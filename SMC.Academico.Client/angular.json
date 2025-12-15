@@ -176,7 +176,14 @@
             "scripts": [
               "projects/smc-sga-aluno/src/assets/recursos/node_modules/jquery/dist/jquery.js",
               "projects/smc-sga-aluno/src/assets/recursos/scripts/smc-developwarning.js"
-            ]
+            ],
+            "optimization": {
+              "fonts": false,
+              "styles": {
+                "minify": false,
+                "inlineCritical": false
+              }
+            }
           },
           "configurations": {
             "production": {
@@ -298,7 +305,14 @@
             "scripts": [
               "projects/smc-sga-professor/src/assets/recursos/node_modules/jquery/dist/jquery.js",
               "projects/smc-sga-professor/src/assets/recursos/scripts/smc-developwarning.js"
-            ]
+            ],
+            "optimization": {
+              "fonts": false,
+              "styles": {
+                "minify": false,
+                "inlineCritical": false
+              }
+            }
           },
           "configurations": {
             "production": {
