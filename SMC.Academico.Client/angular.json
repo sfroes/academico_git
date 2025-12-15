@@ -43,7 +43,15 @@
               "dom-set",
               "dom-plane",
               "@mattlewis92/dom-autoscroller"
-            ]
+            ],
+            "optimization": {
+              "scripts": false,
+              "styles": {
+                "minify": false,
+                "inlineCritical": false
+              },
+              "fonts": false
+            }
           },
           "configurations": {
             "production": {
@@ -53,7 +61,14 @@
                   "with": "projects/smc-sga-administrativo/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": false
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -171,7 +186,14 @@
                   "with": "projects/smc-sga-aluno/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": false
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -286,7 +308,14 @@
                   "with": "projects/smc-sga-professor/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": false
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
