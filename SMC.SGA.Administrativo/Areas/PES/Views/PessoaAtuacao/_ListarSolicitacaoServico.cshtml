@@ -1,0 +1,31 @@
+﻿@model PessoaAtuacaoSolicitacaoServicoViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(x => x.SeqSolicitacaoServico)
+    @Smc.EditorFor(x => x.SeqPessoaAtuacao)
+    @Smc.EditorFor(x => x.SeqTipoDocumento)
+    @Smc.DisplayFor(x => x.DescricaoSolicitacaoServico).CssClass("smc-listdetailed-conteudo-subtitulo").HideLabel()
+    @(Smc.Grid("Anexos", new SMCPagerModel<PessoaAtuacaoAnexoViewModel>(Model.Anexos))
+                              .FieldColumn(x => x.SituacaoEntregaDocumento)
+                              .FieldColumn(x => x.DataPrazoEntrega)
+                              .FieldColumn(x => x.DataEntrega)
+                              .FieldColumn(x => x.VersaoDocumento)
+                              .FieldColumn(x => x.FormaEntregaDocumento)
+                              .FieldColumn(x => x.SeqArquivoAnexado)
+                              .FieldColumn(x => x.Observacao)
+                              .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-sga-col-button-situacao", true,
+                                     f => Smc.Button("btn-visualizar-documento")
+                                             .CssClass("smc-btn-download-ico")
+                                             .Text(Smc.GetUIResource("Botao_Visualizar_Documento"))
+                                             .Tooltip(Smc.GetUIResource("Botao_Visualizar_Documento_Tooltip"))
+                                             .Type(SMCButtonType.Link)
+                                             .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true)
+                                             .Action("DownloadFileGuid", "Home", new { @area = "", @guidFile = (f as PessoaAtuacaoAnexoViewModel).UidArquivoAnexado })
+                                             .Enabled((f as PessoaAtuacaoAnexoViewModel).UidArquivoAnexado.HasValue))
+                              .AutoHideNavigator()
+                              .HideNumberOfRowsPerPageSelector()
+                              .HideRowsTotalizer()
+                              .HideGridTitle()
+                              .HidePager())
+}

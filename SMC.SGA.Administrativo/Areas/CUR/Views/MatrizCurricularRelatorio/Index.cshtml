@@ -1,0 +1,11 @@
+﻿@model MatrizCurricularRelatorioFiltroViewModel
+
+@using (Smc.Form("formGerarRelatorio", "RelatorioMatrizCurricular").Begin())
+{
+    using (Smc.Fieldset("fieldsetRelatorio").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqMatrizCurricular).Size(SMCSize.Grid18_24)
+
+        @Html.Partial("_BotoesRelatorioPadrao", true)
+    }
+}

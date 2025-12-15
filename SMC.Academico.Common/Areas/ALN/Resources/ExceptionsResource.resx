@@ -1,0 +1,721 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERR_ConcedeFormacaoExigePeriodoException" xml:space="preserve">
+    <value>O tipo de termo só pode ser parametrizado para exigir período, quando o termo não concede formação.</value>
+  </data>
+  <data name="ERR_ConcedeFormacaoTermoIntercambioException" xml:space="preserve">
+    <value>O tipo de termo só pode ser parametrizado para conceder formação, quando o vínculo em questão exigir oferta de matriz curricular.</value>
+  </data>
+  <data name="ERR_AlteracaoDadosNaoPermitida" xml:space="preserve">
+    <value>Operação não permitida. A situação do(s) ingressante(s) não permite alteração de dados.</value>
+  </data>
+  <data name="ERR_AssociacaoFormacaoEspecificaIngressante" xml:space="preserve">
+    <value>Associação não permitida. É obrigatório associar os tipos de formação específica de acordo com as
+seguintes quantidades:&lt;/br&gt;&lt;/br&gt;{0}</value>
+  </data>
+  <data name="ERR_AssociacaoIngressanteFormacaoEspecificaNaoPermitida" xml:space="preserve">
+    <value>Operação não permitida. O vínculo do(s) ingressante(s) não permite a associação de formação específica.</value>
+  </data>
+  <data name="ERR_AssociacaoObrigatoriaFormacaoEspecificaIngressante" xml:space="preserve">
+    <value>Não foi possível executar a associação. O tipo de formação específica por tipo de entidade está configurado para que seja obrigatório a associação de uma formação específica ao ingressante.</value>
+  </data>
+  <data name="ERR_CodigoPessoaDadosMestreException" xml:space="preserve">
+    <value>Não existe integração com o CAD para a pessoa {0} do ACADEMICO de código = {1}.</value>
+  </data>
+  <data name="ERR_CPFPassaporteTermoIntercambioLookupException" xml:space="preserve">
+    <value>Informar apenas CPF ou Passaporte como parâmetro.</value>
+  </data>
+  <data name="ERR_InclusoaMatriculaAcademicoException" xml:space="preserve">
+    <value>Erro na criação da matrícula do aluno.</value>
+  </data>
+  <data name="ERR_IngressantesFormacaoEspecificaDiferente" xml:space="preserve">
+    <value>Operação não permitida. Só é possível associar uma formação específica em lote se os selecionados não possuírem formação específica ou, se já possuem, todos devem ter a mesma formação específica.</value>
+  </data>
+  <data name="ERR_IngressantesOrientadorDiferente" xml:space="preserve">
+    <value>Operação não permitida. Só é possível associar um orientador em lote se os selecionados não possuírem orientadores ou, se já possuem, todos devem ter o mesmo orientador.</value>
+  </data>
+  <data name="ERR_NaoExisteIngressanteAssociadoException" xml:space="preserve">
+    <value>Acesso não permitido. Não existe processo seletivo apto para o processo de matrícula.</value>
+  </data>
+  <data name="ERR_OfertasSemVagasException" xml:space="preserve">
+    <value>A(s) oferta(s) de campanha a seguir não possui(em) vagas disponíveis:
+{0}</value>
+    <comment>RN_ALN_036 Controle vaga oferta campanha - ingressante DI</comment>
+  </data>
+  <data name="ERR_QuantidadeOfertasIngressanteException" xml:space="preserve">
+    <value>A quantidade de ofertas do ingressante ultrapassou a quantidade máxima de ofertas permitida para o vínculo {0}.</value>
+  </data>
+  <data name="ERR_TipoMobilidadeTermoIntercambioLookupException" xml:space="preserve">
+    <value>Parâmetro de tipo mobilidade obrigatório.</value>
+  </data>
+  <data name="ERR_ExigeOfertaMatrizCurricularConcedeFormacaoException" xml:space="preserve">
+    <value>O vínculo só pode ser parametrizado para conceder formação, quando exigir oferta de matriz curricular.</value>
+  </data>
+  <data name="ERR_ExigeOfertaMatrizCurricularExigeCursoException" xml:space="preserve">
+    <value>O vínculo só pode ser parametrizado para exigir oferta de matriz curricular quando exigir curso.</value>
+  </data>
+  <data name="FK_aluno_01" xml:space="preserve">
+    <value>Exclusão não permitida. Pessoa-Atuação já é um aluno.</value>
+  </data>
+  <data name="FK_aluno_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe aluno com este tipo de vínculo de aluno.</value>
+  </data>
+  <data name="FK_aluno_formacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Aluno-histórico já possui formações cadastradas.</value>
+  </data>
+  <data name="FK_aluno_formacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Formação específica do curso já possui alunos associados.</value>
+  </data>
+  <data name="FK_aluno_formacao_historico_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe histórico para este aluno-formação.</value>
+  </data>
+  <data name="FK_aluno_formacao_historico_02" xml:space="preserve">
+    <value>Exclusão não permitida. Formação específica do curso já possui histórico de alunos associados.</value>
+  </data>
+  <data name="FK_aluno_formacao_historico_03" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe histórico de formação específica de aluno com este motivo de alteração.</value>
+  </data>
+  <data name="FK_aluno_formacao_historico_04" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de matrícula está associada a histórico de formação de aluno.</value>
+  </data>
+  <data name="FK_aluno_historico_01" xml:space="preserve">
+    <value>Exclusão não permitida. Aluno já possui histórico cadastrado.</value>
+  </data>
+  <data name="FK_aluno_historico_02" xml:space="preserve">
+    <value>Exclusão não permitida. Curso-Oferta-Turno já possui aluno associado.</value>
+  </data>
+  <data name="FK_aluno_historico_03" xml:space="preserve">
+    <value>Exclusão não permitida. Ingressante já está associado a aluno-historico.</value>
+  </data>
+  <data name="FK_aluno_historico_04" xml:space="preserve">
+    <value>Exclusão não permitida. Ciclo letivo já possui histórico de aluno cadastrado.</value>
+  </data>
+  <data name="FK_aluno_historico_05" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem alunos associados à esta entidade.</value>
+  </data>
+  <data name="FK_aluno_historico_06" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de matrícula está associada a um histórico-aluno.</value>
+  </data>
+  <data name="FK_aluno_historico_07" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe alunos associados à este nível de ensino.</value>
+  </data>
+  <data name="FK_aluno_historico_ciclo_letivo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Aluno-histórico já possui historico por ciclo letivo.</value>
+  </data>
+  <data name="FK_aluno_historico_ciclo_letivo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Ciclo letivo já possui histórico de aluno cadastrado.</value>
+  </data>
+  <data name="FK_aluno_historico_ciclo_letivo_03" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de matrícula está associada a um histórico de aluno por ciclo letivo.</value>
+  </data>
+  <data name="FK_aluno_historico_situacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem situações cadastradas para este histórico.</value>
+  </data>
+  <data name="FK_aluno_historico_situacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem históricos de situação de aluno com esta situação.</value>
+  </data>
+  <data name="FK_aluno_historico_situacao_03" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de matrícula está associada a um histórico de situação de aluno.</value>
+  </data>
+  <data name="FK_forma_ingresso_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de vínculo já possui formas de ingresso cadastradas.</value>
+  </data>
+  <data name="FK_ingressante_01" xml:space="preserve">
+    <value>Exclusão não permitida. Pessoa x atuação já é um ingressante.</value>
+  </data>
+  <data name="FK_ingressante_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem ingressantes cadastrados com este tipo de vínculo.</value>
+  </data>
+  <data name="FK_ingressante_03" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem ingressantes cadastrados com esta forma de ingresso.</value>
+  </data>
+  <data name="FK_ingressante_04" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem ingressantes cadastrados associados à esta matriz x oferta.</value>
+  </data>
+  <data name="FK_ingressante_05" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem ingressantes cadastrados para esta campanha x ciclo letivo.</value>
+  </data>
+  <data name="FK_ingressante_06" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem ingressantes cadastrados para esta entidade.</value>
+  </data>
+  <data name="FK_ingressante_07" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem ingressantes cadastrados para este nível de ensino.</value>
+  </data>
+  <data name="FK_ingressante_08" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem ingressantes cadastrados neste processo seletivo.</value>
+  </data>
+  <data name="FK_ingressante_09" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem ingressantes cadastrado para este convocado.</value>
+  </data>
+  <data name="FK_ingressante_formacao_especifica_01" xml:space="preserve">
+    <value>Exclusão não permitida. Formação específica já está associada a ingressantes.</value>
+  </data>
+  <data name="FK_ingressante_formacao_especifica_02" xml:space="preserve">
+    <value>Exclusão não permitida. Ingressante já possui formação específica associada.</value>
+  </data>
+  <data name="FK_ingressante_formacao_especifica_03" xml:space="preserve">
+    <value>Exclusão não permitida. Formação específica já está associada a ingressantes.</value>
+  </data>
+  <data name="FK_ingressante_historico_situacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Ingressante já possui situações cadastradas.</value>
+  </data>
+  <data name="FK_ingressante_oferta_01" xml:space="preserve">
+    <value>Exclusão não permitida. Ingressante já possui ofertas associadas.</value>
+  </data>
+  <data name="FK_ingressante_oferta_02" xml:space="preserve">
+    <value>Exclusão não permitida. Campanha x Oferta já está associada a ingressantes.</value>
+  </data>
+  <data name="FK_ingressante_oferta_03" xml:space="preserve">
+    <value>Exclusão não permitida. Campanha x Oferta já está associada a ingressantes.</value>
+  </data>
+  <data name="FK_ingressante_oferta_04" xml:space="preserve">
+    <value>Exclusão não permitida. Campanha x Oferta x Item já está associada a ingressantes.</value>
+  </data>
+  <data name="FK_instituicao_nivel_forma_ingresso_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de forma de ingresso para esta configuração de tipo de vínculo de aluno.</value>
+  </data>
+  <data name="FK_instituicao_nivel_forma_ingresso_02" xml:space="preserve">
+    <value>Exclusão não permitida. Forma de ingresso já está configurada por tipo de vínculo de aluno x instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_situacao_matricula_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de situação de matrícula para esta configuração de tipo de vínculo de aluno.</value>
+  </data>
+  <data name="FK_instituicao_nivel_situacao_matricula_02" xml:space="preserve">
+    <value>Exclusão não permitida. Situação de matrícula já está configurada por tipo de vínculo de aluno x instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_orientacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de tipo de orientação para esta configuração de tipo de vínculo de aluno.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_orientacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de orientação já está configurado por tipo de vínculo de aluno x instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_orientacao_03" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de tipo de orientação para esta configuração de tipo de termo de intercâmbio x instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_orientacao_participacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de tipo de participação para esta configuração de tipo de orientação x instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_termo_intercambio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de tipo de termo de intercâmbio para esta configuração de tipo de vínculo de aluno.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_termo_intercambio_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de termo de intercâmbio já está configurado por tipo de vínculo de aluno x instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_vinculo_aluno_01" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já possui tipo de vínculo de aluno configurado.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_vinculo_aluno_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de vínculo de aluno já foi associado a uma instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_parceria_intercambio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui cadastro de parceria de intercâmbio.</value>
+  </data>
+  <data name="FK_parceria_intercambio_arquivo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Parceria de intercâmbio já possui arquivos anexados.</value>
+  </data>
+  <data name="FK_parceria_intercambio_arquivo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Arquivo anexado à parceria de intercâmbio.</value>
+  </data>
+  <data name="FK_parceria_intercambio_instituicao_externa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Parceria de intercâmbio já possui instituição externas associadas.</value>
+  </data>
+  <data name="FK_parceria_intercambio_instituicao_externa_02" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição externa possui parceria de intercâmbio.</value>
+  </data>
+  <data name="FK_parceria_intercambio_tipo_termo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Parceria de intercâmbio possui tipo de termo de intercâmbio associado.</value>
+  </data>
+  <data name="FK_parceria_intercambio_tipo_termo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de termo de intercâmbio já está associado a uma parceria de intercâmbio.</value>
+  </data>
+  <data name="FK_parceria_intercambio_vigencia_01" xml:space="preserve">
+    <value>Exclusão não permitida. Parceria de intercâmbio possui períodos de vigência cadastrados.</value>
+  </data>
+  <data name="FK_plano_estudo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe plano de estudo cadastrado.</value>
+  </data>
+  <data name="FK_plano_estudo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de matrícula está associada a um plano de estudo.</value>
+  </data>
+  <data name="FK_plano_estudo_03" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe plano de estudo cadastrado com esta matriz curricular.</value>
+  </data>
+  <data name="FK_plano_estudo_item_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe itens para este plano de estudo.</value>
+  </data>
+  <data name="FK_plano_estudo_item_02" xml:space="preserve">
+    <value>Exclusão não permitida. Turma já está associada a plano de estudo.</value>
+  </data>
+  <data name="FK_plano_estudo_item_03" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de componente já está associada a plano de estudo.</value>
+  </data>
+  <data name="FK_plano_estudo_item_04" xml:space="preserve">
+    <value>Exclusão não permitida. Orientação está associada a um item de plano de estudo.</value>
+  </data>
+  <data name="FK_termo_intercambio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de termo de intercâmbio já foi utilizado no cadastro de termo de intercâmbio.</value>
+  </data>
+  <data name="FK_termo_intercambio_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe termos de intercâmbio cadastrado para esta parceria de intercâmbio x instituição externa.</value>
+  </data>
+  <data name="FK_termo_intercambio_arquivo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Termo de intercâmbio já possui arquivos anexados.</value>
+  </data>
+  <data name="FK_termo_intercambio_arquivo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Arquivo anexado à termo de intercâmbio.</value>
+  </data>
+  <data name="FK_termo_intercambio_pessoa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe pessoas associadas a este termo de intercâmbio x tipo de mobilidade.</value>
+  </data>
+  <data name="FK_termo_intercambio_tipo_mobilidade_01" xml:space="preserve">
+    <value>Exclusão não permitida. Termo de intercâmbio possui tipo de mobilidade associada.</value>
+  </data>
+  <data name="FK_termo_intercambio_vigencia_01" xml:space="preserve">
+    <value>Exclusão não permitida. Termo de intercâmbio possui períodos de vigência cadastrados.</value>
+  </data>
+  <data name="UN_aluno_formacao_01" xml:space="preserve">
+    <value>Aluno já está associado à esta formação específica.</value>
+  </data>
+  <data name="UN_aluno_historico_01" xml:space="preserve">
+    <value>Já existe aluno x histórico para este ingressante.</value>
+  </data>
+  <data name="UN_aluno_historico_ciclo_letivo_01" xml:space="preserve">
+    <value>Já existe histórico para este ciclo letivo deste aluno.</value>
+  </data>
+  <data name="UN_forma_ingresso_01" xml:space="preserve">
+    <value>Já existe forma de ingresso com esta descrição para este tipo de vinculo.</value>
+  </data>
+  <data name="UN_ingressante_formacao_especifica_01" xml:space="preserve">
+    <value>Formação específica já está associada ao ingressante.</value>
+  </data>
+  <data name="UN_instituicao_nivel_forma_ingresso_01" xml:space="preserve">
+    <value>Forma de ingresso já está associada à este nível de ensino x instituição de ensino x tipo de vínculo de aluno.</value>
+  </data>
+  <data name="UN_instituicao_nivel_situacao_matricula_01" xml:space="preserve">
+    <value>Situação de matrícula já está associada à este nível de ensino x instituição de ensino x tipo de vínculo de aluno.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_orientacao_01" xml:space="preserve">
+    <value>Tipo de orientação já está associado à este nível de ensino x instituição de ensino x tipo de vínculo de aluno.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_orientacao_participacao_01" xml:space="preserve">
+    <value>Tipo de participação já está associado a esta configuração de tipo de orientação.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_termo_intercambio_01" xml:space="preserve">
+    <value>Tipo de termo de intercâmbio já está associado à este nível de ensino x instituição de ensino x tipo de vínculo de aluno.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_vinculo_aluno_01" xml:space="preserve">
+    <value>Tipo de vínculo de aluno já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_parceria_intercambio_01" xml:space="preserve">
+    <value>Já existe parceria de intercâmbio com essa descrição.</value>
+  </data>
+  <data name="UN_parceria_intercambio_arquivo_01" xml:space="preserve">
+    <value>Arquivo já está associado à parceria de intercâmbio.</value>
+  </data>
+  <data name="UN_parceria_intercambio_instituicao_externa_01" xml:space="preserve">
+    <value>Instituição externa já está associada à parceria de intercâmbio.</value>
+  </data>
+  <data name="UN_parceria_intercambio_tipo_termo_01" xml:space="preserve">
+    <value>Tipo de termo já está associado à parceria de intercâmbio.</value>
+  </data>
+  <data name="UN_termo_intercambio_arquivo_01" xml:space="preserve">
+    <value>Arquivo já está associado ao termo de intercâmbio.</value>
+  </data>
+  <data name="UN_termo_intercambio_pessoa_01" xml:space="preserve">
+    <value>Já existe pessoa com este CPF neste termo de intercâmbio.</value>
+  </data>
+  <data name="UN_termo_intercambio_tipo_mobilidade_01" xml:space="preserve">
+    <value>Associação não permitida. Não é possível associar ao termo, um tipo de mobilidade mais de uma vez.</value>
+  </data>
+  <data name="UN_termo_intercambio_vigencia_01" xml:space="preserve">
+    <value>Alteração não permitida. Não é possível salvar um termo com períodos de vigência iguais.</value>
+  </data>
+  <data name="UN_tipo_termo_intercambio_01" xml:space="preserve">
+    <value>Já existe tipo de termo de intercâmbio com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_vinculo_aluno_01" xml:space="preserve">
+    <value>Já existe tipo de vínculo com esta descrição.</value>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoOrientacaoParticipacaoObrigatoriaException" xml:space="preserve">
+    <value>{0}  não permitida. É necessário informar pelo menos um tipo de participação como obrigatório".</value>
+  </data>
+  <data name="ERR_AtuacaoSemEmailException" xml:space="preserve">
+    <value>Não é possível prosseguir. É necessário a inclusão de pelo menos um endereço eletrônico do tipo E-mail.</value>
+    <comment>RN_ALN_008 Consistência endereço eletrônico</comment>
+  </data>
+  <data name="ERR_AtuacaoSemEnderecoException" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatório informar apenas um endereço com a correspondência "Acadêmica e Financeira" ou um endereço com a correspondência "Acadêmica" e outro com "Financeira".</value>
+    <comment>RN_ALN_006 - Consistência endereço</comment>
+  </data>
+  <data name="ERR_AssociacaoIngressanteOfertaObrigatoriaException" xml:space="preserve">
+    <value>Não é possível prosseguir. É necessário selecionar pelo menos um uma oferta.</value>
+  </data>
+  <data name="ERR_IntegracaoDadosMestresException" xml:space="preserve">
+    <value>Erro no integração com os dados mestres: {0}.</value>
+  </data>
+  <data name="Alteracao" xml:space="preserve">
+    <value>Alteração</value>
+  </data>
+  <data name="ERR_AlterarVigenciaAntigaException" xml:space="preserve">
+    <value>Alteração não permitida. Apenas a vigência atual poderá ser alterada e/ou excluída.</value>
+  </data>
+  <data name="ERR_DataFimVigenciaAnteriorInvalidaException" xml:space="preserve">
+    <value>Alteração não permitida. Data fim da vigência anterior à atual deverá ser menor ou igual à data atual.</value>
+  </data>
+  <data name="ERR_SemVigenciaComDataValidaException" xml:space="preserve">
+    <value>É necessário haver UMA vigência com data de término superior à data atual.</value>
+  </data>
+  <data name="ERR_UmPeriodoVigenciaException" xml:space="preserve">
+    <value>Inclusão não permitida. Só é possível incluir um período vigente por vez.</value>
+  </data>
+  <data name="ERR_VigenciaDataFimInvalidaException" xml:space="preserve">
+    <value>Alteração não permitida. Data fim da vigência atual deverá ser maior que a data atual.</value>
+  </data>
+  <data name="ERR_VigenciaInvalidaException" xml:space="preserve">
+    <value>{0} não permitida. O período do termo deve estar dentro do período de vigência da parceria de intercâmbio.</value>
+  </data>
+  <data name="Inclusao" xml:space="preserve">
+    <value>Inclusão</value>
+  </data>
+  <data name="ERR_AssociacaoObrigatoriaOrientadorIngressante" xml:space="preserve">
+    <value>Operação não permitida. É obrigatório associar um colaborador ao tipo de participação "{0}".</value>
+  </data>
+  <data name="ERR_AssociacaoOrientadorIngressanteSemParametro" xml:space="preserve">
+    <value>Operação não permitida. O tipo de participação "{0}" não está parametrizado para o tipo de orientação selecionado.</value>
+  </data>
+  <data name="FK_periodo_intercambio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Termo de intercâmbio já possui período associado.</value>
+  </data>
+  <data name="FK_pessoa_atuacao_termo_intercambio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Pessoa x Atuação possui termo de intercâmbio associado.</value>
+  </data>
+  <data name="FK_pessoa_atuacao_termo_intercambio_02" xml:space="preserve">
+    <value>Exclusão não permitida. Termo de intercâmbio está associado à pessoa x atuação.</value>
+  </data>
+  <data name="FK_pessoa_atuacao_termo_intercambio_03" xml:space="preserve">
+    <value>Exclusão não permitida. Orientação já possui termo de intercâmbio associado à pessoa x atuação.</value>
+  </data>
+  <data name="FK_pessoa_atuacao_termo_intercambio_arquivo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Termo de intercâmbio já possui arquivo associado à pessoa x atuação.</value>
+  </data>
+  <data name="FK_pessoa_atuacao_termo_intercambio_arquivo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Arquivo já está associado a um termo de intercâmbio.</value>
+  </data>
+  <data name="FK_termo_intercambio_03" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino possui termo de intercâmbio cadastrado.</value>
+  </data>
+  <data name="ERR_IngressanteDuplicadoException" xml:space="preserve">
+    <value>{0} não permitida. Ingressante já cadastrado.</value>
+    <comment>RN_ALN_005 1.1 Validação de duplicitade do ingressante</comment>
+  </data>
+  <data name="ERR_IngressanteComSituacaoMatriculaInvalidaException" xml:space="preserve">
+    <value>A solicitação de matrícula deste ingressante encontra-se {0}. Não é possível incluir novas disciplinas pela carga de ingressantes.</value>
+  </data>
+  <data name="ERR_IngressanteTermoIntercambioIntervaloVigenciaException" xml:space="preserve">
+    <value>Não é possível prosseguir. Todo período entre a menor data início e a maior data fim dos termos deve estar coberto por um termo vigente.</value>
+  </data>
+  <data name="ERR_IngressanteTermoIntercambioParceriaDiferenteException" xml:space="preserve">
+    <value>Não é possível prosseguir. Os termos associados devem pertencer a uma mesma parceria de intercâmbio.</value>
+  </data>
+  <data name="ERR_IngressanteTermoIntercambioTipoDiferenteException" xml:space="preserve">
+    <value>Não é possível prosseguir. Os tipos de termo de intercâmbio associados ao ingressante devem ser iguais.</value>
+  </data>
+  <data name="ERR_LiberacaoIngressaneInvalidaException" xml:space="preserve">
+    <value>Liberação não permitida, situação ou origem de ingressante inválida.</value>
+  </data>
+  <data name="ERR_NaoExisteAlunoAssociadoException" xml:space="preserve">
+    <value>Não foi encontrado nenhum aluno associado à este login.</value>
+  </data>
+  <data name="FK_aluno_historico_08" xml:space="preserve">
+    <value>Exclusão não permitida. Forma de ingresso já está associada a aluno x histórico.</value>
+  </data>
+  <data name="UN_aluno_historico_02" xml:space="preserve">
+    <value>Já existe aluno x histórico com esta solicitação de matrícula.</value>
+  </data>
+  <data name="ERR_AtuacaoSemTelefoneException" xml:space="preserve">
+    <value>É necessário a inclusão de pelo menos um telefone.</value>
+    <comment>RN_ALN_007 - Consistência telefone</comment>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoOrientacaoTipoTermoException" xml:space="preserve">
+    <value>{0} não permitida. Já existe um tipo de orientação associado a este tipo de termo de
+intercâmbio.</value>
+  </data>
+  <data name="ERR_TurmasSemVagasException" xml:space="preserve">
+    <value>A(s) turma(s) da(s) oferta(s) de campanha a seguir não possui(em) vagas disponíveis:
+{0}</value>
+  </data>
+  <data name="ERR_NovaDataPrevisaoAnteriorDataAtualException" xml:space="preserve">
+    <value>A nova data de previsão de conclusão deverá ser maior que a data atual.</value>
+  </data>
+  <data name="ERR_NovaDataPrevisaoAnteriorPrevisaoAtualException" xml:space="preserve">
+    <value>A nova data de previsão de conclusão deverá ser maior que a data atual de previsão de conclusão.</value>
+  </data>
+  <data name="ERR_NovaDataPrevisaoNaoInformadaException" xml:space="preserve">
+    <value>Para realizar o deferimento é preciso informar a nova data de previsão de conclusão do aluno. Favor retornar ao passo anterior e preencher a data.</value>
+  </data>
+  <data name="ERR_NovaDataPrevisaoAnteriorNaoUltimoDiaMesException" xml:space="preserve">
+    <value>O dia da nova data de previsão de conclusão deverá ser o último dia do mês.</value>
+  </data>
+  <data name="ERR_IncluirServicoAdicionalException" xml:space="preserve">
+    <value>Erro ao criar a matrícula de serviço adicional. ({0})</value>
+  </data>
+  <data name="ERR_IngressanteTermoIntercambioDuplicadoException" xml:space="preserve">
+    <value>Não é possível prosseguir. Um termo de intercâmbio pode ser associado a um ingressante apenas uma vez.</value>
+  </data>
+  <data name="ERR_ParceriaIntercambioPeriodoExatoIgualException" xml:space="preserve">
+    <value>Alteração não permitida. Não é possível salvar uma parceria com períodos de vigência iguais.</value>
+  </data>
+  <data name="ERR_NaoConcedeFormacaoNaoExigePeriodoException" xml:space="preserve">
+    <value>O tipo de termo deve ser parametrizado para exigir período, quando o termo não concede formação.</value>
+  </data>
+  <data name="ERR_ConcedeFormacaoInstituicaoValorDiferenteException" xml:space="preserve">
+    <value>Para o campo "Concede formação", o(s) Tipo(s) de Termo só pode(m) ter o(s) valor(es):{0}Pois já existe cadastro(s) anterior(es) com este(s) valor(es).</value>
+  </data>
+  <data name="ERR_ParceriaIntercambioExisteTermoCadastradoException" xml:space="preserve">
+    <value>Exclusão não permitida. Existe(m) temo(s) de intercâmbio cadastrado(s) para esta parceria.</value>
+  </data>
+  <data name="ERR_TermoIntercambioPossuiPessoaAtuacaoException" xml:space="preserve">
+    <value>Exclusão não permitida. Existem pessoas associadas ao termo em questão.</value>
+  </data>
+  <data name="ERR_TermoIntercambioInclusaoMaisPeriodoVigenciaException" xml:space="preserve">
+    <value>Inclusão não permitida. Não é possível informar mais de um periodo de vigência para o termo de intercâmbio.</value>
+  </data>
+  <data name="ERR_TermoIntercambioPeriodoVigenciaExatamenteIguaisException" xml:space="preserve">
+    <value>Alteração não permitida. Não é possível salvar um termo com períodos de vigência iguais.</value>
+  </data>
+  <data name="ERR_TermoIntercambioPeriodoNumeroVagasMenorPessoaAtivaException" xml:space="preserve">
+    <value>Alteração não permitida. A quantidade de vagas informada tem que ser maior ou igual a quantidade de pessoas associadas ao termo de intercâmbio.</value>
+  </data>
+  <data name="ERR_TrancamentoMatriculaAlunoDIException" xml:space="preserve">
+    <value>Não é possível efetuar o trancamento de matrícula de aluno que não possui vínculo em curso.</value>
+  </data>
+  <data name="ERR_AlunoHistoricoCicloLetivoInvalidoException" xml:space="preserve">
+    <value>Não foi possível encontrar histórico do aluno no ciclo letivo.</value>
+  </data>
+  <data name="ERR_AlunoMigracaoInvalidoException" xml:space="preserve">
+    <value>Aluno não possui codigo de migração do SGP.</value>
+  </data>
+  <data name="ERR_IngressanteExclusaoNaoPermitidaException" xml:space="preserve">
+    <value>Não é possível excluir o ingressante, pois sua situação se encontra "Apto
+para matrícula", "Matriculado", "Desistente" ou "Cancelado".</value>
+  </data>
+  <data name="ERR_ParceriaIntercambioPeriodoNecessarioUmException" xml:space="preserve">
+    <value>Inclusão não permitida. É necessário informar o período de vigência.</value>
+  </data>
+  <data name="ERR_ParceriaIntercambioPeriodoPossivelUmException" xml:space="preserve">
+    <value>Inclusão não permitida. É possível informar somente um período de vigência.</value>
+  </data>
+  <data name="ERR_ParceriaIntercambioExisteTermoPorTipoException" xml:space="preserve">
+    <value>Alteração não permitida.Já existem termos de intercâmbio cadastrado para esta parceria de intercâmbio com esse tipo de termo de intercâmbio.</value>
+  </data>
+  <data name="ERR_PlanoEstudoSemItensException" xml:space="preserve">
+    <value>{0} É necessário conter pelo menos um item no plano de estudo do aluno.</value>
+  </data>
+  <data name="ERR_AlunoSemBloqueioPrazoConclusaoException" xml:space="preserve">
+    <value>Não foi possível encontrar o bloqueio de prazo de conclusão para o aluno.</value>
+  </data>
+  <data name="ERR_TermoIntercambioExclusaoTipoMobilidadeException" xml:space="preserve">
+    <value>Alteração não permitida. O(s) tipo(s) de mobilidade {0} não pode(m) ser excluído(s), pois  existem pessoas associadas ao termo de intercâmbio com esse(s) tipo(s).</value>
+  </data>
+  <data name="ERR_PrazoConclusaoInvalidoException" xml:space="preserve">
+    <value>Prazo de conclusão do curso do aluno é inválido ou não existe.</value>
+  </data>
+  <data name="ERR_IngressanteTermoIntercambioVagaExcedidaException" xml:space="preserve">
+    <value>Não é possível prosseguir. A quantidade de vagas do termo de intercambio já foi excedida.</value>
+    <comment>RN_ALN_030 - Consistência termos e período de intercâmbio</comment>
+  </data>
+  <data name="UN_pessoa_atuacao_termo_intercambio_01" xml:space="preserve">
+    <value>Já existe associação deste termo de intercâmbio com esse aluno / ingressante.</value>
+  </data>
+  <data name="ERR_TermoIntercambioParametrosInvalidosException" xml:space="preserve">
+    <value>Não é permitido informar os parâmetros tipo de mobilidade, instituição de ensino, nível de ensino e tipo de vínculo caso não seja informado o cpf ou passaporte.</value>
+  </data>
+  <data name="ERR_IngressanteExclusaoNaoPermitidaOrigemException" xml:space="preserve">
+    <value>Exclusão não permitida. Não é possível excluir o ingressante, pois sua origem é "Convocado" ou "Selecionado no GPI".</value>
+  </data>
+  <data name="ERR_CodigoAmostraPpaNaoEncontradoException" xml:space="preserve">
+    <value>Código da amostra PPA não encontrado.</value>
+  </data>
+  <data name="ERR_UrlAvaliacaoCpaNaoConfiguradaException" xml:space="preserve">
+    <value>URL da avaliação CPA ({0}) não foi configurada.</value>
+  </data>
+  <data name="ERR_IngressanteSemOfertasException" xml:space="preserve">
+    <value>É necessário selecionar ao menos uma oferta para o ingressante.</value>
+  </data>
+  <data name="ERR_CodigoPessoaNaoEncontradoDadosMestreException" xml:space="preserve">
+    <value>Pessoa não encontrada.</value>
+  </data>
+  <data name="ERR_IngressanteBloqueioPessoaException" xml:space="preserve">
+    <value>Cadastro não autorizado.</value>
+  </data>
+  <data name="ERR_AlunoLogadoSemVinculoException" xml:space="preserve">
+    <value>Não foi possível identificar o vínculo selecionado. Favor efetuar o login, selecionar o vínculo e tentar novamente.</value>
+  </data>
+  <data name="ERR_PeriodoIntercambioDataFimMenorQueConclusaoInvalidaException" xml:space="preserve">
+    <value>Alteração não permitida. A nova data fim não pode ser maior que a data de previsão de conclusão do
+aluno.</value>
+  </data>
+  <data name="ERR_PeriodoIntercambioDataInicioMenorQueDataAdmissaoException" xml:space="preserve">
+    <value>Alteração não permitida. A nova data início não pode ser menor que a data de admissão do aluno.</value>
+  </data>
+  <data name="ERR_PeriodoIntercambioDataCoincideException" xml:space="preserve">
+    <value>Alteração nao permitida. Para esse termo de intercâmbio associado ao aluno, existe outro período de
+intercambio que coincide com o periodo informado.</value>
+  </data>
+  <data name="ERR_PeriodoIntercambioDatasParceriaInvalidasException" xml:space="preserve">
+    <value>Alteração não permitida. A nova data deverá estar entre a data inicio e a data fim da parceria de
+intercâmbio</value>
+  </data>
+  <data name="ERR_PeriodoIntercambioPessoaAtuacaoSItuacaoMatriculaException" xml:space="preserve">
+    <value>Alteração não permitida. Entre o período de intercâmbio informado, o(a) aluno(a) possui alguma
+situação de matrícula que nao permite a mobilidade.</value>
+  </data>
+  <data name="ERR_PeriodoIntercambioProcessoRenovacaoEncerradoException" xml:space="preserve">
+    <value>Alteração não permitida. Não é possivel matricular o aluno na data fim informada, pois o processo de
+renovação de matrícula foi encerrado.</value>
+  </data>
+  <data name="ERR_PeriodoIntercambioDataInicioNaoPodeSerDIferenteDeCicloLetivoIngresso" xml:space="preserve">
+    <value>Alteração não permitida. A nova da início não pode pertencer a um ciclo letivo diferente do ciclo letivo de ingresso: {0}.</value>
+  </data>
+  <data name="ERR_EfetivacaoMatriculaException" xml:space="preserve">
+    <value>A efetivação não pode ser efetuada, pois o aluno possui o seguinte bloqueio:&lt;/br&gt; {0}</value>
+  </data>
+  <data name="ERR_DataPrevisaoMenorAutorizacaoException" xml:space="preserve">
+    <value>A nova data de previsão de conclusão deverá ser maior que a data da autorização de novo depósito do trabalho.</value>
+  </data>
+  <data name="ERR_DataPrevisaoMenorInicioSituacaoException" xml:space="preserve">
+    <value>A nova data de previsão de conclusão deverá ser maior que a data de início da situação de matrícula Matriculado ou Provável formando.</value>
+  </data>
+  <data name="ERR_MaisDeUmAlunoSelecionadoException" xml:space="preserve">
+    <value>Para esse tipo de relatório, apenas um único aluno deve ser selecionado.</value>
+  </data>
+  <data name="ERR_SituacaoAlunoFormadoSemCicloAtualException" xml:space="preserve">
+    <value>Não foi encontrado ciclo letivo para o curso-oferta-localidade-turno deste aluno na data {0}.</value>
+  </data>
+  <data name="ERR_EmailParticipanteNaoEncontradoException" xml:space="preserve">
+    <value>Não foi possível identificar o e-mail do(s) seguinte(s) assinante(s): {0}</value>
+  </data>
+  <data name="ERR_ParticipanteNaoEncontradoException" xml:space="preserve">
+    <value>Ocorreu um erro ao enviar o documento para assinatura. Não foi localizado no Acadêmico nenhum tipo de vínculo de funcionário com os vínculos a seguir cadastrados no fluxo do GAD: {0}</value>
+  </data>
+  <data name="ERR_RelatorioSemSelecionarAlunoException" xml:space="preserve">
+    <value>Favor selecionar ao menos um aluno para gerar o relatório.</value>
+  </data>
+</root>

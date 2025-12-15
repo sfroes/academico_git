@@ -1,0 +1,29 @@
+﻿@model AssociacaoOrientadorIngressanteViewModel
+
+@Html.Action("CabecalhoIngressante", "Ingressante", Model.SeqIngressante)
+
+@using (Smc.Form("formAssociacaoOrientadorIngressante", "SalvarAssociacaoOrientadorIngressante").Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqIngressante)
+    @Smc.EditorFor(prop => prop.SeqNivelEnsino)
+    @Smc.EditorFor(prop => prop.SeqInstituicaoEnsino)
+    @Smc.EditorFor(prop => prop.SeqTipoIntercambio)
+    @Smc.EditorFor(prop => prop.SeqTipoOrientacao)
+
+    using (Smc.Div("OrientacoesIngressante")
+              .Size(SMCSize.Grid24_24)
+              .Dependency("SeqTipoOrientacao", "BuscarOrientacoesIngressante", "Ingressante", "ALN", true, new string[] { "SeqIngressante", "SeqInstituicaoEnsino", "SeqNivelEnsino", "SeqTipoIntercambio" })
+              .Begin())
+    {
+
+    }
+
+    var buttonSet = Smc.ButtonSet();
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().Hide(Smc.GetViewMode() == SMCViewMode.ReadOnly).SecurityToken(UC_ALN_002_03_03.ASSOCIAR_ORIENTADOR));
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Index", "Ingressante", new { Area = "ALN" }, forceForBackBehavior: true));
+
+    @buttonSet;
+
+}

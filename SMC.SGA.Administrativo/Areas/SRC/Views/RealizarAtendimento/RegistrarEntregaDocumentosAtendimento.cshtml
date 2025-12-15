@@ -1,0 +1,60 @@
+﻿@using SMC.DadosMestres.Common.Areas.PES.Enums
+@using SMC.Academico.UI.Mvc.Areas.SRC.Views.RegistroDocumento.App_LocalResources
+@using SMC.Academico.Common.Areas.SRC.Constants;
+@using SMC.Formularios.UI.Mvc;
+@using SMC.Framework;
+@using SMC.Framework.UI.Mvc.Html;
+
+@model RegistroDocumentosAtendimentoViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_PARECER_ENTREGA_DOCUMENTACAO))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    if (Model.Documentos.Count() > 0)
+    {
+        @Smc.List("Documentos", r => r.Documentos).HtmlTemplate(documentos => Html.Partial("_RegistrarEntregaDocumentosAtendimento", documentos.Value)).CssClass("smc-sga-registro-documentos")
+    }
+
+    @Html.Partial("_BotoesNavegacaoAtendimento")
+
+}
+
+
+<script type="text/javascript">
+    $(document).on("focus", ".smc-academico-situacao-entrega-documento > select", function () {
+        $(this).data('valorAntigo', $(this).val());
+    });
+
+    $(document).on("change", ".smc-academico-situacao-entrega-documento > select", function () {
+
+        var select = $(this);
+        var linha = $(this).closest(".smc-detalhe-editavel-linha-dados");
+        var upload = $(linha).find("[data-name='ArquivoAnexado']");
+
+        var controlUpload = smc.core.uicontrol(upload);
+        var controlSelect = smc.core.uicontrol(select);
+
+        if ((controlSelect.getValue() == 1 || controlSelect.getValue() == 6) && controlUpload.getValue() != null)
+        {
+            if (controlSelect.getValue() == 1)
+            {
+                smc.core.alertError('@UIResource.Titulo_Inserir_Erro', '@UIResource.ERR_ArquivoAnexadoValidacaoAguardandoEntrega');
+            }
+            if (controlSelect.getValue() == 6)
+            {
+                smc.core.alertError('@UIResource.Titulo_Inserir_Erro', '@UIResource.ERR_ArquivoAnexadoValidacaoPendente');
+            }
+            select.val($(select).data("valorAntigo"));
+            select.trigger("change");
+        }
+    });
+</script>

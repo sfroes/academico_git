@@ -1,0 +1,19 @@
+﻿@model ConfiguracaoTurmaDivisaoComponenteModel
+
+@using (Smc.Div().Begin())
+{
+    @Smc.DisplayFor(prop => prop.Descricao)
+    @Smc.EditorFor(prop => prop.QuantidadeGrupos)
+    @Smc.EditorFor(prop => prop.QuantidadeProfessores)
+    @Smc.EditorFor(prop => prop.NotaMaxima)
+    @Smc.EditorFor(prop => prop.ApurarFrequencia)
+    @Smc.EditorFor(prop => prop.MateriaLecionadaObrigatoria)
+    @Smc.EditorFor(prop => prop.SeqEscalaApuracao)
+
+    @Smc.EditorFor(prop => prop.Seq)
+    @Smc.EditorFor(prop => prop.SeqTurma)
+    @Smc.EditorFor(prop => prop.SeqOrigemAvaliacao)
+    @Smc.EditorFor(prop => prop.SeqCriterioAprovacao)
+    @Smc.EditorFor(prop => prop.SeqDivisaoComponente)
+    @Smc.EditorFor(prop => prop.TipoEscalaApuracao)
+}

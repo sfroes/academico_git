@@ -1,0 +1,86 @@
+﻿@using SMC.Formularios.UI.Mvc;
+@using SMC.Academico.Common.Areas.SRC.Constants;
+@using SMC.Academico.Common.Areas.CNC.Constants;
+
+@model SMC.Academico.UI.Mvc.Areas.SRC.Models.SolicitacaoCobrancaTaxaViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_COBRANCA_TAXA_SERVICO))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    @Smc.EditorFor(m => m.backUrl)
+    @Smc.HiddenFor(m => m.Token)
+
+    @Smc.HiddenFor(m => m.CodigoNucleo)
+    @Smc.HiddenFor(m => m.ExibeMensagemInformativaTaxasSemValor)
+    @Smc.EditorFor(m => m.ExisteTaxaAssociada)
+    @*@Smc.HiddenFor(m => m.Taxas)*@
+    @Smc.HiddenFor(m => m.ValorTotalTaxas)
+    @Smc.HiddenFor(m => m.ExisteTaxaSemValor)
+    @Smc.HiddenFor(m => m.ExisteTaxaComValorIncorreto)
+
+    if (Model.ExisteTaxaAssociada)
+    {
+        using (Smc.Fieldset("fsTaxas").Begin())
+        {
+            @Smc.EditorFor(m => m.MensagemInformativaTaxasSemValor)
+
+            @(Smc.Grid("gridTaxas", new SMCPagerModel<SMC.Academico.UI.Mvc.Areas.SRC.Models.SolicitacaoCobrancaTaxaItemViewModel>(Model.Taxas))
+                  .AutoGenerateColumns(generateHiddenValues: true)
+                  .HideNavigator()
+                  .HidePager()
+                  .HideRowNumber()
+                  .HideRowsTotalizer()
+                  .HideGridTitle()
+            )
+
+            <span class="smc-texto-bold smc-alinhamento-direita smc-size-md-15 smc-size-xs-15 smc-size-sm-15 smc-size-lg-15">
+                @Smc.GetUIResource("Label_Total_Geral"): @Model.ValorTotalTaxas
+            </span>
+
+            @*<table class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+                    <thead>
+                        <tr>
+                            <td>@Smc.GetUIResource("Label_Descricao")</td>
+                            <td>@Smc.GetUIResource("Label_Valor")</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (SMC.Academico.UI.Mvc.Areas.SRC.Models.SolicitacaoCobrancaTaxaItemViewModel taxa in Model.Taxas)
+                        {
+                            <tr>
+                                <td class="smc-size-md-15 smc-size-xs-15 smc-size-sm-15 smc-size-lg-15">@taxa.DescricaoTaxa</td>
+                                <td class="smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3">@taxa.ValorTaxa</td>
+                            </tr>
+                        }
+                        <tr>
+                            <td class="smc-texto-bold smc-alinhamento-direita smc-size-md-15 smc-size-xs-15 smc-size-sm-15 smc-size-lg-15">@Smc.GetUIResource("Label_Total_Geral")</td>
+                            <td class="smc-texto-bold smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3">@Model.ValorTotalTaxas</td>
+                        </tr>
+                    </tbody>
+                </table>*@
+        }
+
+        using (Smc.Fieldset("fsTipoEmissao").Begin())
+        {
+            @Smc.EditorFor(m => m.TipoEmissaoTaxa)
+        }
+    }
+    else
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            <span class="smc-datagrid-no-results">Não há cobrança de taxa para a solicitação de serviço.</span>
+        }
+    }
+
+    @Html.Partial("_BotoesNavegacao", Model)
+}

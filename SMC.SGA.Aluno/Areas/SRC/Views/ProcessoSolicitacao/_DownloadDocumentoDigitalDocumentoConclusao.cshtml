@@ -1,0 +1,178 @@
+﻿@using SMC.Academico.Common.Areas.CNC.Enums;
+@model DownloadDocumentoDigitalDocumentoConclusaoPaginaViewModel
+
+@using (Smc.Fieldset("fsDocumentoConclusao").Size(SMCSize.Grid24_24).LegendText(Model.TituloSecao).Begin())
+{
+    if (Model.DiplomaDigital)
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(x => x.CodigoValidacaoDiploma)
+        }
+
+        if (Model.CategoriaSituacaoDocumentoAcademicoAtual != ClasseSituacaoDocumento.Invalido)
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+            {
+                @Smc.EditorFor(x => x.ExibirGrauTitulacao)
+                @Smc.EditorFor(x => x.ExibirFormacao)
+
+                @Smc.DisplayFor(x => x.DescricaoCurso)
+                @Smc.DisplayFor(x => x.DescricaoGrauAcademico)
+                @Smc.DisplayFor(x => x.DescricaoTitulacao)
+                @Smc.DisplayFor(x => x.FormacaoEspecifica)
+                @Smc.DisplayFor(x => x.NumeroRegistro)
+            }
+        }
+
+        if (Model.CategoriaSituacaoDocumentoAcademicoAtual != ClasseSituacaoDocumento.Invalido)
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(x => x.DataRegistro)
+                @Smc.DisplayFor(x => x.NumeroProcesso)
+                @Smc.DisplayFor(x => x.DataColacao)
+                @Smc.EditorFor(x => x.CategoriaSituacaoDocumentoAcademicoAtual)
+            }
+        }
+
+        if (Model.CategoriaSituacaoDocumentoAcademicoAtual == ClasseSituacaoDocumento.Invalido)
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+            {
+                <p>@Html.Raw(Smc.GetUIResource("MSG_MensagemDiplomaInvalido"))</p>
+            }
+        }
+
+        @(
+        Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-alinha-esquerda")
+                      .AddButton(Smc.Button(SMCButtonBehavior.Visualizar)
+                      .Size(SMCSize.Grid8_24)
+                      .DisplayMode(SMCButtonDisplayMode.Text)
+                      .Type(SMCButtonType.Link)
+                      .CssClass("smc-btn-download-icotext-destaque smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24")
+                      .Action("DownloadXMLDiplomaAssinado", "ProcessoSolicitacao", new { seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa), codigoVerificacao = Model.CodigoValidacaoDiploma, Area = "SRC" })
+                      //.Attribute("target", "_blank")
+                      .Attribute("data-behavior-download", "true")
+                      .Text(Smc.GetUIResource("Botao_Baixarxmldiploma"))
+                      .Tooltip(Smc.GetUIResource("Botao_Baixarxmldiploma"))
+                      .Hide(Model.CategoriaSituacaoDocumentoAcademicoAtual == ClasseSituacaoDocumento.Invalido))
+
+                      .AddButton(Smc.Button(SMCButtonBehavior.Visualizar)
+                      .Size(SMCSize.Grid8_24)
+                      .DisplayMode(SMCButtonDisplayMode.Text)
+                      .Type(SMCButtonType.Link)
+                      .CssClass("smc-btn-download-icotext-destaque smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24")
+                      .Action("DownloadRelatorioManifesto", "ProcessoSolicitacao", new { seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa), codigoVerificacao = Model.CodigoValidacaoDiploma, diplomaDigital = Model.DiplomaDigital, Area = "SRC" })
+                      .Attribute("target", "_blank")
+                      .Attribute("data-behavior-download", "true")
+                      .Text(Smc.GetUIResource("Botao_Baixarrelatoriomanifestodiploma"))
+                      .Tooltip(Smc.GetUIResource("Botao_Baixarrelatoriomanifestodiploma"))
+                      .Hide(Model.CategoriaSituacaoDocumentoAcademicoAtual == ClasseSituacaoDocumento.Invalido))
+        )
+
+        @(
+        Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-alinha-esquerda")
+                      .AddButton(Smc.Button(SMCButtonBehavior.Visualizar)
+                      .Size(SMCSize.Grid8_24)
+                      .DisplayMode(SMCButtonDisplayMode.Text)
+                      .Type(SMCButtonType.Link)
+                      .CssClass("smc-btn-download-icotext-destaque smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24")
+                      .Action("DownloadRepresentacaoVisualDiploma", "ProcessoSolicitacao", new { seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa), codigoVerificacao = Model.CodigoValidacaoDiploma, Area = "SRC" })
+                      .Attribute("target", "_blank")
+                      .Attribute("data-behavior-download", "true")
+                      .Text(Smc.GetUIResource("Botao_Baixarrepresentacaovisualdiploma"))
+                      .Tooltip(Smc.GetUIResource("Botao_Baixarrepresentacaovisualdiploma"))
+                      .Hide(Model.CategoriaSituacaoDocumentoAcademicoAtual == ClasseSituacaoDocumento.Invalido))
+
+                      .AddButton(Smc.Button(SMCButtonBehavior.Visualizar)
+                      .Size(SMCSize.Grid8_24)
+                      .DisplayMode(SMCButtonDisplayMode.Text)
+                      .Type(SMCButtonType.Link)
+                      .CssClass("smc-btn-visualizar-icotext-destaque smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24")
+                      .Url(Model.UrlConsultaPublicaDiploma)
+                      .Attribute("target", "_blank")
+                      .Text(Smc.GetUIResource("Botao_Consultapublicadownloaddiploma"))
+                      .Tooltip(Smc.GetUIResource("Botao_Consultapublicadownloaddiploma")))
+        )
+    }
+    else
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(x => x.CodigoValidacaoHistorico)
+        }
+
+        if (Model.CategoriaSituacaoDocumentoAcademicoAtual != ClasseSituacaoDocumento.Invalido)
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+            {
+                @Smc.EditorFor(x => x.ExibirFormacao)
+
+                @Smc.DisplayFor(x => x.DescricaoCurso)
+                @Smc.DisplayFor(x => x.NumeroProcesso)
+                @Smc.DisplayFor(x => x.FormacaoEspecifica)
+            }
+        }
+
+        if (Model.CategoriaSituacaoDocumentoAcademicoAtual == ClasseSituacaoDocumento.Invalido)
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+            {
+                <p>@Html.Raw(Smc.GetUIResource("MSG_MensagemDiplomaInvalido"))</p>
+            }
+        }
+
+        @(
+        Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-alinha-esquerda")
+                      .AddButton(Smc.Button(SMCButtonBehavior.Visualizar)
+                      .Size(SMCSize.Grid8_24)
+                      .DisplayMode(SMCButtonDisplayMode.Text)
+                      .Type(SMCButtonType.Link)
+                      .CssClass("smc-btn-download-icotext-destaque smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24")
+                      .Action("DownloadXMLHistoricoAssinado", "ProcessoSolicitacao", new { seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa), codigoVerificacao = Model.CodigoValidacaoHistorico, Area = "SRC" })
+                      //.Attribute("target", "_blank")
+                      .Attribute("data-behavior-download", "true")
+                      .Text(Smc.GetUIResource("Botao_Baixarxmlhistorico"))
+                      .Tooltip(Smc.GetUIResource("Botao_Baixarxmlhistorico"))
+                      .Hide(Model.CategoriaSituacaoDocumentoAcademicoAtual == ClasseSituacaoDocumento.Invalido))
+
+                      .AddButton(Smc.Button(SMCButtonBehavior.Visualizar)
+                      .Size(SMCSize.Grid8_24)
+                      .DisplayMode(SMCButtonDisplayMode.Text)
+                      .Type(SMCButtonType.Link)
+                      .CssClass("smc-btn-download-icotext-destaque smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24")
+                      .Action("DownloadRelatorioManifesto", "ProcessoSolicitacao", new { seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa), codigoVerificacao = Model.CodigoValidacaoHistorico, diplomaDigital = Model.DiplomaDigital, Area = "SRC" })
+                      .Attribute("target", "_blank")
+                      .Attribute("data-behavior-download", "true")
+                      .Text(Smc.GetUIResource("Botao_Baixarrelatoriomanifestohistorico"))
+                      .Tooltip(Smc.GetUIResource("Botao_Baixarrelatoriomanifestohistorico"))
+                      .Hide(Model.CategoriaSituacaoDocumentoAcademicoAtual == ClasseSituacaoDocumento.Invalido))
+        )
+
+        @(
+        Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-alinha-esquerda")
+                      .AddButton(Smc.Button(SMCButtonBehavior.Visualizar)
+                      .Size(SMCSize.Grid8_24)
+                      .DisplayMode(SMCButtonDisplayMode.Text)
+                      .Type(SMCButtonType.Link)
+                      .CssClass("smc-btn-download-icotext-destaque smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24")
+                      .Action("DownloadRepresentacaoVisualHistorico", "ProcessoSolicitacao", new { seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa), codigoVerificacao = Model.CodigoValidacaoHistorico, Area = "SRC" })
+                      .Attribute("target", "_blank")
+                      .Attribute("data-behavior-download", "true")
+                      .Text(Smc.GetUIResource("Botao_Baixarrepresentacaovisualhistorico"))
+                      .Tooltip(Smc.GetUIResource("Botao_Baixarrepresentacaovisualhistorico"))
+                      .Hide(Model.CategoriaSituacaoDocumentoAcademicoAtual == ClasseSituacaoDocumento.Invalido))
+
+                      .AddButton(Smc.Button(SMCButtonBehavior.Visualizar)
+                      .Size(SMCSize.Grid8_24)
+                      .DisplayMode(SMCButtonDisplayMode.Text)
+                      .Type(SMCButtonType.Link)
+                      .CssClass("smc-btn-visualizar-icotext-destaque smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24")
+                      .Url(Model.UrlConsultaPublicaHistorico)
+                      .Attribute("target", "_blank")
+                      .Text(Smc.GetUIResource("Botao_Consultapublicadownloadhistorico"))
+                      .Tooltip(Smc.GetUIResource("Botao_Consultapublicadownloadhistorico")))
+        )
+    }
+}

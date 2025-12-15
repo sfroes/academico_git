@@ -1,0 +1,10 @@
+﻿@model IngressanteDynamicModel
+
+@if (Model.CondicoesObrigatoriedade.SMCCount() > 0)
+{
+    using (Smc.Fieldset("FsCondicaoObrigatoriedade").LegendText(Smc.GetUIResource("Label_CodicoesObrigatoriedade")).Begin())
+    {
+        ViewBag.DadosAcademicosSomenteLeitura = Model.DadosAcademicosSomenteLeitura;
+        @Smc.List("CondicoesObrigatoriedade", m => m.CondicoesObrigatoriedade).HtmlTemplate(condicaoObrigatoriedade => Html.Partial("_CondicaoObrigatoriedadeItem", condicaoObrigatoriedade.Value))
+    }
+}

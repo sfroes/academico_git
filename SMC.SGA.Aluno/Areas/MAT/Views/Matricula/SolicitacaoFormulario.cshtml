@@ -1,0 +1,15 @@
+﻿@model SolicitacaoFormularioViewModel
+
+@section MenuLateral {
+    @Html.Action("MenuPaginas", Model)
+}
+
+@{
+    var viewFrm = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.IMPRESSAO_SOLICITACAO_PADRAO_FORMULARIO);
+    @Html.Partial(viewFrm, Model.DadoFormulario)
+}
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    @Html.Partial("_BotoesNavegacao", Model)
+}

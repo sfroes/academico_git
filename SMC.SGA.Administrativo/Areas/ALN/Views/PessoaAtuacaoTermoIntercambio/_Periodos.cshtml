@@ -1,0 +1,30 @@
+﻿@model PessoaAtuacaoTermoIntercambioPeriodoDynamicModel
+
+@using (Smc.Div().CssClass("smc-display-collection").Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid8_24).Begin())
+    {
+        <p>Início: @Model.DataInicio.ToShortDateString() - Término: @Model.DataFim.ToShortDateString()</p>
+    }
+
+    using (Smc.Div("DivButton").Size(SMCSize.Grid1_24).Begin())
+    {
+        @(Smc.ButtonSet().NumberOfButtonsToShow(1).Type(SMCButtonSetType.Primary)
+                        .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                       .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+                                       .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("Salvar", "PessoaAtuacaoTermoIntercambioPeriodo", new { @backUrl = Url.Action("Index", "PessoaAtuacaoTermoIntercambio") }))
+                                       .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Editar_Periodo"))
+                                       .Ajax(isPost: false)
+                                       .Text(Smc.GetUIResource("Botao_Editar_Periodo"))
+                                       .Tooltip(Smc.GetUIResource("Botao_Editar_Periodo"))
+                                       .SecurityToken(UC_ALN_004_03_02.MANTER_INTERCAMBIO)
+                                       .CssClass("smc-btn-alterar-ico")
+                                       .Enabled(Model.PermiteEdicao)
+                                       .Action("Editar", "PessoaAtuacaoTermoIntercambioPeriodo", new { seq = new SMCEncryptedLong(Model.Seq) })));
+    }
+
+    if (!Model.PermiteEdicao)
+    {
+        @Smc.Instructions().Size(SMCSize.Grid1_24).CssClass("smc-instrucoes-preenchimento-icone").Text(Smc.GetUIResource("Label_EdicaoPeriodoBloqueada_FillInstructions"));
+    }
+}

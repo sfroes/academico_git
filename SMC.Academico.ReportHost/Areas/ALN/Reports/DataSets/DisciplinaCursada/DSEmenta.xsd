@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSEmenta" targetNamespace="http://tempuri.org/DSEmenta.xsd" xmlns:mstns="http://tempuri.org/DSEmenta.xsd" xmlns="http://tempuri.org/DSEmenta.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSEmenta" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSEmenta" msprop:Generator_UserDSName="DSEmenta">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSEmenta" msprop:Generator_TableClassName="DSEmentaDataTable" msprop:Generator_TableVarName="tableDSEmenta" msprop:Generator_RowChangedName="DSEmentaRowChanged" msprop:Generator_TablePropName="_DSEmenta" msprop:Generator_RowDeletingName="DSEmentaRowDeleting" msprop:Generator_RowChangingName="DSEmentaRowChanging" msprop:Generator_RowEvHandlerName="DSEmentaRowChangeEventHandler" msprop:Generator_RowDeletedName="DSEmentaRowDeleted" msprop:Generator_RowClassName="DSEmentaRow" msprop:Generator_UserTableName="DSEmenta" msprop:Generator_RowEvArgName="DSEmentaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SeqAluno" msprop:Generator_ColumnVarNameInTable="columnSeqAluno" msprop:Generator_ColumnPropNameInRow="SeqAluno" msprop:Generator_ColumnPropNameInTable="SeqAlunoColumn" msprop:Generator_UserColumnName="SeqAluno" type="xs:long" minOccurs="0" />
+              <xs:element name="SeqHistoricoEscolar" msprop:Generator_ColumnVarNameInTable="columnSeqHistoricoEscolar" msprop:Generator_ColumnPropNameInRow="SeqHistoricoEscolar" msprop:Generator_ColumnPropNameInTable="SeqHistoricoEscolarColumn" msprop:Generator_UserColumnName="SeqHistoricoEscolar" type="xs:long" minOccurs="0" />
+              <xs:element name="DescricaoComponenteCurricular" msprop:Generator_ColumnVarNameInTable="columnDescricaoComponenteCurricular" msprop:Generator_ColumnPropNameInRow="DescricaoComponenteCurricular" msprop:Generator_ColumnPropNameInTable="DescricaoComponenteCurricularColumn" msprop:Generator_UserColumnName="DescricaoComponenteCurricular" type="xs:string" minOccurs="0" />
+              <xs:element name="DataInicioEmenta" msprop:Generator_ColumnVarNameInTable="columnDataInicioEmenta" msprop:Generator_ColumnPropNameInRow="DataInicioEmenta" msprop:Generator_ColumnPropNameInTable="DataInicioEmentaColumn" msprop:Generator_UserColumnName="DataInicioEmenta" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DataFimEmenta" msprop:Generator_ColumnVarNameInTable="columnDataFimEmenta" msprop:Generator_ColumnPropNameInRow="DataFimEmenta" msprop:Generator_ColumnPropNameInTable="DataFimEmentaColumn" msprop:Generator_UserColumnName="DataFimEmenta" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Ementa" msprop:Generator_ColumnVarNameInTable="columnEmenta" msprop:Generator_ColumnPropNameInRow="Ementa" msprop:Generator_ColumnPropNameInTable="EmentaColumn" msprop:Generator_UserColumnName="Ementa" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoComponenteCurricularAssunto" msprop:Generator_ColumnVarNameInTable="columnDescricaoComponenteCurricularAssunto" msprop:Generator_ColumnPropNameInRow="DescricaoComponenteCurricularAssunto" msprop:Generator_ColumnPropNameInTable="DescricaoComponenteCurricularAssuntoColumn" msprop:Generator_UserColumnName="DescricaoComponenteCurricularAssunto" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

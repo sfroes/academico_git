@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Botao_Novo" xml:space="preserve">
+    <value>Nova turma</value>
+  </data>
+  <data name="Botao_Novo_Tooltip" xml:space="preserve">
+    <value>Nova turma</value>
+  </data>
+  <data name="Editar_Title" xml:space="preserve">
+    <value>Alterar Turma</value>
+  </data>
+  <data name="gridPadrao_Grid_Titulo" xml:space="preserve">
+    <value>Turmas</value>
+  </data>
+  <data name="Incluir_Title" xml:space="preserve">
+    <value>Nova Turma</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Cadastro de Turma</value>
+  </data>
+  <data name="Listar_Excluir_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão da turma "{0}" ?</value>
+  </data>
+  <data name="Listar_Excluir_Titulo" xml:space="preserve">
+    <value>Excluir Turma</value>
+  </data>
+  <data name="Wizard_Title_0" xml:space="preserve">
+    <value>Seleção da Configuração Principal</value>
+  </data>
+  <data name="Wizard_Title_1" xml:space="preserve">
+    <value>Seleção da Configuração para Compartilhamento</value>
+  </data>
+  <data name="Wizard_Title_2" xml:space="preserve">
+    <value>Seleção de Oferta de Matriz Curricular</value>
+  </data>
+  <data name="Wizard_Title_3" xml:space="preserve">
+    <value>Divisão da Turma</value>
+  </data>
+  <data name="Wizard_Title_4" xml:space="preserve">
+    <value>Seleção de Assunto de Componente</value>
+  </data>
+  <data name="Wizard_Title_5" xml:space="preserve">
+    <value>Confirmação de Turma</value>
+  </data>
+  <data name="GridConfiguracaoCompartilhada_Grid_Titulo" xml:space="preserve">
+    <value>Configurações para Compartilhamento</value>
+  </data>
+  <data name="MSG_Erro_AssociacaoTipoInstituicaoNivel" xml:space="preserve">
+    <value>Não é possível prosseguir. O componente curricular da configuração selecionada e o tipo de turma devem estar associados ao mesmo nível de ensino.</value>
+  </data>
+  <data name="Botao_VisualizarComponenteCurricular" xml:space="preserve">
+    <value>Visualizar componente curricular</value>
+  </data>
+  <data name="VisualizarComponenteCurricular_Title" xml:space="preserve">
+    <value>Detalhes do Componente Curricular</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Compartilhado" xml:space="preserve">
+    <value>Não existem configurações cadastradas para compartilhamento.</value>
+  </data>
+  <data name="MSG_Informacao_GrupoOferta" xml:space="preserve">
+    <value>Ao desfazer a seleção dessas configurações:&lt;br /&gt;{0}todas as ofertas de matrizes associadas a ela, nesta turma, serão excluídas.</value>
+  </data>
+  <data name="OfertasMatriz_Detalhe_Titulo" xml:space="preserve">
+    <value>Ofertas de matriz curricular</value>
+  </data>
+  <data name="CriterioAprovacao_Detalhe_Titulo" xml:space="preserve">
+    <value>Critérios de aprovação do componente curricular</value>
+  </data>
+  <data name="DivisoesComponente_Detalhe_Titulo" xml:space="preserve">
+    <value>Divisões da configuração do componente curricular</value>
+  </data>
+  <data name="ParametroOferta_Detalhe_Titulo" xml:space="preserve">
+    <value>Ofertas de matriz curricular</value>
+  </data>
+  <data name="Label_Nenhum_Registro_CriterioAprovacao" xml:space="preserve">
+    <value>Não existe critério de aprovação cadastrado para configuração da oferta matriz.</value>
+  </data>
+  <data name="Label_Nenhum_Registro_DivisoesComponente" xml:space="preserve">
+    <value>Não existem divisões de componente cadastrados para configuração da oferta matriz.</value>
+  </data>
+  <data name="MSG_Erro_NumeroVagasOferta" xml:space="preserve">
+    <value>Não é possível prosseguir. O somatório das reservas de vagas das ofertas de turma deve ser igual às vagas definidas na turma.</value>
+  </data>
+  <data name="GrupoComponenteSubstituto_Fieldset_Legenda" xml:space="preserve">
+    <value>Componente Substituto</value>
+  </data>
+  <data name="MSG_Erro_OfertaMatrizPrincipal" xml:space="preserve">
+    <value>Não é possível prosseguir. Apenas uma oferta de matriz pode ser marcada como principal, favor alterar para prosseguir.</value>
+  </data>
+  <data name="MSG_Erro_OfertaMatrizMaisConfiguracaoMaisOfertas" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatório associar pelo menos uma oferta de matriz para cada configuração associada.</value>
+  </data>
+  <data name="MSG_Erro_OfertaMatrizUmaConfiguracaoMaisOfertas" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatório associar mais de uma oferta de matriz para a configuração associada.</value>
+  </data>
+  <data name="MSG_Erro_OfertaMatrizUmaConfiguracaoUmaOferta" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatório associar apenas uma oferta de matriz para a configuração principal.</value>
+  </data>
+  <data name="MSG_Informacao_CriterioAssociado" xml:space="preserve">
+    <value>Ao desfazer a associação de oferta de matriz, o parâmetro associado à turma será excluído.</value>
+  </data>
+  <data name="ParametroDivisoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Divisão da turma - </value>
+  </data>
+  <data name="ParametroOfertaComponente_Detalhe_Titulo" xml:space="preserve">
+    <value>Oferta de matriz curricular do componente - </value>
+  </data>
+  <data name="ParametroAssunto_Detalhe_Titulo" xml:space="preserve">
+    <value>Assunto de componente</value>
+  </data>
+  <data name="ParametroPrincipal_Detalhe_Titulo" xml:space="preserve">
+    <value>Configuração de turma</value>
+  </data>
+  <data name="MSG_Erro_TipoTurmaExigeAssociacao" xml:space="preserve">
+    <value>Não é possível prosseguir. Para o tipo de turma em questão, é necessário selecionar uma configuração de
+componente que seja de um componente que não exige associação de assunto de componente.</value>
+  </data>
+  <data name="Parametros_Detalhe_Titulo" xml:space="preserve">
+    <value>Parâmetros</value>
+  </data>
+  <data name="ColunaOfertaCompleto_Titulo" xml:space="preserve">
+    <value>Oferta</value>
+  </data>
+  <data name="MSG_Erro_OfertaMatrizPrincipalNenhum" xml:space="preserve">
+    <value>Não é possível prosseguir. Não foi marcada nenhuma oferta de matriz como principal, favor alterar para prosseguir.</value>
+  </data>
+  <data name="ConfiguracaoCompartilhada_Title" xml:space="preserve">
+    <value>Configurações para Compartilhamento</value>
+  </data>
+  <data name="Botao_GerarRelatorioDiarioTurma" xml:space="preserve">
+    <value>Diário de turma</value>
+  </data>
+  <data name="Botao_GerarRelatorioDiarioTurma_Tooltip" xml:space="preserve">
+    <value>Diário de turma</value>
+  </data>
+  <data name="Botao_AssociacaoProfessorTurma" xml:space="preserve">
+    <value>Associação de professor</value>
+  </data>
+  <data name="Botao_TurmaOrientacao" xml:space="preserve">
+    <value>Orientação de turma</value>
+  </data>
+  <data name="Botao_TurmaOrientacao_Tooltip" xml:space="preserve">
+    <value>Orientação de turma</value>
+  </data>
+  <data name="Botao_AssociacaoProfessorTurma_Tooltip" xml:space="preserve">
+    <value>Associação de professor</value>
+  </data>
+  <data name="Botao_ListaFrequencia" xml:space="preserve">
+    <value>Lista de frequência</value>
+  </data>
+  <data name="Botao_ListaFrequencia_Tooltip" xml:space="preserve">
+    <value>Lista de frequência</value>
+  </data>
+  <data name="Title_Lista_Frequencia" xml:space="preserve">
+    <value>Lista de Frequência</value>
+  </data>
+  <data name="Botao_Emitir_Relatorio" xml:space="preserve">
+    <value>Emitir relatório</value>
+  </data>
+  <data name="Instruction_Turma_Nao_Permite_Orientacao" xml:space="preserve">
+    <value>Esta divisão não permite orientação.</value>
+  </data>
+  <data name="Botao_PostagemMaterial" xml:space="preserve">
+    <value>Postagem de material didático</value>
+  </data>
+  <data name="Botao_PostagemMaterial_Tooltip" xml:space="preserve">
+    <value>Postagem de material didático</value>
+  </data>
+  <data name="MSG_Alterar_Turma_Desabilitado" xml:space="preserve">
+    <value>Alguns campos estarão desabilitados, pois a turma já está em uma solicitação de matrícula ou em um plano de estudo. Deseja continuar?</value>
+  </data>
+  <data name="Title_Alterar_Turma_Desabilitado" xml:space="preserve">
+    <value>Alteração de Turma</value>
+  </data>
+  <data name="MSG_Excluir_Turma_Desabilitado" xml:space="preserve">
+    <value>Exclusão não permitida. Esta turma está em uma solicitação de matrícula ou em um plano de estudo.</value>
+  </data>
+  <data name="MSG_Diario_Fechado_Desabilitado" xml:space="preserve">
+    <value>Só é possível emitir este relatório quando o diário está fechado.</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Assunto_Componente" xml:space="preserve">
+    <value>Não existe assunto de componente associado a esta turma.</value>
+  </data>
+  <data name="ParametroAssunto_Detalhe_Label" xml:space="preserve">
+    <value>Componente curricular assunto</value>
+  </data>
+  <data name="Divisoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Divisões da turma</value>
+  </data>
+  <data name="MSG_Erro_ConfiguracaoComponenteCurriculo" xml:space="preserve">
+    <value>Não é possível prosseguir. A configuração principal não é de um componente pertencente a um currículo.</value>
+  </data>
+  <data name="MSG_Erro_NumeroVagasCadaOferta" xml:space="preserve">
+    <value>Não é possível prosseguir. Quando uma oferta de matriz possui vagas reservadas, as demais ofertas associadas à turma também devem ter vagas reservadas.</value>
+  </data>
+  <data name="MSG_Erro_QuantidadeVagasOcupadas" xml:space="preserve">
+    <value>Não é possível prosseguir. Não é permitido alterar a quantidade de vagas de uma turma para um valor menor que a quantidade de vagas ocupadas. Quantidade de vagas ocupadas: {0}</value>
+  </data>
+  <data name="MSG_Informacao_Turma_Cancelada" xml:space="preserve">
+    <value>Ao cancelar uma turma, se ela estiver em pelo menos uma solicitação de matrícula ou em pelo menos um plano de estudo, os itens serão cancelados nas solicitações de matrícula e nos planos de estudos.</value>
+  </data>
+  <data name="Botao_CopiarTurma" xml:space="preserve">
+    <value>Cópia</value>
+  </data>
+  <data name="Botao_DesdobrarTurma" xml:space="preserve">
+    <value>Desdobramento</value>
+  </data>
+  <data name="Botao_LancamentoNotaFrequencia" xml:space="preserve">
+    <value>Lançamento de nota final</value>
+  </data>
+  <data name="MSG_Reabrir_Diario_Desabilitado" xml:space="preserve">
+    <value>Só é possível reabrir o diário quando ele está fechado.</value>
+  </data>
+  <data name="Title_Reabrir_Diario" xml:space="preserve">
+    <value>Reabertura de diário</value>
+  </data>
+  <data name="Botao_Reabrir_Diario" xml:space="preserve">
+    <value>Reabertura de diário</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Oferta_Matriz" xml:space="preserve">
+    <value>Não existe oferta de matriz associada a esta turma.</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Parametros" xml:space="preserve">
+    <value>Não existe parâmetros cadastrado para configuração da oferta matriz.</value>
+  </data>
+  <data name="Botao_LancarFrequencia" xml:space="preserve">
+    <value>Lançamento de frequência</value>
+  </data>
+  <data name="Botao_LancarFrequencia_Tooltip" xml:space="preserve">
+    <value>Lançamento de frequência</value>
+  </data>
+  <data name="Instruction_LancarFrequencia_Criterio_Aprovacao_Frequencia" xml:space="preserve">
+    <value>Só é possível lançar frequência para divisões de turma que possuem apuração por frequência.</value>
+  </data>
+  <data name="Instruction_LancarFrequencia_Turma_Diario_Aberto" xml:space="preserve">
+    <value>Só é possível lançar frequência se o diário da turma estiver aberto.</value>
+  </data>
+  <data name="Instruction_LancarNotaFrequencia_Turma_Diario_Aberto" xml:space="preserve">
+    <value>Só é possível lançar nota e frequência se o diário da turma estiver aberto.</value>
+  </data>
+  <data name="Instruction_Turma_Cancelada" xml:space="preserve">
+    <value>A turma está cancelada, portanto não é possível acessar esta funcionalidade.</value>
+  </data>
+  <data name="Instruction_Editar_Turma_Desabilitado_Diario_Fechado" xml:space="preserve">
+    <value>Alteração não permitida. O diário da turma está fechado.</value>
+  </data>
+  <data name="Instruction_Copiar_Turma_Desabilitado_Desdobramento" xml:space="preserve">
+    <value>Cópia não permitida. Esta turma foi criada através de um desdobramento. Favor copiar a turma {0}.1.</value>
+  </data>
+  <data name="Instruction_Desdobrar_Turma_Desabilitado_Diario_Fechado" xml:space="preserve">
+    <value>Desdobramento não permitido. O diário da turma está fechado.</value>
+  </data>
+  <data name="Instruction_Desdobrar_Turma_Desabilitado_Turma_Cancelada" xml:space="preserve">
+    <value>Desdobramento não permitido. Esta turma está cancelada.</value>
+  </data>
+  <data name="FieldsetConfiguracaoCompartilhada" xml:space="preserve">
+    <value>Configurações para Compartilhamento</value>
+  </data>
+  <data name="GridConfiguracaoCompartilhada_Coluna" xml:space="preserve">
+    <value>Configuração de componentes</value>
+  </data>
+  <data name="Editar_Sucesso" xml:space="preserve">
+    <value>Turma alterada com sucesso.</value>
+  </data>
+  <data name="Incluir_Sucesso" xml:space="preserve">
+    <value>Turma incluída com sucesso.</value>
+  </data>
+  <data name="MSG_Erro_ConfiguracoesComponenteCurriculo" xml:space="preserve">
+    <value>Não é possível prosseguir. A(s) configuração(ões) {0} não é(são) de componente(s) pertencente(s) a um currículo.</value>
+  </data>
+  <data name="MSG_Erro_OfertaMatrizQtdVagasReservadasMenorVagasOcupadas" xml:space="preserve">
+    <value>Não é possível prosseguir. A quantidade de vagas reservadas para as ofertas de matriz devem ter um valor maior ou igual a quantidade de vagas ocupadas. Quantidade de vagas ocupadas: &lt;br /&gt;{0}</value>
+  </data>
+  <data name="MSG_Informacao_Turma_Compartilhada" xml:space="preserve">
+    <value>Uma turma compartilhada será disponibilizada para alunos de diferentes currículos. Ela pode ser compartilhada:&lt;br /&gt;
+- Através de outra configuração de componente, no Passo 2: sendo necessário selecionar pelo menos uma oferta de matriz para cada configuração;&lt;br /&gt;
+- Através de ofertas de matriz, no Passo 3: selecionando apenas a configuração principal e sendo necessário selecionar mais de uma oferta de matriz.</value>
+  </data>
+  <data name="MSG_Informacao_Turma_Exige_Assunto" xml:space="preserve">
+    <value>A seleção e alteração da oferta de matriz impactam no Passo 5 - Seleção de Assunto de Componente.</value>
+  </data>
+  <data name="MSG_Informacao_Turma_Selecao_Assunto" xml:space="preserve">
+    <value>Só é possível associar assuntos de componente que estão cadastrados, em comum, em todas as ofertas de matriz selecionadas no Passo 3 - Seleção de Oferta de Matriz Curricular.</value>
+  </data>
+  <data name="MSG_Erro_OfertaMatrizNaoAssociadaAssunto" xml:space="preserve">
+    <value>Não é possível prosseguir. O assunto de componente da turma não está associado a(s) seguinte(s) oferta(s) de matriz: &lt;br /&gt;&lt;br /&gt; - {0}</value>
+  </data>
+  <data name="MSG_Erro_UsuarioSemPermissaoConfiguracaoComponente" xml:space="preserve">
+    <value>Não é possível prosseguir. A turma deve possuir uma configuração cujo componente curricular seja da sua entidade responsável.</value>
+  </data>
+  <data name="MSG_Confirmar_Cancelar_Turma" xml:space="preserve">
+    <value>Ao cancelar esta turma, ela será removida de todos os planos de estudo de alunos matriculados nela. Também será removida de solicitações ativas dos processos de matrícula, de renovação e
+&lt;br /&gt; 
+alteração de plano de estudo. Caso exista grade de aula associada a esta turma, os horários de aula serão cancelados e os professores e o espaço fisico serão desalocados dos horários, a partir
+&lt;br /&gt;
+da data do cancelamento da turma. Tem certeza que deseja prosseguir?</value>
+  </data>
+  <data name="MSG_Excluir_Turma" xml:space="preserve">
+    <value>Confirma a exclusão da turma '{0} - {1}'?</value>
+  </data>
+  <data name="Title_Excluir_Turma" xml:space="preserve">
+    <value>Excluir Turma</value>
+  </data>
+  <data name="Botao_Cancelar_Turma" xml:space="preserve">
+    <value>Cancelamento</value>
+  </data>
+  <data name="Title_Cancelar_Turma" xml:space="preserve">
+    <value>Cancelamento</value>
+  </data>
+  <data name="MSG_Informacao_Copiar_Turma" xml:space="preserve">
+    <value>Esta funcionalidade agiliza o cadastro, criando novas turmas a partir dos dados de turmas já existentes. É necessário alterar um dos dados para finalizar o cadastro.</value>
+  </data>
+  <data name="MSG_Informacao_Desdobrar_Turma" xml:space="preserve">
+    <value>Esta funcionalidade ofertará novamente a turma para o mesmo ciclo letivo, sendo possível fazer alteração apenas na quantidade de vagas disponíveis.</value>
+  </data>
+  <data name="MSG_Excluir_Turma_Desabilitado_Aula_Lancada" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem aulas registradas para esta divisão de turma.</value>
+  </data>
+  <data name="Instruction_Cancelar_Turma_Desabilitado_Turma_Cancelada" xml:space="preserve">
+    <value>Operação indisponível. Turma já está cancelada.</value>
+  </data>
+  <data name="MSG_Ofertar_Turma" xml:space="preserve">
+    <value>Deseja ofertar esta turma novamente?</value>
+  </data>
+  <data name="Title_Ofertar_Turma" xml:space="preserve">
+    <value>Oferta de turma</value>
+  </data>
+  <data name="Instruction_Ofertar_Turma_Desabilitado" xml:space="preserve">
+    <value>Operação indisponível. Turma já está ofertada.</value>
+  </data>
+  <data name="Botao_Ofertar_Turma" xml:space="preserve">
+    <value>Oferta de turma</value>
+  </data>
+  <data name="MSG_Erro_UsuarioSemPermissaoMatrizOfertaException" xml:space="preserve">
+    <value>Não é possível prosseguir. A turma deve possuir uma oferta de matriz curricular que seja da sua entidade responsável.</value>
+  </data>
+  <data name="MSG_Erro_ConfiguracaoNaoAssociadaOfertaMatriz" xml:space="preserve">
+    <value>- A configuração {0} não está associada à oferta de matriz {1}.</value>
+  </data>
+  <data name="MSG_Erro_OfertaMatrizNaoAtiva" xml:space="preserve">
+    <value>Não é possível prosseguir. As seguintes ofertas de matriz não estão ativas ou em extinção no período do ciclo letivo selecionado para a turma:&lt;br /&gt; - {0}</value>
+  </data>
+  <data name="Mensagem_Botoes_Turma_Cancelada" xml:space="preserve">
+    <value>Operação indisponível. A turma está cancelada.</value>
+  </data>
+  <data name="Instruction_LancarNotaFrequencia_Turma_Permite_Avaliacao_Parcial" xml:space="preserve">
+    <value>Só é possível lançar nota e frequência quando a turma não permite lançamentos parciais.</value>
+  </data>
+  <data name="MSG_Editar_Turma_Desdobramento" xml:space="preserve">
+    <value>Alguns campos estarão desabilitados, pois esta turma é ou possui um desdobramento. Deseja continuar?</value>
+  </data>
+  <data name="MSG_Editar_Turma_Nota_Lancada" xml:space="preserve">
+    <value>Alguns campos estarão desabilitados, pois a turma já possui nota lançada. Deseja continuar?</value>
+  </data>
+  <data name="Botao_AlterarConfiguracaoGrade" xml:space="preserve">
+    <value>Configuração para grade</value>
+  </data>
+  <data name="Botao_AlterarConfiguracaoGrade_Tooltip" xml:space="preserve">
+    <value>Configuração para grade</value>
+  </data>
+  <data name="Instruction_Turma_Nao_Vigente" xml:space="preserve">
+    <value>Operação indisponível. O período letivo da turma não está vigente.</value>
+  </data>
+  <data name="fieldset_periodo_letivo" xml:space="preserve">
+    <value>Período Letivo da turma</value>
+  </data>
+  <data name="Instruction_Divisao_Sem_Configuracao_Grade" xml:space="preserve">
+    <value>Operação indisponível. Nenhum registro de configuração de grade foi criado previamente para a divisão da turma. Favor verificar se esta  divisão de  turma permite ter grade de aula.</value>
+  </data>
+  <data name="Botao_AgendamentoAula" xml:space="preserve">
+    <value>Agendamento de aula</value>
+  </data>
+  <data name="Botao_AgendamentoAula_Tooltip" xml:space="preserve">
+    <value>Agendamento de aula</value>
+  </data>
+  <data name="MSG_Agendamento_Aula_Sem_Agenda" xml:space="preserve">
+    <value>Operação indisponível. Não existe agenda configurada para esta turma.</value>
+  </data>
+  <data name="MSG_Agendamento_Aula_Sem_Grade" xml:space="preserve">
+    <value>Operação indisponível. Nenhuma divisão desta turma possui carga horário para lançamento de grade de aula.</value>
+  </data>
+  <data name="Instruction_AssociarProfessor_Turma_Desabilitado_Agenda" xml:space="preserve">
+    <value>A inclusão, alteração ou exclusão do professor só poderá ser feita
+pela grade horária.</value>
+  </data>
+  <data name="Instruction_AssociarProfessor_Turma_Desabilitado_Diario_Fechado" xml:space="preserve">
+    <value>Associação de professor à turma não permitido. O diário da turma está fechado.</value>
+  </data>
+  <data name="Instruction_AssociarProfessor_Turma_Orientacao" xml:space="preserve">
+    <value>Para turma de orientação, os professores devem ser lançados para
+cada aluno na tela "Orientação de turma", na engrenagem da divisão de turma.</value>
+  </data>
+  <data name="Botao_Configuracao_Turma" xml:space="preserve">
+    <value>Configuração</value>
+  </data>
+  <data name="Instruction_Configuracao_Turma_Desabilitado" xml:space="preserve">
+    <value>Só é possível alterar configuração se o diário estiver aberto.</value>
+  </data>
+  <data name="fieldset_criterio_aprovacao" xml:space="preserve">
+    <value>Critério de Aprovação</value>
+  </data>
+  <data name="fieldset_divisao_configuracao_componente_curricular" xml:space="preserve">
+    <value>Divisões da Configuração do Componente Curricular</value>
+  </data>
+  <data name="Title_Configuracao_Turma" xml:space="preserve">
+    <value>Configuração</value>
+  </data>
+  <data name="Botao_Acompanhamento_Nota" xml:space="preserve">
+    <value>Acompanhamento de notas</value>
+  </data>
+  <data name="Botao_Acompanhamento_Nota_Tooltip" xml:space="preserve">
+    <value>Acompanhamento de notas</value>
+  </data>
+  <data name="Botao_Recuperar_Matriz" xml:space="preserve">
+    <value>Recuperar dados da matriz</value>
+  </data>
+  <data name="MSG_ConfiguracaoTurma" xml:space="preserve">
+    <value>Todas as configurações serão sobrepostas com as configurações da matriz principal da turma. Deseja continuar?</value>
+  </data>
+  <data name="MSG_Erro_MatrizDevePossuirConfiguracaoComponentePrincipal" xml:space="preserve">
+    <value>Não é possível prosseguir. A oferta de matriz selecionada como principal deve possuir a configuração de componente principal.</value>
+  </data>
+</root>

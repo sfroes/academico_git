@@ -1,0 +1,120 @@
+﻿@model CabecalhoSolicitacaoViewModel
+
+@using (Smc.Div().CssClass("smc-sga-ingressante-cabecalho").Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().CssClass("smc-sga-ingressante-cabecalho-titulo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("").Size(SMCSize.Grid20_24, SMCSize.Grid20_24, SMCSize.Grid20_24, SMCSize.Grid20_24).Begin())
+        {
+            <span class="col-md-offset-2 col-sm-offset-1 col-lg-offset-2 smc-size-md-21 smc-size-xs-21 smc-size-sm-21 smc-size-lg-21">@Model.DescricaoProcesso</span>
+            <span class="smc-sga-ingressante-cabecalho-subtitulo col-md-offset-2 col-sm-offset-1 col-lg-offset-2 smc-size-md-21 smc-size-xs-21 smc-size-sm-21 smc-size-lg-21">@Model.DescricaoProcessoSeletivo</span>
+        }
+
+        var desabilitar = Session[SolicitacaoMatriculaConstants.KEY_SESSION_DESABILITAR_SELECAO_SERVICO] as bool? ?? false;
+
+        if (!desabilitar)
+        {
+            using (Smc.Div().CssClass("").Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+            {
+                //.SecurityToken(UC_MAT_003_16_02.Selecionar_Ingressante)
+                @(Smc.Button("selecionarIngressante").CssClass("smc-sga-btn-trocaroferta").Type(SMCButtonType.Link).Url(Url.Action("ModalTrocarSolicitacao", "Solicitacao", new { area = "MAT" })))
+            }
+        }
+    }
+
+    using (Smc.Div().CssClass("smc-sga-ingressante-cabecalho-itens").Size(SMCSize.Grid24_24).Begin())
+    {
+        @*NV02 - RN_ORG_049*@
+        if (Model.ExibeEntidadeResponsavelEVinculo)
+        {
+            using (Smc.Div().CssClass(" smc-sga-ingressante-cabecalho-item smc-sga-ingressante-vinculo").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(x => x.DescricaoVinculo).CssClass("smc-sga-display-header")
+                @Smc.DisplayFor(x => x.DescricaoEntidadeResponsavel).CssClass("smc-sga-display-header")
+            }
+        }
+
+        @*NV06*@
+        if (Model.ExigeCurso)
+        {
+            using (Smc.Div().CssClass(" smc-sga-ingressante-cabecalho-item  smc-sga-ingressante-curso").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(x => x.DescricaoOferta).CssClass("smc-sga-display-header")
+                @Smc.DisplayFor(x => x.DescricaoLocalidade).CssClass("smc-sga-display-header")
+                @Smc.DisplayFor(x => x.DescricaoModalidade).CssClass("smc-sga-display-header")
+                @Smc.DisplayFor(x => x.DescricaoTurno).CssClass("smc-sga-display-header")
+            }
+        }
+
+
+        @*NV06 && NV02*@
+        if (Model.ExigeCurso && Model.ExibeFormacoesEspecificas &&
+        @*NV10*@
+        (Model.FormacoesEspecificas != null || Model.NomeOrientador != null))
+        {
+            using (Smc.Div().CssClass(" smc-sga-ingressante-cabecalho-item smc-sga-ingressante-concentracao").Size(SMCSize.Grid24_24).Begin())
+            {
+                if (Model.FormacoesEspecificas != null)
+                {
+                    foreach (var item in Model.FormacoesEspecificas)
+                    {
+                        using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+                        {
+                            @*RN_ALN_014 - Exibição formação específica pessoa-atuação
+                                Não exibir o label do campo, exibir os valores:
+                                    <Tipo de Formação Específica>":" <Formação Específica>
+                                - Para "Tipo de Formação Específica", exibir todos os 0,tipos da hierarquia de formações do curso da pessoa-atuação em questão. Ordenar os tipos de acordo com o nível da hierarquia de formações, do nível superior para o nível inferior.
+                                - Para "Formação Específica", exibir as formações específicas associadas à pessoa-atuação em questão. Caso não exista uma formação específica para o tipo de formação específica da hierarquia do curso, exibir: "Ainda não definido".*@
+
+                            using (Smc.Div().CssClass("smc-display smc-sga-display-header").Begin())
+                            {
+                                <label>@item.DescricaoTipoFormacaoEspecifica:</label>
+
+                                if (!string.IsNullOrWhiteSpace(item.DescricoesFormacoesEspecificas))
+                                {
+                                    <p>@item.DescricoesFormacoesEspecificas</p>
+                                }
+                                else
+                                {
+                                    @Smc.GetUIResource("FormacoesEspecificasNaoDefinidas")
+                                }
+                            }
+                        }
+                    }
+                }
+                if (!string.IsNullOrEmpty(Model.DescricaoTipoOrientacao))
+                {
+                    @Smc.DisplayFor(x => x.DescricaoTipoOrientacao).CssClass("smc-sga-display-header")
+                }
+                if (!string.IsNullOrEmpty(Model.NomeOrientador))
+                {
+                    @Smc.DisplayFor(x => x.NomeOrientador).CssClass("smc-sga-display-header")
+                }
+            }
+        }
+
+        if (Model.ExibeContatoSetorMatricula || Model.ExibeContatoSecretariaAcademica || Model.ExibeContatoCoordenacaoCurso)
+        {
+            if (!string.IsNullOrEmpty(Model.ContatoSetorMatricula) || !string.IsNullOrEmpty(Model.ContatoSecretariaAcademica) || !string.IsNullOrEmpty(Model.ContatoCoordenacaoCurso))
+            {
+                using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-ingressante-cabecalho-item smc-sga-ingressante-contato").Begin())
+                {
+                    if (Model.ExibeContatoSetorMatricula && !string.IsNullOrEmpty(Model.ContatoSetorMatricula))
+                    {
+                        @Smc.DisplayFor(x => x.ContatoSetorMatricula).CssClass("smc-sga-display-header")
+                    }
+
+                    if (Model.ExibeContatoSecretariaAcademica && !string.IsNullOrEmpty(Model.ContatoSecretariaAcademica))
+                    {
+                        @Smc.DisplayFor(x => x.ContatoSecretariaAcademica).CssClass("smc-sga-display-header")
+                    }
+
+                    if (Model.ExibeContatoCoordenacaoCurso && !string.IsNullOrEmpty(Model.ContatoCoordenacaoCurso))
+                    {
+                        @Smc.DisplayFor(x => x.ContatoCoordenacaoCurso).CssClass("smc-sga-display-header")
+                    }
+                }
+            }
+        }
+    }
+}

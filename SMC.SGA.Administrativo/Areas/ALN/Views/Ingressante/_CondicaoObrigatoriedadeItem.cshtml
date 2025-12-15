@@ -1,0 +1,9 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Models
+
+@model PessoaAtuacaoCondicaoObrigatoriedadeViewModel
+
+@Smc.EditorFor(m => m.Seq)
+@Smc.EditorFor(m => m.SeqPessoaAtuacao)
+@Smc.EditorFor(m => m.SeqCondicaoObrigatoriedade)
+@Smc.HiddenFor(m => m.DescricaoCondicaoObrigatoriedade)
+@Smc.EditorFor(m => m.Ativo).DisplayText(Model.DescricaoCondicaoObrigatoriedade).Readonly(Convert.ToBoolean(ViewBag.DadosAcademicosSomenteLeitura))

@@ -1,0 +1,8 @@
+﻿@using SMC.SGA.Administrativo.Areas.FIN.Models
+@model ConfiguracaoBeneficioDynamicModel
+
+@using (Smc.Header("ConfiguracaoBeneficio", SMCHeaderType.Primary)
+                                                        //.Item(prop => prop.Seq, sizeMD: SMCSize.Grid8_24)
+                                                        .Item(prop => prop.SeqInstituicaoNivel, sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid8_24)
+                                                        .Item(prop => prop.SeqBeneficio, sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid8_24)
+                                                        .Begin()) { }

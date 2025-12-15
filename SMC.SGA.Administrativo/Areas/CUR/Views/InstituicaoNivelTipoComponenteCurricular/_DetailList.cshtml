@@ -1,0 +1,30 @@
+﻿@model InstituicaoNivelTipoComponenteCurricularDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        @*using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(m => m.DescricaoInstituicaoNivel).HideLabel(SMCDisplayHideLabel.Parent).Size(SMCSize.Grid8_24)
+            }*@
+        //using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista smc-listdetailed-conteudo-separador-horizontal").Size(SMCSize.Grid24_24).Begin())
+        //{
+
+        using (Smc.Div().CssClass("smc-listdetailed-listagem-itens").Size(SMCSize.Grid12_24).Begin())
+        {
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_TipoComponenteCurricular")</label>
+                    @Smc.DisplayFor(m => m.DescricaoTipoComponenteCurricular).HideLabel().CssClass("smc-display-collection").Size(SMCSize.Grid24_24)
+        }
+
+        using (Smc.Div().CssClass("smc-listdetailed-listagem-itens").Size(SMCSize.Grid12_24).Begin())
+        {
+            //@Smc.DisplayFor(m => m.TiposDivisaoComponente).Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-conteudo-separador-vertical").HideLabel(SMCDisplayHideLabel.Children)
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_TipoDivisaoComponente")</label>
+                    @Smc.List("TiposDivisaoComponente" + Model.Seq, Model.TiposDivisaoComponente).Size(SMCSize.Grid24_24).HtmlTemplate(tipo => Html.Partial("_TipoDivisaoComponente", tipo))
+         //           @Smc.DisplayFor(m => m.TiposDivisaoComponente).HideLabel().CssClass("smc-listdetailed-conteudo-separador-vertical").Size(SMCSize.Grid24_24)
+        }
+        // }
+    }
+    @Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24).MessageRemoveConfirm(string.Format(Smc.GetUIResource("Listar_Excluir_Confirmacao"), Model.DescricaoTipoComponenteCurricular, Model.DescricaoInstituicaoNivel))
+}

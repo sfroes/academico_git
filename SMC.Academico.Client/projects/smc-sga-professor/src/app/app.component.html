@@ -1,0 +1,15 @@
+<smc-header (carregado)="componenteCarregado()"></smc-header>
+<smc-menu (carregado)="componenteCarregado()"></smc-menu>
+<div id="divConteudoPrincipal" class="smc-conteudo-centro container-fluid smc-size-md-20 smc-size-xs-24 smc-size-sm-22 smc-size-lg-20 col-md-offset-2 col-sm-offset-1 col-lg-offset-2" data-type="smc-conteudo">
+  <section class="content">
+    <h1></h1>
+    <router-outlet></router-outlet>
+  </section>
+</div>
+<!--<div class="smc-sga-icone-documentacao">
+  <a href="http://www.google.com" target="_blank" title="Ajuda da página">teste</a>
+</div>-->
+<smc-footer (carregado)="componenteCarregado()"></smc-footer>
+<div>
+  <po-loading-overlay *ngIf="carregando" p-screen-lock="true" p-text="Aguarde"></po-loading-overlay>
+</div>

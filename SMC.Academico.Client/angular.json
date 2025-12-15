@@ -1,0 +1,367 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "administrativo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/smc-sga-administrativo",
+      "sourceRoot": "projects/smc-sga-administrativo/src",
+      "prefix": "sga",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/administrativo",
+            "index": "projects/smc-sga-administrativo/src/index.html",
+            "main": "projects/smc-sga-administrativo/src/main.ts",
+            "polyfills": "projects/smc-sga-administrativo/src/polyfills.ts",
+            "tsConfig": "projects/smc-sga-administrativo/tsconfig.app.json",
+            "aot": true,
+            "assets": ["projects/smc-sga-administrativo/src/favicon.ico", "projects/smc-sga-administrativo/src/assets"],
+            "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
+              "node_modules/@po-ui/style/css/po-theme-default-variables.min.css",
+              "node_modules/@po-ui/style/css/po-theme-core.min.css",
+              "projects/smc-sga-administrativo/src/styles.scss",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
+            ],
+            "scripts": [
+              "projects/smc-sga-administrativo/src/assets/recursos/node_modules/jquery/dist/jquery.js",
+              "projects/smc-sga-administrativo/src/assets/recursos/scripts/smc-developwarning.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "angular-calendar/date-adapters/date-fns",
+              "calendar-utils/date-adapters/date-fns",
+              "dom-set",
+              "dom-plane",
+              "@mattlewis92/dom-autoscroller"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/smc-sga-administrativo/src/environments/environment.ts",
+                  "with": "projects/smc-sga-administrativo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "administrativo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "administrativo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "administrativo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/smc-sga-administrativo/src/test.ts",
+            "polyfills": "projects/smc-sga-administrativo/src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": ["projects/smc-sga-administrativo/src/favicon.ico", "projects/smc-sga-administrativo/src/assets"],
+            "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
+              "projects/smc-sga-administrativo/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json", "e2e/tsconfig.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/smc-sga-administrativo/e2e/protractor.conf.js",
+            "devServerTarget": "administrativo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "administrativo:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "aluno": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/smc-sga-aluno",
+      "sourceRoot": "projects/smc-sga-aluno/src",
+      "prefix": "sga",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/aluno",
+            "index": "projects/smc-sga-aluno/src/index.html",
+            "main": "projects/smc-sga-aluno/src/main.ts",
+            "polyfills": "projects/smc-sga-aluno/src/polyfills.ts",
+            "tsConfig": "projects/smc-sga-aluno/tsconfig.app.json",
+            "aot": true,
+            "assets": ["projects/smc-sga-aluno/src/favicon.ico", "projects/smc-sga-aluno/src/assets"],
+            "styles": [
+              "node_modules/@po-ui/style/css/po-theme-default-variables.min.css",
+              "node_modules/@po-ui/style/css/po-theme-core.min.css",
+              "projects/smc-sga-aluno/src/styles.scss",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
+            ],
+            "scripts": [
+              "projects/smc-sga-aluno/src/assets/recursos/node_modules/jquery/dist/jquery.js",
+              "projects/smc-sga-aluno/src/assets/recursos/scripts/smc-developwarning.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/smc-sga-aluno/src/environments/environment.ts",
+                  "with": "projects/smc-sga-aluno/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "aluno:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "aluno:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "aluno:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/smc-sga-aluno/src/test.ts",
+            "polyfills": "projects/smc-sga-aluno/src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": ["projects/smc-sga-aluno/src/favicon.ico", "projects/smc-sga-aluno/src/assets"],
+            "styles": ["projects/smc-sga-aluno/src/styles.scss"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json", "e2e/tsconfig.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/smc-sga-aluno/e2e/protractor.conf.js",
+            "devServerTarget": "aluno:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "aluno:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "professor": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/smc-sga-professor",
+      "sourceRoot": "projects/smc-sga-professor/src",
+      "prefix": "sga",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/Professor",
+            "index": "projects/smc-sga-professor/src/index.html",
+            "main": "projects/smc-sga-professor/src/main.ts",
+            "polyfills": "projects/smc-sga-professor/src/polyfills.ts",
+            "tsConfig": "projects/smc-sga-professor/tsconfig.app.json",
+            "aot": true,
+            "assets": ["projects/smc-sga-professor/src/favicon.ico", "projects/smc-sga-professor/src/assets"],
+            "styles": [
+              "node_modules/@po-ui/style/css/po-theme-default-variables.min.css",
+              "node_modules/@po-ui/style/css/po-theme-core.min.css",
+              "projects/smc-sga-professor/src/styles.scss",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
+            ],
+            "scripts": [
+              "projects/smc-sga-professor/src/assets/recursos/node_modules/jquery/dist/jquery.js",
+              "projects/smc-sga-professor/src/assets/recursos/scripts/smc-developwarning.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/smc-sga-professor/src/environments/environment.ts",
+                  "with": "projects/smc-sga-professor/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "professor:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "professor:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "professor:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/smc-sga-professor/src/test.ts",
+            "polyfills": "projects/smc-sga-professor/src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": ["projects/smc-sga-professor/src/favicon.ico", "projects/smc-sga-professor/src/assets"],
+            "styles": ["projects/smc-sga-professor/src/styles.scss"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json", "e2e/tsconfig.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/smc-sga-professor/e2e/protractor.conf.js",
+            "devServerTarget": "professor:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "professor:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "professor",
+  "cli": {
+    "analytics": "2751c81f-9592-4058-88b7-e53da5dcc42e"
+  }
+}

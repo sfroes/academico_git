@@ -1,0 +1,6 @@
+﻿@model HistoricoSolicitacaoEtapaItemViewModel
+
+@if (Model.SituacaoFinalEtapa == SituacaoFinalEtapa.Sim)
+{
+    @Smc.LegendItem(x => x.SituacaoFinalEtapa)
+}

@@ -1,0 +1,37 @@
+﻿@using SMC.SGA.Administrativo.Areas.FIN.Models
+@using SMC.Academico.Common.Areas.SRC.Constants
+@model PessoaAtaucaoBeneficioConsultaViewModel
+
+@if (Model.Notificacoes.SMCAny())
+{
+    @(Smc.Grid("gridNotiticacoes" + Model.Seq, new SMCPagerModel<PessoaAtuacaoBeneficioBeneficioEnvioNotificacaoViewModel>(Model.Notificacoes))
+                                                                                      .HideGridTitle()
+                                                                                      .HideNavigator()
+                                                                                      .HideRowNumber()
+                                                                                      .FieldColumn(f => f.DescricaoTipoNotificacao, cssClass: "smc-size-md-8")
+                                                                                      .FieldColumn(f => f.Assunto, cssClass: "smc-size-md-8")
+                                                                                      .FieldColumn(f => f.SucessoEnvio, cssClass: "smc-size-md-3")
+                                                                                      .FieldColumn(f => f.DataProcessamento, cssClass: "smc-size-md-5")
+                                                                                      .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-grid-coluna-botoes", true,
+                                                                                          f => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                                                          .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDetalheNotificacao")
+                                                                                          .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarDetalheNotificacao_Title"))
+                                                                                          .SecurityToken(UC_SRC_004_01_05.CONSULTAR_DADOS_NOTIFICACAO)
+                                                                                          .Ajax(isPost: false)
+                                                                                          .Text(Smc.GetUIResource("Botao_VisualizarDetalheNotificacao"))
+                                                                                          .Tooltip(Smc.GetUIResource("Botao_VisualizarDetalheNotificacao_Tooltip"))
+                                                                                          .CssClass("smc-btn-visualizar-ico")
+                                                                                          .Action("ConsultarDetalheNotificacao", "SolicitacaoServico", new { Area = "SRC", seqNotificacaoEmail = new SMCEncryptedLong((f as PessoaAtuacaoBeneficioBeneficioEnvioNotificacaoViewModel).Seq) })))
+}
+else
+{
+    using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+    {
+        <p>@Smc.GetUIResource("Nenhuma_Notificacao")</p>
+    }
+}
+
+@using (Smc.ModalWindow("modalVisualizarDetalheNotificacao")
+      .Size(SMCModalWindowSize.Largest)
+      .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+      .Begin()) { }

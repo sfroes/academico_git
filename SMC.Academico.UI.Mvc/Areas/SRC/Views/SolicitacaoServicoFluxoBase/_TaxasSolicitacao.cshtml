@@ -1,0 +1,28 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.SRC.Models;
+@using SMC.Academico.UI.Mvc.Areas.SRC.Views.SolicitacaoServicoFluxoBase.App_LocalResources;
+
+@model DadosModalSolicitacaoServicoViewModel
+
+@using (Smc.Fieldset("Taxas").LegendText(@Smc.GetUIResource("Fieldset_Taxas")).CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    @(Smc.Grid("gridTaxas", new SMCPagerModel<DadosModalSolicitacaoTaxaViewModel>(Model.TaxasSolicitacao))
+                                                                           .HideGridTitle()
+                                                                           .Size(SMCSize.Grid24_24)
+                                                                           .AutoHideNavigator()
+                                                                           .HideNavigator()
+                                                                           .HideNumberOfRowsPerPageSelector()
+                                                                           .HidePager()
+                                                                           .HideRowsTotalizer()
+                                                                           .FieldColumn(x => x.DescricaoTaxa)
+                   .ButtonColumn(SMCButtonSetType.Secondary, 1, null, null, "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3", false,
+                                 f => Smc.Button("GerarBoleto")
+                                   .CssClass("smc-sga-botao-boleto")
+                                   .Type(SMCButtonType.Link)
+                                   .Tooltip(Smc.GetUIResource("Botao_Gerarboleto"))
+                                   .Attribute("target", "_blank")
+                                   .Enabled((f as DadosModalSolicitacaoTaxaViewModel).HabilitarBotaoEmitirBoleto)
+                                   .ButtonInstructions(Smc.GetUIResource((f as DadosModalSolicitacaoTaxaViewModel).MensagemBotaoEmitirBoleto))
+                                   .Action("EmissaoBoletoGerar", "SolicitacaoServicoRoute", new { seqTitulo = new SMCEncryptedLong((f as DadosModalSolicitacaoTaxaViewModel).SeqTituloGra), seqTaxa = new SMCEncryptedLong((f as DadosModalSolicitacaoTaxaViewModel).SeqTaxaGra), seqServico = new SMCEncryptedLong((f as DadosModalSolicitacaoTaxaViewModel).SeqServico), seqSolicitacaoServico = new SMCEncryptedLong((f as DadosModalSolicitacaoTaxaViewModel).SeqSolicitacaoServico), numeroProtocolo = (f as DadosModalSolicitacaoTaxaViewModel).NumeroProtocolo, backUrl = (f as DadosModalSolicitacaoTaxaViewModel).BackUrl, Area = string.Empty }))
+                   .CssClass("smc-sga-alinhamento-botao-secundario")
+    )
+}

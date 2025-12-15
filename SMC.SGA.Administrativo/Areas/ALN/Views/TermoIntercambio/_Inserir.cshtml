@@ -1,0 +1,22 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+
+@model TermoIntercambioDynamicModel
+
+@Smc.EditorFor(prop => prop.Seq)
+@Smc.EditorFor(prop => prop.SeqParceriaIntercambio)
+@Smc.EditorFor(prop => prop.Descricao)
+@Smc.EditorFor(prop => prop.SeqNivelEnsino)
+@Smc.EditorFor(prop => prop.SeqParceriaIntercambioTipoTermo)
+@Smc.EditorFor(prop => prop.SeqParceriaIntercambioInstituicaoExterna)
+@Smc.EditorFor(prop => prop.ExibeVigencias)
+@Smc.EditorFor(prop => prop.Ativo)
+@Smc.EditorFor(prop => prop.SomenteLeituraJustificativaPeriodoVigencia)
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mestre-detalhe-bloqueio-botoes").Begin())
+{
+    @Smc.MasterDetail(prop => prop.Vigencias, SMC.Framework.UI.Mvc.DataAnnotations.SMCDetailType.Modal).MinimumItens(1)
+}
+
+@Smc.EditorFor(prop => prop.TiposMobilidade)
+
+@Smc.EditorFor(prop => prop.Arquivos)

@@ -1,0 +1,47 @@
+﻿@model EmitirBoletoAbertoParcelaViewModel
+
+@using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.DisplayFor(x => x.NumeroParcela).Size(SMCSize.Grid2_24)
+    @Smc.DisplayFor(x => x.SemestreAno).Size(SMCSize.Grid6_24)
+    @Smc.DisplayFor(x => x.DataVencimentoTitulo).Size(SMCSize.Grid8_24)
+    @Smc.DisplayFor(x => x.DataLimitePagamento).Size(SMCSize.Grid8_24)
+}
+
+@if (Model.Boletos.Count > 0)
+{
+    @(Smc.Grid("gridBoletos", new SMCPagerModel<EmitirBoletoAbertoBoletoViewModel>(Model.Boletos))
+                             .Size(SMCSize.Grid24_24)
+                             .CssClass("smc-listdetailed-conteudo-lista")
+                             .AutoGenerateColumns(false)
+                             .AllowExportToExcel(false)
+                             .AllowExportToPDF(false)
+                             .AllowRefresh(false)
+                             .AllowSort(false)
+                             .AutoHideNavigator(true)
+                             .HideGridTitle(true)
+                             .HideNavigator(true)
+                             .HideNumberOfRowsPerPageSelector(true)
+                             .HidePager()
+                             .HideRowNumber(true)
+                             .HideRowsTotalizer(true)
+                            .FieldColumn(x => x.NomePessoa)
+                            .FieldColumn(x => x.DescricaoSituacaoTitulo)
+                             .ContentColumn(
+    @<text>
+        @{
+            var itemParsed = item as EmitirBoletoAbertoBoletoViewModel;
+            @(Smc.ButtonSet().CssClass("smc-sga-alinhamento-botao-secundario").Type(SMCButtonSetType.Secondary)
+                        .AddButton(Smc.Button("GerarBoleto", "EmissaoBoletoGerar", new { seqTitulo = new SMCEncryptedLong(itemParsed.SeqTitulo), seqServico = new SMCEncryptedLong(itemParsed.SeqServico) })
+                        .CssClass("smc-sga-botao-boleto")
+                        .Type(SMCButtonType.Link)
+                        .Tooltip(Smc.GetUIResource("Botao_Gerarboleto"))
+                        .SecurityToken()
+                        .Attribute("target", "_blank"))
+            )
+        }
+    </text>, header: Smc.GetUIResource("Boleto")
+                       , cssClass: "smc-size-md-4 smc-size-xs-4 smc-size-sm-4 smc-size-lg-4"
+                      )
+    )
+}

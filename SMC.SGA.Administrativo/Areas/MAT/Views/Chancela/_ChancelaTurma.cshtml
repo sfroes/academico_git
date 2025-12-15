@@ -1,0 +1,38 @@
+﻿@model ChancelaTurmaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid22_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+            {
+                if (Model.Pertence == SMC.Academico.Common.Areas.MAT.Enums.TurmaOfertaMatricula.ComponentePertence)
+                {
+                    @Smc.LegendItem(m => m.Pertence, false)
+                }
+            }
+            @Smc.DisplayFor(m => m.TurmaFormatado).CssClass("smc-listdetailed-conteudo-titulo").Size(SMCSize.Grid15_24).HideLabel()
+            @Smc.HiddenFor(m => m.TurmaFormatado)
+            using (Smc.Div().Size(SMCSize.Grid4_24).Begin())
+            {
+                if (Model.AssociacaoOfertaMatrizTipoTurma != SMC.Academico.Common.Areas.TUR.Enums.AssociacaoOfertaMatriz.ExigeApenasUma)
+                {
+                    @Smc.DisplayFor(m => m.DescricaoTipoTurma).Size(SMCSize.Grid24_24).CssClass("smc-sga-totalizador").HideLabel()
+                    @Smc.Instructions().Text(Smc.GetUIResource("DescricaoTipoTurma_FillInstructions")).CssClass("smc-sga-instruction smc-sga-instruction-totalizador")
+                }
+            }
+            @Smc.EditorFor(x => x.SeqItem)
+            @Smc.EditorFor(x => x.SeqSituacaoItemMatricula).HideLabel().Size(SMCSize.Grid4_24).Readonly((bool)ViewBag.ChancelaFinalizada)
+        }
+
+        using (Smc.Div().CssClass("col-md-offset-2 col-lg-offset-2 col-sm-offset-2 smc-sga-divisoes-turma").Size(SMCSize.Grid23_24).Begin())
+        {
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("ParametroDivisoes_Detalhe_Titulo")</label>
+            @Smc.List("Divisoes" + Model.Seq, m => m.TurmaMatriculaDivisoes).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(divisao => Html.Partial("_ChancelaTurmaDivisoes", divisao.Value))
+        }
+
+    }
+}

@@ -1,0 +1,15 @@
+﻿@model ConfigurarVagasOfertaCampanhaViewModel
+
+@Smc.DisplayFor(m => m.MensagemAlertaProcessoSeletivo).HideLabel()
+
+@(Smc.Grid("gridListarProcessosSeletivos", Model.ProcessosSeletivos)
+                        .AllowSelect(f => f.Seq)
+                        .HideNavigator()
+                        .HidePager()
+                        .HideRowNumber()
+                        .HideRowsTotalizer()
+                        .HideGridTitle()
+                        .Attribute("data-detail-property", SMCLookupHelper.GetCurrentPropertyName(Smc))
+                        .FieldColumn(x => x.Descricao))
+
+@Smc.WizardView()

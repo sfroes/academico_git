@@ -1,0 +1,8 @@
+﻿@using SMC.Financeiro.UI.Mvc.Extensions;
+
+@model NegociacaoParcelaCartaoViewModel
+
+@using (Smc.Div("Pagamento").Size(SMCSize.Grid24_24).CssClass("smc-sga-pagamento").Begin())
+{
+    @Smc.StudentFinancialAgreement(Model.CodigoAluno, Model.CodigoPessoa, Model.SeqOrigem, Model.TipoAluno, Model.SituacaoAluno)
+}

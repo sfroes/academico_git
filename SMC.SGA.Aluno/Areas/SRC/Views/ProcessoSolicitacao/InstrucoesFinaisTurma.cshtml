@@ -1,0 +1,41 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.SRC.Models.SelecaoTurmaPaginaViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_INSTRUCOES_FINAIS_SOLICITACAO_MATRICULA))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    @Smc.HiddenFor(x => x.SeqProcesso)
+
+    using (Smc.Fieldset("").Size(SMCSize.Grid24_24).LegendText(Smc.GetUIResource("Documentos_Fieldset_Legenda")).Begin())
+    {
+            var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-alinha-esquerda");
+
+            buttonSet.AddButton(Smc.Button("VisualizarComprovante")
+                                 .CssClass("smc-btn-documento-icotext")
+                                 .Action("ComprovanteProcessosRelatorio", "ComprovanteProcessos", new { seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoServico), seqProcessoEtapa = new SMCEncryptedLong(Model.SeqProcessoEtapa), seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao), @area = string.Empty })
+                                 .Attribute("target", "_blank")
+                                 .Type(SMCButtonType.Link));
+
+            @buttonSet;
+    }
+}
+
+@{
+    var buttonSet2 = Smc.ButtonSet().CssClass("smc-sga-matricula-linha-botoes").Size(SMCSize.Grid24_24);
+
+    buttonSet2.AddButton(Smc.Button("sairProcesso")
+                    .Id("sairProcesso")
+                    .Type(SMCButtonType.Link)
+                    .Action("Index", "SolicitacaoServico", new { area = "SRC" })
+                    .CssClass("smc-btn-proximo-icotext-destaque"));
+
+    @buttonSet2;
+}

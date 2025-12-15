@@ -1,0 +1,19 @@
+﻿@model List<CampanhaOfertaListaViewModel>
+@{ 
+    var lista = new SMCPagerModel<CampanhaOfertaListaViewModel>(Model);
+    lista.PageSettings.PageSize = int.MaxValue;
+}
+@(Smc.Grid("gridCampanhaOferta", lista)
+        .Action("ListarCampanhaOfertas")
+        .AllowSelect(f => f.Seq)
+        .AutoGenerateColumns()
+        .HideNumberOfRowsPerPageSelector()
+        .HidePager()
+        .HideNavigator()
+        .HideRowsTotalizer()
+    .ButtonColumn(SMCButtonSetType.Primary, 1, string.Empty, string.Empty, string.Empty, false,
+                 f => Smc.Button(SMCButtonBehavior.Excluir).Type(SMCButtonType.Link).DisplayMode(SMCButtonDisplayMode.Icon)
+                         .Action("Excluir", "CampanhaOferta", new { seq = new SMCEncryptedLong((f as CampanhaOfertaListaViewModel).Seq), Area = "CAM" })
+                         .Confirm(Smc.GetUIResource("Title_Confirmar_Exclusao"), Smc.GetUIResource("MSG_ExclusaoAssociacao"), SMCWindowButtons.No,(f as CampanhaOfertaListaViewModel).PossuiVinculoProcessoSeletivo )
+                         )
+)

@@ -1,0 +1,27 @@
+﻿@using SMC.Academico.Common.Areas.MAT.Enums;
+
+@model SMC.Academico.UI.Mvc.Areas.TUR.Models.PlanoEstudoOfertaItemViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-sga-plano-estudo-item").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("").Size(SMCSize.Grid22_24).Begin())
+            {
+                <div class="smc-sga-plano-estudo-intro">
+                    @Smc.LegendItem(m => m.Pertence)
+                    @Smc.DisplayFor(m => m.NomeDisciplina).CssClass("smc-sga-plano-desc").Size(SMCSize.Grid24_24).HideLabel()
+                </div>
+
+                <ul>
+                    @foreach (var cargaHoraria in Model.ListaCargasHorarias)
+                    {
+                        <li>@cargaHoraria</li>
+                    }
+                </ul>
+            }
+        }
+    }
+}

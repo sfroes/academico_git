@@ -1,0 +1,128 @@
+﻿@using SMC.SGA.Administrativo.Areas.SRC.Views.SolicitacaoServico.App_LocalResources
+@model DadosSolicitacaoViewModel
+
+@Smc.EditorFor(x => x.ExibirComprovanteMatriculaETermoAdesao)
+
+@* Caso seja ExibirComprovanteMatriculaETermoAdesao (ou seja, tem um dos 4 tokens e é do tipo de solicitação de matrícula) *@
+@if (Model.ExibirComprovanteMatriculaETermoAdesao)
+{
+    using (Smc.Fieldset("Documentos").LegendText("Documentos da matrícula").Size(SMCSize.Grid24_24).Begin())
+    {
+        var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-alinha-esquerda");
+
+        // Se for de um dos tokens MATRICULA_INGRESSANTE, RENOVACAO_MATRICULA e MATRICULA_REABERTURA, gera o botão de arquivo de termo de adesão
+        if (Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.MATRICULA_INGRESSANTE ||
+            Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.RENOVACAO_MATRICULA ||
+            Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.MATRICULA_REABERTURA)
+        {
+            var botaoTermoAdesao = Smc.Button("VisualizarContrato", "TermoAdesao", new { seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoServico), @area = string.Empty }, "RealizarAtendimento")
+                                      .Attribute("target", "_blank")
+                                      .Type(SMCButtonType.Link)
+                                      .CssClass("smc-btn-documento-icotext")
+                                      .Hide(!Model.ExibirComprovanteMatriculaETermoAdesao);
+
+            if (!Model.SolicitacaoPossuiCodigoAdesao)
+            {
+                botaoTermoAdesao.Enabled(false);
+                botaoTermoAdesao.ButtonInstructions(UIResource.MSG_SolicitacaoNaoPossuiTermoAdesaoEArquivoTermoAdesao);
+            }
+
+            buttonSet.AddButton(botaoTermoAdesao);
+        }
+
+        // Se for de um dos tokens MATRICULA_INGRESSANTE, RENOVACAO_MATRICULA, MATRICULA_REABERTURA e PLANO_ESTUDO, gera o botão de comprovante de matrícula
+        if (Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.MATRICULA_INGRESSANTE ||
+            Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.RENOVACAO_MATRICULA ||
+            Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.MATRICULA_REABERTURA ||
+            Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.PLANO_ESTUDO)
+        {
+            var botaoComprovante = Smc.Button("ComprovanteMatriculaRelatorio")
+                   .CssClass("smc-btn-documento-icotext smc-sga-margem-botao-documento")
+                   .Attribute("target", "_blank")
+                   .Type(SMCButtonType.Link)
+                   .Hide(!Model.ExibirComprovanteMatriculaETermoAdesao);
+
+            if (Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.MATRICULA_INGRESSANTE || Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.RENOVACAO_MATRICULA || Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.MATRICULA_REABERTURA)
+            {
+                botaoComprovante.Action("ComprovanteMatriculaRelatorio", "ComprovanteMatricula", new { seqIngressante = new SMCEncryptedLong(Model.SeqPessoaAtuacao), seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoServico), @area = string.Empty });
+            }
+            else if (Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.PLANO_ESTUDO)
+            {
+                botaoComprovante.Action("ComprovanteProcessosRelatorio", "ComprovanteProcessos", new { seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoServico), seqProcessoEtapa = new SMCEncryptedLong(Model.Solicitacao.SeqProcessoEtapaAtual.GetValueOrDefault()), seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao), @area = string.Empty });
+            }
+
+            if (!Model.SolicitacaoComMatriculaEfetivada)
+            {
+                botaoComprovante.Enabled(false);
+                botaoComprovante.ButtonInstructions(UIResource.MSG_SolicitacaoComMatriculaNaoEfetivada);
+            }
+
+            buttonSet.AddButton(botaoComprovante);
+
+            @buttonSet;
+        }
+    }
+}
+
+@* A seção "Documentos de conclusão gerados a partir da solicitação" deverá ser exibida somente se a solicitação for referente ao tipo
+    de serviço: EMISSAO_DOCUMENTO_CONCLUSAO. *@
+@if (Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.EMISSAO_DOCUMENTO_CONCLUSAO)
+{
+    using (Smc.Fieldset("DocumentoConclusao").LegendText("Documentos de conclusão gerados a partir da solicitação").Size(SMCSize.Grid24_24).Begin())
+    {
+        @(Smc.Grid("gridDocumentosConclusao", new SMCPagerModel<DocumentoConclusaoSolicitacaoViewModel>(Model.DocumentosConclusaoSolicitacao))
+                                                    .AutoGenerateColumns()
+                                                    .AutoHideNavigator()
+                                                    .HideNumberOfRowsPerPageSelector()
+                                                    .HideRowsTotalizer()
+                                                    .HideGridTitle()
+                                                    .HidePager()
+                .ButtonColumn(SMCButtonSetType.Secondary, 0, "", "", "smc-grid-coluna-botoes", true,
+                       x => Smc.Button("ConsultarDocumentoConclusao")
+                               //.CssClass("smc-btn-documento-icotext")
+                               .Tooltip(Smc.GetUIResource("Botao_Consultardocumentoconclusao"))
+                               .Type(SMCButtonType.Link)
+                               .Attribute("target", "_blank")
+                               .Action("Consultar", "DocumentoConclusao", new { seq = new SMCEncryptedLong((x as DocumentoConclusaoSolicitacaoViewModel).SeqDocumentoAcademico), @area = "CNC" }),
+                       x => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                               //.CssClass("smc-btn-documento-icotext")
+                               .Text(Smc.GetUIResource("Botao_Consultardocumentogad"))
+                               .Tooltip(Smc.GetUIResource("Botao_Consultardocumentogad"))
+                               .Type(SMCButtonType.Link)
+                               .Attribute(SMCMvcConsts.MODAL_ID, "modalDiploma")
+                               .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Visualizar_Documento_Academico"))
+                               .Ajax(isPost: false)
+                               .Url((x as DocumentoConclusaoSolicitacaoViewModel).UrlDocumentoGAD)
+                               .Hide(string.IsNullOrEmpty((x as DocumentoConclusaoSolicitacaoViewModel).UrlDocumentoGAD)))
+        )
+    }
+}
+
+@using (Smc.Fieldset("Documentos").LegendText("Documentos").CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    @(Smc.Grid("gridDocumentos", new SMCPagerModel<DocumentoSolicitacaoViewModel>(Model.DocumentosSolicitacao))
+                                                     .FieldColumn(x => x.TipoDocumento)
+                                                     .FieldColumn(x => x.DataEntrega)
+                                                     .FieldColumn(x => x.DataPrazoEntrega)
+                                                     .FieldColumn(x => x.FormaEntregaDocumento)
+                                                     .FieldColumn(x => x.VersaoDocumento)
+                                                     .FieldColumn(x => x.SituacaoEntregaDocumento)
+                                                     .FieldColumn(x => x.Observacao)
+                                                     .FieldColumn(x => x.SeqArquivoAnexado)
+                                                     .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-grid-coluna-botoes", true,
+                                                            f => Smc.Button("btn-download-arquivo-anexo")
+                                                                    .CssClass("smc-btn-download-ico")
+                                                                    .Text(Smc.GetUIResource("Botao_Download_Arquivo_Anexo"))
+                                                                    .Tooltip(Smc.GetUIResource("Botao_Download_Arquivo_Anexo_Tooltip"))
+                                                                    .Type(SMCButtonType.Link)
+                                                                    .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true)
+                                                                    .Attribute("target", "_blank")
+                                                                    .Action("DownloadFileGuid", "Home", new { @area = "", @guidFile = (f as DocumentoSolicitacaoViewModel).UidArquivoAnexado.ToString() })
+                                                                    .Enabled((f as DocumentoSolicitacaoViewModel).UidArquivoAnexado.HasValue))
+                                                     .AutoHideNavigator()
+                                                     .HideNumberOfRowsPerPageSelector()
+                                                     .HideRowsTotalizer()
+                                                     .HideGridTitle()
+                                                     .HidePager())
+
+}

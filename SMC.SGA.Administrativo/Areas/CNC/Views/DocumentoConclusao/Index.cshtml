@@ -1,0 +1,30 @@
+﻿@using SMC.SGA.Administrativo.Areas.CNC.Models;
+
+@model DocumentoConclusaoFiltroViewModel
+
+@using (Smc.Form("filtroDocumentoConclusao", "ListarDocumentosConclusao").Ajax("#divGridDocumentosConclusao").Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Fieldset("filtros").CssClass("smc-fieldset-filter").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(m => m.HabilitaTipoInvalidade)
+        @Smc.EditorFor(m => m.ListarDepartamentosGruposProgramas)
+        @Smc.EditorFor(m => m.SeqTipoServico)
+
+        @Smc.EditorFor(m => m.SeqPessoa)
+        @Smc.EditorFor(m => m.SeqsEntidadesResponsaveis)
+        @Smc.EditorFor(m => m.SeqCursoOfertaLocalidade)
+        @Smc.EditorFor(m => m.SeqTipoDocumentoAcademico)
+        @Smc.EditorFor(m => m.SeqSituacaoDocumentoAcademico)
+        @Smc.EditorFor(m => m.TipoInvalidade)
+
+        @(Smc.ButtonSet()
+             .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+             .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+        )
+    }
+}
+
+@using (Smc.Div("divGridDocumentosConclusao").Attribute("data-id", "divGridDocumentosConclusao").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Smc.ActionList("ListarDocumentosConclusao", Model, true)
+}

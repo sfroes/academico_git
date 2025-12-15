@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSComponenteCurricularHoraAula" targetNamespace="http://tempuri.org/DSComponenteCurricularHoraAula.xsd" xmlns:mstns="http://tempuri.org/DSComponenteCurricularHoraAula.xsd" xmlns="http://tempuri.org/DSComponenteCurricularHoraAula.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSComponenteCurricularHoraAula" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DSComponenteCurricularHoraAula" msprop:Generator_DataSetName="DSComponenteCurricularHoraAula">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSComponenteCurricularHoraAula" msprop:Generator_RowEvHandlerName="DSComponenteCurricularHoraAulaRowChangeEventHandler" msprop:Generator_RowDeletedName="DSComponenteCurricularHoraAulaRowDeleted" msprop:Generator_RowDeletingName="DSComponenteCurricularHoraAulaRowDeleting" msprop:Generator_RowEvArgName="DSComponenteCurricularHoraAulaRowChangeEvent" msprop:Generator_TablePropName="_DSComponenteCurricularHoraAula" msprop:Generator_RowChangedName="DSComponenteCurricularHoraAulaRowChanged" msprop:Generator_RowChangingName="DSComponenteCurricularHoraAulaRowChanging" msprop:Generator_TableClassName="DSComponenteCurricularHoraAulaDataTable" msprop:Generator_RowClassName="DSComponenteCurricularHoraAulaRow" msprop:Generator_TableVarName="tableDSComponenteCurricularHoraAula" msprop:Generator_UserTableName="DSComponenteCurricularHoraAula">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SeqAluno" msprop:Generator_ColumnPropNameInRow="SeqAluno" msprop:Generator_ColumnPropNameInTable="SeqAlunoColumn" msprop:Generator_ColumnVarNameInTable="columnSeqAluno" msprop:Generator_UserColumnName="SeqAluno" type="xs:long" minOccurs="0" />
+              <xs:element name="SeqHistoricoEscolar" msprop:Generator_ColumnPropNameInRow="SeqHistoricoEscolar" msprop:Generator_ColumnPropNameInTable="SeqHistoricoEscolarColumn" msprop:Generator_ColumnVarNameInTable="columnSeqHistoricoEscolar" msprop:Generator_UserColumnName="SeqHistoricoEscolar" type="xs:long" minOccurs="0" />
+              <xs:element name="DescricaoCicloLetivo" msprop:Generator_ColumnPropNameInRow="DescricaoCicloLetivo" msprop:Generator_ColumnPropNameInTable="DescricaoCicloLetivoColumn" msprop:Generator_ColumnVarNameInTable="columnDescricaoCicloLetivo" msprop:Generator_UserColumnName="DescricaoCicloLetivo" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoComponenteCurricular" msprop:Generator_ColumnPropNameInRow="DescricaoComponenteCurricular" msprop:Generator_ColumnPropNameInTable="DescricaoComponenteCurricularColumn" msprop:Generator_ColumnVarNameInTable="columnDescricaoComponenteCurricular" msprop:Generator_UserColumnName="DescricaoComponenteCurricular" type="xs:string" minOccurs="0" />
+              <xs:element name="ListaProfessores" msprop:Generator_ColumnPropNameInRow="ListaProfessores" msprop:Generator_ColumnPropNameInTable="ListaProfessoresColumn" msprop:Generator_ColumnVarNameInTable="columnListaProfessores" msprop:Generator_UserColumnName="ListaProfessores" type="xs:string" minOccurs="0" />
+              <xs:element name="CargaHorariaAula" msprop:Generator_ColumnPropNameInRow="CargaHorariaAula" msprop:Generator_ColumnPropNameInTable="CargaHorariaAulaColumn" msprop:Generator_ColumnVarNameInTable="columnCargaHorariaAula" msprop:Generator_UserColumnName="CargaHorariaAula" type="xs:int" minOccurs="0" />
+              <xs:element name="CargaHorariaRelogio" msprop:Generator_ColumnPropNameInRow="CargaHorariaRelogio" msprop:Generator_ColumnPropNameInTable="CargaHorariaRelogioColumn" msprop:Generator_ColumnVarNameInTable="columnCargaHorariaRelogio" msprop:Generator_UserColumnName="CargaHorariaRelogio" type="xs:int" minOccurs="0" />
+              <xs:element name="Credito" msprop:Generator_ColumnPropNameInRow="Credito" msprop:Generator_ColumnPropNameInTable="CreditoColumn" msprop:Generator_ColumnVarNameInTable="columnCredito" msprop:Generator_UserColumnName="Credito" type="xs:int" minOccurs="0" />
+              <xs:element name="Nota" msprop:Generator_ColumnPropNameInRow="Nota" msprop:Generator_ColumnPropNameInTable="NotaColumn" msprop:Generator_ColumnVarNameInTable="columnNota" msprop:Generator_UserColumnName="Nota" type="xs:short" minOccurs="0" />
+              <xs:element name="DescricaoEscalaApuracaoItem" msprop:Generator_ColumnPropNameInRow="DescricaoEscalaApuracaoItem" msprop:Generator_ColumnPropNameInTable="DescricaoEscalaApuracaoItemColumn" msprop:Generator_ColumnVarNameInTable="columnDescricaoEscalaApuracaoItem" msprop:Generator_UserColumnName="DescricaoEscalaApuracaoItem" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoComponenteCurricularAssunto" msprop:Generator_ColumnPropNameInRow="DescricaoComponenteCurricularAssunto" msprop:Generator_ColumnPropNameInTable="DescricaoComponenteCurricularAssuntoColumn" msprop:Generator_ColumnVarNameInTable="columnDescricaoComponenteCurricularAssunto" msprop:Generator_UserColumnName="DescricaoComponenteCurricularAssunto" type="xs:string" minOccurs="0" />
+              <xs:element name="PercentualFrequencia" msprop:Generator_ColumnPropNameInRow="PercentualFrequencia" msprop:Generator_ColumnPropNameInTable="FrequenciaColumn" msprop:Generator_ColumnVarNameInTable="columnFrequencia" msprop:Generator_UserColumnName="PercentualFrequencia" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

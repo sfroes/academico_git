@@ -1,0 +1,51 @@
+﻿@model TurmaOfertaMatrizViewModel
+
+@using (Smc.Header("ConfiguracaoPrincipal ", SMCHeaderType.Primary)
+    .Item(prop => prop.ConfiguracaoPrincipal, cssClass: "hidden")
+
+
+    .Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-header-detalhes").Begin())
+    {
+
+        if (Model.ConfiguracaoPrincipal == SMC.Academico.Common.Enums.LegendaPrincipal.Principal)
+        {
+            using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+            {
+                @Smc.LegendItem(m => m.ConfiguracaoPrincipal, false)
+            }
+            @Smc.DisplayFor(m => m.DescricaoConfiguracaoComponente).HideLabel().Size(SMCSize.Grid22_24, SMCSize.Grid20_24, SMCSize.Grid21_24, SMCSize.Grid22_24)
+        }
+
+        else
+        {
+            @Smc.DisplayFor(m => m.DescricaoConfiguracaoComponente).CssClass("smc-sga-header-detalhes-offset").HideLabel().Size(SMCSize.Grid23_24, SMCSize.Grid21_24, SMCSize.Grid22_24, SMCSize.Grid23_24)
+        }
+
+        using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24).Begin())
+        {
+            @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).AddButton(@Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_CUSTOM).Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarComponenteCurricular_Title")).Text(Smc.GetUIResource("Botao_VisualizarComponenteCurricular")).Tooltip(Smc.GetUIResource("Botao_VisualizarComponenteCurricular")).Ajax(isPost: false).Action("VerDetalhesPartial", "ComponenteCurricular", new { @area = "CUR", @seq = new SMCEncryptedLong(Model.SeqComponenteCurricular) }).CssClass("smc-btn-visualizar-ico").SecurityToken(SMC.Academico.Common.Areas.CUR.Constants.UC_CUR_002_03_01.VISUALIZAR_DETALHES_COMPONENTE_CURRICULAR))
+            )
+        }
+    }
+}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(m => m.SeqConfiguracaoComponente)
+    @Smc.EditorFor(m => m.DesabilitarMatrizCurricularOferta)
+    @Smc.EditorFor(m => m.DesabilitarOfertasMatrizConfiguracaoPrincipal)
+    @Smc.EditorFor(m => m.SeqCicloLetivo)
+
+    var masterDetail = Smc.MasterDetail(m => m.OfertasMatriz);
+
+    if (Model.PermitirApenasInserirOfertas) { masterDetail.HideButtons(SMCMasterDetailButtonHidden.Remove); }
+
+    if (Model.DesabilitarAlteracaoOfertas)
+    {
+        masterDetail.HideButtons(SMCMasterDetailButtonHidden.Remove | SMCMasterDetailButtonHidden.Add);
+    }
+
+    @masterDetail
+}

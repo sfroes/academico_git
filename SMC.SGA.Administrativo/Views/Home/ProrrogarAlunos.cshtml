@@ -1,0 +1,8 @@
+﻿@model ProrrogarAlunosViewModel
+
+<p>Informe abaixo os códigos de migração dos alunos a serem prorrogados:</p>
+@using (Smc.Form("frmSalvar", "SalvarProrrogacaoAlunos").Begin())
+{
+    @Smc.EditorFor(x => x.CodigosMigracao)
+    @Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Salvar))
+}

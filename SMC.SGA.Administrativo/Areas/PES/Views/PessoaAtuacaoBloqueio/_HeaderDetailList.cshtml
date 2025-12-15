@@ -1,0 +1,18 @@
+﻿@model PessoaAtuacaoBloqueioListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.NomePessoa).CssClass("smc-listdetailed-conteudo-titulo").Size(SMCSize.Grid6_24)
+            @Smc.DisplayFor(m => m.TipoAtuacao).Size(SMCSize.Grid6_24)
+            @Smc.DisplayFor(m => m.CPF).Size(SMCSize.Grid6_24)
+            @Smc.DisplayFor(m => m.Passaporte).Size(SMCSize.Grid6_24)
+        }
+
+    }
+    //@Html.Partial("_DetailListButtons", Model)
+}

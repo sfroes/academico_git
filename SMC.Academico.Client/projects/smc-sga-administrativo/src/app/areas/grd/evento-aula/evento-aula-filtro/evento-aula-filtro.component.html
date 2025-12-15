@@ -1,0 +1,47 @@
+<div
+  class="smc-fieldset-filter smc-size-md-24 smc-size-lg-24 smc-size-xs-24 smc-size-sm-24"
+  data-type="smc-formfieldset"
+  id="fieldsetPesquisaViewPadrao"
+>
+  <div *ngIf="mensagemFalha" class="smc-sga-mensagem-turma-preenchida">
+    <p>{{ mensagemFalha }}</p>
+  </div>
+  <form [formGroup]="formFiltro" (ngSubmit)="onSubmit()">
+    <smc-lookup-ciclo-letivo
+      formControlName="seqCicloLetivoInicio"
+      class="smc-size-lg-4 smc-size-sm-4"
+      [s-readonly]="readonlyLookup"
+    ></smc-lookup-ciclo-letivo>
+    <smc-lookup-turma
+      formControlName="seqTurma"
+      class="smc-size-lg-12 smc-size-sm-12"
+      [seq-ciclo-letivo]="formFiltro.controls.seqCicloLetivoInicio.value"
+      [s-readonly]="readonlyLookup"
+      [s-required]="true"
+    ></smc-lookup-turma>
+    <div class="smc-buttonset-horizontal-primario">
+      <smc-button
+        [s-disabled]="!formFiltro.valid || !desabilitarBotao"
+        s-label="Pesquisar"
+        s-tooltip="Pesquisar"
+        s-button-class="smc-btn-pesquisar-icotext-destaque"
+        s-type="submit"
+      ></smc-button>
+      <smc-button
+        s-label="Limpar"
+        s-tooltip="Limpar"
+        s-button-class="smc-btn-limparenviar-ico"
+        s-type="reset"
+        (s-click)="limparForm()"
+      ></smc-button>
+      <smc-button
+        (s-click)="novoAgendamento.emit()"
+        s-label="Novo agendamento"
+        s-tooltip="Novo agendamento"
+        s-button-class="smc-btn-novo-icotext"
+        [s-loading]="dataSourceCarregando$ | async"
+        [s-disabled]="desabilitarBotao || somenteLeitura || cargaHorariaCompleta || tokenSegurancaIncluir"
+      ></smc-button>
+    </div>
+  </form>
+</div>

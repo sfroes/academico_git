@@ -1,0 +1,97 @@
+﻿@model DivisaoMatrizCurricularComponenteListarDynamicModel
+
+@using (Smc.Accordion("GruposCurriculares").CssClass("smc-sga-componentes-na-matriz").Begin())
+{
+    using (Smc.AccordionSection("grupoCurricular" + Model.Seq).Title(Model.GrupoCurricularComponente).IsOpen(false).Begin())
+    {
+        foreach (var grupoCurricularComponente in Model.GruposCurricularesComponentes)
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+            {
+                using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+                {
+                    using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+                    {
+                        using (Smc.Div().CssClass("smc-display smc-listdetailed-conteudo-titulo smc-texto-bold").Size(SMCSize.Grid23_24).Begin())
+                        {
+                            <p>@grupoCurricularComponente.DescricaoComponente</p>
+                        }
+
+                        using (Smc.Div().Size(SMCSize.Grid1_24).Begin())
+                        {
+                            SMCButtonFluentConfiguration buttonNovaConfiguracao = Smc.Button(SMCButtonBehavior.Novo, "Incluir", new
+                            {
+                                SeqGrupoCurricularComponente = new SMCEncryptedLong(grupoCurricularComponente.Seq),
+                                SeqMatrizCurricular = new SMCEncryptedLong(Model.SeqMatrizCurricular),
+                                SeqCurriculoCursoOferta = new SMCEncryptedLong(Model.SeqCurriculoCursoOferta)
+                            })
+                            .Text(Smc.GetUIResource("Botao_Nova_Configuracao"))
+                            .Tooltip(Smc.GetUIResource("Botao_Nova_Configuracao"))
+                            .SecurityToken(UC_CUR_001_05_07.CONFIGURAR_COMPONENTE_MATRIZ);
+
+                            SMCButtonFluentConfiguration buttonVisualizarComponenteCurricular = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                            .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_CUSTOM)
+                            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarComponenteCurricular_Title"))
+                            .Text(Smc.GetUIResource("Botao_VisualizarComponenteCurricular"))
+                            .Tooltip(Smc.GetUIResource("Botao_VisualizarComponenteCurricular"))
+                            .SecurityToken(UC_CUR_002_03_01.VISUALIZAR_DETALHES_COMPONENTE_CURRICULAR)
+                            .Ajax(isPost: false)
+                            .Action("VerDetalhesPartial", "ComponenteCurricular", new { seq = new SMCEncryptedLong(grupoCurricularComponente.SeqComponenteCurricular) });
+
+                            SMCButtonSetFluentConfiguration buttonSet = (Smc.ButtonSet().Type(SMCButtonSetType.Secondary)
+                            .NumberOfButtonsToShow(0)
+                            .Size(SMCSize.Grid1_24));
+
+                            using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid1_24).CssClass("smc-sga-margem-superior").Begin())
+                            {
+                                buttonSet.AddButton(buttonNovaConfiguracao);
+                                buttonSet.AddButton(buttonVisualizarComponenteCurricular);
+
+                                @buttonSet
+                            }
+                        }
+                    }
+
+                    using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+                    {
+                        @(Smc.Grid("DivisoesMatrizCurricularComponente", new SMCPagerModel<DivisaoMatrizCurricularComponenteListarItemViewModel>(grupoCurricularComponente.DivisaoMatrizCurricularComponentes))
+                                    .FieldColumn(f => f.DescricaoConfiguracaoComponente, cssClass: "smc-size-md-18  smc-size-lg-18")
+                                    .FieldColumn(f => f.DescricaoDivisao, cssClass: "smc-size-md-6  smc-size-lg-6")
+                                    .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+                                            x => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new
+                                            {
+                                                Seq = new SMCEncryptedLong((x as DivisaoMatrizCurricularComponenteListarItemViewModel).Seq),
+                                                SeqGrupoCurricularComponente = new SMCEncryptedLong((x as DivisaoMatrizCurricularComponenteListarItemViewModel).SeqGrupoCurricularComponente),
+                                                SeqMatrizCurricular = new SMCEncryptedLong(Model.SeqMatrizCurricular),
+                                                SeqCurriculoCursoOferta = new SMCEncryptedLong(Model.SeqCurriculoCursoOferta)
+                                            })
+                                            .DisplayMode(SMCButtonDisplayMode.Icon)
+                                            //.Tooltip(Smc.GetUIResource("Botao_Editar_Configuracao"))
+                                            .SecurityToken(UC_CUR_001_05_07.CONFIGURAR_COMPONENTE_MATRIZ),
+
+                                            x => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new
+                                            {
+                                                Seq = new SMCEncryptedLong((x as DivisaoMatrizCurricularComponenteListarItemViewModel).Seq),
+                                                SeqMatrizCurricular = new SMCEncryptedLong(Model.SeqMatrizCurricular),
+                                                SeqCurriculoCursoOferta = new SMCEncryptedLong(Model.SeqCurriculoCursoOferta)
+                                            })
+                                            .DisplayMode(SMCButtonDisplayMode.Icon)
+                                            //.Tooltip(Smc.GetUIResource("Botao_Excluir_Configuracao"))
+                                            .Confirm(Smc.GetUIResource("Exclusao_Configuracao_Componente_Title"),
+                                            string.Format(Smc.GetUIResource("Exclusao_Configuracao_Componente_Confirmacao"), (x as DivisaoMatrizCurricularComponenteListarItemViewModel).DescricaoConfiguracaoComponente))
+                                            .SecurityToken(UC_CUR_001_05_07.CONFIGURAR_COMPONENTE_MATRIZ)
+                                    )
+                                    .HideNumberOfRowsPerPageSelector()
+                                    .HideNavigator()
+                                    .HidePager()
+                                    .HideRowNumber()
+                                    .HideRowsTotalizer()
+                                    .HideGridTitle()
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+

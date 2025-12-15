@@ -1,0 +1,83 @@
+﻿@using SMC.Academico.Common.Areas.ORT.Constants
+@using SMC.Academico.Common.Areas.ORT.Enums
+
+@model HomeAlunoViewModel
+
+
+@using (Smc.Div("divGridPublicacoes").CssClass("smc-sga-externo-agrupamento-grid").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    <h2>@Smc.GetUIResource("Label_Dados_Publicacoes")</h2>
+
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+    {
+        <p>@Html.Raw(string.Format(Smc.GetUIResource("Mensagem_Informativa_Intrucao_Bdp"), Model.Publicacoes.FirstOrDefault().NomeReduzidaInstituicao))</p>
+    }
+
+    if (Model != null && Model.Publicacoes != null && Model.Publicacoes.Count > 0)
+    {
+        @(Smc.Grid("gridPublicacoes" + Model.SeqCicloLetivo, new SMCPagerModel<HomePublicacaoBdpViewModel>(Model.Publicacoes))
+                                                                   .HideGridTitle()
+                                                                   .HideNavigator()
+                                                                   .HideRowNumber()
+                                                                   .FieldColumn(f => f.DescricaoTipoTrabalho, cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3")
+                                                                   .FieldColumn(f => f.DescricaoTituloTrabalho, cssClass: "smc-size-md-16 smc-size-xs-16 smc-size-sm-16 smc-size-lg-16")
+                                                                   .FieldColumn(f => f.UltimaSituacaoTrabalho, cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3")
+                                                                   .ButtonColumn(SMCButtonSetType.Secondary, 5, "", "", "", true,
+                                                                                   f => Smc.Button(SMCButtonBehavior.Alterar, "Edit", new { Seq = new SMCEncryptedLong((f as HomePublicacaoBdpViewModel).Seq), Area = "ORT" }, "PublicacaoBdp")
+                                                                                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                                                                                        .Hide((f as HomePublicacaoBdpViewModel).DesabilitarBotaoEditar)
+                                                                                        .SecurityToken(UC_ORT_003_01_01.MANTER_PUBLICACAO_TRABALHO_BIBLIOTECA)
+                                                                                        .Text(Smc.GetUIResource("Botao_AlterarPublicacaoBdp"))
+                                                                                        .Tooltip(Smc.GetUIResource("Botao_AlterarPublicacaoBdp_Tooltip")),
+
+                                                                                   f => Smc.Button(SMCButtonBehavior.Alterar, "Insert", new { Seq = new SMCEncryptedLong((f as HomePublicacaoBdpViewModel).Seq), Area = "ORT" }, "PublicacaoBdp")
+                                                                                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                                                                                        .Hide((f as HomePublicacaoBdpViewModel).DesabilitarBotaoNovo)
+                                                                                        .SecurityToken(UC_ORT_003_01_01.MANTER_PUBLICACAO_TRABALHO_BIBLIOTECA)
+                                                                                        .Text(Smc.GetUIResource("Botao_NovaPublicacaoBdp"))
+                                                                                        .Tooltip(Smc.GetUIResource("Botao_NovaPublicacaoBdp_Tooltip")),
+
+                                                                                   //f => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "Details", new { Seq = new SMCEncryptedLong((f as HomePublicacaoBdpViewModel).Seq), Area = "ORT" }, "PublicacaoBdp")
+                                                                                   //     .Ajax()
+                                                                                   //     .Attribute(SMCMvcConsts.MODAL_ID, "modalDetailsPublicacaoBdp")
+                                                                                   //     .CssClass("smc-btn-visualizar-ico")
+                                                                                   //     .Hide((f as HomePublicacaoBdpViewModel).DesabilitarBotaoVisualizar)
+                                                                                   //     .SecurityToken(UC_ORT_003_01_01.MANTER_PUBLICACAO_TRABALHO_BIBLIOTECA)
+                                                                                   //     .Text(Smc.GetUIResource("Botao_VisualizarPublicacaoBdp"))
+                                                                                   //     .Tooltip(Smc.GetUIResource("Botao_VisualizarPublicacaoBdp_Tooltip")),
+
+                                                                                   f => Smc.Button(SMCButtonBehavior.Visualizar, "Details", new { Seq = new SMCEncryptedLong((f as HomePublicacaoBdpViewModel).Seq), Area = "ORT" }, "PublicacaoBdp")
+                                                                                        //.Ajax()
+                                                                                        .Attribute(SMCMvcConsts.MODAL_ID, "modalDetailsPublicacaoBdp")
+                                                                                        .CssClass("smc-btn-visualizar-ico")
+                                                                                        .Hide((f as HomePublicacaoBdpViewModel).DesabilitarBotaoVisualizar)
+                                                                                        .SecurityToken(UC_ORT_003_01_01.MANTER_PUBLICACAO_TRABALHO_BIBLIOTECA)
+                                                                                        .Text(Smc.GetUIResource("Botao_VisualizarPublicacaoBdp"))
+                                                                                        .Tooltip(Smc.GetUIResource("Botao_VisualizarPublicacaoBdp_Tooltip")),
+
+                                                                                   f => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "ModalAutorizarPublicacao", new { Seq = new SMCEncryptedLong((f as HomePublicacaoBdpViewModel).Seq), Area = "ORT" }, "PublicacaoBdp")
+                                                                                        .Ajax()
+                                                                                        .Attribute(SMCMvcConsts.MODAL_ID, "modalAutorizacaoPublicacaoBdp")
+                                                                                        .CssClass("smc-btn-confirmar-ico")
+                                                                                        .Hide((f as HomePublicacaoBdpViewModel).DesabilitarBotaoAutorizar)
+                                                                                        .SecurityToken(UC_ORT_003_01_02.AUTORIZAR_PUBLICACAO_TRABALHO_BIBLIOTECA)
+                                                                                        .Text(Smc.GetUIResource("Botao_AutorizarPublicacaoBdp"))
+                                                                                        .Tooltip(Smc.GetUIResource("Botao_AutorizarPublicacaoBdp_Tooltip")),
+
+                                                                                  f => Smc.Button(SMCButtonBehavior.Imprimir, "ImprimirAutorizacao", new { Seq = new SMCEncryptedLong((f as HomePublicacaoBdpViewModel).Seq), SeqInstituicaoNivel = new SMCEncryptedLong((f as HomePublicacaoBdpViewModel).SeqInstituicaoNivel), Area = "ORT" }, "PublicacaoBdp")
+                                                                                        .Attribute("target", "_blank")
+                                                                                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                                                                                        .Hide((f as HomePublicacaoBdpViewModel).DesabilitarBotaoImprimir)
+                                                                                        .SecurityToken(UC_ORT_003_01_03.EXIBIR_RELATORIO_AUTORIZACAO_PUBLICACAO)
+                                                                                        .Text(Smc.GetUIResource("Botao_SegundaViaAutorizacaoPublicacaoBdp"))
+                                                                                        .Tooltip(Smc.GetUIResource("Botao_SegundaViaAutorizacaoPublicacaoBdp_Tooltip")))
+                                                                .Size(SMCSize.Grid24_24))
+    }
+    else
+    {
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+        {
+            <p>Não existem turmas disponíveis.</p>
+        }
+    }
+}

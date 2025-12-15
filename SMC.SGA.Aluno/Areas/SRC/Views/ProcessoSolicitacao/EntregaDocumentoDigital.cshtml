@@ -1,0 +1,75 @@
+﻿@model EntregaDocumentoDigitalPaginaViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_ENTREGA_DOCUMENTO_DIGITAL))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    @Smc.EditorFor(x => x.SeqSolicitacaoServicoAuxiliar);
+
+    using (Smc.Fieldset("fsDadosPessoais").Begin())
+    {
+        @Smc.DisplayFor(x => x.Cpf);
+        @Smc.DisplayFor(x => x.NomeAluno);
+
+        if (!string.IsNullOrEmpty(Model.NomeSocial))
+        {
+            @Smc.DisplayFor(x => x.NomeSocial);
+        }
+
+        @Smc.DisplayFor(x => x.Sexo);
+        @Smc.DisplayFor(x => x.DataNascimento);
+
+        if (!string.IsNullOrEmpty(Model.NumeroIdentidade))
+        {
+            @Smc.DisplayFor(x => x.NumeroIdentidade);
+        }
+
+        if (!string.IsNullOrEmpty(Model.OrgaoEmissorIdentidade))
+        {
+            @Smc.DisplayFor(x => x.OrgaoEmissorIdentidade);
+        }
+
+        if (!string.IsNullOrEmpty(Model.UfIdentidade))
+        {
+            @Smc.DisplayFor(x => x.UfIdentidade);
+        }
+
+        if (!string.IsNullOrEmpty(Model.NumeroPassaporte))
+        {
+            @Smc.DisplayFor(x => x.NumeroPassaporte);
+        }
+
+        if (!string.IsNullOrEmpty(Model.NomePaisEmissaoPassaporte))
+        {
+            @Smc.DisplayFor(x => x.NomePaisEmissaoPassaporte);
+        }
+
+        @Smc.DisplayFor(x => x.DescricaoNacionalidade);
+        @Smc.DisplayFor(x => x.Naturalidade);
+    }
+
+    if (Model.DocumentosConclusao != null && Model.DocumentosConclusao.Any())
+    {
+        foreach (var documentoConclusao in Model.DocumentosConclusao)
+        {
+            @Html.Partial("_EntregaDocumentoDigitalFormacao", documentoConclusao)
+        }
+    }
+
+    using (Smc.Fieldset("fsConfirmacaoDados").Begin())
+    {
+        @Smc.EditorFor(x => x.ConfirmacaoAluno);
+        @Smc.EditorFor(x => x.Observacao);
+        @Smc.MasterDetail(x => x.DocumentosUpload).MinimumItens(1);
+    }
+
+    @Html.Partial("_BotoesNavegacao", Model)
+}

@@ -1,0 +1,156 @@
+﻿[
+  {
+    "outputFile": "Content/Css/smc-recursos.css",
+    "inputFile": "Content/Css/smc-recursos.scss",
+    "minify": {
+      "enabled": true
+    },
+    "options": {
+      "relativeUrls": false
+    }
+  },
+  {
+    "outputFile": "SGA.Administrativo/Css/smc-recursos.css",
+    "inputFile": "SGA.Administrativo/Css/smc-recursos.scss",
+    "minify": {
+      "enabled": true
+    },
+    "options": {
+      "relativeUrls": false
+    }
+  },
+  {
+    "outputFile": "SGA.Administrativo/Css/smc-megamenu.css",
+    "inputFile": "SGA.Administrativo/Css/smc-megamenu.scss",
+    "minify": {
+      "enabled": true 
+    },
+    "options": {
+      "relativeUrls": false
+    }
+  },
+  {
+    "outputFile": "SGA.Mobile/Css/smc-recursos.css",
+    "inputFile": "SGA.Mobile/Css/smc-recursos.scss",
+    "minify": {
+      "enabled": true
+    },
+    "options": {
+      "relativeUrls": false
+    }
+  },
+  {
+    "outputFile": "SGA.Administrativo/Css/smc-login-sga.css",
+    "inputFile": "SGA.Administrativo/Css/smc-login-sga.scss"
+  },
+  {
+    "outputFile": "Content/Css/smc-login-sga.css",
+    "inputFile": "Content/Css/smc-login-sga.scss"
+  },
+  {
+    "outputFile": "SGA.Aluno/Css/smc-recursos.css",
+    "inputFile": "SGA.Aluno/Css/smc-recursos.scss",
+    "minify": {
+      "enabled": true
+    },
+    "options": {
+      "relativeUrls": false
+    }
+  },
+  {
+    "outputFile": "SGA.Aluno/Css/smc-login-sga.css",
+    "inputFile": "SGA.Aluno/Css/smc-login-sga.scss"
+  },
+  {
+    "outputFile": "Content/Css/smc-boleto-bancario.css",
+    "inputFile": "Content/Css/smc-boleto-bancario.scss",
+    "minify": {
+      "enabled": true
+    },
+    "options": {
+      "relativeUrls": false
+    }
+  },
+  {
+    "outputFile": "SGA.BDP/Css/smc-recursos.css",
+    "inputFile": "SGA.BDP/Css/smc-recursos.scss",
+    "minify": {
+      "enabled": true
+    },
+    "options": {
+      "relativeUrls": false
+    }
+  },
+  {
+    "outputFile": "SGA.Professor/Css/smc-recursos.css",
+    "inputFile": "SGA.Professor/Css/smc-recursos.scss",
+    "minify": {
+      "enabled": true
+    },
+    "options": {
+      "relativeUrls": false
+    }
+  },
+  {
+    "outputFile": "SGA.Professor/Css/smc-login-sga.css",
+    "inputFile": "SGA.Professor/Css/smc-login-sga.scss"
+  },
+  {
+    "outputFile": "Content/Css/smc-acessibilidade.css",
+    "inputFile": "Content/Css/smc-acessibilidade.scss"
+  },
+  {
+    "outputFile": "Content/Css/smc-impressao.css",
+    "inputFile": "Content/Css/smc-impressao.scss",
+    "minify": {
+      "enabled": true
+    },
+    "options": {
+      "relativeUrls": false
+    }
+  },
+  {
+    "outputFile": "SGA.Grad/Css/smc-recursos.css",
+    "inputFile": "SGA.Grad/Css/smc-recursos.scss"
+  },
+  {
+    "outputFile": "SGA.Grad/Css/smc-impressao.css",
+    "inputFile": "SGA.Grad/Css/smc-impressao.scss",
+    "minify": {
+      "enabled": true
+    },
+    "options": {
+      "relativeUrls": false
+    }
+  },
+  {
+    "outputFile": "SGA.Grad/Css/smc-login-sga.css",
+    "inputFile": "SGA.Grad/Css/smc-login-sga.scss",
+    "minify": {
+      "enabled": true
+    },
+    "options": {
+      "relativeUrls": false
+    }
+  },
+  {
+    "outputFile": "SGA.Grad/Css/smc-recursos-matricula.css",
+    "inputFile": "SGA.Grad/Css/smc-recursos-matricula.scss",
+    "minify": {
+      "enabled": true
+    },
+    "options": {
+      "relativeUrls": false
+    }
+  },
+  {
+    "outputFile": "ConsultaDiploma/Css/smc-recursos.css",
+    "inputFile": "ConsultaDiploma/Css/smc-recursos.scss",
+    "minify": {
+      "enabled": true
+    },
+    "options": {
+      "relativeUrls": false
+    }
+  }
+]

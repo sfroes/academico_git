@@ -1,0 +1,25 @@
+﻿@model SMC.SGA.Administrativo.Areas.ORT.Models.FichaCatalograficaViewModel
+
+@using (Smc.Header("FichaCatalografica", SMCHeaderType.Primary)
+                    .Item(prop => prop.Aluno)
+                    .Item(prop => prop.Titulo)
+                    .Begin()) { }
+
+@using (Smc.Div().Begin())
+{
+    @Smc.HiddenFor(m => m.SeqPublicacaoBdp)
+    @Smc.HiddenFor(m => m.Titulo)
+    @Smc.HiddenFor(m => m.Aluno)
+
+    @Smc.EditorFor(m => m.Cutter)
+    @Smc.EditorFor(m => m.CDU)
+    @Smc.EditorFor(m => m.SeqBibliotecario)
+    @Smc.EditorFor(m => m.PossuiIlustracao)
+}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.MasterDetail(m => m.Assunto).HideTitles().MinimumItens(1)
+}
+
+

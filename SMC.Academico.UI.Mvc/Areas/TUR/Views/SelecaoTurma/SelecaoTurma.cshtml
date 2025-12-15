@@ -1,0 +1,80 @@
+﻿@using SMC.Academico.Common.Areas.SRC.Constants;
+
+@model SMC.Academico.UI.Mvc.Areas.TUR.Models.SelecaoTurmaViewModel
+@using (Smc.Fieldset("divSelecaoTurmaOferta").LegendText(@Smc.GetUIResource("Fieldset_Modal_SelecaoTurma_Lista_Titulo") + Model.CicloLetivoDescricao).Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Fieldset("dataselector-filter-selecaoturma").CssClass(" smc-fieldset-filter smc-sga-filtro-turma").Begin())
+    {
+
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+        {
+            using (Smc.Div().CssClass(" smc-sga-ico-mensagem").Begin()) { }
+            <p>@Smc.GetUIResource("Informativo_Turma_Pesquisar")</p>
+            if (Model.ExibirPreRequisito == true)
+            {<p>@Smc.GetUIResource("Informativo_Turma_Existe_PreRequisito")</p>}
+    }
+
+    @Smc.EditorFor(m => m.TurmaDescricao).Size(SMCSize.Grid10_24).DisplayText(@Smc.GetUIResource("Fieldset_Modal_SelecaoTurma_Campo_Turma"))
+    @Smc.EditorFor(m => m.SomenteObrigatorio).CssClass("smc-sga-margin-top-20").Size(SMCSize.Grid10_24).DisplayText(@Smc.GetUIResource("Fieldset_Modal_SelecaoTurma_Campo_Curriculo"))
+    @Smc.EditorFor(m => m.CicloLetivoDescricao)
+    @Smc.EditorFor(m => m.SeqSolicitacaoMatricula)
+    @Smc.EditorFor(m => m.SeqIngressante)
+    @Smc.EditorFor(m => m.SeqProcesso)
+    @Smc.EditorFor(m => m.SeqProcessoEtapa)
+    @Smc.EditorFor(m => m.SeqPrograma)
+    @Smc.EditorFor(m => m.backUrl)
+    @Smc.EditorFor(m => m.ExibirFiltroCurriculo)
+
+    var buttonSet = Smc.ButtonSet();
+
+    buttonSet.AddButton(Smc.Button("data-dataselector-search", "PesquisarSelecaoTurmaDetalhes", "SelecaoTurma")
+                         .Ajax(isPost: true,
+                         updateTargetId: "#divModalSelecaoTurmaPesquisa",
+                         prepareDataToRequest: "smc.dataselector.prepareSearch('#dataselector-filter-selecaoturma')",
+                         fieldsContainerToRequest: "#divModalSelecaoTurmaPesquisa #dataselector-filter-selecaoturma #selectorSelectedValues")
+                         .CssClass("smc-btn-pesquisar-icotext-destaque Fabi")
+                         .Text(Smc.GetUIResource("Fieldset_Modal_SelecaoTurma_Botao_Pesquisar"))
+                         .Tooltip(Smc.GetUIResource("Fieldset_Modal_SelecaoTurma_Botao_Pesquisar")));
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Limpar)
+                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                        .Attribute("data-clear-container", "#dataselector-filter-selecaoturma")
+                        .Attribute("data-clear", "#divModalSelecaoTurmaPesquisa"));
+
+
+    @buttonSet;
+}
+
+using (Smc.Div("divModalSelecaoTurmaPesquisa").Attribute("data-id", "divModalSelecaoTurmaPesquisa").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    if (Model.TurmasMatrizOferta != null && Model.TurmasMatrizOferta.Count > 0)
+    {
+        <p class="smc-sga-titulo-legenda"> @Smc.GetUIResource("Titulo_Legenda_TurmaOfertaMatricula")</p>
+        @(Smc.Legend("ComponenteCurriculo", SMCOrientation.Horizontal).Items<SMC.Academico.Common.Areas.MAT.Enums.TurmaOfertaMatricula>())
+
+        var view2 = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.SELECAO_TURMA_OFERTA);
+        TempData["IndiceAtual"] = 0;
+        @(Smc.List("SelectedValues", Model.TurmasMatrizOferta).AllowSelect(s => s.Seq, x => !x.PreRequisito).HtmlTemplate(turma => Html.Partial(view2, turma)))
+    }
+    else
+    {
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+        {
+            <p>@Smc.GetUIResource("Label_Nenhum_Registro_Turma")</p>
+        }
+    }
+}
+}
+<script>
+    $("#dataselector-filter-selecaoturma").find(":input").each(function () {
+        $(this).bind('keypress.filter', function (e) {
+            if (e.keyCode == 13) {
+                if ($(e.target).closest('#dataselector-filter-selecaoturma').length > 0) {
+                    $(e.target).closest('#dataselector-filter-selecaoturma').find('[data-behavior="data-dataselector-search"]').click();
+                }
+                return false;
+            }
+        });
+    });
+    smc.core.setInputFocus($('[data-id="modalSelecionarTurma"]'));
+</script>

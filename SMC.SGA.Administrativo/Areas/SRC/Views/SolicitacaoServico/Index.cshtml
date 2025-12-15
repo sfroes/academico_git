@@ -1,0 +1,101 @@
+﻿@using SMC.Academico.Common.Areas.MAT.Constants
+@model SolicitacaoServicoFiltroViewModel
+
+@{ if (Request.QueryString.AllKeys.Select(a => a.ToLower()).Contains("seqprocesso"))
+    {
+        Session["_SGA_Retornar_SeqProcesso"] = true;
+    }
+    else if (Session["_SGA_Retornar_SeqProcesso"] != null)
+    {
+        Session.Remove("_SGA_Retornar_SeqProcesso");
+    }
+}
+
+@using (Smc.Form("filtroSolicitacaoServico", "ListarSolicitacoesServico", "SolicitacaoServico").Ajax("#divViewPadrao").Begin())
+{
+    using (Smc.Fieldset("filtros").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(m => m.NumeroProtocolo)
+        @Smc.EditorFor(m => m.SeqPessoa)
+        @Smc.EditorFor(m => m.SeqServico).AjaxLoad("BuscarServicosDataSourceReadOnlySession", "SolicitacaoServico", null)
+        @Smc.EditorFor(m => m.SeqsProcessos)
+        @Smc.EditorFor(m => m.SeqProcessoEtapa)
+        @Smc.EditorFor(m => m.CategoriaSituacao)
+        @Smc.EditorFor(m => m.SeqSituacaoEtapa)
+        @Smc.EditorFor(m => m.TipoFiltroCentralSolicitacao)
+        @Smc.EditorFor(m => m.SeqsEntidadesResponsaveis).AjaxLoad("BuscarEntidadesResponsaveisDataSourceReadOnlySession", "SolicitacaoServico", null)
+        @Smc.EditorFor(m => m.SeqUsuarioResponsavel).AjaxLoad("BuscarUsuariosResponsaveisDataSourceReadOnlySession", "SolicitacaoServico", null)
+        @Smc.EditorFor(m => m.DisponivelParaAtendimento)
+        @Smc.EditorFor(m => m.PossuiBloqueio)
+        @Smc.EditorFor(m => m.BloquearGrupoEscalonamento)
+        @Smc.EditorFor(m => m.BloquearSituacaoDocumentacao)
+        @Smc.EditorFor(m => m.PrimeiroAcessoPagina)
+
+        using (Smc.HidePanel("filtroAvancado").CssClass("smc-hidepanel-pesquisa-avancada smc-sga-solicitacao-servico").Begin())
+        {
+            @Smc.EditorFor(m => m.SeqGrupoEscalonamento)
+            @Smc.EditorFor(m => m.SituacaoDocumentacao)
+            @Smc.EditorFor(m => m.SeqBloqueio)
+
+            using (Smc.Fieldset("DataCriacao").Size(SMCSize.Grid8_24).Begin())
+            {
+                @Smc.EditorFor(m => m.DataInclusaoInicio)
+                @Smc.EditorFor(m => m.DataInclusaoFim)
+            }
+
+        }
+
+        @(Smc.ButtonSet().CssClass("smc-buttonset-com-hidepanel")
+                                                 .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                                                 .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+        )
+    }
+
+}
+
+@using (Smc.Div("divLegenda").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Html.Partial("_HeaderIndexList")
+}
+
+@using (Smc.Div("divViewPadrao").Attribute("data-id", "divViewPadrao").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Smc.ActionList("ListarSolicitacoesServico", Model, true)
+}
+
+@using (Smc.ModalWindow("modalConsultarBloqueiosEtapa")
+    .Form("frmConsultarBloqueiosEtapa")
+    .Size(SMCModalWindowSize.Largest)
+    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+    .Begin()) { }
+
+@using (Smc.ModalWindow("modalRegistrarDocumentos")
+    .Form("frmRegistrar", "SalvarRegistroDocumentos", "RegistroDocumentosItemRoute", new { area = string.Empty }, closeOnSubmit: true, config: x => x.Ajax())
+    .Size(SMCModalWindowSize.Largest)
+    .CssClass("smc-sga-modal-expandida")
+    .Button(SMCButtonBehavior.Salvar, "SalvarRegistroDocumentos", "RegistroDocumentosItemRoute", new { area = string.Empty }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+    .SecurityToken(UC_SRC_004_02_01.REGISTRAR_DOCUMENTOS)
+    .Begin()) { }
+
+@using (Smc.ModalWindow("modalCancelarSolicitacao")
+        .Form("frmCancelar", "SalvarCancelamentoSolicitacao", "SolicitacaoServico", new { area = "SRC" }, closeOnSubmit: true, config: x => x.Ajax())
+        .Size(SMCModalWindowSize.Large)
+        .Button(SMCButtonBehavior.Salvar, "SalvarCancelamentoSolicitacao", "SolicitacaoServico", new { area = string.Empty }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .SecurityToken(UC_SRC_004_01_08.CANCELAR_SOLICITACAO)
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalReabrirSolicitacao")
+        .Form("frmReabrir", "SalvarReaberturaSolicitacao", "SolicitacaoServico", new { area = "SRC" }, closeOnSubmit: true, config: x => x.Ajax())//, config: x => x.Ajax())
+        .Size(SMCModalWindowSize.Large)
+        .Button(SMCButtonBehavior.Salvar, "SalvarReaberturaSolicitacao", "SolicitacaoServico", new { area = string.Empty }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .SecurityToken(UC_SRC_004_01_09.REABRIR_SOLICITACAO)
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalVisualizarPlanoEstudo")
+        .Size(SMCModalWindowSize.Largest)
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .SecurityToken(UC_MAT_003_20_01.VISUALIZAR_ITENS_PLANO_ESTUDO)
+        .Begin()) { }

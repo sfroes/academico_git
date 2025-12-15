@@ -1,0 +1,50 @@
+﻿@model  SMC.Academico.UI.Mvc.Areas.SRC.Models.SolicitacaoServicoPaginaViewModelBase
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@{
+    var lista = Smc.List("listaBloqueios", Model.Bloqueios).HtmlTemplate(@<text>
+    @Html.Partial("_ExibicaoBloqueioItem", item)
+    </text>);
+}
+
+@if (ViewBag.ExibeEmModal != null && ((bool)ViewBag.ExibeEmModal))
+{
+    using (Smc.ModalWindow("modalBloqueios").Title(Smc.GetUIResource("Titulo_Modal_Bloqueios")).Size(SMCModalWindowSize.Large).AutoShow().Begin())
+    {
+        <p>@Smc.GetUIResource("Mensagem_Bloqueio")</p>
+        @lista
+    }
+}
+else
+{
+    @*@section MenuLateral {
+            @Html.Action("MenuPaginas", Model)
+        }*@
+
+    <p>@Smc.GetUIResource("Mensagem_Bloqueio")</p>
+    @lista
+
+    var buttonSet = Smc.ButtonSet().CssClass("smc-sga-matricula-linha-botoes").Size(SMCSize.Grid24_24);
+
+    buttonSet.AddButton(Smc.Button("cancelarProcesso")
+                        .Id("cancelarProcesso")
+                        .Type(SMCButtonType.Link)
+                        .Action("Index", "Chancela")
+                        .CssClass("smc-btn-cancelar-icotext"));
+
+    @buttonSet;
+}
+
+@using (Smc.ModalWindow("modalDesbloqueio")
+           .Form("formDesbloqueio", "SalvarPessoaAtuacaoBloqueioDesbloqueio", "PessoaAtuacaoBloqueioDesbloqueio", new { area = "PES", backUrl = Model.backUrl }, closeOnSubmit: true)
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }

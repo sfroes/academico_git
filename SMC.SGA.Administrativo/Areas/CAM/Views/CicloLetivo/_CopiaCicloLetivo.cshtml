@@ -1,0 +1,14 @@
+﻿@using (Smc.Div("divCopiaCicloLetivo").ConditionalDisplay("gridPadrao_Grid", true).Begin())
+{
+    @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_CUSTOM)
+            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Copia_Ciclo_Letivo_Titulo"))
+            .Ajax(fieldsContainerToRequest: "gridPadrao_Grid")
+            .Action("Index", "CicloLetivoCopia")
+            .Text(Smc.GetUIResource("Botao_Abrir_Modal_Copia_Ciclo_Letivo"))
+            .Tooltip(Smc.GetUIResource("Botao_Abrir_Modal_Copia_Ciclo_Letivo_Tooltip"))
+            .CssClass("smc-btn-copiar-icotext")
+            .SecurityToken(UC_CAM_002_01_05.COPIAR_CICLO_LETIVO)
+            .Type(SMCButtonType.InputButton))) 
+}

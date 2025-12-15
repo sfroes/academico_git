@@ -1,0 +1,16 @@
+﻿@using SMC.SGA.Administrativo.Areas.CNC.Models;
+
+@model DocumentoConclusaoStatusDiplomaViewModel
+
+@Smc.HiddenFor(m => m.ExigeTipoCancelamento)
+@Smc.EditorFor(m => m.MotivosCancelamento)
+@Smc.EditorFor(m => m.TiposCancelamento)
+@Smc.EditorFor(m => m.HabilitaCampoClassificacaoInvalidadeDocumento)
+
+@Smc.EditorFor(m => m.SeqDocumentoConclusao)
+@Smc.EditorFor(m => m.TokenAcao)
+@Smc.EditorFor(m => m.MotivoInvalidadeDocumento)
+@Smc.EditorFor(m => m.TipoCancelamento)
+@Smc.EditorFor(m => m.SeqClassificacaoInvalidadeDocumento)
+@Smc.DisplayFor(m => m.MensagemInformativa)
+@Smc.EditorFor(m => m.Observacao)

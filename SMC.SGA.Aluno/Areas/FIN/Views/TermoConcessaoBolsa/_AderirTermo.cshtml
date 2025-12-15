@@ -1,0 +1,22 @@
+﻿@using SMC.SGA.Aluno.Areas.FIN.Views.TermoConcessaoBolsa.App_LocalResources
+@model TermoConcessaoBolsaListaViewModel
+
+@using(Smc.Header("CabecalhoTermo", SMCHeaderType.Primary).Item(i => i.DescricaoTipoLancamento).Begin()) { }
+
+@using (Smc.Div("divAdesao").Begin())
+{
+    @Smc.HiddenFor(e => e.SeqTermoConcessaoBolsa)
+
+    <h3>@UIResource.MSG_Alerta_Leitura</h3>
+    
+    <div class="smc-size-xs-24">
+        <embed src="@Url.Action("VisualizarTermoConcessaoBolsa",new { SeqTermoConcessaoBolsa=Model.SeqTermoConcessaoBolsa })" type="application/pdf" class="smc-sga-loading-local-carregamento-arquivo" />
+    </div>
+
+    <div class="smc-size-xs-24">
+        @Smc.EditorFor(e => e.TermoAceite).CssClass("smc-sga-check-aceite").Attribute("id", "TermoAceite")
+    </div>
+}
+
+<script src="@Url.SMCBuscarRecursoGlobalAplicacao("Scripts/Areas/FIN/AdesaoTermo.js")" type="text/javascript"></script>
+

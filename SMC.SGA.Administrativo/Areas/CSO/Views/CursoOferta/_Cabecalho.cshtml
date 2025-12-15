@@ -1,0 +1,7 @@
+﻿@model CursoOfertaCabecalhoViewModel
+
+@using (Smc.Header("Curso", SMCHeaderType.Primary)
+                            .Item(prop => prop.Seq, sizeMD: SMCSize.Grid4_24)
+                            .Item(prop => prop.DescricaoNivelEnsino, sizeMD: SMCSize.Grid8_24)
+                            .Item(prop => prop.Nome, sizeMD: SMCSize.Grid12_24)
+                            .Begin()) { }

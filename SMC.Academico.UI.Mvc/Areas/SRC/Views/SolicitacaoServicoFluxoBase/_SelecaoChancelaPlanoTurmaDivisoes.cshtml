@@ -1,0 +1,62 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.SRC.Models.SelecaoChancelaPlanoTurmaDivisoesViewModel
+
+@{
+    bool AlgumPertenceAoPlano = (bool?)ViewBag.AlgumPertenceAoPlano ?? false;
+}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.EditorFor(m => m.SeqConfiguracaoComponente)
+            @Smc.EditorFor(m => m.Seq)
+            @Smc.HiddenFor(m => m.SituacaoPlanoEstudo)
+            @Smc.HiddenFor(x => x.Motivo)
+            @Smc.HiddenFor(x => x.PertencePlanoEstudo)
+            @Smc.HiddenFor(x => x.SeqDivisaoTurma)
+            @Smc.HiddenFor(x => x.SeqDivisaoComponente)
+            using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24).CssClass("smc-sga-legenda-agrupamento smc-sga-legenda-agrupamento-chancela-situacao-plano").Begin())
+            {
+                if (AlgumPertenceAoPlano)
+                {
+                    @Smc.LegendItem(m => m.SituacaoPlanoEstudo)
+                }
+            }
+
+            @Smc.DisplayFor(m => m.DivisaoTurmaDescricao).Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24).HideLabel()
+            @Smc.DisplayFor(m => m.SeqDivisaoTurma).Size(SMCSize.Grid7_24, SMCSize.Grid7_24, SMCSize.Grid7_24, SMCSize.Grid7_24).HideLabel()
+
+            @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).Size(SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24).CssClass("smc-sga-alinhamento-botao-secundario")
+                        .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                    .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDivisaoTurma")
+                                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Divisao_Turma"))
+                                    .Ajax(isPost: false)
+                                    .SecurityToken(SMC.Academico.Common.Areas.TUR.Constants.UC_TUR_001_06_01.VISUALIZAR_DETALHES_DIVISAO_TURMA)
+                                    .CssClass("smc-btn-visualizar-icotext").Tooltip(Smc.GetUIResource("Tooltip_Divisao_Turma"))
+                                    .Text(Smc.GetUIResource("Botao_Divisao_Turma"))
+                                    .Action("VisualizarDivisaoTurmaDetalhes", "DetalhesDivisaoTurmaRoute", new { seqDivisaoTurma = Model.SeqDivisaoTurma, seqPessoaAtuacao = Model.SeqPessoaAtuacao, area = string.Empty }))
+            )
+
+            var exibirNaoAlterado = ((bool)ViewBag.ChancelaFinalizada) || Model.SituacaoPlanoEstudo == SMC.Academico.Common.Areas.MAT.Enums.MatriculaPertencePlanoEstudo.NaoAlterado;
+            if (exibirNaoAlterado)
+            {
+                using (Smc.Div().Size(SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24).Begin())
+                {
+                    @Smc.HiddenFor(x => x.SeqSituacaoItemMatricula)
+
+                }
+            }
+            else if (Model.SituacaoPlanoEstudo == SMC.Academico.Common.Areas.MAT.Enums.MatriculaPertencePlanoEstudo.Exclusao && Model.Motivo == SMC.Academico.Common.Areas.MAT.Enums.MotivoSituacaoMatricula.PorTrocaDeGrupo)
+            {
+                <span class="sga-item-matricula-cancelado-troca-grupo">Cancelado por troca de grupo</span>
+                @Smc.HiddenFor(x => x.SeqSituacaoItemMatricula)
+            }
+            else
+            {
+                @Smc.EditorFor(x => x.SeqSituacaoItemMatricula).HideLabel().Size(SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24).CssClass("smc-sga-select-situacao")
+            }
+        }
+    }
+}

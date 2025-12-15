@@ -1,0 +1,82 @@
+<div class="smc-lookup smc-lookup-unico">
+  <div class="smc-lookup-corpo">
+    <div class="smc-lookup-corpo-acoes">
+      <div class="smc-lookup-input-width">
+        <div class="po-field-container-title" [class.smc-lookup-required]="required && !readonly">
+          <span class="po-field-title">{{ label }}</span>
+        </div>
+        <div class="po-field-container-content">
+          <input
+            class="smc-horizontal-align-left ui-autocomplete-input"
+            placeholder="Pesquisar..."
+            type="text"
+            [required]="required"
+            autocomplete="off"
+            [readOnly]="readonly"
+            [value]="descricaoFormatada"
+          />
+          <smc-button
+            class="smc-lookup-pesquisar"
+            s-label="Busca detalhada"
+                      s-tooltip="Busca detalhada"
+            s-button-class="smc-btn-custom smc-btn-lookup-open-modal
+            smc-lookup-open-command"
+            (s-click)="abrirArvore()"
+          ></smc-button>
+          <smc-button
+            class="smc-lookup-corpo-limpar"
+            s-label="Limpar"
+                      s-tooltip="Limpar"
+            s-button-class="smc-btn-custom smc-btn-limpar-ico"
+            (s-click)="clearSelection()"
+          ></smc-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<smc-modal s-size="xl" s-title="Local">
+  <div s-modal-body>
+    <div class="smc-treeview">
+      <div class="smc-treeview-painel-busca">
+        <form [formGroup]="formFiltro" (ngSubmit)="filtrar()">
+          <input
+            class="smc-treeview-campo-busca"
+            placeholder="Pesquisar:"
+            type="text"
+            autocomplete="off"
+            formControlName="label"
+          />
+          <smc-button
+            class="smc-lookup-pesquisar"
+            s-label="Busca detalhada"
+            s-button-class="smc-btn-custom smc-treeview-botao-buscar"
+            s-type="submit"
+          ></smc-button>
+          <smc-button
+            class="smc-lookup-corpo-limpar"
+            s-label="Limpar"
+            s-button-class="smc-btn-custom smc-treeview-botao-limpar"
+            (s-click)="limpar()"
+          ></smc-button>
+        </form>
+      </div>
+      <smc-tree-view
+        s-selectable-single-item="true"
+        s-select-sheet-only="false"
+        [s-items]="dataSourceLocal"
+        (s-selected)="onSelected($event)"
+        (s-unselected)="onUnselected()"
+      >
+      </smc-tree-view>
+    </div>
+  </div>
+  <div s-modal-footer>
+    <smc-button
+      s-button-class="smc-btn-confirmar-icotext-destaque"
+      s-label="Selecionar"
+      (s-click)="selecionarLocal()"
+    ></smc-button>
+    <smc-button s-button-class="smc-btn-fechar-icotext" s-label="Fechar" (s-click)="fecharArvore()"></smc-button>
+  </div>
+</smc-modal>

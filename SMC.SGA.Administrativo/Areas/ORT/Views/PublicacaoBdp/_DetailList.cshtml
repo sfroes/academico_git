@@ -1,0 +1,93 @@
+﻿@model PublicacaoBdpListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid23_24, SMCSize.Grid23_24, SMCSize.Grid23_24, SMCSize.Grid23_24).CssClass("smc-listdetailed-conteudo").Begin())
+    {
+        @Smc.LegendItem(m => m.Legenda)
+        @Smc.DisplayFor(m => m.TipoTrabalho)
+        @Smc.DisplayFor(m => m.DataDefesa)
+        @Smc.DisplayFor(m => m.Titulo)
+        @Smc.DisplayFor(m => m.Autores).CssClass("smc-display-list-line")
+    }
+
+    using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24).CssClass("smc-buttonset-vertical-secundario").Begin())
+    {
+        SMCButtonFluentConfiguration btnEdit = null;
+        if (Model.Situacao == SMC.Academico.Common.Areas.ORT.Enums.SituacaoTrabalhoAcademico.LiberadaConsulta)
+        {
+            btnEdit = Smc.Button(SMCButtonBehavior.Visualizar)
+                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                        .Action("Editar", "PublicacaoBdp", new { seq = SMCDESCrypto.EncryptNumberForURL(Model.Seq) })
+                        .Enabled(Model.DisponivelEdicao)
+                        .ButtonInstructions((!Model.DisponivelEdicao) ? Smc.GetUIResource("Label_Liberado") : null);
+        }
+        else
+        {
+            btnEdit = Smc.Button(SMCButtonBehavior.Alterar)
+                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                        .Action("Editar", "PublicacaoBdp", new { seq = SMCDESCrypto.EncryptNumberForURL(Model.Seq) })
+                        .Enabled(Model.DisponivelEdicao)
+                        .ButtonInstructions((!Model.DisponivelEdicao) ? Smc.GetUIResource("Label_Liberado") : null);
+        }
+
+        SMCButtonFluentConfiguration btnFichaCatalografica = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, "modalImpressaoFicha")
+            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_EmissaoFichaCatalografica"))
+            .Ajax()
+            .Attribute("target", "_blank")
+            .Text(Smc.GetUIResource("Botao_ImprimirFichaCatalografica"))
+            .Tooltip(Smc.GetUIResource("Botao_ParametrosFichaCatalografica_Tooltip"))
+            .Action("PrepararFichaCatalografica", "PublicacaoBdp", new { seqPublicacaoBdp = SMCDESCrypto.EncryptNumberForURL(Model.SeqPublicacaoBdp) });
+
+        SMCButtonFluentConfiguration btnImprimir = Smc.Button(SMCButtonBehavior.Imprimir)
+            .DisplayMode(SMCButtonDisplayMode.Text)
+            .Text("Emitir termo de autorização de publicação")
+            .Attribute("target", "_blank")
+            .Action("ImprimirAutorizacao", "PublicacaoBdp", new { seq = SMCDESCrypto.EncryptNumberForURL(Model.SeqPublicacaoBdp), seqInstituicaoNivel = SMCDESCrypto.EncryptNumberForURL(Model.SeqInstituicaoNivel) })
+            .Tooltip(Smc.GetUIResource("Botao_ImprimirTermoAutorizacao_Tooltip"))
+            .Hide(!Model.DisponivelImpressaoAutorizacao);
+
+        @(Smc.ButtonSet()
+            .Type(SMCButtonSetType.Secondary)
+            .Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)
+            .CssClass("smc-sga-externo-botoes-grid")
+            .AddButton(btnEdit)
+            .AddButton(btnFichaCatalografica)
+            .AddButton(btnImprimir)
+            .NumberOfButtonsToShow(1))
+
+    }
+}
+
+@using (Smc.ModalWindow("modalImpressaoFicha")
+           .Form("formImprimirFichaCatalografica", "ProcessarFichaCatalografica", "PublicacaoBdpReport", Model, closeOnSubmit: true)
+           .Button(SMCButtonBehavior.Relatorio, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                    .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true)
+                    .Attribute("formtarget", "_blank").Highlight().CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+                    .Text(Smc.GetUIResource("Botao_ImprimirFichaCatalografica")))
+           .Button(SMCButtonBehavior.Desfazer, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text("Limpar"))
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Size(SMCModalWindowSize.Medium)
+           .Begin())
+{
+}
+
+@*@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-body-grid").Begin())
+       {
+
+           @Smc.LegendItem(m => m.Legenda)
+           @Smc.DisplayFor(m => m.TipoTrabalho).HideLabel()
+           @Smc.DisplayFor(m => m.Titulo).HideLabel()
+           @Smc.DisplayFor(m => m.Autores).HideLabel().CssClass("smc-display-list-line")
+
+           using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24).CssClass("smc-buttonset-vertical-secundario").Begin())
+           {
+               @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)
+                                               .AddButton(Smc.Button(SMCButtonBehavior.Alterar).DisplayMode(SMCButtonDisplayMode.Icon)
+                                                                                               .Action("Editar", "PublicacaoBdp", new { seq = SMCDESCrypto.EncryptNumberForURL(Model.Seq) })
+                                                                                               .Enabled(Model.DisponivelEdicao)
+                                                                                               .ButtonInstructions((!Model.DisponivelEdicao) ? Smc.GetUIResource("Label_Liberado") : null))
+               )
+           }
+    }*@

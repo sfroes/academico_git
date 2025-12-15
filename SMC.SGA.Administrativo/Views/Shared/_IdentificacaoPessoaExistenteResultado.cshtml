@@ -1,0 +1,26 @@
+﻿@model PessoaAtuacaoViewModel
+
+@if (Model.PessoaLocalizadaComMesmoDocumento)
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+    {
+        using (Smc.Div().CssClass(" smc-sga-ico-mensagem").Begin())
+        {
+        }
+        <p>@Smc.GetUIResource("Label_Confirmacao_Pessoa_Existente")</p>
+    }
+}
+
+@(Smc.Grid("CadastrarNovaPessoa", Model.PessoasExistentes)
+        .AllowSelect(m => m.Seq, singleSelect: true)
+        .AutoGenerateColumns()
+        .HideNavigator()
+        .HideGridTitle()
+)
+
+@if (!Model.UtilizarMesmaPessoa.GetValueOrDefault())
+{
+    @Smc.RadioButton("CadastrarNovaPessoa", "True", Model.CadastrarNovaPessoa).DisplayText(Smc.GetUIResource("Label_CadastrarNovaPessoa")).CssClass("smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24 smc-sga-destaque-label")
+}
+
+@Smc.HiddenFor(m => m.UtilizarMesmaPessoa)

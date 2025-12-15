@@ -1,0 +1,15 @@
+﻿@using SMC.SGA.Administrativo.Areas.FIN.Models
+@model PessoaAtuacaoBeneficioExcluirViewModel
+
+@{
+    Layout = null;
+}
+
+@string.Format(Smc.GetUIResource("Listar_Excluir_Confirmacao"), Model.DescricaoBeneficio, Model.Nome)
+
+<br />
+<br />
+@Smc.EditorFor(e => e.SeqPessoaAtuacao)
+@Smc.EditorFor(e => e.SeqPessoaAtuacaoBeneficio)
+@Smc.EditorFor(e => e.Justificativa)
+

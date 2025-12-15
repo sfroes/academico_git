@@ -1,0 +1,85 @@
+﻿@import "../../../Content/Css/identidade/smc-identidade-visual";
+// ----- Cores do Sistema ----- //
+// Base
+$smc-branco: #ffffff!default;
+$smc-cinza: #7a7a7a!default; // Cinza adotado como padrão para textos gerais na aplicação (por isso, separado da escala de cinza).
+$smc-preto: #333333!default;
+$smc-vermelho: #fe4218!default;
+$smc-verde: #146504!default;
+$smc-cor-erro-texto: #b94a48!default;
+$smc-cor-erro-background: #ffe1e0!default;
+
+// Escala de Cinza
+
+$smc-cinza-01: #fcfcfc!default;
+$smc-cinza-02: #f7f8f9!default;
+$smc-cinza-03: #ededed!default;
+$smc-cinza-04: #dcdcdc!default;
+$smc-cinza-05: #cccccc!default;
+$smc-cinza-06: #b3b3b3!default;
+$smc-cinza-07: #999999!default;
+$smc-cinza-08: #626262!default;
+$smc-cinza-09: #505050!default;
+$smc-cinza-10: #444444!default;
+
+// Box legenda descritiva
+$smc-legend-box-float: none!default;
+$smc-legend-box-margin: 0 0 10px 0 !default;
+$smc-legend-box-width: 98%!default;
+$smc-legend-box-border: none!default;
+$smc-legend-box-background-color: transparent !default;
+$smc-legend-box-padding: 6px 10px 10px 12px !default;
+$smc-legend-box-ul-padding: 0 !default;
+$smc-legend-box-ul-margin: auto !default;
+$smc-legend-content-title-font-size: 16px!default;
+$smc-legend-content-title-font-weight: 600!default;
+
+//Cor de barra de login em faixa SM (responsivo)
+$smc-smc-login-sm-background: $smc-cinza-03!default;
+
+// lista detalhada com diferenciação de cores para header
+$smc-listdetailed-header-conteudo-background: $smc-cinza-03 !default;
+$smc-listdetailed-header-conteudo-border-bottom: solid 3px $smc-branco!default;
+
+$smc-button-instruction-margin-top: -32px!default;
+$smc-btn-configurar-topo-pagina-z-index: 5;
+
+// ********** ----- HEADER ----- ********** //
+$smc-header-botao-itens-width: 95%!default;
+
+// ********** ----- HIDE PANEL ----- ********** //
+// Ícones
+//$smc-hidepanel-ico-seta-direita: $smc-caminho-compartilhado + "smc-ico-seta-cinza-direita-min.png"!default;
+//$smc-hidepanel-ico-seta-baixo: $smc-caminho-compartilhado + "smc-ico-seta-cinza-baixo-min.png"!default;
+// Configurações Gerais
+$smc-hidepanel-background-position: 5px center!default;
+$smc-hidepanel-padding: 0 0 0 15px!default;
+$smc-hidepanel-padding: 10px 20px!default;
+$smc-hidepanel-margin: -1px 0 5px 0!default;
+
+// Botoes
+$smc-hidepanel-button-background: transparent url() no-repeat $smc-hidepanel-background-position !default;
+$smc-hidepanel-button-border: none!default;
+$smc-hidepanel-panel-border: none!default;
+
+$smc-hidepanel-button-expanded-border-radius: 0!default;
+$smc-hidepanel-border-radius: 0!default;
+$smc-hidepanel-li-before-content: ""!default;
+$smc-hidepanel-li-before-width: 5px!default;
+$smc-hidepanel-li-before-height: 5px!default;
+$smc-hidepanel-li-before-margin: 0 3px 0 5px!default;
+$smc-hidepanel-li-before-font-weight: bold!default;
+$smc-hidepanel-panel-background: $smc-cinza-01!default;
+
+// Hidepanel específico SGA
+$smc-hidepanel-button-before-color: #b2c083;
+$smc-hidepanel-panel-background-color: #eff3e3;
+$smc-hidepanel-panel-label-color: #4d5534;
+
+// Hidepanel de Pesquisa Avançada
+$smc-hidepanel-pesquisa-avancada-margin: 170px 0 0 0!default;
+$smc-hidepanel-pesquisa-avancada-width: 66.5%!default;
+$smc-hidepanel-pesquisa-avancada-z-index: 2!default;
+$smc-hidepanel-pesquisa-avancada-botao-margin: -54px 1px 0 0!default;
+$smc-hidepanel-pesquisa-avancada-painel-width: 100%!default;
+$smc-hidepanel-pesquisa-avancada-painel-fieldset-background: transparent!default;

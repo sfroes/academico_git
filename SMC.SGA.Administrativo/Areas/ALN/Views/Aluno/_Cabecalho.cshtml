@@ -1,0 +1,35 @@
+﻿@model  AlunoCabecalhoViewModel
+
+@{
+    var header = Smc.Header("HeaderAluno", SMCHeaderType.Primary)
+        .Item(p => p.NumeroRegistroAcademico, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid3_24)
+        .Item(p => p.Nome, sizeMD: SMCSize.Grid11_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid13_24)
+        .Item(p => p.DescricaoSituacaoMatricula, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24);
+    if (Model.Falecido)
+    {
+        header.Item(p => p.Falecido, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid2_24, sizeLG: SMCSize.Grid3_24);
+    }
+
+    header.Item(p => p.NomeEntidadeResponsavel, cssClass: "smc-clear", sizeMD: SMCSize.Grid14_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid16_24, sizeLG: SMCSize.Grid16_24)
+        .Item(p => p.DescricaoNivelEsino, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24)
+        .Item(p => p.TipoVinculoAluno, cssClass: "smc-clear", sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid3_24)
+        .Item(p => p.DescricaoFormaIngresso, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid5_24, sizeLG: SMCSize.Grid4_24)
+        .Item(p => p.DescricaoVinculo, sizeMD: SMCSize.Grid17_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid16_24, sizeLG: SMCSize.Grid17_24)
+        .Item(p => p.CodigoAlunoMigracao, cssClass: "smc-clear", sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24)
+        .Item(p => p.DataAdmissao, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24)
+        .Item(p => p.DataPrevisaoConclusao, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24)
+        .Item(p => p.DataLimiteConclusao, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24);
+
+    if (Model.ExigeParceriaIntercambioIngresso || Model.ConcedeFormacao)
+    {
+        header.Item(p => p.DescricaoInstituicaoExterna, sizeMD: SMCSize.Grid11_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid9_24, sizeLG: SMCSize.Grid13_24);
+    }
+
+    if (Model.ExigeParceriaIntercambioIngresso && Model.ExigePeriodoIntercambioTermo)
+    {
+        header.Item(i => i.DataInicioTermoIntercambio, sizeMD: SMCSize.Grid7_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid7_24, sizeLG: SMCSize.Grid6_24);
+        header.Item(i => i.DataFimTermoIntercambio, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid5_24);
+    }
+}
+
+@using (header.Begin()) { }

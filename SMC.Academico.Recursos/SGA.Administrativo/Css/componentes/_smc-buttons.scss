@@ -1,0 +1,176 @@
+﻿// BUTTONS
+.smc-button > [disabled="disabled"] {
+    opacity: 1;
+}
+// Ajuste de tamanho de botão com button instruction dentro de buttonset secundário (grids). Ver em:
+// http://localhost/Dev/SGA.Administrativo/MAT/Chancela
+.smc-buttonset-horizontal-secundario {
+    & > .smc-button {
+        & > .smc-btn-custom {
+            height: auto!important;
+        }
+    }
+
+    .dropdown{
+        display:inline;
+    }
+    .smc-btn-custom, .smc-btn-excluir-ico {
+        //font-size: 11px; comentado por interferir diretamente nos demais botões de Grid. Verificar solução
+        padding: 3px 7px 5px 5px !important;
+        height: 25px !important;
+        //border-color: $smc-cinza-04 !important; comentado por interferir diretamente nos demais botões de Grid. Verificar solução
+        i {
+            //  height: 10px;
+            margin-top: -2px !important;
+            //  margin-right: 5px;
+            //  font-size: 12px;
+          //  &:before {
+                //   font-size: 13px;
+           // }
+        }
+
+      //  &:hover {
+      //      border-color: $smc-cor-principal-04 !important;
+      //      color: $smc-cor-principal-04 !important;
+      //      background-color: $smc-branco !important;
+      //  }
+    }
+}
+
+.smc-sga-alinhamento-botao-secundario {
+ //   float: left;
+    width: auto;
+    clear: none;
+ //   margin-top:-5px;
+ //
+ //   .smc-btn-custom {
+ //       font-size: 11px;
+ //       padding: 3px 7px 5px 7px;
+ //       height: 25px !important;
+ //       border-color: $smc-cinza-04 !important;
+ //
+ //       i {
+ //           height: 10px;
+ //           margin-top: -5px !important;
+ //           margin-right: 5px;
+ //           font-size: 12px;
+ //
+ //           &:before {
+ //               font-size: 13px;
+ //           }
+ //       }
+ //
+ //       &:hover {
+ //           border-color: $smc-cor-principal-04 !important;
+ //           color: $smc-cor-principal-04 !important;
+ //           background-color: $smc-branco !important;
+ //       }
+ //   }
+}
+
+.smc-btn-gerar-relatorio-icotext-destaque {
+    margin: 0 2px;
+}
+
+.smc-buttonset-horizontal-secundario {
+    .smc-btn-disabled {
+        .smc-btn-cancelar-ico + .smc-instrucoes-preenchimento-container,
+        .smc-btn-excluir-ico + .smc-instrucoes-preenchimento-container,
+        .smc-btn-alterar-ico + .smc-instrucoes-preenchimento-container {
+            .smc-instrucoes-preenchimento-icone {
+                font-size: 14px;
+                margin-left: 8px;
+                margin-top: 4px;
+                line-height: 15px;
+            }
+
+            .smc-instrucoes-preenchimento-icone::before {
+                width: 15px;
+                height: 14px;
+            }
+        }
+    }
+}
+
+.smc-btn-download-ico {
+    font-size: 0 !important;
+    width: 30px !important;
+    height: 28px !important;
+}
+
+@media (min-width:0px) and (max-width:$smc-size-screen-xs-max) {
+    .smc-sga-alinhamento-botao-secundario {
+        float: right;
+        margin-right: 10px;
+    }
+    .smc-buttonset-vertical-secundario {
+
+        & > .smc-button .smc-btn-alterar-ico, .smc-button .smc-btn-excluir-ico {
+            padding: 0 0 3px 0;
+        }
+
+        & > .dropdown {
+            & > .smc-dropdown-btn-toggle-config {
+                padding: 0 0 3px 0;
+            }
+        }
+    }
+    .smc-listdetailed-item {
+        .smc-buttonset-vertical-secundario {
+            margin: 10px 2px 0 2px;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+
+}
+
+
+.smc-buttonset-inst-nivel-ensino {
+    & > div {
+        & > div {
+            & > a.smc-btn-custom {
+                padding-bottom: 0 !important;
+            }
+        }
+    }
+}
+
+.smc-btn-enviar-assinatura-icotext-destaque {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none !important;
+    font-size: 12px;
+    margin: 1px 2px;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    height: 31px;
+    padding: 2px 8px 0 8px;
+    background-color: #074458;
+    border: solid 1px #074458;
+    color: $smc-branco;
+
+    &:hover {
+        background-color: #bad6da;
+        border: solid 1px #074458;
+        color: #074458;
+    }
+
+    i {
+        &:before {
+            content: "\f1d9" !important;
+            font-family: FontAwesome !important;
+            margin-right: 10px;
+        }
+    }
+}
+
+.smc-sga-buttonset-assinatura {
+    display: flex;
+    align-items: center;
+
+    button {
+        display: flex;
+        align-items: center;
+    }
+}

@@ -1,0 +1,23 @@
+﻿@model TurmaOrientacaoDynamicModel
+
+@Smc.HiddenFor(h => h.Seq)
+@Smc.HiddenFor(h => h.SeqNivelEnsino)
+@Smc.HiddenFor(h => h.SeqOrientacao)
+@Smc.HiddenFor(h => h.SeqDivisaoTurma)
+@Smc.HiddenFor(h => h.SeqTurma)
+@Smc.HiddenFor(h => h.ExisteHistoricoEscolarAluno)
+
+@using (Smc.Header("Turma", SMCHeaderType.Primary)
+        .Item(prop => prop.RaNome, sizeMD: SMCSize.Grid24_24)
+
+        .Begin())
+{ }
+
+@*@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+    {*@
+
+
+@(Smc.MasterDetail(m => m.Colaboradores))
+
+@*}*@
+

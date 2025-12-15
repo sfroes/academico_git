@@ -1,0 +1,71 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.SRC.Models;
+@using SMC.Academico.UI.Mvc.Areas.SRC.Views.SolicitacaoServicoFluxoBase.App_LocalResources;
+
+@model DadosModalSolicitacaoServicoViewModel
+
+@if (Model.ExibirInformacao == true)
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+    {
+        <p class="smc-sga-msg-conteudo-botao">@Smc.GetUIResource("Modal_Solicitacao_Administrativo_Informativo")</p>
+    }
+}
+
+@using (Smc.Fieldset("fsSolicitacao").LegendText(Smc.GetUIResource("Modal_Solicitacao_Fieldset_Solicitacao_Servico")).Begin())
+{
+    @Smc.DisplayFor(x => x.Solicitacao.NumeroProtocolo).Size(SMCSize.Grid4_24).CssClass("smc-sga-destaque-texto");
+    @Smc.DisplayFor(x => x.Solicitacao.Processo).Size(SMCSize.Grid14_24);
+    @Smc.DisplayFor(x => x.Solicitacao.SituacaoDocumentacao).Size(SMCSize.Grid6_24);
+}
+
+@using (Smc.Fieldset("fsSituacaoAtual").LegendText(Smc.GetUIResource("Modal_Solicitacao_Fieldset_Situacao")).Begin())
+{
+    @Smc.DisplayFor(x => x.SolicitacaoAtual.Descricao).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid8_24);
+    @Smc.DisplayFor(x => x.SolicitacaoAtual.DataSituacao).Size(SMCSize.Grid4_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid4_24);
+    @Smc.DisplayFor(x => x.SolicitacaoAtual.UsuarioResponsavel).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid12_24);
+    @Smc.DisplayFor(x => x.SolicitacaoAtual.Observacao).Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24);
+
+}
+
+@using (Smc.Accordion("SolicitacoesOriginalAtualizada").CssClass("smc-sga-accordion-secundario").Begin())
+{
+    var descricaoOriginalPreenchida = !string.IsNullOrEmpty(Model.SolicitacaoOriginal.DescricaoSolicitacao);
+    var descricaoAtualizadaPreenchida = !string.IsNullOrEmpty(Model.SolicitacaoAtualizada.DescricaoSolicitacao);
+
+    using (Smc.AccordionSection("SolicitacaoOriginal").IsOpen(descricaoOriginalPreenchida && !descricaoAtualizadaPreenchida).Size(SMCSize.Grid24_24).Begin())
+    {
+
+        using (Smc.Fieldset("DadosCriacao").CssClass("smc-sga-confirmacao-dados smc-sga-fieldset-secundario").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(x => x.SolicitacaoOriginal.CriadoPor).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+            @Smc.DisplayFor(x => x.SolicitacaoOriginal.DataCriacao).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+        }
+
+        if (!string.IsNullOrEmpty(Model.SolicitacaoOriginal.Justificativa) || !string.IsNullOrEmpty(Model.SolicitacaoOriginal.JustificativaComplementar))
+        {
+            using (Smc.Fieldset("Justificativa").CssClass("smc-sga-confirmacao-dados smc-sga-fieldset-secundario").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(x => x.SolicitacaoOriginal.Justificativa).HideLabel()
+                @Smc.DisplayFor(x => x.SolicitacaoOriginal.JustificativaComplementar).HideLabel()
+            }
+        }
+
+        using (Smc.Fieldset("InformacoesComplementaresOriginal").CssClass("smc-sga-confirmacao-dados smc-sga-fieldset-secundario").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(x => x.SolicitacaoOriginal.DescricaoSolicitacao).HideLabel()
+        }
+    }
+
+    using (Smc.AccordionSection("SolicitacaoAtualizada").Size(SMCSize.Grid24_24).IsOpen(descricaoOriginalPreenchida && descricaoAtualizadaPreenchida).Begin())
+    {
+        @Smc.DisplayFor(x => x.SolicitacaoAtualizada.AtualizadoPor).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+        @Smc.DisplayFor(x => x.SolicitacaoAtualizada.DataAtualizacao).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+
+        using (Smc.Fieldset("InformacoesComplementaresAtualizada").CssClass("smc-sga-confirmacao-dados smc-sga-fieldset-secundario").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(x => x.SolicitacaoAtualizada.DescricaoSolicitacao).HideLabel()
+        }
+    }
+
+}
+

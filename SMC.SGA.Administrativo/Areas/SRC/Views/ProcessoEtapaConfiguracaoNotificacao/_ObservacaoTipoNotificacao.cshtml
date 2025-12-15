@@ -1,0 +1,14 @@
+﻿@model TipoNotificacaoViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24)@*.CssClass("smc-display smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-mensagem-multiplas-linhas")*@.Begin())
+{
+    using (Smc.Div()/*.CssClass(" smc-sga-ico-mensagem")*/.Begin())
+    { }
+
+    if (Model != null && !string.IsNullOrEmpty(Model.Observacao))
+    {
+        @Smc.DisplayFor(d => d.Observacao)
+    }
+}
+
+@Smc.HiddenFor(d => d.Observacao)

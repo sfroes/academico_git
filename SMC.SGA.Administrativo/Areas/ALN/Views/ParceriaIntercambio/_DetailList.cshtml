@@ -1,0 +1,40 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+
+@model ParceriaIntercambioListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.Seq).Size(SMCSize.Grid2_24, SMCSize.Grid24_24, SMCSize.Grid4_24, SMCSize.Grid2_24)
+            @Smc.DisplayFor(m => m.Descricao).Size(SMCSize.Grid22_24, SMCSize.Grid24_24, SMCSize.Grid20_24, SMCSize.Grid22_24)
+        }
+
+        // Div com os detalhes
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(m => m.TipoParceriaIntercambio).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid4_24)
+                @Smc.DisplayFor(m => m.ProcessoNegociacao).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24)
+                @Smc.DisplayFor(m => m.Ativo).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid4_24, SMCSize.Grid2_24)
+                @Smc.DisplayFor(m => m.PossuiAnexo).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+                @Smc.DisplayFor(w => w.TotalTermos).Size(SMCSize.Grid4_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid4_24).CssClass("smc-sga-totalizador")
+
+            }
+            using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid8_24).Begin())
+            {
+                @Smc.DisplayFor(w => w.TiposTermo)
+            }
+            using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid16_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid16_24).Begin())
+            {
+                @Smc.DisplayFor(w => w.InstituicoesExternas)
+            }
+        }
+    }
+
+    @Html.Partial("_DetailListButtons", Model)
+}

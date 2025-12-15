@@ -1,0 +1,42 @@
+﻿@using SMC.SGA.Administrativo.Areas.FIN.Models
+@using SMC.Academico.Common.Areas.FIN.Constants
+@using SMC.Academico.Common.Areas.FIN.Enums
+@model PessoaAtaucaoBeneficioAlterarVigenciaViewModel
+
+@Html.Action("CabecalhoPessoaAtuacaoBeneficio", "PessoaAtuacaoBeneficio", new { @SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao) })
+
+@{
+    var header = Smc.Header("PessoaAtuacaoBeneficio", SMCHeaderType.Primary);
+
+    header.Item(prop => prop.DescricaoBeneficio, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid6_24);
+    header.Item(prop => prop.DescricaoTipoDeducao, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid6_24);
+    header.Item(prop => prop.DescricaoFormaDeducao, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid6_24);
+    header.Item(prop => prop.ValorBeneficio, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid6_24);
+
+    using (header.Begin()) { }
+}
+@Smc.EditorFor(e => e.Seq)
+@Smc.EditorFor(e => e.SeqBeneficio)
+@Smc.EditorFor(e => e.SeqPessoaAtuacao)
+@Smc.EditorFor(e => e.SeqConfiguracaoBeneficio)
+@Smc.EditorFor(e => e.Aluno)
+@Smc.EditorFor(e => e.DesablilitarDataFim)
+
+@{
+    if (!Model.Aluno)
+    {
+        @Smc.EditorFor(e => e.MensagemInformativa)
+        @Smc.EditorFor(e => e.IncideParcelaMatricula)
+    }
+}
+
+@Smc.EditorFor(e => e.DataInicioVigencia)
+@Smc.EditorFor(e => e.DataFimVigencia)
+@Smc.EditorFor(e => e.SeqMotivoAlteracaoBeneficio)
+@Smc.EditorFor(e => e.Justificativa)
+
+
+@using (Smc.Div("ArquivosAnexos").Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.MasterDetail(m => m.ArquivosAnexo)
+}

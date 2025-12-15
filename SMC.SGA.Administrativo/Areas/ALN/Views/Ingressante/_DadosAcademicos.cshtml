@@ -1,0 +1,58 @@
+﻿@model IngressanteDynamicModel
+
+@if (Smc.GetViewMode() == SMCViewMode.Insert)
+{
+    @Smc.HiddenFor(m => m.Seq)
+    @Smc.HiddenFor(m => m.SeqInstituicaoEnsino)
+}
+@Smc.EditorFor(m => m.Campanha).Readonly(Model.DadosAcademicosSomenteLeitura)
+@Smc.EditorFor(m => m.SeqEntidadeResponsavel)
+@Smc.EditorFor(m => m.SeqCampanha)
+@Smc.EditorFor(m => m.SeqCampanhaCicloLetivo)
+@Smc.EditorFor(m => m.SeqProcessoSeletivo).Readonly(Model.DadosAcademicosSomenteLeitura)
+@Smc.EditorFor(m => m.SeqNivelEnsino).Readonly(Model.DadosAcademicosSomenteLeitura)
+@Smc.EditorFor(m => m.SeqCicloLetivo).Readonly(Model.DadosAcademicosSomenteLeitura)
+@Smc.EditorFor(m => m.SeqTipoVinculoAluno).Readonly(Model.DadosAcademicosSomenteLeitura)
+@Smc.EditorFor(m => m.SeqFormaIngresso).Readonly(Model.DadosAcademicosSomenteLeitura)
+@Smc.EditorFor(m => m.SeqInstituicaoTransferenciaExterna).Readonly(Model.DadosAcademicosSomenteLeitura)
+@Smc.EditorFor(m => m.CursoTransferenciaExterna).Readonly(Model.DadosAcademicosSomenteLeitura)
+@Smc.EditorFor(m => m.Ativas)
+@Smc.EditorFor(m => m.ExigeOfertaMatrizCurricular)
+@Smc.EditorFor(m => m.QuantidadeOfertaCampanhaIngresso)
+@Smc.HiddenFor(m => m.DadosAcademicosSomenteLeitura)
+
+@Smc.EditorFor(m => m.ExigeParceriaIntercambioIngresso)
+@Smc.EditorFor(m => m.TipoMobilidade)
+@Smc.HiddenFor(m => m.Cpf)
+@Smc.HiddenFor(m => m.NumeroPassaporte)
+
+@using (Smc.Div("DivOfertas").Size(SMCSize.Grid24_24)
+                .Dependency("QuantidadeOfertaCampanhaIngresso", "BuscarOfertas", "Ingressante")
+                .Begin())
+{
+    @Html.Partial("_Ofertas", Model)
+}
+
+@using (Smc.Div("DivCondicoesObrigatoriedade").Size(SMCSize.Grid24_24)
+                .ConditionalDisplay("SeqMatrizCurricularOferta", SMCConditionalOperation.NotEqual, "RObg1", "")
+                .ConditionalDisplay("ExigeOfertaMatrizCurricular", SMCConditionalOperation.Equals, "RObg2", true)
+                .ConditionalRule("RObg1 && RObg2")
+                .Dependency("SeqMatrizCurricularOferta", "BuscarCondicoesObrigatoriedadeMatrizCurricular", "Ingressante", "ALN", true, "Seq", "DadosAcademicosSomenteLeitura")
+                .Begin())
+{
+}
+
+@using (Smc.Fieldset("DivOrientacao").LegendText(Smc.GetUIResource("OrientacoesPessoaAtuacao_Detalhe_Titulo")).Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(m => m.PermiteOrientacaoPessoaAtuacao)
+    @Smc.EditorFor(m => m.RequerOrientacaoPessoaAtuacao)
+    @Smc.EditorFor(m => m.SeqTipoOrientacao).Readonly(Model.DadosAcademicosSomenteLeitura)
+    @Smc.EditorFor(m => m.OrientacaoParticipacoesColaboradores).Readonly(Model.DadosAcademicosSomenteLeitura)
+}
+
+@using (Smc.Div("DivTermosIntercambio").Size(SMCSize.Grid24_24)
+                .Dependency("ExigeParceriaIntercambioIngresso", "BuscarTermosIntercambio", "Ingressante")
+                .Begin())
+{
+    @Html.Partial("_TermosIntercambio", Model)
+}

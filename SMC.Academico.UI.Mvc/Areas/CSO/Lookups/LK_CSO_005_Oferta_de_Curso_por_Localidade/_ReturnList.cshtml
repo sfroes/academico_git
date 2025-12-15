@@ -1,0 +1,42 @@
+﻿
+@using SMC.Academico.UI.Mvc.Areas.CSO.Lookups;
+@using SMC.Framework.UI.Mvc;
+@using SMC.Framework.UI.Mvc.Html;
+
+@{
+    var guidJanela = Guid.NewGuid().ToString();
+}
+
+@using (Smc.Div().Size(SMCSize.Grid21_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid21_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid21_24).Begin())
+        {
+            @(Smc.Grid("gridCursoOfertaLocalidade", new SMCPagerModel<CursoOfertaLocalidadeLookupViewModel>(Model))
+                    .HideNavigator()
+                    .HidePager()
+                    .HideRowNumber()
+                    .HideRowsTotalizer()
+                    .HideGridTitle()
+                    .Attribute("data-detail-property", SMCLookupHelper.GetCurrentPropertyName(Smc))
+                    .ContentColumn(
+            @<text>
+                @((item as CursoOfertaLocalidadeLookupViewModel).DescricaoOfertaCurso) /
+                @((item as CursoOfertaLocalidadeLookupViewModel).NomeLocalidade)
+                <input data-model-property="key" type="hidden" name="Seq" value="@((item as CursoOfertaLocalidadeLookupViewModel).Seq)" />
+                <input type="hidden" name="Codigo" value="@((item as CursoOfertaLocalidadeLookupViewModel).Seq)" />
+                <input type="hidden" name="Descricao" value="@((item as CursoOfertaLocalidadeLookupViewModel).DescricaoOfertaCurso)" />
+            </text>)
+            .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "", false,
+                 x => Smc.Button(SMCButtonBehavior.ExcluirElemento)
+                        .DisplayMode(SMCButtonDisplayMode.Icon))
+            )
+        }
+    }
+}
+
+@using (Smc.ModalWindow(guidJanela)
+                            .Size(SMCModalWindowSize.Largest)
+                            .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+                            .Begin()) { }

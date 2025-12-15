@@ -1,0 +1,9 @@
+﻿@model TrabalhoAcademicoDynamicModel
+@if (Smc.GetViewMode() == SMCViewMode.Insert)
+{
+    @Smc.HiddenFor(x => x.SeqNivelEnsino);
+}
+
+@Smc.EditorFor(m => m.ExisteAvaliacaoCadastrada)
+@Smc.EditorFor(m => m.Seq)
+@Smc.EditorFor(x => x.Autores)

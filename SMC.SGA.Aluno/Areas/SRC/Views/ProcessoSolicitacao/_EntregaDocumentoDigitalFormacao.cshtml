@@ -1,0 +1,73 @@
+﻿@model EntregaDocumentoDigitalDocumentoConclusaoPaginaViewModel
+
+@using (Smc.Fieldset("fsFormacoesAluno").Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(x => x.ExibirGrauTitulacao)
+    @Smc.EditorFor(x => x.DiplomaDigital)
+
+    @Smc.DisplayFor(x => x.DescricaoCurso)
+    @Smc.DisplayFor(x => x.DescricaoGrauAcademico)
+    @Smc.DisplayFor(x => x.DescricaoTitulacao)
+    @Smc.DisplayFor(x => x.DataColacaoGrau)
+    @Smc.DisplayFor(x => x.NumeroVia)
+
+    if (!string.IsNullOrEmpty(Model.CodigoValidacaoDiploma))
+    {
+        using (Smc.Div().Size(SMCSize.Grid6_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+            {
+                <label>
+                    Código de validação do diploma
+                    <br />
+                    @{
+                        var buttonSetConsultaPublica = Smc.ButtonSet().CssClass("smc-sga-btn-formato-link smc-wizard-passo");
+                        buttonSetConsultaPublica.AddButton(Smc.Button("ConsultaPublica")
+                                          .Tooltip(Smc.GetUIResource("Botao_Consulta_Publica_Tooltip"))
+                                          .Type(SMCButtonType.Link)
+                                          .Attribute("target", "_blank")
+                                          .Text(Model.CodigoValidacaoDiploma)
+                                          .Url(Model.UrlConsultaPublicaDiploma));
+
+                        @buttonSetConsultaPublica;
+                    }
+                </label>
+            }
+        }
+    }
+
+    if (!string.IsNullOrEmpty(Model.CodigoValidacaoHistorico))
+    {
+        using (Smc.Div().Size(SMCSize.Grid6_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+            {
+                <label>
+                    Código de validação do histórico escolar
+                    <br />
+                    @{
+                        var buttonSetConsultaPublica = Smc.ButtonSet().CssClass("smc-sga-btn-formato-link smc-wizard-passo");
+                        buttonSetConsultaPublica.AddButton(Smc.Button("ConsultaPublica")
+                                          .Tooltip(Smc.GetUIResource("Botao_Consulta_Publica_Tooltip"))
+                                          .Type(SMCButtonType.Link)
+                                          .Attribute("target", "_blank")
+                                          .Text(Model.CodigoValidacaoHistorico)
+                                          .Url(Model.UrlConsultaPublicaHistorico));
+
+                        @buttonSetConsultaPublica;
+                    }
+                </label>
+            }
+        }
+    }
+
+    @(Smc.Grid("gridFormacoes", new SMCPagerModel<EntregaDocumentoDigitalFormacaoPaginaViewModel>(Model.FormacoesEspecificas))
+                .AutoGenerateColumns()
+                .AutoHideNavigator()
+                .HideGridTitle()
+                .HideNavigator()
+                .HideNumberOfRowsPerPageSelector()
+                .HidePager()
+                .HideRowNumber()
+                .HideRowsTotalizer())
+}

@@ -1,0 +1,33 @@
+﻿@model TurmaDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    //Controle de Habilitar/Desabilitar Campos
+    @Smc.EditorFor(m => m.HabilitarCicloLetivoInicio)
+    @Smc.EditorFor(m => m.HabilitarConfiguracaoComponente)
+    @Smc.EditorFor(m => m.HabilitarTipoTurma)
+
+    @Smc.EditorFor(m => m.SeqCicloLetivoInicioHidden)
+    //@Smc.EditorFor(m => m.SeqCicloLetivoFimHidden)
+    @Smc.EditorFor(m => m.SeqNivel)
+    @Smc.EditorFor(m => m.TipoGestaoDivisaoComponente)
+    @Smc.EditorFor(m => m.ConfiguracaoComponenteAtivo)
+    @Smc.EditorFor(m => m.CodigoFormatado).Readonly().Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid5_24, SMCSize.Grid4_24)
+    @Smc.HiddenFor(m => m.SituacaoJustificativa).Size(SMCSize.Grid24_24)
+
+    //Campos da tela
+    @Smc.DisplayFor(m => m.InformativoTurmaCompartilhada).Size(SMCSize.Grid24_24)
+    @Smc.EditorFor(m => m.ConfiguracaoComponente).Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid19_24, SMCSize.Grid24_24)
+    @Smc.EditorFor(m => m.SeqCicloLetivoInicio).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid4_24)
+    @Smc.EditorFor(m => m.QuantidadeVagas).Size(SMCSize.Grid4_24, SMCSize.Grid24_24, SMCSize.Grid4_24, SMCSize.Grid4_24)
+
+    using (Smc.Fieldset("PeriodoLetivo").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("fieldset_periodo_letivo")).Begin())
+    {
+        @Smc.EditorFor(m => m.PeriodoLetivoReadOnly)
+        @Smc.EditorFor(m => m.DataInicioPeriodoLetivo).Size(SMCSize.Grid5_24, SMCSize.Grid24_24, SMCSize.Grid4_24, SMCSize.Grid5_24)
+        @Smc.EditorFor(m => m.DataFimPeriodoLetivo).Size(SMCSize.Grid5_24, SMCSize.Grid24_24, SMCSize.Grid4_24, SMCSize.Grid5_24)
+    }
+
+    @Smc.EditorFor(m => m.SeqsMatrizCurricular)
+    @Smc.EditorFor(m => m.SeqAgendaTurma)
+}

@@ -1,0 +1,74 @@
+﻿@using SMC.DadosMestres.Common.Areas.PES.Enums;
+@using SMC.Academico.UI.Mvc.Areas.SRC.Views.RegistroDocumento.App_LocalResources;
+@using SMC.Academico.UI.Mvc;
+
+@model SMC.Academico.UI.Mvc.Areas.SRC.Models.SolicitacaoRegistroDocumentoViewModel
+
+@if (Model.TokenServicoEntregaDocumentacao)
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+    {
+        <p>@Smc.GetUIResource("Informativo_Entrega_Documentacao")</p>
+    }
+}
+
+@if (Model.ExibeLegenda)
+{
+    @(Smc.Legend("legenda", SMCOrientation.Horizontal).CssClass("smc-sga-legenda")
+         .Items(new List<SMCLegendItem>() {
+                    new SMCLegendItem() {
+                    CssClass = "smc-legenda-status-aguardandoentrega",
+                    Description = SituacaoEntregaDocumento.AguardandoEntrega.SMCGetDescription()
+                    },
+                    new SMCLegendItem() {
+                    CssClass = "smc-legenda-status-indeferido",
+                    Description = SituacaoEntregaDocumento.Indeferido.SMCGetDescription()
+                    },
+                    new SMCLegendItem() {
+                    CssClass = "smc-legenda-status-pendente",
+                    Description = SituacaoEntregaDocumento.Pendente.SMCGetDescription()
+                    },
+                    new SMCLegendItem() {
+                    CssClass = "smc-legenda-status-instrucoes",
+                    Description = "Passe o mouse sobre o ícone para visualizar as inconformidades sobre o documento."
+                    }
+               }))
+}
+
+@{ var view1 = Smc.GetExternalView(AcademicoExternalViews._REGISTRAR_DOCUMENTOS_DOCUMENTO); }
+@Smc.List("Documentos", r => r.Documentos).HtmlTemplate(item => Html.Partial(view1, item.Value)).CssClass("smc-sga-registro-documentos smc-sgaaluno-registrodocumentos")
+
+@Smc.EditorFor(m => m.SeqSolicitacaoServico)
+@Smc.EditorFor(m => m.SeqConfiguracaoEtapa)
+@Smc.EditorFor(m => m.SeqPessoaAtuacao)
+@Smc.EditorFor(m => m.GrupoObrigatorio)
+@Smc.EditorFor(m => m.GrupoDocumento)
+@Smc.EditorFor(m => m.BackUrl)
+
+<script type="text/javascript">
+    $(document).on("focus", ".smc-academico-situacao-entrega-documento > select", function () {
+        $(this).data('valorAntigo', $(this).val());
+    });
+
+    $(document).on("change", ".smc-academico-situacao-entrega-documento > select", function () {
+        var select = $(this);
+        var linha = $(this).closest(".smc-detalhe-editavel-linha-dados");
+        var upload = $(linha).find("[data-name='ArquivoAnexado']");
+
+        var controlUpload = smc.core.uicontrol(upload);
+        var controlSelect = smc.core.uicontrol(select);
+
+        if ((controlSelect.getValue() == 1 || controlSelect.getValue() == 6) && controlUpload.getValue() != null)
+        {
+            if (controlSelect.getValue() == 1)
+            {
+                smc.core.alertError('@UIResource.Titulo_Inserir_Erro', '@UIResource.ERR_ArquivoAnexadoValidacaoAguardandoEntrega');
+            }
+            if (controlSelect.getValue() == 6)
+            {
+                smc.core.alertError('@UIResource.Titulo_Inserir_Erro', '@UIResource.ERR_ArquivoAnexadoValidacaoPendente');
+            }
+            controlSelect.setValue($(select).data("valorAntigo"));
+        }
+    });
+</script>

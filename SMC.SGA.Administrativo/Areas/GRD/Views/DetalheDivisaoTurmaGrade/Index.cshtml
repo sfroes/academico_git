@@ -1,0 +1,35 @@
+﻿@using SMC.Academico.Common.Areas.GRD.Constants;
+
+@{
+    var seqDivisaoTurma = 20117;
+}
+
+@(Smc.ButtonSet().CssClass("smc-sga-btn-formato-link")
+          .AddButton(Smc.Button(SMCButtonBehavior.Visualizar)
+                    .Tooltip(Smc.GetUIResource("Botao_Detalhe_Divisao_Tooltip"))
+                    .DisplayMode(SMCButtonDisplayMode.Text)
+                    .Text(Smc.GetUIResource("Botao_Detalhe_Divisao"))
+                    .Attribute(SMCMvcConsts.MODAL_ID, "modalDetalheDivisao")
+                    .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                    .Ajax(isPost: false)
+                    .SecurityToken(UC_GRD_001_01_03.DETALHE_DIVISAO_TURMA_GRADE)
+                    .Action("ConsultaDetalheDivisaoTurmaGradeAngular", "DetalheDivisaoTurmaGrade", new { SeqDivisaoTurma = new SMCEncryptedLong(seqDivisaoTurma), Area = "GRD" }))
+)
+
+@*@{
+    var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-btn-formato-link");
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+                           .DisplayMode(SMCButtonDisplayMode.Text)
+                           .Text(Smc.GetUIResource("Botao_ExecutarCarga"))
+                           .Highlight());
+
+    @buttonSet;
+}*@
+
+@using (Smc.ModalWindow("modalDetalheDivisao")
+                    .Size(SMCModalWindowSize.Largest)
+                    .Title(Smc.GetUIResource("Botao_Detalhe_Divisao_Tooltip_Title"))
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Botao_Cancelar")).Tooltip(Smc.GetUIResource("Botao_Cancelar")))
+                    .Begin())
+{ }

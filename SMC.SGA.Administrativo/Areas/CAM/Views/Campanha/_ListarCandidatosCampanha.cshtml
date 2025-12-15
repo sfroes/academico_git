@@ -1,0 +1,6 @@
+﻿@model SMCPagerModel<CampanhaConsultarCandidatoListarViewModel>
+
+@(Smc.Grid("gridCandidatos")
+    .AllowExportToExcel(true)
+    .AutoGenerateColumns()
+    .AutoHideNavigator())

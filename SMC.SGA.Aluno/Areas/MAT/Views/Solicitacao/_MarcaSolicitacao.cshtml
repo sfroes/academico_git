@@ -1,0 +1,17 @@
+﻿@model SolicitacaoMatriculaSelecionadaViewModel
+
+
+@*
+    <span class="smc-estilo-descricao-ingressante">@Model.DescricaoIngressante</span>
+    @(Smc.Button("selecionarIngressante").CssClass("smc-estilo-botao-selecionar-ingressante").Type(SMCButtonType.Link).Url(Url.Action("ModalTrocarIngressante", "Ingressante", new { area = "MAT" })))
+*@
+@if(ViewBag.SelecaoAutomatica != null && ((bool)ViewBag.SelecaoAutomatica))
+{
+    @*Faz o redirecionamento automático pois selecionou o ingressante automaticamente devido a ter somente um item...*@
+    <script>
+        window.onload = function () {
+            smc.core.displayLoadingPanel();
+            window.location.href = "@Url.Action("Index", "Solicitacao", new { area = "MAT" })";
+        };
+    </script>
+}

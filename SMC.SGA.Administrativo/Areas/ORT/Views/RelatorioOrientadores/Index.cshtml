@@ -1,0 +1,33 @@
+﻿@model RelatorioOrientadoresFiltroViewModel
+
+@using (Smc.Form("frmViewPadrao", "GerarRelatorio").Attribute("target", "_blank").Begin())
+{
+    //Filtros
+    using (Smc.Div("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter").Begin())
+    {
+        // Campos hidden
+        @Smc.EditorFor(prop => prop.Oritentador)
+
+        @Smc.EditorFor(prop => prop.SeqEntidadeResponsavel).Size(SMCSize.Grid9_24)
+        @Smc.EditorFor(prop => prop.SeqColaborador).Size(SMCSize.Grid9_24)
+        @Smc.EditorFor(prop => prop.ExibirOrientacoesFinalizadas).Size(SMCSize.Grid6_24)
+
+        using (Smc.Fieldset("SituacaoMatricula").Size(SMCSize.Grid10_24).CssClass("smc-sga-situacao-matricula-fieldset").LegendText(@Smc.GetUIResource("fieldset_situacao_matricula")).Begin())
+        {
+            @Smc.EditorFor(prop => prop.SeqCicloLetivo).Size(SMCSize.Grid10_24)
+            @Smc.EditorFor(prop => prop.SeqsTiposSituacoesMatriculas).Size(SMCSize.Grid14_24)
+        }
+
+    }
+
+    var buttonSet = Smc.ButtonSet();
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Relatorio)
+                                .CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+                                .Text(Smc.GetUIResource("Botao_Relatorio"))
+                                .Tooltip(Smc.GetUIResource("Botao_Relatorio_Tooltip"))
+                                .Type(SMCButtonType.Submit));
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Limpar).DisplayMode(SMCButtonDisplayMode.Icon));
+
+    @buttonSet;
+
+}

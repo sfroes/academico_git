@@ -1,0 +1,35 @@
+﻿@model ConfiguracaoEtapaBloqueioFiltroViewModel
+
+@Html.Action("Cabecalho", new { seqConfiguracaoEtapa = (SMCEncryptedLong)Model.SeqConfiguracaoEtapa })
+
+@(Smc.ButtonSet().Type(SMCButtonSetType.Primary)
+               .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+               .Enabled(Model.HabilitarBotaoNovo)
+               .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoNovo))
+               .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirNovaConfiguracaoEtapaBloqueio")
+               .Text(Smc.GetUIResource("Botao_Incluir_Nova_Configuracao_Etapa_Bloqueio"))
+               .Tooltip(Smc.GetUIResource("Botao_Incluir_Nova_Configuracao_Etapa_Bloqueio_Tooltip"))
+               .Ajax(isPost: false, updateTargetId: "modalIncluirNovaConfiguracaoEtapaBloqueio")
+               .CssClass("smc-btn-novo-icotext-destaque")            
+               .SecurityToken(UC_SRC_002_04_09.CONFIGURAR_ETAPA_MANTER_BLOQUEIOS)
+               .Url(Url.Action("Incluir", "ConfiguracaoEtapaBloqueio", new { SeqConfiguracaoEtapa = new SMCEncryptedLong((Model as ConfiguracaoEtapaBloqueioFiltroViewModel).SeqConfiguracaoEtapa) })))
+)
+
+@using (Smc.Div("divGridConfiguracoesEtapaBloqueio").Attribute("data-id", "divGridConfiguracoesEtapaBloqueio").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Smc.ActionList("ListarConfiguracoesEtapaBloqueio", Model, false)
+}
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button("Voltar", "Index", new { seqProcesso = (SMCEncryptedLong)Model.SeqProcesso }, "ConfiguracaoEtapa")
+    .Type(SMCButtonType.Link)
+    .CssClass("smc-btn-voltar-icotext"))
+)
+
+@using (Smc.ModalWindow("modalIncluirNovaConfiguracaoEtapaBloqueio")
+                    .Title(Smc.GetUIResource("Botao_Incluir_Nova_Configuracao_Etapa_Bloqueio_Title"))
+                    .Form("Incluir", "Salvar", "ConfiguracaoEtapaBloqueio", null, true, x => x.Ajax("#divGridConfiguracoesEtapaBloqueio", fieldsContainerToRequest: "#divGridConfiguracoesEtapaBloqueio"))
+                    .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Botao_Cancelar")).Tooltip(Smc.GetUIResource("Botao_Cancelar")))
+                    .Begin())
+{ }

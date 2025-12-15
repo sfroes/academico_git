@@ -1,0 +1,22 @@
+﻿.smc-sga-detalhe-editavel {
+    .smc-detalhe-editavel-header {
+        label {
+            color: #074458 !important;
+            font-weight: 400 !important;
+            font-size: 11px !important;
+        }
+    }
+
+    div.smc-detalhe-editavel-linha-dados {
+        min-height: 85px !important;
+        background: #fff;
+
+        &:nth-child(1n) {
+            background: #efefef;
+        }
+    }
+
+    .smc-detalhe-editavel-titulo {
+        font-size: 17px !important;
+    }
+}

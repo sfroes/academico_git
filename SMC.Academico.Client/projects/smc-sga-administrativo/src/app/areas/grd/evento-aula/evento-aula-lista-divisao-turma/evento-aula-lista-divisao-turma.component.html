@@ -1,0 +1,18 @@
+<ng-container *ngFor="let divisao of divisoesTurma">
+  <div [hidden]="!divisao.visivel" class="smc-sga-agendamento-agrupamento">
+    <div class="smc-size-lg-20 smc-sga-agendamento-divisao-turma">
+      <div class="smc-size-lg-1 smc-sga-agendamento-bullet {{ divisao.cor }}"></div>
+      <div class="smc-size-lg-23">
+        <h3>{{ divisao.grupoFormatado }} - {{ divisao.tipoDivisaoDescricao }}</h3>
+      </div>
+    </div>
+
+    <div class="smc-size-lg-4 smc-sga-agendamento-total-lista">
+      <label>Nº de agendamentos</label>
+      <p>{{ divisao.eventoAulas.length }}</p>
+    </div>
+    <div class="smc-size-lg-24 smc-sga-agendamento-lista-itens">
+      <po-table [p-columns]="colunasTabela" [p-items]="divisao.eventoAulas" p-hide-columns-manager="true"> </po-table>
+    </div>
+  </div>
+</ng-container>

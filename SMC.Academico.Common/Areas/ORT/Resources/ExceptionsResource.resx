@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERR_AlunosPerteceremMesmoCursoException" xml:space="preserve">
+    <value>Os alunos deverão obrigatoriamente pertencer ao mesmo
+curso: {0}</value>
+  </data>
+  <data name="ERR_DatasPeriodoOrientacaoException" xml:space="preserve">
+    <value>{0} não permitida. O período de datas de todos os professores/pesquisadores deverá estar compreendido entre o período de datas da orientação.</value>
+  </data>
+  <data name="ERR_LancamentoNotaBancaExaminadoraApenasUmMembroPresidirBancaException" xml:space="preserve">
+    <value>Operação não permitida. É possível que apenas um membro presida a banca examinadora.</value>
+  </data>
+  <data name="ERR_LancamentoNotaBancaExaminadoraApuracaoAvaliacaoExclusaoException" xml:space="preserve">
+    <value>Não é permitdo a exclusão, pois a avaliação já foi apurada</value>
+  </data>
+  <data name="ERR_LancamentoNotaBancaExaminadoraApuracaoAvaliacaoNaoExisteException" xml:space="preserve">
+    <value>Operação não permitida. Não existe lançamento de nota para esta banca.</value>
+  </data>
+  <data name="ERR_LancamentoNotaBancaExaminadoraAvaliacaoExclusaoException" xml:space="preserve">
+    <value>Exclusão não permitida. Avaliação do Trabalho não existe!</value>
+  </data>
+  <data name="ERR_LancamentoNotaBancaExaminadoraConceitoObrigatorioException" xml:space="preserve">
+    <value>Operação não permitida. É necessário informar o conceito.</value>
+  </data>
+  <data name="ERR_LancamentoNotaBancaExaminadoraMembroComParticipacaoObrigadorioException" xml:space="preserve">
+    <value>Operação não permitida. É necessário informar o(s) membro(s) que participaram da banca examinadora.</value>
+  </data>
+  <data name="ERR_LancamentoNotaBancaExaminadoraNotaObrigatoriaException" xml:space="preserve">
+    <value>Operação não permitida. É necessário informar a nota.</value>
+  </data>
+  <data name="ERR_OrientacaoAoMenosUmColaboradorVigenteException" xml:space="preserve">
+    <value>{0} não permitida. É necessário a associação de pelo menos um professor com o período vigente.</value>
+  </data>
+  <data name="ERR_OrientacaoComColaboradoresPeriodoSobrepostoException" xml:space="preserve">
+    <value>{0} não permitida. O mesmo professor/pesquisador não pode ser associado a uma orientação com períodos sobrepostos.</value>
+  </data>
+  <data name="ERR_OrientacaoJaExisteEmVigenciaException" xml:space="preserve">
+    <value>Inclusão não permitida. O(a) aluno(a) {0} já possui para este nível de ensino uma orientação do tipo “{1}”.</value>
+  </data>
+  <data name="ERR_OrientacaoNumeroMaximoAlunoException" xml:space="preserve">
+    <value>O número limite de alunos para este tipo de orientação foi
+excedido.</value>
+  </data>
+  <data name="ERR_OrientacaoObrigatoriaException" xml:space="preserve">
+    <value>{0} não permitida. Ainda é necessário informar professores com o(s) tipo(s) de participação: {1}</value>
+  </data>
+  <data name="ERR_OrientacaoOrigemException" xml:space="preserve">
+    <value>{0} não permitida. Para o(s) tipo(s) de participação: {1}</value>
+  </data>
+  <data name="ERR_OrientacoesExigidasPorNivelEnsinoException" xml:space="preserve">
+    <value>O nível de ensino {0} e vínculo {1} informados exigem uma ou mais orientações dos tipos:&lt;br /&gt;- {2}</value>
+  </data>
+  <data name="ERR_OrigemParticipacaoOrientcaoInvalidaException" xml:space="preserve">
+    <value>Alteração não permitida. O professor {0} só pode ser informado com a Instituição sendo {1}.</value>
+    <comment>Alteração não permitida. O professor &lt;Tipo de Participação&gt; só pode ser informado com a Instituição sendo &lt;Origem&gt;.</comment>
+  </data>
+  <data name="ERR_PublicacaoBdpIdiomaSemPalavraChaveException" xml:space="preserve">
+    <value>Inclusão/Alteração não permitida. É necessário informar pelo menos uma palavra-chave para cada idioma.</value>
+  </data>
+  <data name="ERR_PublicacaoBdpLiberacaoConsultaSemArquivoException" xml:space="preserve">
+    <value>Para que o trabalho possa ser liberado para consulta na Biblioteca Digital, obrigatoriamente o arquivo do documento do trabalho deverá estar anexado.</value>
+  </data>
+  <data name="ERR_PublicacaoBdpSemIdiomaPortuguesException" xml:space="preserve">
+    <value>Alteração não permitida. É necessário cadastrar as informações do trabalho em pelo menos dois idiomas, sendo que obrigatoriamente o português deverá ser um deles.</value>
+  </data>
+  <data name="ERR_PublicacaoBdpSituacaoAcademicaInvalidaException" xml:space="preserve">
+    <value>Situação acadêmica inválida para operação.</value>
+  </data>
+  <data name="ERR_PublicacaoBdpTipoAutorizacaoObrigatorioException" xml:space="preserve">
+    <value>Obrigatoriamente o arquivo com o tipo {0} deve ser anexado.</value>
+  </data>
+  <data name="ERR_TemplatePublicacaoBdpNaoEncontradoException" xml:space="preserve">
+    <value>Template não encontrado.</value>
+  </data>
+  <data name="ERR_Template_comprovante_nao_encontrado" xml:space="preserve">
+    <value>Não foram encontrados templates para o  comprovante de entrega de trabalho.</value>
+  </data>
+  <data name="ERR_TiposParticipacaoOrientacaoObrigatoriosException" xml:space="preserve">
+    <value>Alteração não permitida. É obrigatório informar professor(es) com o(s) tipo(s) de participação:&lt;br /&gt;- {0}</value>
+    <comment>Alteração não permitida. É obrigatório informar professor(es) com o(s) tipo(s) de participação: 
+- &lt;Tipo de Participação&gt; com a Instituição sendo &lt;Origem&gt;</comment>
+  </data>
+  <data name="ERR_TrabalhoAcademicoComAvaliacaoException" xml:space="preserve">
+    <value>Exclusão não permitida. Este trabalho já possui avaliação cadastrada para seu componente curricular.</value>
+  </data>
+  <data name="ERR_TrabalhoAcademicoComprovanteSemDataException" xml:space="preserve">
+    <value>A emissão do comprovante de entrega não pode ser realizada, pois a data de entrega do Trabalho ainda não foi registrada.</value>
+  </data>
+  <data name="ERR_TrabalhoAcademicoComPublicacaoBdpException" xml:space="preserve">
+    <value>Exclusão não permitida. Este trabalho já está com suas informações cadastradas na Biblioteca Digital.</value>
+  </data>
+  <data name="ERR_TrabalhoAcademicoNaoExisteException" xml:space="preserve">
+    <value>Exclusão não permitida. Este trabalho não existe!</value>
+  </data>
+  <data name="ERR_TrabalhoAcademicoQuantidadeInvalidaAlunosException" xml:space="preserve">
+    <value>É necessário a associação de somente um aluno.</value>
+  </data>
+  <data name="ERR_TrabalhoAcademicoSemDataException" xml:space="preserve">
+    <value>Inclusão/Alteração não permitida. É obrigatório informar a data de entrega do trabalho na secretaria.</value>
+  </data>
+  <data name="ERR_TrabalhoAcademicoTipoDuplicadoException" xml:space="preserve">
+    <value>Inclusão/Alteração não permitida. Já existe um trabalho acadêmico deste tipo cadastrado para o aluno informado.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_orientacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já possui tipo de orientação configurado.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_orientacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de orientação já foi associada a uma instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_orientacao_participacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de tipo de orientação já possui tipo de participação configurado.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_trabalho_01" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já possui tipo de trabalho configurado.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_trabalho_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de trabalho já foi associada a uma instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_orientacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe orientação deste tipo de orientação.</value>
+  </data>
+  <data name="FK_orientacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe orientação para esta instituição de ensino.</value>
+  </data>
+  <data name="FK_orientacao_03" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe orientação para este nível de ensino.</value>
+  </data>
+  <data name="FK_orientacao_colaborador_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe colaborador associado a esta orientação.</value>
+  </data>
+  <data name="FK_orientacao_colaborador_02" xml:space="preserve">
+    <value>Exclusão não permitida. Colaborador já está associado a orientação.</value>
+  </data>
+  <data name="FK_orientacao_colaborador_03" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe colaborador em orientação associado a esta instituição externa.</value>
+  </data>
+  <data name="FK_orientacao_pessoa_atuacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe pessoa x atuação associada a esta orientação.</value>
+  </data>
+  <data name="FK_orientacao_pessoa_atuacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Pessoa x Atuação já está associada a orientação.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_orientacao_01" xml:space="preserve">
+    <value>Tipo de orientação já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_orientacao_participacao_01" xml:space="preserve">
+    <value>Tipo de participação já está associado à este nível de ensino x instituição de ensino x tipo de orientação.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_trabalho_01" xml:space="preserve">
+    <value>Tipo de trabalho já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_orientacao_pessoa_atuacao_01" xml:space="preserve">
+    <value>Orientação já está associada a esta pessoa x atuação.</value>
+  </data>
+  <data name="UN_tipo_orientacao_01" xml:space="preserve">
+    <value>Já existe tipo de orientação com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_trabalho_01" xml:space="preserve">
+    <value>Já existe tipo de trabalho com esta descrição. </value>
+  </data>
+  <data name="ERR_OrientacaoColaboradorMesmoTipoParticipacaoCotutelaException" xml:space="preserve">
+    <value>{0} não permitida. Para Orientação de Conclusão de Curso em Cotutela só é possível informar dois Orientadores.</value>
+  </data>
+  <data name="ERR_OrientacaoColaboradorMesmoTipoParticipacaoException" xml:space="preserve">
+    <value>{0} não permitida. Para Orientação de Conclusão de Curso só é possível informar um Orientador.</value>
+  </data>
+  <data name="ERR_OrientacaoTurmaColaboradorObrigatorioException" xml:space="preserve">
+    <value>Operação não permitida.É obrigatório que tenha pelo menos um professor/ pesquisador associado ao aluno.</value>
+  </data>
+  <data name="ERR_ParametrosUploadArquivoBDPInvalidoException" xml:space="preserve">
+    <value>Verifique a existência da tag '{0}' no web.config.</value>
+  </data>
+  <data name="ERR_TrabalhoAcademicoAlunoComSituacaoNaoPermitidaDataDefesa" xml:space="preserve">
+    <value>Operação não permitida. O aluno deverá estar com a situação matriculado, matriculado em mobilidade ou provável formando no ciclo letivo à data da defesa.</value>
+  </data>
+  <data name="ERR_TrabalhoAcademicoDataInvalidaException" xml:space="preserve">
+    <value>A data de depósito deve ser igual à data atual ou maior/igual que a data referente ao sexto dia útil do mês corrente.</value>
+  </data>
+  <data name="ERR_CriacaoAmostraPPAException" xml:space="preserve">
+    <value>Erro ao fazer integração com PPA para criação de amostra.</value>
+  </data>
+  <data name="ERR_PublicacaoBDPJaExistenteTrabalhoException" xml:space="preserve">
+    <value>Já existe uma publicação BDP para este trabalho.</value>
+  </data>
+  <data name="ERR_PublicacaoBdpLiberacaoConsultaSemOrientadorException" xml:space="preserve">
+    <value>Operação não permitida. O orientador não foi informado na banca examinadora da defesa.</value>
+  </data>
+  <data name="ERR_ProfessorNaoTemVinculoValidoException" xml:space="preserve">
+    <value>Inclusão/Alteração não permitida. Para o(s) Professor(es)/Pesquisador(es) listado(s) abaixo, não existe vínculo válido no período de orientação informado.&lt;br/&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="ERR_PublicacaoBdpIdiomaTrabalhoException" xml:space="preserve">
+    <value>Inclusão/Alteração não permitida. É necessário que um, somente um, dos idiomas esteja sinalizado como "Idioma do Trabalho".</value>
+  </data>
+  <data name="ERR_AlterarSituacaoPublicacaoException" xml:space="preserve">
+    <value>Não é possível atualizar a situação da publicação no BDP para {0} pois ela já se encontra nessa situação.</value>
+  </data>
+  <data name="ERR_AutorizacaoJaRealizadaException" xml:space="preserve">
+    <value>Não é possível registrar a autorização de publicação no BDP, pois esta já foi realizada!</value>
+  </data>
+  <data name="ERR_TrabalhoAcademicoInclusaoSolicitacaoNaoAtendida" xml:space="preserve">
+    <value>Inclusão não permitida. Este aluno possui solicitação de Depósito de Dissertação/Tese ainda não atendida. Para que o trabalho seja incluído esta solicitação deverá ser atendida.</value>
+  </data>
+  <data name="ERR_PublicacaoBdpSolicitacaoAbertaAbortarException" xml:space="preserve">
+    <value>Este aluno possui solicitação de {0} ainda não finalizada(s). Para registro da entrega definitiva do trabalho estes tipos de solicitações deverão ser concluídas.</value>
+  </data>
+  <data name="ERR_PublicacaoBdpArquivoTextoCompletoException" xml:space="preserve">
+    <value>Obrigatoriamente o arquivo com o tipo "Texto Completo" tem que estar anexado.</value>
+  </data>
+  <data name="ERR_PublicacaoBdpArquivoTipoException" xml:space="preserve">
+    <value>Inclusão não permitida. É permitido apenas um arquivo por tipo.</value>
+  </data>
+  <data name="ERR_PublicacaoBdpArquivoSemTipoException" xml:space="preserve">
+    <value>Alteração não permitida. É necessário ter um arquivo com mesmo tipo de autorização.</value>
+  </data>
+  <data name="ERR_ConfiguracaoAvaliacaoPPAConcluinteInvalidaException" xml:space="preserve">
+    <value>Configuração da avaliação PPA de concluinte é inválida. Necessário informar o CodigoOrigemPpa e CodigoInstrumentoPpa.</value>
+  </data>
+  <data name="ERR_PublicacaoBdpIdiomaCurriculoNaoConcluidoException" xml:space="preserve">
+    <value>Aluno não integralizou todo o seu currículo não podendo desta forma, ter a situação de 'FORMADO' e ter seu trabalho liberado para consulta.</value>
+  </data>
+  <data name="ERR_PublicacaoBdpIdiomaPlanoEstudoSemNotaException" xml:space="preserve">
+    <value>O aluno não possui nota final lançada para as turmas:&lt;br /&gt; {0}</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_trabalho_03" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de trabalho já foi associada a uma instituição de ensino x nível de ensino (tipo de trabalho de cancelamento).</value>
+  </data>
+  <data name="ERR_SituacaoMatriculaCanceladaDataAutorizacaoException" xml:space="preserve">
+    <value>Não é possível prosseguir. O aluno está com situação de matrícula cancelada na data de autorização informada.</value>
+  </data>
+  <data name="ERR_DataAutorizacaoInferiorDataConclusaoException" xml:space="preserve">
+    <value>Não é possível prosseguir. A data de autorização deve ser menor que a data de previsão de conclusão do aluno ({0}). O aluno deve solicitar prorrogação de prazo de conclusão.</value>
+  </data>
+  <data name="ERR_DataAutorizacaoInferiorDataDefesaException" xml:space="preserve">
+    <value>Não é possível prosseguir. A data de autorização deve ser maior que a data da defesa em que o aluno foi reprovado.</value>
+  </data>
+  <data name="ERR_SituacaoMatriculaCanceladaException" xml:space="preserve">
+    <value>Não é possível prosseguir. O aluno está com situação de matrícula cancelada.</value>
+  </data>
+  <data name="FK_configuracao_numeracao_trabalho_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de numeração de trabalho acadêmico para esta entidade.</value>
+  </data>
+  <data name="FK_configuracao_numeracao_trabalho_oferta_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de numeração de trabalho acadêmico já possui ofertas associadas.</value>
+  </data>
+  <data name="FK_configuracao_numeracao_trabalho_oferta_02" xml:space="preserve">
+    <value>Exclusão não permitida. Curso x Oferta x Localidade já possui configuração de numeração de trabalho acadêmico.</value>
+  </data>
+  <data name="UN_configuracao_numeracao_trabalho_01" xml:space="preserve">
+    <value>Já existe configuração de numeração de trabalho acadêmico para esta entidade com esta descrição.</value>
+  </data>
+  <data name="UN_configuracao_numeracao_trabalho_oferta_01" xml:space="preserve">
+    <value>As ofertas de curso por localidade selecionadas já existem em outra configuração de numeração de trabalho acadêmico.</value>
+  </data>
+  <data name="ERR_DataAutorizacaoMaiorDataFimException" xml:space="preserve">
+    <value>Não é possível prosseguir. A data de autorização deve ser menor ou igual a {0} que corresponde a data de fim do ciclo letivo imediatamente posterior ao ciclo da defesa.</value>
+  </data>
+  <data name="ERR_TrabalhoAcademicoSemCicloLetivoException" xml:space="preserve">
+    <value>Não é possível prosseguir. Não existe ciclo letivo cadastrado para data de autorização informada.</value>
+  </data>
+  <data name="FK_trabalho_academico_05" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço já deu origem a um trabalho acadêmico.</value>
+  </data>
+  <data name="FK_trabalho_academico_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui trabalho acadêmico cadastrado.</value>
+  </data>
+  <data name="FK_trabalho_academico_02" xml:space="preserve">
+    <value>Exclusão não permitida. Nivel de ensino já possui trabalho acadêmico cadastrado.</value>
+  </data>
+  <data name="FK_trabalho_academico_03" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de trabalho já possui trabalho acadêmico cadastrado.</value>
+  </data>
+  <data name="FK_trabalho_academico_04" xml:space="preserve">
+    <value>Exclusão não permitida. Arquivo anexado a trabalho acadêmico.</value>
+  </data>
+  <data name="ERR_ExisteSolicitacaoTrabalhoAcademicoException" xml:space="preserve">
+    <value>Exclusão não permitida. Este trabalho foi incluído através de uma solicitação de depósito.</value>
+  </data>
+</root>

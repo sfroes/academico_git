@@ -1,0 +1,29 @@
+﻿@model EscalonamentoCabecalhoViewModel
+
+@using (Smc.Header("ProcessoCabecalho", SMCHeaderType.Primary).CssClass("smc-header-botao")
+                 .Item(prop => prop.SeqProcesso, sizeMD: SMCSize.Grid2_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid2_24)
+                 .Item(prop => prop.DescricaoProcesso, sizeMD: SMCSize.Grid22_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid22_24)
+                 .Item(prop => prop.DescricaoEtapa, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid10_24)
+                 .Item(prop => prop.SituacaoEtapa, sizeMD: SMCSize.Grid12_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid12_24)
+                 .Begin())
+{
+    if (Model.ExigeEscalonamento)
+    {
+        SMCButtonFluentConfiguration buttonConsultarGruposEscalonamento = Smc.Button(SMCButtonBehavior.Visualizar)
+            .Text(Smc.GetUIResource("Botao_Consultar_Grupo_Escalonamento"))
+            .Tooltip(Smc.GetUIResource("Botao_Consultar_Grupo_Escalonamento"))
+            .Type(SMCButtonType.Link)
+            .Action("Index", "GrupoEscalonamento", new { SeqProcesso = new SMCEncryptedLong(Model.SeqProcesso), Area = "SRC" })
+            .SecurityToken(UC_SRC_002_06_01.PESQUISAR_GRUPO_ESCALONAMENTO_PROCESSO);
+
+        SMCButtonSetFluentConfiguration buttonSet = (Smc.ButtonSet().Type(SMCButtonSetType.Secondary)
+        .NumberOfButtonsToShow(0));
+
+        buttonSet.AddButton(buttonConsultarGruposEscalonamento);
+
+        using (Smc.Div("").Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+        {
+            @buttonSet
+        }
+    }
+}

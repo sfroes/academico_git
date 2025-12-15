@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSLogAtualizacaoColaborador" targetNamespace="http://tempuri.org/DSLogAtualizacaoColaborador.xsd" xmlns:mstns="http://tempuri.org/DSLogAtualizacaoColaborador.xsd" xmlns="http://tempuri.org/DSLogAtualizacaoColaborador.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSLogAtualizacaoColaborador" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSLogAtualizacaoColaborador" msprop:Generator_UserDSName="DSLogAtualizacaoColaborador">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSLogAtualizacaoColaborador" msprop:Generator_TableClassName="DSLogAtualizacaoColaboradorDataTable" msprop:Generator_TableVarName="tableDSLogAtualizacaoColaborador" msprop:Generator_TablePropName="_DSLogAtualizacaoColaborador" msprop:Generator_RowDeletingName="DSLogAtualizacaoColaboradorRowDeleting" msprop:Generator_RowChangingName="DSLogAtualizacaoColaboradorRowChanging" msprop:Generator_RowEvHandlerName="DSLogAtualizacaoColaboradorRowChangeEventHandler" msprop:Generator_RowDeletedName="DSLogAtualizacaoColaboradorRowDeleted" msprop:Generator_UserTableName="DSLogAtualizacaoColaborador" msprop:Generator_RowChangedName="DSLogAtualizacaoColaboradorRowChanged" msprop:Generator_RowEvArgName="DSLogAtualizacaoColaboradorRowChangeEvent" msprop:Generator_RowClassName="DSLogAtualizacaoColaboradorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DataProcessamento" msprop:Generator_ColumnVarNameInTable="columnDataProcessamento" msprop:Generator_ColumnPropNameInRow="DataProcessamento" msprop:Generator_ColumnPropNameInTable="DataProcessamentoColumn" msprop:Generator_UserColumnName="DataProcessamento" type="xs:string" minOccurs="0" />
+              <xs:element name="Professor" msprop:Generator_ColumnVarNameInTable="columnProfessor" msprop:Generator_ColumnPropNameInRow="Professor" msprop:Generator_ColumnPropNameInTable="ProfessorColumn" msprop:Generator_UserColumnName="Professor" type="xs:string" minOccurs="0" />
+              <xs:element name="Acao" msprop:Generator_ColumnVarNameInTable="columnAcao" msprop:Generator_ColumnPropNameInRow="Acao" msprop:Generator_ColumnPropNameInTable="AcaoColumn" msprop:Generator_UserColumnName="Acao" type="xs:string" minOccurs="0" />
+              <xs:element name="Motivo" msprop:Generator_ColumnVarNameInTable="columnMotivo" msprop:Generator_ColumnPropNameInRow="Motivo" msprop:Generator_ColumnPropNameInTable="MotivoColumn" msprop:Generator_UserColumnName="Motivo" type="xs:string" minOccurs="0" />
+              <xs:element name="Entidade" msprop:Generator_ColumnVarNameInTable="columnEntidade" msprop:Generator_ColumnPropNameInRow="Entidade" msprop:Generator_ColumnPropNameInTable="EntidadeColumn" msprop:Generator_UserColumnName="Entidade" type="xs:string" minOccurs="0" />
+              <xs:element name="AtividadeFinalizada" msprop:Generator_ColumnVarNameInTable="columnAtividadeFinalizada" msprop:Generator_ColumnPropNameInRow="AtividadeFinalizada" msprop:Generator_ColumnPropNameInTable="AtividadeFinalizadaColumn" msprop:Generator_UserColumnName="AtividadeFinalizada" type="xs:string" minOccurs="0" />
+              <xs:element name="Aluno" msprop:Generator_ColumnVarNameInTable="columnAluno" msprop:Generator_ColumnPropNameInRow="Aluno" msprop:Generator_ColumnPropNameInTable="AlunoColumn" msprop:Generator_UserColumnName="Aluno" type="xs:string" minOccurs="0" />
+              <xs:element name="DataFimAfastamento" msprop:Generator_ColumnVarNameInTable="columnDataFimAfastamento" msprop:Generator_ColumnPropNameInRow="DataFimAfastamento" msprop:Generator_ColumnPropNameInTable="DataFimAfastamentoColumn" msprop:Generator_UserColumnName="DataFimAfastamento" type="xs:string" minOccurs="0" />
+              <xs:element name="DataInicioAfastamento" msprop:Generator_ColumnVarNameInTable="columnDataInicioAfastamento" msprop:Generator_ColumnPropNameInRow="DataInicioAfastamento" msprop:Generator_ColumnPropNameInTable="DataInicioAfastamentoColumn" msprop:Generator_UserColumnName="DataInicioAfastamento" type="xs:string" minOccurs="0" />
+              <xs:element name="ExibeColunasInicioFimAfastamento" msprop:Generator_ColumnVarNameInTable="columnExibeColunasInicioFimAfastamento" msprop:Generator_ColumnPropNameInRow="ExibeColunasInicioFimAfastamento" msprop:Generator_ColumnPropNameInTable="ExibeColunasInicioFimAfastamentoColumn" msprop:Generator_UserColumnName="ExibeColunasInicioFimAfastamento" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

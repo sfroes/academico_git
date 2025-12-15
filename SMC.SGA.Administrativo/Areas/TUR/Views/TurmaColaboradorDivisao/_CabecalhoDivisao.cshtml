@@ -1,0 +1,38 @@
+﻿@model TurmaCabecalhoDivisoesViewModel
+@*Modelo*@
+@if (Model.DetalhesDivisao != null)
+{
+    if (Model.DetalhesDivisao.Count > 0)
+    {
+
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-header-detalhes-titulo-grid").Begin())
+        {
+            <h3>@Model.DivisaoComponenteDescricao</h3>
+        }
+
+        using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+        {
+            @(Smc.Grid("DivisoesComponentes" + Model.SeqDivisao, new SMCPagerModel<DivisaoTurmaColaboradorDivisoesViewModel>(Model.DetalhesDivisao))
+                                .AutoGenerateColumns()
+                                .HideGridTitle()
+                                .HideNavigator()
+                                .HideRowNumber()
+                                .Size(SMCSize.Grid24_24))
+        }
+    }
+    else
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-header-detalhes-titulo-grid").Begin())
+            {
+                <h3>@Model.DivisaoComponenteDescricao</h3>
+            }
+
+            using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+            {
+                <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+            }
+        }
+    }
+}

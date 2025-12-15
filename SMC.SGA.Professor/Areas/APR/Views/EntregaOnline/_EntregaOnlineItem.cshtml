@@ -1,0 +1,62 @@
+﻿@using SMC.Academico.Common.Areas.APR.Enums
+
+@using (Smc.Div("").CssClass("smc-sga-lista-agrupadora-dados").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+{
+    @model EntregaOnlineViewModel
+
+    @Smc.LegendItem(x => x.SituacaoEntrega, true)
+    @Smc.DisplayFor(x => x.DataEntrega)
+    @Smc.DisplayFor(x => x.Observacao)
+
+    @Smc.HiddenFor(x => x.SituacaoEntrega)
+    @Smc.HiddenFor(x => x.DataEntrega)
+    @Smc.HiddenFor(x => x.Observacao)
+    @Smc.HiddenFor(x => x.BloquearBotaoDownload)
+    @Smc.HiddenFor(x => x.Seq)
+    @Smc.HiddenFor(x => x.SeqArquivoAnexado)
+    @Smc.HiddenFor(x => x.UidArquivoAnexado)
+
+    if (Model.UidArquivoAnexado.HasValue)
+    {
+        var botaoDownload = Smc.Button("Download")
+                               .CssClass("smc-btn-download-icotext")
+                               .Enabled(!Model.BloquearBotaoDownload)
+                               .Type(SMCButtonType.Link)
+                               .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, "true");
+
+        if (!Model.BloquearBotaoDownload)
+        {
+            botaoDownload.Action("DownloadEntrega", "EntregaOnline", new { @guidFile = Model.UidArquivoAnexado.Value });
+        }
+
+        var botaoLiberarNovaEntrega = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                         .Type(SMCButtonType.Link)
+                                         .Ajax(isPost: false)
+                                         .Text(Smc.GetUIResource("Botao_LiberarNovaEntrega"))
+                                         .Attribute(SMCMvcConsts.MODAL_ID, Model.SituacaoEntrega == SituacaoEntregaOnline.SolicitadoNovaEntrega ? "modalLiberarNegarNovaEntrega" : "modalLiberarNovaEntrega")
+                                         .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Titulo_Modal_LiberarNovaEntrega"))
+                                         .Enabled(!Model.BloquearBotaoLiberarNovaEntrega);
+
+        if (!Model.BloquearBotaoLiberarNovaEntrega)
+        {
+            botaoLiberarNovaEntrega.Action("LiberarNovaEntrega", "EntregaOnline", new { seqEntregaOnline = new SMCEncryptedLong(Model.Seq) });
+        }
+
+        var botaoHistoricoSituacoes = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "HistoricoSituacaoEntrega", new { seqEntregaOnline = new SMCEncryptedLong(Model.Seq), area = "" }, "EntregaOnlineRoute")
+                                          .Type(SMCButtonType.Link)
+                                          .Ajax(isPost: false)
+                                          .Text(Smc.GetUIResource("Botao_HistoricoSituacoes"))
+                                          .Attribute(SMCMvcConsts.MODAL_ID, "modalHistoricoSituacoes")
+                                          .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Titulo_Modal_HistoricoSituacoes"));
+
+        @(Smc.ButtonSet()
+            .AddButton(botaoDownload)
+            .AddButton(botaoLiberarNovaEntrega)
+            .AddButton(botaoHistoricoSituacoes)
+            .NumberOfButtonsToShow(1)
+            .Size(SMCSize.Grid4_24, SMCSize.Grid24_24, SMCSize.Grid5_24, SMCSize.Grid4_24)
+            .Attribute("style", "clear: none"))
+    }
+
+    @Smc.EditorFor(x => x.Participantes)
+}

@@ -1,0 +1,72 @@
+﻿// HIDEPANEL em Solicitações de Serviço
+.smc-sga-hidepanel-etapas {
+    border-bottom: none !important;
+
+    .smc-hidepanel-button {
+        font-size: 0;
+        width: 20px;
+        padding: 0;
+
+        @extend .fa-commenting;
+
+        :focus {
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        &::before {
+            @extend .fa;
+            color: $smc-cor-secundaria-01;
+            font-size: 18px;
+            float: left;
+            line-height: 20px;
+            margin-right: 10px;
+        }
+    }
+
+    .smc-hidepanel-button-expanded {
+        @extend .fa-commenting-o;
+
+        &::before {
+            @extend .fa;
+        }
+    }
+
+    .smc-hidepanel-panel {
+        clear: both;
+        overflow: hidden;
+        background-color: $smc-branco;
+        border: solid 2px $smc-cor-secundaria-01;
+        margin-left: 16px;
+        margin-top: 0px;
+        padding: 10px 5px;
+
+        h3 {
+            margin-bottom: 10px !important;
+        }
+
+        .smc-buttonset-horizontal-primario {
+            clear: none !important;
+            margin-top: 15px;
+        }
+
+        .smc-instrucoes-preenchimento-container {
+            margin: 30px 30px 0 0;
+        }
+
+        .smc-listdetailed-item-filho {
+            border-bottom: solid 1px $smc-cinza-03;
+            padding-bottom: 5px;
+        }
+
+        .smc-list-conteudo {
+            ul {
+                li:last-child {
+                    .smc-listdetailed-item-filho {
+                        border-bottom: none !important;
+                    }
+                }
+            }
+        }
+    }
+}

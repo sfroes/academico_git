@@ -1,0 +1,331 @@
+﻿//MIXIN PARA FORMATO DE BOTÕES SECUNDÁRIOS COM TEXTO E ÍCONE EM HEADER
+@mixin smc-sga-btn-icotext-custom {
+    font-size: 11px;
+    height: 27px !important;
+    border-color: $smc-cinza-04 !important;
+
+    &:hover {
+        border: solid 1px $smc-cor-secundaria-01 !important;
+    }
+}
+
+// HEADER PRIMÁRIO
+.smc-header-tipo-primary {
+    border-left: 5px solid $smc-cor-secundaria-01;
+
+    .smc-header-grupo-itens {
+        .smc-header-item {
+            p {
+                min-height: 20px; // Artifício para quando o parágrafo não carregar dados (os parágrafos vazios distorcem o header).
+            }
+        }
+    }
+
+    .smc-display-collection {
+        margin-top: -10px;
+        // Estrutura de bullets para header com detalhes. Exemplo em: http://localhost/Dev/SGA.Administrativo/ALN/TermoIntercambio?seqParceriaIntercambio=54B44C94F46C1EC7.
+        div {
+            .smc-display {
+                padding: 0;
+                @extend .fa-circle;
+                @extend .fa;
+
+                &::before {
+                    float: left;
+                    font-size: 5px;
+                    margin: 5px 5px 0 5px;
+                    color: $smc-cor-principal-04;
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+
+        h3 {
+            margin: 0 5px 5px 5px;
+            font: normal normal bold 14px/14px "segoe_uiregular",Arial,sans-serif !important;
+            color: $smc-cor-principal;
+        }
+
+        .container-fluid {
+            .smc-display {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.smc-sga-totalizador { // totalizadores http://localhost/Dev/SGA.Administrativo/CUR/CurriculoCursoOfertaGrupo?seqCurriculoCursoOferta=384F9C8FCB58D09F
+    border: 2px solid $smc-cinza-03;
+    background-color: $smc-branco;
+    padding: 7px 0 10px 0;
+    margin-bottom: 5px;
+    min-height: 117px;
+}
+
+
+.smc-sga-totalizador-titulo {
+    text-align: center;
+    color: $smc-cor-principal;
+    line-height: 16px;
+    min-height: 32px;
+}
+
+.smc-sga-totalizador-valor { // totalizadores usados na Associação de Grupo Curricular (IMPORTANTE NÃO ALTERAR ESSA CLASSE)
+    text-align: center;
+    color: $smc-cor-principal-04;
+    padding-top: 0 !important;
+
+    p {
+        font-size: 30px !important;
+        margin-top: -5px !important;
+        margin-bottom: 5px !important;
+    }
+}
+
+//.smc-sga-totalizador { // totalizadores http://localhost/Dev/SGA.Administrativo/CUR/CurriculoCursoOfertaGrupo?seqCurriculoCursoOferta=384F9C8FCB58D09F
+//    margin-bottom: 0;
+//    margin-top: 2px;
+//
+//    p {
+//        margin-top: 5px !important;
+//        margin-bottom: -4px !important;
+//        font-size: 12px !important;
+//    }
+//}
+
+.smc-sga-header-button {
+    .smc-header-grupo-itens {
+        @extend .smc-size-lg-23;
+
+    }
+}
+.smc-sga-totalizador-valor-destaque {
+    @extend .smc-sga-totalizador-valor;
+    color: $smc-cor-principal-10;
+}
+
+.smc-sga-totalizador-texto-detalhe {
+    text-align: center;
+    font-size: 11px;
+    padding: 0;
+    line-height: 10px;
+    color: $smc-cinza-07;
+}
+
+.smc-sga-header-detalhes-collection{
+    padding: 15px 0 5px 0;
+}
+
+// Exemplo de header com detalhes em título de grid em: http://localhost/Dev/SGA.Administrativo/TUR/DivisaoTurmaColaborador?SeqTurma=26FF193A96602934
+.smc-sga-header-detalhes-titulo-grid {
+    h3 {
+        margin: 0;
+        background-color: $smc-cor-principal-08;
+        padding: 9px 6px;
+        color: $smc-cor-principal-01;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .smc-buttonset-horizontal-secundario {
+        width: auto;
+        position: absolute;
+        top: 15%;
+        right: 2%;
+
+        .smc-btn-custom {
+            @include smc-sga-btn-icotext-custom;
+        }
+    }
+    //Grid
+    .smc-grid {
+        background-color: transparent !important;
+        margin: 0 !important;
+    }
+
+    tr {
+        height: 30px !important;
+        background-color: transparent !important;
+    }
+
+    thead {
+        display: none !important;
+    }
+
+    td {
+        border-color: $smc-cor-secundaria-05 !important;
+    }
+}
+
+.smc-sga-header-detalhes-titulo-grid-thead { // Adriana: Classe utilizada para exibir header de grid, quando necessário. Disponível em: http://localhost/Dev/SGA.Administrativo/ALN/TermoIntercambio?seqParceriaIntercambio=54B44C94F46C1EC7
+    & > div {
+        margin-top: 10px !important;
+    }
+
+    h3 {
+        margin: 0 5px
+        
+        5px 5px !important;
+        background-color: transparent !important;
+        color: $smc-cor-secundaria-01 !important;
+        font-weight: bold !important;
+        font-size: 14px !important;
+    }
+
+    thead {
+        display: table-header-group !important;
+    }
+
+    tr {
+        th {
+            padding: 5px 10px !important;
+        }
+    }
+}
+.smc-sga-header-detalhes-grid-completo {
+    background-color: transparent !important;
+
+    .smc-datagrid {
+        table {
+            thead {
+                tr {
+                    th {
+                        margin: 0;
+                        background-color: $smc-cor-principal-08;
+                        padding: 3px 2px;
+                        color: $smc-cor-principal-01;
+                        font-weight: bold;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    background-color: transparent !important;
+
+                    td {
+                        border-color: $smc-cor-secundaria-05 !important;
+                        .smc-display{
+                            //padding-top: 9px!important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+        // Exemplo de header com detalhes em: http://localhost/Dev/SGA.Administrativo/TUR/DivisaoTurmaColaborador?SeqTurma=26FF193A96602934
+        .smc-header-tipo-primary {
+            .smc-sga-header-detalhes-separador {
+                margin: 10px 0 0 0 !important;
+                border-top: solid 1px $smc-cor-principal-06 !important;
+            }
+        }
+
+.smc-sga-header-detalhes {
+    margin: 0;
+    padding: 10px 0 0 0;
+    border-top: none;
+
+    .smc-listdetailed-header-conteudo {
+        padding-top: 10px !important;
+    }
+
+    .smc-display {
+        padding-top: 0 !important;
+    }
+
+    .smc-sga-legenda-configuracao-principal:before {
+        margin: 0 !important;
+    }
+
+    .smc-buttonset-horizontal-secundario {
+        .smc-button {
+            float: right;
+        }
+
+        .smc-btn-custom {
+            //@include smc-sga-btn-icotext-custom; -> Conteúdo comentado devido a necessidade de remoção de texto dos botões de visualização nos headers de turma.
+            padding: 0 5px 0 3px !important;
+        }
+
+        .smc-btn-visualizar-ico-destaque {
+            padding: 1px 0px 0 6px !important;
+        }
+    }
+
+    .smc-sga-header-detalhes-titulo-grid {
+        .smc-buttonset-horizontal-secundario {
+            top: 2% !important;
+        }
+    }
+}
+
+        .smc-sga-header-detalhes-offset {
+            margin-left: 5.5%;
+        }
+
+        .smc-sga-header-accordion {
+            section {
+                margin: 5px 2px 5px 0;
+                border-width: 1px;
+
+                &::before {
+                    top: 4px;
+                }
+
+                &:hover {
+                    border-width: 1px;
+                }
+
+                h3 {
+                    height: 25px;
+                }
+
+                h3 a {
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+
+                &[data-open="True"] {
+                    border: solid 1px #dbeaf2;
+                }
+
+                .smc-display {
+                    width: 100%;
+                    padding: 0;
+
+                    div {
+                        height: 25px;
+                    }
+                }
+            }
+
+            div[data-type="smc-accordion-content"] {
+                padding: 0 15px 0 15px;
+                margin-bottom: 0;
+            }
+        }
+
+        .smc-header-tipo-primary {
+
+            .smc-sga-mensagem-informativa {
+                border-width: 1px;
+            }
+        }
+
+        .smc-sga-fildsets-header {
+            min-height: 120px;
+        }
+
+//Linha inserida para resolver uma quebra indesejada no header de Chancela de plano de estudo
+@media (min-width:990px) {
+    .smc-header > .smc-header-grupo-itens > .smc-header-item {
+        min-height: 60px;
+    }
+}
+

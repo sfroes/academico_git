@@ -1,0 +1,60 @@
+﻿@model EnvioNotificacaoFiltroViewModel
+
+
+@using (Smc.Form("filtroEnvioNotificacao", "BuscarEnvioNotificacoes", "EnvioNotificacao").Ajax("#divViewPadrao").Begin())
+{
+    using (Smc.Fieldset("filtros").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(m => m.Assunto)
+        @Smc.EditorFor(m => m.Remetente)
+        @Smc.EditorFor(m => m.TipoAtuacao)
+        @Smc.EditorFor(m => m.UsuarioEnvio)
+        @Smc.EditorFor(m => m.DataEnvio)
+    }
+
+    @(Smc.ButtonSet()
+                    .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                    .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon).Id("btnLimparFiltroEnvioNotificacao"))
+                    .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                                                .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                                .Type(SMCButtonType.Link)
+                                                .SecurityToken()
+                                                .Url(Url.Action("Incluir"))))
+}
+
+
+@using (Smc.Div("divViewPadrao").Attribute("data-id", "divViewPadrao").CssClass("smc-sga-tabela-ajustada").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Smc.ActionList("BuscarEnvioNotificacoes", Model)
+}
+
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var urlOrigem = window.location.href.split("EnvioNotificacao")[0] + "EnvioNotificacao/";
+            window.history.replaceState(null, null, urlOrigem);
+        });
+        $("#btnLimparFiltroEnvioNotificacao").on("click", function (e) {
+            e.preventDefault();
+            var urldestino = window.location.href.split("EnvioNotificacao")[0] + "EnvioNotificacao/Index?limparCamposFiltro=true";
+            $.post(urldestino);
+
+        });
+
+        //Trata voltar pelo navegador
+        window.addEventListener("load", function () {
+            const navEntries = performance.getEntriesByType("navigation");
+            const navType = navEntries[0]?.type || performance.navigation.type;
+            var urlDestino = window.location.href.split("EnvioNotificacao")[0] + "EnvioNotificacao/Index?voltarNavegador=true";
+            if (navType === "back_forward" || navType === 2) {
+                $.post(urlDestino, function () {
+                    window.location.reload();
+                });
+            }
+
+        });
+
+
+    </script>
+}

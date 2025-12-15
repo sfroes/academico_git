@@ -1,0 +1,20 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.CUR.Lookups;
+@using SMC.Framework.UI.Mvc;
+@using SMC.Framework.UI.Mvc.Html;
+
+@model SMC.Framework.Model.SMCPagerModel<object>
+
+    @if (Model != null && Model.Count > 0)
+    {
+        @(Smc.List("SelectedValues", Model)
+        .AllowSelect(true)
+        .HtmlTemplate(
+    @<text>
+        @Html.ExternalPartial(SMC.Academico.UI.Mvc.AcademicoExternalViews._CONFIG_COMPONENTE_002_DETAIL_LIST, (item as ConfiguracaoComponenteLookupViewModel))
+    </text>
+        ))
+    }
+    else
+    {
+        <p style="text-align: center"><i>Nenhum registro foi encontrado.</i></p>
+    }

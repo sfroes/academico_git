@@ -1,0 +1,14 @@
+﻿@model ConsultaTurmaAmostraViewModel
+
+@Html.Action("CabecalhoTurma", new { seq = Model.SeqConfiguracaoAvaliacaoPpa })
+
+@using (Smc.Div("divListaTurmas").Attribute("data-id", "divListaTurmas").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+
+    @Smc.ActionList("ListarTurmas", Model.Filtro)
+
+}
+
+@(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+.DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+.Action("Index", "ConfiguracaoAvaliacaoPpa", new { @area = "PES" })))

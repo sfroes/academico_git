@@ -1,0 +1,83 @@
+﻿@model HomeTurmaViewModel
+
+@if (Model.DivisoesTurma != null)
+{
+    if (Model.DivisoesTurma.Count > 0)
+    {
+        using (Smc.Div().CssClass("smc-sga-externo-agrupamento-secundario").Size(SMCSize.Grid24_24).Begin())
+        {
+            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid21_24, SMCSize.Grid20_24, SMCSize.Grid21_24, SMCSize.Grid21_24)">@Model.DescricaoConfiguracaoComponente</label>
+
+            SMCButtonFluentConfiguration botaoAvaliacao = Smc.Button("Avaliacao")
+            .Action("Index", "Avaliacao", new { SeqOrigemAvaliacao = new SMCEncryptedLong(Model.SeqOrigemAvaliacao), Area = "APR", backUrl = Url.Action("Index") })
+            .Text(Smc.GetUIResource("Botao_Avaliacao_Turma"))
+            .Type(SMCButtonType.Link)
+            .Hide(Model.HideAvaliacao)
+            .Enabled(Model.DesabilitarAvaliacao)
+            .ButtonInstructions(Smc.GetUIResource(Model.InstructionsAvaliacao))
+            .Tooltip(Smc.GetUIResource("Botao_Avaliacao_Turma_Tooltip"))
+            .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_001_01_01.PESQUISAR_AVALIACAO_TURMA);
+
+            SMCButtonFluentConfiguration botaoGerarRelatorioDiarioTurma = Smc.Button("DiarioTurmaRelatorio")
+              .Action("DiarioTurmaRelatorio", "DiarioTurmaRelatorio", new { SeqTurma = new SMCEncryptedLong(Model.Seq), Area = "APR" })
+              .Text(Smc.GetUIResource("Botao_GerarRelatorioDiarioTurma"))
+              .Type(SMCButtonType.Link)
+              .Attribute("target", "_blank")
+              .Tooltip(Smc.GetUIResource("Botao_GerarRelatorioDiarioTurma_Tooltip"))
+              .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_002_02_01.EXIBIR_RELATORIO_DIARIO_TURMA);
+
+            SMCButtonFluentConfiguration botaoLancarNotasFrequenciasFinais = Smc.Button("LancarNotasFrequenciasFinais")
+              .Action("Index", "LancamentoHistoricoEscolarRoute", new { seqTurma = new SMCEncryptedLong(Model.Seq), Area = "", backUrl = Url.Action("Index") })
+              .Text(Smc.GetUIResource("Botao_LancamentoHistoricoEscolar"))
+              .Type(SMCButtonType.Link)
+              .Tooltip(Smc.GetUIResource("Botao_LancamentoHistoricoEscolar_Tooltip"))
+              .Hide(Model.EsconderNotasFrequenciasFinais)
+              .Enabled(Model.HabilitarNotasFrequenciasFinais)
+              .ButtonInstructions(Smc.GetUIResource(Model.MensagemNotasFrequenciasFinais))
+              .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_001_15_01.LANCAMENTO_NOTA_FREQUENCIA_FINAL);
+
+            SMCButtonFluentConfiguration botaoLancamentoNota = Smc.Button("LancamentoNota")
+               .Url(Url.Content("~/App/APR/LancamentoNota?seqOrigemAvaliacao=" + new SMCEncryptedLong(Model.SeqOrigemAvaliacao)))
+               .Text(Smc.GetUIResource("Botao_Lancamento_Nota_Turma"))
+               .Type(SMCButtonType.Link)
+               .Hide(Model.HideLancamentoNota)
+               .Enabled(Model.DesabilitarLancamentoNota)
+               .ButtonInstructions(Smc.GetUIResource(Model.InstructionsLancamentoNota))
+               .Tooltip(Smc.GetUIResource("Botao_Lancamento_Nota_Turma_Tooltip"))
+               .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_001_05_01.LANCAMENTO_NOTA);
+
+            SMCButtonFluentConfiguration botaoAcompanhamentoNota = Smc.Button("RelatorioAcompanhamento")
+               .Action("RelatorioAcompanhamento", "Home", new { seqOrigemAvaliacao = new SMCEncryptedLong(Model.SeqOrigemAvaliacao)})
+               .Text(Smc.GetUIResource("Botao_Acompanhamento_Nota"))
+               .Hide(Model.HideLAcompanhamentoNotas)
+               .Attribute("target", "_blank")
+               .Enabled(Model.DesabilitarAcompanhamentoNotas)
+               .Type(SMCButtonType.Link)
+               .ButtonInstructions(Smc.GetUIResource(Smc.GetUIResource(Model.InstructionsAcompanhamentoNotas)))
+               .Tooltip(Smc.GetUIResource("Botao_Acompanhamento_Nota_Tooltip"))
+               .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_001_17_01.EXIBIR_RELATORIO_ACOMPANHAMENTO_NOTA);
+
+            @(Smc.ButtonSet()
+                 .Size(SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24, SMCSize.Grid2_24)
+                 .CssClass("smc-sga-externo-botoes-grid")
+                 .AddButton(botaoAvaliacao)
+                 .AddButton(botaoAcompanhamentoNota)
+                 .AddButton(botaoGerarRelatorioDiarioTurma)
+                 .AddButton(botaoLancamentoNota)
+                 .AddButton(botaoLancarNotasFrequenciasFinais)                 
+                 .NumberOfButtonsToShow(0));
+
+        }
+        @Smc.List("Divisoes", m => m.DivisoesTurma).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(divisao => Html.Partial("_HomeTurmaDivisao", divisao.Value))
+
+    }
+    else
+    {
+        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-externo-agrupamento-secundario">@Model.DescricaoConfiguracaoComponente</label>
+
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+        {
+            <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+        }
+    }
+}

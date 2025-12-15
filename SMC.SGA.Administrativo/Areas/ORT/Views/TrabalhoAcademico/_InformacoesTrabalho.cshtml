@@ -1,0 +1,12 @@
+﻿@using SMC.SGA.Administrativo.Areas.ORT.Models
+@model TrabalhoAcademicoDynamicModel
+@if (Smc.GetViewMode() == SMCViewMode.Insert && Model.ExibirAlertaNivelEnsinoAlterado)
+{
+    @Smc.DisplayFor(m => m.MensagemAlerta).HideLabel()
+}
+@Smc.EditorFor(h => h.Titulo)
+@Smc.EditorFor(h => h.SeqNivelEnsino)
+@Smc.EditorFor(h => h.SeqTipoTrabalho)
+@Smc.EditorFor(h => h.DataDepositoSecretaria)
+@Smc.EditorFor(h => h.GeraFinanceiroEntregaTrabalho)
+@Smc.EditorFor(h => h.AlterarDataDepositoSecretaria)

@@ -1,0 +1,33 @@
+﻿@model HomeAlunoViewModel
+
+@using (Smc.Div("divtTurmas").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    <h2>@Smc.GetUIResource("Label_Dados_Turmas")</h2>
+    if (Model != null && Model.Cursos != null && Model.Cursos.Count > 0)
+    {
+        @Smc.List("Cursos", c => c.Cursos).CssClass("smc-sga-externo-area-rolagem").Size(SMCSize.Grid24_24).HtmlTemplate(curso => Html.Partial("_HomeCurso", curso.Value))
+    }
+    else
+    {
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+        {
+        <p>Não existem turmas disponíveis.</p>
+        }
+    }
+}
+
+@using (Smc.Div("divAtividades").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    <h2>@Smc.GetUIResource("Label_Dados_Atividades")</h2>
+    if (Model != null && Model.Atividades != null && Model.Atividades.Count > 0)
+    {
+        @Smc.List("Atividades", c => c.Atividades).CssClass("smc-sga-externo-area-rolagem").Size(SMCSize.Grid24_24).HtmlTemplate(atividade => Html.Partial("_HomeAtividade", atividade.Value))
+    }
+    else
+    {
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+        {
+        <p>Não existem atividades acadêmicas disponíveis.</p>
+        }
+    }
+}

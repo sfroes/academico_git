@@ -1,0 +1,13 @@
+﻿@model TurmaParametrosViewModel
+
+@if (Model.ExiteOfertasConfiguracao)
+{
+    var criterioSelecionado = Model.ParametrosOfertas.Where(w => w.Selecionado).ToList();
+
+    @Smc.List("Criterio" + Model.Seq, criterioSelecionado).CssClass("smc-list-item-grid smc-listdetailed-conteudo-lista-item-destaque").HtmlTemplate(criterio => Html.Partial("_StepDadosTurmaParametrosCriterio", criterio))
+}
+else
+{
+    @Smc.List("Criterio" + Model.Seq, m => m.ParametrosOfertas).CssClass("smc-list-item-grid smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24).HtmlTemplate(criterio => Html.Partial("_StepDadosTurmaParametrosCriterio", criterio.Value))
+
+}

@@ -1,0 +1,19 @@
+﻿@model AtendimentoParecerAssertViewModel
+
+@{
+    Layout = null;
+}
+
+@using (Smc.Fieldset("fsAssertDeferido").Begin())
+{
+    @Smc.DisplayFor(x => x.Protocolo)
+    @Smc.DisplayFor(x => x.DescricaoProcesso)
+    @Smc.DisplayFor(x => x.NomeSolicitante)
+    @Smc.DisplayFor(x => x.OrientacoesDeferimento)
+}
+
+@using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+{
+    <label>@Smc.GetUIResource("MSG_Confirma_Deferimento")</label>
+}
+

@@ -1,0 +1,11 @@
+﻿@model ContatoViewModel
+
+@using (Smc.Form("formContato", "Contato").Begin())
+{
+    @Smc.EditorFor(m => m.Assunto)
+    @Smc.EditorFor(m => m.Nome)
+    @Smc.EditorFor(m => m.Email)
+    @Smc.EditorFor(m => m.Message)
+
+    @Smc.Button(SMCButtonBehavior.Enviar)
+}

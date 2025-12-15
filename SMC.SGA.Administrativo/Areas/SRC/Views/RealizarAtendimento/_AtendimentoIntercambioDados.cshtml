@@ -1,0 +1,26 @@
+﻿@model AtendimentoIntercambioViewModel
+
+@Smc.HiddenFor(x => x.OrientacaoAluno)
+@Smc.HiddenFor(x => x.ExisteTipoOrientacaoParametrizado)
+
+@using (Smc.Fieldset("fsDadosIntercambio").Begin())
+{
+	@Smc.EditorFor(x => x.CotutelaJaAssociada)
+	@Smc.EditorFor(x => x.SeqTermoIntercambio)
+	@Smc.EditorFor(x => x.DescricaoTipoTermo)
+	@Smc.EditorFor(x => x.DescricaoInstituicaoExterna)
+	@Smc.HiddenFor(x => x.ExigePeriodo)
+	@Smc.EditorFor(x => x.DataInicio)
+	@Smc.EditorFor(x => x.DataFim)
+}
+
+@using (Smc.Fieldset("fsDadosOrientacao").Begin())
+{
+	@Smc.EditorFor(x => x.SeqTipoOrientacao)
+
+	using (Smc.Div("divDadosOrientacaox").Size(SMCSize.Grid24_24).Dependency("SeqTipoOrientacao", "BuscarDadosOrientacaoIntercambio", "RealizarAtendimento", "SRC", false, "SeqSolicitacaoServico", "SeqTipoTermoIntercambio", "SeqTermoIntercambio").Begin())
+	{
+	}
+}
+
+

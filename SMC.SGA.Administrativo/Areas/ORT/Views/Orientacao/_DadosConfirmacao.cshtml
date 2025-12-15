@@ -1,0 +1,48 @@
+﻿@using SMC.SGA.Administrativo.Areas.ORT.Models
+@model OrientacaoDynamicModel
+
+
+@using (Smc.Div().CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Fieldset("DadosOrientacao").Begin())
+    {
+        @Smc.DisplayFor(m => m.DescricaoNivelEnsino).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24)
+        @Smc.DisplayFor(m => m.DescricaoTipoVinculoAluno).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24)
+        @Smc.DisplayFor(m => m.DescricaoTipoIntercambio).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24)
+        @Smc.DisplayFor(m => m.DescricaoTipoOrientacao).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24)
+    }
+
+
+    using (Smc.Fieldset("Alunos").LegendText(@Smc.GetUIResource("TituloListaAlunos")).Begin())
+    {
+        using (Smc.Div("DivAlunos").CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24).Begin())
+        {
+            @(Smc.Grid("gridAluno" + Model.Seq, new SMCPagerModel<OrientacaoPessoaAtuacaoMasterDetailViewModel>(Model.OrientacoesPessoaAtuacao))
+                                                                .FieldColumn(f => f.RAConfirmacao, cssClass: "smc-size-md-2")
+                                                                .FieldColumn(f => f.NomeAlunoConfirmacao, cssClass: "smc-size-md-22")
+                                                                .HideGridTitle()
+                                                                .HideNavigator()
+                                                                .HideRowNumber()
+                                                                .Size(SMCSize.Grid24_24))
+
+        }
+    }
+
+    using (Smc.Fieldset("Professores").LegendText(@Smc.GetUIResource("TituloListaProfessores")).Begin())
+    {
+        using (Smc.Div("DivProfessores").CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24).Begin())
+        {
+            @(Smc.Grid("gridProfessor" + Model.Seq, new SMCPagerModel<OrientacoesColaboradorMasterDetailViewModel>(Model.OrientacoesColaborador))
+                                                                .FieldColumn(f => f.NomeOrientadorConfirmacao)
+                                                                .FieldColumn(f => f.TipoParticipacaoOrientacao)
+                                                                .FieldColumn(f => f.DataInicioOrientacao)
+                                                                .FieldColumn(f => f.DataFimOrientacao)
+                                                                .FieldColumn(f => f.NomeInstiuicaoFinanceiraConfirmacao)
+                                                                .HideGridTitle()
+                                                                .HideNavigator()
+                                                                .HideRowNumber()
+                                                                .Size(SMCSize.Grid24_24))
+        }
+    }
+
+}

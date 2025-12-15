@@ -1,0 +1,5 @@
+﻿@model CampanhaConsultarCandidatoCabecalhoViewModel
+
+@using (Smc.Header("Campanha", SMCHeaderType.Primary)
+              .Item(prop => prop.Descricao, sizeMD: SMCSize.Grid12_24)
+              .Begin()) { }

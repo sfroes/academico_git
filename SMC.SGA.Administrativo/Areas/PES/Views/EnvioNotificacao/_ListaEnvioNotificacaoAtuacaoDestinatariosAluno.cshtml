@@ -1,0 +1,12 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Models
+
+@model SMCPagerModel<EnvioNotificacaoPessoasListarViewModel>
+
+@(Smc.Grid("gridEnvioNotificacoesAtuacaoAluno", Model)
+        .AutoGenerateColumns(false)
+        .FieldColumn(x => x.NumeroRegistroAcademico)
+        .FieldColumn(x => x.Nome)
+        .FieldColumn(x => x.Email)
+        .HideRowNumber()
+        )
+

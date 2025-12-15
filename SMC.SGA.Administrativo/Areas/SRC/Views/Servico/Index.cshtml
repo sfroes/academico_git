@@ -1,0 +1,33 @@
+﻿@model ServicoFiltroViewModel
+
+@using (Smc.Form("filtroServico", "ListarServicos").Ajax("#divGridServicos").Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Fieldset("filtros").CssClass("smc-fieldset-filter").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(m => m.Seq)
+        @Smc.EditorFor(m => m.SeqTipoServico)
+        @Smc.EditorFor(m => m.TipoAtuacao)
+        @Smc.EditorFor(m => m.Descricao)
+
+        @(Smc.ButtonSet()
+             .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+             .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+             .AddButton(Smc.Button(SMCButtonBehavior.Novo).DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+             .Tooltip(Smc.GetUIResource("Botao_Incluir_Novo_Servico"))
+             .Type(SMCButtonType.Link)
+             .SecurityToken(UC_SRC_001_01_02.MANTER_SERVICO)
+             .Url(Url.Action("Incluir")))
+        )
+    }
+}
+
+@using (Smc.Div("divGridServicos").Attribute("data-id", "divGridServicos").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Smc.ActionList("ListarServicos", Model, true)
+}
+
+@using (Smc.ModalWindow("modalConsultarTaxasPorNucleo").Size(SMCModalWindowSize.Large)
+                    .Title(Smc.GetUIResource("Botao_Consultar_Taxas_Nucleo_Title"))
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Botao_Fechar")).Tooltip(Smc.GetUIResource("Botao_Fechar")))
+                    .Begin())
+{ }

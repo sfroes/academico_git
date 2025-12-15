@@ -1,0 +1,122 @@
+﻿@model ChancelaViewModel
+
+@{ 
+    ViewBag.ChancelaFinalizada = Model.ChancelaFinalizada;
+}
+
+@{
+    var header = Smc.Header("headerChancela", SMCHeaderType.Primary)
+            .Item(x => x.Nome, sizeMD: SMCSize.Grid14_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid14_24);
+
+    if (!string.IsNullOrWhiteSpace(Model.CPF))
+    {
+        header.Item(x => x.CPF, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid10_24);
+    }
+
+    if (!string.IsNullOrWhiteSpace(Model.Passaporte))
+    {
+        header.Item(x => x.Passaporte, sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid8_24);
+    }
+
+    header.Item(x => x.DescricaoProcesso, sizeMD: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid14_24);
+
+    if (!string.IsNullOrWhiteSpace(Model.DescricaoOfertaCampanha))
+    {
+        header.Item(x => x.DescricaoOfertaCampanha, sizeMD: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid10_24);
+    }
+}
+@using (header.Begin()) { }
+
+@using (Smc.Form("frmSalvarChancela", "Salvar").Begin())
+{
+    
+    using (Smc.Header("SituacaoAtual", SMCHeaderType.Primary)
+                        .Item(prop => prop.DescricaoSituacaoAtualFormatada, sizeMD: SMCSize.Grid24_24)
+                        .Begin()) {
+    }
+
+    @Smc.HiddenFor(d => d.Seq)
+    @Smc.HiddenFor(d => d.SeqProcesso)
+    @Smc.HiddenFor(d => d.SeqProcessoEtapa)
+    @Smc.HiddenFor(d => d.Orientacao)
+    if (Model.ExigirCurso == true && Model.ExigirMatrizCurricularOferta == true && !Model.ChancelaFinalizada)
+    {
+        @(Smc.ButtonSet().Size(SMCSize.Grid24_24)
+                .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                     .Action("PesquisarSelecaoTurma", "SelecaoTurmaRoute", new { @seqSolicitacaoMatricula = Model.Seq, @seqIngressante = Model.SeqIngressante, @seqProcesso = Model.SeqProcesso, @seqProcessoEtapa = Model.SeqProcessoEtapa, @backUrl = Url.Action("Editar", "Chancela", new { seq = new SMCEncryptedLong(Model.Seq), seqProcesso = new SMCEncryptedLong(Model.SeqProcesso), seqProcessoEtapa = new SMCEncryptedLong(Model.SeqProcessoEtapa), orientacao = Model.Orientacao, area = "MAT" }), @area = string.Empty })
+                     .Ajax(isPost: false)
+                     .SecurityToken(UC_MAT_003_09_01.SELECIONAR_TURMAS)
+                     .Attribute(SMCMvcConsts.MODAL_ID, "modalSelecionarTurma")
+                     .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Selecionar_Turma"))
+                     .Text(Smc.GetUIResource("Label_Selecionar_Turma"))
+                     .Tooltip(Smc.GetUIResource("Label_Selecionar_Turma")))
+                .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                     .Action("PesquisarSelecaoAtividade", "SelecaoAtividadeRoute", new { @seqSolicitacaoMatricula = Model.Seq, @seqIngressante = Model.SeqIngressante, @seqProcessoEtapa = Model.SeqProcessoEtapa, @backUrl = Url.Action("Editar", "Chancela", new { seq = new SMCEncryptedLong(Model.Seq), seqProcesso = new SMCEncryptedLong(Model.SeqProcesso), seqProcessoEtapa = new SMCEncryptedLong(Model.SeqProcessoEtapa), orientacao = Model.Orientacao, area = "MAT" }), @area = string.Empty })
+                     .Ajax(isPost: false)
+                     .SecurityToken(UC_MAT_003_10_01.SELECIONAR_ATIVIDADES_ACADEMICAS)
+                     .Attribute(SMCMvcConsts.MODAL_ID, "modalSelecionarAtividade")
+                     .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Selecionar_Atividade"))
+                     .Text(Smc.GetUIResource("Label_Selecionar_Atividade"))
+                     .Tooltip(Smc.GetUIResource("Label_Selecionar_Atividade"))))
+    }
+
+    if (Model.Turmas != null && Model.Turmas.Count() > 0)
+    {
+        using (Smc.Fieldset("listaTurmas").CssClass("smc-sga-fieldset-list-submit").Begin())
+        {
+            @(Smc.Legend("ComponenteCurriculo", SMCOrientation.Horizontal).CssClass("smc-sga-legenda").Items<SMC.Academico.Common.Areas.MAT.Enums.TurmaOfertaMatricula>())
+            @(Smc.List("gridTurmas", m => m.Turmas)
+                .CssClass("smc-list-submit")
+                .Size(SMCSize.Grid24_24)
+                .HtmlTemplate(item => Html.Partial("_ChancelaTurma", item.Value)))
+        }
+    }
+
+    if (Model.Atividades != null && Model.Atividades.Count() > 0)
+    {
+        using (Smc.Fieldset("listaAtividades").CssClass("smc-sga-fieldset-list-submit").Begin())
+        {
+            @(Smc.List("gridAtividades", m => m.Atividades)
+                .CssClass("smc-list-submit")
+                .Size(SMCSize.Grid24_24)
+                .HtmlTemplate(item => Html.Partial("_ChancelaAtividade", item.Value)))
+
+        }
+    }
+
+    if (Model.ChancelaFinalizada)
+    {
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button("ReabrirChancela").CssClass("smc-btn-custom-destaque").Type(SMCButtonType.Link).SecurityToken(UC_MAT_003_22_01.CHANCELAR_PLANO_ESTUDO).Action("ReabrirChancela", "Chancela", new { seq = new SMCEncryptedLong(Model.Seq), seqProcesso = new SMCEncryptedLong(Model.SeqProcesso), seqProcessoEtapa = new SMCEncryptedLong(Model.SeqProcessoEtapa), orientacao = Model.Orientacao }))
+            .AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Voltar", routeValues: new { seqProcesso = new SMCEncryptedLong(Model.SeqProcesso), seqProcessoEtapa = new SMCEncryptedLong(Model.SeqProcessoEtapa), orientacao = Model.Orientacao }, forceForBackBehavior: true))
+            )
+    }
+    else
+    {
+       @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Salvar).CssClass("smc-btn-custom-destaque").Tooltip(Smc.GetUIResource("Botao_Chancelar")))
+            .AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Voltar", routeValues: new { seqProcesso = new SMCEncryptedLong(Model.SeqProcesso), seqProcessoEtapa = new SMCEncryptedLong(Model.SeqProcessoEtapa), orientacao = Model.Orientacao }, forceForBackBehavior: true))
+    )
+
+    }
+}
+
+@using (Smc.ModalWindow("modalVisualizarDivisaoTurma")
+                       .Form("formVisualizarDivisaoTurma", closeOnSubmit: true)
+                       .Size(SMCModalWindowSize.Large)
+                       .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+                       .Begin()) { }
+
+@using (Smc.ModalWindow("modalSelecionarTurma")
+        .Form("frmModalSelecaoTurma", "SalvarSelecaoTurma", "SelecaoTurmaRoute", new { area = string.Empty }, closeOnSubmit: true, config: x => x.Ajax())
+        .Size(SMCModalWindowSize.Largest)
+        .Button(SMCButtonBehavior.Salvar, "SalvarSelecaoTurma", "SelecaoTurmaRoute", new { area = string.Empty }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalSelecionarAtividade")
+        .Form("frmModalSelecaoAtividade", "SalvarSelecaoAtividade", "SelecaoAtividadeRoute", new { area = string.Empty }, closeOnSubmit: true, config: x => x.Ajax())
+        .Size(SMCModalWindowSize.Largest)
+        .Button(SMCButtonBehavior.Salvar, "SalvarSelecaoAtividade", "SelecaoAtividadeRoute", new { area = string.Empty }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }

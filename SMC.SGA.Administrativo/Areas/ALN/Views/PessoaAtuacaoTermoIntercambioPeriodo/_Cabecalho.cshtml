@@ -1,0 +1,15 @@
+﻿@model PessoaAtuacaoTermoIntercambioPeriodoCabecalhoViewModel
+
+@using (Smc.Header("PessoaAtuacaoTermoIntercambioPeriodo", SMCHeaderType.Primary)
+                    .Item(prop => prop.Nome, sizeSM: SMCSize.Grid8_24, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+                    .Item(prop => prop.TipoAtuacao, sizeSM: SMCSize.Grid3_24, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+                    .Item(prop => prop.NomeEntidadeResponsavel, sizeSM: SMCSize.Grid10_24, sizeMD: SMCSize.Grid10_24, sizeLG: SMCSize.Grid10_24, sizeXS: SMCSize.Grid10_24)
+
+                    .Item(prop => prop.DescricaoNivelEnsino, sizeSM: SMCSize.Grid8_24, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+                    .Item(prop => prop.TipoVinculoAlunoDescricao, sizeSM: SMCSize.Grid7_24, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+                    .Item(prop => prop.DescricaoTipoTermo, sizeSM: SMCSize.Grid7_24, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+                    .Item(prop => prop.DescricaoTermoIntercambio, sizeSM: SMCSize.Grid10_24, sizeMD: SMCSize.Grid10_24, sizeLG: SMCSize.Grid10_24, sizeXS: SMCSize.Grid10_24)
+
+                    .Item(prop => prop.InstituicaoExternaNome, sizeSM: SMCSize.Grid7_24, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+                    .Item(prop => prop.TipoMobilidade, sizeSM: SMCSize.Grid7_24, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+                    .Begin()){ }

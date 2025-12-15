@@ -1,0 +1,16 @@
+﻿@using SMC.Academico.Common.Areas.SRC.Enums
+@model SMC.Academico.UI.Mvc.Areas.SRC.Models.DadosModalSolicitacaoServicoViewModel
+
+
+@using (Smc.Div("").Size(SMCSize.Grid18_24).Begin())
+{
+    <p class="smc-sga-titulo-legenda"> @Smc.GetUIResource("Label_Situacao_Final_Etapa")</p>
+    @(Smc.Legend("SituacaoFinalEtapa", SMCOrientation.Horizontal).Items<SituacaoFinalEtapa>())
+}
+
+@(Smc.List("Historicos", Model.HistoricosSolicitacao)
+                                        .HtmlTemplate(
+        @<text>
+            @{ var view = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.DADOS_MODAL_SOLICITACAO_SERVICO_HISTORICO_ITEM); }
+            @Html.Partial(view, item)
+        </text>))

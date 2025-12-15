@@ -1,0 +1,29 @@
+﻿@model SolicitacaoMatriculaListaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().CssClass("smc-sga-aluno-selecao-titulo-processo").Begin())
+    {
+        @Smc.DisplayFor(x => x.DescricaoProcesso).HideLabel()
+    }
+
+    using (Smc.Div().CssClass("smc-sga-aluno-selecao-campos-processo").Begin())
+    {
+        @Smc.DisplayFor(x => x.DescricaoOferta)
+
+        if (Model.ExibirCicloLetivo)
+        {
+            @Smc.DisplayFor(x => x.CicloLetivo).CssClass("ciclo")
+        }
+
+        if (Model.ExibirVinculo)
+        {
+            @Smc.DisplayFor(x => x.DescricaoVinculo).CssClass("vinculo")
+        }
+
+        @Smc.DisplayFor(x => x.DescricaoFormaIngresso)
+        @Smc.DisplayFor(x => x.DescricaoSituacao)
+
+        @Smc.HiddenFor(x => x.DescricaoProcesso).Name("DescricaoProcesso_" + Model.SeqSolicitacaoServico)
+    }
+}

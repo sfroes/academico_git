@@ -1,0 +1,24 @@
+﻿@model TurmaDynamicModel
+
+@{
+    Model.Cabecalho.TurmaConfiguracoesCabecalho = Model.TurmaConfiguracoesCabecalho;
+}
+
+@Html.Partial("_CabecalhoCompleto", Model.Cabecalho)
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-display smc-sga-mensagem smc-sga-mensagem-alerta smc-sga-mensagem-multiplas-linhas").Begin())
+{
+    @Smc.DisplayFor(m => m.MensagemConfirmarCancelarTurma)
+}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-header-detalhes").Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(m => m.Seq)
+        //@Smc.EditorFor(m => m.DiarioFechado)
+        @Smc.EditorFor(m => m.SituacaoJustificativa).Size(SMCSize.Grid24_24)
+    }
+}
+
+

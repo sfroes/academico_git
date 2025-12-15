@@ -1,0 +1,20 @@
+﻿@model ConfigurarVagasOfertaProcessoSeletivoViewModel
+
+@using (Smc.Form("formCopiarVagasOfertaProcessoSeletivo").Ajax().Begin())
+{
+    @Smc.EditorFor(m => m.SeqCampanha)
+    @Smc.EditorFor(m => m.SeqProcessoSeletivo)
+    @Smc.HiddenFor(m => m.gridListaOfertasProcessoSeletivo)
+
+    @(Smc.Grid("gridListarCopiarVagas", new SMCPagerModel<ConfigurarVagasOfertaCampanhaListaViewModel>(Model.CampanhaOfertas))
+            .HideNavigator()
+            .HidePager()
+            .HideRowNumber()
+            .HideRowsTotalizer()
+            .HideGridTitle()
+            .Attribute("data-detail-property", SMCLookupHelper.GetCurrentPropertyName(Smc))
+            .FieldColumn(x => x.TipoOfertaDisplay)
+            .FieldColumn(x => x.OfertaDisplay)
+            .FieldColumn(x => x.Vagas)
+    )
+}

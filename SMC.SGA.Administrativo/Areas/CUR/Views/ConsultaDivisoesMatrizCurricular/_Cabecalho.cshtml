@@ -1,0 +1,10 @@
+﻿@model MatrizCurricularCabecalhoViewModel
+
+@using (Smc.Header("CurriculoCursoOferta", SMCHeaderType.Primary)
+           .Item(prop => prop.DescricaoCursoFormatada, sizeMD: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid8_24)
+           .Item(prop => prop.DescricaoCurriculoFormatada, sizeMD: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid16_24)
+           .Item(prop => prop.DescricaoOfertaCurso, sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid8_24)
+           .Item(prop => prop.SituacaoCurriculo, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid6_24)
+           .Item(prop => prop.DescricaoMatrizFormatada, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid10_24)
+           .Begin())
+{ }

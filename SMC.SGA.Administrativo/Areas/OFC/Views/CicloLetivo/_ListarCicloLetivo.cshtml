@@ -1,0 +1,17 @@
+﻿@model SMCPagerModel<CicloLetivoListaViewModel>
+
+@(Smc.Grid("gridCicloLetivo")
+     .Action("ListarCicloLetivo", "CicloLetivo")
+     .AutoGenerateColumns()
+     .ButtonColumn(SMCButtonSetType.Secondary, "smc-sga-grid-coluna-botoes",
+                     item => Smc.FieldButton(SMCButtonBehavior.Alterar, "Editar", new { @seqCicloLetivo = SMCDESCrypto.EncryptNumberForURL((item as CicloLetivoListaViewModel).Seq) }, "CicloLetivo")
+                                .DisplayMode(SMCButtonDisplayMode.Icon),
+                     
+                     item => Smc.FieldButton(SMCButtonBehavior.Excluir, "Excluir", new { @seqCicloLetivo = SMCDESCrypto.EncryptNumberForURL((item as CicloLetivoListaViewModel).Seq) }, "CicloLetivo")
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .Ajax(isPost: true, updateTargetId: "#divGridCicloLetivo")
+                                .Confirm(Smc.GetUIResource("Exclusao_Ciclo_Letivo_Title"),
+                                         string.Format(Smc.GetUIResource("Exclusao_Ciclo_Letivo_Confirmacao"), (item as CicloLetivoListaViewModel).Descricao))
+                  )
+)
+

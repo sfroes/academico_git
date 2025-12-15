@@ -1,0 +1,25 @@
+﻿@using SMC.SGA.Administrativo.Areas.FIN.Models
+
+@model ContratoListarDynamicModel
+
+@{ 
+    SMCButtonFluentConfiguration buttonVisualizarContrato = Smc.Button("btn-visualizar-contrato")
+         .Text(Smc.GetUIResource("Botao_Visualizar_Contrato"))
+        .Tooltip(Smc.GetUIResource("Botao_Visualizar_Contrato"))
+        .Type(SMCButtonType.Link)
+        .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true)
+        .Attribute("target", "_blank") 
+        .SecurityToken(SMC.Academico.Common.Areas.FIN.Constants.UC_FIN_002_02_01.PESQUISAR_CONTRATO)
+        .Action("VisualizarArquivo", "Contrato", new { @SeqContrato = new SMCEncryptedLong(Model.Seq) });
+
+
+    SMCButtonFluentConfiguration buttonTermoAdesao = Smc.Button("btn-termo-adesao")
+        .Text(Smc.GetUIResource("Botao_Novo_Termo_Adesao"))
+        .Tooltip(Smc.GetUIResource("Botao_Novo_Termo_Adesao"))
+        .Type(SMCButtonType.Link)
+        .CssClass("smc-btn-custom-destaque")
+        .SecurityToken(SMC.Academico.Common.Areas.FIN.Constants.UC_FIN_002_02_03.PESQUISAR_TERMO_ADESAO)
+        .Action("Index", "TermoAdesao", new { @SeqContrato = new SMCEncryptedLong(Model.Seq) });
+}
+
+@Smc.Templates.DetailedListButtons().AddButton(buttonVisualizarContrato).AddButton(buttonTermoAdesao).NumberOfButtonsToShow(2).Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)

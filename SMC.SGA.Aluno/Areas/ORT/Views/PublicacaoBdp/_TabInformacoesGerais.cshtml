@@ -1,0 +1,36 @@
+﻿@model PublicacaoBdpViewModel
+
+@Smc.EditorFor(e => e.UltimaSituacaoTrabalho).Readonly().Size(SMCSize.Grid6_24, SMCSize.Grid12_24, SMCSize.Grid16_24, SMCSize.Grid6_24)
+
+@Smc.EditorFor(e => e.DescricaoTipoTrabalho).Readonly().Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid12_24)
+@Smc.EditorFor(e => e.DataDefesa).Readonly().Size(SMCSize.Grid4_24, SMCSize.Grid12_24, SMCSize.Grid8_24, SMCSize.Grid4_24)
+@Smc.EditorFor(e => e.QuantidadeVolumes).Size(SMCSize.Grid4_24, SMCSize.Grid12_24, SMCSize.Grid8_24, SMCSize.Grid4_24).Required()
+@Smc.EditorFor(e => e.QuantidadePaginas).Size(SMCSize.Grid4_24, SMCSize.Grid12_24, SMCSize.Grid8_24, SMCSize.Grid4_24).Required()
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+{
+    <p>@Smc.GetUIResource("Mensagem_Informativa_Autores")</p>
+}
+
+@Smc.MasterDetail(m => m.TrabalhoAcademico.Autores).HideButtons().Size(SMCSize.Grid24_24)
+
+@Smc.EditorFor(e => e.Arquivos).CssClass("smc-sga-externo-upload-arquivo");
+
+@*@Smc.EditorFor(e => e.UrlArquivo)
+@Smc.EditorFor(e => e.TamanhoArquivo)
+@Smc.EditorFor(e => e.NomeArquivo)*@
+
+@using (Smc.Fieldset("FieldSetBancaExaminadora").Begin())
+{
+    @(Smc.Grid("gridBancaExaminadora" + Model.Seq, new SMCPagerModel<BancaExaminadoraViewModel>(Model.TrabalhoAcademico.MembrosBancaExaminadora))
+                                        .HideGridTitle()
+                                        .HideNavigator()
+                                        .HideRowNumber()
+                                        .FieldColumn(f => f.Nome, cssClass: "smc-size-md-10 smc-size-xs-10 smc-size-sm-10 smc-size-lg-10")
+                                        //.FieldColumn(f => f.TipoMembroBanca, cssClass: "smc-size-md-6 smc-size-xs-6 smc-size-sm-6 smc-size-lg-6")
+                                        .FieldColumn(f => f.Instituicao, cssClass: "smc-size-md-14 smc-size-xs-14 smc-size-sm-14 smc-size-lg-14")
+                                        .Size(SMCSize.Grid24_24))
+}
+
+
+

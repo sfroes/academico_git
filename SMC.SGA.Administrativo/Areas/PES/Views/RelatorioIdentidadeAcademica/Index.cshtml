@@ -1,0 +1,41 @@
+﻿@model RelatorioIdentidadeAcademicaFiltroViewModel
+
+@section Scripts{
+    <script type="text/javascript" src=@Url.SMCBuscarRecursoAplicacao("Scripts/Relatorio.js")></script>
+}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+{
+    <p>@Html.Raw(Smc.GetUIResource("MSG_Informacao_Identidade_Estudantil"))</p>
+}
+
+@using (Smc.Form("frmViewPadrao", "GerarRelatorio", Model).Begin())
+{
+    using (Smc.Div("divViewPadrao").Attribute("data-id", "divViewPadrao").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.TabSet("IdentidadeEstudantil").Begin())
+        {
+            using (Smc.Tab("Alunos").Begin())
+            {
+                @Smc.EditorFor(m => m.Alunos).Size(SMCSize.Grid24_24)
+            }
+            using (Smc.Tab("Colaboradores").Begin())
+            {
+                @Smc.HiddenFor(m => m.CriaVinculoInstitucional)
+                @Smc.HiddenFor(m => m.VinculoAtivo)
+                @Smc.EditorFor(m => m.Colaboradores).Size(SMCSize.Grid24_24)
+            }
+        }
+
+        var buttonSet = Smc.ButtonSet().ConditionalDisplay("Alunos_Grid", true);
+
+        buttonSet.AddButton(Smc.Button("Gerar_Relatorio").Url(Url.Action("GerarRelatorio"))
+                        .Ajax(fieldsContainerToRequest: "#divViewPadrao", onSuccess: "GerarRelatorio")
+                        .CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+                        .Text(Smc.GetUIResource("Botao_Relatorio"))
+                        .Tooltip(Smc.GetUIResource("Botao_Relatorio_Tooltip"))
+                        .Attribute("data-behavior-download", "true"));
+
+        @buttonSet
+    }
+}

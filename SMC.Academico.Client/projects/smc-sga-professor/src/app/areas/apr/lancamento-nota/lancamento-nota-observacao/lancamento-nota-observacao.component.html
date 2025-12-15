@@ -1,0 +1,66 @@
+<po-modal p-title="Observação do aluno" class="smc-sga-modal-ajuste-botoes" [p-primary-action]="acaoFechar"
+  [p-secondary-action]="acaoSalvar" p-size="xl">
+  <app-lancamento-nota-cabecalho [descricaoOrigemAvaliacao]="descricaoOrigemAvaliacao" [nomeAluno]="nomeAluno">
+  </app-lancamento-nota-cabecalho>
+
+  <p class="smc-sga-titulo-legenda">Situação da entrega</p>
+  <div class="smc-legend-box smc-legend-orientation-horizontal">
+    <ul class="smc-legend-content">
+      <li class="smc-legend-content-title">
+        <span></span>
+      </li>
+      <li class="smc-legend-circle-fill smc-legend-green2">
+        <span title="Entrega online">Entrega via SGA</span>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="smc-sga-grid-estrutura">
+    <div class="">
+      <div class="smc-sga-grid-header">
+        <div class="smc-size-lg-1 smc-size-md-1 smc-size-sm-1 smc-size-xs-1">
+        </div>
+        <div class="smc-size-lg-9 smc-size-md-9 smc-size-sm-9 smc-size-xs-9">
+          <p>Avaliação</p>
+        </div>
+        <div class="smc-size-lg-2 smc-size-md-2 smc-size-sm-2 smc-size-xs-2">
+          <p>Nota</p>
+        </div>
+        <div class="smc-size-lg-12 smc-size-md-12 smc-size-sm-12 smc-size-xs-12">
+          <p>Comentário</p>
+        </div>
+      </div>
+      <form [formGroup]="formObservacao">
+        <ng-container formArrayName="apuracoes">
+          <div *ngFor="let apuracao of apuracaoes; index as indexApuracao" formGroupName="{{indexApuracao}}"
+            class="smc-sga-grid-linha smc-size-md-24">
+            <div class="smc-size-md-1">
+              <ul *ngIf="avaliacoes[indexApuracao].entregaWeb" class="smc-legend-content">
+                <li class="smc-legend-circle-fill smc-legend-green2">
+                </li>
+              </ul>
+            </div>
+            <div class="smc-size-md-9">
+              <p>{{avaliacoes[indexApuracao].descricaoFormatada}}</p>
+            </div>
+            <div class="smc-size-lg-2 smc-size-md-2 smc-size-sm-2 smc-size-xs-2">
+              <po-input formControlName="nota" [p-required]="validarNotaObrigatoria(indexApuracao)"
+                [p-disabled]="avaliacoes[indexApuracao].entregaWeb || diarioFechado || formado"
+                [p-error-pattern]="'Valor entre 0 e ' +  avaliacoes[indexApuracao].valor + ' ou *'"
+                p-pattern="^(\*|[0-9]+|[0-9]+,[0-9]?[0-9]?)$"
+                [class.smc-campo-highlight]="formObservacao.get('apuracoes.' + indexApuracao + '.nota').dirty">
+              </po-input>
+            </div>
+            <div class="smc-size-lg-12 smc-size-md-12 smc-size-sm-12 smc-size-xs-12">
+              <po-input #comentario formControlName="comentarioApuracao"
+                [p-disabled]="avaliacoes[indexApuracao].entregaWeb || diarioFechado || formado"
+                [class.smc-campo-highlight]="formObservacao.get('apuracoes.' + indexApuracao + '.comentarioApuracao').dirty">
+              </po-input>
+            </div>
+          </div>
+        </ng-container>
+      </form>
+    </div>
+  </div>
+</po-modal>

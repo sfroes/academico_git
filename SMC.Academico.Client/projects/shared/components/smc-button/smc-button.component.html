@@ -1,0 +1,13 @@
+<div class="smc-button">
+  <button
+    #button
+    (click)="clickEvent.emit()"
+    [class]="getClass()"
+    [type]="type"
+    [disabled]="disabled || loading"
+    [title]="getTooltip()"
+  >
+    <div [class.smc-sga-carregando-local]="loading"></div>
+    <i></i>{{ label }}
+  </button>
+</div>

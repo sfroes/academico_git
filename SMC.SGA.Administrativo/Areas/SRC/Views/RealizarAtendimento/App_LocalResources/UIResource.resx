@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DadosAdicionais_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados do atendimento</value>
+  </data>
+  <data name="DadosCriacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados da criação da solicitação</value>
+  </data>
+  <data name="fsJustificativa_Fieldset_Legenda" xml:space="preserve">
+    <value>Justificativa da solicitação</value>
+  </data>
+  <data name="InformacoesComplementaresAtualizada_Fieldset_Legenda" xml:space="preserve">
+    <value>Informações complementares atualizadas</value>
+  </data>
+  <data name="InformacoesComplementaresOriginal_Fieldset_Legenda" xml:space="preserve">
+    <value>Informações complementares</value>
+  </data>
+  <data name="MSG_Existem_Bloqueios" xml:space="preserve">
+    <value>Opção indisponível. Há bloqueio(s) associado(s) ao solicitante que impede(m) iniciar a realização do atendimento.</value>
+  </data>
+  <data name="SolicitacaoAtualizada_Accordion_Section_Titulo" xml:space="preserve">
+    <value>Solicitação atualizada</value>
+  </data>
+  <data name="SolicitacaoOriginal_Accordion_Section_Titulo" xml:space="preserve">
+    <value>Solicitação original</value>
+  </data>
+  <data name="Texto_Nao_Ha_Documentos_Requeridos" xml:space="preserve">
+    <value>Não há documentação requerida para esse tipo de solicitação.</value>
+  </data>
+  <data name="Label_Documentos" xml:space="preserve">
+    <value>Documentos da solicitação</value>
+  </data>
+  <data name="Label_Formularios" xml:space="preserve">
+    <value>Formulários da solicitação</value>
+  </data>
+  <data name="fsDadosParecer_Fieldset_Legenda" xml:space="preserve">
+    <value>Parecer do atendimento</value>
+  </data>
+  <data name="MSG_Confirmacao_Situacao_Futura_Aluno" xml:space="preserve">
+    <value>Atenção. Esse tipo de solicitação realiza atualização no histórico de matrícula do aluno, portanto foram identificadas as seguintes previsões futuras de situação: &lt;br&gt;&lt;ul&gt;{0}&lt;/ul&gt;&lt;br&gt;Deseja prosseguir com o deferimento dessa solicitação? Caso prossiga as situações futuras serão canceladas.</value>
+  </data>
+  <data name="MSG_Confirma_Deferimento" xml:space="preserve">
+    <value>Confirma o DEFERIMENTO da solicitação?</value>
+  </data>
+  <data name="MSG_Confirma_Indeferimento" xml:space="preserve">
+    <value>Confirma o INDEFERIMENTO da solicitação?</value>
+  </data>
+  <data name="MSG_Assert_ParcelasEmAberto_Trancamento" xml:space="preserve">
+    <value>Atenção! Esse aluno possui pendência financeira com a instituição. Gentileza orientá-lo a procurar a divisão financeira para regularizar sua situação. Deseja realmente efetuar o trancamento?</value>
+  </data>
+  <data name="fsSolicitacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Descrição da solicitação</value>
+  </data>
+  <data name="MSG_RealizarAtendimento_Sucesso" xml:space="preserve">
+    <value>{0} realizado com sucesso para a solicitação {1}.</value>
+  </data>
+  <data name="MSG_Titulo_Sucesso" xml:space="preserve">
+    <value>Sucesso</value>
+  </data>
+  <data name="MSG_Confirmacao_Situacao_Futura_Aluno_Item" xml:space="preserve">
+    <value>&lt;li&gt;Situação futura {0}, a partir de {1}, gerado pela solicitação {2} - {3}.&lt;/li&gt;</value>
+  </data>
+  <data name="Botao_Concluiratendimento" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="Botao_Confirmar" xml:space="preserve">
+    <value>Efetivar</value>
+  </data>
+  <data name="Botao_Confirmar_Tooltip" xml:space="preserve">
+    <value>Efetivar</value>
+  </data>
+  <data name="MensagemConfirmacao" xml:space="preserve">
+    <value>Após realizar a efetivação, não será possível alterar nenhuma das informações fornecidas anteriormente durante este processo.&lt;br /&gt;&lt;br /&gt;Confirma a efetivação?</value>
+  </data>
+  <data name="Mensagem_Documentos_Pendentes" xml:space="preserve">
+    <value>Não é possível prosseguir. Para efetivar a matrícula, é necessário validar a entrega de todos os documentos obrigatórios requeridos.</value>
+  </data>
+  <data name="TituloConfirmacao" xml:space="preserve">
+    <value>Confirmação de matrícula</value>
+  </data>
+  <data name="MSG_Assert_ParcelasEmAberto_Cancelamento" xml:space="preserve">
+    <value>Atenção! Esse aluno possui pendência financeira com a instituição. Gentileza orientá-lo a procurar a divisão financeira para regularizar sua situação. Deseja realmente efetuar o cancelamento?</value>
+  </data>
+  <data name="fsDadosReabertura_Fieldset_Legenda" xml:space="preserve">
+    <value>Reabertura de matrícula</value>
+  </data>
+  <data name="Botao_Modaldeferido_Nao" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Botao_Modaldeferido_Sim" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Botao_Modalindeferido_Nao" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Botao_Modalindeferido_Sim" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="fsAssertDeferido_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados do parecer</value>
+  </data>
+  <data name="fsAssertIndeferido_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados do parecer</value>
+  </data>
+  <data name="fsDocumentos_Fieldset_Legenda" xml:space="preserve">
+    <value>Documentos da solicitação</value>
+  </data>
+  <data name="ModalDeferido_Assert_Title" xml:space="preserve">
+    <value>Confirmação do parecer</value>
+  </data>
+  <data name="ModalIndeferido_Assert_Title" xml:space="preserve">
+    <value>Confirmação do parecer</value>
+  </data>
+  <data name="Botao_Confirmar_Reabertura" xml:space="preserve">
+    <value>Efetivar reabertura</value>
+  </data>
+  <data name="Botao_Confirmar_Reabertura_Tooltip" xml:space="preserve">
+    <value>Efetivar reabertura</value>
+  </data>
+  <data name="Botao_Confirmar_Renovacao" xml:space="preserve">
+    <value>Efetivar renovação</value>
+  </data>
+  <data name="Botao_Confirmar_Tooltip_Renovacao" xml:space="preserve">
+    <value>Efetivar renovação</value>
+  </data>
+  <data name="fsDadosIntercambio_Fieldset_Legenda" xml:space="preserve">
+    <value>Intercâmbio</value>
+  </data>
+  <data name="fsDadosOrientacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Orientação</value>
+  </data>
+  <data name="Participantes_Detalhe_Titulo" xml:space="preserve">
+    <value>Participantes</value>
+  </data>
+  <data name="Modal_Title_Dados_Intercambio" xml:space="preserve">
+    <value>Dados de intercâmbio</value>
+  </data>
+  <data name="Botao_AdicionarGrupo" xml:space="preserve">
+    <value>Adicionar grupo</value>
+  </data>
+  <data name="Botao_AdicionarGrupo_Tooltip" xml:space="preserve">
+    <value>Adicionar grupo de dispensa</value>
+  </data>
+  <data name="Destinos_Detalhe_Titulo" xml:space="preserve">
+    <value>Componentes/Grupos currículares</value>
+  </data>
+  <data name="OrigensExternas_Detalhe_Titulo" xml:space="preserve">
+    <value>Em outras instituições</value>
+  </data>
+  <data name="OrigensInternas_Detalhe_Titulo" xml:space="preserve">
+    <value>Nesta instituição</value>
+  </data>
+  <data name="Title_Modal_AdicionarGrupo" xml:space="preserve">
+    <value>Adicionar novo grupo de dispensa</value>
+  </data>
+  <data name="Editar_Title" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="Listar_Excluir_Titulo" xml:space="preserve">
+    <value>Confirma a exclusão?</value>
+  </data>
+  <data name="MSG_Excluir_Grupo_Dispensa" xml:space="preserve">
+    <value>Você confirma a exclusão deste grupo de dispensa? Esta exclusão não poderá ser desfeita.</value>
+  </data>
+  <data name="MSG_Informativa_Sem_Grupos" xml:space="preserve">
+    <value>Nenhum agrupamento de componentes foi criado.</value>
+  </data>
+  <data name="legenda_itens_cursados" xml:space="preserve">
+    <value>Itens cursados</value>
+  </data>
+  <data name="legenda_itens_dispensados" xml:space="preserve">
+    <value>Itens a serem dispensados</value>
+  </data>
+  <data name="fsAnaliseDocumento_Fieldset_Legenda" xml:space="preserve">
+    <value>Análise</value>
+  </data>
+  <data name="fsConferenciaDadosEmissao_Fieldset_Legenda" xml:space="preserve">
+    <value>Conferência dos dados para emissão do documento</value>
+  </data>
+  <data name="fsDadosAdicionaisDiploma_Fieldset_Legenda" xml:space="preserve">
+    <value>Informações adicionais do diploma</value>
+  </data>
+  <data name="fsDadosPessoais_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados pessoais</value>
+  </data>
+  <data name="fsEmissaoNaoPermitida_Fieldset_Legenda" xml:space="preserve">
+    <value>Emissão não permitida</value>
+  </data>
+  <data name="fsFormacoesAluno_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados de formação</value>
+  </data>
+  <data name="Botao_AlterarDadosPessoaisAluno" xml:space="preserve">
+    <value>Alterar dados pessoais do aluno</value>
+  </data>
+  <data name="Botao_AtualizarVisualizacaoDadosAluno" xml:space="preserve">
+    <value>Atualizar a visualização dos dados do aluno</value>
+  </data>
+  <data name="Botao_VerHistoricoEscolar" xml:space="preserve">
+    <value>Visualizar histórico escolar</value>
+  </data>
+  <data name="Botao_VerHistoricoEscolarInterno" xml:space="preserve">
+    <value>Visualizar histórico escolar interno</value>
+  </data>
+  <data name="Botao_VisualizarCadastroDocumentoAnterior" xml:space="preserve">
+    <value>Visualizar cadastro da via anterior</value>
+  </data>
+  <data name="Botao_VisualizarIntegralizacaoCurricular" xml:space="preserve">
+    <value>Visualizar integralização curricular</value>
+  </data>
+  <data name="fsFormacoesEspecificas_Fieldset_Legenda" xml:space="preserve">
+    <value>Formações específicas concluídas</value>
+  </data>
+  <data name="fsIdentificacaoAluno_Fieldset_Legenda" xml:space="preserve">
+    <value>Identificação do aluno</value>
+  </data>
+  <data name="fsFormacoesEspecificasAnteriores_Fieldset_Legenda" xml:space="preserve">
+    <value>Formações específicas concluídas (emitidas em vias anteriores)</value>
+  </data>
+  <data name="Botao_Cancelarsolicitacao" xml:space="preserve">
+    <value>Cancelar solicitação</value>
+  </data>
+  <data name="MSG_Assert_DocumentoConclusao_Atualizar" xml:space="preserve">
+    <value>Confirma a atualização do documento de conclusão? Ao confirmar o cadastro do documento será atualizado.</value>
+  </data>
+  <data name="MSG_Assert_DocumentoConclusao_Cancelar" xml:space="preserve">
+    <value>Confirma o cancelamento da solicitação? Ao confirmar, não será gerado o documento de conclusão e a solicitação será cancelada com o motivo {0} - {1}.</value>
+  </data>
+  <data name="MSG_Assert_DocumentoConclusao_Novo" xml:space="preserve">
+    <value>Confirma a emissão do documento de conclusão? Ao confirmar será gerado o cadastro do documento de conclusão.</value>
+  </data>
+  <data name="Botao_ImprimirDocumentoConclusao" xml:space="preserve">
+    <value>Imprimir o documento</value>
+  </data>
+  <data name="Botao_VisualizarCadastroDocumento" xml:space="preserve">
+    <value>Visualizar o cadastro do documento</value>
+  </data>
+  <data name="fsDocumentoConclusao_Fieldset_Legenda" xml:space="preserve">
+    <value>Documento de conclusão</value>
+  </data>
+  <data name="Botao_Confirmarimpressao" xml:space="preserve">
+    <value>Confirmar impressão</value>
+  </data>
+  <data name="fsNumeroSerie_Fieldset_Legenda" xml:space="preserve">
+    <value>Número de série</value>
+  </data>
+  <data name="MSG_Assert_DocumentoConclusaoParecer_Confirmar" xml:space="preserve">
+    <value>Confirma a impressão do {0}?&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Número de série: {1}&lt;/li&gt;&lt;li&gt;Processo: {2}&lt;/li&gt;&lt;/ul&gt;</value>
+  </data>
+  <data name="MSG_RealizarAtendimento_Sucesso_ConfirmacaoDocumento" xml:space="preserve">
+    <value>Dados para emissão do documento de conclusão confirmados com sucesso!</value>
+  </data>
+  <data name="MSG_RealizarAtendimento_Sucesso_ConfirmacaoImpressaoDocumento" xml:space="preserve">
+    <value>Confirmação da impressão do documento de conclusão feita com sucesso!</value>
+  </data>
+  <data name="Assinaturas_Detalhe_Titulo" xml:space="preserve">
+    <value>Assinaturas</value>
+  </data>
+  <data name="Botao_Confirmarassinatura" xml:space="preserve">
+    <value>Confirmar assinaturas</value>
+  </data>
+  <data name="MSG_Assert_Assinatura_TipoRegistro_Documento_Externo" xml:space="preserve">
+    <value>Confirma a inserção do número de registro do documento de conclusão gerado manualmente, através de livro de registros?</value>
+  </data>
+  <data name="MSG_Assert_Assinatura_TipoRegistro_Documento_Interno" xml:space="preserve">
+    <value>Confirma a geração do número de registro automaticamente do documento de conclusão?</value>
+  </data>
+  <data name="MSG_RealizarAtendimento_Sucesso_ConfirmacaoAssinaturaDocumento" xml:space="preserve">
+    <value>Assinaturas confirmadas com sucesso!</value>
+  </data>
+  <data name="Botao_Confirmarentrega" xml:space="preserve">
+    <value>Confirmar finalização da solicitação</value>
+  </data>
+  <data name="Botao_ImprimirProtocoloEntregaDocumento" xml:space="preserve">
+    <value>Imprimir protocolo de entrega</value>
+  </data>
+  <data name="fsEntregaDocumento_Fieldset_Legenda" xml:space="preserve">
+    <value>Entrega do documento de conclusão</value>
+  </data>
+  <data name="MSG_Data_Limite_Entrega_Documento_Conclusao" xml:space="preserve">
+    <value>O tipo do documento possui prazo para entrega, conforme a Portaria MEC nº 1.224, de 18 de dezembro de 2013.</value>
+  </data>
+  <data name="Botao_VisualizarDadosSolicitante" xml:space="preserve">
+    <value>Dados de contato</value>
+  </data>
+  <data name="Botao_VisualizarDadosSolicitante_Tooltip" xml:space="preserve">
+    <value>Dados de contato</value>
+  </data>
+  <data name="VisualizarDadosSolicitante_Title" xml:space="preserve">
+    <value>Visualização de Dados de Contato</value>
+  </data>
+  <data name="MSG_Assert_Solicitacao_Documento_Dissertacao_Requisitos_Pendentes" xml:space="preserve">
+    <value>&lt;div&gt;&lt;b&gt;{0}&lt;/b&gt; não cumpriu os requisitos dos componentes curriculares abaixo:&lt;/div&gt;{1}&lt;br /&gt;&lt;br /&gt;&lt;p&gt;Deseja mesmo registrar o depósito para agendamento da defesa?&lt;/p&gt;</value>
+  </data>
+  <data name="MSG_Assert_ComponenteNaoAprovado_Confirmacao" xml:space="preserve">
+    <value>Os seguintes componentes estão no plano de estudo do aluno: {0}.&lt;br/&gt;&lt;br/&gt;. O deferimento da dispensa fará uma alteração de plano removendo este item. Deseja prosseguir com o deferimento?</value>
+  </data>
+  <data name="Botao_Sincronizardadosaluno" xml:space="preserve">
+    <value>Sincronizar dados do aluno</value>
+  </data>
+  <data name="MensagemSucessoSincronismoDadosAluno" xml:space="preserve">
+    <value>Sincronismo dos dados do aluno realizado com sucesso!</value>
+  </data>
+  <data name="fsDemaisInformações_Fieldset_Legenda" xml:space="preserve">
+    <value>Demais informações</value>
+  </data>
+  <data name="fsMensagens_Fieldset_Legenda" xml:space="preserve">
+    <value>Mensagens</value>
+  </data>
+  <data name="Botao_AtosNormativosCurso" xml:space="preserve">
+    <value>Atos normativos</value>
+  </data>
+  <data name="Modal_Title_Atos_Normativos_Curso" xml:space="preserve">
+    <value>Atos normativos do curso</value>
+  </data>
+  <data name="fsInformacoesApuracaoFormacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Informações relacionadas a apuração de formação do aluno</value>
+  </data>
+  <data name="fsDocumentacaoAcademica_Fieldset_Legenda" xml:space="preserve">
+    <value>Documentação acadêmica</value>
+  </data>
+  <data name="MSG_Dados_Matriz_Curricular" xml:space="preserve">
+    <value>Os dados da matriz curricular serão enviados de acordo com o histórico escolar do SGA (Legado) e estruturados conforme definição técnica do MEC.</value>
+  </data>
+  <data name="DocumentacaoComprobatoria_Detalhe_Titulo" xml:space="preserve">
+    <value>Documentação comprobatória</value>
+  </data>
+  <data name="fsDadosRegistro_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados do registro</value>
+  </data>
+  <data name="MSG_Dados_Reutilizados_Via_Anterior" xml:space="preserve">
+    <value>Se os dados não devem ser reutilizados lembre-se de publicar no DOU a anulação do registro do documento anterior, conforme &lt;b&gt;&lt;u&gt;Portaria 1.095 de 25/10/2018, Capítulo 5, &lt;/br&gt; Seção II, Artigo 25, § 5º.&lt;/u&gt;&lt;/b&gt;
+&lt;/br&gt;
+Senão, os dados de registro (número e data) e os dados da publicação DOU (número, data, seção e página) serão
+reutilizados no novo documento que será gerado.</value>
+  </data>
+  <data name="Title_Editar_Mensagem" xml:space="preserve">
+    <value>Alterar Informação Adicional</value>
+  </data>
+  <data name="Title_Nova_Mensagem" xml:space="preserve">
+    <value>Nova Informação Adicional</value>
+  </data>
+  <data name="MensagemDiplomaDigitalBachareladoLicenciatura" xml:space="preserve">
+    <value>O grau acadêmico é BACHARELADO/LICENCIATURA, conforme orientação do MEC serão
+gerados dois diplomas, um de BACHARELADO e outro de LICENCIATURA, ambos
+relacionados através de anotações em "Informações Adicionais</value>
+  </data>
+  <data name="Modal_Title_RVDD" xml:space="preserve">
+    <value>Informações Representação Visual</value>
+  </data>
+  <data name="Botao_RVDD" xml:space="preserve">
+    <value>RVDD</value>
+  </data>
+  <data name="MSG_TituloInformacoesRVDD" xml:space="preserve">
+    <value>O texto é apenas demonstração das principais informações que serão exibidas na representação visual referente a formação obtida pelo aluno:</value>
+  </data>
+  <data name="Botao_ConsultarDocumentacaoAcademica" xml:space="preserve">
+    <value>Histórico escolar</value>
+  </data>
+  <data name="Modal_Title_Consultar_Documentacao_Academica" xml:space="preserve">
+    <value>Histórico Escolar</value>
+  </data>
+  <data name="Titulo_Legenda_ConsultaHistoricoEscolar" xml:space="preserve">
+    <value>Legenda</value>
+  </data>
+  <data name="AtividadeComplementar_Accordion_Section_Titulo" xml:space="preserve">
+    <value>Atividade Complementar</value>
+  </data>
+  <data name="Disciplina_Accordion_Section_Titulo" xml:space="preserve">
+    <value>Disciplina</value>
+  </data>
+  <data name="MensagemDiplomaDigitalGrauAcademicoSemAssociacao" xml:space="preserve">
+    <value>Não foi identificado grau-acadêmico distinto com base na formação do aluno ou respectiva "Oferta de Curso por Localidade". Por esse motivo será considerado o ato normativo mais recente (maior data) independente do grau-acadêmico.</value>
+  </data>
+  <data name="Mensagem_Documentos_Pendentes_Sem_Prazo_Entrega" xml:space="preserve">
+    <value>Não é possível prosseguir. Para efetivar a matrícula, é necessário informar a data de prazo de entrega para os documentos que estão pendentes.</value>
+  </data>
+  <data name="MensagemHistoricoEscolarNumeroViaMaiorUm" xml:space="preserve">
+    <value>Foi identificado que será gerada NOVA VIA de HISTÓRICO ESCOLAR. A via anterior será
+anulada automaticamente ao confirmar a emissão.</value>
+  </data>
+  <data name="MSG_Assert_Confirma_Emissao_Historico" xml:space="preserve">
+    <value>Confirma a emissão do {0} e invalidação do {1} identificado como via anterior?</value>
+  </data>
+  <data name="MSG_Assert_Confirma_CHIntegralizadaMenorCHCurriculo" xml:space="preserve">
+    <value>A Carga Horária Integralizada é menor que a Carga Horária do Currículo. Confirma a emissão?</value>
+  </data>
+  <data name="Confirmacao_Entrega_Documentacao_Atendimento" xml:space="preserve">
+    <value>Os arquivos dos seguintes documentos já foram entregues anteriormente e serão substituídos:
+&lt;br /&gt; &lt;br /&gt; {0} &lt;br /&gt;&lt;/br /&gt;
+Deseja realmente prosseguir?"</value>
+  </data>
+  <data name="fsAvisosImportantes_Fieldset_Legenda" xml:space="preserve">
+    <value>Aviso(s) importante(s)</value>
+  </data>
+  <data name="MensagemAutorizacaoNomeSocial" xml:space="preserve">
+    <value>O aluno possui AUTORIZAÇÃO de uso do NOME SOCIAL no CAD. Por esse motivo será enviado o NOME SOCIAL e NOME CIVIL na emissão do documento: (XML).</value>
+  </data>
+  <data name="MensagemDiplomaPrimeiraViaComHistorico" xml:space="preserve">
+    <value>No processo de emissão de PRIMEIRA VIA de DIPLOMA é emitido também o HISTÓRICO
+ESCOLAR FINAL.</value>
+  </data>
+  <data name="fsDadosAdicionaisHistorico_Fieldset_Legenda" xml:space="preserve">
+    <value>Informações adicionais do histórico escolar</value>
+  </data>
+  <data name="MensagemInstrucaoNomeSocial" xml:space="preserve">
+    <value>Mensagem para o contexto do Nome social autorizado no CAD</value>
+  </data>
+  <data name="fsDadosCadastroPessoa_Fieldset_Legenda" xml:space="preserve">
+    <value>Nome social autorizado no CAD</value>
+  </data>
+  <data name="MSG_Assert_DadosPessoais" xml:space="preserve">
+    <value>Essa emissão irá gerar histórico escolar final e foi identificado que o aluno já possui diploma digital que encontra-se Válido ou Emissão em Andamento. E a identificação dos dados pessoais utilizados no diploma é diferente da identificação dos dados pessoais considerada na emissão do histórico. Analise a divergência antes de prosseguir com a emissão: &lt;br&gt; &lt;br&gt; {0} &lt;br&gt; &lt;br&gt;Confirma a emissão mesmo com as divergências dos dados pessoais?</value>
+  </data>
+  <data name="Confirmacao_Atualizacao_Documento_Emissao_Diploma" xml:space="preserve">
+    <value>Ao finalizar, a documentação será validada pelo CRA e a solicitação pode ser reaberta.
+Caso isso ocorra, será necessário realizar o atendimento novamente.</value>
+  </data>
+  <data name="SituacaoEnade_Accordion_Section_Titulo" xml:space="preserve">
+    <value>Siuação Enade</value>
+  </data>
+</root>

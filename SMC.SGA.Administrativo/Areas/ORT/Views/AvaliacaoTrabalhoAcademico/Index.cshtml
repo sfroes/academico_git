@@ -1,0 +1,57 @@
+﻿@model AvaliacaoTrabalhoAcademicoViewModel
+
+@Html.Action("CabecalhoAvaliacaoTrabalhoAcademico", new { seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) })
+
+@Smc.List("Lista", m => m.Componentes).HtmlTemplate(item => Html.Partial("_DetailComponente", item.Value))
+
+@(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+            .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+            .Action("Index", "TrabalhoAcademico", forceForBackBehavior: true)
+            .SecurityToken(UC_ORT_002_02_03.PESQUISAR_AVALIACAO_TRABALHO_ACADEMICO)))
+
+@using (Smc.ModalWindow("modalAdicionarAvaliacaoTrabalhoAcademicoBancaExaminadora")
+           .Form("frmAgendamentoBanca", "SalvarSair", "AvaliacaoTrabalhoAcademicoBancaExaminadora", new { area = "ORT", seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) }, closeOnSubmit: true, config: x => x.Ajax())
+           .Size(SMCModalWindowSize.Large)
+           .Button(SMCButtonBehavior.Salvar, "SalvarSair", "AvaliacaoTrabalhoAcademicoBancaExaminadora", new { area = "ORT", seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }
+
+@using (Smc.ModalWindow("modalAdicionarAvaliacaoTrabalhoAcademicoBancaExaminadoraDesabilitado")
+           .Form("frmAgendamentoBanca", "SalvarSair", "AvaliacaoTrabalhoAcademicoBancaExaminadora", new { area = "ORT", seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) }, closeOnSubmit: true, config: x => x.Ajax())
+           .Size(SMCModalWindowSize.Large)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }
+
+
+@using (Smc.ModalWindow("modalAvaliacaoTrabalhoAcademicoBancaExaminadora")
+.Form("frmAvaliacaoTrabalhoAcademicoBancaExaminadora", "SalvarSair", "AvaliacaoTrabalhoAcademicoBancaExaminadora", new { area = "ORT", seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) }, closeOnSubmit: true, config: x => x.Ajax())
+.Size(SMCModalWindowSize.Large)
+.Button(SMCButtonBehavior.Salvar, "SalvarSair", "AvaliacaoTrabalhoAcademicoBancaExaminadora", new { area = "ORT", seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+.Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+.Begin()) { }
+
+@using (Smc.ModalWindow("modalLancamentoNotaBancaExaminadora")
+.Form("frmLancamentoNotaBancaExaminadora", "SalvarSair", "LancamentoNotaBancaExaminadora", new { area = "ORT", seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) }, closeOnSubmit: true, config: x => x.Ajax())
+.Size(SMCModalWindowSize.Largest)
+.Button(SMCButtonBehavior.Salvar, "SalvarSair", "LancamentoNotaBancaExaminadora", new { area = "ORT", seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+.Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+.Begin()) { }
+
+@using (Smc.ModalWindow("modalDetalhesMotivoCancelamentoBancaExaminadora")
+.Size(SMCModalWindowSize.Medium)
+.Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+.Begin()) { }
+
+@using (Smc.ModalWindow("modalAlterarArquivoAta")
+.Size(SMCModalWindowSize.Medium)
+.Form("frmSalvarAlteracaoArquivoAta", "SalvarAtaDefesa", "AvaliacaoTrabalhoAcademico", new { area = "ORT" }, closeOnSubmit: true, config: x => x.Ajax())
+.Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().Confirm(Smc.GetUIResource("Title_Confirma_Alteracao_Ata"), Smc.GetUIResource("MSG_Confirma_Alteracao_Ata")))
+.Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+.Begin()) { }
+
+@using (Smc.ModalWindow("modalAdicionarArquivoAta")
+.Size(SMCModalWindowSize.Medium)
+.Form("frmSalvarAdicaoArquivoAta", "SalvarAtaDefesa", "AvaliacaoTrabalhoAcademico", new { area = "ORT" }, closeOnSubmit: true, config: x => x.Ajax())
+.Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+.Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+.Begin()) { }

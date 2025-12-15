@@ -1,0 +1,85 @@
+﻿@model CurriculoCursoOfertaCabecalhoViewModel
+
+@using (Smc.Header("CurriculoCursoOferta", SMCHeaderType.Primary)
+            .Item(prop => prop.CursoCompleto, sizeMD: SMCSize.Grid9_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid11_24, sizeLG: SMCSize.Grid9_24)
+            .Item(prop => prop.CurriculoCompleto, sizeMD: SMCSize.Grid13_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid13_24)
+            .Item(prop => prop.Ativo, sizeMD: SMCSize.Grid2_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid2_24)
+            .Begin())
+{
+
+}
+
+@using (Smc.Header("OfertaCurso", SMCHeaderType.Secondary).CssClass("smc-header-lista-detalhada")
+            .Item(prop => prop.CursoOfertaDescricao, sizeMD: SMCSize.Grid24_24)
+            .Begin())
+{
+}
+
+@if (Model.QuantidadeHoraAulaObrigatoria.HasValue)
+{
+    using (Smc.Div("QuantidadeHoraAulaObrigatoria").CssClass("smc-sga-totalizador").Size(SMCSize.Grid4_24).Begin())
+    {
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Label_QuantidadeHoraAulaObrigatoria")</span>
+        @Smc.DisplayFor(m => m.QuantidadeHoraAulaObrigatoria).CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24)
+        @Smc.DisplayFor(m => m.QuantidadeAssociadaHoraAulaObrigatoria).CssClass(Model.QuantidadeAssociadaHoraAulaObrigatoriaDestacada ? "smc-sga-totalizador-valor-destaque" : "smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24)
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Label_InformadoCurriculo")</span>
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Label_AssociadoOfertaCurso")</span>
+    }
+}
+@if (Model.QuantidadeHoraAulaOptativa.HasValue)
+{
+    using (Smc.Div("QuantidadeHoraAulaOptativa").CssClass("smc-sga-totalizador").Size(SMCSize.Grid4_24).Begin())
+    {
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Label_QuantidadeHoraAulaOptativa")</span>
+        @Smc.DisplayFor(m => m.QuantidadeHoraAulaOptativa).CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24)
+        @Smc.DisplayFor(m => m.QuantidadeAssociadaHoraAulaOptativa).CssClass(Model.QuantidadeAssociadaHoraAulaOptativaDestacada ? "smc-sga-totalizador-valor-destaque" : "smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24)
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Label_InformadoCurriculo")</span>
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Label_AssociadoOfertaCurso")</span>
+    }
+}
+
+@if (Model.QuantidadeHoraRelogioObrigatoria.HasValue)
+{
+    using (Smc.Div("QuantidadeHoraRelogioObrigatoria").CssClass("smc-sga-totalizador").Size(SMCSize.Grid4_24).Begin())
+    {
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Label_QuantidadeHoraRelogioObrigatoria")</span>
+        @Smc.DisplayFor(m => m.QuantidadeHoraRelogioObrigatoria).CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24)
+        @Smc.DisplayFor(m => m.QuantidadeAssociadaHoraRelogioObrigatoria).CssClass(Model.QuantidadeAssociadaHoraRelogioObrigatoriaDestacada ? "smc-sga-totalizador-valor-destaque" : "smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24)
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Label_InformadoCurriculo")</span>
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Label_AssociadoOfertaCurso")</span>
+    }
+}
+@if (Model.QuantidadeHoraRelogioOptativa.HasValue)
+{
+    using (Smc.Div("QuantidadeHoraRelogioOptativa").CssClass("smc-sga-totalizador").Size(SMCSize.Grid4_24).Begin())
+    {
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Label_QuantidadeHoraRelogioOptativa")</span>
+        @Smc.DisplayFor(m => m.QuantidadeHoraRelogioOptativa).CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24)
+        @Smc.DisplayFor(m => m.QuantidadeAssociadaHoraRelogioOptativa).CssClass(Model.QuantidadeAssociadaHoraRelogioOptativaDestacada ? "smc-sga-totalizador-valor-destaque" : "smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24)
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Label_InformadoCurriculo")</span>
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Label_AssociadoOfertaCurso")</span>
+    }
+}
+
+@if (Model.QuantidadeCreditoObrigatorio.HasValue)
+{
+    using (Smc.Div("QuantidadeCreditoObrigatorio").CssClass("smc-sga-totalizador").Size(SMCSize.Grid4_24).Begin())
+    {
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Label_QuantidadeCreditoObrigatorio")</span>
+        @Smc.DisplayFor(m => m.QuantidadeCreditoObrigatorio).CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24)
+        @Smc.DisplayFor(m => m.QuantidadeAssociadaCreditoObrigatorio).CssClass(Model.QuantidadeAssociadaCreditoObrigatorioDestacada ? "smc-sga-totalizador-valor-destaque" : "smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24)
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Label_InformadoCurriculo")</span>
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Label_AssociadoOfertaCurso")</span>
+    }
+}
+@if (Model.QuantidadeCreditoOptativo.HasValue)
+{
+    using (Smc.Div("QuantidadeCreditoOptativo").CssClass("smc-sga-totalizador").Size(SMCSize.Grid4_24).Begin())
+    {
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Label_QuantidadeCreditoOptativo")</span>
+        @Smc.DisplayFor(m => m.QuantidadeCreditoOptativo).CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24)
+        @Smc.DisplayFor(m => m.QuantidadeAssociadaCreditoOptativo).CssClass(Model.QuantidadeAssociadaCreditoOptativoDestacada ? "smc-sga-totalizador-valor-destaque" : "smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24)
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Label_InformadoCurriculo")</span>
+        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Label_AssociadoOfertaCurso")</span>
+    }
+}

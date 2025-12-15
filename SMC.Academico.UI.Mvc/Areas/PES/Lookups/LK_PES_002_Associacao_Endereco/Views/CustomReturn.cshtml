@@ -1,0 +1,68 @@
+﻿@*
+    BaseType: SMC.Framework.UI.Mvc.SMCWebViewPage
+    DisableLinePragmas: true
+
+    Imports: SMC.Framework,
+    SMC.Framework.DataAnnotations,
+    SMC.Framework.Extensions,
+    SMC.Framework.Ioc,
+    SMC.Framework.Mapper,
+    SMC.Framework.Model,
+    SMC.Framework.Security,
+    SMC.Framework.Service.Security,
+    SMC.Framework.UI.Mvc.Dynamic,
+    SMC.Framework.UI.Mvc.Exceptions,
+    SMC.Framework.UI.Mvc.Helpers,
+    SMC.Framework.UI.Mvc.Html,
+    SMC.Framework.UI.Mvc.Util,
+    SMC.Framework.Util,
+    System,
+    System.Collections.Generic,
+    System.Configuration,
+    System.Web,
+    System.Web.Mvc,
+    System.Web.Mvc.Html,
+    SMC.Academico.UI.Mvc.Areas.CUR.Lookups,
+    SMC.Academico.UI.Mvc.Areas.PES.Lookups
+*@
+
+@{ 
+    var partial = "~/Areas/PES/Lookups/LK_PES_002_Associacao_Endereco/Views/CustomReturnItem.cshtml";
+}
+
+@model List<SMC.Academico.UI.Mvc.Areas.PES.Lookups.PessoaEnderecoLookupViewModel>
+
+<span class="smc-lookup-multiplo-titulo">@Smc.GetUIResource("Titulo_LookupEndereco")</span>
+@(Smc.Grid("gridLookupPessoasEndereco", new SMCPagerModel<PessoaEnderecoLookupViewModel>(Model))
+                                        .HideNavigator()
+                                        .HidePager()
+                                        .HideRowNumber()
+                                        .HideRowsTotalizer()
+                                        .HideGridTitle()
+                                        .Attribute("data-detail-property", SMCLookupHelper.GetCurrentPropertyName(Smc))
+                                        .FieldColumn(x => x.TipoEndereco)
+                                        .FieldColumn(x => x.DescPais)
+                                        .FieldColumn(x => x.CEP)
+                                        .FieldColumn(x => x.EnderecoCompleto)
+                                        .FieldColumn(x => x.DescCidadeEstado)
+                                        .ContentColumn(@<text>
+                                            @{
+                                                            var itemPessoaEndereco = (item as PessoaEnderecoLookupViewModel);
+                                            }
+                                            <input type="hidden" data-model-property="key" name="Seq" value="@(itemPessoaEndereco.Seq)" />
+                                            <input type="hidden" name="SeqEndereco" value="@(itemPessoaEndereco.SeqEndereco)" />
+                                            <input type="hidden" name="SeqPessoaEndereco" value="@(itemPessoaEndereco.SeqPessoaEndereco)" />
+                                            <input type="hidden" name="TipoEndereco" value="@(itemPessoaEndereco.TipoEndereco)" />
+                                            <input type="hidden" name="DescPais" value="@(itemPessoaEndereco.DescPais)" />
+                                            <input type="hidden" name="CEP" value="@(itemPessoaEndereco.CEP)" />
+                                            <input type="hidden" name="Logradouro" value="@(itemPessoaEndereco.Logradouro)" />
+                                            <input type="hidden" name="Numero" value="@(itemPessoaEndereco.Numero)" />
+                                            <input type="hidden" name="Bairro" value="@(itemPessoaEndereco.Bairro)" />
+                                            <input type="hidden" name="Complemento" value="@(itemPessoaEndereco.Complemento)" />
+                                            <input type="hidden" name="NomeCidade" value="@(itemPessoaEndereco.NomeCidade)" />
+                                            <input type="hidden" name="SiglaUf" value="@(itemPessoaEndereco.SiglaUf)" />
+                                            <input type="hidden" name="EnderecoCompleto" value="@(itemPessoaEndereco.EnderecoCompleto)" />
+                                            <input type="hidden" name="DescCidadeEstado" value="@(itemPessoaEndereco.DescCidadeEstado)" />
+                                            @Html.Partial(partial, itemPessoaEndereco)
+                                        </text>, @Smc.GetUIResource("Colaborador_EnderecoCorrespondencia"))
+                                                                                .ButtonColumn(SMCButtonSetType.Secondary, null, false, x => Smc.Button(SMCButtonBehavior.ExcluirElemento).DisplayMode(SMCButtonDisplayMode.Icon).Hide(Smc.GetViewMode() == SMCViewMode.ReadOnly)))

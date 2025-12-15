@@ -1,0 +1,6 @@
+﻿@model ConsultaTurmaAmostraViewModel
+
+@Html.Action("CabecalhoAlterarData", new { Model })
+
+@Smc.EditorFor(m => m.DataLimiteResposta)
+@Smc.HiddenFor(m => m.SeqConfiguracaoAvaliacaoPpa)

@@ -1,0 +1,226 @@
+﻿@using StackExchange.Profiling;
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <title>@Smc.GetUIResource("SiglaAplicacao") - @Smc.RenderTitle()</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="accept-language" content="pt-br">
+    <meta name="author" content="GTI - Gerência de Tecnologia da Informação">
+    <meta name="copyright" content="© 2018 GTI" />
+    <meta name="description" content="Biblioteca Digital da PUC Minas">
+    <meta name="keywords" content="Biblioteca Digital da PUC Minas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    @*-- SASS RECURSOS --*@
+    <!-- classes css padrões -->
+    @Html.SMCRegisterBaseCss()
+
+    @if (IsSectionDefined("Css"))
+    {
+        @RenderSection("Css")
+    }
+    @* <link href="~/Content/Css/smc-recursos.min.css" rel="stylesheet" />*@
+
+    @Html.SMCGoogleAnalyticsTagManagerHead()
+</head>
+<body class="fixed sidebar-mini">
+    @Html.SMCGoogleAnalyticsTagManagerBody()
+
+    @*-- componente noscript --*@
+    @Html.SMCNoScriptWarning()
+
+    @using (Smc.Div("divConteudoPrincipal").CssClass("container-fluid").Begin())
+    {
+        using (Smc.Div("divConteudoPrincipalEstrutura").CssClass("row").Begin())
+        {
+
+            <header class="smc-ribbon">
+                <nav class="navbar navbar-fixed-top col-md-offset-2 col-lg-offset-2 @SMCSizeHelper.GetSizeClasses(SMCSize.Grid20_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid20_24)">
+                    @*-- Logo --*@
+                    <a href="@Url.Action("index", "home", new { @area = "" })" class="smc-aplicaco-logotipo @SMCSizeHelper.GetSizeClasses(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid24_24,SMCSize.Grid5_24)">
+                        @*-- Padrão para insersão de logotipo --*@
+                        <img class="img-responsive" src="/Recursos/Academico/4.0/SGA.BDP/Images/smc-bdp-logotipo.png" alt="Logotipo BDP" />
+                    </a>
+
+                    @*-- Busca de funcionalidades --*@
+
+                    @using (Smc.Div("divBuscaFuncionalidades").Size(SMCSize.Grid15_24, SMCSize.Grid24_24, SMCSize.Grid20_24, SMCSize.Grid15_24).Begin())
+                    {
+                        @Html.Partial("_LinksTopo")
+                    }
+
+                    @*-- Área do usuário e nome da instituição--*@
+                    @using (Smc.Div("divAreaUsuario").CssClass("smc-login navbar-custom-menu").Size(SMCSize.Grid3_24, SMCSize.Grid24_24, SMCSize.Grid3_24, SMCSize.Grid4_24).Begin())
+                    {
+                        @*-- Nome da Instituição --*@
+
+                        using (Smc.Div("divLoginInstituicao").CssClass("smc-login-instituicao").Size(SMCSize.Grid17_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid17_24).Begin())
+                        {
+                            if (Context.GetSeqArquivoInstituicaoLogada() > 0)
+                            {
+                                <div class="smc-bdp-logotipo-intituicao">
+                                    <img src="@Url.Action("Logo", "Home", new { @area = "", @seq = new SMCEncryptedLong(Context.GetSeqArquivoInstituicaoLogada().GetValueOrDefault()) })" />
+                                </div>
+                            }
+                            @*  @Html.Action("ModalSelecionarInstituicao", "InstituicaoEnsino", new { area = "ORG" })
+                                @(Smc.Button("selecionarInstituicao").CssClass("smc-estilo-botao-selecionar-instituicao").Type(SMCButtonType.Link).Url(Url.Action("ModalTrocarInstituicao", "InstituicaoEnsino", new { area = "ORG" })))
+                            *@
+                        }
+
+                        @*-- Área do usuário*@
+                        <ul class="nav navbar-nav @SMCSizeHelper.GetSizeClasses(SMCSize.Grid7_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+                            <li>
+                                @*--janelas do menu superior--*@
+                                @*Smc.MenuFavoritos()*@
+                                @*@Smc.Button("open-favorites").CssClass("smc-usuario-favorito").Attribute("title", "Meus itens favoritos").Type(SMCButtonType.Link)*@
+                            </li>
+
+                            @*-- Usuário --*@
+
+                            @*@(Smc.UserProfileWindow()
+                                .Buttons(b => b
+                                .ShowProfile()
+                                .ChangePassword()
+                                .Logout()))*@
+                            <li class="hidden-xs hidden-sm">
+                                @Smc.Accessibility()
+                            </li>
+
+                            <li>
+                                @*@Smc.HelpWindow()*@
+                            </li>
+                        </ul>
+                    }
+                </nav>
+            </header>
+
+            @*-- Menu principal --*@
+            @*@Smc.MenuPrincipal(orientation: SMCOrientation.Vertical)*@
+
+            @*-- Conteúdo - obrigatório --*@
+            <div id="divConteudoPrincipal" class="smc-conteudo-centro container-fluid smc-size-md-22 smc-size-xs-24 smc-size-sm-22 smc-size-lg-20 col-md-offset-1 col-sm-offset-1 col-lg-offset-2" data-type="smc-conteudo">
+
+                @*-- (obrigatório) --*@
+                @Smc.MessagePlaceholder(SMCMessagePlaceholders.Default).CssClass("smc-mensagens-principal")
+
+                <section class="content">
+                    @*-- Área de mensagens e alertas (obrigatório) --*@
+                    @Smc.MessagePlaceholder(SMCMessagePlaceholders.Centro).CssClass("smc-mensagens-centro")
+
+                    @*-- titulo da página (obrigatório)--*@
+                    <h1 class="smc-bdp-titulo-content">@Smc.RenderTitle()</h1>
+
+                    @*-- componente de navegação entre páginas --*@
+                    @Smc.NavigationGroup()
+
+                    @*-- corpo da página (obrigatório) --*@
+                    @RenderBody()
+
+                    <!-- Container de alertas (obrigatório) -->
+                    @using (Smc.Div("divAlerta").CssClass("bottom-right jGrowl").Attribute("data-alert-container", "default").Begin())
+                    {
+                    }
+                </section>
+            </div>
+
+            using (Smc.Div("rodape").CssClass("smc-bdp-footer").Size(SMCSize.Grid24_24).Begin())
+            {
+                using (Smc.Div("rodape").CssClass("smc-bdp-footer-container col-md-offset-1 col-sm-offset-1 col-lg-offset-1").Size(SMCSize.Grid23_24, SMCSize.Grid24_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+                {
+                    using (Smc.Div("sobre").CssClass("smc-bdp-footer-sobre").Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid8_24).Begin())
+                    {
+                        <h3>Sobre</h3>
+                        <p>
+                            @string.Format(Smc.GetUIResource("Label_Sobre_Parte_1"), Context.GetDescricaoInstituicaoLogada())
+                        </p>
+                        <p>
+                            @Smc.GetUIResource("Label_Sobre_Parte_2")
+                        </p>
+                    }
+                    using (Smc.Div("contato").CssClass("smc-bdp-footer-contato").Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid8_24).Begin())
+                    {
+                        <h3>Fale Conosco</h3>
+                        @Html.Partial("_Contato", new ContatoViewModel())
+                    }
+                    using (Smc.Div("links").CssClass("smc-bdp-footer-links").Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid8_24).Begin())
+                    {
+                        <h3>Links Úteis</h3>
+                        <ul>
+                            <li>
+                                <a href="http://www.ndltd.org/" target="_blank">
+                                    Networked Digital
+                                    Library of Theses
+                                    and Dissertation
+                                    (NDLTD)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.ibict.br/" target="_blank">
+                                    Biblioteca Digital
+                                    do Instituto
+                                    Brasileiro de
+                                    Informação em
+                                    Ciência e
+                                    Tecnologia (IBICT)
+                                </a>
+                            </li>
+                        </ul>
+                    }
+                }
+                @*--(obrigatório) uso obrigatório do logotipo da GTI e Copyright--*@
+                <footer class="smc-footer footer smc-conteudo-padding">
+                    <ul class="smc-footer-conteudo container">
+                        <li class="smc-footer-copyright">@string.Format(Smc.GetUIResource("Layout_Texto_Copyright"), DateTime.Today.Year)</li>
+                        <li class="smc-footer-logo-gti" title="@Smc.GetUIResource("Layout_Titulo_Logotipo_GTI")"></li>
+                        <li class="smc-footer-logo-smc" title="@Smc.GetUIResource("Layout_Titulo_Logotipo_SMC")"></li>
+                    </ul>
+                </footer>
+            }
+
+
+
+            @Smc.MessagePlaceholder(SMCMessagePlaceholders.Footer).IsDefault().CssClass("smc-mensagens-footer")
+        }
+    }
+    @*-- componente alerta navegador (obrigatório) --*@
+    @(Smc.BrowserAlert()
+                                            .RejectBrowser(SMCBrowsers.InternetExplorer, 9)
+                                            .RejectBrowser(SMCBrowsers.Chrome, 24)
+                                            .RejectBrowser(SMCBrowsers.FireFox, 20)
+                                            .RejectBrowser(SMCBrowsers.Safari, 4)
+                                            //.SuggestedBrowsers(SMCBrowsers.Chrome, SMCBrowsers.FireFox, SMCBrowsers.InternetExplorer)
+                                            .IconsPath("/Recursos/Images/browsers/")
+    )
+
+    @*-- componente alerta processando (obrigatório) --*@
+    @*@using (Smc.Div("divAlertaProcessando").CssClass("smc-alerta-processando").Begin())
+        {
+            <span>@Smc.GetUIResource("Layout_Texto_Aguarde")</span>
+        }*@
+
+    @using (Smc.Div("divAlertaProcessando").CssClass("smc-alerta-processando").Begin())
+    {
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        <span class="sr-only"></span>
+        <p>@Smc.GetUIResource("Layout_Texto_Aguarde")</p>
+        <div>@Smc.GetUIResource("Layout_Texto_Aguarde")</div>
+    }
+
+    @*  @Smc.MenuSecundario()*@
+
+    @Html.SMCRegisterBundleScripts()
+
+    @*-- Section para renderização de scrits das views (obrigatório)--*@
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts")
+    }
+
+    @MiniProfiler.Current.RenderIncludes()
+</body>
+</html>

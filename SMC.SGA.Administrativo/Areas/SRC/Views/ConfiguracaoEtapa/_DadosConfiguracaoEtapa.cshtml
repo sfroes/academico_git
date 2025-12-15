@@ -1,0 +1,30 @@
+﻿@model ConfiguracaoEtapaViewModel
+
+@Html.Action("CabecalhoManter", new { seqProcessoEtapa = (SMCEncryptedLong)Model.SeqProcessoEtapa })
+
+@using (Smc.Form("formConfiguracaoProcesso", "Salvar").Ajax().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(m => m.SeqProcessoEtapa)
+    @Smc.EditorFor(m => m.SeqProcesso)
+    @Smc.EditorFor(m => m.CamposReadyOnly)
+    @Smc.EditorFor(m => m.CampoOrientacaoReadOnly)
+
+    @Smc.EditorFor(m => m.Seq)
+    @Smc.EditorFor(m => m.SeqConfiguracaoProcesso)
+    @Smc.EditorFor(m => m.Descricao)
+    @Smc.EditorFor(m => m.OrientacaoEtapa)
+    @Smc.EditorFor(m => m.DescricaoTermoEntregaDocumentacao)
+
+    var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24);
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+                           .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                           .Highlight());
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+             .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+             .Type(SMCButtonType.Link)
+             .Url(Url.Action("Index", "ConfiguracaoEtapa", new { SeqProcesso = new SMCEncryptedLong((Model as ConfiguracaoEtapaViewModel).SeqProcesso) }), true));
+
+    @buttonSet;
+}

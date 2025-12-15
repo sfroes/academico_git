@@ -1,0 +1,43 @@
+﻿@model PublicacaoBdpViewModel
+
+@Html.Action("CabecalhoPublicacaoBdp", new { seqTrabalhoAcademico = Model.SeqTrabalhoAcademico })
+
+@if (Model.ExibirAutorizacao)
+{
+    using (Smc.Header("Publicacao", SMCHeaderType.Secondary)
+                            .Item(prop => prop.DataAutorizacao, sizeMD: SMCSize.Grid6_24)
+                            .Item(prop => prop.TipoAutorizacao, sizeMD: SMCSize.Grid12_24)
+                            .Begin())
+    {
+        var buttonSet = Smc.ButtonSet();
+
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Visualizar, "ImprimirAutorizacao", new { Seq = new SMCEncryptedLong(Model.Seq), SeqInstituicaoNivel = new SMCEncryptedLong(Model.SeqInstituicaoNivel), Area = "ORT" }, "PublicacaoBdp").Text(Smc.GetUIResource("Botao_SegundaViaAutorizacaoPublicacaoBdp")).Tooltip(Smc.GetUIResource("Botao_SegundaViaAutorizacaoPublicacaoBdp_Tooltip")).SecurityToken(UC_ORT_003_01_03.EXIBIR_RELATORIO_AUTORIZACAO_PUBLICACAO));
+
+        @buttonSet;
+    }
+}
+
+@using (Smc.Div("divSalvarPublicacao").Begin())
+{
+    @Smc.EditorFor(e => e.Seq)
+    @Smc.EditorFor(e => e.SeqTrabalhoAcademico)
+
+    using (Smc.Wizard("tabPublicacaoBdp")
+                .ButtonSet(1,cssClass: "smc-wizard-salvar",
+                    buttons: item => Smc.Button(SMCButtonBehavior.Salvar)
+                                .Action("SalvarAutorizarPosteriormente", "PublicacaoBdp", new { Area = "ORT" })
+                                .DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                .ButtonSet(1, alwaysVisible: true, cssClass: "smc-wizard-cancelar-arrow",
+                    buttons: item => Smc.Button(SMCButtonBehavior.Cancelar)
+                                        .Action("index", "home", new { Area = "" })
+                                        .DisplayMode(SMCButtonDisplayMode.TextAndIcon)).Begin())
+    {
+        using (Smc.WizardStep(0).Description("Informações Gerais").Title(Smc.GetUIResource("Tab_Informacoes_gerais")).Action("WizardInformacoesGerais").Begin()) { }
+
+        using (Smc.WizardStep(1).Description("Informações por Idioma").Title(Smc.GetUIResource("Tab_Informacoes_por_Idioma")).Action("WizardInformacoesIdioma").Begin()) { }
+
+        using (Smc.WizardStep(2).Description("Confirmacao").Title(Smc.GetUIResource("Tab_Confirmacao")).Action("WizardConfirmacao").Begin()) { }
+    }
+}
+
+@Smc.WizardView()

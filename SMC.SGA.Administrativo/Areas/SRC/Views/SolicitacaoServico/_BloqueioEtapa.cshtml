@@ -1,0 +1,63 @@
+﻿@using SMC.Academico.Common.Areas.PES.Constants
+@model BloqueioEtapaSolicitacaoViewModel
+
+@{
+    Func<BloqueioEtapaSolicitacaoItemViewModel, SMCButtonFluentConfiguration> botaoDesbloqueio = (a) =>
+    {
+        var btn = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                  .Attribute(SMCMvcConsts.MODAL_ID, "modalDesbloqueio")
+                  .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_DesbloquearPessoaAtuacaoBloqueio"))
+                  .Ajax(isPost: false)
+                  .Text(Smc.GetUIResource("Botao_DesbloquearPessoaAtuacaoBloqueio"))
+                  .Tooltip(Smc.GetUIResource("Botao_DesbloquearPessoaAtuacaoBloqueio"))
+                  .SecurityToken(UC_PES_004_03_03.DESBLOQUEAR)
+                  .Action("Editar", "PessoaAtuacaoBloqueioDesbloqueio", new { seq = new SMCEncryptedLong(a.Seq), area = "PES" });
+
+        if ((a.SituacaoBloqueio == SMC.Academico.Common.Areas.PES.Enums.SituacaoBloqueio.Desbloqueado && a.TipoDesbloqueio == SMC.Academico.Common.Areas.PES.Enums.TipoDesbloqueio.Temporario) ||
+             a.SituacaoBloqueio == SMC.Academico.Common.Areas.PES.Enums.SituacaoBloqueio.Bloqueado)
+        {
+            if (a.FormaDesbloqueioMotivo == SMC.Academico.Common.Areas.PES.Enums.FormaBloqueio.Integracao)
+            {
+                btn.Enabled(false).ButtonInstructions(Smc.GetUIResource("ButtonInstructions_DesbloqueioDesabilitadoIntegracao"));
+            }
+            else if (!a.HabilitaBotaoDesbloqueio &&
+                     (a.FormaDesbloqueioMotivo == SMC.Academico.Common.Areas.PES.Enums.FormaBloqueio.Manual || a.FormaDesbloqueioMotivo == SMC.Academico.Common.Areas.PES.Enums.FormaBloqueio.Ambos))
+            {
+                btn.Enabled(false).ButtonInstructions(Smc.GetUIResource("ButtonInstructions_DesbloqueioDesabilitadoManual"));
+            }
+        }
+        else if ((a.SituacaoBloqueio == SMC.Academico.Common.Areas.PES.Enums.SituacaoBloqueio.Desbloqueado && a.TipoDesbloqueio == SMC.Academico.Common.Areas.PES.Enums.TipoDesbloqueio.Efetivo) ||
+                  a.FormaDesbloqueioMotivo == SMC.Academico.Common.Areas.PES.Enums.FormaBloqueio.Integracao)
+        {
+            btn.Enabled(false).ButtonInstructions(Smc.GetUIResource("ButtonInstructions_DesbloqueioDesabilitado"));
+        }
+
+        return btn;
+    };
+}
+
+@using (Smc.Header("Etapa", SMCHeaderType.Primary)
+             .Item(x => x.Etapa)
+             .Begin()) { }
+
+@(Smc.Grid("gridBloqueios", new SMCPagerModel<BloqueioEtapaSolicitacaoItemViewModel>
+              (Model.Bloqueios))
+              .FieldColumn(f => f.TipoBloqueio)
+              .FieldColumn(f => f.MotivoBloqueio)
+              .FieldColumn(f => f.Referente)
+              .FieldColumn(f => f.Bloqueio)
+              .FieldColumn(f => f.SituacaoBloqueio)
+              .FieldColumn(f => f.DataBloqueio)
+              .FieldColumn(f => f.BloqueioImpede)
+              .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-grid-coluna-botoes", true,
+                      f => botaoDesbloqueio((f as BloqueioEtapaSolicitacaoItemViewModel)))
+              .HideGridTitle()
+              .HideNavigator()
+)
+
+@using (Smc.ModalWindow("modalDesbloqueio")
+  .Form("formDesbloqueio", "SalvarPessoaAtuacaoBloqueioDesbloqueio", "PessoaAtuacaoBloqueioDesbloqueio", new { area = "PES", @backUrl = !string.IsNullOrEmpty(Model.BackUrl) ? Model.BackUrl : Url.Action("Index", "SolicitacaoServico") }, closeOnSubmit: true)
+  .Size(SMCModalWindowSize.Largest)
+  .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+  .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+  .Begin()) { }

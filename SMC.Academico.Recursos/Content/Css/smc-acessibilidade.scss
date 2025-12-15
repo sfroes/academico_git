@@ -1,0 +1,91 @@
+﻿// acessibilidade
+
+.smc-acessibilidade-contraste {
+    .smc-menu-responsivo-orientation-horizontal {
+        .smc-menu-dinamico, .smc-dynamic-menu, 
+        .smc-menu-dinamico-principal, 
+        .smc-menu-dinamico-principal li {
+            background-color: #5a5a5a !important;
+        }
+    }
+
+    .smc-ribbon, .smc-sga-externo-totalizador:before, 
+    .smc-sga-externo-totalizador-status-novo:before, 
+    .smc-sga-externo-totalizador-status-emandamento:before, 
+    .smc-sga-externo-totalizador-status-concluida:before, 
+    .smc-sga-externo-totalizador-status-encerrada:before {
+        background: #000 !important;
+    }
+
+    div.smc-wizard-step {
+        background-color: transparent !important;
+    }
+
+    div.smc-sga-processo-passo-atual.smc-wizard-step span {
+        background-color: #fff000 !important;
+
+        &:before {
+            color: #000;
+        }
+    }
+    //header
+    .smc-acessibilidade {
+        & > button {
+            border: 0;
+        }
+    }
+
+    .smc-sga-externo-solicitacoes {
+        border: 1px solid #fff;
+    }
+
+    .smc-button > .smc-estilo-botao-selecionar-instituicao {
+        border-color: transparent !important;
+
+        &::before {
+            color: #fff000 !important;
+        }
+    }
+    //ajusta cores das logos de intiuição para cores oposta.
+    //Com isso é preciso sempre que as mesmas sejam pretas e de fundo branco
+    .smc-sga-aluno-logotipo-intituicao {
+        img {
+            filter: invert(100%);
+        }
+    }
+    //conteudo centro
+    th {
+        background: #2f2c2c !important;
+    }
+
+    .smc-timeline-data {
+        background-color: #5a5a5a !important;
+        border-color: #5a5a5a !important;
+
+        &:after {
+            border-color: transparent #5a5a5a transparent transparent
+        }
+    }
+
+    .smc-timeline-data:before {
+        background-color: #5a5a5a !important;
+    }
+
+    .smc-instrucoes-preenchimento-icone {
+        background-color: transparent !important;
+        border: none !important;
+    }
+
+    button.smc-editorformodel-advancedfilter {
+        border: 1px solid #fff;
+        background: #fff;
+
+        &:before {
+            color: #000;
+        }
+
+        &:focus {
+            background: #ccc !important;
+        }
+    }
+}

@@ -1,0 +1,2251 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Spreadsheet</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.Spreadsheet.CodeLib.Algorithm">
+            <summary>
+            The Algorithm object is used to perform the calculating tasks.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.ArrayEqual(System.Byte[],System.Byte[])">
+            <summary>
+            Compares two arrays
+            </summary>
+            <param name="bytes">The Array</param>
+            <param name="data">The Array</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.ArrayEqual(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+            Compares two arrays
+            </summary>
+            <param name="a">The Array</param>
+            <param name="b">The Array</param>
+            <param name="count">The count.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.ArrayIndice(System.Int32)">
+            <summary>
+            Sets the indice on an array
+            </summary>
+            <param name="length">The length.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.Maximum(System.Collections.ArrayList)">
+            <summary>
+            Looks for the maximum length of the ArrayList
+            </summary>
+            <param name="list">list of lists</param>
+            <returns>the maximum length</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.Sum(System.Collections.Generic.IList{System.Int32})">
+            <summary>
+            Sums the specified list.
+            </summary>
+            <param name="list">The list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.CopyArray(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+            Copies the array.
+            </summary>
+            <param name="src">The SRC.</param>
+            <param name="dest">The dest.</param>
+            <param name="start">The start.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.Maximum(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Maximums the specified list.
+            </summary>
+            <param name="list">The list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.Minimum(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Minimums the specified list.
+            </summary>
+            <param name="list">The list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.Minimum(System.Collections.Generic.IEnumerable{System.UInt32})">
+            <summary>
+            Minimums the specified list.
+            </summary>
+            <param name="list">The list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.PosofMaximum(System.Collections.Generic.IList{System.Int32})">
+            <summary>
+            Return the postion of the maximum in the list.
+            </summary>
+            <param name="list">The list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.PosofMinimum(System.Collections.Generic.IList{System.Int32})">
+            <summary>
+            Return the postion of the Minimum in the list.
+            </summary>
+            <param name="list">The list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.PosofMinimum(System.Int32[])">
+            <summary>
+            Return the postion of the Minimum in the list.
+            </summary>
+            <param name="list">The list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.PosofMaximums(System.Collections.Generic.IList{System.Int32})">
+            <summary>
+            Return the postion of the Maximum in the list.
+            </summary>
+            <param name="list">The list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.PosofMinimums(System.Collections.Generic.IList{System.Int32})">
+            <summary>
+            Return the postion of the Minimum in the list.
+            </summary>
+            <param name="list">The list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Algorithm.Flat``1(System.Collections.Generic.List{System.Collections.Generic.List{``0}})">
+            <summary>
+            Flats the specified groups.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="groups">The groups.</param>
+            <returns></returns>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.CodeLib.BinarySearchTreeBase`2.Size">
+            <summary>
+            The number of nodes contained in the tree.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.BinarySearchTreeBase`2.RotateLeft(`1)">
+            <summary>
+             Rebalance the tree by rotating the nodes to the left.
+            </summary>        
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.BinarySearchTreeBase`2.RotateRight(`1)">
+            <summary>
+             Rebalance the tree by rotating the nodes to the right.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.CodeLib.RedBlackTree`1">
+            <summary>
+            A red-black tree must satisfy these properties:
+            1. The root is black. 
+            2. All leaves are black. 
+            3. Red nodes can only have black children. 
+            4. All paths from a node to its leaves contain the same number of black nodes.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.RedBlackTree`1.FixupAfterInsert(SMC.Framework.Spreadsheet.CodeLib.RedBlackTreeNode{`0})">
+            <summary>
+            restores the red-black properties to the search tree
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.RedBlackTree`1.FixupAfterDelete(SMC.Framework.Spreadsheet.CodeLib.RedBlackTreeNode{`0})">
+            <summary>
+            restores the red-black properties to the search tree
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.CodeLib.Bin2Hex">
+            <summary>
+            Binary data to Hexadecimal string
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Bin2Hex.Encode(System.Byte[])">
+            <summary>
+            Encodes the specified data.
+            </summary>
+            <param name="data">The data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Bin2Hex.Decode(System.String)">
+            <summary>
+            Decodes the specified code.
+            </summary>
+            <param name="code">The code.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Bin2Hex.Format(System.Byte[])">
+            <summary>
+            Formats the specified data.
+            </summary>
+            <param name="data">The data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Bin2Hex.Format(System.Byte[],System.String,System.Int32)">
+            <summary>
+            Formats the specified data.
+            </summary>
+            <param name="data">The data.</param>
+            <param name="format">The format.</param>
+            <param name="bytesPerRow">The bytes per row.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Bin2Hex.Parse(System.String)">
+            <summary>
+            Parses the specified text.
+            </summary>
+            <param name="text">The text.</param>
+            <returns></returns>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.CodeLib.XmlData`1">
+            <summary>
+            XmlFile load and save object from and to xml file;
+            </summary>	
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.XmlData`1.Load(System.String)">
+            <summary>
+            Loads the specified xmlfile.
+            </summary>
+            <param name="xmlfile">The xmlfile.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.XmlData`1.Load(System.IO.Stream)">
+            <summary>
+            Loads the specified xmldata.
+            </summary>
+            <param name="xmldata">The xmldata.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.XmlData`1.Load(System.String,System.String)">
+            <summary>
+            Loads the specified xmlfile.
+            </summary>
+            <param name="xmlfile">The xmlfile.</param>
+            <param name="root">The root.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.XmlData`1.Save(System.String,`0)">
+            <summary>
+            Saves the specified xmlfile.
+            </summary>
+            <param name="xmlfile">The xmlfile.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.CodeLib.XmlFile">
+            <summary>
+            XmlFile load and save object from and to xml file;
+            </summary>	
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.XmlFile.Load(System.String,System.Type)">
+            <summary>
+            Loads the specified xmlfile.
+            </summary>
+            <param name="xmlfile">The xmlfile.</param>
+            <param name="datatype">The datatype.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.XmlFile.Save(System.String,System.Object)">
+            <summary>
+            Saves the specified xmlfile.
+            </summary>
+            <param name="xmlfile">The xmlfile.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.XmlFile.Save(System.String,System.String,System.Object)">
+            <summary>
+            Saves the specified xmlfile.
+            </summary>
+            <param name="xmlfile">The xmlfile.</param>
+            <param name="root">The root.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.CodeLib.TxtFile">
+            <summary>
+            TxtFile
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.Create(System.String)">
+            <summary>
+            Creates the specified file.
+            </summary>
+            <param name="file">The file.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.Read(System.String)">
+            <summary>
+            Reads the specified file.
+            </summary>
+            <param name="file">The file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.Read(System.String,System.String)">
+            <summary>
+            Reads the specified file.
+            </summary>
+            <param name="file">The file.</param>
+            <param name="encoding">The encoding.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.ReadLines(System.String,System.String)">
+            <summary>
+            Reads the lines.
+            </summary>
+            <param name="file">The file.</param>
+            <param name="encoding">The encoding.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.Read(System.String,System.Text.Encoding)">
+            <summary>
+            Reads the specified file.
+            </summary>
+            <param name="file">The file.</param>
+            <param name="encoding">The encoding.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.ReadLines(System.String,System.Text.Encoding)">
+            <summary>
+            Reads the lines.
+            </summary>
+            <param name="file">The file.</param>
+            <param name="encoding">The encoding.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.Write(System.String,System.String)">
+            <summary>
+            Writes the specified file.
+            </summary>
+            <param name="file">The file.</param>
+            <param name="text">The text.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.Write(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Writes the specified file.
+            </summary>
+            <param name="file">The file.</param>
+            <param name="text">The text.</param>
+            <param name="encoding">The encoding.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.Append(System.String,System.String)">
+            <summary>
+            Appends the specified file.
+            </summary>
+            <param name="file">The file.</param>
+            <param name="text">The text.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.Append(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Appends the specified file.
+            </summary>
+            <param name="file">The file.</param>
+            <param name="text">The text.</param>
+            <param name="encoding">The encoding.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.GetText(System.IO.TextReader,System.String)">
+            <summary>
+            Gets the text from current position of reader to specified tag.
+            tag should occupy just one line.
+            if tag is null then read to the end of file.
+            </summary>
+            <param name="reader">The reader.</param>
+            <param name="tag">The tag.</param>
+            <returns>the text from current position of reader to specified tag, tag is not included.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.GetText(System.String,System.String,System.String)">
+            <summary>
+            Gets the text between two tags in file.
+            each tag should occupy just one line.
+            </summary>
+            <param name="file">The file in UTF-8.</param>
+            <param name="startTag">The start tag.</param>
+            <param name="endTag">The end tag.</param>
+            <returns>the text between two tags in file, or null if startTag is not found.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.GetText(System.String,System.String,System.String,System.Int32@)">
+            <summary>
+            Gets the text.
+            </summary>
+            <param name="file">The file.</param>
+            <param name="startTag">The start tag.</param>
+            <param name="endTag">The end tag.</param>
+            <param name="lineNum">The line num.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TxtFile.CountLinesAndChars(System.String,System.Int32@,System.Int32@)">
+            <summary>
+            Counts the lines and chars.
+            </summary>
+            <param name="file">The file.</param>
+            <param name="lines">The lines.</param>
+            <param name="chars">The chars.</param>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.CodeLib.BinFile">
+            <summary>
+            BinFile
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.BinFile.Read(System.String)">
+            <summary>
+            Reads the specified datafile.
+            </summary>
+            <param name="datafile">The datafile.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.BinFile.Write(System.String,System.Object)">
+            <summary>
+            Writes the specified datafile.
+            </summary>
+            <param name="datafile">The datafile.</param>
+            <param name="obj">The obj.</param>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.CodeLib.FileType">
+            <summary>
+            Represents the file type.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileType.Txt">
+            <summary>
+            Txt file
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileType.Rtf">
+            <summary>
+            Rtf file
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileType.Html">
+            <summary>
+            Html file
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileType.Xml">
+            <summary>
+            Xml file
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileType.PDF">
+            <summary>
+            PDF file
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileType.Bin">
+            <summary>
+            Bin file
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileType.Zip">
+            <summary>
+            Zip file
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileType.Img">
+            <summary>
+            Image file
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileType.Excel97">
+            <summary>
+            Excel 97 xls
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileType.Excel2007">
+            <summary>
+            Excel 2007 Open Xml Format
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileType.All">
+            <summary>
+            All file type
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.CodeLib.FileSelector">
+            <summary>
+            FileSelector
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileSelector.TitleSingleFile">
+            <summary>
+            The Title of FileDialog for select a Single File
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileSelector.TitleMultiFile">
+            <summary>
+            The Title of FileDialog for select Multiple Files
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileSelector.Filter">
+            <summary>
+            Filter
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.CodeLib.FileSelector.FileExtension">
+            <summary>
+            Sets the file extension.
+            </summary>
+            <value>The file extension.</value>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.CodeLib.FileSelector.ImageFormat">
+            <summary>
+            Gets the image format.
+            </summary>
+            <value>The image format.</value>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileSelector.OFD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.FileSelector.SFD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.CodeLib.FileSelector.InitialPath">
+            <summary>
+            Gets or sets the initial directory displayed by the file dialog box.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.FileSelector.#cctor">
+            <summary>
+            Initializes the <see cref="T:SMC.Framework.Spreadsheet.CodeLib.FileSelector"/> class.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.FileSelector.BrowseFile">
+            <summary>
+            Browses the file.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.FileSelector.BrowseFiles">
+            <summary>
+            Browses the files.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.FileSelector.BrowseFileForSave">
+            <summary>
+            Browses the file for save.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.FileSelector.BrowseFile(SMC.Framework.Spreadsheet.CodeLib.FileType)">
+            <summary>
+            Browses the file.
+            </summary>
+            <param name="type">The type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.FileSelector.BrowseFile(System.String)">
+            <summary>
+            Browses the file.
+            </summary>
+            <param name="filter">The filter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.FileSelector.BrowseFiles(SMC.Framework.Spreadsheet.CodeLib.FileType)">
+            <summary>
+            Browses the files.
+            </summary>
+            <param name="type">The type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.FileSelector.BrowseFiles(System.String)">
+            <summary>
+            Browses the files.
+            </summary>
+            <param name="filter">The filter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.FileSelector.BrowseFileForSave(SMC.Framework.Spreadsheet.CodeLib.FileType)">
+            <summary>
+            Browses the file for save.
+            </summary>
+            <param name="type">The type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.FileSelector.BrowseFileForSave(System.String)">
+            <summary>
+            Browses the file for save.
+            </summary>
+            <param name="filter">The filter.</param>
+            <returns></returns>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.CodeLib.Pair`2">
+            <summary>
+            Pair
+            </summary>
+            <typeparam name="TLeft">The type of the left.</typeparam>
+            <typeparam name="TRight">The type of the right.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.Pair`2.Left">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.CodeLib.Pair`2.Right">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Pair`2.#ctor(`0,`1)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SMC.Framework.Spreadsheet.CodeLib.Pair`2"/> class.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Pair`2.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Pair`2.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type. <see cref="M:System.Object.GetHashCode"></see> is suitable for use in hashing algorithms and data structures like a hash table.
+            </summary>
+            <returns>
+            A hash code for the current <see cref="T:System.Object"></see>.
+            </returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Pair`2.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"></see> is equal to the current <see cref="T:System.Object"></see>.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"></see> to compare with the current <see cref="T:System.Object"></see>.</param>
+            <returns>
+            true if the specified <see cref="T:System.Object"></see> is equal to the current <see cref="T:System.Object"></see>; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Pair`2.Equals(SMC.Framework.Spreadsheet.CodeLib.Pair{`0,`1})">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+            true if the current object is equal to the other parameter; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Pair`2.op_Equality(SMC.Framework.Spreadsheet.CodeLib.Pair{`0,`1},SMC.Framework.Spreadsheet.CodeLib.Pair{`0,`1})">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="one">The one.</param>
+            <param name="other">The other.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.Pair`2.op_Inequality(SMC.Framework.Spreadsheet.CodeLib.Pair{`0,`1},SMC.Framework.Spreadsheet.CodeLib.Pair{`0,`1})">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="one">The one.</param>
+            <param name="other">The other.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.CodeLib.StreamHelper">
+            <summary>
+            This class represents a Stream Helper.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.StreamHelper.WriteByteOrderMark(System.IO.StreamWriter)">
+            <summary>
+            Write Byte Order Mark(BOM) of streamWriter's Encoding
+            to streamWriter's underlying stream.
+            </summary>
+            <param name="streamWriter">The stream writer.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.StreamHelper.WriteBytes(System.IO.Stream,System.Byte[])">
+            <summary>
+            Writes the bytes.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="bytes">The bytes.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.StreamHelper.ReadBytes(System.IO.Stream,System.Int32)">
+            <summary>
+            Reads the bytes.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="count">The count.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.StreamHelper.ReadBytes(System.IO.Stream,System.Byte[])">
+            <summary>
+            Reads the bytes.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="buffer">The buffer.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.StreamHelper.ReadToEnd(System.IO.Stream)">
+            <summary>
+            Reads to end.
+            </summary>
+            <param name="stream">The stream.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.StreamHelper.SearchStream(System.IO.Stream,System.Byte[])">
+            <summary>
+            Search the first occurance of values from current position in stream
+            </summary>
+            <param name="stream"></param>
+            <param name="values"></param>
+            <returns>the stream position after values or -1 if not fount</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.StreamHelper.SearchStream(System.IO.Stream,System.Byte[],System.Int32)">
+            <summary>
+            Search the first occurance of values from current position in stream within start range
+            </summary>
+            <param name="stream"></param>
+            <param name="values"></param>
+            <param name="maxlength">maximum bytes to seach</param>
+            <returns></returns>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.CodeLib.TextEncoding">
+            <summary>
+            TextEncoding
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TextEncoding.FitsInASCIIEncoding(System.String)">
+            <summary>
+            check if all charaters in text are ASCII charater
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TextEncoding.EncodingIsRight(System.Text.Encoding,System.Byte[])">
+            <summary>
+            Encodings the is right.
+            </summary>
+            <param name="encoding">The encoding.</param>
+            <param name="data">The data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TextEncoding.SafeDecodeString(System.Text.Encoding,System.Byte[])">
+            <summary>
+            Safes the decode string.
+            </summary>
+            <param name="encoding">The encoding.</param>
+            <param name="data">The data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.CodeLib.TextEncoding.GroupTextByEncoding(System.String)">
+            <summary>
+            Group text by encoding.
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.Exceptions.SMCFileAlreadyOpenException">
+            <summary>
+            Representa uma exceção quando se tenta abrir um arquivo já aberto
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.Exceptions.SMCFileAlreadyOpenException.#ctor">
+            <summary>
+            Cria um novo objeto SMCFileAlreadyOpenException
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.Exceptions.SMCFileNotOpenException">
+            <summary>
+            Representa uma exceção quando tenta acessar um recurso aqui ainda não foi carregado
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.Exceptions.SMCFileNotOpenException.#ctor">
+            <summary>
+            Cria um novo objeto SMCFileNotOpenException.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.Exceptions.SMCInvalidSpreadsheetException">
+            <summary>
+            Representa uma exceção quando há uma tentativa de acessar um spreadsheet inexistente
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.Exceptions.SMCInvalidSpreadsheetException.#ctor(System.String)">
+            <summary>
+            Cria um novo objeto SMCInvalidSpreadsheetException
+            </summary>
+            <param name="spreadsheet">Nome do spreadsheet</param>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.Exceptions.SMCInvalidSpreadsheetException._spreadsheet">
+            <summary>
+            Armazena o nome do spreadsheet
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.Exceptions.SMCInvalidSpreadsheetException.SpreadSheet">
+            <summary>
+            Nome do spreadsheet
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.ISMCSpreadsheetProvider">
+            <summary>
+            Interface para lidar com documentos de planílhas.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.ISMCSpreadsheetProvider.Spreadsheets">
+            <summary>
+            Retorna os nomes das planílhas contidas no documento.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetProvider.GetColumnCount(System.String)">
+            <summary>
+            Retorna a quantidade de colunas de uma planilha contida no documento.
+            </summary>
+            <param name="spreadsheet">nome da planilha contida no documento</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetProvider.GetColumnName(System.String,System.Int32)">
+            <summary>
+            Retorna o nome de uma coluna de uma planilha contida no documento.
+            </summary>
+            <param name="spreadsheet">nome da planilha contida no documento</param>
+            <param name="column">índice da coluna</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetProvider.OpenForRead(System.String)">
+            <summary>
+            Abre uma planilha, contida no documento, para leitura.
+            </summary>
+            <param name="spreadsheet">nome da planilha contida no documento</param>
+            <returns>O leitor de planilha.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetProvider.Transform``1(System.String)">
+            <summary>
+            Cria uma transformação, de uma planilha para um tipo.
+            </summary>
+            <typeparam name="TDestination">o tipo destino</typeparam>
+            <param name="spreadsheet">nome da planilha contida no documento</param>
+            <returns>A transformação.</returns>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader">
+            <summary>
+            Interface para lidar com a leitura de uma planilha.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.RowCount">
+            <summary>
+            Retorna a quantidade de linhas da planilha.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.ColumnCount">
+            <summary>
+            Retorna a quantidade de colunas da planilha.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.CurrentRow">
+            <summary>
+            Retorna o número da linha corrente.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.Errors">
+            <summary>
+            Coleção de uso geral para reportar erros encontrados na planilha.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.AddError(System.Int32,System.String)">
+            <summary>
+            Reporta um erro em uma linha da planilha.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.GetColumnName(System.Int32)">
+            <summary>
+            Retorna o nome de uma coluna da planilha.
+            </summary>
+            <param name="column">índice da coluna</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.GetValue(System.Int32)">
+            <summary>
+            Obtém o valor de uma coluna.
+            </summary>
+            <param name="column">índice da coluna</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.GetValues">
+            <summary>
+            Obtém os valores de todas as colunas.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.MoveNext">
+            <summary>
+            Move para a próxima linha.
+            </summary>
+            <returns>True/False se conseguiu ou não mover para a próxima linha.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.TryGetValue(System.Int32,System.Nullable{System.Boolean}@)">
+            <summary>
+            Tenta obter o valor da coluna como "bool".
+            </summary>
+            <param name="column">índice da coluna</param>
+            <param name="value">variável que irá receber o valor</param>
+            <returns>True/False se conseguiu ou não ler o valor no formato desejado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.TryGetValue(System.Int32,System.Nullable{System.Byte}@)">
+            <summary>
+            Tenta obter o valor da coluna como "byte".
+            </summary>
+            <param name="column">índice da coluna</param>
+            <param name="value">variável que irá receber o valor</param>
+            <returns>True/False se conseguiu ou não ler o valor no formato desejado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.TryGetValue(System.Int32,System.Nullable{System.Char}@)">
+            <summary>
+            Tenta obter o valor da coluna como "char".
+            </summary>
+            <param name="column">índice da coluna</param>
+            <param name="value">variável que irá receber o valor</param>
+            <returns>True/False se conseguiu ou não ler o valor no formato desejado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.TryGetValue(System.Int32,System.Nullable{System.DateTime}@)">
+            <summary>
+            Tenta obter o valor da coluna como "DateTime".
+            </summary>
+            <param name="column">índice da coluna</param>
+            <param name="value">variável que irá receber o valor</param>
+            <returns>True/False se conseguiu ou não ler o valor no formato desejado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.TryGetValue(System.Int32,System.Nullable{System.Decimal}@)">
+            <summary>
+            Tenta obter o valor da coluna como "decimal".
+            </summary>
+            <param name="column">índice da coluna</param>
+            <param name="value">variável que irá receber o valor</param>
+            <returns>True/False se conseguiu ou não ler o valor no formato desejado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.TryGetValue(System.Int32,System.Nullable{System.Double}@)">
+            <summary>
+            Tenta obter o valor da coluna como "double".
+            </summary>
+            <param name="column">índice da coluna</param>
+            <param name="value">variável que irá receber o valor</param>
+            <returns>True/False se conseguiu ou não ler o valor no formato desejado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.TryGetValue(System.Int32,System.Nullable{System.Single}@)">
+            <summary>
+            Tenta obter o valor da coluna como "float".
+            </summary>
+            <param name="column">índice da coluna</param>
+            <param name="value">variável que irá receber o valor</param>
+            <returns>True/False se conseguiu ou não ler o valor no formato desejado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.TryGetValue(System.Int32,System.Nullable{System.Int32}@)">
+            <summary>
+            Tenta obter o valor da coluna como "Int32".
+            </summary>
+            <param name="column">índice da coluna</param>
+            <param name="value">variável que irá receber o valor</param>
+            <returns>True/False se conseguiu ou não ler o valor no formato desejado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.TryGetValue(System.Int32,System.Nullable{System.Int64}@)">
+            <summary>
+            Tenta obter o valor da coluna como "Int64".
+            </summary>
+            <param name="column">índice da coluna</param>
+            <param name="value">variável que irá receber o valor</param>
+            <returns>True/False se conseguiu ou não ler o valor no formato desejado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.TryGetValue(System.Int32,System.Nullable{System.Int16}@)">
+            <summary>
+            Tenta obter o valor da coluna como "Int16".
+            </summary>
+            <param name="column">índice da coluna</param>
+            <param name="value">variável que irá receber o valor</param>
+            <returns>True/False se conseguiu ou não ler o valor no formato desejado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetReader.TryGetValue(System.Int32,System.String@)">
+            <summary>
+            Tenta obter o valor da coluna como "string".
+            </summary>
+            <param name="column">índice da coluna</param>
+            <param name="value">variável que irá receber o valor</param>
+            <returns>True/False se conseguiu ou não ler o valor no formato desejado.</returns>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.ISMCSpreadsheetTransformation`1">
+            <summary>
+            Interface para lidar com transformações entre planilhas e objetos.
+            </summary>
+            <typeparam name="TDestination">Tipo da classe destino da transformação.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetTransformation`1.Map``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Int32,System.Nullable{System.Boolean},System.Nullable{System.Boolean},SMC.Framework.Spreadsheet.SMCTransformationConverterEvent{`0})">
+            <summary>
+            Mapeia uma propriedade.
+            </summary>
+            <typeparam name="TProperty"></typeparam>
+            <param name="column">índice da coluna</param>
+            <param name="property">expressão lambda que deve apontar para uma propriedade</param>
+            <param name="allowNull">somente se aplica a "value types" (tipos onde o valor padrão não é "null")</param>
+            <param name="strict">True/False para fazer ou não a conversão dos valores de forma estrita. A conversão estrita não permite: -arredondamentos na conversão de real para inteiro.</param>
+            <param name="onConvert">conversor do valor customizado</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetTransformation`1.MessageForNullValueError(System.String)">
+            <summary>
+            Define o formato das mensagens para valores nulos.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetTransformation`1.MessageForTypeMismatchError(System.String)">
+            <summary>
+            Define o formato das mensagens para valores inválidos.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetTransformation`1.OnRowComplete(SMC.Framework.Spreadsheet.SMCTransformationEvent{`0})">
+            <summary>
+            Evento que permite executar alguma ação quando do término da transformação de uma linha (após OnValidate, OnRowSuccess e OnRowFail).
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetTransformation`1.OnRowFail(SMC.Framework.Spreadsheet.SMCTransformationEvent{`0})">
+            <summary>
+            Evento que permite executar alguma ação quando da transformação de uma linha com erro.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetTransformation`1.OnRowSuccess(SMC.Framework.Spreadsheet.SMCTransformationEvent{`0})">
+            <summary>
+            Evento que permite executar alguma ação quando da transformação de uma linha sem nenhum erro.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetTransformation`1.OnValidate(SMC.Framework.Spreadsheet.SMCTransformationValidatorEvent{`0})">
+            <summary>
+            Evento que permite a validação da instância de uma linha transformada (antes de OnRowSuccess e OnRowFail).
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetTransformation`1.Perform">
+            <summary>
+            Realiza a transformação.
+            </summary>
+            <returns>O resultado da transformação.</returns>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.ISMCSpreadsheetTransformationContext`1">
+            <summary>
+            Interface que define o contexto de uma transformação.
+            </summary>
+            <typeparam name="TDestination"></typeparam>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.ISMCSpreadsheetTransformationContext`1.Row">
+            <summary>
+            Número da linha corrente.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetTransformationContext`1.AddError(System.String)">
+            <summary>
+            Adiciona um erro referente à linha corrente.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.ISMCSpreadsheetValueConverter">
+            <summary>
+            Conversor genérico de tipos e valores.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.ISMCSpreadsheetValueConverter.Convert(System.Type,System.Type,System.Object,System.Object@)">
+            <summary>
+            Converte um valor de um tipo para outro.
+            </summary>
+            <param name="fromType">Tipo de origem.</param>
+            <param name="toType">Tipo de destino.</param>
+            <param name="from">Valor a ser convertido.</param>
+            <param name="to">Valor resultado.</param>
+            <returns>Verdadeiro se foi convertido com sucesso, caso contrário falso.</returns>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.Resources.ExceptionsResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.Resources.ExceptionsResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.Resources.ExceptionsResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.Resources.ExceptionsResource.SMCFileAlreadyOpenException">
+            <summary>
+              Looks up a localized string similar to Arquivo já está aberto!.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.Resources.ExceptionsResource.SMCFileNotOpenException">
+            <summary>
+              Looks up a localized string similar to Arquivo não está aberto!.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.Resources.ExceptionsResource.SMCInvalidSpreadsheetException">
+            <summary>
+              Looks up a localized string similar to Planilha inválida: {0}.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCOfficeOleDbSpreadsheetProvider">
+            <summary>
+            Implementação utilizando OleDb.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCOfficeOleDbSpreadsheetReader">
+            <summary>
+            Implementação utilizando OleDb.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCSpreadsheetError">
+            <summary>
+            Representa um erro em uma planilha.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetError.Row">
+            <summary>
+            Número da linha.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetError.Message">
+            <summary>
+            Mensagem de erro.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCOfficeSpreadsheetHelper">
+            <summary>
+            Classe de suporte com métodos para ler uma planilha do excel.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCOfficeSpreadsheetHelper.OpenFromFile(System.String)">
+            <summary>
+            Abre um documento de planilhas à partir de um arquivo.
+            </summary>
+            <param name="fileName">Nome do arquivo.</param>
+            <returns>Provider para leitura do arquivo.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCOfficeSpreadsheetHelper.CreateTemplate(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Retorna um template de pasta de trabalho.
+            </summary>
+            <param name="columns">Colunas do template.</param>
+            <param name="worksheetName">Nome da planilha do template.</param>
+            <returns>Pasta de trabalho.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCOfficeSpreadsheetHelper.SaveWorkbook(SMC.Framework.SpreadSheet.Workbook,System.String)">
+            <summary>
+            Salva a pasta de trabalho no disco.
+            </summary>
+            <param name="wb">Pasta de trabalho.</param>
+            <param name="filePath">Local que deverá ser salvo, contendo também o nome do arquivo e a extensão .xls.</param>
+            <returns>True, se salvo com sucesso ou false, caso não salvo.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SMC.Framework.Spreadsheet.SMCOfficeSpreadsheetHelper.CreateObjectList(SMC.Framework.SpreadSheet.Workbook,System.Type)" -->
+        <!-- Badly formed XML comment ignored for member "M:SMC.Framework.Spreadsheet.SMCOfficeSpreadsheetHelper.CreateObjectList(System.IO.Stream,System.Type)" -->
+        <member name="M:SMC.Framework.Spreadsheet.SMCOfficeSpreadsheetHelper.CreateObject(SMC.Framework.SpreadSheet.Workbook,System.Type)">
+            <summary>
+            Cria um objeto do tipo informado.
+            A pasta de trabalho deverá ter as propriedades na primeira linha e os valores na segunda linha.
+            </summary>
+            <param name="wb">Pasta de trabalho que irá conter os dados para criar o objeto preenchido.</param>
+            <param name="type">Tipo do objeto que será criado.</param>
+            <returns>Objeto do tipo informado, preenchido com o que está na pasta de trabalho.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCOfficeSpreadsheetHelper.CreateObject(System.IO.Stream,System.Type)">
+            <summary>
+            Cria um objeto do tipo informado.
+            A pasta de trabalho deverá ter as propriedades na primeira linha e os valores na segunda linha.
+            </summary>
+            <param name="st">Stream contendo a pasta de trabalho que possui os dados para criar o objeto preenchido.</param>
+            <param name="type">Tipo do objeto que será criado.</param>
+            <returns>Objeto do tipo informado, preenchido com o que está na pasta de trabalho.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCOfficeSpreadsheetHelper.CreateColumnsList(SMC.Framework.SpreadSheet.Workbook)">
+            <summary>
+            Cria uma lista de strings contendo os nomes das colunas da primeira planilha da pasta de trablaho.
+            </summary>
+            <param name="wb">Pasta de trabalho.</param>
+            <returns>Lista de strings com os nomes das colunas.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCOfficeSpreadsheetHelper.CreateColumnsList(System.IO.Stream)">
+            <summary>
+            Cria uma lista de strings contendo os nomes das colunas da primeira planilha da pasta de trablaho.
+            </summary>
+            <param name="st">Stream da pasta de trabalho.</param>
+            <returns>Lista de strings com os nomes das colunas.</returns>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformation`1">
+            <summary>
+            Implementação padrão de SMCSpreadsheetTransformation.
+            </summary>
+            <typeparam name="TDestination">Tipo da classe de resultado.</typeparam>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformation`1.DefaultConverter">
+            <summary>
+            Implementação interna deste transformador.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformation`1.StrictConverter">
+            <summary>
+            Essa classe faz algumas checagens a mais:
+            - Não deixa passar conversões de real para inteiro por arredondamento.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformation`1.Mapping">
+            <summary>
+            Define um mapeamento para uma propriedade.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResult`1">
+            <summary>
+            Classe que representa o resultado de uma linha na leitura de uma planilha.
+            </summary>
+            <typeparam name="TDestination">Tipo da classe de destino da transformação.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResult`1._errorsList">
+            <summary>
+            Armazena a lista de erros.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResult`1.ErrorCount">
+            <summary>
+            Recupera a quantidade de erros encontrados.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResult`1.Errors">
+            <summary>
+            Recupera a lista de erros encontrados.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResult`1.ErrorsToCopy">
+            <summary>
+            Copia os erros que forem atribuídos (utilizado para model binding no MVC).
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResult`1.HasInstance">
+            <summary>
+            Define se foi criada uma instância de TDestination para a linha.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResult`1.Instance">
+            <summary>
+            Instância TDestination para a linha.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResult`1.IsValid">
+            <summary>
+            Define se a linha está sem erros e com a instância criada.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResult`1.Row">
+            <summary>
+            Número da linha do resultado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResult`1.AddError(System.String)">
+            <summary>
+            Adiciona um novo erro ao resultado.
+            </summary>
+            <param name="message">Mensagem de erro.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResult`1.AddRowError(System.String)">
+            <summary>
+            Adiciona um novo erro na linha.
+            </summary>
+            <param name="message">Mensagem de erro.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResult`1.EnsureErrorsList">
+            <summary>
+            Garante que a lista de erros está criada.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1">
+            <summary>
+            Coleção de resultados na leitura de uma planilha.
+            </summary>
+            <typeparam name="TDestination">Tipo da entidade resultado.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1._resultsByRow">
+            <summary>
+            Armazena os resultados por linha.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.#ctor">
+            <summary>
+            Cria um novo objeto SMCSpreadsheetTransformationResults.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.EnumeratorWrapper">
+            <summary>
+            Wrapper para um enumerador de dicionário funcionar como uma lista.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.GetEnumerator">
+            <summary>
+            Recupera a lista de resultados por linha.
+            </summary>
+            <returns>Lista de resultados por linha.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Recupera a lista de resultados por linha.
+            </summary>
+            <returns>Lista de resultados por linha.</returns>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.Item(System.Int32)">
+            <summary>
+            Recupera a instância resultado para uma linha.
+            </summary>
+            <param name="row">Linha que contém o resultado.</param>
+            <returns>Instância resultado para uma linha.</returns>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.Total">
+            <summary>
+            Recupera o total de linhas processadas.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.TotalSuccess">
+            <summary>
+            Recupera o total de linhas que foram processadas com sucesso.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.TotalFailed">
+            <summary>
+            Recupera o total de linhas que foram falharam ao ser processadas.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.TotalErrors">
+            <summary>
+            Recupera o total de erros somados de cada linha.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.ResultsToCopy">
+            <summary>
+            Copia os resultados que forem atribuídos (utilizado para model binding no MVC).
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.AddError(System.Int32,System.String)">
+            <summary>
+            Adiciona um erro na lista de resultados.
+            </summary>
+            <param name="row">Linha que contém o erro.</param>
+            <param name="message">Mensagem de erro.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.AddRowError(System.Int32,System.String)">
+            <summary>
+            Adicina um novo erro a uma linha.
+            </summary>
+            <param name="row">Número da linha.</param>
+            <param name="message">Mensagem de erro.</param>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.IsValid(System.Int32)">
+            <summary>
+            Verifica se uma linha está válida.
+            </summary>
+            <param name="row">Linha a ser verificada.</param>
+            <returns>Verdadeiro se a linha está válida, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.SMCSpreadsheetTransformationResults`1.SetInstance(System.Int32,`0)">
+            <summary>
+            Atualiza uma instância para uma linha.
+            </summary>
+            <param name="row">Índice da linha.</param>
+            <param name="instance">Instância a ser definida para a linha.</param>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCTransformationConverterEvent`1">
+            <summary>
+            Define a assinatura de um conversor de dados.
+            </summary>
+            <typeparam name="TDestination"></typeparam>
+            <param name="inValue">valor de entrada lido da planilha</param>
+            <param name="outValue">valor de saída a ser escrito na instância de destino</param>
+            <returns>True/False se conseguiu ou não converter o valor.</returns>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCTransformationEvent`1">
+            <summary>
+            Define a assinatura de um evento genérico.
+            </summary>
+            <typeparam name="TDestination"></typeparam>
+            <param name="context">o contexto da transformação</param>
+            <param name="instance">a instância de destino</param>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.SMCTransformationValidatorEvent`1">
+            <summary>
+            Define a assinatura de um validador de uma instância.
+            </summary>
+            <typeparam name="TDestination"></typeparam>
+            <param name="context">o contexto da transformação</param>
+            <param name="instance">a instância a ser validada</param>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.Xlsx.Cell">
+            <summary>
+            Representa uma célula de um arquivo .xlsx
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.Xlsx.Cell.CellReference">
+            <summary>
+            Usado para a conversão de coluna do .xlsx para índice de coluna a partir de 0
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Spreadsheet.Xlsx.Cell.Value">
+            <summary>
+            Valor original da célula
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.Xlsx.Cell.ColumnIndex">
+            <summary>
+            Índice da coluna de célula orignal começando em 0
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.Xlsx.Cell.Text">
+            <summary>
+            Texto da célula Excel (se for uma string)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Spreadsheet.Xlsx.Cell.Amount">
+            <summary>
+            Valor da célula do Excel (se fosse um número)
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.Xlsx.Row">
+            <summary>
+            Representa uma linha de uma planilha.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.Xlsx.sst">
+            <summary>
+            Trata os textos compartilhados em um arquivo .xlsx
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.Xlsx.FileVersion">
+            <summary>
+            Estas classes representam uma pasta de trabalho do excel à partir da versão 2007
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.Xlsx.Workbook">
+            <summary>
+            Representa uma pasta de trabalho do Excel em formato .xlsx
+            e fornece todas as planilhas contidas nesta pasta de trabalho.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.Xlsx.Workbook.Worksheets(System.String)">
+            <summary>
+            Todas as planilhas na pasta de trabalho Excel desserializadas.
+            </summary>
+            <param name="ExcelFileName">Caminho completo e nome do arquivo .xlsx</param>
+            <returns>Planilhas da pasta de trabalho</returns>
+        </member>
+        <member name="M:SMC.Framework.Spreadsheet.Xlsx.Workbook.DateFromExcelFormat(System.String)">
+            <summary>
+            Método de conversão de um valor de célula do Excel para uma data
+            </summary>
+            <param name="ExcelCellValue">Valor da célula</param>
+            <returns>Data/hora informados na célula</returns>
+        </member>
+        <member name="T:SMC.Framework.Spreadsheet.Xlsx.Worksheet">
+            <summary>
+            Esta classe foi feita para representar planilhas dentro de arquivos .xlsx
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.CompoundDocumentFormat.CompoundFileHeader.#ctor">
+            <summary>
+            Create a CompoundFileHeader with default values.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.CompoundDocumentFormat.DirectoryEntry">
+            <summary>
+            Directory Entry Structure 
+            The size of each directory entry is exactly 128 bytes.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.NameBuffer">
+            <summary>
+            Character array of the name of the entry, always 16-bit Unicode characters,
+            with trailing zero character (results in a maximum name length of 31 characters)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.NameDataSize">
+            <summary>
+            Size of the used area of the character buffer of the name 
+            (not character count), including the trailing zero character
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.EntryType">
+            <summary>
+            Type of the entry: 
+            00H = Empty 03H = LockBytes (unknown)
+            01H = User storage 04H = Property (unknown)
+            02H = User stream 05H = Root storage
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.NodeColor">
+            <summary>
+            Node colour of the entry: 00H = Red 01H = Black
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.LeftChildDID">
+            <summary>
+            DID of the left child node inside the red-black tree of all direct members of the parent storage 
+            (if this entry is a user storage or stream), ¨C1 if there is no left child
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.RightChildDID">
+            <summary>
+            DID of the right child node inside the red-black tree of all direct members of the parent storage
+            (if this entry is a user storage or stream), ¨C1 if there is no right child
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.MembersTreeNodeDID">
+            <summary>
+            The directory organises direct members (storages and streams) of each storage in a separate red-black tree.
+            DID of the root node entry of the red-black tree of all storage members
+            (if this entry is a storage), ¨C1 otherwise
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.UniqueIdentifier">
+            <summary>
+            Unique identifier, if this is a storage (not of interest in the following, may be all 0)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.UserFlags">
+            <summary>
+            User flags (not of interest in the following, may be all 0)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.CreationTime">
+            <summary>
+            Time stamp of creation of this entry.
+            Most implementations do not write a valid time stamp, but fill up this space with zero bytes.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.LastModificationTime">
+            <summary>
+            Time stamp of last modification of this entry. 
+            Most implementations do not write a valid time stamp, but fill up this space with zero bytes.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.FirstSectorID">
+            <summary>
+            SID of first sector or short-sector, if this entry refers to a stream,
+            SID of first sector of the short-stream container stream, if this is the root storage entry,
+            0 otherwise
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.StreamLength">
+            <summary>
+            Total stream size in bytes, if this entry refers to a stream,
+            total size of the shortstream container stream, if this is the root storage entry, 
+            0 otherwise
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.DirectoryEntry.UnUsed">
+            <summary>
+            Not used
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.FileTypeIdentifier">
+            <summary>
+            Compound document file identifier: D0H CFH 11H E0H A1H B1H 1AH E1H
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.FileIdentifier">
+            <summary>
+            Unique identifier (UID) of this file (not of interest in the following, may be all 0)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.RevisionNumber">
+            <summary>
+            Revision number of the file format (most used is 003EH)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.VersionNumber">
+            <summary>
+            Version number of the file format (most used is 0003H)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.ByteOrderMark">
+            <summary>
+            Byte order identifier: FEH FFH = Little-Endian FFH FEH = Big-Endian
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.SectorSizeInPot">
+            <summary>
+            Size of a sector in the compound document file in power-of-two (ssz),
+            (most used value is 9 which means 512 bytes, minimum value is 7 which means 128 bytes)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.ShortSectorSizeInPot">
+            <summary>
+            Size of a short-sector in the short-stream container stream in power-of-two (ssz),
+            (most used value is 6 which means 64 bytes, maximum value is sector size  in power-of-two)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.UnUsed10">
+            <summary>
+            Not used
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.NumberOfSATSectors">
+            <summary>
+            Total number of sectors used for the sector allocation table
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.FirstSectorIDofDirectoryStream">
+            <summary>
+            SID of first sector of the directory stream
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.UnUsed4">
+            <summary>
+            Not used
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.MinimumStreamSize">
+            <summary>
+            Minimum size of a standard stream (in bytes, most used size is 4096 bytes),
+            streams smaller than this value are stored as short-streams
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.FirstSectorIDofShortSectorAllocationTable">
+            <summary>
+            SID of first sector of the short-sector allocation table,
+            or ¨C2 (End Of Chain SID) if not extant
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.NumberOfShortSectors">
+            <summary>
+            Total number of sectors used for the short-sector allocation table
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.FirstSectorIDofMasterSectorAllocationTable">
+            <summary>
+            SID of first sector of the master sector allocation table,
+            or ¨C2 (End Of Chain SID) if no additional sectors used
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.NumberOfMasterSectors">
+            <summary>
+            Total number of sectors used for the master sector allocation table
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.FileHeader.MasterSectorAllocationTable">
+            <summary>
+            First part of the master sector allocation table containing 109 SIDs
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.CompoundDocumentFormat.MasterSectorAllocation">
+            <summary>
+            The master sector allocation table (MSAT) is an array of SecIDs of all sectors
+            used by the sector allocation table (SAT).
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.SID.Free">
+            <summary>
+            Free SID,  Free sector
+            (may exist in the file, but is not part of any stream)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.SID.EOC">
+            <summary>
+            End Of Chain SID
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.SID.SAT">
+            <summary>
+            SAT SID, Sector is used by the sector allocation table
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.CompoundDocumentFormat.SID.MSAT">
+            <summary>
+            MSAT SID, Sector is used by the master sector allocation table
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.BinaryDrawingFormat.EscherRecord.Instance">
+            <summary>
+            Instance
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.BinaryDrawingFormat.EscherRecord.Version">
+            <summary>
+            Version
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.BinaryDrawingFormat.MsofbtBSE">
+            <summary>
+            File BLIP Store Entry 
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.BinaryDrawingFormat.MsofbtDgg.GroupIdClusters">
+            <summary>
+            (DrawingGroupId, numShapeIdsUsed) pairs
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.BinaryDrawingFormat.ShapeProperty">
+            <summary>
+            Shape Properties msofbtOPT
+            The first part of an OPT record is an array of FOPTEs,
+            consisting of ID-value pairs 
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.BinaryDrawingFormat.ShapeProperty.IsBlipID">
+            <summary>
+            BLIP properties just store a BLIP ID (basically an index into an array in the BLIP Store).
+            only valid if IsComplex is false
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.BinaryDrawingFormat.ShapeProperty.IsComplex">
+            <summary>
+            if true, PropertyValue is the length of the data.
+            The data of the complex properties follows the FOPTE array in the file record.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SpreadSheet.BinaryFileFormat.CellFormatCollection">
+            <summary>
+            Excel built-in cell format 
+            source:             
+             http://svn.apache.org/viewvc/poi/trunk/src/java/org/apache/poi/hssf/usermodel/HSSFDataFormat.java?view=markup  
+             http://sc.openoffice.org/excelfileformat.pdf 
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.BOOLERR.Value">
+            <summary>
+            Boolean or error value (type depends on the following byte)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.BOOLERR.ValueType">
+            <summary>
+            0 = Boolean value; 1 = Error code
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SpreadSheet.BinaryFileFormat.EXTSST">
+            <summary>
+            This record occurs in conjunction with the SST record.
+            Used to optimise string search operations.
+            </summary>
+            <summary>
+            This record occurs in conjunction with the SST record.
+            Used to optimise string search operations.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.EXTSST.NumStrings">
+            <summary>
+            Number of strings in a portion, this number is  >=8
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.EXTSST.Offsets">
+            <summary>
+            List of OFFSET structures for all portions.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.FORMULA.Result">
+            <summary>
+            Result of the formula.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.FORMULA.FormulaData">
+            <summary>
+            Formula data (RPN token array)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.MULRK.RowIndex">
+            <summary>
+            Index to row
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.MULRK.FirstColIndex">
+            <summary>
+            Index to first column (fc)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.MULRK.XFRKList">
+            <summary>
+            List of nc=lc-fc+1 XF/RK structures.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.MULRK.LastColIndex">
+            <summary>
+            Index to last column (lc)
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SpreadSheet.BinaryFileFormat.SST">
+            <summary>
+            List of nm Unicode strings, 16-bit string length
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.SST.TotalOccurance">
+            <summary>
+            Total number of strings in the workbook
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.SST.NumStrings">
+            <summary>
+            Number of following strings (nm)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.SST.StringList">
+            <summary>
+            List of nm Unicode strings, 16-bit string length
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.StringOffset.AbsolutePosition">
+            <summary>
+            Absolute stream position of first string of the portion
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.StringOffset.RelativePosition">
+            <summary>
+            Relative record position of string
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.SpreadSheet.BinaryFileFormat.Record.FullSize">
+            <summary>
+            Data size plus header size
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.BACKUP.CreateBackupOnSaving">
+            <summary>
+            whether Excel makes a backup of the file while saving
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.BOF.RequiredExcelVersion">
+            <summary>
+            Lowest Excel version that can read all records in this file
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.BOOKBOOL.NotSaveExternalLinkedValues">
+            <summary>
+            0 = Save external linked values; 1 = Do not save external linked values
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.BOTTOMMARGIN.Value">
+            <summary>
+            Bottom page margin in inches (IEEE 754 floating-point value, 64-bit double precision)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.BOUNDSHEET.StreamPosition">
+            <summary>
+            Absolute stream position of the BOF record of the sheet represented by this record.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.BOUNDSHEET.Visibility">
+            <summary>
+            00H = Visible, 01H = Hidden, 02H = Strong hidden
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.BOUNDSHEET.SheetType">
+            <summary>
+            00H = Worksheet, 02H = Chart, 06H = Visual Basic module
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.BOUNDSHEET.SheetName">
+            <summary>
+            BIFF8: Unicode string, 8-bit string length
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.CALCCOUNT.Value">
+            <summary>
+            Maximum number of iterations allowed in circular references
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.CALCMODE.Value">
+            <summary>
+            whether to calculate formulas manually,automatically or automatically except for multiple table operations.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.CellValue.RowIndex">
+            <summary>
+            Index to row, 0-based row number
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.CellValue.ColIndex">
+            <summary>
+            Index to column, 0-based column number
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.CellValue.XFIndex">
+            <summary>
+            Index to XF record
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.CODEPAGE.CodePageIdentifier">
+            <summary>
+            text encoding used to write byte strings
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SpreadSheet.BinaryFileFormat.COLINFO">
+            <summary>
+            This record specifies the width and default cell formatting for a given range of columns.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.COLINFO.FirstColIndex">
+            <summary>
+            Index to first column in the range
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.COLINFO.LastColIndex">
+            <summary>
+            Index to last column in the range
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.COLINFO.Width">
+            <summary>
+            Width of the columns in 1/256 of the width of the zero character, using default font (first
+            FONT record in the file)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.COLINFO.XFIndex">
+            <summary>
+            Index to XF record for default column formatting
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.COLINFO.OptionFlags">
+            <summary>
+            Option flags
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.COLINFO.NotUsed">
+            <summary>
+            Not used
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.DATEMODE.Mode">
+            <summary>
+            0 = Base date is 1899-Dec-31; 1 = Base date is 1904-Jan-01
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SpreadSheet.BinaryFileFormat.DBCELL">
+            <summary>
+            contains relative offsets to calculate the stream position of the first cell
+            record for each row in each row block.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.DBCELL.FirstRowOffset">
+            <summary>
+            Relative offset to first ROW record in the Row Block
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.DBCELL.FirstCellOffsets">
+            <summary>
+            relative offsets to calculate stream position of the first cell record for the respective row
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SpreadSheet.BinaryFileFormat.DEFCOLWIDTH">
+            <summary>
+            This record specifies  the default  column width for columns  that  do not  have a specific width set  using  the records
+            COLWIDTH, COLINFO or STANDARDWIDTH.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.DEFCOLWIDTH.Value">
+            <summary>
+            Column width in characters, using the width of the zero character from default font (first FONT record in the file).
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.DIMENSIONS.FirstRow">
+            <summary>
+            Index to first used row
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.DIMENSIONS.LastRow">
+            <summary>
+            Index to last used row, increased by 1
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.DIMENSIONS.FirstColumn">
+            <summary>
+            Index to first used column
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.DIMENSIONS.LastColumn">
+            <summary>
+            Index to last used column, increased by 1
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.DIMENSIONS.UnUsed">
+            <summary>
+            Not used
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SpreadSheet.BinaryFileFormat.EOF">
+            <summary>
+            Indicates the end of workbook globals, a worksheet, a chart, etc.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.FONT.Height">
+            <summary>
+            Height of the font (in twips = 1/20 of a point)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.FONT.OptionFlags">
+            <summary>
+            Option flags
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.FONT.ColorIndex">
+            <summary>
+            Colour index
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.FONT.Weight">
+            <summary>
+            Font weight (100-1000). Standard values are 0190H (400) for normal text and 02BCH
+            (700) for bold text.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.FONT.Escapement">
+            <summary>
+            Escapement type: 0000H = None
+            0001H = Superscript
+            0002H = Subscript
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.FONT.Underline">
+            <summary>
+            Underline type: 00H = None
+            01H = Single 21H = Single accounting
+            02H = Double 22H = Double accounting
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.FONT.Family">
+            <summary>
+            Font family: 00H = None (unknown or don't care)
+            01H = Roman (variable width, serifed)
+            02H = Swiss (variable width, sans-serifed)
+            03H = Modern (fixed width, serifed or sans-serifed)
+            04H = Script (cursive)
+            05H = Decorative (specialised, for example Old English, Fraktur)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.FONT.CharacterSet">
+            <summary>
+            Character set (used by all cell records containing byte strings)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.FONT.Name">
+            <summary>
+            Font name
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SpreadSheet.BinaryFileFormat.FORMAT">
+            <summary>
+            This record contains information about a number format.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.FORMAT.FormatIndex">
+            <summary>
+            Format index used in other records
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.FORMAT.FormatString">
+            <summary>
+            Number format string
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.LABEL.Value">
+            <summary>
+            Index into SST record
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.LABELSST.SSTIndex">
+            <summary>
+            Index into SST record
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.MULBLANK.RowIndex">
+            <summary>
+            Index to row
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.MULBLANK.FirstColIndex">
+            <summary>
+            Index to first column (fc)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.MULBLANK.XFIndice">
+            <summary>
+            List of nc=lc-fc+1 16-bit indexes to XF records
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.MULBLANK.LastColIndex">
+            <summary>
+            Index to last column (lc)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.NUMBER.Value">
+            <summary>
+            IEEE 754 floating-point value (64-bit double precision)
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SpreadSheet.BinaryFileFormat.PALETTE">
+            <summary>
+            This record contains the definition of all user-defined  colours  available for cell and object formatting.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.PALETTE.NumColors">
+            <summary>
+            Number of following colours.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.PALETTE.Colors">
+            <summary>
+            List of RGB colours.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.RK.Value">
+            <summary>
+            RK value
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SpreadSheet.BinaryFileFormat.ROW">
+            <summary>
+            Index to column of the last cell which is described by a cell record, increased by 1
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.ROW.RowIndex">
+            <summary>
+            Index of this row
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.ROW.FirstColIndex">
+            <summary>
+            Index to column of the first cell which is described by a cell record
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.ROW.LastColIndex">
+            <summary>
+            Index to column of the last cell which is described by a cell record, increased by 1
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.ROW.Flags">
+            <summary>
+            Option flags and default row formatting
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.RSTRING.FormattingRuns">
+            <summary>
+            List of rt formatting runs
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.STANDARDWIDTH.DefaultColumnWidth">
+            <summary>
+            Default width of the columns in 1/256 of the width of the zero character, using default font (first FONT record in the file)
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SpreadSheet.BinaryFileFormat.STRING">
+            <summary>
+            This record stores the result of a string formula. It occurs directly after a string formula.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.STRING.Value">
+            <summary>
+            Non-empty Unicode string, 16-bit string length
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SpreadSheet.BinaryFileFormat.WINDOW1">
+            <summary>
+            General   settings   for   the  document  window  and  global  workbook   settings
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.WINDOW1.HorizontalPosition">
+            <summary>
+            Horizontal position of the document window in twips
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.WINDOW1.VerticalPosition">
+            <summary>
+            Vertical position of the document window in twips
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.WINDOW1.WindowWidth">
+            <summary>
+            Width of the document window in twips
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.WINDOW1.WindowHeight">
+            <summary>
+            Height of the document window in twips
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.WINDOW1.ActiveWorksheet">
+            <summary>
+            Index to active (displayed) worksheet
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.WINDOW1.FirstVisibleTab">
+            <summary>
+            Index of first visible tab in the worksheet tab bar
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.WINDOW1.SelecteWorksheets">
+            <summary>
+            Number of selected worksheets (highlighted in the worksheet tab bar)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.WINDOW1.TabBarWidth">
+            <summary>
+            Width of worksheet tab bar (in 1/1000 of window width).
+            The remaining space is used by the horizontal scrollbar.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SpreadSheet.BinaryFileFormat.PictureOption">
+            <summary>
+            Picture option flags
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.BinaryFileFormat.PictureOption.Reserved">
+            <summary>
+            Picture option flags
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.SpreadSheet.CellCollection.Item(System.Int32,System.Int32)">
+            <summary>
+            Get cell by row and col index
+            </summary>
+            <param name="row">starts from 0.</param>
+            <param name="col">starts from 0.</param>
+            <returns></returns>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.CellFormat.General">
+            <summary>
+            Default Format.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.CellFormat.Date">
+            <summary>
+            Format the DateTime with: "YYYY-MM-DD" e.g: 2009-02-18
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.CellFormat.Time">
+            <summary>
+            Format the DateTime with: "HH:mm:ss" e.g: 14:45:00
+            </summary>
+            <example>Format the DateTime with: "HH:mm:ss" e.g: 14:45:00</example>
+        </member>
+        <member name="F:SMC.Framework.SpreadSheet.CellFormat.Engineer">
+            <summary>
+            Format the number with: "#,###.00000" e.g: 100.12345
+            </summary>
+            <example>Format the number with: "#,###.00000" e.g: 100.12345</example>
+        </member>
+        <member name="P:SMC.Framework.SpreadSheet.ColumnWidth.Item(System.UInt16,System.UInt16)">
+            <summary>
+            Get or set column width, the unit is 1/256 of the width of the zero character, using default font.
+            </summary>
+            <param name="firstColIndex">Index to first column in the range</param>
+            <param name="lastColIndex">Index to last column in the range</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.SpreadSheet.Workbook.Load(System.String)">
+            <summary>
+            Load workbook from a file path.
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:SMC.Framework.SpreadSheet.Workbook.Load(System.IO.Stream)">
+            <summary>
+            Load workbook from Stream.
+            </summary>
+            <param name="fileStream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.SpreadSheet.Workbook.Save(System.String)">
+            <summary>
+            Save workbook to a file.
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:SMC.Framework.SpreadSheet.Workbook.Save(System.IO.Stream)">
+            <summary>
+            Save workbook to stream.
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:SMC.Framework.SpreadSheet.Worksheet.PopulateCells">
+            <summary>
+            Este método existe para evitar que o Office2010 dê pau ao ler uma planilha que tenha menos de 115 células.
+            </summary>
+        </member>
+    </members>
+</doc>

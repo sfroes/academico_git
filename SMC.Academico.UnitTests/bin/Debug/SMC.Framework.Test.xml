@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Test</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.Test.ISMCWebDriver">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Test.ISMCWebElement">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Test.TypeTestBrowser">
+            <summary>
+            Enum para o tipo de browser
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumExtensions.Wait``1(System.Func{``0},System.Int32)">
+            <summary>
+            Se não conseguir vai tentar 10 vezes e
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="method"></param>
+            <param name="miliseconds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumExtensions.Exist(SMC.Framework.Test.ISMCWebDriver,OpenQA.Selenium.By)">
+            <summary>
+            verifica se o elemento (que esteja visivel) existe ou não.
+            </summary>
+            <param name="webDriver"></param>
+            <param name="by"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumExtensions.FindElement(SMC.Framework.Test.ISMCWebDriver,OpenQA.Selenium.By)">
+            <summary>
+            
+            </summary>
+            <param name="webDriver"></param>
+            <param name="by"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumExtensions.Click(SMC.Framework.Test.SMCWebElement,System.Int32)">
+            <summary>
+            Clica e espera o delay informado
+            </summary>
+            <param name="smcElement"></param>
+            <param name="miliseconds">Delay a ser esperado depois do click</param>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumExtensions.WaitModal(SMC.Framework.Test.ISMCWebDriver)">
+            <summary>
+            Espera a tela do Aguarde sumir 
+            </summary>
+            <param name="driver"></param>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumExtensions.ExistJS(SMC.Framework.Test.ISMCWebDriver,System.String)">
+            <summary>
+            Verifica via script se um campo existe e se não está hidden.
+            Null significa que o objeto não existe
+            </summary>
+            <param name="driver"></param>
+            <param name="selectorJs"></param>
+            <returns>Null significa que o objeto não existe</returns>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumExtensions.GetEmail(SMC.Framework.Test.SMCWebElement,System.String)">
+            <summary>
+            Quando o campo de e-mail traz mais de um e-mail e vc quer somente um dominio 
+            de e-mail especifico.
+            Ex: x@gmail.com | y@pucminas.br | z@sga.pucminas.br
+            </summary>
+            <param name="webElement"></param>
+            <param name="domainEmail">Determina qual dominio de e-mail você quer buscar</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumExtensions.SMCLoginCpf(SMC.Framework.Test.ISMCWebDriver,System.String,System.String,System.Boolean)">
+            <summary>
+            Autentica utilizando Cpf
+            </summary>
+            <param name="driver"></param>
+            <param name="cpf"></param>
+            <param name="senha"></param>
+            <param name="phantomJS"></param>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumExtensions.SMCLoginEmail(SMC.Framework.Test.ISMCWebDriver,System.String,System.String,System.Boolean)">
+            <summary>
+            Autentica utilizando Email
+            </summary>
+            <param name="driver"></param>
+            <param name="email"></param>
+            <param name="senha"></param>
+            <param name="phantomJS"></param>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumUnitTest.ExecuteTest(System.Action{SMC.Framework.Test.ISMCWebDriver},SMC.Framework.Test.TypeTestBrowser,System.Boolean)">
+            <summary>
+            Executa o teste de acordo com o navegador utilizado, basendo-se no que está implementado em DoTest
+            </summary>
+            <returns>Retorna o log do teste</returns>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumUnitTest.GetLogs(SMC.Framework.Test.ISMCWebDriver)">
+            <summary>
+            Método responsável por gerar o log do teste
+            </summary>
+            <param name="driverNavigator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumUnitTest.CheckMessage(System.String,System.Int32)">
+            <summary>
+            Vai procurar uma modal (smc-modal-window) que esteja visivel e que contenha smc-modal-content
+            </summary>
+            <param name="message">Palavra ou frase que será 'pesquisada' dentro do (smc-modal-content). Utiliza Contains...</param>
+            <param name="sleep">Tempo q vai esperar para checar a mensagem</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumUnitTest.CheckError(System.Int32)">
+            <summary>
+            No smc-modal-content tem que possuir a palavra erro.
+            Se a palavra for outra então utilize o método CheckMessage('...')
+            </summary>
+            <param name="sleep">Tempo q vai esperar para checar a mensagem</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumUnitTest.CheckSuccess(System.Int32)">
+            <summary>
+            No smc-modal-content tem que possuir a palavra sucesso.
+            Se a palavra for outra então utilize o método CheckMessage('...')
+            </summary>
+            <param name="sleep">Tempo q vai esperar para checar a mensagem</param>
+            <returns></returns>
+        </member>
+        <member name="T:SMC.Framework.Test.SMCContainMode">
+            <summary>
+            Indica o modo com que o contains irá se comportar
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCStringURLExtension.SMCGetQueryStrings(System.String)">
+            <summary>
+            Retorna os valores contidos em uma QueryString
+            </summary>
+            <param name="URL"></param>
+            <returns>Retorna uma lista de chave/valor, não foi utilizado o Dictionary porque pode acontecer de por um erro aparecerem chaves repetidas</returns>
+        </member>
+        <member name="M:SMC.Framework.Test.Asserts.SMCStringAssert.NotContainsQueryString(System.String,System.String)">
+            <summary>
+            Dispara uma AssertFailedException caso a URL contenha qualquer QueryString ou termine com interrogação (?) 
+            </summary>
+            <param name="value"></param>
+            <param name="message">Mensagem caso aconteça a exceção</param>
+        </member>
+        <member name="M:SMC.Framework.Test.Asserts.SMCStringAssert.AreEqualQueryStringKeysCount(System.String,System.Int32,System.String)">
+            <summary>
+            Verifica a quantidade de parâmetros presentes na QueryString
+            </summary>
+            <param name="value"></param>
+            <param name="expectedValue">Valor esperado de parâmetros</param>
+            <param name="message"></param>
+        </member>
+        <member name="M:SMC.Framework.Test.Asserts.SMCStringAssert.ContainsQueryStringKeys(System.String,System.String,SMC.Framework.Test.SMCContainMode,System.String[])">
+            <summary>
+            Dispara uma AssertFailedException caso a URL NÃO contenha qualquer uma das Keys especificadas
+            </summary>
+            <param name="value"></param>
+            <param name="message">Mensagem caso aconteça a exceção</param>
+            <param name="containsMode">Modo como o contains deverá se comportar</param>
+            <param name="keys">Chaves que deverão estar presentes na QueryString (não é case sensitive)</param>
+        </member>
+        <member name="M:SMC.Framework.Test.Asserts.SMCStringAssert.NotContainsQueryStringKeys(System.String,System.String,SMC.Framework.Test.SMCContainMode,System.String[])">
+            <summary>
+            Dispara uma AssertFailedException caso a URL CONTENHA qualquer uma das Keys especificadas
+            </summary>
+            <param name="value"></param>
+            <param name="message">Mensagem caso aconteça a exceção</param>
+            <param name="containsMode">Modo como o contains deverá se comportar</param>
+            <param name="keys">Chaves que deverão estar presentes na QueryString (não é case sensitive)</param>
+        </member>
+        <member name="M:SMC.Framework.Test.Asserts.SMCStringAssert.ContainsQueryStringKeyValuePairs(System.String,System.String,SMC.Framework.Test.SMCContainMode,System.Boolean,System.Collections.Generic.KeyValuePair{System.String,System.String}[])">
+            <summary>
+            Dispara uma AssertFailedException caso a URL NÃO contenha qualquer uma das Keys especificadas
+            </summary>
+            <param name="value"></param>
+            <param name="message">Mensagem caso aconteça a exceção</param>
+            <param name="containsMode">Modo como o contains deverá se comportar</param>
+            <param name="ignoreCase">Indica se case deverá ser ignorado (tando o da Key quanto o do Value)</param>
+            <param name="keys">Chaves que deverão estar presentes na QueryString</param>
+        </member>
+        <member name="M:SMC.Framework.Test.Asserts.SMCStringAssert.NotContainsQueryStringKeyValuePairs(System.String,System.String,SMC.Framework.Test.SMCContainMode,System.Boolean,System.Collections.Generic.KeyValuePair{System.String,System.String}[])">
+            <summary>
+            Dispara uma AssertFailedException caso a URL CONTENHA qualquer uma das Keys especificadas
+            </summary>
+            <param name="value"></param>
+            <param name="message">Mensagem caso aconteça a exceção</param>
+            <param name="containsMode">Modo como o contains deverá se comportar</param>
+            <param name="ignoreCase">Indica se case deverá ser ignorado (tando o da Key quanto o do Value)</param>
+            <param name="keys">Chaves que deverão estar presentes na QueryString</param>
+        </member>
+        <member name="M:SMC.Framework.Test.Asserts.SMCStringAssert.CustomAssertQueryStringKeys(System.String,System.Action{System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}}})">
+            <summary>
+            Permite a customização do Assert para o tratamento de uma URL no que se refere a QueryString
+            </summary>
+            <param name="value"></param>
+            <param name="action">Método de tratamento da QueryString</param>
+        </member>
+        <member name="M:SMC.Framework.Test.Asserts.SMCStringAssert.VerifyQueryStringKeys(System.String,System.String,SMC.Framework.Test.SMCContainMode,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.KeyValuePair{System.String,System.String}[])">
+            <summary>
+            Verifica a presença ou a ausência de Keys em uma determinada QueryString
+            </summary>
+            <param name="value"></param>
+            <param name="message"></param>
+            <param name="containsMode">Modo como o contains deverá se comportar</param>
+            <param name="contains">Se TRUE o modode pesquisa será contains, FALSE not contains </param>
+            <param name="isKeyValue">Indica se o valor também deverá ser levado em consideração</param>
+            <param name="ignoreCase">Indica se case deverá ser ignorado (tando o da Key quanto o do Value)</param>
+            <param name="keys"></param>
+        </member>
+        <member name="F:SMC.Framework.Test.SMCSeleniumUtils.CommomPath">
+            <summary>
+            Caminho padrão dos drivers
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumUtils.GetDriver(SMC.Framework.Test.TypeTestBrowser)">
+            <summary>
+            Retorna o caminho completo do driver de acordo com o navegador
+            </summary>
+            <param name="typeTestBrowser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Test.SMCSeleniumUtils.CreateDriver(SMC.Framework.Test.TypeTestBrowser)">
+            <summary>
+            Retorna o Driver de acordo com o navegador
+            </summary>
+            <param name="typeTestBrowser"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

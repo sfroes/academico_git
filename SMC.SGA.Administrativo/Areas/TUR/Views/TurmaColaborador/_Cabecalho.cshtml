@@ -1,0 +1,23 @@
+﻿@model TurmaCabecalhoViewModel
+
+@using (Smc.Header("Turma", SMCHeaderType.Primary)
+           .Item(prop => prop.CodigoFormatado, sizeMD: SMCSize.Grid4_24)
+           .Item(prop => prop.CicloLetivoInicio, sizeMD: SMCSize.Grid5_24)
+           //.Item(prop => prop.CicloLetivoFim, sizeMD: SMCSize.Grid4_24)
+           .Item(prop => prop.Vagas, sizeMD: SMCSize.Grid4_24)
+           .Item(prop => prop.DescricaoTipoTurma, sizeMD: SMCSize.Grid6_24)
+           .Item(prop => prop.SituacaoTurmaAtual, sizeMD: SMCSize.Grid5_24)
+           .Begin())
+{
+
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-header-detalhes smc-sga-header-detalhes-separador").Begin())
+    {
+        if (Model.TurmaConfiguracoesCabecalho != null)
+        {
+            @*@(Smc.Legend("ConfiguracaoPrincipal", SMCOrientation.Vertical).CssClass("smc-sga-legenda").Items<SMC.Academico.Common.Enums.LegendaPrincipal>())*@
+            @Smc.List("Configuracoes" + Model.Seq, m => m.TurmaConfiguracoesCabecalho).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(cabecalho => Html.Partial("_CabecalhoConfiguracao", cabecalho.Value))
+        }
+    }
+
+}
+

@@ -1,0 +1,49 @@
+﻿@model PeriodicoFiltroDynamicModel
+
+@using (Smc.Form("frmPeriodico", "Listar", null).Ajax("#divViewPadrao", insertionMode: InsertionMode.Replace).Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.Seq)
+        @Smc.EditorFor(prop => prop.SeqClassificacaoPeriodico)
+        @Smc.EditorFor(prop => prop.Descricao)
+        @Smc.EditorFor(prop => prop.CodigoISSN)
+        @Smc.EditorFor(prop => prop.DescAreaAvaliacao)
+        @Smc.EditorFor(prop => prop.QualisCapes)
+
+        var buttonSet = Smc.ButtonSet();
+
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight());
+
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Limpar)
+                               .DisplayMode(SMCButtonDisplayMode.Icon)
+                               .Ajax(isPost: false));
+
+        buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                               .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+                               .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Incluir_Title"))
+                               .CssClass("smc-btn-novo-icotext")
+                               .Text("Novo")
+                               .Tooltip("Novo")
+                               .Ajax(isPost: false)
+                               .Action("Incluir", "Periodico"));
+
+        buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                               .Attribute(SMCMvcConsts.MODAL_ID, "modalImportarPeriodico")
+                               .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Importar_Title"))
+                               .CssClass("smc-btn-download-icotext")
+                               .Text("Importar")
+                               .Tooltip("Importar")
+                               .Ajax(isPost: false)
+                               .Action("ImportarPeriodico", "Periodico", new { seqClassificacaoPeriodico = Model.SeqClassificacaoPeriodico }));
+
+        @buttonSet;
+
+    }
+}
+@using (Smc.ModalWindow("modalImportarPeriodico")
+           .Form("frmImportarPeriodico", "SalvarImportacaoPeriodico", "Periodico", new { area = "CUR" }, closeOnSubmit: true)
+           .Size(SMCModalWindowSize.Large)
+           .Button(SMCButtonBehavior.Salvar, "SalvarImportacaoPeriodico", "Periodico", new { area = "CUR" }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }

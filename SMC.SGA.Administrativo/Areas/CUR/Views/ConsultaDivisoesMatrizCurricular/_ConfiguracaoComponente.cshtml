@@ -1,0 +1,10 @@
+﻿@model ConsultaDivisaoMatrizCurricularComponenteItemViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid1_24).Begin())
+    {
+        @Smc.LegendItem(m => m.SituacaoComponente, false)
+    }
+    @Smc.DisplayFor(m => m.DescricaoFormatada).HideLabel().Size(SMCSize.Grid23_24)
+}

@@ -1,0 +1,23 @@
+﻿@model AssociacaoFormacoesEspecificasAlunoViewModel
+
+@Html.Action("CabecalhoPessoaAtuacao", "PessoaAtuacao", new { @area = "PES", @seqPessoaAtuacao = Model.SeqAluno })
+
+@using (Smc.Form("formAssociacaoFormacoesEspecificasAluno", "SalvarAssociacaoFormacoesEspecificasAluno").Begin())
+{
+    @Smc.EditorFor(p => p.SeqAluno)
+    @Smc.EditorFor(p => p.SeqCurso)
+    @Smc.EditorFor(p => p.SeqCursoOfertaLocalidade)
+    @Smc.EditorFor(p => p.SeqFormacaoEspecifica)
+    @Smc.EditorFor(p => p.SeqsFormacoesEspecificasOrigem)
+    @Smc.EditorFor(p => p.SelecaoNivelFolha)
+    @Smc.EditorFor(p => p.SelecaoNivelSuperior)
+    @Smc.EditorFor(p => p.FormacoesEspecificas)
+    @Smc.EditorFor(p => p.ConsiderarSometeTipoFomacaoEspecifica)
+
+    var buttonSet = Smc.ButtonSet();
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().Hide(Smc.GetViewMode() == SMCViewMode.ReadOnly));
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Index", "Aluno").Highlight(Smc.GetViewMode() == SMCViewMode.ReadOnly));
+
+    @buttonSet;
+}

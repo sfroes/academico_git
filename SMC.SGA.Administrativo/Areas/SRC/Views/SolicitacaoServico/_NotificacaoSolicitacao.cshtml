@@ -1,0 +1,22 @@
+﻿@model DadosSolicitacaoViewModel
+
+@(Smc.Grid("gridNotificacoes", Model.NotificacoesSolicitacao)
+            .AutoGenerateColumns()
+            .HideGridTitle()
+            .AllowSort()
+            .Action("BuscarNotificacoesSolicitacao", "SolicitacaoServico", new { SeqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico) })
+            .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-grid-coluna-botoes", true,
+                f => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDetalheNotificacao")
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarDetalheNotificacao_Title"))
+                .Ajax(isPost: false)
+                .Text(Smc.GetUIResource("Botao_VisualizarDetalheNotificacao"))
+                .Tooltip(Smc.GetUIResource("Botao_VisualizarDetalheNotificacao_Tooltip"))
+                .CssClass("smc-btn-visualizar-ico")
+                .SecurityToken(UC_SRC_004_01_05.CONSULTAR_DADOS_NOTIFICACAO)
+                .Action("ConsultarDetalheNotificacao", "SolicitacaoServico", new { seqNotificacaoEmail = new SMCEncryptedLong((f as NotificacaoSolicitacaoViewModel).Seq), seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), seqTipoNotificacao = new SMCEncryptedLong((f as NotificacaoSolicitacaoViewModel).SeqTipoNotificacao) })))
+
+@using (Smc.ModalWindow("modalVisualizarDetalheNotificacao")
+      .Size(SMCModalWindowSize.Largest)
+      .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+      .Begin()) { }

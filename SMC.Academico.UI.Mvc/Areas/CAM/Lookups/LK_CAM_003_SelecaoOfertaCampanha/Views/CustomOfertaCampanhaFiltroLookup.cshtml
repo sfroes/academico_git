@@ -1,0 +1,14 @@
+﻿@using SMC.Academico.Common.Constants;
+@using SMC.Framework;
+@using SMC.Framework.UI.Mvc;
+@using SMC.Framework.UI.Mvc.Html;
+@using SMC.Academico.UI.Mvc.Areas.CAM.Lookups;
+@using SMC.Framework.Model;
+
+@model SelecaoOfertaCampanhaLookupFiltroViewModel
+
+@Smc.DefaultSelectorFilter()
+
+@using (Smc.Div("divMensagemAlerta")
+    .Size(SMCSize.Grid24_24)
+    .Dependency("SeqTipoOferta", "BuscarTipoOfertaSelecaoOfertaCampanha", "TipoOferta", "CAM", false, includedProperties: new[] { "SeqCampanha" }).Begin()) { }

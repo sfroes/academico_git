@@ -1,0 +1,34 @@
+﻿@model PessoaAtuacaoViewModel
+
+@using (Smc.Div("filtroPessoaExistente").Begin())
+{
+    using (Smc.Fieldset("filtroPessoa").Size(SMCSize.Grid24_24).CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(m => m.MensagemIdentificacaoPessoaExistente)
+        @Smc.EditorFor(m => m.IdentificacaoPessoa)
+        @Smc.EditorFor(m => m.IdentificacaoTipoNacionalidade)
+        @Smc.EditorFor(m => m.IdentificacaoNome)
+        @Smc.EditorFor(m => m.IdentificacaoDataNascimento)
+        @Smc.EditorFor(m => m.IdentificacaoCpf)
+        @Smc.EditorFor(m => m.IdentificacaoNumeroPassaporte)
+
+        var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24).Type(SMCButtonSetType.Primary);
+
+        buttonSet.AddButton(Smc.Button("data-dataselector-search", "BuscarPessoaExistente", Model.BuscaPessoaExistenteRouteValues)
+                                .CssClass("smc-sga-btn-localizar-pessoa")
+                                .Ajax(isPost: true, updateTargetId: "#divResultPessoaExistente", fieldsContainerToRequest: "#filtroPessoaExistente")
+                                .Text(Smc.GetUIResource("Botao_Localizar_Pessoa"))
+                                .Tooltip(Smc.GetUIResource("Botao_Localizar_Pessoa")));
+
+        @buttonSet;
+
+    }
+}
+
+@using (Smc.Div("divResultPessoaExistente").Begin())
+{
+    if (Model.UtilizarMesmaPessoa.HasValue)
+    {
+        @Html.Partial("_IdentificacaoPessoaExistenteResultado", Model)
+    }
+}

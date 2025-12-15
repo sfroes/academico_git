@@ -1,0 +1,47 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.MAT.Models.PessoaAtuacaoBloqueioViewModel
+@using SMC.Academico.Common.Areas.PES.Constants
+
+@using (Smc.Div().CssClass("smc-listdetailed-item").Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.MotivoBloqueio.Descricao).Size(SMCSize.Grid21_24, SMCSize.Grid24_24, SMCSize.Grid19_24, SMCSize.Grid22_24)
+
+            if (Model.PermiteDesbloqueioTemporarioEfetivacao)
+            {
+                @(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                    .Attribute(SMCMvcConsts.MODAL_ID, "modalDesbloqueio")
+                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_DesbloquearPessoaAtuacaoBloqueio"))
+                    .Ajax(isPost: false)
+                    .CssClass("smc-btn-custom-destaque-grid smc-btn-custom-destaque-header-lista smc-btn-custom-destaque-header-lista-principal")
+                    .Text(Smc.GetUIResource("Botao_DesbloquearPessoaAtuacaoBloqueio"))
+                    .Tooltip(Smc.GetUIResource("Botao_DesbloquearPessoaAtuacaoBloqueio"))
+                    .SecurityToken(UC_PES_004_03_03.DESBLOQUEAR)
+                    .Action("Editar", "PessoaAtuacaoBloqueioDesbloqueio", new { @seq = new SMCEncryptedLong(Model.Seq), @area = "PES", @temporario = true, @TipoDesbloqueio = 1 })
+                    .Size(SMCSize.Grid3_24, SMCSize.Grid24_24, SMCSize.Grid5_24, SMCSize.Grid2_24))
+
+            }
+        }
+
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista smc-sga-confirmacao-dados").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.DescricaoTipoBloqueio).Size(SMCSize.Grid6_24)
+            /*NV02*/
+            if (Model.NumeroIngressante.HasValue)
+            {
+                @Smc.DisplayFor(m => m.NumeroIngressante).Size(SMCSize.Grid6_24)
+            }
+
+            if (Model.RegistroAcademico.HasValue)
+            {
+                @Smc.DisplayFor(m => m.RegistroAcademico).Size(SMCSize.Grid6_24)
+            }
+
+            @Smc.DisplayFor(m => m.DescricaoVinculo).Size(SMCSize.Grid6_24)
+            @Smc.DisplayFor(m => m.DescricaoReferenciaAtuacao).Size(SMCSize.Grid24_24)
+            @Smc.DisplayFor(m => m.MotivoBloqueio.OrientacoesDesbloqueio).Size(SMCSize.Grid24_24)
+        }
+    }
+}

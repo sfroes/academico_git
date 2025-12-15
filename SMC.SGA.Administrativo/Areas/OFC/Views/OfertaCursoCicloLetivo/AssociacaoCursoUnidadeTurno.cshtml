@@ -1,0 +1,82 @@
+﻿@model OfertaCursoCicloLetivoAssociacaoCursoUnidadeTurnoFiltroViewModel
+
+@section Scripts{
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.Datepicker)
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.TreeView)
+}
+
+@using (Smc.Header("AssociacaoCursoUnidadeTurno", SMCHeaderType.Primary)
+    .Item(prop => prop.DadosOfertaCursoCicloLetivo.OfertaCurso, SMCSize.Grid5_24)
+    .Item(prop => prop.DadosOfertaCursoCicloLetivo.CicloLetivo, SMCSize.Grid5_24)
+    .Item(prop => prop.DadosOfertaCursoCicloLetivo.FormaIngresso, SMCSize.Grid5_24)
+    .Begin())
+{
+    using (Smc.ButtonSet().Begin())
+    {
+        @Html.Partial("_BotaoConfigurarOfertaCursoCicloLetivo", new OfertaCursoCicloLetivoBotaoConfigurarViewModel() { Action = OfertaCursoCicloLetivoActionsEnum.AssociarCursoUnidadeTurno, SeqOfertaCursoCicloLetivo = (SMCEncryptedLong)Model.SeqOfertaCursoCicloLetivo })
+    }
+}
+
+@using (Smc.Form("formPesquisaAssociacaoCursoUnidadeTurno", "ListarAssociacaoCursoUnidadeTurno").Ajax("#divGridAssociacaoCursoUnidadeTurno").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaAssociacaoCursoUnidadeTurno").Begin())
+    {
+        @Smc.FieldEditorFor(prop => prop.SeqOfertaCursoCicloLetivo)
+        @Smc.FieldEditorFor(prop => prop.SeqModalidade)
+        @Smc.FieldEditorFor(prop => prop.SeqUnidadeLocalidadeSelecionada)
+        @Smc.FieldEditorFor(prop => prop.SeqCurso)
+        @Smc.FieldEditorFor(prop => prop.SeqTurno)
+
+        using (Smc.FieldButtonSet().Size(SMCSize.Grid4_24).Begin())
+        {
+            @Smc.FieldButton(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight()
+            @Smc.FieldButton(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon)
+        }
+    }
+}
+@using (Smc.ButtonSet().Size(SMCSize.Grid4_24).CssClass("smc-sga-buttonset-top-paginas").Begin())
+{
+    @(Smc.FieldButton("AssociarCursoUnidadeTurno")
+     .Attribute("data-context", "menu-associar-curso-unidade-turno")
+         .CssClass("smc-btn-associar-icotext-destaque")
+    )
+}
+
+@(Smc.ContextMenu("menu-associar-curso-unidade-turno")
+     .OpenEvent(SMCMouseEvent.LeftClick)
+     .Item(x => x.Attribute(SMCMvcConsts.MODAL_ID, "associarCursoUnidadeTurno")
+                 .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                 .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Incluir_Associacao_Modal_Title"))
+                 .Text(Smc.GetUIResource("AssociacaoUnica"))
+                 .Ajax(isPost: false, updateTargetId: "painelAjaxIncluirAssociacaoCursoUnidadeTurno")
+                 .Url(Html.SMCAction("IncluirAssociacaoCursoUnidadeTurno", "OfertaCursoCicloLetivo", new { seqOfertaCursoCicloLetivo = (SMCEncryptedLong)Model.SeqOfertaCursoCicloLetivo })))
+     .Item(x => x.Text(Smc.GetUIResource("AssociacaoLote"))
+                 .Url(Html.SMCAction("AssociacaoCursoUnidadeTurnoLote", "OfertaCursoCicloLetivo", new { seqOfertaCursoCicloLetivo = (SMCEncryptedLong)Model.SeqOfertaCursoCicloLetivo })))
+)
+
+<div id="divGridAssociacaoCursoUnidadeTurno">
+    @Html.Action("ListarAssociacaoCursoUnidadeTurno")
+</div>
+
+@using (Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-buttonset-bottom-paginas").Begin())
+{
+    @Smc.FieldButton(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Url("Index")
+}
+
+@using (Smc.ModalWindow("associarCursoUnidadeTurno")
+        .Size(SMCModalWindowSize.Medium)
+        .AllowEscKeyToClose()
+        .ContentId("painelAjaxIncluirAssociacaoCursoUnidadeTurno")
+        .Form("associarCursoUnidadeTurno", "IncluirAssociacaoCursoUnidadeTurno", "OfertaCursoCicloLetivo", config: prop => prop.Ajax("#divGridAssociacaoCursoUnidadeTurno"))
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Tooltip(Smc.GetUIResource("Botao_Cancelar_Tooltip")))
+        .Begin()) { }
+
+@using (Smc.ModalWindow("editarAssociacaoCursoUnidadeTurno")
+        .Size(SMCModalWindowSize.Medium)
+        .AllowEscKeyToClose()
+        .ContentId("painelAjaxEditarAssociacaoCursoUnidadeTurno")
+        .Form("editarAssociacaoCursoUnidadeTurno", "EditarAssociacaoCursoUnidadeTurno", "OfertaCursoCicloLetivo", config: prop => prop.Ajax("#divGridAssociacaoCursoUnidadeTurno"))
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Tooltip(Smc.GetUIResource("Botao_Cancelar_Tooltip")))
+        .Begin()) { }

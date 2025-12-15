@@ -1,0 +1,82 @@
+﻿@model ConvocacaoListarDynamicModel
+
+@using SMC.Academico.Common.Areas.CAM.Enums
+
+@using (Smc.Div().Size(SMCSize.Grid22_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.Descricao).Size(SMCSize.Grid14_24)
+            @Smc.DisplayFor(m => m.DescCampanhaCicloLetivo).Size(SMCSize.Grid4_24)
+            @Smc.DisplayFor(m => m.QuantidadeChamadasRegulares).Size(SMCSize.Grid6_24)
+        }
+
+        using (Smc.Div("divItem").CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            if (Model.Chamadas != null)
+            {
+                @(Smc.Grid("Chamadas", new SMCPagerModel<ChamadaViewModel>(Model.Chamadas, null))
+                    .FieldColumn(x => x.Numero, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2")
+                    .FieldColumn(x => x.TipoChamada, cssClass: "smc-size-md-10 smc-size-xs-10 smc-size-sm-10 smc-size-lg-10")
+                    .FieldColumn(x => x.SituacaoChamada, cssClass: "smc-size-md-6 smc-size-xs-6 smc-size-sm-6 smc-size-lg-6")
+                    .FieldColumn(x => x.Processando, cssClass: "smc-size-md-6 smc-size-xs-6 smc-size-sm-6 smc-size-lg-6")
+                    .ButtonColumn(SMCButtonSetType.Secondary, 0, "", "", "", true,
+                    @*x => Smc.Button("Botao_Convocar_Candidatos")
+                            .Text(Smc.GetUIResource("Botao_Convocar_Candidatos"))
+                            .Tooltip(Smc.GetUIResource("Botao_Convocar_Candidatos"))
+                            .Action("ConvocarCandidatos", "Convocacao", new { @seqChamada = new SMCEncryptedLong((x as ChamadaViewModel).Seq) }),
+                        x => Smc.Button("Botao_Desfazer_Convocacao")
+                            .Text(Smc.GetUIResource("Botao_Desfazer_Convocacao"))
+                            .Tooltip(Smc.GetUIResource("Botao_Desfazer_Convocacao"))
+                            .Action("DesfazerConvocacao", "Convocacao", new { @seqChamada = new SMCEncryptedLong((x as ChamadaViewModel).Seq) }),*@                    
+
+                    x => Smc.Button("Botao_Carregar_Ingressantes")
+                        .Text(Smc.GetUIResource("Botao_Carregar_Ingressantes"))
+                        .Tooltip(Smc.GetUIResource("Botao_Carregar_Ingressantes"))
+                        .Type(SMCButtonType.Link)
+                        .SecurityToken(UC_CAM_001_05_02.MANTER_CONVOCACAO)
+                        .Action("CarregarIngressantes", "Convocacao", new { @seqChamada = new SMCEncryptedLong((x as ChamadaViewModel).Seq) }),
+
+                    //x => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                    //    .SecurityToken(UC_CAM_001_05_08.VISUALIZAR_IMPEDIMENTOS)
+                    //    .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_CUSTOM)
+                    //    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Liberar_Matricula_Title"))
+                    //    .Text(Smc.GetUIResource("Botao_Liberar_Para_Matricula"))
+                    //    .Tooltip(Smc.GetUIResource("Botao_Liberar_Para_Matricula_Tooltip"))
+                    //    .Ajax(isPost: true)
+                    //    .Enabled((x as ChamadaViewModel).Ativo)
+                    //    .Confirm(Smc.GetUIResource("Title_Liberar_Convocacao"), string.Format((x as ChamadaViewModel).MensagemConfirmacao, Model.Descricao))
+                    //    .ButtonInstructions((x as ChamadaViewModel).Instrucoes)
+                    //    .Action((x as ChamadaViewModel).Acao, "Convocacao", new { @seqChamada = new SMCEncryptedLong((x as ChamadaViewModel).Seq) }))
+
+                    x => Smc.Button("Botao_Liberar_Para_Matricula")
+                        .SecurityToken(UC_CAM_001_05_08.VISUALIZAR_IMPEDIMENTOS)
+                        //.Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_CUSTOM)
+                        //.Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Liberar_Matricula_Title"))
+                        .Text(Smc.GetUIResource("Botao_Liberar_Para_Matricula"))
+                        .Tooltip(Smc.GetUIResource("Botao_Liberar_Para_Matricula_Tooltip"))
+                        .Ajax(isPost: true)
+                        .Enabled((x as ChamadaViewModel).Ativo)
+                        .Confirm(Smc.GetUIResource("Title_Liberar_Convocacao"), string.Format((x as ChamadaViewModel).MensagemConfirmacao, Model.Descricao))
+                        .ButtonInstructions((x as ChamadaViewModel).Instrucoes)
+                        .Action((x as ChamadaViewModel).Acao, "Convocacao", new { @seqChamada = new SMCEncryptedLong((x as ChamadaViewModel).Seq) }))
+
+                    //x => Smc.Button("Botao_Consultar_Posicao_Consolidada")
+                    //    .Text(Smc.GetUIResource("Botao_Consultar_Posicao_Consolidada"))
+                    //    .Tooltip(Smc.GetUIResource("Botao_Consultar_Posicao_Consolidada"))
+                    //    .Action("ConsultarPosicaoConsolidada", "Convocacao", new { @seqChamada = new SMCEncryptedLong((x as ChamadaViewModel).Seq) }),
+                    //x => Smc.Button("Botao_Consultar_Candidatos")
+                    //    .Text(Smc.GetUIResource("Botao_Consultar_Candidatos"))
+                    //    .Tooltip(Smc.GetUIResource("Botao_Consultar_Candidatos"))
+                    //    .Action("ConsultarCandidatos", "Convocacao", new { @seqChamada = new SMCEncryptedLong((x as ChamadaViewModel).Seq) }))
+                    .HideNavigator()
+                    .HideRowNumber()
+                    .HideGridTitle()
+                )
+            }
+        }
+    }
+    @Html.Partial("_DetailListButtons", Model)
+}

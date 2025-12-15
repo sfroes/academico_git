@@ -1,0 +1,54 @@
+﻿@model PublicacaoBdpViewModel
+
+@Html.Action("CabecalhoPublicacaoBdp", new { seqTrabalhoAcademico = Model.SeqTrabalhoAcademico })
+
+@if (Model.ExibirAutorizacao)
+{
+    using (Smc.Header("Publicacao", SMCHeaderType.Secondary)
+                            .Item(prop => prop.DataAutorizacao, sizeMD: SMCSize.Grid6_24)
+                            .Item(prop => prop.TipoAutorizacao, sizeMD: SMCSize.Grid12_24)
+                            .Begin())
+    {
+        var buttonSet = Smc.ButtonSet();
+
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Visualizar, "ImprimirAutorizacao", new { Seq = new SMCEncryptedLong(Model.Seq), SeqInstituicaoNivel = new SMCEncryptedLong(Model.SeqInstituicaoNivel), Area = "ORT" }, "PublicacaoBdp").Text(Smc.GetUIResource("Botao_SegundaViaAutorizacaoPublicacaoBdp")).Tooltip(Smc.GetUIResource("Botao_SegundaViaAutorizacaoPublicacaoBdp_Tooltip")).SecurityToken(UC_ORT_003_01_03.EXIBIR_RELATORIO_AUTORIZACAO_PUBLICACAO));
+
+        @buttonSet;
+    }
+}
+@using (Smc.Form("frmValidar", "SalvarAutorizarPosteriormente").Begin())
+{
+    using (Smc.Div("divSalvarPublicacao").Begin())
+    {
+        @Smc.EditorFor(e => e.Seq)
+        @Smc.EditorFor(e => e.SeqTrabalhoAcademico)
+
+        using (Smc.TabSet("tabPublicacaoBdp").Begin())
+        {
+            using (Smc.Tab("tab01").Title(Smc.GetUIResource("Tab_Informacoes_gerais")).Begin())
+            {
+                @Html.Partial("_TabInformacoesGerais", Model)
+            }
+            using (Smc.Tab("tab02").Title(Smc.GetUIResource("Tab_Informacoes_por_Idioma")).Begin())
+            {
+                @Html.Partial("_TabInformacoesIdiomas", Model)
+            }
+        }
+
+        var buttonSet2 = Smc.ButtonSet();
+
+        buttonSet2.AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+                             .DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight()                
+            .Text(Smc.GetUIResource("Botao_SalvarPublicacaoBdp"))
+                             .Tooltip(Smc.GetUIResource("Botao_SalvarPublicacaoBdp_Tooltip"))
+
+                             .SecurityToken(UC_ORT_003_01_02.AUTORIZAR_PUBLICACAO_TRABALHO_BIBLIOTECA));
+                             //.CssClass("smc-btn-confirmar-icotext-destaque"));
+        buttonSet2.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+                            .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                            .Action("Index", "Home", new { Area = "" }, forceForBackBehavior: true)
+                            .Highlight(Smc.GetViewMode() == SMCViewMode.ReadOnly));
+
+        @buttonSet2;
+    }
+}

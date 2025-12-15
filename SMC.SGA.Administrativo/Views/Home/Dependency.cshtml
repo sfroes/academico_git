@@ -1,0 +1,23 @@
+﻿@model DependencyViewModel
+
+@using (Smc.Form("frm").Begin())
+{
+    @Smc.EditorFor(x => x.SeqFora)
+    @Smc.EditorFor(x => x.Math)
+    @Smc.EditorFor(x => x.Radio)
+    @Smc.EditorFor(x => x.Teste)
+    @Smc.EditorFor(x => x.Arquivo)
+    @Smc.EditorFor(x => x.Imagem)
+    @Smc.EditorFor(x => x.Arquivos)
+    @Smc.EditorFor(x => x.MasterDetail)
+    @Smc.EditorFor(x => x.TextEditor)
+    @Smc.EditorFor(m => m.Address)
+
+
+    using (Smc.Div("lala").ConditionalDisplay("SeqFora", SMCConditionalOperation.NotEqual, "R1", "2").ConditionalRule("R1").Begin())
+    {
+    }
+    @Smc.Button(SMCButtonBehavior.Limpar)
+    @Smc.Button(SMCButtonBehavior.LimparEnviar)
+    @Smc.Button(SMCButtonBehavior.Salvar)
+}

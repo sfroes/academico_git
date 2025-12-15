@@ -1,0 +1,31 @@
+﻿@model CurriculoCursoOfertaListarViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item-filho").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista-hidepanel").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.HidePanel("hidePanelOfertaCurso" + Model.Seq).CssClass("smc-sga-hidepanel-balao").Header(Model.Descricao).Begin())
+            {
+                @Smc.DisplayFor(m => m.GruposCurriculares).Size(SMCSize.Grid24_24).CssClass("smc-sga-remove-bullet")
+                @Smc.DisplayFor(m => m.QuantidadeHoraAulaObrigatoriaTotal).Size(SMCSize.Grid5_24)
+                @Smc.DisplayFor(m => m.QuantidadeCreditoObrigatorioTotal).Size(SMCSize.Grid5_24)
+                @Smc.DisplayFor(m => m.QuantidadeHoraAulaOptativaTotal).Size(SMCSize.Grid5_24)
+                @Smc.DisplayFor(m => m.QuantidadeCreditoOptativoTotal).Size(SMCSize.Grid5_24)
+            }
+        }
+    }
+    @(Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)
+         .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                       .Text(Smc.GetUIResource("Botao_AssociacaoGrupoCurricular"))
+                       .Tooltip(Smc.GetUIResource("Botao_AssociacaoGrupoCurricular"))
+                       .Action("Index", "CurriculoCursoOfertaGrupo", new { seqCurriculoCursoOferta = new SMCEncryptedLong(Model.Seq) })
+                       .SecurityToken(UC_CUR_001_01_05.PESQUISAR_ASSOCIACAO_GRUPO_CURRICULAR_OFERTA_CURSO))
+         .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                       .Text(Smc.GetUIResource("Botao_CadastroMatrizCurricular"))
+                       .Tooltip(Smc.GetUIResource("Botao_CadastroMatrizCurricular"))
+                       .Action("Index", "MatrizCurricular", new { seqCurriculoCursoOferta = new SMCEncryptedLong(Model.Seq) })
+                       .SecurityToken(UC_CUR_001_05_01.PESQUISAR_MATRIZ_CURRICULAR))
+    )
+}

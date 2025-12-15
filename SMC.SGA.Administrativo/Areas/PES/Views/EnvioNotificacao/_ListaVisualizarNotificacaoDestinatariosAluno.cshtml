@@ -1,0 +1,33 @@
+@using SMC.SGA.Administrativo.Areas.PES.Models
+@using SMC.Academico.Common.Areas.SRC.Constants
+@model SMCPagerModel<EnvioNotificacaoPessoasListarViewModel>
+
+@(Smc.Grid("gridVisualizarNotificacoesDestinatariosAluno", Model)
+        .AutoGenerateColumns(false)
+        .FieldColumn(x => x.NumeroRegistroAcademico, cssClass: "smc-size-md-1 smc-size-sm-1 smc-size-xs-1 smc-size-lg-1")
+        .FieldColumn(x => x.Nome, cssClass: "smc-size-md-5 smc-size-sm-5 smc-size-xs-5 smc-size-lg-5")
+        .FieldColumn(x => x.Email, cssClass: "smc-size-md-8 smc-size-sm-8 smc-size-xs-8 smc-size-lg-8")
+        .FieldColumn(x => x.Vinculo, cssClass: "smc-size-md-2 smc-size-sm-2 smc-size-xs-2 smc-size-lg-2")
+        .FieldColumn(x => x.DadosVinculo, cssClass: "smc-size-md-8 smc-size-sm-8 smc-size-xs-8 smc-size-lg-8")
+        .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-grid-coluna-botoes", true,
+                f => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDetalheNotificacao")
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarDetalheNotificacao_Title"))
+                .SecurityToken(UC_SRC_004_01_05.CONSULTAR_DADOS_NOTIFICACAO)
+                .Ajax(isPost: true)
+                .Text(Smc.GetUIResource("Botao_VisualizarDetalheNotificacao"))
+                .Tooltip(Smc.GetUIResource("Botao_VisualizarDetalheNotificacao_Tooltip"))
+                 .ButtonInstructions(!(f as EnvioNotificacaoPessoasListarViewModel).PermiteVisualizarNotificacao ?
+                         Smc.GetUIResource("ButtonInstructions_PermiteVisualizarNotificacao") :
+                         string.Empty)
+                 .Enabled((f as EnvioNotificacaoPessoasListarViewModel).PermiteVisualizarNotificacao)
+                .CssClass("smc-btn-visualizar-ico")
+                .Action("ConsultarDetalheNotificacao", "SolicitacaoServico", new { Area = "SRC", seqNotificacaoEmail = new SMCEncryptedLong((f as EnvioNotificacaoPessoasListarViewModel).SeqNotificacaoEmailDestinatario) }))
+        .HideRowNumber())
+
+
+@using (Smc.ModalWindow("modalVisualizarDetalheNotificacao")
+      .Size(SMCModalWindowSize.Largest)
+      .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+      .Begin()) { }
+

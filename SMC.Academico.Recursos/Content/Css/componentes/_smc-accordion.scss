@@ -1,0 +1,65 @@
+﻿.smc-sga-accordion-header-display {
+    display: table;
+    float: left;
+    padding-top: 5px;
+    margin-right: 20px;
+
+    label {
+        float: left;
+        font-weight: bold !important;
+        color: $smc-cor-secundaria-01 !important;
+        font-size: 13px;
+    }
+
+    p {
+        float: left;
+        font-weight: bold !important;
+        color: $smc-cor-principal !important;
+        font-size: 13px;
+    }
+}
+
+.smc-accordion {
+    table {
+        font-family: 'segoe_uiregular', Arial, sans-serif !important;
+        }
+}
+
+.smc-sga-accordion-secundario {
+    table {
+        .smc-sga-coluna-status {
+            div {
+                display: block;
+
+                .smc-display-legend {
+                    div::before {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+
+        .smc-buttonset-horizontal-secundario {
+            display: block;
+
+
+            .smc-button {
+                display: block;
+
+                .smc-btn-custom {
+                    display: block;
+                }
+            }
+        }
+
+        .smc-sga-btn-formato-link {
+            .smc-button {
+                .smc-btn-custom {
+                    display: table !important;
+                    }
+                }
+            }
+        }
+    }
+

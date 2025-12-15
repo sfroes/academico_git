@@ -1,0 +1,43 @@
+﻿@model FuncionarioListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        // Div da superior com dados pessoais
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.Seq).Size(SMCSize.Grid4_24)
+            @Smc.DisplayFor(m => m.NomeFormatado).Size(SMCSize.Grid10_24)
+            if (Model.Falecido)
+            {
+                @Smc.DisplayFor(m => m.CpfOuPassaporte).Size(SMCSize.Grid4_24)
+                @Smc.DisplayFor(m => m.Falecido).Size(SMCSize.Grid2_24)
+            }
+            else
+            {
+                @Smc.DisplayFor(m => m.CpfOuPassaporte).Size(SMCSize.Grid6_24)
+            }
+        }
+        // Div da inferior com vínculos
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista smc-listdetailed-conteudo-separador-horizontal").Size(SMCSize.Grid24_24).Begin())
+        {
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_VinculosAtivos")</label>
+            if (Model.VinculosAtivos.SMCCount() > 0)
+            {         
+
+                @Smc.List("vinculos", Model.VinculosAtivos).HtmlTemplate(vinculo =>Html.Partial("_VinculoDetailList",vinculo))
+            }
+            else
+            {
+                using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <p>@Smc.GetUIResource("Label_NenhumVinculoAtivo")</p>
+                }
+            }
+
+
+        }
+    }
+    @Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)
+}

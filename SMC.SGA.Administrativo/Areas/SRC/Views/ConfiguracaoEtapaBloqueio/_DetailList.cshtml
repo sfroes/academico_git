@@ -1,0 +1,26 @@
+﻿@model SMCPagerModel<ConfiguracaoEtapaBloqueioListarViewModel>
+
+@(Smc.Grid("gridConfiguracaoEtapaBloqueio", Model)
+     .AutoGenerateColumns()
+     .AllowSort()
+     .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+
+        x => Smc.Button(SMCButtonBehavior.Alterar)
+                .CssClass("smc-btn-alterar-ico")
+                .Tooltip(Smc.GetUIResource("Botao_Editar_Configuracao_Etapa_Bloqueio_Tooltip"))
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirNovaConfiguracaoEtapaBloqueio")
+                .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Botao_Editar_Configuracao_Etapa_Bloqueio_Title"))
+                .Ajax(isPost: false, updateTargetId: "#divGridConfiguracoesEtapaBloqueio")
+                .SecurityToken(UC_SRC_002_04_09.CONFIGURAR_ETAPA_MANTER_BLOQUEIOS)
+                .Action("Editar", "ConfiguracaoEtapaBloqueio", new { Seq = new SMCEncryptedLong((x as ConfiguracaoEtapaBloqueioListarViewModel).Seq), Area = "SRC" }),
+
+        x => Smc.Button(SMCButtonBehavior.Excluir)
+                .Enabled((x as ConfiguracaoEtapaBloqueioListarViewModel).HabilitarBotaoExcluir)
+                .ButtonInstructions(Smc.GetUIResource((x as ConfiguracaoEtapaBloqueioListarViewModel).MensagemBotaoExcluir))
+                .DisplayMode(SMCButtonDisplayMode.Icon)              
+                .Tooltip(Smc.GetUIResource("Botao_Excluir_Configuracao_Etapa_Bloqueio_Tooltip"))
+                .Ajax(isPost: false)
+                .SecurityToken(UC_SRC_002_04_09.CONFIGURAR_ETAPA_MANTER_BLOQUEIOS)
+                .Action("Excluir", "ConfiguracaoEtapaBloqueio", new { Seq = new SMCEncryptedLong((x as ConfiguracaoEtapaBloqueioListarViewModel).Seq), SeqProcessoEtapa = new SMCEncryptedLong((x as ConfiguracaoEtapaBloqueioListarViewModel).SeqProcessoEtapa), SeqConfiguracaoEtapa = new SMCEncryptedLong((x as ConfiguracaoEtapaBloqueioListarViewModel).SeqConfiguracaoEtapa), Area = "SRC" }))
+)

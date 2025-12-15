@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSServicoCicloLetivo" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSServicoCicloLetivo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSServicoCicloLetivo" msprop:Generator_UserDSName="DSServicoCicloLetivo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSServicoCicloLetivo" msprop:Generator_TableClassName="DSServicoCicloLetivoDataTable" msprop:Generator_TableVarName="tableDSServicoCicloLetivo" msprop:Generator_TablePropName="_DSServicoCicloLetivo" msprop:Generator_RowDeletingName="DSServicoCicloLetivoRowDeleting" msprop:Generator_RowChangingName="DSServicoCicloLetivoRowChanging" msprop:Generator_RowEvHandlerName="DSServicoCicloLetivoRowChangeEventHandler" msprop:Generator_RowDeletedName="DSServicoCicloLetivoRowDeleted" msprop:Generator_UserTableName="DSServicoCicloLetivo" msprop:Generator_RowChangedName="DSServicoCicloLetivoRowChanged" msprop:Generator_RowEvArgName="DSServicoCicloLetivoRowChangeEvent" msprop:Generator_RowClassName="DSServicoCicloLetivoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SeqGrupoPrograma" msprop:Generator_ColumnVarNameInTable="columnSeqGrupoPrograma" msprop:Generator_ColumnPropNameInRow="SeqGrupoPrograma" msprop:Generator_ColumnPropNameInTable="SeqGrupoProgramaColumn" msprop:Generator_UserColumnName="SeqGrupoPrograma" type="xs:double" minOccurs="0" />
+              <xs:element name="SeqEtapa" msprop:Generator_ColumnVarNameInTable="columnSeqEtapa" msprop:Generator_ColumnPropNameInRow="SeqEtapa" msprop:Generator_ColumnPropNameInTable="SeqEtapaColumn" msprop:Generator_UserColumnName="SeqEtapa" type="xs:double" minOccurs="0" />
+              <xs:element name="SeqCurso" msprop:Generator_ColumnVarNameInTable="columnSeqCurso" msprop:Generator_ColumnPropNameInRow="SeqCurso" msprop:Generator_ColumnPropNameInTable="SeqCursoColumn" msprop:Generator_UserColumnName="SeqCurso" type="xs:double" minOccurs="0" />
+              <xs:element name="NomeCurso" msprop:Generator_ColumnVarNameInTable="columnNomeCurso" msprop:Generator_ColumnPropNameInRow="NomeCurso" msprop:Generator_ColumnPropNameInTable="NomeCursoColumn" msprop:Generator_UserColumnName="NomeCurso" type="xs:string" minOccurs="0" />
+              <xs:element name="QuantidadeNaoIniciada" msprop:Generator_ColumnVarNameInTable="columnQuantidadeNaoIniciada" msprop:Generator_ColumnPropNameInRow="QuantidadeNaoIniciada" msprop:Generator_ColumnPropNameInTable="QuantidadeNaoIniciadaColumn" msprop:Generator_UserColumnName="QuantidadeNaoIniciada" type="xs:int" minOccurs="0" />
+              <xs:element name="QuantidadeEmAndamento" msprop:Generator_ColumnVarNameInTable="columnQuantidadeEmAndamento" msprop:Generator_ColumnPropNameInRow="QuantidadeEmAndamento" msprop:Generator_ColumnPropNameInTable="QuantidadeEmAndamentoColumn" msprop:Generator_UserColumnName="QuantidadeEmAndamento" type="xs:int" minOccurs="0" />
+              <xs:element name="QuantidadeFimComSucesso" msprop:Generator_ColumnVarNameInTable="columnQuantidadeFimComSucesso" msprop:Generator_ColumnPropNameInRow="QuantidadeFimComSucesso" msprop:Generator_ColumnPropNameInTable="QuantidadeFimComSucessoColumn" msprop:Generator_UserColumnName="QuantidadeFimComSucesso" type="xs:int" minOccurs="0" />
+              <xs:element name="QuantidadeFimSemSucesso" msprop:Generator_ColumnVarNameInTable="columnQuantidadeFimSemSucesso" msprop:Generator_ColumnPropNameInRow="QuantidadeFimSemSucesso" msprop:Generator_ColumnPropNameInTable="QuantidadeFimSemSucessoColumn" msprop:Generator_UserColumnName="QuantidadeFimSemSucesso" type="xs:int" minOccurs="0" />
+              <xs:element name="QuantidadeCancelada" msprop:Generator_ColumnVarNameInTable="columnQuantidadeCancelada" msprop:Generator_ColumnPropNameInRow="QuantidadeCancelada" msprop:Generator_ColumnPropNameInTable="QuantidadeCanceladaColumn" msprop:Generator_UserColumnName="QuantidadeCancelada" type="xs:int" minOccurs="0" />
+              <xs:element name="NomeGrupoPrograma" msprop:Generator_ColumnVarNameInTable="columnNomeGrupoPrograma" msprop:Generator_ColumnPropNameInRow="NomeGrupoPrograma" msprop:Generator_ColumnPropNameInTable="NomeGrupoProgramaColumn" msprop:Generator_UserColumnName="NomeGrupoPrograma" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoEtapa" msprop:Generator_ColumnVarNameInTable="columnDescricaoEtapa" msprop:Generator_ColumnPropNameInRow="DescricaoEtapa" msprop:Generator_ColumnPropNameInTable="DescricaoEtapaColumn" msprop:Generator_UserColumnName="DescricaoEtapa" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

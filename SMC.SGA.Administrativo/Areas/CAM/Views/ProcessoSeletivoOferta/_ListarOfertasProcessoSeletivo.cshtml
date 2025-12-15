@@ -1,0 +1,16 @@
+﻿@model List<ProcessoSeletivoOfertaListaViewModel>
+
+@(Smc.Grid("gridListaOfertasProcessoSeletivo", new SMCPagerModel<ProcessoSeletivoOfertaListaViewModel>(Model))
+        .AllowSelect(f => f.Seq)
+        .AutoGenerateColumns()
+        //.AllowExportToExcel(true)
+        .HideNumberOfRowsPerPageSelector()
+        .HidePager()
+        .HideNavigator()
+        .HideRowsTotalizer()
+        .ButtonColumn(SMCButtonSetType.Primary, 1, string.Empty, string.Empty, string.Empty, false,
+                    f => Smc.Button(SMCButtonBehavior.Excluir).Type(SMCButtonType.Link).DisplayMode(SMCButtonDisplayMode.Icon).SecurityToken(UC_CAM_001_02_04.ASSOCIAR_OFERTA_PROCESSO_SELETIVO)
+                                .Action("Excluir", "ProcessoSeletivoOferta", new { seq = new SMCEncryptedLong((f as ProcessoSeletivoOfertaListaViewModel).Seq), Area = "CAM" })
+                                .Confirm(Smc.GetUIResource("Title_Confirmar_Exclusao"), Smc.GetUIResource("MSG_ExclusaoAssociacao"), SMCWindowButtons.No, (f as ProcessoSeletivoOfertaListaViewModel).PossuiVinculoConvocacao)
+                                )
+)

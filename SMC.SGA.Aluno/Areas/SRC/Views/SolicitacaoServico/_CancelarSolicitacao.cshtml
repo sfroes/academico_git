@@ -1,0 +1,11 @@
+﻿@model CancelarSolicitacaoViewModel
+
+@using (Smc.Header("CancelarSolicitacao", SMCHeaderType.Primary)
+                                .Item(prop => prop.NumeroProtocolo, sizeMD: SMCSize.Grid4_24)
+                                .Item(prop => prop.Servico, sizeMD: SMCSize.Grid8_24)
+                                .Item(prop => prop.Situacao, sizeMD: SMCSize.Grid8_24)
+                                .Item(prop => prop.DataSolicitacao, sizeMD: SMCSize.Grid4_24)
+                                .Begin()) { }
+
+@Smc.EditorFor(prop => prop.SeqSolicitacaoServico)
+@Smc.EditorFor(prop => prop.Observacao)

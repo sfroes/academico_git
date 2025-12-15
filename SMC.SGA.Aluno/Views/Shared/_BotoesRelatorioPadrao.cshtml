@@ -1,0 +1,32 @@
+﻿@model bool
+
+@if (Model) //true, renderiza ButtonSet
+{
+    var buttonSet = Smc.ButtonSet().CssClass("smc-sga-buttonset-relatorio");
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Relatorio)
+                    .CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+                     .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                     .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true)
+                     .Attribute("formtarget", "_blank")//formtarget="_blank"
+                     .Highlight());
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Limpar)
+                     .DisplayMode(SMCButtonDisplayMode.Icon));
+
+    @buttonSet;
+}
+else //false, não renderiza ButtonSet
+{
+    @(Smc.Button(SMCButtonBehavior.Relatorio)
+                .CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+                 .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                 .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true)
+                 .Attribute("formtarget", "_blank")
+                 .Highlight()
+    )
+
+    @(Smc.Button(SMCButtonBehavior.Limpar)
+                 .DisplayMode(SMCButtonDisplayMode.Icon)
+    )
+}

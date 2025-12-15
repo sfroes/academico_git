@@ -1,0 +1,12 @@
+﻿@model PublicacaoBdpViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+{
+    <p>@Html.Raw(Smc.GetUIResource("Mensagem_Informativa_Idiomas"))</p>
+}
+
+@Smc.EditorFor(m => m.InformacoesIdioma).Size(SMCSize.Grid24_24).Readonly(Smc.GetViewMode() == SMCViewMode.ReadOnly)
+
+
+
+

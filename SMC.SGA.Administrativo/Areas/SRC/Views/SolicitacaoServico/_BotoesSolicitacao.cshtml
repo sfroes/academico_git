@@ -1,0 +1,292 @@
+﻿@using SMC.Academico.Common.Areas.SRC.Enums
+@using SMC.SGA.Administrativo.Areas.SRC.Views.SolicitacaoServico.App_LocalResources
+@using SMC.Academico.Common.Areas.MAT.Constants
+@using SMC.Academico.Common.Areas.ALN.Constants
+
+@model BotoesSolicitacaoViewModel
+
+@{
+    #region Realizar Atendimento
+
+    SMCButtonFluentConfiguration botaoRealizarAtendimento = Smc.Button("RealizarAtendimento",
+          "EntrarEtapaValidacao",
+          new
+          {
+              @seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico),
+              @seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa)
+          },
+          "RealizarAtendimento")
+          .Ajax()
+          .Type(SMCButtonType.Link)
+          .Text(UIResource.Botao_RealizarAtendimento)
+          .Tooltip(UIResource.Botao_RealizarAtendimento_Tooltip);
+
+    if (Model.SituacaoAtualSolicitacaoEFimProcesso)
+    {
+        botaoRealizarAtendimento.Enabled(false);
+        botaoRealizarAtendimento.ButtonInstructions(UIResource.MSG_SituacaoAtualSolicitacaoEFimProcesso);
+    }
+    else if (Model.SituacaoAtualEtapaDiferenteLiberada)
+    {
+        botaoRealizarAtendimento.Enabled(false);
+        botaoRealizarAtendimento.ButtonInstructions(UIResource.MSG_SituacaoAtualEtapaDiferenteLiberada);
+    }
+    else if (Model.EtapaAtualIndisponivelCentralAtendimento)
+    {
+        botaoRealizarAtendimento.Enabled(false);
+
+        if (!string.IsNullOrEmpty(Model.OrientacaoAtendimento))
+        {
+            botaoRealizarAtendimento.ButtonInstructions(Model.OrientacaoAtendimento);
+        }
+        else
+        {
+            botaoRealizarAtendimento.ButtonInstructions(UIResource.MSG_EtapaAtualIndisponivelCentralAtendimento);
+        }
+    }
+    else if (Model.SolicitacaoComEtapaAtualCompartilhadaEUsuarioNaoAssociado)
+    {
+        botaoRealizarAtendimento.Enabled(false);
+        botaoRealizarAtendimento.ButtonInstructions(UIResource.MSG_SolicitacaoComEtapaAtualCompartilhadaEUsuarioNaoAssociado);
+    }
+    else if (Model.SolicitantePossuiBloqueiosVigentes)
+    {
+        botaoRealizarAtendimento.Enabled(false);
+        botaoRealizarAtendimento.ButtonInstructions(UIResource.MSG_SolicitantePossuiBloqueiosVigentes);
+    }
+    else if (Model.SolicitacaoPossuiGrupoEscalonamentoComPeriodoNaoVigente)
+    {
+        botaoRealizarAtendimento.Enabled(false);
+        botaoRealizarAtendimento.ButtonInstructions(UIResource.MSG_SolicitacaoPossuiGrupoEscalonamentoComPeriodoNaoVigente);
+    }
+    else if (Model.SolicitacaoComEtapaAtualNaoCompartilhadaEEntidadeUsuarioLogadoNaoResponsavel)
+    {
+        botaoRealizarAtendimento.Enabled(false);
+        botaoRealizarAtendimento.ButtonInstructions(UIResource.MSG_SolicitacaoComEtapaAtualNaoCompartilhadaEEntidadeUsuarioLogadoNaoResponsavel);
+    }
+    else if (Model.UsuarioNaoPossuiAcessoARealizarAtendimento)
+    {
+        botaoRealizarAtendimento.Enabled(false);
+        botaoRealizarAtendimento.ButtonInstructions(UIResource.MSG_UsuarioNaoPossuiAcessoARealizarAtendimento);
+    }
+    else if (Model.SolicitacaoPossuiUsuarioResponsavel && !Model.UsuarioLogadoEResponsavelAtualPelaSolicitacao)
+    {
+        botaoRealizarAtendimento.Confirm(UIResource.MSG_Titulo_Confirmacao, UIResource.MSG_ConfirmacaoSolicitacaoPossuiUsuarioResponsavel);
+    }
+    else if (Model.EtapaNaoDisponivelParaAplicacao)
+    {
+        botaoRealizarAtendimento.Enabled(false);
+        botaoRealizarAtendimento.ButtonInstructions(UIResource.MSG_EtapaNaoDisponivelParaAplicacao);
+    }
+    else
+    {
+        botaoRealizarAtendimento.Enabled(true);
+        if (!Model.UsuarioLogadoEResponsavelAtualPelaSolicitacao)
+        {
+            botaoRealizarAtendimento.Confirm(UIResource.MSG_Titulo_Confirmacao, UIResource.MSG_ConfirmacaoInicioAtendimento);
+        }
+    }
+
+    #endregion
+
+    #region Imprimir
+
+    SMCButtonFluentConfiguration botaoImprimirSolicitacao = Smc.Button(SMCButtonBehavior.Imprimir, "ImprimirDadosSolicitacaoPadrao", new
+    {
+        seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico),
+        seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa),
+        seqServico = new SMCEncryptedLong(Model.SeqServico)
+    }, "RealizarAtendimento")
+        .Type(SMCButtonType.Link)
+        .SecurityToken(UC_SRC_004_03_01.REALIZAR_ATENDIMENTO_INSTRUCAO_INICIAL)
+        .CssClass("smc-btn-imprimir-text")
+        .Attribute("target", "_blank");
+
+    #endregion
+
+    #region Retornar a etapa anterior
+
+    SMCButtonFluentConfiguration botaoRetornarEtapaAnterior = Smc.Button("RetornarEtapaAnterior",
+        "RetornarSolicitacaoParaEtapaAnterior",
+        new { @seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico) },
+        "SolicitacaoServico")
+        .Type(SMCButtonType.Link)
+        .CssClass("smc-btn-custom-destaque")
+        .Text(UIResource.Botao_RetornarEtapaAnterior)
+        .Tooltip(UIResource.Botao_RetornarEtapaAnterior_Tooltip)
+        .Confirm(UIResource.MSG_Titulo_Confirmacao, Model.MensagemConfirmacaoRetornarEtapaAnterior);
+
+    if (Model.TokenServico == TOKEN_SERVICO.EMISSAO_DIPLOMA_DIGITAL_1_VIA || Model.TokenServico == TOKEN_SERVICO.EMISSAO_DIPLOMA_DIGITAL_2_VIA || Model.TokenServico == TOKEN_SERVICO.EMISSAO_HISTORICO_ESCOLAR_DIGITAL)
+    {
+        botaoRetornarEtapaAnterior.Hide(true);
+        botaoRetornarEtapaAnterior.Enabled(false);
+    }
+    else if (Model.SituacaoAtualSolicitacaoEInicialEtapa && Model.EtapaAtualVigente && Model.EtapaAnteriorVigente && Model.EtapaAtualEAnteriorAssociadasMesmaAplicacao)
+    {
+        botaoRetornarEtapaAnterior.Hide(false);
+        botaoRetornarEtapaAnterior.Enabled(true);
+    }
+    else
+    {
+        botaoRetornarEtapaAnterior.Hide(true);
+        botaoRetornarEtapaAnterior.Enabled(false);
+    }
+
+    #endregion
+
+    #region Registro de Documentos
+
+    SMCButtonFluentConfiguration botaoRegistrarDocumentos = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+      .Attribute(SMCMvcConsts.MODAL_ID, "modalRegistrarDocumentos")
+      .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource(UIResource.Title_Modal_Registro_Documentos))
+      .Ajax(isPost: false)
+      .Text(Smc.GetUIResource(UIResource.Botao_RegistroDocumentos))
+      .Tooltip(Smc.GetUIResource(UIResource.Botao_RegistroDocumentos_Tooltip))
+      .Type(SMCButtonType.InputButton)
+      .SecurityToken(UC_SRC_004_02_01.REGISTRAR_DOCUMENTOS)
+      .Action("RegistrarDocumentos", "RegistroDocumentosItemRoute", new { @seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), @seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao), @area = string.Empty });
+
+    if (Model.SituacaodDocumentacaoNaoRequerida)
+    {
+        botaoRegistrarDocumentos.Enabled(false);
+        botaoRegistrarDocumentos.ButtonInstructions(UIResource.MSG_SituacaodDocumentacaoNaoRequerida);
+    }
+    else if (Model.SituacaoAtualSolicitacaoEFimProcesso)
+    {
+        botaoRegistrarDocumentos.Enabled(false);
+        botaoRegistrarDocumentos.ButtonInstructions(UIResource.MSG_SituacaoAtualSolicitacaoEFimProcesso);
+    }
+    else if (Model.ConfigEtapaPossuiPaginaUploadDocumento)
+    {
+        botaoRegistrarDocumentos.Enabled(false);
+        botaoRegistrarDocumentos.ButtonInstructions(UIResource.MSG_SolicitacaoIndisponivelParaRegistroDocumentos);
+    }
+
+    if (Model.TokenServico == TOKEN_SERVICO.ENTREGA_DOCUMENTACAO || Model.TokenServico == TOKEN_SERVICO.ATUALIZACAO_DOCUMENTACAO_EMISSAO_DIPLOMA)
+    {
+        botaoRegistrarDocumentos.Enabled(false);
+        botaoRegistrarDocumentos.ButtonInstructions(UIResource.MSG_Informativo_Registrar_Documento);
+
+    }
+
+    #endregion
+
+    #region Reabrir Solicitacao
+
+    SMCButtonFluentConfiguration botaoReabrirSolicitacao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+.Attribute(SMCMvcConsts.MODAL_ID, "modalReabrirSolicitacao")
+.Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource(UIResource.Title_Modal_Reabrir_Solicitacao))
+.Ajax(isPost: false)
+.Text(Smc.GetUIResource(UIResource.Botao_Reabrirsolicitacao))
+.Tooltip(Smc.GetUIResource(UIResource.Botao_Reabrirsolicitacao_Tooltip))
+.SecurityToken(UC_SRC_004_01_09.REABRIR_SOLICITACAO)
+.Type(SMCButtonType.InputButton);
+
+    if (!string.IsNullOrEmpty(Model.MensagemInformativaBotaoReabrirSolicitacao))
+    {
+        botaoReabrirSolicitacao.ButtonInstructions(Model.MensagemInformativaBotaoReabrirSolicitacao).Enabled(Model.BotaoReabrirSolicitacaoHabilitado);
+    }
+    else
+    {
+        botaoReabrirSolicitacao.Action("ReabrirSolicitacao", "SolicitacaoServico", new { @seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico) });
+    }
+
+    #endregion
+
+    #region Cancelar Solicitação
+
+    SMCButtonFluentConfiguration botaoCancelarSolicitacao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+    .Attribute(SMCMvcConsts.MODAL_ID, "modalCancelarSolicitacao")
+    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource(UIResource.Title_Modal_Cancelar_Solicitacao))
+    .Ajax(isPost: false)
+    .Text(Smc.GetUIResource(UIResource.Botao_Cancelarsolicitacao))
+    .Tooltip(Smc.GetUIResource(UIResource.Botao_Cancelarsolicitacao_Tooltip))
+    .SecurityToken(UC_SRC_004_01_08.CANCELAR_SOLICITACAO)
+    .Type(SMCButtonType.InputButton)
+    .Action("CancelarSolicitacao", "SolicitacaoServico", new { @seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico) });
+
+    //Se a situação atual da solicitação for final de processo, o botão deverá ser desabilitado com a seguinte
+    //mensagem informativa: "Opção indisponível. A solicitação está encerrada ou concluída.".
+    if (Model.SituacaoAtualSolicitacaoEFimProcesso)
+    {
+        botaoCancelarSolicitacao.Enabled(false);
+        botaoCancelarSolicitacao.ButtonInstructions(UIResource.MSG_SituacaoAtualSolicitacaoEFimProcesso);
+    }
+    //Senão, se não houver parametrização para a etapa atual da solicitação de pelo menos 1(uma)
+    //[situação classificada como Cancelada]*, o botão deverá ser desabilitado. Mensagem informativa:
+    //"Opção indisponível. Não existe parametrização de situação de cancelamento para a etapa atual da solicitação."
+    else if (!Model.EtapaAtualPossuiParametrizacaoDeSituacaoDeCancelamento)
+    {
+        botaoCancelarSolicitacao.Enabled(false);
+        botaoCancelarSolicitacao.ButtonInstructions(UIResource.MSG_EtapaAtualNaoPossuiParametrizacaoDeSituacaoDeCancelamento);
+    }
+    else if (Model.UsuarioNaoPossuiAcessoARealizarAtendimento)
+    {
+        botaoCancelarSolicitacao.Enabled(false);
+        botaoCancelarSolicitacao.ButtonInstructions(UIResource.MSG_UsuarioNaoPossuiAcessoARealizarAtendimentoCancelar);
+    }
+
+    #endregion
+
+    #region Visualizar Plano de Estudo
+
+    SMCButtonFluentConfiguration botaoVisualizarPlanoEstudo = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+    .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarPlanoEstudo")
+    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource(UIResource.Title_Modal_Visualizar_Plano_Estudo))
+    .Ajax(isPost: false)
+    .Text(Smc.GetUIResource(UIResource.Botao_VisualizarPlanoEstudo))
+    .Tooltip(Smc.GetUIResource(UIResource.Botao_VisualizarPlanoEstudo_Tooltip))
+    .Type(SMCButtonType.InputButton)
+    .SecurityToken(UC_MAT_003_20_01.VISUALIZAR_ITENS_PLANO_ESTUDO)
+    .Action("VisualizarTurmaAtividade", "SolicitacaoMatriculaItemRoute", new { @seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoServico), @seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa), @erro = false, @area = string.Empty, @desconsideraEtapa = true, @desativarFiltroDados = true });
+
+    if (!Model.SolicitacaoServicoEDeMatricula || !Model.PrimeiraEtapaComSituacaoFinalEtapaEFinalizadaComSucesso)
+    {
+        botaoVisualizarPlanoEstudo.Enabled(false);
+        botaoVisualizarPlanoEstudo.ButtonInstructions(UIResource.MSG_SolicitacaoServicoNaoEDeMatriculaOuPrimeiraEtapaNaoFinalizadaComSucesso);
+    }
+
+    #endregion
+
+    #region Finalizar solicitação CRA
+
+    SMCButtonFluentConfiguration botaoFinalizarSolicitacaoCRA = Smc.Button("RealizarAtendimento",
+      "FinalizarSolicitacaoCRA",
+      new
+      {
+          @seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico)
+      },
+      "RealizarAtendimento")
+      .Ajax()
+      .Type(SMCButtonType.Link)
+     .Text(UIResource.Botao_FinalizarSolicitacaoCRA)
+    .ButtonInstructions(!Model.PermiteFinalizarSolicitacaoCRA ?
+        Smc.GetUIResource("ButtonInstructions_FinalizarSolicitacaoCRA") :
+        string.Empty)
+    .Ajax()
+    .Enabled(Model.PermiteFinalizarSolicitacaoCRA)
+    .Tooltip(Smc.GetUIResource(UIResource.Botao_FinalizarSolicitacaoCRA_Tooltip))
+    .Confirm("Finalizar solicitação", UIResource.MSG_FinalizarSolicitacaoCRA);
+
+    #endregion Finalizar solicitacação CRA
+}
+
+@if (!string.IsNullOrEmpty(Model.MensagemErro))
+{
+    <p> @Model.MensagemErro. </p>
+}
+else
+{
+    @botaoRealizarAtendimento
+    @botaoRegistrarDocumentos
+    @botaoReabrirSolicitacao
+    @botaoCancelarSolicitacao
+    @botaoVisualizarPlanoEstudo
+    @botaoImprimirSolicitacao
+    @botaoRetornarEtapaAnterior
+
+    if (Model.TokenServico == TOKEN_SERVICO.ATUALIZACAO_DOCUMENTACAO_EMISSAO_DIPLOMA)
+    {
+        @botaoFinalizarSolicitacaoCRA;
+    }
+}

@@ -1,0 +1,16 @@
+UC; Descrição
+UC_GRD_001_01_01.Pesquisar_Evento_Aula;Pesquisar os horários dos eventos de aula.
+UC_GRD_001_01_02.Incluir_Evento_Aula;Tem como objetivo incluir  dados referentes ao evento aula.
+UC_GRD_001_01_02.Permite_Alterar_Data_Agendamento_Aula;<font color="#000080">O usuário que possuir permissão neste token poderá alterar as datas de inicio e fim para geração dos eventos de aula , quando o parametro de distribuição de aula cadastrado para a divisão de turma for 'Semanal' ou 'Quinzenal'.
+UC_GRD_001_01_03.Alterar_Horario;Este caso de uso tem como objetivo permitir a alteração das informações de horário e de associação do professor.
+UC_GRD_001_01_03.Detalhe_Divisao_Turma_Grade;Visualizar detalhes da divisão de turma direcionada para grade.
+UC_GRD_001_01_04.Excluir_Evento_Aula;Tem como objetivo excluir os eventos de aula.
+UC_GRD_001_01_05.Visualizar_Simulacao_Evento_Aula;Permite a visualização  dos agendamentos que são simulados conforme parametros informados pelo usuário.
+UC_GRD_001_01_06.Permite_Alterar_Grade_Fora_Vigencia_Turma;Somente usuários que possuem permissão a este token poderão incluir, alterar ou excluir registros da grade quando a turma não estiver mais vigente.  Considera-se turma' não vigente' aquela cuja data atual  não se encontra dentro do periodo letivo da turma incluindo os limites do periodo.
+UC_GRD_001_01_06.Visualizar_Detalhes_Evento_Aula;Permite consultar os dados do agendamento.
+UC_GRD_001_01_07.Alterar_Local;Permie a alteração do local associado ao horário da grade de aula.
+UC_GRD_001_01_08.Alterar_Colaborador;Permite alterar os colaboradores associados ao horários na grade de aula.
+UC_GRD_001_01_09.Alterar_Colaborador_substituto;Permite associar colaborador substituto ao evento aula.
+UC_GRD_001_02_01.Alterar_Configuracao_Grade;Esse caso de uso tem como objetivo permitir a alteração das configurações para geração do evento aula na grade por divisão de turma.
+UC_GRD_001_04_01.Pesquisar_Grade_Compartilhada;Pesquisar as divisões de turma que compartilham no mesmo horário o professor e o local.
+UC_GRD_001_04_02.Manter_Grade_Compartilhada;Este caso de uso tem como objetivo cadastrar um compartilhamento de grade.

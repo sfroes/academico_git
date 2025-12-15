@@ -1,0 +1,28 @@
+﻿@model SolicitacaoMatriculaSeletorViewModel
+
+@if (ViewBag.HabilitarSelecao != null && ((bool)ViewBag.HabilitarSelecao))
+{
+    using (Smc.ModalWindow("modalSelecionarSolicitacaoInicial")
+        .Title(Smc.GetUIResource("TituloModal"))
+        .Form("formSelecionarSolicitacao", "SelecionarSolicitacao", "Solicitacao", config: a => a.Ajax())
+        .Button("selecionar", config: bnt => bnt.Type(SMCButtonType.Submit).CssClass("smc-btn-confirmar-icotext-destaque"))
+        .CssClass("smc-sga-modal-selecionar-ingressante")
+        .AutoShow()
+        .AllowEscKeyToClose(false)
+        .Size(SMCModalWindowSize.Medium)
+        .HideCloseButton()
+        .Begin())
+    {
+        @(Smc.List("SeqSolicitacaoServico", Model.Solicitacoes).GroupByProperty(x => x.NomeInstituicaoEnsino, @<text><h3>@item.NomeInstituicaoEnsino</h3></text>)
+            .HtmlTemplate(@<text>
+                @Html.Partial("_ModalSelecionarSolicitacaoItem", item)
+             </text>)
+            .AllowSelect(x => x.SeqSolicitacaoServico, true, SMCListSelectPosition.Before)
+
+            )
+    }
+}
+else
+{
+    @Html.Action("MarcaSolicitacao", "Solicitacao", new { automatico = ViewBag.SelecaoAutomatica })
+}

@@ -1,0 +1,8 @@
+﻿@model CabecalhoProcessoSeletivoViewModel
+
+@using (Smc.Header("cabecalhoProcessoSeletivo", SMCHeaderType.Primary)
+        .Item(m => m.SeqCampanha, sizeXS: SMCSize.Grid6_24, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24)
+        .Item(m => m.Campanha, sizeXS: SMCSize.Grid18_24, sizeSM: SMCSize.Grid18_24, sizeMD: SMCSize.Grid15_24, sizeLG: SMCSize.Grid15_24)
+        .Item(m => m.CiclosLetivos, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeMD: SMCSize.Grid15_24, sizeLG: SMCSize.Grid5_24)
+        .Begin())
+{ }

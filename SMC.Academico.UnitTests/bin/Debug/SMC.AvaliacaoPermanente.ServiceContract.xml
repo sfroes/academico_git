@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.AvaliacaoPermanente.ServiceContract</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Data.AvaliacaoInstitucionalData">
+            <summary>
+            Avaliacao Instucional Data
+            </summary>
+        </member>
+        <member name="P:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Data.AvaliacaoInstitucionalData.CodigoAvaliacao">
+            <summary>
+            Codigo da Avaliacao
+            </summary>
+        </member>
+        <member name="P:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Data.AvaliacaoInstitucionalData.Nome">
+            <summary>
+            Nome Avaliacao
+            </summary>
+        </member>
+        <member name="P:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Data.AvaliacaoInstitucionalData.DataInicio">
+            <summary>
+            Data de inicio da avaliação
+            </summary>
+        </member>
+        <member name="P:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Data.AvaliacaoInstitucionalData.DataFim">
+            <summary>
+            Data fim da avaliação
+            </summary>
+        </member>
+        <member name="T:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Data.TipoInstrumentoData">
+            <summary>
+            Tipo Intrumento Data
+            </summary>
+        </member>
+        <member name="P:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Data.TipoInstrumentoData.SeqTipoInstrumento">
+            <summary>
+            Sequencial do tipo de instrumento
+            </summary>
+        </member>
+        <member name="P:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Data.TipoInstrumentoData.Descricao">
+            <summary>
+            Descricao do tipo de instrumento
+            </summary>
+        </member>
+        <member name="T:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IAmostraService">
+            <summary>
+            Serviço de Amostra
+            </summary>
+        </member>
+        <member name="M:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IAmostraService.VerificarSePessoaEhAmostra(SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Data.VerificarAmostraFiltroData)">
+            <summary>
+            Verifica se uma pessoa é uma amostra válida para resposta de questionários
+            </summary>
+            <param name="model">Dados para a consulta de amostra</param>
+            <returns>Retorna TRUE caso a pessoa seja amostra válida. Ou FALSE, caso contrário.</returns>
+        </member>
+        <member name="M:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IAmostraService.GerarAmostra(SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Data.GerarAmostraData)">
+            <summary>
+            Gera uma amostra no banco de dados do PPA
+            </summary>
+            <param name="model">Dados para criação da amostra</param>
+            <returns>Retorna codigo da amostra gerada.</returns>
+        </member>
+        <member name="M:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IAmostraService.VerificarPessoaComResposta(SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Data.VerificarRespostaData)">
+            <summary>
+            Verifica se a pessoa já respondeu o censo vacinal do COVID
+            </summary>
+            <param name="model">Código da pessoa e do formulário</param>
+            <returns>True caso a pessoa já tenha respondido o questionário</returns>
+        </member>
+        <member name="M:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IAmostraService.BuscarOrigensAmostras(System.Collections.Generic.List{System.Int32},System.Nullable{System.Boolean})">
+            <summary>
+            Busca o codigo e descrição de origem
+            </summary>
+            <param name="amostraAtiva">Lista de códigos para pesquisa de origem</param>
+            <param name="codigosOrigemPpa">Lista de códigos para pesquisa de origem</param>
+            <returns>Lista de origens</returns>
+        </member>
+        <member name="M:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IAmostraService.BuscarDescricaoAvaliacoes(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Busca o codigo e descrição de avaliações
+            </summary>
+            <param name="codigosAvaliacoes">Lista de códigos para pesquisa de avaliações</param>
+            <returns>Lista de avaliações</returns>
+        </member>
+        <member name="M:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IAmostraService.BuscarTiposInstrumentos(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Busca o codigo e descrição de tipos de instrumento
+            </summary>
+            <param name="codigosInstrumentos">Lista de códigos para pesquisa de tipos de instrumentos</param>
+            <returns>Lista de codigos de tipos de instrumentos</returns>
+        </member>
+        <member name="M:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IAmostraService.BuscarDescricoesAvaliacoesAtivas">
+            <summary>
+            Busca o codigo e descrição das Avaliacoes
+            </summary>
+            <returns>Lista de codigos e descrições das Avaliacoes</returns>
+        </member>
+        <member name="M:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IAmostraService.BuscarDataAvaliacaoSelecionada(System.Int32)">
+            <summary>
+            Busca data da avaliação selecionada
+            </summary>
+            <returns>Lista de codigos e descrições das Origens</returns>
+        </member>
+        <member name="M:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IAmostraService.BuscarEspecieAvaliador(System.Nullable{System.Int32})">
+            <summary>
+            Busca data da avaliação selecionada
+            </summary>
+            <returns>Lista de codigos e descrições das Origens</returns>
+        </member>
+        <member name="M:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IAmostraService.VerificarAplicacaoQuestionarioValida(System.Int32)">
+            <summary>
+            Verifica se existe uma aplicação questionário com o código informado
+            </summary>
+            <param name="codAplicacaoQuestionario">Código da aplicação questionário a ser verificada</param>
+            <returns>TRUE em caso de existir a aplicação questionário e FALSE caso contrário</returns>
+        </member>
+        <member name="M:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IAmostraService.BuscarInstrumentos(System.Nullable{System.Int64})">
+            <summary>
+            Busca o codigo e descrição de instrumento
+            </summary>
+            <param name="codigoAvaliacao">Lista de códigos para pesquisa de instrumentos</param>
+            <returns>Lista de instrumentos</returns>
+        </member>
+        <member name="M:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IAmostraService.CargaAvaliacaoProfessorStrictoSensu(System.Int32)">
+            <summary>
+            Executa a procedure st_carga_avaliacao_professor_stricto_sensu
+            </summary>
+            <param name="codigoAvaliacao">Codigo de avaliação a ser carregada</param>
+        </member>
+        <member name="M:SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Interfaces.IQuestionarioRapidoService.VerificarResposta(SMC.AvaliacaoPermanente.ServiceContract.Areas.QST.Data.VerificarRespostaData)">
+            <summary>
+            Verifica se uma pessoa já respondeu um questionário em uma data específica.
+            </summary>
+            <returns>Respondeu ou não</returns>
+        </member>
+    </members>
+</doc>

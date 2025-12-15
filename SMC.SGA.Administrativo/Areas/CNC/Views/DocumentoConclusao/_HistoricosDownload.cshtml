@@ -1,0 +1,12 @@
+﻿@using SMC.SGA.Administrativo.Areas.CNC.Models;
+
+@model SMCPagerModel<DocumentoConclusaoHistoricoDownloadListarViewModel>
+
+@(Smc.Grid("gridHistoricoDownload", Model)
+                       .AutoGenerateColumns()
+                       .HideRowNumber()
+                       .AutoHideNavigator()
+                       //.HideNavigator()
+                       .AllowSort()
+                       .HideGridTitle()
+)

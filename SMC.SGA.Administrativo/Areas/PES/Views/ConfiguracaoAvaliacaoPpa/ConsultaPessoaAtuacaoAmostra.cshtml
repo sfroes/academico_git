@@ -1,0 +1,14 @@
+﻿@model SMC.SGA.Administrativo.Areas.PES.Models.ConsultaTurmaAmostraViewModel
+
+@Html.Action("CabecalhoAmostra", new { seqConfiguracaoAvaliacaoPpa = Model.SeqConfiguracaoAvaliacaoPpa, seqConfiguracaoAvaliacaoPpaTurma = Model.SeqConfiguracaoAvaliacaoPpaTurma })
+
+@using (Smc.Div("divListaAmostras").Attribute("data-id", "divListaAmostras").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+
+    @Smc.ActionList("ListarAmostras", Model.Filtro)
+
+}
+
+@(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+.DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+.Action("Index", "ConfiguracaoAvaliacaoPpa", new { @area = "PES" })))

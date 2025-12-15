@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Log4Net</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.Log4Net.SMCMsmqAppender">
+            <summary>
+            Appender para Message Queue do Windows..
+            Pode-se configurar o nome pelo config (AppSettings["MessageQueue_Name"])
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Log4Net.SMCLog4NetLogger">
+            <summary>
+            Classe de log utilizando Log4Net.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Log4Net.SMCLog4NetLogger._log">
+            <summary>
+            Classe de acesso ao log.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Log4Net.SMCLog4NetLogger.Information(System.String)">
+            <summary>
+            Escreve uma mensagem de informação.
+            </summary>
+            <param name="message">Mensagem para log.</param>
+        </member>
+        <member name="M:SMC.Framework.Log4Net.SMCLog4NetLogger.Information(System.String,System.Object[])">
+            <summary>
+            Escreve uma mensagem de informação atendendo ao formato informado.
+            </summary>
+            <param name="format">Formato da mensagem.</param>
+            <param name="args">Parâmetros para a exibição da mensagem.</param>
+        </member>
+        <member name="M:SMC.Framework.Log4Net.SMCLog4NetLogger.Information(System.String,System.Exception)">
+            <summary>
+            Escreve uma mensagem de informação e o erro associado.
+            </summary>
+            <param name="message">Mensagem de erro.</param>
+            <param name="ex">Erro associado.</param>
+        </member>
+        <member name="M:SMC.Framework.Log4Net.SMCLog4NetLogger.Warning(System.String)">
+            <summary>
+            Escreve uma mensagem de alerta.
+            </summary>
+            <param name="message">Mensagem para log.</param>
+        </member>
+        <member name="M:SMC.Framework.Log4Net.SMCLog4NetLogger.Warning(System.String,System.Exception)">
+            <summary>
+            Escreve uma mensagem de alerta atendendo ao formato informado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Log4Net.SMCLog4NetLogger.Warning(System.String,System.Object[])">
+            <summary>
+            Escreve uma mensagem de alerta e o erro associado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Log4Net.SMCLog4NetLogger.Error(System.String)">
+            <summary>
+            Escreve uma mensagem de erro.
+            </summary>
+            <param name="message">Mensagem para log.</param>
+        </member>
+        <member name="M:SMC.Framework.Log4Net.SMCLog4NetLogger.Error(System.String,System.Object[])">
+            <summary>
+            Escreve uma mensagem de erro atendendo ao formato informado.
+            </summary>
+            <param name="format">Formato da mensagem.</param>
+            <param name="args">Parâmetros para a exibição da mensagem.</param>
+        </member>
+        <member name="M:SMC.Framework.Log4Net.SMCLog4NetLogger.Error(System.String,System.Exception)">
+            <summary>
+            Escreve uma mensagem de erro e a exceção associado.
+            </summary>
+            <param name="message">Mensagem de erro.</param>
+            <param name="ex">Erro associado.</param>
+        </member>
+    </members>
+</doc>

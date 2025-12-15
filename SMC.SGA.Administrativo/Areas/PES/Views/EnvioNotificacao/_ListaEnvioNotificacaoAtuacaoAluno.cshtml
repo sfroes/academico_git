@@ -1,0 +1,14 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Models
+
+@model SMCPagerModel<EnvioNotificacaoPessoasListarViewModel>
+
+@(Smc.Grid("gridEnvioNotificacoesAtuacaoAluno", Model)
+        .AllowSelect(x => x.Seq)
+        .AutoGenerateColumns(false)
+        .FieldColumn(x => x.NumeroRegistroAcademico).CssClass("smc-size-xs-2 smc-size-sm-2 smc-size-md-2 smc-size-lg-2")
+        .FieldColumn(x => x.Nome).CssClass("smc-size-xs-6 smc-size-sm-6 smc-size-md-6 smc-size-lg-6")
+        .FieldColumn(x => x.SituacaoMatricula).CssClass("smc-size-xs-4 smc-size-sm-4 smc-size-md-4 smc-size-lg-4")
+        .FieldColumn(x => x.Vinculo).CssClass("smc-size-xs-4 smc-size-sm-4 smc-size-md-4 smc-size-lg-4")
+        .FieldColumn(x => x.DadosVinculo).CssClass("smc-size-xs-6 smc-size-sm-6 smc-size-md-6 smc-size-lg-6")
+        .FieldColumn(x => x.Turma).CssClass("smc-size-xs-2 smc-size-sm-2 smc-size-md-2 smc-size-lg-2")
+        .HideRowNumber())

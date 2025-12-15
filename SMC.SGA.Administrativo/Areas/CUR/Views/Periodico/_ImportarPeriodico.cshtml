@@ -1,0 +1,13 @@
+﻿@model PeriodicoImportacaoViewModel
+
+@using (Smc.Fieldset("fieldsetImportarViewPadrao").CssClass("smc-fieldset-filter").Begin())
+{
+    @Smc.EditorFor(prop => prop.Seq)
+    @Smc.EditorFor(prop => prop.SeqClassificacaoPeriodico)
+    @Smc.EditorFor(prop => prop.MensagemInformativa)
+    @Smc.EditorFor(prop => prop.ArquivoAnexado)
+    @Smc.EditorFor(prop => prop.Descricao)
+    @Smc.EditorFor(prop => prop.AnoInicio)
+    @Smc.EditorFor(prop => prop.AnoFim)
+
+}

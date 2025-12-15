@@ -1,0 +1,62 @@
+﻿@model InstituicaoNivelTipoVinculoAlunoDynamicModel
+
+@using (Smc.Fieldset("DadosPessoais").Begin())
+{
+    @Smc.DisplayFor(p => p.NivelEnsinoConfirmacao).Size(SMCSize.Grid10_24)
+    @Smc.DisplayFor(p => p.DescricaoVinculoConfirmacao).Size(SMCSize.Grid14_24)
+}
+
+@using (Smc.Fieldset("ParametrosGerais").Begin())
+{ 
+    @Smc.DisplayFor(p => p.ExigeParceriaConfirmacao)
+    @Smc.DisplayFor(p => p.ExigeCursoConfirmacao)
+    @Smc.DisplayFor(p => p.ConcedeFormacaoConfirmacao)
+    @Smc.DisplayFor(p => p.ExigeOfertaMatrizCurricularConfirmacao)
+    if (!string.IsNullOrEmpty(Model.QuantidadeOfertasConfirmacao))
+    {
+        @Smc.DisplayFor(p => p.QuantidadeOfertasConfirmacao)
+    }
+    if (!string.IsNullOrEmpty(Model.TipoDeCobrancaConfirmacao))
+    {
+        @Smc.DisplayFor(p => p.TipoDeCobrancaConfirmacao)
+    } 
+    @Smc.DisplayFor(p => p.PossuiValorFixoMatriculaConfirmacao)
+}
+
+@using (Smc.Fieldset("FormaIngresso").Begin())
+{
+    @(Smc.Grid("gridFormas", new SMCPagerModel<InstituicaoNivelFormaIngressoConfirmacaoViewModel>(Model.FormasIngressoConfirmacao))
+        .FieldColumn(w => w.FormaIngressoConfirmacao)
+        .FieldColumn(w => w.TipoFormaIngressoConfirmacao)
+        .HideGridTitle()
+        .HideNavigator()
+        .HideRowNumber()
+        .AllowSort())
+}
+
+@if (Model.TiposTermoIntercambio.SMCCount() > 0)
+{
+    using (Smc.Fieldset("TipoTermoIntercambio").Begin())
+    {
+        @(Smc.Grid("gridTipos", new SMCPagerModel<InstituicaoNivelTipoTermoIntercambioConfirmacaoViewModel>(Model.TiposTermoIntercambioConfirmacao))
+            .FieldColumn(w => w.TipoTermoIntercambioConfirmacao)
+            .FieldColumn(w => w.ConcedeFormacaoTipoTermoConfirmacao)
+            .FieldColumn(w => w.ExigePeriodoIntercambioTermoConfirmacao)
+            .FieldColumn(w => w.PermiteIngressoConfirmacao)
+            .FieldColumn(w => w.PermiteSaidaIntercambioConfirmacao)
+            .HideGridTitle()
+            .HideNavigator()
+            .HideRowNumber()
+            .AllowSort()) 
+    }
+}
+
+@using (Smc.Fieldset("SituacaoMatricula").Begin())
+{
+    @(Smc.Grid("gridSituacoes", new SMCPagerModel<InstituicaoNivelSituacaoMatriculaConfirmacaoViewModel>(Model.SituacoesMatriculaConfirmacao))
+        .FieldColumn(w => w.SituacaoMatriculaConfirmacao) 
+        .HideGridTitle()
+        .HideNavigator()
+        .HideRowNumber()
+        .AllowSort()) 
+}

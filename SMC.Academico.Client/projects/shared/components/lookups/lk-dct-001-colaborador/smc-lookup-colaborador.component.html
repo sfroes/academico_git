@@ -1,0 +1,80 @@
+<ng-template #template [formGroup]="filterForm">
+  <fieldset class="smc-size-md-24 smc-size-lg-24">
+    <legend>Colaborador</legend>
+    <po-number formControlName="seq" class="smc-size-md-2" p-maxlength="11" p-label="ID"></po-number>
+    <po-input formControlName="nome" class="smc-size-md-11" p-label="Nome"></po-input>
+    <po-input formControlName="nomeSocial" class="smc-size-md-11" p-label="Nome Social"></po-input>
+  </fieldset>
+  <fieldset class="smc-size-md-24 smc-size-lg-24">
+    <legend>Vínculo</legend>
+    <smc-select
+      class="smc-size-md-13"
+      formControlName="seqEntidadeVinculo"
+      s-label="Entidade"
+      [s-options]="dataSourceEntidadeResposavel"
+    >
+    </smc-select>
+    <smc-select
+      class="smc-size-md-5"
+      formControlName="seqTipoVinculoColaborador"
+      s-label="Tipo de vínculo"
+      [s-options]="dataSourceTipoVinculo"
+    >
+    </smc-select>
+    <po-datepicker
+      formControlName="dataInicio"
+      class="smc-size-md-3"
+      p-label="Data início"
+      p-min-date="{{ filterForm.get('dataFim').value }}"
+      p-error-pattern="Data é menor que data mínima permitida"
+    ></po-datepicker>
+    <po-datepicker
+      formControlName="dataFim"
+      class="smc-size-md-3"
+      p-label="Data fim"
+      p-min-date="{{ filterForm.get('dataInicio').value }}"
+      p-error-pattern="Data é menor que data mínima permitida"
+    ></po-datepicker>
+  </fieldset>
+  <fieldset class="smc-size-md-12">
+    <legend>Oferta de curso por localidade/Atividade</legend>
+    <smc-lookup-curso-oferta-localidade
+      formControlName="seqCursoOfertaLocalidade"
+      class="smc-size-md-16"
+      s-label="Oferta de curso por localidade"
+      [s-seqs-entidade-responsavel]="seqEntidadeVinculo"
+    >
+    </smc-lookup-curso-oferta-localidade>
+    <smc-select
+      class="smc-size-md-8"
+      formControlName="tipoAtividade"
+      s-label="Tipo de atividade"
+      [s-options]="dataSourceTipoAtividade"
+      s-auto-select-single-item="true"
+    >
+    </smc-select>
+  </fieldset>
+  <fieldset class="smc-size-md-12">
+    <legend>Instituição</legend>
+    <smc-lookup-instituicao-externa
+      formControlName="seqInstituicaoExterna"
+      class="smc-size-md-16"
+      s-retornar-instituicao-ensinoLogada="true"
+    ></smc-lookup-instituicao-externa>
+    <smc-select
+      class="smc-size-md-8"
+      formControlName="situacaoColaboradorNaInstituicao"
+      s-label="Situação na instituição"
+      [s-options]="dataSourceSituacaoColaboradorInstituicao"
+      [s-disabled]="situacaoColaboradorReadonly"
+    >
+    </smc-select>
+  </fieldset>
+</ng-template>
+<smc-lookup
+  [s-advanced-search-template]="template"
+  [s-advanced-list-columns]="colunasBuscaAvancada"
+  [s-selector]="seletor"
+  [s-label]="label"
+>
+</smc-lookup>

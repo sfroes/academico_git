@@ -1,0 +1,102 @@
+﻿@model GrupoEscalonamentoListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(p => p.Descricao).Size(SMCSize.Grid12_24)
+            @Smc.DisplayFor(p => p.Ativo).Size(SMCSize.Grid3_24)
+            @Smc.DisplayFor(p => p.QuantidadeSolicitacoes).Size(SMCSize.Grid6_24)
+            @*@Smc.DisplayFor(p => p.NumeroDivisaoParcelas).HideLabel(Model.NumeroDivisaoParcelas == null).Size(SMCSize.Grid6_24)*@
+        }
+
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            @(Smc.Grid("gridGrupoEscalonamento", new SMCPagerModel<GrupoEscalonamentoListarItemViewModel>(Model.Itens))
+                       .AutoGenerateColumns()
+                       .HideGridTitle()
+                       .HideRowNumber()
+                       .HidePager()
+                       .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "", true,
+                               x => Smc.Button(SMCButtonBehavior.Alterar)
+                                   .SecurityToken(UC_SRC_002_06_02.MANTER_GRUPO_ESCALONAMENTO_PROCESSO)
+                                   .Text(Smc.GetUIResource("Botao_ConfigurarParcelas"))
+                                   .Tooltip(Smc.GetUIResource("Botao_ConfigurarParcelas_Tooltip"))
+                                   .CssClass("smc-btn-custom-destaque-grid")
+                                   .Enabled((x as GrupoEscalonamentoListarItemViewModel).HabilitaBtnComPermissaoManutencaoProcesso)
+                                   .Action("Editar", "GrupoEscalonamentoItem", new { seq = new SMCEncryptedLong((x as GrupoEscalonamentoListarItemViewModel).Seq), seqEscalonamento = new SMCEncryptedLong((x as GrupoEscalonamentoListarItemViewModel).SeqEscalonamento), ProcessoExpirado = Model.ProcessoExpirado, NumeroDivisaoParcelas = Model.NumeroDivisaoParcelas, EscalonamentoExpirado = (x as GrupoEscalonamentoListarItemViewModel).DataEncerramento.HasValue, seqProcesso = new SMCEncryptedLong((x as GrupoEscalonamentoListarItemViewModel).SeqProcesso), tokenServico = (x as GrupoEscalonamentoListarItemViewModel).TokenServico }))
+            )
+        }
+    }
+
+    SMCButtonFluentConfiguration buttonExcluir = Smc.Button(SMCButtonBehavior.Excluir)
+        .DisplayMode(SMCButtonDisplayMode.Icon)
+        .Tooltip(Smc.GetUIResource("botao_excluir_grupo_escalonamento_tooltip"))
+        .Confirm(Smc.GetUIResource("Listar_Excluir_Titulo"), string.Format(Smc.GetUIResource("Listar_Excluir_Confirmacao"), Model.Descricao), SMCWindowButtons.Yes, true)
+        .SecurityToken(UC_SRC_002_05_02.MANTER_ESCALONAMENTO_ETAPA)
+        .Enabled(Model.HabilitaBtnComPermissaoManutencaoProcesso && Model.HabilitarBotaoExcluir)
+        .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoExcluir))
+        .Action("Excluir", "GrupoEscalonamento", new { Seq = new SMCEncryptedLong(Model.Seq), SeqProcesso = new SMCEncryptedLong(Model.SeqProcesso) });
+
+    SMCButtonFluentConfiguration buttonValidarGrupoEscalonamento = Smc.Button(SMCButtonBehavior.Visualizar)
+          .Text(Smc.GetUIResource("Botao_Validar_Grupo_Escalonamento"))
+          .Ajax(isPost: false)
+          .Tooltip(Smc.GetUIResource("Botao_Validar_Grupo_Escalonamento"))
+          .Type(SMCButtonType.Link)
+          .Action("ValidarGrupoEscalonamento", "GrupoEscalonamento", new { SeqProcesso = new SMCEncryptedLong(Model.SeqProcesso), SeqGrupoEscalonamento = new SMCEncryptedLong(Model.Seq) })
+          .Hide(Model.EsconderBotaoValidarGrupo)
+          .Enabled(Model.HabilitaBtnComPermissaoManutencaoProcesso && Model.HabilitarBotaoValidarGrupo)
+          .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoValidarGrupo))
+          .SecurityToken(UC_SRC_002_06_02.MANTER_GRUPO_ESCALONAMENTO_PROCESSO)
+          .Confirm(Smc.GetUIResource("title_modal_validar_grupo_escalonamento"), string.Format(Smc.GetUIResource("mensagem_validar_grupo_escalonamento"), Model.Descricao), SMCWindowButtons.Yes, true);
+
+    SMCButtonFluentConfiguration buttonAssociarSolicitacao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+         .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+         .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("SalvarAssociarSolicitacaoGrupoEscalonamento", "GrupoEscalonamento", new { @backUrl = Url.Action("Index", "GrupoEscalonamento") }))
+         .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Associar_Solicitacao_Grupo_Escalonamento"))
+         .Ajax(isPost: false)
+         .Text(Smc.GetUIResource("Botao_Associar_Solicitacao_Grupo_Escalonamento"))
+         .Tooltip(Smc.GetUIResource("Botao_Associar_Solicitacao_Grupo_Escalonamento"))
+         .Type(SMCButtonType.Link)
+         .SecurityToken(UC_SRC_002_06_05.ASSOCIAR_SOLICITACAO_SERVICO)
+         .Enabled(Model.HabilitaBtnComPermissaoManutencaoProcesso && Model.HabilitarBotaoAssociacao)
+         .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoAssociacao))
+         .Action("IncluirAssociarSolicitacaoGrupoEscalonamento", "GrupoEscalonamento", new { @SeqGrupoEscalonamento = new SMCEncryptedLong(Model.Seq), SeqProcesso = new SMCEncryptedLong(Model.SeqProcesso) });
+
+    SMCButtonFluentConfiguration buttonNoticacaoPeriodo = Smc.Button(SMCButtonBehavior.Visualizar)
+        .Ajax(isPost: false)
+        .Text(Smc.GetUIResource("Botao_Notificacao_Periodo_Grupo_Escalonamento"))
+        .Tooltip(Smc.GetUIResource("Botao_Notificacao_Periodo_Grupo_Escalonamento"))
+        .Type(SMCButtonType.Link)
+        .SecurityToken(UC_SRC_002_06_01.PESQUISAR_GRUPO_ESCALONAMENTO_PROCESSO)
+        .Enabled(Model.HabilitaBtnComPermissaoManutencaoProcesso && Model.HabilitarBotaoNotificacao)
+        .Confirm(Smc.GetUIResource("Title_Modal_EnviarNotificacao"), Smc.GetUIResource("Mensagem_Enviar_Notificacao_Grupo_Escalonamento_Assert"), SMCWindowButtons.Yes, true)
+        .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoNotificacao))
+        .Action("EnviarNotificacaoPrazoVigencia", "GrupoEscalonamento", new { @SeqGrupoEscalonamento = new SMCEncryptedLong(Model.Seq), SeqProcesso = new SMCEncryptedLong(Model.SeqProcesso) });
+
+    SMCButtonFluentConfiguration buttonCopiarGrupoEscalonamento = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+        .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("CopiarGrupoEscalonamento", "GrupoEscalonamento", new { @backUrl = Url.Action("Index", "GrupoEscalonamento") }))
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Copiar_Grupo_Escalonamento"))
+        .Ajax(isPost: false)
+        .Text(Smc.GetUIResource("Botao_Copiar_Grupo_Escalonamento"))
+        .Tooltip(Smc.GetUIResource("Botao_Copiar_Grupo_Escalonamento"))
+        .Type(SMCButtonType.Link)
+        .SecurityToken(UC_SRC_002_06_04.COPIAR_GRUPO_ESCALONAMENTO)
+        .Enabled(Model.HabilitaBtnComPermissaoManutencaoProcesso && Model.HabilitarBotaoCopiaProcesso)
+        .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoCopiaProcesso))
+        .Action("CopiarGrupoEscalonamento", "GrupoEscalonamento", new { @SeqGrupoEscalonamento = new SMCEncryptedLong(Model.Seq) });
+
+    @(Smc.Templates.DetailedListButtons()
+        .AllowRemove(false)
+        .EnableEdit(Model.HabilitaBtnComPermissaoManutencaoProcesso)
+        .AddButton(buttonExcluir)
+        .AddButton(buttonValidarGrupoEscalonamento)
+        .AddButton(buttonAssociarSolicitacao)
+        .AddButton(buttonNoticacaoPeriodo)
+        .AddButton(buttonCopiarGrupoEscalonamento)
+        .NumberOfButtonsToShow(0)
+        .Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24))
+}

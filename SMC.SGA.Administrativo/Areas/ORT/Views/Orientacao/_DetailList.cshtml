@@ -1,0 +1,89 @@
+﻿@using SMC.SGA.Administrativo.Areas.ORT.Models
+@using SMC.Academico.ServiceContract.Areas.ORT.Data
+@model OrientacaoListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+
+            using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+            {
+              
+                @Smc.DisplayFor(d => d.TipoOrientacao.Descricao).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid12_24)
+            }
+        }
+
+
+
+        // Div da esquerda com lista detalhada
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            @*<label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_BeneficioHistoricoValorAuxilio")</label>*@
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("DadosAlunoCompleto")</label>
+
+            if (Model.OrientacoesPessoaAtuacao.Count() > 0)
+            {
+
+                @(Smc.Grid("OrientacaoPessoaAtuacao" + Model.Seq, new SMCPagerModel<OrientacaoPessoaAtuacaoViewModel>(Model.OrientacoesPessoaAtuacao))
+                            .FieldColumn(f => f.RA, cssClass: "smc-size-md-2")
+                            .FieldColumn(f => f.Nome, cssClass: "smc-size-md-7")
+                            .FieldColumn(f => f.DescricaoOfertaCursoLocalidade, cssClass: "smc-size-md-7")
+                            .FieldColumn(f => f.Turno, cssClass: "smc-size-md-2")
+                            .FieldColumn(f => f.DadosCicloCompleto, cssClass: "smc-size-md-6")
+                        .HideGridTitle()
+                        .HideNavigator()
+                        .HideRowNumber()
+                        .Size(SMCSize.Grid24_24))
+            }
+            else
+            {
+                using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+                }
+            }
+        }
+
+
+        // Div da direita com lsita detalhada
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            @*<label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_BeneficioHistoricoValorAuxilio")</label>*@
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("DadosColaboradorCompleto")</label>
+
+            if (Model.OrientacoesPessoaAtuacao.Count() > 0)
+            {
+
+                @(Smc.Grid("OrientacaoColaborador" + Model.Seq, new SMCPagerModel<OrientacaoColaboradorViewModel>(Model.OrientacoesColaborador))
+                        .FieldColumn(f => f.Nome, cssClass: "smc-size-md-10")
+                        .FieldColumn(f => f.TipoParticipacaoOrientacao, cssClass: "smc-size-md-6")
+                        .FieldColumn(f => f.DataFormatada, cssClass: "smc-size-md-8")
+                        .HideGridTitle()
+                        .HideNavigator()
+                        .HideRowNumber()
+                            .Size(SMCSize.Grid24_24))
+            }
+            else
+            {
+                using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+                }
+            }
+        }
+    }
+
+    SMCButtonFluentConfiguration buttonExcluir = Smc.Button(SMCButtonBehavior.Excluir)
+     .DisplayMode(SMCButtonDisplayMode.Icon)
+     .Tooltip(Smc.GetUIResource("Botao_Excluir_Orientacao_Tooltip"))
+     .Confirm(Smc.GetUIResource("Listar_Excluir_Titulo"), string.Format(Smc.GetUIResource("Listar_Excluir_Confirmacao"), Model.NomesAlunosExclucao), SMCWindowButtons.Yes, true)
+     .SecurityToken(UC_ORT_001_02_02.MANTER_ORIENTACAO)
+     .Enabled(Model.HabilitarBotaoExcluir)
+     .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoExcluir))
+     .Action("Excluir", "Orientacao", new { Seq = new SMCEncryptedLong(Model.Seq) });
+
+    @Smc.Templates.DetailedListButtons().AllowRemove(false).AddButton(buttonExcluir).Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)}

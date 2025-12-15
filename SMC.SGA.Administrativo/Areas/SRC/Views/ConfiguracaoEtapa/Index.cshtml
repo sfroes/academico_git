@@ -1,0 +1,14 @@
+﻿@model ConfiguracaoEtapaFiltroViewModel
+
+@Html.Action("CabecalhoIndex", new { seqProcesso = (SMCEncryptedLong)Model.SeqProcesso })
+
+@using (Smc.Div("divGridConfiguracoesEtapa").Attribute("data-id", "divGridConfiguracoesEtapa").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Smc.ActionList("ListarConfiguracoesEtapa", Model, false)
+}
+
+@(Smc.ButtonSet()
+       .AddButton(Smc.Button("Voltar", "Index", "Processo")
+       .Type(SMCButtonType.Link)
+       .CssClass("smc-btn-voltar-icotext"))
+)

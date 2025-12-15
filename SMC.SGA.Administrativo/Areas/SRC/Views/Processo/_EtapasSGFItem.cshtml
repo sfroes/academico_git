@@ -1,0 +1,13 @@
+﻿@using SMC.SGA.Administrativo.Areas.SRC.Models
+
+@model ProcessoEtapaSGFViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(prop => prop.Seq)    
+    @Smc.EditorFor(prop => prop.Descricao)
+    @Smc.EditorFor(prop => prop.Obrigatorio)
+    @Smc.EditorFor(prop => prop.DescricaoExibir).HideLabel()
+    @Smc.EditorFor(prop => prop.ObrigatorioExibir).HideLabel()
+    @Smc.EditorFor(prop => prop.AssociarEtapa).HideLabel()
+}

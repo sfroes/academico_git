@@ -1,0 +1,717 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Specification</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.Specification.ISMCCustomFilter`1">
+            <summary>
+            Contrato para as classes de especificação
+            conforme o pattern Specification.
+            </summary>
+            <typeparam name="TEntity">Tipo da classe da especificação.</typeparam>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCDynamicFilterSpecification`1">
+            <summary>
+            Specification para o filtro dinâmico.
+            </summary>
+            <typeparam name="TEntity">Tipo da Entidade</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDynamicFilterSpecification`1.#ctor">
+            <summary>
+            Construtor padrão
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDynamicFilterSpecification`1.#ctor(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Construtor recebendo a expression
+            </summary>
+            <param name="expression">Expression</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDynamicFilterSpecification`1.SatisfiedBy">
+            <summary>
+            Execução do specification
+            </summary>
+            <returns>Expression</returns>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCDynamicSpecification`1">
+            <summary>
+            Specification somente para o DYNAMIC.
+            </summary>
+            <typeparam name="TEntity">Tipo da classe da especificação.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCDynamicSpecification`1._specAnd">
+            <summary>
+            Expressão que será feita AND ou OR (caso tenha)
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCDynamicSpecification`1.Filters">
+            <summary>
+            Armazena os valores dos filtros do form (usando key, value). Exemplos: "Nome", "Hugo"
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCDynamicSpecification`1.Parameters">
+             <summary>
+             Armazena os valores de parâmetros (Session, Querystring).
+             Lembrando que tem que ser especificado por meio do SMCDynamicParameters
+            
+             </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDynamicSpecification`1.#ctor">
+            <summary>
+            Cria um novo objeto SMCTrueSpecification.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDynamicSpecification`1.SetFilters(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Aplica os valores e cria o specification
+            </summary>
+            <param name="filters"></param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDynamicSpecification`1.And(SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Caso seja necessário combinar specification.
+            É combinado o Includes, mas o OrderBy será do SMCDynamic (isto é, não é considerado o OrderBy do novo specification)
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDynamicSpecification`1.SatisfiedBy">
+            <summary>
+            Recupera a especificação para verificação de uma entidade.
+            </summary>
+            <returns>Especificação para verificação de uma entidade.</returns>
+        </member>
+        <member name="T:SMC.Framework.Specification.ISMCDataSpecification">
+            <summary>
+            Contém os dados necessários para a paginação
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.ISMCDataSpecification.OrderByClauses">
+            <summary>
+            Recupera as cláusulas de ordenação.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.ISMCDataSpecification.MaxResults">
+            <summary>
+            Número máximo de resultados para a pesquisa.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.ISMCDataSpecification.PageNumber">
+            <summary>
+            Número da página.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCDataSpecification">
+            <summary>
+            Contém os dados necessários para a paginação
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCDataSpecification._pageNumber">
+            <summary>
+            Define a página selecionada (página atual)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCDataSpecification._maxResults">
+            <summary>
+            Define quantidade de registros que deverá ser exibido (QuantidadePorPagina).
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCDataSpecification._listOrderClauses">
+            <summary>
+            Lista de cláusulas de ordenação.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCDataSpecification.PageNumber">
+            <summary>
+            Define qual página selecionada (Página Atual)
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCDataSpecification.MaxResults">
+            <summary>
+            Define quantidade de registros que deverá ser exibido (QuantidadePorPagina).
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCDataSpecification.OrderByClauses">
+            <summary>
+            Define a lista de ordenação de campos
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDataSpecification.Merge(SMC.Framework.Specification.SMCDataSpecification)">
+            <summary>
+            Faz merge do OrderBy e PageSettings
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDataSpecification.SetOrderBy(System.String)">
+            <summary>
+            Propriedade que será ordenado
+            </summary>
+            <param name="propertyName">campo que será realizado a ordenação</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDataSpecification.SetOrderBy(System.Collections.Generic.IEnumerable{SMC.Framework.SMCSortInfo})">
+            <summary>
+            Propriedade que será ordenado
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDataSpecification.SetOrderByDescending(System.String)">
+            <summary>
+            Propriedade que será ordenado
+            </summary>
+            <param name="propertyName">campo que será realizado a ordenação</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDataSpecification.ClearOrderBy">
+            <summary>
+            Limpa as cláusulas de ordenação.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCDynamicSeqSpecification`1">
+            <summary>
+            Especificação para busca pelo Sequêncial.
+            Por default a OrderBy é pelo Seq.
+            </summary>
+            <typeparam name="TEntity">Tipo da classe da especificação.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCDynamicSeqSpecification`1._exp">
+            <summary>
+            Armazena a expressão para avaliação da propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCDynamicSeqSpecification`1.Seq">
+            <summary>
+            Sequêncial da classe (código ou identificador)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCDynamicSeqSpecification`1._trueExpression">
+            <summary>
+            Expressão verdadeira.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDynamicSeqSpecification`1.#ctor(System.Int64)">
+             <summary>
+            
+             </summary>
+             <param name="seq"></param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCDynamicSeqSpecification`1.SatisfiedBy">
+            <summary>
+            Recupera a especificação para verificação de uma entidade.
+            </summary>
+            <returns>Especificação para verificação de uma entidade.</returns>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCSeqSpecification`1">
+            <summary>
+            Especificação para busca pelo Sequêncial. 
+            Por default a OrderBy é pelo Seq.
+            </summary>
+            <typeparam name="TEntity">Tipo da classe da especificação.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCSeqSpecification`1._exp">
+            <summary>
+            Armazena a expressão para avaliação da propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCSeqSpecification`1.Seq">
+            <summary>
+            Sequêncial da classe (código ou identificador)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCSeqSpecification`1._trueExpression">
+            <summary>
+            Expressão verdadeira.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSeqSpecification`1.#ctor(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="seq"></param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSeqSpecification`1.#ctor(System.Int64,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="seq"></param>
+            <param name="orderBy"></param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSeqSpecification`1.#ctor(System.Int64,System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            
+            </summary>
+            <param name="seq"></param>
+            <param name="orderBy"></param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSeqSpecification`1.SatisfiedBy">
+            <summary>
+            Recupera a especificação para verificação de uma entidade.
+            </summary>
+            <returns>Especificação para verificação de uma entidade.</returns>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCAndSpecification`1">
+            <summary>
+            Especificação para a operação de AND.
+            </summary>
+            <typeparam name="TEntity">Tipo da classe da especificação.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCAndSpecification`1._exp">
+            <summary>
+            Armazena a expressão para avaliação da propriedade.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCAndSpecification`1.#ctor(SMC.Framework.Specification.SMCSpecification{`0},SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Cria um novo objeto SMCAndSpecification para duas outras especificações.
+            </summary>
+            <param name="leftSpecification">Especificação da esquerda.</param>
+            <param name="rightSpecification">Especificação da direita.</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCAndSpecification`1.SatisfiedBy">
+            <summary>
+            Recupera a especificação para verificação de uma entidade.
+            </summary>
+            <returns>Especificação para verificação de uma entidade.</returns>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCCompositeSpecification`1">
+            <summary>
+            Classe base para as especificações compostas.
+            </summary>
+            <typeparam name="TEntity">Tipo da classe da especificação.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCCompositeSpecification`1.#ctor(SMC.Framework.Specification.SMCSpecification{`0},SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Cria um novo objeto SMCCompositeSpecification.
+            </summary>
+            <param name="leftSpecification">Especificação da esquerda.</param>
+            <param name="rightSpecification">Especificação da direita.</param>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCCompositeSpecification`1._leftSpecification">
+            <summary>
+            Armazena a especificação da esquerda.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCCompositeSpecification`1._rightSpecification">
+            <summary>
+            Armazena a especificação da direita.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCCompositeSpecification`1.LeftSpecification">
+            <summary>
+            Recupera a especificação da esquerda.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCCompositeSpecification`1.RightSpecification">
+            <summary>
+            Recupera a especificação da direita.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCContainsSpecification`2">
+            <summary>
+            Classe base para as especificações que verificam um valor em um conjunto de valores.
+            </summary>
+            <typeparam name="TEntity">Tipo da classe da especificação.</typeparam>
+            <typeparam name="TKey">Tipo do item da coleção.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCContainsSpecification`2._contains">
+            <summary>
+            Armazena o nome do método de suporte.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCContainsSpecification`2._typeKey">
+            <summary>
+            Armazena o tipo do item da coleção.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCContainsSpecification`2._typeEntity">
+            <summary>
+            Armazena o tipo da entidade.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCContainsSpecification`2._exp">
+            <summary>
+            Armazena a expressão para avaliação da propriedade.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCContainsSpecification`2._exp2">
+            <summary>
+            Armazena a expressão para avaliação. Faz um AND com a primeira expressão
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCContainsSpecification`2._values">
+            <summary>
+            Armazena os valores que serão verificados.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCContainsSpecification`2.Values">
+            <summary>
+            Recupera os valores que serão verificados.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCContainsSpecification`2.PropertyName">
+            <summary>
+            Recupera o nome da propriedade que possui a coleção.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCContainsSpecification`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0,`1}},`1[])">
+            <summary>
+            Cria um novo objeto SMCContainsSpecification.
+            </summary>
+            <param name="property">Expressão para a propriedade que contém a coleção.</param>
+            <param name="values">Valores que serão verificados.</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCContainsSpecification`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0,`1}},`1[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Cria um novo objeto SMCContainsSpecification.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCContainsSpecification`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0,`1}},`1[],SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Cria um novo objeto SMCContainsSpecification.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCContainsSpecification`2.SatisfiedBy">
+            <summary>
+            Recupera a especificação para verificação de uma entidade.
+            </summary>
+            <returns>Especificação para verificação de uma entidade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCContainsSpecification`2.GetPropertyName(System.Linq.Expressions.Expression{System.Func{`0,`1}})">
+            <summary>
+            Recupera o nome da propriedade a partir da lamda expression.
+            </summary>
+            <param name="expression">Expressão que contém a propriedade.</param>
+            <returns>Nome da propriedade.</returns>
+        </member>
+        <member name="T:SMC.Framework.Specification.ISMCSpecification`1">
+            <summary>
+            Contrato para as classes de especificação
+            conforme o pattern Specification.
+            </summary>
+            <typeparam name="TEntity">Tipo da classe da especificação.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Specification.ISMCSpecification`1.SatisfiedBy">
+            <summary>
+            Recupera a especificação para verificação de uma entidade.
+            </summary>
+            <returns>Especificação para verificação de uma entidade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Specification.ISMCSpecification`1.IsSatisfiedBy(`0)">
+            <summary>
+            Verifica se a especificação é satisfeita pela entidade informada.
+            </summary>
+            <param name="entity">Entidade a ser verificada.</param>
+            <returns>Verdadeiro se a especificação é satisfeita pela entidade informada.</returns>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCNotSpecification`1">
+            <summary>
+            Especificação para a operação de NOT.
+            </summary>
+            <typeparam name="TEntity">Tipo da classe da especificação.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCNotSpecification`1.#ctor(SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Cria um novo objeto SMCNotSpecification para uma especificação.
+            </summary>
+            <param name="originalSpecification">Especificação original.</param>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCNotSpecification`1.OriginalSpecification">
+            <summary>
+            Recupera a especificação original.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCNotSpecification`1.SatisfiedBy">
+            <summary>
+            Recupera a especificação para verificação de uma entidade.
+            </summary>
+            <returns>Especificação para verificação de uma entidade.</returns>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCOrSpecification`1">
+            <summary>
+            Especificação para a operação de OR.
+            </summary>
+            <typeparam name="TEntity">Tipo da classe da especificação.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCOrSpecification`1._exp">
+            <summary>
+            Armazena a expressão para avaliação da propriedade.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCOrSpecification`1.#ctor(SMC.Framework.Specification.SMCSpecification{`0},SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Cria um novo objeto SMCOrSpecification para duas outras especificações.
+            </summary>
+            <param name="leftSpecification">Especificação da esquerda.</param>
+            <param name="rightSpecification">Especificação da direita.</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCOrSpecification`1.SatisfiedBy">
+            <summary>
+            Recupera a especificação para verificação de uma entidade.
+            </summary>
+            <returns>Especificação para verificação de uma entidade.</returns>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCParameterRebinder">
+            <summary>
+            Helper for rebinder parameters without use Invoke method in expressions
+            ( this methods is not supported in all linq query providers,
+            for example in Linq2Entities is not supported)
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCParameterRebinder.#ctor(System.Collections.Generic.Dictionary{System.Linq.Expressions.ParameterExpression,System.Linq.Expressions.ParameterExpression})">
+            <summary>
+            Default construcotr
+            </summary>
+            <param name="map">Map specification</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCParameterRebinder.ReplaceParameters(System.Collections.Generic.Dictionary{System.Linq.Expressions.ParameterExpression,System.Linq.Expressions.ParameterExpression},System.Linq.Expressions.Expression)">
+            <summary>
+            Replate parameters in expression with a Map information
+            </summary>
+            <param name="map">Map information</param>
+            <param name="exp">Expression to replace parameters</param>
+            <returns>Expression with parameters replaced</returns>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCParameterRebinder.VisitParameter(System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            Visit pattern method
+            </summary>
+            <param name="p">A Parameter expression</param>
+            <returns>New visited expression</returns>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCPropertySpecification`1">
+            <summary>
+            Representa uma especificação de comparação de uma propriedade de uma entidade
+            </summary>
+            <typeparam name="TEntity">Tipo da classe da especificação.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCPropertySpecification`1._startsWith">
+            <summary>
+            Armazena o método StartsWith da string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCPropertySpecification`1._exp">
+            <summary>
+            Armazena a expressão para avaliação da propriedade.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCPropertySpecification`1._value">
+            <summary>
+            Armazena o valor da propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCPropertySpecification`1.Value">
+            <summary>
+            Recupera ou atribui o valor da propriedade.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCPropertySpecification`1._propertyName">
+            <summary>
+            Armazena o nome da propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCPropertySpecification`1.PropertyName">
+            <summary>
+            Recupera ou atribui o nome da propriedade. Podendo ter mais de um nível.
+            Ex: Paginador.Pessoa.Endereco.Codigo
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Specification.SMCPropertySpecification`1.Comparison">
+            <summary>
+            Define a forma de comparação da propriedade.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCPropertySpecification`1.#ctor(System.String,System.Object)">
+            <summary>
+            Cria um novo objeto SMCPropertySpecification.
+            </summary>
+            <param name="propertyName">Nome da propriedade.</param>
+            <param name="value">Valor da propriedade.</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCPropertySpecification`1.#ctor(System.String,System.String,System.Object)">
+            <summary>
+            Cria um novo objeto SMCPropertySpecification.
+            </summary>
+            <param name="orderBy">Campo para ordenação.</param>
+            <param name="propertyName">Nome da propriedade.</param>
+            <param name="value">Valor da propriedade.</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCPropertySpecification`1.SatisfiedBy">
+            <summary>
+            Recupera a especificação para verificação de uma entidade.
+            </summary>
+            <returns>Especificação para verificação de uma entidade.</returns>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCPropertySpecification`1.SMCPropertyComparison">
+            <summary>
+            Define os tipos de comparacao possíveis.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCSpecification`1">
+            <summary>
+            Classe base para as classes de especificação
+            conforme o pattern Specification.
+            </summary>
+            <typeparam name="TEntity">Tipo da classe da especificação.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.GetOrderByExp">
+            <summary>
+            Utilizado no EntityRepository para fazer o OrderBy, O outro OrderByClause é convertido para esse.
+            </summary>
+            <summary>
+            Faz o merge do OrderBy e devolve o nome OrderBy
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.MergeOrderByOld">
+            <summary>
+            Pega o OrderByClauses e adiciona no Novo OrderByExp
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.SetOrderByDescending``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Dado uma lambda expression faz a ordenação do resultado
+            </summary>
+            <param name="expression">campo que será realizado a ordenação</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.SatisfiedBy">
+            <summary>
+            Recupera a especificação para verificação de uma entidade.
+            </summary>
+            <returns>Especificação para verificação de uma entidade.</returns>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCSpecification`1._compiledCriteria">
+            <summary>
+            Armazena o critério de filtro compilado para ser utilizado na função IsSatisfiedBy.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.MergeOrderBy(System.Collections.Generic.List{SMC.Framework.SMCSortInfo})">
+            <summary>
+            Faz um merge dos OrderBy (que utilizam expressions - nova forma de fazer)
+            </summary>
+            <param name="orderByExp"></param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.IsSatisfiedBy(`0)">
+            <summary>
+            Verifica se uma entidade satisfaz o critério da especificação.
+            </summary>
+            <param name="entity">Entidade a ser validada.</param>
+            <returns>Verdadeiro se a entidade satisfaz a especificação, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.AddExpression(System.String,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Adiciona o tratamento para um campo da especificação
+            </summary>
+            <param name="value"></param>
+            <param name="expression">Expressão que deve ser adicionada na especificação</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.AddExpression``1(``0,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Adiciona o tratamento para um campo da especificação
+            </summary>
+            <param name="value"></param>
+            <param name="expression">Expressão que deve ser adicionada na especificação</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.AddExpression``1(System.Nullable{``0},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Adiciona o tratamento para um campo da especificação
+            </summary>
+            <param name="value"></param>
+            <param name="expression">Expressão que deve ser adicionada na especificação</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.AddExpression``1(``0[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Adiciona o tratamento para um campo da especificação
+            </summary>
+            <param name="values"></param>
+            <param name="expression">Expressão que deve ser adicionada na especificação</param>
+            <typeparam name="T">Tipo do parâmetro da coleção de valores do filtro</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.AddExpression``1(System.Collections.Generic.List{``0},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Adiciona o tratamento para um campo da especificação
+            </summary>
+            <param name="values"></param>
+            <param name="expression">Expressão que deve ser adicionada na especificação</param>
+            <typeparam name="T">Tipo do parâmetro da coleção de valores do filtro</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.AddExpression(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Adiciona o tratamento para um campo obrigatório da especificação
+            </summary>
+            <param name="expression">Expressão que deve ser adicionada na especificação</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.AddExpression(System.Func{System.Boolean},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Adiciona o tratamento para um campo da especificação
+            </summary>
+            <param name="isEnabled">Define se a expressão deve ser adicionada na especificação</param>
+            <param name="expression">Expressão que deve ser adicionada na especificação</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.AddExpressionOr(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}})">
+            <summary>
+            Adiciona um grupo de expressões para ser tratado como (A ou B ou C)
+            </summary>
+            <example>list.Add(B); list.Add(C); AddExpression(A); AddExpressionOr(list); gera a expressão: (A) e (B ou C)</example>
+            <param name="expressions">Coleção de expressões</param>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.GetExpression">
+            <summary>
+            Recupera a especificação criada com os tratamentos configurados com AddExpression
+            </summary>
+            <returns>Especificação apenas com o tratamento dos campos habilitados</returns>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.op_BitwiseAnd(SMC.Framework.Specification.SMCSpecification{`0},SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Operador de AND.
+            </summary>
+            <param name="leftSpecification">Especificação da esquerda.</param>
+            <param name="rightSpecification">Especificação da direita.</param>
+            <returns>Nova especificação AND.</returns>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.op_BitwiseOr(SMC.Framework.Specification.SMCSpecification{`0},SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Operador de OR.
+            </summary>
+            <param name="leftSpecification">Especificação da esquerda.</param>
+            <param name="rightSpecification">Especificação da direita.</param>
+            <returns>Nova especificação OR.</returns>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.op_LogicalNot(SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Operador de NOT.
+            </summary>
+            <param name="specification">Especificação que será negada.</param>
+            <returns>Nova especificação NOT.</returns>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCSpecification`1.GetKnownTypes">
+            <summary>
+            Método de suporte para configurar as classes specification que podem
+            ser utilizadas como parametro em serviços wcf.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Specification.SMCTrueSpecification`1">
+            <summary>
+            Especificação para a operação sempre verdadeira.
+            </summary>
+            <typeparam name="TEntity">Tipo da classe da especificação.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Specification.SMCTrueSpecification`1._trueExpression">
+            <summary>
+            Expressão verdadeira.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCTrueSpecification`1.#ctor">
+            <summary>
+            Utilizado quando você quer retornar todos os registros. Exemplo de um Search All.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCTrueSpecification`1.#ctor(SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Utilizado quando você quer retornar todos os registros. Exemplo de um Search All.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Specification.SMCTrueSpecification`1.SatisfiedBy">
+            <summary>
+            Recupera a especificação para verificação de uma entidade.
+            </summary>
+            <returns>Especificação para verificação de uma entidade.</returns>
+        </member>
+    </members>
+</doc>

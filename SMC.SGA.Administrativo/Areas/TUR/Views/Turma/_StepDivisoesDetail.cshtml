@@ -1,0 +1,10 @@
+﻿@model TurmaDivisoesViewModel
+@if (Model.PermitirGrupo)
+{
+    @Smc.MasterDetail(m => m.DivisoesComponentes).CssClass("smc-sga-divisoes-turma").TitleMasterDetail(Model.DivisaoComponenteDescricao).HideButtons(false).DisplayCounter(true, "GrupoNumero").MinimumItens(1)
+}
+else
+{
+    @Smc.MasterDetail(m => m.DivisoesComponentes).CssClass("smc-sga-divisoes-turma").TitleMasterDetail(Model.DivisaoComponenteDescricao).HideButtons(true).MinimumItens(1)
+}
+

@@ -1,0 +1,90 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.APR.Models.DownloadMaterialViewModel
+@using SMC.Framework.UI.Mvc.Util
+
+@using (Smc.Form("escolherMateriais", "Download", "DownloadMaterial").Begin())
+{
+    @Smc.HiddenFor(m => m.TipoOrigemMaterial)
+    @Smc.HiddenFor(m => m.TipoAtuacao)
+    @Smc.HiddenFor(m => m.SeqsOrigemMaterial)
+
+    using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+    {
+        @(Smc.TreeView("DownloadMateriais", Model.Materiais)
+                     .Expanded()
+                     .ContentTemplate(
+                    @<text>
+                        @{
+							if (item.Level == 0)
+							{
+								item.Options.CssClass = "smc-sga-treeview-header";
+								if (string.IsNullOrEmpty(item.Value.DescricaoOrigem))
+								{
+									@Html.Action("BuscarCabecalho", new { seqOrigemMaterial = new SMCEncryptedLong(item.Value.SeqOrigemMaterial) });
+								}
+								else
+								{
+									
+									@Html.Partial(SMC.Framework.UI.Mvc.SMCControllerBase.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.DOWNLOAD_PATH + "_Cabecalho", Html), new SMC.Academico.UI.Mvc.Areas.APR.Models.DownloadMaterialCabecalhoViewModel { Descricao = item.Value.DescricaoOrigem })
+								}
+							}
+						}
+                    </text>)
+					.AllowCheck(SMCSelectMode.HierarchicalCheckbox)
+					.ConfigureNode(item =>
+					{
+						if (item.Value.TipoMaterial == SMC.Academico.Common.Areas.APR.Enums.TipoMaterial.Link)
+						{
+							if (item.Value.DataAlteracao.GetValueOrDefault() != default(DateTime))
+							{
+								item.Tooltip = (!string.IsNullOrEmpty(item.Value.Observacao) ? item.Value.Observacao + " - " : string.Empty) + item.Value.UrlLink + " - " + item.Value.DataAlteracao.Value.ToString("d") + " - " + item.Value.DataAlteracao.Value.ToString("HH:mm");
+							}
+							else
+							{
+								item.Tooltip = (!string.IsNullOrEmpty(item.Value.Observacao) ? item.Value.Observacao + " - " : string.Empty) + item.Value.UrlLink + " - " + item.Value.DataInclusao.ToString("d") + " - " + item.Value.DataInclusao.ToString("HH:mm");
+							}
+							item.Target = "_blank";
+							item.Options.CssClass = "smc-sga-treeview-ico-link smc-sga-check-disable";
+							return item.Url = item.Value.UrlLink;
+						}
+						else if (item.Value.TipoMaterial == SMC.Academico.Common.Areas.APR.Enums.TipoMaterial.Arquivo)
+						{
+							if (item.Value.DataAlteracao.GetValueOrDefault() != default(DateTime))
+							{
+								item.Tooltip = $"{(!string.IsNullOrEmpty(item.Value.Observacao) ? item.Value.Observacao + " - " : string.Empty)} {item.Value.ArquivoAnexado.Nome} ({SMCUploadHelper.FormatFileSize(item.Value.ArquivoAnexado.Tamanho)}) - {item.Value.DataAlteracao.Value.ToString("d")} - {item.Value.DataAlteracao.Value.ToString("HH:mm")}";
+							}
+							else
+							{
+								item.Tooltip = $"{(!string.IsNullOrEmpty(item.Value.Observacao) ? item.Value.Observacao + " - " : string.Empty)} {item.Value.ArquivoAnexado.Nome} ({SMCUploadHelper.FormatFileSize(item.Value.ArquivoAnexado.Tamanho)}) - {item.Value.DataInclusao.ToString("d")} - {item.Value.DataInclusao.ToString("HH:mm")}";
+							}
+							item.Target = "_blank";
+							item.Attributes.Add("data-behavior-download", "true");
+							item.Options.CssClass = "smc-sga-treeview-ico-arquivo";
+							return item.Url = Url.Action("DownloadFileGuid", "Home", new { @area = "", @guidFile = item.Value.UidArquivoAnexado.Value });
+						}
+						else if (item.Value.TipoMaterial == SMC.Academico.Common.Areas.APR.Enums.TipoMaterial.Pasta)
+						{
+							item.Options.CssClass = "smc-sga-treeview-ico-pasta";
+
+							if (item.Value.DataAlteracao.GetValueOrDefault() != default(DateTime))
+							{
+								item.Tooltip = (!string.IsNullOrEmpty(item.Value.Observacao) ? item.Value.Observacao + " - " : string.Empty) + item.Value.DataAlteracao.Value.ToString("d") + " - " + item.Value.DataAlteracao.Value.ToString("HH:mm");
+							}
+							else
+							{
+								item.Tooltip = (!string.IsNullOrEmpty(item.Value.Observacao) ? item.Value.Observacao + " - " : string.Empty) + item.Value.DataInclusao.ToString("d") + " - " + item.Value.DataInclusao.ToString("HH:mm");
+							}
+
+						}
+						return null;
+					}
+				))
+    }
+
+    var buttonSet = Smc.ButtonSet().Orientation(SMCOrientation.Horizontal).Type(SMC.Framework.UI.Mvc.Html.SMCButtonSetType.Primary);
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar).Text("Download").CssClass("smc-btn-download-icotext-destaque").Type(SMCButtonType.Submit).DisplayMode(SMCButtonDisplayMode.Text).Attribute("data-behavior-download", "true").Highlight());
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Index", "Home", new { area = "" }, forceForBackBehavior: true));
+
+    @buttonSet;
+
+}

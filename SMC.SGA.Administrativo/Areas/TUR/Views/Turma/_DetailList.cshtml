@@ -1,0 +1,286 @@
+﻿@using SMC.Academico.Common.Areas.TUR.Enums;
+@model TurmaListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item smc-sga-lista-turma smc-sga-lista-detalhada").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.CodigoFormatado).Size(SMCSize.Grid2_24, SMCSize.Grid12_24, SMCSize.Grid6_24, SMCSize.Grid2_24)
+            @Smc.DisplayFor(m => m.DescricaoCicloLetivoInicio).Size(SMCSize.Grid3_24, SMCSize.Grid12_24, SMCSize.Grid10_24, SMCSize.Grid2_24)
+
+            @Smc.DisplayFor(m => m.QuantidadeVagas).Size(SMCSize.Grid2_24, SMCSize.Grid12_24, SMCSize.Grid8_24, SMCSize.Grid2_24)
+            @Smc.DisplayFor(m => m.DescricaoTipoTurma).Size(SMCSize.Grid9_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid8_24)
+            @Smc.DisplayFor(m => m.SituacaoTurmaAtual).Size(SMCSize.Grid3_24, SMCSize.Grid12_24, SMCSize.Grid4_24, SMCSize.Grid3_24)
+            @Smc.DisplayFor(m => m.DiarioSituacao).Size(SMCSize.Grid5_24, SMCSize.Grid12_24, SMCSize.Grid8_24, SMCSize.Grid3_24);
+
+            using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid4_24).Begin())
+            {
+                @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-margem-superior")
+                                .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizaTurma" + Model.Seq)
+                                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Turma_Detalhes"))
+                                .Ajax(isPost: false)
+                                .SecurityToken(SMC.Academico.Common.Areas.TUR.Constants.UC_TUR_001_06_01.VISUALIZAR_DETALHES_DIVISAO_TURMA)
+                                .CssClass("smc-btn-visualizar-icotext").Tooltip(Smc.GetUIResource("Tooltip_Turma_Detalhes"))
+                                .Text(Smc.GetUIResource("Botao_Turma_Detalhes"))
+                                .Action("VisualizaTurmaDetalhes", "Turma", new { seqTurma = Model.Seq }))
+                )
+            }
+
+            using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-config-componente-turma").Begin())
+            {
+                @Smc.List("Configuracoes" + Model.Seq, m => m.TurmaConfiguracoesCabecalho).Size(SMCSize.Grid20_24).HtmlTemplate(cabecalho => Html.Partial("_StepDadosTurmaConfiguracao", cabecalho.Value))
+            }
+
+        }
+
+        @Smc.List("Divisoes" + Model.Seq, m => m.TurmaDivisoes).CssClass("smc-list-item-grid smc-listdetailed-conteudo-lista-item-destaque smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24").Size(SMCSize.Grid24_24).HtmlTemplate(divisao => Html.Partial("_StepDadosTurmaDivisoesListar", divisao.Value))
+    }
+
+    // Criação dos botões e suas regras
+
+    var buttonAlterar = Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { Seq = new SMCEncryptedLong(Model.Seq) }, "Turma")
+        .DisplayMode(SMCButtonDisplayMode.Icon)
+        .SecurityToken(UC_TUR_001_01_02.MANTER_TURMA);
+
+    var buttonExcluir = Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new { Seq = new SMCEncryptedLong(Model.Seq) }, "Turma")
+        .DisplayMode(SMCButtonDisplayMode.Icon)
+        .Confirm(Smc.GetUIResource("Title_Excluir_Turma"), string.Format(Smc.GetUIResource("MSG_Excluir_Turma"), Model.CodigoFormatado, Model.DescricaoConfiguracaoComponente))
+        .SecurityToken(UC_TUR_001_01_02.MANTER_TURMA);
+
+    var buttonAgendamentoAula = Smc.Button("LancamentoNota")
+        .Url(Url.Content("~/App/GRD/EventoAula/Turma/" + new SMCEncryptedLong(Model.Seq) + "?origem=Turma"))
+        .Text(Smc.GetUIResource("Botao_AgendamentoAula"))
+        .Type(SMCButtonType.Link)
+        .Tooltip(Smc.GetUIResource("Botao_AgendamentoAula"))
+        .SecurityToken(SMC.Academico.Common.Areas.GRD.Constants.UC_GRD_001_01_01.PESQUISAR_EVENTO_AULA);
+
+    var buttonAssociacaoProfessorTurma = Smc.Button("DivisaoTurmaColaborador", "Index", new { SeqTurma = new SMCEncryptedLong(Model.Seq) }, "DivisaoTurmaColaborador")
+        .Text(Smc.GetUIResource("Botao_AssociacaoProfessorTurma"))
+        .Type(SMCButtonType.Link)
+        .Tooltip(Smc.GetUIResource("Botao_AssociacaoProfessorTurma_Tooltip"))
+        .SecurityToken(UC_TUR_001_02_01.PESQUISAR_ASSOCIACAO_PROFESSOR_TURMA);
+
+    var botaoGerarRelatorioDiarioTurma = Smc.Button("DiarioTurmaRelatorio")
+        .Action("DiarioTurmaRelatorio", "DiarioTurmaRelatorio", new { SeqTurma = new SMCEncryptedLong(Model.Seq), Area = "APR" })
+        .Text(Smc.GetUIResource("Botao_GerarRelatorioDiarioTurma"))
+        .Type(SMCButtonType.Link)
+        .Attribute("target", "_blank")
+        .Tooltip(Smc.GetUIResource("Botao_GerarRelatorioDiarioTurma_Tooltip"))
+        .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_002_02_01.EXIBIR_RELATORIO_DIARIO_TURMA);
+
+    var buttonReabrirDiario = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+        .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("ReabrirDiario", "Turma", new { @backUrl = Url.Action("Index", "Turma") }))
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Reabrir_Diario"))
+        .Ajax(isPost: true)
+        .Text(Smc.GetUIResource("Botao_Reabrir_Diario"))
+        .Tooltip(Smc.GetUIResource("Botao_Reabrir_Diario"))
+        .Type(SMCButtonType.InputButton).CssClass("smc-btn-custom")
+        .SecurityToken(UC_TUR_001_01_03.REABRIR_DIARIO)
+        .Action("ModalReabrirDiario", "Turma", new { seq = new SMCEncryptedLong(Model.Seq) });
+
+    var buttonCancelarTurma = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+        .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("CancelarTurma", "Turma", new { @backUrl = Url.Action("Index", "Turma") }))
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Cancelar_Turma"))
+        .Ajax(isPost: true)
+        .Text(Smc.GetUIResource("Botao_Cancelar_Turma"))
+        .Tooltip(Smc.GetUIResource("Botao_Cancelar_Turma"))
+        .Type(SMCButtonType.InputButton).CssClass("smc-btn-custom")
+        .SecurityToken(UC_TUR_001_01_04.CANCELAR_TURMA)
+        .Action("ModalCancelarTurma", "Turma", new { seq = new SMCEncryptedLong(Model.Seq) });
+
+    var buttonConfiguracaoTurma = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+        .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("SalvarConfiguracaoTurma", "Turma", new { @backUrl = Url.Action("Index", "Turma") }))
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Configuracao_Turma"))
+        .Ajax(isPost: true)
+        .Text(Smc.GetUIResource("Botao_Configuracao_Turma"))
+        .Tooltip(Smc.GetUIResource("Botao_Configuracao_Turma"))
+        .Type(SMCButtonType.InputButton).CssClass("smc-btn-custom")
+        .SecurityToken(UC_TUR_001_08_01.ALTERAR_CONFIGURACAO_TURMA)
+        .Action("ConfiguracaoTurma", "Turma", new { seq = new SMCEncryptedLong(Model.Seq) });
+
+    var buttonOfertarTurma = Smc.Button("OfertarTurma")
+        .Action("OfertarTurma", "Turma", new { Seq = new SMCEncryptedLong(Model.Seq) })
+        .Text(Smc.GetUIResource("Botao_Ofertar_Turma"))
+        .Tooltip(Smc.GetUIResource("Botao_Ofertar_Turma"))
+        .Type(SMCButtonType.Link)
+        .SecurityToken(UC_TUR_001_01_04.CANCELAR_TURMA);
+
+    var buttonLancamentoNotaFrequencia = Smc.Button(SMCButtonBehavior.Alterar, "Index", new { SeqTurma = new SMCEncryptedLong(Model.Seq), area = "", backUrl = Url.Action("Index") }, "LancamentoHistoricoEscolarRoute")
+        .Text(Smc.GetUIResource("Botao_LancamentoNotaFrequencia"))
+        .Tooltip(Smc.GetUIResource("Botao_LancamentoNotaFrequencia"))
+        .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_001_15_01.LANCAMENTO_NOTA_FREQUENCIA_FINAL);
+
+    var buttonDesdobrar = Smc.Button(SMCButtonBehavior.Novo, "Incluir", new { seqTurma = new SMCEncryptedLong(Model.Seq), operacao = OperacaoTurma.Desdobrar }, "Turma")
+        .Text(Smc.GetUIResource("Botao_DesdobrarTurma"))
+        .Tooltip(Smc.GetUIResource("Botao_DesdobrarTurma"))
+        .SecurityToken(UC_TUR_001_01_02.MANTER_TURMA);
+
+    var buttonCopiar = Smc.Button(SMCButtonBehavior.Novo, "Incluir", new { seqTurma = new SMCEncryptedLong(Model.Seq), operacao = OperacaoTurma.Copiar, backUrl = Url.Action("Index") }, "Turma")
+        .Text(Smc.GetUIResource("Botao_CopiarTurma"))
+        .Tooltip(Smc.GetUIResource("Botao_CopiarTurma"))
+        .SecurityToken(UC_TUR_001_01_02.MANTER_TURMA);
+
+    SMCButtonFluentConfiguration botaoAcompanhamentoNota = Smc.Button("LancamentoNota")
+           .Action("RelatorioAcompanhamento", "Turma", new { seqOrigemAvaliacao = new SMCEncryptedLong(Model.SeqOrigemAvaliacao), administrativo = true })
+           .Text(Smc.GetUIResource("Botao_Acompanhamento_Nota"))
+           .Type(SMCButtonType.Link)
+           .Attribute("target", "_blank")
+           .Tooltip(Smc.GetUIResource("Botao_Acompanhamento_Nota_Tooltip"))
+           .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_001_17_01.EXIBIR_RELATORIO_ACOMPANHAMENTO_NOTA);
+
+    if (Model.SituacaoTurmaAtual == SituacaoTurma.Cancelada)
+    {
+        var textoTurmaCancelada = Smc.GetUIResource("Mensagem_Botoes_Turma_Cancelada");
+
+        buttonAlterar.Enabled(false).ButtonInstructions(textoTurmaCancelada);
+        buttonAssociacaoProfessorTurma.Enabled(false).ButtonInstructions(textoTurmaCancelada);
+        buttonDesdobrar.Enabled(false).ButtonInstructions(textoTurmaCancelada);
+        botaoGerarRelatorioDiarioTurma.Enabled(false).ButtonInstructions(textoTurmaCancelada);
+        buttonLancamentoNotaFrequencia.Enabled(false).ButtonInstructions(textoTurmaCancelada);
+        buttonReabrirDiario.Enabled(false).ButtonInstructions(textoTurmaCancelada);
+        buttonConfiguracaoTurma.Enabled(false).ButtonInstructions(textoTurmaCancelada);
+        buttonCancelarTurma.Enabled(false).ButtonInstructions(textoTurmaCancelada);
+        buttonOfertarTurma.Enabled(true).Confirm(Smc.GetUIResource("Title_Ofertar_Turma"), string.Format(Smc.GetUIResource("MSG_Ofertar_Turma"), Model.CodigoFormatado, Model.DescricaoConfiguracaoComponente));
+    }
+    else
+    {
+        // Regra 1
+        if (Model.DiarioFechado)
+        {
+            buttonAlterar.Enabled(false).ButtonInstructions(Smc.GetUIResource("Instruction_Editar_Turma_Desabilitado_Diario_Fechado"));
+            buttonConfiguracaoTurma.Enabled(false).ButtonInstructions(Smc.GetUIResource("Instruction_Configuracao_Turma_Desabilitado"));
+        }
+        // Regra 2
+        else if (Model.PossuiNotaLancada)
+        {
+            buttonAlterar.Confirm(Smc.GetUIResource("Title_Alterar_Turma_Desabilitado"), Smc.GetUIResource("MSG_Editar_Turma_Nota_Lancada"));
+        }
+        // Regra 3
+        else if (Model.EhOuPossuiDesdobramento)
+        {
+            buttonAlterar.Confirm(Smc.GetUIResource("Title_Alterar_Turma_Desabilitado"), Smc.GetUIResource("MSG_Editar_Turma_Desdobramento"));
+        }
+        // Regra 4
+        else if (Model.ConfirmarAlteracao)
+        {
+            buttonAlterar.Confirm(Smc.GetUIResource("Title_Alterar_Turma_Desabilitado"), Smc.GetUIResource("MSG_Alterar_Turma_Desabilitado"));
+        }
+
+        // Caso não esteja cancelada, exibe o botão de ofertar turma desabilitado
+        buttonOfertarTurma.Enabled(false).ButtonInstructions(Smc.GetUIResource("Instruction_Ofertar_Turma_Desabilitado"));
+
+        if (!Model.DiarioFechado)
+        {
+            //botaoGerarRelatorioDiarioTurma.Enabled(false).ButtonInstructions(Smc.GetUIResource("MSG_Diario_Fechado_Desabilitado"));
+
+            /*Exibir comando “Reabrir diário”, a cada turma exibida, somente quando o campo “Diário fechado” possui valor igual a
+            sim. Caso não esteja com este valor, exibir o comando desabilitado com a seguinte mensagem:
+            “Só é possível reabrir o diário quando ele está fechado."*/
+            buttonReabrirDiario.Enabled(false).ButtonInstructions(Smc.GetUIResource("MSG_Reabrir_Diario_Desabilitado"));
+        }
+
+        if (Model.DiarioFechado)
+        {
+            //buttonAssociacaoProfessorTurma.Enabled(false).ButtonInstructions(Smc.GetUIResource("Instruction_AssociarProfessor_Turma_Desabilitado_Diario_Fechado"));
+            buttonLancamentoNotaFrequencia.Enabled(false).ButtonInstructions(Smc.GetUIResource("Instruction_LancarNotaFrequencia_Turma_Diario_Aberto"));
+            buttonDesdobrar.Enabled(false).ButtonInstructions(Smc.GetUIResource("Instruction_Desdobrar_Turma_Desabilitado_Diario_Fechado"));
+
+        }
+        else
+        {
+            if (Model.PermiteAvaliacaoParcial)
+            {
+                buttonLancamentoNotaFrequencia.Enabled(false).ButtonInstructions(Smc.GetUIResource("Instruction_LancarNotaFrequencia_Turma_Permite_Avaliacao_Parcial"));
+            }
+            buttonDesdobrar.ButtonInstructions(Smc.GetUIResource("MSG_Informacao_Desdobrar_Turma"));
+        }
+    }
+
+    if (Model.DesativarExcluir)
+    {
+        buttonExcluir.Enabled(false).ButtonInstructions(Model.MensagemDesativarExcluir);
+    }
+    else if (Model.AulaLancada)
+    {
+        buttonExcluir.Enabled(false).ButtonInstructions(Smc.GetUIResource("MSG_Excluir_Turma_Desabilitado_Aula_Lancada"));
+    }
+    else if (Model.DesativarExcluirValidacaoEventoAula)
+    {
+        buttonExcluir.Enabled(false).ButtonInstructions(Model.MensagemDesativarExcluir);
+    }
+
+    if (Model.AgendaTurmaConfigurada || Model.GradeConfigurada)
+    {
+        //buttonAssociacaoProfessorTurma.Enabled(false).ButtonInstructions(Smc.GetUIResource("Instruction_AssociarProfessor_Turma_Desabilitado_Agenda"));
+    }
+    else if (!Model.AgendaTurmaConfigurada)
+    {
+        buttonAgendamentoAula.Enabled(false).ButtonInstructions(Smc.GetUIResource("MSG_Agendamento_Aula_Sem_Agenda"));
+    }
+    else if (!Model.GradeConfigurada)
+    {
+        buttonAgendamentoAula.Enabled(false).ButtonInstructions(Smc.GetUIResource("MSG_Agendamento_Aula_Sem_Grade"));
+    }
+
+    if (Model.Numero > 1)
+    {
+        buttonCopiar.Enabled(false).ButtonInstructions(string.Format(Smc.GetUIResource("Instruction_Copiar_Turma_Desabilitado_Desdobramento"), Model.Codigo));
+    }
+    else
+    {
+        buttonCopiar.ButtonInstructions(Smc.GetUIResource("MSG_Informacao_Copiar_Turma"));
+    }
+
+    //if(Model.PossuiDivisaoOrientacao)
+    //{
+    //    buttonAssociacaoProfessorTurma.Enabled(false).ButtonInstructions(Smc.GetUIResource("Instruction_AssociarProfessor_Turma_Orientacao"));
+    //}
+
+    using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24).Begin())
+    {
+        @(Smc.ButtonSet()
+            .Size(SMCSize.Grid24_24)
+            .Type(SMCButtonSetType.Secondary)
+            .Orientation(SMCOrientation.Vertical)
+            .NumberOfButtonsToShow(2)
+            .AddButton(buttonAlterar)
+            .AddButton(buttonExcluir)
+            .AddButton(botaoAcompanhamentoNota)
+            .AddButton(buttonAgendamentoAula)
+            .AddButton(buttonAssociacaoProfessorTurma)
+            .AddButton(buttonCancelarTurma)
+            .AddButton(buttonConfiguracaoTurma)
+            .AddButton(buttonCopiar)
+            .AddButton(buttonDesdobrar)
+            .AddButton(botaoGerarRelatorioDiarioTurma)
+            .AddButton(buttonLancamentoNotaFrequencia)
+            .AddButton(buttonOfertarTurma)
+            .AddButton(buttonReabrirDiario))
+    }
+}
+
+@using (Smc.ModalWindow("modalVisualizaTurma" + Model.Seq)
+           .Form("formVisualizarTurma" + Model.Seq, closeOnSubmit: true)
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }
+
+@using (Smc.ModalWindow("modalListaFrequencia" + Model.Seq)
+           .Form("formListaFrequencia" + Model.Seq, "GerarRelatorio", "ListaFrequencia", new { area = "APR" }, closeOnSubmit: true)
+           .Button(SMCButtonBehavior.Relatorio, config: bnt => bnt
+                        .Conditional(SMCConditionalBehavior.ReadOnly, "Colaboradores_Grid", SMCConditionalOperation.Equals, false)
+                        .Text(Smc.GetUIResource("Botao_Emitir_Relatorio"))
+                        .Tooltip(Smc.GetUIResource("Botao_Emitir_Relatorio"))
+                        .CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+                        .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true)
+                        .Attribute("formtarget", "_blank").Highlight())
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Size(SMCModalWindowSize.Auto)
+           .Begin()) { }

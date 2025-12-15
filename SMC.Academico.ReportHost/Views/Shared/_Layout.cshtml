@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- classes css padrões -->
+    @Html.SMCRegisterBaseCss()
+    <link href="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <link href="C:/SMC/Framework4.2/SMC.Recursos/Recursos/Academico/4.0/SGA.Administrativo/Css/smc-recursos.min.css" rel="stylesheet" />
+    <link href="C:/SMC/Framework4.2/SMC.Recursos/Css/sass-padrao/acessibilidade/smc-acessibilidade-2.0.min.css" rel="stylesheet" />
+    <link href="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/summernote/summernote-lite.css" rel="stylesheet" />
+
+    @if (IsSectionDefined("Css"))
+    {
+        @RenderSection("Css")
+    }
+</head>
+
+<body class="fixed sidebar-mini">
+    @*-- corpo da página (obrigatório) --*@
+    @RenderBody()
+
+    @Html.SMCRegisterBundleScripts()
+    <script src="https://www.google.com/recaptcha/api.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/jquery-ui-1.11.1.min.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/jquery.mousewheel.min.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/mCustomScrollbar/jquery.mCustomScrollbar.min.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Css/sass-padrao/bootstrap/javascripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/html2canvas.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/detect-2.2.2.min.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/jquery.jGrowl.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/fileDownload/jquery.fileDownload.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/jquery-mask-plugin-1.14.min.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/jquery.maskMoney.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/jquery-qrcode/jquery.qrcode-0.7.0.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/summernote/summernote-lite.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/summernote/lang/summernote-pt-BR.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/nestedSortable/jquery.mjs.nestedSortable.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/jquery.knob.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/node_modules/jquery.fancytree/dist/modules/jquery.fancytree.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/node_modules/jquery.fancytree/dist/modules/jquery.fancytree.dnd.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/node_modules/jquery.fancytree/dist/modules/jquery.fancytree.filter.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/node_modules/jquery.fancytree/dist/modules/jquery.fancytree.glyph.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/node_modules/jquery.fancytree/dist/modules/jquery.fancytree.persist.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/jsrender.min.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/libs/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/node_modules/parsleyjs/dist/parsley.min.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-core.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-validation.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-masterDetail.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-favorites-menu.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-conditionalbehavior.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-totalize.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/Localidade/smc-localidade.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-contextcontrol.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-accordion.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-alerta.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-browsealert.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-button.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-circular-progress.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-checkbox.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-checkboxlist.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-currency.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-datagrid.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-dataselector.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-datepicker.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-dependency.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-div.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-dynamic-menu.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-erro.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-fields.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-fieldset.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-gadgets.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-gotop.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-hidden.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-hidepanel.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-list.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-lookup.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-mask.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-math.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-message.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-pager.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-qrcode.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-radiobutton.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-scheduler.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-search-menu.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-search.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-selects.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-sidepanel.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-sortpicker.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-tabs.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-textarea.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-textbox.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-texteditor.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-timeline.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-treeview.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-upload.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-updatecontent.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-window.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-wizard.js" type="text/javascript"></script>
+    <script src="C:/SMC/Framework4.2/SMC.Recursos/Scripts/smc-developwarning.js" type="text/javascript"></script>
+
+    @*-- Section para renderização de scrits das views (obrigatório)--*@
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts")
+    }
+</body>
+</html>

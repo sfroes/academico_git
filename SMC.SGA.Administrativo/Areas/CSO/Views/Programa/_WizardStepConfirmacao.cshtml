@@ -1,0 +1,12 @@
+﻿@model ReplicaFormacaoEspecificaProgramaViewModel
+
+@Smc.EditorFor(m => m.MensagemInformativa)
+
+@Smc.EditorFor(prop => prop.SeqFormacaoEspecifica)
+@Smc.EditorFor(prop => prop.SeqEntidadeResponsavel)
+@Smc.EditorFor(prop => prop.CategoriasAtividadesSituacoesAtuais)
+
+@(Smc.TreeView("ItensSelecionados", Model.ItensSelecionados)
+         .Expanded())
+
+@Smc.WizardView()

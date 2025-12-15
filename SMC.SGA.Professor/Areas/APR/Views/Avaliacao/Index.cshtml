@@ -1,0 +1,36 @@
+﻿@model AvaliacaoFiltroViewModel
+
+@Html.Action("CabecalhoAvalicaoTurma", "Avaliacao", new { seqOrigemAvaliacao = Model.SeqOrigemAvaliacao })
+
+@using (Smc.Form("filtroAvaliacao", "ListarAvaliacoes").Ajax("#divGridAvaliacoes").Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Fieldset("filtros").Size(SMCSize.Grid24_24).CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.HiddenFor(e => e.SeqOrigemAvaliacao)
+        @Smc.EditorFor(e => e.TipoAvaliacao)
+        @Smc.EditorFor(e => e.Sigla)
+        @Smc.EditorFor(e => e.Descricao)
+        @Smc.EditorFor(e => e.DiarioFechado)
+        @Smc.EditorFor(e => e.TipoOrigemAvaliacao)
+
+        @(Smc.ButtonSet().Type(SMCButtonSetType.Primary)
+                     .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                     .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+                     .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                            .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                            .Type(SMCButtonType.Link)
+                            .Url(Url.Action("Insert", "Avaliacao", new { SeqOrigemAvaliacao = new SMCEncryptedLong(Model.SeqOrigemAvaliacao) })))
+        )
+
+    }
+}
+
+
+@using (Smc.Div("divGridAvaliacoes").Attribute("data-id", "divGridAvaliacoes").Begin())
+{
+    @Smc.ActionList("ListarAvaliacoes", Model, false)
+}
+
+@(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+                        .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                        .Action("Index", "Home", new { Area = "" }, true)))

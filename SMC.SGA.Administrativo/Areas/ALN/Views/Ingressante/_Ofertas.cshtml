@@ -1,0 +1,6 @@
+﻿@model IngressanteDynamicModel
+
+@Smc.EditorFor(m => m.OfertasMatrizDependencyOfertas)
+
+@Smc.MasterDetail(m => m.Ofertas).MaximumItens(Model.QuantidadeOfertaCampanhaIngresso).ReadOnly(Model.DadosAcademicosSomenteLeitura)
+@Smc.EditorFor(m => m.SeqMatrizCurricularOferta).Readonly(Model.DadosAcademicosSomenteLeitura)

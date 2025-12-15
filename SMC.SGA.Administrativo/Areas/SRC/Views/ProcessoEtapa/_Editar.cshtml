@@ -1,0 +1,115 @@
+﻿@model ProcessoEtapaDynamicModel
+
+@Smc.EditorFor(prop => prop.SeqProcesso)
+@Smc.EditorFor(prop => prop.SeqProcessoEtapa)
+@Smc.EditorFor(prop => prop.CamposReadyOnly)
+@Smc.EditorFor(prop => prop.ExigeEscalonamento)
+
+@using (Smc.Fieldset("DadosGerais").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_dados_gerais")).Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqEtapaSgf)
+    @Smc.EditorFor(prop => prop.Seq)
+    @Smc.EditorFor(prop => prop.DescricaoEtapa)
+    @Smc.EditorFor(prop => prop.Ordem)
+    @Smc.EditorFor(prop => prop.Token)
+    @Smc.EditorFor(prop => prop.SituacaoEtapa)
+    @Smc.EditorFor(prop => prop.DataEncerramento)
+}
+
+@using (Smc.Fieldset("ParametrosGerais").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_parametros_gerais")).Begin())
+{
+    @Smc.EditorFor(prop => prop.TipoPrazoEtapa)
+    @Smc.EditorFor(prop => prop.NumeroDiasPrazoEtapa)
+    @Smc.EditorFor(prop => prop.DataInicio)
+    @Smc.EditorFor(prop => prop.DataFim)
+    @Smc.EditorFor(prop => prop.CentralAtendimento)
+    @Smc.EditorFor(prop => prop.OrientacaoAtendimento)
+    @Smc.EditorFor(prop => prop.FinalizacaoEtapaAnterior)
+    @Smc.EditorFor(prop => prop.EtapaCompartilhada)
+}
+
+@if (Model.ExibeSecaoTokenMatricula)
+{
+    using (Smc.Fieldset("ParametrosEspecificos").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_parametros_especificos")).Begin())
+    {
+        @Smc.EditorFor(prop => prop.SolicitacaoEtapaAnteriorAtendida)
+        @Smc.EditorFor(prop => prop.ExibeItemMatriculaSolicitante)
+        @Smc.EditorFor(prop => prop.ExibeItemAposTerminoEtapa)
+        @Smc.EditorFor(prop => prop.ControleVaga)
+    }
+
+    @Smc.MasterDetail(m => m.SituacoesItemMatricula).MinimumItens(1)
+}
+else
+{
+    @Smc.HiddenFor(prop => prop.SolicitacaoEtapaAnteriorAtendida)
+    @Smc.HiddenFor(prop => prop.ExibeItemMatriculaSolicitante)
+    @Smc.HiddenFor(prop => prop.ExibeItemAposTerminoEtapa)
+    @Smc.HiddenFor(prop => prop.ControleVaga)
+}
+
+@Smc.MasterDetail(m => m.FiltrosDados)
+
+@*@Smc.EditorFor(prop => prop.SeqProcesso)
+    @Smc.EditorFor(prop => prop.SeqEtapaSgf)
+    @Smc.EditorFor(prop => prop.Token)
+    @Smc.EditorFor(prop => prop.Ordem)*@
+
+@*@if (Model.SituacaoEtapa == SituacaoEtapa.Liberada || Model.SituacaoEtapa == SituacaoEtapa.Encerrada)
+    {
+        @Smc.EditorFor(prop => prop.SituacaoEtapa)
+        @Smc.EditorFor(prop => prop.DescricaoEtapa).Readonly()
+        @Smc.EditorFor(prop => prop.CentralAtendimento).Readonly()
+        @Smc.EditorFor(prop => prop.FinalizacaoEtapaAnterior).Readonly()
+        @Smc.EditorFor(prop => prop.ExibeItemMatriculaSolicitante).Readonly()
+        @Smc.EditorFor(prop => prop.SolicitacaoEtapaAnteriorAtendida).Readonly()
+        @Smc.EditorFor(prop => prop.ExibeItemAposTerminoEtapa).Readonly()
+    }
+    else
+    {
+        @Smc.EditorFor(prop => prop.SituacaoEtapa)
+        @Smc.EditorFor(prop => prop.DescricaoEtapa)
+        @Smc.EditorFor(prop => prop.CentralAtendimento)
+        @Smc.EditorFor(prop => prop.FinalizacaoEtapaAnterior)
+        @Smc.EditorFor(prop => prop.ExibeItemMatriculaSolicitante)
+        @Smc.EditorFor(prop => prop.SolicitacaoEtapaAnteriorAtendida)
+        @Smc.EditorFor(prop => prop.ExibeItemAposTerminoEtapa)
+    }*@
+
+
+@*Solução Paleativa devido ao [SMCConditionalReadonly(nameof(TipoPrazoEtapa), SMCConditionalOperation.Equals, SMC.Academico.Common.Areas.SRC.Enums.TipoPrazoEtapa.Escalonamento)]
+    junto com [SMCSelect(nameof(TiposPrazoEtapa), AutoSelectSingleItem = true)] para Enumerador não estar funcionando*@
+@*@if ((Model.TiposPrazoEtapa != null
+        && Model.TiposPrazoEtapa.Count == 1
+        && Model.TiposPrazoEtapa.FirstOrDefault().Seq == (long)TipoPrazoEtapa.Escalonamento)
+        || Model.SituacaoEtapa == SituacaoEtapa.Liberada || Model.SituacaoEtapa == SituacaoEtapa.Encerrada)
+    {
+        @Smc.EditorFor(prop => prop.TipoPrazoEtapa).Readonly()
+    }
+    else
+    {
+        @Smc.EditorFor(prop => prop.TipoPrazoEtapa)
+    }*@
+
+@*@if (Model.SituacaoEtapa == SituacaoEtapa.Liberada || Model.SituacaoEtapa == SituacaoEtapa.Encerrada)
+    {
+        @Smc.EditorFor(prop => prop.NumeroDiasPrazoEtapa).Readonly()
+        @Smc.EditorFor(prop => prop.DataInicio).Readonly()
+        @Smc.EditorFor(prop => prop.DataFim).Readonly()
+
+        using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.MasterDetail(prop => prop.Escalonamentos).ReadOnly()
+        }
+    }
+    else
+    {
+        @Smc.EditorFor(prop => prop.NumeroDiasPrazoEtapa)
+        @Smc.EditorFor(prop => prop.DataInicio)
+        @Smc.EditorFor(prop => prop.DataFim)
+
+        using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.MasterDetail(prop => prop.Escalonamentos)
+        }
+    }*@

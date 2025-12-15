@@ -1,0 +1,65 @@
+﻿@model ColaboradorDynamicModel
+@using (Smc.Div("DivConfirmacao").CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    @Smc.EditorFor(m => m.MensagemStep6)
+
+    using (Smc.Fieldset("DadosPessoais").Begin())
+    {
+        @Smc.DisplayFor(p => p.Nome)
+        @Smc.DisplayFor(p => p.NomeSocialConfirmacao)
+        @Smc.DisplayFor(p => p.DataNascimento)
+        @Smc.DisplayFor(p => p.Cpf)
+        @Smc.DisplayFor(p => p.NumeroPassaporteConfirmacao).Size(SMCSize.Grid8_24)
+    }
+    if (Model.Enderecos.SMCCount() + Model.Telefones.SMCCount() + Model.EnderecosEletronicos.SMCCount() > 0)
+    {
+        using (Smc.Fieldset("Contatos").Begin())
+        {
+            if (Model.Enderecos.SMCCount() > 0)
+            {
+                @Smc.DisplayFor(p => p.Enderecos).CssClass("smc-sga-confirmacao-dados-agrupamento")
+            }
+            if (Model.Telefones.SMCCount() > 0)
+            {
+                @Smc.DisplayFor(p => p.Telefones).CssClass("smc-sga-confirmacao-dados-agrupamento-telefone")
+            }
+            if (Model.EnderecosEletronicos.SMCCount() > 0)
+            {
+                @Smc.DisplayFor(p => p.EnderecosEletronicos).CssClass("smc-sga-confirmacao-dados-agrupamento-email")
+            }
+        }
+    }
+    if (Model.InstituicoesExternas.SMCCount() > 0)
+    {
+        using (Smc.Fieldset("InstituicoesExternas").Begin())
+        {
+            @Smc.DisplayFor(p => p.InstituicoesExternas).CssClass("smc-display-collection-list")
+        }
+    }
+    using (Smc.Fieldset("Vinculo").Begin())
+    {
+        @Smc.DisplayFor(p => p.DescricaoVinculoConfirmacao)
+
+        if (Model.ColaboradoresResponsaveis.SMCCount() > 0)
+        {
+            @Smc.DisplayFor(p => p.ColaboradoresResponsaveisConfirmacao).CssClass("smc-sga-confirmacao-dados-agrupamento")
+        }
+        @*if (Model.Cursos.SMCCount() > 0)
+            {
+                @Smc.DisplayFor(p => p.CursosConfirmacao).CssClass("smc-sga-confirmacao-dados-agrupamento smc-sga-confirmacao-dados-paralelos")
+            }*@
+        if (Model.FormacoesEspecificas.SMCCount() > 0)
+        {
+            @Smc.DisplayFor(p => p.FormacoesEspecificasConfirmacao).CssClass("smc-sga-confirmacao-dados-agrupamento")
+        }
+    }
+    if (Model.SeqTitulacao.HasValue)
+    {
+        using (Smc.Fieldset("FormacaoAcademica").Begin())
+        {
+            @Smc.DisplayFor(p => p.SeqTitulacao).Size(SMCSize.Grid10_24)
+            @Smc.DisplayFor(p => p.Descricao).Size(SMCSize.Grid10_24)
+            @Smc.DisplayFor(p => p.TitulacaoMaxima).Size(SMCSize.Grid4_24)
+        }
+    }
+}

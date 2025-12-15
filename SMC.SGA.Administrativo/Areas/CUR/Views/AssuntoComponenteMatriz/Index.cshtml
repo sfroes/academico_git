@@ -1,0 +1,90 @@
+﻿@model List<AssuntoComponenteMatrizListarViewModel>
+@using SMC.Academico.UI.Mvc.Areas.CUR.Lookups
+
+@Html.Action("AssuntoComponenteMatrizCabecalho", "AssuntoComponenteMatriz", Model)
+
+
+@foreach (var modelo in Model)
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+            {
+                using (Smc.Div().CssClass("smc-display smc-listdetailed-conteudo-titulo smc-texto-bold").Size(SMCSize.Grid23_24).Begin())
+                {
+                    <p>@modelo.DescricaoGrupoCurricular</p>
+                }
+
+                using (Smc.Div().Size(SMCSize.Grid1_24).Begin())
+                {
+                    SMCButtonFluentConfiguration buttonNovaConfiguracao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                    .Attribute(SMCMvcConsts.MODAL_ID, "modalSalvarAssunto")
+                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("NovoAssunto_Title"))
+                    .Text(Smc.GetUIResource("Botao_Associar_Assunto"))
+                    .Tooltip(Smc.GetUIResource("Botao_Associar_Assunto"))
+                    .SecurityToken(UC_CUR_001_05_09.MANTER_ASSUNTO_COMPONENTE_MATRIZ)
+                    .Ajax(isPost: false)
+                    .Action("Incluir", "AssuntoComponenteMatriz", new { 
+                        seq = new SMCEncryptedLong(modelo.seqGrupoCurricularComponente), SeqDivisaoMatrizCurricularComponente = new SMCEncryptedLong(modelo.SeqDivisaoMatrizCurricularComponente) 
+                    });
+
+                    SMCButtonSetFluentConfiguration buttonSet = (Smc.ButtonSet().Type(SMCButtonSetType.Secondary)
+                    .NumberOfButtonsToShow(0)
+                    .Size(SMCSize.Grid1_24));
+
+                    using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid1_24).CssClass("smc-sga-margem-superior").Begin())
+                    {
+                        buttonSet.AddButton(buttonNovaConfiguracao);
+
+                        @buttonSet
+                    }
+                }
+            }
+
+            using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+            {
+                @(Smc.Grid("Assuntos", new SMCPagerModel<ComponenteCurricularLookupViewModel>
+                (modelo.Assuntos))
+                .FieldColumn(f => f.DescricaoCompleta, cssClass: "smc-size-md-24  smc-size-lg-24")
+                .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+
+                x => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new
+                {
+                    Seq = new SMCEncryptedLong((x as ComponenteCurricularLookupViewModel).Seq.Value),
+                    SeqDivisaoMatrizCurricularComponente = new SMCEncryptedLong(modelo.SeqDivisaoMatrizCurricularComponente)
+                }, "AssuntoComponenteMatriz")
+                .DisplayMode(SMCButtonDisplayMode.Icon)
+                .Confirm(Smc.GetUIResource("Exclusao_Assunto_Title"),
+                string.Format(Smc.GetUIResource("Exclusao_Assunto_Confirmacao"), (x as ComponenteCurricularLookupViewModel).DescricaoCompleta))
+                .SecurityToken(UC_CUR_001_05_08.EXCLUSAO_ASSUNTO_COMPONENTE_MATRIZ))
+                .HideNumberOfRowsPerPageSelector()
+                .HideNavigator()
+                .HidePager()
+                .HideRowNumber()
+                .HideRowsTotalizer()
+                .HideGridTitle())
+            }
+        }
+    }
+
+}
+
+@using (Smc.ModalWindow("modalSalvarAssunto")
+            .Form("formSalvarAssunto", "SalvarAssunto", "AssuntoComponenteMatriz", closeOnSubmit: true)            
+            .Size(SMCModalWindowSize.Large)
+            .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .Button(SMCButtonBehavior.Fechar, config: btn => btn.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Begin()) { }
+
+@Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+                .CssClass("smc-btn-voltar-icotext")
+                .Action("Index", "ConfiguracaoComponenteMatriz", new
+                {
+                    SeqMatrizCurricular = new SMCEncryptedLong(Model.FirstOrDefault().SeqMatrizCurricular),
+                    SeqCurriculoCursoOferta = new SMCEncryptedLong(Model.FirstOrDefault().SeqCurriculoCursoOferta)
+                })
+                .Type(SMCButtonType.Link)
+                )
+

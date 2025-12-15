@@ -1,0 +1,63 @@
+﻿@using SMC.SGA.Administrativo.Areas.TUR.Views.DivisaoTurmaColaborador.App_LocalResources
+@model TurmaCabecalhoViewModel
+
+@using (Smc.Header("Turma", SMCHeaderType.Primary)
+                                                     .Item(prop => prop.CodigoFormatado, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid5_24, sizeLG: SMCSize.Grid3_24)
+                                                     .Item(prop => prop.CicloLetivoInicio, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid5_24)
+                                                     //.Item(prop => prop.CicloLetivoFim, sizeMD: SMCSize.Grid4_24)
+                                                     .Item(prop => prop.Vagas, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid9_24, sizeLG: SMCSize.Grid3_24)
+                                                     .Item(prop => prop.DescricaoTipoTurma, sizeMD: SMCSize.Grid7_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid6_24)
+                                                     .Item(prop => prop.SituacaoTurmaAtual, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid3_24)
+    .Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-header-detalhes smc-sga-header-detalhes-separador").Begin())
+    {
+        if (Model.TurmaConfiguracoesCabecalho != null)
+        {
+            @*@(Smc.Legend("ConfiguracaoPrincipal", SMCOrientation.Vertical).CssClass("smc-sga-legenda").Items<SMC.Academico.Common.Enums.LegendaPrincipal>())*@
+            @Smc.List("Configuracoes" + Model.Seq, m => m.TurmaConfiguracoesCabecalho).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(cabecalho => Html.Partial("_CabecalhoConfiguracao", cabecalho.Value))
+        }
+
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-header-detalhes-titulo-grid").Begin())
+        {
+            <h3>@Smc.GetUIResource("ProfessorResponsavel_Detalhe_Titulo")</h3>
+
+            @(Smc.ButtonSet()
+                .Type(SMCButtonSetType.Secondary)
+                .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "Editar", new { seq = new SMCEncryptedLong(Model.Seq) }, "TurmaColaborador")
+                .Ajax(isPost: false)
+                .CssClass("smc-btn-novo-icotext")
+                .SecurityToken(UC_TUR_001_02_03.ASSOCIAR_PROFESSOR_RESPOSAVEL_TURMA)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalAdicionarResponsavel")
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("ProfessorResponsavel_Modal_Titulo"))
+                .Text(Smc.GetUIResource("Botao_AssociarProfessorTurma"))
+                .Enabled(Model.HabilitarBotaoAssociarProfessor)
+                .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoAssociarProfessor))
+                .Tooltip(Smc.GetUIResource("Botao_AssociarProfessorTurma_Tooltip"))))
+
+
+
+            if (Model.Colaboradores != null)
+            {
+                @(Smc.Grid("Colaboradores" + Model.Seq, new SMCPagerModel<TurmaCabecalhoResponsavelViewModel>(Model.Colaboradores))
+                                                                                                                    .FieldColumn(f => f.NomeColaborador)
+                                                                                                                    .HideGridTitle()
+                                                                                                                    .HideNavigator()
+                                                                                                                    .HideRowNumber()
+                                                                                                                    .CssClass("smc-sga-header-detalhes-custom-grid")
+                                                                                                                    .Size(SMCSize.Grid24_24))
+            }
+
+            else
+            {
+                using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+                {
+                    using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                    {
+                        <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+                    }
+                }
+            }
+        }
+    }
+}

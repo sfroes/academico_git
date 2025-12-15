@@ -1,0 +1,48 @@
+﻿@model TurmaCabecalhoViewModel
+
+@using (Smc.Header("CabecalhoConfiguracaoGrade", SMCHeaderType.Primary).CssClass("smc-header-botao")
+            .Item(p => p.DescricaoTurma, sizeMD: SMCSize.Grid24_24)
+            .Item(p => p.DescricoesCursoOfertaLocalidadeTurno, sizeMD: SMCSize.Grid24_24, hideDescription: true).Begin())
+{
+    SMCButtonFluentConfiguration buttonComponenteCurricular = (Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                               .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_CUSTOM)
+                                                               .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarComponenteCurricular_Title"))
+                                                               .CssClass("smc-btn-visualizar-ico")
+                                                               .Text(Smc.GetUIResource("Botao_VisualizarComponenteCurricular"))
+                                                               .Tooltip(Smc.GetUIResource("Botao_VisualizarComponenteCurricular"))
+                                                               .Ajax(isPost: false)
+                                                               .Action("VerDetalhesPartial", "ComponenteCurricular", new { @area = "CUR", @seq = new SMCEncryptedLong(Model.SeqComponenteCurricular) })
+                                                               .SecurityToken(SMC.Academico.Common.Areas.CUR.Constants.UC_CUR_002_03_01.VISUALIZAR_DETALHES_COMPONENTE_CURRICULAR));
+
+    SMCButtonSetFluentConfiguration buttonSet = (Smc.ButtonSet().Type(SMCButtonSetType.Secondary)
+                                                .NumberOfButtonsToShow(1));
+
+    buttonSet.AddButton(buttonComponenteCurricular);
+
+    using (Smc.Div("").CssClass("smc-sga-header-btn-container").Begin())
+    {
+        @buttonSet
+    }
+}
+
+@*@using (Smc.Header("Turma", SMCHeaderType.Primary)
+                                                         .Item(prop => prop.CodigoFormatado, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid5_24, sizeLG: SMCSize.Grid3_24)
+                                                         .Item(prop => prop.CicloLetivoInicio, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid5_24)
+                                                         //.Item(prop => prop.CicloLetivoFim, sizeMD: SMCSize.Grid4_24)
+                                                         .Item(prop => prop.Vagas, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid9_24, sizeLG: SMCSize.Grid3_24)
+                                                         .Item(prop => prop.DescricaoTipoTurma, sizeMD: SMCSize.Grid7_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid6_24)
+                                                         .Item(prop => prop.SituacaoTurmaAtual, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid3_24)
+            .Begin())
+    {
+
+
+
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-header-detalhes smc-sga-header-detalhes-separador").Begin())
+        {
+            if (Model.TurmaConfiguracoesCabecalho != null)
+            {
+                @(Smc.Legend("ConfiguracaoPrincipal", SMCOrientation.Vertical).CssClass("smc-sga-legenda").Items<SMC.Academico.Common.Enums.LegendaPrincipal>())
+                @Smc.List("Configuracoes" + Model.Seq, m => m.TurmaConfiguracoesCabecalho).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(cabecalho => Html.Partial("_CabecalhoConfiguracao", cabecalho.Value))
+            }
+        }
+    }*@

@@ -1,0 +1,103 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.CNC.Models;
+@model IntegralizacaoConsultaHistoricoViewModel
+
+@{
+    if (Model.HistoricoEscolarComMatriz.SMCCount() == 0 && Model.HistoricoEscolarSemMatriz.SMCCount() == 0)
+    {
+        if (Model.DadosCabecalho.SeqAluno > 0)
+        {
+            <label>@string.Format(Smc.GetUIResource("Label_Lista_Integralizacao_SemRegistro"), "Aluno")</label>
+        }
+        else
+        {
+            <label>@string.Format(Smc.GetUIResource("Label_Lista_Integralizacao_SemRegistro"), "Ingressante")</label>
+        }
+
+    }
+    else
+    {
+        using (Smc.Div("SituacaoComponente").Size(SMCSize.Grid11_24).Begin())
+        {
+            <p class="smc-sga-titulo-legenda">@Smc.GetUIResource("Title_Legenda_SituacaoComponenteIntegralizacao")</p>
+            @(Smc.Legend("SituacaoComponente", SMCOrientation.Horizontal).CssClass("smc-sga-legenda").Items<SMC.Academico.Common.Areas.CNC.Enums.SituacaoComponenteIntegralizacaoLegend>())
+        }
+
+        using (Smc.Div("SiglaComponente").Size(SMCSize.Grid13_24).CssClass("smc-sga-legenda-sigla").Begin())
+        {
+                @Smc.DisplayFor(m => m.LegendaTiposComponentesCurriculares)
+        }
+    }
+
+    if (Model.HistoricoEscolarComMatriz.SMCCount() > 0)
+    {
+        using (Smc.Accordion("ComponentesComMatriz").AllowMultipleOpen(true).Size(SMCSize.Grid24_24).CssClass("smc-sga-accordion-integralizacao-curricular").Begin())
+        {
+            foreach (var item in Model.HistoricoEscolarComMatriz.OrderBy(o => o.NumeroDivisao))
+            {
+                using (Smc.AccordionSection("Divisao" + Guid.NewGuid().ToString()).Title(item.DescricaoDivisao).IsOpen(true).Begin())
+                {
+                    var viewDivisao = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.INTEGRALIZACAO_CURRICULAR_DIVISAO);
+                    @Html.Partial(viewDivisao, item);
+                }
+            }
+        }
+    }
+
+    if (Model.HistoricoEscolarSemMatriz.SMCCount() > 0)
+    {
+        using (Smc.Accordion("ComponentesSemMatriz").AllowMultipleOpen(true).Size(SMCSize.Grid24_24).CssClass("smc-sga-accordion-integralizacao-curricular").Begin())
+        {
+
+            using (Smc.AccordionSection("ComponentesCurricularSemMatriz").Title(@Smc.GetUIResource("Title_Componentes_Curricular_Cursados")).IsOpen(true).Begin())
+            {
+                using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-mensagem-multiplas-linhas").Begin())
+                {
+                    using (Smc.Div().CssClass("smc-sga-ico-mensagem").Begin()) { }
+                    @Smc.DisplayFor(m => m.MensagemComponentesCursados).HideLabel().Size(SMCSize.Grid24_24)
+                }
+
+                @(Smc.Grid("gridComponentes", new SMCPagerModel<IntegralizacaoHistoricoSemMatrizViewModel>(Model.HistoricoEscolarSemMatriz))
+                                                                                                                                .HideGridTitle()
+                                                                                                                                .HideNavigator()
+                                                                                                                                .HidePager()
+                                                                                                                                .HideRowNumber()
+                                                                                                                                .HideRowsTotalizer()
+                                                                                                                                .FieldColumn(f => f.CodigoComponente, cssClass: "smc-size-md-3 smc-size-sm-3 smc-size-xs-3 smc-size-lg-3")
+                                                                                                                                .FieldColumn(f => f.SiglaComponente, cssClass: "smc-size-md-1 smc-size-sm-1 smc-size-xs-1 smc-size-lg-1")
+                                                                                                                                .ContentColumn(@<text>
+                                                                                                                                    @{
+                                                                                                                                                    var model = (item as IntegralizacaoHistoricoSemMatrizViewModel);
+                                                                                                                                    }
+                                                                                                                                    @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-btn-formato-link")
+                                                                                                                                                                        .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                                                                                                                                        .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizar")
+                                                                                                                                                                        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Componente_Curricular_Ementa"))
+                                                                                                                                                                        .Ajax(isPost: false)
+                                                                                                                                                                        .Action("ConsultaComponenteCurricularEmenta", "ComponenteCurricularEmentaRoute", new { SeqComponenteCurricular = model.SeqComponente, SeqPessoaAtuacao = (long?)ViewBag.SeqPessoaAtuacao, SeqHistoricoEscolarUltimo = model.SeqHistoricoEscolarUltimo, SeqPlanoEstudo = model.SeqPlanoEstudo, area = string.Empty })
+                                                                                                                                                                        .Type(SMCButtonType.Link)
+                                                                                                                                                                        .Text(model.DescricaoComponente)))
+                                                                                                                                </text>, header: Smc.GetUIResource("Title_Column_ComponenteCurricular"), cssClass: "smc-size-md-12 smc-size-sm-12 smc-size-xs-12 smc-size-lg-12")
+                                                                                                                                                                .FieldColumn(f => f.CargaHoraria, cssClass: "smc-size-md-3 smc-size-sm-3 smc-size-xs-3 smc-size-lg-3")
+                                                                                                                                                                .FieldColumn(f => f.Credito, cssClass: "smc-size-md-3 smc-size-sm-3 smc-size-xs-3 smc-size-lg-3")
+                                                                                                                                                                .ContentColumn(@<text>
+                                                                                                                                                                    @{ var model = (item as IntegralizacaoHistoricoSemMatrizViewModel); }
+                                                                                                                                                                    @Smc.LegendItem(x => model.SituacaoComponente, false, model)
+                                                                                                                                                                </text>, cssClass: "smc-sga-coluna-status")
+                                                                                                                                                                                                                        .ContentColumn(@<text>
+                                                                                                                                                                                                                            @{ var model = (item as IntegralizacaoHistoricoSemMatrizViewModel); }
+                                                                                                                                                                                                                            @{var buttonSet = Smc.ButtonSet().Type(SMCButtonSetType.Secondary);
+                                                                                                                                                                                                                                buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                                                                    .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizar")
+                                                                                                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Historico_Escolar_Integralizacao"))
+                                                                                                    .Ajax(isPost: false)
+                                                                                                    .Action("ConsultaHistoricosEscolarComponente", "IntegralizacaoCurricularRoute", new { SeqsHistoricosEscolarPlano = model.SeqsHistoricosEscolarPlano, SeqPlanoEstudo = model.SeqPlanoEstudo, SeqPlanoEstudoAntigo = model.SeqPlanoEstudoAntigo, SeqComponente = model.SeqComponente, area = string.Empty })
+                                                                                                    .Tooltip(Smc.GetUIResource("Button_Historico_Escolar_Integralizacao"))
+                                                                                                    .CssClass("smc-btn-visualizar-ico"));
+                                                                                                                                                                                                                                if (model.ExibirInformacao)
+                                                                                                                                                                                                                                { @buttonSet;
+                                                                                                                                                                                                                                                    } }
+                                                                                                                                                                                                                        </text>, cssClass: "smc-size-md-1 smc-size-sm-1 smc-size-xs-1 smc-size-lg-1").Size(SMCSize.Grid24_24))
+            }
+        }
+    }
+}

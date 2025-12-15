@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSComprovanteProcessosAtividades" targetNamespace="http://tempuri.org/DSComprovanteProcessosAtividades.xsd" xmlns:mstns="http://tempuri.org/DSComprovanteProcessosAtividades.xsd" xmlns="http://tempuri.org/DSComprovanteProcessosAtividades.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSComprovanteProcessosAtividades" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSComprovanteProcessosAtividades" msprop:Generator_UserDSName="DSComprovanteProcessosAtividades">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Atividades" msprop:Generator_TableClassName="AtividadesDataTable" msprop:Generator_TableVarName="tableAtividades" msprop:Generator_RowChangedName="AtividadesRowChanged" msprop:Generator_TablePropName="Atividades" msprop:Generator_RowDeletingName="AtividadesRowDeleting" msprop:Generator_RowChangingName="AtividadesRowChanging" msprop:Generator_RowEvHandlerName="AtividadesRowChangeEventHandler" msprop:Generator_RowDeletedName="AtividadesRowDeleted" msprop:Generator_RowClassName="AtividadesRow" msprop:Generator_UserTableName="Atividades" msprop:Generator_RowEvArgName="AtividadesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Seq" msprop:Generator_ColumnVarNameInTable="columnSeq" msprop:Generator_ColumnPropNameInRow="Seq" msprop:Generator_ColumnPropNameInTable="SeqColumn" msprop:Generator_UserColumnName="Seq" type="xs:long" minOccurs="0" />
+              <xs:element name="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" msprop:Generator_UserColumnName="Descricao" type="xs:string" minOccurs="0" />
+              <xs:element name="SituacaoMotivo" msprop:Generator_ColumnVarNameInTable="columnSituacaoMotivo" msprop:Generator_ColumnPropNameInRow="SituacaoMotivo" msprop:Generator_ColumnPropNameInTable="SituacaoMotivoColumn" msprop:Generator_UserColumnName="SituacaoMotivo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

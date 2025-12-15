@@ -1,0 +1,23 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.CUR.Lookups;
+    @using SMC.Framework;
+    @using SMC.Framework.Extensions;
+    @using System.Collections;
+    @using System.Linq;
+
+    @model OfertaMatrizCurricularLookupViewModel
+    @using (Smc.Div("divItem").Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+    {
+        using (Smc.Div("divItem").CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div("divItem").CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.HiddenFor(x => x.Seq)
+                @Smc.DisplayFor(x => x.Codigo).Size(SMCSize.Grid3_24)
+                @Smc.DisplayFor(x => x.DescricaoUnidadeLocalidade).Size(SMCSize.Grid11_24)
+                @Smc.DisplayFor(x => x.DescricaoTurno).Size(SMCSize.Grid2_24)
+                @Smc.DisplayFor(x => x.DataInicioVigencia).Size(SMCSize.Grid3_24)
+                @Smc.DisplayFor(x => x.DataFinalVigencia).Size(SMCSize.Grid3_24)
+                @Smc.DisplayFor(x => x.HistoricoSituacaoAtual).Size(SMCSize.Grid2_24)
+            }
+        }
+    }

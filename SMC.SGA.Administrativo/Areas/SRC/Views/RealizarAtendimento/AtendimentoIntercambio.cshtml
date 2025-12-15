@@ -1,0 +1,29 @@
+﻿@model AtendimentoIntercambioViewModel
+
+@{
+	Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+	@Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_ATENDIMENTO_REABERTURA))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+	@Smc.HiddenFor(x => x.SeqInstituicaoEnsino)
+	@Smc.HiddenFor(x => x.SeqNivelEnsino)
+	@Smc.HiddenFor(x => x.SeqTipoVinculoAluno)
+	@Smc.HiddenFor(x => x.Cpf)
+	@Smc.HiddenFor(x => x.NumeroPassaporte)
+	@Smc.HiddenFor(x => x.TipoMobilidade)
+
+	@Smc.EditorFor(x => x.SeqTipoTermoIntercambio)
+
+	using (Smc.Div("divDadosTermo").Size(SMCSize.Grid24_24).Dependency("SeqTipoTermoIntercambio", "BuscarDadosTermoIntercambio", "RealizarAtendimento", "SRC", false, "SeqSolicitacaoServico").Begin())
+	{
+	}
+
+	@Html.Partial("_BotoesNavegacao", Model)
+}

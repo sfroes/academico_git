@@ -1,0 +1,26 @@
+<po-modal #modalAlerta p-title="Atenção!" [p-primary-action]="acaoFecharModalAleta">
+    <div *ngIf="!mensagemUnica">
+        <div
+            class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24 smc-sga-mensagem smc-sga-mensagem-informativa">
+            <p>
+                {{mensagemAlerta}}
+            </p>
+        </div>
+        <div *ngIf="nomesAlunoAlerta.length">
+            <p>Aluno(s) sem nota:</p>
+            <ul class="smc-sga-lista-alunos-fechamento-diario">
+                <li *ngFor="let nome of nomesAlunoAlerta">{{ nome }}</li>
+            </ul>
+        </div>
+    </div>
+    <div *ngIf="mensagemUnica">
+      <p>
+        {{mensagemUnica}}
+      </p>
+      <div *ngIf="nomesAlunoAlerta.length">
+        <ul class="smc-sga-lista-alunos-fechamento-diario">
+          <li *ngFor="let nome of nomesAlunoAlerta">{{ nome }}</li>
+        </ul>
+      </div>
+    </div>
+</po-modal>

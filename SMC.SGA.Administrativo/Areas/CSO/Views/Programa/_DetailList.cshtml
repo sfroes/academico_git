@@ -1,0 +1,33 @@
+﻿@model ProgramaListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+   
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.Titulo).CssClass("smc-listdetailed-conteudo-titulo").HideLabel().Size(SMCSize.Grid24_24)
+            @Smc.DisplayFor(m => m.TipoPrograma).Size(SMCSize.Grid8_24)
+            @Smc.DisplayFor(m => m.DescricaoSituacaoAtual).Size(SMCSize.Grid8_24)
+        }
+        // Div com cursos
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_Cursos")</label>
+            if (Model.Cursos.SMCCount() > 0)
+            {
+                @Smc.DisplayFor(m => m.Cursos).HideLabel().Size(SMCSize.Grid24_24).HideLabel()
+            }
+            else
+            {
+                using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+                }
+            }
+        }
+    }
+    @Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24, SMCSize.Grid3_24, SMCSize.Grid1_24, SMCSize.Grid1_24)
+}

@@ -1,0 +1,37 @@
+﻿namespace SMC.Academico.Common.Areas.MAT.Constants
+{
+    public static class TOKENS_SITUACAO_MATRICULA
+    {
+        public const string AGUARDANDO_RETORNO_MOBILIDADE = "AGUARDANDO_RETORNO_MOBILIDADE";
+
+        public const string APTO_MATRICULA = "APTO_MATRICULA";
+
+        public const string CANCELADO_DESCUMPRIMENTO_NORMAS_CURSO = "CANCELADO_DESCUMPRIMENTO_NORMAS_CURSO";
+
+        public const string CANCELADO_MOTIVO_FALECIMENTO = "CANCELADO_MOTIVO_FALECIMENTO";
+
+        public const string CANCELADO_NAO_EFETIVACAO_MATRICULA = "CANCELADO_NAO_EFETIVACAO_MATRICULA";
+
+        public const string CANCELADO_SANCAO_DESLIGAMENTO_UNIVERSIDADE = "CANCELADO_SANCAO_DESLIGAMENTO_UNIVERSIDADE";
+
+        public const string CANCELADO_SOLICITACAO_ALUNO = "CANCELADO_SOLICITACAO_ALUNO";
+
+        public const string FORMADO = "FORMADO";
+
+        public const string MATRICULADO = "MATRICULADO";
+
+        public const string MATRICULADO_MOBILIDADE = "MATRICULADO_MOBILIDADE";
+
+        public const string PRAZO_CONCLUSAO_ENCERRADO = "PRAZO_CONCLUSAO_ENCERRADO";
+
+        public const string PROVAVEL_FORMANDO = "PROVAVEL_FORMANDO";
+
+        public const string TERMINO_DISCIPLINA_ISOLADA = "TERMINO_DISCIPLINA_ISOLADA";
+
+        public const string TERMINO_INTERCAMBIO = "TERMINO_INTERCAMBIO";
+
+        public const string TRANCADO = "TRANCADO";
+
+        public const string TRANSFERIDO_INTERNAMENTE = "TRANSFERIDO_INTERNAMENTE";
+    }
+}

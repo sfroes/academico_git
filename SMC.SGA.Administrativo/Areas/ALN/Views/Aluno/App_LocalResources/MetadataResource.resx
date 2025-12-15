@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArquivoFoto" xml:space="preserve">
+    <value>Foto</value>
+  </data>
+  <data name="CadastrarNovaPessoa" xml:space="preserve">
+    <value>Cadastrar nova pessoa</value>
+  </data>
+  <data name="CategoriaCnh" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="CodigoCidadeNaturalidade" xml:space="preserve">
+    <value>Cidade</value>
+  </data>
+  <data name="CodigoPaisEmissaoPassaporte" xml:space="preserve">
+    <value>País de emissão</value>
+  </data>
+  <data name="CodigoPaisNacionalidade" xml:space="preserve">
+    <value>País de origem</value>
+  </data>
+  <data name="CondicoesObrigatoriedade" xml:space="preserve">
+    <value>Condições de obrigatoriedade</value>
+  </data>
+  <data name="CondicoesObrigatoriedadeConfirmacao" xml:space="preserve">
+    <value>Condições de obrigatoriedade</value>
+  </data>
+  <data name="Cpf" xml:space="preserve">
+    <value>CPF</value>
+  </data>
+  <data name="CsmDocumentoMilitar" xml:space="preserve">
+    <value>CSM</value>
+  </data>
+  <data name="DataEmissaoCnh" xml:space="preserve">
+    <value>Data de emissão</value>
+  </data>
+  <data name="DataExpedicaoIdentidade" xml:space="preserve">
+    <value>Data expedição</value>
+  </data>
+  <data name="DataNascimento" xml:space="preserve">
+    <value>Data de nascimento</value>
+  </data>
+  <data name="DataPisPasep" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="DataValidadePassaporte" xml:space="preserve">
+    <value>Data de validade</value>
+  </data>
+  <data name="DataVencimentoCnh" xml:space="preserve">
+    <value>Data de vencimento</value>
+  </data>
+  <data name="DescricaoNaturalidadeEstrangeira" xml:space="preserve">
+    <value>Descrição da naturalidade</value>
+  </data>
+  <data name="EmailConfirmacao" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EstadoCivil" xml:space="preserve">
+    <value>Estado civil</value>
+  </data>
+  <data name="FormacoesEspecificas" xml:space="preserve">
+    <value>Formações específicas</value>
+  </data>
+  <data name="FormaIngresso" xml:space="preserve">
+    <value>Forma ingresso</value>
+  </data>
+  <data name="IdentificacaoCpf" xml:space="preserve">
+    <value>CPF</value>
+  </data>
+  <data name="IdentificacaoDataNascimento" xml:space="preserve">
+    <value>Data de nascimento</value>
+  </data>
+  <data name="IdentificacaoNome" xml:space="preserve">
+    <value>Nome completo</value>
+  </data>
+  <data name="IdentificacaoNumeroPassaporte" xml:space="preserve">
+    <value>Passaporte</value>
+  </data>
+  <data name="IdentificacaoTipoNacionalidade" xml:space="preserve">
+    <value>Nacionalidade</value>
+  </data>
+  <data name="MatrizCurricularOferta" xml:space="preserve">
+    <value>Oferta de matriz curricular</value>
+  </data>
+  <data name="MatrizCurricularOfertaConfirmacao" xml:space="preserve">
+    <value>Oferta de matriz curricular</value>
+  </data>
+  <data name="MensagemStep0" xml:space="preserve">
+    <value>A pessoa que deseja cadastrar já existe na base de dados?</value>
+  </data>
+  <data name="MensagemStep2" xml:space="preserve">
+    <value>Dados pessoais</value>
+  </data>
+  <data name="MensagemStep3" xml:space="preserve">
+    <value>Dados de contato</value>
+  </data>
+  <data name="NecessidadeEspecial" xml:space="preserve">
+    <value>Portador de necessidades especiais?</value>
+  </data>
+  <data name="NomeConfirmacao" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="NomePessoaParentesco" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="NomeSocial" xml:space="preserve">
+    <value>Nome social</value>
+  </data>
+  <data name="NomeSocial_FillInstructions" xml:space="preserve">
+    <value>&lt;p&gt;Deve ser preenchido com pelo menos dois nomes ou nome e um sobrenome, sem uso de caracteres especiais ou números.&lt;/p&gt;
+&lt;p&gt;RESOLUÇÃO No - 12, DE 16 DE JANEIRO DE 2015&lt;/p&gt;
+&lt;p&gt;Art. 1° Deve ser garantido pelas instituições e redes de ensino, em todos os níveis e modalidades, o reconhecimento e adoção do nome social àqueles e àquelas cuja identificação civil não reflita adequadamente sua identidade de gênero, mediante solicitação do próprio interessado.&lt;br /&gt;
+Art. 2° Deve ser garantido, àquelas e àqueles que o solicitarem, o direito ao tratamento oral exclusivamente pelo nome social, em qualquer circunstância, não cabendo qualquer tipo de objeção de consciência.&lt;br /&gt;
+Fonte: Diário Oficial da União – Publicação: 12 de março de 2015&lt;/p&gt;
+&lt;p&gt;Veja mais em: http://pesquisa.in.gov.br/imprensa/jsp/visualiza/index.jsp?jornal=1&amp;pagina=3&amp;data=12/03/2015&lt;/p&gt;</value>
+  </data>
+  <data name="NumeroDocumentoMilitar" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="NumeroIdentidade" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="NumeroPassaporte" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="NumeroPassaporteConfirmacao" xml:space="preserve">
+    <value>Passaporte</value>
+  </data>
+  <data name="NumeroPisPasep" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="NumeroRegistroCnh" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="NumeroSecaoTituloEleitor" xml:space="preserve">
+    <value>Seção eleitoral</value>
+  </data>
+  <data name="NumeroTituloEleitor" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="NumeroZonaTituloEleitor" xml:space="preserve">
+    <value>Zona eleitoral</value>
+  </data>
+  <data name="OfertasCampanha" xml:space="preserve">
+    <value>Oferta de campanha</value>
+  </data>
+  <data name="OrgaoEmissorIdentidade" xml:space="preserve">
+    <value>Órgão emissor</value>
+  </data>
+  <data name="Orientacoes" xml:space="preserve">
+    <value>Professores/Pesquisadores</value>
+  </data>
+  <data name="OrigemIngressante" xml:space="preserve">
+    <value>Origem</value>
+  </data>
+  <data name="RacaCor" xml:space="preserve">
+    <value>Raça/Cor</value>
+  </data>
+  <data name="RacaCor_Info" xml:space="preserve">
+    <value>Como você se considera?</value>
+  </data>
+  <data name="SeqCampanhaCicloLetivo" xml:space="preserve">
+    <value>Oferta de campanha</value>
+  </data>
+  <data name="SeqColaborador" xml:space="preserve">
+    <value>Professor/Pesquisador</value>
+  </data>
+  <data name="SeqEscalonamento" xml:space="preserve">
+    <value>Escalonamento</value>
+  </data>
+  <data name="SeqMatrizCurricularOferta" xml:space="preserve">
+    <value>Oferta de matriz curricular</value>
+  </data>
+  <data name="SeqProcessoSeletivo" xml:space="preserve">
+    <value>Processo seletivo</value>
+  </data>
+  <data name="SeqTermoIntercambio" xml:space="preserve">
+    <value>Termo de intercâmbio</value>
+  </data>
+  <data name="SeqTipoVinculoAluno" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="SituacaoIngressante" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="TipoDocumentoMilitar" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="TipoNacionalidade" xml:space="preserve">
+    <value>Nacionalidade</value>
+  </data>
+  <data name="TipoNecessidadeEspecial" xml:space="preserve">
+    <value>Tipo de necessidade especial</value>
+  </data>
+  <data name="TipoParentesco" xml:space="preserve">
+    <value>Tipo filiação</value>
+  </data>
+  <data name="TipoPisPasep" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="UfDocumentoMilitar" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="UfIdentidade" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="UfNaturalidade" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="UfTituloEleitor" xml:space="preserve">
+    <value>Estado emissor</value>
+  </data>
+  <data name="Vinculo" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="TipoOrientacao" xml:space="preserve">
+    <value>Tipo de orientação</value>
+  </data>
+  <data name="CpfOuPassaporte" xml:space="preserve">
+    <value>CPF ou Passaporte</value>
+  </data>
+  <data name="IngressanteListarDynamicModel_Orientadores" xml:space="preserve">
+    <value>Professores/Pesquisadores</value>
+  </data>
+  <data name="NumeroRegistroAcademico" xml:space="preserve">
+    <value>RA</value>
+  </data>
+  <data name="SeqsSituacaoMatriculaCicloLetivo" xml:space="preserve">
+    <value>Situação da matrícula</value>
+  </data>
+  <data name="DescricaoCursoOferta" xml:space="preserve">
+    <value>Oferta de curso</value>
+  </data>
+  <data name="DescricaoEntidadeResponsavel" xml:space="preserve">
+    <value>Entidade responsável</value>
+  </data>
+  <data name="DescricaoFormacaoEspecifica" xml:space="preserve">
+    <value>Formação específica</value>
+  </data>
+  <data name="DescricaoLocalidade" xml:space="preserve">
+    <value>Localidade</value>
+  </data>
+  <data name="DescricaoSituacaoMatricula" xml:space="preserve">
+    <value>Situação da matrícula</value>
+  </data>
+  <data name="DescricaoVinculo" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="AlunoDynamicModel" xml:space="preserve">
+    <value>Aluno</value>
+  </data>
+  <data name="CicloLetivoIngresso" xml:space="preserve">
+    <value>Ciclo letivo de ingresso</value>
+  </data>
+  <data name="OfertaCurso" xml:space="preserve">
+    <value>Oferta de curso</value>
+  </data>
+  <data name="OfertaMatriz" xml:space="preserve">
+    <value>Oferta de matriz</value>
+  </data>
+  <data name="TipoSolicitacao" xml:space="preserve">
+    <value>Solicitação de serviço</value>
+  </data>
+  <data name="DadosVinculo" xml:space="preserve">
+    <value>Dados do vínculo</value>
+  </data>
+  <data name="DataAdmissao" xml:space="preserve">
+    <value>Data de admissão</value>
+  </data>
+  <data name="Situacao" xml:space="preserve">
+    <value>Situação da matrícula</value>
+  </data>
+  <data name="Entidade" xml:space="preserve">
+    <value>Entidade responsável</value>
+  </data>
+  <data name="Falecido" xml:space="preserve">
+    <value>Falecido</value>
+  </data>
+  <data name="VinculoAtivo" xml:space="preserve">
+    <value>Vínculo ativo</value>
+  </data>
+  <data name="DataFim" xml:space="preserve">
+    <value>Fim do intercâmbio</value>
+  </data>
+  <data name="DataInicio" xml:space="preserve">
+    <value>Início do intercâmbio</value>
+  </data>
+  <data name="DescricaoTermoIntercambio" xml:space="preserve">
+    <value>Termo de intercâmbio</value>
+  </data>
+  <data name="DescricaoTipoIntercambio" xml:space="preserve">
+    <value>Tipo de termo</value>
+  </data>
+  <data name="InstituicaoExterna" xml:space="preserve">
+    <value>Instituição de ensino externa</value>
+  </data>
+  <data name="DescricaoFormaIngresso" xml:space="preserve">
+    <value>Forma de ingresso</value>
+  </data>
+  <data name="IdIngressante" xml:space="preserve">
+    <value>ID do ingressante</value>
+  </data>
+  <data name="Nome_FillInstructions" xml:space="preserve">
+    <value>Deve ser preenchido com pelo menos dois nomes ou nome e um sobrenome, sem uso de caracteres especiais ou números.</value>
+  </data>
+  <data name="AlunoCabecalhoViewModel_DescricaoVinculo" xml:space="preserve">
+    <value>Dados do vínculo</value>
+  </data>
+  <data name="NomeEntidadeResponsavel" xml:space="preserve">
+    <value>Entidade responsável</value>
+  </data>
+  <data name="NomePessoaParentesco_FillInstructions" xml:space="preserve">
+    <value>Deve ser preenchido com pelo menos dois nomes ou nome e um sobrenome, sem uso de caracteres especiais ou números.</value>
+  </data>
+  <data name="VinculoAlunoAtivo" xml:space="preserve">
+    <value>Situação do vínculo ativo</value>
+  </data>
+  <data name="TipoVinculoAluno" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="NomeCompleto" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="CodigoPaisNacionalidadeReadOnly" xml:space="preserve">
+    <value>País de origem</value>
+  </data>
+  <data name="CodigoPaisNacionalidadeReadOnly_FillInstructions" xml:space="preserve">
+    <value>Somente o Administrador Acadêmico do Sistema pode alterar este campo.</value>
+  </data>
+  <data name="CpfReadOnly" xml:space="preserve">
+    <value>CPF</value>
+  </data>
+  <data name="CpfReadOnly_FillInstructions" xml:space="preserve">
+    <value>Somente o Administrador Acadêmico do Sistema pode alterar este campo.</value>
+  </data>
+  <data name="DataNascimentoReadOnly" xml:space="preserve">
+    <value>Data de nascimento</value>
+  </data>
+  <data name="DataNascimentoReadOnly_FillInstructions" xml:space="preserve">
+    <value>Somente o Administrador Acadêmico do Sistema pode alterar este campo.</value>
+  </data>
+  <data name="NomeSocialReadOnly" xml:space="preserve">
+    <value>Nome social</value>
+  </data>
+  <data name="NomeSocialReadOnly_FillInstructions" xml:space="preserve">
+    <value>Somente o Administrador Acadêmico do Sistema pode alterar este campo.</value>
+  </data>
+  <data name="TipoNacionalidadeReadOnly" xml:space="preserve">
+    <value>Nacionalidade</value>
+  </data>
+  <data name="TipoNacionalidadeReadOnly_FillInstructions" xml:space="preserve">
+    <value>Somente o Administrador Acadêmico do Sistema pode alterar este campo.</value>
+  </data>
+  <data name="NomeFiliacaoReadOnly" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="NomeFiliacaoReadOnly_FillInstructions" xml:space="preserve">
+    <value>Somente o Administrador Acadêmico do Sistema pode alterar este campo.</value>
+  </data>
+  <data name="TipoParentescoReadOnly" xml:space="preserve">
+    <value>Tipo de filiação</value>
+  </data>
+  <data name="TipoParentescoReadOnly_FillInstructions" xml:space="preserve">
+    <value>Somente o Administrador Acadêmico do Sistema pode alterar este campo.</value>
+  </data>
+  <data name="NomeFiltro" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="SeqCicloLetivoIngresso" xml:space="preserve">
+    <value>Ciclo letivo de ingresso</value>
+  </data>
+  <data name="CursoTransferenciaExterna" xml:space="preserve">
+    <value>Curso transferência externa</value>
+  </data>
+  <data name="NomeInstituicaoTransferenciaExterna" xml:space="preserve">
+    <value>Instituição transferência externa</value>
+  </data>
+  <data name="Inclusao" xml:space="preserve">
+    <value>Usuário de inclusão</value>
+  </data>
+  <data name="NumeroProtocolo" xml:space="preserve">
+    <value>Protocolo da Solicitação de Inclusão</value>
+  </data>
+  <data name="Observacao" xml:space="preserve">
+    <value>Observação de inclusão</value>
+  </data>
+  <data name="DescricaoNivelEsino" xml:space="preserve">
+    <value>Nível de ensino</value>
+  </data>
+  <data name="Exclusao" xml:space="preserve">
+    <value>Usuário de exclusão</value>
+  </data>
+  <data name="NumeroProtocoloExclusao" xml:space="preserve">
+    <value>Protocolo da Solicitação de Exclusão</value>
+  </data>
+  <data name="ObservacaoExclusao" xml:space="preserve">
+    <value>Observação de exclusão</value>
+  </data>
+  <data name="DataFimTermoIntercambio" xml:space="preserve">
+    <value>Data fim do intercâmbio</value>
+  </data>
+  <data name="DataInicioTermoIntercambio" xml:space="preserve">
+    <value>Data início do intercâmbio</value>
+  </data>
+  <data name="DescricaoInstituicaoExterna" xml:space="preserve">
+    <value>Instituição de ensino externa</value>
+  </data>
+  <data name="Emails" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="AlunoFiltroDynamicModel_NumeroPassaporte" xml:space="preserve">
+    <value>Passaporte</value>
+  </data>
+  <data name="CancelarMatriculaViewModel_DataInicio" xml:space="preserve">
+    <value>Data início da situação</value>
+  </data>
+  <data name="CancelarMatriculaViewModel_Observacao" xml:space="preserve">
+    <value>Observação</value>
+  </data>
+  <data name="CancelarMatriculaViewModel_SeqSituacaoMatricula" xml:space="preserve">
+    <value>Situação de matrícula</value>
+  </data>
+  <data name="DataLimiteConclusao" xml:space="preserve">
+    <value>Data limite de conclusão</value>
+  </data>
+  <data name="DataPrevisaoConclusao" xml:space="preserve">
+    <value>Data de previsão de conclusão</value>
+  </data>
+  <data name="ConsultaDadosAlunoCiclosLetivosSituacoesViewModel_DataInicio" xml:space="preserve">
+    <value>Início</value>
+  </data>
+  <data name="AlunoCabecalhoViewModel_CodigoAlunoMigracao" xml:space="preserve">
+    <value>Código de migração</value>
+  </data>
+  <data name="AlunoListarDynamicModel_CodigoAlunoMigracao" xml:space="preserve">
+    <value>Código de migração</value>
+  </data>
+  <data name="ConsultaDadosAlunoViewModel_OfertaMatriz" xml:space="preserve">
+    <value>Oferta de matriz atual</value>
+  </data>
+  <data name="ConsultaDadosAlunoTermoIntercambioViewModel_DataFim" xml:space="preserve">
+    <value>Fim do intercâmbio</value>
+  </data>
+  <data name="ConsultaDadosAlunoTermoIntercambioViewModel_DataInicio" xml:space="preserve">
+    <value>Início do intercâmbio</value>
+  </data>
+  <data name="ConsultaDadosAlunoTermoIntercambioViewModel_DescricaoTermoIntercambio" xml:space="preserve">
+    <value>Termo de intercâmbio</value>
+  </data>
+  <data name="ConsultaDadosAlunoTermoIntercambioViewModel_DescricaoTipoIntercambio" xml:space="preserve">
+    <value>Tipo de termo</value>
+  </data>
+  <data name="ConsultaDadosAlunoTermoIntercambioViewModel_InstituicaoExterna" xml:space="preserve">
+    <value>Instituição de ensino externa</value>
+  </data>
+  <data name="ArquivoAnexado" xml:space="preserve">
+    <value>Anexo</value>
+  </data>
+  <data name="Observacoes" xml:space="preserve">
+    <value>Observações</value>
+  </data>
+  <data name="SeqCicloLetivoSituacaoMatricula" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="SeqsGruposProgramasResponsaveis" xml:space="preserve">
+    <value>Entidade responsável</value>
+  </data>
+  <data name="AlunoListarDynamicModel_CodigoPessoaCAD" xml:space="preserve">
+    <value>Código de pessoa (CAD)</value>
+  </data>
+  <data name="NumeroRegistroProfissional" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="TipoRegistroProfissional" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="NumeroIdentidadeEstrangeira" xml:space="preserve">
+    <value>Identidade Estrangeira</value>
+  </data>
+  <data name="AlunoFiltroDynamicModel_CodigoAlunoMigracao_FillInstructions" xml:space="preserve">
+    <value>O código de migração refere-se ao número de matrícula do aluno de graduação no SGA Legado.</value>
+  </data>
+</root>

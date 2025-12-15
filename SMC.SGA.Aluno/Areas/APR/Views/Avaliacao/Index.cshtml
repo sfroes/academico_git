@@ -1,0 +1,183 @@
+﻿@model ConsultaAvaliacoesTurmaViewModel
+
+@using (Smc.Div("divLegenda").Begin())
+{
+    @(Smc.Legend("legenda", SMCOrientation.Horizontal).CssClass("smc-legenda-titulo-agrupamento").Items<SMC.Academico.Common.Areas.APR.Enums.SituacaoEntregaOnline>().Size(SMCSize.Grid24_24))
+}
+
+@using (Smc.Div("divContainer").CssClass("smc-sga-trabalho-online").Begin())
+{
+    using (Smc.Div("divTurma").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div("divAgrupamentoTurma").Size(SMCSize.Grid24_24).CssClass("smc-sga-listaturma").Begin())
+        {
+            <h2 class="smc-size-lg-15 smc-size-xs-24 smc-size-sm-24 smc-size-md-13">@Model.Descricao</h2>
+            using (Smc.Div("divTotalizadores").Size(SMCSize.Grid11_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid9_24).Begin())
+            {
+                if (Model.PossuiApuracaoFrequencia)
+                {
+                    using (Smc.Div().CssClass("col-lg-offset-1 col-md-offset-1 smc-sga-totalizador smc-sga-totalizador-detalhe").Size(SMCSize.Grid5_24, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid5_24).Begin())
+                    {
+                        <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Label_Totalizador_Faltas")</span>
+                        <p>@Model.Falta</p>
+                    }
+                }
+                using (Smc.Div().CssClass("col-lg-offset-1 col-md-offset-1 smc-sga-totalizador smc-sga-totalizador-detalhe").Size(SMCSize.Grid5_24, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid5_24).Begin())
+                {
+                    <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-totalizador-titulo">
+                        @if (Model.DiarioFechado)
+                        {
+                            @Smc.GetUIResource("Label_Totalizador_Nota_Final");
+                        }
+                        else
+                        {
+                            @Smc.GetUIResource("Label_Totalizador_Nota_Total");
+                        }
+                    </span>
+                    <p>@Model.NotaTotal</p>
+                }
+                using (Smc.Div().CssClass("col-lg-offset-1 col-md-offset-1 smc-sga-totalizador smc-sga-totalizador-detalhe smc-sga-totalizador-detalhe-reavaliacao").Size(SMCSize.Grid5_24, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid5_24).Begin())
+                {
+                    <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-totalizador-titulo">
+                        @if (Model.DiarioFechado)
+                        {
+                            @Smc.GetUIResource("Label_Totalizador_Reavaliacao_Nota_Final");
+                        }
+                        else
+                        {
+                            @Smc.GetUIResource("Label_Totalizador_Reavaliacao_Nota_Total");
+                        }
+                    </span>
+                    <p>@Model.NotaTotalReavaliacao</p>
+                }
+                using (Smc.Div().CssClass("col-lg-offset-1 col-md-offset-1 smc-sga-totalizador smc-sga-totalizador-detalhe").Size(SMCSize.Grid5_24, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid5_24).Begin())
+                {
+                    <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Label_Totalizador_Situacao")</span>
+                    <p>@Model.Situacao</p>
+                }
+            }
+            @(Smc.Grid("gridAvalicaoTurma", new SMCPagerModel<DetalhesAvaliacaoViewModel>(Model.Avaliacoes))
+                    .AutoHideNavigator()
+                    .HideGridTitle()
+                    .HideNumberOfRowsPerPageSelector()
+                    .HideRowNumber()
+                    .HideRowsTotalizer()
+                    .ContentColumn(
+                    @<text>
+                            @{
+                                var modelo = (item as DetalhesAvaliacaoViewModel);
+                                if (modelo.EntregaWeb)
+                                {
+                                    @Smc.LegendItem(x => modelo.Situacao, false, modelo)
+                                }
+                            }
+                    </text>, cssClass: "smc-size-md-1")
+                    .FieldColumn(f => f.Sigla, cssClass: "smc-size-md-2")
+                    .ContentColumn(
+                        @<text>
+                            <p class="smc-sga-descricao-avaliacao">
+                                @((item as DetalhesAvaliacaoViewModel).Descricao)
+                            </p>
+                            @if (!string.IsNullOrEmpty((item as DetalhesAvaliacaoViewModel).Local))
+                                                {
+                                <p class="smc-sga-local-avaliacao">
+                                    @((item as DetalhesAvaliacaoViewModel).Local)
+                                </p>
+                                                }
+                        </text>, header: Smc.GetUIResource("Coluna_Descricao_Avaliacao"), cssClass: "smc-size-md-10")
+                        .FieldColumn(f => f.Data, cssClass: "smc-size-md-7")
+                        .FieldColumn(f => f.Valor, cssClass: "smc-size-md-2")
+                        .ContentColumn(
+                        @<text>
+                            @{
+                                                    var modelo = (item as DetalhesAvaliacaoViewModel);
+                                @modelo.Nota;
+                                                    if (!string.IsNullOrEmpty(modelo.ComentarioApuracao))
+                                                    {
+                                    @Smc.Instructions().Text(modelo.ComentarioApuracao).CssClass("smc-sga-instruction");
+                                                    }
+                            }
+                        </text>, header: Smc.GetUIResource("Coluna_Nota_Avaliacao"), cssClass: "smc-size-md-2")
+                        .ButtonColumn(SMCButtonSetType.Primary, 0, "", "", "", true,
+                                    b => Smc.Button(SMCButtonBehavior.Visualizar, "Index", new { SeqAplicacaoAvaliacao = new SMCEncryptedLong((b as DetalhesAvaliacaoViewModel).SeqAplicacaoAvaliacao) }, "EntregaOnline")
+                                    .DisplayMode(SMCButtonDisplayMode.Text)
+                                    //.Hide(!(b as DetalhesAvaliacaoViewModel).EntregaWeb)
+                                    .Enabled((b as DetalhesAvaliacaoViewModel).EntregaWeb)
+                                    .Text(Smc.GetUIResource("Botao_Entrega_Online"))
+                                    .Tooltip(Smc.GetUIResource("Botao_Entrega_Online_Tooltip"))))
+        }
+    }
+    if (Model.DivisoesTurma.SMCAny())
+    {
+        foreach (var divisao in Model.DivisoesTurma)
+        {
+            using (Smc.Div("divDivisaoTurma").Size(SMCSize.Grid24_24).CssClass("smc-sga-divisaoturma").Begin())
+            {
+                using (Smc.Div().Size(SMCSize.Grid22_24, SMCSize.Grid24_24, SMCSize.Grid18_24, SMCSize.Grid22_24).Begin())
+                {
+                    <h3>@divisao.Descricao</h3>
+                }
+                using (Smc.Div().Size(SMCSize.Grid2_24, SMCSize.Grid24_24, SMCSize.Grid6_24, SMCSize.Grid2_24).CssClass("smc-sga-totalizador smc-sga-totalizador-detalhe").Begin())
+                {
+                    <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)  smc-sga-totalizador-titulo">Nota</span>
+                    <p>@divisao.Nota</p>
+                }
+
+                @(Smc.Grid("gridAvalicaoDivisaoTurma", new SMCPagerModel<DetalhesAvaliacaoViewModel>(divisao.Avaliacoes))
+                .AutoHideNavigator()
+                .HideGridTitle()
+                .HideNumberOfRowsPerPageSelector()
+                .HideRowNumber()
+                .HideRowsTotalizer()
+                .ContentColumn(
+                                    @<text>
+                                        @{
+                                                            var modelo = (item as DetalhesAvaliacaoViewModel);
+                                                            if (modelo.EntregaWeb)
+                                                            {
+                                                @Smc.LegendItem(x => modelo.Situacao, false, modelo)
+                                                            }
+                                        }
+                                    </text>, cssClass: "smc-size-md-1")
+                  .FieldColumn(f => f.Sigla, cssClass: "smc-size-md-2")
+                  .ContentColumn(
+                                                            @<text>
+                                                                <p class="smc-sga-descricao-avaliacao">
+                                                                    @((item as DetalhesAvaliacaoViewModel).Descricao)
+                                                                </p>
+                                                                @if (!string.IsNullOrEmpty((item as DetalhesAvaliacaoViewModel).Local))
+                                                                                {
+                                                                    <p  class="smc-sga-local-avaliacao">
+                                                                        @((item as DetalhesAvaliacaoViewModel).Local)
+                                                                    </p>
+                                                                                }
+                                                            </text>, header: Smc.GetUIResource("Coluna_Descricao_Avaliacao"), cssClass: "smc-size-md-10")
+
+                                          .FieldColumn(f => f.Data, cssClass: "smc-size-md-7")
+                                          .FieldColumn(f => f.Valor, cssClass: "smc-size-md-2")
+                                          .ContentColumn(
+                                            @<text>
+                                                @{
+                                                                    var modelo = (item as DetalhesAvaliacaoViewModel);
+                                                    @modelo.Nota;
+                                                                    if (!string.IsNullOrEmpty(modelo.ComentarioApuracao))
+                                                                    {
+                                                        @Smc.Instructions().Text(modelo.ComentarioApuracao).CssClass("smc-sga-instruction");
+                                                                    }
+                                                }
+                                            </text>, header: Smc.GetUIResource("Coluna_Nota_Avaliacao"), cssClass: "smc-size-md-2")
+                                            .ButtonColumn(SMCButtonSetType.Primary, 0, "", "", "", true,
+                                                    b => Smc.Button(SMCButtonBehavior.Visualizar, "Index", new { SeqAplicacaoAvaliacao = new SMCEncryptedLong((b as DetalhesAvaliacaoViewModel).SeqAplicacaoAvaliacao) }, "EntregaOnline")
+                                                    .DisplayMode(SMCButtonDisplayMode.Text)
+                                                    //.Hide(!(b as DetalhesAvaliacaoViewModel).EntregaWeb)
+                                                    .Enabled((b as DetalhesAvaliacaoViewModel).EntregaWeb)
+                                                    .Text(Smc.GetUIResource("Botao_Entrega_Online"))
+                                                    .Tooltip(Smc.GetUIResource("Botao_Entrega_Online_Tooltip"))))
+            }
+        }
+    }
+}
+
+@(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+                        .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                        .Action("Index", "Home", new { Area = "" }, true)))

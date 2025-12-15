@@ -1,0 +1,46 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.MAT.Models.TurmaMatriculaItemViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid22_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.TurmaFormatado).CssClass("smc-listdetailed-conteudo-titulo").Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid16_24).HideLabel()
+
+            if (Model.AssociacaoOfertaMatrizTipoTurma != SMC.Academico.Common.Areas.TUR.Enums.AssociacaoOfertaMatriz.ExigeApenasUma)
+            {
+                using (Smc.Div().Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid4_24).Begin())
+                {
+                    @Smc.DisplayFor(m => m.DescricaoTipoTurma).Size(SMCSize.Grid24_24).CssClass("smc-sga-totalizador-destaque").HideLabel()
+                    @Smc.Instructions().Text(Smc.GetUIResource("DescricaoTipoTurma_FillInstructions")).CssClass("smc-sga-instruction smc-sga-instruction-totalizador")
+                }
+
+            }
+            else
+            {
+                using (Smc.Div().Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid4_24).Begin())
+                {
+                }
+            }
+            @*@Smc.DisplayFor(m => m.SituacaoMotivo).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24).CssClass("smc-sga-totalizador-destaque").HideLabel()*@
+            @Smc.EditorFor(m => m.backUrl)
+        }
+
+        using (Smc.Div().CssClass("col-md-offset-1 col-lg-offset-1 col-sm-offset-1 smc-sga-divisoes-turma").Size(SMCSize.Grid23_24).Begin())
+        {
+            using (Smc.Div().Size(SMCSize.Grid9_24, SMCSize.Grid12_24, SMCSize.Grid9_24, SMCSize.Grid9_24).Begin())
+            {
+                <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("ParametroDivisoes_Detalhe_Titulo")</label>
+            }
+            using (Smc.Div().Size(SMCSize.Grid9_24, SMCSize.Grid12_24, SMCSize.Grid9_24, SMCSize.Grid10_24).CssClass("smc-margin-left-15").Begin())
+            {
+                <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Fieldset_Modal_SelecaoTurma_Campo_Divisao")</label>
+            }
+
+            var view1 = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews._CONFIRMACAO_TURMA_OFERTA_DIVISOES);
+            @Smc.List("Divisoes" + Model.Seq, m => m.TurmaMatriculaDivisoes).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(divisao => Html.Partial(view1, divisao.Value))
+        }
+    }
+}

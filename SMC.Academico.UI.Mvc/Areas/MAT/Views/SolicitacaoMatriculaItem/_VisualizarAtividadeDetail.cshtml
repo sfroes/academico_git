@@ -1,0 +1,14 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.MAT.Models.SolicitacaoMatriculaItemSituacaoViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid22_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+        {
+            @Smc.LegendItem(m => m.PertenceAtividade, false)
+        }
+        @Smc.DisplayFor(m => m.DescricaoConfiguracaoComponente).CssClass("smc-listdetailed-conteudo-titulo-linhaunica").Size(SMCSize.Grid17_24, SMCSize.Grid22_24, SMCSize.Grid15_24, SMCSize.Grid17_24).HideLabel()
+        @Smc.DisplayFor(m => m.SituacaoMotivo).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid6_24).CssClass("smc-sga-totalizador-destaque").HideLabel()
+    }
+}

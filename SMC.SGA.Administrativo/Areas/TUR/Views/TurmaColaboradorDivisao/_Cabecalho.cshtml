@@ -1,0 +1,26 @@
+﻿@model TurmaCabecalhoViewModel
+@using (Smc.Header("Turma", SMCHeaderType.Primary)
+                                                     .Item(prop => prop.CodigoFormatado, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid5_24, sizeLG: SMCSize.Grid3_24)
+                                                     .Item(prop => prop.CicloLetivoInicio, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid5_24)
+                                                     //.Item(prop => prop.CicloLetivoFim, sizeMD: SMCSize.Grid4_24)
+                                                     .Item(prop => prop.Vagas, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid9_24, sizeLG: SMCSize.Grid3_24)
+                                                     .Item(prop => prop.DescricaoTipoTurma, sizeMD: SMCSize.Grid7_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid6_24)
+                                                     .Item(prop => prop.SituacaoTurmaAtual, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid3_24)
+           .Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-header-detalhes smc-sga-header-detalhes-separador").Begin())
+    {
+        if (Model.TurmaConfiguracoesCabecalho != null)
+        {
+            @*@(Smc.Legend("ConfiguracaoPrincipal", SMCOrientation.Vertical).CssClass("smc-sga-legenda").Items<SMC.Academico.Common.Enums.LegendaPrincipal>())*@
+            @Smc.List("Configuracoes" + Model.Seq, m => m.TurmaConfiguracoesCabecalho).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(cabecalho => Html.Partial("_CabecalhoConfiguracao", cabecalho.Value))
+        }
+
+        if (Model.TurmaDivisoesCabecalho != null)
+        {
+            @Smc.List("Divisoes" + Model.Seq, m => m.TurmaDivisoesCabecalho).HtmlTemplate(cabecalho => Html.Partial("_CabecalhoDivisao", cabecalho.Value))
+        }
+
+    }
+}
+

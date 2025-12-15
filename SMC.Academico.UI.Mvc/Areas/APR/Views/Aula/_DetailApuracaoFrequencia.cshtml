@@ -1,0 +1,33 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.APR.Models
+
+@model  ApuracaoFrequenciaViewModel
+
+@using (Smc.Div().CssClass("smc-detalhe-editavel-organizador").Begin())
+{
+    using (Smc.Div().Begin())
+    {
+        using (Smc.Div().CssClass("smc-detalhe-editavel-linha-dados").Begin())
+        {
+
+            @Smc.HiddenFor(m => m.AlunoComHistorico)
+            @Smc.HiddenFor(m => m.FaltasAtuais)
+            @Smc.HiddenFor(m => m.Seq)
+            @Smc.HiddenFor(m => m.SeqAlunoHistoricoCicloLetivo)
+            @Smc.HiddenFor(m => m.SeqAula)
+            @Smc.HiddenFor(m => m.AlunoFormado)
+            @Smc.EditorFor(m => m.Situacao)
+            @Smc.EditorFor(m => m.NumeroRegistroAcademico)
+            @Smc.EditorFor(m => m.NomeAluno)
+            @if (Model.AlunoFormado)
+            {
+                @Smc.EditorFor(m => m.NumeroFaltas).Size(SMCSize.Grid2_24, SMCSize.Grid12_24, SMCSize.Grid2_24, SMCSize.Grid2_24).Attribute("title", Smc.GetUIResource("AlunoFormado_Tooltip"))
+            }
+            else
+            {
+                @Smc.EditorFor(m => m.NumeroFaltas).Size(SMCSize.Grid2_24, SMCSize.Grid12_24, SMCSize.Grid2_24, SMCSize.Grid2_24)
+            }
+            @Smc.EditorFor(m => m.Total).Size(SMCSize.Grid2_24, SMCSize.Grid12_24, SMCSize.Grid2_24, SMCSize.Grid2_24)
+
+        }
+    }
+}

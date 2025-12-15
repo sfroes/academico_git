@@ -1,0 +1,1083 @@
+﻿@import "_smc-fonte.scss";
+
+$smc-caminho-recursos: "../../../../../../Recursos/4.0";
+
+$grid-columns: 24;
+
+// ----- Caminhos das imagens ----- //
+$smc-caminho-compartilhado: $smc-caminho-recursos + "/Images/"!default;
+$smc-caminho-compartilhado-idioma: $smc-caminho-compartilhado + "/smc-ico-idioma/"!default;
+$smc-caminho-aplicacao: "../../Content/Images/" !default;
+
+
+// ----- Caminhos das fontes ----- //
+$smc-caminho-fonte: $smc-caminho-recursos + "/Fonts/"!default;
+$smc-caminho-fonte-compartilhado: $smc-caminho-fonte;
+$path-awesome: $smc-caminho-recursos + "/Css/sass-padrao/font-awesome/fonts" !default; //caminho das fontes do font-awesome
+$smc-caminho-fonte-aplicacao: "../../Content/Fonts/" !default;
+
+// Font-faces
+@include font-face($smc-caminho-fonte-aplicacao, "sf_ui_displayregular", "sf-ui-display-regular-webfont");
+
+// dentro das fontes ( CAMINHO DA FONTE, NOME CHAMADO NA APLICAÇÃO, NOME DO ARQUIVO )
+@include font-face($smc-caminho-fonte-compartilhado, "SegoeLight", "segoewp-light-webfont");
+@include font-face($smc-caminho-fonte-compartilhado, "SegoeSemibold", "seguisb-webfont");
+@include font-face($smc-caminho-fonte-compartilhado, "segoe_uiregular", "segoeui-webfont");
+@include font-face($smc-caminho-fonte-compartilhado, "segoe_uibold", "segoeuib-webfont");
+@include font-face($smc-caminho-fonte-compartilhado, "segoe_uiitalic", "segoeuii-webfont");
+@include font-face($smc-caminho-fonte-compartilhado, "smc-legend", "smc-legend");
+@include font-face($smc-caminho-fonte-compartilhado, "smc_gti", "smc_gti");
+@include font-face($smc-caminho-fonte-compartilhado, "smc-logotipo", "smc-logotipo");
+
+
+
+// ********** ----- CORES PRINCIPAIS DO SISTEMA / BOTÕES E ITENS GERAIS ----- ********** //
+
+$smc-caminhoPie: "/Recursos/Css/sass-padrao/PIE/PIE.htc"!default;
+
+// ----- Cores do Sistema ----- //
+// Base
+$smc-branco: #ffffff!default;
+$smc-cinza: #626262!default; // Cinza adotado como padrão para textos gerais na aplicação (por isso, separado da escala de cinza).
+$smc-preto: #333333!default;
+$smc-vermelho: #fe4218!default;
+$smc-verde: #146504!default;
+$smc-cor-erro-texto: #b94a48!default;
+$smc-cor-erro-background: #ffe1e0!default;
+
+// Escala de Cinza
+
+$smc-cinza-01: #fcfcfc!default;
+$smc-cinza-02: #f7f8f9!default;
+$smc-cinza-03: #e5e5e5!default;
+$smc-cinza-04: #dcdcdc!default;
+$smc-cinza-05: #cccccc!default;
+$smc-cinza-06: #b3b3b3!default;
+$smc-cinza-07: #999999!default;
+$smc-cinza-08: #626262!default;
+$smc-cinza-09: #505050!default;
+$smc-cinza-10: #444444!default;
+
+// Paleta de Cores da Aplicação (PRINCIPAIS)
+$smc-cor-principal-01: #005e66!default;
+$smc-cor-principal-02: #005e66!default;
+$smc-cor-principal-03: #1a829f!default;
+$smc-cor-principal-04: #1f9fc9!default;
+$smc-cor-principal-05: #427492!default;
+$smc-cor-principal-06: #bad6da!default;
+$smc-cor-principal-07: #e5f5f6!default;
+$smc-cor-principal-08: #e7f1f3!default;
+$smc-cor-principal-09: #275f71!default;
+$smc-cor-principal-10: #005b63!default;
+
+// Paleta de Cores da Aplicação (SECUNDÁRIAS)
+$smc-cor-secundaria-01: #005e66!default;
+$smc-cor-secundaria-02: #00ffff!default;
+$smc-cor-secundaria-03: #71c7db!default;
+$smc-cor-secundaria-04: #00b09e!default;
+$smc-cor-secundaria-05: #dbeaf2!default;
+$smc-cor-secundaria-06: #ff5001!default;
+
+// Cores principais da identidade
+$smc-cor-principal: #005e66!default; // Cor principal do sistema.
+$smc-cor-principal-hover: #1f9fc9!default; // Cor principal hover para botões primários.
+$smc-cor-principal-hover1: #dcdcdc!default; // Cor principal hover para botões destaque (highlight) e outros diversos hovers do sistema.
+$smc-cor-principal-bordas: #dbeaf2!default; // Cor principal das bordas sistema.
+$smc-cor-principal-headers-e-textos: #004058!default; // Cor aplicada à headers, painel busca, textos e links (aplicados em fundo de cor clara).
+$smc-cor-principal-paineis-e-textos: #e5e5e5!default; // Cor aplicada ao painel da esquerda, textos e links (aplicados em funco de cor escura).
+$smc-cor-principal-sombras: #b3b3b3!default; // Cor aplicada às sombras dos menus e das janelas de contexto.
+$smc-cor-principal-contextos: $smc-cor-principal-03!default; // Cor aplicada aos fundos de todos as formas de contexto: novo upload, sortpicker, context menu, context window e painel gadget.
+$smc-cor-principal-backgrounds: #f0f0f0!default; // Cor aplicada ao header (ribbon), à bgs de inputs e de blocos de detalhe editável.
+$smc-cor-principal-background-alternada: #fbfbfb!default;
+$smc-cor-principal-focus-destaque: #f2fdff!default; // Cor aplicada ao campo no estado "focus" e à bgs de elementos internos de menus de contexto.
+$smc-cor-principal-titulos: #005e66!default; // Cor aplicada aos títulos das telas do sistema.
+
+// Cores secundárias da identidade
+$smc-cor-secundaria: #0083a2!default;
+$smc-cor-secundaria-titulos: #ff5001!default; // Cor aplicada aos títulos secundários do sistema (Por exemplo: <legend> do detalhe editável).
+$smc-cor-secundaria-bordas: $smc-cor-secundaria-05!default; // Cor das bordas demarcadoras de regiões no sistema (fieldsets e detalhe editável).
+$smc-cor-secundaria-backgrounds: #e7fbfe!default; // Cor aplicada aos fundo da linha recém incluída no detalhe editável e em outros bgs secundários.
+
+
+// ----- Cores gerais de campos (INPUTS) ----- //
+// Cores campos (base)
+$smc-cor-borda-input: $smc-cinza-06!default;
+$smc-cor-placeholder: $smc-cinza-04!default;
+
+// Cores contador de caracteres do textarea
+$smc-cor-conta-caracteres: $smc-cinza-06!default;
+$smc-cor-conta-caracteres-cinza: $smc-cinza-05!default;
+$smc-cor-conta-caracteres-vermelho: #ddc0c0!default;
+
+// Cores texto selecionado
+$smc-cor-selecao: $smc-cor-principal-hover!default;
+
+// Cores campos desabilitados
+$smc-campo-desabilitado-borda: $smc-cinza-04!default;
+$smc-campo-desabilitado-background: $smc-cinza-03!default;
+$smc-input-texto-desabilitado-borda: $smc-cinza-04!default;
+$smc-input-texto-desabilitado-texto: $smc-cinza-07!default;
+$smc-input-texto-desabilitado-background: $smc-cinza-03!default;
+
+// Cores de campos com foco
+$smc-cor-campos-foco: $smc-cor-principal-focus-destaque!default;
+$smc-cor-borda-campos-foco: $smc-cor-secundaria-bordas!default;
+$smc-cor-campos-foco-sombra: 2px 2px 2px rgba(253,237,206,0.5)!default;
+
+// Cor e ícones para validação de Campos
+$smc-cor-label-erro: $smc-cor-erro-texto!default!default;
+$smc-cor-input-erro-background: $smc-cor-erro-background!default;
+
+// Cores e ícones dos checkbox e radiobuttons
+$smc-cor-borda-checkbox: $smc-cinza-05!default;
+$smc-cor-borda-radiobutton: $smc-cinza-05!default;
+
+// ---- Cores e imagens do topo ----- //
+$smc-cor-topo-separador: $smc-cor-secundaria!default;
+$smc-img-textura-topo: $smc-caminho-aplicacao + "smc-sga-img-textura-topo.png"!default;
+
+// ----- Imagem animada de preloader ----- //
+$img-preloader-uploadfile: $smc-caminho-compartilhado + "smc-img-uploadimage-loading.gif"!default;
+$img-preloader: $smc-caminho-compartilhado + "smc-img-preloader.gif"!default;
+$img-preloader-min: $smc-caminho-compartilhado + "smc-img-minpreloader.gif"!default;
+
+// ----- Ícones Gerais (ELIMINAR) ----- //
+$ico-confirmar: $smc-caminho-compartilhado + "smc-ico-confirmar.png"!default;
+$smc-ico-timepicker: $smc-caminho-compartilhado + "smc-ico-timepicker.png"!default;
+$ico-upload-loading: $smc-caminho-compartilhado + "smc-img-uploadimage-loading.gif"!default;
+
+// ---- White Space para cross browser ---- //
+$img-whitespace: $smc-caminho-compartilhado + "smc-img-crossbrowser-whitespace.png"!default;
+
+
+// ********** ----- LOGOTIPOS ----- ********** //
+$smc-logo-arquidiocese: "\e100";
+$smc-logo-arquidiocese-vertical: "\e101";
+$smc-logo-arquidiocese-icone: "\e104";
+$smc-logo-gti: "\e105";
+$smc-logo-gti-semassinatura: "\e106";
+$smc-logo-gti-icone: "\e107";
+$smc-logo-pucminas: "\e108";
+$smc-logo-pucminas-assinatura: "\e109";
+$smc-logo-pucminas-brasao: "\e110";
+$smc-logo-sociedade: "\e111";
+$smc-logo-sociedade-semassinatura: "\e112";
+$smc-logo-santamaria: "\e113";
+$smc-logo-santamaria-vertical: "\e114";
+$smc-logo-santamaria-icone: "\e115";
+
+// ********** ----- BUSCA ----- ********** //
+// Painel
+
+$smc-busca-funcionalidade-painel-top-xs: 8px!default;
+
+// ********** ----- ESTILO ----- ********** //
+
+$smc-background-image-modal: $smc-caminho-aplicacao +"smc-sga-img-background-login.png" !default;
+
+// Cores estilo
+$smc-cor-cabecalho: $smc-cor-principal-01!default;
+$smc-cor-titulo-principal: $smc-cor-secundaria-titulos!default;
+$smc-cor-subtitulo: $smc-cor-secundaria-titulos!default;
+$smc-cor-background: $smc-branco!default;
+$smc-cor-nome-instituicao: $smc-cinza!default;
+$smc-cor-rodape: $smc-cinza-01!default;
+$smc-cor-rodape-borda: $smc-cinza-02!default;
+$smc-cor-rodape-copyright: $smc-cor-secundaria-01!default;
+
+// Fonte adotada em todo o sistema
+$smc-estilo-textos-sistema-font-family: "sf_ui_displayregular"!default;
+$smc-estilo-textos-sistema-font-size: 14px!default;
+
+// Fonte adotada em todos os títulos do sistema
+$smc-estilo-titulos-sistema-clear: both!default;
+$smc-estilo-titulos-sistema-color: $smc-cor-principal-01!default;
+$smc-estilo-titulos-sistema-font-family: "sf_ui_displayregular"!default;
+$smc-estilo-titulos-sistema-border-bottom: none!default;
+$smc-estilo-titulos-sistema-margin: 35px 0 15px 0!default;
+$smc-estilo-titulos-sistema-padding: 0!default;
+
+// Configuração do plano de fundo do sistema
+$smc-estilo-body-background-color: $smc-cinza-01!default;
+$smc-estilo-body-background-image: none !default;
+$smc-estilo-body-background-repeat: no-repeat!default;
+$smc-estilo-body-background-position: right 140px!default;
+
+// Alerta processando
+$smc-estilo-alerta-processando-background-color: $smc-preto!default;
+$smc-estilo-alerta-processando-opacity: 0.96!default;
+$smc-estilo-alerta-processando-z-index: 1050!default;
+$smc-estilo-alerta-processando-span-font-family: 'segoe_uiregular', Arial, sans-serif!default;
+$smc-estilo-alerta-processando-span-margin: 10% auto 0!default;
+$smc-estilo-alerta-processando-span-border: none!default;
+$smc-estilo-alerta-processando-span-padding: 17px 15px 15px 60px!default;
+$smc-estilo-alerta-processando-span-background: none!default;
+$smc-estilo-alerta-processando-span-color: $smc-cor-principal-03!default;
+$smc-estilo-alerta-processando-padding: 20% 50% !default;
+$smc-estilo-alerta-processando-span-z-index: 21!default;
+$smc-estilo-alerta-processando-span-width: 150px!default;
+$smc-estilo-alerta-processando-span-display: block!default;
+$smc-estilo-alerta-processando-span-background-color: $smc-cor-principal-01!default;
+$smc-estilo-alerta-processando-span-background-size: auto!default;
+$smc-estilo-alerta-processando-span-background-position: 15px center!default;
+$smc-estilo-alerta-processando-span-text-align: center!default;
+$smc-estilo-alerta-processando-span-height: 52px!default;
+$smc-estilo-alerta-processando-span-radius: 3px!default;
+$smc-estilo-alerta-processando-i-span-p-display: block!default;
+$smc-estilo-alerta-processando-div-display: none!default;
+
+// Ribbon
+$smc-estilo-ribbon-background-image: $smc-img-textura-topo!default;
+$smc-estilo-ribbon-background-repeat: no-repeat!default;
+$smc-estilo-ribbon-height: 70px!default;
+$smc-estilo-ribbon-z-index: 1040!default;
+$smc-estilo-ribbon-separador-background-position: right center!default;
+$smc-estilo-ribbon-border-bottom: 1px solid $smc-cinza-03!default;
+$smc-estilo-ribbon-login-margin-top: 23px!default;
+$smc-estilo-ribbon-login-instituicao-padding: 2px!default;
+$smc-estilo-ribbon-login-instituicao-overflow: hidden!default;
+$smc-estilo-ribbon-login-instituicao-white-space: nowrap!default;
+$smc-estilo-ribbon-login-instituicao-text-overflow: ellipsis!default;
+$smc-estilo-ribbon-login-instituicao-font-style: normal!default;
+$smc-estilo-ribbon-login-instituicao-color: $smc-cor-principal-01!default;
+
+// Ícones de Acessibilidade
+$smc-estilo-acessibilidade-z-index: 51!default;
+$smc-estilo-acessibilidade-dropdown-min-width: 200px!default;
+$smc-estilo-acessibilidade-dropdown-background-color: $smc-branco!default;
+$smc-estilo-acessibilidade-dropdown-padding: 5px 10px!default;
+$smc-estilo-acessibilidade-button-margin-right: 3px!default;
+$smc-estilo-btn-acessibilidade-border: none!default;
+$smc-estilo-btn-acessibilidade-background-color: transparent!default; //$smc-cor-secundaria-01!default;
+$smc-estilo-btn-acessibilidade-color: $smc-cor-principal-01!default;
+$smc-estilo-btn-acessibilidade-radius: 4px!default;
+$smc-estilo-btn-acessibilidade-padding: 2px 5px!default;
+$smc-estilo-btn-acessibilidade-icon-size: 21px!default;
+$smc-estilo-btn-acessibilidade-icon-shadow: none!default;
+
+// Sigla e botão de troca de instituição
+$smc-estilo-sigla-instituicao-display: block!default;
+$smc-estilo-sigla-instituicao-padding: 0 0 0 22%!default;
+$smc-estilo-sigla-instituicao-position: absolute!default;
+$smc-estilo-sigla-instituicao-width: auto!default;
+$smc-estilo-sigla-instituicao-font-size: 10px!default;
+$smc-estilo-dropdown-menu-box-shadow: 0 2px 4px $smc-cinza-06!default;
+$smc-estilo-botao-selecionar-instituicao-width: 65%!default;
+$smc-estilo-botao-selecionar-instituicao-padding: 0!default;
+$smc-estilo-botao-selecionar-instituicao-margin: 0 0 0 21%!default;
+$smc-estilo-botao-selecionar-instituicao-border: 0!default;
+$smc-estilo-botao-selecionar-instituicao-background: transparent!default;
+$smc-estilo-botao-selecionar-instituicao-radius: 0!default;
+$smc-estilo-botao-selecionar-instituicao-font-size: 0!default;
+$smc-estilo-botao-selecionar-instituicao-height: 20px!default;
+$smc-estilo-botao-selecionar-instituicao-icone-i-font-size: 0!default;
+$smc-estilo-botao-selecionar-instituicao-icone-color: $smc-cor-principal-01;
+$smc-estilo-botao-selecionar-instituicao-icone-before-font-size: 18px!default;
+$smc-estilo-botao-selecionar-instituicao-focus-box-shadow: none!default;
+$smc-estilo-botao-selecionar-instituicao-before: -2px!default;
+
+// Sistema
+$smc-sistema-margin: 10px 0 0 0!default;
+$smc-sistema-background-color: transparent!default;
+$smc-sistema-background-image: $smc-caminho-aplicacao + ""!default;
+$smc-sistema-background-repeat: no-repeat!default;
+$smc-sistema-background-potision: 0 0!default;
+$smc-sistema-height: 68px!default;
+$smc-sistema-img-margin: 9px 0 0 8px!default;
+$smc-estilo-navbar-fixed-top-padding: 0!default;
+
+// Menu de Usuário
+$smc-estilo-user-before-font-size: 22px!default;
+$smc-estilo-user-before-color: $smc-cor-principal-01!default;
+$smc-estilo-user-before-position: absolute!default;
+$smc-estilo-user-menu-float: none!default;
+$smc-estilo-user-menu-min-width: 260px!default;
+$smc-estilo-user-menu-dropdown-left: -200px!default;
+$smc-estilo-user-header-text-align: center!default;
+$smc-estilo-user-header-img-border: solid 1px $smc-cor-principal-bordas!default;
+$smc-estilo-user-header-p-font-weight: 600!default;
+$smc-estilo-user-header-p-font-style: italic!default;
+$smc-estilo-user-header-p-max-width: 235px!default;
+
+// Menu de Favoritos
+$smc-estilo-usuario-favorito-height: 30px!default;
+$smc-estilo-usuario-favorito-width: 30px!default;
+$smc-estilo-usuario-favorito-float: left!default;
+$smc-estilo-usuario-favorito-before-font-size: 22px!default;
+$smc-estilo-usuario-favorito-before-color: $smc-cor-secundaria-01!default;
+$smc-estilo-usuario-favorito-before-position: absolute!default;
+
+// Conteúdo
+$smc-estilo-aplicaco-logotipo-padding-top: 8px!default;
+$smc-estilo-aplicaco-logotipo-margin-top: 2px!default;
+$smc-estilo-conteudo-margin: 70px 0 0 0!default;
+$smc-estilo-conteudo-padding: 0 15px 0 15px!default;
+$smc-estilo-conteudo-position: relative!default;
+$smc-estilo-conteudo-min-height: 537px!default;
+$smc-estilo-conteudo-padding-left: 240px!default;
+$smc-estilo-conteudo-background-color: $smc-cinza-01!default;
+$smc-estilo-conteudo-clear: none!default;
+
+
+
+// Usuário (Antigo GADGET WINDOW)
+$smc-estilo-user-footer-borda-interna: $smc-cor-principal-bordas!default;
+$smc-estilo-user-footer-box-botoes: $smc-cinza-02!default;
+$smc-estilo-user-footer-cor-botao: $smc-cor-secundaria-01!default;
+$smc-estilo-user-footer-cor-borda-botao: $smc-cor-secundaria-01!default;
+$smc-estilo-user-footer-cor-botao-hover: $smc-cor-principal-06!default;
+$smc-estilo-user-footer-cor-borda-botao-hover: $smc-cor-principal-06!default;
+$smc-estilo-user-footer-janela-usuario-botoes-width: 100%!default;
+$smc-estilo-user-footer-janela-usuario-botoes-padding: 10px!default;
+$smc-estilo-user-footer-botao-padrao-radius: 3px!default;
+$smc-estilo-user-footer-botao-padrao-font-size: 12px!default;
+$smc-estilo-user-footer-botao-padrao-margin: 0 2px!default;
+
+// Favorito
+$smc-menu-favorito-cor: #ecc734!default;
+
+// Rodapé
+$smc-estilo-footer-position: inherit!default;
+$smc-estilo-footer-margin-bottom: -4px; //-15px!default;
+$smc-estilo-footer-border: none!default;
+$smc-estilo-footer-display: block!default;
+$smc-estilo-footer-width: auto!default;
+$smc-estilo-footer-height: 70px!default;
+$smc-estilo-footer-conteudo-height: 70px!default;
+$smc-estilo-footer-copyright-font-style: normal!default;
+$smc-estilo-footer-copyright-font-variant: normal!default;
+$smc-estilo-footer-copyright-font-weight: normal!default;
+$smc-estilo-footer-copyright-font-size: 10px!default;
+$smc-estilo-footer-copyright-font-line-height: normal!default;
+$smc-estilo-footer-copyright-font-family: 'segoe_uiregular'!default;
+$smc-estilo-footer-copyright-text-align: left !default;
+$smc-estilo-footer-copyright-padding-top: 15px; //43px!default;
+$smc-estilo-footer-copyright-position: absolute!default;
+$smc-estilo-footer-copyright-width: 100%!default;
+$smc-estilo-footer-copyright-padding-top: 29px!default;
+$smc-estilo-logo-do-rodape-width: 95px!default;
+$smc-estilo-logo-do-rodape-height: 40px!default;
+$smc-estilo-logo-do-rodape-margin: 8px 2% 3px 0!default;
+$smc-estilo-logo-do-rodape-color: $smc-cor-secundaria-01!default;
+
+// Conteúdo telas de retorno em layout 4-16-4
+$smc-layout_4_16_4-img-return-margin-top: 20px!default;
+$smc-layout_4_16_4-msg-return-margin-top: 40px!default;
+$smc-layout_4_16_4-msg-return-h2-color: $smc-cinza!default;
+
+// Ajuda
+$smc-estilo-btn-help-border: none!default;
+$smc-estilo-btn-help-background-color: transparent!default;
+$smc-estilo-btn-help-radius: none!default!default;
+$smc-estilo-btn-help-padding: 0px 3px!default!default;
+$smc-estilo-btn-help-icon-size: 23px!default!default;
+$smc-estilo-btn-help-icon-shadow: none!default!default;
+$smc-estilo-btn-help-color: $smc-cor-principal-01!default;
+
+// ----- Imagens rodapé ----- //
+$smc-img-rodape-logo-gti: $smc-caminho-compartilhado + "smc-logo-gti-rodape.png"!default;
+$smc-img-rodape-logo-smc: $smc-caminho-compartilhado + "smc-logo-smc-rodape.png"!default;
+$smc-img-rodape-logo-puc: $smc-caminho-compartilhado + "smc-logo-puc-rodape.png"!default;
+
+// Fieldsets
+$smc-estilo-fieldset-border: 1px solid $smc-cor-secundaria-05 !default;
+$smc-estilo-fieldset-background: transparent!default;
+$smc-estilo-fieldset-border-radius: 10px !default;
+$smc-estilo-fieldset-margin: 0 !default;
+$smc-estilo-fieldset-width: auto!default;
+$smc-estilo-fieldset-padding: 10px 5px!default;
+
+// ********** ----- DETALHE EDITAVEL ----- ********** //
+$smc-detalhe-editavel-titulo-font-size: 18px!default;
+
+
+
+// ********** ----- HEADER ----- ********** //
+$smc-header-position: relative!default;
+$smc-header-min-height: 40px!default;
+$smc-header-display: inline-block!default;
+$smc-header-clear: both!default;
+$smc-header-label-clear: both!default;
+$smc-header-p-clear: both!default;
+
+// Cabeçalho com botão na lateral direita superior
+$smc-header-botao-itens-width: 90%!default;
+$smc-header-botao-buttonset-float: right!default;
+$smc-header-botao-buttonset-clear: none!default;
+$smc-header-botao-buttonset-margin: 6px!default;
+$smc-header-botao-buttonset-width: 5%!default;
+
+// Cabeçalho com label à esquerda do conteúdo formando lista horizontal
+$smc-header-label-esquerda-lista-horizontal-after-content: ":"!default;
+
+// Cabeçalho com label à esquerda do conteúdo formando lista vertical
+$smc-header-label-esquerda-lista-vertical-after-content: ":"!default;
+
+// Primeiro campo do cabeçalho com label oculto e dado usado como título
+$smc-header-first-child-titulo-label-display: none!default;
+$smc-header-first-child-titulo-p-color: $smc-branco!default;
+$smc-header-first-child-titulo-p-font-size: 16px!default;
+$smc-header-first-child-titulo-p-padding: 1px 1px 6px 0!default;
+$smc-header-first-child-titulo-p-border-bottom: solid 1px $smc-branco!default;
+$smc-header-first-child-titulo-p-margin: 0 0 10px 6px!default;
+
+// Cabeçalho em Lista Detalhada
+$smc-header-lista-detalhada-width: 100%!default;
+$smc-header-lista-detalhada-background: transparent!default;
+$smc-header-lista-detalhada-border-bottom: solid 1px $smc-cinza-03!default;
+$smc-header-lista-detalhada-radius: 0!default;
+$smc-header-lista-detalhada-box-shadow: none!default;
+$smc-header-lista-detalhada-margin: 0!default;
+$smc-header-lista-detalhada-padding: 6px 8px 15px 7px!default;
+
+$smc-header-lista-detalhada-label-font: normal normal bold 12px /14px 'segoe_uiregular'!default;
+$smc-header-lista-detalhada-label-color: $smc-cor-secundaria-01!default;
+$smc-header-lista-detalhada-label-padding: 2px!default;
+$smc-header-lista-detalhada-label-margin: 0!default;
+
+$smc-header-lista-detalhada-p-font: normal normal bold 12px /14px 'segoe_uiregular'!default;
+$smc-header-lista-detalhada-p-color: $smc-preto!default;
+$smc-header-lista-detalhada-p-padding: 2px!default;
+$smc-header-lista-detalhada-p-margin: 0!default;
+
+// Configurações para geração das classes de Header
+$smc-header-tipos: "primary", "secondary", "tertiary", "quaternary"!default;
+$smc-header-widths: 100%, 100%, 100%, 100%!default;
+$smc-header-backgrounds: $smc-branco, $smc-cor-principal-01, $smc-cor-secundaria-04, $smc-cor-secundaria-05!default;
+$smc-header-borders: solid 1px $smc-cor-principal-06, solid 1px $smc-cor-principal-01, solid 1px $smc-cor-secundaria-03, solid 1px $smc-cor-secundaria-02!default;
+$smc-header-radius: 0, 0, 10px, 10px!default;
+$smc-header-shadows: none, none, none, none!default;
+$smc-header-margins: 0 0 10px 0, 0, 0, 0!default;
+$smc-header-paddings: 15px, 10px 6px 6px 6px, 15px, 0!default;
+
+$smc-header-label-fonts: normal normal bold 14px/16px segoe_uiregular, normal normal bold 14px/16px segoe_uiregular, normal normal bold 14px/16px segoe_uiregular, normal normal bold 14px/16px segoe_uiregular!default;
+$smc-header-label-colors: $smc-cor-secundaria-01, $smc-cor-secundaria-03, $smc-cor-secundaria-02, $smc-cor-secundaria-02!default;
+$smc-header-label-paddings: 2px, 2px, 2px, 2px!default;
+$smc-header-label-margins: 0, 0, 0, 0!default;
+
+$smc-header-p-fonts: normal normal normal 14px/16px segoe_uiregular, normal normal normal 14px/16px segoe_uiregular, normal normal bold 14px/16px segoe_uiregular, normal normal bold 14px/16px segoe_uiregular!default;
+$smc-header-p-colors: $smc-cor-principal, $smc-branco, $smc-cor-secundaria-02, $smc-cor-secundaria-02!default;
+$smc-header-p-paddings: 2px, 2px, 2px, 2px!default;
+$smc-header-p-margins: 0, 0, 0, 0!default;
+
+// Totalizador
+$smc-totalizador-width: 99%!default;
+$smc-totalizador-padding: 10px 0 0 0!default;
+$smc-totalizador-min-height: 50px!default;
+$smc-totalizador-margin: 10px 5px 10px 5px!default;
+$smc-totalizador-border-top: dashed 1px $smc-cor-secundaria-01!default;
+$smc-totalizador-display: inline-block!default;
+$smc-totalizador-background: none!default;
+$smc-totalizador-radius: 5px!default;
+
+// Cabeçalho do totalizador
+$smc-totalizador-header-padding: 0 5px!default;
+$smc-totalizador-header-width: 100%!default;
+$smc-totalizador-header-margin: 0!default;
+$smc-totalizador-header-label-font: italic normal 14px /16px 'segoe_uiregular'!default;
+$smc-totalizador-header-label-color: $smc-branco!default;
+$smc-totalizador-header-p-font: italic normal 14px /16px 'segoe_uiregular'!default;
+$smc-totalizador-header-p-color: $smc-branco!default;
+
+// Itens do totalizador
+$smc-totalizador-itens-display: block!default;
+$smc-totalizador-itens-float: left!default;
+$smc-totalizador-itens-background-color: $smc-cor-secundaria-05!default;
+//$smc-totalizador-itens-background-image:;
+//$smc-totalizador-itens-background-repeat:;
+//$smc-totalizador-itens-background-position:;
+//$smc-totalizador-itens-background-attachment:;
+$smc-totalizador-itens-margin: 0 4px 8px 4px!default;
+$smc-totalizador-itens-min-height: 30px!default;
+$smc-totalizador-itens-padding: 8px 3px!default;
+$smc-totalizador-itens-radius: 5px!default;
+$smc-totalizador-itens-span-margin-left: 50px!default;
+$smc-totalizador-itens-span-float: left!default;
+$smc-totalizador-itens-label-color: $smc-cor-principal!default;
+$smc-totalizador-itens-label-font-size: 12px!default;
+$smc-totalizador-itens-label-display: block!default;
+$smc-totalizador-itens-label-width: 96%!default;
+$smc-totalizador-itens-p-color: $smc-cor-principal!default;
+$smc-totalizador-itens-p-font-size: 16px!default;
+$smc-totalizador-itens-p-margin-bottom: 0!default;
+
+// Totalizador em pares (left e right)
+$smc-totalizador-left-item-margin: 0 0 4px 4px!default;
+$smc-totalizador-left-item-width: 16%!default;
+$smc-totalizador-left-item-bottom-right-radius: 0!default;
+$smc-totalizador-left-item-top-right-radius: 0!default;
+$smc-totalizador-left-item-background: $smc-cor-secundaria-05!default;
+$smc-totalizador-left-item-span-margin-left: 35px!default;
+
+
+$smc-totalizador-right-item-margin: 0 4px 4px 0!default;
+$smc-totalizador-right-item-width: 16%!default;
+$smc-totalizador-right-item-bottom-right-radius: 0!default;
+$smc-totalizador-right-item-top-right-radius: 0!default;
+$smc-totalizador-right-item-background: dashed 1px $smc-cinza!default;
+$smc-totalizador-right-item-background: $smc-cor-secundaria-05!default;
+$smc-totalizador-right-item-span-margin-left: 35px!default;
+
+// Totalizador sem imagem no plano de fundo
+$smc-totalizador-sem-imagem-span-margin-left: 10px!default;
+
+// Configurações para geração das classes de Totalizador
+$smc-totalizador-tipos: "primary", "secondary", "tertiary", "quaternary", "quinary", "senary", "septenary", "octonary"!default;
+$smc-totalizador-widths: 99%, 49.2%, 32.5%, 24.2%, 19.2%, 15.85%, 13.5%, 11.7%!default;
+
+// Particularidades totalizador SENÁRIO (Diminuição da fonte)
+$smc-totalizador-tipo-senary-p-font: normal normal bold 15px /17px 'segoe_uiregular'!default;
+$smc-totalizador-single-item-senary-width: 31.2%!default;
+
+// Particularidades totalizador OCTONÁRIO (Diminuição da fonte)
+$smc-totalizador-tipo-octonary-p-font: normal normal bold 15px /17px 'segoe_uiregular'!default;
+
+// ********** FILL INSTRUCTIONS ----- ********** //
+
+// Button Instruction Disabled
+$smc-btn-disabled-instruction-height: 38px!default;
+//$smc-btn-disabled-instruction-icone-padding: 0 1px 1px 1px!default;
+
+// Button Instruction Active
+//$smc-button-instruction-background: $smc-cor-secundaria-01!default;
+//$smc-button-instruction-margin-left: -4px!default;
+$smc-button-instruction-margin-top: -30px!default;
+//$smc-button-instruction-tamanho: 19px!default;
+//$smc-button-instruction-line-height: 21px!default;
+//$smc-button-instruction-icone-radius: 50px!default;
+//$smc-button-instruction-icone-width: 18px!default;
+//$smc-button-instruction-icone-height: 19px!default;
+//$smc-button-instruction-icone-padding: 0 1px 1px 0!default;
+$smc-instrucoes-preenchimento-icone-color: #ffc727!default;
+$smc-instrucoes-preenchimento-container-z-index: 1038!default;
+
+// ********** ----- LEGENDA ----- ********** //
+// Ícones de legenda
+$smc-ico-legend-circulo-cheio: "\e900"!default;
+$smc-ico-legend-circulo-vazado: "\e901"!default;
+$smc-ico-legend-quadrado-cheio: "\e902"!default;
+$smc-ico-legend-quadrado-vazado: "\e903"!default;
+$smc-ico-legend-coracao-cheio: "\e904"!default;
+$smc-ico-legend-coracao-vazado: "\e905"!default;
+$smc-ico-legend-estrela-cheia: "\e906"!default;
+$smc-ico-legend-estrela-vazada: "\e907"!default;
+$smc-ico-legend-losango-cheio: "\e908"!default;
+$smc-ico-legend-losango-vazado: "\e909"!default;
+$smc-ico-legend-triangulo-cheio: "\e90a"!default;
+$smc-ico-legend-triangulo-vazado: "\e90b"!default;
+$smc-ico-legend-gota-cheia: "\e90c"!default;
+$smc-ico-legend-gota-vazada: "\e90d"!default;
+$smc-ico-legend-hexagrama-cheia: "\e90e"!default;
+$smc-ico-legend-hexagrama-vazada: "\e90f"!default;
+$smc-ico-legend-flor-cheia: "\e910"!default;
+$smc-ico-legend-flor-vazada: "\e911"!default;
+$smc-ico-legend-octogono-cheio: "\e912"!default;
+$smc-ico-legend-octogono-vazado: "\e913"!default;
+
+// Configuração geral do posicionamento dos ícones
+$smc-base-ico-legend-background-position: 1px 12px!default;
+$smc-base-ico-legend-background-repeat: no-repeat!default;
+$smc-base-ico-legend-display: inline-table!default;
+$smc-base-ico-legend-font-size: 25px!default;
+$smc-base-ico-legend-line-height: 10px !default;
+$smc-base-ico-legend-position: relative!default;
+$smc-base-ico-legend-left: 0!default;
+$smc-base-ico-legend-top: 5px!default;
+$smc-base-ico-legend-font-family: "smc-legend"!default;
+
+// Cores de legendas
+// Cores do texto das legendas
+$smc-cor-texto-legenda: $smc-cor-principal-01!default;
+
+// Variação de Amarelo
+$smc-legend-cor-amarelo: #ffe295,#f2c242,#c59413, #976e00!default;
+
+// Variação de Azul
+$smc-legend-cor-azul: #83b2ef, #4280d0, #003b87, #01214a!default;
+
+// Variação de Rosa
+$smc-legend-cor-rosa: #ffa4f7, #ec3adc, #9e2a8f, #570d51!default;
+
+// Variação de Verde
+$smc-legend-cor-verde: #b0f487, #6eae4c, #137d05, #014a15!default;
+
+// Variação de Vermelho
+$smc-legend-cor-vermelho: #fba6a4, #d44d43, #ac1307, #751100!default;
+
+// Box legenda descritiva
+$smc-legend-box-margin: 10px!default;
+$smc-legend-box-border: none!default;
+$smc-legend-box-background-color: transparent!default;
+$smc-legend-box-padding: 20px!default;
+$smc-legend-box-ul-padding: 0 0!default;
+$smc-legend-box-ul-margin: auto !default;
+$smc-legend-box-width: 100%!default;
+$smc-legend-content-title-font-size: 16px!default;
+$smc-legend-content-title-color: $smc-preto!default;
+$smc-legend-content-title-font-weight: 600!default;
+
+// Vertical
+$smc-legend-orientation-vertical-ul-li-display: block !default;
+$smc-legend-orientation-vertical-ul-li-first-child-margin-bottom: 10px;
+$smc-legend-orientation-vertical-ul-li-first-child-display: block;
+
+// Horizontal
+$smc-legend-orientation-horizontal-ul-li-display: inline-table!default;
+$smc-legend-orientation-horizontal-ul-li-padding-right: 10px!default;
+$smc-legend-orientation-horizontal-ul-li-first-child-margin-bottom: 10px!default;
+$smc-legend-orientation-horizontal-ul-li-first-child-display: block!default;
+
+//Legenda de Idiomas
+$smc-legend-idiomas-borda-bandeiras-posicao: $smc-cor-secundaria-02!default;
+$smc-legend-idiomas-cor-login-icones-lista: transparent!default;
+
+
+// ********** ----- LOGIN ----- ********** //
+
+// Processando
+$smc-login-alerta-processando-background-color: $smc-preto!default;
+$smc-login-alerta-processando-opacity: 0.96!default;
+$smc-login-alerta-processando-z-index: 1050!default;
+$smc-login-alerta-processando-span-font-family: 'segoe_uiregular', Arial, sans-serif!default;
+$smc-login-alerta-processando-span-margin: 10% auto 0!default;
+$smc-login-alerta-processando-span-border: none!default;
+$smc-login-alerta-processando-span-padding: 17px 15px 15px 60px!default;
+$smc-login-alerta-processando-span-background: none!default;
+$smc-login-alerta-processando-span-color: $smc-cor-principal-03!default;
+$smc-login-alerta-processando-span-z-index: 21!default;
+$smc-login-alerta-processando-span-width: 150px!default;
+$smc-login-alerta-processando-span-display: block!default;
+$smc-login-alerta-processando-span-background-color: $smc-cor-principal!default;
+$smc-login-alerta-processando-span-background-size: auto!default;
+$smc-login-alerta-processando-span-background-position: 15px center!default;
+$smc-login-alerta-processando-span-text-align: center!default;
+$smc-login-alerta-processando-span-height: 52px!default;
+$smc-login-alerta-processando-span-radius: 3px!default;
+
+
+
+// Body
+$smc-login-body-background-color: $smc-cinza-02!default;
+$smc-login-body-border-top: none!default;
+$smc-login-body-border-bottom: none!default;
+$smc-login-body-border-left: none!default;
+$smc-login-body-border-right: none!default;
+$smc-login-body-background-image: $smc-caminho-aplicacao +"smc-sga-img-background-login.png" !default;
+$smc-login-body-background-repeat: no-repeat!default;
+$smc-login-body-background-position: top left!default;
+$smc-login-body-background-size: auto!default;
+
+// Internacionalização
+$smc-login-btn-internacionalizacao-div-a-border: none!default;
+$smc-login-btn-internacionalizacao-div-a-bg-color: transparent!default;
+$smc-login-btn-internacionalizacao-div-a-color: $smc-preto!default;
+$smc-login-btn-internacionalizacao-div-a-color-hover: $smc-cor-principal-hover!default;
+$smc-login-btn-internacionalizacao-div-a-box-shadow-focus: none!default;
+$smc-login-btn-internacionalizacao-div-a-outline-focus: none!default;
+
+
+// Conteúdo
+$smc-login-conteudo-top: 50px!default;
+$smc-login-conteudo-height: 100%!default;
+$smc-login-conteudo-min-height: 680px!default;
+
+// Login Section
+$smc-login-section-background-color: transparent!default;
+$smc-login-section-background-image: none !default;
+$smc-login-section-background-repeat: no-repeat!default;
+$smc-login-section-background-position: 0 0!default;
+$smc-login-section-margin: 0!default;
+$smc-login-section-border: none!default;
+$smc-login-section-padding: 0!default;
+$smc-login-section-radius: 0!default;
+$smc-login-fieldset-background-color: transparent !default;
+
+// Login Section H1
+$smc-login-section-h1-display: block !default;
+$smc-login-section-h1-background-color: transparent!default;
+$smc-login-section-h1-background-image: $smc-caminho-aplicacao + "smc-sga-logotipo-login.png"!default;
+$smc-login-section-h1-background-repeat: no-repeat!default;
+$smc-login-section-h1-background-position: center!default;
+$smc-login-section-h1-height: 80px !default;
+$smc-login-section-h1-width: 188px !default;
+$smc-login-section-h1-font-size: 0 !default;
+$smc-login-section-h1-padding: 0 !default;
+$smc-login-section-h1-margin: 0 0 20px 0 !default;
+$smc-login-section-h1-borders: none!default;
+
+// Login Section H2
+$smc-login-section-h2-font-size: 15px!default;
+$smc-login-section-h2-color: $smc-cinza!default;
+$smc-login-section-h2-margin: 15px 0!default;
+$smc-login-section-h2-font-weight: normal!default;
+$smc-login-section-h2-width: 100%!default;
+$smc-login-section-label-color: $smc-cinza !default;
+
+// Fieldset Lembrar Senha
+$smc-login-fieldset-lembrar-senha-radiobutton-label-margin: -5px 5% 12px 0!default;
+$smc-login-fieldset-lembrar-senha-radiobutton-label-font-size: 13px!default;
+$smc-login-fieldset-lembrar-senha-radiobutton-label-position: relative!default;
+$smc-login-fieldset-lembrar-senha-radiobutton-label-display: block!default;
+$smc-login-fieldset-lembrar-senha-radiobutton-label-margin-top: -7px !default;
+$smc-login-fieldset-lembrar-senha-radiobutton-label-margin-bottom: 10px!default;
+
+// Login Separador
+$smc-login-separador-width: 100%!default;
+$smc-login-separador-display: table!default;
+$smc-login-separador-text-align: center!default;
+$smc-login-separador-border-bottom: 1px solid $smc-cinza-03!default;
+$smc-login-separador-max-height: 5px!default;
+$smc-login-separador-margin-bottom: 8px!default;
+
+$smc-login-separador-span-padding: 0 5px!default;
+$smc-login-separador-span-font-size: 13px!default;
+$smc-login-separador-span-color: $smc-cinza!default;
+$smc-login-separador-span-display: block!default;
+$smc-login-separador-span-text-align: center!default;
+$smc-login-separador-span-margins: -6px 10% 0 10%!default;
+$smc-login-separador-span-background-color: $smc-cor-principal-09!default;
+
+$smc-login-novo-cadastro-button-width: 100%!default;
+$smc-login-novo-cadastro-btn-cadastrar-width: 100%!default;
+$smc-login-novo-cadastro-btn-cadastrar-text-align: center!default;
+$smc-login-novo-cadastro-btn-cadastrar-font-size: 12px!default;
+$smc-login-novo-cadastro-btn-cadastrar-line-height: 15px!default;
+$smc-login-novo-cadastro-btn-cadastrar-margin-top: 20px!default;
+
+
+
+
+// Mensagens de validação
+$smc-login-mensagens-centro-modal-window-auto-width: 100%!default;
+$smc-login-mensagens-centro-modal-window-auto-left: 0!default;
+$smc-login-mensagens-centro-modal-header-button-left: 95%!default;
+
+//Botão Esqueci minha senha
+$smc-login-lembrar-senha-text-align: left!default;
+$smc-login-lembrar-senha-margin-bottom: -23px !default;
+$smc-login-lembrar-senha-button-background-color: transparent!default;
+$smc-login-lembrar-senha-button-padding: 15px 0!default;
+$smc-login-lembrar-senha-button-border: none!default;
+$smc-login-lembrar-senha-button-color: $smc-cor-principal-01!default;
+$smc-login-lembrar-senha-button-color-hover: $smc-cor-principal-04!default;
+$smc-login-lembrar-senha-button-text-decoration: underline!default;
+$smc-login-lembrar-senha-button-box-shadow: none!default;
+$smc-login-lembrar-senha-button-outline: none!default;
+$smc-detalhe-editavel-tabular-background-color: $smc-cor-principal-10!default;
+
+// Lista de itens para recuperação de senha
+$smc-login-lista-itens-background-color: transparent!default;
+$smc-login-lista-itens-border: none!default;
+$smc-login-lista-itens-background-color-detalhe-editavel-titulo: transparent!default;
+$smc-login-lista-itens-border-detalhe-editavel-titulo: none!default;
+
+// Grupo Botões de Ação Secundária
+$smc-login-group-acao-secundaria-padding-top: 0!default;
+$smc-login-group-acao-secundaria-float: left !default;
+$smc-login-group-acao-secundaria-display: block!default;
+
+// Botões de Ação Secundária(Tratamento individual)
+$smc-login-btn-acao-secundaria-width: 100%!default;
+$smc-login-btn-acao-secundaria-text-align: center!default;
+$smc-login-btn-acao-principal-margin: 0 0 40px 0!default;
+$smc-login-btn-acao-principal-float: left !default;
+$smc-login-btn-acao-secundaria-usuarioderede-height: 23px!default;
+
+$smc-login-group-acao-secundaria-usuarioderede-bg-color: $smc-branco!default;
+$smc-login-group-acao-secundaria-usuarioderede-bg-color-hover: $smc-cor-principal-hover!default;
+$smc-login-group-acao-secundaria-usuarioderede-border: 1px solid $smc-preto!default;
+$smc-login-group-acao-secundaria-usuarioderede-border-hover: 1px solid $smc-preto!default;
+
+$smc-login-group-acao-secundaria-cadastrar-bg-color: $smc-branco!default;
+$smc-login-group-acao-secundaria-cadastrar-bg-color-hover: $smc-cor-principal-hover!default;
+$smc-login-group-acao-secundaria-cadastrar-border: 1px solid $smc-preto!default;
+$smc-login-group-acao-secundaria-cadastrar-border-hover: 1px solid $smc-preto!default;
+
+$smc-login-group-acao-secundaria-login-bg-color: $smc-branco!default;
+$smc-login-group-acao-secundaria-login-bg-color-hover: $smc-cor-principal-hover!default;
+$smc-login-group-acao-secundaria-login-border: 1px solid $smc-preto!default;
+$smc-login-group-acao-secundaria-login-border-hover: 1px solid $smc-preto!default;
+
+
+// Form Autentication e Reenvio de Senha
+$smc-login-form-authentication-margin-top: 30px!default;
+$smc-login-form-authentication-padding: 0!default;
+$smc-login-texto-reenvio-senha-font-size: 14px!default;
+$smc-login-texto-reenvio-senha-span-color: $smc-cor-secundaria-02 !default;
+$smc-login-texto-reenvio-senha-span-display: block!default;
+$smc-login-texto-reenvio-senha-p-font-size: 18px!default;
+$smc-login-texto-reenvio-senha-p-font-weight: bold!default;
+
+
+// Footer
+$smc-login-footer-background: transparent!default;
+$smc-login-footer-padding: 15px 1% 15px 1%!default;
+$smc-login-footer-position: inherit!default;
+$smc-login-footer-margin-bottom: -4px!default;
+$smc-login-footer-height: auto!default;
+$smc-login-footer-display: inline-block!default;
+$smc-login-footer-width: 100%!default;
+
+// Tela Inicial
+$smc-login-inicio-aplicacao-margin-bottom: 3px!default;
+$smc-login-inicio-aplicacao-cursor: pointer!default;
+$smc-login-inicio-aplicacao-color: $smc-cinza!default;
+$smc-login-inicio-aplicacao-color-hover: $smc-preto!default;
+$smc-login-inicio-aplicacao-text-decoration: none!default;
+
+
+// ********** ----- MENU DINÂMICO ----- ********** //
+// Cores
+$smc-menu-importante-cor-item-a: $smc-cor-secundaria!default;
+$cor-principal-menu: $smc-cor-secundaria!default;
+$smc-menu-principal-cor-destaque: $smc-cor-secundaria!default;
+$smc-cor-menu-importante: $smc-cor-secundaria-03!default;
+$smc-menu-principal-cor-destaque-hover: $smc-cor-secundaria-04!default;
+$smc-menu-principal-cor-borda: transparent!default;
+$smc-menu-principal-cor-background: $smc-cor-principal-02!default;
+$smc-menu-principal-cor-separador: $smc-cor-principal-07!default;
+$smc-menu-principal-cor-background-hover: $smc-cor-secundaria-01!default;
+$smc-menu-principal-cor-seta: $smc-cor-principal-04!default;
+$smc-menu-principal-cor-item-selecionado: $smc-cor-secundaria-03!default;
+$smc-menu-principal-cor-link: $smc-branco!default;
+$smc-menu-principal-cor-link-hover: $smc-branco!default;
+$smc-menu-principal-cor-setinha: $smc-cinza-06!default;
+$smc-menu-principal-fontsize-link: 14px!default;
+$smc-menu-N2-a-hover-color: $smc-branco!default;
+$smc-menu-N2-a-hover-background-color: $smc-cor-principal-01!default;
+
+// Cores complementares menu dinamico
+$smc-menu-dinamico-min-cor: $smc-cinza-06!default;
+$smc-cor-menu-principal-fundo: $smc-cinza-03!default;
+$smc-cor-menu-principal-border-right: $smc-cinza-06!default;
+$smc-cor-menu-subitem-setinha-baixo: $smc-cinza-02!default;
+$smc-cor-menu-bordaseparadora: $smc-cinza-03!default;
+
+// Estrutura do Menu Dinâmico
+$smc-menu-dinamico-principal-float: left!default;
+$smc-menu-dinamico-principal-width: 230px!default;
+$smc-menu-dinamico-principal-overflow-y: auto!default;
+$smc-menu-dinamico-principal-overflow-x: hidden!default;
+
+// Icone de exibir/esconder o menu dinâmico
+$smc-menu-dinamico-ico-referencia-cor: $smc-cor-principal-01!default;
+
+// Item "a" dentro do menu principal
+$smc-menu-dinamico-principal-a-float: left!default;
+$smc-menu-dinamico-principal-a-padding: 11px 0 10px 10px!default;
+$smc-menu-dinamico-principal-a-margin-left: 5px!default;
+$smc-menu-dinamico-principal-a-margin-top: 0!default;
+$smc-menu-dinamico-principal-a-height: 14px!default;
+$smc-menu-dinamico-principal-a-font-size: 14px!default;
+
+// Item "li" dentro do menu principal
+$smc-menu-dinamico-principal-li-padding: 0 0 8px 0!default;
+$smc-menu-dinamico-principal-li-height: 27px!default;
+
+// Seta do menu principal
+$smc-menu-dinamico-principal-seta-cor-transparente: transparent!default;
+$smc-menu-dinamico-principal-seta-border-style: solid!default;
+$smc-menu-dinamico-principal-seta-border-width: 6px 8px 7px 5px!default;
+$smc-menu-dinamico-principal-seta-margin-left: 230px!default;
+$smc-menu-dinamico-principal-seta-margin-top: -33px!default;
+$smc-menu-dinamico-principal-seta-display: block!default;
+$smc-menu-dinamico-principal-seta-float: right!default;
+$smc-menu-dinamico-principal-seta-position: fixed!default;
+$smc-menu-dinamico-principal-seta-z-index: 16!default;
+$smc-menu-dinamico-principal-seta-sombra: rgba(0,0,0,0.2)!default;
+
+// Menu expandido
+$smc-menu-dinamico-float: left!default;
+$smc-menu-dinamico-overflow: hidden!default;
+$smc-menu-dinamico-width: 230px!default;
+$smc-menu-dinamico-margin-right: 10px!default;
+$smc-menu-dinamico-top: 70px!default;
+$smc-menu-dinamico-z-index: 49!default;
+$smc-menu-dinamico-height: 100%!default;
+$smc-menu-dinamico-position: fixed!default;
+
+// Sombra
+$smc-menu-dinamico-box-shadow: 0px 3px 12px -4px rgba(0,0,0,0.75)!default;
+$smc-menu-dinamico-box-shadow-last-child: -1px 0 0 0 rgba(222,222,222,1)!default;
+$smc-menu-dinamico-box-shadow-min: 1px 1px 0 $smc-branco!default;
+
+// Base para fixação do menu
+$base-fixar-menu-icone-width: 40px!default;
+$base-fixar-menu-icone-height: 25px!default;
+$base-fixar-menu-icone-display: block!default;
+$base-fixar-menu-icone-cursor: pointer!default;
+$base-fixar-menu-icone-position: relative!default;
+$base-fixar-menu-icone-background-position: 17px 5px!default;
+$base-fixar-menu-icone-background-repeat: no-repeat!default;
+$base-fixar-menu-icone-margin-top: -35px!default;
+$base-fixar-menu-icone-float: right!default;
+
+// Menu recolhido
+$smc-menu-dinamico-min-width: 36px!default;
+$smc-menu-dinamico-overflow: hidden!default;
+$smc-menu-dinamico-padding-top: 50px!default;
+
+$smc-menu-dinamico-top: 70px!default;
+$smc-menu-dinamico-z-index: 49!default;
+$smc-menu-dinamico-height: 100%!default;
+$smc-menu-dinamico-position: fixed!default;
+
+// Menu importante
+$smc-menu-importante-height: 41px!default;
+$smc-menu-importante-margin-top: 10px!default;
+$smc-menu-importante-font-size: 15px!default;
+$smc-menu-importante-text-transform: uppercase!default;
+$smc-menu-importante-border-radius: 0 3px 3px 0!default;
+$smc-menu-importante-box-shadow: -1px 0 0 0 $smc-cor-menu-importante!default;
+
+
+
+// Itens do menu importante
+$smc-menu-importante-items-width: 267px!default;
+$smc-menu-importante-items-margin-left: -2px!default;
+
+// Links (itens) do menu importante
+$smc-menu-importante-items-a-font-size: 14px!default;
+$smc-menu-importante-items-a-padding: 21px 35px 20px 20px!default;
+$smc-menu-importante-items-a-font-family: 'SegoeSemibold'!default;
+$smc-menu-importante-items-a-position: absolute!default;
+
+// Submenu
+$smc-menu-submenu-display: none!default;
+$smc-menu-submenu-float: left!default;
+$smc-menu-submenu-margin-top: -20px!default;
+$smc-menu-submenu-position: fixed!default;
+$smc-menu-submenu-z-index: 50!default;
+$smc-menu-submenu-min-height: 0!default;
+$smc-menu-submenu-max-height: 600px!default;
+$smc-menu-submenu-border-radius: 2px!default;
+$smc-menu-submenu-box-shadow: 0 0 0 0px rgba(0,0,0,.2)!default;
+
+// UL do submenu
+$smc-menu-submenu-ul-float: left!default;
+$smc-menu-submenu-ul-width: auto!default;
+$smc-menu-submenu-ul-min-width: 225px!default;
+
+// Texto do submenu
+$smc-menu-submenu-a-width: 100%!default;
+$smc-menu-submenu-a-display: inline!default;
+$smc-menu-submenu-a-padding: 10px 35px 10px 15px!default;
+$smc-menu-submenu-a-float: left!default;
+$smc-menu-submenu-a-z-index: 5!default;
+$smc-menu-submenu-a-font-size: 13px!default;
+$smc-menu-submenu-a-font-family: 'segoe_uiregular'!default;
+$smc-menu-submenu-a-white-space: nowrap!default;
+
+// Nível 3
+$smc-menu-submenu-nivel3-border-radius: 0 3px 3px 0!default;
+$smc-menu-submenu-nivel3-min-width: 270px!default;
+
+// Item de texto do nível 3
+$smc-menu-submenu-nivel3-a-width: 85%!default;
+$smc-menu-submenu-nivel3-a-margin-right: -26px!default;
+
+// Ícones menu principal
+
+$smc-menu-principal-ico-menu-aberto: $smc-caminho-compartilhado + "smc-ico-menu-dinamico-aberto.png";
+$smc-menu-principal-ico-menu-fixo: $smc-caminho-compartilhado + "smc-ico-menu-dinamico-fixo.png";
+$smc-menu-principal-ico-menu-dinamico: $smc-caminho-compartilhado + "smc-ico-menu-dinamico.png";
+$smc-menu-principal-ico-menu-favorito: $smc-caminho-compartilhado + "smc-img-icon-estrela_favorito_sprite.png";
+
+
+// ********** ----- TIMELINE ----- ********** //
+// Cores timeline
+$smc-timeline-cor-principal: $smc-cor-principal!default;
+$smc-timeline-cor-linha-tempo: $smc-cinza-02!default;
+$smc-timeline-cor-conteudo: transparent!default;
+$smc-timeline-cor-conteudo-alternado: transparent!default;
+$smc-timeline-cor-conteudo-texto: $smc-cinza!default;
+$smc-timeline-height: 600px!default;
+$smc-timeline-overflow-y: auto!default;
+$smc-timeline-overflow-x: hidden!default;
+
+// Loading da timeline
+$smc-timeline-loading-default-height: 32px!default; 
+
+// Configuração dos itens de data
+$smc-timeline-data-display: block!default;
+$smc-timeline-data-width: 150px!default;
+$smc-timeline-data-position: relative!default;
+$smc-timeline-data-padding: 0 5px 0 35px!default;
+$smc-timeline-data-margin-left: 20px!default;
+$smc-timeline-data-font-size: 13px!default;
+$smc-timeline-data-font-weight: bold!default;
+
+// Conteúdo
+$smc-timeline-conteudo-principal-border-radius: 5px!default;
+$smc-timeline-conteudo-principal-margin: 0 0 10px 20px!default;
+$smc-timeline-conteudo-principal-padding: 10px!default;
+$smc-timeline-conteudo-principal-display: block!default;
+
+// Titulo
+$smc-timeline-titulo-margin-top: 0!default;
+//$smc-timeline-titulo-padding:;
+//$smc-timeline-titulo-width: ;
+$smc-timeline-titulo-font-size: 13px!default;
+
+// Ícones timeline
+$smc-timeline-cor-amarelo: #feb64a!default;
+
+// ********** ----- UPLOAD ----- ********** //
+// Files Counter
+$smc-uploadFile-filesCounter-display: inline!default;
+$smc-uploadFile-filesCounter-padding: 5px 6px 4px 4px!default;
+$smc-uploadFile-arquivo-span-smc-uploadFile-arquivo-download-top: 37px!default;
+
+
+// ********** ----- WIZARD ----- ********** //
+// Cores
+$smc-wizard-barra-acoes-borda-top: solid 3px $smc-cinza-03!default;
+$smc-wizard-passo-desabilitado: $smc-cor-principal-05!default;
+$smc-wizard-passo-habilitado: $smc-cor-principal-03!default;
+$smc-wizard-passo-habilitado-texto: $smc-cor-principal!default;
+$smc-wizard-passo-visitado: $smc-cor-secundaria-01!default;
+$smc-wizard-passo-visitado-texto: $smc-cinza-06!default;
+
+// Configuração geral do Wizard
+$smc-wizard-margin: 5px 0!default;
+$smc-wizard-position: relative!default;
+$smc-wizard-padding: 10px!default;
+$smc-wizard-border: none!default;
+$smc-wizard-background-image: none!default;
+
+// Espaço do conteúdo
+$smc-wizard-conteudo-display: block!default;
+$smc-wizard-conteudo-margin: 0!default;
+$smc-wizard-conteudo-padding: 0!default;
+$smc-wizard-conteudo-overflow: hidden!default;
+$smc-wizard-conteudo-clear: both!default;
+
+$smc-wizard-content-margin: 10px 0 0 0!default;
+
+// Barra de botões/ações
+$smc-wizard-barra-acoes-padding-top: 5px!default;
+
+// Anchor (Abas de passos)
+$smc-wizard-anchor-li-div-float: left!default;
+$smc-wizard-anchor-li-div-width: 20%!default;
+$smc-wizard-anchor-li-div-z-index: 99!default;
+
+// Wizard passo
+$smc-wizard-passo-display: block!default;
+$smc-wizard-passo-padding: 5px!default;
+$smc-wizard-passo-weight: bold!default;
+$smc-wizard-passo-font-family: 'segoe_uiregular'!default;
+$smc-wizard-stepwizard-before-height: 1px;
+
+// Wizard localização
+$smc-wizard-localizacao-width: 25px!default;
+$smc-wizard-localizacao-height: 25px!default;
+$smc-wizard-localizacao-text-align: center!default;
+$smc-wizard-localizacao-padding: 5px!default;
+$smc-wizard-localizacao-margin-top: 5px!default;
+$smc-wizard-localizacao-float: left!default;
+$smc-wizard-localizacao-margin-right: 10px!default;
+$smc-wizard-localizacao-radius: 3px!default;
+
+
+

@@ -1,0 +1,20 @@
+﻿@model ConsultaPosicaoGeralViewModel
+
+@if (Model.QuantidadeSolicitacoesTotal == 0)
+{
+    using (Smc.Div().CssClass("smc-list-no-results").Begin())
+    {
+        @Smc.GetUIResource("Lista_No_Results")
+    }
+}
+else
+{
+    using (Smc.Header("TotalGeral", SMCHeaderType.Primary).Item(p => p.QuantidadeSolicitacoesTotal).Begin())
+    {
+    }
+    @(Smc.List("Processos", Model.Processos)
+        .HtmlTemplate(item => @Html.Partial("_ListarPosicaoConsolidadaGeralProcesso", item))
+        .Pager("divViewPadrao", "ListarPosicaoConsolidadaGeral")
+        .AutoHideNavigator()
+    )
+}

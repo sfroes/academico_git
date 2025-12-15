@@ -1,0 +1,23 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.ALN.Lookups;
+@using SMC.Framework.UI.Mvc;
+@using SMC.Framework.UI.Mvc.Html;
+
+@model SMC.Framework.Model.SMCPagerModel<object>
+
+    @if (Model.SMCCount() > 0)
+    {
+        <div data-type="smc-datagrid-container" data-default="true">
+            @(Smc.List("SelectedValues", Model)
+                     .AllowSelect(true)
+                     .HtmlTemplate(
+                    @<text>
+                        @Html.ExternalPartial(SMC.Academico.UI.Mvc.AcademicoExternalViews._TERMO_INTERCAMBIO_002_DETAIL_LIST, (item as TermoIntercambioLookupViewModel))
+                    </text>
+                           )
+            )
+        </div>    
+    }
+    else
+    {
+        <p>@Smc.GetUIResource("DataSelector_Resultado_Vazio")</p>
+    }

@@ -1,0 +1,6 @@
+﻿@model TurmaDynamicModel
+
+@Html.Partial("_Cabecalho", Model.Cabecalho)
+
+@(Smc.Legend("ConfiguracaoPrincipal", SMCOrientation.Vertical).CssClass("smc-sga-legenda").Items<SMC.Academico.Common.Enums.LegendaPrincipal>())
+@Smc.List("Criterio" + Model.Seq, m => m.TurmaParametros).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(criterio => Html.Partial("_StepParametrosConfiguracao", criterio.Value))

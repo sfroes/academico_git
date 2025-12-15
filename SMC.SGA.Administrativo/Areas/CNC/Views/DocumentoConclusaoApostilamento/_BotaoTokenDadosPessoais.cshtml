@@ -1,0 +1,16 @@
+﻿@using SMC.Academico.Common.Areas.ALN.Constants;
+
+@model long
+
+@{
+    SMCButtonFluentConfiguration buttonManterAluno = Smc.Button(SMCButtonBehavior.Visualizar)
+             .Text(Smc.GetUIResource("Botao_Manter_Aluno"))
+             .Tooltip(Smc.GetUIResource("Botao_Manter_Aluno"))
+             .Type(SMCButtonType.Link)
+             .Action("Editar", "Aluno", new { Seq = new SMCEncryptedLong(Model), Area = "ALN" })
+             .SecurityToken(UC_ALN_001_01_02.MANTER_ALUNO);
+
+    SMCButtonSetFluentConfiguration buttonSet = (Smc.ButtonSet().Type(SMCButtonSetType.Primary).NumberOfButtonsToShow(0));
+    buttonSet.AddButton(buttonManterAluno);
+    @buttonSet
+}

@@ -1,0 +1,690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FF11544-9B60-4DEC-A6AC-2D39BB82D445}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMC.Academico.Service</RootNamespace>
+    <AssemblyName>SMC.Academico.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Producao|AnyCPU'">
+    <OutputPath>bin\Producao\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Desenvolvimento|AnyCPU'">
+    <OutputPath>bin\Desenvolvimento\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Qualidade|AnyCPU'">
+    <OutputPath>bin\Qualidade\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|AnyCPU'">
+    <OutputPath>bin\Homologacao\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.StrongName, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e3e8412083d25dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.StrongName.2.0.30\lib\net461\Dapper.StrongName.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.4.1.0\lib\net461\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.EF6, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.EF6.4.1.0\lib\net461\MiniProfiler.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Providers.SqlServer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Providers.SqlServer.4.1.0\lib\net461\MiniProfiler.Providers.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Shared, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Shared.4.1.0\lib\net461\MiniProfiler.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.AgendadorTarefa.ServiceContract">
+      <HintPath>..\..\Referencias\AgendadorTarefa\4.2\SMC.AgendadorTarefa.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.AssinaturaDigital.Common, Version=4.2.4.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.AssinaturaDigital.Common.4.2.251111.1\lib\net471\SMC.AssinaturaDigital.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.AssinaturaDigital.ServiceContract, Version=4.2.4.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.AssinaturaDigital.ServiceContract.4.2.251111.1\lib\net471\SMC.AssinaturaDigital.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.AvaliacaoPermanente.ServiceContract, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.AvaliacaoPermanente.ServiceContract.4.2.251008.1\lib\net471\SMC.AvaliacaoPermanente.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Calendarios.ServiceContract">
+      <HintPath>..\..\Referencias\Calendarios\4.2\SMC.Calendarios.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.DadosMestres.Common, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\DadosMestres\4.2\SMC.DadosMestres.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.DadosMestres.ServiceContract, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\DadosMestres\4.2\SMC.DadosMestres.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.EstruturaOrganizacional.Common">
+      <HintPath>..\..\Referencias\EstruturaOrganizacional\4.2\SMC.EstruturaOrganizacional.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.EstruturaOrganizacional.ServiceContract">
+      <HintPath>..\..\Referencias\EstruturaOrganizacional\4.2\SMC.EstruturaOrganizacional.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.Common, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.DataRepository, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.DataRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.Domain, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.EntityRepository, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.EntityRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.Service, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.ServiceContract, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Formularios.Common">
+      <HintPath>..\..\Referencias\Formularios\4.2\SMC.Formularios.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Formularios.ServiceContract">
+      <HintPath>..\..\Referencias\Formularios\4.2\SMC.Formularios.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Core, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Core.4.2.251008.1\lib\net471\SMC.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Data, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Data.4.2.251008.1\lib\net471\SMC.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.DataAnnotations, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.DataAnnotations.4.2.251008.1\lib\net471\SMC.Framework.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Domain, Version=4.2.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Domain.4.2.251008.1\lib\net471\SMC.Framework.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Entity, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Entity.4.2.251008.1\lib\net471\SMC.Framework.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Model, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Model.4.2.251008.1\lib\net471\SMC.Framework.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Repository, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Repository.4.2.251008.1\lib\net471\SMC.Framework.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Security, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Security.4.2.251008.1\lib\net471\SMC.Framework.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Security.DirectoryServices, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Security.DirectoryServices.4.2.251008.1\lib\net471\SMC.Framework.Security.DirectoryServices.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Service, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Service.4.2.251008.1\lib\net471\SMC.Framework.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Service.Host, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Service.Host.4.2.251008.1\lib\net471\SMC.Framework.Service.Host.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Specification, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Specification.4.2.251008.1\lib\net471\SMC.Framework.Specification.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Transaction, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Transaction.4.2.251008.1\lib\net471\SMC.Framework.Transaction.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Unity, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Unity.4.2.251008.1\lib\net471\SMC.Framework.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Google.ServiceContract">
+      <HintPath>..\..\Referencias\Google\4.2\SMC.Google.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Infraestrutura.ServiceContract, Version=4.2.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Infraestrutura.ServiceContract.4.2.240826.1\lib\net471\SMC.Infraestrutura.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Inscricoes.ServiceContract">
+      <HintPath>..\..\Referencias\Inscricoes\4.2\SMC.Inscricoes.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.IntegracaoAcademico.Common">
+      <HintPath>..\..\Referencias\IntegracaoAcademico\4.2\SMC.IntegracaoAcademico.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.IntegracaoAcademico.DataRepository">
+      <HintPath>..\..\Referencias\IntegracaoAcademico\4.2\SMC.IntegracaoAcademico.DataRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.IntegracaoAcademico.Domain">
+      <HintPath>..\..\Referencias\IntegracaoAcademico\4.2\SMC.IntegracaoAcademico.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.IntegracaoAcademico.EntityRepository">
+      <HintPath>..\..\Referencias\IntegracaoAcademico\4.2\SMC.IntegracaoAcademico.EntityRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.IntegracaoAcademico.Service">
+      <HintPath>..\..\Referencias\IntegracaoAcademico\4.2\SMC.IntegracaoAcademico.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.IntegracaoAcademico.ServiceContract">
+      <HintPath>..\..\Referencias\IntegracaoAcademico\4.2\SMC.IntegracaoAcademico.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Localidades.Common, Version=4.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Localidades.Common.4.2.251007.1\lib\net471\SMC.Localidades.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Localidades.ServiceContract, Version=4.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Localidades.ServiceContract.4.2.251007.1\lib\net471\SMC.Localidades.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Notificacoes.ServiceContract, Version=4.2.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Notificacoes.ServiceContract.4.2.250701.1\lib\net471\SMC.Notificacoes.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Pessoas.Common">
+      <HintPath>..\..\Referencias\Pessoas\4.2\SMC.Pessoas.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Pessoas.ServiceContract">
+      <HintPath>..\..\Referencias\Pessoas\4.2\SMC.Pessoas.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Seguranca.Common, Version=4.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Seguranca\4.2\SMC.Seguranca.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Seguranca.Service">
+      <HintPath>..\..\Referencias\Seguranca\4.2\SMC.Seguranca.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Seguranca.ServiceContract, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Seguranca\4.2\SMC.Seguranca.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.1\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.13.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.8.13\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.6.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.5.5.6\lib\net47\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\ALN\Services\ALNDynamicService.cs" />
+    <Compile Include="Areas\ALN\Services\AlunoFormacaoService.cs" />
+    <Compile Include="Areas\ALN\Services\AlunoHistoricoCicloLetivoService.cs" />
+    <Compile Include="Areas\ALN\Services\AlunoHistoricoService.cs" />
+    <Compile Include="Areas\ALN\Services\AlunoService.cs" />
+    <Compile Include="Areas\ALN\Services\FormaIngressoService.cs" />
+    <Compile Include="Areas\ALN\Services\IngressanteService.cs" />
+    <Compile Include="Areas\ALN\Services\InstituicaoNivelTipoOrientacaoParticipacaoService.cs" />
+    <Compile Include="Areas\ALN\Services\InstituicaoNivelTipoOrientacaoService.cs" />
+    <Compile Include="Areas\ALN\Services\InstituicaoNivelTipoTermoIntercambioService.cs" />
+    <Compile Include="Areas\ALN\Services\InstituicaoNivelTipoVinculoAlunoService.cs" />
+    <Compile Include="Areas\ALN\Services\ParceriaIntercambioInstituicaoExternaService.cs" />
+    <Compile Include="Areas\ALN\Services\ParceriaIntercambioService.cs" />
+    <Compile Include="Areas\ALN\Services\PeriodoIntercambioService.cs" />
+    <Compile Include="Areas\ALN\Services\PessoaAtuacaoTermoIntercambioService.cs" />
+    <Compile Include="Areas\ALN\Services\PlanoEstudoItemService.cs" />
+    <Compile Include="Areas\ALN\Services\PlanoEstudoService.cs" />
+    <Compile Include="Areas\ALN\Services\TipoRelatorioService.cs" />
+    <Compile Include="Areas\ALN\Services\TermoIntercambioService.cs" />
+    <Compile Include="Areas\ALN\Services\TipoTermoIntercambioService.cs" />
+    <Compile Include="Areas\ALN\Services\TipoVinculoAlunoService.cs" />
+    <Compile Include="Areas\APR\Services\ApuracaoFrequenciaGradeService.cs" />
+    <Compile Include="Areas\APR\Services\AvaliacaoService .cs" />
+    <Compile Include="Areas\APR\Services\ApuracaoAvaliacaoService.cs" />
+    <Compile Include="Areas\APR\Services\APRDynamicService.cs" />
+    <Compile Include="Areas\APR\Services\AulaService.cs" />
+    <Compile Include="Areas\APR\Services\EntregaOnlineService.cs" />
+    <Compile Include="Areas\APR\Services\EscalaApuracaoItemService.cs" />
+    <Compile Include="Areas\APR\Services\OrigemAvaliacaoService.cs" />
+    <Compile Include="Areas\APR\Services\InstituicaoNivelTipoMembroBancaService.cs" />
+    <Compile Include="Areas\APR\Services\HistoricoEscolarService.cs" />
+    <Compile Include="Areas\APR\Services\MaterialService.cs" />
+    <Compile Include="Areas\APR\Services\CriterioAprovacaoService.cs" />
+    <Compile Include="Areas\APR\Services\EscalaApuracaoService.cs" />
+    <Compile Include="Areas\APR\Services\InstituicaoNivelCriterioAprovacaoService.cs" />
+    <Compile Include="Areas\APR\Services\InstituicaoNivelEscalaApuracaoService.cs" />
+    <Compile Include="Areas\CAM\Services\CAMDynamicService.cs" />
+    <Compile Include="Areas\CAM\Services\CampanhaOfertaService.cs" />
+    <Compile Include="Areas\CAM\Services\CampanhaService.cs" />
+    <Compile Include="Areas\CAM\Services\ChamadaService.cs" />
+    <Compile Include="Areas\CAM\Services\ConvocacaoService.cs" />
+    <Compile Include="Areas\CAM\Services\CampanhaCicloLetivoService.cs" />
+    <Compile Include="Areas\CAM\Services\ProcessoSeletivoOfertaService.cs" />
+    <Compile Include="Areas\CAM\Services\ProcessoSeletivoService.cs" />
+    <Compile Include="Areas\CAM\Services\TipoOfertaService.cs" />
+    <Compile Include="Areas\CAM\Services\EventoLetivoService.cs" />
+    <Compile Include="Areas\CAM\Services\CicloLetivoService.cs" />
+    <Compile Include="Areas\CAM\Services\CicloLetivoTipoEventoService.cs" />
+    <Compile Include="Areas\CAM\Services\InstituicaoNivelRegimeLetivoService.cs" />
+    <Compile Include="Areas\CAM\Services\RegimeLetivoService.cs" />
+    <Compile Include="Areas\CAM\Services\TipoProcessoSeletivoService.cs" />
+    <Compile Include="Areas\CNC\Services\ClassificacaoInvalidadeDocumentoService.cs" />
+    <Compile Include="Areas\CNC\Services\CNCDynamicService.cs" />
+    <Compile Include="Areas\CNC\Services\DeclaracaoGenericaService.cs" />
+    <Compile Include="Areas\CNC\Services\DocumentoAcademicoService.cs" />
+    <Compile Include="Areas\CNC\Services\DocumentoConclusaoApostilamentoService.cs" />
+    <Compile Include="Areas\CNC\Services\DocumentoConclusaoService.cs" />
+    <Compile Include="Areas\CNC\Services\InstituicaoNivelTipoDocumentoModeloRelatorioService.cs" />
+    <Compile Include="Areas\CNC\Services\OrgaoRegistroService.cs" />
+    <Compile Include="Areas\CNC\Services\InstituicaoNivelTipoDocumentoAcademicoService.cs" />
+    <Compile Include="Areas\CNC\Services\SituacaoDocumentoAcademicoService.cs" />
+    <Compile Include="Areas\CNC\Services\SolicitacaoDocumentoConclusaoEntregaDigitalService.cs" />
+    <Compile Include="Areas\CNC\Services\SolicitacaoDocumentoConclusaoService.cs" />
+    <Compile Include="Areas\CNC\Services\TipoApostilamentoService.cs" />
+    <Compile Include="Areas\CNC\Services\GrupoRegistroService.cs" />
+    <Compile Include="Areas\CNC\Services\TipoDocumentoAcademicoService.cs" />
+    <Compile Include="Areas\CNC\Services\TitulacaoDocumentoComprobatorioService.cs" />
+    <Compile Include="Areas\CNC\Services\TitulacaoService.cs" />
+    <Compile Include="Areas\CSO\Services\ClassificacaoService.cs" />
+    <Compile Include="Areas\CSO\Services\CSODynamicService.cs" />
+    <Compile Include="Areas\CSO\Services\CursoOfertaLocalidadeTurnoService.cs" />
+    <Compile Include="Areas\CSO\Services\CursoOfertaLocalidadeService.cs" />
+    <Compile Include="Areas\CSO\Services\CursoOfertaService.cs" />
+    <Compile Include="Areas\CSO\Services\CursoUnidadeService.cs" />
+    <Compile Include="Areas\CSO\Services\CursoFormacaoEspecificaService.cs" />
+    <Compile Include="Areas\CSO\Services\CursoService.cs" />
+    <Compile Include="Areas\CSO\Services\FormacaoEspecificaService.cs" />
+    <Compile Include="Areas\CSO\Services\GrauAcademicoService.cs" />
+    <Compile Include="Areas\CSO\Services\HierarquiaClassificacaoService.cs" />
+    <Compile Include="Areas\CSO\Services\InstituicaoNivelModalidadeService.cs" />
+    <Compile Include="Areas\CSO\Services\InstituicaoNivelTipoFormacaoEspecificaService.cs" />
+    <Compile Include="Areas\CSO\Services\InstituicaoNivelTipoOfertaCursoService.cs" />
+    <Compile Include="Areas\CSO\Services\InstituicaoNivelTurnoService.cs" />
+    <Compile Include="Areas\CSO\Services\InstituicaoTipoEntidadeHierarquiaClassificacaoService.cs" />
+    <Compile Include="Areas\CSO\Services\ModalidadeService.cs" />
+    <Compile Include="Areas\CSO\Services\ProgramaPropostaService.cs" />
+    <Compile Include="Areas\CSO\Services\ProgramaTipoAutorizacaoBdpService.cs" />
+    <Compile Include="Areas\CSO\Services\ProgramaService.cs" />
+    <Compile Include="Areas\CSO\Services\TipoClassificacaoService.cs" />
+    <Compile Include="Areas\CSO\Services\TipoCursoService.cs" />
+    <Compile Include="Areas\CSO\Services\TipoFormacaoEspecificaService.cs" />
+    <Compile Include="Areas\CSO\Services\TipoHierarquiaClassificacaoService.cs" />
+    <Compile Include="Areas\CSO\Services\TurnoService.cs" />
+    <Compile Include="Areas\CUR\Services\ClassificacaoPeriodicoService.cs" />
+    <Compile Include="Areas\CUR\Services\ComponenteCurricularEmentaService.cs" />
+    <Compile Include="Areas\CUR\Services\ComponenteCurricularService.cs" />
+    <Compile Include="Areas\CUR\Services\CondicaoObrigatoriedadeService.cs" />
+    <Compile Include="Areas\CUR\Services\ConfiguracaoComponenteService.cs" />
+    <Compile Include="Areas\CUR\Services\ConsultaDivisoesMatrizCurricularService.cs" />
+    <Compile Include="Areas\CUR\Services\CURDynamicService.cs" />
+    <Compile Include="Areas\CUR\Services\CurriculoCursoOfertaGrupoService.cs" />
+    <Compile Include="Areas\CUR\Services\CurriculoCursoOfertaService.cs" />
+    <Compile Include="Areas\CUR\Services\CurriculoService.cs" />
+    <Compile Include="Areas\CUR\Services\DispensaService.cs" />
+    <Compile Include="Areas\CUR\Services\DivisaoComponenteService.cs" />
+    <Compile Include="Areas\CUR\Services\DivisaoMatrizCurricularComponenteService.cs" />
+    <Compile Include="Areas\CUR\Services\DivisaoMatrizCurricularService.cs" />
+    <Compile Include="Areas\CUR\Services\DocumentoAcademicoCurriculoService.cs" />
+    <Compile Include="Areas\CUR\Services\GrupoConfiguracaoComponenteService.cs" />
+    <Compile Include="Areas\CUR\Services\GrupoComponenteCurricularService.cs" />
+    <Compile Include="Areas\CUR\Services\GrupoCurricularService.cs" />
+    <Compile Include="Areas\CUR\Services\HistoricoSituacaoMatrizCurricularOfertaService.cs" />
+    <Compile Include="Areas\CUR\Services\InstituicaoNivelTipoDivisaoComponenteCurricularService.cs" />
+    <Compile Include="Areas\CUR\Services\InstituicaoNivelTipoComponenteCurricularService.cs" />
+    <Compile Include="Areas\CUR\Services\MatrizCurricularConfiguracaoComponenteService.cs" />
+    <Compile Include="Areas\CUR\Services\MatrizCurricularDivisaoComponenteService.cs" />
+    <Compile Include="Areas\CUR\Services\MatrizCurricularOfertaService.cs" />
+    <Compile Include="Areas\CUR\Services\MatrizCurricularService.cs" />
+    <Compile Include="Areas\CUR\Services\PeriodicoService.cs" />
+    <Compile Include="Areas\CUR\Services\QualisPeriodicoService.cs" />
+    <Compile Include="Areas\CUR\Services\RequisitoService.cs" />
+    <Compile Include="Areas\CUR\Services\TipoConfiguracaoGrupoCurricularService.cs" />
+    <Compile Include="Areas\CUR\Services\TipoDivisaoComponenteService.cs" />
+    <Compile Include="Areas\CUR\Services\DivisaoCurricularService.cs" />
+    <Compile Include="Areas\CUR\Services\TipoDivisaoCurricularService.cs" />
+    <Compile Include="Areas\CUR\Services\TipoGrupoCurricularService.cs" />
+    <Compile Include="Areas\DCT\Services\CategoriaInstituicaoEnsinoService.cs" />
+    <Compile Include="Areas\DCT\Services\ColaboradorService.cs" />
+    <Compile Include="Areas\DCT\Services\ColaboradorVinculoCursoService.cs" />
+    <Compile Include="Areas\DCT\Services\ColaboradorAptoComponenteService.cs" />
+    <Compile Include="Areas\DCT\Services\ColaboradorVinculoService.cs" />
+    <Compile Include="Areas\DCT\Services\DCTDynamicService.cs" />
+    <Compile Include="Areas\DCT\Services\InstituicaoExternaService.cs" />
+    <Compile Include="Areas\DCT\Services\InstituicaoNivelTipoAtividadeColaboradorService.cs" />
+    <Compile Include="Areas\DCT\Services\InstituicaoTipoEntidadeVinculoColaboradorService.cs" />
+    <Compile Include="Areas\DCT\Services\TipoRelatorioService.cs" />
+    <Compile Include="Areas\DCT\Services\LogAtualizacaoColaboradorService.cs" />
+    <Compile Include="Areas\DCT\Services\TipoVinculoColaboradorService.cs" />
+    <Compile Include="Areas\FIN\Services\BeneficioHistoticoValorAuxilioService.cs" />
+    <Compile Include="Areas\FIN\Services\BeneficioService.cs" />
+    <Compile Include="Areas\FIN\Services\ConfiguracaoBeneficioService.cs" />
+    <Compile Include="Areas\FIN\Services\ContratoService.cs" />
+    <Compile Include="Areas\FIN\Services\FINDynamicService.cs" />
+    <Compile Include="Areas\FIN\Services\InstituicaoNivelBeneficioService.cs" />
+    <Compile Include="Areas\FIN\Services\MotivoAlteracaoBeneficioService.cs" />
+    <Compile Include="Areas\FIN\Services\PessoaAtuacaoBeneficioService.cs" />
+    <Compile Include="Areas\FIN\Services\PessoaJuridicaService.cs" />
+    <Compile Include="Areas\FIN\Services\TermoAdesaoService.cs" />
+    <Compile Include="Areas\GRD\Services\GradeHoraraCompartilhadaService.cs" />
+    <Compile Include="Areas\GRD\Services\EventoAulaService.cs" />
+    <Compile Include="Areas\GRD\Services\HistoricoDivisaoTurmaConfiguracaoGradeService.cs" />
+    <Compile Include="Areas\GRD\Services\GRDDynamicService.cs" />
+    <Compile Include="Areas\MAT\Services\IngressanteDesistenteService.cs" />
+    <Compile Include="Areas\MAT\Services\MATDynamicService.cs" />
+    <Compile Include="Areas\MAT\Services\TipoSituacaoMatriculaService.cs" />
+    <Compile Include="Areas\MAT\Services\SituacaoMatriculaService.cs" />
+    <Compile Include="Areas\MAT\Services\SolicitacaoMatriculaItemService.cs" />
+    <Compile Include="Areas\MAT\Services\SolicitacaoMatriculaService.cs" />
+    <Compile Include="Areas\ORG\Services\AtoNormativoService.cs" />
+    <Compile Include="Areas\ORG\Services\EntidadeConfiguracaoNotificacaoService.cs" />
+    <Compile Include="Areas\ORG\Services\EntidadeHistoricoSituacaoService.cs" />
+    <Compile Include="Areas\ORG\Services\EntidadeImagemService.cs" />
+    <Compile Include="Areas\ORG\Services\EntidadeService.cs" />
+    <Compile Include="Areas\ORG\Services\HierarquiaEntidadeItemService.cs" />
+    <Compile Include="Areas\ORG\Services\HierarquiaEntidadeService.cs" />
+    <Compile Include="Areas\ORG\Services\InstituicaoEnsinoService.cs" />
+    <Compile Include="Areas\ORG\Services\InstituicaoLocalidadeAgendaService.cs" />
+    <Compile Include="Areas\ORG\Services\InstituicaoNivelCalendarioService.cs" />
+    <Compile Include="Areas\ORG\Services\InstituicaoModeloRelatorioService.cs" />
+    <Compile Include="Areas\ORG\Services\InstituicaoNivelModeloRelatorioService.cs" />
+    <Compile Include="Areas\ORG\Services\InstituicaoNivelService.cs" />
+    <Compile Include="Areas\ORG\Services\InstituicaoNivelSistemaOrigemService.cs" />
+    <Compile Include="Areas\ORG\Services\InstituicaoTipoEntidadeService.cs" />
+    <Compile Include="Areas\CAM\Services\InstituicaoTipoEventoService.cs" />
+    <Compile Include="Areas\ORG\Services\MantenedoraService.cs" />
+    <Compile Include="Areas\ORG\Services\SituacaoEntidadeService.cs" />
+    <Compile Include="Areas\ORG\Services\TipoAgendaService.cs" />
+    <Compile Include="Areas\ORG\Services\NivelEnsinoService.cs" />
+    <Compile Include="Areas\ORG\Services\ORGDynamicService.cs" />
+    <Compile Include="Areas\ORG\Services\AssuntoNormativoService .cs" />
+    <Compile Include="Areas\ORG\Services\TipoAtoNormativoService.cs" />
+    <Compile Include="Areas\ORG\Services\TipoHierarquiaEntidadeItemService.cs" />
+    <Compile Include="Areas\ORG\Services\TipoEntidadeService.cs" />
+    <Compile Include="Areas\ORG\Services\TipoHierarquiaEntidadeService.cs" />
+    <Compile Include="Areas\ORT\Services\ConfiguracaoNumeracaoTrabalhoService.cs" />
+    <Compile Include="Areas\ORT\Services\OrientacaoService.cs" />
+    <Compile Include="Areas\ORT\Services\ORTDynamicService.cs" />
+    <Compile Include="Areas\ORT\Services\PublicacaoBdpService.cs" />
+    <Compile Include="Areas\ORT\Services\TipoOrientacaoService.cs" />
+    <Compile Include="Areas\ORT\Services\TipoTrabalhoService.cs" />
+    <Compile Include="Areas\APR\Services\AplicacaoAvaliacaoService.cs" />
+    <Compile Include="Areas\ORT\Services\TrabalhoAcademicoService.cs" />
+    <Compile Include="Areas\PES\Services\ConfiguracaoAvaliacaoPpaService.cs" />
+    <Compile Include="Areas\PES\Services\ConfiguracaoAvaliacaoPpaTurmaService.cs" />
+    <Compile Include="Areas\PES\Services\EnvioNotificacaoDestinatarioService.cs" />
+    <Compile Include="Areas\PES\Services\EnvioNotificacaoService.cs" />
+    <Compile Include="Areas\PES\Services\FuncionarioVinculoService.cs" />
+    <Compile Include="Areas\PES\Services\InstituicaoNivelTipoMensagemService.cs" />
+    <Compile Include="Areas\PES\Services\InstituicaoTipoEntidadeTipoFuncionarioService.cs" />
+    <Compile Include="Areas\PES\Services\InstituicaoTipoFuncionarioService.cs" />
+    <Compile Include="Areas\PES\Services\InstituicaoTipoAtuacaoService.cs" />
+    <Compile Include="Areas\PES\Services\MensagemPessoaAtuacaoService.cs" />
+    <Compile Include="Areas\PES\Services\PESDynamicService.cs" />
+    <Compile Include="Areas\PES\Services\PessoaAtuacaoBloqueioService.cs" />
+    <Compile Include="Areas\PES\Services\PessoaAtuacaoDocumentoService.cs" />
+    <Compile Include="Areas\PES\Services\PessoaAtuacaoEnderecoService.cs" />
+    <Compile Include="Areas\PES\Services\FormacaoAcademicaService.cs" />
+    <Compile Include="Areas\PES\Services\FuncionarioService.cs" />
+    <Compile Include="Areas\PES\Services\PessoaAtuacaoService.cs" />
+    <Compile Include="Areas\PES\Services\PessoaEnderecoService.cs" />
+    <Compile Include="Areas\PES\Services\MotivoBloqueioService.cs" />
+    <Compile Include="Areas\PES\Services\PessoaAtuacaoCondicaoObrigatoriedadeService.cs" />
+    <Compile Include="Areas\PES\Services\PessoaAtuacaoAmostraPpaService.cs" />
+    <Compile Include="Areas\PES\Services\TagService.cs" />
+    <Compile Include="Areas\PES\Services\TipoFuncionarioService.cs" />
+    <Compile Include="Areas\PES\Services\TipoBloqueioService.cs" />
+    <Compile Include="Areas\PES\Services\PessoaService.cs" />
+    <Compile Include="Areas\PES\Services\PessoaEnderecoEletronicoService.cs" />
+    <Compile Include="Areas\PES\Services\PessoaTelefoneService.cs" />
+    <Compile Include="Areas\PES\Services\ReferenciaFamiliarService.cs" />
+    <Compile Include="Areas\PES\Services\MensagemService.cs" />
+    <Compile Include="Areas\PES\Services\TipoMensagemService.cs" />
+    <Compile Include="Areas\SRC\Services\ArquivoSecaoPaginaService.cs" />
+    <Compile Include="Areas\SRC\Services\ConfiguracaoEtapaBloqueioService.cs" />
+    <Compile Include="Areas\SRC\Services\ConfiguracaoEtapaPaginaService.cs" />
+    <Compile Include="Areas\SRC\Services\ConfiguracaoEtapaService.cs" />
+    <Compile Include="Areas\SRC\Services\ConfiguracaoProcessoService.cs" />
+    <Compile Include="Areas\SRC\Services\DocumentoRequeridoService.cs" />
+    <Compile Include="Areas\SRC\Services\GrupoDocumentoRequeridoService.cs" />
+    <Compile Include="Areas\SRC\Services\ProcessoEtapaConfiguracaoNotificacaoService.cs" />
+    <Compile Include="Areas\SRC\Services\EscalonamentoService.cs" />
+    <Compile Include="Areas\SRC\Services\GrupoEscalonamentoItemService.cs" />
+    <Compile Include="Areas\SRC\Services\JustificativaSolicitacaoServicoService.cs" />
+    <Compile Include="Areas\SRC\Services\PosicaoConsolidadaService.cs" />
+    <Compile Include="Areas\SRC\Services\ProcessoEtapaService.cs" />
+    <Compile Include="Areas\SRC\Services\ParametroEnvioNotificacaoService.cs" />
+    <Compile Include="Areas\SRC\Services\ProcessoUnidadeResponsavelService.cs" />
+    <Compile Include="Areas\SRC\Services\SolicitacaoHistoricoNavegacaoService.cs" />
+    <Compile Include="Areas\SRC\Services\SolicitacaoHistoricoSituacaoService.cs" />
+    <Compile Include="Areas\SRC\Services\SolicitacaoServicoBoletoTituloService.cs" />
+    <Compile Include="Areas\SRC\Services\SolicitacaoTrabalhoAcademicoService.cs" />
+    <Compile Include="Areas\SRC\Services\SolicitacaoServicoEtapaService.cs" />
+    <Compile Include="Areas\SRC\Services\SolicitacaoServicoService.cs" />
+    <Compile Include="Areas\SRC\Services\GrupoEscalonamentoService.cs" />
+    <Compile Include="Areas\SRC\Services\RegistroDocumentoService.cs" />
+    <Compile Include="Areas\SRC\Services\TextoSecaoPaginaService.cs" />
+    <Compile Include="Areas\SRC\Services\TipoNotificacaoService.cs" />
+    <Compile Include="Areas\SRC\Services\SolicitacaoDispensaService.cs" />
+    <Compile Include="Areas\SRC\Services\TipoRelatorioServicoService.cs" />
+    <Compile Include="Areas\SRC\Services\TipoServicoService.cs" />
+    <Compile Include="Areas\SRC\Services\ServicoService.cs" />
+    <Compile Include="Areas\SRC\Services\ProcessoService.cs" />
+    <Compile Include="Areas\SRC\Services\SRCDynamicService.cs" />
+    <Compile Include="Areas\SRC\Services\ViewCentralSolicitacaoServicoService.cs" />
+    <Compile Include="Areas\TUR\Services\DivisaoTurmaColaboradorService.cs" />
+    <Compile Include="Areas\TUR\Services\DivisaoTurmaService.cs" />
+    <Compile Include="Areas\TUR\Services\TipoTurmaService.cs" />
+    <Compile Include="Areas\TUR\Services\TURDynamicService.cs" />
+    <Compile Include="Areas\TUR\Services\TurmaHistoricoFechamentoDiarioService.cs" />
+    <Compile Include="Areas\TUR\Services\TurmaColaboradorService.cs" />
+    <Compile Include="Areas\TUR\Services\TurmaService.cs" />
+    <Compile Include="Ioc\ServiceIocMapping.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CalendarioService.cs" />
+    <Compile Include="Services\SGFHelperService.cs" />
+    <Compile Include="Services\TipoEventoService.cs" />
+    <Compile Include="Services\SGADataFilterService.cs" />
+    <Compile Include="Services\DataFilterProviderService.cs" />
+    <Compile Include="Services\ArquivoAnexadoService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\ALN\Transformers\" />
+    <Folder Include="Areas\APR\Transformers\" />
+    <Folder Include="Areas\CAM\Transformers\" />
+    <Folder Include="Areas\CNC\Transformers\" />
+    <Folder Include="Areas\CSO\Transformers\" />
+    <Folder Include="Areas\CUR\Transformers\" />
+    <Folder Include="Areas\DCT\Transformers\" />
+    <Folder Include="Areas\FIN\Transformers\" />
+    <Folder Include="Areas\GRD\Transformers\" />
+    <Folder Include="Areas\MAT\Transformers\" />
+    <Folder Include="Areas\ORG\Transformers\" />
+    <Folder Include="Areas\ORT\Transformers\" />
+    <Folder Include="Areas\PES\Transformers\" />
+    <Folder Include="Areas\SRC\Transformers\" />
+    <Folder Include="Areas\TUR\Transformers\" />
+    <Folder Include="Transformers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMC.Academico.Common\SMC.Academico.Common.csproj">
+      <Project>{cc1064e4-9968-420b-a793-876145a3ab66}</Project>
+      <Name>SMC.Academico.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Academico.DataRepository\SMC.Academico.DataRepository.csproj">
+      <Project>{262185CD-248F-45D3-8F6D-6A6DA529E6F9}</Project>
+      <Name>SMC.Academico.DataRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Academico.Domain\SMC.Academico.Domain.csproj">
+      <Project>{909cb7a4-a839-4d7a-bd63-643b61ff5c8e}</Project>
+      <Name>SMC.Academico.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Academico.EntityRepository\SMC.Academico.EntityRepository.csproj">
+      <Project>{96e86703-9cf9-4340-a722-6a924be081bb}</Project>
+      <Name>SMC.Academico.EntityRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Academico.ServiceContract\SMC.Academico.ServiceContract.csproj">
+      <Project>{5f1a4a21-d8f6-4fcd-a851-4fc7861ac61e}</Project>
+      <Name>SMC.Academico.ServiceContract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*$(TargetName).dll" "$(SolutionDir)..\Referencias\Academico\4.2"  /R /Y /I /D</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

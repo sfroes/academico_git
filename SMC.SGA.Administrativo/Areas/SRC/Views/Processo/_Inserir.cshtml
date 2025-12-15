@@ -1,0 +1,24 @@
+﻿@using SMC.SGA.Administrativo.Areas.SRC.Models
+
+@model ProcessoDynamicModel
+
+@Smc.EditorFor(prop => prop.TokenTipoServico)
+@Smc.EditorFor(prop => prop.TokenServico)
+
+@Smc.EditorFor(prop => prop.Seq)
+@Smc.EditorFor(prop => prop.Descricao)
+@Smc.EditorFor(prop => prop.SeqTipoServico)
+@Smc.EditorFor(prop => prop.SeqServico)
+@Smc.EditorFor(prop => prop.ValorPercentualServicoAdicional)
+@Smc.EditorFor(prop => prop.SeqCicloLetivo)
+@Smc.EditorFor(prop => prop.DataInicio)
+@Smc.EditorFor(prop => prop.DataFim)
+
+@using (Smc.Div("divEtapasSGF").Dependency("SeqServico", "BuscarEtapasSGFPorServico", "Processo", true).Begin())
+{
+    @Html.Partial("_EtapasSGF", Model)
+}
+
+@Smc.EditorFor(prop => prop.SeqInstituicaoEnsino)
+@Smc.EditorFor(prop => prop.EntidadesResponsaveis)
+@Smc.EditorFor(prop => prop.EntidadesCompartilhadas)

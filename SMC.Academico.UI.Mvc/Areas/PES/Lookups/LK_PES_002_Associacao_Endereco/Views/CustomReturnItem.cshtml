@@ -1,0 +1,30 @@
+﻿@*
+    BaseType: SMC.Framework.UI.Mvc.SMCWebViewPage
+    DisableLinePragmas: true
+    Imports: SMC.Framework,
+    SMC.Framework.DataAnnotations,
+    SMC.Framework.Extensions,
+    SMC.Framework.Ioc,
+    SMC.Framework.Mapper,
+    SMC.Framework.Model,
+    SMC.Framework.Security,
+    SMC.Framework.Service.Security,
+    SMC.Framework.UI.Mvc.Dynamic,
+    SMC.Framework.UI.Mvc.Exceptions,
+    SMC.Framework.UI.Mvc.Helpers,
+    SMC.Framework.UI.Mvc.Html,
+    SMC.Framework.UI.Mvc.Util,
+    SMC.Framework.Util,
+    System,
+    System.Collections.Generic,
+    System.Configuration,
+    System.Web,
+    System.Web.Mvc,
+    System.Web.Mvc.Html,
+    SMC.Academico.UI.Mvc.Areas.CUR.Lookups,
+    SMC.Academico.UI.Mvc.Areas.PES.Lookups
+*@
+
+@model SMC.Academico.UI.Mvc.Areas.PES.Lookups.PessoaEnderecoLookupViewModel
+
+@Smc.EditorFor(x => x.EnderecoCorrespondencia).HideLabel().Size(SMCSize.Grid24_24)

@@ -1,0 +1,108 @@
+﻿@using SMC.Framework.Model;
+@using SMC.SGA.Administrativo.Areas.CNC.Models;
+@using SMC.Academico.Common.Areas.CNC.Constants;
+@using SMC.Academico.Common.Areas.SRC.Constants;
+
+@model DeclaracaoGenericaDadosGeraisViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-container-declaracao-generica").Begin())
+{  
+
+    using (Smc.Fieldset("DadosAluno").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario margin-top-15").LegendText(Smc.GetUIResource("fieldset_dados_aluno")).Begin())
+    {
+        @Smc.EditorFor(a => a.NumeroRegistroAcademico)
+        @Smc.EditorFor(a => a.CodigoAlunoMigracao)
+        @Smc.EditorFor(a => a.NomeAluno)
+        @Smc.EditorFor(a => a.Cpf)
+        @Smc.EditorFor(a => a.NumeroPassaporte)
+
+        if (Model.SeqPessoaDadosPessoais.HasValue)
+        {
+            using (Smc.Div("DivVisualizar").Size(SMCSize.Grid4_24).Begin())
+            {
+                @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary)
+                             .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                           .Attribute(SMCMvcConsts.MODAL_ID, "modalDadosPessoais")
+                                           .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_VisualizarDadosAluno"))
+                                           .Ajax(isPost: false)
+                                           .Text(Smc.GetUIResource("Botao_VisualizarDadosAluno"))
+                                           .Tooltip(Smc.GetUIResource("Botao_VisualizarDadosAluno"))
+                                           .Type(SMCButtonType.Link).CssClass("smc-btn-visualizar-icotext")
+                                           .Action("VisualizarDadosPessoais", "DocumentoConclusao", new { @seqPessoaDadosPessoais = new SMCEncryptedLong(Model.SeqPessoaDadosPessoais.Value), @area = "CNC" })
+                                           ));
+            }
+        }
+        @Smc.EditorFor(a => a.NivelEnsino)
+        @Smc.EditorFor(a => a.Vinculo)
+    }
+
+    using (Smc.Fieldset("DadosDocumento").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario margin-top-25").LegendText(Smc.GetUIResource("fieldset_dados_documento")).Begin())
+    {
+        @Smc.EditorFor(a => a.Seq)
+        @Smc.EditorFor(a => a.TipoDocumento)
+
+
+        if (Model.SeqDocumentoGAD.HasValue)
+        {
+            using (Smc.Div().Size(SMCSize.Grid4_24).Begin())
+            {
+                using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <label>
+                        Documento GAD
+                        <br />
+                        @{ var buttonSetDocumentoGAD = Smc.ButtonSet().CssClass("smc-sga-btn-formato-link smc-wizard-passo smc-sga-btn-docgad");
+                            buttonSetDocumentoGAD.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                          .Attribute(SMCMvcConsts.MODAL_ID, "modalDocumento")
+                                          .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Visualizar_Documento"))
+                                          .Ajax(isPost: false)
+                                          .Type(SMCButtonType.Link)
+                                          .Url(Model.UrlDocumentoGAD)
+                                          .SecurityToken(UC_CNC_005_01_02.CONSULTAR_DOCUMENTO_ACADEMICO_PESSOA_ATUACAO)
+                                          .Text(Model.SeqDocumentoGAD.Value.ToString()));
+
+                            @buttonSetDocumentoGAD;
+                        }
+                    </label>
+                }
+            }
+        }
+        else
+        {
+            @Smc.EditorFor(a => a.SeqDocumentoGAD)
+        }
+
+    }
+
+    using (Smc.Fieldset("DadosSituacao").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario smc-sga-fieldset-situacao margin-top-25").LegendText(Smc.GetUIResource("fieldset_dados_situacao")).Begin())
+    {
+
+        @(Smc.Grid("gridSituacoes", new SMCPagerModel<DeclaracaoGenericaHistoricoListarViewModel>(Model.Situacoes))
+                                         .AutoGenerateColumns()
+                                         .AutoHideNavigator()
+                                         .HideNavigator()
+                                         .HideGridTitle())
+    }
+    
+    var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24);
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+    .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+    .Type(SMCButtonType.Link)
+    .Url(Url.Action("Index", "DeclaracaoGenerica"), true));
+
+    @buttonSet;
+}
+
+@using (Smc.ModalWindow("modalDadosPessoais")
+           .Form("formDadosPessoais", closeOnSubmit: true)
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }
+
+
+@using (Smc.ModalWindow("modalDocumento").CssClass("smc-sga-modal-docgad")
+           .Form("formDocumento", closeOnSubmit: true)
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }

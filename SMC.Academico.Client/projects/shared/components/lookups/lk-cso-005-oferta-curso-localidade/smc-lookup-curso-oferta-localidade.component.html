@@ -1,0 +1,65 @@
+<ng-template #filtro [formGroup]="filterForm">
+  <fieldset class="smc-size-md-24 smc-size-lg-24">
+    <legend>Curso</legend>
+    <po-input
+      formControlName="nomeCurso"
+      class="smc-size-md-8"
+      p-label="Nome"
+      [p-disabled]="isReadOnly(nomeCurso)"
+    ></po-input>
+    <po-multiselect
+      formControlName="seqsEntidadesResponsaveis"
+      class="smc-size-md-6"
+      [p-options]="dataSourceEntidadesResponsaveis"
+      [p-disabled]="isReadOnly(seqsEntidadesResponsaveis)"
+      p-placeholder="Selecionar..."
+      p-label="Entidade responsável"
+    ></po-multiselect>
+    <smc-select
+      formControlName="seqNivelEnsino"
+      class="smc-size-md-6"
+      [s-options]="dataSourceNivelEnsino"
+      [s-disabled]="isReadOnly(seqNivelEnsino)"
+      s-label="Nível de ensino"
+    ></smc-select>
+    <smc-select
+      formControlName="seqSituacaoAtual"
+      class="smc-size-md-4"
+      [s-options]="dataSourceSituacao"
+      [s-disabled]="isReadOnly(seqSituacaoAtual)"
+      s-label="Situação"
+    ></smc-select>
+  </fieldset>
+  <fieldset class="smc-size-md-24">
+    <legend>Oferta de curso por localidade</legend>
+    <smc-select
+      formControlName="seqTipoFormacaoEspecifica"
+      class="smc-size-md-8"
+      [s-options]="dataSourceTiposFormacaoEspecifica"
+      [s-disabled]="isReadOnly(seqTipoFormacaoEspecifica)"
+      s-label="Tipo de formação"
+    ></smc-select>
+    <smc-select
+      formControlName="seqLocalidade"
+      class="smc-size-md-8"
+      [s-options]="dataSourceLocalidade"
+      [s-disabled]="isReadOnly(seqLocalidade)"
+      s-label="Localidade"
+    ></smc-select>
+    <smc-select
+      formControlName="seqModalidade"
+      class="smc-size-md-8"
+      [s-options]="dataSourceModalidade"
+      [s-disabled]="isReadOnly(seqModalidade)"
+      s-auto-select-single-item="true"
+      s-label="Modalidade"
+    ></smc-select>
+  </fieldset>
+</ng-template>
+<smc-lookup
+  [s-advanced-search-template]="filtro"
+  [s-advanced-list-columns]="colunasBuscaAvancada"
+  [s-label]="label"
+  [s-selector]="seletor"
+>
+</smc-lookup>

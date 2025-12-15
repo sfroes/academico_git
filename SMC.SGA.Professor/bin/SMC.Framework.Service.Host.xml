@@ -1,0 +1,1355 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Service.Host</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.Service.Host.SMCWsdlContractCommentsBehavior">
+            <summary>
+            Classe de suporte para escrever a documentação do Contrato no WSDL.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlContractCommentsBehavior.AddBindingParameters(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)">
+            <summary>
+            Configures any binding elements to support the contract behavior.
+            </summary>
+            <param name="contractDescription">The contract description to modify.</param>
+            <param name="endpoint">The endpoint to modify.</param>
+            <param name="bindingParameters">The objects that binding elements require to support the behavior.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlContractCommentsBehavior.ApplyClientBehavior(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)">
+            <summary>
+            Implements a modification or extension of the client across a contract.
+            </summary>
+            <param name="contractDescription">The contract description for which the extension is intended.</param>
+            <param name="endpoint">The endpoint.</param>
+            <param name="clientRuntime">The client runtime.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlContractCommentsBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.DispatchRuntime)">
+            <summary>
+            Implements a modification or extension of the client across a contract.
+            </summary>
+            <param name="contractDescription">The contract description to be modified.</param>
+            <param name="endpoint">The endpoint that exposes the contract.</param>
+            <param name="dispatchRuntime">The dispatch runtime that controls service execution.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlContractCommentsBehavior.Validate(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint)">
+            <summary>
+            Implement to confirm that the contract and endpoint can support the contract behavior.
+            </summary>
+            <param name="contractDescription">The contract to validate.</param>
+            <param name="endpoint">The endpoint to validate.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlContractCommentsBehavior.GetDocumentAssembly">
+            <summary>
+            Recupera o assembly que possui a documentação do serviço.
+            </summary>
+            <returns>Assembly que possui a documentação do serviço.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlContractCommentsBehavior.Write(SMC.Framework.Service.Host.XmlComments.Documentation,System.ServiceModel.Description.WsdlContractConversionContext)">
+            <summary>
+            Escreve a documentação no WSDL.
+            </summary>
+            <param name="doc">Documentação.</param>
+            <param name="context">Contexto corrente.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCWsdlOperationCommentsBehavior">
+            <summary>
+            Classe de suporte para escrever a documentação da operação do contrato no WSDL.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlOperationCommentsBehavior.AddBindingParameters(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Channels.BindingParameterCollection)">
+            <summary>
+            Implement to pass data at runtime to bindings to support custom behavior.
+            </summary>
+            <param name="operationDescription">The operation being examined. Use for examination only. If the operation description is modified, the results are undefined.</param>
+            <param name="bindingParameters">The collection of objects that binding elements require to support the behavior.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlOperationCommentsBehavior.ApplyClientBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.ClientOperation)">
+            <summary>
+            Implements a modification or extension of the client across an operation.
+            </summary>
+            <param name="operationDescription">The operation being examined. Use for examination only. If the operation description is modified, the results are undefined.</param>
+            <param name="clientOperation">The run-time object that exposes customization properties for the operation described by operationDescription.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlOperationCommentsBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.DispatchOperation)">
+            <summary>
+            Implements a modification or extension of the service across an operation.
+            </summary>
+            <param name="operationDescription">The operation being examined. Use for examination only. If the operation description is modified, the results are undefined.</param>
+            <param name="dispatchOperation">The run-time object that exposes customization properties for the operation described by operationDescription.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlOperationCommentsBehavior.Validate(System.ServiceModel.Description.OperationDescription)">
+            <summary>
+            Implement to confirm that the operation meets some intended criteria.
+            </summary>
+            <param name="operationDescription">The operation being examined. Use for examination only. If the operation description is modified, the results are undefined.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlOperationCommentsBehavior.GetDocumentAssembly">
+            <summary>
+            Recupera o assembly que possui a documentação do serviço.
+            </summary>
+            <returns>Assembly que possui a documentação do serviço.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlOperationCommentsBehavior.Write(SMC.Framework.Service.Host.XmlComments.Documentation,System.ServiceModel.Description.WsdlContractConversionContext)">
+            <summary>
+            Escreve a documentação no WSDL.
+            </summary>
+            <param name="doc">Documentação.</param>
+            <param name="context">Contexto corrente.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCOnFindAsyncResult">
+            <summary>
+            Resultado da chamada do método Find.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCOnFindAsyncResult.#ctor(System.AsyncCallback,System.Object)">
+            <summary>
+            Cria um novo objeto SMCOnFindAsyncResult.
+            </summary>
+            <param name="callback">Método de callback.</param>
+            <param name="state">Objeto de estado.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCOnFindAsyncResult.End(System.IAsyncResult)">
+            <summary>
+            Finaliza a execução.
+            </summary>
+            <param name="result">Resultado da chamada.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCOnOfflineAnnouncementAsyncResult">
+            <summary>
+            Resultado da chamada do método OfflineAnnouncement.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCOnOfflineAnnouncementAsyncResult.#ctor(System.AsyncCallback,System.Object)">
+            <summary>
+            Cria um novo objeto SMCOnOfflineAnnouncementAsyncResult.
+            </summary>
+            <param name="callback">Método de callback.</param>
+            <param name="state">Objeto de estado.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCOnOfflineAnnouncementAsyncResult.End(System.IAsyncResult)">
+            <summary>
+            Finaliza a execução.
+            </summary>
+            <param name="result">Resultado da chamada.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCOnResolveAsyncResult">
+            <summary>
+            Resultado da chamada do método Resolve.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCOnResolveAsyncResult.#ctor(System.ServiceModel.Discovery.EndpointDiscoveryMetadata,System.AsyncCallback,System.Object)">
+            <summary>
+            Cria um novo objeto SMCOnOnlineAnnouncementAsyncResult.
+            </summary>
+            <param name="matchingEndpoint">Critério de pesquisa.</param>
+            <param name="callback">Método de callback.</param>
+            <param name="state">Objeto de estado.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCOnResolveAsyncResult.End(System.IAsyncResult)">
+            <summary>
+            Finaliza a execução.
+            </summary>
+            <param name="result">Resultado da chamada.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.Exceptions.SMCAsyncInvalidOperationException">
+            <summary>
+            Representa uma exceção quando uma operação inválida é feita em um objeto assíncrono.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.Exceptions.SMCAsyncInvalidOperationException.#ctor">
+            <summary>
+            Cria uma novo objeto SMCAsyncInvalidOperationException.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.Exceptions.SMCIlegalPropertySetException">
+            <summary>
+            Representa uma exceção quando há uma tentativa ilegal de modificar o valor de uma propriedade
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.Exceptions.SMCIlegalPropertySetException.#ctor">
+            <summary>
+            Cria um objeto SMCInvalidPropertySetException
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.Exceptions.SMCUndefinedElementException">
+            <summary>
+            Representa uma exceção quando um acesso a um elemento não definido é feito
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.Exceptions.SMCUndefinedElementException.#ctor">
+            <summary>
+            Cria um objeto SMCUndefinedElementException.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCPrincipalMessageInspector">
+            <summary>
+            Classe para interceptar a message do cliente dentro do serviço.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCPrincipalMessageInspector.AfterReceiveRequest(System.ServiceModel.Channels.Message@,System.ServiceModel.IClientChannel,System.ServiceModel.InstanceContext)">
+            <summary>
+            Após receber a requisição.
+            </summary>
+            <param name="message">Mensagem.</param>
+            <param name="channel">Canal de comunicação.</param>
+            <param name="instanceContext">Contexto.</param>
+            <returns>Resultado da chamada.</returns>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.SMCPrincipalMessageInspector.ActionPattern">
+            <summary>
+            Padrão para actions.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCPrincipalMessageInspector.BeforeSendReply(System.ServiceModel.Channels.Message@,System.Object)">
+            <summary>
+            Método chamada antes do envio do retorno.
+            </summary>
+            <param name="reply">Resposta.</param>
+            <param name="correlationState">Objeto de correlação enviado pelo método AfterReceiveRequest.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCPrincipalMessageInspector.GetHeaderValue``1(System.ServiceModel.Channels.Message,System.String,System.String)">
+            <summary>
+            Recupera um valor do header da mensagem.
+            </summary>
+            <typeparam name="T">Tipo do valor do header.</typeparam>
+            <param name="message">Mensagem.</param>
+            <param name="name">Nome do item do header.</param>
+            <param name="ns">Nome do namespace.</param>
+            <returns>Valor do item da header ou default.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCPrincipalMessageInspector.GetHeader``1(System.ServiceModel.Channels.Message)">
+            <summary>
+            Recupera um valor do header da mensagem.
+            </summary>
+            <typeparam name="T">Tipo do valor do header.</typeparam>
+            <param name="message">Mensagem.</param>
+            <returns>Valor do item da header ou nulo.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCServiceHost">
+            <summary>
+            Host de serviço.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCServiceHost.#ctor">
+            <summary>
+            Cria uma nova instância de SMCServiceHost.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCServiceHost.#ctor(System.Object,System.Uri[])">
+            <summary>
+            Cria uma nova instância de SMCServiceHost.
+            </summary>
+            <param name="singletonInstance">Instância única.</param>
+            <param name="baseAddresses">Endereços base.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCServiceHost.#ctor(System.Type,System.Uri[])">
+            <summary>
+            Cria uma nova instância de SMCServiceHost.
+            </summary>
+            <param name="serviceType">Tipo do serviço.</param>
+            <param name="baseAddresses">Endereços base.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCServiceHost.InitializeRuntime">
+            <summary>
+            Inicializa o host.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCServiceHost.OnOpening">
+            <summary>
+            Executado durante a transição do host para o estado Aberto. 
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCServiceHostFactory">
+            <summary>
+            Classe de suporte para criação do host do serviço.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCServiceHostFactory.CreateServiceHost(System.Type,System.Uri[])">
+            <summary>
+            Cria um host para o serviço especificado.
+            </summary>
+            <param name="type">Tipo do serviço.</param>
+            <param name="baseAddresses">Endereços do serviço.</param>
+            <returns>Host para o serviço.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCApplyDataContractResolver">
+            <summary>
+            	Permite enviar classes geradas pelo Entity Framework através de um serviço.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.SMCApplyDataContractResolver.instance">
+            <summary>
+            	Armazena a instancia unica da classe para tratamento das classes do EF.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCApplyDataContractResolver.#ctor">
+            <summary>
+            	Impede a criação de multiplas instancias da classe.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.SMCApplyDataContractResolver.Instance">
+            <summary>
+            	Recupera a instancia unica da classe para tratamento das classes do EF.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCApplyDataContractResolver.AddBindingParameters(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Channels.BindingParameterCollection)">
+            <summary>
+            	Adiciona parâmetros curtomizados para a serialização de uma operação.
+            </summary>
+            <param name = "description">Descrição da operação.</param>
+            <param name = "parameters">Parametros utilizados na operação.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCApplyDataContractResolver.ApplyClientBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.ClientOperation)">
+            <summary>
+            	Modifica o comportamento da serialização de um POCO por um serviço.
+            </summary>
+            <param name = "description">Descrição da operação.</param>
+            <param name = "proxy">O objeto que expõe propriedades customizadas para a operação.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCApplyDataContractResolver.ApplyDispatchBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.DispatchOperation)">
+            <summary>
+            	Modifica o comportamento da serialização de um POCO por um serviço.
+            </summary>
+            <param name = "description">Descrição da operação.</param>
+            <param name = "dispatch">O objeto que expõe propriedades customizadas para a operação.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCApplyDataContractResolver.Validate(System.ServiceModel.Description.OperationDescription)">
+            <summary>
+            	Valida uma operação.
+            </summary>
+            <param name = "description">Descrição da operação.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCAsyncResult">
+            <summary>
+            Classe abstrata para chamadas assíncronas utilizadas pelo serviço de Discovery.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCAsyncResult.#ctor(System.AsyncCallback,System.Object)">
+            <summary>
+            Cria uma nova instância de SMCAsyncResult.
+            </summary>
+            <param name="callback">Método de callback.</param>
+            <param name="state">Objeto de estado.</param>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.SMCAsyncResult.AsyncState">
+            <summary>
+            Objeto de estado.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.SMCAsyncResult.AsyncWaitHandle">
+            <summary>
+            Handle para sinalização da thread.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.SMCAsyncResult.CompletedSynchronously">
+            <summary>
+            Define se a operação foi completada síncronamente.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.SMCAsyncResult.IsCompleted">
+            <summary>
+            Define se a operação foi completada.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCAsyncResult.End``1(System.IAsyncResult)">
+            <summary>
+            Finaliza a execução assíncrona.
+            </summary>
+            <typeparam name="TAsyncResult">Resultado da chamada assíncrona.</typeparam>
+            <param name="result">Resultado.</param>
+            <returns>Resultado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCAsyncResult.Complete(System.Boolean)">
+            <summary>
+            Completa a operação.
+            </summary>
+            <param name="completedSynchronously">Define se foi completada sincronamente.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCAsyncResult.Complete(System.Boolean,SMC.Framework.Exceptions.SMCException)">
+            <summary>
+            Completa a operação.
+            </summary>
+            <param name="completedSynchronously">Define se foi completada sincronamente.</param>
+            <param name="exception">Erro ocorrido.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCErrorHandler">
+            <summary>
+            	Classe do lado server que transforma um erro em uma FaultException
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCOnOnlineAnnouncementAsyncResult">
+            <summary>
+            Resultado da chamada do método OnlineAnnouncement.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCOnOnlineAnnouncementAsyncResult.#ctor(System.AsyncCallback,System.Object)">
+            <summary>
+            Cria um novo objeto SMCOnOnlineAnnouncementAsyncResult.
+            </summary>
+            <param name="callback">Método de callback.</param>
+            <param name="state">Objeto de estado.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCOnOnlineAnnouncementAsyncResult.End(System.IAsyncResult)">
+            <summary>
+            Finaliza a execução.
+            </summary>
+            <param name="result">Resultado da chamada.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCWsdlCommentsBehavior">
+            <summary>
+            Classe base para permitir inserir comentários no WSDL do serviço.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlCommentsBehavior.ExportContract(System.ServiceModel.Description.WsdlExporter,System.ServiceModel.Description.WsdlContractConversionContext)">
+            <summary>
+            Recupera a documentação do contrato.
+            </summary>
+            <param name="exporter">Dados do wsdl.</param>
+            <param name="context">Contexto atual.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlCommentsBehavior.ExportEndpoint(System.ServiceModel.Description.WsdlExporter,System.ServiceModel.Description.WsdlEndpointConversionContext)">
+            <summary>
+            Recupera informações de um endpoint.
+            </summary>
+            <param name="exporter">Dados do wsdl.</param>
+            <param name="context">Contexto atual.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlCommentsBehavior.GetDocumentAssembly">
+            <summary>
+            Recupera o assembly que possui a documentação do serviço.
+            </summary>
+            <returns>Assembly que possui a documentação do serviço.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlCommentsBehavior.Write(SMC.Framework.Service.Host.XmlComments.Documentation,System.ServiceModel.Description.WsdlContractConversionContext)">
+            <summary>
+            Escreve a documentação no WSDL.
+            </summary>
+            <param name="doc">Documentação.</param>
+            <param name="context">Contexto corrente.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlCommentsBehavior.TryGetDocumentation(System.Reflection.Assembly,SMC.Framework.Service.Host.XmlComments.Documentation@)">
+            <summary>
+            Tenta recuperar a documentação em um assembly.
+            </summary>
+            <param name="assembly">Assembly que possui a documentação.</param>
+            <param name="doc">Documento recuperado.</param>
+            <returns>Verdadeiro se conseguiu recuperar o documento, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCWsdlCommentsBehavior.GravarLog(SMC.Framework.Exceptions.SMCException,System.Reflection.Assembly,System.String,System.String)">
+            <summary>
+            Grava erros no log.
+            </summary>
+            <param name="ex">Exceção original.</param>
+            <param name="assembly">Assembly.</param>
+            <param name="caminho">Caminho procurado.</param>
+            <param name="assemblyPath">Caminho do assembly.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCInstanceProvider">
+            <summary>
+            Classe reponsável pela criação de instâncias de serviço.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.SMCInstanceProvider.ServiceType">
+            <summary>
+            Recupera ou atribui o tipo do serviço.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCInstanceProvider.#ctor">
+            <summary>
+            Cria uma nova instância de SMCInstanceProvider.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCInstanceProvider.GetInstance(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Message)">
+            <summary>
+            Cria uma nova instância do serviço utilizando Ioc.
+            </summary>
+            <param name="instanceContext">Contexto de instância.</param>
+            <param name="message">Mensagem.</param>
+            <returns>Instância do serviço.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCInstanceProvider.GetInstance(System.ServiceModel.InstanceContext)">
+            <summary>
+            Cria uma nova instância do serviço utilizando Ioc.
+            </summary>
+            <param name="instanceContext">Contexto de instância.</param>
+            <returns>Instância do serviço.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCInstanceProvider.ReleaseInstance(System.ServiceModel.InstanceContext,System.Object)">
+            <summary>
+            Libera uma instancia de serviço.
+            </summary>
+            <param name="instanceContext">Contexto de instância.</param>
+            <param name="instance">Instancia de serviço.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.SMCServiceBehavior">
+            <summary>
+            Classe de configuração dos hosts de serviço.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.SMCServiceBehavior.InstanceProvider">
+            <summary>
+            Armazena o provider de geração de instâncias do serviço.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCServiceBehavior.#ctor">
+            <summary>
+            Cria uma nova instância de SMCServiceBehavior.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCServiceBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+            <summary>
+            Configura o serviço.
+            </summary>
+            <param name="serviceDescription">Descrição do serviço.</param>
+            <param name="serviceHostBase">Informações do host.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCServiceBehavior.AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)">
+            <summary>
+            Configura os parametros de binding.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.SMCServiceBehavior.Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+            <summary>
+            Valida um serviço.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.Resources.ExceptionsResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.Resources.ExceptionsResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.Resources.ExceptionsResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.Resources.ExceptionsResource.SMCAsyncInvalidOperationException">
+            <summary>
+              Looks up a localized string similar to Async object already ended..
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.Resources.ExceptionsResource.SMCIlegalPropertySetException">
+            <summary>
+              Looks up a localized string similar to Tipo do elemento não pode ser alterado..
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.Resources.ExceptionsResource.SMCUndefinedElementException">
+            <summary>
+              Looks up a localized string similar to Tipo do elemento não foi definido..
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.AssemblyInfo">
+            <summary>
+            	Representa as informações de um assembly que gerou comentários.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.AssemblyInfo.Name">
+            <summary>
+            	Recupera ou atribui o nome do assembly que gerou os comentários.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.Comment">
+            <summary>
+            	Classe base para todos os itens de comentários.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.Comment.Documentation">
+            <summary>
+            	Documento associado ao elemento.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.Comment.AnyAttr">
+            <summary>
+            	Representa os atributos não identificados no momento da desserialização.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.Documentation">
+            <summary>
+            	Representa o documento de comentários gerado a partir de um assembly.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Documentation.formatter">
+            <summary>
+            	Armazena a classe responsável pela formatação dos elementos.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.Documentation.Assembly">
+            <summary>
+            	Recupera ou atribui as informações do assembly que gerou o arquivo de comentários.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.Documentation.Members">
+            <summary>
+            	Recupera ou atribui os elementos que geraram comentários de um assembly.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.Documentation.Formatter">
+            <summary>
+            	Recupera ou atribui o objeto responsável por formatar os elementos.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.Create(System.Reflection.Assembly)">
+            <summary>
+            	Cria um novo objeto com os comentários de um assembly específico.
+            </summary>
+            <param name = "assembly">Assembly que possui as informações de comentário.</param>
+            <returns>Classe com os comentários do assembly ou nulo, caso não seja encontrado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.Create(System.String)">
+            <summary>
+            	Cria um novo objeto com os comentários de um assembly específico.
+            </summary>
+            <param name = "assemblyPath">Caminho do assembly.</param>
+            <returns>Classe com os comentários do assembly ou nulo, caso não seja encontrado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.TryCreate(System.Reflection.Assembly,SMC.Framework.Service.Host.XmlComments.Documentation@)">
+            <summary>
+            	Cria um novo objeto com os comentários de um assembly específico.
+            </summary>
+            <param name = "assembly">Assembly que possui as informações de comentário.</param>
+            <param name = "documentation">Objeto que será criado a partir do caminho informado.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.TryCreate(System.String,SMC.Framework.Service.Host.XmlComments.Documentation@)">
+            <summary>
+            	Cria um novo objeto com os comentários de um assembly específico.
+            </summary>
+            <param name = "assemblyPath">Caminho do assembly.</param>
+            <param name = "documentation">Objeto que será criado a partir do caminho informado.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetDocumentation(System.String)">
+            <summary>
+            	Faz a leitura da documentação Xml e desserializa.
+            </summary>
+            <param name = "documentFile">Arquivo que contém a documentação.</param>
+            <returns>Documentação lida a partir do arquivo.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetAssemblyDocumentation(System.String)">
+            <summary>
+            	Recupera o arquivo de contém a documentação do assembly.
+            </summary>
+            <param name = "assemblyPath">Caminho do assembly que possui as informações de comentário.</param>
+            <returns>Nome do arquivo que possui os comentários.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.FixupElementName(System.Object[])">
+            <summary>
+            	Configura a referencia de cada item de documentation para o próprio.
+            </summary>
+            <param name = "items">Itens que terão corrigidas as referências.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.ConfigureDocumentationMembers(SMC.Framework.Service.Host.XmlComments.Documentation,System.Object[])">
+            <summary>
+            	Configura a referencia de cada item de documentation para o próprio.
+            </summary>
+            <param name = "documentation">Documentação do assembly.</param>
+            <param name = "items">Itens a serem configurados.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.ToString">
+            <summary>
+            	Transforma o elemento atual em string serializando em xml.
+            </summary>
+            <returns>Conteúdo.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetComments(System.Type)">
+            <summary>
+            	Retorna os comentários para um tipo especifico.
+            </summary>
+            <param name = "type">Classe que possui os comentários.</param>
+            <returns>Comentários da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetComments(System.Reflection.FieldInfo)">
+            <summary>
+            	Retorna os comentários para uma variável.
+            </summary>
+            <param name = "fieldInfo">Variável que possui os comentários.</param>
+            <returns>Comentários da variável.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetComments(System.Reflection.EventInfo)">
+            <summary>
+            	Retorna os comentários para um evento.
+            </summary>
+            <param name = "eventInfo">Evento que possui os comentários.</param>
+            <returns>Comentários do evento.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetComments(System.Reflection.PropertyInfo)">
+            <summary>
+            	Retorna os comentários para uma propriedade.
+            </summary>
+            <param name = "propertyInfo">Propriedade que possui os comentários.</param>
+            <returns>Comentários da propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetComments(System.Reflection.ConstructorInfo)">
+            <summary>
+            	Retorna os comentários para um construtor.
+            </summary>
+            <param name = "constructorInfo">Construtor que possui os comentários.</param>
+            <returns>Comentários do construtor.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetComments(System.Reflection.MethodInfo)">
+            <summary>
+            	Retorna os comentários para um método.
+            </summary>
+            <param name = "methodInfo">Método que possui os comentários.</param>
+            <returns>Comentários do método.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.FindComment(System.String)">
+            <summary>
+            	Pesquisa por um comentário a partir do identificador do membro.
+            </summary>
+            <param name = "identifier">Identificador do membro.</param>
+            <returns>Comentários para o membro ou nulo, caso não seja encontrado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetComments``1">
+            <summary>
+            	Retorna os comentários para um tipo especifico.
+            </summary>
+            <typeparam name = "T">Tipo que possui os comentários.</typeparam>
+            <returns>Comentários da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetFieldComments``1(System.String)">
+            <summary>
+            	Retorna os comentários para uma variável de uma classe.
+            </summary>
+            <typeparam name = "T">Tipo que possui os comentários.</typeparam>
+            <returns>Comentários da variável.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetEventComments``1(System.String)">
+            <summary>
+            	Retorna os comentários para um evento de uma classe.
+            </summary>
+            <typeparam name = "T">Tipo que possui os comentários.</typeparam>
+            <param name = "name">Nome do evento.</param>
+            <returns>Comentários do evento.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetPropertyComments``1(System.String)">
+            <summary>
+            	Retorna os comentários para uma propriedade de uma classe.
+            </summary>
+            <typeparam name = "T">Tipo que possui os comentários.</typeparam>
+            <param name = "name">Nome da propriedade.</param>
+            <returns>Comentários da propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetConstructorComments``1(System.Type[])">
+            <summary>
+            	Retorna os comentários para um construtor de uma classe.
+            </summary>
+            <typeparam name = "T">Tipo que possui os comentários.</typeparam>
+            <param name = "types">Tipos dos parametros do construtor.</param>
+            <returns>Comentários da propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Documentation.GetMethodComments``1(System.String,System.Type[])">
+            <summary>
+            	Retorna os comentários para um método de uma classe.
+            </summary>
+            <typeparam name = "T">Tipo que possui os comentários.</typeparam>
+            <param name = "name">Nome do método.</param>
+            <param name = "types">Tipos dos paramtros dos métodos.</param>
+            <returns>Comentários do método.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType">
+            <summary>
+            	Enumerador para as opções de comentários.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.C">
+            <summary>
+            	Comentario para linha de código única.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.Code">
+            <summary>
+            	Comentário para linhas de código múltiplas.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.Description">
+            <summary>
+            	Comentário de descrição.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.Example">
+            <summary>
+            	Comentários de exemplos.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.SMCException">
+            <summary>
+            	Comentários para exceções.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.Item">
+            <summary>
+            	Comentário de item de lista.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.List">
+            <summary>
+            	Comentários em formato de lista.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.ListHeader">
+            <summary>
+            	Comentário para cabeçalho de lista.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.Paragraph">
+            <summary>
+            	Comentários em parágrafos.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.Parameter">
+            <summary>
+            	Comentários de parâmetros.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.ParameterReference">
+            <summary>
+            	Comentários de parâmetros de referência.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.Permission">
+            <summary>
+            	Comentários de permissões necessárias.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.remarks">
+            <summary>
+            	Comentários adicionais.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.Returns">
+            <summary>
+            	Comentários para o parâmetro de retorno.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.See">
+            <summary>
+            	Comentário para referencia.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.SeeAlso">
+            <summary>
+            	Comentário para referencia.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.Summary">
+            <summary>
+            	Comentário de resumo.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.Term">
+            <summary>
+            	Comentário de termo.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.TypeParameter">
+            <summary>
+            	Comentário para um parametro generico.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.TypeParameterReference">
+            <summary>
+            	Comentário para uma referencia a um parametro generico.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType.Value">
+            <summary>
+            	Comentário de valor.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.Enumerators.ListType">
+            <summary>
+            	Representa as opções de lista.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ListType.Bullet">
+            <summary>
+            	Marcadores.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ListType.Number">
+            <summary>
+            	Números.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Enumerators.ListType.Table">
+            <summary>
+            	Tabela.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.GenericComment">
+            <summary>
+            	Representa um comentário simples.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.GenericComment.elementType">
+            <summary>
+            	Armazena o tipo do elemento.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.GenericComment.Items">
+            <summary>
+            	Representa os itens internos desse comentário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.GenericComment.ItemsElementName">
+            <summary>
+            	Recupera a lista de opções possíveis para o elemento.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.GenericComment.ElementType">
+            <summary>
+            	Recupera o tipo do elemento associado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.GenericComment.SMC#Framework#Service#Host#XmlComments#Interfaces#ITypedComment#SetElementType(SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType)">
+            <summary>
+            	Permite definir o tipo do elemento.
+            </summary>
+            <param name = "type">Tipo do elemento.</param>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.GenericComment.ValidTypes">
+            <summary>
+            	Recupera os tipos válidos para o elemento genérico.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.Helpers.CommentFormatter">
+            <summary>
+            	Classe de suporte para formatação de itens em string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Helpers.CommentFormatter.InlineTags">
+            <summary>
+            	Lista dos elementos que vão quebrar linha antes da tag de fechamento.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Helpers.CommentFormatter.BlockTags">
+            <summary>
+            	Lista dos elementos que vão quebrar linha depois da tag de fechamento.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.Helpers.CommentFormatter.MultilineTags">
+            <summary>
+            	Lista dos elementos que vão quebrar linha depois da tag de abertura.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.CommentFormatter.#ctor">
+            <summary>
+            	Cria uma nova instância do formatter;
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.Helpers.CommentFormatter.ItemsSeparator">
+            <summary>
+            	Recupera ou atribui o separador entre items.
+            	O padrão é Enviroment.NewLine.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.Helpers.CommentFormatter.RemoveNewLine">
+            <summary>
+            	Recupera ou atribui o valor que define se texto vazio deve ser removido do resultado.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.Helpers.CommentFormatter.IndentSize">
+            <summary>
+            	Recupera ou atribui o tamanho da identação dos elementos.
+            	O padrão é 0.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.Helpers.CommentFormatter.CommentPrefix">
+            <summary>
+            	Recupera ou atribui os caracteres que vão prefixar cada linha de comentário.
+            	O padrão é '/// '.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.CommentFormatter.GetCurrent(SMC.Framework.Service.Host.XmlComments.Comment)">
+            <summary>
+            	Recupera o formatter para o item.
+            </summary>
+            <param name = "comment">Comentário.</param>
+            <returns>Formatter para a classe.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.Helpers.FormatterExtensions">
+            <summary>
+            	Classe de suporte para formatação.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.FormatterExtensions.GetName(SMC.Framework.Service.Host.XmlComments.Enumerators.ListType)">
+            <summary>
+            	Recupera o nome de um item de um enumerador lendo do atributo XmlEnum.
+            </summary>
+            <param name = "listType">Item procurado.</param>
+            <returns>Resultado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.FormatterExtensions.GetName(SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType)">
+            <summary>
+            	Recupera o nome de um item de um enumerador lendo do atributo XmlEnum.
+            </summary>
+            <param name = "elementType">Item procurado.</param>
+            <returns>Resultado.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.Helpers.IdentifierUtils">
+            <summary>
+            	Classe de suporte para manipulação de identifiers.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.IdentifierUtils.GetIdentifier(System.Type)">
+            <summary>
+            	Recupera o identificador para uma classe "T:Namespace.Classe".
+            </summary>
+            <param name = "type">Classe que possui os comentários.</param>
+            <returns>Identificador para uma classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.IdentifierUtils.GetIdentifier(System.Reflection.FieldInfo)">
+            <summary>
+            	Recupera o identificador para uma variável "F:Namespace.Classe.Variavel".
+            </summary>
+            <param name = "fieldInfo">Variável que possui os comentários.</param>
+            <returns>Identificador para uma variável.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.IdentifierUtils.GetIdentifier(System.Reflection.PropertyInfo)">
+            <summary>
+            	Recupera o identificador para uma propriedade "P:Namespace.Classe.Propriedade(Parametro1,Parametro2)".
+            </summary>
+            <param name = "propertyInfo">Propriedade que possui os comentários.</param>
+            <returns>Identificador para uma propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.IdentifierUtils.GetIdentifier(System.Reflection.MethodInfo)">
+            <summary>
+            	Recupera o identificador para um método "M:Namespace.Classe.Metodo(Parametro1,Parametro2)".
+            </summary>
+            <param name = "methodInfo">Método que possui os comentários.</param>
+            <returns>Identificador para um método.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.IdentifierUtils.GetIdentifier(System.Reflection.EventInfo)">
+            <summary>
+            	Recupera o identificador para um evento "E:Namespace.Classe.Evento".
+            </summary>
+            <param name = "eventInfo">Evento que possui os comentários.</param>
+            <returns>Identificador para um evento.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.IdentifierUtils.GetIdentifier(System.Reflection.ConstructorInfo)">
+            <summary>
+            	Recupera o identificador para um construtor "M:Namespace.Classe.#ctor(Parametro1,Parametro2)".
+            </summary>
+            <param name = "constructorInfo">Construtor que possui os comentários.</param>
+            <returns>Identificador para um construtor.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.IdentifierUtils.GetIdentifier(System.Reflection.ParameterInfo[])">
+            <summary>
+            	Recupera o identificar para a lista de parâmetros de um método ou construtor.
+            </summary>
+            <param name = "parameters">Lista de parâmetros.</param>
+            <returns>Identificador para a lista de parâmetros.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.IdentifierUtils.GetIdentifier(System.Reflection.ParameterInfo)">
+            <summary>
+            	Realiza o trabalho de um parâmetro para criar
+            </summary>
+            <param name = "parameterInfo">Parâmetro que possui as informações.</param>
+            <returns>Identificador para o parâmetro</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.IdentifierUtils.RemoveIdentifier(System.String)">
+            <summary>
+            	Removendo os prefixos utilizandos em um identifier.
+            </summary>
+            <param name = "identifier">Identifier original.</param>
+            <returns>Identifier sem o prefixo.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Helpers.IdentifierUtils.GetTypeName(System.Type)">
+            <summary>
+            	Recupera o nome amigável de um tipo.
+            </summary>
+            <param name = "type">Tipo procurado.</param>
+            <returns>Nome do tipo informado.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.Interfaces.IParentComment">
+            <summary>
+            	Interface para itens que possuem conteúdo filhos.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.Interfaces.IParentComment.Items">
+            <summary>
+            	Itens filhos do comentário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.Interfaces.IParentComment.ItemsElementName">
+            <summary>
+            	Recupera a lista de opções possíveis para o elemento.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.Interfaces.ITypedComment">
+            <summary>
+            	Representa um comentário genérico utilizado por mais de um tipo de elemento.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.Interfaces.ITypedComment.ValidTypes">
+            <summary>
+            	Recupera os tipos válidos para o elemento genérico.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.Interfaces.ITypedComment.SetElementType(SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType)">
+            <summary>
+            	Define o tipo de elemento.
+            </summary>
+            <param name = "type">Tipo de elemento.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.ListComment">
+            <summary>
+            	Representa um comentário que possui uma lista de itens.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.ListComment.Items">
+            <summary>
+            	Representa os itens internos desse comentário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.ListComment.ItemsElementName">
+            <summary>
+            	Recupera a lista de opções possíveis para o elemento.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.ListComment.Type">
+            <summary>
+            	Representa o tipo de lista.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.ListComment.ElementType">
+            <summary>
+            	Recupera o tipo do elemento associado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.ListComment.RenderAttributes">
+            <summary>
+            	Retorna os atributos do elemento em string.
+            </summary>
+            <returns>Atributos do elemento em string.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.ListItemComment">
+            <summary>
+            	Representa um item de uma lista de comentários.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.ListItemComment.elementType">
+            <summary>
+            	Armazena o tipo do elemento.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.ListItemComment.Items">
+            <summary>
+            	Representa os itens internos desse comentário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.ListItemComment.ItemsElementName">
+            <summary>
+            	Recupera a lista de opções possíveis para o elemento.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.ListItemComment.ElementType">
+            <summary>
+            	Recupera o tipo do elemento associado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.ListItemComment.SMC#Framework#Service#Host#XmlComments#Interfaces#ITypedComment#SetElementType(SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType)">
+            <summary>
+            	Permite definir o tipo do elemento.
+            </summary>
+            <param name = "type">Tipo do elemento.</param>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.ListItemComment.SMC#Framework#Service#Host#XmlComments#Interfaces#ITypedComment#ValidTypes">
+            <summary>
+            	Recupera os tipos válidos para o elemento genérico.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.MemberComment">
+            <summary>
+            	Representa as informações de um membro (classe, método, propriedade, field, evento) que tem comentários no assembly.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.MemberComment.Name">
+            <summary>
+            	Recupera ou atribui o nome do elemento que gerou os comentários.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.MemberComment.Items">
+            <summary>
+            	Recupera ou atribui todos os itens de comentário internos.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.MemberComment.ItemsElementName">
+            <summary>
+            	Recupera a lista de opções possíveis para o elemento.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.MemberComment.ToString">
+            <summary>
+            	Retorna a representação em string do comentário.
+            </summary>
+            <returns>Representação em string do comentário</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.NamedComment">
+            <summary>
+            	Representa comentários genéricos com nome.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.NamedComment.Name">
+            <summary>
+            	Nome do elemento.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.NamedComment.ValidTypes">
+            <summary>
+            	Recupera os tipos válidos para o elemento genérico.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.NamedComment.RenderAttributes">
+            <summary>
+            	Retorna os atributos do elemento em string.
+            </summary>
+            <returns>Atributos do elemento em string.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.ParentComment">
+            <summary>
+            	Representa comentários que possuem itens filhos.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.ParentComment.Items">
+            <summary>
+            	Itens filhos do comentário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.ParentComment.ItemsElementName">
+            <summary>
+            	Recupera a lista de opções possíveis para o elemento.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.ParentComment.RenderContent">
+            <summary>
+            	Retorna o conteúdo do elemento em string.
+            </summary>
+            <returns>Conteúdo do elemento em string.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.ReferenceComment">
+            <summary>
+            	Representa um comentário com referencia para um elemento.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.ReferenceComment.Reference">
+            <summary>
+            	Representa o membro que o comentário faz referencia.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.ReferenceComment.ValidTypes">
+            <summary>
+            	Recupera os tipos válidos para o elemento genérico.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.ReferenceComment.RenderAttributes">
+            <summary>
+            	Retorna os atributos do elemento em string.
+            </summary>
+            <returns>Atributos do elemento em string.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.SimpleComment">
+            <summary>
+            	Representa comentários que não possuem itens filhos.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Host.XmlComments.SimpleComment.elementType">
+            <summary>
+            	Armazena o tipo do elemento.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.SimpleComment.ElementType">
+            <summary>
+            	Recupera o tipo do elemento associado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.SimpleComment.SMC#Framework#Service#Host#XmlComments#Interfaces#ITypedComment#SetElementType(SMC.Framework.Service.Host.XmlComments.Enumerators.ElementType)">
+            <summary>
+            	Permite definir o tipo do elemento.
+            </summary>
+            <param name = "type">Tipo do elemento.</param>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.SimpleComment.ValidTypes">
+            <summary>
+            	Recupera os tipos válidos para o elemento genérico.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.SimpleNamedComment">
+            <summary>
+            	Representa comentários que possuem uma definição de nome.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.SimpleNamedComment.Name">
+            <summary>
+            	Nome do elemento.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.SimpleNamedComment.ValidTypes">
+            <summary>
+            	Recupera os tipos válidos para o elemento genérico.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.SimpleNamedComment.RenderAttributes">
+            <summary>
+            	Retorna os atributos do elemento em string.
+            </summary>
+            <returns>Atributos do elemento em string.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.SimpleReferenceComment">
+            <summary>
+            	Representa comentários para informações adicionais &lt;see&gt;.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.SimpleReferenceComment.Reference">
+            <summary>
+            	Referencia para o objeto.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.SimpleReferenceComment.ValidTypes">
+            <summary>
+            	Recupera os tipos válidos para o elemento genérico.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.SimpleReferenceComment.RenderAttributes">
+            <summary>
+            	Retorna os atributos do elemento em string.
+            </summary>
+            <returns>Atributos do elemento em string.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Host.XmlComments.TagComment">
+            <summary>
+            	Classe abstrata para todas os comentários que possuem tags.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Host.XmlComments.TagComment.ElementType">
+            <summary>
+            	Recupera o tipo do elemento associado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.TagComment.RenderContent">
+            <summary>
+            	Retorna o conteúdo do elemento em string.
+            </summary>
+            <returns>Conteúdo do elemento em string.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.TagComment.RenderAttributes">
+            <summary>
+            	Retorna os atributos do elemento em string.
+            </summary>
+            <returns>Atributos do elemento em string.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Host.XmlComments.TagComment.ToString">
+            <summary>
+            	Retorna a representação em string do comentário.
+            </summary>
+            <returns>Representação em string do comentário</returns>
+        </member>
+    </members>
+</doc>

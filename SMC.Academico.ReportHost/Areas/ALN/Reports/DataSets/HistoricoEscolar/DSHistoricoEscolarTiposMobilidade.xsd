@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSHistoricoEscolarTiposMobilidade" targetNamespace="http://tempuri.org/DSHistoricoEscolarTiposMobilidade.xsd" xmlns:mstns="http://tempuri.org/DSHistoricoEscolarTiposMobilidade.xsd" xmlns="http://tempuri.org/DSHistoricoEscolarTiposMobilidade.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSHistoricoEscolarTiposMobilidade" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DSHistoricoEscolarTiposMobilidade" msprop:Generator_DataSetName="_DSHistoricoEscolarTiposMobilidade">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSHistoricoEscolarTiposMobilidade" msprop:Generator_RowEvHandlerName="DSHistoricoEscolarTiposMobilidadeRowChangeEventHandler" msprop:Generator_RowDeletedName="DSHistoricoEscolarTiposMobilidadeRowDeleted" msprop:Generator_RowDeletingName="DSHistoricoEscolarTiposMobilidadeRowDeleting" msprop:Generator_RowEvArgName="DSHistoricoEscolarTiposMobilidadeRowChangeEvent" msprop:Generator_TablePropName="DSHistoricoEscolarTiposMobilidade" msprop:Generator_RowChangedName="DSHistoricoEscolarTiposMobilidadeRowChanged" msprop:Generator_RowChangingName="DSHistoricoEscolarTiposMobilidadeRowChanging" msprop:Generator_TableClassName="DSHistoricoEscolarTiposMobilidadeDataTable" msprop:Generator_RowClassName="DSHistoricoEscolarTiposMobilidadeRow" msprop:Generator_TableVarName="tableDSHistoricoEscolarTiposMobilidade" msprop:Generator_UserTableName="DSHistoricoEscolarTiposMobilidade">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Seq" msprop:Generator_ColumnPropNameInRow="Seq" msprop:Generator_ColumnPropNameInTable="SeqColumn" msprop:Generator_ColumnVarNameInTable="columnSeq" msprop:Generator_UserColumnName="Seq" type="xs:long" minOccurs="0" />
+              <xs:element name="Titulo" msprop:Generator_ColumnPropNameInRow="Titulo" msprop:Generator_ColumnPropNameInTable="TituloColumn" msprop:Generator_ColumnVarNameInTable="columnTitulo" msprop:Generator_UserColumnName="Titulo" type="xs:string" minOccurs="0" />
+              <xs:element name="DataInicio" msprop:Generator_ColumnPropNameInRow="DataInicio" msprop:Generator_ColumnPropNameInTable="DataInicioColumn" msprop:Generator_ColumnVarNameInTable="columnDataInicio" msprop:Generator_UserColumnName="DataInicio" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DataFim" msprop:Generator_ColumnPropNameInRow="DataFim" msprop:Generator_ColumnPropNameInTable="DataFimColumn" msprop:Generator_ColumnVarNameInTable="columnDataFim" msprop:Generator_UserColumnName="DataFim" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Instituicao" msprop:Generator_ColumnPropNameInRow="Instituicao" msprop:Generator_ColumnPropNameInTable="InstituicaoColumn" msprop:Generator_ColumnVarNameInTable="columnInstituicao" msprop:Generator_UserColumnName="Instituicao" type="xs:string" minOccurs="0" />
+              <xs:element name="OrientadorInstituicao" msprop:Generator_ColumnPropNameInRow="OrientadorInstituicao" msprop:Generator_ColumnPropNameInTable="OrientadorInstituicaoColumn" msprop:Generator_ColumnVarNameInTable="columnOrientadorInstituicao" msprop:Generator_UserColumnName="OrientadorInstituicao" type="xs:string" minOccurs="0" />
+              <xs:element name="PaisInstituicao" msprop:Generator_ColumnPropNameInRow="PaisInstituicao" msprop:Generator_ColumnPropNameInTable="PaisInstituicaoColumn" msprop:Generator_ColumnVarNameInTable="columnPaisInstituicao" msprop:Generator_UserColumnName="PaisInstituicao" type="xs:string" minOccurs="0" />
+              <xs:element name="DatasInicioPeriodos" msprop:Generator_ColumnPropNameInRow="DatasInicioPeriodos" msprop:Generator_ColumnPropNameInTable="DatasInicioPeriodosColumn" msprop:Generator_ColumnVarNameInTable="columnDatasInicioPeriodos" msprop:Generator_UserColumnName="DatasInicioPeriodos" type="xs:string" minOccurs="0" />
+              <xs:element name="DatasFimPeriodos" msprop:Generator_ColumnPropNameInRow="DatasFimPeriodos" msprop:Generator_ColumnPropNameInTable="DatasFimPeriodosColumn" msprop:Generator_ColumnVarNameInTable="columnDatasFimPeriodos" msprop:Generator_UserColumnName="DatasFimPeriodos" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,17 @@
+﻿@model TurmaParametrosOfertaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Fieldset("fieldsetCriterioAprovacao").LegendText(Smc.GetUIResource("CriterioAprovacao_Detalhe_Titulo")).Begin())
+    {
+        @Smc.EditorFor(m => m.SeqCriterioAprovacao)
+        @Smc.EditorFor(m => m.CriterioNotaMaxima)
+        @Smc.EditorFor(m => m.CriterioPercentualNotaAprovado)
+        @Smc.EditorFor(m => m.CriterioPercentualFrequenciaAprovado)
+        @Smc.EditorFor(m => m.CriterioDescricaoEscalaApuracao)
+    }
+    using (Smc.Fieldset("fieldsetDivisoesComponentes").LegendText(Smc.GetUIResource("DivisoesComponente_Detalhe_Titulo")).Begin())
+    {
+        @Smc.List("DivisoesComponente", m => m.DivisoesComponente).HtmlTemplate(divisao => Html.Partial("_StepParametrosNovoDivisoes", divisao.Value));
+    }
+}

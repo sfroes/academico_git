@@ -1,0 +1,24 @@
+﻿@model List<SMC.Academico.UI.Mvc.Areas.TUR.Models.DetalhesDivisaoTurmaViewModel>
+
+@{
+    var divisaoDestaque = Model.FirstOrDefault(x => x.Destaque);
+}
+
+
+@Html.Partial(Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.DETALHES_DIVISAO_TURMA_CABECALHO), divisaoDestaque)
+
+@(Smc.Grid("gridDivisoes", new SMCPagerModel<SMC.Academico.UI.Mvc.Areas.TUR.Models.DetalhesDivisaoTurmaViewModel>(Model))
+        .FieldColumn(x => x.GrupoFormatado)
+        .FieldColumn(x => x.DescricaoLocalidade)
+        .FieldColumn(x => x.InformacoesAdicionais)
+        .FieldColumn(x => x.NomesColaboradores)
+        
+        .GridRowConfiguration((x, y) => x.CssClass = (y as SMC.Academico.UI.Mvc.Areas.TUR.Models.DetalhesDivisaoTurmaViewModel).Destaque ? "smc-sga-item-disponivel" : string.Empty)
+        .AutoGenerateColumns(false)
+        .HideNavigator()
+        .HideNumberOfRowsPerPageSelector()
+        .HidePager()
+        .HideRowNumber()
+        .HideRowsTotalizer()
+        .AutoHideNavigator()
+        .HideGridTitle())

@@ -1,0 +1,30 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.APR.Models.EntregaOnline
+@using SMC.Framework;
+@using SMC.Framework.UI.Mvc.Html;
+@using SMC.Academico.Common.Areas.APR.Enums;
+
+@model  HistoricoSituacaoEntregaOnlineViewModel
+
+
+@using (Smc.Header("header", SMCHeaderType.Primary)
+            .Item(x => x.Sigla, sizeMD: SMCSize.Grid4_24, sizeSM: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24)
+            .Item(x => x.Descricao, sizeMD: SMCSize.Grid12_24, sizeSM: SMCSize.Grid12_24, sizeXS: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24)
+            .Item("Data", $"{Model.DataInicio.ToString("dd/MM/yyyy HH:mm")} a {(Model.DataFim.HasValue ? Model.DataFim.Value.ToString("dd/MM/yyyy HH:mm") : "-")}", sizeMD: SMCSize.Grid8_24, sizeSM: SMCSize.Grid8_24, sizeXS: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24)
+            .Item(x => x.Alunos, sizeMD: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24)
+            .Begin())
+{
+}
+
+@if (Model.Situacoes != null && Model.Situacoes.Any())
+{
+    @(Smc.Grid("gridSituacoes", new SMCPagerModel<HistoricoSituacaoEntregaOnlineItemViewModel>(Model.Situacoes))
+        .AutoGenerateColumns()
+        .HideNumberOfRowsPerPageSelector()
+        .HidePager()
+        .HideNavigator()
+        .HideRowsTotalizer())
+}
+else
+{
+    <p class="smc-datagrid-no-results"> @Smc.GetUIResource("EntregaOnline_Nenhum_Historico_Situacao") </p>
+}

@@ -1,0 +1,19 @@
+﻿@model RelatorioAlunosPorComponenteFiltroViewModel
+
+@Html.Action("Cabecalho", "RelatorioAlunosPorComponente")
+
+@using (Smc.Form("frmViewPadrao", "GerarRelatorio", Model).Begin())
+{
+    //Filtros
+    using (Smc.Fieldset("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(x => x.SeqCicloLetivo)
+        @Smc.EditorFor(x => x.SeqCursoOfertaLocalidade)
+        @Smc.EditorFor(x => x.SeqTurno)
+        @Smc.EditorFor(x => x.SeqTurma)
+        @Smc.EditorFor(x => x.SeqConfiguracaoComponente)
+        @Smc.EditorFor(x => x.ExibirSolicitanteMatrículaNaoFinalizada)
+
+        @Html.Partial("_BotoesRelatorioPadrao", true)
+    }
+}

@@ -1,0 +1,41 @@
+UC; Descrição
+UC_CAM_001_01_01.Pesquisar_Campanha;Este caso de uso tem como objetivo pesquisar as campanhas, permitindo também a exclusão.
+UC_CAM_001_01_02.Manter_Campanha;Este caso de uso tem como objetivo cadastrar e alterar os dados de uma campanha.
+UC_CAM_001_01_03.Pesquisar_Oferta_Campanha;Este caso de uso tem como objetivo pesquisar as ofertas associadas a uma campanha, permitindo também a exclusão.
+UC_CAM_001_01_04.Associar_Oferta_Campanha;Este caso de uso tem como objetivo associar e desassociar em lote ofertas de uma campanha.
+UC_CAM_001_01_04.Manter_Associacao_Oferta_Campanha;ESTE CASO DE USO DEVERÁ SER IMPLEMENTADO SOMENTE PARA A GRADUAÇÃO.  ELE DEVERÁ SER REVISADO  Este caso de uso tem como objetivo vincular outros itens a um item de campanha associado previamente, para que sejam ofertados de forma agrupada, em um único item. Também permite desvincular um item que tenha sido associado de forma agrupada.
+UC_CAM_001_01_05.Configurar_Vagas_Ofertas_Campanha;Este caso de uso tem como objetivo configurar as vagas das ofertas associdas à campanha.
+UC_CAM_001_01_06.Copiar_Campanha;Este caso de uso tem como objetivo copiar uma campanha.
+UC_CAM_001_02_01.Pesquisar_Processo_Seletivo;Este caso de uso tem como objetivo pesquisar os processos seletivos, permitindo também a exclusão.
+UC_CAM_001_02_02.Manter_Processo_Seletivo;Este caso de uso tem como objetivo cadastrar e alterar os dados de um processo seletivo.
+UC_CAM_001_02_03.Pesquisar_Oferta_Processo_Seletivo;Este caso de uso tem como objetivo pesquisar as ofertas de um processo seletivo, permitindo também a exclusão.
+UC_CAM_001_02_04.Associar_Oferta_Processo_Seletivo;Este caso de uso tem como objetivo associar e desassociar em lote ofertas de um processo seletivo.
+UC_CAM_001_02_05.Configurar_Vagas_Ofertas_Processo_Seletivo;Este caso de uso tem como objetivo configurar as vagas das ofertas associdas ao processo seletivo.
+UC_CAM_001_03_01.Consultar_Candidato;Esse caso de uso tem como objetivo permitir a consulta dos dados dos candidatos.
+UC_CAM_001_04_01.Consultar_Posicao_Consolidada;Esse caso de uso tem como objetivo consultar a posição consolidada dos candidatos.
+UC_CAM_001_05_01.Pesquisar_Convocacao;Este caso de uso tem como objetivo pesquisar as convocações e suas respectivas chamadas, permitindo também a exclusão.
+UC_CAM_001_05_02.Manter_Convocacao;Este caso de uso tem como objetivo cadastrar e alterar os dados de uma convocação e de suas respectivas chamadas.
+UC_CAM_001_05_03.Pesquisar_Oferta_Convocacao;Este caso de uso tem como objetivo pesquisar as ofertas de uma convocação, permitindo também a exclusão.
+UC_CAM_001_05_04.Associar_Oferta_Convocacao;Este caso de uso tem como objetivo associar e desassociar em lote ofertas de uma convocação.
+UC_CAM_001_05_05.Configurar_Vagas_Ofertas_Convocacao;Este caso de uso tem como objetivo configurar as vagas das ofertas associdas à convocação.
+UC_CAM_001_05_06.Pesquisar_Convocacao_Execentes;Este caso de uso tem como objetivo cosultar e selecionar candidatos excedentes para a convocação.
+UC_CAM_001_05_07.Pesquisar_Convocacao_Execentes;Esse caso de uso tem como objetivo convocar um candidato.
+UC_CAM_001_05_08.Visualizar_Impedimentos;Esse caso de uso tem como objetivo visualizar os impedimentos para liberação de matrícula.
+UC_CAM_001_06_01.Pesquisar_Tipo_Oferta;Este caso de uso tem como objetivo pesquisar os tipos de oferta, permitindo também a exclusão.
+UC_CAM_001_06_02.Manter_Tipo_Oferta;Este caso de uso tem como objetivo cadastrar e alterar os dados de um tipo de oferta.
+UC_CAM_001_07_01.Pesquisar_Tipo_Processo_Seletivo;Este caso de uso tem como objetivo pesquisar os tipos de processo seletivo, permitindo também a exclusão.
+UC_CAM_001_07_02.Manter_Tipo_Processo_Seletivo;Este caso de uso tem como objetivo cadastrar e alterar os dados de um tipo de processo seletivo.
+UC_CAM_002_01_01.Pesquisar_Ciclo_Letivo;Este caso de uso tem como objetivo consultar os ciclos letivos, permitindo também a exclusão.
+UC_CAM_002_01_02.Manter_Ciclo_Letivo;Este caso de uso tem como objetivo cadastrar ou alterar os dados de um ciclo letivo.
+UC_CAM_002_01_03.Pesquisar_Parametrizacao_Tipo_Evento_Letivo;Este caso de uso tem como objetivo consultar a parametrização de tipo de evento letivo, permitindo também a exclusão.
+UC_CAM_002_01_04.Manter_Parametrizacao_Tipo_Evento_Letivo;Este caso de uso tem como objetivo cadastrar ou alterar os dados de uma parametrização de tipo de evento letivo.
+UC_CAM_002_01_05.Copiar_Ciclo_Letivo;Este caso de uso tem como objetivo cadastrar um ciclo letivo através da cópia dos dados de um ciclo letivo já existente.   
+UC_CAM_002_02_01.Manter_Regime_Letivo;Este caso de uso tem como objetivo manter o cadastro de regime letivo, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_CAM_002_03_01.Pesquisar_Evento_Letivo;Este caso de uso tem como objetivo consultar os eventos letivos de um ciclo letivo, permitindo também a exclusão.
+UC_CAM_002_03_02.Manter_Evento_Letivo;Este caso de uso tem como objetivo cadastrar ou alterar os dados de um evento letivo do ciclo letivo.
+UC_CAM_002_03_03.Copiar_Evento_Letivo;Este caso de uso tem como objetivo copiar eventos letivos de um ciclo letivo para outro ciclo letivo
+UC_CAM_002_03_04.Alterar_Evento_Letivo_Lote;Este caso de uso tem como objetivo alterar eventos letivos em lote.
+UC_CAM_002_03_05.Visualizar_Evento_Letivo;Este caso de uso tem como objetivo visualizar os detalhes de um evento letivo.
+UC_CAM_003_01_01.Manter_Regime_Letivo_Instituicao_Nivel;Este caso de uso tem como objetivo manter o cadastro de regime letivo por instituição e nível, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_CAM_003_02_01.Pesquisar_Parametros_Instituicao_Tipo_Evento;Este caso de uso tem como objetivo consultar os tipos de evento por instituição, permitindo também a exclusão.  
+UC_CAM_003_02_02.Manter_Parametros_Instituicao_Tipo_Evento;Este caso de uso tem como objetivo cadastrar ou alterar os tipos de evento por instituição

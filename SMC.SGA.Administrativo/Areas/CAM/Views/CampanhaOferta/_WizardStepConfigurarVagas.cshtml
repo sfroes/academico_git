@@ -1,0 +1,49 @@
+﻿@model ConfigurarVagasOfertaCampanhaViewModel
+
+@using (Smc.Form("formSelecaoOfertaCampanha").Ajax().Begin())
+{
+    @(Smc.Grid("gridListarConfigurarVagas", Model.CampanhaOfertas)
+                .HideNavigator()
+                .HidePager()
+                .HideRowNumber()
+                .HideRowsTotalizer()
+                .HideGridTitle()
+                .Attribute("data-detail-property", SMCLookupHelper.GetCurrentPropertyName(Smc))
+                .FieldColumn(x => x.TipoOfertaDisplay)
+                .FieldColumn(x => x.OfertaDisplay)
+                .ContentColumn(@<text>
+                    @{
+                                        ViewBag.Index = (ViewBag.Index != null) ? ((int)ViewBag.Index) + 1 : 0;
+                    }
+                    @Html.Partial("_CustomVagasItem", item as ConfigurarVagasOfertaCampanhaListaViewModel)
+                </text>, @Smc.GetUIResource("ConfigurarVagasOfertaCampanha_Vagas")))
+
+
+    if (Model.ProcessosSeletivos.Count > 0)
+    {
+        using (Smc.Div("divProcessosSeletivo")
+                  .ConditionalDisplay("CampanhaOfertas", SMCConditionalOperation.NotEqual, requiredValue: null)
+                .Begin())
+        {
+            @Smc.DisplayFor(m => m.MensagemAlertaProcessoSeletivo).HideLabel()
+
+            @Smc.TreeView("ProcessosSelecionados", Model.ProcessosSeletivosTree).Expanded(true).AllowCheck(SMCSelectMode.Checkbox)
+        }
+    }
+
+    @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Configurar)
+                    .CssClass("smc-btn-alterar-icotext-destaque")
+                    .Text(Smc.GetUIResource("Botao_Associar_Campanha_Oferta"))
+                    .Tooltip(Smc.GetUIResource("Botao_Associar_Campanha_Oferta_Tooltip"))
+                    .Conditional(SMCConditionalBehavior.ReadOnly, "OfertasCampanha", SMCConditionalOperation.Equals, null)
+                    .Action("AssociarCampanhaOferta", "CampanhaOferta")
+                    .Type(SMCButtonType.Submit))
+            .AddButton(Smc.Button("Voltar")
+                    .CssClass("smc-btn-voltar-icotext")
+                    .Action("Index", "Campanha")
+                    .Type(SMCButtonType.Link))
+    )
+}
+
+@Smc.WizardView()

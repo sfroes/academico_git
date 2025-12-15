@@ -1,0 +1,34 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+@model TipoVinculoAlunoListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.Seq).Size(SMCSize.Grid5_24, SMCSize.Grid6_24, SMCSize.Grid5_24, SMCSize.Grid5_24)
+            @Smc.DisplayFor(m => m.Descricao).Size(SMCSize.Grid19_24, SMCSize.Grid18_24, SMCSize.Grid19_24, SMCSize.Grid19_24)
+
+        }
+        // Div com forma de ingresso
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+            {
+                @(Smc.Grid("gridParametros", new SMCPagerModel<FormaIngressoViewModel>(Model.FormasIngresso.OrderBy(o => o.Descricao)))
+                .ContentColumn(@<text>@((item as FormaIngressoViewModel).Descricao)</text>, header: Smc.GetUIResource("ColunaFormaIngressoDescricao_Titulo"), cssClass: "smc-size-md-9 smc-size-xs-9 smc-size-sm-9 smc-size-lg-9")
+                .FieldColumn(f => f.Token, cssClass: "smc-size-md-8 smc-size-xs-8 smc-size-sm-8 smc-size-lg-8")
+                .FieldColumn(f => f.TipoFormaIngresso, cssClass: "smc-size-md-7 smc-size-xs-7 smc-size-sm-7 smc-size-lg-7")
+                .HideGridTitle()
+                .HideNavigator()
+                .HideRowNumber()
+
+)
+            }
+        }
+    }
+
+    @Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)
+}

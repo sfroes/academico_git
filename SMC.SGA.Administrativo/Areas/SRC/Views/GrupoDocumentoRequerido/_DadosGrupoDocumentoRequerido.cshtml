@@ -1,0 +1,27 @@
+﻿@model GrupoDocumentoRequeridoViewModel
+
+@using (Smc.Header("CabecalhoGrupoDocumentoRequerido", SMCHeaderType.Primary)
+           .Item(i => i.DescricaoConfiguracaoEtapa, sizeMD: SMCSize.Grid24_24).Begin())
+{}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-display smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-mensagem-multiplas-linhas").Begin())
+{
+    using (Smc.Div().CssClass(" smc-sga-ico-mensagem").Begin())
+    { }
+
+    @Smc.DisplayFor(d => d.Mensagem)
+}
+
+@Smc.EditorFor(m => m.SeqConfiguracaoEtapa)
+@Smc.EditorFor(m => m.DescricaoConfiguracaoEtapa)
+@Smc.EditorFor(m => m.SeqProcessoEtapa)
+
+@Smc.EditorFor(m => m.Seq)
+@Smc.EditorFor(m => m.Descricao)
+@Smc.EditorFor(m => m.MinimoObrigatorio)
+@Smc.EditorFor(m => m.UploadObrigatorio)
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.MasterDetail(m => m.Itens).MinimumItens(1)
+}

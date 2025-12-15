@@ -1,0 +1,96 @@
+﻿@model SolicitacaoMatriculaSelecionadaViewModel
+
+@section cabecalhoMAT
+{
+    @Html.Action("CabecalhoSolicitacao", new { seqSolicitacaoServico = Model.SeqSolicitacaoServico })
+}
+
+
+
+<h1 class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-titulo-etapa">@Smc.GetUIResource("Index_Titulo")</h1>
+@using (Smc.Div("divEntregaDocumentos").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24);
+
+    buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                           .Attribute(SMCMvcConsts.MODAL_ID, "modalEntregarDocumentos")
+                           .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Entregar_Documentos"))
+                           .Ajax(isPost: false)
+                           .Text(Smc.GetUIResource("Label_Entregar_Documentos"))
+                           .Tooltip(Smc.GetUIResource("Label_Entregar_Documentos"))
+                           .Hide(!Model.ExibirEntregaDocumentos)
+                           .Action("EntregarDocumentos", "Solicitacao", new
+                           {
+                               @seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico),
+                               @seqPessoaAtuacao = Model.SeqPessoaAtuacao,
+                               @area = "MAT"
+                           }));
+    @buttonSet;
+}
+@(Smc.Legend("legenda", SMCOrientation.Horizontal).CssClass("smc-sga-legenda").Items<SMC.Academico.Common.Areas.ALN.Enums.SituacaoEtapaSolicitacaoMatricula>().Size(SMCSize.Grid24_24))
+@(Smc.Grid("gridEtapas", new SMCPagerModel<SMC.Academico.UI.Mvc.Models.EtapaListaViewModel> { ModelValues = Model.Etapas })
+    .CssClass("smc-sga-grid-inicial")
+    .HideRowNumber()
+    .AutoHideNavigator()
+    .HideGridTitle()
+    .HideNavigator()
+    .GridRowConfiguration((options,item) => {
+        var itemParsed = (item as SMC.Academico.UI.Mvc.Models.EtapaListaViewModel);
+        if (itemParsed.Ativo)
+        {
+            options.CssClass = "smc-sga-etapa-atual";
+        }
+    })
+    .HideNumberOfRowsPerPageSelector()
+    .HidePager()
+    .HideRowsTotalizer()
+    .FieldColumn(c => c.SituacaoEtapaIngressante, order: 0)
+    .ContentColumn(@<text>
+        @{
+            var itemParsed = (item as SMC.Academico.UI.Mvc.Models.EtapaListaViewModel);
+            if ((itemParsed.Ativo || itemParsed.SituacaoEtapaIngressante.HasFlag(SMC.Academico.Common.Areas.ALN.Enums.SituacaoEtapaSolicitacaoMatricula.Finalizada)) && itemParsed.PossuiFluxoNaAplicacaoSGAAluno && !itemParsed.SituacaoEtapaIngressante.HasFlag(SMC.Academico.Common.Areas.ALN.Enums.SituacaoEtapaSolicitacaoMatricula.NaoFinalizada))
+            {
+                <div class="smc-sga-ingressante-etapas-descricao ">@Html.ActionLink(itemParsed.DescricaoEtapa, "EntrarEtapa", "Matricula", new { @seqSolicitacaoMatricula = new SMCEncryptedLong(itemParsed.SeqSolicitacaoServico), @seqEtapaSGF = new SMCEncryptedLong(itemParsed.SeqEtapaSGF), @seqProcessoEtapa = new SMCEncryptedLong(itemParsed.SeqProcessoEtapa), @seqIngressante = new SMCEncryptedLong(Model.SeqPessoaAtuacao), @seqConfiguracaoEtapa = new SMCEncryptedLong(itemParsed.SeqConfiguracaoEtapa) }, new { })</div>
+            }
+            else
+            {
+                <div class="smc-sga-ingressante-etapas-descricao">@itemParsed.DescricaoEtapa</div>
+            }
+
+            if (!string.IsNullOrWhiteSpace(itemParsed.Instrucoes))
+            {
+                @Smc.Instructions().Text(itemParsed.Instrucoes)
+            }
+        }
+    </text>, order: 1)
+    .FieldColumn(c => c.DataVigencia, order: 2, cssClass: "smc-sga-ingressante-data-destaque")
+    .ButtonColumn(SMCButtonSetType.Secondary, null, false,
+        x =>
+        {
+            var itemParsed = (x as SMC.Academico.UI.Mvc.Models.EtapaListaViewModel);
+
+            return (Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                    .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarPlanoEnsino")
+                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Visualizar_PlanoEnsino"))
+                    .Ajax(isPost: false)
+                    .Text(Smc.GetUIResource("Botao_Visualizar_PlanoEnsino"))
+                    .Tooltip(Smc.GetUIResource("Botao_Visualizar_PlanoEnsino"))
+                    .Hide(!itemParsed.ExibirVisualizarPlanoEstudos)
+                    .SecurityToken(UC_MAT_003_20_01.VISUALIZAR_ITENS_PLANO_ESTUDO)
+                    .Action("VisualizarTurmaAtividade", "SolicitacaoMatriculaItemRoute", new { @seqSolicitacaoMatricula = new SMCEncryptedLong(itemParsed.SeqSolicitacaoServico), @seqConfiguracaoEtapa = new SMCEncryptedLong(itemParsed.SeqConfiguracaoEtapa), @erro = false, @area = string.Empty, @desconsideraEtapa = false }));
+        }
+    )
+)
+
+@using (Smc.ModalWindow("modalVisualizarPlanoEnsino")
+        .Form("formVisualizarTurma", "VisualizarTurmaAtividade", "SolicitacaoMatriculaItemRoute", new { seqSolicitacaoMatricula = 1, area = string.Empty, @desconsideraEtapa = false }, closeOnSubmit: true)
+        .Size(SMCModalWindowSize.Largest)
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalEntregarDocumentos")
+        .Form("formAnexarDocumentos", "SalvarEntregarDocumentos", null, closeOnSubmit: true, config: frm => frm.Ajax())
+        .Size(SMCModalWindowSize.Largest)
+        .Button(SMCButtonBehavior.Salvar, "SalvarRegistroDocumentos", null, new { area = string.Empty }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }

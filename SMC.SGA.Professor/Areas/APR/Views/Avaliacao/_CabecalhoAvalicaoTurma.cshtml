@@ -1,0 +1,24 @@
+﻿@model AvaliacaoCabecalhoViewModel
+
+@{
+    SMCButtonFluentConfiguration botaoLancamentoNota = Smc.Button("LancamentoNota")
+              .Url(Url.Content("~/App/APR/LancamentoNota?seqOrigemAvaliacao=" + new SMCEncryptedLong(Model.SeqOrigemAvaliacao)))
+              .Text(Smc.GetUIResource("Botao_Lancamento_Nota"))
+              .Type(SMCButtonType.Link)
+              .Tooltip(Smc.GetUIResource("Botao_Lancamento_Nota_Tooltip"))
+              .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_001_05_01.LANCAMENTO_NOTA);
+}
+
+@(Smc.ButtonSet().CssClass("smc-btn-configurar-topo-pagina")
+        .NumberOfButtonsToShow(0, SMCButtonSetGroupedStyle.Button)
+        .Type(SMCButtonSetType.Primary)
+        .AddButton(botaoLancamentoNota))
+
+
+@using (Smc.Header("Avaliacao", SMCHeaderType.Primary)
+        .Item(prop => prop.OrigemAvaliacao, sizeMD: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24)
+        .Begin())
+{
+
+
+}

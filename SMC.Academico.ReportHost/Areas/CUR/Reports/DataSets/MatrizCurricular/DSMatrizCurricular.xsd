@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSMatrizCurricular" targetNamespace="http://tempuri.org/DSMatrizCurricular.xsd" xmlns:mstns="http://tempuri.org/DSMatrizCurricular.xsd" xmlns="http://tempuri.org/DSMatrizCurricular.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSMatrizCurricular" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSMatrizCurricular" msprop:Generator_UserDSName="DSMatrizCurricular">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MatrizCurricular" msprop:Generator_TableClassName="MatrizCurricularDataTable" msprop:Generator_TableVarName="tableMatrizCurricular" msprop:Generator_TablePropName="MatrizCurricular" msprop:Generator_RowDeletingName="MatrizCurricularRowDeleting" msprop:Generator_RowChangingName="MatrizCurricularRowChanging" msprop:Generator_RowEvHandlerName="MatrizCurricularRowChangeEventHandler" msprop:Generator_RowDeletedName="MatrizCurricularRowDeleted" msprop:Generator_UserTableName="MatrizCurricular" msprop:Generator_RowChangedName="MatrizCurricularRowChanged" msprop:Generator_RowEvArgName="MatrizCurricularRowChangeEvent" msprop:Generator_RowClassName="MatrizCurricularRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SeqMatrizCurricular" msprop:Generator_ColumnVarNameInTable="columnSeqMatrizCurricular" msprop:Generator_ColumnPropNameInRow="SeqMatrizCurricular" msprop:Generator_ColumnPropNameInTable="SeqMatrizCurricularColumn" msprop:Generator_UserColumnName="SeqMatrizCurricular" type="xs:long" minOccurs="0" />
+              <xs:element name="DescricaoMatrizCurricular" msprop:Generator_ColumnVarNameInTable="columnDescricaoMatrizCurricular" msprop:Generator_ColumnPropNameInRow="DescricaoMatrizCurricular" msprop:Generator_ColumnPropNameInTable="DescricaoMatrizCurricularColumn" msprop:Generator_UserColumnName="DescricaoMatrizCurricular" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoSituacao" msprop:Generator_ColumnVarNameInTable="columnDescricaoSituacao" msprop:Generator_ColumnPropNameInRow="DescricaoSituacao" msprop:Generator_ColumnPropNameInTable="DescricaoSituacaoColumn" msprop:Generator_UserColumnName="DescricaoSituacao" type="xs:string" minOccurs="0" />
+              <xs:element name="SeqNivelEnsino" msprop:Generator_ColumnVarNameInTable="columnSeqNivelEnsino" msprop:Generator_ColumnPropNameInRow="SeqNivelEnsino" msprop:Generator_ColumnPropNameInTable="SeqNivelEnsinoColumn" msprop:Generator_UserColumnName="SeqNivelEnsino" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoNivelEnsino" msprop:Generator_ColumnVarNameInTable="columnDescricaoNivelEnsino" msprop:Generator_ColumnPropNameInRow="DescricaoNivelEnsino" msprop:Generator_ColumnPropNameInTable="DescricaoNivelEnsinoColumn" msprop:Generator_UserColumnName="DescricaoNivelEnsino" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoLocalidade" msprop:Generator_ColumnVarNameInTable="columnDescricaoLocalidade" msprop:Generator_ColumnPropNameInRow="DescricaoLocalidade" msprop:Generator_ColumnPropNameInTable="DescricaoLocalidadeColumn" msprop:Generator_UserColumnName="DescricaoLocalidade" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoTurno" msprop:Generator_ColumnVarNameInTable="columnDescricaoTurno" msprop:Generator_ColumnPropNameInRow="DescricaoTurno" msprop:Generator_ColumnPropNameInTable="DescricaoTurnoColumn" msprop:Generator_UserColumnName="DescricaoTurno" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,37 @@
+﻿@using SMC.SGA.Aluno.Extensions
+@model HomeTurmaDivisaoViewModel
+
+@using (Smc.Div().CssClass("smc-sga-externo-agrupamento-terciario").Size(SMCSize.Grid24_24).Begin())
+{
+
+    <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid20_24, SMCSize.Grid19_24, SMCSize.Grid20_24, SMCSize.Grid20_24)">@Model.DivisaoTurmaRelatorioDescricao</label>
+
+    var buttonset = Smc.ButtonSet()
+        .Size(SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24, SMCSize.Grid2_24)
+        .CssClass("smc-sga-externo-botoes-grid")
+        .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDivisaoTurma")
+                                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Divisao_Turma"))
+                                .Ajax(isPost: false)
+                                .SecurityToken(SMC.Academico.Common.Areas.TUR.Constants.UC_TUR_001_06_01.VISUALIZAR_DETALHES_DIVISAO_TURMA)
+                                .Tooltip(Smc.GetUIResource("Botao_DetalhesDivisao_Tooltip"))
+                                .Text(Smc.GetUIResource("Botao_DetalhesDivisao"))
+                                .Action("VisualizarDivisaoTurmaDetalhes", "DetalhesDivisaoTurmaRoute", new { seqDivisaoTurma = new SMCEncryptedLong(Model.Seq), seqPessoaAtuacao = new SMCEncryptedLong(Context.GetAlunoLogado().Seq), area = string.Empty })
+        )
+        .NumberOfButtonsToShow(0);
+    
+    if (Model.SeqOrigemMaterial.GetValueOrDefault() > 0)
+    {
+        SMCButtonFluentConfiguration buttonMaterial = Smc.Button("DownloadMaterial", "Index", new
+        {
+            SeqsOrigemMaterial = Model.SeqOrigemMaterial,
+            tipoOrigemMaterial = SMC.Academico.Common.Areas.APR.Enums.TipoOrigemMaterial.DivisaoTurma,
+            tipoAtuacao = SMC.Academico.Common.Areas.PES.Enums.TipoAtuacao.Aluno,
+            Area = "APR"
+        }, "DownloadMaterial").Text(Smc.GetUIResource("Botao_DownloadMaterial")).Type(SMCButtonType.Link).Tooltip(Smc.GetUIResource("Botao_DownloadMaterial_Tooltip"));
+
+        buttonset.AddButton(buttonMaterial);
+    }
+
+    @buttonset
+}

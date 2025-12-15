@@ -1,0 +1,582 @@
+﻿@model SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_ANALISE_EMISSAO_DOCUMENTO))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    @Smc.HiddenFor(x => x.SeqSolicitacaoServicoAuxiliar)
+    @Smc.HiddenFor(x => x.SeqConfiguracaoEtapaAuxiliar)
+    @Smc.HiddenFor(x => x.SeqPessoaAtuacaoAuxiliar)
+    @Smc.HiddenFor(x => x.EmissaoPermitida)
+    @Smc.HiddenFor(x => x.SeqTipoDocumentoAcademico)
+    @Smc.HiddenFor(x => x.SeqViaAnterior)
+    @Smc.HiddenFor(x => x.TokenTipoDocumentoAcademicoAnterior)
+    @Smc.HiddenFor(x => x.DescricaoTipoDocumentoAcademicoAnterior)
+    @Smc.HiddenFor(x => x.ExisteDocumentoConclusao)
+    @Smc.HiddenFor(x => x.MotivoEmissaoNaoPermitida)
+    @Smc.HiddenFor(x => x.ExibirDadosIdentidade)
+    @Smc.HiddenFor(x => x.ExibirReconhecimentoCurso)
+    @Smc.HiddenFor(x => x.TokenTipoDocumentoAcademico)
+    @Smc.HiddenFor(x => x.NumeroVia)
+    @Smc.HiddenFor(x => x.SeqInstituicaoEnsino)
+    @Smc.HiddenFor(x => x.SeqInstituicaoNivel)
+    @Smc.HiddenFor(x => x.NomePais)
+    @Smc.HiddenFor(x => x.DescricaoViaAnteriorMensagem)
+    @Smc.HiddenFor(x => x.DescricaoViaAtual)
+    @Smc.HiddenFor(x => x.CodigoUnidadeSeo)
+    @Smc.HiddenFor(x => x.DescricaoGrauAcademicoSelecionado)
+    @Smc.HiddenFor(x => x.SeqCursoOfertaLocalidade)
+    @Smc.HiddenFor(x => x.SeqGrauAcademico)
+    @Smc.HiddenFor(x => x.DataConclusao)
+    @Smc.HiddenFor(x => x.SeqOrgaoRegistro)
+    @Smc.HiddenFor(x => x.CamposReadOnly)
+    @Smc.HiddenFor(x => x.ExibirMensagemDiplomaDigitalBachareladoLicenciatura)
+    @Smc.HiddenFor(x => x.ExibirMensagemHistoricoEscolarNumeroViaMaiorUm)
+    @Smc.HiddenFor(x => x.ExibirMensagemDiplomaPrimeiraViaComHistorico)
+    @Smc.HiddenFor(x => x.ExibirMensagemAutorizacaoNomeSocial)
+    @Smc.HiddenFor(x => x.ExibirComandoDocumentacaoAcademica)
+    @Smc.HiddenFor(x => x.ExibirComandoRVDD)
+    @Smc.HiddenFor(x => x.EmissaoDiplomaDigital1Via)
+    @Smc.HiddenFor(x => x.ExisteFormacaoAssociada)
+    @Smc.HiddenFor(x => x.CodigoAlunoMigracao)
+    @Smc.HiddenFor(x => x.ExibirNomeSocial)
+    @Smc.HiddenFor(x => x.HabilitarCampoGrauAcademico)
+    @Smc.HiddenFor(x => x.SeqPessoaDadosPessoais)
+    @Smc.HiddenFor(x => x.SeqTitulacao)
+    @Smc.HiddenFor(x => x.DescricaoCursoDocumentoAuxiliar)
+
+    if (!Model.EmissaoPermitida)
+    {
+        using (Smc.Fieldset("fsAnaliseDocumento").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(x => x.DescricaoTipoDocumentoAcademico)
+            @Smc.DisplayFor(x => x.EmissaoPermitida)
+
+            @(Smc.ButtonSet().Size(SMCSize.Grid24_24)
+                        .AddButton(Smc.Button("SincronizarDadosAluno")
+                        .Type(SMCButtonType.Link)
+                        .Action("SincronizarDadosAluno", "RealizarAtendimento", new
+                        {
+                            area = "SRC",
+                            CodigoAlunoMigracao = new SMCEncryptedLong(Model.CodigoAlunoMigracao.GetValueOrDefault()),
+                            SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacaoAuxiliar),
+                            SeqSolicitacaoServico = Model.SeqSolicitacaoServico,
+                            SeqConfiguracaoEtapa = Model.SeqConfiguracaoEtapa,
+                            TokenRet = Model.TokenPaginaAnterior
+                        })
+                        .Tooltip(Smc.GetUIResource("Botao_Sincronizardadosaluno"))
+                        .Hide(!Model.ExibirBotaoSincronizarDadosAluno)))
+        }
+
+        using (Smc.Fieldset("fsEmissaoNaoPermitida").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(x => x.MotivoEmissaoNaoPermitida)
+            @Smc.EditorFor(x => x.ObservacoesEmissaoNaoPermitida)
+        }
+    }
+    else
+    {
+
+        using (Smc.Fieldset("fsDadosPessoais").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(x => x.NumeroRA)
+                @Smc.DisplayFor(x => x.CodigoAlunoMigracao)
+                @Smc.DisplayFor(x => x.CodigoPessoaCAD)
+                @Smc.DisplayFor(x => x.Cpf)
+                @Smc.DisplayFor(x => x.NomeAluno)
+                @Smc.DisplayFor(x => x.NomeSocial).CssClass("smc-sga-nome-social")
+                @Smc.DisplayFor(x => x.Sexo)
+                @Smc.DisplayFor(x => x.DataNascimento)
+                @Smc.DisplayFor(x => x.DescricaoNacionalidade)
+                @Smc.DisplayFor(x => x.Naturalidade)
+                @Smc.DisplayFor(x => x.DataInclusaoDadosPessoais)
+                @Smc.DisplayFor(x => x.UsuarioInclusaoDadosPessoais)
+                @Smc.DisplayFor(x => x.FiliacaoDisplay)
+                @Smc.EditorFor(x => x.DesabilitarTipoIdentidade)
+                @Smc.EditorFor(x => x.TipoIdentidade).CssClass("smc-sga-select-ReadOly")
+            }
+
+            using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(x => x.NumeroIdentidade)
+                @Smc.DisplayFor(x => x.OrgaoEmissorIdentidade)
+                @Smc.DisplayFor(x => x.UfIdentidade)
+                @Smc.DisplayFor(x => x.DataExpedicaoIdentidade)
+            }
+
+            using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(x => x.TipoDocumento)
+                @Smc.DisplayFor(x => x.NumeroDocumento)
+                @Smc.DisplayFor(x => x.NumeroPassaporte)
+                @Smc.DisplayFor(x => x.NomePaisEmissaoPassaporte)
+                @Smc.DisplayFor(x => x.DataValidadePassaporte)
+                @Smc.DisplayFor(x => x.NumeroIdentidadeEstrangeira)
+            }
+
+            @(Smc.ButtonSet().Size(SMCSize.Grid24_24)
+                            .AddButton(Smc.Button("AlterarDadosPessoaisAluno")
+                                .Action("Editar", "Aluno", new { area = "ALN", seq = new SMCEncryptedLong(Model.SeqPessoaAtuacaoAuxiliar) })
+                                .Type(SMCButtonType.Link)
+                                .Attribute("target", "_blank")
+                                .Text(Smc.GetUIResource("Botao_AlterarDadosPessoaisAluno"))
+                                .Tooltip(Smc.GetUIResource("Botao_AlterarDadosPessoaisAluno"))
+                                .Hide(!Model.TokenNivelMestradoDoutorado))
+                            .AddButton(Smc.Button("SincronizarDadosAluno")
+                                .Type(SMCButtonType.Link)
+                                .Action("SincronizarDadosAluno", "RealizarAtendimento", new
+                                {
+                                    area = "SRC",
+                                    CodigoAlunoMigracao = new SMCEncryptedLong(Model.CodigoAlunoMigracao.GetValueOrDefault()),
+                                    SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacaoAuxiliar),
+                                    SeqSolicitacaoServico = Model.SeqSolicitacaoServico,
+                                    SeqConfiguracaoEtapa = Model.SeqConfiguracaoEtapa,
+                                    TokenRet = Model.TokenPaginaAnterior
+                                })
+                                .Tooltip(Smc.GetUIResource("Botao_Sincronizardadosaluno"))
+                                .Hide(!Model.ExibirBotaoSincronizarDadosAluno))
+                        )
+        }
+
+
+        using (Smc.Fieldset("fsFormacoesAluno").CssClass("smc-sga-normaliza-fsformacaoaluno").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(x => x.DescricaoTipoDocumentoAcademico)
+            @Smc.DisplayFor(x => x.DescricaoNivelEnsino)
+            @Smc.DisplayFor(x => x.DescricaoCurso)
+            @Smc.DisplayFor(x => x.DescricaoCursoDocumento)
+            @Smc.DisplayFor(x => x.CodigoCursoOfertaLocalidade)
+
+            @Smc.DisplayFor(x => x.DescricaoModalidade)
+            @Smc.DisplayFor(x => x.DescricaoFormaIngresso)
+            @Smc.DisplayFor(x => x.DataAdmissao)
+            @Smc.DisplayFor(x => x.NumeroViaGerada)
+
+            if (Model.ExisteFormacaoAssociada)
+            {
+                if (!string.IsNullOrEmpty(Model.DescricaoTitulacao))
+                {
+                    @Smc.DisplayFor(x => x.DescricaoTitulacao)
+                }
+            }
+            @Smc.EditorFor(x => x.SeqGrauAcademicoSelecionado).CssClass("smc-sga-select-ReadOly")
+
+            #region Consultar Via Anterior
+
+            @*if (Model.SeqViaAnterior.HasValue)
+                {
+                    @Smc.DisplayFor(x => x.NumeroViaAnterior)
+
+                    @(Smc.ButtonSet().Size(SMCSize.Grid24_24)
+                                    .AddButton(Smc.Button("VerViaAnterior")
+                                    .Type(SMCButtonType.Link)
+                                    .Attribute("target", "_blank")
+                                    .Action("Consultar", "DocumentoConclusao", new { area = "CNC", Seq = new SMCEncryptedLong(Model.SeqViaAnterior.Value) })
+                                    .Text(Smc.GetUIResource("Botao_VisualizarCadastroDocumentoAnterior"))
+                                    .Tooltip(Smc.GetUIResource("Botao_VisualizarCadastroDocumentoAnterior"))))
+                }*@
+
+            #endregion
+
+            var dataConclusao = string.Empty;
+
+            if (Model.DataConclusao.HasValue)
+            {
+                dataConclusao = Model.DataConclusao.Value.ToShortDateString();
+            }
+
+            using (Smc.Div("divBotoesModais")
+                      .Size(SMCSize.Grid24_24)
+                      .Dependency("TipoIdentidade", "BuscarBotoesModaisCampoTipoIdentidadeSelecionado", "RealizarAtendimento", "SRC", false,
+                      new string[] { "SeqSolicitacaoServicoAuxiliar", "ExibirComandoDocumentacaoAcademica", "ExibirComandoRVDD", "SeqCursoOfertaLocalidade", "SeqGrauAcademicoSelecionado", "DataConclusao" })
+                      .Dependency("SeqGrauAcademicoSelecionado", "BuscarBotoesModaisCampoTipoIdentidadeSelecionado", "RealizarAtendimento", "SRC", false,
+                      new string[] { "SeqSolicitacaoServicoAuxiliar", "ExibirComandoDocumentacaoAcademica", "ExibirComandoRVDD", "SeqCursoOfertaLocalidade", "TipoIdentidade", "DataConclusao" })
+                      .Begin())
+            {
+                Smc.ButtonSet().Size(SMCSize.Grid24_24)
+                    .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Type(SMCButtonType.Link).Ajax()
+                                .Attribute(SMCMvcConsts.MODAL_ID, "modalConsultarDocumentacaoAcademica")
+                                .Type(SMCButtonType.Link)
+                                .Action("ConsultarDocumentacaoAcademica", "RealizarAtendimento", new
+                                {
+                                    seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServicoAuxiliar),
+                                    area = "SRC"
+                                })
+                                .Text(Smc.GetUIResource("Botao_ConsultarDocumentacaoAcademica"))
+                                .Tooltip(Smc.GetUIResource("Botao_ConsultarDocumentacaoAcademica"))
+                                .Hide(!Model.ExibirComandoDocumentacaoAcademica))
+                    .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Type(SMCButtonType.Link).Ajax()
+                                .Attribute(SMCMvcConsts.MODAL_ID, "modalRVDD")
+                                .Type(SMCButtonType.Link)
+                                .Action("ConsultarInformacoesRVDD", "RealizarAtendimento", new
+                                {
+                                    seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServicoAuxiliar),
+                                    tipoIdentidade = Model.TipoIdentidade,
+                                    area = "SRC"
+                                })
+                                .Text(Smc.GetUIResource("Botao_RVDD"))
+                                .Tooltip(Smc.GetUIResource("Botao_RVDD"))
+                                .Hide(!Model.ExibirComandoRVDD))
+                     .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Type(SMCButtonType.Link).Ajax()
+                                .Attribute(SMCMvcConsts.MODAL_ID, "modalAtosNormativosCurso")
+                                .Type(SMCButtonType.Link)
+                                .Action("ConsultarAtosNormativosCurso", "RealizarAtendimento", new
+                                {
+                                    seqCursoOfertaLocalidade = new SMCEncryptedLong(Model.SeqCursoOfertaLocalidade),
+                                    seqGrauAcademico = new SMCEncryptedLong(Model.SeqGrauAcademicoSelecionado.GetValueOrDefault()),
+                                    dataConclusao = dataConclusao,
+                                    area = "SRC"
+                                })
+                                .Text(Smc.GetUIResource("Botao_AtosNormativosCurso"))
+                                .Tooltip(Smc.GetUIResource("Botao_AtosNormativosCurso")));
+            }
+
+            using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+            {
+                var formacoesConcatenadas = new List<SolicitacaoAnaliseEmissaoDocumentoConclusaoFormacaoConcluidaViewModel>();
+
+                if (Model.FormacoesEspecificasConcluidas != null)
+                {
+                    formacoesConcatenadas.AddRange(Model.FormacoesEspecificasConcluidas);
+                }
+
+                if (Model.FormacoesEspecificasViasAnteriores != null)
+                {
+                    formacoesConcatenadas.AddRange(Model.FormacoesEspecificasViasAnteriores);
+                }
+
+                if (formacoesConcatenadas.Any())
+                {
+                    formacoesConcatenadas = formacoesConcatenadas.OrderBy(o => o.DataFormacao).ToList();
+                }
+
+                if (formacoesConcatenadas.Any())
+                {
+                    @(Smc.Grid("gridFormacoes", new SMCPagerModel<SolicitacaoAnaliseEmissaoDocumentoConclusaoFormacaoConcluidaViewModel>(formacoesConcatenadas))
+                            .AutoGenerateColumns()
+                            .AutoHideNavigator()
+                            .HideGridTitle()
+                            .HideNavigator()
+                            .HideNumberOfRowsPerPageSelector()
+                            .HidePager()
+                            .HideRowNumber()
+                            .HideRowsTotalizer()
+                    )
+                }
+            }
+
+            if (Model.TokenNivelMestradoDoutorado)
+            {
+                using (Smc.Fieldset("fsInformacoesApuracaoFormacao").Size(SMCSize.Grid24_24).Begin())
+                {
+                    @(Smc.ButtonSet().Size(SMCSize.Grid24_24)
+                           .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Type(SMCButtonType.Link).Ajax()
+                                                   .Attribute(SMCMvcConsts.MODAL_ID, "modalIntegralizacao")
+                                                   .Type(SMCButtonType.Link)
+                                                   .Action("ConsultaIntegralizacaoCurricular", "IntegralizacaoCurricularRoute", new { area = "", seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacaoAuxiliar) })
+                                                   .Text(Smc.GetUIResource("Botao_VisualizarIntegralizacaoCurricular"))
+                                                   .Tooltip(Smc.GetUIResource("Botao_VisualizarIntegralizacaoCurricular"))
+                                                   .Hide(!Model.TokenNivelMestradoDoutorado))
+                           .AddButton(Smc.Button("VerHistoricoEscolarInterno")
+                                                   .Action("GerarEApresentarRelatorio", "Relatorio", new { area = "ALN", seqAluno = new SMCEncryptedLong(Model.SeqPessoaAtuacaoAuxiliar), TipoRelatorio = (int)SMC.Academico.Common.Areas.ALN.Enums.TipoRelatorio.HistoricoEscolarInterno, ExibeProfessor = true })
+                                                   .Type(SMCButtonType.Link)
+                                                   .Attribute("target", "_blank")
+                                                   .Text(Smc.GetUIResource("Botao_VerHistoricoEscolarInterno"))
+                                                   .Tooltip(Smc.GetUIResource("Botao_VerHistoricoEscolarInterno"))
+                                                   .Hide(!Model.TokenNivelMestradoDoutorado))
+                           .AddButton(Smc.Button("VerHistoricoEscolar")
+                                                   .Action("Index", "HistoricoEscolar", new { area = "APR", SeqAluno = new SMCEncryptedLong(Model.SeqPessoaAtuacaoAuxiliar) })
+                                                   .Type(SMCButtonType.Link)
+                                                   .Attribute("target", "_blank")
+                                                   .Text(Smc.GetUIResource("Botao_VerHistoricoEscolar"))
+                                                   .Tooltip(Smc.GetUIResource("Botao_VerHistoricoEscolar"))
+                                                   .Hide(!Model.TokenNivelMestradoDoutorado)))
+                }
+            }
+
+            if (Model.ExibirSecaoDocumentacaoAcademica)
+            {
+                @Smc.MasterDetail(x => x.DocumentacaoComprobatoria);
+            }
+
+            @*if (Model.ExibirSecaoDocumentacaoAcademica)
+                {
+                    using (Smc.Fieldset("fsDocumentacaoAcademica").Size(SMCSize.Grid24_24).Begin())
+                    {
+                        using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+                        {
+                            @Smc.EditorFor(x => x.ExibirSecaoDocumentacaoAcademica)
+                            @Smc.EditorFor(x => x.FormatoHistoricoEscolar)
+                        }
+
+                        using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+                        {
+                            @Smc.EditorFor(x => x.CargaHorariaCurso)
+                            @Smc.EditorFor(x => x.CargaHorariaIntegralizada)
+                            @Smc.EditorFor(x => x.DataEmissaoHistorico)
+                            @Smc.EditorFor(x => x.DataEnade)
+                            @Smc.EditorFor(x => x.SituacaoEnade)
+                            @Smc.DisplayFor(x => x.MensagemInformativaDocumentacao)
+                        }
+
+                        using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+                        {
+                            @Smc.MasterDetail(x => x.DocumentacaoComprobatoria);
+                        }
+                    }
+                }
+                else
+                {
+                    @Smc.HiddenFor(x => x.FormatoHistoricoEscolar)
+                }*@
+
+            if (Model.ExibirSecaoDadosRegistro)
+            {
+                using (Smc.Fieldset("fsDadosRegistro").Size(SMCSize.Grid24_24).Begin())
+                {
+                    @Smc.EditorFor(x => x.ExibirSecaoDadosRegistro)
+                    @Smc.DisplayFor(x => x.NumeroViaGerada)
+                    @Smc.DisplayFor(x => x.DescricaoViaAnterior)
+                    @Smc.EditorFor(x => x.ReutilizarDados)
+                    @Smc.DisplayFor(x => x.MensagemInformativaDadosRegistro)
+                }
+            }
+            else
+            {
+                @Smc.HiddenFor(x => x.ReutilizarDados)
+            }
+
+            //if (Model.EmissaoDiplomaDigital1Via)
+            //{
+
+            if (Model.ExibirDadosDiploma)
+            {
+                using (Smc.Fieldset("fsDadosAdicionaisDiploma").Size(SMCSize.Grid24_24).Begin())
+                {
+                    @(Smc.ButtonSet().Type(SMCButtonSetType.Primary)
+                       .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                       .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirNovaMensagemDiploma")
+                       .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Nova_Mensagem"))
+                       .Ajax(isPost: false, updateTargetId: "modalIncluirNovaMensagemDiploma")
+                       .Enabled(Model.HabilitarBotaoNovaMensagem)
+                       .CssClass("smc-btn-novo-ico-destaque")
+                       .SecurityToken(UC_SRC_004_18_01.REALIZAR_ATENDIMENTO_DOCTO_CONCLUSAO_ANALISE_EMISSAO)
+                       .Url(Url.Action("IncluirMensagem", "RealizarAtendimento", new
+                       {
+                           SeqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServicoAuxiliar),
+                           ExisteDocumentoConclusao = Model.ExisteDocumentoConclusao,
+                           TokenTipoDocumentoAcademico = Model.TokenTipoDocumentoAcademico,
+                           SeqTipoDocumentoSolicitado = Model.SeqTipoDocumentoSolicitado,
+                           NumeroVia = Model.NumeroVia,
+                           SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacaoAuxiliar),
+                           SeqInstituicaoEnsino = new SMCEncryptedLong(Model.SeqInstituicaoEnsino.GetValueOrDefault()),
+                           SeqInstituicaoNivel = new SMCEncryptedLong(Model.SeqInstituicaoNivel),
+                           ReutilizarDados = Model.ReutilizarDados,
+                           NomePais = Model.NomePais,
+                           DescricaoViaAnterior = Model.DescricaoViaAnteriorMensagem,
+                           DescricaoViaAtual = Model.DescricaoViaAtual,
+                           CodigoUnidadeSeo = Model.CodigoUnidadeSeo,
+                           DescricaoGrauAcademico = Model.DescricaoGrauAcademicoSelecionado,
+                           DocumentoAcademico = "DIPLOMA_DIGITAL"
+                       })))
+                    )
+
+                    using (Smc.Div("divGridMensagensDiploma").Attribute("data-id", "divGridMensagensDiploma").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+                    {
+                        using (Smc.Div("divMensagensDiploma")
+                            .Size(SMCSize.Grid24_24)
+                            .Dependency("ReutilizarDados", "BuscarMensagensCampoReutilizarSelecionado", "RealizarAtendimento", "SRC", false,
+                            new string[] { "SeqSolicitacaoServicoAuxiliar", "ExisteDocumentoConclusao", "TokenTipoDocumentoAcademico", "SeqTipoDocumentoSolicitado", "NumeroVia", "SeqPessoaAtuacaoAuxiliar",
+                            "SeqInstituicaoEnsino", "SeqInstituicaoNivel", "NomePais", "DescricaoViaAnterior", "DescricaoViaAtual", "CodigoUnidadeSeo", "DescricaoGrauAcademicoSelecionado", "ExibirNomeSocial",
+                            "NomeAluno", "CodigoAlunoMigracao", "TokenNivelEnsino"})
+                            .Begin())
+                        {
+                            @Smc.ActionList("ListarMensagens", new
+                       {
+                           SeqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServicoAuxiliar),
+                           ExisteDocumentoConclusao = Model.ExisteDocumentoConclusao,
+                           TokenTipoDocumentoAcademico = Model.TokenTipoDocumentoAcademico,
+                           SeqTipoDocumentoSolicitado = Model.SeqTipoDocumentoSolicitado,
+                           NumeroVia = Model.NumeroVia,
+                           SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacaoAuxiliar),
+                           SeqInstituicaoEnsino = new SMCEncryptedLong(Model.SeqInstituicaoEnsino.GetValueOrDefault()),
+                           SeqInstituicaoNivel = new SMCEncryptedLong(Model.SeqInstituicaoNivel),
+                           ReutilizarDados = Model.ReutilizarDados,
+                           NomePais = Model.NomePais,
+                           DescricaoViaAnterior = Model.DescricaoViaAnteriorMensagem,
+                           DescricaoViaAtual = Model.DescricaoViaAtual,
+                           CodigoUnidadeSeo = Model.CodigoUnidadeSeo,
+                           DescricaoGrauAcademico = Model.DescricaoGrauAcademicoSelecionado,
+                           ExibirNomeSocial = Model.ExibirNomeSocial,
+                           NomeAluno = Model.NomeAluno,
+                           CodigoAlunoMigracao = Model.CodigoAlunoMigracao,
+                           TokenNivelEnsino = Model.TokenNivelEnsino,
+                           DocumentoAcademico = "DIPLOMA_DIGITAL"
+                       })
+                        }
+                    }
+
+                    if (Model.TokenNivelMestradoDoutorado)
+                    {
+                        using (Smc.Fieldset("fsDemaisInformações").Size(SMCSize.Grid24_24).Begin())
+                        {
+                            @Smc.DisplayFor(x => x.ReconhecimentoCurso)
+
+                            @Smc.DisplayFor(x => x.DataDefesa)
+                            @Smc.DisplayFor(x => x.Cotutela)
+                        }
+                    }
+                }
+            }
+            if (Model.ExibirDadosHistorico)
+            {
+                using (Smc.Fieldset("fsDadosAdicionaisHistorico").Size(SMCSize.Grid24_24).Begin())
+                {
+                    @(Smc.ButtonSet().Type(SMCButtonSetType.Primary)
+                       .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                       .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirNovaMensagemHistorico")
+                       .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Nova_Mensagem"))
+                       .Ajax(isPost: false, updateTargetId: "modalIncluirNovaMensagemHistorico")
+                       .Enabled(Model.HabilitarBotaoNovaMensagem)
+                       .CssClass("smc-btn-novo-ico-destaque")
+                       .SecurityToken(UC_SRC_004_18_01.REALIZAR_ATENDIMENTO_DOCTO_CONCLUSAO_ANALISE_EMISSAO)
+                       .Url(Url.Action("IncluirMensagem", "RealizarAtendimento", new
+                       {
+                           SeqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServicoAuxiliar),
+                           ExisteDocumentoConclusao = Model.ExisteDocumentoConclusao,
+                           TokenTipoDocumentoAcademico = Model.TokenTipoDocumentoAcademico,
+                           SeqTipoDocumentoSolicitado = Model.SeqTipoDocumentoSolicitado,
+                           NumeroVia = Model.NumeroVia,
+                           SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacaoAuxiliar),
+                           SeqInstituicaoEnsino = new SMCEncryptedLong(Model.SeqInstituicaoEnsino.GetValueOrDefault()),
+                           SeqInstituicaoNivel = new SMCEncryptedLong(Model.SeqInstituicaoNivel),
+                           ReutilizarDados = Model.ReutilizarDados,
+                           NomePais = Model.NomePais,
+                           DescricaoViaAnterior = Model.DescricaoViaAnteriorMensagem,
+                           DescricaoViaAtual = Model.DescricaoViaAtual,
+                           CodigoUnidadeSeo = Model.CodigoUnidadeSeo,
+                           DescricaoGrauAcademico = Model.DescricaoGrauAcademicoSelecionado,
+                           DocumentoAcademico = "HISTORICO_ESCOLAR"
+                       })))
+                    )
+
+                    using (Smc.Div("divGridMensagensHistorico").Attribute("data-id", "divGridMensagensHistorico").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+                    {
+                        using (Smc.Div("divMensagensHistorico")
+                            .Size(SMCSize.Grid24_24)
+                            .Dependency("ReutilizarDados", "BuscarMensagensCampoReutilizarSelecionado", "RealizarAtendimento", "SRC", false,
+                            new string[] { "SeqSolicitacaoServicoAuxiliar", "ExisteDocumentoConclusao", "TokenTipoDocumentoAcademico", "SeqTipoDocumentoSolicitado", "NumeroVia", "SeqPessoaAtuacaoAuxiliar",
+                            "SeqInstituicaoEnsino", "SeqInstituicaoNivel", "NomePais", "DescricaoViaAnterior", "DescricaoViaAtual", "CodigoUnidadeSeo", "DescricaoGrauAcademicoSelecionado", "ExibirNomeSocial",
+                            "NomeAluno", "CodigoAlunoMigracao", "TokenNivelEnsino"})
+                            .Begin())
+                        {
+                            @Smc.ActionList("ListarMensagens", new
+                       {
+                           SeqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServicoAuxiliar),
+                           ExisteDocumentoConclusao = Model.ExisteDocumentoConclusao,
+                           TokenTipoDocumentoAcademico = Model.TokenTipoDocumentoAcademico,
+                           SeqTipoDocumentoSolicitado = Model.SeqTipoDocumentoSolicitado,
+                           NumeroVia = Model.NumeroVia,
+                           SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacaoAuxiliar),
+                           SeqInstituicaoEnsino = new SMCEncryptedLong(Model.SeqInstituicaoEnsino.GetValueOrDefault()),
+                           SeqInstituicaoNivel = new SMCEncryptedLong(Model.SeqInstituicaoNivel),
+                           ReutilizarDados = Model.ReutilizarDados,
+                           NomePais = Model.NomePais,
+                           DescricaoViaAnterior = Model.DescricaoViaAnteriorMensagem,
+                           DescricaoViaAtual = Model.DescricaoViaAtual,
+                           CodigoUnidadeSeo = Model.CodigoUnidadeSeo,
+                           DescricaoGrauAcademico = Model.DescricaoGrauAcademicoSelecionado,
+                           ExibirNomeSocial = Model.ExibirNomeSocial,
+                           NomeAluno = Model.NomeAluno,
+                           CodigoAlunoMigracao = Model.CodigoAlunoMigracao,
+                           TokenNivelEnsino = Model.TokenNivelEnsino,
+                           DocumentoAcademico = "HISTORICO_ESCOLAR"
+                       })
+                        }
+                    }
+
+                    if (Model.TokenNivelMestradoDoutorado)
+                    {
+                        using (Smc.Fieldset("fsDemaisInformações").Size(SMCSize.Grid24_24).Begin())
+                        {
+                            @Smc.DisplayFor(x => x.ReconhecimentoCurso)
+
+                            @Smc.DisplayFor(x => x.DataDefesa)
+                            @Smc.DisplayFor(x => x.Cotutela)
+                        }
+                    }
+                }
+            }
+            //}
+
+            using (Smc.Fieldset("fsAvisosImportantes").Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagens-importantes").Begin())
+            {
+                using (Smc.Div().Size(SMCSize.Grid23_24).Begin())
+                {
+                    @Smc.EditorFor(m => m.MensagemDiplomaDigitalBachareladoLicenciatura)
+                    @Smc.EditorFor(m => m.MensagemHistoricoEscolarNumeroViaMaiorUm)
+                    @Smc.EditorFor(m => m.MensagemDiplomaPrimeiraViaComHistorico)
+                    @Smc.EditorFor(m => m.MensagemAutorizacaoNomeSocial)
+                }
+            }
+        }
+    }
+
+    @Html.Partial("_BotoesNavegacao", Model)
+}
+
+@using (Smc.ModalWindow("modalIntegralizacao")
+        .Size(SMCModalWindowSize.Largest)
+        .Title(Smc.GetUIResource("Modal_Title_Integralizacao_Curricular"))
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalConsultarDocumentacaoAcademica")
+        .Size(SMCModalWindowSize.Large)
+        .Title(Smc.GetUIResource("Modal_Title_Consultar_Documentacao_Academica"))
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalRVDD")
+        .Size(SMCModalWindowSize.Large)
+        .Title(Smc.GetUIResource("Modal_Title_RVDD"))
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalAtosNormativosCurso")
+        .Size(SMCModalWindowSize.Medium)
+        .Title(Smc.GetUIResource("Modal_Title_Atos_Normativos_Curso"))
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalIncluirNovaMensagemDiploma")
+                    .Form("FormIncluir", "SalvarMensagem", "RealizarAtendimento", null, true, x => x.Ajax("#divGridMensagensDiploma", fieldsContainerToRequest: "#divGridMensagensDiploma"))
+                    .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().Id("BtnSalvarMensagem"))
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Botao_Cancelar")).Tooltip(Smc.GetUIResource("Botao_Cancelar")))
+                    .Begin()) { }
+
+@using (Smc.ModalWindow("modalIncluirNovaMensagemHistorico")
+                    .Form("FormIncluir", "SalvarMensagem", "RealizarAtendimento", null, true, x => x.Ajax("#divGridMensagensHistorico", fieldsContainerToRequest: "#divGridMensagensHistorico"))
+                    .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().Id("BtnSalvarMensagem"))
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Botao_Cancelar")).Tooltip(Smc.GetUIResource("Botao_Cancelar")))
+                    .Begin()) { }
+
+@section Scripts{
+    <script type="text/javascript">
+        setInterval(function () {
+        $("#controla-size-modal").parent().parent().addClass("smc-modal-window-large");
+        $("#controla-size-modal").parent().parent().removeClass("smc-modal-window-auto");
+        }, 100);
+
+    </script>
+}

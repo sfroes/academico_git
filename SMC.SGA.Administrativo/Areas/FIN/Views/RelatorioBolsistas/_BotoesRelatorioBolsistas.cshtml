@@ -1,0 +1,34 @@
+﻿@model bool
+
+
+@if (Model) //true, renderiza ButtonSet
+{
+    var buttonSet = Smc.ButtonSet();
+
+
+
+    buttonSet.AddButton(Smc.Button("Gerar_Relatorio").Url(Url.Action("GerarRelatorio"))
+                                             .Ajax(fieldsContainerToRequest: "#fieldsetPesquisaViewPadrao", onSuccess: "GerarRelatorio")
+                                             .CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+                                             .Text(Smc.GetUIResource("Botao_Relatorio_PDF"))
+                                             .Attribute("data-behavior-download", "true"));
+
+
+
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Relatorio)
+    .Action("GerarRelatorioExcel", "RelatorioBolsistas", new { area = "FIN" })
+    .Ajax("#divViewPadrao #fieldsetPesquisaViewPadrao")
+    .CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+    .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+    .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true)
+    .Text(Smc.GetUIResource("Botao_Relatorio_Excel")));
+
+
+
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Limpar)
+.DisplayMode(SMCButtonDisplayMode.Icon));
+
+    @buttonSet;
+}

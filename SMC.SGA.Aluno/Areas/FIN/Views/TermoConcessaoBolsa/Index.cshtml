@@ -1,0 +1,60 @@
+﻿@using SMC.Academico.Common.Areas.FIN.Constants
+@model TermoConcessaoBolsaViewModel
+
+@Smc.EditorFor(e => e.ExibirMensagemAlerta)
+
+@Smc.DisplayFor(m => m.MensagemAlerta).Size(SMCSize.Grid24_24, SMCSize.Grid24_24,SMCSize.Grid24_24,SMCSize.Grid24_24)
+
+@(Smc.Legend("TermoConcessao", SMCOrientation.Horizontal).Items<SMC.Academico.Common.Areas.FIN.Enums.TermoConcessaoBolsa>())
+@(Smc.Grid("gridTermoConcessaoBolsa", new SMCPagerModel<TermoConcessaoBolsaListaViewModel>(Model.Beneficios))
+                                            .HideGridTitle()
+                                            .HideNavigator()
+                                            .HideRowNumber()
+                                            .ContentColumn( //Observar retrirada temporariamente para definição da regra 08/07/2019 AN responsável no momento Luciana
+                                            @<text>
+                                                @{
+                                                    var itemParsed = item as TermoConcessaoBolsaListaViewModel;
+
+                                                    if (itemParsed.Situacao == SMC.Academico.Common.Areas.FIN.Enums.TermoConcessaoBolsa.Pendente)
+                                                    {
+                                                        @Smc.Legend("LegPendente", SMCOrientation.Horizontal).Item("smc-legenda-status-aguardandoentrega", "", true);
+                                                    }
+                                                    else
+                                                    {
+                                                        @Smc.Legend("LegAderido", SMCOrientation.Horizontal).Item("smc-legenda-status-deferido", "", true);
+                                                    }
+                                                }
+                                            </text>, cssClass: "smc-size-md-1 smc-size-xs-1 smc-size-sm-1 smc-size-lg-1")
+                                            .FieldColumn(f => f.DescricaoTipoLancamento, cssClass: "smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-8")
+                                            .FieldColumn(f => f.DataInicioValidade, cssClass: "smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-4")
+                                            .FieldColumn(f => f.DataFimValidade, cssClass: "smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-4")
+                                            .FieldColumn(f => f.PercentualContrato, cssClass: "smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-3")
+                                            //.FieldColumn(f => f.Situacao, cssClass: "smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-3")
+                                            .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "", true,
+                                               f => Smc.Button(SMCButtonBehavior.Visualizar, "VisualizarTermoConcessaoBolsa", new { SeqTermoConcessaoBolsa = new SMCEncryptedLong((f as TermoConcessaoBolsaListaViewModel).SeqTermoConcessaoBolsa), Area = "FIN" }, "TermoConcessaoBolsa")
+                                               .Attribute("target", "_blank")
+                                               .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                               .Hide((f as TermoConcessaoBolsaListaViewModel).EhPendente)
+                                               //.SecurityToken(UC_FIN_004_03_02.ADERIR_TERMO_CONCESSAO_BOLSA)
+                                               .Text(Smc.GetUIResource("Botao_Visualizar_Termo"))
+                                               .Tooltip(Smc.GetUIResource("Botao_Visualizar_Termo_Tooltip")),
+
+                                               f => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "AderirTermoConcessaoBolsa", new { seqTermoConcessaoBolsa = (f as TermoConcessaoBolsaListaViewModel).SeqTermoConcessaoBolsa, Area = "FIN" }, "TermoConcessaoBolsa")
+                                               .Ajax()
+                                               .Attribute(SMCMvcConsts.MODAL_ID, "modalAderirTermo")
+                                               .CssClass("smc-btn-gerar-relatorio-icotext")
+                                               .Hide(!(f as TermoConcessaoBolsaListaViewModel).EhPendente)
+                                               //.SecurityToken(UC_FIN_004_03_02.ADERIR_TERMO_CONCESSAO_BOLSA)
+                                               .Text(Smc.GetUIResource("Botao_Aderir_Termo"))
+                                               .Tooltip(Smc.GetUIResource("Botao_Aderir_Termo_Tootip"))
+
+                                            ).Size(SMCSize.Grid24_24))
+
+@using (Smc.ModalWindow("modalAderirTermo")
+        .Form("formAdesao", "ConfirmarAdessaoTermo", "TermoConcessaoBolsa", closeOnSubmit: true)
+        .Title(Smc.GetUIResource("Titulo_Modal_AderirTermo"))
+        .Size(SMCModalWindowSize.Large)
+        .Button(SMCButtonBehavior.Confirmar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().Text("Aderir").Enabled(false).Attribute("id", "btnSalvarAdesao"))
+        .Button(SMCButtonBehavior.Fechar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon)).Begin())
+{
+}

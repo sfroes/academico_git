@@ -1,0 +1,7 @@
+﻿@model SMCPagerModel<OfertaCursoCicloLetivoAssociacaoCursoUnidadeTurnoLoteListaViewModel>
+
+@(Smc.Grid("gridAssociacaoCursoUnidadeTurnoLote")
+     .Action("ListarAssociacaoCursoUnidadeTurnoLote", "OfertaCursoCicloLetivo")
+     .AutoGenerateColumns()
+     .AllowSelect()
+)

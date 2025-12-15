@@ -1,0 +1,259 @@
+﻿// As importações devem ocorrer NECESSARIAMENTE nesta ordem
+// ********** ----- IDENTIDADE VISUAL (APLICAÇÃO) ----- ********** //
+@import "identidade/_smc-identidade-visual.scss";
+
+// ********** ----- Recursos compatilhados ------ ********** //
+@import "../../Content/Css/smc-login-sga.scss";
+
+// ********** ----- ESTILO CUSTOMIZADO (APLICAÇÃO) ----- ********** //
+@import "smc-estilo.scss";
+
+.smc-login-footer {
+    border-bottom: 3px solid $smc-cor-secundaria-01;
+    background: transparent right center url(../../Objectstore/Images/smc-sgagrad-logo-pucminas-login.png) no-repeat !important;
+    height: 160px;
+    position: absolute;
+    padding: 0 20%;
+    width: 80%;
+    bottom: 0;
+    margin-left: 10%;
+    z-index:-1;
+}
+
+.smc-login-section h1 {
+    margin-bottom: 50px;
+    background-size: contain;
+}
+
+.smc-login-professor {
+    h1 {
+        background-color: transparent;
+        background-image: url(../../Objectstore/Images/smc-sga-logotipo-professor-login.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        // background: transparent url(../../Objectstore/Images/smc-sga-logotipo-professor-login.png) no-repeat center !important;
+        // background-size:contain;
+    }
+
+    .smc-sga-mensagem {
+        width: 40%;
+        margin-left: 30%;
+
+        font {
+            font-family: 'segoe_uiregular',Arial,sans-serif;
+        }
+    }
+}
+
+.smc-login-professor-latosensu {
+    h1 {
+        background-color: transparent;
+        background-image: url(../../Objectstore/Images/smc-sga-logotipo-professor-latosensu-login.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // background: transparent url(../../Objectstore/Images/smc-sga-logotipo-professor-latosensu-login.png) no-repeat center !important;
+        //  background-size: contain;
+    }
+
+    .smc-sga-mensagem {
+        width: 40%;
+        margin-left: 30%;
+
+        font {
+            font-family: 'segoe_uiregular',Arial,sans-serif;
+        }
+    }
+}
+
+.smc-sgagrad-ajuste-fonte {
+    font, p, span {
+        font-size: 14px !important;
+    }
+
+    h1 {
+        font {
+            font-size: 32px !important;
+        }
+    }
+
+    h2 {
+        font {
+            font-size: 22px !important;
+        }
+    }
+}
+
+.smc-login-separador,
+.smc-login-group-acao-secundaria {
+    display: none;
+}
+
+@media (min-width:0px) and (max-width:$smc-size-screen-xs-max) {
+    .smc-login-footer {
+        display:none;
+    }
+
+    .smc-btn-enviar-icotext-destaque {
+        height: 50px;
+    }
+
+    a {
+        color: $smc-cor-secundaria-04 !important;
+    }
+}
+
+.smc-login-conteudo {
+    h2:before {
+        display: none;
+    }
+}
+
+.smc-login-section {
+    fieldset {
+        border: none !important;
+    }
+}
+
+.smc-sgagrad-link-login {
+    font-size: 11px;
+    margin-top: 20px;
+    display: block;
+}
+
+span {
+    font-family: 'segoe_uiregular', Arial, sans-serif;
+    font-size: 14px !important;
+    color: $smc-cinza-08;
+    font-weight: normal;
+}
+
+input[type=text], select, input[type=password], input {
+    width: 100% !important;
+    font-family: 'segoe_uiregular', Arial, sans-serif;
+}
+
+.smc-login-section {
+    margin-top: 110px;
+}
+
+.smc-btn-enviar-icotext-destaque {
+    float: right;
+    padding: 0 20px;
+}
+
+
+
+/* ALTERAR SENHA IEC */
+.btn-abrir {
+    padding: 10px 18px;
+    background-color: #003348;
+    border: 1px solid #003348;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.modal-senha-iec {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,76,95,0.2);
+}
+
+.modal-content-senha-iec {
+    background-color: #fff;
+    margin: 8% auto;
+    padding: 70px 60px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+.modal-content-senha-iec h2 {
+    margin-top: 0;
+    color: #003348;
+    font-size: 23px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    opacity: 0.5;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.modal-senha-iec table p {
+    color: #7a7a7a !important;
+    margin-bottom: 6px !important;
+}
+
+.modal-senha-iec input[type="password"] {
+    padding: 10px;
+    height: 37px !important;
+    margin-bottom: 15px;
+}
+
+.btn-enviar {
+    background-color: #003348;
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-enviar:hover {
+    background-color: #003348;
+}
+
+.modal-senha-iec center > table {
+    margin-top: 30px;
+}
+
+.modal-senha-iec center > table > tbody > tr > td {
+    width: 100% !important;
+}
+
+.modal-senha-iec center > table > tbody > tr > td > p {
+    display: block !important;
+    margin: 0;
+}
+
+.modal-senha-iec .smc-btn-enviar {
+    width: 100%;
+    background-color: #074458;
+    border: solid 1px #074458;
+    color: #fff;
+}
+
+.modal-senha-iec .smc-btn-enviar:hover {
+    background-color: #bad6da;
+    border: solid 1px #074458;
+    color: #074458;
+}
+
+.smc-sgagrad-regras-senha {
+    padding: 0 0 0px 15px;
+    margin: 0;
+}
+
+.smc-sgagrad-regras-senha li {
+    margin-bottom: 7px;
+}

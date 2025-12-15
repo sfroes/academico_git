@@ -1,0 +1,29 @@
+﻿@model  TurmaGrupoConfiguracaoViewModel
+
+@using (Smc.Div().CssClass("smc-detalhe-editavel-organizador").Begin())
+{
+    using (Smc.Div().Begin())
+    {
+        using (Smc.Div().CssClass("smc-detalhe-editavel-linha-dados").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.HiddenFor(m => m.SeqConfiguracaoComponente)
+            @Smc.EditorFor(m => m.Selecionado).HideLabel().Readonly(Model.SomenteLeitura)
+            @Smc.DisplayFor(m => m.Descricao).HideLabel()
+            using (Smc.Div().Size(SMCSize.Grid2_24).Begin())
+            {
+                @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary)
+                                    .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                    .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_CUSTOM)
+                                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarComponenteCurricular_Title"))
+                                    .Text(Smc.GetUIResource("Botao_VisualizarComponenteCurricular"))
+                                    .Tooltip(Smc.GetUIResource("Botao_VisualizarComponenteCurricular"))
+                                    .Ajax(isPost: false)
+                                    .SecurityToken(SMC.Academico.Common.Areas.CUR.Constants.UC_CUR_002_03_01.VISUALIZAR_DETALHES_COMPONENTE_CURRICULAR)
+                                    .Action("VerDetalhesPartial", "ComponenteCurricular", new { @area = "CUR", @seq = new SMCEncryptedLong(Model.SeqComponenteCurricular) })
+                                    .CssClass("smc-btn-visualizar-ico"))
+                )
+            }
+
+        }
+    }
+}

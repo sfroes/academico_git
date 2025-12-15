@@ -1,0 +1,26 @@
+﻿@model EntidadeConfiguracaoNotificacaoFiltroViewModel
+
+@using (Smc.Form("filtroEntidadeConfiguracaoNotificacao", "ListarEntidadeConfiguracaoNotificacao", "EntidadeConfiguracaoNotificacao").Ajax("#divViewPadrao").Begin())
+{
+    using (Smc.Fieldset("filtros").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(m => m.SeqEntidade)
+        @Smc.EditorFor(m => m.SeqTipoNotificacao)
+
+        @(Smc.ButtonSet()@*.CssClass("smc-buttonset-com-hidepanel")*@
+             .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+             .AddButton(Smc.Button(SMCButtonBehavior.Limpar).DisplayMode(SMCButtonDisplayMode.Icon))
+             .AddButton(Smc.Button(SMCButtonBehavior.Novo).DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                 .Tooltip(Smc.GetUIResource("Botao_Incluir_Nova_Configuracao"))
+                 .Type(SMCButtonType.Link)
+                 .SecurityToken(UC_ORG_002_09_02.MANTER_CONFIGURACAO_NOTIFICACAO_ENTIDADE)
+                 .Url(Url.Action("Incluir"))
+             )
+        )
+    }
+}
+
+@using (Smc.Div("divViewPadrao").Attribute("data-id", "divViewPadrao").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Smc.ActionList("ListarEntidadeConfiguracaoNotificacao", Model, true)
+}

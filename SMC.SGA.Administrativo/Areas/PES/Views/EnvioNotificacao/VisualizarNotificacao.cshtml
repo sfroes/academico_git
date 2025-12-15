@@ -1,0 +1,39 @@
+@model VisualizarNotificacaoViewModel
+
+<h1>@Smc.GetUIResource("Title_Visualizar_Notificacao")</h1>
+
+@using (Smc.Div("visualizarEnvioNotificacao").Begin())
+{
+
+    @Smc.DisplayFor(m => m.NomeRemetente);
+    @Smc.DisplayFor(m => m.EmailRemetente);
+    @Smc.DisplayFor(m => m.EmailResposta);
+    @Smc.DisplayFor(m => m.UsuarioEnvio);
+    @Smc.DisplayFor(m => m.DataEnvio);
+    @Smc.DisplayFor(m => m.Assunto);
+
+    using (Smc.Div("mensagemNotificacao").CssClass("smc-sga-container-envio-notificacao").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Html.Raw(HttpUtility.HtmlDecode(Model.Mensagem));
+    }
+}
+@using (Smc.Div("destinatariosVisualizarNotificacao").Begin())
+{
+    @Smc.ActionList("BuscarDestinatariosVisualizarNotificacao", Model.VisualizarDestinatariosNotificacaoViewModel)
+}
+@{
+    var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-matricula-linha-botoes");
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+                 .Action("VoltarParaHomeEnvioNotificacao", "EnvioNotificacao", forceForBackBehavior: true, routeValues: "PES/EnvioNotificacao/")
+                 .Id("btnVoltarParaHomeEnvioNotificacao")
+                 .Text(Smc.GetUIResource("Botao_Voltar"))
+                 .Tooltip(Smc.GetUIResource("Botao_Voltar_Tooltip"))
+                 .CssClass("smc-btn-anterior-icotext")
+                 );
+}
+@buttonSet
+
+@section Scripts{
+    <script type="text/javascript" src=@Url.SMCBuscarRecursoAplicacao("Scripts/Areas/PES/EnvioNotificacao/EnvioNotificacao.js")></script>
+}

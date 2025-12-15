@@ -1,0 +1,16 @@
+﻿@model SMCPagerModel<ConfiguracaoEtapaListarViewModel>
+
+@if (Model.Any())
+{
+    @(Smc.List("Etapas", Model)
+       .HtmlTemplate(item => @Html.Partial("_DetailListItem", item)))
+}
+else
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        <span class="smc-datagrid-no-results">Nenhum registro encontrado</span>
+    }
+}
+
+

@@ -1,0 +1,48 @@
+﻿@model ConsultaDivisoesMatrizCurricularViewModel
+
+@Html.Action("CabecalhoConsultaDivisoesMatrizCurricular", Model.SeqMatrizCurricular)
+
+@(Smc.Legend("SituacaoComponente", SMCOrientation.Horizontal).Items<SMC.Academico.Common.Areas.CUR.Enums.SituacaoConfiguracaoComponenteCurricular>())
+@(Smc.Legend("SituacaoComponente", SMCOrientation.Horizontal).Items<SMC.Academico.Common.Areas.CUR.Enums.SituacaoConfiguracaoGrupoCurricular>())
+
+@using (Smc.Accordion("Divisoes").Begin())
+{
+    if (Model.ComponentesACursarTree.SMCAny())
+    {
+        using (Smc.AccordionSection("AccordionComponentesACursar").Title(Smc.GetUIResource("ComponentesACursar")).IsOpen().Begin())
+        {
+            @Smc.TreeView("TreeComponentesACursar", Model.ComponentesACursarTree).Expanded(true).CssClass("smc-sga-treeview-legend smc-sga-treeview-componentes-curriculares").ContentTemplate(c => Html.Partial("_Legend", c.Value))
+        }
+    }
+    foreach (var divisao in Model.DivisoesMatrizCurricular)
+    {
+        using (Smc.AccordionSection("AccordionDivisao" + divisao.Seq).Title(divisao.DescricaoDivisaoCurricularItem).IsOpen(!Model.ComponentesACursarTree.SMCAny()).Begin())
+        {
+            if (divisao.ConfiguracoesComponentes.SMCCount() > 0)
+            {
+                using (Smc.Fieldset("FieldSetConfiguracaoComponentes" + divisao.Seq).LegendText(Smc.GetUIResource("Label_Componentes")).Begin())
+                {
+                    @Smc.TreeView("TreeComponentesGrupos" + divisao.Seq, divisao.ComponentesGruposTree).Expanded(true).CssClass("smc-sga-treeview-legend smc-sga-treeview-componentes-curriculares").ContentTemplate(c => Html.Partial("_Legend", c.Value))
+                }
+            }
+            if (divisao.ConfiguracoesGruposTree.SMCCount() > 0)
+            {
+                using (Smc.Fieldset("FieldSetConfiguracaoGrupos" + divisao.Seq).LegendText(Smc.GetUIResource("Label_ConfiguracoesGrupos")).Begin())
+                {
+                    @Smc.TreeView("TreeConfiguracaoGrupos" + divisao.Seq, divisao.ConfiguracoesGruposTree).Expanded(true).CssClass("smc-sga-treeview-legend smc-sga-treeview-componentes-curriculares").ContentTemplate(c => Html.Partial("_Legend", c.Value))
+                }
+            }
+        }
+    }
+}
+
+@(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+    .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+    .Action("Index", "MatrizCurricular", new { SeqCurriculoCursoOferta = new SMCEncryptedLong(Model.SeqCurriculoCursoOferta) })
+    .SecurityToken(UC_CUR_001_05_01.PESQUISAR_MATRIZ_CURRICULAR)
+    .Highlight()))
+
+@using (Smc.ModalWindow("modalVisualizarDadosGrupoCurricular")
+    .Size(SMCModalWindowSize.Medium)
+    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+    .Begin()) { }

@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERR_Alterar_Grupo_escalonamento_Exception" xml:space="preserve">
+    <value>Alteração não permitida. Já existem convocados para a chamada {0}. Não é possível alterar o grupo de escalonamento.</value>
+  </data>
+  <data name="ERR_CampanhaDescricaoRepetidaException" xml:space="preserve">
+    <value>Operação não permitida. Já existe outra campanha com a mesma descrição.</value>
+  </data>
+  <data name="ERR_CampanhaOfertaAssociacaoCursoExtintoException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. Seu curso estará em extinção ou extinto no início do período letivo</value>
+  </data>
+  <data name="ERR_CampanhaOfertaAssociacaoCursoUnidadeExtintoException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. Seu curso x unidade estará em extinção ou extinto no início do período letivo.</value>
+  </data>
+  <data name="ERR_CampanhaOfertaAssociacaoDuplicadaExtintoException" xml:space="preserve">
+    <value>Associação não permitida. A oferta {0} já foi associada à campanha</value>
+  </data>
+  <data name="ERR_CampanhaOfertaAssociacaoFormacaoEspecificaDesativadaException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. Sua formação específica está desativada ou não estará mais vigente na data início do período letivo.</value>
+  </data>
+  <data name="ERR_CampanhaOfertaAssociacaoOfertaCursoDesativadoException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. Sua oferta de curso está desativada.</value>
+  </data>
+  <data name="ERR_CampanhaOfertaAssociacaoOfertaCursoLocalidadeExtintoException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. Sua oferta de curso por localidade estará em extinção ou extinta no início do período letivo.</value>
+  </data>
+  <data name="ERR_CampanhaOfertaAssociacaoTurmaCanceladaException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. A turma está cancelada</value>
+  </data>
+  <data name="ERR_CampanhaOfertaAssociacaoTurmaGeraOrientacaoException" xml:space="preserve">
+    <value>Associação não permitida. A turma {0} gera orientação. Turmas que geram orientação não podem ser ofertadas como disciplina isolada.</value>
+  </data>
+  <data name="ERR_CampanhaOfertaAssociacaoTurnoDesativadoException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. Seu turno está desativado para a oferta de curso por localidade.</value>
+  </data>
+  <data name="ERR_CampanhaPeriodoInscricaoOfertaMaiorPeriodoInscricaoEtapaException" xml:space="preserve">
+    <value>O período de inscrição das ofertas não pode ultrapassar o período da etapa de inscrição.</value>
+  </data>
+  <data name="ERR_CampanhaTipoProcessoNaoVilculadoNivelEnsinoVinculoFormaIngressoException" xml:space="preserve">
+    <value>O processo {0} não pode ser copiado. Seu tipo de processo não está mais ativo para os níveis de ensino, o vínculo e/ou a forma de ingresso do processo.</value>
+  </data>
+  <data name="ERR_CampanhaUnidadeResponsavelCicloLetivoRepetidoException" xml:space="preserve">
+    <value>Operação não permitida. Existe outra campanha para {0} no(s) ciclo(s) letivo(s) informado(s).</value>
+  </data>
+  <data name="ERR_CampanhaUnidadeResponsavelTipoOfertaNaoVinculadoException" xml:space="preserve">
+    <value>O tipo de oferta {0} não está mais ativo para {1}. As ofertas deste tipo não poderão ser copiadas.</value>
+  </data>
+  <data name="ERR_CicloLetivoInvalidoException" xml:space="preserve">
+    <value>Ciclo letivo é inválido!</value>
+  </data>
+  <data name="ERR_CopiaCampanhaOfertaCursoDesativadaException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. Sua oferta de curso está desativada.</value>
+  </data>
+  <data name="ERR_CopiaCampanhaOfertaCursoExtintaException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. Seu curso estará em extinção ou extinto no início do período letivo.</value>
+  </data>
+  <data name="ERR_CopiaCampanhaOfertaCursoLocalidadeExtintaException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. Sua oferta de curso por localidade estará em extinção ou extinta no início do período letivo.</value>
+  </data>
+  <data name="ERR_CopiaCampanhaOfertaCursoUnidadeExtintaException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. Seu curso x unidade estará em extinção ou extinto no início do período letivo.</value>
+  </data>
+  <data name="ERR_CopiaCampanhaOfertaFormacaoEspecificaDesativadaException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. Sua formação específica está desativada ou não estará mais vigente na data início do período letivo.</value>
+  </data>
+  <data name="ERR_CopiaCampanhaOfertaTurmaCanceladaException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. A turma está cancelada.</value>
+  </data>
+  <data name="ERR_CopiaCampanhaOfertaTurnoDesativadoParaOfertaException" xml:space="preserve">
+    <value>A oferta {0} não pode ser selecionada. Seu turno está desativado para a oferta de curso por localidade.</value>
+  </data>
+  <data name="ERR_ImpossivelAlterarAbrangenciaException" xml:space="preserve">
+    <value>Não é permitido alterar o tipo de abrangência, porque o tipo de evento em questão já foi parametrizado por ciclo letivo.</value>
+  </data>
+  <data name="ERR_ImpossivelAlterarApenasUmaParametrizacaoException" xml:space="preserve">
+    <value>Não é permitido alterar o valor do campo “Somente um por parametrização”, porque o tipo de evento em questão já foi parametrizado por ciclo letivo.</value>
+  </data>
+  <data name="ERR_ImpossivelAlterarObrigatorioDeNaoParaSimException" xml:space="preserve">
+    <value>O tipo de parâmetro "{0}" não pode ser obrigatório, pois existe parametrização por ciclo letivo para o tipo de evento em questão, onde este tipo de parâmetro não foi informado.</value>
+  </data>
+  <data name="ERR_ImpossivelAlterarTipoAgendaException" xml:space="preserve">
+    <value>Não é permitido trocar o tipo de agenda "{0}", porque já existe evento letivo cadastrado para o tipo de evento em questão.</value>
+  </data>
+  <data name="ERR_ImpossivelAlterarTipoEventoException" xml:space="preserve">
+    <value>Não é permitido trocar o tipo de evento "{0}", porque ele já foi parametrizado por ciclo letivo.</value>
+  </data>
+  <data name="ERR_ImpossivelAlterarTipoParametroException" xml:space="preserve">
+    <value>Não é permitido alterar o tipo de parâmetro "{0}", porque ele já foi parametrizado por ciclo letivo.</value>
+  </data>
+  <data name="ERR_ImpossivelExcluirTipoParametroException" xml:space="preserve">
+    <value>Não é permitido excluir o tipo de parâmetro "{0}", porque ele já foi parametrizado por ciclo letivo.</value>
+  </data>
+  <data name="ERR_NaoExistemConvocadosParaLiberacaoException" xml:space="preserve">
+    <value>Não existem convocados nesta chamada para liberação para matrícula.</value>
+  </data>
+  <data name="ERR_ObrigatoriedadeCopiaCiclo" xml:space="preserve">
+    <value>É obrigatório selecionar ao menos um ciclo letivo.</value>
+  </data>
+  <data name="ERR_ObrigatoriedadeSelecaoMesmoAno" xml:space="preserve">
+    <value>É obrigatório selecionar ciclos letivos do mesmo ano para a cópia.</value>
+  </data>
+  <data name="ERR_OfertaVagaMaiorConvocacaoProcessoSeletivoException" xml:space="preserve">
+    <value>Alteração não permitida. Existe oferta cuja quantidade de vagas é maior que as vagas configuradas no processo seletivo "{0}".</value>
+  </data>
+  <data name="ERR_OfertaVagaMaiorProcessoSeletivoException" xml:space="preserve">
+    <value>Alteração não permitida. Existe oferta cuja quantidade de vagas é maior que as vagas configuradas na oferta da campanha.</value>
+  </data>
+  <data name="ERR_OfertaVagaMenorProcessoSeletivoException" xml:space="preserve">
+    <value>Alteração não permitida. Existe oferta cuja quantidade de vagas é menor que as vagas configuradas no(s) processo(s) seletivo(s).</value>
+  </data>
+  <data name="ERR_OfertaVagaTurmaInsuficienteException" xml:space="preserve">
+    <value>Não é permitido aumentar a quantidade de vagas das ofertas listadas abaixo, pois suas turmas não possuem vagas suficientes:
+{0}</value>
+  </data>
+  <data name="ERR_OfertaVagaTurmaOcupadaInsuficienteException" xml:space="preserve">
+    <value>"Não é permitido diminuir as vagas das ofertas listadas abaixo, pois já estão ocupadas:
+{0}</value>
+  </data>
+  <data name="ERR_OrientacaoConvocadosException" xml:space="preserve">
+    <value>Existem ingressantes que não possuem as orientações para liberação da matricula.</value>
+  </data>
+  <data name="ERR_PeriodoEventoLetivoNullArgumentException" xml:space="preserve">
+    <value>O(s) parâmetro(s) "{0}" são obrigatórios para verificação do período do evento letivo informado.</value>
+  </data>
+  <data name="ERR_PeriodoEventoLetivoVazioException" xml:space="preserve">
+    <value>Não foi encontrado nenhum evento letivo com os parâmetros {0}.</value>
+  </data>
+  <data name="ERR_ProcessoGPISemEtapaInscricaoException" xml:space="preserve">
+    <value>Associação não permitida. O processo do GPI associado ao processo seletivo desta oferta não possui etapa de inscrição cadastrada.</value>
+  </data>
+  <data name="ERR_ProcessoMatriculaNaoConfiguradoCursoNivelEnsinoException" xml:space="preserve">
+    <value>Alteração não permitida. O processo de matrícula {0} não foi configurado para os níveis de ensino ou cursos de oferta por localidade e turno das ofertas associadas a este processo seletivo e para o vínculo informado.</value>
+  </data>
+  <data name="ERR_ProcessoMatriculaNaoConfiguradoCursoNivelSemVinculoEnsinoException" xml:space="preserve">
+    <value>Alteração não permitida. O processo de matrícula {0} não foi configurado para os níveis de ensino ou cursos de oferta localidade e turno das ofertas associadas a este processo seletivo e para o(s) vínculo(s) da(s) forma(s) de ingresso do tipo de processo seletivo informado.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoCicloLetivoDuplicadoException" xml:space="preserve">
+    <value>Operação  não permitida. Somente um processo de matrícula pode ser associado por ciclo letivo.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoComIngressanteException" xml:space="preserve">
+    <value>Alteração não permitida. Existem ingressantes para o processo de matrícula {0} no ciclo letivo {1}.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoComNivelEnsinoAssociadoException" xml:space="preserve">
+    <value>Alteração não permitida. Existem ofertas do nível de ensino {0} associadas a este processo seletivo.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoComOfertasException" xml:space="preserve">
+    <value>Alteração não permitida. Não é permitido trocar a configuração de reserva de vagas, quando já existem ofertas associadas ao processo seletivo.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoComTipoOfertasDiferentesException" xml:space="preserve">
+    <value>Alteração não permitida. Existem ofertas associadas a este processo seletivo cujo tipo de oferta não é permitido para o tipo de processo seletivo informado.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoNaoConfiguradoNivelEnsinoComVinculoException" xml:space="preserve">
+    <value>Operação não permitida. O processo de matrícula {0} não foi configurado para o(s) nível(is) de ensino e o vínculo informados.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoOfertaConvocacaoDuplicadaException" xml:space="preserve">
+    <value>Associação não permitida. A oferta {0} já foi associada à convocação.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoOfertaDuplicadaException" xml:space="preserve">
+    <value>Associação não permitida. A oferta {0} já foi associada ao processo seletivo.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoOfertaNivelEnsinoOfertaCursoException" xml:space="preserve">
+    <value>Associação não permitida. Existem ofertas cujo nível de ensino ou a oferta de curso por localidade e turno não estão configuradas para o(s) processo(s) de matrícula e o(s) vínculo(s) da(s) forma(s) de ingresso do tipo de processo seletivo do processo seletivo em questão.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoOfertaVinculoConvocacaoException" xml:space="preserve">
+    <value>Associação não permitida. Existem ofertas cujo nível de ensino ou a oferta de curso por localidade e turno não estão configurados para o processo de matrícula do processo seletivo e do ciclo letivo desta convocação e para vínculo do processo seletivo em questão.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoOfertaVinculoIngressanteExcluirException" xml:space="preserve">
+    <value>Exclusão não permitida. Existe ingressante associado à oferta {0}, para o processo seletivo {1}.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoTemplateProcessoDesativadoTipoProcessoException" xml:space="preserve">
+    <value>O template do processo GPI {0} está desativado para o tipo de processo deste processo. Não é possível copiar as etapas.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoTipoHierarquiaProcessoGpiDesativadoTipoProcessoUnidadeResponsavelException" xml:space="preserve">
+    <value>O tipo de hierarquia do processo GPI {0} está desativado para o tipo de processo e a unidade responsável deste processo. Não é possível copiar a(as) oferta(s) para este processo.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoTipoProcessoGpiDesativadoUnidadeResponsavelException" xml:space="preserve">
+    <value>O tipo de processo do processo GPI {0} está desativado para a unidade responsável deste processo. Não é possível copiar as ofertas e as etapas do processo.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoTipoProcessoGpiNaoVinculadoTipoProcessoException" xml:space="preserve">
+    <value>O processo {0} não pode ser copiado. O tipo de processo do GPI não pode mais ser vinculado ao tipo de processo deste processo seletivo do SGA.</value>
+  </data>
+  <data name="ERR_QuantidadeItensAnoUtilizado" xml:space="preserve">
+    <value>Este regime letivo já está sendo utilizado. Não é possível alterar a quantidade de itens ano.</value>
+  </data>
+  <data name="ERR_ReducaoVagaOfertaConvocacaoInvalidaException" xml:space="preserve">
+    <value>Alteração não permitida. Não é possível reduzir {0} vagas da oferta {1} na convocação {2}, pois não existem vagas suficientes.</value>
+  </data>
+  <data name="ERR_ReducaoVagaOfertaProcessoSeletivoInvalidaException" xml:space="preserve">
+    <value>Alteração não permitida. Não é possível reduzir {0} vagas da oferta {1} no processo seletivo {2}, pois não existem vagas suficientes.</value>
+  </data>
+  <data name="ERR_ReplicarOfertaVagaProcessoSeletivoException" xml:space="preserve">
+    <value>Alteração não permitida. Não é possível replicar vagas para as ofertas da convocação, sem selecionar seu respectivo processo seletivo.</value>
+  </data>
+  <data name="ERR_TipoOfertaExigeCursoOfertaLocalidadeTurnoException" xml:space="preserve">
+    <value>Este tipo de oferta já está sendo utilizado por uma oferta de uma campanha. Não é possível alterar o indicador "Exige curso oferta localidade turno".</value>
+  </data>
+  <data name="ERR_TipoOfertaTipoFormacaoEspecificaException" xml:space="preserve">
+    <value>Este tipo de oferta já está sendo utilizado por uma oferta de uma campanha. Não é possível alterar o tipo de formação específica.</value>
+  </data>
+  <data name="ERR_TipoOfertaTipoItemHierarquiaOfertaGpiException" xml:space="preserve">
+    <value>Este tipo de oferta já está sendo utilizado por um processo do GPI. Não é possível alterar o tipo de item de hierarquia de oferta.</value>
+  </data>
+  <data name="FK_campanha_01" xml:space="preserve">
+    <value>Exclusão não permitida. Entidade já é responsável por campanha.</value>
+  </data>
+  <data name="FK_campanha_ciclo_letivo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Campanha já possui ciclo letivo associado.</value>
+  </data>
+  <data name="FK_campanha_ciclo_letivo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Ciclo letivo já está associado a campanha.</value>
+  </data>
+  <data name="FK_campanha_oferta_01" xml:space="preserve">
+    <value>Exclusão não permitida. Campanha já possui ofertas cadastradas.</value>
+  </data>
+  <data name="FK_campanha_oferta_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de oferta já possui cadastro de ofertas em campanha.</value>
+  </data>
+  <data name="FK_campanha_oferta_item_01" xml:space="preserve">
+    <value>Exclusão não permitida. Oferta já possui itens.</value>
+  </data>
+  <data name="FK_campanha_oferta_item_02" xml:space="preserve">
+    <value>Exclusão não permitida. Curso já possui associação com oferta de campanha.</value>
+  </data>
+  <data name="FK_campanha_oferta_item_03" xml:space="preserve">
+    <value>Exclusão não permitida. Turma já possui associação com oferta de campanha.</value>
+  </data>
+  <data name="FK_campanha_oferta_item_04" xml:space="preserve">
+    <value>Exclusão não permitida. Professor/Pesquisador já possui associaçao com oferta de campanha.</value>
+  </data>
+  <data name="FK_campanha_oferta_item_05" xml:space="preserve">
+    <value>Exclusão não permitida. Formação específica já possui associação com oferta de campanha.</value>
+  </data>
+  <data name="FK_ciclo_letivo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui ciclo letivo cadastrado.</value>
+  </data>
+  <data name="FK_ciclo_letivo_02" xml:space="preserve">
+    <value>Exclusão  não permitida. Regime Letivo já possui ciclo letivo cadastrado.</value>
+  </data>
+  <data name="FK_ciclo_letivo_nivel_ensino_01" xml:space="preserve">
+    <value>Exclusão não permitida. Ciclo letivo já possui níveis de ensino associados.</value>
+  </data>
+  <data name="FK_ciclo_letivo_nivel_ensino_02" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já está associado a um ciclo letivo.</value>
+  </data>
+  <data name="FK_ciclo_letivo_tipo_evento_01" xml:space="preserve">
+    <value>Exclusão não permitida. Ciclo letivo já possui tipo de evento configurado.</value>
+  </data>
+  <data name="FK_ciclo_letivo_tipo_evento_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de evento já está configurado em ciclo letivo.</value>
+  </data>
+  <data name="FK_ciclo_letivo_tipo_evento_nivel_ensino_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de evento já possui nível de ensino associado.</value>
+  </data>
+  <data name="FK_ciclo_letivo_tipo_evento_nivel_ensino_02" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já está associado a configuração de tipo de evento por ciclo letivo.</value>
+  </data>
+  <data name="FK_ciclo_letivo_tipo_evento_parametro_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de evento já possui parâmetros associados.</value>
+  </data>
+  <data name="FK_ciclo_letivo_tipo_evento_parametro_02" xml:space="preserve">
+    <value>Exclusão não permitida. Parâmetro já está configurado no tipo de evento de ciclo letivo.</value>
+  </data>
+  <data name="FK_convocacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Campanha já possui convocações associadas.</value>
+  </data>
+  <data name="FK_convocacao_oferta_01" xml:space="preserve">
+    <value>Exclusão não permitida. A Convocação está associada a uma ou mais Ofertas.</value>
+  </data>
+  <data name="FK_convocado_01" xml:space="preserve">
+    <value>Exclusão não permitida. A Convocação está associada a uma ou mais Chamadas.</value>
+  </data>
+  <data name="FK_evento_letivo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de evento já possui Evento letivo cadastrado.</value>
+  </data>
+  <data name="FK_evento_letivo_agd_01" xml:space="preserve">
+    <value>Exclusão não permitida. Evento letivo possui evento AGD cadastrado.</value>
+  </data>
+  <data name="FK_evento_letivo_nivel_ensino_01" xml:space="preserve">
+    <value>Exclusão não permitida. Evento letivo possui nível de ensino configurado.</value>
+  </data>
+  <data name="FK_evento_letivo_nivel_ensino_02" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino está associado a uma evento letivo.</value>
+  </data>
+  <data name="FK_evento_letivo_parametro_entidade_01" xml:space="preserve">
+    <value>Exclusão não permitida. Evento letivo possui parâmetros configurados.</value>
+  </data>
+  <data name="FK_evento_letivo_parametro_entidade_02" xml:space="preserve">
+    <value>Exclusão não permitida. Entidade possui evento letivo parametrizado.</value>
+  </data>
+  <data name="FK_instituicao_nivel_regime_letivo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Regime Letivo já está configurado para uso em um nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_regime_letivo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já possui regime letivo configurado.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_processo_seletivo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já possui tipo de processo seletivo configurado.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_processo_seletivo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de processo seletivo já está configurado para uso em um nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="FK_instituicao_tipo_evento_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de esnino já possui tipo de evento configurado.</value>
+  </data>
+  <data name="FK_instituicao_tipo_evento_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de agenda já possui tipo de evento configurado.</value>
+  </data>
+  <data name="FK_instituicao_tipo_evento_parametro_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de tipo de evento já possui parâmetros configurados.</value>
+  </data>
+  <data name="FK_processo_seletivo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Campanha já possui processos seletivos cadastrados.</value>
+  </data>
+  <data name="FK_processo_seletivo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe processos seletivos cadastrados com este tipo de processo seletivo.</value>
+  </data>
+  <data name="FK_processo_seletivo_03" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe processo seletivo cadastrado com esta forma de ingresso.</value>
+  </data>
+  <data name="FK_processo_seletivo_04" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe processo seletivo cadastrado com esse tipo de vínculo de aluno.</value>
+  </data>
+  <data name="FK_processo_seletivo_nivel_ensino_01" xml:space="preserve">
+    <value>Exclusão não permitida. Processo seletivo já possui nível de ensino associado.</value>
+  </data>
+  <data name="FK_processo_seletivo_nivel_ensino_02" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já está configurado em processo seletivo.</value>
+  </data>
+  <data name="FK_processo_seletivo_oferta_01" xml:space="preserve">
+    <value>Exclusão não permitida. Processo seletivo já possui ofertas cadastradas.</value>
+  </data>
+  <data name="FK_processo_seletivo_oferta_02" xml:space="preserve">
+    <value>Exclusão não permitida. Oferta da campanha já está associado a processo seletivo.</value>
+  </data>
+  <data name="FK_processo_seletivo_processo_matricula_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe processo de matrícula configurado para este processo seletivo.</value>
+  </data>
+  <data name="FK_processo_seletivo_processo_matricula_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe processo de matrícula configurado para este ciclo letivo da campanha.</value>
+  </data>
+  <data name="FK_processo_seletivo_processo_matricula_03" xml:space="preserve">
+    <value>Exclusão não permitida. Processo de matrícula já associado a processo seletivo.</value>
+  </data>
+  <data name="FK_tipo_oferta_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de formação específica já está configurado em tipo de oferta.</value>
+  </data>
+  <data name="FK_tipo_oferta_unidade_responsavel_01" xml:space="preserve">
+    <value>Exclusão não permitida. Entidade está associada a tipo de oferta.</value>
+  </data>
+  <data name="FK_tipo_oferta_unidade_responsavel_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de oferta possui entidades responsáveis configuradas.</value>
+  </data>
+  <data name="FK_tipo_processo_seletivo_gpi_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de processo seletivo já possui tipo de processo GPI configurado.</value>
+  </data>
+  <data name="FK_tipo_processo_seletivo_tipo_oferta_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de processo seletivo já possui tipo de oferta configurada.</value>
+  </data>
+  <data name="FK_tipo_processo_seletivo_tipo_oferta_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de tipo de processo seletivo utilizando este tipo de oferta.</value>
+  </data>
+  <data name="UN_campanha_01" xml:space="preserve">
+    <value>Já existe campanha com esta descrição para esta unidade responsável.</value>
+  </data>
+  <data name="UN_campanha_ciclo_letivo_01" xml:space="preserve">
+    <value>Ciclo letivo já está associado a esta campanha.</value>
+  </data>
+  <data name="UN_campanha_oferta_01" xml:space="preserve">
+    <value>Já existe oferta com esta descrição nesta campanha.</value>
+  </data>
+  <data name="UN_ciclo_letivo_01" xml:space="preserve">
+    <value>Já existe um ciclo letivo cadastrado para a instituição de ensino com o mesmo regime letivo, ano ciclo e nº ciclo.</value>
+  </data>
+  <data name="UN_ciclo_letivo_tipo_evento_parametro_01" xml:space="preserve">
+    <value>Já existe configuração deste parâmetro para este ciclo letivo e tipo de evento.</value>
+  </data>
+  <data name="UN_evento_letivo_agd_01" xml:space="preserve">
+    <value>Evento AGD já está associado a este evento letivo.</value>
+  </data>
+  <data name="UN_evento_letivo_parametro_entidade_01" xml:space="preserve">
+    <value>Parâmetro já configurado para este evento letivo e entidade.</value>
+  </data>
+  <data name="UN_instituicao_nivel_regime_letivo_01" xml:space="preserve">
+    <value>Regime letivo já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_processo_seletivo_01" xml:space="preserve">
+    <value>Tipo de processo seletivo já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_tipo_evento_01" xml:space="preserve">
+    <value>Tipo de evento já está configurado para esta instituição e tipo de agenda.</value>
+  </data>
+  <data name="UN_instituicao_tipo_evento_parametro_01" xml:space="preserve">
+    <value>Este parâmetro já está configurado para esse tipo de evento.</value>
+  </data>
+  <data name="UN_processo_seletivo_01" xml:space="preserve">
+    <value>Já existe processo seletivo com esta descrição nesta campanha.</value>
+  </data>
+  <data name="UN_processo_seletivo_nivel_ensino_01" xml:space="preserve">
+    <value>Nível de ensino já está associado ao processo seletivo.</value>
+  </data>
+  <data name="UN_processo_seletivo_oferta_01" xml:space="preserve">
+    <value>Oferta já está associada ao processo seletivo.</value>
+  </data>
+  <data name="UN_processo_seletivo_processo_matricula_01" xml:space="preserve">
+    <value>Já existe configuração de processo de matrícula para este processo seletivo x ciclo letivo x campanha.</value>
+  </data>
+  <data name="UN_regime_letivo_01" xml:space="preserve">
+    <value>Já existe regime letivo cadastrado com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_oferta_01" xml:space="preserve">
+    <value>Já existe tipo de oferta com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_oferta_02" xml:space="preserve">
+    <value>Já existe tipo de oferta com este token.</value>
+  </data>
+  <data name="UN_tipo_oferta_03" xml:space="preserve">
+    <value>Já existe tipo de oferta cadastrado com essa associação ao tipo de hierarquia de oferta do GPI.</value>
+  </data>
+  <data name="UN_tipo_oferta_unidade_responsavel_01" xml:space="preserve">
+    <value>Tipo de oferta já está associado a entidade.</value>
+  </data>
+  <data name="UN_tipo_processo_seletivo_01" xml:space="preserve">
+    <value>Já existe tipo de processo seletivo com esta descrição nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_tipo_processo_seletivo_02" xml:space="preserve">
+    <value>Já existe tipo de processo seletivo com este token nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_tipo_processo_seletivo_gpi_01" xml:space="preserve">
+    <value>Tipo de processo GPI já está associado a este tipo de processo seletivo.</value>
+  </data>
+  <data name="UN_tipo_processo_seletivo_tipo_oferta_01" xml:space="preserve">
+    <value>Tipo de oferta já está associado a este tipo de processo seletivo.</value>
+  </data>
+</root>

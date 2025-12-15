@@ -1,0 +1,439 @@
+<Playlist Version="2.0">
+  <Rule Name="Includes" Match="Any">
+    <Rule Match="All">
+      <Property Name="Solution" />
+      <Rule Match="Any">
+        <Rule Match="All">
+          <Property Name="Project" Value="SMC.Academico.Tests" />
+          <Rule Match="Any">
+            <Rule Match="All">
+              <Property Name="Namespace" Value="SMC.Academico.Tests.ADM.ALN" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="Aluno" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.ALN.Aluno.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.ALN.Aluno.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoVinculoAluno" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.ALN.TipoVinculoAluno.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.ALN.TipoVinculoAluno.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="CondicaodeObrigatoriedade" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.ALN.CondicaodeObrigatoriedade.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.ALN.CondicaodeObrigatoriedade.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoSituacaoMatricula" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.ALN.TipoSituacaoMatricula.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.ALN.TipoSituacaoMatricula.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+            <Rule Match="All">
+              <Property Name="Namespace" Value="SMC.Academico.Tests.ADM.APR" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="CriterioAprovacao" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.APR.CriterioAprovacao.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.APR.CriterioAprovacao.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="Escala_Apuracao" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.APR.Escala_Apuracao.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.APR.Escala_Apuracao.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+            <Rule Match="All">
+              <Property Name="Namespace" Value="SMC.Academico.Tests.ADM.CSO" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="Grau_Academico" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CSO.Grau_Academico.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CSO.Grau_Academico.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoClassificacao" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CSO.TipoClassificacao.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CSO.TipoClassificacao.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoFormacaoEspecifica" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CSO.TipoFormacaoEspecifica.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CSO.TipoFormacaoEspecifica.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoOfertaCurso" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CSO.TipoOfertaCurso.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CSO.TipoOfertaCurso.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="Turno" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CSO.Turno.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CSO.Turno.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="EscaladeApuracao" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CSO.EscaladeApuracao.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CSO.EscaladeApuracao.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="DivisaoCurricular" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CSO.DivisaoCurricular.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CSO.DivisaoCurricular.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="Modalidade" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CSO.Modalidade.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CSO.Modalidade.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+            <Rule Match="All">
+              <Property Name="Namespace" Value="SMC.Academico.Tests.ADM.CUR" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoComponenteCurricular" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CUR.TipoComponenteCurricular.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CUR.TipoComponenteCurricular.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoComponenteCurricularXInstituicaoeNivelEnsino" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CUR.TipoComponenteCurricularXInstituicaoeNivelEnsino.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CUR.TipoComponenteCurricularXInstituicaoeNivelEnsino.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+            <Rule Match="All">
+              <Property Name="Namespace" Value="SMC.Academico.Tests.ADM.ORG" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoEntidade" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.ORG.TipoEntidade.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.ORG.TipoEntidade.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+            <Rule Match="All">
+              <Property Name="Namespace" Value="SMC.Academico.Tests.ADM.ORT" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoOrientacao" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.ORT.TipoOrientacao.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.ORT.TipoOrientacao.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoTrabalho" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.ORT.TipoTrabalho.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.ORT.TipoTrabalho.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="Trabalho" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.ORT.Trabalho.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.ORT.Trabalho.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+            <Rule Match="All">
+              <Property Name="Namespace" Value="SMC.Academico.Tests.ADM.SRC" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="CentralProcessos" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.SRC.CentralProcessos.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.SRC.CentralProcessos.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+            <Rule Match="All">
+              <Property Name="Namespace" Value="SMC.Academico.Tests.ADM.CNC" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="Grau_Academico" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CNC.Grau_Academico.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CNC.Grau_Academico.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="SituacaoDocumentoAcademico" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CNC.SituacaoDocumentoAcademico.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CNC.SituacaoDocumentoAcademico.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoDocumentoConclusao" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CNC.TipoDocumentoConclusao.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CNC.TipoDocumentoConclusao.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="Titulacao" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CNC.Titulacao.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CNC.Titulacao.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="OrgaoRegistro" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CNC.OrgaoRegistro.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CNC.OrgaoRegistro.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="GrupoRegistro" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CNC.GrupoRegistro.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CNC.GrupoRegistro.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoApostalimento" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CNC.TipoApostalimento.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CNC.TipoApostalimento.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoVinculoAluno" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CNC.TipoVinculoAluno.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CNC.TipoVinculoAluno.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="Turno" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CNC.Turno.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CNC.Turno.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="DocumentoConclusao" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CNC.DocumentoConclusao.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CNC.DocumentoConclusao.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="Curso" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.CNC.Curso.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.CNC.Curso.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+            <Rule Match="All">
+              <Property Name="Namespace" Value="SMC.Academico.Tests.ADM.MAT" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoSituacaoMatricula" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.MAT.TipoSituacaoMatricula.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.MAT.TipoSituacaoMatricula.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+            <Rule Match="All">
+              <Property Name="Namespace" Value="SMC.Academico.Tests.ADM.DCT" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="TipoVinculoColaborador" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="SMC.Academico.Tests.ADM.DCT.TipoVinculoColaborador.TesteOrdenadoCRUD" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="SMC.Academico.Tests.ADM.DCT.TipoVinculoColaborador.TesteOrdenadoCRUD" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Property Name="Class" Value="Periodico" />
+              </Rule>
+            </Rule>
+          </Rule>
+        </Rule>
+      </Rule>
+    </Rule>
+  </Rule>
+</Playlist>

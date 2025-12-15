@@ -1,0 +1,10 @@
+﻿@using SMC.SGA.Administrativo.Areas.FIN.Models
+@model PessoaAtuacaoBeneficioDynamicModel
+
+@{ 
+    bool exibeButons = Model.IdExisteResponsaveisFinanceiros.GetValueOrDefault();
+    int exigeMinimo = (Model.IdAssociarResponsavelFinanceiro == (int)SMC.Academico.Common.Areas.FIN.Enums.AssociarResponsavelFinanceiro.Exige ? 1 : 0);
+}
+
+@Smc.MasterDetail(m => m.ResponsaveisFinanceiro).HideButtons(exibeButons).MinimumItens(exigeMinimo)
+

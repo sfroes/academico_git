@@ -1,0 +1,2440 @@
+﻿@import "componentes/_smc-buttons.scss";
+@import "componentes/_smc-header.scss";
+@import "componentes/_smc-list.scss";
+@import "componentes/_smc-datagrid.scss";
+@import "componentes/_smc-legend.scss";
+@import "componentes/_smc-timeline.scss";
+@import "componentes/_smc-wizard.scss";
+
+//acessibilidade
+//@import "../../Content/Css/smc-acessibilidade.scss";
+
+.smc-sgagrad-tab-header {
+    display: none;
+}
+
+body {
+    background: $smc-branco url(../../Objectstore/Images/smc-sgagrad-img-background.png) no-repeat top right !important;
+}
+
+.smc-sgagrad-matricula-header {
+    background-image: url(../../Objectstore/Images/smc-sgagrad-logo-pucminas.png);
+    background-position: 20% 50%;
+    background-repeat: no-repeat;
+    height: 135px;
+
+    &::before {
+        content: "";
+        width: 65%;
+        height: 3px;
+        background-color: $smc-cor-principal-04;
+        position: absolute;
+        top: 134px;
+    }
+
+    h1 {
+        font-family: 'segoe_uiregular',Arial,sans-serif !important;
+        color: $smc-cor-secundaria-01;
+        font-weight: normal;
+        font-size: 30px;
+        margin-left: 30%;
+        margin-top: 35px;
+        margin-bottom: 0;
+
+        font {
+            font-family: 'segoe_uiregular',Arial,sans-serif !important;
+        }
+    }
+
+    > font {
+        margin-left: 0;
+        font-family: 'segoe_uiregular',Arial,sans-serif !important;
+    }
+
+    font > span {
+        margin-left: 30%;
+        font-family: 'segoe_uiregular',Arial,sans-serif !important;
+        color: $smc-cor-secundaria-01;
+        font-weight: normal;
+        font-size: 16px;
+    }
+}
+
+.smc-sgagrad-instrucoes-preenchimento {
+    p {
+        font-size: 11px !important;
+        color: $smc-cinza-06 !important;
+        margin-top: -6px;
+    }
+}
+
+a.smc-aplicaco-logotipo {
+    padding-top: 20px;
+    margin-top: 2px;
+}
+
+.smc-sgagrad-text-instrucoes p font span, .smc-sgagrad-text-instrucoes p, .smc-sgagrad-text-instrucoes, .smc-sgagrad-text-instrucoes > p > font > span {
+    font-size: 11px !important;
+    color: $smc-cinza-06;
+}
+
+.smc-sgagrad-conteudo-login {
+    margin-left: 12%;
+    width: 42%;
+    margin-top: 60px;
+
+    h2 {
+        color: $smc-cor-principal-04 !important;
+        font-size: 22px !important;
+        margin-bottom: 50px;
+        margin-top: 25px;
+        font-family: 'segoe_uiregular',Arial,sans-serif !important;
+
+        font {
+            font-family: 'segoe_uiregular',Arial,sans-serif !important;
+        }
+    }
+
+    td {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    p, td {
+        color: $smc-cinza-10;
+        font-size: 14px;
+    }
+
+    input[type=text] {
+        width: 100% !important;
+        margin-right: 15px;
+    }
+
+    .smc-btn-enviar-icotext-destaque {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+h2 {
+    color: $smc-cor-principal-04 !important;
+    font-size: 22px !important;
+    margin-bottom: 40px;
+    margin-top: 65px;
+
+    font {
+        font-family: 'segoe_uiregular',Arial,sans-serif !important;
+    }
+}
+
+
+.smc-footer-centro {
+    //position: fixed;
+    bottom: 0;
+    z-index: -5;
+
+    &::after {
+        display: none !important;
+    }
+}
+
+
+
+.smc-footer-logo-smc {
+    display: none;
+}
+
+.smc-sga-btn-boleto-icotext {
+    line-height: 25px;
+
+    i {
+        @extend .fa;
+        @extend .fa-barcode;
+        line-height: 29px;
+        float: left;
+        margin-right: 10px;
+
+        &:before {
+            font-size: 18px !important;
+        }
+    }
+}
+
+.smc-sga-btn-cartao-icotext {
+    line-height: 25px;
+
+    i {
+        @extend .fa;
+        @extend .fa-credit-card;
+        line-height: 29px;
+        float: left;
+        margin-right: 10px;
+
+        &:before {
+            font-size: 18px !important;
+        }
+    }
+}
+
+.smc-sga-mensagem-informativa {
+    li {
+        font-size: 13px;
+    }
+
+    ol {
+        margin-left: 40px;
+    }
+
+    font {
+        color: #5c7f8f !important;
+    }
+}
+
+.smc-sgagrad-conteudo-login-sal {
+    margin-top: -10px !important;
+
+    h2 {
+        margin-bottom: 20px !important;
+        margin-top: 15px !important;
+
+        font {
+            font-family: 'segoe_uiregular',Arial,sans-serif !important;
+        }
+    }
+}
+
+.smc-sga-mensagem-matricula-sal p {
+    margin-top: 0 !important;
+}
+
+.smc-buttonset-horizontal-primario.smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16 {
+    float: none !important;
+}
+
+.smc-sgagrad-alinhamento-mensagem {
+    margin-left: 11%;
+}
+
+.smc-sgagrad-matricula-conteudo {
+   // margin-left: 10%;
+    background-color: $smc-branco;
+    tbody{
+        tr{
+            td{
+                padding-right:20px;
+            }
+        }
+    }
+}
+
+.smc-footer-copyright > font {
+    font-size: 10px;
+}
+
+.smc-sgagrad-matricula-modal {
+    background-image: none !important;
+
+    h2 {
+        margin-bottom: 20px;
+        margin-top: 20px;
+
+        font {
+            font-family: 'segoe_uiregular',Arial,sans-serif !important;
+        }
+    }
+
+    .smc-sgagrad-matricula-header {
+        background-position: 6% 50%;
+
+        h1 {
+            font-size: 30px;
+            margin-left: 24%;
+            margin-top: 10px;
+
+            font {
+                font-family: 'segoe_uiregular',Arial,sans-serif !important;
+            }
+        }
+
+        font > span {
+            margin-left: 25%;
+        }
+    }
+
+    .smc-sgagrad-espacamento {
+        margin-top: 30px;
+    }
+}
+/////////////////////////////***********************************-------------------------
+@media print {
+    .smc-buttonset-horizontal-primario {
+        display: none;
+    }
+}
+////////// ********** ALUNO
+.smc-login-section {
+    h2:after {
+        display: none;
+    }
+}
+
+.smc-login-instituicao {
+    & > .smc-estilo-sigla-instituicao {
+        text-align: center !important;
+    }
+}
+
+.smc-sga-aluno-logotipo-intituicao {
+    height: 50px;
+    text-align: center;
+
+    img {
+        height: 45px;
+    }
+}
+
+.smc-sga-aluno-usuario {
+    margin-top: -10px !important;
+}
+
+.smc-sga-aluno-ribbon {
+    height: 120px;
+    background-image: url('../Images/smc-sga-aluno-textura-topo.png') !important;
+    background-position: left center;
+    background-color: $smc-branco;
+
+    .navbar-fixed-top {
+        padding-top: 12px;
+    }
+
+    .smc-login-instituicao {
+        white-space: unset !important;
+
+        & > .smc-button {
+            width: 12px !important;
+            float: left;
+            margin-top: -20px;
+        }
+    }
+
+    .smc-estilo-sigla-instituicao {
+        padding: 0 !important;
+        line-height: 14px;
+        position: relative !important;
+        width: 100% !important;
+        font-size: 12px !important;
+        float: left;
+        margin-right: 5px;
+        margin-top: 10px;
+    }
+
+    .navbar-nav {
+        margin-top: 26px;
+    }
+}
+
+.smc-sga-aluno-conteudo {
+    margin-top: 145px !important;
+}
+
+
+.smc-menu-responsivo {
+    top: 100px;
+    z-index: 1039;
+}
+////////// ********** FIM ALUNO
+//body
+.smc-sga-body {
+    background: url(../Images/smc-sga-img-inicio.png) right 120px no-repeat, url(../Images/smc-sga-img-background.png) 0 120px repeat-x;
+    background-color: $smc-cinza-01;
+
+    .ui-draggable.smc-modal-window-auto.smc-message-fixed {
+        position: fixed;
+        width: 80%;
+        z-index: 2;
+        margin-top: 10px;
+        top: 120px !important;
+
+        h2 {
+            margin-bottom: 0;
+            margin-top: 5px;
+
+            font {
+                font-family: 'segoe_uiregular',Arial,sans-serif !important;
+            }
+        }
+    }
+}
+//
+.smc-conteudo-centro {
+    margin-top: 115px;
+    min-height: 537px;
+}
+// Rodapé
+.smc-footer-centro {
+
+    &::after { // inclusão da borda inferior
+        content: "";
+        padding: 0 49.5%;
+        border-bottom: 4px solid $smc-cor-secundaria-01;
+        // margin-left: 2%;
+    }
+}
+//MENU HORIZONTAL
+.smc-menu-dinamico-controls {
+    display: none;
+}
+
+.smc-menu-responsivo-orientation-horizontal {
+    width: 100%;
+    padding-right: 0;
+    height: 45px;
+
+    .smc-menu-dinamico {
+        padding-top: 0;
+    }
+
+    .smc-dynamic-menu {
+        margin-left: 8.33333%;
+        width: 83.33333%;
+    }
+
+    .smc-menu-dinamico-principal {
+        padding: 0;
+        margin-top: 0;
+
+        > li {
+            display: inline-block;
+            cursor: pointer;
+            height: 45px;
+
+            a {
+                padding: 12px 0 10px 10px;
+                display: inline-block;
+            }
+
+            ul li a {
+                padding: 12px 5px 10px 10px;
+            }
+        }
+    }
+
+    .smc-menu-submenu {
+        min-height: 0;
+        background-color: $smc-cor-secundaria-01;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        width: auto;
+        margin-top: 0px;
+        top: 15px !important;
+
+        a {
+            color: $smc-branco;
+            width: 100%;
+        }
+
+        .smc-menu-submenu-items {
+            margin-left: 200px !important;
+            top: -28px !important;
+
+            :hover {
+                > a {
+                    color: $smc-cor-secundaria-01;
+                }
+            }
+        }
+    }
+
+    .smc-menu-N2 {
+        display: none;
+        position: absolute;
+        margin-left: auto !important;
+        padding: 0;
+        height: auto;
+        list-style-type: none;
+        border: none;
+        width: auto;
+        left: auto !important;
+        margin-top: 30px;
+        min-width: 200px;
+    }
+
+    .smc-menu-dinamico-link-submenu:before, .smc-menu-setinha:before {
+        display: inline-block;
+        position: inherit;
+        margin-top: 13px !important;
+        float: right;
+        -ms-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        position: inherit !important;
+        margin-right: 15px !important;
+        cursor: pointer;
+        color: $smc-cor-principal-06;
+    }
+
+    .smc-menu-favorito {
+        display: none;
+    }
+
+    .smc-menu-submenu, .smc-menu-submenu-items {
+        background-color: $smc-cor-principal-03 !important;
+    }
+}
+
+.smc-footer-conteudo { // redução da margem para ficar um pouco menor a distância entre os logos e a borda.
+    margin-bottom: 0;
+}
+// conteúdo central
+.smc-sga-btn-trocaroferta {
+    @include smc-btn-base;
+    @include smc-btn-ico;
+    @include smc-btn-tamanho (primario_ico_button);
+    @include icone-posicao(primario);
+    @include smc-btn-cor-destaque;
+    background-color: transparent;
+    border: none;
+    margin-top: 25px;
+
+    & > i {
+        @extend .fa-retweet;
+        @extend .fa;
+    }
+
+    &:hover {
+        background-color: transparent;
+        border: none;
+        color: $smc-cor-principal-04;
+    }
+}
+// título
+.smc-sga-titulo-etapa, .smc-sga-titulo {
+    color: $smc-cor-secundaria-01;
+    font-size: 22px;
+
+    &:before {
+        width: 50px;
+        content: "";
+        background-color: $smc-cor-secundaria-01;
+        height: 3px;
+        position: absolute;
+        margin-top: 50px;
+    }
+}
+
+.smc-sga-titulo {
+    margin-bottom: 40px;
+}
+// legenda
+.smc-sga-legenda {
+    text-align: right;
+
+    .smc-legend-content-title {
+        display: none !important;
+    }
+
+    span {
+        font-size: 11px;
+        color: $smc-preto;
+        font-weight: bold;
+    }
+}
+
+legend {
+    font-size: 18px !important;
+}
+// grid
+.smc-sga-etapa-atual {
+    td {
+        background-color: #fefae3 !important;
+        border-color: #e6c616 !important;
+    }
+}
+
+
+.smc-sga-grid-inicial {
+    background-color: transparent !important;
+
+    table {
+        border-collapse: separate;
+        border-spacing: 0 5px !important;
+
+        .smc-sga-ingressante-etapas-descricao {
+            width: 90%;
+            float: left;
+
+            a {
+                color: $smc-cor-secundaria-04;
+
+                :hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        background-color: transparent !important;
+        height: 36px !important;
+    }
+
+    td:first-child {
+        border-radius: 50px 0 0 50px;
+        border-top: 1px solid $smc-cinza-03 !important;
+        border-bottom: 1px solid $smc-cinza-03 !important;
+        border-left: 1px solid $smc-cinza-03 !important;
+        border-right: none;
+        width: 50px;
+        text-align: center;
+
+        div {
+            display: inline-block;
+        }
+
+        .smc-display-legend {
+            width: 12px;
+            display: inline-block;
+        }
+    }
+
+    td:last-child {
+        border-radius: 0 50px 50px 0;
+        border-top: 1px solid $smc-cinza-03 !important;
+        border-bottom: 1px solid $smc-cinza-03 !important;
+        border-right: 1px solid $smc-cinza-03 !important;
+        border-left: none;
+    }
+
+    td {
+        border-bottom: 1px solid $smc-cinza-03 !important;
+        border-top: 1px solid $smc-cinza-03 !important;
+        border-left: none !important;
+        border-right: none !important;
+
+        span, p, font {
+            font-size: 14px !important;
+        }
+
+        a {
+            color: $smc-cor-secundaria-01 !important;
+            cursor: pointer !important;
+
+            &:hover {
+                color: $smc-cor-secundaria-04 !important;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .smc-btn-custom {
+        height: 15px;
+        padding: 0;
+        border: none !important;
+        color: $smc-cor-secundaria-04 !important;
+
+        &:hover {
+            border: none !important;
+            text-decoration: underline !important;
+        }
+    }
+}
+// área do usuário
+.user-header {
+    p {
+        color: $smc-cor-principal;
+    }
+}
+// ÁREA DE MATRÍCULA
+.smc-btn-custom[disabled="disabled"] {
+    border: 2px solid $smc-cinza-03 !important;
+    height: 25px;
+
+    &:hover {
+        border: 2px solid transparent !important;
+        color: $smc-cinza-06 !important;
+    }
+}
+///////// ********** ----- RESPONSIVIDADE ----- ********** //////////
+//LG
+@media (min-width:1200px) {
+}
+//MD
+@media (max-width:1199px) {
+    .smc-menu-dinamico-link-submenu > a {
+        padding: 12px 0 10px 0;
+        font-size: 13px;
+
+        ul > li > a {
+            padding: 12px 5px 10px 0px;
+        }
+    }
+
+    .smc-menu-responsivo-orientation-horizontal .smc-menu-dinamico-link-submenu:before, .smc-menu-responsivo-orientation-horizontal .smc-menu-setinha:before {
+        margin-left: -7px;
+    }
+
+    .smc-sga-aluno-ribbon {
+        background-position: -120px center;
+    }
+}
+//SM Limite máximo
+@media (max-width: 991px) {
+
+    .smc-menu-responsivo {
+        top: 130px !important;
+    }
+    // RIBBON
+    .smc-sga-aluno-ribbon {
+        height: 90px;
+        background-position: -130px center;
+    }
+
+    .smc-sga-aluno-ribbon .smc-login-instituicao > .smc-button {
+        width: 22px !important;
+        margin-top: 5px;
+    }
+
+    .smc-menu-dinamico-controls {
+        top: 90px !important;
+        display: block !important;
+        background: $smc-cor-principal-02;
+        width: 100%;
+        height: 42px;
+        box-shadow: 0 3px 12px -4px rgba(0,0,0,.75);
+        z-index: 1039 !important;
+    }
+
+    .smc-menu-dinamico-ico-referencia {
+        top: 9px;
+        left: 15px;
+
+        &::before {
+            color: $smc-branco;
+            text-shadow: 0 1px 0 $smc-cor-principal;
+        }
+    }
+
+    .smc-ribbon .navbar .smc-login .smc-login-instituicao {
+        padding: 0 2px;
+        margin-top: 0;
+    }
+}
+//SM (Toda faixa SM)
+@media (min-width:768px) and (max-width:991px) {
+    .smc-menu-dinamico-link-submenu > a {
+        padding: 12px 5px 10px 0;
+    }
+
+    .smc-menu-responsivo-orientation-horizontal .smc-menu-dinamico-link-submenu:before, .smc-menu-responsivo-orientation-horizontal .smc-menu-setinha:before {
+        margin-left: -7px;
+    }
+
+    .smc-sga-aluno-ribbon {
+        background-position: -120px center;
+    }
+
+    .navbar {
+        & > div {
+            & > .smc-login-instituicao {
+                margin-left: 0 !important;
+            }
+
+            & > .navbar-nav {
+                margin-top: 15px !important;
+            }
+        }
+    }
+
+    .smc-menu-submenu {
+        background: $smc-cinza-03;
+    }
+
+    .smc-menu-N2 > li > a {
+        color: $smc-cinza-08;
+    }
+
+    .smc-sga-aluno-logotipo-bdp {
+        background-size: 100%;
+    }
+
+    .smc-sga-aluno-ribbon .smc-estilo-sigla-instituicao {
+        margin-top: -5px;
+        width: 80% !important;
+    }
+
+    .smc-sga-aluno-ribbon .smc-login-instituicao > .smc-button {
+        margin-top: -20px;
+    }
+}
+//XS 0 à 767px
+@media (min-width:0px) and (max-width:$smc-size-screen-xs-max) {
+    .smc-sga-body {
+        background: url(../Images/smc-sga-img-inicio.png) left 120px no-repeat,url(../Images/smc-sga-img-background.png) right 115px repeat-x;
+    }
+
+    .user > .dropdown-menu {
+        min-width: 300px;
+        border: solid 4px $smc-cinza-03 !important;
+    }
+
+    .user-footer {
+        height: 70px;
+    }
+
+    .user-header p, .smc-acessibilidade > div.dropdown-menu {
+        min-width: 300px;
+    }
+
+
+    .smc-sga-grid-inicial .smc-btn-custom {
+        height: 55px;
+        margin-left: -30px;
+        line-height: 12px !important;
+    }
+
+    .smc-login {
+        height: 60px !important;
+        margin-top: 5px !important;
+    }
+
+    .smc-sga-body {
+        background: none !important;
+    }
+
+    h1 {
+        margin: 20px 0 10px 0;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    .smc-sga-titulo {
+        margin-bottom: 15px;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    .smc-aplicaco-logotipo {
+        padding-top: 0;
+    }
+
+    .smc-sga-mensagem {
+        &::before {
+            font-size: 25px;
+        }
+
+        p {
+            font-size: 12px;
+            margin: 0 5px 5px 30px !important;
+        }
+    }
+
+    .smc-sga-aluno-ribbon {
+        height: 75px;
+    }
+
+    .smc-menu-dinamico-controls {
+        z-index: 1040 !important;
+        top: 75px !important;
+        display: block !important;
+        background: transparent;
+        width: auto;
+        height: auto;
+        box-shadow: 0 3px 12px -4px rgba(255,255,255,.75);
+    }
+
+    .smc-menu-dinamico-ico-referencia {
+        &::before {
+            color: $smc-cor-principal-02;
+            text-shadow: 0 1px 0 $smc-branco;
+        }
+    }
+
+    .smc-menu-responsivo {
+        top: 65px !important;
+    }
+
+    .smc-sga-aluno-conteudo {
+        margin-top: 130px !important;
+    }
+    // div central
+    .smc-sga-conteudo-centro-menu {
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-top: 0;
+    }
+    // botões
+    .smc-sga-matricula-linha-botoes {
+        .smc-button:last-child {
+            float: right;
+
+            .smc-btn-proximo-icotext-destaque {
+                padding-top: 0 !important;
+            }
+        }
+    }
+
+    .smc-uploadFile-contextWindowControls {
+        .smc-button {
+            .smc-btn-custom {
+                font-size: 0;
+                line-height: 0 !important;
+            }
+        }
+    }
+
+    .smc-btn-custom[disabled="disabled"],
+    .smc-btn-anterior-icotext,
+    .smc-btn-proximo-icotext-destaque,
+    .smc-btn-cancelar-icotext,
+    .smc-btn-fechar-icotext,
+    .smc-btn-confirmar-icotext-destaque,
+    .smc-btn-novo-icotext,
+    .smc-btn-visualizar-icotext,
+    .smc-sga-mob-btn-visualizar-ico,
+    .smc-btn-confirmar-icotext,
+    .smc-btn-voltar-icotext,
+    .smc-btn-limpar-ico,
+    .smc-btn-limparenviar-ico,
+    .smc-btn-pesquisar-icotext-destaque,
+    .smc-btn-pesquisar-ico,
+    .smc-btn-salvar-icotext-destaque,
+    .smc-btn-imprimir-icotext,
+    .smc-btn-imprimir {
+        font-size: 0;
+        height: 50px;
+        padding: 1px 8px 0 16px;
+    }
+
+    .smc-btn-voltar-icotext {
+        padding-top: 12px;
+    }
+
+    .smc-btn-visualizar-icotext {
+        padding-top: 11px;
+    }
+
+    .smc-btn-proximo-icotext-destaque,
+    .smc-btn-imprimir-icotext,
+    .smc-btn-imprimir {
+        padding-top: 10px !important;
+    }
+
+    .smc-btn-documento-icotext {
+        padding-top: 12px !important;
+    }
+
+    .smc-btn-no, .smc-btn-yes {
+        padding: 0 13px 0 13px !important;
+    }
+
+    .user-footer {
+        ul {
+            .btn-default {
+                .smc-button {
+                    a {
+                        line-height: 48px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-acessibilidade {
+        .dropdown-menu {
+            .smc-buttonset-horizontal-primario {
+                .smc-btn-custom {
+                    width: 45px;
+                }
+
+                .smc-btn-fontenormal {
+                    margin-top: 3px !important;
+                }
+
+                .smc-btn-fontemaior, .smc-btn-contraste {
+                    padding-top: 6px !important;
+                }
+            }
+        }
+    }
+
+    .smc-btn-pesquisar-destaque,
+    .smc-btn-custom {
+        height: 50px;
+        padding: 1px 8px 0 16px;
+        text-transform: uppercase;
+        // line-height: 46px !important;
+    }
+
+    .smc-btn-cancelar-icotext {
+        padding-top: 10px;
+    }
+
+    .smc-sga-mob-btn-visualizar-ico {
+        @include smc-btn-base;
+        @include smc-btn-ico;
+        @include smc-btn-tamanho(primario_ico_button);
+        @include icone-posicao(primario);
+        @include smc-btn-cor-padrao;
+        margin-top: 0;
+    }
+    // header
+    .smc-header {
+        padding: 5px;
+    }
+
+    .ui-draggable.smc-modal-window-auto.smc-message-fixed {
+        .smc-modal-content {
+            height: auto !important;
+        }
+    }
+
+    .smc-modal-window .smc-modal-header > div.smc-button {
+        float: left;
+        width: 25px;
+        position: absolute;
+        margin-left: 10px;
+    }
+    // mensagem fixa
+    .smc-modal-window-medium,
+    .smc-modal-window-large,
+    .smc-modal-window-largest {
+        width: 96% !important;
+        left: 2% !important;
+    }
+
+    .smc-sga-alinhamento-botao-secundario {
+        float: right;
+        margin-right: 10px;
+
+        .smc-btn-custom {
+            line-height: 15px !important;
+        }
+    }
+
+    .smc-modal {
+        .smc-message-fixed {
+            padding: 0 !important;
+        }
+
+        .smc-modal-header {
+            .smc-button {
+                left: 80% !important;
+            }
+
+            h2 {
+                margin-left: 5px !important;
+                margin: 0;
+            }
+        }
+
+        .smc-modal-content {
+            max-height: 350px !important;
+            padding: 0 5px;
+
+            .smc-sga-margin-top-20 {
+                margin-top: 0;
+            }
+
+            .smc-buttonset-horizontal-primario {
+                margin-top: 0;
+            }
+
+            p {
+                margin: 0 0 5px 0;
+            }
+
+            .smc-legend-box {
+                width: 70%;
+                margin-top: 0;
+            }
+        }
+    }
+
+    .ui-draggable.smc-modal-window-small.smc-modal-window {
+        .smc-modal-content {
+            height: 200px !important;
+        }
+    }
+    // grid
+    .smc-sga-grid-inicial td:last-child {
+        width: 50px;
+    }
+    //rodapé
+    .smc-footer-logo-gti, .smc-footer-logo-smc {
+        line-height: 15px;
+
+        &:before {
+            font-size: 40px;
+            line-height: 20px;
+        }
+    }
+
+    .smc-footer-copyright {
+        display: none;
+    }
+
+    .smc-footer-conteudo {
+        margin-top: 30px;
+    }
+
+    .smc-footer-centro {
+        height: 20px;
+    }
+    // login
+    .smc-login-body {
+        background-position: -250px 0;
+    }
+
+    .smc-login-footer-copyright {
+        display: none;
+    }
+}
+//XS Limite máximo
+@media (max-width: 767px) {
+
+    input {
+        width: 100% !important;
+    }
+
+    .smc-sga-aluno-ribbon .smc-estilo-sigla-instituicao {
+        width: 60% !important;
+        margin-top: 10px;
+    }
+
+    .navbar > div > .smc-login-instituicao {
+        margin-left: 15%;
+    }
+
+    .smc-menu-submenu {
+        background: $smc-cinza-03;
+        top: 0px !important;
+    }
+
+    .smc-menu-N2 > li > a {
+        color: $smc-cinza-08;
+    }
+
+    .smc-sga-aluno-logotipo-intituicao img {
+        height: 33px;
+        margin-top: 10px;
+    }
+    //btn user aluno
+    div.user-menu {
+        background: #fff;
+        border-radius: 29px;
+        height: 34px;
+        width: 34px;
+        border: 1px solid #0083a2;
+        box-shadow: 3px 5px 7px -5px #000;
+
+        & > button {
+            margin-right: 2px;
+        }
+    }
+
+    .navbar > div > .navbar-nav {
+        margin-top: -95px !important;
+    }
+}
+///////////////
+//detalhes em sub-faixas (telas menores que 480px)
+@media (max-width: 480px) {
+    .smc-aplicaco-logotipo {
+        padding-top: 0;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 310px) {
+    .navbar > div > .navbar-nav {
+        margin-top: -4px !important;
+    }
+}
+//------------------------
+// TODAS AS FAIXAS
+@media (min-width:$smc-size-screen-xs-max) and (max-width:3000px) {
+    // login
+    .smc-login-body {
+        background-position: -105px 0;
+    }
+
+    .smc-sga-mensagem > p {
+        margin: 5px 0 10px 60px !important;
+        width: 80% !important;
+    }
+}
+// BOTOES HEADER ------- SILVER -----------------------------------------------------------------------------
+.smc-sgagrad-ajuste-fonte {
+    font, p, span {
+        font-size: 14px !important;
+    }
+
+    h1 {
+        font {
+            font-size: 32px !important;
+        }
+    }
+
+    h2 {
+        font {
+            font-size: 22px !important;
+        }
+    }
+
+    & > tbody > tr > td > p > table {
+        // background: red;
+      //  margin-top: 60px;
+    }
+}
+
+h3, h3 font, .smc-sgagrad-ajuste-fonte h3, .smc-sgagrad-ajuste-fonte h3 font {
+    font-size: 19px !important;
+}
+
+h1 {
+    font {
+        font-size: 32px !important;
+    }
+}
+
+h2 {
+    font {
+        font-size: 22px !important;
+    }
+}
+// LINKS UTEIS HOME
+.smc-sgagrad-linksuteis {
+    div {
+        display: inline-block;
+        padding: 5px;
+    }
+
+    .smc-sgagrad-linksuteis-pucmail {
+        width: 16.66667%;
+        height: 80px;
+        padding-top: 30px;
+
+        a {
+            background-image: url("../../Objectstore/Images/smc-sgagrad-img-pucmail.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            padding: 50%;
+        }
+    }
+
+    .smc-sgagrad-linksuteis-pucvirtual {
+        width: 16.66667%;
+        height: 80px;
+        padding-top: 30px;
+
+        a {
+            background-image: url("../../Objectstore/Images/smc-sgagrad-img-pucvirtual.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            padding: 50%;
+        }
+    }
+
+    .smc-sgagrad-linksuteis-sge {
+        width: 16.66667%;
+        height: 80px;
+        padding-top: 30px;
+
+        a {
+            background-image: url("../../Objectstore/Images/smc-sgagrad-img-sge.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            padding: 50%;
+        }
+    }
+
+    .smc-sgagrad-linksuteis-gde {
+        width: 16.66667%;
+        height: 80px;
+        padding-top: 30px;
+
+        a {
+            background-image: url("../../Objectstore/Images/smc-sgagrad-img-gde.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            padding: 50%;
+        }
+    }
+
+    .smc-sgagrad-linksuteis-formatura {
+        width: 16.66667%;
+        height: 80px;
+        padding-top: 30px;
+
+        a {
+            background-image: url("../../Objectstore/Images/smc-sgagrad-img-formatura.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            padding: 50%;
+        }
+    }
+}
+
+.smc-sga-externo-agrupamento-primario {
+    label, span {
+        color: $smc-cor-principal-04;
+        margin: 20px 5px 5px 0;
+        font-size: 20px !important;
+        float: left;
+    }
+}
+//TABELAS
+.smc-sgagrad-tab-header {
+    height: 145px;
+}
+
+.smc-sgagrad-tab-header-popup {
+    height: 90px;
+}
+// ÍCONES HEADER
+%smc-sgagrad-base-icones-topo {
+    margin-top: 10px;
+    padding: 0 6px;
+    @extend .fa;
+
+    &::before {
+        color: $smc-cor-principal-01;
+        font-size: 22px;
+    }
+
+    a {
+        font-size: 0;
+        margin-top: -26px;
+    }
+}
+
+.smc-sgagrad-NecessidadesEspeciais {
+    @extend %smc-sgagrad-base-icones-topo;
+    @extend .fa-sign-language;
+}
+
+.smc-sgagrad-Mensagens {
+    @extend %smc-sgagrad-base-icones-topo;
+    @extend .fa-envelope-o;
+
+    span {
+        color: $smc-branco;
+        font-size: 10px;
+        font-weight: bold;
+        position: absolute;
+        background-color: $smc-vermelho;
+        border-radius: 50px;
+        padding: 2px 5px;
+        line-height: 10px;
+    }
+}
+
+.smc-sgagrad-Noticia {
+    @extend %smc-sgagrad-base-icones-topo;
+    @extend .fa-newspaper-o;
+}
+
+.smc-sgagrad-Ajuda {
+    @extend %smc-sgagrad-base-icones-topo;
+    @extend .fa-question-circle;
+}
+
+.smc-sgagrad-Sair {
+    @extend %smc-sgagrad-base-icones-topo;
+    @extend .fa-sign-out;
+}
+
+.smc-sgagrad-Configuracao {
+    @extend %smc-sgagrad-base-icones-topo;
+    @extend .fa-cog;
+}
+// LISTA DE DISCIPLINAS
+.smc-sgagrad-lista-disciplinas {
+    position: absolute;
+    background-color: $smc-cinza-02;
+    padding: 30px;
+    z-index: 1;
+    height: 100%;
+    overflow-y: auto;
+
+    div.TurmaSGA {
+        display: block;
+        padding: 10px !important;
+
+        .smc-sga-externo-botoes-grid {
+            .smc-dropdown-btn-toggle-config {
+                background-color: transparent !important;
+                color: $smc-cor-principal;
+                border: none;
+            }
+        }
+
+        .smc-buttonset-horizontal-primario {
+            margin: -8px 0;
+        }
+    }
+
+    span {
+        margin: 0 0 10px 0;
+        padding-left: 20px;
+        color: $smc-cor-secundaria-01 !important;
+        display: inline-block;
+        width: 91%;
+        font-size: 14px !important;
+
+        &:before {
+            @extend .fa;
+            @extend .fa-clipboard;
+            float: left;
+            position: absolute;
+            font-size: 14px;
+            color: $smc-cor-secundaria-01;
+            margin-top: 3px;
+            margin-left: -20px;
+        }
+    }
+}
+
+.TurmaSGA {
+    padding: 50px 10px 20px 10px;
+    border-bottom: 1px solid #dfe6e6;
+
+    span {
+        color: $smc-cor-secundaria-01;
+        font-size: 20px;
+    }
+}
+// LISTA DE DISCIPLINAS DA HOME
+.smc-sgagrad-lista-turma-home {
+    .smc-sgagrad-lista-disciplinas {
+        position: relative !important;
+        // padding: 30px 55px !important;
+        // margin: 0 20px 0 5px;
+        padding: 0 55px !important;
+        margin: 30px 20px 0 5px;
+        overflow: auto;
+        max-height: 450px;
+
+        h2 {
+            padding-top: 15px;
+        }
+
+        a {
+            margin: 0 0 5px 0;
+            padding: 0 0 0 25px;
+        }
+
+        a:before {
+            margin-top: 1px !important;
+            margin-left: 1px;
+        }
+    }
+}
+// LISTA DE NOTÍCIAS DA HOME
+.smc-sgagrad-lista-noticias-home {
+    margin-right: 18%;
+    padding: 30px 3px 30px 55px !important;
+
+    h2 {
+        padding-top: 15px !important;
+
+        &::before {
+            position: relative;
+            margin-top: 50px;
+            display: block;
+            margin-bottom: -50px;
+        }
+    }
+
+    .smc-sgagrad-lista-noticias-home-conteudo {
+        max-height: 450px;
+        overflow-y: auto;
+        display: block;
+        padding-right: 52px;
+    }
+
+    .smc-sgagrad-data-noticia {
+        font-size: 11px;
+        color: $smc-cor-secundaria-01;
+
+        &:before {
+            @extend .fa;
+            @extend .fa-calendar;
+            color: $smc-cor-secundaria;
+            font-size: 11px;
+            margin-bottom: 0px;
+            margin-right: 7px;
+        }
+    }
+
+    .smc-sgagrad-resumo-noticia {
+        font-size: 12px;
+        color: $smc-cinza-08;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    table {
+        tbody {
+            tr {
+
+                &:first-child {
+                    display: none;
+                }
+
+                &:nth-child(2) td {
+                    padding-top: 0;
+                }
+
+                td {
+                    padding: 15px 5px;
+                    border-bottom: 1px solid $smc-cinza-02;
+
+                    div a {
+                        color: #000;
+
+                        &:hover {
+                            color: $smc-cor-secundaria-04;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// MENU ACESSO RÁPIDO
+.smc-sgagrad-menu-acesso-rapido-estrutura {
+    div {
+        width: 24%;
+        margin-left: 1.3%;
+        padding: 3px 8px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+.smc-sgagrad-menu-acesso-rapido {
+    border: 3px solid $smc-cinza-03;
+    height: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    float: inherit;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+
+    p, font p {
+        width: 100%;
+        text-align: center;
+        color: $smc-cinza-09;
+        font-size: 11px;
+        line-height: 11px;
+    }
+
+    a {
+        @extend .fa;
+        font-size: 20px;
+        text-align: center;
+
+        &:before {
+            font-size: 32px;
+            margin: 10px 0;
+            display: block;
+        }
+    }
+}
+
+
+.smc-sgagrad-menu-acesso-rapido-1,
+.smc-sgagrad-menu-acesso-rapido-2,
+.smc-sgagrad-menu-acesso-rapido-3,
+.smc-sgagrad-menu-acesso-rapido-4 {
+    border: 3px solid #e5e5e5;
+    height: 110px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    float: inherit;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+
+    p {
+        width: 100%;
+        text-align: center;
+        color: $smc-cinza-09;
+        font-size: 11px;
+        line-height: 11px;
+    }
+
+    a {
+        @extend .fa;
+        font-size: 20px;
+        text-align: center;
+
+        &:before {
+            font-size: 32px;
+            margin: 10px 0;
+            display: block;
+        }
+    }
+}
+
+.smc-sgagrad-menu-acesso-rapido-1 {
+    a {
+        color: #f7dc7e;
+        @extend .fa-info-circle;
+        cursor: no-drop;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.smc-sgagrad-menu-acesso-rapido-2 {
+    a {
+        color: #88c788;
+        @extend .fa-files-o;
+
+        p {
+            padding-top: 12px !important;
+        }
+    }
+
+    > p {
+        cursor: no-drop;
+        @extend .fa;
+        font-size: 20px;
+        text-align: center;
+        color: #cecece;
+        @extend .fa-files-o;
+        width: 100%;
+        height: 110px;
+        margin-top: -7px;
+        padding-top: 20px;
+
+        &:before {
+            font-size: 32px;
+            margin: 10px 0;
+            display: block;
+        }
+
+        font {
+            font-family: 'segoe_uiregular',Arial,sans-serif !important;
+            margin-top: 30px;
+            display: block;
+            font-size: 11px;
+        }
+    }
+}
+
+.smc-sgagrad-menu-acesso-rapido-3 {
+    a {
+        color: #f1ba6c;
+        @extend .fa-th;
+
+        p {
+            padding-top: 12px !important;
+        }
+    }
+}
+
+.smc-sgagrad-menu-acesso-rapido-4 {
+    a {
+        color: #34c1e4;
+        @extend .fa-bar-chart;
+
+        p {
+            padding-top: 12px !important;
+        }
+    }
+
+    > p {
+        cursor: no-drop;
+        @extend .fa;
+        font-size: 20px;
+        text-align: center;
+        color: #cecece;
+        @extend .fa-files-o;
+        width: 100%;
+        height: 110px;
+        margin-top: -7px;
+        padding-top: 19px;
+
+        &:before {
+            font-size: 32px;
+            margin: 10px 0;
+            display: block;
+        }
+
+        font {
+            font-family: 'segoe_uiregular',Arial,sans-serif !important;
+            margin-top: 20px;
+            display: block;
+            display: block;
+            font-size: 11px;
+        }
+    }
+}
+//MENU
+.smc-menu-dinamico-link-submenu:hover {
+    > ul.smc-menu-N2 {
+        display: block;
+    }
+}
+
+.smc-sgagrad-menu-button-fechar {
+    display: none;
+    cursor: pointer;
+    width: 30px !important;
+    background-color: $smc-cinza-02;
+    z-index: 1;
+    left: 0px;
+    height: 30px;
+    margin-top: 15px;
+    padding: 35px;
+    font-size: 0;
+    position: fixed !important;
+
+    &:before {
+        @extend .fa;
+        @extend .fa-angle-double-left;
+        color: $smc-cor-secundaria-01;
+        font-size: 20px;
+        margin-top: -10px;
+        margin-left: -8px;
+    }
+}
+
+.smc-sgagrad-menu-button-abrir {
+    width: 30px !important;
+    background-color: $smc-cinza-02;
+    z-index: 1;
+    left: 0px;
+    height: 30px;
+    margin-top: 15px;
+    font-size: 0;
+    cursor: pointer;
+    padding: 35px;
+    position: fixed;
+
+    &:before {
+        @extend .fa;
+        @extend .fa-clipboard;
+        color: $smc-cor-secundaria-01;
+        font-size: 20px;
+        margin-top: -8px;
+        margin-left: -9px;
+    }
+}
+
+.sidenav {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    background-color: $smc-cinza-02;
+    overflow: hidden;
+    transition: 0.5s;
+    top: 150px;
+    bottom: 0;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+// LABELS
+.smc-sgagrad-label {
+    font-weight: bold;
+    clear: both;
+    display: block;
+    margin: 5px 0;
+}
+
+.smc-buttonset-horizontal-primario {
+    float: right !important;
+    margin: 10px 0;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin: 2px 5px 0 5px;
+    height: 15px;
+    width: 15px !important;
+}
+
+.smc-sgagrad-espacamento-horizontal {
+    padding: 5px 0;
+}
+
+input[type="text"], input[type="password"], select {
+    background-color: $smc-branco;
+    border: 1px solid $smc-cor-borda-input;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    margin-bottom: 5px;
+    padding: 5px 15px !important;
+    font-family: 'segoe_uiregular',Arial,sans-serif;
+    height: 31px !important;
+    clear: inherit !important;
+    display: inline-block !important;
+    width: auto !important;
+}
+// links puros
+.smc-sgagrad-link, .smc-sgagrad-link > a {
+    text-decoration: underline !important;
+    font-style: italic;
+    color: $smc-cor-secundaria-01 !important;
+    margin-bottom: 5px;
+}
+
+p {
+    text-align: justify;
+}
+
+.smc-buttonset-horizontal-primario p {
+    float: right !important;
+    margin: 10px 0;
+}
+
+.smc-sgagrad-alinhamento-botao {
+    margin-bottom: -8px;
+}
+
+.smc-sga-mensagem {
+    p > font, span, p {
+        font-size: 13px !important;
+    }
+}
+// lista de links da página de matricula
+.smc-sgagrad-lista {
+    a {
+        padding-left: 5px;
+        width: 100%;
+        color: $smc-cor-secundaria-01 !important;
+
+        &::before {
+            content: "■";
+            color: $smc-cor-secundaria-01;
+            font-size: 10px;
+            float: left;
+            margin-top: 2px;
+        }
+
+        &:hover {
+            color: $smc-cor-secundaria-04 !important;
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.smc-sgagrad-lista-itens {
+    p {
+        padding-left: 5px;
+        width: 100%;
+
+        span {
+            font-size: 14px !important;
+        }
+
+        &::before {
+            content: "■";
+            color: $smc-preto;
+            font-size: 10px;
+            float: left;
+            margin-top: 2px;
+            margin-right: 5px;
+        }
+    }
+}
+// classe para a listagem de erros na tela de cadastro de bolsa
+.smc-sgagrad-lista-span {
+    background: #fcf8e3;
+    color: #a38147;
+    border: solid 2px #e4a445;
+    border-top: none;
+    margin-top: -29px;
+    display: block;
+    z-index: 4;
+    position: relative;
+
+    span {
+        font-size: 13px !important;
+    }
+
+    p {
+        padding-left: 5px;
+        width: 100%;
+        font-size: 13px !important;
+        color: #a38147;
+        margin-left: 70px;
+
+        &::before {
+            content: "■";
+            color: #a38147;
+            font-size: 10px;
+            float: left;
+            margin-top: 2px;
+        }
+    }
+}
+// classe para ajuste cor do botão dentro do grid
+.smc-btn-excluir-ico {
+    color: #fe4218 !important;
+
+    i {
+        color: #fe4218 !important;
+    }
+}
+// ÁREA DE MATRÍCULA
+.smc-buttonset-matricula {
+    float: right !important;
+    margin: -20px 0 -5px 0;
+}
+
+.smc-sgagrad-agrupamento-periodo {
+    border-bottom: 1px solid $smc-cinza-05;
+    margin-bottom: -5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: $smc-cor-secundaria-01 !important;
+}
+
+.smc-sgagrad-area-destaque {
+    background-color: $smc-cinza-03;
+}
+
+.smc-sgagrad-disciplina {
+    font-size: 13px;
+}
+
+hr {
+    border: 1px dashed $smc-cinza-04;
+    border-bottom: none;
+}
+
+h2.smc-sgagrad-titulo-matricula {
+    margin-bottom: 30px !important;
+    margin-top: 0 !important;
+}
+
+.smc-sgagrad-tituloprincipal-matricula {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+    color: $smc-cor-principal-01;
+    font-size: 20px;
+    padding-left: 140px;
+
+    font, span {
+        border-bottom: none;
+        margin: 0;
+        padding: 0;
+        color: $smc-cor-principal-01;
+        font-size: 25px !important;
+        padding-left: 20px;
+    }
+}
+
+.smc-sgagrad-botao-instrucoes {
+    margin-right: 7%;
+    position: absolute;
+    right: 0%;
+    top: 15px;
+}
+
+.smc-ribbon-matricula {
+    background: $smc-branco url("../../Objectstore/Images/smc-sga-aluno-textura-topo.png") $smc-estilo-ribbon-background-repeat -460px center;
+    height: $smc-estilo-ribbon-height;
+    left: 0;
+    margin: $smc-estilo-ribbon-margin !important;
+    padding: 0;
+    right: 0;
+    z-index: $smc-estilo-ribbon-z-index;
+    position: $smc-estilo-ribbon-position;
+    top: 0;
+    border-bottom: $smc-estilo-ribbon-border-bottom;
+}
+// GRID DE MENSAGENS
+.smc-sgagrad-grid-mensagens {
+    tr {
+        td {
+            span {
+                font-size: 14px !important;
+                color: $smc-cinza-08;
+            }
+
+            a {
+                font-size: 14px !important;
+                color: $smc-cor-secundaria-01 !important;
+
+                &:hover {
+                    color: $smc-cor-secundaria-04 !important;
+                }
+            }
+
+            font:nth-child(4), font:nth-child(5), font:nth-child(6) {
+                span {
+                    font-size: 12px !important;
+                    color: $smc-cinza-06;
+                }
+            }
+        }
+    }
+}
+
+.smc-sgagrad-area-mensagem {
+    p {
+        border: 1px solid $smc-cinza-04;
+        padding: 15px !important;
+        border-radius: 5px;
+        background-color: $smc-branco;
+    }
+}
+
+.smc-sgagrad-grid-mensagensenviadas {
+    max-height: 70px;
+    overflow-y: auto;
+    height: 70px;
+    display: block;
+    overflow-x: hidden;
+
+    tbody {
+        tr {
+            width: auto;
+            display: inline-block;
+            margin-right: 5px;
+
+            &:last-child {
+                margin-right: -5px;
+            }
+        }
+    }
+}
+// TELA DE SELEÇÃO DE ALUNOS PARA ENVIO DE EMAIL
+.smc-sgagrad-grid-selecao-alunos {
+    max-height: 200px;
+    height: 200px;
+    overflow: auto;
+    display: inline-block;
+
+    > tbody {
+        display: inline-table;
+        width: 100%;
+
+        > tr:first-child {
+            display: none !important;
+        }
+
+        tr td {
+            padding: 0;
+            border-bottom: none;
+        }
+    }
+}
+
+.smc-sgagrad-grid-selecao-alunos-header {
+    > tbody {
+        > tr:first-child {
+            display: block !important;
+            padding: 5px !important;
+        }
+    }
+}
+
+.smc-sgagrad-grid-agrupador-alunos {
+    margin: 0 !important;
+    border-bottom: 1px solid $smc-cinza-04;
+
+    tbody tr:nth-child(1) {
+        height: 0 !important;
+        padding: 0 !important;
+
+        span {
+            padding: 5px 5px !important;
+            line-height: 25px;
+        }
+
+        td {
+            padding: 0;
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    tbody tr:nth-child(2n) {
+        background-color: $smc-branco !important;
+
+        td {
+            border-bottom: none !important;
+        }
+    }
+}
+//TELA DE FORMULÁRIOS
+.smc-sgagrad-formulario {
+    td {
+        padding: 0 5px;
+    }
+
+    input[type='text'], select {
+        width: 100% !important;
+    }
+
+    .smc-sgagrad-tabela-endereco {
+        display: inline-table;
+    }
+
+    td, th, span {
+        font-size: 14px !important;
+    }
+
+    table tr td:last-child {
+        padding-right: 0;
+    }
+
+    table tr td:first-child {
+        padding-left: 0;
+    }
+}
+
+.smc-sgagrad-campo-caixapostal {
+    margin-bottom: -35px;
+}
+
+.smc-sgagrad-confirmacaodados {
+    p {
+        margin: 1px 0;
+    }
+}
+// LINKS ÁREA DE NOTÍCIA
+.smc-sgagrad-noticias {
+    p {
+        margin: 0;
+    }
+
+    a {
+        color: $smc-preto;
+    }
+}
+
+.smc-sgagrad-noticias-item {
+    p {
+        margin: 0;
+    }
+
+    a {
+        color: $smc-preto;
+    }
+}
+
+.smc-sgagrad-banner {
+    text-align: center;
+    margin-bottom: 20px;
+
+    a {
+        position: absolute;
+        width: 100%;
+        height: 160px;
+        z-index: 1;
+        cursor: pointer;
+    }
+}
+
+.smc-sgagrad-btn-anexar-icotext-destaque {
+    p font:nth-child(2) span {
+        &:before {
+            content: 'Escolher arquivo';
+            @extend .smc-btn-enviar;
+            margin: 5px 0 -25px 0;
+            z-index: 1;
+            position: relative;
+            padding: 5px 10px;
+            pointer-events: none;
+        }
+    }
+
+    input {
+        font-size: 12px;
+        cursor: pointer;
+    }
+}
+// TELA CREDENCIAIS DE ACESSO
+.smc-sgagrad-btn-trocasenha {
+    float: right;
+    margin-top: -75px;
+    line-height: 25px;
+}
+
+
+.smc-sgagrad-texto-destaque {
+    color: $smc-cor-principal-01;
+    font-weight: bold;
+}
+
+.smc-sgagrad-credenciaisacesso-item {
+    border-bottom: 1px solid $smc-cinza-04;
+}
+// BOTÕES
+.smc-sgagrad-btn-mail {
+    @extend .smc-btn-custom-destaque;
+    line-height: 25px;
+
+    i {
+        @extend .fa-envelope-o;
+        @extend .fa;
+
+        &:before {
+            margin-right: 7px;
+        }
+    }
+}
+
+.smc-sgagrad-btn-alterarsenha {
+    margin-left: 96px;
+    margin-top: -47px;
+
+    a {
+        line-height: 25px;
+    }
+}
+
+.smc-sgagrad-agrupador {
+    border: 3px solid $smc-cor-principal-06;
+    padding: 13px;
+
+    td {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+// MODAIS E POPUPS DO SILVER
+.smc-sgagrad-ribbon-popup {
+    .smc-sga-aluno-logotipo-intituicao {
+        height: 50px !important;
+        text-align: right !important;
+
+        img {
+            height: 65px !important;
+            margin-right: 16%;
+        }
+    }
+
+    .smc-sga-aluno-logotipo-intituicao img {
+        height: 90px;
+        margin-right: 16%;
+        background-color: $smc-branco;
+        padding: 10px;
+        margin-top: -13px;
+    }
+}
+// TELA DE CADASTRO COM EMAIL
+.smc-sgagrad-campo-desabilitado {
+    p {
+        margin: -7px 0 0 -1px;
+    }
+
+    table {
+        width: 100%;
+        margin-left: -5px;
+    }
+
+    table tr td p {
+        border: 1px solid $smc-cinza-04 !important;
+        color: $smc-cinza-07 !important;
+        background-color: $smc-cinza-03 !important;
+        padding: 7px 15px;
+        border-radius: 5px;
+    }
+
+    p b font span, p font:last-child span {
+        border: 1px solid $smc-cinza-04 !important;
+        color: $smc-cinza-07 !important;
+        background-color: $smc-cinza-03 !important;
+        padding: 5px 15px;
+        border-radius: 5px;
+        display: block;
+        margin-top: 7px;
+    }
+
+    input {
+        margin-top: -12px;
+    }
+}
+
+
+
+pre {
+    font-family: 'segoe_uiregular',Arial,sans-serif;
+    padding: 5px 15px 5px 15px;
+    color: $smc-preto !important;
+    font-size: 14px;
+
+    b, font {
+        font-style: normal !important;
+        font-size: 14px;
+        font-weight: normal !important;
+    }
+}
+
+.smc-sgagrad-webmail {
+    p {
+        margin-bottom: 2px;
+    }
+}
+
+.smc-sgagrad-identificacao {
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #0083a2;
+    padding-bottom: 1rem;
+}
+
+.smc-sgagrad-destaque {
+    color: #0083a2 !important;
+}
+
+.mt-0 { 
+    margin-top: 0 !important;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.smc-sgagrad-matricula-conteudo {
+    .smc-btn-copiar-icotext,
+    .smc-sga-btn-boleto-icotext,
+    .smc-sga-btn-cartao-icotext,
+    .smc-btn-anexar-icotext {
+        margin: 10px 2px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .smc-sgagrad-ribbon-popup {
+
+        .smc-sga-aluno-logotipo-intituicao img {
+            height: 70px;
+            margin-top: -10px;
+        }
+    }
+
+    body {
+        background-size: 36% !important;
+        background-position: top right !important;
+    }
+
+    .smc-sgagrad-matricula-header {
+        background-position: 10% 19%;
+    }
+
+    .smc-sgagrad-ajuste-fonte > tbody > tr > td > p > table {
+        margin-top: 60px;
+        // background: red;
+        width: 100%;
+    }
+
+    .smc-sgagrad-matricula-header h1 {
+        margin-left: 10%;
+        margin-top: 180px;
+    }
+
+    .smc-sgagrad-matricula-header font > span {
+        margin-left: 10%;
+    }
+
+    .smc-buttonset-horizontal-primario, .smc-buttonset-horizontal-primario p {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        background-size: 36% !important;
+        background-position: top right !important;
+    }
+
+    .smc-sgagrad-matricula-header {
+        background-position: 10% 19%;
+
+    }
+
+    .smc-sgagrad-ajuste-fonte > tbody > tr > td > p > table {
+        margin-top: 60px;
+       // background: red;
+        width: 100%;
+    }
+
+    .smc-sgagrad-matricula-header h1 {
+        margin-left: 10%;
+        margin-top: 180px;
+    }
+
+    .smc-sgagrad-matricula-header font > span {
+        margin-left: 10%;
+    }
+
+    .smc-buttonset-horizontal-primario {
+        width: 100%;
+    }
+}
+
+.smc-sgagrad-campo-desabilitado-modal {
+    p {
+        margin: -7px 0 0 -1px;
+
+        font {
+            position: absolute;
+            margin-top: 7px;
+        }
+    }
+
+    > p > font {
+        position: absolute;
+        //  margin-top: -14px;
+    }
+
+    p font span {
+        border: 1px solid $smc-cinza-04 !important;
+        color: $smc-cinza-07 !important;
+        background-color: $smc-cinza-03 !important;
+        padding: 5px 0;
+        border-radius: 5px;
+        display: block;
+        margin-top: 0;
+        width: 210px !important;
+    }
+
+    input {
+        z-index: 2;
+        position: relative;
+    }
+
+    p font span input, p font span select {
+        z-index: 2;
+        position: relative;
+        margin: -6px 0 -6px 0;
+        width: 209px !important;
+    }
+}

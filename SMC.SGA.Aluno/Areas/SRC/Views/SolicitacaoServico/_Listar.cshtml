@@ -1,0 +1,33 @@
+﻿@using SGA.Aluno.Areas.SRC.SolicitacaoServico
+@model SMCPagerModel<SolicitacaoServicoListaViewModel>
+
+@if (Model != null && Model.Count > 0)
+{
+    @(Smc.List("Solicitacoes", Model)
+         .HtmlTemplate(item => @Html.Partial("_Solicitacao", item)))
+
+}
+else
+{
+    using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+    {
+        <p>Não foram identificadas solicitações.</p>
+    }
+}
+
+@using (Smc.ModalWindow("modalCancelarSolicitacao")
+.Size(SMCModalWindowSize.Large)
+.Form("frmCancelarSolicitacao", "SalvarCancelamentoSolicitacao", "SolicitacaoServico", new { @area = "SRC" }, config: x => x.Ajax())
+.Title(Smc.GetUIResource("Modal_CancelarSolicitacao_Titulo"))
+.Button(SMCButtonBehavior.Confirmar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+.Button(SMCButtonBehavior.Fechar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+.Begin())
+{
+
+}
+
+@using (Smc.ModalWindow("modalSolicitacao")
+.Form("formSolicitacao", closeOnSubmit: true)
+.Size(SMCModalWindowSize.Largest)
+.Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+.Begin()) { }

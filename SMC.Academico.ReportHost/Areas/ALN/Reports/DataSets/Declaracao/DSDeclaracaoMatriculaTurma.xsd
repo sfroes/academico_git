@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSDeclaracaoMatriculaTurma" targetNamespace="http://tempuri.org/DSDeclaracaoMatriculaTurma.xsd" xmlns:mstns="http://tempuri.org/DSDeclaracaoMatriculaTurma.xsd" xmlns="http://tempuri.org/DSDeclaracaoMatriculaTurma.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSDeclaracaoMatriculaTurma" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="_DSDeclaracaoMatriculaTurma" msprop:Generator_UserDSName="DSDeclaracaoMatriculaTurma">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSDeclaracaoMatriculaTurma" msprop:Generator_TableClassName="DSDeclaracaoMatriculaTurmaDataTable" msprop:Generator_TableVarName="tableDSDeclaracaoMatriculaTurma" msprop:Generator_RowChangedName="DSDeclaracaoMatriculaTurmaRowChanged" msprop:Generator_TablePropName="DSDeclaracaoMatriculaTurma" msprop:Generator_RowDeletingName="DSDeclaracaoMatriculaTurmaRowDeleting" msprop:Generator_RowChangingName="DSDeclaracaoMatriculaTurmaRowChanging" msprop:Generator_RowEvHandlerName="DSDeclaracaoMatriculaTurmaRowChangeEventHandler" msprop:Generator_RowDeletedName="DSDeclaracaoMatriculaTurmaRowDeleted" msprop:Generator_RowClassName="DSDeclaracaoMatriculaTurmaRow" msprop:Generator_UserTableName="DSDeclaracaoMatriculaTurma" msprop:Generator_RowEvArgName="DSDeclaracaoMatriculaTurmaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SeqPessoaAtuacao" msprop:Generator_ColumnVarNameInTable="columnSeqPessoaAtuacao" msprop:Generator_ColumnPropNameInRow="SeqPessoaAtuacao" msprop:Generator_ColumnPropNameInTable="SeqPessoaAtuacaoColumn" msprop:Generator_UserColumnName="SeqPessoaAtuacao" type="xs:long" minOccurs="0" />
+              <xs:element name="NomeProfessor" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="NomeProfessor" msprop:Generator_ColumnVarNameInTable="columnNomeProfessor" msprop:Generator_ColumnPropNameInTable="NomeProfessorColumn" msprop:Generator_UserColumnName="NomeProfessor" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoTurmaConfiguracaoComponente" msprop:Generator_ColumnVarNameInTable="columnDescricaoTurmaConfiguracaoComponente" msprop:Generator_ColumnPropNameInRow="DescricaoTurmaConfiguracaoComponente" msprop:Generator_ColumnPropNameInTable="DescricaoTurmaConfiguracaoComponenteColumn" msprop:Generator_UserColumnName="DescricaoTurmaConfiguracaoComponente" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

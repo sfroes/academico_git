@@ -1,0 +1,45 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+
+@model  PessoaAtuacaoCabecalhoViewModel
+
+@*@{
+
+        var header = Smc.Header("PessoaAtuacao", SMCHeaderType.Primary)
+                           .Item(prop => prop.NomeCompleto, sizeMD: SMCSize.Grid12_24)
+                           .Item(prop => prop.Cpf, sizeMD: SMCSize.Grid4_24)
+                           .Item(prop => prop.NumeroPassaporte, sizeMD: SMCSize.Grid4_24);
+
+        if (Model.Falecido)
+        {
+            header.Item(prop => prop.Falecido, sizeMD: SMCSize.Grid4_24);
+        }
+
+    }
+
+    @using (header.Begin()) { }*@
+
+@{
+    var header = Smc.Header("PessoaAtuacaoBeneficio", SMCHeaderType.Primary);
+
+    if (Model.TipoAtuacao == SMC.Academico.Common.Areas.PES.Enums.TipoAtuacao.Aluno)
+    {
+        header.Item(prop => prop.RA, sizeMD: SMCSize.Grid2_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid2_24);
+        header.Item(prop => prop.CodigoMigracaoAluno, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid16_24, sizeLG: SMCSize.Grid3_24);
+    }
+    else
+    {
+        header.Item(prop => prop.SeqIngressante, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid5_24);
+    }
+
+    header.Item(prop => prop.NomeCompleto, sizeMD: SMCSize.Grid18_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid8_24)
+          .Item(prop => prop.Cpf, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid4_24)
+          .Item(prop => prop.NumeroPassaporte, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid4_24);
+
+    if (Model.Falecido)
+    {
+        header
+            .Item(prop => prop.Falecido, sizeMD: SMCSize.Grid12_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid3_24);
+    }
+}
+
+@using (header.Begin()) { }

@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{96E86703-9CF9-4340-A722-6A924BE081BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMC.Academico.EntityRepository</RootNamespace>
+    <AssemblyName>SMC.Academico.EntityRepository</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Producao|AnyCPU'">
+    <OutputPath>bin\Producao\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Desenvolvimento|AnyCPU'">
+    <OutputPath>bin\Desenvolvimento\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Qualidade|AnyCPU'">
+    <OutputPath>bin\Qualidade\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|AnyCPU'">
+    <OutputPath>bin\Homologacao\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.StrongName, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e3e8412083d25dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.StrongName.2.0.30\lib\net461\Dapper.StrongName.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.4.1.0\lib\net461\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.EF6, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.EF6.4.1.0\lib\net461\MiniProfiler.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Providers.SqlServer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Providers.SqlServer.4.1.0\lib\net461\MiniProfiler.Providers.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Shared, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Shared.4.1.0\lib\net461\MiniProfiler.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Calendarios.Common">
+      <HintPath>..\..\Referencias\Calendarios\4.2\SMC.Calendarios.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.DadosMestres.Common, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\DadosMestres\4.2\SMC.DadosMestres.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.Common">
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Formularios.Common">
+      <HintPath>..\..\Referencias\Formularios\4.2\SMC.Formularios.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Core, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Core.4.2.251008.1\lib\net471\SMC.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.DataAnnotations, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.DataAnnotations.4.2.251008.1\lib\net471\SMC.Framework.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Domain, Version=4.2.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Domain.4.2.251008.1\lib\net471\SMC.Framework.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Entity, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Entity.4.2.251008.1\lib\net471\SMC.Framework.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Model, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Model.4.2.251008.1\lib\net471\SMC.Framework.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Repository, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Repository.4.2.251008.1\lib\net471\SMC.Framework.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Service.Host, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Service.Host.4.2.251008.1\lib\net471\SMC.Framework.Service.Host.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Specification, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Specification.4.2.251008.1\lib\net471\SMC.Framework.Specification.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Localidades.Common, Version=4.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Localidades.Common.4.2.251007.1\lib\net471\SMC.Localidades.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.13.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.8.13\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.6.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.5.5.6\lib\net47\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcademicoContext.cs" />
+    <Compile Include="AcademicoContext.Views.cs" />
+    <Compile Include="AcademicoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcademicoModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Ioc\EntityIocMapping.cs" />
+    <Compile Include="Mappings\ALN\AlunoFormacaoMap.cs" />
+    <Compile Include="Mappings\ALN\AlunoHistoricoCicloLetivoMap.cs" />
+    <Compile Include="Mappings\ALN\AlunoHistoricoMap.cs" />
+    <Compile Include="Mappings\ALN\AlunoHistoricoPrevisaoConclusaoMap.cs" />
+    <Compile Include="Mappings\ALN\AlunoHistoricoSituacaoMap.cs" />
+    <Compile Include="Mappings\ALN\AlunoMap.cs" />
+    <Compile Include="Mappings\ALN\FormaIngressoMap.cs" />
+    <Compile Include="Mappings\ALN\IngressanteFormacaoEspecificaMap.cs" />
+    <Compile Include="Mappings\ALN\IngressanteHistoricoSituacaoMap.cs" />
+    <Compile Include="Mappings\ALN\IngressanteMap.cs" />
+    <Compile Include="Mappings\ALN\IngressanteOfertaMap.cs" />
+    <Compile Include="Mappings\ALN\InstituicaoNivelFormaIngressoMap.cs" />
+    <Compile Include="Mappings\ALN\InstituicaoNivelSituacaoMatriculaMap.cs" />
+    <Compile Include="Mappings\ALN\InstituicaoNivelTipoOrientacaoMap.cs" />
+    <Compile Include="Mappings\ALN\InstituicaoNivelTipoOrientacaoParticipacaoMap.cs" />
+    <Compile Include="Mappings\ALN\InstituicaoNivelTipoTermoIntercambioMap.cs" />
+    <Compile Include="Mappings\ALN\InstituicaoNivelTipoVinculoAlunoMap.cs" />
+    <Compile Include="Mappings\ALN\ParceriaIntercambioArquivoMap.cs" />
+    <Compile Include="Mappings\ALN\ParceriaIntercambioInstituicaoExternaMap.cs" />
+    <Compile Include="Mappings\ALN\ParceriaIntercambioMap.cs" />
+    <Compile Include="Mappings\ALN\ParceriaIntercambioTipoTermoMap.cs" />
+    <Compile Include="Mappings\ALN\ParceriaIntercambioVigenciaMap.cs" />
+    <Compile Include="Mappings\ALN\PeriodoIntercambioMap.cs" />
+    <Compile Include="Mappings\ALN\PessoaAtuacaoTermoIntercambioArquivoMap.cs" />
+    <Compile Include="Mappings\ALN\PessoaAtuacaoTermoIntercambioMap.cs" />
+    <Compile Include="Mappings\ALN\PlanoEstudoItemMap.cs" />
+    <Compile Include="Mappings\ALN\PlanoEstudoMap.cs" />
+    <Compile Include="Mappings\ALN\TermoIntercambioArquivoMap.cs" />
+    <Compile Include="Mappings\ALN\TermoIntercambioMap.cs" />
+    <Compile Include="Mappings\ALN\TermoIntercambioPessoaMap.cs" />
+    <Compile Include="Mappings\ALN\TermoIntercambioTipoMobilidadeMap.cs" />
+    <Compile Include="Mappings\ALN\TermoIntercambioVigenciaMap.cs" />
+    <Compile Include="Mappings\ALN\TipoTermoIntercambioMap.cs" />
+    <Compile Include="Mappings\ALN\TipoVinculoAlunoMap.cs" />
+    <Compile Include="Mappings\ALN\ViewAlunoMap.cs" />
+    <Compile Include="Mappings\APR\AplicacaoAvaliacaoMap.cs" />
+    <Compile Include="Mappings\APR\ApuracaoAvaliacaoMap.cs" />
+    <Compile Include="Mappings\APR\ApuracaoFrequenciaGradeMap.cs" />
+    <Compile Include="Mappings\APR\ApuracaoFrequenciaMap.cs" />
+    <Compile Include="Mappings\APR\AulaMap.cs" />
+    <Compile Include="Mappings\APR\AvaliacaoMap.cs" />
+    <Compile Include="Mappings\APR\CriterioAprovacaoCursoMap.cs" />
+    <Compile Include="Mappings\APR\CriterioAprovacaoMap.cs" />
+    <Compile Include="Mappings\APR\EntregaOnlineHistoricoSituacaoMap.cs" />
+    <Compile Include="Mappings\APR\EntregaOnlineMap.cs" />
+    <Compile Include="Mappings\APR\EntregaOnlineParticipanteMap.cs" />
+    <Compile Include="Mappings\APR\EscalaApuracaoCursoMap.cs" />
+    <Compile Include="Mappings\APR\EscalaApuracaoItemMap.cs" />
+    <Compile Include="Mappings\APR\EscalaApuracaoMap.cs" />
+    <Compile Include="Mappings\APR\HistoricoEscolarColaboradorMap.cs" />
+    <Compile Include="Mappings\APR\HistoricoEscolarMap.cs" />
+    <Compile Include="Mappings\APR\InstituicaoNivelCriterioAprovacaoMap.cs" />
+    <Compile Include="Mappings\APR\InstituicaoNivelEscalaApuracaoMap.cs" />
+    <Compile Include="Mappings\APR\InstituicaoNivelTipoMembroBancaMap.cs" />
+    <Compile Include="Mappings\APR\InstituicaoNivelTipoOrigemAvaliacaoMap.cs" />
+    <Compile Include="Mappings\APR\MaterialMap.cs" />
+    <Compile Include="Mappings\APR\MaterialVisualizacaoMap.cs" />
+    <Compile Include="Mappings\APR\MembroBancaExaminadoraMap.cs" />
+    <Compile Include="Mappings\APR\OrigemAvaliacaoMap.cs" />
+    <Compile Include="Mappings\APR\OrigemMaterialMap.cs" />
+    <Compile Include="Mappings\ArquivoAnexadoMap.cs" />
+    <Compile Include="Mappings\CAM\CampanhaCicloLetivoMap.cs" />
+    <Compile Include="Mappings\CAM\CampanhaMap.cs" />
+    <Compile Include="Mappings\CAM\CampanhaOfertaItemMap.cs" />
+    <Compile Include="Mappings\CAM\CampanhaOfertaMap.cs" />
+    <Compile Include="Mappings\CAM\ChamadaMap.cs" />
+    <Compile Include="Mappings\CAM\CicloLetivoMap.cs" />
+    <Compile Include="Mappings\CAM\CicloLetivoTipoEventoMap.cs" />
+    <Compile Include="Mappings\CAM\CicloLetivoTipoEventoParametroMap.cs" />
+    <Compile Include="Mappings\CAM\ConfiguracaoEventoLetivoItemMap.cs" />
+    <Compile Include="Mappings\CAM\ConfiguracaoEventoLetivoMap.cs" />
+    <Compile Include="Mappings\CAM\ConvocacaoMap.cs" />
+    <Compile Include="Mappings\CAM\ConvocacaoOfertaMap.cs" />
+    <Compile Include="Mappings\CAM\ConvocadoMap.cs" />
+    <Compile Include="Mappings\CAM\ConvocadoOfertaMap.cs" />
+    <Compile Include="Mappings\CAM\EventoLetivoAgdMap.cs" />
+    <Compile Include="Mappings\CAM\EventoLetivoMap.cs" />
+    <Compile Include="Mappings\CAM\EventoLetivoParametroEntidadeMap.cs" />
+    <Compile Include="Mappings\CAM\EventoLetivoTipoAlunoMap.cs" />
+    <Compile Include="Mappings\CAM\InstituicaoNivelRegimeLetivoMap.cs" />
+    <Compile Include="Mappings\CAM\InstituicaoNivelTipoProcessoSeletivoMap.cs" />
+    <Compile Include="Mappings\CAM\InstituicaoTipoEventoMap.cs" />
+    <Compile Include="Mappings\CAM\InstituicaoTipoEventoParametroMap.cs" />
+    <Compile Include="Mappings\CAM\ProcessoSeletivoMap.cs" />
+    <Compile Include="Mappings\CAM\ProcessoSeletivoNivelEnsinoMap.cs" />
+    <Compile Include="Mappings\CAM\ProcessoSeletivoOfertaMap.cs" />
+    <Compile Include="Mappings\CAM\ProcessoSeletivoProcessoMatriculaMap.cs" />
+    <Compile Include="Mappings\CAM\RegimeLetivoMap.cs" />
+    <Compile Include="Mappings\CAM\TipoOfertaMap.cs" />
+    <Compile Include="Mappings\CAM\TipoOfertaUnidadeResponsavelMap.cs" />
+    <Compile Include="Mappings\CAM\TipoProcessoSeletivoGpiMap.cs" />
+    <Compile Include="Mappings\CAM\TipoProcessoSeletivoMap.cs" />
+    <Compile Include="Mappings\CAM\TipoProcessoSeletivoTipoOfertaMap.cs" />
+    <Compile Include="Mappings\CNC\ApuracaoFormacaoMap.cs" />
+    <Compile Include="Mappings\CNC\ClassificacaoInvalidadeDocumentoMap.cs" />
+    <Compile Include="Mappings\CNC\DeclaracaoGenericaMap.cs" />
+    <Compile Include="Mappings\CNC\DocumentoAcademicoHistoricoSituacaoMap.cs" />
+    <Compile Include="Mappings\CNC\DocumentoAcademicoMap.cs" />
+    <Compile Include="Mappings\CNC\DocumentoConclusaoApostilamentoMap.cs" />
+    <Compile Include="Mappings\CNC\DocumentoConclusaoFormacaoMap.cs" />
+    <Compile Include="Mappings\CNC\DocumentoConclusaoMap.cs" />
+    <Compile Include="Mappings\CNC\DocumentoConclusaoMensagemMap.cs" />
+    <Compile Include="Mappings\CNC\GrupoRegistroMap.cs" />
+    <Compile Include="Mappings\CNC\InstituicaoNivelTipoDocumentoFormacaoEspecificaMap.cs" />
+    <Compile Include="Mappings\CNC\InstituicaoNivelTipoDocumentoAcademicoMap.cs" />
+    <Compile Include="Mappings\CNC\InstituicaoNivelTipoDocumentoModeloRelatorioMap.cs" />
+    <Compile Include="Mappings\CNC\OrgaoRegistroMap.cs" />
+    <Compile Include="Mappings\CNC\SituacaoDocumentoAcademicoGrupoDoctoMap.cs" />
+    <Compile Include="Mappings\CNC\SituacaoDocumentoAcademicoMap.cs" />
+    <Compile Include="Mappings\CNC\SolicitacaoDocumentoConclusaoEntregaDigitalMap.cs" />
+    <Compile Include="Mappings\CNC\SolicitacaoDocumentoConclusaoMap.cs" />
+    <Compile Include="Mappings\CNC\TipoApostilamentoMap.cs" />
+    <Compile Include="Mappings\CNC\TipoDocumentoAcademicoMap.cs" />
+    <Compile Include="Mappings\CNC\TipoDocumentoAcademicoServicoMap.cs" />
+    <Compile Include="Mappings\CNC\TipoDocumentoAcademicoTagMap.cs" />
+    <Compile Include="Mappings\CNC\TitulacaoDocumentoComprobatorioMap.cs" />
+    <Compile Include="Mappings\CNC\TitulacaoMap.cs" />
+    <Compile Include="Mappings\CSO\ClassificacaoMap.cs" />
+    <Compile Include="Mappings\CSO\CursoFormacaoEspecificaMap.cs" />
+    <Compile Include="Mappings\CSO\CursoFormacaoEspecificaTitulacaoMap.cs" />
+    <Compile Include="Mappings\CSO\CursoMap.cs" />
+    <Compile Include="Mappings\CSO\CursoOfertaLocalidadeFormacaoMap.cs" />
+    <Compile Include="Mappings\CSO\CursoOfertaLocalidadeMap.cs" />
+    <Compile Include="Mappings\CSO\CursoOfertaLocalidadeTurnoMap.cs" />
+    <Compile Include="Mappings\CSO\CursoOfertaMap.cs" />
+    <Compile Include="Mappings\CSO\CursoUnidadeMap.cs" />
+    <Compile Include="Mappings\CSO\FormacaoEspecificaMap.cs" />
+    <Compile Include="Mappings\CSO\GrauAcademicoMap.cs" />
+    <Compile Include="Mappings\CSO\HierarquiaClassificacaoMap.cs" />
+    <Compile Include="Mappings\CSO\InstituicaoNivelHierarquiaClassificacaoMap.cs" />
+    <Compile Include="Mappings\CSO\InstituicaoNivelModalidadeLocalidadeMap.cs" />
+    <Compile Include="Mappings\CSO\InstituicaoNivelModalidadeMap.cs" />
+    <Compile Include="Mappings\CSO\InstituicaoNivelTipoCursoMap.cs" />
+    <Compile Include="Mappings\CSO\InstituicaoNivelTipoFormacaoEspecificaMap.cs" />
+    <Compile Include="Mappings\CSO\InstituicaoNivelTipoOfertaCursoMap.cs" />
+    <Compile Include="Mappings\CSO\InstituicaoNivelTurnoMap.cs" />
+    <Compile Include="Mappings\CSO\InstituicaoTipoEntidadeFormacaoEspecificaMap.cs" />
+    <Compile Include="Mappings\CSO\InstituicaoTipoEntidadeHierarquiaClassificacaoMap.cs" />
+    <Compile Include="Mappings\CSO\ModalidadeMap.cs" />
+    <Compile Include="Mappings\CSO\ProgramaHistoricoNotaMap.cs" />
+    <Compile Include="Mappings\CSO\ProgramaMap.cs" />
+    <Compile Include="Mappings\CSO\ProgramaPropostaMap.cs" />
+    <Compile Include="Mappings\CSO\ProgramaTipoAutorizacaoBdpMap.cs" />
+    <Compile Include="Mappings\CSO\TipoClassificacaoMap.cs" />
+    <Compile Include="Mappings\CSO\TipoFormacaoEspecificaMap.cs" />
+    <Compile Include="Mappings\CSO\TipoFormacaoEspecificaTipoCursoMap.cs" />
+    <Compile Include="Mappings\CSO\TipoHierarquiaClassificacaoMap.cs" />
+    <Compile Include="Mappings\CSO\TipoOfertaCursoMap.cs" />
+    <Compile Include="Mappings\CSO\TurnoMap.cs" />
+    <Compile Include="Mappings\CUR\ClassificacaoPeriodicoMap.cs" />
+    <Compile Include="Mappings\CUR\ComponenteCurricularEmentaMap.cs" />
+    <Compile Include="Mappings\CUR\ComponenteCurricularEntidadeMap.cs" />
+    <Compile Include="Mappings\CUR\ComponenteCurricularMap.cs" />
+    <Compile Include="Mappings\CUR\ComponenteCurricularNivelEnsinoMap.cs" />
+    <Compile Include="Mappings\CUR\ComponenteCurricularOrganizacaoMap.cs" />
+    <Compile Include="Mappings\CUR\ComponenteCurricularOrgaoReguladorMap.cs" />
+    <Compile Include="Mappings\CUR\ComponenteLegadoMap.cs" />
+    <Compile Include="Mappings\CUR\CondicaoObrigatoriedadeMap.cs" />
+    <Compile Include="Mappings\CUR\ConfiguracaoComponenteMap.cs" />
+    <Compile Include="Mappings\CUR\CurriculoCursoOfertaGrupoMap.cs" />
+    <Compile Include="Mappings\CUR\CurriculoCursoOfertaMap.cs" />
+    <Compile Include="Mappings\CUR\CurriculoMap.cs" />
+    <Compile Include="Mappings\CUR\DispensaGrupoComponenteMap.cs" />
+    <Compile Include="Mappings\CUR\DispensaGrupoMap.cs" />
+    <Compile Include="Mappings\CUR\DispensaHistoricoVigenciaMap.cs" />
+    <Compile Include="Mappings\CUR\DispensaMap.cs" />
+    <Compile Include="Mappings\CUR\DispensaMatrizExcecaoMap.cs" />
+    <Compile Include="Mappings\CUR\DivisaoComponenteMap.cs" />
+    <Compile Include="Mappings\CUR\DivisaoCurricularItemMap.cs" />
+    <Compile Include="Mappings\CUR\DivisaoCurricularMap.cs" />
+    <Compile Include="Mappings\CUR\DivisaoMatrizCurricularComponenteMap.cs" />
+    <Compile Include="Mappings\CUR\DivisaoMatrizCurricularGrupoMap.cs" />
+    <Compile Include="Mappings\CUR\DivisaoMatrizCurricularMap.cs" />
+    <Compile Include="Mappings\CUR\DocumentoAcademicoCurriculoMap.cs" />
+    <Compile Include="Mappings\CUR\GrupoConfiguracaoComponenteItemMap.cs" />
+    <Compile Include="Mappings\CUR\GrupoConfiguracaoComponenteMap.cs" />
+    <Compile Include="Mappings\CUR\GrupoCurricularComponenteMap.cs" />
+    <Compile Include="Mappings\CUR\GrupoCurricularMap.cs" />
+    <Compile Include="Mappings\CUR\HistoricoSituacaoMatrizCurricularOfertaMap.cs" />
+    <Compile Include="Mappings\CUR\InstituicaoNivelCondicaoObrigatoriedadeMap.cs" />
+    <Compile Include="Mappings\CUR\InstituicaoNivelTipoComponenteCurricularMap.cs" />
+    <Compile Include="Mappings\CUR\InstituicaoNivelTipoDivisaoComponenteMap.cs" />
+    <Compile Include="Mappings\CUR\InstituicaoNivelTipoDivisaoCurricularMap.cs" />
+    <Compile Include="Mappings\CUR\InstituicaoNivelTipoGrupoCurricularMap.cs" />
+    <Compile Include="Mappings\CUR\MatrizCurricularDivisaoComponenteMap.cs" />
+    <Compile Include="Mappings\CUR\MatrizCurricularMap.cs" />
+    <Compile Include="Mappings\CUR\MatrizCurricularOfertaExcecaoLocalidadeMap.cs" />
+    <Compile Include="Mappings\CUR\MatrizCurricularOfertaMap.cs" />
+    <Compile Include="Mappings\CUR\MatrizCurricularRequisitoMap.cs" />
+    <Compile Include="Mappings\CUR\PeriodicoMap.cs" />
+    <Compile Include="Mappings\CUR\QualisPeriodicoMap.cs" />
+    <Compile Include="Mappings\CUR\RequisitoItemMap.cs" />
+    <Compile Include="Mappings\CUR\RequisitoMap.cs" />
+    <Compile Include="Mappings\CUR\TipoComponenteCurricularMap.cs" />
+    <Compile Include="Mappings\CUR\TipoConfiguracaoGrupoCurricularMap.cs" />
+    <Compile Include="Mappings\CUR\TipoDivisaoComponenteMap.cs" />
+    <Compile Include="Mappings\CUR\TipoDivisaoCurricularMap.cs" />
+    <Compile Include="Mappings\CUR\TipoGrupoCurricularMap.cs" />
+    <Compile Include="Mappings\DadoFormularioCampoMap.cs" />
+    <Compile Include="Mappings\DadoFormularioMap.cs" />
+    <Compile Include="Mappings\DCT\CategoriaInstituicaoEnsinoMap.cs" />
+    <Compile Include="Mappings\DCT\ColaboradorAptoComponenteMap.cs" />
+    <Compile Include="Mappings\DCT\ColaboradorInstituicaoExternaMap.cs" />
+    <Compile Include="Mappings\DCT\ColaboradorMap.cs" />
+    <Compile Include="Mappings\DCT\ColaboradorResponsavelVinculoMap.cs" />
+    <Compile Include="Mappings\DCT\ColaboradorVinculoAtividadeMap.cs" />
+    <Compile Include="Mappings\DCT\ColaboradorVinculoCursoMap.cs" />
+    <Compile Include="Mappings\DCT\ColaboradorVinculoFormacaoEspecificaMap.cs" />
+    <Compile Include="Mappings\DCT\ColaboradorVinculoMap.cs" />
+    <Compile Include="Mappings\DCT\InstituicaoExternaMap.cs" />
+    <Compile Include="Mappings\DCT\InstituicaoNivelTipoAtividadeColaboradorMap.cs" />
+    <Compile Include="Mappings\DCT\InstituicaoTipoEntidadeVinculoColaboradorMap.cs" />
+    <Compile Include="Mappings\DCT\LogAtualizacaoColaboradorItemMap.cs" />
+    <Compile Include="Mappings\DCT\LogAtualizacaoColaboradorMap.cs" />
+    <Compile Include="Mappings\DCT\LogAtualizacaoColaboradorVinculoMap.cs" />
+    <Compile Include="Mappings\DCT\ProfessorMap.cs" />
+    <Compile Include="Mappings\DCT\TipoVinculoColaboradorMap.cs" />
+    <Compile Include="Mappings\EnderecoEletronicoMap.cs" />
+    <Compile Include="Mappings\EnderecoMap.cs" />
+    <Compile Include="Mappings\FIN\BeneficioControleFinanceiroMap.cs" />
+    <Compile Include="Mappings\FIN\BeneficioEnvioNotificacaoMap.cs" />
+    <Compile Include="Mappings\FIN\BeneficioHistoricoSituacaoMap.cs" />
+    <Compile Include="Mappings\FIN\BeneficioHistoricoValorAuxilioMap.cs" />
+    <Compile Include="Mappings\FIN\BeneficioHistoricoVigenciaMap.cs" />
+    <Compile Include="Mappings\FIN\BeneficioMap.cs" />
+    <Compile Include="Mappings\FIN\ConfiguracaoBeneficioMap.cs" />
+    <Compile Include="Mappings\FIN\ContratoCursoMap.cs" />
+    <Compile Include="Mappings\FIN\ContratoMap.cs" />
+    <Compile Include="Mappings\FIN\ContratoNivelEnsinoMap.cs" />
+    <Compile Include="Mappings\FIN\InstituicaoNivelBeneficioMap.cs" />
+    <Compile Include="Mappings\FIN\MotivoAlteracaoBeneficioMap.cs" />
+    <Compile Include="Mappings\FIN\PessoaAtuacaoBeneficioAnexoMap.cs" />
+    <Compile Include="Mappings\FIN\PessoaAtuacaoBeneficioMap.cs" />
+    <Compile Include="Mappings\FIN\PessoaAtuacaoBeneficioResponsavelFinanceiroMap.cs" />
+    <Compile Include="Mappings\FIN\PessoaJuridicaMap.cs" />
+    <Compile Include="Mappings\FIN\TermoAdesaoMap.cs" />
+    <Compile Include="Mappings\FIN\TipoBeneficioMap.cs" />
+    <Compile Include="Mappings\FormularioConfiguracaoMap.cs" />
+    <Compile Include="Mappings\GRD\EventoAulaColaboradorMap.cs" />
+    <Compile Include="Mappings\GRD\EventoAulaMap.cs" />
+    <Compile Include="Mappings\GRD\GradeHorariaCompartilhadaItemMap.cs" />
+    <Compile Include="Mappings\GRD\GradeHorariaCompartilhadaMap.cs" />
+    <Compile Include="Mappings\GRD\HistoricoDivisaoTurmaConfiguracaoGradeMap.cs" />
+    <Compile Include="Mappings\MAT\SituacaoItemMatriculaMap.cs" />
+    <Compile Include="Mappings\MAT\SituacaoMatriculaMap.cs" />
+    <Compile Include="Mappings\MAT\SolicitacaoMatriculaItemHistoricoSituacaoMap.cs" />
+    <Compile Include="Mappings\MAT\SolicitacaoMatriculaItemMap.cs" />
+    <Compile Include="Mappings\MAT\SolicitacaoMatriculaMap.cs" />
+    <Compile Include="Mappings\MAT\SolicitacaoReaberturaMatriculaMap.cs" />
+    <Compile Include="Mappings\MAT\TipoSituacaoMatriculaMap.cs" />
+    <Compile Include="Mappings\ORG\AssuntoNormativoMap.cs" />
+    <Compile Include="Mappings\ORG\AtoNormativoEntidadeMap.cs" />
+    <Compile Include="Mappings\ORG\AtoNormativoMap.cs" />
+    <Compile Include="Mappings\ORG\EntidadeClassificacaoMap.cs" />
+    <Compile Include="Mappings\ORG\EntidadeConfiguracaoNotificacaoMap.cs" />
+    <Compile Include="Mappings\ORG\EntidadeHistoricoSituacaoMap.cs" />
+    <Compile Include="Mappings\ORG\EntidadeIdiomaMap.cs" />
+    <Compile Include="Mappings\ORG\EntidadeImagemMap.cs" />
+    <Compile Include="Mappings\ORG\EntidadeMap.cs" />
+    <Compile Include="Mappings\ORG\HierarquiaEntidadeItemMap.cs" />
+    <Compile Include="Mappings\ORG\HierarquiaEntidadeMap.cs" />
+    <Compile Include="Mappings\ORG\InstituicaoEnsinoMap.cs" />
+    <Compile Include="Mappings\ORG\InstituicaoLocalidadeAgendaMap.cs" />
+    <Compile Include="Mappings\ORG\InstituicaoModeloRelatorioMap.cs" />
+    <Compile Include="Mappings\ORG\InstituicaoNivelCalendarioMap.cs" />
+    <Compile Include="Mappings\ORG\InstituicaoNivelMap.cs" />
+    <Compile Include="Mappings\ORG\InstituicaoNivelModeloRelatorioMap.cs" />
+    <Compile Include="Mappings\ORG\InstituicaoNivelSistemaOrigemMap.cs" />
+    <Compile Include="Mappings\ORG\InstituicaoNivelTipoEventoMap.cs" />
+    <Compile Include="Mappings\ORG\InstituicaoTipoEntidadeEnderecoEletronicoMap.cs" />
+    <Compile Include="Mappings\ORG\InstituicaoTipoEntidadeEnderecoMap.cs" />
+    <Compile Include="Mappings\ORG\InstituicaoTipoEntidadeMap.cs" />
+    <Compile Include="Mappings\ORG\InstituicaoTipoEntidadeSituacaoMap.cs" />
+    <Compile Include="Mappings\ORG\InstituicaoTipoEntidadeTelefoneMap.cs" />
+    <Compile Include="Mappings\ORG\MantenedoraMap.cs" />
+    <Compile Include="Mappings\ORG\NivelEnsinoMap.cs" />
+    <Compile Include="Mappings\ORG\SituacaoEntidadeMap.cs" />
+    <Compile Include="Mappings\ORG\TipoAgendaMap.cs" />
+    <Compile Include="Mappings\ORG\TipoAtoNormativoMap.cs" />
+    <Compile Include="Mappings\ORG\TipoEntidadeMap.cs" />
+    <Compile Include="Mappings\ORG\TipoHierarquiaEntidadeItemMap.cs" />
+    <Compile Include="Mappings\ORG\TipoHierarquiaEntidadeMap.cs" />
+    <Compile Include="Mappings\ORT\ConfiguracaoNumeracaoTrabalhoMap.cs" />
+    <Compile Include="Mappings\ORT\ConfiguracaoNumeracaoTrabalhoOfertaMap.cs" />
+    <Compile Include="Mappings\ORT\InstituicaoNivelTipoTrabalhoMap.cs" />
+    <Compile Include="Mappings\ORT\OrientacaoColaboradorMap.cs" />
+    <Compile Include="Mappings\ORT\OrientacaoMap.cs" />
+    <Compile Include="Mappings\ORT\OrientacaoPessoaAtuacaoMap.cs" />
+    <Compile Include="Mappings\ORT\PublicacaoBdpArquivoMap.cs" />
+    <Compile Include="Mappings\ORT\PublicacaoBdpAutorizacaoMap.cs" />
+    <Compile Include="Mappings\ORT\PublicacaoBdpHistoricoSituacaoMap.cs" />
+    <Compile Include="Mappings\ORT\PublicacaoBdpIdiomaMap.cs" />
+    <Compile Include="Mappings\ORT\PublicacaoBdpMap.cs" />
+    <Compile Include="Mappings\ORT\PublicacaoBdpPalavraChaveMap.cs" />
+    <Compile Include="Mappings\ORT\TipoOrientacaoMap.cs" />
+    <Compile Include="Mappings\ORT\TipoTrabalhoMap.cs" />
+    <Compile Include="Mappings\ORT\TrabalhoAcademicoAutoriaMap.cs" />
+    <Compile Include="Mappings\ORT\TrabalhoAcademicoDivisaoComponenteMap.cs" />
+    <Compile Include="Mappings\ORT\TrabalhoAcademicoMap.cs" />
+    <Compile Include="Mappings\PES\ConfiguracaoAvaliacaoPpaMap.cs" />
+    <Compile Include="Mappings\PES\ConfiguracaoAvaliacaoPpaTurmaMap.cs" />
+    <Compile Include="Mappings\PES\DocumentoApresentadoFormacaoMap.cs" />
+    <Compile Include="Mappings\PES\EnvioNotificacaoDestinatarioMap.cs" />
+    <Compile Include="Mappings\PES\EnvioNotificacaoMap.cs" />
+    <Compile Include="Mappings\PES\FormacaoAcademicaMap.cs" />
+    <Compile Include="Mappings\PES\FuncionarioMap.cs" />
+    <Compile Include="Mappings\PES\FuncionarioVinculoMap.cs" />
+    <Compile Include="Mappings\PES\InstituicaoMotivoBloqueioMap.cs" />
+    <Compile Include="Mappings\PES\InstituicaoNivelTipoMensagemMap.cs" />
+    <Compile Include="Mappings\PES\InstituicaoTipoAtuacaoMap.cs" />
+    <Compile Include="Mappings\PES\InstituicaoTipoEntidadeTipoFuncionarioMap.cs" />
+    <Compile Include="Mappings\PES\InstituicaoTipoFuncionarioMap.cs" />
+    <Compile Include="Mappings\PES\MensagemMap.cs" />
+    <Compile Include="Mappings\PES\MensagemPessoaAtuacaoMap.cs" />
+    <Compile Include="Mappings\PES\MotivoBloqueioMap.cs" />
+    <Compile Include="Mappings\PES\PessoaAtuacaoAmostraPpaMap.cs" />
+    <Compile Include="Mappings\PES\PessoaAtuacaoBloqueioComprovanteMap.cs" />
+    <Compile Include="Mappings\PES\PessoaAtuacaoBloqueioItemMap.cs" />
+    <Compile Include="Mappings\PES\PessoaAtuacaoBloqueioMap.cs" />
+    <Compile Include="Mappings\PES\PessoaAtuacaoCondicaoObrigatoriedadeMap.cs" />
+    <Compile Include="Mappings\PES\PessoaAtuacaoDocumentoMap.cs" />
+    <Compile Include="Mappings\PES\PessoaAtuacaoEnderecoMap.cs" />
+    <Compile Include="Mappings\PES\PessoaAtuacaoFormularioMap.cs" />
+    <Compile Include="Mappings\PES\PessoaAtuacaoMap.cs" />
+    <Compile Include="Mappings\PES\PessoaDadosPessoaisMap.cs" />
+    <Compile Include="Mappings\PES\PessoaEnderecoEletronicoMap.cs" />
+    <Compile Include="Mappings\PES\PessoaEnderecoMap.cs" />
+    <Compile Include="Mappings\PES\PessoaFiliacaoMap.cs" />
+    <Compile Include="Mappings\PES\PessoaMap.cs" />
+    <Compile Include="Mappings\PES\PessoaTelefoneMap.cs" />
+    <Compile Include="Mappings\PES\ReferenciaFamiliarMap.cs" />
+    <Compile Include="Mappings\PES\TagMap.cs" />
+    <Compile Include="Mappings\PES\TipoBloqueioMap.cs" />
+    <Compile Include="Mappings\PES\TipoFuncionarioMap.cs" />
+    <Compile Include="Mappings\PES\TipoMensagemMap.cs" />
+    <Compile Include="Mappings\PES\TipoMensagemTagMap.cs" />
+    <Compile Include="Mappings\PES\TipoMensagemTipoAtuacaoMap.cs" />
+    <Compile Include="Mappings\PES\TipoMensagemTipoUsoMap.cs" />
+    <Compile Include="Mappings\PES\ViewDadosOrigemPessoaAtuacaoMap.cs" />
+    <Compile Include="Mappings\SRC\ArquivoSecaoPaginaMap.cs" />
+    <Compile Include="Mappings\SRC\ConfiguracaoEtapaBloqueioMap.cs" />
+    <Compile Include="Mappings\SRC\ConfiguracaoEtapaMap.cs" />
+    <Compile Include="Mappings\SRC\ConfiguracaoEtapaPaginaMap.cs" />
+    <Compile Include="Mappings\SRC\ConfiguracaoProcessoCursoMap.cs" />
+    <Compile Include="Mappings\SRC\ConfiguracaoProcessoMap.cs" />
+    <Compile Include="Mappings\SRC\ConfiguracaoProcessoNivelEnsinoMap.cs" />
+    <Compile Include="Mappings\SRC\ConfiguracaoProcessoTipoVinculoAlunoMap.cs" />
+    <Compile Include="Mappings\SRC\DocumentoRequeridoMap.cs" />
+    <Compile Include="Mappings\SRC\EscalonamentoMap.cs" />
+    <Compile Include="Mappings\SRC\GrupoDocumentoRequeridoItemMap.cs" />
+    <Compile Include="Mappings\SRC\GrupoDocumentoRequeridoMap.cs" />
+    <Compile Include="Mappings\SRC\GrupoEscalonamentoItemMap.cs" />
+    <Compile Include="Mappings\SRC\GrupoEscalonamentoItemParcelaMap.cs" />
+    <Compile Include="Mappings\SRC\GrupoEscalonamentoMap.cs" />
+    <Compile Include="Mappings\SRC\InstituicaoNivelServicoMap.cs" />
+    <Compile Include="Mappings\SRC\JustificativaSolicitacaoServicoMap.cs" />
+    <Compile Include="Mappings\SRC\ParametroEnvioNotificacaoMap.cs" />
+    <Compile Include="Mappings\SRC\ProcessoEtapaConfiguracaoNotificacaoMap.cs" />
+    <Compile Include="Mappings\SRC\ProcessoEtapaFiltroDadoMap.cs" />
+    <Compile Include="Mappings\SRC\ProcessoEtapaMap.cs" />
+    <Compile Include="Mappings\SRC\ProcessoMap.cs" />
+    <Compile Include="Mappings\SRC\ProcessoUnidadeResponsavelMap.cs" />
+    <Compile Include="Mappings\SRC\RestricaoSolicitacaoSimultaneaMap.cs" />
+    <Compile Include="Mappings\SRC\ServicoMap.cs" />
+    <Compile Include="Mappings\SRC\ServicoMotivoBloqueioParcelaMap.cs" />
+    <Compile Include="Mappings\SRC\ServicoParametroEmissaoTaxaMap.cs" />
+    <Compile Include="Mappings\SRC\ServicoSituacaoAlunoMap.cs" />
+    <Compile Include="Mappings\SRC\ServicoSituacaoIngressanteMap.cs" />
+    <Compile Include="Mappings\SRC\ServicoTaxaMap.cs" />
+    <Compile Include="Mappings\SRC\ServicoTipoDocumentoMap.cs" />
+    <Compile Include="Mappings\SRC\ServicoTipoNotificacaoMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoArtigoMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoAtividadeComplementarMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoDadoFormularioCampoMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoDadoFormularioMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoDispensaDestinoMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoDispensaGrupoDestinoMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoDispensaGrupoMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoDispensaGrupoOrigemExternaMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoDispensaGrupoOrigemInternaMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoDispensaMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoDispensaOrigemExternaMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoDispensaOrigemInternaMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoDocumentoRequeridoMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoHistoricoNavegacaoMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoHistoricoSituacaoMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoHistoricoUsuarioResponsavelMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoIntercambioMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoIntercambioParticipanteMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoServicoBoletoMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoServicoBoletoTaxaMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoServicoBoletoTituloMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoServicoEnvioNotificacaoMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoServicoEtapaMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoServicoMap.cs" />
+    <Compile Include="Mappings\SRC\SolicitacaoTrabalhoAcademicoMap.cs" />
+    <Compile Include="Mappings\SRC\TextoSecaoPaginaMap.cs" />
+    <Compile Include="Mappings\SRC\TipoNotificacaoAtributoAgendamentoMap.cs" />
+    <Compile Include="Mappings\SRC\TipoNotificacaoMap.cs" />
+    <Compile Include="Mappings\SRC\TipoServicoMap.cs" />
+    <Compile Include="Mappings\SRC\ViewCentralSolicitacaoServicoMap.cs" />
+    <Compile Include="Mappings\TelefoneMap.cs" />
+    <Compile Include="Mappings\TUR\DivisaoTurmaColaboradorMap.cs" />
+    <Compile Include="Mappings\TUR\DivisaoTurmaMap.cs" />
+    <Compile Include="Mappings\TUR\InstituicaoNivelTipoTurmaMap.cs" />
+    <Compile Include="Mappings\TUR\RestricaoTurmaMatrizMap.cs" />
+    <Compile Include="Mappings\TUR\TipoTurmaMap.cs" />
+    <Compile Include="Mappings\TUR\TurmaColaboradorMap.cs" />
+    <Compile Include="Mappings\TUR\TurmaConfiguracaoComponenteMap.cs" />
+    <Compile Include="Mappings\TUR\TurmaHistoricoFechamentoDiarioMap.cs" />
+    <Compile Include="Mappings\TUR\TurmaHistoricoSituacaoMap.cs" />
+    <Compile Include="Mappings\TUR\TurmaMap.cs" />
+    <Compile Include="Partials\AcademicoContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AcademicoModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AcademicoModel.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AcademicoModel.edmx.diagram">
+      <DependentUpon>AcademicoModel.edmx</DependentUpon>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMC.Academico.Common\SMC.Academico.Common.csproj">
+      <Project>{cc1064e4-9968-420b-a793-876145a3ab66}</Project>
+      <Name>SMC.Academico.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Academico.Domain\SMC.Academico.Domain.csproj">
+      <Project>{909cb7a4-a839-4d7a-bd63-643b61ff5c8e}</Project>
+      <Name>SMC.Academico.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*$(TargetName).dll" "$(SolutionDir)..\Referencias\Academico\4.2"  /R /Y /I /D</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

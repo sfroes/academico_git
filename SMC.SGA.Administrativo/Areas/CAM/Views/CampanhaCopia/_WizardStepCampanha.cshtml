@@ -1,0 +1,16 @@
+﻿@model CampanhaCopiaViewModel
+
+@using (Smc.Fieldset("fieldsetCampanhaOrigem").Begin())
+{
+    @Smc.DisplayFor(prop => prop.SeqCampanhaOrigem)
+    @Smc.DisplayFor(prop => prop.DescricaoCampanhaOrigem)
+    @Smc.DisplayFor(prop => prop.CiclosLetivosCampanhaOrigem)
+}
+
+@using (Smc.Fieldset("fieldsetCampanhaDestino").Begin())
+{
+    @Smc.EditorFor(prop => prop.DescricaoCampanhaDestino)
+    @Smc.EditorFor(prop => prop.CiclosLetivosCampanhaDestino)
+}
+
+@Smc.WizardView()

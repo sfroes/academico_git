@@ -1,0 +1,35 @@
+﻿@model SolicitacaoServicoFiltroViewModel
+
+@using (Smc.Form("frmFiltro", "Listar").Ajax("#divDados").Begin())
+{
+    using (Smc.Fieldset("fsFiltro").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(x => x.NumeroProtocolo)
+        @Smc.EditorFor(x => x.SeqTipoServico)
+        @Smc.EditorFor(x => x.SeqServico)
+        @Smc.EditorFor(x => x.CategoriaSituacao)
+        @Smc.EditorFor(x => x.DataSolicitacao)
+
+        @(Smc.ButtonSet()
+                         .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).Highlight().DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+                         .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+                         .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "NovaSolicitacao").SecurityToken(UC_ALN_005_02_02.MANTER_SOLICITACAO_ALUNO).Attribute(SMCMvcConsts.MODAL_ID, "modalNovaSolicitacao").Text(Smc.GetUIResource("Botao_NovaSolicitacao")).Tooltip(Smc.GetUIResource("Botao_NovaSolicitacao")).CssClass("smc-btn-novo-icotext").Ajax()))
+    }
+}
+
+@using (Smc.Div("divDados").Begin())
+{
+    @Html.Action("Listar", Model)
+}
+
+@Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar).Action("Index", "Home", new { @area = "" }, forceForBackBehavior: true).DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+
+@using (Smc.ModalWindow("modalNovaSolicitacao")
+                .Form("frmNovaSolicitacao", "Index", "ProcessoSolicitacao", new { @area = "SRC" }, config: x => x.Ajax())
+                .Title(Smc.GetUIResource("Modal_NovaSolicitacao_Titulo"))
+                .Button("Proximo", config: x => x.CssClass("smc-btn-proximo-icotext-destaque").Type(SMCButtonType.Submit))
+                .Button(SMCButtonBehavior.Fechar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+                .Begin())
+{
+
+}

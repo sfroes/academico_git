@@ -1,0 +1,18 @@
+﻿@model ColaboradorDynamicModel
+
+@Smc.EditorFor(p => p.EntidadeVinculoGrupoPrograma)
+@Smc.EditorFor(p => p.SeqEntidadeVinculo)
+@Smc.EditorFor(p => p.SeqTipoFormacaoEspecifica)
+@Smc.EditorFor(p => p.SeqsEntidadesResponsaveis)
+@Smc.EditorFor(p => p.SeqTipoVinculoColaborador)
+@Smc.EditorFor(p => p.DataInicioVinculo)
+@Smc.EditorFor(p => p.DataFimVinculo)
+@Smc.EditorFor(p => p.ExibirColaboradorResponsavel)
+@using (Smc.Fieldset("Pesquisa").LegendText(Smc.GetUIResource("PESQUISA_Fieldset_Legenda")).Begin())
+{
+    @Smc.EditorFor(p => p.TituloPesquisa)
+    @Smc.EditorFor(p => p.Observacao)
+    @Smc.EditorFor(p => p.ColaboradoresResponsaveis)
+}
+@*@Smc.EditorFor(p => p.Cursos)*@
+@Smc.EditorFor(p => p.FormacoesEspecificas)

@@ -1,0 +1,11 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.APR.Models
+@using SMC.Framework.UI.Mvc
+@using SMC.Academico.Common.Areas.APR.Constants
+@using SMC.Academico.UI.Mvc.Areas.APR.Views.Aula.App_LocalResources
+@model List<ApuracaoFrequenciaViewModel>
+
+
+@*@{
+    var detailView = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.AULA_PATH + "_DetailApuracaoFrequencia");
+    @Smc.List("Apuracao", m => m).GroupByProperty(g => g.FirstOrDefault().DescricaoCursoOfertaLocalidadeTurno, @<text><h3>@item.DescricaoCursoOfertaLocalidadeTurno</h3></text>).HtmlTemplate(item => @Html.Partial(detailView, item.Value))
+}*@

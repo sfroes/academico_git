@@ -1,0 +1,39 @@
+﻿// BUTTONS
+.smc-button > [disabled="disabled"], .smc-btn-custom[disabled="disabled"] {
+    opacity: 1;
+    height: 31px;
+}
+
+.smc-buttonset-horizontal-secundario {
+    .smc-btn-disabled {
+        .smc-btn-visualizar-ico + .smc-instrucoes-preenchimento-container,
+        .smc-btn-cancelar-ico + .smc-instrucoes-preenchimento-container,
+        .smc-btn-excluir-ico + .smc-instrucoes-preenchimento-container {
+            .smc-instrucoes-preenchimento-icone {
+                font-size: 14px;
+                margin-left: 8px;
+                margin-top: 4px;
+                line-height: 15px;
+            }
+
+            .smc-instrucoes-preenchimento-icone::before {
+                width: 15px;
+                height: 14px;
+            }
+        }
+    }
+}
+
+//.smc-fix-alinhamento-bts {
+//        .smc-btn-salvar-icotext-destaque,
+//        .smc-btn-confirmar-icotext,
+//        .smc-btn-copiar-icotext,
+//        .smc-btn-visualizar-icotext,
+//        .smc-btn-voltar-icotext {
+//            & > i {
+//                vertical-align: middle;
+//                margin: 0 8px 0 0 !important;
+//            }
+//        }
+//}
+//

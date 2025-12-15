@@ -1,0 +1,21 @@
+﻿@model SMCPagerModel<SMCDatasourceItem>
+
+@using (Smc.Div().CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Fieldset("ProcessoSeletivo").Size(SMCSize.Grid24_24)
+        .LegendText(@Smc.GetUIResource("fieldset_processo_seletivo")).Begin())
+    {
+        <div id="gridListarProcessosSeletivosWrapper" data-detail-property="model">
+            @(Smc.Grid("gridListarProcessosSeletivos", Model)
+                                                    .HideNavigator()
+                                                    .HidePager()
+                                                    .HideRowNumber()
+                                                    .HideRowsTotalizer()
+                                                    .HideGridTitle()
+                                                    .Attribute("data-detail-property", SMCLookupHelper.GetCurrentPropertyName(Smc))
+                                                    .FieldColumn(x => x.Descricao))
+        </div>
+    }
+}
+
+@Smc.WizardView()

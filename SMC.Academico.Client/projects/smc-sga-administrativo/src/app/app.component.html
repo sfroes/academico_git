@@ -1,0 +1,16 @@
+<smc-header (carregado)="componenteCarregado()"></smc-header>
+<smc-menu (carregado)="componenteCarregado()"></smc-menu>
+<div class="smc-conteudo container-fluid smc-conteudo-padding" data-type="smc-conteudo" id="divConteudoPrincipal">
+  <div class="row" data-type="smc-div" id="divConteudoPrincipalEstrutura">
+    <section class="content">
+      <h1></h1>
+      <router-outlet></router-outlet>
+      <router-outlet name="modais"></router-outlet>
+    </section>
+  </div>
+</div>
+
+<smc-footer (carregado)="componenteCarregado()"></smc-footer>
+<div>
+  <po-loading-overlay *ngIf="carregando" p-screen-lock="true" p-text="Aguarde"></po-loading-overlay>
+</div>

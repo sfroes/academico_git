@@ -1,0 +1,46 @@
+﻿@model OfertaCursoCicloLetivoAssociacaoLocalidadeFiltroViewModel
+
+@section Scripts {
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.Window,
+                                     RegisterHelperControls.TreeView)
+}
+
+@using (Smc.Header("AssociacaoLocalidade", SMCHeaderType.Primary)
+    .Item(prop => prop.DadosOfertaCursoCicloLetivo.OfertaCurso, SMCSize.Grid5_24)
+    .Item(prop => prop.DadosOfertaCursoCicloLetivo.CicloLetivo, SMCSize.Grid5_24)
+    .Item(prop => prop.DadosOfertaCursoCicloLetivo.FormaIngresso, SMCSize.Grid5_24)
+    .Begin())
+{
+    using (Smc.ButtonSet().Begin())
+    {
+        @Html.Partial("_BotaoConfigurarOfertaCursoCicloLetivo", new OfertaCursoCicloLetivoBotaoConfigurarViewModel() { Action = OfertaCursoCicloLetivoActionsEnum.AssociarLocalidade, SeqOfertaCursoCicloLetivo = (SMCEncryptedLong)Model.SeqOfertaCursoCicloLetivo })
+    }
+}
+
+@using (Smc.ButtonSet().CssClass("smc-sga-buttonset-top-paginas").Begin())
+{
+        @(Smc.FieldButton(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+         .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Associar_Localidade_Modal_Title"))
+         .Attribute(SMCMvcConsts.MODAL_ID, "incluirAssociacaoLocalidade")
+         .CssClass("smc-btn-novo-icotext-destaque")
+         .Ajax(isPost: false, updateTargetId: "painelAjaxIncluirAssociacaoLocalidade")
+         .Url(Url.Action("IncluirAssociacaoLocalidade", new { seqOfertaCursoCicloLetivo = SMCDESCrypto.EncryptNumberForURL(Model.SeqOfertaCursoCicloLetivo) }))
+        )
+}
+
+    <div id="divGridAssociacaoLocalidade">
+        @Html.Action("ListarAssociacaoLocalidade", Model)
+    </div>
+
+    @using (Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-buttonset-bottom-paginas").Begin())
+{
+        @Smc.FieldButton(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Url("Index")
+}
+
+    @using (Smc.ModalWindow("incluirAssociacaoLocalidade")
+           .Size(SMCModalWindowSize.Medium)
+           .AllowEscKeyToClose()
+           .ContentId("painelAjaxIncluirAssociacaoLocalidade")
+           .Form("incluirAssociacaoLocalidade", "IncluirAssociacaoLocalidade", "OfertaCursoCicloLetivo", config: prop => prop.Ajax("#divGridAssociacaoLocalidade"))
+           .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+           .Begin()) { }

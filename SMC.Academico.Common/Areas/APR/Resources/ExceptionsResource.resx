@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERR_ArquivoInvalidoException" xml:space="preserve">
+    <value>Arquivo inválido ou não encontrado.</value>
+  </data>
+  <data name="ERR_ArquivoNaoAnexadoException" xml:space="preserve">
+    <value>Arquivo não foi anexado ao material.</value>
+  </data>
+  <data name="ERR_EscalaApuracaoSequenciaIncorretaPercentuais" xml:space="preserve">
+    <value>Os percentuais da escala de apuração devem ser informados sem que haja sobreposição dos mesmos. </value>
+  </data>
+  <data name="ERR_HistoricoEscolarComponenteCurricularAssuntoDuplicadoException" xml:space="preserve">
+    <value>O componente curricular com este assunto já está associado a este histórico escolar.</value>
+    <comment>RN_APR_037.2 Associação componente curricular no histórico escolar</comment>
+  </data>
+  <data name="ERR_HistoricoEscolarComponenteCurricularDuplicadoException" xml:space="preserve">
+    <value>O componente curricular já está associado a este histórico escolar.</value>
+    <comment>RN_APR_037.1 Associação componente curricular no histórico escolar</comment>
+  </data>
+  <data name="ERR_HistoricoEscolarComponenteCurricularGestaoNaoPermitidaException" xml:space="preserve">
+    <value>Não é possível cadastrar um componente com o tipo de gestão diferente de exame para o aluno selecionado.</value>
+  </data>
+  <data name="ERR_ListarException" xml:space="preserve">
+    <value>Sequencial de origem ou Tipo de Origem do Material e seu respetivo sequencial não foram informados.</value>
+  </data>
+  <data name="ERR_MaterialExistenteException" xml:space="preserve">
+    <value>{0} não permitida. '{1}' já existente.</value>
+  </data>
+  <data name="ERR_OrigemMaterialNaoEncontradoException" xml:space="preserve">
+    <value>Origem do material não encontrado.</value>
+  </data>
+  <data name="ERR_PastaSemArquivoException" xml:space="preserve">
+    <value>O material é uma pasta e, portanto, não possui arquivo associado.</value>
+  </data>
+  <data name="ERR_SeqOrigemMaterialException" xml:space="preserve">
+    <value>O código da origem do material é obrigatório quando o tipo da origem do material é Divisão de Turma ou Orientação.</value>
+  </data>
+  <data name="ERR_TamanhoMaximoException" xml:space="preserve">
+    <value>Tamanho máximo de arquivo é 10MB. Experimente compactar o seu arquivo.</value>
+  </data>
+  <data name="ERR_TipoArquivoException" xml:space="preserve">
+    <value>O tipo do arquivo {0} não é permitido.</value>
+  </data>
+  <data name="ERR_TipoOrigemMaterialException" xml:space="preserve">
+    <value>É obrigatório informar o Tipo da origem do material.</value>
+  </data>
+  <data name="FK_aplicacao_avaliacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Avaliação já possui aplicações.</value>
+  </data>
+  <data name="FK_aplicacao_avaliacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Origem de avaliação já possui aplicações de avaliação.</value>
+  </data>
+  <data name="FK_apuracao_avaliacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Aplicação da avaliação já possui apuração de nota/conceito.</value>
+  </data>
+  <data name="FK_apuracao_avaliacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Aluno já possui apuração de nota/conceito.</value>
+  </data>
+  <data name="FK_apuracao_avaliacao_03" xml:space="preserve">
+    <value>Exclusão não permitida. Escala de apuração já possui registros de apuração de nota/conceito.</value>
+  </data>
+  <data name="FK_avaliacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem avaliações cadastradas para esta instituição de ensino.</value>
+  </data>
+  <data name="FK_criterio_aprovacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Escala de apuração já está associada a critério de aprovação.</value>
+  </data>
+  <data name="FK_criterio_aprovacao_curso_01" xml:space="preserve">
+    <value>Exclusão não permitida. Critério de aprovação já está associado a um curso x oferta x localidade x turno.</value>
+  </data>
+  <data name="FK_criterio_aprovacao_curso_02" xml:space="preserve">
+    <value>Exclusão não permitida. Curso x oferta x localidade x turno possui critérios de aprovação associados.</value>
+  </data>
+  <data name="FK_escala_apuracao_curso_01" xml:space="preserve">
+    <value>Exclusão não permitida. Escala de apuração já está associada a um curso x oferta x localidade x turno.</value>
+  </data>
+  <data name="FK_escala_apuracao_curso_02" xml:space="preserve">
+    <value>Exclusão não permitida. Curso x oferta x localidade x turno possui escalas de apuração associadas.</value>
+  </data>
+  <data name="FK_escala_apuracao_item_01" xml:space="preserve">
+    <value>Exclusão não permitida. Escala de apuração já possui itens cadastrados.</value>
+  </data>
+  <data name="FK_historico_escolar_01" xml:space="preserve">
+    <value>Exclusão não permitida. Aluno (histórico) já possui registro de histórico escolar.</value>
+  </data>
+  <data name="FK_historico_escolar_02" xml:space="preserve">
+    <value>Exclusão não permitida. Origem de avaliação já deu origem a registros de histórico escolar.</value>
+  </data>
+  <data name="FK_historico_escolar_03" xml:space="preserve">
+    <value>Exclusão não permitida. Ciclo letivo já possui registros de histórico escolar.</value>
+  </data>
+  <data name="FK_historico_escolar_04" xml:space="preserve">
+    <value>Exclusão não permitida. Item da escala de apuração já foi utilizado em registro de histórico escolar.</value>
+  </data>
+  <data name="FK_historico_escolar_05" xml:space="preserve">
+    <value>Exclusão não permitida. Componente curricular já possui lançamento de histórico escolar.</value>
+  </data>
+  <data name="FK_historico_escolar_06" xml:space="preserve">
+    <value>Exclusão não permitida. Componente curricular já possui lançamento de histórico escolar (componente substituto).</value>
+  </data>
+  <data name="FK_historico_escolar_07" xml:space="preserve">
+    <value>Exclusão não permitida. Critério de aprovação já possui lançamento de histórico escolar.</value>
+  </data>
+  <data name="FK_historico_escolar_08" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço já deu origem a registro no histórico escolar do aluno.</value>
+  </data>
+  <data name="FK_historico_escolar_09" xml:space="preserve">
+    <value>Exclusão não permitida. Existe registro no histórico escolar de dispensa para este grupo curricular.</value>
+  </data>
+  <data name="FK_historico_escolar_colaborador_01" xml:space="preserve">
+    <value>Exclusão não permitida. Histórico escolar possui colaborador associado.</value>
+  </data>
+  <data name="FK_historico_escolar_colaborador_02" xml:space="preserve">
+    <value>Exclusão não permitida. Colaborador está associado a registro de histórico escolar.</value>
+  </data>
+  <data name="FK_historico_escolar_colaborador_03" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição externa está associada a registro de histórico escolar.</value>
+  </data>
+  <data name="FK_instituicao_nivel_criterio_aprovacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já possui critério de aprovação configurado.</value>
+  </data>
+  <data name="FK_instituicao_nivel_criterio_aprovacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Critério de Aprovação já foi associado a uma instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_escala_apuracao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já possui escala de apuração configurada.</value>
+  </data>
+  <data name="FK_instituicao_nivel_escala_apuracao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Escala de apuração já foi associado a uma instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_membro_banca_01" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já possui tipo de membro de banca configurado.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_origem_avaliacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já possui tipo de origem de avaliação configurado.</value>
+  </data>
+  <data name="FK_material_01" xml:space="preserve">
+    <value>Exclusão não permitida. Material já possui itens filhos.</value>
+  </data>
+  <data name="FK_material_02" xml:space="preserve">
+    <value>Exclusão não permitida. Origem de material já possui materiais cadastrados.</value>
+  </data>
+  <data name="FK_material_03" xml:space="preserve">
+    <value>Exclusão não permitida. Arquivo anexado a um material.</value>
+  </data>
+  <data name="FK_material_visualizacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Material já possui configuração de visualização cadastrada.</value>
+  </data>
+  <data name="FK_material_visualizacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino possui configuração de visualização cadastrada.</value>
+  </data>
+  <data name="FK_membro_banca_examinadora_01" xml:space="preserve">
+    <value>Exclusão não permitida. Aplicação da avaliação (banca) já possui membros de banca cadastrados.</value>
+  </data>
+  <data name="FK_membro_banca_examinadora_02" xml:space="preserve">
+    <value>Exclusão não permitida. Colaborador é membro de banca examinadora.</value>
+  </data>
+  <data name="FK_membro_banca_examinadora_03" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição externa associada a membro de banca examinadora.</value>
+  </data>
+  <data name="UN_aplicacao_avaliacao_01" xml:space="preserve">
+    <value>Está avaliação já está sendo aplicada nesta origem de avaliação.</value>
+  </data>
+  <data name="UN_aplicacao_avaliacao_02" xml:space="preserve">
+    <value>Já existe avaliação com esta sigla nesta origem de avaliação.</value>
+  </data>
+  <data name="UN_apuracao_avaliacao_01" xml:space="preserve">
+    <value>Já existe apuração cadastrada para este aluno nesta avaliação.</value>
+  </data>
+  <data name="UN_criterio_aprovacao_01" xml:space="preserve">
+    <value>Já existe critério de aprovação cadastrado com esta descrição.</value>
+  </data>
+  <data name="ERR_DivisaoTurmaSemProfessorAssociadoException" xml:space="preserve">
+    <value>Não existem professores associados a esta divisão de turma.</value>
+  </data>
+  <data name="UN_escala_apuracao_01" xml:space="preserve">
+    <value>Já existe escala de apuração cadastrada com esta descrição.</value>
+  </data>
+  <data name="UN_escala_apuracao_item_01" xml:space="preserve">
+    <value>Já existe item nesta escala cadastrado com esta descrição.</value>
+  </data>
+  <data name="UN_historico_escolar_colaborador_01" xml:space="preserve">
+    <value>Colaborador já está associado a este histórico escolar.</value>
+  </data>
+  <data name="UN_historico_escolar_componente_curricular_01" xml:space="preserve">
+    <value>Componente curricular já está associado a este histórico escolar.</value>
+  </data>
+  <data name="UN_instituicao_nivel_criterio_aprovacao_01" xml:space="preserve">
+    <value>Critério de aprovação já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_escala_apuracao_01" xml:space="preserve">
+    <value>Escala de apuração já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_membro_banca_01" xml:space="preserve">
+    <value>Tipo de membro de banca já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_origem_avaliacao_01" xml:space="preserve">
+    <value>Tipo de origem de avaliação já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_material_01" xml:space="preserve">
+    <value>Já existe pasta / material com este nome.</value>
+  </data>
+  <data name="UN_material_visualizacao_01" xml:space="preserve">
+    <value>Tipo de atuação e Nível de ensino já configurado para este material.</value>
+  </data>
+  <data name="UN_membro_banca_examinadora_01" xml:space="preserve">
+    <value>Colaborador já é membro desta banca examinadora.</value>
+  </data>
+  <data name="ERR_LancamentoHistoricoEscolarTurmaSemDiarioException" xml:space="preserve">
+    <value>O diário da turma não foi localizado!</value>
+  </data>
+  <data name="UN_divisao_turma_duracao_aula" xml:space="preserve">
+    <value>A duração da aula deverá ser maior ou igual a {0} e menor ou igual a {1}.</value>
+  </data>
+  <data name="FK_apuracao_frequencia_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem apurações de frequencia registradas nesta aula.</value>
+  </data>
+  <data name="FK_apuracao_frequencia_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe apuração de frequencia neste aluno x histórico x ciclo letivo.</value>
+  </data>
+  <data name="FK_aula_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem aulas registradas para esta divisão de turma.</value>
+  </data>
+  <data name="UN_apuracao_frequencia_01" xml:space="preserve">
+    <value>Já existe apuração de frequencia para este aluno nesta aula.</value>
+  </data>
+  <data name="UN_aula_01" xml:space="preserve">
+    <value>Já existe aula nesta data para esta divisão de turma.</value>
+  </data>
+  <data name="ERR_AulaDiarioTurmaFechadoException" xml:space="preserve">
+    <value>O diário da turma está fechado e não permite alterações.</value>
+  </data>
+  <data name="ERR_AulaNumeroMaximoFaltasMaiorCargaHorariaException" xml:space="preserve">
+    <value>Número máximo de faltas deverá ser menor ou igual a {0}.</value>
+  </data>
+  <data name="ERR_AulaSeqDivisaoTurmaNaoInformadoException" xml:space="preserve">
+    <value>Você deve informar o sequencial da divisão de turma para lançar a frequência.</value>
+  </data>
+  <data name="ERR_EscalaApuracaoItemNaoEncontradoException" xml:space="preserve">
+    <value>Não foi encontrado nenhum item na escala de apuração para a nota {0}.</value>
+  </data>
+  <data name="ERR_AvaliacaoExisteArquivoAvaliacaoException" xml:space="preserve">
+    <value>Operação não permitida. Já existe entrega de arquivo de avaliação online para a avaliação".</value>
+  </data>
+  <data name="ERR_AvaliacaoExisteLancamentoNotaException" xml:space="preserve">
+    <value>Operação não permitida. Já existe lançamento de nota/conceito para a avaliação.</value>
+  </data>
+  <data name="ERR_AvaliacaoNotaMaximaExecedenteException" xml:space="preserve">
+    <value>Operação não permitida. A soma do valor de todas as avaliações cadastradas para a turma ultrapassa {0}.</value>
+  </data>
+  <data name="ERR_AvaliacaoDataNaoPermitidaException" xml:space="preserve">
+    <value>{0} de data/hora não permitida. Não é possível incluir data/hora menor que a atual.</value>
+  </data>
+  <data name="ERR_AvaliacaoNotaLancadaException" xml:space="preserve">
+    <value>Alteração de valor não permitida. Já existe nota lançada.</value>
+  </data>
+  <data name="ERR_AvaliacaoAlterarFormatoEntregaException" xml:space="preserve">
+    <value>Alteração formato de entrega não permitido. Já existe arquivo entregue.</value>
+  </data>
+  <data name="UN_entrega_online_participante_01" xml:space="preserve">
+    <value>Este aluno já é participante desta entrega.</value>
+  </data>
+  <data name="FK_entrega_online_01" xml:space="preserve">
+    <value>Exclusão não permitida. Avaliação possui entregas online realizadas.</value>
+  </data>
+  <data name="FK_entrega_online_02" xml:space="preserve">
+    <value>Exclusão não permitida. Arquivo está associado a uma entrega online.</value>
+  </data>
+  <data name="FK_entrega_online_03" xml:space="preserve">
+    <value>Exclusão não permitida. Histórico de situação é o atual da entrega.</value>
+  </data>
+  <data name="FK_entrega_online_historico_situacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Entrega online possui situação cadastrada.</value>
+  </data>
+  <data name="FK_entrega_online_participante_01" xml:space="preserve">
+    <value>Exclusão não permitida. Entrega online possui participantes associados.</value>
+  </data>
+  <data name="FK_entrega_online_participante_02" xml:space="preserve">
+    <value>Exclusão não permitida. Aluno-Histórico possui entrega de avaliação registrada.</value>
+  </data>
+  <data name="ERR_EntregaOnlineParticipaEmOutraEntregaException" xml:space="preserve">
+    <value>O aluno {0} já realizou a entrega desta avaliação em outro grupo.</value>
+  </data>
+  <data name="ERR_EntregaOnlineEncerradaException" xml:space="preserve">
+    <value>Entrega não é permitida. O período de entrega desta avaliação está encerrado.</value>
+  </data>
+  <data name="ERR_EntregaOnlineSituacaoEntregaException" xml:space="preserve">
+    <value>Entrega não é permitida. Avaliação já liberada para correção.</value>
+  </data>
+  <data name="ERR_AplicacaoAvaliacaoMembrosBancaFaltantesException" xml:space="preserve">
+    <value>Operação não permitida. É necessário informar o(s) membro(s) que participou(aram) da banca examinadora.</value>
+  </data>
+  <data name="ERR_LancamentoHistoricoEscolarTurmaPermiteAvaliacaoParcialException" xml:space="preserve">
+    <value>Só é possível lançar nota e frequência quando a turma não permite lançamentos parciais.</value>
+  </data>
+  <data name="FK_aplicacao_avaliacao_03" xml:space="preserve">
+    <value>Exclusão não permitida. Aula foi utilizada na marcação de avaliação da divisão de turma.</value>
+  </data>
+  <data name="FK_aplicacao_avaliacao_04" xml:space="preserve">
+    <value>Exclusão não permitida. Aula foi utilizada na marcação de avaliação da divisão de turma.</value>
+  </data>
+  <data name="ERR_ApuracaoFrequenciaGradeColisaoProfessorException" xml:space="preserve">
+    <value>Frequência já apurada por outro professor</value>
+  </data>
+  <data name="ERR_AvaliacaoDataForaPeriodoTurmaException" xml:space="preserve">
+    <value>Data da avaliação está fora do período letivo da turma.</value>
+  </data>
+  <data name="ERR_ApuracaoAvaliacaoAulasNaoApuradasException" xml:space="preserve">
+    <value>Operação não permitida. Existe aula não apurada.</value>
+  </data>
+  <data name="ERR_AplicacaoAvaliacaoAlunoAprovadoDispensadoComponenteAssuntoException" xml:space="preserve">
+    <value>Operação não permitida. O aluno(a) {0} já aprovado(a) ou dispensado(a) neste componente/assunto.</value>
+  </data>
+  <data name="ERR_ConfiguracaoNotificacaoNaoExisteException" xml:space="preserve">
+    <value>Não existe uma configuração de notificação cujo token seja 'POTENCIAL_REGISTRO_TRABALHO. Favor reportar este erro ao analista responsável na GTI.</value>
+  </data>
+</root>

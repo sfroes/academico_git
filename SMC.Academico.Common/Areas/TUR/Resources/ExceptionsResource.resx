@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERR_TurmaCodigoFormatoInvalidoException" xml:space="preserve">
+    <value>A turma deve utilizar apenas números (1 a 9), seguindo o critério código(.)número</value>
+  </data>
+  <data name="ERR_TurmaCoRequisitoInvalidoException" xml:space="preserve">
+    <value>Seleção não permitida.{0}</value>
+  </data>
+  <data name="ERR_TurmaGerarOrientacaoInvalidoException" xml:space="preserve">
+    <value>Seleção não permitida. É necessário possuir orientador para solicitar a(s) turma(s): {0}</value>
+  </data>
+  <data name="FK_divisao_turma_01" xml:space="preserve">
+    <value>Exclusão não permitida. Turma já possui divisões de turma.</value>
+  </data>
+  <data name="FK_divisao_turma_02" xml:space="preserve">
+    <value>Exclusão não permitida. Divisão de componente já está associado a uma divisão de turma.</value>
+  </data>
+  <data name="FK_divisao_turma_03" xml:space="preserve">
+    <value>Exclusão não permitida. Localidade já possui divisão de turma.</value>
+  </data>
+  <data name="FK_divisao_turma_04" xml:space="preserve">
+    <value>Exclusão não permitida. Origem de avaliação está associada a divisão de turma.</value>
+  </data>
+  <data name="FK_divisao_turma_colaborador_01" xml:space="preserve">
+    <value>Exclusão não permitida. Divisão de turma já possui colaboradores.</value>
+  </data>
+  <data name="FK_divisao_turma_colaborador_02" xml:space="preserve">
+    <value>Exclusão não permitida. Colaborador já está associado à uma divisão de turma.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_turma_01" xml:space="preserve">
+    <value>Exclusão não permitida. Existe tipo de turma configurado para este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_turma_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de turma já está configurado em uma instituição x nível de ensino.</value>
+  </data>
+  <data name="FK_restricao_turma_matriz_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração do componente da turma já possui restrição de matriz curricular.</value>
+  </data>
+  <data name="FK_restricao_turma_matriz_02" xml:space="preserve">
+    <value>Exclusão não permitida. Oferta da matriz curricular já possui restrição em turma.</value>
+  </data>
+  <data name="FK_restricao_turma_matriz_03" xml:space="preserve">
+    <value>Exclusão não permitida. Componente curricular já possui restrição em turma.</value>
+  </data>
+  <data name="FK_turma_01" xml:space="preserve">
+    <value>Exclusão não permitida. Ciclo letivo já está associado a uma turma (ciclo inicial).</value>
+  </data>
+  <data name="FK_turma_02" xml:space="preserve">
+    <value>Exclusão não permitida. Ciclo letivo já está associado a uma turma (ciclo final).</value>
+  </data>
+  <data name="FK_turma_03" xml:space="preserve">
+    <value>Exclusão não permitida. Origem de avaliação está associado a uma turma.</value>
+  </data>
+  <data name="FK_turma_04" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe turma cadastrada com este tipo de turma.</value>
+  </data>
+  <data name="FK_turma_colaborador_01" xml:space="preserve">
+    <value>Exclusão não permitida. Turma já possui colaborador associado.</value>
+  </data>
+  <data name="FK_turma_colaborador_02" xml:space="preserve">
+    <value>Exclusão não permitida. Colaborador já está associado a turma.</value>
+  </data>
+  <data name="FK_turma_configuracao_componente_01" xml:space="preserve">
+    <value>Exclusão não permitida. Turma já possui configuração de componente associado.</value>
+  </data>
+  <data name="FK_turma_configuracao_componente_02" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de componente já está associado a turma.</value>
+  </data>
+  <data name="FK_turma_historico_fechamento_diario_01" xml:space="preserve">
+    <value>Exclusão não permitida. Turma já possui histórico de fechamento de diário cadastrado.</value>
+  </data>
+  <data name="UN_divisao_turma_01" xml:space="preserve">
+    <value>Já existe uma divisão de turma para essa turma com este número.</value>
+  </data>
+  <data name="UN_divisao_turma_colaborador_01" xml:space="preserve">
+    <value>Colaborador já está associado a esta divisão de turma.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_turma_01" xml:space="preserve">
+    <value>Tipo de turma já está configurado para esta instituição x nível de ensino.</value>
+  </data>
+  <data name="UN_restricao_turma_matriz_01" xml:space="preserve">
+    <value>Já existe restrição para esta oferta de matriz curricular e/ou componente de assunto.</value>
+  </data>
+  <data name="UN_tipo_turma_01" xml:space="preserve">
+    <value>Já existe tipo de turma com esta descrição.</value>
+  </data>
+  <data name="UN_turma_01" xml:space="preserve">
+    <value>Já existe turma com este código / número.</value>
+  </data>
+  <data name="UN_turma_colaborador_01" xml:space="preserve">
+    <value>Colaborador já está associado a esta turma.</value>
+  </data>
+  <data name="UN_turma_configuracao_componente_01" xml:space="preserve">
+    <value>Configuração de componente já está associado a esta turma.</value>
+  </data>
+  <data name="ERR_TurmaIgualSelecionadaInvalidoException" xml:space="preserve">
+    <value>Seleção não permitida. Não é possível cursar as turmas abaixo, pois elas são do mesmo componente: {0} &lt;/br&gt;Favor verificar detalhes das turmas, clicando em "Mais informações".</value>
+  </data>
+  <data name="ERR_TurmaPreRequisitoInvalidoException" xml:space="preserve">
+    <value>Seleção não permitida.{0}</value>
+  </data>
+  <data name="ERR_TurmaSemCursoCanceladoInvalidoException" xml:space="preserve">
+    <value>Não é possível prosseguir no Processo de Matrícula, pois os itens da solicitação foram cancelados.</value>
+  </data>
+  <data name="ERR_TurmaSemCursoSelecionadoInvalidoException" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatório selecionar pelo menos uma turma.</value>
+  </data>
+  <data name="ERR_TurmaOfertasSemParametrosInvalidoException" xml:space="preserve">
+    <value>Não é possível prosseguir. As seguintes ofertas de matriz não possuem parâmetros associados: {0}</value>
+  </data>
+  <data name="ERR_TurmaParametroObrigatorioInvalidoException" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatório associar um parâmetro de oferta de matriz.</value>
+  </data>
+  <data name="ERR_TurmaParametroApurarFrequenciaInvalidoException" xml:space="preserve">
+    <value>Não é possível prosseguir. Pelo menos uma das divisões de configuração de componente deve ter o campo “Apuração por frequência” com valor igual a sim.</value>
+  </data>
+  <data name="ERR_TurmaDivisaoVagasInvalidoException" xml:space="preserve">
+    <value>Não é possível prosseguir. O somatório das divisões da turma deve ser igual às vagas definidas na turma.</value>
+  </data>
+  <data name="ERR_TurmaDivisaoVagasOcupadasInvalidoException" xml:space="preserve">
+    <value>Não é possível prosseguir. A quantidade de vagas reservadas para as divisões devem ter um valor maior ou igual à quantidade de vagas ocupadas.</value>
+  </data>
+  <data name="ERR_TurmaSemMatrizPrincipalException" xml:space="preserve">
+    <value>Não foi encontrada matriz principal para a oferta {0}.</value>
+  </data>
+  <data name="ERR_TurmaPreCoRequisitoInvalidoException" xml:space="preserve">
+    <value>Seleção não permitida.{0}</value>
+  </data>
+  <data name="ERR_TurmaComponenteAssuntoObrigatorioException" xml:space="preserve">
+    <value>Não é possível prosseguir. O componente curricular da configuração selecionada exige seleção de assunto de componente.</value>
+  </data>
+  <data name="ERR_TurmaCanceladaNotaLancadaException" xml:space="preserve">
+    <value>Não é possível prosseguir. Já existe nota lançada para alunos desta turma.</value>
+  </data>
+  <data name="ERR_TurmaCanceladaPlanoEstudoAlunoException" xml:space="preserve">
+    <value>Não é possível prosseguir. Os seguintes alunos estão matriculados apenas nesta turma:  &lt;br /&gt;&lt;br /&gt;{0}&lt;br /&gt;&lt;br /&gt;Para cancelar esta turma, favor resolver a situação de cada aluno listado.</value>
+  </data>
+  <data name="ERR_TurmaDuplicadaException" xml:space="preserve">
+    <value>Não é possível prosseguir, pois a turma {0} é igual a turma que está sendo cadastrada. Não é possível criar turmas com os seguintes dados iguais:
+&lt;br /&gt;
+&lt;br /&gt;- Ciclo letivo;
+&lt;br /&gt;- Configuração de componente principal;
+&lt;br /&gt;- Configuração de componente para compartilhamento;
+&lt;br /&gt;- Oferta de Matriz;
+&lt;br /&gt;- Assunto de componente.
+&lt;br /&gt;&lt;br /&gt;Favor desdobrar a turma existente.</value>
+  </data>
+  <data name="ERR_DivisaoTurmaColaboradorQuantidadeProfessoresInvalidaException" xml:space="preserve">
+    <value>Operação não permitida. Somente {0} professor(es) pode(m) ser associado(s) à divisão da turma.</value>
+  </data>
+  <data name="ERR_JustificativaCancelamentoNaoInformadaException" xml:space="preserve">
+    <value>Justificativa de cancelamento não informada.</value>
+  </data>
+  <data name="ERR_TurmaNaoEncontradaException" xml:space="preserve">
+    <value>Turma não encontrada!</value>
+  </data>
+  <data name="ERR_TurmaJaAprovadaDispensadaException" xml:space="preserve">
+    <value>{0} não permitida. As turmas abaixo já foram concluídas ou dispensadas: {1}</value>
+  </data>
+  <data name="ERR_SelecaoTurmaCanceladaException" xml:space="preserve">
+    <value>Seleção não permitida. As seguintes turmas estão canceladas:&lt;br /&gt;&lt;br /&gt;{0}&lt;br /&gt;&lt;br /&gt;Favor removê-las.</value>
+  </data>
+  <data name="ERR_TurmaDataFimPeriodoLetivoException" xml:space="preserve">
+    <value>A data fim deverá ser maior ou igual à data início.</value>
+  </data>
+  <data name="ERR_TurmaExcluirGrupoComAlunoMatriculadoException" xml:space="preserve">
+    <value>Não é possível excluir o grupo, pois ele está em uma solicitação de matrícula ou em um plano de estudos. </value>
+  </data>
+  <data name="ERR_TurmaExcluirGrupoComEventoAulaException" xml:space="preserve">
+    <value>Exclusão não permitida. Existe(m) evento(s) de aula associado ao grupo.</value>
+  </data>
+  <data name="ERR_TurmaPeriodoLetivoNaoContidoOfertaException" xml:space="preserve">
+    <value>Período letivo da turma não está incluso no período letivo do curso oferta x localidade x turno ao qual a turma está vinculada. </value>
+  </data>
+  <data name="ERR_TurmaQuantidadeVagasMenorVagasOcupadasException" xml:space="preserve">
+    <value>Não é possível prosseguir. A quantidade de vagas das seguintes divisões deve ter um valor maior ou igual a quantidade de vagas ocupadas:
+&lt;/br&gt;
+{0}</value>
+  </data>
+  <data name="ERR_TurmaSelecionadaDesdobradaException" xml:space="preserve">
+    <value>Seleção não permitida. Não é possível cursar as turmas abaixo, pois elas são do mesmo componente::&lt;br /&gt;&lt;br /&gt;{0}&lt;br /&gt;&lt;br /&gt;Favor verificar detalhes das turmas, clicando em "Mais informações".</value>
+  </data>
+  <data name="ERR_TurmaCoincidenciaHorarioInvalidoException" xml:space="preserve">
+    <value>Não é possível prosseguir. As seguintes turmas estão com coincidência de horário: {0} .</value>
+  </data>
+  <data name="ERR_QuantidadeGrupoExcedidoException" xml:space="preserve">
+    <value>Não é possível prosseguir. Quantidade de grupo excedido.</value>
+  </data>
+  <data name="ERR_TurmaDivisaoComAvaliacaoCadastradaException" xml:space="preserve">
+    <value>Alteração não permitida. Turma possui avaliação cadastrada.</value>
+  </data>
+  <data name="ERR_TurmaDivisaoComNotaCadastradaException" xml:space="preserve">
+    <value>Alteração não permitida. Turma possui aluno com situação final no histórico escolar.</value>
+  </data>
+  <data name="ERR_TurmaEventoAulaPeriodoLetivoException" xml:space="preserve">
+    <value>Alteração do período letivo não permitida. Existem eventos de aula criados para as divisões da turma e as datas destes eventos estão fora do limite do período letivo que foi informado.</value>
+  </data>
+  <data name="ERR_TurmaExcluirGrupoComEventoOuMatriculaException" xml:space="preserve">
+    <value>Não é possível excluir os seguintes grupos, pois eles estão em uma solicitação de matrícula ou em um plano de estudos: {0}</value>
+  </data>
+  <data name="ERR_TurmaVagasExcedidasException" xml:space="preserve">
+    <value>Não foi possível realizar as solicitações:&lt;/br&gt;&lt;/br&gt; {0}</value>
+  </data>
+  <data name="ERR_TurmaSelecaoObrigatoriaException" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatório selecionar pelo menos uma turma.</value>
+  </data>
+</root>

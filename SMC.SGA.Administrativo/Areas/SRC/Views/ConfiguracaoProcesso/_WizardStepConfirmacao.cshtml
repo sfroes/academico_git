@@ -1,0 +1,27 @@
+﻿@model ConfiguracaoProcessoViewModel
+
+@using (Smc.Div().CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Fieldset("CadastroGeral").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("WizardStepTipoConfiguracao_Title")).Begin())
+    {
+        @Smc.DisplayFor(m => m.SeqTipoConfiguracao).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.Descricao).Size(SMCSize.Grid24_24)
+    }
+
+    using (Smc.Fieldset("NivelEnsinoTipoVinculo").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("WizardStepConfiguracao_Title")).Begin())
+    {
+        @Smc.DisplayFor(m => m.TiposVinculoAluno).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+
+        if (Model.ExibirSecaoNivelEnsino)
+        {
+            @Smc.DisplayFor(m => m.NiveisEnsino).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+        }
+
+        if (Model.ExibirSecaoCursos)
+        {
+            @Smc.DisplayFor(m => m.Cursos).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+        }
+    }
+
+    @Smc.WizardView()
+}

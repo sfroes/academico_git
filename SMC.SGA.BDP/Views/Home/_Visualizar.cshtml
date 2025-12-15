@@ -1,0 +1,72 @@
+﻿@model TrabalhoAcademicoViewModel
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="smc-bdp-resultado-integra">
+
+    @Smc.DisplayFor(m => m.TipoTrabalhoNivelEnsino)
+    @Smc.DisplayFor(m => m.Autores)
+    @if (!string.IsNullOrWhiteSpace(Model.Programa))
+    {
+        @Smc.DisplayFor(m => m.Programa)
+    }
+    @Smc.DisplayFor(m => m.AreaConhecimento)
+    @Smc.DisplayFor(m => m.AreaConcentracao)
+    @Smc.DisplayFor(m => m.Orientadores)
+    @if (Model.Coorientadores != null && Model.Coorientadores.Count > 0)
+    {
+        @Smc.DisplayFor(m => m.Coorientadores)
+    }
+    @if (Model.BancaExaminadora != null && Model.BancaExaminadora.Count > 0)
+    {
+        <div class="smc-display smc-display-collection">
+            <div>
+                <h3>@Smc.GetUIResource("Label_BancaExaminadora")</h3>
+                @foreach (var banca in Model.BancaExaminadora)
+                {
+                    <p>@banca.Nome ( @banca.InstituicaoFormatada )</p>
+                }
+            </div>
+        </div>
+    }
+
+    @if (Model.DataDefesa.HasValue && Model.DataDefesa <= DateTime.Now)
+    {
+        @Smc.DisplayFor(m => m.DataDefesa)
+    }
+    else
+    {
+        // Campos sem registro no BDP
+        @Smc.DisplayFor(m => m.DataPrevistaDefesa)
+        @Smc.DisplayFor(m => m.Local)
+        @Smc.DisplayFor(m => m.Telefones)
+    }
+
+    @if (Model.Situacao.HasValue && Model.Situacao == SMC.Academico.Common.Areas.ORT.Enums.SituacaoTrabalhoAcademico.LiberadaConsulta)
+    {
+        <hr>
+        foreach (var idioma in Model.InformacoesEstrangeiras)
+        {
+            @Smc.DisplayFor(m => idioma.Titulo).Label(string.Format(Smc.GetUIResource("Label_TituloEstrangeiro"), idioma.Idioma.GetDescriptionPortuguese()))
+            @Smc.DisplayFor(m => idioma.PalavrasChave).Label(string.Format(Smc.GetUIResource("Label_PalavrasChaveEstrangeira"), idioma.Idioma.GetDescriptionPortuguese()))
+            @Smc.DisplayFor(m => idioma.Resumo).Label(string.Format(Smc.GetUIResource("Label_ResumoEstrangeiro"), idioma.Idioma.GetDescriptionPortuguese()))
+            <hr>
+        }
+
+        foreach (var arquivo in Model.Arquivos)
+        {
+            <div>
+                @Smc.DisplayFor(m => arquivo.TipoAutorizacao).Size(SMCSize.Grid24_24)
+
+                @(Smc.Button(SMCButtonBehavior.Visualizar)
+                    .Text(@Smc.GetUIResource("Label_VisualizarTrabalho"))
+                    .Tooltip(arquivo.NomeArquivo)
+                    .Type(SMCButtonType.Link)
+                    .Url(arquivo.UrlArquivo).Attribute("target", "_blank")
+                    .DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight()
+                )
+            </div>
+        }
+    }
+
+</div>

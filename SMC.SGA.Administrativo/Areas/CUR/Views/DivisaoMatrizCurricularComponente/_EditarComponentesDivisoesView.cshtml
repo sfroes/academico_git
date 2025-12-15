@@ -1,0 +1,24 @@
+﻿@model  DivisaoMatrizCurricularComponenteDetailViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(prop => prop.Seq)
+    @Smc.EditorFor(prop => prop.SeqDivisaoMatrizCurricularComponente)
+    @Smc.EditorFor(prop => prop.SeqDivisaoComponente)
+    @Smc.EditorFor(prop => prop.TipoDivisaoComponenteArtigo)
+    @Smc.DisplayFor(prop => prop.DivisaoComponenteDescricao)
+    @Smc.EditorFor(prop => prop.ComprovacaoArtigoMinima)
+    @Smc.EditorFor(prop => prop.QuantidadeGrupos)
+    @Smc.EditorFor(prop => prop.QuantidadeProfessores)
+    @Smc.EditorFor(prop => prop.NotaMaxima)
+    @Smc.EditorFor(prop => prop.ApurarFrequencia)
+    @Smc.EditorFor(prop => prop.MateriaLecionadaObrigatoria)
+    @Smc.EditorFor(prop => prop.SeqEscalaApuracao)
+    @Smc.EditorFor(prop => prop.TipoComponenteCurricularTurma)
+    @Smc.EditorFor(prop => prop.DivisaoComponenteCargaHorariaGrade)
+    @Smc.EditorFor(prop => prop.DivisaoComponenteCargaHorariaGradeAuxiliar)
+    @Smc.EditorFor(prop => prop.TipoDistribuicaoAula)
+    @Smc.EditorFor(prop => prop.TipoPulaFeriado)
+    @Smc.EditorFor(prop => prop.TipoPagamentoAula)
+    @Smc.EditorFor(prop => prop.AulaSabado)
+}

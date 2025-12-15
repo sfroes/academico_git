@@ -1,0 +1,23 @@
+﻿@model PessoaAtuacaoTipoDocumentoViewModel
+
+@using (Smc.Fieldset("TipoDocumento").LegendText(Model.DescricaoTipoDocumento).Begin())
+{
+
+    using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(x => x.SeqPessoaAtuacao)
+        @Smc.EditorFor(x => x.SeqTipoDocumento)
+
+        var buttonSet = Smc.ButtonSet();
+
+        buttonSet.AddButton(Smc.Button("RegistrarDocumento")
+            .CssClass("smc-btn-novo-ico-destaque")
+                         .Action("RegistrarDocumento", "PessoaAtuacao", new { seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao), seqTipoDocumento = new SMCEncryptedLong(Model.SeqTipoDocumento), @area = "PES" })
+                         .Type(SMCButtonType.Link));
+
+        @buttonSet;
+
+        @Smc.List("Solicitacoes", Model.Solicitacoes).HtmlTemplate(item => @Html.Partial("_ListarSolicitacaoServico", item))
+
+    }
+}

@@ -1,0 +1,18 @@
+﻿@model CabecalhoInformacaoProcessoViewModel
+
+@Smc.EditorFor(x => x.SeqGrupoEscalonamento)
+
+@if (Model.SeqGrupoEscalonamento > 0)
+{
+
+    using (Smc.Header("InformacaoProcesso", SMCHeaderType.Primary)
+             .Item(x => x.DescricaoProcesso, sizeMD: SMCSize.Grid12_24)
+             .Item(x => x.DescricaoGrupoEscalonamento, sizeMD: SMCSize.Grid12_24)
+             .Begin()) { }
+}
+else
+{
+    using (Smc.Header("InformacaoProcesso", SMCHeaderType.Primary)
+         .Item(x => x.DescricaoProcesso, sizeMD: SMCSize.Grid12_24)
+         .Begin()) { }
+}

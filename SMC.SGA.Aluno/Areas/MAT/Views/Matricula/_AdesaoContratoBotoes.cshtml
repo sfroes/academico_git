@@ -1,0 +1,62 @@
+﻿@model PaginaAdesaoContratoMatriculaViewModel
+
+@{
+    var buttonSet = Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-botoes-secundarios").AddButton(
+        Smc.Button("VisualizarContrato",
+                   "AdesaoContratoVisualizar",
+                   new { seqArquivoContrato = new SMCEncryptedLong(Model.SeqArquivoContrato) })
+                   .Attribute("target", "_blank")
+                   .Type(SMCButtonType.Link)
+                   .CssClass("smc-btn-documento-icotext")
+                   .SecurityToken(UC_MAT_003_13_01.PAGINA_CONTRATO_PRESTACAO_SERVICOS_EDUCACIONAIS)
+                   .Attribute("onclick", "$('#btn_aderir_contrato').removeAttr('disabled');"));
+
+    if (Model.CodigoAdesao.GetValueOrDefault() != Guid.Empty)
+    {
+        //buttonSet.AddButton(
+        //    Smc.Button("VisualizarTermo",
+        //               "AdesaoContratoTermo",
+        //               new { seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoMatricula) })
+        //               .Attribute("target", "_blank")
+        //               .Type(SMCButtonType.Link));
+
+
+        buttonSet.AddButton(
+            Smc.Button("VisualizarTermo", "VisualizarTermoAdesao", new { seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoMatricula) }, "Matricula")
+                       .CssClass("smc-btn-documento-icotext")
+                       .Attribute("target", "_blank") 
+                       .Type(SMCButtonType.Link)); 
+    }
+    else
+    {
+        buttonSet.AddButton(
+            Smc.Button("AderirContrato",
+                       "AdesaoContratoAderir",
+                       new { seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoMatricula) })
+                       .Type(SMCButtonType.Link)
+                       .Confirm(Smc.GetUIResource("TituloConfirmacao"), 
+                                Smc.GetUIResource("MensagemConfirmacao") + "<p>" + Model.TermoAdesao + "</p>", 
+                                SMCWindowButtons.Yes)
+                       .Enabled(false)
+                       .Id("btn_aderir_contrato")
+                       .CssClass("smc-btn-documento-icotext")
+                       .ButtonInstructions(Smc.GetUIResource("Botao_Aderircontrato_Instrucoes"))
+                       .Ajax(updateTargetId: "#divAdesao")
+                       .SecurityToken(UC_MAT_003_13_01.PAGINA_CONTRATO_PRESTACAO_SERVICOS_EDUCACIONAIS)
+                       .Attribute("onclick", "$('#proximaPagina').removeAttr('disabled');")
+                       );
+    }
+
+    @buttonSet
+
+    if (Model.CodigoAdesao.HasValue || Model.DataAdesao.HasValue)
+    {
+        using (Smc.Fieldset("fsDadosAdesao").Begin())
+        {
+            @Smc.DisplayFor(x => x.DataAdesao).Size(SMCSize.Grid5_24)
+            @Smc.DisplayFor(x => x.CodigoAdesao).Size(SMCSize.Grid19_24)
+            @Smc.HiddenFor(x => x.DataAdesao)
+            @Smc.HiddenFor(x => x.CodigoAdesao)
+        }
+    }
+}

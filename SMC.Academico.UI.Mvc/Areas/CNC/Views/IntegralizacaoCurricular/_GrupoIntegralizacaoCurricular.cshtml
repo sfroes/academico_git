@@ -1,0 +1,161 @@
+﻿@using SMC.Framework.UI.Mvc;
+@using SMC.Framework.UI.Mvc.Html;
+@using SMC.Academico.UI.Mvc.Areas.CNC.Models;
+@using SMC.Academico.Common.Areas.CNC.Enums;
+@using SMC.Academico.Common.Areas.SRC.Constants;
+@model  IntegralizacaoMatrizGrupoViewModel
+
+@{
+
+    if (Model.GruposFilhos.SMCCount() > 0)
+    {
+        using (Smc.Accordion("DivisaoComGrupos").AllowMultipleOpen(true).CssClass("smc-sga-accordion-secundario").Size(SMCSize.Grid24_24).Begin())
+        {
+            foreach (var item in Model.GruposFilhos)
+            {
+                var headerCompleto = "<div class=\"smc-sga-accordion-header-display\"><label class='titlePrincipal'>Grupo:&nbsp</label><p>" + item.DescricaoGrupo + "</p></div>" +
+                                     "<div class=\"smc-sga-accordion-header-display\"><label class='titleSub'>Configuração:&nbsp</label><p>" + item.ConfiguracaoGrupo + "</p></div>";
+
+                //if (!Model.SeqGrupoCurricularSuperior.HasValue())
+                //{
+                //    headerCompleto += "<div class=\"smc-sga-accordion-header-display\"><label class='titleSub'>Concluído:&nbsp</label><p>" + item.PercentualConclusaoGrupoFormatado + "</p></div>";
+                //}
+
+                using (Smc.AccordionSection("Grupo" + Guid.NewGuid().ToString()).Title(f => headerCompleto).IsOpen(false).Begin())
+                {
+                    var viewGrupo = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.INTEGRALIZACAO_CURRICULAR_GRUPO);
+                    @Html.Partial(viewGrupo, item);
+                }
+            }
+        }
+    }
+
+    if (Model.Beneficios.SMCCount() > 0 || Model.CondicoesObrigatorias.SMCCount() > 0 || Model.FormacoesEspecificas.SMCCount() > 0 || Model.SeqSolicitacaoServico != null)
+    {
+        using (Smc.Fieldset("FieldSetObservacoes" + Model.SeqGrupoCurricular).CssClass("smc-sga-fieldset-agrupamentos-internos").LegendText(Smc.GetUIResource("Label_Observacoes")).Begin())
+        {
+            if (Model.Beneficios.SMCCount() > 0)
+            {
+                using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <label>@Smc.GetUIResource("Label_EspecificoBolsista")</label>
+                }
+                @Smc.DisplayFor(m => m.Beneficios).HideLabel().Size(SMCSize.Grid24_24)
+            }
+
+            if (Model.CondicoesObrigatorias.SMCCount() > 0)
+            {
+                using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <label>@Smc.GetUIResource("Label_EspecificoCondicao")</label>
+                }
+                @Smc.DisplayFor(m => m.CondicoesObrigatorias).HideLabel().Size(SMCSize.Grid24_24)
+            }
+
+            if (Model.FormacoesEspecificas.SMCCount() > 0)
+            {
+                using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <label>@Smc.GetUIResource("Label_EspecificoFormacao")</label>
+                }
+                @Smc.DisplayFor(m => m.FormacoesEspecificas).HideLabel().Size(SMCSize.Grid24_24)
+            }
+
+            if (Model.GruposDivisoes.SMCCount() > 0)
+            {
+                using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <label>
+                        @Smc.GetUIResource("Label_EspecificoGrupo")
+                        @Model.ConfiguracaoGrupo
+                        @Smc.GetUIResource("Label_EspecificoDivisoes")
+                    </label>
+                }
+                @Smc.DisplayFor(m => m.GruposDivisoes).HideLabel().Size(SMCSize.Grid24_24)
+            }
+
+            if (Model.SeqSolicitacaoServico.SMCCount() > 0)
+            {
+                using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <label>
+                        @Model.MensagemDispensaGrupo
+
+                        @for (int index = 0; index < Model.SeqSolicitacaoServico.SMCCount(); index++)
+                        {
+                            @{ var buttonSet = Smc.ButtonSet().CssClass("smc-sga-btn-formato-link");
+
+                                buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                    .Attribute(SMCMvcConsts.MODAL_ID, "modalSolicitacao")
+                                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Solicitacao_Servico_Simplificado"))
+                                    .Action("ConsultarSolicitacaoServicoModal", "SolicitacaoServicoRoute", new { SeqSolicitacaoServico = Model.SeqSolicitacaoServico[index], BackUrl = HttpContext.Current.Request.UrlReferrer.ToString(), area = string.Empty })
+                                    .Ajax(isPost: false)
+                                    .SecurityToken(UC_SRC_004_14_01.CONSULTAR_SOLICITACAO)
+                                    .Type(SMCButtonType.Link)
+                                    .Text(Model.ProtocoloDispensaGrupo[index]));
+
+                                @buttonSet;
+                            }
+                        }
+                    </label>
+                }
+            }
+
+        }
+    }
+
+    if (Model.Configuracoes.SMCCount() > 0)
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+        {
+
+            @(Smc.Grid("gridConfiguracoes" + Model.SeqGrupoCurricular, new SMCPagerModel<IntegralizacaoMatrizConfiguracaoViewModel>(Model.Configuracoes))
+                          .HideGridTitle()
+                          .HideNavigator()
+                          .HidePager()
+                          .HideRowNumber()
+                          .HideRowsTotalizer()
+                          .FieldColumn(f => f.CodigoConfiguracao, cssClass: "smc-size-md-3 smc-size-sm-3 smc-size-xs-3 smc-size-lg-3")
+                          .FieldColumn(f => f.SiglaComponente, cssClass: "smc-size-md-1 smc-size-sm-1 smc-size-xs-1 smc-size-lg-1")
+                          .ContentColumn(@<text>
+                                            @{                 
+                                                var model = (item as IntegralizacaoMatrizConfiguracaoViewModel);
+                                             }
+                                            @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-btn-formato-link")
+                                                .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizar")
+                                                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Componente_Curricular_Ementa"))
+                                                .Ajax(isPost: false)
+                                                .Action("ConsultaComponenteCurricularEmenta", "ComponenteCurricularEmentaRoute", new { SeqComponenteCurricular = model.SeqComponenteCurricular, SeqPessoaAtuacao = (long?)ViewBag.SeqPessoaAtuacao,  SeqHistoricoEscolarUltimo = model.SeqHistoricoEscolarUltimo, SeqPlanoEstudo = model.SeqPlanoEstudo, area = string.Empty })
+                                                .Type(SMCButtonType.Link)
+                                                .Text(model.DescricaoConfiguracao)))   
+                                           </text>, header: Smc.GetUIResource("Title_Column_ComponenteCurricular"), cssClass: "smc-size-md-12 smc-size-sm-12 smc-size-xs-12 smc-size-lg-12")
+                          .FieldColumn(f => f.CargaHoraria, cssClass: "smc-size-md-3 smc-size-sm-3 smc-size-xs-3 smc-size-lg-3")
+                          .FieldColumn(f => f.Credito, cssClass: "smc-size-md-3 smc-size-sm-3 smc-size-xs-3 smc-size-lg-3")
+                          .ContentColumn(@<text>
+                                            @{
+                                                var model = (item as IntegralizacaoMatrizConfiguracaoViewModel);
+                                                @Smc.LegendItem(x => model.SituacaoComponente, false, model)
+                                             }
+                                         </text>, cssClass: "smc-sga-coluna-status")
+                          .ContentColumn(@<text>
+                                            @{                 
+                                                var model = (item as IntegralizacaoMatrizConfiguracaoViewModel);
+                                                if (model.ExibirInformacao)
+                                                {
+                                                    var btn = Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-margem-superior")
+                                                        .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                        .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizar")
+                                                        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Historico_Escolar_Integralizacao"))
+                                                        .Ajax(isPost: false)
+                                                        .Action("ConsultaHistoricosEscolarComponente", "IntegralizacaoCurricularRoute", new { SeqsHistoricosEscolarPlano = model.SeqsHistoricosEscolarPlano, SeqPlanoEstudo = model.SeqPlanoEstudo, SeqPlanoEstudoAntigo = model.SeqPlanoEstudoAntigo, SeqComponente = model.SeqComponenteCurricular, SeqConfiguracaoComponente = model.SeqConfiguracaoComponente , area = string.Empty })
+                                                        .Tooltip(Smc.GetUIResource("Botao_Historico_Escolar_Integralizacao"))
+                                                        .CssClass("smc-btn-visualizar-ico"));
+                                                    @btn;
+                                                }
+                                             }
+                                           </text>, cssClass: "smc-size-md-1 smc-size-sm-1 smc-size-xs-1 smc-size-lg-1")
+                                                  .Size(SMCSize.Grid24_24))
+        }
+    }
+}

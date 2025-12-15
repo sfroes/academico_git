@@ -1,0 +1,18 @@
+﻿@model CicloLetivoTipoEventoDynamicModel
+@using (Smc.Div().CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Fieldset("TipoEvento").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("fieldset_tipo_evento")).Begin())
+    {
+    @Smc.DisplayFor(m => m.SeqTipoAgenda)
+    @Smc.DisplayFor(m => m.SeqTipoEventoAgd)
+    }
+
+    @Smc.HiddenFor(m => m.ExibirMensagem)
+    @Smc.DisplayFor(m => m.Mensagem)
+
+    using (Smc.Fieldset("Parametros").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("fieldset_parametros")).Begin())
+    {
+    @Smc.DisplayFor(m => m.NiveisEnsino).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-conteudo-lista")
+    @Smc.DisplayFor(m => m.Parametros).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-conteudo-lista")
+    }
+}

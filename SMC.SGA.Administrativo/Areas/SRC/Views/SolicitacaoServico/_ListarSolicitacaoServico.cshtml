@@ -1,0 +1,104 @@
+﻿@using SMC.SGA.Administrativo.Areas.SRC.Views.SolicitacaoServico.App_LocalResources
+@using SMC.Academico.Common.Areas.SRC.Constants
+@using SMC.DadosMestres.Common.Areas.PES.Enums
+
+@model SMCPagerModel<SolicitacaoServicoListarViewModel>
+
+@(Smc.Grid("gridSolicitacoesServico", Model)
+        .AutoGenerateColumns()
+        .HideRowNumber()
+        .AllowSort()
+        .ContentColumn(@<text>
+            @{
+                var f = (item as SolicitacaoServicoListarViewModel);
+                var botaoRegistrardocumento = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                            .Action("RegistrarDocumentos", "RegistroDocumentosItemRoute", new
+                            {
+                                seqSolicitacaoServico = new SMCEncryptedLong(f.Seq),
+                                seqPessoaAtuacao = new SMCEncryptedLong(f.SeqIngressante.GetValueOrDefault()),
+                                area = string.Empty
+                            })
+                            .Id("RegistroDocumentos")
+                            .Type(SMCButtonType.Link)
+                            .Enabled(!f.SituacaodDocumentacaoNaoRequerida && !f.SituacaoAtualSolicitacaoEFimProcesso && !f.ConfigEtapaPossuiPaginaUploadDocumento)
+                            .Ajax(isPost: false)
+                            .SecurityToken(UC_SRC_004_02_01.REGISTRAR_DOCUMENTOS)
+                            .Attribute(SMCMvcConsts.MODAL_ID, "modalRegistrarDocumentos")
+                            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource(UIResource.Title_Modal_Registro_Documentos))
+                            .Tooltip(f.SituacaoDocumentacao.SMCGetDescription());
+
+                switch (f.SituacaoDocumentacao)
+                {
+                    case SituacaoDocumentacao.Nenhum:
+                        botaoRegistrardocumento.Tooltip(SituacaoDocumentacao.NaoRequerida.SMCGetDescription());
+                        botaoRegistrardocumento.Options.HtmlAttributes["class"] = "smc-btn-documento-nao-requerida";
+                        break;
+
+                    case SituacaoDocumentacao.AguardandoEntrega:
+                        botaoRegistrardocumento.Options.HtmlAttributes["class"] = "smc-btn-documento-aguarda-nova-entrega";
+                        break;
+
+                    case SituacaoDocumentacao.AguardandoValidacao:
+                        botaoRegistrardocumento.Options.HtmlAttributes["class"] = "smc-btn-documento-aguarda-validacao";
+                        break;
+
+                    case SituacaoDocumentacao.Entregue:
+                        botaoRegistrardocumento.Options.HtmlAttributes["class"] = "smc-btn-documento-entregue";
+                        break;
+
+                    case SituacaoDocumentacao.EntregueComPendencia:
+                        botaoRegistrardocumento.Options.HtmlAttributes["class"] = "smc-btn-documento-entrega-pendencia";
+                        break;
+
+                    case SituacaoDocumentacao.NaoRequerida:
+                        botaoRegistrardocumento.Options.HtmlAttributes["class"] = "smc-btn-documento-nao-requerida";
+                        break;
+                }
+
+                if (f.TokenEntregaDocumentacao)
+                {
+                    botaoRegistrardocumento.Enabled(false);
+                }
+
+                var botaoConsultarBloqueioEtapa = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                        .Action("ConsultarBloqueiosEtapa", "SolicitacaoServico", new
+                                        {
+                                            seqSolicitacaoServico = new SMCEncryptedLong(f.Seq),
+                                            seqSolicitacaoServicoEtapa = new SMCEncryptedLong(f.SeqSolicitacaoServicoEtapa.GetValueOrDefault())
+                                        })
+                                        .Id("ConsultarBloqueioEtapa")
+                                        .Type(SMCButtonType.Link)
+                                        .Ajax(isPost: false)
+                                        .SecurityToken(UC_SRC_004_01_01.PESQUISAR_SOLICITACAO)
+                                        .Attribute(SMCMvcConsts.MODAL_ID, "modalConsultarBloqueiosEtapa")
+                                        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource(UIResource.Title_Modal_Consultar_Bloqueios))
+                                        .Tooltip(f.PossuiBloqueio.SMCGetDescription());
+
+                if (f.PossuiBloqueio == SMC.Academico.Common.Areas.SRC.Enums.PossuiBloqueio.Sim)
+                {
+                    botaoConsultarBloqueioEtapa.Options.HtmlAttributes["class"] = "smc-btn-bloqueio";
+                }
+                else if (f.PossuiBloqueio == SMC.Academico.Common.Areas.SRC.Enums.PossuiBloqueio.Nao)
+                {
+                    botaoConsultarBloqueioEtapa.Options.HtmlAttributes["class"] = "smc-btn-desbloqueio";
+                }
+
+                SMCButtonFluentConfiguration botaoConsultarSolicitacao = Smc.Button(SMCButtonBehavior.Visualizar, "Solicitacao",
+                                                    new
+                                                    {
+                                                        @seqSolicitacaoServico = new SMCEncryptedLong(f.Seq),
+                                                    },
+                                                    "SolicitacaoServico")
+                                                    .SecurityToken(UC_SRC_004_01_02.CONSULTAR_SOLICITACAO)
+                                                    .Type(SMCButtonType.Link)
+                                                    .CssClass("smc-btn-visualizar-ico");
+            }
+            @(Smc.ButtonSet()
+                                    .AddButton(botaoRegistrardocumento)
+                                    .AddButton(botaoConsultarBloqueioEtapa)
+                                    .AddButton(botaoConsultarSolicitacao)
+                                    .NumberOfButtonsToShow(3, SMCButtonSetGroupedStyle.Button, "GerarBotoesSolicitacao", "SolicitacaoServico", new { @seqSolicitacaoServico = f.Seq }, false)
+                                    .Type(SMCButtonSetType.Secondary).CssClass("smc-btn-tabela-historico-solicitacoes"))
+
+        </text>, string.Empty, SMCHorizontalAlignment.Center, true, 10, SMCVerticalAlignment.Middle, "smc-grid-coluna-botoes")
+)

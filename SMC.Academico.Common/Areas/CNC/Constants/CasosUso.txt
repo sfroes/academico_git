@@ -1,0 +1,23 @@
+UC; Descrição
+UC_CNC_001_02_01.Exibir_Integralizacao_Curricular;Esse caso de uso tem como objetivo a exibição da integralização curricular de um aluno.
+UC_CNC_002_01_01.Pesquisar_Documento_Conclusao;Este caso de  uso tem como objetivo a pesquisa dos documentos de conclusão, permitindo também sua exclusão.
+UC_CNC_002_01_02.Manter_Documento_Conclusao_Antigo;Este caso de uso tem como objetivo a manutenção (inclusão/alteração) de documento de conclusão que referem-se a cadastro de histórico.     É considerado cadastro de histórico, os diplomas registrados pela UFMG enquanto a PUC não tinha autonomia para realizar a emissão/registro ou, quando eram registrados apenas por livros.    E esse cadastro é necessário quando alunos que formaram nessa época solicitam a emissão da 2º via do diploma e, o cadastro da 1º via precisa ser resgatado nos livros de registro da UFMG ou da própria puc.    [Importante] Documentos de conclusão que não referem-se a histórico deverão ser emitidos através de solicitação de serviço.
+UC_CNC_002_01_03.Consultar_Documento_Conclusao;Este caso de uso tem como objetivo apenas consultar os dados de um documento de conclusão.
+UC_CNC_002_01_04.Pesquisar_Apostilamento;Este caso de uso tem como objetivo listar os apostilamentos associados ao documento de conclusão, permitindo também sua exclusão.
+UC_CNC_002_01_05.Manter_Apostilamento;Este caso de uso tem como objetivo inserir/atualizar os dados de apostilamento do documento de conclusão.
+UC_CNC_002_01_06.Consultar_Dados_Pessoais;Este caso de uso tem como objetivo inserir/atualizar os dados de apostilamento do documento de conclusão.
+UC_CNC_002_01_07.Manter_Status_Documento_Digital;Este caso de uso tem como objetivo permitir anular ou restaurar um diploma digital.  [Observação] Por enquanto temos somente esse tipo de documento que é digital
+UC_CNC_002_03_01.Pesquisar_Diploma_Digital;Esse caso de uso tem como objetivo a pesquisa de diplomas digitais.
+UC_CNC_002_03_02.Consultar_Diploma_Digital;Esse caso de uso tem como objetivo a consulta de diplomas digitais.
+UC_CNC_002_04_01.Manter_Titulacao;Este caso de uso tem como objetivo manter o cadastro de titulações, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.  
+UC_CNC_004_01_01.Manter_Tipo_Documento_Academico;Este caso de uso tem como objetivo manter o cadastro de tipos de documento acadêmico, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_CNC_004_03_01.Manter_Tipo_Apostilamento;Este caso de uso tem como objetivo manter o cadastro de tipos de apostilamento, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_CNC_004_04_01.Manter_Tipo_Documento_Academico_Instituicao_Nivel;Este caso de uso tem como objetivo, consultar, cadastrar ou alterar a parametrização de um tipo de documento acadêmico por instituição e nível de ensino, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão).    É um cadastro dynamic.
+UC_CNC_004_05_01.Manter_Situacao_Documento_Academico;Este caso de uso tem como objetivo manter o cadastro de situação de documento acadêmico, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_CNC_004_06_01.Manter_Orgao_Registro;Este caso de uso tem como objetivo manter o cadastro de órgão de registro, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_CNC_004_07_01.Manter_Grupo_Registro;Este caso de uso tem como objetivo manter o cadastro de grupo de registro, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_CNC_004_08_01.Manter_Classificacao_Invalidade_Documento;Este caso de uso tem como objetivo manter o cadastro de classificação de invalidade do documento, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão). É um cadastro dynamic.
+UC_CNC_005_01_01.Pesquisar_Documento_Academico_Pessoa_Atuacao;Este caso de  uso tem como objetivo a pesquisa dos documentos acadêmicos, permitindo também seu cancelamento.
+UC_CNC_005_01_02.Consultar_Documento_Academico_Pessoa_Atuacao;Este caso de uso tem como objetivo apenas consultar os dados de um documento de conclusão.
+UC_CNC_005_01_03.Consultar_Dados_Pessoais_Pessoa_Atuacao;Este caso de uso tem como objetivo consultar os dados pessoais do aluno.
+UC_CNC_005_01_04.Cancelar_Documento_Academico_Pessoa_Atuacao;Este caso de uso tem como objetivo permitir cancelar a assinatura de um documento acadêmico.

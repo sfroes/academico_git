@@ -1,0 +1,114 @@
+﻿@model ConfiguracaoEtapaListarViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().Size(SMCSize.Grid23_24, SMCSize.Grid21_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+            {
+                @Smc.DisplayFor(p => p.DescricaoEtapa).Size(SMCSize.Grid17_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid17_24)
+                @Smc.DisplayFor(p => p.SituacaoEtapa).Size(SMCSize.Grid6_24, SMCSize.Grid20_24, SMCSize.Grid20_24, SMCSize.Grid6_24)
+            }
+            using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid3_24, SMCSize.Grid2_24, SMCSize.Grid1_24).Begin())
+            {
+                SMCButtonFluentConfiguration buttonLiberarEtapa = Smc.Button(SMCButtonBehavior.Visualizar)
+                        .Text(Smc.GetUIResource("Botao_Liberar_Etapa"))
+                        .Ajax(isPost: false)
+                        .Tooltip(Smc.GetUIResource("Botao_Liberar_Etapa"))
+                        .Type(SMCButtonType.Link)
+                        .Action("LiberarEtapa", "ConfiguracaoEtapa", new { SeqProcesso = new SMCEncryptedLong(Model.SeqProcesso), SeqProcessoEtapa = new SMCEncryptedLong(Model.SeqProcessoEtapa), Area = "SRC" })
+                        .Hide(Model.EsconderBotaoLiberar)
+                        .SecurityToken(UC_SRC_002_04_01.PESQUISAR_CONFIGURACAO_ETAPA)
+                        .Confirm(Smc.GetUIResource("title_modal_liberar_etapa"), string.Format(Smc.GetUIResource("mensagem_liberar_etapa"), Model.DescricaoEtapa), SMCWindowButtons.Yes, true);
+
+                SMCButtonFluentConfiguration buttonColocarManutencao = Smc.Button(SMCButtonBehavior.Visualizar)
+                       .Text(Smc.GetUIResource("Botao_Colocar_Manutencao"))
+                       .Ajax(isPost: false)
+                       .Tooltip(Smc.GetUIResource("Botao_Colocar_Manutencao"))
+                       .Type(SMCButtonType.Link)
+                       .Action("ColocarManutencaoEtapa", "ConfiguracaoEtapa", new { SeqProcesso = new SMCEncryptedLong(Model.SeqProcesso), SeqProcessoEtapa = new SMCEncryptedLong(Model.SeqProcessoEtapa), Area = "SRC" })
+                       .Hide(Model.EsconderBotaoManutencao)
+                       .Enabled(Model.HabilitarBotaoManutencao)
+                       .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoManutencao))
+                       .SecurityToken(UC_SRC_002_04_01.PESQUISAR_CONFIGURACAO_ETAPA)
+                       .Confirm(Smc.GetUIResource("title_modal_etapa_em_manutencao"), string.Format(Smc.GetUIResource("mensagem_etapa_em_manutencao"), Model.DescricaoEtapa), SMCWindowButtons.Yes, true);
+
+                SMCButtonFluentConfiguration buttonNovaConfiguracaoEtapa = Smc.Button(SMCButtonBehavior.Novo)
+                       .Enabled(Model.HabilitarBotaoNovo)
+                       .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoNovo))
+                       .Text(Smc.GetUIResource("Botao_Incluir_Nova_Configuracao_Etapa"))
+                       .Tooltip(Smc.GetUIResource("Botao_Incluir_Nova_Configuracao_Etapa"))
+                       .SecurityToken(UC_SRC_002_05_02.MANTER_ESCALONAMENTO_ETAPA)
+                       .Action("Incluir", "ConfiguracaoEtapa", new { SeqProcesso = new SMCEncryptedLong(Model.SeqProcesso), SeqProcessoEtapa = new SMCEncryptedLong(Model.SeqProcessoEtapa), Area = "SRC" });
+
+                SMCButtonSetFluentConfiguration buttonSet = (Smc.ButtonSet().Type(SMCButtonSetType.Secondary)
+                .NumberOfButtonsToShow(0)
+                .Size(SMCSize.Grid1_24));
+
+                using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid1_24).CssClass("smc-sga-margem-superior").Begin())
+                {
+                    buttonSet.AddButton(buttonLiberarEtapa);
+                    buttonSet.AddButton(buttonColocarManutencao);
+                    buttonSet.AddButton(buttonNovaConfiguracaoEtapa);
+
+                    @buttonSet
+                }
+            }
+        }
+
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            @(Smc.Grid("gridConfiguracoesEtapa", new SMCPagerModel<ConfiguracaoEtapaListarItemViewModel>(Model.ConfiguracoesEtapa))
+            .AutoGenerateColumns()
+            .AutoHideNavigator()
+            .HideGridTitle()
+            .HideNavigator()
+            .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+
+            x => Smc.Button(SMCButtonBehavior.Alterar)
+                    .CssClass("smc-btn-alterar-ico")
+                    .Tooltip(Smc.GetUIResource("botao_edit_configuracao_etapa_tooltip"))
+                    .SecurityToken(UC_SRC_002_04_02.MANTER_CONFIGURACAO_ETAPA)
+                    .Action("Editar", "ConfiguracaoEtapa", new { Seq = new SMCEncryptedLong((x as ConfiguracaoEtapaListarItemViewModel).Seq), Area = "SRC" }),
+
+            x => Smc.Button(SMCButtonBehavior.Excluir)
+                    .Enabled((x as ConfiguracaoEtapaListarItemViewModel).HabilitarBotaoExcluir)
+                    .ButtonInstructions(Smc.GetUIResource((x as ConfiguracaoEtapaListarItemViewModel).MensagemBotaoExcluir))
+                    .DisplayMode(SMCButtonDisplayMode.Icon)
+                    .Confirm(Smc.GetUIResource("Exclusao_Configuracao_Etapa_Title"),
+                    string.Format(Smc.GetUIResource("Exclusao_Configuracao_Etapa_Confirmacao"), (x as ConfiguracaoEtapaListarItemViewModel).DescricaoConfiguracaoEtapa))
+                    .Tooltip(Smc.GetUIResource("botao_excluir_configuracao_etapa_tooltip"))
+                    .SecurityToken(UC_SRC_002_04_02.MANTER_CONFIGURACAO_ETAPA)
+                    .Action("Excluir", "ConfiguracaoEtapa", new { Seq = new SMCEncryptedLong((x as ConfiguracaoEtapaListarItemViewModel).Seq), SeqProcesso = new SMCEncryptedLong((x as ConfiguracaoEtapaListarItemViewModel).SeqProcesso), Area = "SRC" }),
+
+            x => Smc.Button(SMCButtonBehavior.Alterar)
+                    .Text(Smc.GetUIResource("Botao_ConfigurarFluxoPaginas"))
+                    .Tooltip(Smc.GetUIResource("Botao_ConfigurarFluxoPaginas"))
+                    .SecurityToken(UC_SRC_002_04_03.CONFIGURAR_ETAPA_FLUXO_PAGINAS)
+                    .Action("Index", "ConfiguracaoEtapaPagina", new { seqConfiguracaoEtapa = new SMCEncryptedLong((x as ConfiguracaoEtapaListarItemViewModel).Seq) }),
+
+            x => Smc.Button(SMCButtonBehavior.Alterar)
+                    .Text(Smc.GetUIResource("Botao_AssociarBloqueios"))
+                    .Tooltip(Smc.GetUIResource("Botao_AssociarBloqueios"))
+                    .SecurityToken(UC_SRC_002_04_08.CONFIGURAR_ETAPA_PESQUISAR_BLOQUEIOS)
+                    .Action("Index", "ConfiguracaoEtapaBloqueio", new { seqProcessoEtapa = new SMCEncryptedLong((x as ConfiguracaoEtapaListarItemViewModel).SeqProcessoEtapa), seqConfiguracaoEtapa = new SMCEncryptedLong((x as ConfiguracaoEtapaListarItemViewModel).Seq) }),
+
+            x => Smc.Button(SMCButtonBehavior.Alterar)
+                    .Text(Smc.GetUIResource("Botao_ConfigurarDocumentacao"))
+                    .Tooltip(Smc.GetUIResource("Botao_ConfigurarDocumentacao"))
+                    .SecurityToken(UC_SRC_002_04_10.CONFIGURAR_ETAPA_PESQUISAR_DOCUMENTOS)
+                    .Action("Index", "DocumentoRequerido", new { seqProcessoEtapa = new SMCEncryptedLong((x as ConfiguracaoEtapaListarItemViewModel).SeqProcessoEtapa), seqConfiguracaoEtapa = new SMCEncryptedLong((x as ConfiguracaoEtapaListarItemViewModel).Seq) }),
+
+            x => Smc.Button(SMCButtonBehavior.Alterar)
+                    .Enabled((x as ConfiguracaoEtapaListarItemViewModel).HabilitarBotaoGrupoDocumento)
+                    .ButtonInstructions(Smc.GetUIResource((x as ConfiguracaoEtapaListarItemViewModel).MensagemBotaoGrupoDocumento))
+                    .Text(Smc.GetUIResource("Botao_ConfigurarGrupoDocumentos"))
+                    .Tooltip(Smc.GetUIResource("Botao_ConfigurarGrupoDocumentos"))
+                    .SecurityToken(UC_SRC_002_04_12.CONFIGURAR_ETAPA_PESQUISAR_GRUPO_DOCUMENTOS)
+                    .Action("Index", "GrupoDocumentoRequerido", new { seqProcessoEtapa = new SMCEncryptedLong((x as ConfiguracaoEtapaListarItemViewModel).SeqProcessoEtapa), seqConfiguracaoEtapa = new SMCEncryptedLong((x as ConfiguracaoEtapaListarItemViewModel).Seq) }))
+            )
+        }
+    }
+}

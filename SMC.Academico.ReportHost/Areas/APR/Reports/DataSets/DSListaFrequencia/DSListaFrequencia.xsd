@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSListaFrequencia" targetNamespace="http://tempuri.org/DSListaFrequencia.xsd" xmlns:mstns="http://tempuri.org/DSListaFrequencia.xsd" xmlns="http://tempuri.org/DSListaFrequencia.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSListaFrequencia" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSListaFrequencia" msprop:Generator_UserDSName="DSListaFrequencia">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSListaFrequencia" msprop:Generator_TableClassName="DSListaFrequenciaDataTable" msprop:Generator_TableVarName="tableDSListaFrequencia" msprop:Generator_TablePropName="_DSListaFrequencia" msprop:Generator_RowDeletingName="DSListaFrequenciaRowDeleting" msprop:Generator_RowChangingName="DSListaFrequenciaRowChanging" msprop:Generator_RowEvHandlerName="DSListaFrequenciaRowChangeEventHandler" msprop:Generator_RowDeletedName="DSListaFrequenciaRowDeleted" msprop:Generator_UserTableName="DSListaFrequencia" msprop:Generator_RowChangedName="DSListaFrequenciaRowChanged" msprop:Generator_RowEvArgName="DSListaFrequenciaRowChangeEvent" msprop:Generator_RowClassName="DSListaFrequenciaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SeqCursoOfertaLocalidadeTurno" msprop:Generator_ColumnVarNameInTable="columnSeqCursoOfertaLocalidadeTurno" msprop:Generator_ColumnPropNameInRow="SeqCursoOfertaLocalidadeTurno" msprop:Generator_ColumnPropNameInTable="SeqCursoOfertaLocalidadeTurnoColumn" msprop:Generator_UserColumnName="SeqCursoOfertaLocalidadeTurno" type="xs:long" minOccurs="0" />
+              <xs:element name="SeqDivisaoTurma" msprop:Generator_ColumnVarNameInTable="columnSeqDivisaoTurma" msprop:Generator_ColumnPropNameInRow="SeqDivisaoTurma" msprop:Generator_ColumnPropNameInTable="SeqDivisaoTurmaColumn" msprop:Generator_UserColumnName="SeqDivisaoTurma" type="xs:long" minOccurs="0" />
+              <xs:element name="DescricaoCursoOfertaLocalidadeTurno" msprop:Generator_ColumnVarNameInTable="columnDescricaoCursoOfertaLocalidadeTurno" msprop:Generator_ColumnPropNameInRow="DescricaoCursoOfertaLocalidadeTurno" msprop:Generator_ColumnPropNameInTable="DescricaoCursoOfertaLocalidadeTurnoColumn" msprop:Generator_UserColumnName="DescricaoCursoOfertaLocalidadeTurno" type="xs:string" minOccurs="0" />
+              <xs:element name="NomeAluno" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="NomeAluno" msprop:Generator_ColumnVarNameInTable="columnNomeAluno" msprop:Generator_ColumnPropNameInTable="NomeAlunoColumn" msprop:Generator_UserColumnName="NomeAluno" type="xs:string" minOccurs="0" />
+              <xs:element name="NumeroRegistroAcademico" msprop:Generator_ColumnVarNameInTable="columnNumeroRegistroAcademico" msprop:Generator_ColumnPropNameInRow="NumeroRegistroAcademico" msprop:Generator_ColumnPropNameInTable="NumeroRegistroAcademicoColumn" msprop:Generator_UserColumnName="NumeroRegistroAcademico" type="xs:long" minOccurs="0" />
+              <xs:element name="AlunoDI" msprop:Generator_ColumnVarNameInTable="columnAlunoDI" msprop:Generator_ColumnPropNameInRow="AlunoDI" msprop:Generator_ColumnPropNameInTable="AlunoDIColumn" msprop:Generator_UserColumnName="AlunoDI" type="xs:boolean" minOccurs="0" />
+              <xs:element name="AlunoFormado" msprop:Generator_ColumnVarNameInTable="columnAlunoFormado" msprop:Generator_ColumnPropNameInRow="AlunoFormado" msprop:Generator_ColumnPropNameInTable="AlunoFormadoColumn" msprop:Generator_UserColumnName="AlunoFormado" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

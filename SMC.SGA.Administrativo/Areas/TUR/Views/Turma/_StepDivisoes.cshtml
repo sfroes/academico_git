@@ -1,0 +1,14 @@
+﻿@model TurmaDynamicModel
+@{ 
+    Model.Cabecalho.TurmaConfiguracoesCabecalho = Model.TurmaConfiguracoesCabecalho;
+}
+
+@Html.Partial("_CabecalhoCompleto", Model.Cabecalho )
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+        @*@(Smc.Legend("ConfiguracaoPrincipal", SMCOrientation.Vertical).CssClass("smc-sga-legenda").Items<SMC.Academico.Common.Enums.LegendaPrincipal>())
+        @Smc.List("Configuracoes" + Model.Seq, m => m.TurmaConfiguracoesCabecalho).Size(SMCSize.Grid24_24).HtmlTemplate(cabecalho => Html.Partial("_CabecalhoConfiguracao", cabecalho.Value))*@
+
+        @Smc.List("Divisoes" + Model.Seq, m => m.TurmaDivisoes).Size(SMCSize.Grid24_24).HtmlTemplate(divisao => Html.Partial("_StepDivisoesDetail", divisao.Value))
+}

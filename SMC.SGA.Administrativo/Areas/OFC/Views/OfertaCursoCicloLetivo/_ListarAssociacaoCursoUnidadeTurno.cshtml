@@ -1,0 +1,29 @@
+﻿@model SMCPagerModel<OfertaCursoCicloLetivoAssociacaoCursoUnidadeTurnoListaViewModel>
+
+@(Smc.Grid("gridAssociacaoCursoUnidadeTurno")
+     .Action("ListarAssociacaoCursoUnidadeTurno", "OfertaCursoCicloLetivo")
+     .AutoGenerateColumns()
+         .ButtonColumn(SMCButtonSetType.Secondary, "smc-sga-grid-coluna-botoes",
+        item => Smc.FieldButton(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                    .Attribute(SMCMvcConsts.MODAL_ID, "editarAssociacaoCursoUnidadeTurno")
+                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Editar_Associacao_Modal_Title"))
+                    .CssClass("smc-btn-alterar-ico")
+                    .Type(SMCButtonType.Link)
+                    .Ajax(isPost: false, updateTargetId: "painelAjaxEditarAssociacaoCursoUnidadeTurno")
+                    .Url(Url.Action("EditarAssociacaoCursoUnidadeTurno", "OfertaCursoCicloLetivo", new { @seqOfertaCursoCicloLetivo = (item as OfertaCursoCicloLetivoAssociacaoCursoUnidadeTurnoListaViewModel).SeqOfertaCursoCicloLetivo })),
+
+        item => Smc.FieldButton(SMCButtonBehavior.Excluir, "ExcluirAssociacaoCursoUnidadeTurno", 
+                                new 
+                                {
+                                    @seqAssociacaoCursoUnidadeTurno = SMCDESCrypto.EncryptNumberForURL((item as OfertaCursoCicloLetivoAssociacaoCursoUnidadeTurnoListaViewModel).SeqAssociacaoCursoUnidadeTurno),
+                                    @seqOfertaCursoCicloLetivo = (item as OfertaCursoCicloLetivoAssociacaoCursoUnidadeTurnoListaViewModel).SeqOfertaCursoCicloLetivo
+                                }, "OfertaCursoCicloLetivo")
+                    .DisplayMode(SMCButtonDisplayMode.Icon)
+                    .Ajax(isPost: true, updateTargetId: "#divGridAssociacaoCursoUnidadeTurno")
+                    .Confirm(Smc.GetUIResource("Exclusao_Curso_Unidade_Turno_Title"),
+                             string.Format(Smc.GetUIResource("Exclusao_Curso_Unidade_Turno_Confirmacao"),
+                                           (item as OfertaCursoCicloLetivoAssociacaoCursoUnidadeTurnoListaViewModel).Curso,
+                                           (item as OfertaCursoCicloLetivoAssociacaoCursoUnidadeTurnoListaViewModel).Unidade))
+                    )
+                
+    )

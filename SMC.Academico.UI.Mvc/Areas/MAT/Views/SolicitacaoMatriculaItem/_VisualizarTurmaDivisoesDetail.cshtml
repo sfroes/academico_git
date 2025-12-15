@@ -1,0 +1,33 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.MAT.Models.SolicitacaoMatriculaItemDivisoesViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+        {
+
+            @Smc.DisplayFor(m => m.DivisaoTurmaDescricao).Size(SMCSize.Grid6_24, SMCSize.Grid10_24, SMCSize.Grid8_24, SMCSize.Grid8_24).HideLabel()
+            @Smc.DisplayFor(m => m.SeqDivisaoTurma).Size(SMCSize.Grid6_24, SMCSize.Grid8_24, SMCSize.Grid6_24, SMCSize.Grid6_24).HideLabel()
+
+            using (Smc.Div("DivButtonVisualizar").CssClass("smc-sga-fieldset-inline-recuo-topo").Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid4_24, SMCSize.Grid4_24).Begin())
+            {
+                var buttonSet = Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-alinhamento-botao-secundario");
+
+                buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                            .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDivisaoTurma")
+                                            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Divisao_Turma"))
+                                            .Ajax(isPost: false)
+                                            .SecurityToken(SMC.Academico.Common.Areas.TUR.Constants.UC_TUR_001_06_01.VISUALIZAR_DETALHES_DIVISAO_TURMA)
+                                            .CssClass("smc-btn-visualizar-icotext").Tooltip(Smc.GetUIResource("Tooltip_Divisao_Turma"))
+                                            .Text(Smc.GetUIResource("Botao_Divisao_Turma"))
+                                            .Action("VisualizarDivisaoTurmaDetalhes", "DetalhesDivisaoTurmaRoute", new { seqDivisaoTurma = Model.SeqDivisaoTurma, seqPessoaAtuacao = Model.SeqPessoaAtuacao, area = string.Empty }));
+
+                @buttonSet;
+            }
+
+            @Smc.DisplayFor(m => m.SituacaoMotivo).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid6_24, SMCSize.Grid6_24).CssClass("smc-sga-totalizador-destaque").HideLabel()
+
+        }
+    }
+}

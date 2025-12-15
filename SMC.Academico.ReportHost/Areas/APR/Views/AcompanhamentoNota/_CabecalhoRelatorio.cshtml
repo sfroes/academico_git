@@ -1,0 +1,56 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.APR.Models
+@model CabecalhoNotaViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cabeçalho report</title>
+    <style>
+        .report-header {
+            height: 120px;
+            padding-bottom: 20px;
+        }
+
+        .report-logo {
+            float: left;
+        }
+
+            .report-logo img {
+                width: 125px;
+                height: auto;
+            }
+
+        .report-instituicao {
+            float: left;
+            width: 84%;
+            text-align: center;
+            font-size: 26px;
+        }
+
+        .report-titulo {
+            float: left;
+            width: 84%;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: -30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="report-header">
+        <div class="report-logo">
+            <img src="@Model.ImagemCabecalho" />
+        </div>
+
+        <div class="report-instituicao">
+            <h3>@Model.nomeInstituicao</h3>
+        </div>
+
+        <div class="report-titulo">
+            <h2>@Model.titulo</h2>
+        </div>
+    </div>
+</body>
+</html>

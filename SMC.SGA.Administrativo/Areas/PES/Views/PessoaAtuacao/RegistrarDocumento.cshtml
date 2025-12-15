@@ -1,0 +1,32 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Views.PessoaAtuacao.App_LocalResources
+
+@model PessoaAtuacaoRegistroDocumentoViewModel
+
+@Html.Action("CabecalhoPessoaAtuacao", "PessoaAtuacao", new { @seqPessoaAtuacao = Model.SeqPessoaAtuacao })
+
+@using (Smc.Header("TipoDocumento", SMCHeaderType.Secondary)
+              .Item(prop => prop.DescricaoTipoDocumento, sizeMD: SMCSize.Grid24_24)
+              .Begin()) { }
+
+@using (Smc.Wizard("wizardRegistroDocumento")
+  .ButtonSet(1, SMCButtonSetGroupedStyle.Arrow, false, "smc-wizard-salvar-arrow", item => Smc.Button(SMCButtonBehavior.Salvar)
+      .Action("SalvarRegistroDocumento", "PessoaAtuacao")
+      .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+      .Highlight()
+      .Hide(Smc.GetViewMode() == SMCViewMode.ReadOnly))
+  .ButtonSet(1, alwaysVisible: true, cssClass: "smc-wizard-voltar-arrow smc-sga-clear-none", buttons: item => @Smc.Button(SMCButtonBehavior.Voltar)
+      .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+      .Action("VisualizarDocumento", "PessoaAtuacao", new { seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao) })
+      .Highlight(Smc.GetViewMode() == SMCViewMode.ReadOnly))
+      .Begin())
+{
+    using (Smc.WizardStep(0).Description(Smc.GetUIResource(UIResource.Wizard_RegistroDocumento_Passo1_Funcionalidade)).Title(UIResource.Wizard_RegistroDocumento_Passo1).Action("Passo1").Begin())
+    {
+
+    }
+    using (Smc.WizardStep(1).Description(Smc.GetUIResource(UIResource.Wizard_RegistroDocumento_Passo2_Funcionalidade)).Title(UIResource.Wizard_RegistroDocumento_Passo2).Action("Passo2").Begin())
+    {
+
+    }
+
+}

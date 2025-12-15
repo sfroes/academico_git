@@ -1,0 +1,7 @@
+﻿@using (Smc.Div("filterboxes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    <div class="smc-bdp-box-filtros smc-bdp-box-filtros-instrucoes"><a href="@Url.Action("InstrucoesPublicacao")">@Smc.GetUIResource("InstrucoesPublicacao")</a></div>
+    <div class="smc-bdp-box-filtros smc-bdp-box-filtros-processo-publicacao"><a href="@Url.Action("Pesquisar", routeValues: new { EmPublicacao = true })">@Smc.GetUIResource("EmPublicacao")</a></div>
+    <div class="smc-bdp-box-filtros smc-bdp-box-filtros-futuras-defesas"><a href="@Url.Action("Pesquisar", routeValues: new { EmFuturasDefesas = true })">@Smc.GetUIResource("FuturasDefesas")</a></div>
+}
+

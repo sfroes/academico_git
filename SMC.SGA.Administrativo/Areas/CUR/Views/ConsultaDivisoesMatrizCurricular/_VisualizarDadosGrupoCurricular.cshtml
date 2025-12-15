@@ -1,0 +1,23 @@
+﻿@model ConsultaDivisoesMatrizCurricularGrupoViewModel
+
+@if (!string.IsNullOrEmpty(Model.DescricaoFormacaoEspecifica))
+{
+    using (Smc.Fieldset("FieldSetDescricaoFormacaoEspecifica").LegendText(Smc.GetUIResource("Label_DescricaoFormacaoEspecifica")).Begin())
+    {
+    @Smc.DisplayFor(m => m.DescricaoFormacaoEspecifica).Size(SMCSize.Grid24_24).HideLabel()
+    }
+}
+@if (Model.DescricoesBeneficios.SMCAny())
+{
+    using (Smc.Fieldset("FieldSetDescricaoBeneficios").LegendText(Smc.GetUIResource("Label_DescricaoBeneficios")).Begin())
+    {
+    @Smc.DisplayFor(m => m.DescricoesBeneficios).Size(SMCSize.Grid24_24).HideLabel()
+    }
+}
+@if (Model.DescricoesCondicoesObrigatoriedade.SMCAny())
+{
+    using (Smc.Fieldset("FieldSetDescricaoCondicoesObrigatoriedade").LegendText(Smc.GetUIResource("Label_DescricaoCondicoesObrigatoriedade")).Begin())
+    {
+    @Smc.DisplayFor(m => m.DescricoesCondicoesObrigatoriedade).Size(SMCSize.Grid24_24).HideLabel()
+    }
+}

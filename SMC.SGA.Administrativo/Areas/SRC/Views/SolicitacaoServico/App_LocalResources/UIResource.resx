@@ -1,0 +1,651 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="gridPadrao_Grid_Titulo" xml:space="preserve">
+    <value>Solicitações</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Central de Solicitações</value>
+  </data>
+  <data name="Botao_RegistroDocumentos" xml:space="preserve">
+    <value>Registrar documentos</value>
+  </data>
+  <data name="Botao_RegistroDocumentos_Tooltip" xml:space="preserve">
+    <value>Registrar documentos</value>
+  </data>
+  <data name="MSG_SituacaoClassificacaoFinalizadaSemSucesso" xml:space="preserve">
+    <value>Operação não permitida. Não é permitido registrar a documentação de solicitações que se encontram na situação "{0}", pois a situação está configurada com a "Classificação da Situação" igual a "Finalizada sem sucesso".</value>
+  </data>
+  <data name="MSG_SituacaodDocumentacaoNaoRequerida" xml:space="preserve">
+    <value>Opção indisponível. Não existe documentação requerida para o processo em questão.</value>
+  </data>
+  <data name="Botao_RegistroChancela" xml:space="preserve">
+    <value>Chancelar plano de estudo</value>
+  </data>
+  <data name="Botao_RegistroChancela_Tooltip" xml:space="preserve">
+    <value>Chancelar plano de estudo</value>
+  </data>
+  <data name="Botao_VisualizarPlanoEstudo" xml:space="preserve">
+    <value>Visualizar plano de estudo</value>
+  </data>
+  <data name="Botao_VisualizarPlanoEstudo_Tooltip" xml:space="preserve">
+    <value>Visualizar plano de estudo</value>
+  </data>
+  <data name="ButtonInstructions_VisualizarNaoPermitido" xml:space="preserve">
+    <value>Operação não permitida. Não é permitido visualizar o plano de estudo.</value>
+  </data>
+  <data name="ButtonInstructions_SolicitacaoNaoPossuiCodigoAdesao" xml:space="preserve">
+    <value>Operação não permitida. O contrato não foi aderido.</value>
+  </data>
+  <data name="Title_Modal_Visualizar_PlanoEnsino" xml:space="preserve">
+    <value>Plano de Estudo</value>
+  </data>
+  <data name="Title_Modal_Registro_Documentos" xml:space="preserve">
+    <value>Registro de Documentos</value>
+  </data>
+  <data name="Botao_EfetivarMatricula" xml:space="preserve">
+    <value>Efetivar matrícula</value>
+  </data>
+  <data name="Botao_EfetivarMatricula_Tooltip" xml:space="preserve">
+    <value>Efetivar matrícula</value>
+  </data>
+  <data name="CRIACAO_Fieldset_Legenda" xml:space="preserve">
+    <value>Data de criação</value>
+  </data>
+  <data name="ENCERRAMENTO_Fieldset_Legenda" xml:space="preserve">
+    <value>Data de encerramento</value>
+  </data>
+  <data name="PREVISAOENCERRAMENTO_Fieldset_Legenda" xml:space="preserve">
+    <value>Previsão de Encerramento</value>
+  </data>
+  <data name="fsFiltrosAgrupados_Fieldset_Legenda" xml:space="preserve">
+    <value>Filtro Avançado</value>
+  </data>
+  <data name="Titulo_Legenda_PossuiBloqueio" xml:space="preserve">
+    <value>Etapa atual possui bloqueios?</value>
+  </data>
+  <data name="Titulo_Legenda_SituacaoDocumentacao" xml:space="preserve">
+    <value>Situação da documentação</value>
+  </data>
+  <data name="MSG_FiltrarPor_EtapaSituacaoAtualSolicitacao" xml:space="preserve">
+    <value>&lt;p&gt;Resultado por: As solicitações foram pesquisadas considerando o histórico de etapa e situação mais atual da solicitação.&lt;/p&gt;</value>
+  </data>
+  <data name="MSG_FiltrarPor_SituacaoEtapaSelecionada" xml:space="preserve">
+    <value>&lt;p&gt;Resultado por: As solicitações foram pesquisadas considerando a última situação da etapa selecionada.&lt;/p&gt;</value>
+  </data>
+  <data name="Aba_Title_Identificacao" xml:space="preserve">
+    <value>Identificação</value>
+  </data>
+  <data name="Solicitacao_Title" xml:space="preserve">
+    <value>Consultar Solicitação</value>
+  </data>
+  <data name="Solicitante_Fieldset_Legenda" xml:space="preserve">
+    <value>Solicitante</value>
+  </data>
+  <data name="DadosCriacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados de criação</value>
+  </data>
+  <data name="InformacoesComplementaresAtualizada_Fieldset_Legenda" xml:space="preserve">
+    <value>Informações complementares</value>
+  </data>
+  <data name="InformacoesComplementaresOriginal_Fieldset_Legenda" xml:space="preserve">
+    <value>Informações complementares</value>
+  </data>
+  <data name="Justificativa_Fieldset_Legenda" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="SolicitacaoAtualizada_Accordion_Section_Titulo" xml:space="preserve">
+    <value>Solicitação atualizada</value>
+  </data>
+  <data name="SolicitacaoOriginal_Accordion_Section_Titulo" xml:space="preserve">
+    <value>Solicitação original</value>
+  </data>
+  <data name="Solicitacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Solicitação</value>
+  </data>
+  <data name="Botao_ConsultarSolicitacao" xml:space="preserve">
+    <value>Consultar solicitação</value>
+  </data>
+  <data name="Botao_ConsultarSolicitacao_Tooltip" xml:space="preserve">
+    <value>Consultar solicitação</value>
+  </data>
+  <data name="Botao_RealizarAtendimento" xml:space="preserve">
+    <value>Realizar atendimento</value>
+  </data>
+  <data name="Botao_RealizarAtendimento_Tooltip" xml:space="preserve">
+    <value>Realizar atendimento</value>
+  </data>
+  <data name="Aba_Title_DocumentosSolicitacao" xml:space="preserve">
+    <value>Documentação</value>
+  </data>
+  <data name="Aba_Title_HistoricosSolicitacao" xml:space="preserve">
+    <value>Histórico de Situação</value>
+  </data>
+  <data name="Aba_Title_NotificacoesSolicitacao" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="gridHistoricosSolicitacao_Grid_Titulo" xml:space="preserve">
+    <value>Históricos</value>
+  </data>
+  <data name="PossuiBloqueios_Fieldset_Legenda" xml:space="preserve">
+    <value>Legenda</value>
+  </data>
+  <data name="Label_Possui_Bloqueio" xml:space="preserve">
+    <value>Etapa possui bloqueio?</value>
+  </data>
+  <data name="gridNotificacoes_Grid_Titulo" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="Botao_VisualizarDadosSolicitante" xml:space="preserve">
+    <value>Dados de contato</value>
+  </data>
+  <data name="Botao_VisualizarDadosSolicitante_Tooltip" xml:space="preserve">
+    <value>Visualizar dados de contato</value>
+  </data>
+  <data name="Identificacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Identificação</value>
+  </data>
+  <data name="VisualizarDadosSolicitante_Title" xml:space="preserve">
+    <value>Visualização de Dados de Contato</value>
+  </data>
+  <data name="CarteiraMotorista_Fieldset_Legenda" xml:space="preserve">
+    <value>Carteira de motorista</value>
+  </data>
+  <data name="DocumentoMilitar_Fieldset_Legenda" xml:space="preserve">
+    <value>Documento militar</value>
+  </data>
+  <data name="Identidade_Fieldset_Legenda" xml:space="preserve">
+    <value>Identidade</value>
+  </data>
+  <data name="Nacionalidade_Fieldset_Legenda" xml:space="preserve">
+    <value>Nacionalidade</value>
+  </data>
+  <data name="Naturalidade_Fieldset_Legenda" xml:space="preserve">
+    <value>Naturalidade</value>
+  </data>
+  <data name="NecessidadesEspeciais_Fieldset_Legenda" xml:space="preserve">
+    <value>Necessidades especiais</value>
+  </data>
+  <data name="Passaporte_Fieldset_Legenda" xml:space="preserve">
+    <value>Passaporte</value>
+  </data>
+  <data name="PISPASEP_Fieldset_Legenda" xml:space="preserve">
+    <value>PIS/PASEP</value>
+  </data>
+  <data name="TituloEleitor_Fieldset_Legenda" xml:space="preserve">
+    <value>Título de eleitor</value>
+  </data>
+  <data name="ConsultarHistoricoNavegacao_Title" xml:space="preserve">
+    <value>Consultar Histórico de Navegação</value>
+  </data>
+  <data name="DadosContato_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados de contato</value>
+  </data>
+  <data name="DadosPessoais_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados pessoais</value>
+  </data>
+  <data name="EnderecosEletronicos_Fieldset_Legenda" xml:space="preserve">
+    <value>Endereços eletrônicos</value>
+  </data>
+  <data name="Enderecos_Fieldset_Legenda" xml:space="preserve">
+    <value>Endereços</value>
+  </data>
+  <data name="Telefones_Fieldset_Legenda" xml:space="preserve">
+    <value>Telefones</value>
+  </data>
+  <data name="Botao_ConsultarBloqueioEtapa_Tooltip" xml:space="preserve">
+    <value>Consultar bloqueio da etapa</value>
+  </data>
+  <data name="Botao_ConsultarBloqueioEtapa" xml:space="preserve">
+    <value>Consultar bloqueio da etapa</value>
+  </data>
+  <data name="Botao_ConsultarHistoricoNavegacao" xml:space="preserve">
+    <value>Consultar histórico de navegação</value>
+  </data>
+  <data name="Botao_ConsultarHistoricoNavegacao_Tooltip" xml:space="preserve">
+    <value>Consultar histórico de navegação</value>
+  </data>
+  <data name="Botao_VisualizarDetalheNotificacao" xml:space="preserve">
+    <value>Visualizar detalhes da notificação</value>
+  </data>
+  <data name="Botao_VisualizarDetalheNotificacao_Tooltip" xml:space="preserve">
+    <value>Visualizar detalhes da notificação</value>
+  </data>
+  <data name="ConsultarBloqueioEtapa_Title" xml:space="preserve">
+    <value>Consultar Bloqueios da Etapa</value>
+  </data>
+  <data name="DetalheNotificacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Detalhes da notificação</value>
+  </data>
+  <data name="Mensagem_Fieldset_Legenda" xml:space="preserve">
+    <value>Mensagem</value>
+  </data>
+  <data name="VisualizarDetalheNotificacao_Title" xml:space="preserve">
+    <value>Detalhes da notificação</value>
+  </data>
+  <data name="Botao_Download_Arquivo_Anexo_Tooltip" xml:space="preserve">
+    <value>Baixar arquivo anexo</value>
+  </data>
+  <data name="Botao_Download_Arquivo_Anxo" xml:space="preserve">
+    <value>Baixar arquivo anexo</value>
+  </data>
+  <data name="Botao_Atualizardadossolicitacao" xml:space="preserve">
+    <value>Atualizar dados da solicitação</value>
+  </data>
+  <data name="Botao_Atualizardadossolicitacao_Tooltip" xml:space="preserve">
+    <value>Atualizar dados da solicitação</value>
+  </data>
+  <data name="Botao_Cancelarsolicitacao" xml:space="preserve">
+    <value>Cancelar solicitação</value>
+  </data>
+  <data name="Botao_Cancelarsolicitacao_Tooltip" xml:space="preserve">
+    <value>Cancelar solicitação</value>
+  </data>
+  <data name="Botao_Reabrirsolicitacao" xml:space="preserve">
+    <value>Reabrir solicitação</value>
+  </data>
+  <data name="Botao_Reabrirsolicitacao_Tooltip" xml:space="preserve">
+    <value>Reabrir solicitação</value>
+  </data>
+  <data name="MSG_ConfirmacaoInicioAtendimento" xml:space="preserve">
+    <value>Confirma a inicialização do atendimento da solicitação selecionada? Ao iniciar o atendimento a solicitação será atribuída para o seu usuário</value>
+  </data>
+  <data name="MSG_ConfirmacaoSolicitacaoPossuiUsuarioResponsavel" xml:space="preserve">
+    <value>A solicitação selecionada já possui usuário responsável pelo atendimento. Você deseja reatribuir o usuário responsável? Ao confirmar, a solicitação será atribuída para o seu usuário</value>
+  </data>
+  <data name="MSG_EtapaAtualIndisponivelCentralAtendimento" xml:space="preserve">
+    <value>Opção indisponível. A etapa atual da solicitação não está disponível para a realização do atendimento</value>
+  </data>
+  <data name="MSG_SituacaoAtualEtapaDiferenteLiberada" xml:space="preserve">
+    <value>Opção indisponível. A etapa atual da solicitação está diferente de liberada.</value>
+  </data>
+  <data name="MSG_SolicitacaoComEtapaAtualCompartilhadaEUsuarioNaoAssociado" xml:space="preserve">
+    <value>Opção indisponível. A etapa atual da solicitação está compartilhada e, o usuário logado não está associado a entidade compartilhada com a solicitação</value>
+  </data>
+  <data name="MSG_SolicitacaoComEtapaAtualNaoCompartilhadaEEntidadeUsuarioLogadoNaoResponsavel" xml:space="preserve">
+    <value>Opção indisponível. A etapa atual da solicitação não está compartilhada e, o usuário logado não está associado a entidade responsável da solicitação</value>
+  </data>
+  <data name="MSG_SituacaoAtualSolicitacaoEncerradaOuConcluida" xml:space="preserve">
+    <value>Opção indisponível. A solicitação está encerrada ou concluída.</value>
+  </data>
+  <data name="MSG_SolicitacaoPossuiGrupoEscalonamentoComPeriodoNaoVigente" xml:space="preserve">
+    <value>Opção indisponível. O período para realização desse atendimento não está vigente</value>
+  </data>
+  <data name="MSG_SolicitantePossuiBloqueiosVigentes" xml:space="preserve">
+    <value>Opção indisponível. Há bloqueio(s) associado(s) ao solicitante que impede(m) iniciar a realização do atendimento</value>
+  </data>
+  <data name="MSG_Titulo_Confirmacao" xml:space="preserve">
+    <value>Realizar Atendimento</value>
+  </data>
+  <data name="MSG_UsuarioNaoPossuiAcessoARealizarAtendimento" xml:space="preserve">
+    <value>Opção indisponível. O usuário logado não possui permissão para a realização desse tipo de atendimento</value>
+  </data>
+  <data name="MSG_EtapaAtualNaoPossuiParametrizacaoDeSituacaoDeCancelamento" xml:space="preserve">
+    <value>Opção indisponível. Não existe parametrização de situação de cancelamento para a etapa atual da solicitação</value>
+  </data>
+  <data name="MSG_ServicoNaoPermitemReabrirSolicitacao" xml:space="preserve">
+    <value>Opção indisponível. O tipo de serviço não permite que a solicitação seja reaberta.</value>
+  </data>
+  <data name="MSG_SolicitacaoServicoNaoEDeMatriculaOuNaoRealizadaAdezaoContrato" xml:space="preserve">
+    <value>Opção indisponível. A solicitação de serviço não é uma solicitação de matrícula ou não foi realizada a adesão do contrato</value>
+  </data>
+  <data name="Title_Modal_Cancelar_Solicitacao" xml:space="preserve">
+    <value>Cancelar Solicitação</value>
+  </data>
+  <data name="MSG_AtendimentoSolicitacao_Sucesso" xml:space="preserve">
+    <value>{0} atendida com sucesso.</value>
+  </data>
+  <data name="MSG_AtualizacaoDadosSolicitacao_Sucesso" xml:space="preserve">
+    <value>{0} atualizada com sucesso.</value>
+  </data>
+  <data name="MSG_CancelamentoSolicitacao_Sucesso" xml:space="preserve">
+    <value>{0} cancelada com sucesso.</value>
+  </data>
+  <data name="MSG_ReaberturaSolicitacao_Sucesso" xml:space="preserve">
+    <value>{0} reaberta com sucesso.</value>
+  </data>
+  <data name="MSG_Titulo_Erro" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="MSG_Titulo_Sucesso" xml:space="preserve">
+    <value>Sucesso</value>
+  </data>
+  <data name="Title_Modal_Reabrir_Solicitacao" xml:space="preserve">
+    <value>Reabrir Solicitação</value>
+  </data>
+  <data name="Title_Modal_Visualizar_Plano_Estudo" xml:space="preserve">
+    <value>Plano de Estudo</value>
+  </data>
+  <data name="MSG_EtapaNaoDisponivelParaAplicacao" xml:space="preserve">
+    <value>Opção indisponível. A solicitação de serviço está em uma etapa que não permite atendimento.</value>
+  </data>
+  <data name="DataCriacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Data de criação</value>
+  </data>
+  <data name="PrevisaoSolucao_Fieldset_Legenda" xml:space="preserve">
+    <value>Previsão de encerramento</value>
+  </data>
+  <data name="Solucao_Fieldset_Legenda" xml:space="preserve">
+    <value>Data de encerramento</value>
+  </data>
+  <data name="MSG_SituacaoSolicitanteNaoPermiteReabrirSolicitacao" xml:space="preserve">
+    <value>Opção indisponível. Para o tipo de serviço da solicitação, a situação atual do solicitante não permite que a solicitação seja reaberta.</value>
+  </data>
+  <data name="MSG_SolicitacaoAssociadaGrupoEscalonamento" xml:space="preserve">
+    <value>Opção indisponível. A solicitação está associada a um grupo de escalonamento. Nesse caso deverá ser associado a solicitação outro grupo de escalonamento vigente. Essa funcionalidade está disponível a partir do cadastro de um grupo de escalonamento na Central de Processos.</value>
+  </data>
+  <data name="MSG_SolicitacaoFinalizadaComSucesso" xml:space="preserve">
+    <value>Opção indisponível. Não é possível reabrir esse tipo de solicitação quando a mesma foi finalizada com sucesso.</value>
+  </data>
+  <data name="MSG_SolicitantePossuiOutrasSolicitacoesEmAbertoComRestricao" xml:space="preserve">
+    <value>Opção indisponível. Não é possível reabrir a solicitação, pois foram identificadas as seguintes solicitações em aberto. E o serviço dessas solicitações são restritivos comparado ao serviço da solicitação selecionada.</value>
+  </data>
+  <data name="JustificativaComplementar_Fieldset_Legenda" xml:space="preserve">
+    <value>Justificativa Complementar</value>
+  </data>
+  <data name="MSG_ImpossivelCancelarSolicitacaoUsuarioLogadoNaoEResponsavelAtual" xml:space="preserve">
+    <value>Opção indisponível. Somente o usuário responsável pela solicitação poderá realizar o cancelamento</value>
+  </data>
+  <data name="Botao_ConsultarBloqueios" xml:space="preserve">
+    <value>Consultar bloqueios</value>
+  </data>
+  <data name="Botao_ConsultarBloqueios_Tooltip" xml:space="preserve">
+    <value>Consultar bloqueios</value>
+  </data>
+  <data name="Title_Modal_Consultar_Bloqueios" xml:space="preserve">
+    <value>Consultar Bloqueios da Etapa</value>
+  </data>
+  <data name="Botao_DesbloquearPessoaAtuacaoBloqueio" xml:space="preserve">
+    <value>Desbloquear</value>
+  </data>
+  <data name="Botao_DesbloquearPessoaAtuacaoBloqueio_Tooltip" xml:space="preserve">
+    <value>Desbloquear</value>
+  </data>
+  <data name="Title_Modal_DesbloquearPessoaAtuacaoBloqueio" xml:space="preserve">
+    <value>Desbloqueio</value>
+  </data>
+  <data name="ButtonInstructions_DesbloqueioDesabilitado" xml:space="preserve">
+    <value>Não é permitido desbloquear se o motivo do bloqueio não permite o desbloqueio manual.</value>
+  </data>
+  <data name="Botao_VisualizarDadosAcademicosAluno" xml:space="preserve">
+    <value>Dados acadêmicos</value>
+  </data>
+  <data name="Botao_VisualizarDadosAcademicosAluno_Tooltip" xml:space="preserve">
+    <value>Visualizar dados acadêmicos</value>
+  </data>
+  <data name="VisualizarDadosAcademicosAluno_Title" xml:space="preserve">
+    <value>Visualização de Dados Acadêmicos</value>
+  </data>
+  <data name="Botao_VisualizarDadosAcademicosIngressante" xml:space="preserve">
+    <value>Dados acadêmicos</value>
+  </data>
+  <data name="Botao_VisualizarDadosAcademicosIngressante_Tooltip" xml:space="preserve">
+    <value>Visualizar dados acadêmicos</value>
+  </data>
+  <data name="VisualizarDadosAcademicosIngressante_Title" xml:space="preserve">
+    <value>Visualização de Dados Acadêmicos</value>
+  </data>
+  <data name="Botao_Comprovantematricularelatorio" xml:space="preserve">
+    <value>Comprovante de matrícula</value>
+  </data>
+  <data name="Botao_Comprovantematricularelatorio_Tooltip" xml:space="preserve">
+    <value>Comprovante de matrícula</value>
+  </data>
+  <data name="Botao_Visualizarcontrato" xml:space="preserve">
+    <value>2ª via do termo de adesão</value>
+  </data>
+  <data name="Botao_Visualizarcontrato_Tooltip" xml:space="preserve">
+    <value>2ª via do termo de adesão</value>
+  </data>
+  <data name="MSG_SolicitacaoComMatriculaNaoEfetivada" xml:space="preserve">
+    <value>Opção indisponível. A solicitação não foi encerrada.</value>
+  </data>
+  <data name="MSG_SolicitacaoNaoPossuiTermoAdesaoEArquivoTermoAdesao" xml:space="preserve">
+    <value>Opção indisponível. A adesão não foi realizada.</value>
+  </data>
+  <data name="gridSolicitacoesServico_Grid_Titulo" xml:space="preserve">
+    <value>Solicitações</value>
+  </data>
+  <data name="MSG_NaoExistemUsuariosResponsaveis" xml:space="preserve">
+    <value>Não existem usuários responsáveis</value>
+  </data>
+  <data name="MSG_SolicitacaoServicoNaoEDeMatriculaOuPrimeiraEtapaNaoFinalizadaComSucesso" xml:space="preserve">
+    <value>Opção indisponível. A solicitação de serviço não é uma solicitação de matrícula ou a primeira etapa não foi finalizada com sucesso</value>
+  </data>
+  <data name="Botao_VisualizarDadosProcesso" xml:space="preserve">
+    <value>Informações do processo</value>
+  </data>
+  <data name="Botao_VisualizarDadosProcesso_Tooltip" xml:space="preserve">
+    <value>Informações do processo</value>
+  </data>
+  <data name="VisualizarDadosProcesso_Title" xml:space="preserve">
+    <value>Informações do Processo</value>
+  </data>
+  <data name="Label_Situacao_Final_Etapa" xml:space="preserve">
+    <value>Situação final da etapa</value>
+  </data>
+  <data name="Botao_RetornarEtapaAnterior" xml:space="preserve">
+    <value>Retornar a etapa anterior</value>
+  </data>
+  <data name="Botao_RetornarEtapaAnterior_Tooltip" xml:space="preserve">
+    <value>Retornar a etapa anterior</value>
+  </data>
+  <data name="MSG_RetornoParaEtapaAnterior_Sucesso" xml:space="preserve">
+    <value>Retorno para a etapa anterior realizado com sucesso</value>
+  </data>
+  <data name="MSG_PrazoParaReabrirSolicitacaoExpirado" xml:space="preserve">
+    <value>Opção indisponível. O prazo permitido para reabrir a solicitação após o encerramento expirou.</value>
+  </data>
+  <data name="MSG_SituacaoAtualSolicitacaoDiferenteEncerradoOuConcluida" xml:space="preserve">
+    <value>Opção indisponível. A reabertura de uma solicitação aplica-se somente a solicitações que a categoria da situação atual seja igual a Encerrado ou Concluído.</value>
+  </data>
+  <data name="gridEtapasSolicitacao_Grid_Titulo" xml:space="preserve">
+    <value>Etapas do processo</value>
+  </data>
+  <data name="Label_EtapasdoProcesso" xml:space="preserve">
+    <value>Etapas do processo</value>
+  </data>
+  <data name="Label_HistoricodoProcesso" xml:space="preserve">
+    <value>Histórico do processo</value>
+  </data>
+  <data name="Informativo_Historico_Solicitacao" xml:space="preserve">
+    <value>Serão listadas as etapas e situações pelas quais a solicitação passou durante o processo.</value>
+  </data>
+  <data name="MSG_SituacaoAtualSolicitacaoEFimProcesso" xml:space="preserve">
+    <value>Opção indisponível. A solicitação está encerrada.</value>
+  </data>
+  <data name="Aba_Title_TaxasSolicitacao" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="Fieldset_HistoricoTitulos" xml:space="preserve">
+    <value>Histórico de títulos</value>
+  </data>
+  <data name="Fieldset_Taxas" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="Botao_Gerarboleto" xml:space="preserve">
+    <value>Emitir boleto</value>
+  </data>
+  <data name="MSG_SolicitacaoReabrirDispensaItemPlano" xml:space="preserve">
+    <value>Existe item dispensado que foi excluído do plano de estudo do aluno, ao reabrir a solicitação a dispensa é desfeita mas o plano de estudo não será recuperado. Deseja prosseguir com a reabertura?</value>
+  </data>
+  <data name="Botao_Consultardocumentoconclusao" xml:space="preserve">
+    <value>Consultar documento de conclusão</value>
+  </data>
+  <data name="Botao_Consultardocumentogad" xml:space="preserve">
+    <value>Consultar documento GAD</value>
+  </data>
+  <data name="Title_Modal_Visualizar_Documento_Academico" xml:space="preserve">
+    <value>Visualizar Documento Acadêmico</value>
+  </data>
+  <data name="MSG_Confirmacao_Fluxo_Assinatura" xml:space="preserve">
+    <value>Atenção. O fluxo de assinatura digital não foi concluído. Se o documento for anulado não será possível restaurá-lo. Confirma o cancelamento da solicitação?</value>
+  </data>
+  <data name="MSG_SolicitacaoServicoReabeturaNaoPermitida" xml:space="preserve">
+    <value>Operação não permitida. A solicitação foi cancelada, enquanto aguardava as assinaturas digitais. Por esse motivo não é possível reabrir a solicitação de serviço. Se necessário inicie novamente o processo de emissão através da criação de nova solicitação.</value>
+  </data>
+  <data name="ButtonInstructions_DesbloqueioDesabilitadoIntegracao" xml:space="preserve">
+    <value>Opção indisponível. A parametrização do motivo não permite desbloqueio manual.</value>
+  </data>
+  <data name="ButtonInstructions_DesbloqueioDesabilitadoManual" xml:space="preserve">
+    <value>Opção indisponível. O usuário logado não possui permissão para desbloquear registros com esse tipo de motivo de bloqueio.</value>
+  </data>
+  <data name="Botao_Reenviar_Notificacao" xml:space="preserve">
+    <value>Reenviar notificação</value>
+  </data>
+  <data name="MSG_UsuarioNaoPossuiAcessoARealizarAtendimentoCancelar" xml:space="preserve">
+    <value>Opção indisponível. O usuário logado não possui permissão para esse serviço.</value>
+  </data>
+  <data name="MSG_TextoInformativoPermanente" xml:space="preserve">
+    <value>Se o documento for anulado de forma permanente não será possível restaurá-lo.</value>
+  </data>
+  <data name="MSG_TextoInformativoTemporario" xml:space="preserve">
+    <value>Se o documento for anulado de forma temporária, o mesmo poderá ser restaurado.</value>
+  </data>
+  <data name="MSG_SolicitacaoIndisponivelParaRegistroDocumentos" xml:space="preserve">
+    <value>Opção indisponível. A etapa atual da solicitação não está disponível para registrar os documentos.</value>
+  </data>
+  <data name="Botao_Reenviar_Notificacao_Solicitacao_NaoPermiteReenvio" xml:space="preserve">
+    <value>Opção indisponível. O tipo da notificação não permite o reenvio.</value>
+  </data>
+  <data name="Botao_Reenviar_Notificacao_Solicitacao_ReenvioParaDestinatarioConfiguracao" xml:space="preserve">
+    <value>Opção indisponível. Não foi identificado destinatário na configuração de notificação.</value>
+  </data>
+  <data name="Botao_Reenviar_Notificacao_Solicitacao_ReenvioParaOrientadorSolicitante" xml:space="preserve">
+    <value>Opção indisponível. Não foi identificado orientador ou e-mail de contato.</value>
+  </data>
+  <data name="Botao_Reenviar_Notificacao_Solicitacao_ReenvioParaSolicitante" xml:space="preserve">
+    <value>Opção indisponível. Não foi identificado e-mail de contato do solicitante.</value>
+  </data>
+  <data name="MSG_Informativo_Registrar_Documento" xml:space="preserve">
+    <value>Opção indisponível. Os documentos desse processo devem ser validados em "Realizar atendimento".</value>
+  </data>
+  <data name="Botao_FinalizarSolicitacaoCRA" xml:space="preserve">
+    <value>Finalizar atendimento do CRA</value>
+  </data>
+  <data name="Botao_FinalizarSolicitacaoCRA_Tooltip" xml:space="preserve">
+    <value>Finalizar atendimento do CRA</value>
+  </data>
+  <data name="ButtonInstructions_FinalizarSolicitacaoCRA" xml:space="preserve">
+    <value>Opção indisponível. A solicitação não está disponível para finalização.</value>
+  </data>
+  <data name="MSG_FinalizarSolicitacaoCRA" xml:space="preserve">
+    <value>Tem certeza que desejar finalizar a solicitação?</value>
+  </data>
+</root>

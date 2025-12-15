@@ -1,0 +1,18 @@
+﻿@{
+    //FIX: HUGO1
+    throw new Exception("CORRIGIR");
+
+}
+
+    @*@model SMCPagerModel<IngressanteListaViewModel>
+
+        @(Smc.Grid("gridIngressantes")
+            .AllowSelect(x => x.SeqIngressante, 0, true)
+            .HideGridTitle()
+            .HideNavigator()
+            .AutoGenerateColumns()
+            .AutoHideNavigator()
+            .HideNumberOfRowsPerPageSelector()
+            .HidePager()
+            .HideRowNumber()
+            .HideRowsTotalizer())*@

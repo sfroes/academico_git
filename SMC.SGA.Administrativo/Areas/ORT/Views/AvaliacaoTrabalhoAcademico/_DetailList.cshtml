@@ -1,0 +1,65 @@
+﻿@model AvaliacaoTrabalhoAcademicoListarDynamicModel
+
+@using (Smc.Header("AvaliacaoTrabalhoAcademico", SMCHeaderType.Primary).CssClass("smc-header-lista-detalhada").Size(SMCSize.Grid24_24)
+                                       .Item(prop => prop.DescricaoComponenteCurricular, sizeMD: SMCSize.Grid11_24)
+                                       .Item(prop => prop.DescricaoSituacaoAprovacao, sizeMD: SMCSize.Grid11_24)
+                                       .Begin())
+{
+
+    using (Smc.Div().Size(SMCSize.Grid1_24).Begin())
+    {
+
+        @(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                    .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+                                    .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("Salvar", "AvaliacaoTrabalhoAcademico", new { backUrl = Url.Action("Index", "AvaliacaoTrabalhoAcademico", new { SeqCurso = Model.Seq }) }))
+                                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Botao_Agendamento_Banca"))
+                                    .Attribute(SMCMvcConsts.MODAL_SUBMIT_UPDATETARGETID, "#titulacoes_" + Model.Seq)
+                                    .Ajax(isPost: false)
+                                    .Text(Smc.GetUIResource("Botao_Agendamento_Banca"))
+                                    .Tooltip(Smc.GetUIResource("Botao_Agendamento_Banca"))
+                                    .Type(SMCButtonType.InputButton).CssClass("smc-btn-custom-destaque")
+                                    .SecurityToken(UC_ORT_002_02_04.MANTER_AGENDAMENTO_BANCA_EXAMINADORA)
+                                    .Action("Incluir", "AvaliacaoTrabalhoAcademico", new { seqTrabalhoAcademico = new SMCEncryptedLong(Model.Seq) }))
+
+    }
+}
+
+@using (Smc.Div("divItemAvaliacoes").CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+{
+    foreach (var avaliacao in Model.Avaliacoes)
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+        {
+            using (Smc.Div("divItemAvaliacao").CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid23_24).Begin())
+            {
+                @Html.Partial("_Legend", avaliacao)
+                @Smc.DisplayFor(m => avaliacao.Data).Size(SMCSize.Grid6_24)
+                @Smc.DisplayFor(m => avaliacao.Hora).Size(SMCSize.Grid6_24)
+                @Smc.DisplayFor(m => avaliacao.Local).Size(SMCSize.Grid6_24)
+                if (avaliacao.MostrarNotaConceito)
+                {
+                    @Smc.DisplayFor(m => avaliacao.NotaConceito).Size(SMCSize.Grid4_24)
+                }
+            }
+            using (Smc.Div("divItemMembroBanca").CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+            {
+                <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Membros")</label>
+                if (avaliacao.MostrarMembrosBancaExaminadora && avaliacao.Membros.Any())
+                {
+                    foreach (var membro in avaliacao.Membros)
+                    {
+                        @Smc.DisplayFor(m => membro.DescricaoMembro).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid23_24)
+                    }
+                }
+                else
+                {
+                    using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                    {
+                        <p> @Smc.GetUIResource("Label_Nenhum_Registro") </p>
+                    }
+                }
+            }
+        }
+        @Html.Partial("_DetailListButtons", Model)
+    }
+}

@@ -1,0 +1,22 @@
+﻿@model ConfiguracaoProcessoViewModel
+
+@using (Smc.Wizard("WizardConfiguracaoProcesso")
+           .ButtonSet(1, SMCButtonSetGroupedStyle.Arrow, false, "smc-wizard-salvar-arrow",
+                          item => Smc.Button(SMCButtonBehavior.Salvar)
+                                     .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                     .Action("Salvar", "ConfiguracaoProcesso")
+                                     .Ajax(isPost: true).Highlight())
+           .ButtonSet(1, SMCButtonSetGroupedStyle.Arrow, cssClass: "smc-wizard-cancelar-arrow", alwaysVisible: true, buttons:
+                          item => Smc.Button(SMCButtonBehavior.Cancelar)
+                                     .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                     .Action("Index", "ConfiguracaoProcesso", new { SeqProcesso = new SMCEncryptedLong((Model as ConfiguracaoProcessoViewModel).SeqProcesso) }))
+
+ .Begin())
+{
+    using (Smc.WizardStep(0).Title(Smc.GetUIResource("WizardStepTipoConfiguracao_Title")).Action("WizardStepTipoConfiguracao").Begin())
+    { }
+    using (Smc.WizardStep(1).Title(Smc.GetUIResource("WizardStepConfiguracao_Title")).Action("WizardStepConfiguracao").Begin())
+    { }
+    using (Smc.WizardStep(2).Title(Smc.GetUIResource("WizardStepConfirmacao_Title")).Action("WizardStepConfirmacao").Begin())
+    { }
+}

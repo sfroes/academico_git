@@ -1,0 +1,18 @@
+﻿@model OfertaCursoCicloLetivoAssociacaoPoloViewModel
+
+
+
+@using (Smc.Fieldset("fieldsetAssociacaoPolo").Begin())
+{
+    <li>
+        <label>
+            @Smc.GetUIResource("Texto_Selecione_Polos")
+        </label>
+    </li>
+    @Smc.FieldEditorFor(prop => prop.SeqOfertaCursoCicloLetivo)
+}
+@(Smc.TreeView("treeviewPolos", Model.Polos)
+         .AllowCheck(true, false, false)
+         .AllowSearch(true, "DescricaoPolo")
+)
+

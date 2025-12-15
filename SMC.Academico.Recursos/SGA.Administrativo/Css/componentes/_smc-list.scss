@@ -1,0 +1,624 @@
+﻿// LISTA DETALHADA
+
+.smc-list {
+    margin-top: 0;
+}
+
+.smc-listdetailed-conteudo-destaque {
+    background-color: $smc-cor-principal-08;
+    //margin-top: -6px;
+}
+
+.smc-listdetailed-item {
+    border-left: 3px solid $smc-cor-principal;
+
+    .smc-display-legend {
+        margin-top: 8px;
+        margin-left: 5px;
+    }
+
+    .smc-buttonset-vertical-secundario {
+        padding-top: 15px;
+        //margin-left: 6px;
+    }
+
+    .smc-sga-totalizador {
+        padding: 3px 0 0px 0;
+        margin-bottom: 0;
+        min-height: 0;
+        margin-top: 5px;
+
+        label {
+            text-align: center;
+            width: 100%;
+        }
+
+        p {
+            font-size: 25px;
+            text-align: center;
+            color: $smc-cor-principal-04;
+            margin: 0px 0 2px 0 !important;
+        }
+    }
+}
+
+.smc-list-item-grid { //simula um grid dentro de lista http://localhost/Dev/SGA.Administrativo/CSO/CursoUnidade?seqEntidade=67F9EB208B63AAB9
+    //margin: 10px 0 10px 0;
+    display: inline-block;
+    width: 100%;
+
+    .smc-display{
+        padding-top: 3px!important;
+    }
+        
+    li {
+        border-bottom: 1px solid $smc-cinza-04;
+        box-shadow: 0 1px 0 $smc-branco;
+        @extend .row;
+
+        &:last-child {
+            border: none;
+            box-shadow: none;
+        }
+    }
+
+    .smc-header-tipo-primary { // Adriana: Incluído para aproximar header primário de conteúdo que o mesmo agrupa. Disponível em http://localhost/Dev/SGA.Administrativo/TUR/Turma/Editar?seq=9EE649BBD6F06623
+        margin-bottom: 3px !important;
+    }
+
+    .smc-listdetailed-conteudo-lista { // Adriana: Incluído para aproximar header primário de conteúdo que o mesmo agrupa. Disponível em http://localhost/Dev/SGA.Administrativo/TUR/Turma/Editar?seq=9EE649BBD6F06623
+        & > .smc-list-item-grid {
+            margin: 0 0 25px 0;
+        }
+    }
+}
+
+.smc-listdetailed-conteudo-titulo {
+    p { // padrão de títulos ( http://localhost/Dev/SGA.Administrativo/CUR/ConfiguracaoComponente?seqComponenteCurricular=F50721EEE016DB10)
+        font: normal normal normal 16px/18px "sf_ui_displayregular",Arial,sans-serif !important;
+        color: $smc-cor-principal-05 !important;
+    }
+}
+
+.smc-listdetailed-conteudo-titulo-aninhado { //Usado na lista detalhada de TUR/Turma
+    padding: 0 !important;
+    margin: 0;
+
+    p {
+        font-weight: bold !important;
+    }
+}
+
+.smc-listdetailed-conteudo-titulo-aninhado.smc-recuo-esquerda { //Usado na lista detalhada de TUR/Turma
+    margin-left: 4.5%;
+}
+
+.smc-recuo-esquerda { //Usado no cabeçalho de configurações de TUR/Turma
+    margin-left: 3.6%;
+}
+
+.smc-listdetailed-conteudo-subtitulo { // padrão de títulos ( http://localhost/Dev/SGA.Administrativo/CUR/ComponenteCurricular)
+    font: normal normal bold 14px/14px "sf_ui_displayregular",Arial,sans-serif !important;
+    color: $smc-cor-principal !important;
+    // margin: 15px 15px 0 15px;
+    input[readonly="readonly"] { //Propriedade utilizada na tela "Nova Parceria Intercâmbio" - UC_ALN_004_01 - Parceria de Intercâmbio
+        background: transparent !important;
+        border: none !important;
+        font: normal normal bold 14px/14px "sf_ui_displayregular",Arial,sans-serif !important;
+        color: $smc-cor-principal !important;
+    }
+}
+
+label.smc-listdetailed-conteudo-subtitulo {
+    margin: 10px 5px 5px 10px;
+}
+
+.smc-listdetailed-conteudo-subtitulo-destaque { // padrão de títulos ( http://localhost/Dev/SGA.Administrativo/CUR/ComponenteCurricular)
+    font: normal normal bold 14px/14px "sf_ui_displayregular",Arial,sans-serif !important;
+    color: $smc-cor-principal !important;
+    margin: 15px 15px 0 15px;
+
+    &:before {
+        content: "";
+        padding: 12px;
+        position: absolute;
+        margin: -7px 0 0 -11px;
+        //border: 2px solid $smc-cor-secundaria-03;
+        border-radius: 3px;
+    }
+}
+//.smc-listdetailed-conteudo-lista { // Glênia: Classe removida para reduzir o tamanho das listas
+//  padding: $smc-listdetailed-header-conteudo-padding;
+//}
+
+.smc-listdetailed-conteudo-lista-hidepanel { // Glênia: classe criada para ajuste de espaçamento em lista detalhada com hidepanel exibindo detalhamento de itens
+    // Cadastro de currículo: http://localhost/Dev/SGA.Administrativo/CUR/Curriculo?wa=wsignin1.0&wtrealm=http%3A%2F%2Flocalhost%2FDev%2FSGA.Administrativo&wctx=rm%3D0%26id%3Dpassive%26ru%3D%252fDev%252fSGA.Administrativo%252fCUR%252fCurriculo%252fIncluir%253fseqCurso%253d14CCE3818E8A9343&wct=2017-10-02T12%3A52%3A27Z&smc=5CD5E0ACA7EA7BED5976C5903DA730D1326713CB7BC72236485A75E0D345E93AB41C0EEBE2E2B7D6BA204BC01361F74BF32BD4D3DFACE2177D989C85D46870D15F6D1D1AFADA7E9F
+    padding: 0;
+}
+
+// Formatação específica para botões em headers de agrupamento em lista detalhada
+// Ver em: http://localhost/Dev/SGA.Administrativo/ALN/InstituicaoNivelTipoVinculoAluno
+.smc-listdetailed-header-conteudo {
+    & > .smc-buttonset-vertical-secundario {
+        margin-left: 0;
+        padding-top: 9px;
+        text-align: right;
+
+        .smc-btn-custom-destaque,
+        .smc-btn-excluir-ico,
+        .smc-btn-alterar-ico {
+            float: left;
+            height: 23px;
+            background: $smc-branco;
+
+            &:hover {
+                background: transparent;
+                border: solid 1px $smc-cor-secundaria-03;
+                color: $smc-cor-secundaria-03;
+            }
+        }
+
+        .smc-btn-excluir-ico {
+            &:hover {
+                border: solid 1px $smc-vermelho;
+                color: $smc-vermelho;
+            }
+        }
+    }
+}
+
+.smc-listdetailed-conteudo-lista, .smc-listdetailed-conteudo-lista-item-destaque {
+    // grid dentro da lista detalhada (http://localhost/Dev/SGA.Administrativo/CUR/MatrizCurricular?seqCurriculoCursoOferta=14CCE3818E8A9343)
+    .smc-datagrid-header {
+        background-color: transparent;
+
+        span:first-child {
+            color: $smc-cor-principal-02;
+        }
+    }
+
+    .smc-grid {
+        margin-bottom: 0;
+        margin-top: 5px;
+    }
+
+    .smc-datagrid {
+
+        thead {
+            box-shadow: none;
+
+            tr th {
+                background-color: transparent !important;
+                padding: 5px 10px !important;
+                color: $smc-cor-principal !important;
+            }
+        }
+
+        tbody tr {
+            background: transparent !important;
+            height: 25px !important;
+
+            td {
+                border-right: none !important;
+                border-bottom: 1px solid $smc-cinza-03 !important;
+                box-shadow: none !important;
+                color: $smc-preto !important;
+                padding-left: 10px !important;
+                min-height: 25px !important;
+                padding-top: 0 !important;
+
+                .smc-display {
+                    p {
+                        color: $smc-preto;
+                    }
+                }
+            }
+
+            td.smc-datagrid-numero-linha{
+                padding-left: 0!important;
+            }
+        }
+    }
+    // fim grid dentro da lista detalhada
+    h3 { // classe dentro da lista para igualar os títulos (Ex.: http://localhost/Dev/SGA.Administrativo/CUR/GrupoConfiguracaoComponente)
+        margin: 5px 5px 5px 0;
+        font: normal normal bold 14px/14px "segoe_uiregular",Arial,sans-serif !important;
+        color: $smc-cor-principal-01;
+    }
+
+    .container-fluid > .smc-display, .smc-display.smc-display-collection > div > .smc-display {
+        clear: both;
+        display: block;
+        margin-bottom: 5px;
+        margin-top: -5px;
+        padding-left: 0;
+        @extend .fa-circle;
+        @extend .fa;
+
+        &::before {
+            float: left;
+            font-size: 5px;
+            margin: 5px 4px 0 5px;
+            color: $smc-cor-principal-04;
+        }
+
+        p {
+            &::before {
+                display: none;
+            }
+        }
+    }
+    // ----- TRECHO COMENTADO PELA APLICAÇÃO DE CLASSE SMC-DISPLAY-COLLECTION NO FRAMEWORK 4.0 ----- //
+    //ul li .smc-display-collection {
+    //    //   margin-bottom: 5px;
+    //    margin-top: -5px;
+    //    padding-left: 0;
+    //    @extend .fa-circle;
+    //    @extend .fa;
+    //
+    //    &::before {
+    //        float: left;
+    //        font-size: 5px;
+    //        margin: 5px 4px 0 5px;
+    //        color: $smc-cor-principal-04;
+    //    }
+    //}
+    ul li {
+        min-height: 25px !important;
+        padding-top: 0 !important;
+        // .smc-size-md-24 {
+        //     @extend .smc-size-md-23;
+        // }
+        //.smc-display {
+        //    padding: 0;
+        //}
+    }
+
+    .smc-display-collection {
+        padding-top: 5px; // margem para detalhes do componente curricular
+        margin-left: 5px;
+    }
+}
+
+.smc-listdetailed-item-filho { // classe para lista detalhada dentro de lista
+    border-left: none;
+    border-bottom: 1px solid $smc-cinza-03;
+    padding: 10px 0 5px 0;
+
+    > .smc-buttonset-vertical-secundario {
+        padding: 0;
+        margin: 0;
+    }
+}
+//Eliminação de borda inferior no último item filho
+.smc-list-conteudo {
+    & > ul {
+        & > li:last-child {
+            & > div {
+                & > .smc-listdetailed-item-filho {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+.smc-listdetailed-listagem-itens {
+    li {
+        margin-bottom: 0 !important;
+        min-height: 20px;
+    }
+
+    .smc-list-item {
+        padding-top: 0;
+        min-height: 20px;
+    }
+
+    .smc-display {
+        clear: both;
+        display: block;
+        margin-bottom: 0;
+        margin-top: -5px;
+        @extend .fa-circle;
+        @extend .fa;
+        margin-left: 25px; // classe para itens na lista detalhada http://localhost/Dev/SGA.Administrativo/CUR/ConfiguracaoComponente
+        &::before {
+            float: left;
+            font-size: 5px;
+            margin: 5px 5px 0 5px;
+            color: $smc-cor-principal-04;
+        }
+    }
+}
+
+
+.smc-listdetailed-conteudo-separador-vertical {
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        height: 97%;
+        padding: 0 1px 0 0;
+        background-color: $smc-branco;
+        float: left;
+        position: absolute;
+        margin-top: 0.5%;
+    }
+}
+// Lista com Header encontrada em:
+// http://localhost/Dev/SGA.Administrativo/CSO/CursoUnidade
+// http://localhost/Dev/SGA.Administrativo/MAT/Chancela
+
+.smc-list-item.smc-list-cabecalho {
+    background: $smc-cor-principal;
+    display: inline-block;
+    width: 99%;
+    margin: 0 0 0 5px;
+    padding: 0 0 5px 0;
+
+    & > div {
+        & > h3 {
+            color: $smc-branco;
+            margin: 8px;
+        }
+        //Herança para botões secundários no header de list group
+        .smc-buttonset-horizontal-secundario {
+            text-align: right;
+            margin-top: 10px;
+
+            & .smc-button {
+                & a {
+                    background-color: $smc-branco;
+                    border: solid 1px $smc-branco;
+                    display: inline-flex;
+
+                    &:hover {
+                        border: solid 1px $smc-cor-secundaria-01;
+                    }
+                }
+
+                & .smc-btn-excluir-ico {
+                    &:hover {
+                        border: solid 1px $smc-vermelho;
+                    }
+                }
+
+                & .smc-btn-alterar-ico {
+                    height: 25px !important;
+                    padding-top: 1px !important;
+                }
+            }
+
+            & .smc-btn-disabled {
+                & a {
+                    background-color: transparent;
+                    border: solid 1px transparent;
+                    display: inline-flex;
+
+                    &:hover {
+                        border: solid 1px transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-listdetailed-item {
+        border: none;
+        background-color: $smc-cor-principal;
+        margin-bottom: 0;
+        display:inline-block;
+
+        div {
+            .smc-display-legend {
+                margin: 7px 0 0 5px;
+                height: 25px;
+            }
+        }
+
+        p, span {
+            color: $smc-branco !important;
+            font-size: 14px !important;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            margin-left: 12px;
+            font-weight: normal !important;
+        }
+
+        label {
+            color: $smc-cor-principal-06;
+            font-size: 12px;
+            margin-top: 2px;
+            margin-left: 12px;
+            float: left;
+            font-weight: normal;
+        }
+    }
+}
+
+.smc-list-cabecalho-topo {
+    border-radius: 0;
+    //border-bottom: 1px solid $smc-cor-principal-08;
+}
+
+.smc-listdetailed-hierarquia {
+    padding: 0;
+
+    p {
+        margin: 0;
+
+        &:before {
+            @extend .fa;
+            @extend .fa-angle-double-up;
+            color: $smc-cor-secundaria-01;
+            padding: 3px;
+        }
+
+        &:first-child {
+            margin-left: 5px;
+        }
+    }
+}
+
+.smc-listdetailed-conteudo-lista-item-destaque {
+    .smc-display {
+        & > label { // Para seleção de parâmetros em Turma (verificar se afeta outras telas).
+            background-color: transparent;
+            font-size: 12px;
+        }
+    }
+
+    .smc-display-collection {
+        & > div {
+            & > h3 { // Para seleção de parâmetros em Turma (verificar se afeta outras telas).
+                background-color: transparent;
+                font-size: 12px;
+            }
+        }
+    }
+
+    label {
+        width: 100%;
+        background-color: $smc-cor-principal-08;
+        padding: 6px;
+        margin-left: 0;
+    }
+
+    + .smc-listdetailed-conteudo-lista-item-destaque {
+        border-left: 1px solid $smc-branco;
+    }
+
+    .smc-listdetailed-conteudo-subtitulo {
+        background-color: transparent !important;
+    }
+}
+
+.smc-sga-remove-bullet {
+    &::before {
+        display: none;
+    }
+}
+
+// Lista detalhada submetível. Ver em:
+// http://localhost/Dev/SGA.Administrativo/MAT/Chancela (na Edição da Chancela)
+
+.smc-list-submit {
+    display: inline-block;
+    width: 100%;
+
+    .smc-listdetailed-item {
+        .smc-listdetailed-conteudo {
+            .smc-listdetailed-header-conteudo {
+                padding-top: 8px !important;
+            }
+        }
+    }
+}
+
+.smc-sga-fieldset-list-submit {
+    width: 99.9%;
+    padding: 12px 2%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+// lista detalhada
+.smc-listdetailed-conteudo-titulo-linhaunica {
+    p {
+        padding: 8px 0 1px 0 !important;
+        font: normal normal normal 16px/24px "sf_ui_displayregular",Arial,sans-serif !important;
+        color: $smc-cor-principal-05 !important;
+    }
+}
+
+//Alteração de size de campos mostrados em lista detalhada que já possuem seus sizes mas a sua mudança afeta tbm os campos do cadastro/filtro.
+.smc-display-list-line {
+    .container-fluid {
+        & > div {
+            width: 100%;
+        }
+    }
+}
+
+
+// Grid simulado dentro de lista. Ver em:
+// http://localhost/Dev/SGA.Administrativo/TUR/DivisaoTurmaColaborador?SeqTurma=26FF193A96602934 (Associar professor à turma)
+.smc-listdetailed-custom-grid {
+
+    .smc-listdetailed-conteudo-subtitulo:first-child {
+        padding: 0 0 0 15px;
+    }
+
+    .smc-buttonset-horizontal-secundario {
+
+        .smc-button {
+            & a {
+                width: 27px !important;
+                height: 27px !important;
+            }
+
+            .smc-btn-alterar-ico {
+                font-size: 0;
+                border: 1px solid transparent !important;
+                padding: 6px 0 3px 5px!important;
+
+                &:hover {
+                    border: 1px solid $smc-cor-secundaria-01 !important;
+                }
+            }
+
+            .smc-btn-excluir-ico {
+                line-height: 0.9;
+                padding: 4px 0 3px 5px;
+            }
+        }
+    }
+}
+
+
+// Classe utilizada para agrupar dados de 3º nível em lista detalhada ("o detalhe do detalhe").
+// Ver em Cadastro de Termo de Intercâmbio: http://localhost/Dev/SGA.Administrativo/ALN/TermoIntercambio?seqParceriaIntercambio=54B44C94F46C1EC7
+.smc-sga-subgrupo-lista-detalhada {
+    margin: 5px 0 3px 0;
+    background: $smc-branco;
+    border: solid 1px $smc-cinza-03;
+    padding: 0 0 2px 0;
+
+    .smc-listdetailed-conteudo-subtitulo {
+        margin: 5px 0 5px 0;
+    }
+
+    .smc-sga-totalizador {
+        margin-top: 9px;
+        position: absolute;
+        right: 7px;
+
+        label {
+            padding: 0;
+        }
+
+        p {
+            min-height: 17px;
+        }
+    }
+
+    .smc-grid {
+        background: transparent;
+    }
+
+    .smc-datagrid {
+        tbody {
+            tr {
+                background: transparent !important;
+
+                td:last-child {
+                    border-bottom: none !important;
+                }
+            }
+        }
+    }
+
+    .smc-datagrid-no-results {
+        border-top: none;
+    }
+}

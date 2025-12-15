@@ -1,0 +1,23 @@
+﻿@model AssociacaoFormacaoEspecificaIngressanteViewModel
+
+@Html.Action("CabecalhoIngressante", "Ingressante", Model.SeqIngressante)
+
+@using (Smc.Form("formAssociacaoFormacaoEspecificaIngressante", "SalvarAssociacaoFormacaoEspecificaIngressante").Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqIngressante)
+    @Smc.EditorFor(prop => prop.SeqCurso)
+    @Smc.EditorFor(prop => prop.SeqCursoOfertaLocalidade)
+    @Smc.EditorFor(prop => prop.SeqFormacaoEspecifica)
+    @Smc.EditorFor(prop => prop.SelecaoNivelFolha)
+    @Smc.EditorFor(prop => prop.SelecaoNivelSuperior)
+
+    @Smc.EditorFor(prop => prop.FormacoesEspecificas)
+
+    var buttonSet = Smc.ButtonSet();
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().Hide(Smc.GetViewMode() == SMCViewMode.ReadOnly));
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Index", "Ingressante"));
+
+    @buttonSet;
+}

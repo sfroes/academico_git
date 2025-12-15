@@ -1,0 +1,7 @@
+﻿@using SMC.SGA.Aluno.Areas.ALN.Models
+@model PlanoEstudoItemViewModel
+
+@using (Smc.Div("").CssClass("smc-sga-externo-agrupamento").Size(SMCSize.Grid24_24).Begin())
+{
+        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">@Model.DescricaoFormatada</label>
+}

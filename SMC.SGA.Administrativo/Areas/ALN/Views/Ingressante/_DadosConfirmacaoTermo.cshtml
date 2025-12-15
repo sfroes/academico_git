@@ -1,0 +1,17 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Models
+
+@model PessoaAtuacaoTermoIntercambioViewModel
+
+@Smc.DisplayFor(m => m.TipoTermoIntercambioConfirmacao)
+@Smc.DisplayFor(m => m.TermoIntercambioConfirmacao)
+@Smc.DisplayFor(m => m.InstituicaoExterna)
+@if (Model.ExistePeriodo)
+{
+    @Smc.DisplayFor(m => m.DataInicio)
+    @Smc.DisplayFor(m => m.DataFim)
+}
+@Smc.DisplayFor(m => m.SeqTipoOrientacao)
+@if (Model.OrientacaoParticipacoesColaboradores.SMCAny())
+{
+    @Smc.DisplayFor(m => m.OrientacaoParticipacoesColaboradores)
+}

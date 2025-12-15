@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DescricaoEtapa" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="DescricaoProcesso" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="DescricaoProcessoImprimir" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="DescricaoServico" xml:space="preserve">
+    <value>Serviço</value>
+  </data>
+  <data name="DescricaoTaxa" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="DocumentosSolicitacaoViewModel_DescricaoTipoDocumento" xml:space="preserve">
+    <value>Tipo de documento</value>
+  </data>
+  <data name="DocumentosSolicitacaoViewModel_Observacao" xml:space="preserve">
+    <value>Observação</value>
+  </data>
+  <data name="DownloadDocumentoDigitalDocumentoConclusaoPaginaViewModel_CodigoValidacao" xml:space="preserve">
+    <value>Código validação</value>
+  </data>
+  <data name="DownloadDocumentoDigitalDocumentoConclusaoPaginaViewModel_CodigoValidacaoDiploma" xml:space="preserve">
+    <value>Código validação</value>
+  </data>
+  <data name="DownloadDocumentoDigitalDocumentoConclusaoPaginaViewModel_CodigoValidacaoHistorico" xml:space="preserve">
+    <value>Código validação</value>
+  </data>
+  <data name="DownloadDocumentoDigitalDocumentoConclusaoPaginaViewModel_DataColacao" xml:space="preserve">
+    <value>Data da colação</value>
+  </data>
+  <data name="DownloadDocumentoDigitalDocumentoConclusaoPaginaViewModel_DataRegistro" xml:space="preserve">
+    <value>Data registro</value>
+  </data>
+  <data name="DownloadDocumentoDigitalDocumentoConclusaoPaginaViewModel_DescricaoCurso" xml:space="preserve">
+    <value>Curso</value>
+  </data>
+  <data name="DownloadDocumentoDigitalDocumentoConclusaoPaginaViewModel_DescricaoGrauAcademico" xml:space="preserve">
+    <value>Grau acadêmico</value>
+  </data>
+  <data name="DownloadDocumentoDigitalDocumentoConclusaoPaginaViewModel_DescricaoTitulacao" xml:space="preserve">
+    <value>Titulação</value>
+  </data>
+  <data name="DownloadDocumentoDigitalDocumentoConclusaoPaginaViewModel_FormacaoEspecifica" xml:space="preserve">
+    <value>Formação</value>
+  </data>
+  <data name="DownloadDocumentoDigitalDocumentoConclusaoPaginaViewModel_NumeroProcesso" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="DownloadDocumentoDigitalDocumentoConclusaoPaginaViewModel_NumeroRegistro" xml:space="preserve">
+    <value>Número registro</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_AtoAutorizacaoCurso" xml:space="preserve">
+    <value>Autorização</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_AtoCredenciamentoInstituicao" xml:space="preserve">
+    <value>Credenciamento</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_AtoReconhecimentoCurso" xml:space="preserve">
+    <value>Reconhecimento</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_AtoRecredenciamentoInstituicao" xml:space="preserve">
+    <value>Recredenciamento</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_AtoRenovacaoReconhecimentoCurso" xml:space="preserve">
+    <value>Renovação reconhecimento</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_AtoRenovacaoRecredenciamentoInstituicao" xml:space="preserve">
+    <value>Renovação de recredenciamento</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_CnpjInstituicao" xml:space="preserve">
+    <value>CNPJ</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_CnpjMantenedora" xml:space="preserve">
+    <value>CNPJ</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_CodigoAlunoMigracao" xml:space="preserve">
+    <value>RA</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_CodigoEmecCurso" xml:space="preserve">
+    <value>Código EMEC</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_CodigoEmecInstituicao" xml:space="preserve">
+    <value>Código EMEC</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_Cpf" xml:space="preserve">
+    <value>CPF</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_DataColacao" xml:space="preserve">
+    <value>Data da colação</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_DataNascimento" xml:space="preserve">
+    <value>Data de nascimento</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_DataRegistro" xml:space="preserve">
+    <value>Data registro</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_DescricaoCurso" xml:space="preserve">
+    <value>Nome do curso</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_DescricaoGrauAcademico" xml:space="preserve">
+    <value>Grau acadêmico</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_DescricaoModalidade" xml:space="preserve">
+    <value>Modalidade</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_DescricaoNacionalidade" xml:space="preserve">
+    <value>Nacionalidade</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_DescricaoTitulacao" xml:space="preserve">
+    <value>Título conferido</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_EnderecoCurso" xml:space="preserve">
+    <value>Endereço</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_EnderecoInstituicao" xml:space="preserve">
+    <value>Endereço</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_EnderecoMantenedora" xml:space="preserve">
+    <value>Endereço</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_FormacoesEspecificas" xml:space="preserve">
+    <value>Formações</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_Naturalidade" xml:space="preserve">
+    <value>Naturalidade</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_NomeAluno" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_NomeInstituicao" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_NomePaisEmissaoPassaporte" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_NomeSocial" xml:space="preserve">
+    <value>Nome social</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_NumeroIdentidade" xml:space="preserve">
+    <value>Identidade</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_NumeroPassaporte" xml:space="preserve">
+    <value>Passaporte</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_NumeroProcesso" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_NumeroRegistro" xml:space="preserve">
+    <value>Número registro</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_OrgaoEmissorIdentidade" xml:space="preserve">
+    <value>Órgão</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_RazaoSocialMantenedora" xml:space="preserve">
+    <value>Razão social</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_Sexo" xml:space="preserve">
+    <value>Sexo</value>
+  </data>
+  <data name="DownloadDocumentoDigitalPaginaViewModel_UfIdentidade" xml:space="preserve">
+    <value>UF</value>
+  </data>
+  <data name="EntregaDocumentoDigitalDocumentoConclusaoPaginaViewModel_CodigoValidacao" xml:space="preserve">
+    <value>Código validação</value>
+  </data>
+  <data name="EntregaDocumentoDigitalDocumentoConclusaoPaginaViewModel_DataColacaoGrau" xml:space="preserve">
+    <value>Colação</value>
+  </data>
+  <data name="EntregaDocumentoDigitalDocumentoConclusaoPaginaViewModel_DescricaoCurso" xml:space="preserve">
+    <value>Curso</value>
+  </data>
+  <data name="EntregaDocumentoDigitalDocumentoConclusaoPaginaViewModel_DescricaoGrauAcademico" xml:space="preserve">
+    <value>Grau acadêmico</value>
+  </data>
+  <data name="EntregaDocumentoDigitalDocumentoConclusaoPaginaViewModel_DescricaoTitulacao" xml:space="preserve">
+    <value>Titulação</value>
+  </data>
+  <data name="EntregaDocumentoDigitalDocumentoConclusaoPaginaViewModel_NumeroVia" xml:space="preserve">
+    <value>Via</value>
+  </data>
+  <data name="EntregaDocumentoDigitalFormacaoPaginaViewModel_DescricaoFormacaoEspefica" xml:space="preserve">
+    <value>Formação</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_ConfirmacaoAluno" xml:space="preserve">
+    <value>Os dados pessoais estão corretos?</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_Cpf" xml:space="preserve">
+    <value>CPF</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_DataNascimento" xml:space="preserve">
+    <value>Data de nascimento</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_DescricaoNacionalidade" xml:space="preserve">
+    <value>Nacionalidade</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_FiliacaoDisplay" xml:space="preserve">
+    <value>Filiação</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_Naturalidade" xml:space="preserve">
+    <value>Naturalidade</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_NomeAluno" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_NomePaisEmissaoPassaporte" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_NomeSocial" xml:space="preserve">
+    <value>Nome social</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_NumeroIdentidade" xml:space="preserve">
+    <value>Identidade</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_NumeroPassaporte" xml:space="preserve">
+    <value>Passaporte</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_Observacao" xml:space="preserve">
+    <value>Comente quais os dados deverão ser atualizados e relate a descrição correta. A seguir anexe cópia dos seus documentos pessoais para que a atualização seja realizada.</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_OrgaoEmissorIdentidade" xml:space="preserve">
+    <value>Órgão</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_Sexo" xml:space="preserve">
+    <value>Sexo</value>
+  </data>
+  <data name="EntregaDocumentoDigitalPaginaViewModel_UfIdentidade" xml:space="preserve">
+    <value>UF</value>
+  </data>
+  <data name="EntregaDocumentoDigitalUploadPaginaViewModel_ArquivoAnexado" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="EntregaDocumentoDigitalUploadPaginaViewModel_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="EntregaDocumentoDigitalUploadPaginaViewModel_SeqTipoDocumento" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+  <data name="InstrucoesFinaisSolicitacaoPadraoPaginaViewModel_DescricaoAtualizada" xml:space="preserve">
+    <value>Descrição atualizada</value>
+  </data>
+  <data name="InstrucoesFinaisSolicitacaoPadraoPaginaViewModel_DescricaoJustificativa" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="InstrucoesFinaisSolicitacaoPadraoPaginaViewModel_DescricaoOriginal" xml:space="preserve">
+    <value>Descrição original</value>
+  </data>
+  <data name="InstrucoesFinaisSolicitacaoPadraoPaginaViewModel_ObservacaoSituacaoAtual" xml:space="preserve">
+    <value>Observação</value>
+  </data>
+  <data name="InstrucoesFinaisSolicitacaoPadraoPaginaViewModel_ObservacoesJustificativa" xml:space="preserve">
+    <value>Observação</value>
+  </data>
+  <data name="InstrucoesFinaisSolicitacaoPadraoPaginaViewModel_SeqJustificativa" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="InstrucoesFinaisSolicitacaoPadraoPaginaViewModel_SituacaoAtualSolicitacao" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="InstrucoesIniciaisSolicitacaoPadraoPaginaViewModel_ObservacoesJustificativa" xml:space="preserve">
+    <value>Observações</value>
+  </data>
+  <data name="InstrucoesIniciaisSolicitacaoPadraoPaginaViewModel_SeqJustificativa" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="MotivoBloqueioViewModel_Descricao" xml:space="preserve">
+    <value>Bloqueio</value>
+  </data>
+  <data name="MotivoBloqueioViewModel_OrientacoesDesbloqueio" xml:space="preserve">
+    <value>Orientações para desbloqueio</value>
+  </data>
+  <data name="Observacao" xml:space="preserve">
+    <value>Observação</value>
+  </data>
+  <data name="PessoaAtuacaoBloqueioViewModel_Descricao" xml:space="preserve">
+    <value>Bloqueio</value>
+  </data>
+  <data name="PessoaAtuacaoBloqueioViewModel_DescricaoReferenciaAtuacao" xml:space="preserve">
+    <value>Referente a</value>
+  </data>
+  <data name="PessoaAtuacaoBloqueioViewModel_DescricaoTipoBloqueio" xml:space="preserve">
+    <value>Tipo de bloqueio</value>
+  </data>
+  <data name="PessoaAtuacaoBloqueioViewModel_DescricaoVinculo" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="PessoaAtuacaoBloqueioViewModel_NumeroIngressante" xml:space="preserve">
+    <value>Número do ingressante</value>
+  </data>
+  <data name="PessoaAtuacaoBloqueioViewModel_RegistroAcademico" xml:space="preserve">
+    <value>Registro acadêmico</value>
+  </data>
+  <data name="ProcessoSolicitacaoPaginaViewModelBase_DescricaoEtapa" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="ProcessoSolicitacaoPaginaViewModelBase_DescricaoServico" xml:space="preserve">
+    <value>Serviço</value>
+  </data>
+  <data name="SeqGrupoPrograma" xml:space="preserve">
+    <value>Programa</value>
+  </data>
+  <data name="SolicitacaoAtividadeComplementarPaginaViewModel_SeqDivisaoComponente" xml:space="preserve">
+    <value>Atividade complementar</value>
+  </data>
+  <data name="SolicitacaoServicoPaginaViewModelBase_DescricaoProcesso" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+</root>

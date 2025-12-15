@@ -1,0 +1,365 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Unity</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.Unity.Interception.SMCInterceptionExtensions">
+            <summary>
+            Contém métodos de extensão para as classes de interceptação.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.Interception.SMCInterceptionExtensions.CreateFrameworkMethodReturn(SMC.Framework.Interception.SMCInterceptionMethodInvocation,Unity.Interception.PolicyInjection.Pipeline.IMethodReturn)">
+            <summary>
+            Cria um retorno do método do tipo SMCInterceptionMethodReturn a partir de um retorno do Unity IMethodReturn.
+            </summary>
+            <param name="methodInvocation">Método chamado.</param>
+            <param name="result">Resultado do unity.</param>
+            <returns>Resultado do método.</returns>
+        </member>
+        <member name="M:SMC.Framework.Unity.Interception.SMCInterceptionExtensions.UpdateResult(Unity.Interception.PolicyInjection.Pipeline.IMethodInvocation,Unity.Interception.PolicyInjection.Pipeline.IMethodReturn@,SMC.Framework.Interception.SMCInterceptionMethodReturn)">
+            <summary>
+            Atualiza uma classe que representa um retorno de método do unity a partir do retorno de método do framework.
+            </summary>
+            <param name="input">Método chamado.</param>
+            <param name="unityMethodReturn">Retorno do método do unity.</param>
+            <param name="frameworkMethodResult">Retorno do método do framework.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.Interception.SMCInterceptionExtensions.GetArguments(Unity.Interception.PolicyInjection.Pipeline.IMethodInvocation)">
+            <summary>
+            Recupera os argumentos do método chamado.
+            </summary>
+            <param name="input">Método chamado.</param>
+            <returns>Argumentos do método chamado.</returns>
+        </member>
+        <member name="T:SMC.Framework.Unity.Interception.SMCUnityInterceptionBehavior">
+            <summary>
+            Classe que faz a interceptação da chamada de um método utilizando o Unity..
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Unity.Interception.SMCUnityInterceptionBehavior._original">
+            <summary>
+            Classe original do framework que faz a interceptação.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.Interception.SMCUnityInterceptionBehavior.#ctor(SMC.Framework.Interception.ISMCInterceptionBehavior)">
+            <summary>
+            Cria um novo objeto SMCUnityInterceptionBehavior.
+            </summary>
+            <param name="original">Classe original do framework que faz a interceptação.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.Interception.SMCUnityInterceptionBehavior.GetRequiredInterfaces">
+            <summary>
+            Recupera as interfaces requeridas.
+            </summary>
+            <returns>Interfaces requeridas.</returns>
+        </member>
+        <member name="M:SMC.Framework.Unity.Interception.SMCUnityInterceptionBehavior.Invoke(Unity.Interception.PolicyInjection.Pipeline.IMethodInvocation,Unity.Interception.InterceptionBehaviors.GetNextInterceptionBehaviorDelegate)">
+            <summary>
+            Intercepta a chamada de um método.
+            </summary>
+            <param name="input">Dados do método.</param>
+            <param name="getNext">Delegate para a chamada do método.</param>
+            <returns>Resultado da chamada do método.</returns>
+        </member>
+        <member name="P:SMC.Framework.Unity.Interception.SMCUnityInterceptionBehavior.WillExecute">
+            <summary>
+            Define se o método deve ser chamado.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Unity.Interception.SMCUnityInterceptionProvider">
+            <summary>
+            Classe que faz a interceptação dos métodos utilizando Unity.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.Interception.SMCUnityInterceptionProvider.Intercept``1(``0,SMC.Framework.Interception.ISMCInterceptionBehavior[])">
+            <summary>
+            Intercepta uma instância de uma classe.
+            </summary>
+            <typeparam name="T">Tipo da classe que será interceptada.</typeparam>
+            <param name="instance">Objeto que será interceptado.</param>
+            <param name="behaviors">Classes que farão a interceptação da classe.</param>
+            <returns>Proxy para o objeto.</returns>
+        </member>
+        <member name="T:SMC.Framework.Unity.SMCUnityContainer">
+            <summary>
+            Classe que implementa o container de IoC utilizando a biblioteca Microsoft.Practices.Unity.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Unity.SMCUnityContainer._container">
+            <summary>
+            Armazena o container do Unity para IoC.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.#ctor">
+            <summary>
+            Cria um novo objeto SMCUnityContainer.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.RegisterType``2(SMC.Framework.Interception.ISMCInterceptionBehavior[])">
+            <summary>
+            Registra uma classe para Ioc.
+            </summary>
+            <typeparam name="TFrom">Classe de origem.</typeparam>
+            <typeparam name="TTo">Classe de destino.</typeparam>
+            <param name="interceptors">Behaviors para o tipo.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.RegisterType``2(System.String,SMC.Framework.Interception.ISMCInterceptionBehavior[])">
+            <summary>
+            Registra uma classe para Ioc.
+            </summary>
+            <typeparam name="TFrom">Classe de origem.</typeparam>
+            <typeparam name="TTo">Classe de destino.</typeparam>
+            <param name="name">Nome do mapeamento.</param>
+            <param name="interceptors">Behaviors para o tipo.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.RegisterType(System.Type,System.Type,SMC.Framework.Interception.ISMCInterceptionBehavior[])">
+            <summary>
+            Registra uma classe para Ioc.
+            </summary>
+            <param name="from">Classe de origem.</param>
+            <param name="to">Classe de destino.</param>
+            <param name="interceptors">Interceptadores para o tipo.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.RegisterType(System.Type,System.Type,System.String,SMC.Framework.Interception.ISMCInterceptionBehavior[])">
+            <summary>
+            Registra uma classe para Ioc.
+            </summary>
+            <param name="from">Classe de origem.</param>
+            <param name="to">Classe de destino.</param>
+            <param name="name">Nome do mapeamento.</param>
+            <param name="interceptors">Interceptadores para o tipo.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.RegisterInstance``1(``0)">
+            <summary>
+            Registra a instância para determinado tipo.
+            </summary>
+            <typeparam name="T">Tipo da instância.</typeparam>
+            <param name="instance">Instância para o tipo.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.RegisterInstance``1(System.String,``0)">
+            <summary>
+            Registra a instância para determinado tipo.
+            </summary>
+            <typeparam name="T">Tipo da instância.</typeparam>
+            <param name="name">Nome do mapeamento.</param>
+            <param name="instance">Instância para o tipo.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.IsRegistered``1">
+            <summary>
+            Verifica se um tipo está registrado.
+            </summary>
+            <typeparam name="T">Tipo a sera verificado.</typeparam>
+            <returns>Verdadeiro se o tipo está registrado, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.IsRegistered``1(System.String)">
+            <summary>
+            Verifica se um tipo está registrado.
+            </summary>
+            <typeparam name="T">Tipo a sera verificado.</typeparam>
+            <param name="nameToCheck">Nome do mapeamento.</param>
+            <returns>Verdadeiro se o tipo está registrado, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.IsRegistered(System.Type)">
+            <summary>
+            Verifica se um tipo está registrado.
+            </summary>
+            <param name="typeToCheck">Tipo a sera verificado.</param>
+            <returns>Verdadeiro se o tipo está registrado, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.IsRegistered(System.Type,System.String)">
+            <summary>
+            Verifica se um tipo está registrado.
+            </summary>
+            <param name="typeToCheck">Tipo a sera verificado.</param>
+            <param name="nameToCheck">Nome do mapeamento.</param>
+            <returns>Verdadeiro se o tipo está registrado, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.Resolve``1(System.Action{``0})">
+            <summary>
+            Recupera um objeto associado ao tipo informado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.Resolve``1(System.String,System.Action{``0})">
+            <summary>
+            Recupera um objeto associado ao tipo informado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.Resolve``1(System.Type,System.Action{``0})">
+            <summary>
+            Recupera um objeto associado ao tipo informado. Nesse caso não é realizado o typeof()
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.Resolve``2(System.Func{``0,``1})">
+            <summary>
+            Recupera um objeto associado ao tipo informado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.Resolve``2(System.String,System.Func{``0,``1})">
+            <summary>
+            Recupera um objeto associado ao tipo informado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.Resolve``2(System.Type,System.Func{``0,``1})">
+            <summary>
+            Recupera um objeto associado ao tipo informado. Nesse caso não é realizado o typeof()
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.Resolve(System.Type)">
+            <summary>
+            Recupera um objeto associado ao tipo informado.
+            </summary>
+            <param name="type">Tipo do objeto a ser criado.</param>
+            <returns>Um novo objeto do tipo <code>type</code>.</returns>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.Resolve(System.Type,System.String)">
+            <summary>
+            Recupera um objeto associado ao tipo informado.
+            </summary>
+            <param name="type">Tipo do objeto a ser criado.</param>
+            <param name="name">Nome do mapeamento a ser utilizado.</param>
+            <returns>Um novo objeto do tipo <code>type</code>.</returns>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.Teardown(System.Object)">
+            <summary>
+            Remove um objeto do container.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.BuildUp``1(``0)">
+            <summary>
+            Constroi as dependencias de um objeto existente.
+            </summary>
+            <typeparam name="T">Tipo do objeto a ser construido.</typeparam>
+            <param name="existing">Objeto existente.</param>
+            <returns>Objeto contruído com suas dependências.</returns>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.ResolveAll(System.Type)">
+            <summary>
+            Resolve todas as dependencias para um tipo.
+            </summary>
+            <param name="type">Typo que será resolvido.</param>
+            <returns>Todas as dependências resolvidas para determinado tipo.</returns>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.RegisterTypeConstruct``2(System.Type[])">
+            <summary>
+            Registra um tipo informando os parâmetros do construtor.
+            </summary>
+            <typeparam name="TFrom">Tipo de origem.</typeparam>
+            <typeparam name="TTo">Tipo de destino.</typeparam>
+            <param name="objects">Parâmetros do construtor.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.RegisterTypeConstruct``2(System.String,System.Type[])">
+            <summary>
+            Registra um tipo informando os parâmetros do construtor.
+            </summary>
+            <typeparam name="TFrom">Tipo de origem.</typeparam>
+            <typeparam name="TTo">Tipo de destino.</typeparam>
+            <param name="name">Nome do mapeamento.</param>
+            <param name="objects">Parâmetros do construtor.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.RegisterTypeConstruct(System.Type,System.Type,System.Type[])">
+            <summary>
+            Registra um tipo informando os parâmetros do construtor.
+            </summary>
+            <param name="from">Tipo de origem.</param>
+            <param name="to">Tipo de destino.</param>
+            <param name="objects">Parâmetros do construtor.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.RegisterTypeConstruct(System.Type,System.Type,System.String,System.Type[])">
+            <summary>
+            Registra um tipo informando os parâmetros do construtor.
+            </summary>
+            <param name="from">Tipo de origem.</param>
+            <param name="to">Tipo de destino.</param>
+            <param name="name">Nome do mapeamento.</param>
+            <param name="objects">Parâmetros do construtor.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.RegisterRepository(System.Type,System.Type,System.String,System.Type)">
+            <summary>
+            Registra um tipo informando os parâmetros do construtor.
+            </summary>
+            <param name="from">Tipo de origem.</param>
+            <param name="to">Tipo de destino.</param>
+            <param name="name">Nome do mapeamento.</param>
+            <param name="context">Parâmetros do construtor.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.ConfigureMap``1">
+            <summary>
+            Aplica o Map da classe que for passado como parâmetro genérico.
+            Pode ser utilizado dentro do container.
+            </summary>
+            <typeparam name="TExtension">Tipo que contém as configurações de Ioc.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.ConfigureMap(SMC.Framework.Ioc.SMCIocExtension)">
+            <summary>
+            Aplica o Map da classe que for passado como parâmetro genérico.
+            Pode ser utilizado dentro do container.
+            </summary>
+            <param name="extension">Classe com configurações de ioc.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.ConfigureMap(System.String)">
+            <summary>
+            Aplica o Map da classe que for passado como parâmetro.
+            Pode ser utilizado dentro do container.
+            </summary>
+            <param name="classFullName">Classe com configurações de ioc.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.RegisterFactory``2">
+            <summary>
+            Método para registrar uma classe e associar a uma classe de factory.
+            </summary>
+            <typeparam name="TInterface">Tipo da interface.</typeparam>
+            <typeparam name="TFactory">Classe que implementa a factory.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.RegisterFactory``2(System.String)">
+            <summary>
+            Método para registrar uma classe e associar a uma classe de factory.
+            </summary>
+            <typeparam name="TInterface">Tipo da interface.</typeparam>
+            <typeparam name="TFactory">Classe que implementa a factory.</typeparam>
+            <param name="name">Nome de identificação da factory.</param>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.ConvertInterceptors(SMC.Framework.Interception.ISMCInterceptionBehavior[])">
+            <summary>
+            Converte uma lista de behaviors de SMCinterception para uma lista de behaviors Unity.
+            </summary>
+            <param name="interceptors">Lista de behaviors SMCInterception.</param>
+            <returns>Lista de behaviors unity.</returns>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.ConvertInterceptor(SMC.Framework.Interception.ISMCInterceptionBehavior)">
+            <summary>
+            Converte um comportamento em um comportamento de interception.
+            </summary>
+            <param name="behavior">Comportamento.</param>
+            <returns>Behavior SMC convertido para um behavior Unity.</returns>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityContainer.Dispose">
+            <summary>
+            Limpa os recursos utilizados pela classe.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Unity.SMCUnityLifetimeManager`2">
+            <summary>
+            Classe de suporte para geração de instâncias de objetos utilizando factory.
+            </summary>
+            <typeparam name="T">Tipo da classe.</typeparam>
+            <typeparam name="TFactory">Tipo da factory que construirá a classe.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Unity.SMCUnityLifetimeManager`2.factory">
+            <summary>
+            Armazena uma instância da factory.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityLifetimeManager`2.#ctor">
+            <summary>
+            Cria um novo objeto SMCUnityLifetimeManager.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Unity.SMCUnityLifetimeManager`2.#ctor(System.String)">
+            <summary>
+            Cria um novo objeto SMCUnityLifetimeManager.
+            </summary>
+            <param name="name">Nome do mapeamento.</param>
+        </member>
+    </members>
+</doc>

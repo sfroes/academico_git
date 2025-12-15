@@ -1,0 +1,19 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Models
+
+@model  PessoaAtuacaoCabecalhoViewModel
+
+@{
+
+    var header = Smc.Header("Ingressante", SMCHeaderType.Primary)
+                       .Item(prop => prop.NomeCompleto, sizeMD: SMCSize.Grid12_24)
+                       .Item(prop => prop.Cpf, sizeMD: SMCSize.Grid4_24)
+                       .Item(prop => prop.NumeroPassaporte, sizeMD: SMCSize.Grid4_24);
+
+    if (Model.Falecido)
+    {
+        header.Item(prop => prop.Falecido, sizeMD: SMCSize.Grid4_24);
+    }
+
+}
+
+@using (header.Begin()) { }

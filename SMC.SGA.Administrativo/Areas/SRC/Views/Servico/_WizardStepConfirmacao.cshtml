@@ -1,0 +1,104 @@
+﻿@model ServicoViewModel
+
+@using (Smc.Div().CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Fieldset("CadastroGeral").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("fieldset_cadastro_geral")).Begin())
+    {
+        @Smc.DisplayFor(m => m.DescricaoTipoServico).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.Descricao).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.DescricaoTemplateSGF).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.Token).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.TokenAcessoAtendimento).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.TokenPermissaoManutencaoProcesso).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.OrigemSolicitacaoServico).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.TipoAtuacao).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.ExigeJustificativaSolicitacao).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.ValidarSituacaoFutura).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.PermiteReabrirSolicitacao).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.TipoPrazoReabertura).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.NumeroDiasPrazoReabertura).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.AcaoLiberacaoTrabalho).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.IntegracaoFinanceira).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.ObrigatorioIdentificarParcela).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.OrientacaoDeferimento).Size(SMCSize.Grid24_24)
+
+        @Smc.DisplayFor(m => m.Justificativas).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+    }
+
+    using (Smc.Fieldset("NivelEnsinoTipoVinculo").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("fieldset_nivel_ensino_tipo_vinculo")).Begin())
+    {
+        @Smc.DisplayFor(m => m.InstituicaoNivelServicos).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+    }
+
+    using (Smc.Fieldset("SituacoesRestricoes").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("fieldset_situacoes_restricoes")).Begin())
+    {
+        @Smc.DisplayFor(m => m.SituacoesSolicitar).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.SituacoesAtender).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.SituacoesReabrir).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.RestricoesSolicitacaoSimultanea).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.MotivosBloqueioParcela).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.TiposDocumento).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+        @*@Smc.DisplayFor(m => m.TiposNotificacao).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)*@
+    }
+
+    using (Smc.Fieldset("TiposDocumentoParaEtapas").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("fieldset_tipos_notificacao_para_etapas")).Begin())
+    {
+        @Smc.DisplayFor(m => m.TiposNotificacao).HideLabel(SMCDisplayHideLabel.All).Size(SMCSize.Grid24_24)
+    }
+
+    if (!string.IsNullOrEmpty(Model.MensagemInformativaTaxasNaoParametrizadas))
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-display smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-mensagem-multiplas-linhas").Begin())
+        {
+            using (Smc.Div().CssClass(" smc-sga-ico-mensagem").Begin())
+            { }
+
+            @Smc.DisplayFor(d => d.MensagemInformativaTaxasNaoParametrizadas).HideLabel()
+        }
+    }
+
+    using (Smc.Fieldset("Taxas").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("fieldset_taxas")).Begin())
+    {
+        @Smc.DisplayFor(m => m.Taxas).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+
+        using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-display smc-display-collection").Size(SMCSize.Grid24_24).Begin())
+            {
+                using (Smc.Div().Begin())
+                {
+                    <h3>@Smc.GetMetadataResource("ParametrosEmissaoTaxa")</h3>
+                }
+
+                foreach (var itemParametro in Model.ParametrosEmissaoTaxa)
+                {
+                    using (Smc.Div().CssClass("container-fluid").Begin())
+                    {
+                        using (Smc.Div().CssClass("smc-display smc-size-md-4 smc-size-xs-24 smc-size-sm-4 smc-size-lg-4").Begin())
+                        {
+                            <p>@itemParametro.TipoEmissaoTaxa.SMCGetDescription()</p>
+                        }
+
+                        if (itemParametro.TipoEmissaoTaxa == TipoEmissaoTaxa.EmissaoBoleto)
+                        {
+                            using (Smc.Div().CssClass("smc-display smc-size-md-3 smc-size-xs-24 smc-size-sm-3 smc-size-lg-3").Begin())
+                            {
+                                <p>@itemParametro.NumeroDiasPrazoVencimentoTitulo</p>
+                            }
+                            using (Smc.Div().CssClass("smc-display smc-size-md-17 smc-size-xs-24 smc-size-sm-17 smc-size-lg-17").Begin())
+                            {
+                                <p>@itemParametro.DescricaoBancoAgenciaContaCarteira</p>
+                            }
+                            @*using (Smc.Div().CssClass("smc-display smc-size-md-6 smc-size-xs-24 smc-size-sm-6 smc-size-lg-6").Begin())
+                                {
+                                   <p>@itemParametro.SeqMensagemTitulo</p>
+                                }*@
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @Smc.WizardView()
+}

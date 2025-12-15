@@ -1,0 +1,115 @@
+﻿//Classes trazidas do SAT para estilização do dashboard exibido no SGA
+.smc-sat-margem-top {
+    margin-top: -35px;
+}
+
+.smc-sat-box-informacoes-iniciais {
+    background-color: $smc-cor-principal-04;
+    padding: 3px 20px;
+    height: 47px;
+    overflow: hidden;
+    background-image: url($smc-caminho-aplicacao +"smc-sat-img-detalhe.png");
+    background-position: right top;
+    background-repeat: no-repeat;
+
+    label, p {
+        font-size: 18px;
+        font-family: 'UniNeue-Light', Arial, sans-serif;
+    }
+}
+
+.smc-sat-box-atualizacoes {
+    height: auto !important;
+    margin-top: -70px;
+    background: $smc-branco;
+    border: solid 1px $smc-cinza-03;
+    padding: 3px 7px 7px 13px !important;
+
+    label, p {
+        font-size: 14px;
+        font-family: 'segoe_uiregular';
+    }
+
+    p {
+        font-weight: normal !important;
+    }
+
+    .smc-sat-margem-top {
+        margin-top: -40px;
+    }
+}
+
+.smc-sat-box-gadgets-contadores {
+    margin: 6px 0 25px 0;
+}
+
+.smc-sat-box-gadgets-item {
+    border: 1px solid $smc-cinza-03;
+    background: $smc-branco;
+    padding: 1px;
+    text-align: center;
+    margin: 6px 0 5px 0;
+
+    .smc-sat-box-gadgets-totalizador {
+        font-size: 40px;
+        color: $smc-cor-principal-04;
+        line-height: 0;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    .smc-sat-box-gadgets-titulo {
+        font-size: 14px;
+        margin: 10px 0 -15px 0;
+        font-family: "sf_ui_displayregular";
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: $smc-cor-principal;
+    }
+}
+
+.smc-sat-situacao-ativo {
+    &:before {
+        @extend .fa;
+        @extend .fa-flag;
+        margin-left: 2px;
+        margin-right: 10px;
+        color: #52e478;
+    }
+}
+
+.smc-sat-situacao-inativo {
+    &:before {
+        @extend .fa;
+        @extend .fa-flag-o;
+        margin-left: 2px;
+        margin-right: 10px;
+        color: #e56453;
+    }
+}
+
+.smc-sat-situacao-emexecucao {
+    &:before {
+        @extend .fa;
+        @extend .fa-flag-checkered;
+        margin-left: 2px;
+        margin-right: 10px;
+        color: #ffcd20;
+    }
+}
+
+.smc-sat-situacao-proximasexecucoes {
+    &:before {
+        @extend .fa;
+        @extend .fa-flag;
+        margin-left: 2px;
+        margin-right: 10px;
+        color: #15a2dd;
+    }
+}
+
+.smc-tabs-tab.smc-sat-situacao-ativo, .smc-tabs-tab.smc-sat-situacao-inativo, .smc-tabs-tab.smc-sat-situacao-emexecucao, .smc-tabs-tab.smc-sat-situacao-proximasexecucoes {
+    font-size: 14px;
+}

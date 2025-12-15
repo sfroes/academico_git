@@ -1,0 +1,16 @@
+﻿@model ColaboradorVinculoCursoCabecalhoViewModel
+
+@{ 
+    var header = Smc.Header("CabecalhoPrimario", SMCHeaderType.Primary)
+        .Item(p => p.Seq, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24)
+        .Item(p => p.NomeCompleto, sizeMD: SMCSize.Grid16_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid16_24, sizeLG: SMCSize.Grid16_24)
+        .Item(p => p.CpfOuPassaporte, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24)
+        .Item(p => p.NomeEntidadeVinculo, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid10_24)
+        .Item(p => p.DescricaoTipoVinculoSelect, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24)
+        .Item(p => p.DataInicio, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid3_24, sizeLG: SMCSize.Grid3_24)
+        .Item(p => p.DataFim, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid3_24, sizeLG: SMCSize.Grid3_24)
+        .Item(p => p.InseridoPorCarga, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24);
+}
+
+@using (header.Begin())
+{ }

@@ -1,0 +1,26 @@
+﻿@using SMC.Academico.Common.Areas.GRD.Constants;
+
+@model SMCPagerModel<HistoricoDivisaoTurmaConfiguracaoGradeListarViewModel>
+
+@(Smc.Grid("gridConfiguracaoGrade", Model)
+     .AutoGenerateColumns()
+     .AllowSort()
+     .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+
+        x => Smc.Button(SMCButtonBehavior.Alterar)
+                .CssClass("smc-btn-alterar-ico")
+                .Tooltip(Smc.GetUIResource("Botao_Editar_Configuracao_Grade_Tooltip"))
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirNovaConfiguracaoGrade")
+                .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Botao_Editar_Configuracao_Grade_Title"))
+                .Ajax(isPost: false, updateTargetId: "#divGridHistoricosDivisaoTurmaConfiguracaoGrade")
+                .SecurityToken(UC_GRD_001_02_01.ALTERAR_CONFIGURACAO_GRADE)
+                .Action("Editar", "HistoricoDivisaoTurmaConfiguracaoGrade", new { Seq = new SMCEncryptedLong((x as HistoricoDivisaoTurmaConfiguracaoGradeListarViewModel).Seq), Area = "GRD" }),
+
+        x => Smc.Button(SMCButtonBehavior.Excluir)
+            .DisplayMode(SMCButtonDisplayMode.Icon)
+            .Confirm(Smc.GetUIResource("Exclusao_Configuracao_Grade_Title"), Smc.GetUIResource("Exclusao_Configuracao_Grade_Confirmacao"))
+            .Tooltip(Smc.GetUIResource("Botao_Excluir_Configuracao_Grade_Tooltip"))
+            .SecurityToken(UC_GRD_001_02_01.ALTERAR_CONFIGURACAO_GRADE)
+            .Action("Excluir", "HistoricoDivisaoTurmaConfiguracaoGrade", new { Seq = new SMCEncryptedLong((x as HistoricoDivisaoTurmaConfiguracaoGradeListarViewModel).Seq), SeqDivisaoTurma = new SMCEncryptedLong((x as HistoricoDivisaoTurmaConfiguracaoGradeListarViewModel).SeqDivisaoTurma), Area = "GRD" }))
+)

@@ -1,0 +1,134 @@
+﻿@using StackExchange.Profiling;
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <title>@Smc.GetUIResource("SiglaAplicacao") - @Smc.RenderTitle()</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="accept-language" content="pt-br">
+    <meta name="author" content="GTI - Gerência de Tecnologia da Informação">
+    <meta name="copyright" content="© 2022 GTI" />
+    <meta name="description" content="Consulta de Diploma PUC Minas">
+    <meta name="keywords" content="Consulta de Diploma PUC Minas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/Recursos/Academico/4.0/Content/Images/favicon.png">
+    @*-- SASS RECURSOS --*@
+    <!-- classes css padrões -->
+    @*  @Html.SMCRegisterBaseCss()
+
+        @if (IsSectionDefined("Css"))
+        {
+            @RenderSection("Css")
+        }
+    *@
+    @* <link href="~/Content/Css/smc-recursos.min.css" rel="stylesheet" />*@
+    <link href="/Recursos/Academico/4.0/ConsultaDiploma/Css/smc-recursos.min.css" rel="stylesheet" />
+
+    @Html.SMCGoogleAnalyticsTagManagerHead()
+</head>
+<body class="fixed sidebar-mini">
+    @Html.SMCGoogleAnalyticsTagManagerBody()
+
+    @*-- componente noscript --*@
+    @Html.SMCNoScriptWarning()
+
+    @using (Smc.Div("divConteudoPrincipal").CssClass("container-fluid").Begin())
+    {
+        using (Smc.Div("divConteudoPrincipalEstrutura").CssClass("row").Begin())
+        {
+            <header class="smc-cpd-header-login">
+                
+                <nav class="navbar navbar-fixed-top @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+                    <div class=" @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)"><h1>CONSULTA PÚBLICA DE DIPLOMAS REGISTRADOS</h1></div>
+                    @using (Smc.Div("divAreaUsuario").CssClass("smc-login navbar-custom-menu hidden-xs").Size(SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid2_24).Begin())
+                    {
+                        @*-- Área de acessibilidade *@
+                        <ul class="nav navbar-nav @SMCSizeHelper.GetSizeClasses(SMCSize.Grid7_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+                            <li>
+                                @Smc.Accessibility()
+                            </li>
+                        </ul>
+                    }
+                </nav>
+            </header>
+
+            @*-- Conteúdo - obrigatório --*@
+            <div id="divConteudoPrincipal" class="smc-cpd-content container-fluid" data-type="smc-conteudo">
+
+                @*-- (obrigatório) --*@
+                @Smc.MessagePlaceholder(SMCMessagePlaceholders.Default).CssClass("smc-mensagens-principal")
+
+                <section class="content">
+                    @*-- Área de mensagens e alertas (obrigatório) --*@
+                    @Smc.MessagePlaceholder(SMCMessagePlaceholders.Centro).CssClass("smc-mensagens-centro")
+
+                    @*-- titulo da página (obrigatório)--*@
+                    <h2>Diploma digital</h2>
+
+                    @*-- componente de navegação entre páginas --*@
+                    @Smc.NavigationGroup()
+
+                    @*-- corpo da página (obrigatório) --*@
+                    <div class=" @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+
+                        @RenderBody()
+                    </div>
+                    <!-- Container de alertas (obrigatório) -->
+                    @using (Smc.Div("divAlerta").CssClass("bottom-right jGrowl").Attribute("data-alert-container", "default").Begin())
+                    {
+                    }
+                </section>
+            </div>
+
+            @*--(obrigatório) uso obrigatório do logotipo da GTI e Copyright--*@
+            <footer class="smc-footer footer">
+                <ul class="smc-footer-conteudo container">
+                    <li class="smc-footer-copyright" title="@string.Format(Smc.GetUIResource("Layout_Legenda_Copyright"), DateTime.Today.Year)">@string.Format(Smc.GetUIResource("Layout_Legenda_Copyright"), DateTime.Today.Year)</li>
+                    <li class="smc-footer-logo-gti" title="@Smc.GetUIResource("Layout_Titulo_Logotipo_GTI")"></li>
+                    <li class="smc-footer-logo-smc" title="@Smc.GetUIResource("Layout_Titulo_Logotipo_SMC")"></li>
+                </ul>
+            </footer>
+
+            @Smc.MessagePlaceholder(SMCMessagePlaceholders.Footer).IsDefault().CssClass("smc-mensagens-footer")
+        }
+    }
+    @*-- componente alerta navegador (obrigatório) --*@
+    @(Smc.BrowserAlert()
+                    .RejectBrowser(SMCBrowsers.InternetExplorer, 9)
+                    .RejectBrowser(SMCBrowsers.Chrome, 24)
+                    .RejectBrowser(SMCBrowsers.FireFox, 20)
+                    .RejectBrowser(SMCBrowsers.Safari, 4)
+                    //.SuggestedBrowsers(SMCBrowsers.Chrome, SMCBrowsers.FireFox, SMCBrowsers.InternetExplorer)
+                    .IconsPath("/Recursos/Images/browsers/")
+    )
+    @*-- componente alerta processando (obrigatório) --*@
+    @*@using (Smc.Div("divAlertaProcessando").CssClass("smc-alerta-processando").Begin())
+        {
+            <span>@Smc.GetUIResource("Layout_Texto_Aguarde")</span>
+        }*@
+
+    @using (Smc.Div("divAlertaProcessando").CssClass("smc-alerta-processando").Begin())
+    {
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        <span class="sr-only"></span>
+        <p>@Smc.GetUIResource("Layout_Texto_Aguarde")</p>
+        <div>@Smc.GetUIResource("Layout_Texto_Aguarde")</div>
+    }
+
+    @*  @Smc.MenuSecundario()*@
+
+    @Html.SMCRegisterBundleScripts()
+
+    @*-- Section para renderização de scrits das views (obrigatório)--*@
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts")
+    }
+
+    @MiniProfiler.Current.RenderIncludes()
+</body>
+</html>

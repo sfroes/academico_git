@@ -1,0 +1,10 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.TUR.Models.DetalhesDivisaoTurmaColaboradorOrganizacaoViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.DisplayFor(m => m.DescricaoTipoOrganizacaoComponente).Size(SMCSize.Grid12_24).HideLabel()
+        @Smc.DisplayFor(m => m.QuantidadeCargaHoraria).Size(SMCSize.Grid6_24).HideLabel()
+    }
+}

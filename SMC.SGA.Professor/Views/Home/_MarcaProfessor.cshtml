@@ -1,0 +1,7 @@
+﻿@model ProfessorSelecionadoViewModel
+@if (Model.SeqArquivoLogo.HasValue)
+{
+    <div class="smc-sga-aluno-logotipo-intituicao">
+        <img src="@Url.Action("Logo", "Home", new { @area = "", @seq = new SMCEncryptedLong(Model.SeqArquivoLogo.GetValueOrDefault()) })" />
+    </div>
+}

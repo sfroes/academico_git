@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSListaFrequenciaColaborador" targetNamespace="http://tempuri.org/DSListaFrequenciaColaborador.xsd" xmlns:mstns="http://tempuri.org/DSListaFrequenciaColaborador.xsd" xmlns="http://tempuri.org/DSListaFrequenciaColaborador.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSListaFrequenciaColaborador" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSListaFrequenciaColaborador" msprop:Generator_UserDSName="DSListaFrequenciaColaborador">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSListaFrequenciaColaborador" msprop:Generator_TableClassName="DSListaFrequenciaColaboradorDataTable" msprop:Generator_TableVarName="tableDSListaFrequenciaColaborador" msprop:Generator_TablePropName="_DSListaFrequenciaColaborador" msprop:Generator_RowDeletingName="DSListaFrequenciaColaboradorRowDeleting" msprop:Generator_RowChangingName="DSListaFrequenciaColaboradorRowChanging" msprop:Generator_RowEvHandlerName="DSListaFrequenciaColaboradorRowChangeEventHandler" msprop:Generator_RowDeletedName="DSListaFrequenciaColaboradorRowDeleted" msprop:Generator_UserTableName="DSListaFrequenciaColaborador" msprop:Generator_RowChangedName="DSListaFrequenciaColaboradorRowChanged" msprop:Generator_RowEvArgName="DSListaFrequenciaColaboradorRowChangeEvent" msprop:Generator_RowClassName="DSListaFrequenciaColaboradorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NomeColaborador" msprop:Generator_ColumnVarNameInTable="columnNomeColaborador" msprop:Generator_ColumnPropNameInRow="NomeColaborador" msprop:Generator_ColumnPropNameInTable="NomeColaboradorColumn" msprop:Generator_UserColumnName="NomeColaborador" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

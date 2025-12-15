@@ -1,0 +1,30 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+
+@model TermoIntercambioDynamicModel
+
+@Smc.EditorFor(prop => prop.SeqParceriaIntercambio)
+@Smc.EditorFor(prop => prop.PossuiPessoaAtuacao)
+@Smc.EditorFor(prop => prop.ConcedeFormacao)
+@Smc.EditorFor(prop => prop.ExibeVigencias)
+@Smc.EditorFor(prop => prop.Ativo)
+@Smc.EditorFor(prop => prop.SomenteLeituraJustificativaPeriodoVigencia)
+
+@Smc.EditorFor(prop => prop.Seq).Readonly(Model.PossuiPessoaAtuacao)
+@Smc.EditorFor(prop => prop.Descricao)
+@Smc.EditorFor(prop => prop.SeqNivelEnsino).Readonly(Model.PossuiPessoaAtuacao)
+@Smc.EditorFor(prop => prop.SeqParceriaIntercambioTipoTermo).Readonly(Model.PossuiPessoaAtuacao)
+@Smc.EditorFor(prop => prop.SeqParceriaIntercambioInstituicaoExterna).Readonly(Model.PossuiPessoaAtuacao)
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mestre-detalhe-bloqueio-botoes").Begin())
+{
+    @(Smc.MasterDetail(prop => prop.Vigencias, SMC.Framework.UI.Mvc.DataAnnotations.SMCDetailType.Modal)
+            .HideButtons(Model.PossuiPessoaAtuacao ? SMCMasterDetailButtonHidden.All : SMCMasterDetailButtonHidden.None))
+}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @(Smc.MasterDetail(prop => prop.TiposMobilidade, SMC.Framework.UI.Mvc.DataAnnotations.SMCDetailType.Modal).MinimumItens(1))
+    //.HideButtons(Model.PossuiPessoaAtuacao ? SMCMasterDetailButtonHidden.Add : SMCMasterDetailButtonHidden.None))
+}
+
+@Smc.EditorFor(prop => prop.Arquivos)

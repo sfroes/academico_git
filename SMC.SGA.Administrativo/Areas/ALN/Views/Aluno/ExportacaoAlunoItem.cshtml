@@ -1,0 +1,69 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+
+@model AlunoListarDynamicModel
+
+@{
+    var header = Smc.Header("HeaderAluno", SMCHeaderType.Primary)
+                    .Item(prop => prop.NumeroRegistroAcademico, sizeMD: SMCSize.Grid1_24, sizeXS: SMCSize.Grid3_24, sizeSM: SMCSize.Grid3_24, sizeLG: SMCSize.Grid1_24)
+                    .Item(prop => prop.Nome, sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid18_24, sizeSM: SMCSize.Grid18_24, sizeLG: SMCSize.Grid5_24)
+                    .Item(prop => prop.CpfOuPassaporte, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid3_24)
+                    .Item(prop => prop.DataNascimento, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid3_24)
+                    .Item(prop => prop.CodigoAlunoMigracao, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid3_24)
+                    .Item(prop => prop.CodigoPessoaCAD, sizeMD: SMCSize.Grid5_24, sizeXS: SMCSize.Grid13_24, sizeSM: SMCSize.Grid9_24, sizeLG: SMCSize.Grid4_24)
+                    .Item(prop => prop.DescricaoSituacaoMatricula, sizeMD: SMCSize.Grid5_24, sizeXS: SMCSize.Grid13_24, sizeSM: SMCSize.Grid9_24, sizeLG: SMCSize.Grid4_24);
+    if (Model.Falecido)
+    {
+        header.Item(prop => prop.Falecido, sizeMD: SMCSize.Grid1_24, sizeXS: SMCSize.Grid18_24, sizeSM: SMCSize.Grid18_24, sizeLG: SMCSize.Grid1_24);
+    }
+}
+@using (header.Begin()) { }
+
+@using (Smc.Fieldset("DadosAcademicos").Size(SMCSize.Grid24_24).CssClass("smc-sga-confirmacao-dados").LegendText("Dados acadêmicos").Begin())
+{
+    @Smc.DisplayFor(m => m.DescricaoEntidadeResponsavel).Size(SMCSize.Grid16_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid16_24)
+    @Smc.DisplayFor(m => m.DescricaoNivelEnsino).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+    using (Smc.Div().Size(SMCSize.Grid3_24, SMCSize.Grid24_24, SMCSize.Grid4_24, SMCSize.Grid3_24).Begin())
+    {
+        if (Model.ExigeParceriaIntercambioIngresso && !string.IsNullOrEmpty(Model.DescricaoParceriaIntercambio))
+        {
+            @Smc.Instructions().Text(Model.DescricaoParceriaIntercambio).CssClass("smc-sga-instruction smc-sga-instruction-vinculo-ingressante-modal")
+        }
+        @Smc.DisplayFor(m => m.DescricaoVinculo)
+    }
+    @Smc.DisplayFor(m => m.DescricaoFormaIngresso).Size(SMCSize.Grid5_24, SMCSize.Grid24_24, SMCSize.Grid5_24, SMCSize.Grid5_24)
+    @Smc.DisplayFor(m => m.DadosVinculo).Size(SMCSize.Grid16_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid16_24)
+    @Smc.DisplayFor(m => m.DescricaoCursoOferta).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+    @Smc.DisplayFor(m => m.DescricaoLocalidade).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+    @Smc.DisplayFor(m => m.DescricaoTurno).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+    @Smc.DisplayFor(m => m.DataAdmissao).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+    @Smc.DisplayFor(m => m.DataPrevisaoConclusao).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+    @Smc.DisplayFor(m => m.DataLimiteConclusao).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+
+    using (Smc.Div("DivFormacoesEspecificas").CssClass("smc-sga-destaque-label").Size(SMCSize.Grid24_24).Begin())
+    {
+        <label>@Smc.GetUIResource("Label_FormacoesEspecificas")</label>
+        if (Model.FormacoesEspecificas.SMCCount() > 0)
+        {
+            @Smc.DisplayFor(m => m.FormacoesEspecificas).HideLabel().Size(SMCSize.Grid24_24)
+        }
+        else
+        {
+            <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+        }
+    }
+
+    @Smc.DisplayFor(m => m.TipoOrientacao).Size(SMCSize.Grid24_24)
+
+    using (Smc.Div("DivOrientacoes").CssClass("smc-sga-destaque-label").Size(SMCSize.Grid24_24).Begin())
+    {
+        <label>@Smc.GetUIResource("Label_Orientacoes")</label>
+        if (Model.Orientacoes.SMCCount() > 0)
+        {
+            @Smc.DisplayFor(m => m.OrientacoesFormatadas).HideLabel().Size(SMCSize.Grid24_24)
+        }
+        else
+        {
+            <p>-</p>
+        }
+    }
+}

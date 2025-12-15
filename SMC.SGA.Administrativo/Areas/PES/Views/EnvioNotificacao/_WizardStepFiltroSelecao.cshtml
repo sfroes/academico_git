@@ -1,0 +1,65 @@
+﻿@model EnvioNotificacaoFiltroSelecaoViewModel
+
+
+@using (Smc.Div("filtroEnvioNotificacaoAtuacao").Begin())
+{
+    using (Smc.Fieldset("filtros").Size(SMCSize.Grid24_24).CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(m => m.TipoAtuacao)
+        @Smc.EditorFor(m => m.SeqsEntidadesResponsaveis)
+        @Smc.EditorFor(m => m.SeqTipoVinculoColaborador)
+        @Smc.EditorFor(m => m.SeqLocalidade)
+        @Smc.EditorFor(m => m.SeqNivelEnsino)
+        @Smc.EditorFor(m => m.SeqCursoOferta)
+        @Smc.EditorFor(m => m.SeqTurno)
+        @Smc.EditorFor(m => m.SeqTipoVinculoAluno)
+        @Smc.EditorFor(m => m.SeqCicloLetivoSituacaoMatricula)
+        @Smc.EditorFor(m => m.SeqsSituacaoMatriculaCicloLetivo)
+        @Smc.EditorFor(m => m.SeqFormacaoEspecifica)
+        @Smc.EditorFor(m => m.Turma)
+        @Smc.EditorFor(m => m.NumeroRegistroAcademico)
+        @Smc.EditorFor(m => m.DataInicio)
+        @Smc.EditorFor(m => m.DataFim)
+        @Smc.EditorFor(m => m.SeqCursoOfertaLocalidade)
+        @Smc.EditorFor(m => m.TipoAtividade)
+        @Smc.EditorFor(m => m.SeqInstituicaoExterna)
+        @Smc.EditorFor(m => m.SeqColaborador)
+    }
+
+
+    var buttonSet = Smc.ButtonSet();
+    buttonSet.AddButton(Smc.Button("data-dataselector-search", "BuscarPessoasEnvioNotificacao", "EnvioNotificacao")
+             .CssClass("smc-btn-pesquisar-icotext-destaque")
+             .Text(Smc.GetUIResource("Botao_Pesquisar_Pessoa_Atuacao"))
+             .Name(Smc.GetUIResource("Botao_Pesquisar_Pessoa_Atuacao"))
+             .Tooltip(Smc.GetUIResource("Botao_Pesquisar_Pessoa_Atuacao"))
+             .Ajax(isPost: true, updateTargetId: "#divResultado", fieldsContainerToRequest: "#filtros"));
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Limpar)
+                           .DisplayMode(SMCButtonDisplayMode.Icon)
+                           .Action("LimparEnvioNotificacaoFiltro")
+                           .Ajax(isPost: true));
+    @buttonSet;
+
+}
+
+@if (!Model.RetornouStep)
+{
+
+    using (Smc.Div("divResultado").CssClass("smc-ajuste-icone-faca-filtro").Begin())
+    {
+        @Smc.ActionList("BuscarPessoasEnvioNotificacao", Model, true)
+    }
+}
+else
+{
+    using (Smc.Div("divResultado").CssClass("smc-ajuste-icone-faca-filtro").Begin())
+    {
+        @Smc.ActionList("BuscarPessoasEnvioNotificacao", Model, false)
+    }
+}
+
+
+
+
+
+@Smc.WizardView()

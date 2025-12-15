@@ -1,0 +1,143 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.SRC.Models.SolicitacaoServicoPaginaViewModelBase
+@using SMC.Academico.UI.Mvc.Areas.SRC.Models
+@using SMC.Academico.Common.Areas.SRC.Constants
+
+@using (Smc.Div("fieldsetParametros").Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqSolicitacaoServico)
+    @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapa)
+    @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapaPagina)
+    @Smc.EditorFor(prop => prop.SeqSolicitacaoHistoricoNavegacao)
+    @Smc.EditorFor(prop => prop.SeqSituacaoFinalSucesso)
+    @Smc.EditorFor(prop => prop.SeqSituacaoFinalSemSucesso)
+    @Smc.EditorFor(prop => prop.SeqSituacaoFinalCancelada)
+    @Smc.EditorFor(prop => prop.SeqSolicitacaoServicoEtapa)
+    @Smc.EditorFor(prop => prop.SeqPessoaAtuacao)
+    @Smc.EditorFor(prop => prop.SeqProcesso)
+    @Smc.EditorFor(prop => prop.SeqServico)
+    @Smc.EditorFor(prop => prop.DescricaoServico)
+    @Smc.EditorFor(prop => prop.Protocolo)
+    @Smc.EditorFor(prop => prop.TokenServico)
+}
+
+@{
+    var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-matricula-linha-botoes");
+
+    if (!string.IsNullOrEmpty(Model.TokenPaginaAnterior))
+    {
+        buttonSet.AddButton((Smc.Button(SMCButtonBehavior.Anterior)
+                                .Action(Model.ActionSalvarEtapa, "RealizarAtendimento", new
+                                {
+                                    @area = "SRC",
+                                    @tokenRet = Model.TokenPaginaAnterior
+                                })
+                                .Id("paginaAnterior")
+                                .Type(SMCButtonType.Submit)
+                                .Attribute("formnovalidate", "formnovalidate")
+                                .Text(Smc.GetUIResource(Model.ChaveTextoBotaoAnterior))
+                                .Tooltip(Smc.GetUIResource(Model.ChaveTextoBotaoAnterior))
+                                .CssClass("smc-btn-anterior-icotext cancel")));
+    }
+
+    //Session["_SGA_Retornar_SeqProcesso"]
+
+    var botaoCancelar = Smc.Button("cancelarProcesso")
+                 .Id("cancelarProcesso")
+                 .Type(SMCButtonType.Link)
+                 .CssClass("smc-btn-cancelar-icotext");
+
+    if (Session["_SGA_Retornar_SeqProcesso"] != null)
+    {
+        botaoCancelar.Action("Index", "SolicitacaoServico", new { SeqProcesso = new SMCEncryptedLong(Model.SeqProcesso), area = "SRC" });
+    }
+    else
+    {
+        botaoCancelar.Action("Index", "SolicitacaoServico", new { area = "SRC" });
+    }
+    buttonSet.AddButton(botaoCancelar);
+
+    if (Model.Token == TOKEN_SOLICITACAO_SERVICO.REGISTRO_DOCUMENTO_ENTREGUE)
+    {
+        var modelParsed = Model as RegistrarEntregaDocumentoViewModel;
+
+        if (Model.TokenServico == TOKEN_SERVICO.SOLICITACAO_RENOVACAO_MATRICULA_LATO_SENSU)
+        {
+            var btnConfirmarResidencia = Smc.Button(SMCButtonBehavior.Salvar)
+            .Action(Model.ActionSalvarEtapa, "RealizarAtendimento", new { @area = "SRC" })
+            .Id("proximaPagina")
+            .Text(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+            .Confirm(Smc.GetUIResource("TituloConfirmacao"), Smc.GetUIResource("MensagemConfirmacao"), SMCWindowButtons.Yes)
+            .Tooltip(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+            .DisplayMode(SMCButtonDisplayMode.Text)
+            .CssClass("smc-btn-proximo-icotext-destaque");
+
+
+            if (Model.ExistemDocumentosPendentesSemPrazoEntrega)
+            {
+                btnConfirmarResidencia.Enabled(false).ButtonInstructions(Smc.GetUIResource("Mensagem_Documentos_Pendentes_Sem_Prazo_Entrega"));
+            }
+            else if (!modelParsed.HabilitarEfetivacaoMatricula)
+            {
+                btnConfirmarResidencia.Enabled(modelParsed.HabilitarEfetivacaoMatricula).ButtonInstructions(Smc.GetUIResource("Mensagem_Documentos_Pendentes"));
+            }
+
+            buttonSet.AddButton(btnConfirmarResidencia);
+        }
+        else
+        {
+            var btnConfirmar = Smc.Button(SMCButtonBehavior.Salvar)
+            .Action(Model.ActionSalvarEtapa, "RealizarAtendimento", new
+            {
+                @area = "SRC"
+            })
+            .Id("proximaPagina")
+            .Text(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+            .Confirm(Smc.GetUIResource("TituloConfirmacao"), Smc.GetUIResource("MensagemConfirmacao"), SMCWindowButtons.Yes)
+            .Tooltip(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+            .DisplayMode(SMCButtonDisplayMode.Text)
+            .CssClass("smc-btn-proximo-icotext-destaque");
+
+            if (Model.ExistemDocumentosPendentesSemPrazoEntrega)
+            {
+                btnConfirmar.Enabled(false).ButtonInstructions(Smc.GetUIResource("Mensagem_Documentos_Pendentes_Sem_Prazo_Entrega"));
+            }
+            else if (!modelParsed.HabilitarEfetivacaoMatricula)
+            {
+                btnConfirmar.Enabled(modelParsed.HabilitarEfetivacaoMatricula).ButtonInstructions(Smc.GetUIResource("Mensagem_Documentos_Pendentes"));
+            }
+
+            buttonSet.AddButton(btnConfirmar);
+        }
+    }
+    else if (Model.Token == TOKEN_SOLICITACAO_SERVICO.CONFIRMACAO_SELECAO_ATIVIDADE_ACADEMICA && Model.TokenServico == TOKEN_SERVICO.MATRICULA_REABERTURA)
+    {
+        var btnConfirmar = Smc.Button(SMCButtonBehavior.Salvar)
+                .Action(Model.ActionSalvarEtapa, "RealizarAtendimento", new
+                {
+                    @area = "SRC"
+                })
+                .Id("proximaPagina")
+                .Text(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+                //.Confirm(Smc.GetUIResource("TituloConfirmacao"), Smc.GetUIResource("MensagemConfirmacao"), SMCWindowButtons.Yes)
+                .Tooltip(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+                .DisplayMode(SMCButtonDisplayMode.Text)
+                .CssClass("smc-btn-proximo-icotext-destaque");
+
+        buttonSet.AddButton(btnConfirmar);
+    }
+    else
+    {
+
+        buttonSet.AddButton((Smc.Button(SMCButtonBehavior.Salvar)
+            .Action(Model.ActionSalvarEtapa, "RealizarAtendimento", new
+            {
+                @area = "SRC"
+            })
+            .Id("proximaPagina")
+            .Text(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+            .Tooltip(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+            .DisplayMode(SMCButtonDisplayMode.Text)
+            .CssClass("smc-btn-proximo-icotext-destaque")));
+    }
+    @buttonSet
+}

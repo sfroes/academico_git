@@ -1,0 +1,39 @@
+﻿@model DivisaoMatrizCurricularComponenteDynamicModel
+
+@Html.Action("DivisaoMatrizCurricularComponenteEdicaoCabecalho", new { Model.SeqMatrizCurricular, Model.SeqGrupoCurricularComponente })
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(m => m.Seq)
+    @Smc.EditorFor(m => m.SeqMatrizCurricular)
+    @Smc.EditorFor(m => m.SeqComponenteCurricular)
+    @Smc.EditorFor(m => m.SeqCurriculoCursoOferta)
+    @Smc.EditorFor(m => m.SeqGrupoCurricularComponente)
+    @Smc.EditorFor(m => m.SeqConfiguracaoComponente)
+    @Smc.EditorFor(m => m.SeqDivisaoMatrizCurricular)
+    @Smc.HiddenFor(m => m.QuantidadeVagasObrigatoria)
+    @Smc.EditorFor(m => m.QuantidadeVagas)
+    @Smc.HiddenFor(m => m.CriterioAprovacaoObrigatorio)
+    @Smc.EditorFor(m => m.SeqCriterioAprovacao)
+    @Smc.EditorFor(m => m.CriterioNotaMaxima)
+    @Smc.EditorFor(m => m.CriterioPercentualNotaAprovado)
+    @Smc.EditorFor(m => m.CriterioPercentualFrequenciaAprovado)
+    @Smc.EditorFor(m => m.CriterioDescricaoEscalaApuracao)
+    @*@Smc.HiddenFor(m => m.GrupoCurricularComponenteExigeAssunto)*@
+    @*@Smc.HiddenFor(m => m.AssuntoComponente)*@
+
+    using (Smc.Div().Size(SMCSize.Grid24_24)
+        .Dependency("SeqConfiguracaoComponente", "PreencherDivisoesConfiguracaoComponente", "DivisaoMatrizCurricularComponente", new string[] { "Seq", "SeqCurriculoCursoOferta", "SeqCriterioAprovacao" })
+        .Dependency("SeqCriterioAprovacao", "PreencherDivisoesConfiguracaoComponente", "DivisaoMatrizCurricularComponente", new string[] { "Seq", "SeqCurriculoCursoOferta", "SeqConfiguracaoComponente" })
+        .Begin())
+    {
+
+    }
+
+    using (Smc.Fieldset("fieldsetTurnos").LegendText(Smc.GetUIResource("TURNOS_Fieldset_Legenda")).Begin())
+    {
+        @Smc.EditorFor(m => m.TurnosExcecao);
+    }
+
+    @*@Smc.EditorFor(m => m.ComponentesCurricularSubstitutos)*@
+}

@@ -1,0 +1,484 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Workflow</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.Workflow.Activities.SMCDebugActivity">
+            <summary>
+            Representa uma atividade para imprimir a mensagem de debug.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.Activities.SMCDebugActivity.Text">
+            <summary>
+            Permite informar a mensagem para debug.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.Activities.SMCDebugActivity.CacheMetadata(System.Activities.CodeActivityMetadata)">
+            <summary>
+            Configura os metadados da atividade.
+            </summary>
+            <param name="metadata">Metadados da atividade.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.Activities.SMCDebugActivity.Execute(System.Activities.CodeActivityContext)">
+            <summary>
+            Executa a atividade.
+            </summary>
+            <param name="context">Contexto de execução.</param>
+            <returns>Estado corrente.</returns>
+        </member>
+        <member name="T:SMC.Framework.Workflow.Activities.SMCStateSequenceActivity`1">
+            <summary>
+            Representa uma atividade associada a um estado de um objeto.
+            </summary>
+            <typeparam name="T">Tipo do estado do objeto (enum, inteiro ou string).</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Workflow.Activities.SMCStateSequenceActivity`1.innerSequence">
+            <summary>
+            Armazena a sequence interna que conterá as atividades.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.Activities.SMCStateSequenceActivity`1.Activities">
+            <summary>
+            Recupera as atividades da sequence.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.Activities.SMCStateSequenceActivity`1.Variables">
+            <summary>
+            Recupera as variváveis da atividade.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.Activities.SMCStateSequenceActivity`1.CacheMetadata(System.Activities.NativeActivityMetadata)">
+            <summary>
+            Implementa o cache de metadados.
+            </summary>
+            <param name="metadata">Metadados.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.Activities.SMCStateSequenceActivity`1.Execute(System.Activities.NativeActivityContext)">
+            <summary>
+            Executa a atividade.
+            </summary>
+            <param name="context">Contexto de execução.</param>
+        </member>
+        <member name="P:SMC.Framework.Workflow.Activities.SMCStateSequenceActivity`1.State">
+            <summary>
+            Estado associado à atividade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.Activities.SMCStateSequenceActivity`1.ConditionToContinue">
+            <summary>
+            Condição associada ao estado para que ele continue a execução.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.Activities.SMCStateSequenceActivity`1.CanReturnToPrevious">
+            <summary>
+            Define se o estado pode retornar para o anterior.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Workflow.Activities.SMCWaitForInputActivity">
+            <summary>
+            Representa uma atividade de espera.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.Activities.SMCWaitForInputActivity.BookmarkName">
+            <summary>
+            Nome do bookmark.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.Activities.SMCWaitForInputActivity.CanInduceIdle">
+            <summary>
+            Define se essa atividade para o workflow.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.Activities.SMCWaitForInputActivity.Execute(System.Activities.NativeActivityContext)">
+            <summary>
+            Cria um bookmark para o workflow.
+            </summary>
+            <param name="context">Contexto de execução.</param>
+        </member>
+        <member name="T:SMC.Framework.Workflow.Activities.SMCWaitForInputActivity`1">
+            <summary>
+            Representa uma atividade de espera que exige um parâmetro de entrada.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.Activities.SMCWaitForInputActivity`1.Input">
+            <summary>
+            Parametro de entrada requerido.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.Activities.SMCWaitForInputActivity`1.Execute(System.Activities.NativeActivityContext)">
+            <summary>
+            Cria um bookmark para o workflow.
+            </summary>
+            <param name="context">Contexto de execução.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.Activities.SMCWaitForInputActivity`1.Continue(System.Activities.NativeActivityContext,System.Activities.Bookmark,System.Object)">
+            <summary>
+            Continua a execução do workflow.
+            </summary>
+            <param name="context">Contexto de execução.</param>
+            <param name="bookmark">Bookmark original.</param>
+            <param name="obj">Valor atribuido.</param>
+        </member>
+        <member name="T:SMC.Framework.Workflow.Exceptions.SMCIlegalWorkflowStateException">
+            <summary>
+            Representa uma exceção quando um workflow se encontra em um estado diferente do válido
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.Exceptions.SMCIlegalWorkflowStateException.#ctor">
+            <summary>
+            Cria um objeto SMCIlegalWorkflowStateException
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Workflow.Extensions.SMCStateExtensions">
+            <summary>
+            Classe com métodos de suporte para workflows de máquinas de estados.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.Extensions.SMCStateExtensions.Execute``1(System.Activities.Activity,SMC.Framework.Workflow.ISMCStateMachine{``0})">
+            <summary>
+            Executa um workflow.
+            </summary>
+            <typeparam name="TState">Tipo do estado.</typeparam>
+            <param name="activity">Objeto que implementa o workflow.</param>
+            <param name="entity">Entidade de entrada.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.Extensions.SMCStateExtensions.Execute``2(System.Activities.Activity,SMC.Framework.Workflow.ISMCStateMachine{``0,``1},``1)">
+            <summary>
+            Executa um workflow.
+            </summary>
+            <typeparam name="TState">Tipo do estado.</typeparam>
+            <typeparam name="TAction">Tipo da ação.</typeparam>
+            <param name="activity">Objeto que implementa o workflow.</param>
+            <param name="entity">Entidade de entrada.</param>
+            <param name="action">Ação executada.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.Extensions.SMCStateExtensions.ExecuteReturn``1(System.Activities.Activity,SMC.Framework.Workflow.ISMCStateMachine{``0})">
+            <summary>
+            Executa um workflow.
+            </summary>
+            <typeparam name="TState">Tipo do estado.</typeparam>
+            <param name="activity">Objeto que implementa o workflow.</param>
+            <param name="entity">Entidade de entrada.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.Extensions.SMCStateExtensions.Transform``1(SMC.Framework.Workflow.ISMCStateWorkflow{``0},System.Func{System.Activities.Activity},SMC.Framework.Workflow.SMCStateTransitionCollection{``0}@)">
+            <summary>
+            Realiza a transformação da implementação do workflow para tratar o status do item.
+            </summary>
+            <typeparam name="TState">Tipo do status (enum, inteiro ou string).</typeparam>
+            <param name="workflow">Fluxo de estados.</param>
+            <param name="implementation">Implementação do status.</param>
+            <param name="transitions">Transições entre os estados.</param>
+            <returns>Atividade alterada para funcionar com workflow.</returns>
+        </member>
+        <member name="M:SMC.Framework.Workflow.Extensions.SMCStateExtensions.Transform``2(SMC.Framework.Workflow.ISMCStateWorkflow{``0,``1},System.Func{System.Activities.Activity},SMC.Framework.Workflow.SMCStateTransitionCollection{``0}@)">
+            <summary>
+            Realiza a transformação da implementação do workflow para tratar o status do item.
+            </summary>
+            <typeparam name="TState">Tipo do status (enum, inteiro ou string).</typeparam>
+            <typeparam name="TAction">Tipo da ação.</typeparam>
+            <param name="workflow">Fluxo de estados.</param>
+            <param name="implementation">Implementação do status.</param>
+            <param name="transitions">Transições entre os estados.</param>
+            <returns>Atividade alterada para funcionar com workflow.</returns>
+        </member>
+        <member name="T:SMC.Framework.Workflow.SMCWorkflowIocMapping">
+            <summary>
+            Classe que contém o mapeamento de Ioc para os workflows.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Workflow.SMCWorkflowIocMapping._worflows">
+            <summary>
+            Armazena a classe de configuração de worflows.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.SMCWorkflowIocMapping.Worflows">
+            <summary>
+            Configura os worflows.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Workflow.SMCWorkflowIocMapping.SMCStateWorkflowIocMapping">
+            <summary>
+            Classe de configuração de workflows.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCWorkflowIocMapping.SMCStateWorkflowIocMapping.#ctor(SMC.Framework.Ioc.ISMCIocContainer)">
+            <summary>
+            Cria um novo objeto SMCWorkflowIocMapping.
+            </summary>
+            <param name="container">Container com o mapeamento Ioc.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCWorkflowIocMapping.SMCStateWorkflowIocMapping.Register``2">
+            <summary>
+            Registra um workflow no Ioc.
+            </summary>
+            <typeparam name="TWorkflow">Tipo da classe que implementa o workflow.</typeparam>
+            <typeparam name="TState">Tipo do enumerador com os estados do workflow.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCWorkflowIocMapping.SMCStateWorkflowIocMapping.Register``2(System.String)">
+            <summary>
+            Registra um workflow no Ioc.
+            </summary>
+            <typeparam name="TWorkflow">Tipo da classe que implementa o workflow.</typeparam>
+            <typeparam name="TState">Tipo do enumerador com os estados do workflow.</typeparam>
+            <param name="name">Nome do mapeamento.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCWorkflowIocMapping.SMCStateWorkflowIocMapping.Register``3">
+            <summary>
+            Registra um workflow no Ioc.
+            </summary>
+            <typeparam name="TWorkflow">Tipo da classe que implementa o workflow.</typeparam>
+            <typeparam name="TState">Tipo do enumerador com os estados do workflow.</typeparam>
+            <typeparam name="TAction">Tipo do enumerador das ações do workflow.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCWorkflowIocMapping.SMCStateWorkflowIocMapping.Register``3(System.String)">
+            <summary>
+            Registra um workflow no Ioc.
+            </summary>
+            <typeparam name="TWorkflow">Tipo da classe que implementa o workflow.</typeparam>
+            <typeparam name="TState">Tipo do enumerador com os estados do workflow.</typeparam>
+            <typeparam name="TAction">Tipo do enumerador das ações do workflow.</typeparam>
+            <param name="name">Nome do mapeamento.</param>
+        </member>
+        <member name="T:SMC.Framework.Workflow.Resources.ExceptionsResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.Resources.ExceptionsResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.Resources.ExceptionsResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.Resources.ExceptionsResource.SMCIlegalWorkflowStateException">
+            <summary>
+              Looks up a localized string similar to Workflow de estado deve ser do tipo Flowchart..
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Workflow.SMCPromotionPersistenceParticipant">
+            <summary>
+            Classe de suporte que permite informar as chaves de identificação de cada instância do workflow.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Workflow.SMCPromotionPersistenceParticipant.PromotedPropertyXNamespace">
+            <summary>
+            Namespace de identificação das propriedades.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Workflow.SMCPromotionPersistenceParticipant.promotedProperties">
+            <summary>
+            Lista de propriedades que identificam um workflow.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCPromotionPersistenceParticipant.#ctor">
+            <summary>
+            Construtor padrão da classe.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCPromotionPersistenceParticipant.PublishValues(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object})">
+            <summary>
+            Chamando quando uma instância de um workflow é recuperado do banco de dados e deve ser novamente preenchido.
+            </summary>
+            <param name="readWriteValues">Lista dos valores que identificam o workflow persistido.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCPromotionPersistenceParticipant.AddPromotedVariable(System.String,System.Object)">
+            <summary>
+            Adiciona um novo valor para identificar o workflow.
+            </summary>
+            <param name="variableName">Nome do identificador / propriedade.</param>
+            <param name="variableValue">Valor do identificador.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCPromotionPersistenceParticipant.ClearExistingPromotionData">
+            <summary>
+            Lista os dados que foram armazenados a lista de identificadores.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCPromotionPersistenceParticipant.CollectValues(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object}@,System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object}@)">
+            <summary>
+            Método para recuperar os identificadores que serão persistidos em base de dados para posterior recuperação dessa instancia.
+            </summary>
+            <param name="readWriteValues">Identificadores que serão escritos e posteriormente recuperados.</param>
+            <param name="writeOnlyValues">Identificadores que serão escritos mas não serão recuperados no momento de carregar novamente a instância.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCPromotionPersistenceParticipant.Promote(System.Activities.DurableInstancing.SqlWorkflowInstanceStore,System.String,System.String)">
+            <summary>
+            Configura uma instância do repositório para aceitar os valores utilizados como identificação do workflow.
+            </summary>
+            <param name="instanceStore">Repositório onde serão armazenados os workflows.</param>
+            <param name="name">Nome do workflow.</param>
+            <param name="propertyName">Nome da propriedade que identifica o worflow.</param>
+        </member>
+        <member name="T:SMC.Framework.Workflow.SMCWorkflowServiceBase`1">
+            <summary>
+            Classe base para todos os serviços de workflow.
+            </summary>
+            <typeparam name="T">Atividade que será disponibilizada pelo serviço.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.connectionString">
+            <summary>
+            String de conexão com o banco que dados onde serão armazenados os workflows.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.#ctor(System.String,System.String[])">
+            <summary>
+            Construtor para a classe de serviço que permitirá inicializar o workflow.
+            Os parâmetros utilizados no construtor serão utilizados para persistir
+            o workflow no banco de dados, identificando-o com as propriedades informdas,
+            para posteriormente serem recuperados a partir da propriedade.
+            </summary>
+            <param name="workflowName">Nome do workflow a ser gerenciado.</param>
+            <param name="promotedProperties">Lista de propriedades que serão identificadores do workflow.</param>
+        </member>
+        <member name="F:SMC.Framework.Workflow.SMCWorkflowServiceBase`1._handler">
+            <summary>
+            Mantém o objeto que irá gerenciar a chamada assíncrona ao workflow.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Workflow.SMCWorkflowServiceBase`1._application">
+            <summary>
+            Mantém a aplicação que irá rodar o workflow.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Workflow.SMCWorkflowServiceBase`1._exception">
+            <summary>
+            Armazena a exceção gerada durante a execução do workflow.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.OutputParameters">
+            <summary>
+            Parâmetro de retorno do workflow.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.WorkflowName">
+            <summary>
+            Nome de identificação do workflow na base de dados.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.PromotedProperties">
+            <summary>
+            Lista de propriedade que serão utilizadas para identificar cada instancia do workflow na base.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.Id">
+            <summary>
+            Identificação do workflow.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.ConnectionString">
+            <summary>
+            Recupera ou atribui a string de conexão do banco onde serão armazenados os workflows.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.PersistAfterCompleted">
+            <summary>
+            Define se o workflow deve persistir depois de salvo no banco de dados.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.Configure">
+            <summary>
+            Configura a aplicação que vai executar o workflow.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.CheckError">
+            <summary>
+            Verifica se houve erro na execução do workflow e dispara uma exceção.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.Run(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Inicializa a execução do workflow, considerando os parâmetros informados.
+            </summary>
+            <param name="inputParameters">Lista de parâmetros utilizados pelo workflow.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.ResumeBookmark(System.Guid,System.String,System.Object)">
+            <summary>
+            Permite resumir um workflow que estava em espera, aguardando algum parâmetro de entrada.
+            </summary>
+            <param name="workflowId">Identificação do workflow a ser resumido.</param>
+            <param name="bookmarkName">Nome do marcador onde o workflow parou a execução.</param>
+            <param name="value">Valor que será enviado para o workflow continuar a execução.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.GetInstanceId(System.Object[])">
+            <summary>
+            Recupera a instância existente do workflow considerando os valores informados como parâmetro.
+            Os valores devem estar associados às propriedades informadas no construtor da classe.
+            </summary>
+            <param name="keys">Valores das chaves que serão utilizados para recuperar a identificação do workflow.</param>
+            <returns>Identificação do workflow que possui as chaves informadas.</returns>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCWorkflowServiceBase`1.Dispose">
+            <summary>
+            Limpa os objetos utilizados pela classe.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Workflow.SMCStateWorkflowHelper">
+            <summary>
+            Classe de suporte para configuração do workflow de estado.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Workflow.SMCStateWorkflowHelper.ModelArgumentName">
+            <summary>
+            Identificação dos parâmetros de workflow para o modelo.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Workflow.SMCStateWorkflowHelper.RetornarArgumentName">
+            <summary>
+            Identificação dos parâmetros de workflow para retornar.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Workflow.SMCStateWorkflowHelper.AcaoArgumentName">
+            <summary>
+            Identificação dos parâmetros de workflow para a ação.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCStateWorkflowHelper.Transform``1(System.Func{System.Activities.Activity},SMC.Framework.Workflow.SMCStateTransitionCollection{``0}@)">
+            <summary>
+            Realiza a transformação da implementação do workflow para tratar o status do item.
+            </summary>
+            <typeparam name="TState">Tipo do status (enum, inteiro ou string).</typeparam>
+            <param name="implementation">Implementação do status.</param>
+            <param name="transitions">Transições entre os estados.</param>
+            <returns>Atividade alterada para funcionar com workflow.</returns>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCStateWorkflowHelper.Transform``2(System.Func{System.Activities.Activity},SMC.Framework.Workflow.SMCStateTransitionCollection{``0}@)">
+            <summary>
+            Realiza a transformação da implementação do workflow para tratar o status do item.
+            </summary>
+            <typeparam name="TState">Tipo do status (enum, inteiro ou string).</typeparam>
+            <typeparam name="TAction">Tipo da ação.</typeparam>
+            <param name="implementation">Implementação do status.</param>
+            <param name="transitions">Transições entre os estados.</param>
+            <returns>Atividade alterada para funcionar com workflow.</returns>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCStateWorkflowHelper.GetStateTransitions``1(System.Activities.Statements.FlowNode)">
+            <summary>
+            Método se suporte para Recuperar as dependencias entre os estados do fluxo.
+            </summary>
+            <typeparam name="TState">Tipo do estado.</typeparam>
+            <param name="node">Nó atual.</param>
+            <returns>Lista de transições de estados.</returns>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCStateWorkflowHelper.GetStateTransitions``1(System.Activities.Statements.FlowNode,System.Nullable{``0},System.Collections.Generic.IList{SMC.Framework.Workflow.SMCStateTransition{``0}})">
+            <summary>
+            Método se suporte para Recuperar as dependencias entre os estados do fluxo.
+            </summary>
+            <typeparam name="TState">Tipo do estado.</typeparam>
+            <param name="node">Nó atual.</param>
+            <param name="previousState">Estado anterior.</param>
+            <param name="states">Lista de dependencias entre os estados.</param>
+        </member>
+        <member name="M:SMC.Framework.Workflow.SMCStateWorkflowHelper.ExecuteWorkflow(System.Activities.Activity,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Executa um workflow.
+            </summary>
+            <param name="activity">Objeto que implementa o workflow.</param>
+            <param name="input">Parametros de entrada.</param>
+        </member>
+    </members>
+</doc>

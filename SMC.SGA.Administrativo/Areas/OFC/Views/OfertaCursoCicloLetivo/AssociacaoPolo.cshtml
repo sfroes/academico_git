@@ -1,0 +1,39 @@
+﻿@model OfertaCursoCicloLetivoAssociacaoPoloFiltroViewModel
+
+@section Scripts {
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.Window,
+                                     RegisterHelperControls.TreeView)
+}
+
+@using (Smc.Header("AssociacaoPolo", SMCHeaderType.Primary)
+    .Item(prop => prop.DadosOfertaCursoCicloLetivo.OfertaCurso, SMCSize.Grid5_24)
+    .Item(prop => prop.DadosOfertaCursoCicloLetivo.CicloLetivo, SMCSize.Grid5_24)
+    .Item(prop => prop.DadosOfertaCursoCicloLetivo.FormaIngresso, SMCSize.Grid5_24)
+    .Begin())
+{
+    using (Smc.ButtonSet().Begin())
+    {
+        @Html.Partial("_BotaoConfigurarOfertaCursoCicloLetivo", new OfertaCursoCicloLetivoBotaoConfigurarViewModel() { Action = OfertaCursoCicloLetivoActionsEnum.AssociarPolo, SeqOfertaCursoCicloLetivo = (SMCEncryptedLong)Model.SeqOfertaCursoCicloLetivo })
+    }
+}
+
+@using (Smc.ButtonSet().CssClass("smc-sga-buttonset-top-paginas").Begin())
+{ @(Smc.FieldButton(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Attribute(SMCMvcConsts.MODAL_ID, "incluirAssociacaoPolo").Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Associar_Polo_Modal_Title")).CssClass("smc-btn-novo-icotext-destaque").Ajax(isPost: false, updateTargetId: "painelAjaxIncluirAssociacaoPolo").Url(Url.Action("IncluirAssociacaoPolo", new { seqOfertaCursoCicloLetivo = (SMCEncryptedLong)Model.SeqOfertaCursoCicloLetivo })))  }
+
+
+    <div id="divGridAssociacaoPolo">
+        @Html.Action("ListarAssociacaoPolo", Model)
+    </div>
+
+    @using (Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-buttonset-bottom-paginas").Begin())
+{
+        @Smc.FieldButton(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Url("Index")
+}
+
+    @using (Smc.ModalWindow("incluirAssociacaoPolo")
+        .Size(SMCModalWindowSize.Medium)
+        .AllowEscKeyToClose()
+        .ContentId("painelAjaxIncluirAssociacaoPolo")
+        .Form("incluirAssociacaoPolo", "IncluirAssociacaoPolo", "OfertaCursoCicloLetivo", config: prop => prop.Ajax("#divGridAssociacaoPolo"))
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Begin()) { }

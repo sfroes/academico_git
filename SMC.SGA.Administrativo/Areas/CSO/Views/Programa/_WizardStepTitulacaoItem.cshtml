@@ -1,0 +1,5 @@
+﻿@model ReplicaFormacaoEspecificaProgramaTitulacaoCursoViewModel
+
+@Smc.EditorFor(m => m.SeqCurso)
+@Smc.EditorFor(m => m.DescricaoCurso)
+@Smc.MasterDetail(m => m.Titulacoes, SMC.Framework.UI.Mvc.DataAnnotations.SMCDetailType.Block).CssClass("smc-sga-mestre-detalhe-excluir-alinhado").TitleMasterDetail(Model.DescricaoCurso).MinimumItens(1)

@@ -1,0 +1,19 @@
+﻿@model ConfiguracaoComponeteMatrizCabecalhoViewModel
+
+@using (Smc.Div().CssClass("smc-header smc-header-tipo-primary").Attribute("data-control", "header").Attribute("data-header-type", "Primary").Attribute("data-type", "smc-header").Begin())
+{
+    using (Smc.Div().CssClass("smc-header-grupo-itens").Begin())
+    {
+        using (Smc.Div().Size(SMCSize.Grid19_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.DescricaoMatriz).Size(SMCSize.Grid24_24)
+        }
+
+        <div class="smc-size-md-4 smc-size-xs-24 smc-size-sm-6 smc-size-lg-4 smc-sga-totalizador smc-sga-totalizador-simples">
+            <span class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24 smc-sga-totalizador-titulo">Componentes com configuração</span>
+            <div class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+                <div class="smc-display smc-sga-totalizador-valor"><p>@Model.TotalComponentesComConfiguracao / @Model.TotalComponentes</p></div>
+            </div>
+        </div>
+    }
+}

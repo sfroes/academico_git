@@ -1,0 +1,14 @@
+<po-table
+  [p-items]="pagerList.itens"
+  [p-columns]="coluns"
+  [p-selectable]="selectable"
+  [p-single-select]="singleSelect"
+  (p-selected)="onSelect($event)"
+  p-hide-columns-manager="true"
+  p-sort="false"></po-table>
+<smc-pager
+  *ngIf="pagerList?.itens?.length > 0"
+  [s-total-itens]="pagerList.total"
+  [s-reset]="onClearPageSettings"
+  (s-page-settings-changed)="pageSettingsChanged.emit($event)">
+</smc-pager>

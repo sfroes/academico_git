@@ -1,0 +1,22 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.MAT.Models;
+@using SMC.Framework.Model;
+
+@model SMCPagerModel<ChancelaListaViewModel>
+
+@if (Model == null || Model.Count == 0)
+{
+    using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+    {
+        <p>Nenhuma solicitação foi encontrada.</p>
+    }
+}
+else
+{
+    @(Smc.List("Chancelas", Model)
+                .Size(SMCSize.Grid24_24)
+                .HideNavigator()
+                .HideRowTotalizer()
+                .DenyChangeNumberOfRowsPerPage()
+                .GroupByProperty(x => x.SeqProcesso, @<text><h3>@item.DescricaoProcesso</h3></text>)
+                            .HtmlTemplate(chancela => Html.Partial("_ChancelaItem", chancela)))
+}

@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="grupoObrigatorios_Fieldset_Legenda" xml:space="preserve">
+    <value>Grupo de documentos obrigatórios</value>
+  </data>
+  <data name="obrigatorios_Fieldset_Legenda" xml:space="preserve">
+    <value>Documentos obrigatórios</value>
+  </data>
+  <data name="opcionais_Fieldset_Legenda" xml:space="preserve">
+    <value>Documentos opcionais</value>
+  </data>
+  <data name="Texto_Minimo_Requerido_Grupo" xml:space="preserve">
+    <value>Mínimo de itens obrigatórios: {0}</value>
+  </data>
+  <data name="Label_Registrar_Documentos" xml:space="preserve">
+    <value>Registrar documentos</value>
+  </data>
+  <data name="Modal_Title_Registrar_Documentos" xml:space="preserve">
+    <value>Registrar Documentos</value>
+  </data>
+  <data name="Documento_Enviado" xml:space="preserve">
+    <value>Documento(s) enviados com sucesso.</value>
+  </data>
+  <data name="Titulo_Inserir_Sucesso" xml:space="preserve">
+    <value>Sucesso</value>
+  </data>
+  <data name="Texto_Confirmar_Alteracao_Plano" xml:space="preserve">
+    <value>Confirma a solicitação de alteração de plano de estudo?</value>
+  </data>
+  <data name="Texto_Confirmar_Disciplina_Eletiva" xml:space="preserve">
+    <value>Confirma a solicitação de disciplina eletiva?</value>
+  </data>
+  <data name="Botao_Chancelar" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="conferencia_Fieldset_Legenda" xml:space="preserve">
+    <value>Conferência</value>
+  </data>
+  <data name="informacoesArtigo_Fieldset_Legenda" xml:space="preserve">
+    <value>Informações do artigo</value>
+  </data>
+  <data name="periodico_Fieldset_Legenda" xml:space="preserve">
+    <value>Periódico</value>
+  </data>
+  <data name="GruposCurriculares_Detalhe_Titulo" xml:space="preserve">
+    <value>Grupos curriculares</value>
+  </data>
+  <data name="ComponentesCurriculares_Detalhe_Titulo" xml:space="preserve">
+    <value>Componentes curriculares</value>
+  </data>
+  <data name="Titulo_Label_TotalCargaHoraria" xml:space="preserve">
+    <value>Carga Horária</value>
+  </data>
+  <data name="Titulo_Label_TotalCreditos" xml:space="preserve">
+    <value>Créditos</value>
+  </data>
+  <data name="Detalhe_Label_TotalCargaHorariaHoras" xml:space="preserve">
+    <value>Horas</value>
+  </data>
+  <data name="Detalhe_Label_TotalCargaHorariaHorasAula" xml:space="preserve">
+    <value>Horas Aula</value>
+  </data>
+  <data name="TotalItensDispensa_Fieldset_Legenda" xml:space="preserve">
+    <value>Total de itens solicitados para dispensa</value>
+  </data>
+  <data name="Botao_PlanoEstudo" xml:space="preserve">
+    <value>Plano de estudo</value>
+  </data>
+  <data name="Botao_Reabrirchancela" xml:space="preserve">
+    <value>Reabrir chancela</value>
+  </data>
+  <data name="Label_Selecionar_Atividade" xml:space="preserve">
+    <value>Selecionar atividade acadêmica</value>
+  </data>
+  <data name="Label_Selecionar_Turma" xml:space="preserve">
+    <value>Selecionar turma</value>
+  </data>
+  <data name="listaAtividades_Fieldset_Legenda" xml:space="preserve">
+    <value>Atividades acadêmicas</value>
+  </data>
+  <data name="listaTurmas_Fieldset_Legenda" xml:space="preserve">
+    <value>Turmas</value>
+  </data>
+  <data name="ModalPlanoEstudo_Title" xml:space="preserve">
+    <value>Plano de Estudo</value>
+  </data>
+  <data name="Modal_Title_Selecionar_Atividade" xml:space="preserve">
+    <value>Selecionar Atividade Acadêmica</value>
+  </data>
+  <data name="Modal_Title_Selecionar_Turma" xml:space="preserve">
+    <value>Selecionar Turma</value>
+  </data>
+  <data name="ParametroDivisoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Divisões de turma</value>
+  </data>
+  <data name="Botao_Visualizar_Turma_Atividade" xml:space="preserve">
+    <value>Exibir itens</value>
+  </data>
+  <data name="TurmaMatrizSelecionada_Lista_Titulo" xml:space="preserve">
+    <value>Turmas selecionadas</value>
+  </data>
+  <data name="AtividadeAcademicaSelecionada_Lista_Titulo" xml:space="preserve">
+    <value>Atividades acadêmicas</value>
+  </data>
+  <data name="Excluir_Atividade_Selecionado" xml:space="preserve">
+    <value>Confirma a exclusão da seleção da atividade acadêmica "{0}" ?</value>
+  </data>
+  <data name="Excluir_Turma_Selecionado" xml:space="preserve">
+    <value>Confirma a exclusão da seleção da turma "{0}" ?</value>
+  </data>
+  <data name="Title_Excluir_Atividade_Selecionado" xml:space="preserve">
+    <value>Excluir Seleção de Atividade Acadêmica</value>
+  </data>
+  <data name="Title_Excluir_Turma_Selecionado" xml:space="preserve">
+    <value>Excluir Seleção de Turma</value>
+  </data>
+  <data name="Tooltip_Alterar" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="Botao_Comprovantematricularelatorio" xml:space="preserve">
+    <value>Comprovante de matrícula</value>
+  </data>
+  <data name="Botao_Visualizarcontrato" xml:space="preserve">
+    <value>2ª via do termo de adesão</value>
+  </data>
+  <data name="Documentos_Fieldset_Legenda" xml:space="preserve">
+    <value>Documentos da matrícula</value>
+  </data>
+  <data name="TituloConfirmacaoRenovacao" xml:space="preserve">
+    <value>Adesão de Contrato</value>
+  </data>
+  <data name="Titulo_Modal_Bloqueios" xml:space="preserve">
+    <value>Bloqueios</value>
+  </data>
+  <data name="Tooltip_Divisao_Turma" xml:space="preserve">
+    <value>Mais informações</value>
+  </data>
+  <data name="TurmaAlterarSelecaoAluno_Title" xml:space="preserve">
+    <value>Alterar Divisões da Turma</value>
+  </data>
+  <data name="TurmaMatrizOferta_Lista_Titulo" xml:space="preserve">
+    <value>Turmas ofertadas - </value>
+  </data>
+  <data name="Label_Nenhum_Registro_Atividade_Selecionada" xml:space="preserve">
+    <value>Nenhuma atividade acadêmica selecionada</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Turma_Selecionada" xml:space="preserve">
+    <value>Nenhuma turma selecionada</value>
+  </data>
+  <data name="Mensagem_Documentos_Pendentes" xml:space="preserve">
+    <value>Não é possível prosseguir. Para efetivar a matrícula, é necessário validar a entrega de todos os documentos obrigatórios requeridos.</value>
+  </data>
+  <data name="Texto_Documentos_Obrigatorios_Enviados" xml:space="preserve">
+    <value>Não existe validação de entrega de documentos obrigatórios pendente. Clique em "Próxima página" para prosseguir.</value>
+  </data>
+  <data name="Texto_Documentos_Obrigatorios_Pendentes" xml:space="preserve">
+    <value>Existem documentos obrigatórios com validação de entrega pendente. Clique em "Registrar documentos" para realizar a validação.</value>
+  </data>
+  <data name="ItensCursadosOutrasInstituicoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Itens cursados em outras instituições</value>
+  </data>
+  <data name="ItensCursadosOutrasInstituicoes_Modal_Editar_Titulo" xml:space="preserve">
+    <value>Itens cursados em outras instituições</value>
+  </data>
+  <data name="TotalItensCursados_Fieldset_Legenda" xml:space="preserve">
+    <value>Total de itens cursados para dispensa</value>
+  </data>
+  <data name="TotalItensDispensa_Fieldset_Legenda1" xml:space="preserve">
+    <value>Total de itens solicitados para dispensa</value>
+  </data>
+  <data name="Mensagem_Assert_Itens_Matriz" xml:space="preserve">
+    <value>Ao prosseguir, os seguintes itens serão excluídos da solicitação de dispensa do aluno, sem possibilidade de serem recuperados: {0} Caso necessário, adicione itens equivalentes aos que serão excluídos, porém, pertencentes à matriz do aluno. &lt;br /&gt;&lt;br /&gt;Deseja continuar?</value>
+  </data>
+  <data name="Texto_Informativo_Itens_Matriz_Plural" xml:space="preserve">
+    <value>Os seguintes itens não foram encontrados na matriz do aluno e não foram incluídos para dispensa:</value>
+  </data>
+  <data name="Texto_Informativo_Itens_Matriz_Singular" xml:space="preserve">
+    <value>O seguinte item não foi encontrado na matriz do aluno e não foi incluído para dispensa:</value>
+  </data>
+  <data name="MSG_Titulo_Erro" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="Documentos_Detalhe_Titulo" xml:space="preserve">
+    <value>Documentos</value>
+  </data>
+  <data name="Mensagem_Assert_Componente_Aprovado_Dispensado" xml:space="preserve">
+    <value>Os seguintes componentes já foram cursados com aprovação ou dispensados:  {0}.   &lt;br /&gt;&lt;br /&gt;Deseja prosseguir mesmo assim?</value>
+  </data>
+  <data name="Botao_Divisao_Turma" xml:space="preserve">
+    <value>Mais informações</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Campo_Divisao" xml:space="preserve">
+    <value>Codificação</value>
+  </data>
+  <data name="Titulo_Legenda_TurmaOfertaMatricula" xml:space="preserve">
+    <value>Pertence ao currículo</value>
+  </data>
+  <data name="Texto_Chancela_Alterar_Plano_Sem_Alteracao" xml:space="preserve">
+    <value>Não foram realizadas alterações no plano de estudo do(a) aluno(a) {0}. &lt;br /&gt;&lt;br /&gt;Confirma a chancela?</value>
+  </data>
+  <data name="Titulo_Legenda_SituacaoItemMatricula" xml:space="preserve">
+    <value>Tipo de solicitação</value>
+  </data>
+  <data name="informacoesNota_Fieldset_Legenda" xml:space="preserve">
+    <value>Lançamento de nota</value>
+  </data>
+  <data name="Botao_Dados_Intercambio" xml:space="preserve">
+    <value>Visualizar dados de intercâmbio</value>
+  </data>
+  <data name="Botao_Dados_Intercambio_Tooltip" xml:space="preserve">
+    <value>Visualizar dados de intercâmbio</value>
+  </data>
+  <data name="Modal_Title_Integralizacao_Curricular" xml:space="preserve">
+    <value>Dados de intercâmbio</value>
+  </data>
+  <data name="Aba_Title_DocumentosSolicitacao" xml:space="preserve">
+    <value>Documentos</value>
+  </data>
+  <data name="Aba_Title_Identificacao" xml:space="preserve">
+    <value>Identificação</value>
+  </data>
+  <data name="Botao_Download_Arquivo_Anexo" xml:space="preserve">
+    <value>Baixar arquivo anexo</value>
+  </data>
+  <data name="Botao_Download_Arquivo_Anexo_Tooltip" xml:space="preserve">
+    <value>Baixar arquivo anexo</value>
+  </data>
+  <data name="MSG_SolicitacaoComMatriculaNaoEfetivada" xml:space="preserve">
+    <value>Opção indisponível. A solicitação não foi encerrada.</value>
+  </data>
+  <data name="MSG_SolicitacaoNaoPossuiTermoAdesaoEArquivoTermoAdesao" xml:space="preserve">
+    <value>Opção indisponível. A adesão não foi realizada.</value>
+  </data>
+  <data name="MSG_NaoExistemUsuariosResponsaveis" xml:space="preserve">
+    <value>Não há usuário responsável.</value>
+  </data>
+  <data name="DadosCriacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados de criação</value>
+  </data>
+  <data name="InformacoesComplementaresAtualizada_Fieldset_Legenda" xml:space="preserve">
+    <value>Informações complementares</value>
+  </data>
+  <data name="InformacoesComplementaresOriginal_Fieldset_Legenda" xml:space="preserve">
+    <value>Informações complementares</value>
+  </data>
+  <data name="JustificativaComplementar_Fieldset_Legenda" xml:space="preserve">
+    <value>Justificativa Complementar</value>
+  </data>
+  <data name="Justificativa_Fieldset_Legenda" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="SolicitacaoAtualizada_Accordion_Section_Titulo" xml:space="preserve">
+    <value>Solicitação atualizada</value>
+  </data>
+  <data name="SolicitacaoOriginal_Accordion_Section_Titulo" xml:space="preserve">
+    <value>Solicitação original</value>
+  </data>
+  <data name="ModalConsultaSolicitacaoServico_Title" xml:space="preserve">
+    <value>Consultar Dados da Solicitação</value>
+  </data>
+  <data name="Texto_Chancela_Item_Aguardando" xml:space="preserve">
+    <value>Chancela não permitida. Existe item na situação "Aguardando chancela".</value>
+  </data>
+  <data name="Aba_Title_HistoricoSolicitacao" xml:space="preserve">
+    <value>Histórico de Situação e Observações</value>
+  </data>
+  <data name="Label_Situacao_Final_Etapa" xml:space="preserve">
+    <value>Situação final da etapa</value>
+  </data>
+  <data name="Mensagem_Aluno_Existe_Historico_Escolar_Atividade_Academica" xml:space="preserve">
+    <value>Existe lançamento de nota no histórico escolar para o(s) item(ns) abaixo. &lt;br/&gt;&lt;br/&gt;{0}&lt;br /&gt;&lt;br/&gt;Tem certeza que deseja removê-lo do plano de estudo do aluno?</value>
+  </data>
+  <data name="fsTaxas_Fieldset_Legenda" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="fsTipoEmissao_Fieldset_Legenda" xml:space="preserve">
+    <value>Selecione como deseja realizar o pagamento</value>
+  </data>
+  <data name="MensagemInformativaTaxasSemValor" xml:space="preserve">
+    <value>Atenção. Não foi identificado o valor da taxa. Favor entrar em contato com a Divisão Financeira. Telefones: (31) 3319-4142 / 3319-4215</value>
+  </data>
+  <data name="Label_Valor" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="Label_Total_Geral" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Aba_Title_TaxasSolicitacao" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="Botao_Gerarboleto" xml:space="preserve">
+    <value>Emitir boleto</value>
+  </data>
+  <data name="Fieldset_Taxas" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="Botao_VisualizarDadosSolicitante" xml:space="preserve">
+    <value>Dados de contato</value>
+  </data>
+  <data name="Botao_VisualizarDadosSolicitante_Tooltip" xml:space="preserve">
+    <value>Dados de contato</value>
+  </data>
+  <data name="VisualizarDadosSolicitante_Title" xml:space="preserve">
+    <value>Visualização de Dados de Contato</value>
+  </data>
+  <data name="Mensagem_Assert_Plano_NaoAlterado_Removido" xml:space="preserve">
+    <value>As seguintes turmas não pertencem mais ao plano de estudos do aluno, portanto ele não será matriculado nelas: &lt;br /&gt; &lt;br /&gt; {0} &lt;br /&gt;&lt;/br /&gt; Deseja continuar?</value>
+  </data>
+  <data name="Mensagem_EntregareiAte" xml:space="preserve">
+    <value>Entregarei até {0}</value>
+  </data>
+  <data name="Mensagem_EntregareiPosteriormente" xml:space="preserve">
+    <value>Entregarei posteriormente</value>
+  </data>
+  <data name="Label_Anexar_Documentos" xml:space="preserve">
+    <value>Anexar documentos</value>
+  </data>
+  <data name="Modal_Title_Anexar_Documentos" xml:space="preserve">
+    <value>Anexar Documentos</value>
+  </data>
+  <data name="Botao_Anexo_Anterior" xml:space="preserve">
+    <value>Anexo anterior</value>
+  </data>
+  <data name="Botao_Efetivar" xml:space="preserve">
+    <value>Efetivar</value>
+  </data>
+  <data name="Confirmacao_Entrega_Documentacao" xml:space="preserve">
+    <value>Os documentos abaixo já foram entregues. Caso os novos arquivos sejam deferidos, os arquivos antigos
+serão SUBSTITUÍDOS pelos novos arquivos anexados. Tem certeza que deseja prosseguir?
+&lt;br /&gt; &lt;br /&gt; {0} &lt;br /&gt;&lt;/br /&gt;</value>
+  </data>
+  <data name="Informativo_Entrega_Documentacao" xml:space="preserve">
+    <value>Os documentos que podem ter mais de um arquivo anexado, podem ser editados (sendo substituídos) ou ter 
+um novo registro incluído (no comando +).
+Os documentos que não podem ter mais de um arquivo anexado, ao serem editados, serão  SEMPRE
+substituídos.</value>
+  </data>
+  <data name="DivisoesComponente_Detalhe_Titulo" xml:space="preserve">
+    <value>Componente curricular</value>
+  </data>
+</root>

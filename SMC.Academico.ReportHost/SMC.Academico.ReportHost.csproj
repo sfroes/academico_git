@@ -1,0 +1,1842 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8F800BF-8CC7-446D-8106-5DF3D02F0255}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMC.Academico.ReportHost</RootNamespace>
+    <AssemblyName>SMC.Academico.ReportHost</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+    <PublishDatabases>false</PublishDatabases>
+    <IncludeIisSettings>true</IncludeIisSettings>
+    <PackageAsSingleFile>true</PackageAsSingleFile>
+    <DeployIisAppPath>SMC Sistemas - 80/SMC.PadraoVisual</DeployIisAppPath>
+    <DeployIisAppPhysicalPath>E:\Aplicativos\Sistemas\SMC.PadraoVisual</DeployIisAppPhysicalPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\ExceptionResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MetadataResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetadataResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\ALN\ALNAreaRegistration.cs" />
+    <Compile Include="Areas\ALN\Apis\PrevisaoConclusaoOrientacaoApiController.cs" />
+    <Compile Include="Areas\ALN\App_LocalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ALN\Apis\ReportApiController.cs" />
+    <Compile Include="Areas\ALN\Models\AlunoFiltroVO.cs" />
+    <Compile Include="Areas\ALN\Models\AlunoListarVO.cs" />
+    <Compile Include="Areas\ALN\Models\AlunoOrientacaoVO.cs" />
+    <Compile Include="Areas\ALN\Models\RelatorioListarItemVO.cs" />
+    <Compile Include="Areas\ALN\Models\RelatorioListarVO.cs" />
+    <Compile Include="Areas\ALN\Models\RelatorioPrevisaoConclusaoOrientacaoAlunosVO.cs" />
+    <Compile Include="Areas\ALN\Models\RelatorioPrevisaoConclusaoOrientacaoFiltroVO.cs" />
+    <Compile Include="Areas\ALN\Models\RelatorioPrevisaoConclusaoOrientacaoVO.cs" />
+    <Compile Include="Areas\ALN\Reports\DataSets\Declaracao\DSDeclaracaoMatricula.Designer.cs">
+      <DependentUpon>DSDeclaracaoMatricula.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\Declaracao\DSDeclaracaoMatriculaAtividade.Designer.cs">
+      <DependentUpon>DSDeclaracaoMatriculaAtividade.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\Declaracao\DSDeclaracaoMatriculaTurma.Designer.cs">
+      <DependentUpon>DSDeclaracaoMatriculaTurma.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSComponenteCurricularHora.Designer.cs">
+      <DependentUpon>DSComponenteCurricularHora.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSComponenteCurricularHoraAula.Designer.cs">
+      <DependentUpon>DSComponenteCurricularHoraAula.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSDisciplinaCursada.Designer.cs">
+      <DependentUpon>DSDisciplinaCursada.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSEmenta.Designer.cs">
+      <DependentUpon>DSEmenta.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolar.Designer.cs">
+      <DependentUpon>DSHistoricoEscolar.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarAdmissaoObservacoes.Designer.cs">
+      <DependentUpon>DSHistoricoEscolarAdmissaoObservacoes.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarAproveitamentoCreditos.Designer.cs">
+      <DependentUpon>DSHistoricoEscolarAproveitamentoCreditos.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarBancas.Designer.cs">
+      <DependentUpon>DSHistoricoEscolarBancas.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarBancasAvaliacoes.Designer.cs">
+      <DependentUpon>DSHistoricoEscolarBancasAvaliacoes.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarBancasAvaliacoesComissao.Designer.cs">
+      <DependentUpon>DSHistoricoEscolarBancasAvaliacoesComissao.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarComponentesConcluidos.Designer.cs">
+      <DependentUpon>DSHistoricoEscolarComponentesConcluidos.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarComponentesExame.Designer.cs">
+      <DependentUpon>DSHistoricoEscolarComponentesExame.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarComponentesSemApuracao.Designer.cs">
+      <DependentUpon>DSHistoricoEscolarComponentesSemApuracao.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarFormacaoEspecifica.Designer.cs">
+      <DependentUpon>DSHistoricoEscolarFormacaoEspecifica.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarObservacao.Designer.cs">
+      <DependentUpon>DSHistoricoEscolarObservacao.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarTiposMobilidade.Designer.cs">
+      <DependentUpon>DSHistoricoEscolarTiposMobilidade.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarTotaisComponentesConcluidos.Designer.cs">
+      <DependentUpon>DSHistoricoEscolarTotaisComponentesConcluidos.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\IdentidadeEstudantil\DSIdentidadeEstudantil.Designer.cs">
+      <DependentUpon>DSIdentidadeEstudantil.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\ListagemAssinatura\DSListagemAssinatura.Designer.cs">
+      <DependentUpon>DSListagemAssinatura.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\NOMERELATORIO\DSObjetivoEstrategico.Designer.cs">
+      <DependentUpon>DSObjetivoEstrategico.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\PrevisaoConclusaoOrientacao\DSRelatorioPrevisaoConclusaoOrientacao.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSRelatorioPrevisaoConclusaoOrientacao.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ALN\Reports\DataSets\PrevisaoConclusaoOrientacao\DSRelatorioPrevisaoConclusaoOrientacaoAluno.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSRelatorioPrevisaoConclusaoOrientacaoAluno.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\APR\Controllers\AcompanhamentoNotaController.cs" />
+    <Compile Include="Areas\APR\Apis\BancasAgendadasApiController.cs" />
+    <Compile Include="Areas\APR\Apis\ListaFrequenciaApiController.cs" />
+    <Compile Include="Areas\APR\APRAreaRegistration.cs" />
+    <Compile Include="Areas\APR\Models\BancaAgendadaVO.cs" />
+    <Compile Include="Areas\APR\Models\BancasAgendadasFiltroVO.cs" />
+    <Compile Include="Areas\APR\Models\ListaFrequenciaFiltroVO.cs" />
+    <Compile Include="Areas\APR\Reports\DataSets\DSListaFrequencia\DSListaFrequencia.cs">
+      <DependentUpon>DSListaFrequencia.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\APR\Reports\DataSets\DSListaFrequencia\DSListaFrequencia.Designer.cs">
+      <DependentUpon>DSListaFrequencia.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\APR\Reports\DataSets\DSListaFrequencia\DSListaFrequenciaCabecalho.Designer.cs">
+      <DependentUpon>DSListaFrequenciaCabecalho.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\APR\Reports\DataSets\DSListaFrequencia\DSListaFrequenciaColaborador.Designer.cs">
+      <DependentUpon>DSListaFrequenciaColaborador.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\APR\Reports\DataSets\DSRelatorioBancasAgendadas.Designer.cs">
+      <DependentUpon>DSRelatorioBancasAgendadas.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\CUR\Apis\MatrizCurricularApiController.cs" />
+    <Compile Include="Areas\CUR\CURAreaRegistration.cs" />
+    <Compile Include="Areas\CUR\Models\MatrizCurricularFiltroVO.cs" />
+    <Compile Include="Areas\CUR\Reports\DataSets\MatrizCurricular\DSMatrizCurricular.Designer.cs">
+      <DependentUpon>DSMatrizCurricular.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\CUR\Reports\DataSets\MatrizCurricular\DSMatrizCurricularDados.Designer.cs">
+      <DependentUpon>DSMatrizCurricularDados.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\CUR\Reports\DataSets\MatrizCurricular\DSMatrizCurricularGrupos.Designer.cs">
+      <DependentUpon>DSMatrizCurricularGrupos.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\DCT\Apis\DocenteReportApiController.cs" />
+    <Compile Include="Areas\DCT\DCTAreaRegistration.cs" />
+    <Compile Include="Areas\DCT\Models\DocenteRelatorioFiltroVO.cs" />
+    <Compile Include="Areas\DCT\Reports\DataSets\LogAtualizacaoColaborador\DSLogAtualizacaoColaborador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSLogAtualizacaoColaborador.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\FIN\Apis\DeclaracaoPagamentoApiController.cs" />
+    <Compile Include="Areas\FIN\Apis\BolsistasApiController.cs" />
+    <Compile Include="Areas\FIN\FINAreaRegistration.cs" />
+    <Compile Include="Areas\FIN\Models\DeclaracaoPagamentoVO.cs" />
+    <Compile Include="Areas\FIN\Models\DeclaracaoPagamentoFiltroVO.cs" />
+    <Compile Include="Areas\FIN\Models\BolsistasVO.cs" />
+    <Compile Include="Areas\FIN\Models\BolsistasFiltroVO.cs" />
+    <Compile Include="Areas\FIN\Reports\DataSets\Bolsistas\DSBolsistas.Designer.cs">
+      <DependentUpon>DSBolsistas.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\FIN\Reports\DataSets\DeclaracaoPagamento\DSDeclaracaoPagamento.Designer.cs">
+      <DependentUpon>DSDeclaracaoPagamento.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\FIN\Views\Bolsistas\App_LocalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\FIN\Views\DeclaracaoPagamento\App_LocalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\MAT\Apis\ConsolidadoSituacaoApiController.cs" />
+    <Compile Include="Areas\MAT\Apis\AlunosPorSituacaoApiController.cs" />
+    <Compile Include="Areas\MAT\Apis\AlunosPorComponenteApiController.cs" />
+    <Compile Include="Areas\MAT\Apis\ComprovanteMatriculaApiController.cs" />
+    <Compile Include="Areas\MAT\MATAreaRegistration.cs" />
+    <Compile Include="Areas\MAT\Models\ConsolidadoSituacaoVO.cs" />
+    <Compile Include="Areas\MAT\Models\ConsolidadoSituacaoFiltroVO.cs" />
+    <Compile Include="Areas\MAT\Models\AlunosPorSituacaoVO.cs" />
+    <Compile Include="Areas\MAT\Models\AlunosPorSituacaoFiltroVO.cs" />
+    <Compile Include="Areas\MAT\Models\AlunosPorComponenteVO.cs" />
+    <Compile Include="Areas\MAT\Models\AlunosPorComponenteFiltroVO.cs" />
+    <Compile Include="Areas\MAT\Models\ComprovanteMatriculaFiltroVO.cs" />
+    <Compile Include="Areas\MAT\Reports\DataSets\AlunosPorComponente\DSAlunosPorComponente.Designer.cs">
+      <DependentUpon>DSAlunosPorComponente.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\MAT\Reports\DataSets\AlunosPorSituacao\DSAlunosPorSituacao.Designer.cs">
+      <DependentUpon>DSAlunosPorSituacao.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\MAT\Reports\DataSets\ConsolidadoSituacao\DSConsolidadoSituacao.Designer.cs">
+      <DependentUpon>DSConsolidadoSituacao.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaAtividades.Designer.cs">
+      <DependentUpon>DSComprovanteMatriculaAtividades.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaDados.Designer.cs">
+      <DependentUpon>DSComprovanteMatriculaDados.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaParcelas.Designer.cs">
+      <DependentUpon>DSComprovanteMatriculaParcelas.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaTurmas.Designer.cs">
+      <DependentUpon>DSComprovanteMatriculaTurmas.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\MAT\Views\RelatorioAlunosPorComponente\App_LocalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\MAT\Views\RelatorioAlunosPorSituacao\App_LocalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\MAT\Views\RelatorioConsolidadoSituacao\App_LocalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ORT\Apis\OrientadoresApiController.cs" />
+    <Compile Include="Areas\ORT\Models\RelatorioOrientadoresFiltroVO.cs" />
+    <Compile Include="Areas\ORT\Models\RelatorioOrientadoresVO.cs" />
+    <Compile Include="Areas\ORT\ORTAreaRegistration.cs" />
+    <Compile Include="Areas\ORT\Reports\DataSets\DSOrientadores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSOrientadores.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PES\Apis\IdentidadeAcademicaApiController.cs" />
+    <Compile Include="Areas\PES\Models\IdentidadeAcademicaFiltroVO.cs" />
+    <Compile Include="Areas\PES\PESAreaRegistration.cs" />
+    <Compile Include="Areas\PES\Reports\DataSets\IdentidadeAcademica\DSIdentidadeAcademica.Designer.cs">
+      <DependentUpon>DSIdentidadeAcademica.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SRC\Apis\ConsolidadoServicoCicloLetivoApiController.cs" />
+    <Compile Include="Areas\SRC\Apis\ComprovanteProcessoApiController.cs" />
+    <Compile Include="Areas\SRC\Apis\ServicoReportApiController.cs" />
+    <Compile Include="Areas\SRC\Models\ConsolidadoServicoCicloLetivoTotalizadorVO.cs" />
+    <Compile Include="Areas\SRC\Models\ConsolidadoServicoCicloLetivoVO.cs" />
+    <Compile Include="Areas\SRC\Models\ConsolidadoServicoCicloLetivoFiltroVO.cs" />
+    <Compile Include="Areas\SRC\Models\ComprovanteProcessoFiltroVO.cs" />
+    <Compile Include="Areas\SRC\Models\DadosRelatorioSolicitacoesBloqueioVO.cs" />
+    <Compile Include="Areas\SRC\Models\ServicoRelatorioFiltroVO.cs" />
+    <Compile Include="Areas\SRC\Reports\DataSets\DSBloqueios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSBloqueios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SRC\Reports\DataSets\DSComprovanteProcessosAtividades.cs">
+      <DependentUpon>DSComprovanteProcessosAtividades.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SRC\Reports\DataSets\DSComprovanteProcessosAtividades.Designer.cs">
+      <DependentUpon>DSComprovanteProcessosAtividades.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SRC\Reports\DataSets\DSComprovanteProcessosDados.Designer.cs">
+      <DependentUpon>DSComprovanteProcessosDados.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SRC\Reports\DataSets\DSComprovanteProcessosTurmas.Designer.cs">
+      <DependentUpon>DSComprovanteProcessosTurmas.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SRC\Reports\DataSets\DSSolicitacoesComBloqueio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSSolicitacoesComBloqueio.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SRC\Reports\DataSets\ServicoCicloLetivo\DSServicoCicloLetivo.Designer.cs">
+      <DependentUpon>DSServicoCicloLetivo.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SRC\Reports\DataSets\ServicoCicloLetivo\DSServicoCicloLetivoTotalizador.Designer.cs">
+      <DependentUpon>DSServicoCicloLetivoTotalizador.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SRC\SRCAreaRegistration.cs" />
+    <Compile Include="Areas\SRC\Views\RelatorioConsolidadoServicoCicloLetivo\App_LocalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SRC\Views\ServicoReport\App_LocalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TUR\Apis\TurmaReportApiController.cs" />
+    <Compile Include="Areas\TUR\Models\TurmaRelatorioFiltroVO.cs" />
+    <Compile Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurma.cs">
+      <DependentUpon>DSDiarioTurma.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurma.Designer.cs">
+      <DependentUpon>DSDiarioTurma.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurmaCabecalho.cs">
+      <DependentUpon>DSDiarioTurmaCabecalho.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurmaCabecalho.Designer.cs">
+      <DependentUpon>DSDiarioTurmaCabecalho.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurmaProfessores.Designer.cs">
+      <DependentUpon>DSDiarioTurmaProfessores.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\TUR\Reports\DataSets\DSTurmaCicloLetivo.Designer.cs">
+      <DependentUpon>DSTurmaCicloLetivo.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\TUR\TURAreaRegistration.cs" />
+    <Compile Include="Ioc\MvcIocMapping.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Shared\App_LocalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.StrongName, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e3e8412083d25dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.StrongName.2.0.30\lib\net461\Dapper.StrongName.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.4.1.0\lib\net461\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.EF6, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.EF6.4.1.0\lib\net461\MiniProfiler.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Mvc5, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Mvc5.4.1.0\lib\net461\MiniProfiler.Mvc5.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Providers.SqlServer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Providers.SqlServer.4.1.0\lib\net461\MiniProfiler.Providers.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Shared, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Shared.4.1.0\lib\net461\MiniProfiler.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorGenerator.Mvc.2.4.9\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.DadosMestres.Common, Version=4.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\DadosMestres\4.2\SMC.DadosMestres.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.Common, Version=4.2.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.ServiceContract, Version=4.2.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.UI.Mvc">
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.UI.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Formularios.Common, Version=4.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Formularios\4.2\SMC.Formularios.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Core, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Core.4.2.251008.1\lib\net471\SMC.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.DataAnnotations, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.DataAnnotations.4.2.251008.1\lib\net471\SMC.Framework.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Entity, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Entity.4.2.251008.1\lib\net471\SMC.Framework.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Json, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Json.4.2.251008.1\lib\net471\SMC.Framework.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Model, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Model.4.2.251008.1\lib\net471\SMC.Framework.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Repository, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Repository.4.2.251008.1\lib\net471\SMC.Framework.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Rest, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Rest.4.2.251008.1\lib\net471\SMC.Framework.Rest.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Service, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Service.4.2.251008.1\lib\net471\SMC.Framework.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Service.Host, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Service.Host.4.2.251008.1\lib\net471\SMC.Framework.Service.Host.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Specification, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Specification.4.2.251008.1\lib\net471\SMC.Framework.Specification.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Spreadsheet, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Spreadsheet.4.2.251008.1\lib\net471\SMC.Framework.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.UI.Mvc, Version=4.2.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.UI.Mvc.4.2.251008.1\lib\net471\SMC.Framework.UI.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Unity, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Unity.4.2.251008.1\lib\net471\SMC.Framework.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Infraestrutura.ServiceContract, Version=4.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Infraestrutura\4.2\SMC.Infraestrutura.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Seguranca.Common, Version=4.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Seguranca\4.2\SMC.Seguranca.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Seguranca.UI.Mvc">
+      <HintPath>..\..\Referencias\Seguranca\4.2\SMC.Seguranca.UI.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.1\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Framework\4.0\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.3.3.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.13.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.8.13\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.6.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.5.5.6\lib\net47\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\ALN\Controllers\" />
+    <Folder Include="Areas\ALN\Views\PrevisaoConclusaoOrientacaoApi\" />
+    <Folder Include="Areas\APR\Views\Shared\" />
+    <Folder Include="Areas\CUR\Controllers\" />
+    <Folder Include="Areas\CUR\Data\" />
+    <Folder Include="Areas\CUR\Views\Shared\" />
+    <Folder Include="Areas\DCT\Controllers\" />
+    <Folder Include="Areas\DCT\Data\" />
+    <Folder Include="Areas\DCT\Views\Shared\" />
+    <Folder Include="Areas\FIN\Controllers\" />
+    <Folder Include="Areas\FIN\Data\" />
+    <Folder Include="Areas\FIN\Views\Shared\" />
+    <Folder Include="Areas\MAT\Controllers\" />
+    <Folder Include="Areas\MAT\Views\Shared\" />
+    <Folder Include="Areas\ORT\Views\OrientadoresApi\" />
+    <Folder Include="Areas\PES\Controllers\" />
+    <Folder Include="Areas\PES\Data\" />
+    <Folder Include="Areas\PES\Views\Shared\" />
+    <Folder Include="Areas\SRC\Controllers\" />
+    <Folder Include="Areas\SRC\Views\Shared\" />
+    <Folder Include="Areas\TUR\Controllers\" />
+    <Folder Include="Areas\TUR\Views\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\DCT\Views\web.config" />
+    <Content Include="Areas\DCT\Reports\DataSets\LogAtualizacaoColaborador\DSLogAtualizacaoColaborador.xsc">
+      <DependentUpon>DSLogAtualizacaoColaborador.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\APR\Views\AcompanhamentoNota\GerarRelatorio.cshtml" />
+    <Content Include="Areas\APR\Views\AcompanhamentoNota\_CabecalhoRelatorio.cshtml" />
+    <Content Include="Areas\APR\Views\AcompanhamentoNota\_RodapeRelatorio.cshtml" />
+    <Content Include="Areas\ALN\Reports\DataSets\PrevisaoConclusaoOrientacao\DSRelatorioPrevisaoConclusaoOrientacao.xsc">
+      <DependentUpon>DSRelatorioPrevisaoConclusaoOrientacao.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\PrevisaoConclusaoOrientacao\DSRelatorioPrevisaoConclusaoOrientacao.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSRelatorioPrevisaoConclusaoOrientacao.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\PrevisaoConclusaoOrientacao\DSRelatorioPrevisaoConclusaoOrientacao.xss">
+      <DependentUpon>DSRelatorioPrevisaoConclusaoOrientacao.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\PrevisaoConclusaoOrientacao\DSRelatorioPrevisaoConclusaoOrientacaoAluno.xsc">
+      <DependentUpon>DSRelatorioPrevisaoConclusaoOrientacaoAluno.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\PrevisaoConclusaoOrientacao\DSRelatorioPrevisaoConclusaoOrientacaoAluno.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSRelatorioPrevisaoConclusaoOrientacaoAluno.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\PrevisaoConclusaoOrientacao\DSRelatorioPrevisaoConclusaoOrientacaoAluno.xss">
+      <DependentUpon>DSRelatorioPrevisaoConclusaoOrientacaoAluno.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\DCT\Reports\DataSets\LogAtualizacaoColaborador\DSLogAtualizacaoColaborador.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSLogAtualizacaoColaborador.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Areas\DCT\Reports\DataSets\LogAtualizacaoColaborador\DSLogAtualizacaoColaborador.xss">
+      <DependentUpon>DSLogAtualizacaoColaborador.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\SRC\Reports\DataSets\DSBloqueios.xsc">
+      <DependentUpon>DSBloqueios.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ORT\Reports\DataSets\DSOrientadores.xsc">
+      <DependentUpon>DSOrientadores.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ORT\Reports\DataSets\DSOrientadores.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSOrientadores.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Areas\ORT\Reports\DataSets\DSOrientadores.xss">
+      <DependentUpon>DSOrientadores.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\SRC\Reports\DataSets\DSBloqueios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSBloqueios.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Areas\SRC\Reports\DataSets\DSBloqueios.xss">
+      <DependentUpon>DSBloqueios.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\SRC\Reports\DataSets\DSSolicitacoesComBloqueio.xsc">
+      <DependentUpon>DSSolicitacoesComBloqueio.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\SRC\Reports\DataSets\DSSolicitacoesComBloqueio.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSSolicitacoesComBloqueio.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Areas\SRC\Reports\DataSets\DSSolicitacoesComBloqueio.xss">
+      <DependentUpon>DSSolicitacoesComBloqueio.xsd</DependentUpon>
+    </Content>
+    <None Include="ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\NOMERELATORIO\DSObjetivoEstrategico.xsc">
+      <DependentUpon>DSObjetivoEstrategico.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\Declaracao\DSDeclaracaoMatricula.xsc">
+      <DependentUpon>DSDeclaracaoMatricula.xsd</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\Declaracao\DSDeclaracaoMatricula.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDeclaracaoMatricula.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\Declaracao\DSDeclaracaoMatricula.xss">
+      <DependentUpon>DSDeclaracaoMatricula.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\Declaracao\DSDeclaracaoMatriculaAtividade.xsc">
+      <DependentUpon>DSDeclaracaoMatriculaAtividade.xsd</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\Declaracao\DSDeclaracaoMatriculaAtividade.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDeclaracaoMatriculaAtividade.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\Declaracao\DSDeclaracaoMatriculaAtividade.xss">
+      <DependentUpon>DSDeclaracaoMatriculaAtividade.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\Declaracao\DSDeclaracaoMatriculaTurma.xsc">
+      <DependentUpon>DSDeclaracaoMatriculaTurma.xsd</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\Declaracao\DSDeclaracaoMatriculaTurma.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDeclaracaoMatriculaTurma.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\Declaracao\DSDeclaracaoMatriculaTurma.xss">
+      <DependentUpon>DSDeclaracaoMatriculaTurma.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSComponenteCurricularHora.xsc">
+      <DependentUpon>DSComponenteCurricularHora.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSComponenteCurricularHora.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSComponenteCurricularHora.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSComponenteCurricularHora.xss">
+      <DependentUpon>DSComponenteCurricularHora.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSComponenteCurricularHoraAula.xsc">
+      <DependentUpon>DSComponenteCurricularHoraAula.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSComponenteCurricularHoraAula.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSComponenteCurricularHoraAula.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSComponenteCurricularHoraAula.xss">
+      <DependentUpon>DSComponenteCurricularHoraAula.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSDisciplinaCursada.xsc">
+      <DependentUpon>DSDisciplinaCursada.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSDisciplinaCursada.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDisciplinaCursada.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSDisciplinaCursada.xss">
+      <DependentUpon>DSDisciplinaCursada.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSEmenta.xsc">
+      <DependentUpon>DSEmenta.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSEmenta.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEmenta.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\DisciplinaCursada\DSEmenta.xss">
+      <DependentUpon>DSEmenta.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolar.xsc">
+      <DependentUpon>DSHistoricoEscolar.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolar.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHistoricoEscolar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolar.xss">
+      <DependentUpon>DSHistoricoEscolar.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarAdmissaoObservacoes.xsc">
+      <DependentUpon>DSHistoricoEscolarAdmissaoObservacoes.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarAdmissaoObservacoes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHistoricoEscolarAdmissaoObservacoes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarAdmissaoObservacoes.xss">
+      <DependentUpon>DSHistoricoEscolarAdmissaoObservacoes.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarAproveitamentoCreditos.xsc">
+      <DependentUpon>DSHistoricoEscolarAproveitamentoCreditos.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarAproveitamentoCreditos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHistoricoEscolarAproveitamentoCreditos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarAproveitamentoCreditos.xss">
+      <DependentUpon>DSHistoricoEscolarAproveitamentoCreditos.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarBancas.xsc">
+      <DependentUpon>DSHistoricoEscolarBancas.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarBancas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHistoricoEscolarBancas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarBancas.xss">
+      <DependentUpon>DSHistoricoEscolarBancas.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarBancasAvaliacoes.xsc">
+      <DependentUpon>DSHistoricoEscolarBancasAvaliacoes.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarBancasAvaliacoes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHistoricoEscolarBancasAvaliacoes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarBancasAvaliacoes.xss">
+      <DependentUpon>DSHistoricoEscolarBancasAvaliacoes.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarBancasAvaliacoesComissao.xsc">
+      <DependentUpon>DSHistoricoEscolarBancasAvaliacoesComissao.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarBancasAvaliacoesComissao.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHistoricoEscolarBancasAvaliacoesComissao.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarBancasAvaliacoesComissao.xss">
+      <DependentUpon>DSHistoricoEscolarBancasAvaliacoesComissao.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarComponentesConcluidos.xsc">
+      <DependentUpon>DSHistoricoEscolarComponentesConcluidos.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarComponentesConcluidos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHistoricoEscolarComponentesConcluidos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarComponentesConcluidos.xss">
+      <DependentUpon>DSHistoricoEscolarComponentesConcluidos.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarComponentesExame.xsc">
+      <DependentUpon>DSHistoricoEscolarComponentesExame.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarComponentesExame.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHistoricoEscolarComponentesExame.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarComponentesExame.xss">
+      <DependentUpon>DSHistoricoEscolarComponentesExame.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarComponentesSemApuracao.xsc">
+      <DependentUpon>DSHistoricoEscolarComponentesSemApuracao.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarComponentesSemApuracao.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHistoricoEscolarComponentesSemApuracao.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarComponentesSemApuracao.xss">
+      <DependentUpon>DSHistoricoEscolarComponentesSemApuracao.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarFormacaoEspecifica.xsc">
+      <DependentUpon>DSHistoricoEscolarFormacaoEspecifica.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarFormacaoEspecifica.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHistoricoEscolarFormacaoEspecifica.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarFormacaoEspecifica.xss">
+      <DependentUpon>DSHistoricoEscolarFormacaoEspecifica.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarObservacao.xsc">
+      <DependentUpon>DSHistoricoEscolarObservacao.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarObservacao.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHistoricoEscolarObservacao.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarObservacao.xss">
+      <DependentUpon>DSHistoricoEscolarObservacao.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarTiposMobilidade.xsc">
+      <DependentUpon>DSHistoricoEscolarTiposMobilidade.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarTiposMobilidade.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHistoricoEscolarTiposMobilidade.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarTiposMobilidade.xss">
+      <DependentUpon>DSHistoricoEscolarTiposMobilidade.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarTotaisComponentesConcluidos.xsc">
+      <DependentUpon>DSHistoricoEscolarTotaisComponentesConcluidos.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarTotaisComponentesConcluidos.xsd">
+      <LastGenOutput>DSHistoricoEscolarTotaisComponentesConcluidos.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\HistoricoEscolar\DSHistoricoEscolarTotaisComponentesConcluidos.xss">
+      <DependentUpon>DSHistoricoEscolarTotaisComponentesConcluidos.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\IdentidadeEstudantil\DSIdentidadeEstudantil.xsc">
+      <DependentUpon>DSIdentidadeEstudantil.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\IdentidadeEstudantil\DSIdentidadeEstudantil.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSIdentidadeEstudantil.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\IdentidadeEstudantil\DSIdentidadeEstudantil.xss">
+      <DependentUpon>DSIdentidadeEstudantil.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Reports\DataSets\ListagemAssinatura\DSListagemAssinatura.xsc">
+      <DependentUpon>DSListagemAssinatura.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\ListagemAssinatura\DSListagemAssinatura.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSListagemAssinatura.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\ListagemAssinatura\DSListagemAssinatura.xss">
+      <DependentUpon>DSListagemAssinatura.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\ALN\Reports\DataSets\NOMERELATORIO\DSObjetivoEstrategico.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSObjetivoEstrategico.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\ALN\Reports\DataSets\NOMERELATORIO\DSObjetivoEstrategico.xss">
+      <DependentUpon>DSObjetivoEstrategico.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\ALN\Views\Web.config" />
+    <Content Include="Areas\ALN\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ALN\Views\Report\_Cursos.cshtml" />
+    <Content Include="Areas\ALN\Views\Report\_Parcelas.cshtml" />
+    <Content Include="Areas\ALN\Views\Report\EmissaoBoletoGerar.cshtml" />
+    <Content Include="Areas\ALN\Views\Report\Index.cshtml" />
+    <Content Include="Areas\TUR\Reports\DataSets\DSTurmaCicloLetivo.xsc">
+      <DependentUpon>DSTurmaCicloLetivo.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurma.xsc">
+      <DependentUpon>DSDiarioTurma.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\APR\Views\web.config" />
+    <Content Include="Areas\APR\Reports\DataSets\DSListaFrequencia\DSListaFrequencia.xsc">
+      <DependentUpon>DSListaFrequencia.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\APR\Reports\BancasAgendadas\RelatorioBancasAgendadas.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Areas\APR\Reports\DataSets\DSListaFrequencia\DSListaFrequencia.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSListaFrequencia.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\APR\Reports\DataSets\DSListaFrequencia\DSListaFrequencia.xss">
+      <DependentUpon>DSListaFrequencia.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\APR\Reports\DataSets\DSListaFrequencia\DSListaFrequenciaCabecalho.xsc">
+      <DependentUpon>DSListaFrequenciaCabecalho.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\APR\Reports\DataSets\DSListaFrequencia\DSListaFrequenciaCabecalho.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSListaFrequenciaCabecalho.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\APR\Reports\DataSets\DSListaFrequencia\DSListaFrequenciaCabecalho.xss">
+      <DependentUpon>DSListaFrequenciaCabecalho.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\APR\Reports\DataSets\DSListaFrequencia\DSListaFrequenciaColaborador.xsc">
+      <DependentUpon>DSListaFrequenciaColaborador.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\APR\Reports\DataSets\DSListaFrequencia\DSListaFrequenciaColaborador.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSListaFrequenciaColaborador.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\APR\Reports\DataSets\DSListaFrequencia\DSListaFrequenciaColaborador.xss">
+      <DependentUpon>DSListaFrequenciaColaborador.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\MAT\Views\web.config" />
+    <Content Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaAtividades.xsc">
+      <DependentUpon>DSComprovanteMatriculaAtividades.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\APR\Reports\DataSets\DSRelatorioBancasAgendadas.xsc">
+      <DependentUpon>DSRelatorioBancasAgendadas.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\APR\Reports\DataSets\DSRelatorioBancasAgendadas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSRelatorioBancasAgendadas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\APR\Reports\DataSets\DSRelatorioBancasAgendadas.xss">
+      <DependentUpon>DSRelatorioBancasAgendadas.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\CUR\Views\web.config" />
+    <Content Include="Areas\CUR\Reports\DataSets\MatrizCurricular\DSMatrizCurricular.xsc">
+      <DependentUpon>DSMatrizCurricular.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\CUR\Reports\DataSets\MatrizCurricular\DSMatrizCurricular.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMatrizCurricular.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\CUR\Reports\DataSets\MatrizCurricular\DSMatrizCurricular.xss">
+      <DependentUpon>DSMatrizCurricular.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\CUR\Reports\DataSets\MatrizCurricular\DSMatrizCurricularDados.xsc">
+      <DependentUpon>DSMatrizCurricularDados.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\CUR\Reports\DataSets\MatrizCurricular\DSMatrizCurricularDados.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMatrizCurricularDados.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\CUR\Reports\DataSets\MatrizCurricular\DSMatrizCurricularDados.xss">
+      <DependentUpon>DSMatrizCurricularDados.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\CUR\Reports\DataSets\MatrizCurricular\DSMatrizCurricularGrupos.xsc">
+      <DependentUpon>DSMatrizCurricularGrupos.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\CUR\Reports\DataSets\MatrizCurricular\DSMatrizCurricularGrupos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMatrizCurricularGrupos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\CUR\Reports\DataSets\MatrizCurricular\DSMatrizCurricularGrupos.xss">
+      <DependentUpon>DSMatrizCurricularGrupos.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\CUR\Reports\MatrizCurricular\MatrizCurricularRelatorio.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\CUR\Reports\MatrizCurricular\MatrizCurricularRelatorioDados.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\CUR\Reports\MatrizCurricular\MatrizCurricularRelatorioGrupos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\FIN\Views\web.config" />
+    <Content Include="Areas\FIN\Reports\DataSets\Bolsistas\DSBolsistas.xsc">
+      <DependentUpon>DSBolsistas.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\FIN\Reports\DataSets\Bolsistas\DSBolsistas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSBolsistas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\FIN\Reports\DataSets\Bolsistas\DSBolsistas.xss">
+      <DependentUpon>DSBolsistas.xsd</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\RelatorioPrevisaoConclusaoOrientacao.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\RelatorioPrevisaoConclusaoOrientacaoAluno.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\DCT\Reports\LogAtualizacaoColaborador\LogAtualizacaoColaborador.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\FIN\Reports\RelatorioBolsistas\RelatorioBolsistas.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Areas\MAT\Reports\DataSets\AlunosPorComponente\DSAlunosPorComponente.xsc">
+      <DependentUpon>DSAlunosPorComponente.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\FIN\Reports\DataSets\DeclaracaoPagamento\DSDeclaracaoPagamento.xsc">
+      <DependentUpon>DSDeclaracaoPagamento.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\FIN\Reports\DataSets\DeclaracaoPagamento\DSDeclaracaoPagamento.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDeclaracaoPagamento.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\FIN\Reports\DataSets\DeclaracaoPagamento\DSDeclaracaoPagamento.xss">
+      <DependentUpon>DSDeclaracaoPagamento.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\FIN\Reports\DeclaracaoPagamento\DeclaracaoPagamento.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Areas\MAT\Reports\DataSets\AlunosPorComponente\DSAlunosPorComponente.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAlunosPorComponente.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\MAT\Reports\DataSets\AlunosPorComponente\DSAlunosPorComponente.xss">
+      <DependentUpon>DSAlunosPorComponente.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\MAT\Reports\DataSets\AlunosPorSituacao\DSAlunosPorSituacao.xsc">
+      <DependentUpon>DSAlunosPorSituacao.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\MAT\Reports\DataSets\AlunosPorSituacao\DSAlunosPorSituacao.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAlunosPorSituacao.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\MAT\Reports\DataSets\AlunosPorSituacao\DSAlunosPorSituacao.xss">
+      <DependentUpon>DSAlunosPorSituacao.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\MAT\Reports\DataSets\ConsolidadoSituacao\DSConsolidadoSituacao.xsc">
+      <DependentUpon>DSConsolidadoSituacao.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\MAT\Reports\DataSets\ConsolidadoSituacao\DSConsolidadoSituacao.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSConsolidadoSituacao.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\MAT\Reports\DataSets\ConsolidadoSituacao\DSConsolidadoSituacao.xss">
+      <DependentUpon>DSConsolidadoSituacao.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaAtividades.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSComprovanteMatriculaAtividades.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaAtividades.xss">
+      <DependentUpon>DSComprovanteMatriculaAtividades.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaDados.xsc">
+      <DependentUpon>DSComprovanteMatriculaDados.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaDados.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSComprovanteMatriculaDados.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaDados.xss">
+      <DependentUpon>DSComprovanteMatriculaDados.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaParcelas.xsc">
+      <DependentUpon>DSComprovanteMatriculaParcelas.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaParcelas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSComprovanteMatriculaParcelas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaParcelas.xss">
+      <DependentUpon>DSComprovanteMatriculaParcelas.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaTurmas.xsc">
+      <DependentUpon>DSComprovanteMatriculaTurmas.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaTurmas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSComprovanteMatriculaTurmas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\MAT\Reports\DataSets\DSComprovanteMatriculaTurmas.xss">
+      <DependentUpon>DSComprovanteMatriculaTurmas.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\SRC\Views\web.config" />
+    <Content Include="Areas\SRC\Reports\DataSets\DSComprovanteProcessosAtividades.xsc">
+      <DependentUpon>DSComprovanteProcessosAtividades.xsd</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="Areas\FIN\Views\DeclaracaoPagamento\App_LocalResources\UIResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\MAT\Reports\RelatorioAlunosPorComponente\RelatorioAlunosPorComponente.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\MAT\Reports\RelatorioAlunosPorSituacao\RelatorioAlunosPorSituacao.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\MAT\Reports\RelatorioConsolidadoSituacao\RelatorioConsolidadoSituacao.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\MAT\Reports\RelatorioConsolidadoSituacao\RelatorioConsolidadoSituacaoAluno.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\MAT\Reports\RelatorioConsolidadoSituacao\RelatorioConsolidadoSituacaoIngressante.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Areas\PES\Views\web.config" />
+    <Content Include="Areas\PES\Reports\DataSets\IdentidadeAcademica\DSIdentidadeAcademica.xsc">
+      <DependentUpon>DSIdentidadeAcademica.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\PES\Reports\DataSets\IdentidadeAcademica\DSIdentidadeAcademica.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSIdentidadeAcademica.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\PES\Reports\DataSets\IdentidadeAcademica\DSIdentidadeAcademica.xss">
+      <DependentUpon>DSIdentidadeAcademica.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\PES\Reports\IdentidadeAcademica\IdentidadeAcademicaRelatorio.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Areas\SRC\Reports\DataSets\DSComprovanteProcessosAtividades.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSComprovanteProcessosAtividades.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\SRC\Reports\DataSets\DSComprovanteProcessosAtividades.xss">
+      <DependentUpon>DSComprovanteProcessosAtividades.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\SRC\Reports\DataSets\DSComprovanteProcessosDados.xsc">
+      <DependentUpon>DSComprovanteProcessosDados.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\SRC\Reports\DataSets\DSComprovanteProcessosDados.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSComprovanteProcessosDados.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\SRC\Reports\DataSets\DSComprovanteProcessosDados.xss">
+      <DependentUpon>DSComprovanteProcessosDados.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\SRC\Reports\DataSets\DSComprovanteProcessosTurmas.xsc">
+      <DependentUpon>DSComprovanteProcessosTurmas.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\SRC\Reports\DataSets\DSComprovanteProcessosTurmas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSComprovanteProcessosTurmas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\SRC\Reports\DataSets\DSComprovanteProcessosTurmas.xss">
+      <DependentUpon>DSComprovanteProcessosTurmas.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\SRC\Reports\DataSets\ServicoCicloLetivo\DSServicoCicloLetivo.xsc">
+      <DependentUpon>DSServicoCicloLetivo.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\SRC\Reports\DataSets\ServicoCicloLetivo\DSServicoCicloLetivo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSServicoCicloLetivo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\SRC\Reports\DataSets\ServicoCicloLetivo\DSServicoCicloLetivo.xss">
+      <DependentUpon>DSServicoCicloLetivo.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\SRC\Reports\DataSets\ServicoCicloLetivo\DSServicoCicloLetivoTotalizador.xsc">
+      <DependentUpon>DSServicoCicloLetivoTotalizador.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\SRC\Reports\DataSets\ServicoCicloLetivo\DSServicoCicloLetivoTotalizador.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSServicoCicloLetivoTotalizador.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\SRC\Reports\DataSets\ServicoCicloLetivo\DSServicoCicloLetivoTotalizador.xss">
+      <DependentUpon>DSServicoCicloLetivoTotalizador.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\SRC\Reports\Relatorio\RelatorioBloqueios.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\SRC\Reports\Relatorio\RelatorioConsolidadoServicoCicloLetivoAgrupado.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\SRC\Reports\Relatorio\ServicoCicloLetivoTotalizador.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurma.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDiarioTurma.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurma.xss">
+      <DependentUpon>DSDiarioTurma.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurmaCabecalho.xsc">
+      <DependentUpon>DSDiarioTurmaCabecalho.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurmaCabecalho.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDiarioTurmaCabecalho.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurmaCabecalho.xss">
+      <DependentUpon>DSDiarioTurmaCabecalho.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurmaProfessores.xsc">
+      <DependentUpon>DSDiarioTurmaProfessores.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurmaProfessores.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDiarioTurmaProfessores.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\TUR\Reports\DataSets\DSDiarioTurma\DSDiarioTurmaProfessores.xss">
+      <DependentUpon>DSDiarioTurmaProfessores.xsd</DependentUpon>
+    </Content>
+    <None Include="Areas\TUR\Reports\DataSets\DSTurmaCicloLetivo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSTurmaCicloLetivo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Areas\TUR\Reports\DataSets\DSTurmaCicloLetivo.xss">
+      <DependentUpon>DSTurmaCicloLetivo.xsd</DependentUpon>
+    </Content>
+    <Content Include="Areas\TUR\Views\web.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\PublicarServer.pubxml" />
+    <Content Include="Office\Excel\readme.txt" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="SMC.Content.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <None Include="Web.Desenvolvimento.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Homologacao.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Producao.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Qualidade.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\Publicar.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\ExceptionResource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ExceptionResource.Designer.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="App_GlobalResources\MetadataResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MetadataResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\UIResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\DisciplinaCursadaEmenta.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarInternoExame.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\ListagemAssinatura.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\IdentidadeEstudantilRelatorio.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarTiposMobilidade.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarRelatorio.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarObservacao.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarInternoTotaisComponentes.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarInternoRelatorio.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarInternoComponentesSemApuracao.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarInternoComponentesConcluidos.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarInternoAproveitamentoCreditos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarFormacaoEspecifica.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarExamesProficiencia.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarComponentesConcluidos.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarBancasRelatorio.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarBancasAvaliacoesRelatorio.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarBancasAvaliacoesComissaoRelatorio.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarAproveitamentoCreditos.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\HistoricoEscolarAdmissaoObservacoes.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\DisciplinaCursadaRelatorio.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\DisciplinaCursadaComponenteCurricularHoraAula.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\DisciplinaCursadaComponenteCurricularHora.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\DeclaracaoMatriculaRelatorioTurma.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\DeclaracaoMatriculaRelatorioAtividade.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\Reports\Relatorio\DeclaracaoMatriculaRelatorio.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ALN\App_LocalResources\MetadataResource.resx" />
+    <EmbeddedResource Include="Areas\ALN\App_LocalResources\UIResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Views\Shared\App_LocalResources\DetailMetadataResource.resx" />
+    <Content Include="Views\Shared\App_LocalResources\DetailUIResource.resx" />
+    <Content Include="Views\Shared\App_LocalResources\MetadataResource.resx" />
+    <EmbeddedResource Include="Areas\FIN\Views\Bolsistas\App_LocalResources\UIResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\MAT\Views\RelatorioAlunosPorComponente\App_LocalResources\UIResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\MAT\Views\RelatorioAlunosPorSituacao\App_LocalResources\UIResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\MAT\Views\RelatorioConsolidadoSituacao\App_LocalResources\UIResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Areas\SRC\Reports\Relatorio\RelatorioSolicitacoesComBloqueio.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Areas\ORT\Reports\Orientadores\OrientadoresRelatorio.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\SRC\Views\RelatorioConsolidadoServicoCicloLetivo\App_LocalResources\UIResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\SRC\Views\ServicoReport\App_LocalResources\UIResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\App_LocalResources\UIResource.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Areas\ALN\Views\Report\App_LocalResources\MetadataResource.resx" />
+    <Content Include="Areas\ALN\Views\Report\App_LocalResources\UIResource.resx" />
+    <EmbeddedResource Include="Areas\APR\App_LocalResources\MetadataResource.resx" />
+    <EmbeddedResource Include="Areas\APR\App_LocalResources\UIResource.resx" />
+    <Content Include="Areas\APR\Reports\ListaFrequencia\CabecalhoRelatorio.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\APR\Reports\ListaFrequencia\ListaFrequenciaRelatorio.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\APR\Reports\ListaFrequencia\ProfessoresRelatorio.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\MAT\Reports\Efetivacao\ComprovanteMatriculaRelatorio.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\MAT\Reports\Efetivacao\ComprovanteMatriculaRelatorioAtividades.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\MAT\Reports\Efetivacao\ComprovanteMatriculaRelatorioParcelas.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\MAT\Reports\Efetivacao\ComprovanteMatriculaRelatorioTurmas.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\SRC\Reports\ComprovanteProcessos\ComprovanteProcessosRelatorio.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\SRC\Reports\ComprovanteProcessos\ComprovanteProcessosRelatorioAtividades.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\SRC\Reports\ComprovanteProcessos\ComprovanteProcessosRelatorioTurmas.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Areas\TUR\App_LocalResources\MetadataResource.resx" />
+    <EmbeddedResource Include="Areas\TUR\App_LocalResources\UIResource.resx" />
+    <Content Include="Areas\TUR\Reports\Relatorio\RelatorioTurmaCicloLetivoColaboradores.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\TUR\Reports\DiarioTurma\ProfessoresDiarioTurmaRelatorio.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\TUR\Reports\DiarioTurma\DiarioTurmaRelatorio.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\TUR\Reports\DiarioTurma\DiarioTurmaCabecalhoDiarioFechado.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\TUR\Reports\DiarioTurma\DiarioTurmaCabecalho.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMC.Academico.Common\SMC.Academico.Common.csproj">
+      <Project>{CC1064E4-9968-420B-A793-876145A3AB66}</Project>
+      <Name>SMC.Academico.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Academico.FilesCollection\SMC.Academico.FilesCollection.csproj">
+      <Project>{00FFB94D-F4FC-4A70-BF41-72FD5867920F}</Project>
+      <Name>SMC.Academico.FilesCollection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Academico.ServiceContract\SMC.Academico.ServiceContract.csproj">
+      <Project>{5F1A4A21-D8F6-4FCD-A851-4FC7861AC61E}</Project>
+      <Name>SMC.Academico.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Academico.Service\SMC.Academico.Service.csproj">
+      <Project>{5FF11544-9B60-4DEC-A6AC-2D39BB82D445}</Project>
+      <Name>SMC.Academico.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Academico.UI.Mvc\SMC.Academico.UI.Mvc.csproj">
+      <Project>{79170621-8804-4C64-95A1-D2598DB2D483}</Project>
+      <Name>SMC.Academico.UI.Mvc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Desenvolvimento|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Qualidade|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Producao|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <!--<Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>-->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52824</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8801/Dev/Academico.ReportHost/v4</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>

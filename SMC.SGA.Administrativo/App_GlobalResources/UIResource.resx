@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlterarSenha_Title" xml:space="preserve">
+    <value>Alteração de senha</value>
+  </data>
+  <data name="Botao_Buscarcep" xml:space="preserve">
+    <value>Buscar CEP</value>
+  </data>
+  <data name="Botao_Buscarcep_Tooltip" xml:space="preserve">
+    <value>Buscar CEP</value>
+  </data>
+  <data name="Botao_Limparcep" xml:space="preserve">
+    <value>Limpar CEP</value>
+  </data>
+  <data name="Botao_Limparcep_Tooltip" xml:space="preserve">
+    <value>Limpar CEP</value>
+  </data>
+  <data name="CursoOferta_DataSelector_Botao_Abrir1" xml:space="preserve">
+    <value>Selecionar oferta de curso</value>
+  </data>
+  <data name="CursoOferta_DataSelector_Pesquisa_Header1" xml:space="preserve">
+    <value>Pesquisar Oferta de Curso</value>
+  </data>
+  <data name="EnderecosEletronicos_Detalhe_Titulo" xml:space="preserve">
+    <value>Endereços eletrônicos</value>
+  </data>
+  <data name="Enderecos_Detalhe_Titulo" xml:space="preserve">
+    <value>Endereços</value>
+  </data>
+  <data name="GRUPO_Alterar" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="GRUPO_AlterarEntidadeHistoricoSituacao" xml:space="preserve">
+    <value>Alterar situação</value>
+  </data>
+  <data name="GRUPO_AssociacaoCursoUnidade" xml:space="preserve">
+    <value>Associação do curso à unidade</value>
+  </data>
+  <data name="GRUPO_Curriculo" xml:space="preserve">
+    <value>Currículo</value>
+  </data>
+  <data name="GRUPO_Curso" xml:space="preserve">
+    <value>Curso</value>
+  </data>
+  <data name="GRUPO_FormacaoEspecifica" xml:space="preserve">
+    <value>Formação específica</value>
+  </data>
+  <data name="GRUPO_MontagemHierarquia" xml:space="preserve">
+    <value>Montagem da hierarquia</value>
+  </data>
+  <data name="GRUPO_OfertaCurso" xml:space="preserve">
+    <value>Oferta de curso</value>
+  </data>
+  <data name="GRUPO_OfertaCursoLocalidade" xml:space="preserve">
+    <value>Oferta de curso por localidade</value>
+  </data>
+  <data name="GRUPO_Proposta" xml:space="preserve">
+    <value>Proposta</value>
+  </data>
+  <data name="Layout_Legenda_Copyright" xml:space="preserve">
+    <value>Copyright - © {0} - Todos direitos reservados.</value>
+  </data>
+  <data name="Layout_Texto_Aguarde" xml:space="preserve">
+    <value>Aguarde</value>
+  </data>
+  <data name="Layout_Texto_Copyright" xml:space="preserve">
+    <value>© {0} - Todos direitos reservados.</value>
+  </data>
+  <data name="Layout_Titulo_Logotipo_SMC" xml:space="preserve">
+    <value>Sociedade Mineira de Cultura</value>
+  </data>
+  <data name="LOOKUPCURSOOFERTAFILTROCURSOOFERTA_Fieldset_Legenda" xml:space="preserve">
+    <value>Oferta de curso</value>
+  </data>
+  <data name="LOOKUPCURSOOFERTAFILTROCURSO_Fieldset_Legenda" xml:space="preserve">
+    <value>Curso</value>
+  </data>
+  <data name="NiveisEnsino_DataSelector_Botao_Abrir" xml:space="preserve">
+    <value>Selecionar nível de ensino</value>
+  </data>
+  <data name="NiveisEnsino_DataSelector_Pesquisa_Header" xml:space="preserve">
+    <value>Pesquisar Nível de Ensino</value>
+  </data>
+  <data name="Perfil_Usuario_Botao_TrocarSenha" xml:space="preserve">
+    <value>Trocar senha</value>
+  </data>
+  <data name="ProfileUsuario_Title" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="SeqNivelEnsino_DataSelector_Pesquisa_Header" xml:space="preserve">
+    <value>Pesquisar Nível de Ensino</value>
+  </data>
+  <data name="SiglaAplicacao" xml:space="preserve">
+    <value>SGA.Administrativo</value>
+  </data>
+  <data name="Telefones_Detalhe_Titulo" xml:space="preserve">
+    <value>Telefones</value>
+  </data>
+  <data name="GRUPO_MatrizCurricular" xml:space="preserve">
+    <value>Cadastro de matriz curricular</value>
+  </data>
+  <data name="Botao_Clear" xml:space="preserve">
+    <value>Limpar</value>
+  </data>
+  <data name="Mensagem_Erro_9Digito" xml:space="preserve">
+    <value>Número de telefone inválido</value>
+  </data>
+  <data name="Mensagem_Erro_DDD" xml:space="preserve">
+    <value>Número do DDD inválido</value>
+  </data>
+  <data name="GRUPO_ConsultaDivisoesMatrizCurricular" xml:space="preserve">
+    <value>Consulta divisões da matriz curricular</value>
+  </data>
+  <data name="GRUPO_DivisaoMatrizCurricularComponente" xml:space="preserve">
+    <value>Configuração de componente curricular</value>
+  </data>
+  <data name="GRUPO_MatrizCurricularConfiguracaoComponente" xml:space="preserve">
+    <value>Configuração de grupo curricular</value>
+  </data>
+  <data name="Treeview_Botao_Buscar_Tooltip" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="Treeview_Botao_Limpar_Busca_Tooltip" xml:space="preserve">
+    <value>Limpar</value>
+  </data>
+  <data name="Botao_Lookup_Visualizar_Componente_Curricular" xml:space="preserve">
+    <value>Visualizar</value>
+  </data>
+  <data name="SeqMatrizCurricularOferta_Grid_Titulo" xml:space="preserve">
+    <value>Ofertas de matriz</value>
+  </data>
+  <data name="Botao_Editar_Endereco_Pessoa" xml:space="preserve">
+    <value>Editar endereço da pessoa</value>
+  </data>
+  <data name="Botao_Novo_Endereco_Pessoa" xml:space="preserve">
+    <value>Desejo incluir novo</value>
+  </data>
+  <data name="Title_Modal_Editar_Endereco_Pessoa" xml:space="preserve">
+    <value>Alterar Endereço</value>
+  </data>
+  <data name="Title_Modal_Novo_Endereco_Pessoa" xml:space="preserve">
+    <value>Novo Endereço</value>
+  </data>
+  <data name="Organizacoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Itens da Organização</value>
+  </data>
+  <data name="Botao_Editar_Telefone_Pessoa" xml:space="preserve">
+    <value>Editar telefone da pessoa</value>
+  </data>
+  <data name="Botao_Novo_Telefone_Pessoa" xml:space="preserve">
+    <value>Desejo incluir novo</value>
+  </data>
+  <data name="Title_Modal_Editar_Telefone_Pessoa" xml:space="preserve">
+    <value>Alterar Telefone</value>
+  </data>
+  <data name="Title_Modal_Novo_Telefone_Pessoa" xml:space="preserve">
+    <value>Novo Telefone</value>
+  </data>
+  <data name="Label_Credito" xml:space="preserve">
+    <value>crédito</value>
+  </data>
+  <data name="Label_Creditos" xml:space="preserve">
+    <value>créditos</value>
+  </data>
+  <data name="Label_Hora" xml:space="preserve">
+    <value>hora</value>
+  </data>
+  <data name="Label_HoraAula" xml:space="preserve">
+    <value>hora-aula</value>
+  </data>
+  <data name="Label_Horas" xml:space="preserve">
+    <value>horas</value>
+  </data>
+  <data name="Label_HorasAula" xml:space="preserve">
+    <value>horas-aula</value>
+  </data>
+  <data name="Label_Item" xml:space="preserve">
+    <value>item</value>
+  </data>
+  <data name="Label_Itens" xml:space="preserve">
+    <value>itens</value>
+  </data>
+  <data name="ExcecoesLocalidade_Detalhe_Titulo" xml:space="preserve">
+    <value>Exceções</value>
+  </data>
+  <data name="GRUPO_ConfiguracaoComponente" xml:space="preserve">
+    <value>Configuração de componente curricular</value>
+  </data>
+  <data name="GrupoCurricularComponente__DataSelector_Pesquisa_Header" xml:space="preserve">
+    <value>Associação de Componente Curricular</value>
+  </data>
+  <data name="LOOKUPCURSOOFERTALOCALIDADEFILTROCURSO_Fieldset_Legenda" xml:space="preserve">
+    <value>Curso</value>
+  </data>
+  <data name="LOOKUPCURSOOFERTALOCALIDADEFILTROOFERTA_Fieldset_Legenda" xml:space="preserve">
+    <value>Oferta de curso por localidade</value>
+  </data>
+  <data name="Botao_Novo_EnderecoEletronico_Pessoa" xml:space="preserve">
+    <value>Desejo incluir novo</value>
+  </data>
+  <data name="Title_Modal_Novo_EnderecoEletronico_Pessoa" xml:space="preserve">
+    <value>Novo Endereço Eletrônico</value>
+  </data>
+  <data name="Titulo_LookupEndereco" xml:space="preserve">
+    <value>Endereços</value>
+  </data>
+  <data name="Atividades_Detalhe_Titulo" xml:space="preserve">
+    <value>Atividades</value>
+  </data>
+  <data name="OfertasMatriz_Grid_Titulo" xml:space="preserve">
+    <value>Ofertas de Matriz</value>
+  </data>
+  <data name="Botao_Consulta_Detalhes_Componente_Curricular" xml:space="preserve">
+    <value>Detalhes do componente curricular</value>
+  </data>
+  <data name="Title_Modal_Consulta_Detalhes_Componente_Curricular" xml:space="preserve">
+    <value>Consulta de Detalhes do Componente Curricular</value>
+  </data>
+  <data name="Label_Nenhum_Registro" xml:space="preserve">
+    <value>Nenhum registro cadastrado.</value>
+  </data>
+  <data name="Layout_Rodape_Mensagem_SMC" xml:space="preserve">
+    <value>GTI - Gerência de Tecnologia da Informação</value>
+  </data>
+  <data name="Botao_Editar" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="Botao_Editar_Tooltip" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="CURRICULOCURSOOFERTAVIEWMODEL_GRUPOCREDITOS_Fieldset_Legenda" xml:space="preserve">
+    <value>Total de créditos</value>
+  </data>
+  <data name="CURRICULOCURSOOFERTAVIEWMODEL_GRUPOHORAS_Fieldset_Legenda" xml:space="preserve">
+    <value>Total de carga horária</value>
+  </data>
+  <data name="CURRICULOCURSOOFERTAVIEWMODEL_GRUPOOFERTA_Fieldset_Legenda" xml:space="preserve">
+    <value> Oferta de curso</value>
+  </data>
+  <data name="SeqCalendario_DataSelector_Grid_Header" xml:space="preserve">
+    <value>Calendários</value>
+  </data>
+  <data name="Telefone_Detalhe_Titulo" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="Botao_Editar_Endereco_Eletronico_Pessoa" xml:space="preserve">
+    <value>Editar endereço eletrônico da pessoa</value>
+  </data>
+  <data name="Botao_Editar_Endereco_Eletronico_WebMail_PUCMinas_Inativo" xml:space="preserve">
+    <value>O webmail da PUC Minas não pode ser alterado.</value>
+  </data>
+  <data name="Title_Modal_Editar_Endereco_Eletronico_Pessoa" xml:space="preserve">
+    <value>Alterar Endereço Eletrônico</value>
+  </data>
+  <data name="PessoaJuridicaLookupViewModel_RazaoSocial" xml:space="preserve">
+    <value>Razão social</value>
+  </data>
+  <data name="GRUPO_BeneficioHistoricoValorAuxilio" xml:space="preserve">
+    <value>Cadastro de valor auxílio</value>
+  </data>
+  <data name="GRUPO_ConfiguracaoBeneficio" xml:space="preserve">
+    <value>Cadastro de configuração de benefício</value>
+  </data>
+  <data name="EntidadesResponsaveis_Detalhe_Titulo" xml:space="preserve">
+    <value>Entidades responsáveis</value>
+  </data>
+  <data name="Localidades_Detalhe_Titulo" xml:space="preserve">
+    <value>Localidades</value>
+  </data>
+  <data name="NiveisEnsino_Detalhe_Titulo" xml:space="preserve">
+    <value>Níveis de ensino</value>
+  </data>
+  <data name="Pessoas_Detalhe_Titulo" xml:space="preserve">
+    <value>Pessoas que utilizarão o termo</value>
+  </data>
+  <data name="TiposProcessoSeletivo_Detalhe_Titulo" xml:space="preserve">
+    <value>Tipos de processo seletivo</value>
+  </data>
+  <data name="Botao_Selecionarinstituicao_Tooltip" xml:space="preserve">
+    <value>Selecionar instituição</value>
+  </data>
+  <data name="Label_Campo_Vazio" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="Colaborador_EnderecoCorrespondencia" xml:space="preserve">
+    <value>*Correspondência</value>
+  </data>
+  <data name="VisualizarTurmaAtividade_listaAtividades_Fieldset_Legenda" xml:space="preserve">
+    <value>Atividades acadêmicas</value>
+  </data>
+  <data name="VisualizarTurmaAtividade_listaTurmas_Fieldset_Legenda" xml:space="preserve">
+    <value>Turmas</value>
+  </data>
+  <data name="Chamadas_Detalhe_Titulo" xml:space="preserve">
+    <value>Chamadas</value>
+  </data>
+  <data name="LOOKUPPARCERIAFILTRO_Fieldset_Legenda" xml:space="preserve">
+    <value>Parceria de intercâmbio</value>
+  </data>
+  <data name="LOOKUPTERMOINTERCAMBIOFILTRO_Fieldset_Legenda" xml:space="preserve">
+    <value>Termo de intercâmbio</value>
+  </data>
+  <data name="FILTROATIVIDADE_Fieldset_Legenda" xml:space="preserve">
+    <value>Oferta de curso por localidade/Atividade</value>
+  </data>
+  <data name="FILTROCOLABORADOR_Fieldset_Legenda" xml:space="preserve">
+    <value>Colaborador</value>
+  </data>
+  <data name="FILTROINSTITUICAO_Fieldset_Legenda" xml:space="preserve">
+    <value>Instituição</value>
+  </data>
+  <data name="FILTROVINCULO_Fieldset_Legenda" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="Orientacoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Orientação</value>
+  </data>
+  <data name="DescricaoTipoTurma_FillInstructions" xml:space="preserve">
+    <value>Alunos de diferentes cursos poderão cursar turmas compartilhadas.</value>
+  </data>
+  <data name="Title_Divisao_Turma" xml:space="preserve">
+    <value>Detalhes da Divisão de Turma</value>
+  </data>
+  <data name="Tooltip_Divisao_Turma" xml:space="preserve">
+    <value>Mais informações</value>
+  </data>
+  <data name="Botao_Cancelarprocesso" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="Botao_Concluirprocesso" xml:space="preserve">
+    <value>Finalizar matrícula</value>
+  </data>
+  <data name="Botao_Divisao_Turma" xml:space="preserve">
+    <value>Mais informações</value>
+  </data>
+  <data name="Botao_Navegacao_Anterior" xml:space="preserve">
+    <value>Página anterior</value>
+  </data>
+  <data name="Botao_Navegacao_Proximo" xml:space="preserve">
+    <value>Próxima página</value>
+  </data>
+  <data name="Botao_Sairprocesso" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="Botao_Selecionar" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="Colaboradores_Professores_Detalhe_Titulo" xml:space="preserve">
+    <value>Professores</value>
+  </data>
+  <data name="Colaboradores_Professores_Detalhe_Titulo_CargaHoraria" xml:space="preserve">
+    <value>Carga horária</value>
+  </data>
+  <data name="Colaboradores_Professores_Detalhe_Titulo_Tema" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="DescricaoTipoTurma_FillInstructions1" xml:space="preserve">
+    <value>Alunos de diferentes cursos poderão cursar turmas compartilhadas.</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoAtividade_Lista_Titulo" xml:space="preserve">
+    <value>Atividades acadêmicas</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Botao_Pesquisar" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Campo_Curriculo" xml:space="preserve">
+    <value>Exibir somente turma pertencente ao currículo</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Campo_Divisao" xml:space="preserve">
+    <value>Codificação</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Campo_Turma" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Campo_Vagas" xml:space="preserve">
+    <value>Vagas: </value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Lista_Titulo" xml:space="preserve">
+    <value>Turmas ofertadas - </value>
+  </data>
+  <data name="Informativo_Atividade_Existe_PreRequisito" xml:space="preserve">
+    <value>As atividades acadêmicas que não podem ser selecionadas possuem pré-requisitos ainda não cumpridos.</value>
+  </data>
+  <data name="Informativo_Turma_Atividade" xml:space="preserve">
+    <value>Existem itens da sua solicitação de matrícula que foram indeferidos ou cancelados. Clique em “Exibir itens” para visualizá-los.</value>
+  </data>
+  <data name="Informativo_Turma_Convocado" xml:space="preserve">
+    <value>Você foi convocado para a(s) turma(s) abaixo. Nesta etapa do processo, não é possível realizar alterações na solicitação de matrícula. Favor prosseguir e, caso queira, requerer a alteração na 3ª Etapa - Efetivação de Matrícula.</value>
+  </data>
+  <data name="Informativo_Turma_Existe_PreRequisito" xml:space="preserve">
+    <value>As turmas que não podem ser selecionadas possuem pré-requisitos ainda não cumpridos.</value>
+  </data>
+  <data name="Informativo_Turma_Pesquisar" xml:space="preserve">
+    <value>Para atualizar o resultado da pesquisa, de acordo com os filtros informados abaixo, clique no botão "Pesquisar".</value>
+  </data>
+  <data name="Informativo_Turma_Todas_Canceladas" xml:space="preserve">
+    <value>Não é possível prosseguir no Processo de Matrícula, pois os itens da solicitação foram cancelados.</value>
+  </data>
+  <data name="Label_Nenhum_Registro1" xml:space="preserve">
+    <value>Nenhum registro retornado.</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Colaborador" xml:space="preserve">
+    <value>Nenhum colaborador disponível.</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Turma" xml:space="preserve">
+    <value>Nenhuma turma disponível.</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Turma_Selecionada" xml:space="preserve">
+    <value>Nenhuma turma selecionada.</value>
+  </data>
+  <data name="Label_Selecionar" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="Label_Voltar" xml:space="preserve">
+    <value>Voltar</value>
+  </data>
+  <data name="Layout_Rodape_Mensagem_SMC1" xml:space="preserve">
+    <value>GTI - Gerência de Tecnologia da Informação</value>
+  </data>
+  <data name="Layout_Texto_Aguarde1" xml:space="preserve">
+    <value>Aguarde...</value>
+  </data>
+  <data name="listaAtividades_Fieldset_Legenda" xml:space="preserve">
+    <value>Atividades acadêmicas</value>
+  </data>
+  <data name="listaTurmas_Fieldset_Legenda" xml:space="preserve">
+    <value>Turmas</value>
+  </data>
+  <data name="ParametroDivisoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Divisões de turma</value>
+  </data>
+  <data name="SiglaAplicacao1" xml:space="preserve">
+    <value>SGA</value>
+  </data>
+  <data name="Texto_Passo_Atual" xml:space="preserve">
+    <value>Passo {0} de {1}</value>
+  </data>
+  <data name="Title_Modal_Visualizar_PlanoEnsino" xml:space="preserve">
+    <value>Plano de Estudo</value>
+  </data>
+  <data name="Title_Modal_Visualizar_PlanoEnsinoCancelado" xml:space="preserve">
+    <value>Itens Indeferidos e Cancelados</value>
+  </data>
+  <data name="GRUPO_Requisito" xml:space="preserve">
+    <value>Requisito da matriz curricular</value>
+  </data>
+  <data name="GRUPO_InstituicaoTipoEntidadeFormacaoEspecifica" xml:space="preserve">
+    <value>Hierarquia de formação específica x Tipo de entidade</value>
+  </data>
+  <data name="GRUPO_InstituicaoTipoEntidadeHierarquiaClassificacao" xml:space="preserve">
+    <value>Hierarquia de classificação x Tipo de entidade</value>
+  </data>
+  <data name="GRUPO_InstituicaoTipoEntidadeVinculoColaborador" xml:space="preserve">
+    <value>Tipo de vínculo colaborador x Tipo de entidade</value>
+  </data>
+  <data name="GRUPO_GrupoEscalonamento" xml:space="preserve">
+    <value>Grupo de escalonamento</value>
+  </data>
+  <data name="GRUPO_PosicaoConsolidada" xml:space="preserve">
+    <value>Consulta posição consolidada</value>
+  </data>
+  <data name="GRUPO_SolicitacaoServico" xml:space="preserve">
+    <value>Solicitações do processo</value>
+  </data>
+  <data name="Botao_Localizar_Pessoa" xml:space="preserve">
+    <value>Localizar pessoa</value>
+  </data>
+  <data name="Label_Confirmacao_Pessoa_Existente" xml:space="preserve">
+    <value>Sua busca retornou um registro com o mesmo CPF, porém os demais dados estão diferentes. Favor avaliar, pois não é possível cadastrar outra pessoa com a mesma documentação.</value>
+  </data>
+  <data name="Label_Contatos" xml:space="preserve">
+    <value>Informe os dados de contato do {0} que está sendo cadastrado. Verifique se os dados já existem ou os insira pela primeira vez no sistema através dos botões "Incluir/Alterar..." abaixo. Em seguida, pressione o botão "Próximo".</value>
+  </data>
+  <data name="Label_Dados_Pessoais" xml:space="preserve">
+    <value>Informe os dados da pessoa que está sendo cadastrada. Em seguida, pressione o botão "Próximo".</value>
+  </data>
+  <data name="Label_Identificacao_Pessoa_Existente" xml:space="preserve">
+    <value>Informe os campos solicitados abaixo, e clique em "Localizar pessoa", caso a pessoa informada esteja na listagem, selecione e clique em "Próximo". Caso ela não seja encontrada, você precisará realizar o cadastro, selecione a opção informando que você não encontrou a pessoa, e clique em "Próximo".</value>
+  </data>
+  <data name="Botao_Turma_Detalhes" xml:space="preserve">
+    <value>Mais informações</value>
+  </data>
+  <data name="Title_Turma_Detalhes" xml:space="preserve">
+    <value>Visualização de Dados da Turma</value>
+  </data>
+  <data name="Tooltip_Turma_Detalhes" xml:space="preserve">
+    <value>Mais informações</value>
+  </data>
+  <data name="Botao_Mensagens" xml:space="preserve">
+    <value>Mensagem</value>
+  </data>
+  <data name="Label_CadastrarNovaPessoa" xml:space="preserve">
+    <value>Não encontrei a pessoa e desejo cadastrar nova.</value>
+  </data>
+  <data name="Layout_Titulo_Logotipo_GTI" xml:space="preserve">
+    <value>Gerência de Tecnologia da Informação</value>
+  </data>
+  <data name="Botao_PostagemMaterial" xml:space="preserve">
+    <value>Postagem de material</value>
+  </data>
+  <data name="Botao_PostagemMaterial_Tooltip" xml:space="preserve">
+    <value>Postagem de material</value>
+  </data>
+  <data name="PalavrasChave_Detalhe_Titulo" xml:space="preserve">
+    <value>Palavras-chave</value>
+  </data>
+  <data name="FILTROCANCELAMENTOBANCA_Fieldset_Legenda" xml:space="preserve">
+    <value>Cancelamento de banca examinadora</value>
+  </data>
+  <data name="OrientacaoParticipacoesColaboradores_Detalhe_Titulo" xml:space="preserve">
+    <value>Participações</value>
+  </data>
+  <data name="ORIENTACAO_Fieldset_Legenda" xml:space="preserve">
+    <value>Orientação</value>
+  </data>
+  <data name="Copia_Informacao_Mensagem" xml:space="preserve">
+    <value>Serão copiados os escalonamentos, as configurações de parcelas e as notificações, com seus respectivos parâmetros de envio, se houver.</value>
+  </data>
+  <data name="GRUPO_Escalonamento" xml:space="preserve">
+    <value>Escalonamento por etapa</value>
+  </data>
+  <data name="Parcelas_Detalhe_Titulo" xml:space="preserve">
+    <value>Parcelas</value>
+  </data>
+  <data name="PROCESSO_Fieldset_Legenda" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="SOLICITANTE_Fieldset_Legenda" xml:space="preserve">
+    <value>Solicitante</value>
+  </data>
+  <data name="Mensagem_Associacao_Grupo_Escalonamento" xml:space="preserve">
+    <value>A associação foi realizada com sucesso. Para mais detalhes da solicitação consulte a Central de Solicitações.</value>
+  </data>
+  <data name="Mensagem_Associacao_Grupo_Escalonamento_Vagas_Disponivel" xml:space="preserve">
+    <value>Quando é realizada a associação, a solicitação reinicia o processo a partir da última etapa em que parou. E não há vaga disponível na turma para todos os itens da solicitação. Confirma a associação do grupo de escalonamento, considerando apenas os itens que possuem vaga disponível? &lt;br /&gt;{0}</value>
+  </data>
+  <data name="TipoAtividades_Detalhe_Titulo" xml:space="preserve">
+    <value>Tipos de atividade</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Atividade_Selecionada" xml:space="preserve">
+    <value>Nenhuma atividade acadêmica selecionada</value>
+  </data>
+  <data name="Desfazer_Excluir_Atividade_Selecionado" xml:space="preserve">
+    <value>Confirma desfazer a exclusão da atividade acadêmica "{0}" ?</value>
+  </data>
+  <data name="Desfazer_Excluir_Turma_Selecionado" xml:space="preserve">
+    <value>Confirma desfazer a exclusão da turma "{0}" ?</value>
+  </data>
+  <data name="Title_Desfazer_Excluir_Atividade_Selecionado" xml:space="preserve">
+    <value>Desfazer Exclusão de Atividade Acadêmica</value>
+  </data>
+  <data name="Title_Desfazer_Excluir_Turma_Selecionado" xml:space="preserve">
+    <value>Desfazer Exclusão de Turma</value>
+  </data>
+  <data name="TituloTurma" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="TituloTurmas" xml:space="preserve">
+    <value>Turmas</value>
+  </data>
+  <data name="Titulo_Legenda_SituacaoComponenteIntegralizacao" xml:space="preserve">
+    <value>Situação dos componentes curriculares</value>
+  </data>
+  <data name="Label_EspecificoBolsista" xml:space="preserve">
+    <value>Específico para bolsistas:</value>
+  </data>
+  <data name="Label_EspecificoCondicao" xml:space="preserve">
+    <value>Específico quando há a condição:</value>
+  </data>
+  <data name="Label_EspecificoFormacao" xml:space="preserve">
+    <value>Específico para a formação:</value>
+  </data>
+  <data name="Label_Observacoes" xml:space="preserve">
+    <value>Observações</value>
+  </data>
+  <data name="Label_EspecificoDivisoes" xml:space="preserve">
+    <value>.E o mesmo está associado nas seguintes divisões curriculares e com as seguintes configurações:</value>
+  </data>
+  <data name="Label_EspecificoGrupo" xml:space="preserve">
+    <value>Esse grupo curricular possui a seguinte configuração:</value>
+  </data>
+  <data name="Modal_Title_Integralizacao_Curricular" xml:space="preserve">
+    <value>Consulta Integralização Curricular</value>
+  </data>
+  <data name="Title_Componentes_Curricular_Cursados" xml:space="preserve">
+    <value>Componentes curriculares</value>
+  </data>
+  <data name="DADOSDOPROFESSOR_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados do professor</value>
+  </data>
+  <data name="ITEMCURSADO_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados do item cursado</value>
+  </data>
+  <data name="Label_Historico_Escolar_Integralizacao_Cursados" xml:space="preserve">
+    <value>O componente curricular foi cursado anteriormente:</value>
+  </data>
+  <data name="Label_Historico_Escolar_Integralizacao_Dispensa" xml:space="preserve">
+    <value>Componente curricular dispensado, através do deferimento da solicitação:</value>
+  </data>
+  <data name="Title_Historico_Escolar_Integralizacao" xml:space="preserve">
+    <value>Consulta de Histórico Escolar</value>
+  </data>
+  <data name="Botao_Integralizacao_Curricular" xml:space="preserve">
+    <value>Integralização curricular</value>
+  </data>
+  <data name="Botao_Integralizacao_Curricular_Tooltip" xml:space="preserve">
+    <value>Integralização curricular</value>
+  </data>
+  <data name="Modal_Solicitacao_Administrativo_Informativo" xml:space="preserve">
+    <value>A consulta completa com todos os dados da solicitação de serviço está disponível através da Central de Solicitações.</value>
+  </data>
+  <data name="Modal_Solicitacao_Fieldset_Identificacao" xml:space="preserve">
+    <value>Identificação</value>
+  </data>
+  <data name="Modal_Solicitacao_Fieldset_Justificativa" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="Modal_Solicitacao_Fieldset_Situacao" xml:space="preserve">
+    <value>Situação atual</value>
+  </data>
+  <data name="Modal_Solicitacao_Fieldset_Solicitacao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Modal_Solicitacao_Fieldset_Solicitacao_Servico" xml:space="preserve">
+    <value>Solicitação</value>
+  </data>
+  <data name="Title_Modal_Solicitacao_Servico_Simplificado" xml:space="preserve">
+    <value>Consulta Solicitação de Serviço</value>
+  </data>
+  <data name="Botao_Historico_Escolar_Integralizacao" xml:space="preserve">
+    <value>Visualizar histórico escolar</value>
+  </data>
+  <data name="Titulo_Legenda_SituacaoItemMatricula" xml:space="preserve">
+    <value>Tipo de solicitação</value>
+  </data>
+  <data name="Titulo_Legenda_TurmaOfertaMatricula" xml:space="preserve">
+    <value>Pertence ao currículo</value>
+  </data>
+  <data name="Label_Protocolo" xml:space="preserve">
+    <value>Protocolo</value>
+  </data>
+  <data name="Label_Componente_Curricular_Ementa_Fieldset" xml:space="preserve">
+    <value>Ementa</value>
+  </data>
+  <data name="Title_Componente_Curricular_Ementa" xml:space="preserve">
+    <value>Consulta de Ementa</value>
+  </data>
+  <data name="gridFeedbacks_Grid_Titulo" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="Label_Componente_Curricular_Ementa_SemRegistro" xml:space="preserve">
+    <value>Nenhuma ementa registrada para este componente curricular.</value>
+  </data>
+  <data name="Label_Lista_Integralizacao_SemRegistro" xml:space="preserve">
+    <value>Não foi identificado para o {0} a associação de Matriz Curricular ou, registros no Histórico Escolar e/ou Plano de Estudos.</value>
+  </data>
+  <data name="Botao_Chancelar_Escalonamento_Vigente" xml:space="preserve">
+    <value>Essa solicitação não poderá ser chancelada, pois a etapa de chancela esta fora do período de vigência.</value>
+  </data>
+  <data name="Botao_Chancelar_Etapa_Liberada" xml:space="preserve">
+    <value>Essa solicitação não poderá ser chancelada, pois a etapa de chancela não esta liberada.</value>
+  </data>
+  <data name="Botao_Chancelar_Etapa_PermiteChancela" xml:space="preserve">
+    <value>Essa solicitação não poderá ser chancelada, pois a situação da solicitação não permite alteração na chancela.</value>
+  </data>
+  <data name="Botao_Chancelar_Instructions" xml:space="preserve">
+    <value>Essa solicitação não poderá ser chancelada pois há bloqueio(s) associado(s) ao solicitante que impede(m) a realização da chancela do plano de estudos.</value>
+  </data>
+  <data name="Botao_PlanoEstudo" xml:space="preserve">
+    <value>Plano de estudo</value>
+  </data>
+  <data name="Botao_Reabrir" xml:space="preserve">
+    <value>Reabrir chancela</value>
+  </data>
+  <data name="Botao_Reabrir_Instructions" xml:space="preserve">
+    <value>Reabrir chancela</value>
+  </data>
+  <data name="Chancela_Index_Title" xml:space="preserve">
+    <value>Chancela de Matrícula</value>
+  </data>
+  <data name="gridChancela_Grid_Titulo" xml:space="preserve">
+    <value>Solicitações</value>
+  </data>
+  <data name="Botao_Chancelar" xml:space="preserve">
+    <value>Chancelar</value>
+  </data>
+  <data name="Mensagem_Enviar_Notificacao_Grupo_Escalonamento" xml:space="preserve">
+    <value>Envio das notificações foram efetuadas com sucesso.</value>
+  </data>
+  <data name="Mensagem_Enviar_Notificacao_Grupo_Escalonamento_Assert" xml:space="preserve">
+    <value>Atenção. Ao confirmar será enviada uma notificação com os prazos de vigência do respectivo grupo de escalonamento. Será enviado para todas as solicitações associadas ao grupo e que não foram finalizadas.</value>
+  </data>
+  <data name="GridSituacoes_Grid_Titulo" xml:space="preserve">
+    <value>Situações</value>
+  </data>
+  <data name="LOOKUPSOLICITACAODESERVICOFILTROSOLICITACAO_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados da solicitação</value>
+  </data>
+  <data name="LOOKUPSOLICITACAODESERVICOFILTROSOLICITANTE_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados do solicitante</value>
+  </data>
+  <data name="Botao_AssociacaoImagem" xml:space="preserve">
+    <value>Associação de imagem</value>
+  </data>
+  <data name="Botao_AssociacaoImagem_Tooltip" xml:space="preserve">
+    <value>Associação de imagem</value>
+  </data>
+</root>

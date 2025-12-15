@@ -1,0 +1,34 @@
+<div class="smc-header smc-header-tipo-primary smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+  <div class="smc-header-grupo-itens">
+    <div class="smc-header-item smc-size-md-2 smc-size-lg-2 smc-size-sm-4 smc-size-xs-4">
+      <label>Ciclo letivo</label>
+      <p>{{ dadosCabecalho.cicloLetivoInicio }}</p>
+    </div>
+    <div class="smc-header-item smc-size-md-2 smc-size-lg-2 smc-size-sm-4 smc-size-xs-4">
+      <label>Cod. turma</label>
+      <p>{{ dadosCabecalho.codigoFormatado }}</p>
+    </div>
+    <div class="smc-header-item smc-size-md-9 smc-size-lg-9 smc-size-sm-24 smc-size-xs-24">
+      <label>Descrição turma</label>
+      <p>{{ dadosCabecalho.descricaoConfiguracaoComponente }}</p>
+    </div>
+    <div class="smc-header-item smc-size-md-3 smc-size-lg-3 smc-size-sm-12 smc-size-xs-24">
+      <label>Data início aulas</label>
+      <p>{{ dadosCabecalho.inicioPeriodoLetivo }}</p>
+    </div>
+    <div class="smc-header-item smc-size-md-3 smc-size-lg-3 smc-size-sm-12 smc-size-xs-24">
+      <label>Data fim aulas</label>
+      <p>{{ dadosCabecalho.fimPeriodoLetivo }}</p>
+    </div>
+    <div class="smc-header-item smc-size-md-5 smc-size-lg-5 smc-size-sm-12 smc-size-xs-24">
+      <smc-button
+        s-button-class="smc-btn-custom smc-btn-novo-icotext smc-btn-header-secundario"
+        s-label="Associar professor responsável"
+        s-tooltip="Associar professor responsável"
+        [s-loading]="dataSourceCarregando$ | async"
+        [s-disabled]="dadosCabecalho.somenteLeitura"
+        (s-click)="abrirModalAssociarProfessor()"
+      ></smc-button>
+    </div>
+  </div>
+</div>

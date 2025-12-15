@@ -1,0 +1,19 @@
+﻿@model OfertaCursoCicloLetivoAssociacaoLocalidadeViewModel
+
+@using (Smc.Fieldset("fieldsetAssociacaoLocalidade").Begin())
+{
+
+    <li>
+        <label>
+            @Smc.GetUIResource("Texto_Selecione_Localidades")
+        </label>
+    </li>
+
+    @Smc.FieldEditorFor(prop => prop.SeqOfertaCursoCicloLetivo)
+}
+
+@(Smc.TreeView("treeviewLocalidades", Model.Localidades)
+         .AllowCheck(true, false, false)
+         .AllowSearch(true, "DescricaoLocalidade")
+)
+

@@ -1,0 +1,53 @@
+﻿
+@using SMC.Academico.UI.Mvc.Areas.CUR.Lookups;
+@using SMC.Framework.UI.Mvc;
+@using SMC.Framework.UI.Mvc.Html;
+
+@{
+    var guidJanela = Guid.NewGuid().ToString();
+}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {            
+            @(Smc.Grid("gridComponentesCurriculares", new SMCPagerModel<ComponenteCurricularLookupViewModel>(Model))
+                    .HideNavigator()
+                    .HidePager()
+                    .HideRowNumber()
+                    .HideRowsTotalizer()
+                    .HideGridTitle()
+                    .Attribute("data-detail-property", SMCLookupHelper.GetCurrentPropertyName(Smc))
+                    .ContentColumn(
+                        @<text>
+                            @((item as ComponenteCurricularLookupViewModel).DescricaoCompleta)
+                            <input data-model-property="key" type="hidden" name="Seq" value="@((item as ComponenteCurricularLookupViewModel).Seq)"/>
+                            <input type="hidden" name="Codigo" value="@((item as ComponenteCurricularLookupViewModel).Codigo)" />
+                            <input type="hidden" name="Descricao" value="@((item as ComponenteCurricularLookupViewModel).Descricao)" />
+                        </text>)
+            .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "", false,
+                 x => Smc.Button(SMCButtonBehavior.ExcluirElemento)
+                        .DisplayMode(SMCButtonDisplayMode.Icon),
+                 x =>
+                        Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                        .Attribute(SMCMvcConsts.MODAL_ID, guidJanela)
+                        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Consulta_Detalhes_Componente_Curricular"))
+                        .Ajax(isPost: false)
+                        .Action("VerDetalhesPartial", "ComponenteCurricular", new { @area = "CUR", @seq = (x as ComponenteCurricularLookupViewModel).Seq })
+                        .CssClass("smc-btn-visualizar-ico")
+                        .Text(Smc.GetUIResource("Botao_Consulta_Detalhes_Componente_Curricular"))
+                        .Tooltip(Smc.GetUIResource("Botao_Consulta_Detalhes_Componente_Curricular"))
+                        )
+            )
+        }
+    }
+}
+
+
+
+@using (Smc.ModalWindow(guidJanela)
+    .Size(SMCModalWindowSize.Largest)
+    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+    .Begin()) { }

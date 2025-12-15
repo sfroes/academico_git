@@ -1,0 +1,9 @@
+﻿@model TipoHierarquiaEntidadeCabecalhoViewModel
+
+@using (Smc.Header("TipoHierarquiaEntidade", SMCHeaderType.Primary)
+           .Item(prop => prop.Descricao, sizeMD: SMCSize.Grid12_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24)
+           .Item(prop => prop.TipoVisao, sizeMD: SMCSize.Grid12_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24)
+           .Begin())
+{
+
+}

@@ -1,0 +1,10 @@
+﻿@model  PessoaAtuacaoMensagemCabecalhoViewModel
+
+@using (Smc.Header("PesssoaAtuacao", SMCHeaderType.Primary)
+   .Item(prop => prop.NomePessoa, sizeMD: SMCSize.Grid12_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24)
+   .Item(prop => prop.TipoAtuacao, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24)
+   .Item(prop => prop.DescricaoSituacaoMatricula, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24)
+   .Begin())
+{
+
+}

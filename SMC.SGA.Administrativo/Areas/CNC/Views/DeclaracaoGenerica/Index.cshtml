@@ -1,0 +1,32 @@
+@using SMC.SGA.Administrativo.Areas.CNC.Models;
+
+@model DeclaracaoGenericaFiltroDynamicModel
+
+
+@using (Smc.Form("filtroDeclaracaoGenerica", "ListarDeclaracoesGenericas").Ajax("#divGridDeclaracoesGenericas")
+        .Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Fieldset("filtros").CssClass("smc-fieldset-filter").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(m => m.PessoaLookup)
+        @Smc.EditorFor(m => m.SeqsEntidadesResponsaveis)
+        @Smc.EditorFor(m => m.SeqCursoOfertaLocalidade)
+        @Smc.EditorFor(m => m.SeqsTiposDocumentos)
+        @Smc.EditorFor(m => m.DataInicioInclusao)
+        @Smc.EditorFor(m => m.DataFimInclusao)
+        @Smc.EditorFor(m => m.SeqSituacaoAtual)
+
+        @(Smc.ButtonSet()
+             .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+             .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+        )
+    }
+}
+
+
+@using (Smc.Div("divGridDeclaracoesGenericas").Attribute("data-id", "divGridDeclaracoesGenericas").CssClass("smc-sga-central-solicitacoes")
+        .Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Smc.ActionList("ListarDeclaracoesGenericas", Model, true)
+}
+

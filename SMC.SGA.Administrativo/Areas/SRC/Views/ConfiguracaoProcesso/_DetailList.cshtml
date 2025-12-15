@@ -1,0 +1,27 @@
+﻿@using SMC.Framework.Model;
+
+@model SMCPagerModel<ConfiguracaoProcessoListarViewModel>
+
+@(Smc.Grid("gridConfiguracaoProcesso", Model)
+     .AutoGenerateColumns()
+     .AllowSort()
+     .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+
+        x => Smc.Button(SMCButtonBehavior.Alterar)
+                .CssClass("smc-btn-alterar-ico")
+                .Tooltip(Smc.GetUIResource("botao_edit_configuracao_processo_tooltip"))
+                .SecurityToken(UC_SRC_002_02_02.MANTER_CONFIGURACAO_PROCESSO)
+                .Action("Editar", "ConfiguracaoProcesso", new { Seq = new SMCEncryptedLong((x as ConfiguracaoProcessoListarViewModel).Seq), Area = "SRC" }),
+
+        x => Smc.Button(SMCButtonBehavior.Excluir)
+                .Enabled((x as ConfiguracaoProcessoListarViewModel).HabilitarBotaoExcluir)
+                .ButtonInstructions(Smc.GetUIResource((x as ConfiguracaoProcessoListarViewModel).MensagemBotaoExcluir))
+                .DisplayMode(SMCButtonDisplayMode.Icon)
+                .Confirm(Smc.GetUIResource("Exclusao_Configuracao_Processo_Title"),
+                string.Format(Smc.GetUIResource("Exclusao_Configuracao_Processo_Confirmacao"), (x as ConfiguracaoProcessoListarViewModel).Descricao))
+                .Tooltip(Smc.GetUIResource("botao_excluir_configuracao_processo_tooltip"))
+                .SecurityToken(UC_SRC_002_02_02.MANTER_CONFIGURACAO_PROCESSO)
+                .Action("Excluir", "ConfiguracaoProcesso", new { Seq = new SMCEncryptedLong((x as ConfiguracaoProcessoListarViewModel).Seq), SeqProcesso = new SMCEncryptedLong((x as ConfiguracaoProcessoListarViewModel).SeqProcesso), Area = "SRC" }))
+)
+
+

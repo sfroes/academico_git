@@ -1,0 +1,11 @@
+﻿@model PublicacaoBdpDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+{
+    <p>@Smc.GetUIResource("Mensagem_Informativa_Idioma_Trabalho")</p>
+}
+
+@(Smc.MasterDetail(m => m.Idiomas, SMC.Framework.UI.Mvc.DataAnnotations.SMCDetailType.Modal)
+        .HideButtons(SMCMasterDetailButtonHidden.Remove | SMCMasterDetailButtonHidden.Add)
+        .ReadOnly(((bool?)TempData["_BloqueiaAlteracoes"]).GetValueOrDefault())
+)

@@ -1,0 +1,14 @@
+﻿@model string
+
+<div class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+    <div class="smc-display" data-control="display" data-type="smc-display">
+        @*<label>@Smc.GetUIResource("MSG_TituloInformacoesRVDD")</label>*@
+        <p><b>@Smc.GetUIResource("MSG_TituloInformacoesRVDD")</b></p>
+    </div>
+</div>
+
+<div class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+    <div class="smc-display" data-control="display" data-type="smc-display" style="text-align:center">
+        <p>@Html.Raw(Model)</p>
+    </div>
+</div>

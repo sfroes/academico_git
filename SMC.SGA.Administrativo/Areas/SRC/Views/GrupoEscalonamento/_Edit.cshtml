@@ -1,0 +1,29 @@
+﻿@model GrupoEscalonamentoDynamicModel
+
+@Smc.EditorFor(e => e.SeqGrupoEscalonamento)
+@Smc.EditorFor(e => e.ObrigarNumeroDivisaoParcelas)
+@Smc.EditorFor(e => e.ExibeNumeroDivisaoParcelasDesabilitado)
+@Smc.EditorFor(e => e.TodasParcelasLiberadas)
+@Smc.EditorFor(e => e.ProcessoEncerrado)
+@Smc.EditorFor(e => e.ExibeMensagemSalvar)
+@Smc.EditorFor(e => e.ExibeMensagemInformativa)
+@Smc.EditorFor(e => e.ExibeMensagemTokenDisciplinaIsolada)
+
+@Smc.EditorFor(e => e.Seq)
+@Smc.EditorFor(e => e.SeqProcesso)
+@Smc.EditorFor(e => e.Descricao)
+@Smc.EditorFor(e => e.Ativo)
+@Smc.EditorFor(e => e.NumeroDivisaoParcelas)
+
+@if (Model.ExibirLegenda)
+{
+    using (Smc.Div("GrupoEscalonamentoParametros").Size(SMCSize.Grid24_24).Begin())
+    {
+        @(Smc.Legend("GrupoEscalonamentoParametros", SMCOrientation.Horizontal).Items<GrupoEscalonamentoParametros>())
+    }
+}
+
+@Smc.EditorFor(m => m.CamposReadOnly)
+@Smc.EditorFor(e => e.MensagemInformativa)
+@Smc.EditorFor(e => e.MensagemTokenDisciplinaIsolada)
+@Smc.EditorFor(m => m.Itens)

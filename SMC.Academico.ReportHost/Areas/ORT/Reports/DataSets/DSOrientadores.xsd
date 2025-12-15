@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSOrientadores" targetNamespace="http://tempuri.org/DSOrientadores.xsd" xmlns:mstns="http://tempuri.org/DSOrientadores.xsd" xmlns="http://tempuri.org/DSOrientadores.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSOrientadores" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSOrientadores" msprop:Generator_UserDSName="DSOrientadores">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSOrientadores" msprop:Generator_TableClassName="DSOrientadoresDataTable" msprop:Generator_TableVarName="tableDSOrientadores" msprop:Generator_RowChangedName="DSOrientadoresRowChanged" msprop:Generator_TablePropName="_DSOrientadores" msprop:Generator_RowDeletingName="DSOrientadoresRowDeleting" msprop:Generator_RowChangingName="DSOrientadoresRowChanging" msprop:Generator_RowEvHandlerName="DSOrientadoresRowChangeEventHandler" msprop:Generator_RowDeletedName="DSOrientadoresRowDeleted" msprop:Generator_RowClassName="DSOrientadoresRow" msprop:Generator_UserTableName="DSOrientadores" msprop:Generator_RowEvArgName="DSOrientadoresRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NomeEntidade" msprop:Generator_ColumnVarNameInTable="columnNomeEntidade" msprop:Generator_ColumnPropNameInRow="NomeEntidade" msprop:Generator_ColumnPropNameInTable="NomeEntidadeColumn" msprop:Generator_UserColumnName="NomeEntidade" type="xs:string" minOccurs="0" />
+              <xs:element name="SeqEntidade" msprop:Generator_ColumnVarNameInTable="columnSeqEntidade" msprop:Generator_ColumnPropNameInRow="SeqEntidade" msprop:Generator_ColumnPropNameInTable="SeqEntidadeColumn" msprop:Generator_UserColumnName="SeqEntidade" type="xs:long" minOccurs="0" />
+              <xs:element name="SeqColaborador" msprop:Generator_ColumnVarNameInTable="columnSeqColaborador" msprop:Generator_ColumnPropNameInRow="SeqColaborador" msprop:Generator_ColumnPropNameInTable="SeqColaboradorColumn" msprop:Generator_UserColumnName="SeqColaborador" type="xs:long" minOccurs="0" />
+              <xs:element name="NomeOrientador" msprop:Generator_ColumnVarNameInTable="columnNomeOrientador" msprop:Generator_ColumnPropNameInRow="NomeOrientador" msprop:Generator_ColumnPropNameInTable="NomeOrientadorColumn" msprop:Generator_UserColumnName="NomeOrientador" type="xs:string" minOccurs="0" />
+              <xs:element name="SeqNivelEnsino" msprop:Generator_ColumnVarNameInTable="columnSeqNivelEnsino" msprop:Generator_ColumnPropNameInRow="SeqNivelEnsino" msprop:Generator_ColumnPropNameInTable="SeqNivelEnsinoColumn" msprop:Generator_UserColumnName="SeqNivelEnsino" type="xs:long" minOccurs="0" />
+              <xs:element name="NivelEnsino" msprop:Generator_ColumnVarNameInTable="columnNivelEnsino" msprop:Generator_ColumnPropNameInRow="NivelEnsino" msprop:Generator_ColumnPropNameInTable="NivelEnsinoColumn" msprop:Generator_UserColumnName="NivelEnsino" type="xs:string" minOccurs="0" />
+              <xs:element name="RAAluno" msprop:Generator_ColumnVarNameInTable="columnRAAluno" msprop:Generator_ColumnPropNameInRow="RAAluno" msprop:Generator_ColumnPropNameInTable="RAAlunoColumn" msprop:Generator_UserColumnName="RAAluno" type="xs:string" minOccurs="0" />
+              <xs:element name="NomeAluno" msprop:Generator_ColumnVarNameInTable="columnNomeAluno" msprop:Generator_ColumnPropNameInRow="NomeAluno" msprop:Generator_ColumnPropNameInTable="NomeAlunoColumn" msprop:Generator_UserColumnName="NomeAluno" type="xs:string" minOccurs="0" />
+              <xs:element name="CicloLetivo" msprop:Generator_ColumnVarNameInTable="columnCicloLetivo" msprop:Generator_ColumnPropNameInRow="CicloLetivo" msprop:Generator_ColumnPropNameInTable="CicloLetivoColumn" msprop:Generator_UserColumnName="CicloLetivo" type="xs:string" minOccurs="0" />
+              <xs:element name="SituacaoMatricula" msprop:Generator_ColumnVarNameInTable="columnSituacaoMatricula" msprop:Generator_ColumnPropNameInRow="SituacaoMatricula" msprop:Generator_ColumnPropNameInTable="SituacaoMatriculaColumn" msprop:Generator_UserColumnName="SituacaoMatricula" type="xs:string" minOccurs="0" />
+              <xs:element name="InicioOrientacao" msprop:Generator_ColumnVarNameInTable="columnInicioOrientacao" msprop:Generator_ColumnPropNameInRow="InicioOrientacao" msprop:Generator_ColumnPropNameInTable="InicioOrientacaoColumn" msprop:Generator_UserColumnName="InicioOrientacao" type="xs:string" minOccurs="0" />
+              <xs:element name="FimOrientacao" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="FimOrientacao" msprop:Generator_ColumnVarNameInTable="columnFimOrientacao" msprop:Generator_ColumnPropNameInTable="FimOrientacaoColumn" msprop:Generator_UserColumnName="FimOrientacao" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

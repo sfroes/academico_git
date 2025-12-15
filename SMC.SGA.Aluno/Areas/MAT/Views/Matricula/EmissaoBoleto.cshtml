@@ -1,0 +1,30 @@
+﻿@{ 
+    //FIX: HUGO1
+    throw new Exception("CORRIGIR");
+}
+
+@*@model PaginaEmissaoBoletoMatriculaViewModel
+
+@section MenuLateral {
+    @Html.Action("MenuPaginas", Model)
+}
+
+@if (Model.BoletoZerado)
+{
+    @(Smc.SGFTemplate().Secao().Token(MatriculaTokens.PAGINA_EMISSAO_BOLETO_MATRICULA_INSTRUCOES_BOLETO_ZERADO))
+}
+else
+{
+    @(Smc.SGFTemplate().Secao().Token(MatriculaTokens.PAGINA_EMISSAO_BOLETO_MATRICULA_INSTRUCOES_BOLETO_A_PAGAR))
+}
+
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    using (Smc.Fieldset("fsPagamentoMatricula").Begin())
+    {
+        @Smc.DisplayFor(x => x.ValorTotalMatricula).CssClass("smc-sga-totalizador-destaque").Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid4_24)
+        @Smc.List("listaParcelas", Model.Parcelas).HtmlTemplate(item => Html.Partial("_EmissaoBoletoParcela", item)).Size(SMCSize.Grid24_24)
+    }
+    @Html.Partial("_BotoesNavegacao", Model)
+}*@

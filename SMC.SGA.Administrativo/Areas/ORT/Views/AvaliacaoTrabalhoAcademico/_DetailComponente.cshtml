@@ -1,0 +1,60 @@
+﻿@using SMC.SGA.Administrativo.Areas.ORT.Models
+@model AvaliacaoTrabalhoAcademicoListaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+
+    // Header de Componente
+    using (Smc.Div().CssClass("smc-list-item smc-list-cabecalho").Begin())
+    {
+
+        using (Smc.Div().CssClass("smc-listdetailed-item").Begin())
+        {
+
+            @Smc.DisplayFor(m => m.DescricaoComponenteCurricular).CssClass("smc-listdetailed-conteudo-titulo").HideLabel()
+            @Smc.DisplayFor(m => m.DescricaoSituacaoAprovacao).CssClass("smc-listdetailed-conteudo-titulo").HideLabel()
+
+            using (Smc.Div("DivButtonVisualizar").Size(SMCSize.Grid7_24, SMCSize.Grid24_24, SMCSize.Grid7_24, SMCSize.Grid6_24).Begin())
+            {
+                var button = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "Incluir", new
+                {
+                    seqTrabalhoAcademico = new SMCEncryptedLong(Model.Seq),
+                    seqNivelEnsino = new SMCEncryptedLong(Model.SeqNivelEnsino),
+                    seqOrigemAvaliacao = new SMCEncryptedLong(Model.SeqOrigemAvaliacao)
+                }, "AvaliacaoTrabalhoAcademicoBancaExaminadora").Ajax(isPost: false).CssClass("smc-btn-novo-icotext")
+                                       .Type(SMCButtonType.Link)
+                                       .SecurityToken(UC_ORT_002_02_04.MANTER_AGENDAMENTO_BANCA_EXAMINADORA)
+                                       .Attribute(SMCMvcConsts.MODAL_ID, "modalAdicionarAvaliacaoTrabalhoAcademicoBancaExaminadora")
+                                       .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("SalvarSair", "AvaliacaoTrabalhoAcademicoBancaExaminadora"
+                                       , new
+                                       {
+                                           @backUrl = Url.Action("Index", "AvaliacaoTrabalhoAcademico", new { seqTrabalhoAcademico = new SMCEncryptedLong(Model.Seq) })
+                                       }))
+                                       .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("AvaliacaoTrabalhoAcademicoBancaExaminadora_Modal_Titulo"))
+                                       .Text(Smc.GetUIResource("Botao_Agendamento_Banca"))
+                                       .Tooltip(Smc.GetUIResource("Botao_Agendamento_Banca_Tooltip"))
+                                       .Enabled(Model.PermitirAgendamentoBanca);
+
+                if (!Model.PermitirAgendamentoBanca)
+                {
+                    button.ButtonInstructions(Smc.GetUIResource("AgendamentoBancaIndisponivel"));
+                }
+                if (Model.DataAutorizacaoSegundoDeposito.HasValue)
+                {
+                    button.Enabled(false).ButtonInstructions(Smc.GetUIResource("AutorizacaoNovoDepositoAssociada"));
+                }
+
+                @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary)
+                    .AddButton(button)
+                )
+            }
+        }
+    }
+
+    // Itens de lista de componente
+    @Smc.List("avaliacoes" + Model.Seq, Model.Avaliacoes).CssClass("smc-list-conteudo").HtmlTemplate(avaliacao => Html.Partial("_DetailAvaliacaoTrabalho", avaliacao))
+
+}
+
+
+

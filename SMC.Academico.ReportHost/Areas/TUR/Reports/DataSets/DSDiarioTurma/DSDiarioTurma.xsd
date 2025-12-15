@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSDiarioTurma" targetNamespace="http://tempuri.org/DSDiarioTurma.xsd" xmlns:mstns="http://tempuri.org/DSDiarioTurma.xsd" xmlns="http://tempuri.org/DSDiarioTurma.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSDiarioTurma" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSDiarioTurma" msprop:Generator_UserDSName="DSDiarioTurma">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSDiarioTurma" msprop:Generator_TableClassName="DSDiarioTurmaDataTable" msprop:Generator_TableVarName="tableDSDiarioTurma" msprop:Generator_TablePropName="_DSDiarioTurma" msprop:Generator_RowDeletingName="DSDiarioTurmaRowDeleting" msprop:Generator_RowChangingName="DSDiarioTurmaRowChanging" msprop:Generator_RowEvHandlerName="DSDiarioTurmaRowChangeEventHandler" msprop:Generator_RowDeletedName="DSDiarioTurmaRowDeleted" msprop:Generator_UserTableName="DSDiarioTurma" msprop:Generator_RowChangedName="DSDiarioTurmaRowChanged" msprop:Generator_RowEvArgName="DSDiarioTurmaRowChangeEvent" msprop:Generator_RowClassName="DSDiarioTurmaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NumeroRegistroAcademico" msprop:Generator_ColumnVarNameInTable="columnNumeroRegistroAcademico" msprop:Generator_ColumnPropNameInRow="NumeroRegistroAcademico" msprop:Generator_ColumnPropNameInTable="NumeroRegistroAcademicoColumn" msprop:Generator_UserColumnName="NumeroRegistroAcademico" type="xs:long" minOccurs="0" />
+              <xs:element name="NomeAluno" msprop:Generator_ColumnVarNameInTable="columnNomeAluno" msprop:Generator_ColumnPropNameInRow="NomeAluno" msprop:Generator_ColumnPropNameInTable="NomeAlunoColumn" msprop:Generator_UserColumnName="NomeAluno" type="xs:string" minOccurs="0" />
+              <xs:element name="Nota" msprop:Generator_ColumnVarNameInTable="columnNota" msprop:Generator_ColumnPropNameInRow="Nota" msprop:Generator_ColumnPropNameInTable="NotaColumn" msprop:Generator_UserColumnName="Nota" type="xs:short" minOccurs="0" />
+              <xs:element name="DescricaoEscalaApuracaoItem" msprop:Generator_ColumnVarNameInTable="columnDescricaoEscalaApuracaoItem" msprop:Generator_ColumnPropNameInRow="DescricaoEscalaApuracaoItem" msprop:Generator_ColumnPropNameInTable="DescricaoEscalaApuracaoItemColumn" msprop:Generator_UserColumnName="DescricaoEscalaApuracaoItem" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoSituacaoHistoricoEscolar" msprop:Generator_ColumnVarNameInTable="columnDescricaoSituacaoHistoricoEscolar" msprop:Generator_ColumnPropNameInRow="DescricaoSituacaoHistoricoEscolar" msprop:Generator_ColumnPropNameInTable="DescricaoSituacaoHistoricoEscolarColumn" msprop:Generator_UserColumnName="DescricaoSituacaoHistoricoEscolar" type="xs:string" minOccurs="0" />
+              <xs:element name="IndicadorApuracaoFrequencia" msprop:Generator_ColumnVarNameInTable="columnIndicadorApuracaoFrequencia" msprop:Generator_ColumnPropNameInRow="IndicadorApuracaoFrequencia" msprop:Generator_ColumnPropNameInTable="IndicadorApuracaoFrequenciaColumn" msprop:Generator_UserColumnName="IndicadorApuracaoFrequencia" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IndicadorApuracaoNota" msprop:Generator_ColumnVarNameInTable="columnIndicadorApuracaoNota" msprop:Generator_ColumnPropNameInRow="IndicadorApuracaoNota" msprop:Generator_ColumnPropNameInTable="IndicadorApuracaoNotaColumn" msprop:Generator_UserColumnName="IndicadorApuracaoNota" type="xs:boolean" minOccurs="0" />
+              <xs:element name="NotaMaxima" msprop:Generator_ColumnVarNameInTable="columnNotaMaxima" msprop:Generator_ColumnPropNameInRow="NotaMaxima" msprop:Generator_ColumnPropNameInTable="NotaMaximaColumn" msprop:Generator_UserColumnName="NotaMaxima" type="xs:short" minOccurs="0" />
+              <xs:element name="SeqEscalaAprovacao" msprop:Generator_ColumnVarNameInTable="columnSeqEscalaAprovacao" msprop:Generator_ColumnPropNameInRow="SeqEscalaAprovacao" msprop:Generator_ColumnPropNameInTable="SeqEscalaAprovacaoColumn" msprop:Generator_UserColumnName="SeqEscalaAprovacao" type="xs:long" minOccurs="0" />
+              <xs:element name="PercentualMinimoNota" msprop:Generator_ColumnVarNameInTable="columnPercentualMinimoNota" msprop:Generator_ColumnPropNameInRow="PercentualMinimoNota" msprop:Generator_ColumnPropNameInTable="PercentualMinimoNotaColumn" msprop:Generator_UserColumnName="PercentualMinimoNota" type="xs:short" minOccurs="0" />
+              <xs:element name="PercentualMinimoFrequencia" msprop:Generator_ColumnVarNameInTable="columnPercentualMinimoFrequencia" msprop:Generator_ColumnPropNameInRow="PercentualMinimoFrequencia" msprop:Generator_ColumnPropNameInTable="PercentualMinimoFrequenciaColumn" msprop:Generator_UserColumnName="PercentualMinimoFrequencia" type="xs:short" minOccurs="0" />
+              <xs:element name="Faltas" msprop:Generator_ColumnVarNameInTable="columnFaltas" msprop:Generator_ColumnPropNameInRow="Faltas" msprop:Generator_ColumnPropNameInTable="FaltasColumn" msprop:Generator_UserColumnName="Faltas" type="xs:short" minOccurs="0" />
+              <xs:element name="AlunoFormado" msprop:Generator_ColumnVarNameInTable="columnAlunoFormado" msprop:Generator_ColumnPropNameInRow="AlunoFormado" msprop:Generator_ColumnPropNameInTable="AlunoFormadoColumn" msprop:Generator_UserColumnName="AlunoFormado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="SeqEscalaApuracao" msprop:Generator_ColumnVarNameInTable="columnSeqEscalaApuracao" msprop:Generator_ColumnPropNameInRow="SeqEscalaApuracao" msprop:Generator_ColumnPropNameInTable="SeqEscalaApuracaoColumn" msprop:Generator_UserColumnName="SeqEscalaApuracao" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

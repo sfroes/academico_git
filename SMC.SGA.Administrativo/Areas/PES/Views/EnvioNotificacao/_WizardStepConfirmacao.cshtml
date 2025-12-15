@@ -1,0 +1,25 @@
+﻿@model EnvioNotificacaoViewModel
+
+@using (Smc.Div("envioNotificacaoAtuacao").Begin())
+{
+    using (Smc.Div("resumoEnvioNotificacao").Begin())
+    {
+        @Smc.DisplayFor(m => m.ConfiguracaoNotificacao.NomeOrigem)
+        @Smc.DisplayFor(m => m.ConfiguracaoNotificacao.EmailOrigem)
+        @Smc.DisplayFor(m => m.ConfiguracaoNotificacao.EmailResposta)
+        @Smc.DisplayFor(m => m.ConfiguracaoNotificacao.Assunto)
+
+        using (Smc.Div("mensagemNotificacao").CssClass("smc-sga-container-envio-notificacao").Size(SMCSize.Grid24_24).Begin())
+        {
+            string mensagemSimulada = TempData["__mensagemSimulada"] as string;
+            @Html.Raw(mensagemSimulada)
+        }
+    }
+
+    using (Smc.Div("destinatariosEnvioNotificacao").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        @Smc.ActionList("BuscarPessoasEnvioNotificacoesConfirmacao", Model, false)
+    }
+}
+
+@Smc.WizardView()

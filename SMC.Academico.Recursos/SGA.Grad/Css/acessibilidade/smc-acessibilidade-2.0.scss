@@ -1,0 +1,476 @@
+﻿// ********** ----- IDENTIDADE VISUAL ----- ********** //
+//@import "../identidade/_smc-identidade-visual.scss";
+@import "../../../Content/Css/smc-acessibilidade.scss";
+// ----- ACESSIBILIDADE CONTRASTE ----- //
+.smc-acessibilidade-contraste {
+    .smc-uploadFile-contextWindowControls {
+        .dropdown {
+            .smc-dropdown-btn-toggle-arrow {
+                background: $smc-contraste-background;
+                border-color: $smc-contraste-borda;
+            }
+        }
+
+        .smc-button {
+            .smc-btn-custom {
+                background: $smc-contraste-background;
+                border-color: $smc-contraste-borda;
+            }
+        }
+    }
+
+    .smc-button-instructions {
+        .smc-instrucoes-preenchimento-icone {
+            background-color: transparent !important;
+            border: none !important;
+        }
+    }
+
+    .smc-sga-botao-boleto, .smc-sga-alinhamento-botao-secundario .smc-btn-custom {
+        border-color: $smc-contraste-borda !important;
+        color: $smc-contraste-color !important;
+
+        &:hover {
+            background-color: $smc-contraste-background-hover !important;
+        }
+    }
+
+    .smc-sga-mensagem-informativa {
+        border-color: $smc-contraste-borda !important;
+
+        &::before {
+            color: $smc-contraste-color !important;
+        }
+    }
+
+    .smc-listdetailed-header-conteudo {
+        .smc-display{
+            label {
+                color: $smc-contraste-color !important;
+            }
+        }
+    }
+}
+
+// ----- ACESSIBILIDADE AUMENTA COM UM CLIQUE ----- //
+.smc-acessibilidade1 {
+    fieldset {
+        legend {
+            font-size: 19px !important;
+        }
+    }
+
+    .smc-sga-externo-totalizador p,
+    .smc-sga-externo-totalizador-status-novo p,
+    .smc-sga-externo-totalizador-status-emandamento p,
+    .smc-sga-externo-totalizador-status-concluida p,
+    .smc-sga-externo-totalizador-status-encerrada p {
+        font-size: 32px !important;
+    }
+
+    .smc-sga-banner-matricula {
+        p {
+            font-size: 28px !important;
+
+            span {
+                font-size: 20px !important;
+            }
+        }
+    }
+
+    .smc-estilo-sigla-instituicao {
+        font-size: 12px !important;
+    }
+
+    .smc-detalhe-editavel-tabular {
+        .smc-detalhe-editavel-titulo {
+            font-size: 20px !important;
+        }
+    }
+
+    .smc-uploadFile-contextWindowControls {
+        .smc-button {
+            .smc-btn-custom {
+                font-size: 16px !important;
+            }
+        }
+    }
+
+    .user-footer {
+        height: 130px;
+
+        ul {
+            .btn-default, .btn {
+                width: 100%;
+                padding: 3px 0 3px 0;
+
+                .smc-button {
+                    width: 100%;
+
+                    a {
+                        font-size: 16px !important;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-busca-funcionalidade {
+        div.smc-busca-funcionalidade-painel {
+            ul {
+                li {
+                    span {
+                        font-size: 18px !important;
+
+                        a {
+                            font-size: 18px !important;
+                        }
+                    }
+
+                    ul {
+                        li {
+                            a {
+                                font-size: 15px !important;
+
+                                span.smc-busca-funcionalide-link-destaque {
+                                    font-size: 15px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-display, .smc-display-collection {
+        label, p, h3, span {
+            font-size: 16px !important;
+        }
+    }
+
+    .smc-sga-botao-boleto, .smc-sga-alinhamento-botao-secundario .smc-btn-custom {
+        font-size: 13px !important;
+    }
+}
+
+// ----- ACESSIBILIDADE AUMENTA COM DOIS CLIQUES ----- //
+.smc-acessibilidade2 {
+
+    fieldset {
+        legend {
+            font-size: 20px !important;
+        }
+    }
+
+    .smc-sga-externo-totalizador p,
+    .smc-sga-externo-totalizador-status-novo p,
+    .smc-sga-externo-totalizador-status-emandamento p,
+    .smc-sga-externo-totalizador-status-concluida p,
+    .smc-sga-externo-totalizador-status-encerrada p {
+        font-size: 34px !important;
+    }
+
+    .smc-sga-banner-matricula {
+        p {
+            font-size: 29px !important;
+
+            span {
+                font-size: 22px !important;
+            }
+        }
+    }
+
+    .smc-estilo-sigla-instituicao {
+        font-size: 14px !important;
+    }
+
+    .smc-detalhe-editavel-tabular {
+        .smc-detalhe-editavel-titulo {
+            font-size: 22px !important;
+        }
+    }
+
+    .smc-uploadFile-contextWindowControls {
+        .smc-button {
+            .smc-btn-custom {
+                font-size: 18px !important;
+            }
+        }
+    }
+
+    .user-footer {
+        height: 130px;
+
+        ul {
+            .btn-default, .btn {
+                width: 100%;
+                padding: 3px 0 3px 0;
+
+                .smc-button {
+                    width: 100%;
+
+                    a {
+                        font-size: 18px !important;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-busca-funcionalidade {
+        div.smc-busca-funcionalidade-painel {
+            ul {
+                li {
+                    span {
+                        font-size: 20px !important;
+
+                        a {
+                            font-size: 20px !important;
+                        }
+                    }
+
+                    ul {
+                        li {
+                            a {
+                                font-size: 17px !important;
+
+                                span.smc-busca-funcionalide-link-destaque {
+                                    font-size: 17px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-display, .smc-display-collection {
+        label, p, h3, span {
+            font-size: 18px !important;
+        }
+    }
+
+    .smc-sga-botao-boleto, .smc-sga-alinhamento-botao-secundario .smc-btn-custom {
+        font-size: 15px !important;
+    }
+}
+
+// ----- ACESSIBILIDADE REDUZ COM UM CLIQUE ----- //
+.smc-acessibilidade-1 {
+    fieldset {
+        legend {
+            font-size: 16px !important;
+        }
+    }
+
+    .smc-sga-externo-totalizador p,
+    .smc-sga-externo-totalizador-status-novo p,
+    .smc-sga-externo-totalizador-status-emandamento p,
+    .smc-sga-externo-totalizador-status-concluida p,
+    .smc-sga-externo-totalizador-status-encerrada p {
+        font-size: 22px !important;
+    }
+
+    .smc-sga-banner-matricula {
+        p {
+            font-size: 25px !important;
+
+            span {
+                font-size: 16px !important;
+            }
+        }
+    }
+
+    .smc-estilo-sigla-instituicao {
+        font-size: 9px !important;
+    }
+
+    .smc-detalhe-editavel-tabular {
+        .smc-detalhe-editavel-titulo {
+            font-size: 16px !important;
+        }
+    }
+
+    .smc-uploadFile-contextWindowControls {
+        .smc-button {
+            .smc-btn-custom {
+                font-size: 12px !important;
+            }
+        }
+    }
+
+    .user-footer {
+        ul {
+            .btn-default, .btn {
+                .smc-button {
+                    a {
+                        font-size: 11px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-busca-funcionalidade {
+        div.smc-busca-funcionalidade-painel {
+            ul {
+                li {
+                    span {
+                        font-size: 14px !important;
+
+                        a {
+                            font-size: 14px !important;
+                        }
+                    }
+
+                    ul {
+                        li {
+                            a {
+                                font-size: 11px !important;
+
+                                span.smc-busca-funcionalide-link-destaque {
+                                    font-size: 11px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-display, .smc-display-collection {
+        label, p, h3, span {
+            font-size: 12px !important;
+        }
+    }
+
+    .smc-sga-botao-boleto, .smc-sga-alinhamento-botao-secundario .smc-btn-custom {
+        font-size: 10px !important;
+    }
+}
+
+// ----- ACESSIBILIDADE REDUZ COM DOIS CLIQUES ----- //
+.smc-acessibilidade-2 {
+    fieldset {
+        legend {
+            font-size: 14px !important;
+        }
+    }
+
+    .smc-sga-externo-totalizador p,
+    .smc-sga-externo-totalizador-status-novo p,
+    .smc-sga-externo-totalizador-status-emandamento p,
+    .smc-sga-externo-totalizador-status-concluida p,
+    .smc-sga-externo-totalizador-status-encerrada p {
+        font-size: 20px !important;
+    }
+
+    .smc-sga-banner-matricula {
+        p {
+            font-size: 23px !important;
+
+            span {
+                font-size: 14px !important;
+            }
+        }
+    }
+
+    .smc-estilo-sigla-instituicao {
+        font-size: 8px !important;
+    }
+
+    .smc-detalhe-editavel-tabular {
+        .smc-detalhe-editavel-titulo {
+            font-size: 14px !important;
+        }
+    }
+
+    .smc-uploadFile-contextWindowControls {
+        .smc-button {
+            .smc-btn-custom {
+                font-size: 10px !important;
+            }
+        }
+    }
+
+    .user-footer {
+        ul {
+            .btn-default, .btn {
+                .smc-button {
+                    a {
+                        font-size: 10px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-busca-funcionalidade {
+        div.smc-busca-funcionalidade-painel {
+            ul {
+                li {
+                    span {
+                        font-size: 13px !important;
+
+                        a {
+                            font-size: 13px !important;
+                        }
+                    }
+
+                    ul {
+                        li {
+                            a {
+                                font-size: 10px !important;
+
+                                span.smc-busca-funcionalide-link-destaque {
+                                    font-size: 10px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-display, .smc-display-collection {
+        label, p, h3, span {
+            font-size: 10px !important;
+        }
+    }
+
+    .smc-sga-botao-boleto, .smc-sga-alinhamento-botao-secundario .smc-btn-custom {
+        font-size: 9px !important;
+    }
+}
+
+//LG
+@media (min-width:$smc-size-screen-lg-min) {
+
+}
+
+//MD
+@media (max-width:$smc-size-screen-md-max) {
+
+}
+
+//SM
+@media (max-width:$smc-size-screen-sm-max) {
+
+}
+
+//XS
+@media (max-width:$smc-size-screen-xs-max) {
+    .smc-uploadFile-contextWindowControls {
+        .smc-button {
+            .smc-btn-custom {
+                font-size: 0 !important;
+            }
+        }
+    }
+}

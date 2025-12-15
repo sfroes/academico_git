@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSDeclaracaoMatriculaAtividade" targetNamespace="http://tempuri.org/DSDeclaracaoMatriculaAtividade.xsd" xmlns:mstns="http://tempuri.org/DSDeclaracaoMatriculaAtividade.xsd" xmlns="http://tempuri.org/DSDeclaracaoMatriculaAtividade.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSDeclaracaoMatriculaAtividade" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="_DSDeclaracaoMatriculaAtividade" msprop:Generator_UserDSName="DSDeclaracaoMatriculaAtividade">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSDeclaracaoMatriculaAtividade" msprop:Generator_TableClassName="DSDeclaracaoMatriculaAtividadeDataTable" msprop:Generator_TableVarName="tableDSDeclaracaoMatriculaAtividade" msprop:Generator_TablePropName="DSDeclaracaoMatriculaAtividade" msprop:Generator_RowDeletingName="DSDeclaracaoMatriculaAtividadeRowDeleting" msprop:Generator_RowChangingName="DSDeclaracaoMatriculaAtividadeRowChanging" msprop:Generator_RowEvHandlerName="DSDeclaracaoMatriculaAtividadeRowChangeEventHandler" msprop:Generator_RowDeletedName="DSDeclaracaoMatriculaAtividadeRowDeleted" msprop:Generator_UserTableName="DSDeclaracaoMatriculaAtividade" msprop:Generator_RowChangedName="DSDeclaracaoMatriculaAtividadeRowChanged" msprop:Generator_RowEvArgName="DSDeclaracaoMatriculaAtividadeRowChangeEvent" msprop:Generator_RowClassName="DSDeclaracaoMatriculaAtividadeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SeqPessoaAtuacao" msprop:Generator_ColumnVarNameInTable="columnSeqPessoaAtuacao" msprop:Generator_ColumnPropNameInRow="SeqPessoaAtuacao" msprop:Generator_ColumnPropNameInTable="SeqPessoaAtuacaoColumn" msprop:Generator_UserColumnName="SeqPessoaAtuacao" type="xs:long" minOccurs="0" />
+              <xs:element name="DescricaoComponenteCurricular" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="DescricaoComponenteCurricular" msprop:Generator_ColumnVarNameInTable="columnDescricaoComponenteCurricular" msprop:Generator_ColumnPropNameInTable="DescricaoComponenteCurricularColumn" msprop:Generator_UserColumnName="DescricaoComponenteCurricular" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

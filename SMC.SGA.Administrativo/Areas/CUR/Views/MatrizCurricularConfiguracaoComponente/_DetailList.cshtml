@@ -1,0 +1,26 @@
+﻿@model MatrizCurricularConfiguracaoComponenteDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.TituloConfiguracaoGrupo).HideLabel().CssClass("smc-listdetailed-conteudo-titulo")
+        }
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            @(Smc.Grid("DivisaoMatrizCurricularGrupo", new SMCPagerModel<MatrizCurricularConfiguracaoComponenteDivisaoViewModel>(Model.DivisaoMatrizCurricularGrupo))
+                .FieldColumn(propertyExpression: f => f.DescricaoDivisaoMatrizCurricular)
+                .FieldColumn(propertyExpression: f => f.QuantidadeItens, visible: Model.FormatoConfiguracaoGrupoGrupoCurricular == SMC.Academico.Common.Areas.CUR.Enums.FormatoConfiguracaoGrupo.Itens)
+                .FieldColumn(propertyExpression: f => f.QuantidadeHoraRelogio, visible: Model.FormatoConfiguracaoGrupoGrupoCurricular == SMC.Academico.Common.Areas.CUR.Enums.FormatoConfiguracaoGrupo.CargaHoraria)
+                .FieldColumn(propertyExpression: f => f.QuantidadeHoraAula, visible: Model.FormatoConfiguracaoGrupoGrupoCurricular == SMC.Academico.Common.Areas.CUR.Enums.FormatoConfiguracaoGrupo.CargaHoraria)
+                .FieldColumn(propertyExpression: f => f.QuantidadeCreditos, visible: Model.FormatoConfiguracaoGrupoGrupoCurricular == SMC.Academico.Common.Areas.CUR.Enums.FormatoConfiguracaoGrupo.Credito)
+                .HideGridTitle()
+                .HideNavigator()
+                .HideRowNumber()
+            )
+        }
+    }
+    @Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24)
+}

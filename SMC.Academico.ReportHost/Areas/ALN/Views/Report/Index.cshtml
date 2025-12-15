@@ -1,0 +1,16 @@
+﻿@model EmitirBoletoAbertoViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    if (Model.Cursos.SMCCount() > 0)
+    {
+        @Smc.List("Cursos", Model.Cursos).CssClass("smc-list-item-grid smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24 ").Size(SMCSize.Grid24_24).HtmlTemplate(curso => Html.Partial("_Cursos", curso))
+    }
+    else
+    {
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+        {
+            <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+        }
+    }
+}

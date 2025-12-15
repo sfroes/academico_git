@@ -1,0 +1,114 @@
+﻿@model SMC.SGA.Administrativo.Areas.CNC.Models.ConsultaPublicaViewModel
+
+@using (Smc.Form("Dados").Ajax().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(a => a.DataConsulta)
+
+    <div class="smc-cpd-agrupamento-resultado">
+        @if (Model.ClasseSituacaoDocumento == SMC.Academico.Common.Areas.CNC.Enums.ClasseSituacaoDocumento.Valido)
+        {
+            <div class="smc-cpd-diploma-valido">
+                @Smc.EditorFor(a => a.SituacaoDiploma).HideLabel().CssClass("smc-cpd-diploma-valido")
+            </div>
+        }
+        else if (Model.ClasseSituacaoDocumento == SMC.Academico.Common.Areas.CNC.Enums.ClasseSituacaoDocumento.Invalido)
+        {
+            <div class="smc-cpd-diploma-invalido">
+                @Smc.EditorFor(a => a.SituacaoDiploma).HideLabel().CssClass("smc-cpd-diploma-invalido")
+            </div>
+        }
+
+        @if (Model.ClasseSituacaoDocumento == SMC.Academico.Common.Areas.CNC.Enums.ClasseSituacaoDocumento.EmissaoEmAndamento)
+        {
+            <div class="smc-cpd-diploma-andamento">
+                @Smc.EditorFor(a => a.SituacaoDiploma).HideLabel().CssClass("smc-cpd-diploma-andamento")
+            </div>
+        }
+
+        @if (Model.Valido)
+        {
+            using (Smc.Div("Diplomado").Size(SMCSize.Grid24_24).CssClass("smc-cpd-agrupamento-header").Begin())
+            {
+                @Smc.EditorFor(a => a.Nome).HideLabel()
+                @Smc.EditorFor(a => a.Cpf)
+            }
+
+            <div class="smc-cpd-agrupamento-header smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+                @Smc.EditorFor(a => a.NomeCurso).HideLabel()
+                @Smc.EditorFor(a => a.CodigoCursoEMEC)
+            </div>
+
+            if (!string.IsNullOrEmpty(Model.NomeCivil))
+            {
+                @Smc.EditorFor(a => a.NomeCivil)
+            }
+
+            if (Model.ExibirApenasConsulta)
+            {
+                @Smc.EditorFor(a => a.CodigoVerificacao)
+            }
+            @Smc.EditorFor(a => a.Titulacao)
+            @Smc.EditorFor(a => a.DescricaoGrauAcademico)
+            @Smc.EditorFor(a => a.DataIngresso)
+            @Smc.EditorFor(a => a.DataConclusao)
+            @Smc.EditorFor(a => a.NumeroProcesso)
+            @Smc.EditorFor(a => a.NumeroRegistro)
+            @Smc.EditorFor(a => a.DataRegistro)
+            @Smc.EditorFor(a => a.DataRegistroDOUFormatado)
+
+            <div class="smc-cpd-agrupamento-campos smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+                <label>@Smc.GetUIResource("Fieldset_Instituicao")</label>
+                @Smc.EditorFor(a => a.NomeInstituicaoEnsino).HideLabel()
+                @Smc.EditorFor(a => a.CodigoMEC).HideLabel()
+
+            </div>
+            @Smc.EditorFor(a => a.Mantenedora)
+
+
+        }
+        else
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+            {
+                if (!string.IsNullOrEmpty(Model.MensagemInformativaDiploma))
+                {
+                    <span class="smc-datagrid-no-results">
+                        @Model.MensagemInformativaDiploma
+                    </span>
+                }
+                else if (string.IsNullOrEmpty(Model.Mensagem))
+                {
+                    <span class="smc-datagrid-no-results">
+                        Não existem informações públicas válidas sobre esse código de validação e diplomado.
+                    </span>
+                }
+                else
+                {
+                    <span class="smc-datagrid-no-results">
+                        @Model.Mensagem
+                    </span>
+                }
+            }
+        }
+    </div>
+
+    if (Model.HistoricoInvalido)
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).CssClass("smc-cpd-historico-anulacao").Begin())
+        {
+            <h2>Histórico de Anulação</h2>
+
+            <p>@Model.MensagemInformativaDiplomaAnuladoParteUm </p>
+            <p>@Model.MensagemInformativaDiplomaAnuladoParteDois </p>
+            <p>@Model.MensagemInformativaDiplomaAnuladoParteTres </p>
+            <p>@Model.MensagemInformativaDiplomaAnuladoParteQuatro </p>
+
+            @(Smc.Grid("Historicos", new SMCPagerModel<SMC.SGA.Administrativo.Areas.CNC.Models.ConsultaPublicaHistoricoViewModel>(Model.Historicos))
+                 .AutoGenerateColumns()
+                 .HideGridTitle()
+                 .HidePager()
+                 .HideRowNumber()
+                 .HideNumberOfRowsPerPageSelector())
+        }
+    }
+}

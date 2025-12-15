@@ -1,0 +1,15 @@
+<ng-template #template [formGroup]="filterForm">
+    <po-input formControlName="sigla" class="smc-size-sm-4" p-label="Sigla"></po-input>
+    <po-input formControlName="nome" class="smc-size-sm-15" p-label="Nome"></po-input>
+    <smc-select formControlName="codigoPais"  class="smc-size-md-5" s-label="País"  [s-options]="dataSourcePaisesValidosCorreios"></smc-select>
+    <smc-select formControlName="ativo"  class="smc-size-md-3" s-label="Ativo?"  [s-options]="dataSourceBoolean"></smc-select>
+    <smc-select formControlName="tipoInstituicaoEnsino"  class="smc-size-md-3" s-label="Tipo"  [s-options]="dataSourceTipoInstituicaoEnsino"></smc-select>
+    <smc-select formControlName="seqCategoriaInstituicaoEnsino"  class="smc-size-md-6" s-label="categoria"  [s-options]="dataSourceCategoriasInstituicaoEnsino"></smc-select>
+</ng-template>
+<smc-lookup
+  s-search-by-key="false"
+  [s-advanced-search-template]="template"
+  [s-advanced-list-columns]="colunasBuscaAvancada" 
+  [s-label]="label"
+  [s-selector]="seletor">
+</smc-lookup>

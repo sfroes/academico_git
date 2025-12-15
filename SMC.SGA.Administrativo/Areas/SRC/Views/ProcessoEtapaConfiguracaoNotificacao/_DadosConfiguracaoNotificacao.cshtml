@@ -1,0 +1,40 @@
+﻿@model ProcessoEtapaConfiguracaoNotificacaoViewModel
+
+@Html.Action("CabecalhoConfiguracaoNotificacao", "ProcessoEtapaConfiguracaoNotificacao", new { seqProcesso = Model.SeqProcesso, seqEtapa = Model.SeqProcessoEtapa })
+
+@Smc.EditorFor(x => x.CamposReadyOnly)
+
+@if (!string.IsNullOrEmpty(Model.MensagemInformativa))
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-display smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-mensagem-multiplas-linhas").Begin())
+    {
+        using (Smc.Div().CssClass(" smc-sga-ico-mensagem").Begin())
+        { }
+
+        @Smc.DisplayFor(x => x.MensagemInformativa).HideLabel()
+    }
+}
+
+@using (Smc.Wizard("WizarIncluir")
+        .ButtonSet(1, SMCButtonSetGroupedStyle.Arrow, false, "smc-wizard-salvar-arrow",
+                      item => Smc.Button(SMCButtonBehavior.Salvar)
+                            .Type(SMCButtonType.Submit)
+                            .Hide(Model.Seq != 0 && Model.CamposReadyOnly)
+                            .Action("Salvar", "ProcessoEtapaConfiguracaoNotificacao")
+                            .Ajax(isPost: true)
+                            .DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+
+               .ButtonSet(1, SMCButtonSetGroupedStyle.Arrow, cssClass: "smc-wizard-cancelar-arrow", alwaysVisible: true, buttons:
+                      item => Smc.Button(SMCButtonBehavior.Cancelar)
+                                .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                .Action("Index", "ProcessoEtapaConfiguracaoNotificacao", new { seqProcesso = new SMCEncryptedLong(Model.SeqProcesso), area = "SRC" }))
+
+    .Begin())
+{
+    using (Smc.WizardStep(0).Title(Smc.GetUIResource("WizardStepTipoNotificacao_Title")).Action("WizardStepTipoNotificacao").Begin())
+    { }
+    using (Smc.WizardStep(1).Title(Smc.GetUIResource("WizardStepConfiguracaoEmail_Title")).Action("WizardStepConfiguracaoEmail").Begin())
+    { }
+    using (Smc.WizardStep(2).Title(Smc.GetUIResource("WizardStepConfiguracaoConfirmacao_Title")).Action("WizardStepConfirmacao").Begin())
+    { }
+}

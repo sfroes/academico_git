@@ -1,0 +1,64 @@
+﻿@model PublicacaoBdpCabecalhoViewModel
+
+@using (Smc.Header("Curso", SMCHeaderType.Primary)
+                    .Item(prop => prop.EntidadeResponsavel, sizeMD: SMCSize.Grid12_24)
+                    .Item(prop => prop.OfertaCursoLocalidadeTurno, sizeMD: SMCSize.Grid12_24)
+                    .Item(prop => prop.AreaConhecimento, sizeMD: SMCSize.Grid12_24)
+                    .Item(prop => prop.AreaConcentracao, sizeMD: SMCSize.Grid12_24)
+                    .Item(prop => prop.DescricaoSituacao, sizeMD: SMCSize.Grid12_24)
+                    .Item(prop => prop.DataSituacao, sizeMD: SMCSize.Grid12_24)
+                    .Begin()) { }
+
+@if (Model.Situacao == SMC.Academico.Common.Areas.ORT.Enums.SituacaoTrabalhoAcademico.AutorizadaLiberadaSecretaria)
+{
+    @(Smc.ButtonSet().AddButton(Smc.Button("RetornarAluno", "RetornarAlunoPublicacao", new {
+                        seqPublicacaoBdp = SMCDESCrypto.EncryptNumberForURL(Model.SeqPublicacaoBdp),
+                        seqTrabalhoAcademico = SMCDESCrypto.EncryptNumberForURL(Model.SeqTrabalhoAcademico)
+                    })
+                    .Ajax()
+                    .Type(SMCButtonType.Link)
+                    .CssClass("smc-btn-anterior-icotext-destaque")
+                    .Id("btn_retornar_aluno")
+                    //.Enabled(!Model.BloqueiaAlteracoes)
+                    .ButtonInstructions(Smc.GetUIResource("Botao_RetornarAluno_FillInstructions"))
+					.Confirm(Smc.GetUIResource("MensagemRetornarAluno_Titulo"), Smc.GetUIResource("MensagemRetornarAluno_Mensagem"))
+                    .SecurityToken(UC_ORT_003_02_02.LIBERAR_PARA_BIBLIOTECA))
+                    .AddButton(Smc.Button("LiberarConferencia", "LiberarConferenciaBiblioteca", new
+                    {
+                        seqPublicacaoBdp = SMCDESCrypto.EncryptNumberForURL(Model.SeqPublicacaoBdp),
+                        seqTrabalhoAcademico = SMCDESCrypto.EncryptNumberForURL(Model.SeqTrabalhoAcademico)
+                    })
+                    .Ajax()
+                    .Type(SMCButtonType.Link)
+                    .CssClass("smc-btn-proximo-icotext-destaque")
+                    .Id("btn_liberar_conferencia")
+                    //.Enabled(!Model.BloqueiaAlteracoes)
+                    .ButtonInstructions(Smc.GetUIResource("Botao_Liberarconferencia_FillInstructions"))
+                    //.Confirm(Smc.GetUIResource("MensagemConfirmacaoLiberarBiblioteca_Titulo"), Smc.GetUIResource("MensagemConfirmacaoLiberarBiblioteca_Mensagem"))
+                    .SecurityToken(UC_ORT_003_02_02.LIBERAR_PARA_BIBLIOTECA)))
+}
+
+@if (Model.Situacao == SMC.Academico.Common.Areas.ORT.Enums.SituacaoTrabalhoAcademico.LiberadaBiblioteca)
+{
+    @(Smc.ButtonSet().AddButton(Smc.Button("LiberarConsulta", "LiberarConsulta", new
+{
+	seqPublicacaoBdp = SMCDESCrypto.EncryptNumberForURL(Model.SeqPublicacaoBdp),
+	seqTrabalhoAcademico = SMCDESCrypto.EncryptNumberForURL(Model.SeqTrabalhoAcademico)
+})
+					.Ajax()
+					.Type(SMCButtonType.Link)
+					.CssClass("smc-btn-proximo-icotext-destaque")
+					//.Enabled(!Model.BloqueiaAlteracoes)
+					.Id("btn_liberar_consulta")
+					.ButtonInstructions(Smc.GetUIResource("Botao_Liberarconsulta_FillInstructions"))
+					.Confirm(Smc.GetUIResource("MensagemConfirmacaoLiberarConsulta_Titulo"), Smc.GetUIResource("MensagemConfirmacaoLiberarConsulta_Mensagem"))
+					.SecurityToken(UC_ORT_003_02_02.LIBERAR_PARA_CONSULTA)))
+}
+
+@Smc.EditorFor(m => m.Situacao)
+@Smc.EditorFor(m => m.BloqueiaAlteracoes)
+
+@{
+    @* Armazena essa informação no viewbag para ser acessada pela tela da aba 2, onde deve-se bloquear edições no MD *@
+    TempData["_BloqueiaAlteracoes"] = Model.BloqueiaAlteracoes;
+}

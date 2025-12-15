@@ -1,0 +1,104 @@
+<smc-modal s-title="Detalhes do Agendamento" s-size="md" (s-on-close)="fecharModal()">
+  <div s-modal-body *ngIf="eventoAula">
+    <p class="smc-sga-agendamento-turma smc-size-md-24 smc-size-lg-24">{{ descricaoDivisaoFormatadaSeleciona }}</p>
+
+    <div *ngIf="recuperarQuantidadeCompartilhamentos() === 1" class="smc-sga-msg-instrucao">
+      <p>
+        Esta divisão de turma pertence ao compartilhamento de grade
+        <a href="../GRD/GradeHorariaCompartilhada?Seq={{ recuperarCompartilhamento().key }}"
+        >{{ recuperarCompartilhamento().value }}</a>. Caso acione qualquer uma das açoes oferecidas na
+        tela é necessário que este compartilhamento de grade seja revisado.
+      </p>
+    </div>
+    <div *ngIf="recuperarQuantidadeCompartilhamentos() > 1" class="smc-sga-msg-instrucao">
+      <p>
+        Esta divisão de turma pertence a vários compartilhamentos de grade.
+        Caso acione qualquer uma das ações oferecidas na tela é necessário que os seguintes compartilhamentos de grade sejam revisados:
+      </p>
+      <ul>
+        <li *ngFor="let compartilhamento of recuperarCompartilhamentosDivisao()"><a href="../GRD/GradeHorariaCompartilhada?Seq={{compartilhamento.key}}">{{ compartilhamento.value }}</a></li>
+      </ul>
+    </div>
+
+    <div class="smc-sga-agendamento-separador-data">
+      <div class="smc-size-md-22 smc-size-lg-22">
+        <p class="smc-sga-agendamento-data">
+          {{ eventoAula.diaSemanaFormatada }} de {{ eventoAula.horaInicio }} - {{ eventoAula.horaFim }}
+        </p>
+        <p class="smc-sga-agendamento-situacaoaula">
+          <span class="smc-sga-agendamento-situacaoaula-label">Situação da aula: </span
+          >{{ eventoAula.situacaoApuracaoFrequencia }}
+        </p>
+      </div>
+      <div class="smc-size-md-2 smc-size-lg-2 smc-sga-alinha-direita">
+        <smc-button
+          [s-disabled]="validarSomenteLeitura() || tokenSegurancaEditarHorario"
+          [s-loading]="carregandoDataSource$ | async"
+          s-button-class="smc-btn-alterar-ico"
+          s-label="Alterar
+      horário"
+          s-tooltip="Alterar horário"
+          (s-click)="abrirModalEditHorario(eventoAula.seqDivisaoTurma, eventoAula.seq)"
+        ></smc-button>
+      </div>
+    </div>
+    <div class="smc-sga-agendamento-separador">
+      <div class="smc-size-md-22 smc-size-lg-22">
+        <p class="smc-sga-agendamento-local" [class.smc-italico]="!eventoAula.codigoLocalSEF">{{ eventoAula.local }}</p>
+      </div>
+      <div class="smc-size-md-2 smc-size-lg-2 smc-sga-alinha-direita">
+        <smc-button
+          [s-disabled]="validarSomenteLeitura() || tokenSegurancaEditarLocal"
+          [s-loading]="carregandoDataSource$ | async"
+          s-button-class="smc-btn-alterar-ico"
+          s-label="Alterar local"
+          s-tooltip="Alterar local"
+          (s-click)="abrirModalEditLocal(eventoAula.seqDivisaoTurma, eventoAula.seq)"
+        ></smc-button>
+      </div>
+    </div>
+    <div class="smc-sga-agendamento-separador">
+      <div class="smc-size-md-20 smc-size-lg-20">
+        <ul class="smc-sga-agendamento-professor">
+          <li *ngFor="let professor of eventoAula.colaboradores" [class.smc-italico]="!professor.seqColaborador">
+            {{ professor.descricaoFormatada }}
+          </li>
+        </ul>
+      </div>
+      <div class="smc-size-md-4 smc-size-lg-4 smc-sga-alinha-direita">
+        <smc-button
+          [s-disabled]="validarSomenteLeitura() || tokenSegurancaEditarColaborador"
+          [s-loading]="carregandoDataSource$ | async"
+          s-button-class="smc-btn-alterar-ico"
+          s-label="Alterar colaborador"
+          s-tooltip="Alterar colaborador"
+          (s-click)="abrirModalEditColaborador(eventoAula.seqDivisaoTurma, eventoAula.seq)"
+        ></smc-button>
+        <smc-button
+          [s-disabled]="validarSomenteLeitura() || tokenSegurancaEditarColaborador || eventoSemProfessor"
+          [s-loading]="carregandoDataSource$ | async"
+          s-button-class="smc-btn-substituto-ico-destaque"
+          s-label="Alterar Colaborador Substituto"
+          s-tooltip="Colaborador Substituto"
+          (s-click)="abrirModalEditColaboradorSubstituto(eventoAula.seqDivisaoTurma, eventoAula.seq)"
+        ></smc-button>
+      </div>
+    </div>
+  </div>
+  <div s-modal-footer>
+    <smc-button
+      [s-disabled]="validarSomenteLeitura() || tokenSegurancaExcluir"
+      [s-loading]="carregandoDataSource$ | async"
+      s-button-class="smc-btn-excluir-icotext"
+      s-label="Excluir agendamento"
+      s-tooltip="Excluir agendamento"
+      (s-click)="abrirModalExcluir(eventoAula.seqDivisaoTurma, eventoAula.seq)"
+    ></smc-button>
+    <smc-button
+      s-button-class="smc-btn-fechar-icotext"
+      s-label="Fechar"
+      s-tooltip="Fechar"
+      (s-click)="fecharModal()"
+    ></smc-button>
+  </div>
+</smc-modal>

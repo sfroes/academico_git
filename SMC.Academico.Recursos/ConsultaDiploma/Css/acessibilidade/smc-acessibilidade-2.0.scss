@@ -1,0 +1,669 @@
+﻿button.smc-hidepanel-button {
+    font-size: 0!important;
+}
+
+.smc-acessibilidade-contraste {
+    background-color: #000;
+    color: #fff;
+}
+
+.smc-acessibilidade-contraste h1, .smc-acessibilidade-contraste h2, .smc-acessibilidade-contraste h3, .smc-acessibilidade-contraste h4, .smc-acessibilidade-contraste h5, .smc-acessibilidade-contraste span, .smc-acessibilidade-contraste p, .smc-acessibilidade-contraste label, .smc-acessibilidade-contraste a {
+    color: #fff !important;
+}
+
+.smc-acessibilidade-contraste div,
+.smc-acessibilidade-contraste header,
+.smc-acessibilidade-contraste footer,
+.smc-acessibilidade-contraste section,
+.smc-acessibilidade-contraste aside,
+.smc-acessibilidade-contraste legend,
+.smc-acessibilidade-contraste fieldset,
+.smc-acessibilidade-contraste pre,
+.smc-acessibilidade-contraste ul,
+.smc-acessibilidade-contraste li,
+.smc-acessibilidade-contraste ol,
+.smc-acessibilidade-contraste .cke_button_on,
+.smc-acessibilidade-contraste .cke_combo_button,
+.smc-acessibilidade-contraste .cke_top,
+.smc-acessibilidade-contraste .cke_reset span,
+.smc-acessibilidade-contraste .smc-tabs-tab,
+.smc-acessibilidade-contraste .smc-modal-footer {
+    background-color: #000;
+    color: #fff;
+}
+
+.smc-acessibilidade-contraste div ul li::before,
+.smc-acessibilidade-contraste header ul li::before,
+.smc-acessibilidade-contraste footer ul li::before,
+.smc-acessibilidade-contraste section ul li::before,
+.smc-acessibilidade-contraste aside ul li::before,
+.smc-acessibilidade-contraste legend ul li::before,
+.smc-acessibilidade-contraste fieldset ul li::before,
+.smc-acessibilidade-contraste pre ul li::before,
+.smc-acessibilidade-contraste ul ul li::before,
+.smc-acessibilidade-contraste li ul li::before,
+.smc-acessibilidade-contraste ol ul li::before,
+.smc-acessibilidade-contraste .cke_button_on ul li::before,
+.smc-acessibilidade-contraste .cke_combo_button ul li::before,
+.smc-acessibilidade-contraste .cke_top ul li::before,
+.smc-acessibilidade-contraste .cke_reset span ul li::before,
+.smc-acessibilidade-contraste .smc-tabs-tab ul li::before,
+.smc-acessibilidade-contraste .smc-modal-footer ul li::before {
+    color: #fff;
+}
+
+.smc-acessibilidade-contraste button,
+.smc-acessibilidade-contraste textarea,
+.smc-acessibilidade-contraste .smc-select-custom .smc-select,
+.smc-acessibilidade-contraste .smc-select-multiplo .smc-select,
+.smc-acessibilidade-contraste .smc-select-itens,
+.smc-acessibilidade-contraste .smc-select-custom .smc-select-itens > input,
+.smc-acessibilidade-contraste .smc-select-multiplo .smc-select-itens > input,
+.smc-acessibilidade-contraste .smc-select > select,
+.smc-acessibilidade-contraste .smc-select > select > option,
+.smc-acessibilidade-contraste .smc-select-multiple,
+.smc-acessibilidade-contraste .smc-modal-window,
+.smc-acessibilidade-contraste .smc-pager .smc-pager-numero,
+.smc-acessibilidade-contraste .dropdown-menu,
+.smc-acessibilidade-contraste .smc-sortpicker .dropdown .dropdown-menu,
+.smc-acessibilidade-contraste .dropdown .dropdown-menu {
+    background-color: #000;
+    color: #fff !important;
+    border: 1px solid #cecece;
+}
+
+.smc-acessibilidade-contraste input,
+.smc-acessibilidade-contraste input[readonly],
+.smc-acessibilidade-contraste textarea[readonly],
+.smc-acessibilidade-contraste select[readonly],
+.smc-acessibilidade-contraste select[disabled],
+.smc-acessibilidade-contraste :focus,
+.smc-acessibilidade-contraste .smc-select-focus,
+.smc-acessibilidade-contraste .smc-busca-funcionalidade > input,
+.smc-acessibilidade-contraste input[type="text"]:focus,
+.smc-acessibilidade-contraste input[type="password"]:focus,
+.smc-acessibilidade-contraste textarea:focus,
+.smc-acessibilidade-contraste select:focus,
+.smc-acessibilidade-contraste .smc-select-conteudo:focus,
+.smc-acessibilidade-contraste .smc-select-focus,
+.smc-acessibilidade-contraste input.cke_dialog_ui_input_text:focus,
+.smc-acessibilidade-contraste input.cke_dialog_ui_input_password:focus,
+.smc-acessibilidade-contraste textarea.cke_dialog_ui_input_textarea:focus,
+.smc-acessibilidade-contraste select.cke_dialog_ui_input_select:focus,
+.smc-acessibilidade-contraste th,
+.smc-acessibilidade-contraste tr,
+.smc-acessibilidade-contraste td,
+.smc-acessibilidade-contraste .smc-simplelist-conteudo div > ul > li:nth-child(2n+1),
+.smc-acessibilidade-contraste .smc-simplelist-conteudo div > ul > li.odd,
+.smc-acessibilidade-contraste .smc-simplelist-conteudo div > ul > li:nth-child(2n),
+.smc-acessibilidade-contraste .smc-simplelist-conteudo div > ul > li.even,
+.smc-acessibilidade-contraste .smc-timeline-conteudo-principal,
+.smc-acessibilidade-contraste .smc-button a,
+.smc-acessibilidade-contraste .smc-busca-funcionalidade-painel,
+.smc-acessibilidade-contraste .smc-sortpicker .dropdown .dropdown-menu > .smc-sortpicker-items-selecionados > .smc-sortpicker-item,
+.smc-acessibilidade-contraste .smc-pager-ico-paginaprimeira, .smc-acessibilidade-contraste .smc-pager-ico-paginaanterior, .smc-acessibilidade-contraste .smc-pager-ico-paginaproxima, .smc-acessibilidade-contraste .smc-pager-ico-paginaultima,
+.smc-acessibilidade-contraste div.ui-draggable,
+.smc-acessibilidade-contraste .smc-btn-anterior-icotext,
+.smc-acessibilidade-contraste .ui-state-default, .smc-acessibilidade-contraste .ui-widget-content .ui-state-default, .smc-acessibilidade-contraste .ui-widget-header .ui-state-default,
+.smc-acessibilidade-contraste .ui-datepicker-month, .smc-acessibilidade-contraste .ui-datepicker-year {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 1px solid #cecece !important;
+}
+
+.smc-acessibilidade-contraste .smc-busca-funcionalidade > input,
+.smc-acessibilidade-contraste .smc-detalhe-editavel-titulo,
+.smc-acessibilidade-contraste .smc-detalhe-editavel-linha-dados-nova:nth-child(2n),
+.smc-acessibilidade-contraste .smc-detalhe-editavel-linha-dados,
+.smc-acessibilidade-contraste .smc-wizard-selecionado {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.smc-acessibilidade-contraste li:hover,
+.smc-acessibilidade-contraste button:hover,
+.smc-acessibilidade-contraste .smc-select-item-selected,
+.smc-acessibilidade-contraste .smc-tabs-tab:hover,
+.smc-acessibilidade-contraste .smc-detalhe-editavel-linha-dados-nova,
+.smc-acessibilidade-contraste .smc-detalhe-editavel-linha-dados-nova div {
+    background-color: #4b4b4b !important;
+}
+
+.smc-acessibilidade-contraste .input-validation-error {
+    background-color: #4b4b4b !important;
+    border: 3px solid #cecece !important;
+}
+
+.smc-acessibilidade-contraste .cke_button_disabled .cke_button_icon {
+    opacity: .6;
+}
+
+.smc-acessibilidade-contraste header, .smc-acessibilidade-contraste .input-validation-error {
+    border-color: #fff000 !important;
+}
+
+.smc-acessibilidade-contraste .smc-tab-error,
+.smc-acessibilidade-contraste .span-validation-error,
+.smc-acessibilidade-contraste .field-validation-error {
+    background-color: #fff000 !important;
+    color: #000 !important;
+}
+
+.smc-acessibilidade-contraste .smc-tab-error span,
+.smc-acessibilidade-contraste .smc-tab-error p,
+.smc-acessibilidade-contraste .span-validation-error span,
+.smc-acessibilidade-contraste .span-validation-error p,
+.smc-acessibilidade-contraste .field-validation-error span,
+.smc-acessibilidade-contraste .field-validation-error p {
+    color: #000 !important;
+}
+
+.smc-acessibilidade-contraste .smc-grid .smc-datagrid > table,
+.smc-acessibilidade-contraste .smc-header-tipo-primary {
+    border: 1px solid #cecece !important;
+    border-collapse: inherit;
+}
+
+.smc-acessibilidade-contraste .smc-datepicker div.smc-ico-datepicker::before {
+    color: #fff;
+}
+
+.smc-acessibilidade-contraste .smc-message-success div.ui-draggable .smc-modal-header h2, .smc-acessibilidade-contraste .smc-message-error div.ui-draggable .smc-modal-header h2, .smc-acessibilidade-contraste .smc-message-alert div.ui-draggable .smc-modal-header h2 {
+    color: #fff !important;
+}
+
+.smc-acessibilidade-contraste .smc-message-success div.ui-draggable .smc-modal-content, .smc-acessibilidade-contraste .smc-message-error div.ui-draggable .smc-modal-content, .smc-acessibilidade-contraste .smc-message-alert div.ui-draggable .smc-modal-content {
+    color: #fff;
+}
+
+.smc-acessibilidade1 h1 {
+    font-size: 35px !important;
+}
+
+.smc-acessibilidade1 h2 {
+    font-size: 23px !important;
+}
+
+.smc-acessibilidade1 h3 {
+    font-size: 18px !important;
+}
+
+.smc-acessibilidade1 h4 {
+    font-size: 16px !important;
+}
+
+.smc-acessibilidade1 span,
+.smc-acessibilidade1 p,
+.smc-acessibilidade1 label,
+.smc-acessibilidade1 a,
+.smc-acessibilidade1 .smc-tabs-tab,
+.smc-acessibilidade1 button,
+.smc-acessibilidade1 select,
+.smc-acessibilidade1 div,
+.smc-acessibilidade1 input,
+.smc-acessibilidade1 textarea,
+.smc-acessibilidade1 .smc-header-tipo-primary > .smc-header-grupo-itens > .smc-header-item > label,
+.smc-acessibilidade1 .smc-header-tipo-primary > .smc-header-grupo-itens > .smc-header-item > p,
+.smc-acessibilidade1 .smc-totalizador > .smc-totalizador-header > p,
+.smc-acessibilidade1 li,
+.smc-acessibilidade1 pre,
+.smc-acessibilidade1 legend {
+    font-size: 16px;
+}
+
+//.smc-acessibilidade1 button {
+//    padding-right: 10px;
+//}
+
+.smc-acessibilidade1 .smc-preenchimento-obrigatorio {
+    font-size: 9px !important;
+}
+
+.smc-acessibilidade1 .smc-menu-dinamico-ico-referencia,
+.smc-acessibilidade1 .smc-btn-transicao button,
+.smc-acessibilidade1 .smc-lookup-open-command,
+.smc-acessibilidade1 .smc-detalhe-editavel-botao-inserir,
+.smc-acessibilidade1 .smc-btn-excluir-ico,
+.smc-acessibilidade1 .smc-mestre-detalhe-botao-inserir,
+.smc-acessibilidade1 .smc-btn-alterar-ico,
+.smc-acessibilidade1 .smc-btn-anexar-ico,
+.smc-acessibilidade1 .smc-btn-anterior-ico,
+.smc-acessibilidade1 .smc-btn-atualizar-ico,
+.smc-acessibilidade1 .smc-btn-cancelar-ico,
+.smc-acessibilidade1 .smc-btn-concluir-ico,
+.smc-acessibilidade1 .smc-btn-configurar-ico,
+.smc-acessibilidade1 .smc-btn-confirmar-ico,
+.smc-acessibilidade1 .smc-btn-copiar-ico,
+.smc-acessibilidade1 .smc-btn-desfazer-ico,
+.smc-acessibilidade1 .smc-btn-enviar-ico,
+.smc-acessibilidade1 .smc-btn-fechar-ico,
+.smc-acessibilidade1 .smc-btn-imprimir-ico,
+.smc-acessibilidade1 .smc-btn-limpar-ico,
+.smc-acessibilidade1 .smc-btn-limparenviar-ico,
+.smc-acessibilidade1 .smc-btn-logout-ico,
+.smc-acessibilidade1 .smc-btn-novo-ico,
+.smc-acessibilidade1 .smc-btn-pesquisar-ico,
+.smc-acessibilidade1 .smc-btn-proximo-ico,
+.smc-acessibilidade1 .smc-btn-sair-ico,
+.smc-acessibilidade1 .smc-btn-salvar-ico,
+.smc-acessibilidade1 .smc-btn-salvarnovo-ico,
+.smc-acessibilidade1 .smc-btn-salvarsair-ico,
+.smc-acessibilidade1 .smc-btn-visualizar-ico,
+.smc-acessibilidade1 .smc-btn-voltar-ico,
+.smc-acessibilidade1 .smc-btn-internacionalizacao,
+.smc-acessibilidade1 .smc-btn-limpacep,
+.smc-acessibilidade1 .smc-btn-buscacep,
+.smc-acessibilidade1 .smc-btn-ico-select-adicionar,
+.smc-acessibilidade1 .smc-btn-ico-select-remover,
+.smc-acessibilidade1 .smc-btn-ico-select-adicionar-todos,
+.smc-acessibilidade1 .smc-btn-ico-select-remover-todos,
+.smc-acessibilidade1 .smc-treeview-botao-limpar,
+.smc-acessibilidade1 .smc-sortpicker-limpar,
+.smc-acessibilidade1 .smc-gadget-window > .smc-gadget-window-button,
+.smc-acessibilidade1 .smc-btn-gerar-relatorio-ico,
+.smc-acessibilidade1 .smc-btn-orderby-ico,
+.smc-acessibilidade1 .smc-treeview-botao-buscar,
+.smc-acessibilidade1 .smc-acessibilidade button,
+.smc-acessibilidade1 .smc-usuario-help,
+.smc-acessibilidade1 .smc-sortpicker-ascdesc input {
+    font-size: 0 !important;
+    padding-right: 0 !important;
+}
+
+.smc-acessibilidade1 .smc-multiselect > .smc-multiselect-disponiveis > label,
+.smc-acessibilidade1 .smc-label-select,
+.smc-acessibilidade1 .smc-grid .smc-datagrid > table thead tr th,
+.smc-acessibilidade1 .smc-totalizador > .smc-totalizador-itens > div > span > label,
+.smc-acessibilidade1 .smc-totalizador > .smc-totalizador-itens > div > div > label,
+.smc-acessibilidade1 .dropdown .dropdown-menu > .smc-button > a,
+.smc-acessibilidade1 .dropdown .dropdown-menu > .smc-button > button,
+.smc-acessibilidade1 .dropdown .dropdown-menu > li > a,
+.smc-acessibilidade1 .dropdown .dropdown-menu > li > button {
+    font-size: 14px !important;
+}
+
+.smc-acessibilidade1 .smc-instrucoes-preenchimento,
+.smc-acessibilidade1 .smc-datagrid-numero-linha,
+.smc-acessibilidade1 .smc-scheduler-calendar-legenda > div > span {
+    font-size: 13px !important;
+}
+
+.smc-acessibilidade1 .span-validation-error > span {
+    padding: 2px 4px 5px 5px;
+}
+
+.smc-acessibilidade1 .smc-uploadFile .smc-uploadFile-controles {
+    height: 35px;
+    width: 190px;
+    background-size: 100%;
+}
+
+.smc-acessibilidade1 .smc-cpd-informacoes {
+    line-height: 17px;
+}
+
+.smc-acessibilidade2 h1 {
+    font-size: 37px !important;
+}
+
+.smc-acessibilidade2 h2 {
+    font-size: 25px !important;
+}
+
+.smc-acessibilidade2 h3 {
+    font-size: 20px !important;
+}
+
+.smc-acessibilidade2 h4 {
+    font-size: 18px !important;
+}
+
+.smc-acessibilidade2 span,
+.smc-acessibilidade2 p,
+.smc-acessibilidade2 label,
+.smc-acessibilidade2 a,
+.smc-acessibilidade2 .smc-tabs-tab,
+.smc-acessibilidade2 button,
+.smc-acessibilidade2 select,
+.smc-acessibilidade2 div,
+.smc-acessibilidade2 input,
+.smc-acessibilidade2 textarea,
+.smc-acessibilidade2 .smc-header-tipo-primary > .smc-header-grupo-itens > .smc-header-item > label,
+.smc-acessibilidade2 .smc-header-tipo-primary > .smc-header-grupo-itens > .smc-header-item > p,
+.smc-acessibilidade2 .smc-totalizador > .smc-totalizador-header > p,
+.smc-acessibilidade2 li,
+.smc-acessibilidade2 pre,
+.smc-acessibilidade2 legend {
+    font-size: 18px;
+}
+
+//.smc-acessibilidade2 button {
+//    padding-right: 12px;
+//}
+
+.smc-acessibilidade2 .smc-preenchimento-obrigatorio {
+    font-size: 11px !important;
+}
+
+.smc-acessibilidade2 .smc-menu-dinamico-ico-referencia,
+.smc-acessibilidade2 .smc-btn-transicao button,
+.smc-acessibilidade2 .smc-lookup-open-command,
+.smc-acessibilidade2 .smc-detalhe-editavel-botao-inserir,
+.smc-acessibilidade2 .smc-btn-excluir-ico,
+.smc-acessibilidade2 .smc-mestre-detalhe-botao-inserir,
+.smc-acessibilidade2 .smc-btn-alterar-ico,
+.smc-acessibilidade2 .smc-btn-anexar-ico,
+.smc-acessibilidade2 .smc-btn-anterior-ico,
+.smc-acessibilidade2 .smc-btn-atualizar-ico,
+.smc-acessibilidade2 .smc-btn-cancelar-ico,
+.smc-acessibilidade2 .smc-btn-concluir-ico,
+.smc-acessibilidade2 .smc-btn-configurar-ico,
+.smc-acessibilidade2 .smc-btn-confirmar-ico,
+.smc-acessibilidade2 .smc-btn-copiar-ico,
+.smc-acessibilidade2 .smc-btn-desfazer-ico,
+.smc-acessibilidade2 .smc-btn-enviar-ico,
+.smc-acessibilidade2 .smc-btn-fechar-ico,
+.smc-acessibilidade2 .smc-btn-imprimir-ico,
+.smc-acessibilidade2 .smc-btn-limpar-ico,
+.smc-acessibilidade2 .smc-btn-limparenviar-ico,
+.smc-acessibilidade2 .smc-btn-logout-ico,
+.smc-acessibilidade2 .smc-btn-novo-ico,
+.smc-acessibilidade2 .smc-btn-pesquisar-ico,
+.smc-acessibilidade2 .smc-btn-proximo-ico,
+.smc-acessibilidade2 .smc-btn-sair-ico,
+.smc-acessibilidade2 .smc-btn-salvar-ico,
+.smc-acessibilidade2 .smc-btn-salvarnovo-ico,
+.smc-acessibilidade2 .smc-btn-salvarsair-ico,
+.smc-acessibilidade2 .smc-btn-visualizar-ico,
+.smc-acessibilidade2 .smc-btn-voltar-ico,
+.smc-acessibilidade2 .smc-btn-internacionalizacao,
+.smc-acessibilidade2 .smc-btn-limpacep,
+.smc-acessibilidade2 .smc-btn-buscacep,
+.smc-acessibilidade2 .smc-btn-ico-select-adicionar,
+.smc-acessibilidade2 .smc-btn-ico-select-remover,
+.smc-acessibilidade2 .smc-btn-ico-select-adicionar-todos,
+.smc-acessibilidade2 .smc-btn-ico-select-remover-todos,
+.smc-acessibilidade2 .smc-treeview-botao-limpar,
+.smc-acessibilidade2 .smc-sortpicker-limpar,
+.smc-acessibilidade2 .smc-gadget-window > .smc-gadget-window-button,
+.smc-acessibilidade2 .smc-btn-gerar-relatorio-ico,
+.smc-acessibilidade2 .smc-btn-orderby-ico,
+.smc-acessibilidade2 .smc-treeview-botao-buscar,
+.smc-acessibilidade2 .smc-acessibilidade button,
+.smc-acessibilidade2 .smc-usuario-help,
+.smc-acessibilidade2 .smc-sortpicker-ascdesc input {
+    font-size: 0 !important;
+    padding-right: 0 !important;
+}
+
+.smc-acessibilidade2 .smc-multiselect > .smc-multiselect-disponiveis > label,
+.smc-acessibilidade2 .smc-label-select,
+.smc-acessibilidade2 .smc-grid .smc-datagrid > table thead tr th,
+.smc-acessibilidade2 .smc-totalizador > .smc-totalizador-itens > div > span > label,
+.smc-acessibilidade2 .smc-totalizador > .smc-totalizador-itens > div > div > label,
+.smc-acessibilidade2 .dropdown .dropdown-menu > .smc-button > a,
+.smc-acessibilidade2 .dropdown .dropdown-menu > .smc-button > button,
+.smc-acessibilidade2 .dropdown .dropdown-menu > li > a,
+.smc-acessibilidade2 .dropdown .dropdown-menu > li > button {
+    font-size: 16px !important;
+}
+
+.smc-acessibilidade2 .smc-instrucoes-preenchimento,
+.smc-acessibilidade2 .smc-datagrid-numero-linha,
+.smc-acessibilidade2 .smc-scheduler-calendar-legenda > div > span {
+    font-size: 15px !important;
+}
+
+.smc-acessibilidade2 .span-validation-error > span {
+    padding: 2px 4px 5px 5px;
+}
+
+.smc-acessibilidade2 .smc-uploadFile .smc-uploadFile-controles {
+    height: 40px;
+    width: 200px;
+    background-size: 103%;
+}
+
+.smc-acessibilidade2 .smc-cpd-informacoes {
+    line-height: 18px;
+}
+
+.smc-acessibilidade-1 h1 {
+    font-size: 25px !important;
+}
+
+.smc-acessibilidade-1 h2 {
+    font-size: 18px !important;
+}
+
+.smc-acessibilidade-1 h3 {
+    font-size: 16px !important;
+}
+
+.smc-acessibilidade-1 h4 {
+    font-size: 14px !important;
+}
+
+.smc-acessibilidade-1 span,
+.smc-acessibilidade-1 p,
+.smc-acessibilidade-1 label,
+.smc-acessibilidade-1 a,
+.smc-acessibilidade-1 .smc-tabs-tab,
+.smc-acessibilidade-1 button,
+.smc-acessibilidade-1 select,
+.smc-acessibilidade-1 div,
+.smc-acessibilidade-1 input,
+.smc-acessibilidade-1 textarea,
+.smc-acessibilidade-1 .smc-header-tipo-primary > .smc-header-grupo-itens > .smc-header-item > label,
+.smc-acessibilidade-1 .smc-header-tipo-primary > .smc-header-grupo-itens > .smc-header-item > p,
+.smc-acessibilidade-1 .smc-totalizador > .smc-totalizador-header > p,
+.smc-acessibilidade-1 li,
+.smc-acessibilidade-1 pre,
+.smc-acessibilidade-1 legend {
+    font-size: 12px;
+}
+
+//.smc-acessibilidade-1 button {
+//    padding-right: 10px;
+//}
+
+.smc-acessibilidade-1 .smc-preenchimento-obrigatorio {
+    font-size: 5px !important;
+}
+
+.smc-acessibilidade-1 .smc-menu-dinamico-ico-referencia,
+.smc-acessibilidade-1 .smc-btn-transicao button,
+.smc-acessibilidade-1 .smc-lookup-open-command,
+.smc-acessibilidade-1 .smc-detalhe-editavel-botao-inserir,
+.smc-acessibilidade-1 .smc-btn-excluir-ico,
+.smc-acessibilidade-1 .smc-mestre-detalhe-botao-inserir,
+.smc-acessibilidade-1 .smc-btn-alterar-ico,
+.smc-acessibilidade-1 .smc-btn-anexar-ico,
+.smc-acessibilidade-1 .smc-btn-anterior-ico,
+.smc-acessibilidade-1 .smc-btn-atualizar-ico,
+.smc-acessibilidade-1 .smc-btn-cancelar-ico,
+.smc-acessibilidade-1 .smc-btn-concluir-ico,
+.smc-acessibilidade-1 .smc-btn-configurar-ico,
+.smc-acessibilidade-1 .smc-btn-confirmar-ico,
+.smc-acessibilidade-1 .smc-btn-copiar-ico,
+.smc-acessibilidade-1 .smc-btn-desfazer-ico,
+.smc-acessibilidade-1 .smc-btn-enviar-ico,
+.smc-acessibilidade-1 .smc-btn-fechar-ico,
+.smc-acessibilidade-1 .smc-btn-imprimir-ico,
+.smc-acessibilidade-1 .smc-btn-limpar-ico,
+.smc-acessibilidade-1 .smc-btn-limparenviar-ico,
+.smc-acessibilidade-1 .smc-btn-logout-ico,
+.smc-acessibilidade-1 .smc-btn-novo-ico,
+.smc-acessibilidade-1 .smc-btn-pesquisar-ico,
+.smc-acessibilidade-1 .smc-btn-proximo-ico,
+.smc-acessibilidade-1 .smc-btn-sair-ico,
+.smc-acessibilidade-1 .smc-btn-salvar-ico,
+.smc-acessibilidade-1 .smc-btn-salvarnovo-ico,
+.smc-acessibilidade-1 .smc-btn-salvarsair-ico,
+.smc-acessibilidade-1 .smc-btn-visualizar-ico,
+.smc-acessibilidade-1 .smc-btn-voltar-ico,
+.smc-acessibilidade-1 .smc-btn-internacionalizacao,
+.smc-acessibilidade-1 .smc-btn-limpacep,
+.smc-acessibilidade-1 .smc-btn-buscacep,
+.smc-acessibilidade-1 .smc-btn-ico-select-adicionar,
+.smc-acessibilidade-1 .smc-btn-ico-select-remover,
+.smc-acessibilidade-1 .smc-btn-ico-select-adicionar-todos,
+.smc-acessibilidade-1 .smc-btn-ico-select-remover-todos,
+.smc-acessibilidade-1 .smc-treeview-botao-limpar,
+.smc-acessibilidade-1 .smc-sortpicker-limpar,
+.smc-acessibilidade-1 .smc-gadget-window > .smc-gadget-window-button,
+.smc-acessibilidade-1 .smc-btn-gerar-relatorio-ico,
+.smc-acessibilidade-1 .smc-btn-orderby-ico,
+.smc-acessibilidade-1 .smc-treeview-botao-buscar,
+.smc-acessibilidade-1 .smc-acessibilidade button,
+.smc-acessibilidade-1 .smc-usuario-help,
+.smc-acessibilidade-1 .smc-sortpicker-ascdesc input {
+    font-size: 0 !important;
+    padding-right: 0 !important;
+}
+
+.smc-acessibilidade-1 .smc-multiselect > .smc-multiselect-disponiveis > label,
+.smc-acessibilidade-1 .smc-label-select,
+.smc-acessibilidade-1 .smc-grid .smc-datagrid > table thead tr th,
+.smc-acessibilidade-1 .smc-totalizador > .smc-totalizador-itens > div > span > label,
+.smc-acessibilidade-1 .smc-totalizador > .smc-totalizador-itens > div > div > label,
+.smc-acessibilidade-1 .dropdown .dropdown-menu > .smc-button > a,
+.smc-acessibilidade-1 .dropdown .dropdown-menu > .smc-button > button,
+.smc-acessibilidade-1 .dropdown .dropdown-menu > li > a,
+.smc-acessibilidade-1 .dropdown .dropdown-menu > li > button {
+    font-size: 10px !important;
+}
+
+.smc-acessibilidade-1 .smc-instrucoes-preenchimento,
+.smc-acessibilidade-1 .smc-datagrid-numero-linha,
+.smc-acessibilidade-1 .smc-scheduler-calendar-legenda > div > span {
+    font-size: 9px !important;
+}
+
+.smc-acessibilidade-1 .span-validation-error > span {
+    padding: 2px 4px 5px 5px;
+}
+
+.smc-acessibilidade-1 .smc-uploadFile .smc-uploadFile-controles {
+    height: 25px;
+    width: 170px;
+    background-size: 80%;
+}
+
+.smc-acessibilidade-2 h1 {
+    font-size: 20px !important;
+}
+
+.smc-acessibilidade-2 h2 {
+    font-size: 16px !important;
+}
+
+.smc-acessibilidade-2 h3 {
+    font-size: 14px !important;
+}
+
+.smc-acessibilidade-2 h4 {
+    font-size: 12px !important;
+}
+
+.smc-acessibilidade-2 span,
+.smc-acessibilidade-2 p,
+.smc-acessibilidade-2 label,
+.smc-acessibilidade-2 a,
+.smc-acessibilidade-2 .smc-tabs-tab,
+.smc-acessibilidade-2 button,
+.smc-acessibilidade-2 select,
+.smc-acessibilidade-2 div,
+.smc-acessibilidade-2 input,
+.smc-acessibilidade-2 textarea,
+.smc-acessibilidade-2 .smc-header-tipo-primary > .smc-header-grupo-itens > .smc-header-item > label,
+.smc-acessibilidade-2 .smc-header-tipo-primary > .smc-header-grupo-itens > .smc-header-item > p,
+.smc-acessibilidade-2 .smc-totalizador > .smc-totalizador-header > p,
+.smc-acessibilidade-2 li,
+.smc-acessibilidade-2 pre,
+.smc-acessibilidade-2 legend {
+    font-size: 10px;
+}
+
+//.smc-acessibilidade-2 button {
+//    padding-right: 10px;
+//}
+
+.smc-acessibilidade-2 .smc-preenchimento-obrigatorio {
+    font-size: 4px !important;
+}
+
+.smc-acessibilidade-2 .smc-menu-dinamico-ico-referencia,
+.smc-acessibilidade-2 .smc-btn-transicao button,
+.smc-acessibilidade-2 .smc-lookup-open-command,
+.smc-acessibilidade-2 .smc-detalhe-editavel-botao-inserir,
+.smc-acessibilidade-2 .smc-btn-excluir-ico,
+.smc-acessibilidade-2 .smc-mestre-detalhe-botao-inserir,
+.smc-acessibilidade-2 .smc-btn-alterar-ico,
+.smc-acessibilidade-2 .smc-btn-anexar-ico,
+.smc-acessibilidade-2 .smc-btn-anterior-ico,
+.smc-acessibilidade-2 .smc-btn-atualizar-ico,
+.smc-acessibilidade-2 .smc-btn-cancelar-ico,
+.smc-acessibilidade-2 .smc-btn-concluir-ico,
+.smc-acessibilidade-2 .smc-btn-configurar-ico,
+.smc-acessibilidade-2 .smc-btn-confirmar-ico,
+.smc-acessibilidade-2 .smc-btn-copiar-ico,
+.smc-acessibilidade-2 .smc-btn-desfazer-ico,
+.smc-acessibilidade-2 .smc-btn-enviar-ico,
+.smc-acessibilidade-2 .smc-btn-fechar-ico,
+.smc-acessibilidade-2 .smc-btn-imprimir-ico,
+.smc-acessibilidade-2 .smc-btn-limpar-ico,
+.smc-acessibilidade-2 .smc-btn-limparenviar-ico,
+.smc-acessibilidade-2 .smc-btn-logout-ico,
+.smc-acessibilidade-2 .smc-btn-novo-ico,
+.smc-acessibilidade-2 .smc-btn-pesquisar-ico,
+.smc-acessibilidade-2 .smc-btn-proximo-ico,
+.smc-acessibilidade-2 .smc-btn-sair-ico,
+.smc-acessibilidade-2 .smc-btn-salvar-ico,
+.smc-acessibilidade-2 .smc-btn-salvarnovo-ico,
+.smc-acessibilidade-2 .smc-btn-salvarsair-ico,
+.smc-acessibilidade-2 .smc-btn-visualizar-ico,
+.smc-acessibilidade-2 .smc-btn-voltar-ico,
+.smc-acessibilidade-2 .smc-btn-internacionalizacao,
+.smc-acessibilidade-2 .smc-btn-limpacep,
+.smc-acessibilidade-2 .smc-btn-buscacep,
+.smc-acessibilidade-2 .smc-btn-ico-select-adicionar,
+.smc-acessibilidade-2 .smc-btn-ico-select-remover,
+.smc-acessibilidade-2 .smc-btn-ico-select-adicionar-todos,
+.smc-acessibilidade-2 .smc-btn-ico-select-remover-todos,
+.smc-acessibilidade-2 .smc-treeview-botao-limpar,
+.smc-acessibilidade-2 .smc-sortpicker-limpar,
+.smc-acessibilidade-2 .smc-gadget-window > .smc-gadget-window-button,
+.smc-acessibilidade-2 .smc-btn-gerar-relatorio-ico,
+.smc-acessibilidade-2 .smc-btn-orderby-ico,
+.smc-acessibilidade-2 .smc-treeview-botao-buscar,
+.smc-acessibilidade-2 .smc-acessibilidade button,
+.smc-acessibilidade-2 .smc-usuario-help,
+.smc-acessibilidade-2 .smc-sortpicker-ascdesc input {
+    font-size: 0 !important;
+    padding-right: 0 !important;
+}
+
+.smc-acessibilidade-2 .smc-multiselect > .smc-multiselect-disponiveis > label,
+.smc-acessibilidade-2 .smc-label-select,
+.smc-acessibilidade-2 .smc-grid .smc-datagrid > table thead tr th,
+.smc-acessibilidade-2 .smc-totalizador > .smc-totalizador-itens > div > span > label,
+.smc-acessibilidade-2 .smc-totalizador > .smc-totalizador-itens > div > div > label,
+.smc-acessibilidade-2 .dropdown .dropdown-menu > .smc-button > a,
+.smc-acessibilidade-2 .dropdown .dropdown-menu > .smc-button > button,
+.smc-acessibilidade-2 .dropdown .dropdown-menu > li > a,
+.smc-acessibilidade-2 .dropdown .dropdown-menu > li > button {
+    font-size: 8px !important;
+}
+
+.smc-acessibilidade-2 .smc-instrucoes-preenchimento,
+.smc-acessibilidade-2 .smc-datagrid-numero-linha,
+.smc-acessibilidade-2 .smc-scheduler-calendar-legenda > div > span {
+    font-size: 7px !important;
+}
+
+.smc-acessibilidade-2 .smc-uploadFile .smc-uploadFile-controles {
+    height: 20px;
+    width: 150px;
+    background-size: 75%;
+}

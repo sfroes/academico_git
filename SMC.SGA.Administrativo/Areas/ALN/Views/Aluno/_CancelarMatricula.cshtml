@@ -1,0 +1,20 @@
+﻿@model CancelarMatriculaViewModel
+
+@Html.Action("CabecalhoPessoaAtuacao", "PessoaAtuacao", new { area = "PES", seqPessoaAtuacao = Model.SeqAluno })
+
+@Smc.EditorFor(m => m.DataInicioCicloLetivo)
+@Smc.EditorFor(m => m.DataFimCicloLetivo)
+
+@Smc.EditorFor(m => m.SeqAluno)
+@Smc.EditorFor(m => m.SeqArquivoAnexado)
+@Smc.EditorFor(m => m.TokenSituacaoMatricula)
+@Smc.EditorFor(m => m.MensagemInformativa)
+@Smc.EditorFor(m => m.SeqCicloLetivo)
+@Smc.EditorFor(m => m.DataInicio)
+@Smc.EditorFor(m => m.SeqSituacaoMatricula)
+@Smc.EditorFor(m => m.Observacao)
+@Smc.EditorFor(m => m.ArquivoAnexado).CssClass("smc-upload-fix")
+
+
+
+

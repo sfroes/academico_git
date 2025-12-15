@@ -1,0 +1,32 @@
+﻿@model ColaboradorVinculoListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item smc-sga-lista-detalhada").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.NomeEntidadeVinculo).CssClass("smc-listdetailed-conteudo-header")
+            @Smc.DisplayFor(m => m.DescricaoTipoVinculoColaborador)
+            @Smc.DisplayFor(m => m.DataInicio)
+            @Smc.DisplayFor(m => m.DataFim)
+            @Smc.DisplayFor(m => m.InseridoPorCarga)
+        }
+        // Div da inferior com ofertas de curso
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+
+            @(Smc.Grid("cursoOfertaLocalidade" + Model.Seq, new SMCPagerModel<ColaboradorVinculoCursoListarViewModel>(Model.Cursos))
+                    .FieldColumn(f => f.NomeCursoOfertaLocalidade)
+                    .FieldColumn(f => f.AtividadesLista)
+                    .HideGridTitle()
+                    .HideRowNumber()
+                    .HideNavigator())
+
+        }
+    }
+
+    @Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24).AllowEdit(Model.EntidadeResponsavelAcessivelFiltroDados).AllowRemove(Model.EntidadeResponsavelAcessivelFiltroDados)
+}

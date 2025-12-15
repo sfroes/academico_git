@@ -1,0 +1,49 @@
+﻿@model DetalheNotificacaoSolicitacaoViewModel
+
+@using (Smc.Fieldset("DetalheNotificacao").CssClass("smc-sga-reenvia-notificacao").Begin())
+{
+    @Smc.DisplayFor(x => x.NomeOrigem).Size(SMCSize.Grid8_24)
+    @Smc.DisplayFor(x => x.EmailOrigem).Size(SMCSize.Grid8_24)
+    @Smc.DisplayFor(x => x.EmailResposta).Size(SMCSize.Grid8_24)
+    @Smc.DisplayFor(x => x.DataPrevistaEnvio).Size(SMCSize.Grid8_24)
+    @Smc.DisplayFor(x => x.EmailDestinatario).Size(SMCSize.Grid8_24)
+    @Smc.DisplayFor(x => x.EmailCopia).Size(SMCSize.Grid8_24)
+    @Smc.DisplayFor(x => x.EmailCopiaOculta).Size(SMCSize.Grid8_24)
+
+    if (Model.SeqSolicitacaoServico.HasValue)
+    {
+        SMCButtonFluentConfiguration button = Smc.Button(SMCButtonBehavior.Visualizar)
+                                .Enabled(Model.PermiteReenvio != PermiteReenvio.NaoPermiteReenvio && Model.TemEmail)
+                                .DisplayMode(SMCButtonDisplayMode.Text)
+                                .CssClass("smc-sga-btn-reenvia-notificacao")
+                                .Text(Smc.GetUIResource("Botao_Reenviar_Notificacao"))
+                                .Tooltip(Smc.GetUIResource("Botao_Reenviar_Notificacao"))
+                                .SecurityToken(UC_SRC_004_01_01.PESQUISAR_SOLICITACAO)
+                                //.Action("EnviarNotificacaoSolicitacao", "SolicitacaoServico", new { @area = "SRC", seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico.Value), tokenTipoNotificacao = Model.TokenTipoNotificacao }));
+                                .Action("ReenviarNotificacaoSolicitacao", "SolicitacaoServico", new { @area = "SRC", seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico.Value), seqNotificacaoEmailDestinatario = new SMCEncryptedLong(Model.SeqNotificacaoEmailDestinatario.Value), permiteReenvio = Model.PermiteReenvio });
+
+        if (Model.PermiteReenvio == PermiteReenvio.NaoPermiteReenvio)
+        {
+            button.ButtonInstructions(Smc.GetUIResource("Botao_Reenviar_Notificacao_Solicitacao_NaoPermiteReenvio"));
+        }
+        else if (Model.PermiteReenvio == PermiteReenvio.ReenvioParaSolicitante && !Model.TemEmail)
+        {
+            button.ButtonInstructions(Smc.GetUIResource("Botao_Reenviar_Notificacao_Solicitacao_ReenvioParaSolicitante"));
+        }
+        else if (Model.PermiteReenvio == PermiteReenvio.ReenvioParaOrientadorSolicitante && !Model.TemEmail)
+        {
+            button.ButtonInstructions(Smc.GetUIResource("Botao_Reenviar_Notificacao_Solicitacao_ReenvioParaOrientadorSolicitante"));
+        }
+        else if (Model.PermiteReenvio == PermiteReenvio.ReenvioParaDestinatarioConfiguracao && !Model.TemEmail)
+        {
+            button.ButtonInstructions(Smc.GetUIResource("Botao_Reenviar_Notificacao_Solicitacao_ReenvioParaDestinatarioConfiguracao"));
+        }
+        @button;
+    }
+
+}
+
+@using (Smc.Fieldset("Mensagem").Begin())
+{
+    @Html.Raw(Model.Mensagem)
+}

@@ -1,0 +1,51 @@
+﻿@model NotaFrequenciaViewModel
+
+@using (Smc.Header("headerNotasFrequencia", SMCHeaderType.Primary)
+            .Item(x => x.DescricaoOferta, sizeMD: SMCSize.Grid7_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid7_24)
+            .Item(x => x.RegistroAcademico, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid3_24)
+            .Item(x => x.DescricaoAluno, sizeMD: SMCSize.Grid14_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid14_24)
+            .Item(x => x.DescricaoCicloLetivo, cssClass: "smc-sga-header-detalhes", sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid3_24)
+            .Item(x => x.DescricaoTurma, cssClass: "smc-sga-header-detalhes", sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeMD: SMCSize.Grid20_24, sizeLG: SMCSize.Grid21_24)
+            .Begin())
+{
+
+}
+
+@if (Model.ExibirNota)
+{
+    using (Smc.Div().Size(SMCSize.Grid4_24).CssClass("col-md-offset-1 col-lg-offset-1 col-sm-offset-1 smc-sga-totalizador smc-sga-externo-totalizador-simples").Begin())
+    {
+    @Smc.DisplayFor(x => x.Nota)
+    }
+}
+
+@if (Model.ExibirApuracao)
+{
+    using (Smc.Div().Size(SMCSize.Grid4_24).CssClass("col-md-offset-2 col-lg-offset-2 col-sm-offset-2 smc-sga-totalizador smc-sga-externo-totalizador-simples").Begin())
+    {
+    @Smc.DisplayFor(x => x.Apuracao)
+    }
+}
+
+@if (Model.ExibirFaltas)
+{
+    using (Smc.Div().Size(SMCSize.Grid4_24).CssClass("col-md-offset-2 col-lg-offset-2 col-sm-offset-2 smc-sga-totalizador smc-sga-externo-totalizador-simples").Begin())
+    {
+    @Smc.DisplayFor(x => x.Faltas)
+    }
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.SituacaoFinal))
+{
+    using (Smc.Div().Size(SMCSize.Grid4_24).CssClass("col-md-offset-2 col-lg-offset-2 col-sm-offset-2 smc-sga-totalizador smc-sga-externo-totalizador-simples").Begin())
+    {
+        @Smc.DisplayFor(x => x.SituacaoFinal)
+    }
+}
+else
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+    {
+        <p>@Smc.GetUIResource("MSG_Sem_Lancamentos_NotasFaltas")</p>
+    }
+}

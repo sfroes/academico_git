@@ -1,0 +1,21 @@
+﻿@model  EnvioNotificacaoDestinatarioAlunoCabecalhoViewModel
+
+@{
+
+    var header = Smc.Header("HeaderEnvioNotificacaoDestinatarioAlunoCabecalho", SMCHeaderType.Primary)
+        .Item(p => p.NumeroRegistroAcademico, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid3_24)
+        .Item(p => p.Nome, sizeMD: SMCSize.Grid11_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid13_24)
+        .Item(p => p.DescricaoSituacaoMatricula, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24)
+        .Item(p => p.NomeEntidadeResponsavel, cssClass: "smc-clear", sizeMD: SMCSize.Grid14_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid16_24, sizeLG: SMCSize.Grid16_24)
+        .Item(p => p.DescricaoNivelEnsino, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24)
+        .Item(p => p.DescricaoVinculo, sizeMD: SMCSize.Grid17_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid16_24, sizeLG: SMCSize.Grid17_24);
+}
+
+@using (header.Begin()) { }
+
+
+@using (Smc.ModalWindow("modalVisualizarDetalheNotificacao")
+           .Form("formDetalhesNotificacao", closeOnSubmit: true)
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }

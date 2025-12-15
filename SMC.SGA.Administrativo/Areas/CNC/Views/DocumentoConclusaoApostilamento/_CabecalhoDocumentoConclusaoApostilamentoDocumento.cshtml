@@ -1,0 +1,19 @@
+﻿@using SMC.SGA.Administrativo.Areas.CNC.Models;
+
+@model CabecalhoDocumentoConclusaoApostilamentoDocumentoViewModel
+
+@using (Smc.Header("CabecalhoDocumentoConclusaoApostilamentoDocumento", SMCHeaderType.Primary)
+       .Item(i => i.Seq, sizeMD: SMCSize.Grid4_24)
+       .Item(i => i.DescricaoTipoDocumentoAcademico, sizeMD: SMCSize.Grid4_24)
+       .Item(i => i.DescricaoSituacaoDocumentoAcademicoAtual, sizeMD: SMCSize.Grid5_24)
+       .Item(i => i.NumeroProcesso, sizeMD: SMCSize.Grid4_24)
+       .Item(i => i.NumeroViaDocumento, sizeMD: SMCSize.Grid3_24)
+       .Item(i => i.TipoRegistroDocumento, sizeMD: SMCSize.Grid4_24)
+       .Item(i => i.OrgaoDeRegistro, sizeMD: SMCSize.Grid4_24)
+       .Item(i => i.NumeroRegistro, sizeMD: SMCSize.Grid4_24)
+       .Item(i => i.DataRegistro, sizeMD: SMCSize.Grid4_24)
+       .Item(i => i.Livro, sizeMD: SMCSize.Grid4_24)
+       .Item(i => i.Folha, sizeMD: SMCSize.Grid4_24).Begin())
+{
+
+}

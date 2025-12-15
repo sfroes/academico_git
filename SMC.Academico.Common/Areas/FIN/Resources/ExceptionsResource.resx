@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERR_BeneficioDeducaoValorParcelaTitularNao" xml:space="preserve">
+    <value>Alteração não permitida. Este benefício tem configuração de dedução de valor parametrizado para algum nível de ensino.</value>
+  </data>
+  <data name="ERR_BeneficioDeducaoValorParcelaTitularSim" xml:space="preserve">
+    <value>Alteração não permitida. Este benefício tem configuração de dedução de valor parametrizado para algum nível de ensino.</value>
+  </data>
+  <data name="ERR_BeneficioHistoricoValorAuxilioAlterar" xml:space="preserve">
+    <value>Alteração não permitida. A data início deve ser maior que a data fim do período anterior.</value>
+  </data>
+  <data name="ERR_BeneficioHistoricoValorAuxilioDataFimException" xml:space="preserve">
+    <value>{0} não permitida. A data fim deve ser sermpre o último dia do mês.</value>
+  </data>
+  <data name="ERR_BeneficioHistoricoValorAuxilioDataInicioException" xml:space="preserve">
+    <value>{0} não permitida. A data início deve ser sermpre o primeiro dia do mês.</value>
+  </data>
+  <data name="ERR_BeneficioHistoricoValorAuxilioIncluir" xml:space="preserve">
+    <value>Inclusão não permitida. A data início deve ser maior que a data fim do período anterior.</value>
+  </data>
+  <data name="ERR_BeneficioHistoricoValorAuxilioNovo" xml:space="preserve">
+    <value>Inclusão não permitida. Para a inserção de um novo registro de auxílio é necessário que a data fim do período anterior seja informada.</value>
+  </data>
+  <data name="ERR_BeneficioResponsavelFinanceiro" xml:space="preserve">
+    <value>Alteração não permitida. Não é possível alterar o benefício para não permitir a associação de responsável financeiro, pois este está associado à pelo menos um ingressante ou aluno no qual o responsável foi informado.</value>
+  </data>
+  <data name="ERR_ConfiguracaoBeneficioAlterar" xml:space="preserve">
+    <value>Alteração não permitida. A data início deve ser maior que a data fim do período anterior</value>
+  </data>
+  <data name="ERR_ConfiguracaoBeneficioDataFimException" xml:space="preserve">
+    <value>{0} não permitida. A data fim deve ser sermpre o último dia do mês.</value>
+  </data>
+  <data name="ERR_ConfiguracaoBeneficioDataInicioException" xml:space="preserve">
+    <value>{0} não permitida. A data início deve ser sermpre o primeiro dia do mês.</value>
+  </data>
+  <data name="ERR_ConfiguracaoBeneficioExcluir" xml:space="preserve">
+    <value>Exclusão não permitida. O benefício já foi associado a algum ingressante ou aluno deste nível de ensino, onde o período concedido está coberto por esta configuração.</value>
+  </data>
+  <data name="ERR_ConfiguracaoBeneficioIncluir" xml:space="preserve">
+    <value>Inclusão não permitida. A data início deve ser maior que a data fim do período anterior</value>
+  </data>
+  <data name="ERR_ConfiguracaoBeneficioNovo" xml:space="preserve">
+    <value>Inclusão não permitida. Para a inserção de um novo registro de configuração de benefício é necessário que a data fim do período anterior seja informada.</value>
+  </data>
+  <data name="ERR_ConfiguracaoBeneficioTipoDeducaoException" xml:space="preserve">
+    <value>{0} não permitida. Já existem configurações cadastradas com tipo de dedução diferente do informado. Favor alterar o valor selecionado para que fique igual às demais configurações.</value>
+  </data>
+  <data name="ERR_ContratoComTermoAtivoException" xml:space="preserve">
+    <value>Já existe um termo de adesão ativo para este contrato com o serviço e o vínculo selecionados.</value>
+  </data>
+  <data name="ERR_ContratoCursosOfertasOuNivelEnsinoException" xml:space="preserve">
+    <value>É obrigatório informar o nível de ensino ou a oferta de curso. Não é permitido ambos serem informados.</value>
+  </data>
+  <data name="ERR_ContratoCursosOfertasOuNivelEnsinoNullException" xml:space="preserve">
+    <value>É obrigatório informar o nível de ensino ou a oferta de curso.</value>
+  </data>
+  <data name="ERR_ContratoCursosVigentesException" xml:space="preserve">
+    <value>{0} não permitida. Já existe um Contrato para um do(s) curso(s) selecionado(s) no período informado.</value>
+  </data>
+  <data name="ERR_ContratoCursosVigentesSemDataException" xml:space="preserve">
+    <value>Existe um Contrato aberto(sem data fim) para um do(s) curso(s) selecionado(s), é preciso finalizá-lo.</value>
+  </data>
+  <data name="ERR_ContratoNiveisEnsinoVigentesException" xml:space="preserve">
+    <value>{0} não permitida. Já existe um Contrato para um do(s) nível(is) de ensino selecionado(s) no período informado.</value>
+  </data>
+  <data name="ERR_ContratoNiveisEnsinoVigentesSemDataFimException" xml:space="preserve">
+    <value>Existe um Contrato aberto(sem data fim) para um do(s) nível(is) de ensino selecionado(s), é preciso finalizá-lo.</value>
+  </data>
+  <data name="ERR_InstituicaoNivelBeneficioDeducaoValorException" xml:space="preserve">
+    <value>Funcionalidade não disponível. A configuração só poderá ser cadastrada para benefícios onde há dedução de valor na parcela do aluno.</value>
+  </data>
+  <data name="ERR_InstituicaoNivelPessoaAtuacaoBeneficioException" xml:space="preserve">
+    <value>Exclusão não permitida, este benefício já foi associado a algum ingressante ou aluno do nível de ensino em questão.</value>
+  </data>
+  <data name="ERR_MotivoAlteracaoBeneficioNaoCadastradoException" xml:space="preserve">
+    <value>Não foi possível encontrar motivo de alteração de benefício com o token "{0}".</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioAlteracaoNaoPermitidaException" xml:space="preserve">
+    <value>Alteração não permitida. A situação do benefício não permite alteração dos dados.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioAlteracaoSituacaoBeneficoException" xml:space="preserve">
+    <value>Alteração não permitida. Já existe contrato de benefício no sistema financeiro para esta pessoa.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioAlteracaoVigenciaDatasIguaisException" xml:space="preserve">
+    <value>Para alterar a vigência do benefício é necessário informar uma data de início ou data fim diferentes das atuais.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioAlunoSituacaoException" xml:space="preserve">
+    <value>{0} não permitida. Não é possível associar benefício para alunos que se encontram em
+situações que não possuem vínculo ativo.</value>
+    <comment>RN_FIN_002</comment>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioAtingeDuasConfiguracoesException" xml:space="preserve">
+    <value>Associação não permitida. O período informado está atingindo o período de alguma configuração diferente da configuração selecionada.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioCondicaoPagamentoAlunoException" xml:space="preserve">
+    <value>Deferimento não permitido. A condição de pagamento configurada para o respectivo benefício é diferente da condição de pagamento do aluno no sistema financeiro. Para prosseguir com o deferimento é necessário que condição de pagamento seja atualizada no sistema financeiro.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioCondicaoPagamentoIngressanteException" xml:space="preserve">
+    <value>Para associar esse benefício é necessário existir uma condição de pagamento válida no sistema financeiro com a mesma quantidade de parcelas exigida pelo benefício.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioContratoSituacaoFinanceiraException" xml:space="preserve">
+    <value>Alteração não permitida. Já existe contrato de benefício no sistema financeiro para esta pessoa.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioDataAdmissaoAluno" xml:space="preserve">
+    <value>Data de início não permitida. A data de início de vigência deverá ser maior ou igual ao mês/ano da admissão do aluno. Lembrando que o dia deve ser o primeiro dia do mês</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioDataFimContratoException" xml:space="preserve">
+    <value>Data fim não permitida. O período de vigência do benefício associado não pode ser menor que a data fim do último contrato.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioDataFimException" xml:space="preserve">
+    <value>{0} não permitida. A data fim deve ser sermpre o último dia do mês.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioDataInicioDataFimBeneficioException" xml:space="preserve">
+    <value>Associação não permitida. A data de início deve ser menor que a data fim.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioDataInicioNaoIncideParcelaComConfiguracaoException" xml:space="preserve">
+    <value>Data de início não permitida. O benefício não incide na parcela de matrícula, nesse caso a data de início de vigência deverá ser maior que o mês/ano da admissão do ingressante. Lembrando que o dia deve ser o primeiro dia do mês.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioDataInicioNaoIncideParcelaSemConfiguracaoException" xml:space="preserve">
+    <value>Data de início não permitida. O benefício não incide na parcela de matrícula, nesse caso a data de início de vigência deverá ser maior que o mês/ano da admissão do ingressante. Lembrando que o dia deve ser o primeiro dia do mês.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioDataInicioPeriodoLetivoException" xml:space="preserve">
+    <value>Data de início não permitida. O início de vigência do benefício não está compreendido no período letivo atual que se aplica ao Aluno. Lembrando que o dia deve ser o primeiro dia do mês</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioDataInicioSimIncideParcelaException" xml:space="preserve">
+    <value>Data de início não permitida. O benefício incide na parcela de matrícula, nesse caso a data de início de vigência deverá ser o mês/ano da admissão do ingressante. Lembrando que o dia deve ser o primeiro dia do mês.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioDeferirBeneficioException" xml:space="preserve">
+    <value>{0} não permitida. A situação atual do {1} não permite o deferimento de benefício.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioEnvioNotificacaoException" xml:space="preserve">
+    <value>Erro ao enviar e-mail de notificação. (Token: {0})</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioErroIncluirBeneficioException" xml:space="preserve">
+    <value>Deferimento do benefício não permitido pelo sistema financeiro. Motivo: {0}</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioExcluirException" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe contrato de benefício no sistema financeiro para esta pessoa.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioForaPeriodoSelecionadoException" xml:space="preserve">
+    <value>Associação não permitida. O período informado não está compreendido no período da configuração selecionada.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioIntervalosVaziosEntreDatasException" xml:space="preserve">
+    <value>Associação não permitida. Existem intervalos entre as datas da configuração selecionada e dos valores para este benefício no período informado.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioLimiteAssociacaoException" xml:space="preserve">
+    <value>Inclusão não permitida. Não é possível associar mais de um benefício à uma pessoa-atuação.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioNaoDeducaoException" xml:space="preserve">
+    <value>Associação não permitida. Existem intervalos entre as datas dos valores para este benefício no período informado.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioNaoExisteIntervaloException" xml:space="preserve">
+    <value>Associação não permitida. Existem intervalos entre as datas da configuração selecionada e dos valores para este benefício no período informado.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioNenhumaAlteracaoBeneficioException" xml:space="preserve">
+    <value>Alteração não permitida. Nenhuma informação do benefício foi alterada.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioPercentualBolsaException" xml:space="preserve">
+    <value>{0}  não permitida. O somatório do percentual da bolsa e dos responsáveis financeiros excede 100%.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioRestricaoCombinacaoException" xml:space="preserve">
+    <value>{0} não permitida. A pessoa em questão possui o benefício {1} que está deferido e, o período de vigência coincide com o período de vigência do benefício em questão. E esse tipo de benefício não permite a associação de um novo benefício com período de vigência coincidente.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioSituacaoException" xml:space="preserve">
+    <value>{0} não permitida. Não é possível associar benefício para ingressantes que se encontram nas situações: "Matriculado", "Desistente" ou "Cancelado".</value>
+    <comment>RN_FIN_002</comment>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioValidacaoChancelaException" xml:space="preserve">
+    <value>Deferimento não permitido, devido a restrição de combinação de benefício. Motivo: {0}</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficioValorSaldoFinalBolsaException" xml:space="preserve">
+    <value>{0} não permitida. O somatório do percentual dos responsáveis financeiros excede 100%.</value>
+  </data>
+  <data name="ERR_PessoaAtuacaoBeneficoDataInicioException" xml:space="preserve">
+    <value>{0} não permitida. A data início deve ser sermpre o primeiro dia do mês.</value>
+  </data>
+  <data name="ERR_PessoaBeneficioAtuacaoDeducaoValorException" xml:space="preserve">
+    <value>Associação não permitida. O benefício aplica dedução de valor na parcela da pessoa e, não foi associada uma configuração do benefício. Para fazer a associação é necessário cadastrar uma configuração</value>
+  </data>
+  <data name="ERR_PessoaJuridicaCnpjInvalidoException" xml:space="preserve">
+    <value>Inclusão/Alteração não permitida. CNPJ inválido.</value>
+  </data>
+  <data name="ERR_PessoaJuridicaEnderecoObrigatorioCorrespondencia" xml:space="preserve">
+    <value>{0} não permitida. É necessário informar um endereço de correspondência.</value>
+  </data>
+  <data name="ERR_PessoaJuridicaNomeContatoObrigatorio" xml:space="preserve">
+    <value>{0} não permitida. É necessário informar pelo menos um nome de contato telefônico.</value>
+  </data>
+  <data name="ERR_PessoaJuridicaTelefoneObrigatorioPrincipal" xml:space="preserve">
+    <value>{0} não permitida. É necessário informar pelo menos um telefone de contato como principal.</value>
+  </data>
+  <data name="ERR_TemplateTermoConcessaoBolsaNaoEncontradoException" xml:space="preserve">
+    <value>Template não encontrado.</value>
+  </data>
+  <data name="ERR_TermoAdesaoSemContratoVigenteException" xml:space="preserve">
+    <value>Não foi encontrado um contrato vigente para o curso ou nível de ensino informados</value>
+  </data>
+  <data name="FK_beneficio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe benefício cadastrado para esta instituição de ensino.</value>
+  </data>
+  <data name="FK_beneficio_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe benefício cadastrado para este tipo de benefício.</value>
+  </data>
+  <data name="FK_beneficio_controle_financeiro_01" xml:space="preserve">
+    <value>Exclusão não permitida. Associação do benefício à pessoa atuação já possui contrato financeiro cadastrado.</value>
+  </data>
+  <data name="FK_beneficio_controle_financeiro_02" xml:space="preserve">
+    <value>Exclusão não permitida. Ciclo letivo já está em uso no controle de benefício financeiro.</value>
+  </data>
+  <data name="FK_beneficio_controle_financeiro_03" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço é responsável por controle de benefício financeiro.</value>
+  </data>
+  <data name="FK_beneficio_historico_valor_auxilio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe valores cadastrados para esta associação de benefício.</value>
+  </data>
+  <data name="FK_beneficio_responsavel_financeiro_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe responsável financeiro cadastrado para este benefício.</value>
+  </data>
+  <data name="FK_beneficio_responsavel_financeiro_02" xml:space="preserve">
+    <value>Exclusão não permitida. Pessoa jurídica já está associada a algum benefício.</value>
+  </data>
+  <data name="FK_configuracao_beneficio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração cadastrada para esta associação de benefício.</value>
+  </data>
+  <data name="FK_contrato_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui contratos cadastrados.</value>
+  </data>
+  <data name="FK_contrato_02" xml:space="preserve">
+    <value>Exclusão não permitida. Arquivo anexado está associado a um contrato.</value>
+  </data>
+  <data name="FK_contrato_curso_01" xml:space="preserve">
+    <value>Exclusão não permitida. Contrato já possui cursos associados.</value>
+  </data>
+  <data name="FK_contrato_curso_02" xml:space="preserve">
+    <value>Exclusão não permitida. Curso já está associado a um contrato.</value>
+  </data>
+  <data name="FK_contrato_nivel_ensino_01" xml:space="preserve">
+    <value>Exclusão não permitida. Contrato já possui níveis de ensino associados.</value>
+  </data>
+  <data name="FK_contrato_nivel_ensino_02" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já está associado a um contrato.</value>
+  </data>
+  <data name="FK_instituicao_nivel_beneficio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de benefício para esta instituição x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_beneficio_02" xml:space="preserve">
+    <value>Exclusão não permitida. Benefício já foi associado a uma instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_pessoa_atuacao_beneficio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe benefício cadastrado para esta pessoa-atuação.</value>
+  </data>
+  <data name="FK_pessoa_atuacao_beneficio_02" xml:space="preserve">
+    <value>Exclusão não permitida. Benefício já está associado a uma pessaoa-atuação.</value>
+  </data>
+  <data name="FK_pessoa_atuacao_beneficio_03" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração já foi utilizada na concessão de benefício para pessoa x atuação.</value>
+  </data>
+  <data name="FK_pessoa_atuacao_beneficio_resp_financeiro_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem responsáveis financeiro cadastrados para este benefício x pessoa-atuação.</value>
+  </data>
+  <data name="FK_pessoa_atuacao_beneficio_resp_financeiro_02" xml:space="preserve">
+    <value>Exclusão não permitida. Pessoa jurídica já é responsável por benefício x pessoa-atuação.</value>
+  </data>
+  <data name="FK_pessoa_juridica_endereco_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe endereço cadastrado para esta pessoa jurídica.</value>
+  </data>
+  <data name="FK_pessoa_juridica_endereco_02" xml:space="preserve">
+    <value>Exclusão não permitida. Endereço pertence a uma pessoa jurídica.</value>
+  </data>
+  <data name="FK_pessoa_juridica_endereco_eletronico_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe endereço eletrônico cadastrado para esta pessoa jurídica.</value>
+  </data>
+  <data name="FK_pessoa_juridica_endereco_eletronico_02" xml:space="preserve">
+    <value>Exclusão não permitida. Endereço eletrônico pertence a uma pessoa jurídica.</value>
+  </data>
+  <data name="FK_pessoa_juridica_telefone_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe telefone cadastrado para esta pessoa jurídica.</value>
+  </data>
+  <data name="FK_pessoa_juridica_telefone_02" xml:space="preserve">
+    <value>Exclusão não permitida. Telefone pertence a uma pessoa jurídica.</value>
+  </data>
+  <data name="FK_termo_adesao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Contrato já possui termos de adesão cadastrados.</value>
+  </data>
+  <data name="FK_termo_adesao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Serviço já possui termos de adesão cadastrados.</value>
+  </data>
+  <data name="FK_termo_adesao_03" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de vínculo de aluno já possui termos de adesão cadastrados.</value>
+  </data>
+  <data name="UN_beneficio_01" xml:space="preserve">
+    <value>Já existe benefício cadastrado com esta descrição nesta instiuição de ensino.</value>
+  </data>
+  <data name="UN_beneficio_controle_financeiro_01" xml:space="preserve">
+    <value>Esse contrato de benefício financeiro já possui registro no acadêmico.</value>
+  </data>
+  <data name="UN_contrato_01" xml:space="preserve">
+    <value>Já existe contrato com esta descrição nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_contrato_02" xml:space="preserve">
+    <value>Já existe contrato com este registro nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_contrato_curso_01" xml:space="preserve">
+    <value>Curso já está associado a este contrato.</value>
+  </data>
+  <data name="UN_contrato_nivel_ensino_01" xml:space="preserve">
+    <value>Nível de ensino já estsá associado a este contrato.</value>
+  </data>
+  <data name="UN_instituicao_nivel_beneficio_01" xml:space="preserve">
+    <value>Benefício já está associado à esta instituição e nível de ensino.</value>
+  </data>
+  <data name="UN_motivo_alteracao_beneficio_01" xml:space="preserve">
+    <value>Já existe um motivo com esta descrição.</value>
+  </data>
+  <data name="UN_motivo_alteracao_beneficio_02" xml:space="preserve">
+    <value>Já existe um motivo com este token.</value>
+  </data>
+  <data name="UN_pessoa_atuacao_beneficio_01" xml:space="preserve">
+    <value>Este benefício já está associado a esta pessoa atuação nesta data de início.</value>
+  </data>
+  <data name="UN_pessoa_atuacao_beneficio_resp_financeiro_01" xml:space="preserve">
+    <value>Responsável financeiro já está associado a este benefício x pessoa-atuação.</value>
+  </data>
+  <data name="UN_pessoa_juridica_01" xml:space="preserve">
+    <value>Já existe pessoa jurídica cadastrada com este CNPJ.</value>
+  </data>
+  <data name="UN_tipo_beneficio_01" xml:space="preserve">
+    <value>Já existe tipo de benefício cadastrado com esta descrição.</value>
+  </data>
+</root>

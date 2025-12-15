@@ -1,0 +1,21 @@
+<li class="po-tree-view-item">
+  <smc-tree-view-item-header
+    [s-item]="item"
+    [s-selectable]="item.selectable === true || ((!hasSubItems && selectSheetOnly) || allSelectedItmes)"
+    [s-selectable-single-item]="selectableSingleItem"
+    (s-expanded)="onClick($event)"
+    (s-selected)="onSelect(item)"
+  >
+  </smc-tree-view-item-header>
+  <ul *ngIf="hasSubItems" class="po-tree-view-item-group" [@toggleBody]="item.expanded ? 'expanded' : 'collapsed'">
+    <smc-tree-view-item
+      *ngFor="let subItem of item.subItems; trackBy: trackByFunction; let first=first; let last=last"
+      [s-item]="subItem"
+      [s-selectable]="item.selectable === true || ((first && last) && selectSheetOnly) || allSelectedItmes"
+      [s-select-sheet-only]="selectSheetOnly"
+      [s-all-selectable-items]="allSelectedItmes"
+      [s-selectable-single-item]="selectableSingleItem"
+    >
+    </smc-tree-view-item>
+  </ul>
+</li>

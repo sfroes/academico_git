@@ -1,0 +1,149 @@
+﻿@model AvaliacaoTrabalhoAcademicoAvaliacaoViewModel
+
+@{
+    SMCButtonFluentConfiguration buttonAlterarAvaliacao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+    .SecurityToken(UC_ORT_002_02_04.MANTER_AGENDAMENTO_BANCA_EXAMINADORA)
+    .Attribute(SMCMvcConsts.MODAL_ID, "modalAdicionarAvaliacaoTrabalhoAcademicoBancaExaminadora")
+    .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("SalvarSair", "AvaliacaoTrabalhoAcademicoBancaExaminadora", new
+    {
+        seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico)
+     ,
+        @backUrl = Url.Action("Index", "AvaliacaoTrabalhoAcademico", new { seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) })
+    }))
+    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Editar_Banca_Examinadora"))
+    .Ajax(isPost: false).CssClass("smc-btn-alterar-ico")
+    .Text(Smc.GetUIResource("Botao_Editar_Aplicacao_Avaliacao_Banca"))
+    .Tooltip(Smc.GetUIResource("Botao_Editar_Aplicacao_Avaliacao_Banca"))
+    .Type(SMCButtonType.Link)
+    .Action("Editar", "AvaliacaoTrabalhoAcademicoBancaExaminadora", new { seq = new SMCEncryptedLong(Model.Seq), seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) }).Enabled(!Model.BancaEstaCancelada);
+
+    if (Model.BancaEstaCancelada)
+    {
+        buttonAlterarAvaliacao.ButtonInstructions(Smc.GetUIResource("EdicaoBancaCancelada"));
+    }
+    if (Model.DataAutorizacaoSegundoDeposito.HasValue)
+    {
+        buttonAlterarAvaliacao.Enabled(false).ButtonInstructions(Smc.GetUIResource("AutorizacaoNovoDepositoAssociada"));
+    }
+
+    SMCButtonFluentConfiguration buttonExcluirAvaliacao = Smc.Button(SMCButtonBehavior.Excluir)
+    .SecurityToken(UC_ORT_002_02_04.MANTER_AGENDAMENTO_BANCA_EXAMINADORA)
+    .Ajax(isPost: false)
+    .Text(Smc.GetUIResource("Botao_Excluir_Aplicacao_Avaliacao_Banca"))
+    .Tooltip(Smc.GetUIResource("Botao_Excluir_Aplicacao_Avaliacao_Banca"))
+    .Confirm(Smc.GetUIResource("Title_Excluir_Aplicacao_Avaliacao_Banca"), Smc.GetUIResource("Excluir_Aplicacao_Avaliacao_Banca_Confirmacao"))
+    .Action("Excluir", "AvaliacaoTrabalhoAcademicoBancaExaminadora", new
+    {
+        seq = new SMCEncryptedLong(Model.Seq)
+    ,
+        @backUrl = Url.Action("Index", "AvaliacaoTrabalhoAcademico", new { seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) })
+    }).DisplayMode(SMCButtonDisplayMode.Icon);
+
+    if (!Model.PermitirExlusaoAvaliacao)
+    {
+        buttonExcluirAvaliacao.Enabled(false).ButtonInstructions(Smc.GetUIResource("ExclusaoAvaliacaoApurada"));
+    }
+    else if (Model.DataAutorizacaoSegundoDeposito.HasValue)
+    {
+        buttonExcluirAvaliacao.Enabled(false).ButtonInstructions(Smc.GetUIResource("AutorizacaoNovoDepositoAssociada"));
+    }
+
+    SMCButtonFluentConfiguration buttonLancamentoNota = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+.SecurityToken(UC_ORT_002_02_05.LANCAR_NOTA_BANCA_EXAMINADORA)
+.Attribute(SMCMvcConsts.MODAL_ID, "modalLancamentoNotaBancaExaminadora")
+.Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("SalvarSair", "LancamentoNotaBancaExaminadora", new
+{
+    seq = new SMCEncryptedLong(Model.Seq)
+,
+    @backUrl = Url.Action("Index", "AvaliacaoTrabalhoAcademico", new { seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) })
+}))
+.Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Lancar_Nota_Banca_Examinadora"))
+.Ajax(isPost: false)
+.CssClass("smc-btn-alterar")
+.Text(Smc.GetUIResource("Botao_Lancar_Nota_Banca_Examinadora"))
+.Tooltip(Smc.GetUIResource("Botao_Lancar_Nota_Banca_Examinadora"))
+.Type(SMCButtonType.Link)
+.Action("Incluir", "LancamentoNotaBancaExaminadora", new { seq = new SMCEncryptedLong(Model.Seq) })
+.Enabled(!Model.BancaEstaCancelada);
+
+    if (!Model.PermitirLancarNota)
+    {
+        buttonLancamentoNota.Enabled(false).ButtonInstructions(Smc.GetUIResource("ApuracaoAvaliacaoNaoPermitida"));
+    }
+    else if (Model.DataAutorizacaoSegundoDeposito.HasValue)
+    {
+        buttonLancamentoNota.Enabled(false).ButtonInstructions(Smc.GetUIResource("AutorizacaoNovoDepositoAssociada"));
+    }
+
+    SMCButtonFluentConfiguration buttonExcluirNotaLancada = Smc.Button("btn-excluir-nota-lancada")
+.SecurityToken(UC_ORT_002_02_05.LANCAR_NOTA_BANCA_EXAMINADORA)
+.Text(Smc.GetUIResource("Botao_Excluir_Nota_Lancada"))
+.Tooltip(Smc.GetUIResource("Botao_Excluir_Nota_Lancada"))
+.Ajax(isPost: false)
+.Confirm(Smc.GetUIResource("Title_Excluir_Lancamento_Nota_Avaliacao_Banca"), Smc.GetUIResource("Excluir_Lancamento_Nota_Avaliacao_Banca_Confirmacao"))
+.Action("Excluir", "LancamentoNotaBancaExaminadora", new
+{
+    seq = new SMCEncryptedLong(Model.Seq)
+,
+    @backUrl = Url.Action("Index", "AvaliacaoTrabalhoAcademico", new { seqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) })
+});
+
+    if (!Model.PermitirExclusaoNotaApuracao)
+    {
+        buttonExcluirNotaLancada.Enabled(false).ButtonInstructions(Smc.GetUIResource("ExclusaoApuracaoAvaliacaoNaoPermitida"));
+    }
+    else if (Model.DataAutorizacaoSegundoDeposito.HasValue)
+    {
+        buttonExcluirNotaLancada.Enabled(false).ButtonInstructions(Smc.GetUIResource("AutorizacaoNovoDepositoAssociada"));
+    }
+
+    SMCButtonFluentConfiguration buttonEmitirAtaDefesa = Smc.Button("btn-emitir-ata-defesa")
+.SecurityToken(UC_ORT_002_02_06.EMITIR_COMPROVANTE_ENTREGA)
+.CssClass("smc-btn-download-text")
+.Text(Smc.GetUIResource("Botao_Emitir_Ata_Defesa"))
+.Tooltip(Smc.GetUIResource("Botao_Emitir_Ata_Defesa_Tooltip"))
+.Type(SMCButtonType.Link)
+.Attribute("target", "_blank")
+.Action("DownloadFileGuid", "Home", new { @area = "", @guidFile = Model.SeqArquivoAnexadoAtaDefesa.HasValue ? Model.GuidArquivoAnexadoAtaDefesa : Guid.NewGuid().ToString() })
+.Hide(!Model.SeqArquivoAnexadoAtaDefesa.HasValue);
+
+    SMCButtonFluentConfiguration buttonAdicionarAtaDefesa = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Attribute(SMCMvcConsts.MODAL_ID, "modalAdicionarArquivoAta")
+        .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("SalvarAtaDefesa", "AvaliacaoTrabalhoAcademico"))
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Adicionar_Ata_Defesa"))
+        .SecurityToken(UC_ORT_002_02_06.EMITIR_COMPROVANTE_ENTREGA)
+        .CssClass("smc-btn-adicionar-ata-defesa")
+        .Text(Smc.GetUIResource("Botao_Adicionar_Ata_Defesa"))
+        .Tooltip(Smc.GetUIResource("Botao_Adicionar_Ata_Defesa_Tooltip"))
+        .Type(SMCButtonType.Link)
+        .Attribute("target", "_blank")
+        .Ajax(isPost: false)
+        .Action("AdicionarAtaDefesa", "AvaliacaoTrabalhoAcademico", new { @area = "ort", seqAplicacaoAvaliacao = new SMCEncryptedLong(Model.Seq), SeqTrabalhoAcademico = new SMCEncryptedLong(Model.SeqTrabalhoAcademico) })
+        .Hide(Model.SeqArquivoAnexadoAtaDefesa.HasValue || !Model.JaApurado || !Model.PublicacaoBiblioteca);
+
+    SMCButtonFluentConfiguration buttonAlterarAtaDefesa = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Attribute(SMCMvcConsts.MODAL_ID, "modalAlterarArquivoAta")
+        .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("SalvarAtaDefesa", "AvaliacaoTrabalhoAcademico"))
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Alterar_Ata_Defesa"))
+        .SecurityToken(UC_ORT_002_02_06.EMITIR_COMPROVANTE_ENTREGA)
+        .CssClass("smc-btn-alterar-ata-defesa")
+        .Text(Smc.GetUIResource("Botao_Alterar_Ata_Defesa"))
+        .Tooltip(Smc.GetUIResource("Botao_Alterar_Ata_Defesa_Tooltip"))
+        .Type(SMCButtonType.Link)
+        .Attribute("target", "_blank")
+        .Ajax(isPost: false)
+        .Action("AlterarAtaDefesa", "AvaliacaoTrabalhoAcademico", new { @area = "ort", seqArquivoAnexadoAtaDefesa = new SMCEncryptedLong(Model.SeqArquivoAnexadoAtaDefesa.GetValueOrDefault()) })
+        .Hide(!Model.SeqArquivoAnexadoAtaDefesa.HasValue);
+
+}
+
+@(Smc.Templates.DetailedListButtons()
+    .AddButton(buttonAlterarAvaliacao)
+    .AddButton(buttonExcluirAvaliacao)
+    .AddButton(buttonLancamentoNota)
+    .AddButton(buttonExcluirNotaLancada)
+    .AddButton(buttonEmitirAtaDefesa)
+    .AddButton(buttonAdicionarAtaDefesa)
+    .AddButton(buttonAlterarAtaDefesa)
+    .NumberOfButtonsToShow(2)
+    .Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24))

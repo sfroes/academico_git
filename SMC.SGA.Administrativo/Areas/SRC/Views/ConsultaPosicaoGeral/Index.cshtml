@@ -1,0 +1,23 @@
+﻿@model ConsultaPosicaoGeralFiltroViewModel
+
+@using (Smc.Form("filtroPosicaoConsolidadaGeral", "ListarPosicaoConsolidadaGeral", "ConsultaPosicaoGeral").Ajax("#divViewPadrao").Begin())
+{
+    using (Smc.Fieldset("filtros").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(m => m.SeqsServicos)
+        @Smc.EditorFor(m => m.SeqsEntidadesResponsaveis)
+        @Smc.EditorFor(m => m.SeqCicloLetivo)
+        @Smc.EditorFor(m => m.SeqsProcesso)
+
+        @(Smc.ButtonSet()
+                .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+        )
+    }
+
+}
+
+@using (Smc.Div("divViewPadrao").Attribute("data-id", "divViewPadrao").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Html.Action("ListarPosicaoConsolidadaGeral", Model)
+}

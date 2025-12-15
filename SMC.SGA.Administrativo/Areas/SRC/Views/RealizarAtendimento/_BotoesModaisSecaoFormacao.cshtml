@@ -1,0 +1,53 @@
+﻿@model SolicitacaoAnaliseEmissaoDocumentoConclusaoCamposModaisViewModel
+
+@using (Smc.Div().Begin())
+{
+    var dataConclusao = string.Empty;
+
+    if (Model.DataConclusao.HasValue)
+    {
+        dataConclusao = Model.DataConclusao.Value.ToShortDateString();
+    }
+
+    var buttonSet = Smc.ButtonSet();
+
+    buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Type(SMCButtonType.Link).Ajax()
+                    .Attribute(SMCMvcConsts.MODAL_ID, "modalConsultarDocumentacaoAcademica")
+                    .Type(SMCButtonType.Link)
+                    .Action("ConsultarDocumentacaoAcademica", "RealizarAtendimento", new
+                    {
+                        seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico),
+                        area = "SRC"
+                    })
+                    .Text(Smc.GetUIResource("Botao_ConsultarDocumentacaoAcademica"))
+                    .Tooltip(Smc.GetUIResource("Botao_ConsultarDocumentacaoAcademica"))
+                    .Hide(!Model.ExibirComandoDocumentacaoAcademica));
+
+    buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Type(SMCButtonType.Link).Ajax()
+                    .Attribute(SMCMvcConsts.MODAL_ID, "modalRVDD")
+                    .Type(SMCButtonType.Link)
+                    .Action("ConsultarInformacoesRVDD", "RealizarAtendimento", new
+                    {
+                        seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico),
+                        tipoIdentidade = Model.TipoIdentidade,
+                        area = "SRC"
+                    })
+                    .Text(Smc.GetUIResource("Botao_RVDD"))
+                    .Tooltip(Smc.GetUIResource("Botao_RVDD"))
+                    .Hide(!Model.ExibirComandoRVDD));
+
+    buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Type(SMCButtonType.Link).Ajax()
+                    .Attribute(SMCMvcConsts.MODAL_ID, "modalAtosNormativosCurso")
+                    .Type(SMCButtonType.Link)
+                    .Action("ConsultarAtosNormativosCurso", "RealizarAtendimento", new
+                    {
+                        seqCursoOfertaLocalidade = new SMCEncryptedLong(Model.SeqCursoOfertaLocalidade),
+                        seqGrauAcademico = new SMCEncryptedLong(Model.SeqGrauAcademico.GetValueOrDefault()),
+                        dataConclusao = dataConclusao,
+                        area = "SRC"
+                    })
+                    .Text(Smc.GetUIResource("Botao_AtosNormativosCurso"))
+                    .Tooltip(Smc.GetUIResource("Botao_AtosNormativosCurso")));
+
+    @buttonSet;
+}

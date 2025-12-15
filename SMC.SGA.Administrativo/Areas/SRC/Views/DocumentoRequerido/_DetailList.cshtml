@@ -1,0 +1,26 @@
+﻿@model SMCPagerModel<DocumentoRequeridoListarViewModel>
+
+@(Smc.Grid("gridDocumentoRequerido", Model)
+     .AutoGenerateColumns()
+     .AllowSort()
+     .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+
+        x => Smc.Button(SMCButtonBehavior.Alterar)
+                .CssClass("smc-btn-alterar-ico")
+                .Tooltip(Smc.GetUIResource("Botao_Editar_Documento_Requerido_Tooltip"))
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirNovoDocumentoRequerido")
+                .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Botao_Editar_Documento_Requerido_Title"))
+                .Ajax(isPost: false, updateTargetId: "#divGridDocumentosRequeridos")
+                .SecurityToken(UC_SRC_002_04_11.CONFIGURAR_ETAPA_MANTER_DOCUMENTOS)
+                .Action("Editar", "DocumentoRequerido", new { Seq = new SMCEncryptedLong((x as DocumentoRequeridoListarViewModel).Seq), Area = "SRC" }),
+
+           x => Smc.Button(SMCButtonBehavior.Excluir)
+                .Enabled((x as DocumentoRequeridoListarViewModel).HabilitarBotaoExcluir)
+                .ButtonInstructions(Smc.GetUIResource((x as DocumentoRequeridoListarViewModel).MensagemBotaoExcluir))
+                .DisplayMode(SMCButtonDisplayMode.Icon)
+                .Confirm(Smc.GetUIResource("Exclusao_Documento_Requerido_Title"), Smc.GetUIResource("Exclusao_Documento_Requerido_Confirmacao"))
+                .Tooltip(Smc.GetUIResource("Botao_Excluir_Documento_Requerido_Tooltip"))
+                .SecurityToken(UC_SRC_002_04_11.CONFIGURAR_ETAPA_MANTER_DOCUMENTOS)
+                .Action("Excluir", "DocumentoRequerido", new { Seq = new SMCEncryptedLong((x as DocumentoRequeridoListarViewModel).Seq), SeqProcessoEtapa = new SMCEncryptedLong((x as DocumentoRequeridoListarViewModel).SeqProcessoEtapa), SeqConfiguracaoEtapa = new SMCEncryptedLong((x as DocumentoRequeridoListarViewModel).SeqConfiguracaoEtapa), Area = "SRC" }))     
+)

@@ -1,0 +1,45 @@
+﻿@using SMC.SGA.Administrativo.Areas.FIN.Models
+
+@model  TermoAdesaoCabecalhoViewModel
+
+@using (Smc.Header("TermoAdesao", SMCHeaderType.Primary).CssClass("smc-header-botao")
+                                                    .Item(prop => prop.NumeroRegistro, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid4_24)
+                                                    .Item(prop => prop.NomeContrato, sizeMD: SMCSize.Grid11_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid14_24, sizeLG: SMCSize.Grid11_24)
+                                                    .Item(prop => prop.DataInicioValidade, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid4_24)
+                                                    .Item(prop => prop.DataFimValidade, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid14_24, sizeLG: SMCSize.Grid4_24)
+                                                    .Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+    {
+        SMCButtonFluentConfiguration buttonVisualizarContrato = Smc.Button("btn-visualizar-contrato")
+          .CssClass("smc-btn-visualizar-ico")
+          .Tooltip(Smc.GetUIResource("Botao_Visualizar_Contrato"))
+          .Type(SMCButtonType.Link)
+          .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true)
+          .Attribute("target", "_blank")
+          .SecurityToken(SMC.Academico.Common.Areas.FIN.Constants.UC_FIN_002_02_01.PESQUISAR_CONTRATO)
+          .Action("VisualizarArquivo", "Contrato", new { @SeqContrato = new SMCEncryptedLong(Model.SeqContrato) });
+
+        @Smc.Templates.DetailedListButtons().AddButton(buttonVisualizarContrato).NumberOfButtonsToShow(1).Size(SMCSize.Grid2_24)
+    }
+
+    using (Smc.Div().CssClass("smc-sga-header-detalhes smc-sga-header-detalhes-separador").Size(SMCSize.Grid24_24).Begin())
+    {
+        if (Model.NiveisEnsino != null && Model.NiveisEnsino.Count > 0)
+        {
+            @Smc.DisplayFor(m => m.NiveisEnsino).CssClass("smc-sga-header-detalhes-titulo-grid-thead").HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24).CssClass("smc-display-list-line")
+        }
+
+        if (Model.Cursos != null && Model.Cursos.Count > 0)
+        {
+            @(Smc.Grid("gridParametros", new SMCPagerModel<TermoAdesaoListarCursoViewModel>(Model.Cursos))
+                .FieldColumn(w => w.NomeCurso) 
+                .HideGridTitle()
+                .HideNavigator()
+                .HideRowNumber()
+                .AllowSort())
+        }
+    }
+
+    
+}

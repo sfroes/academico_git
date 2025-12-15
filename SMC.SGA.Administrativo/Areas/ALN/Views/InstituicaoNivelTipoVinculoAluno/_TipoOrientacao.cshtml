@@ -1,0 +1,48 @@
+﻿@model  InstituicaoNivelTipoOrientacaoListarViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.TipoTermoIntercambio).Size(SMCSize.Grid12_24)
+            @Smc.DisplayFor(m => m.TipoOrientacao).Size(SMCSize.Grid12_24)
+        }
+
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-conteudo-lista-item-destaque").Begin())
+        {
+            <label class="smc-listdetailed-conteudo-subtitulo">Tipos de participação</label>
+            @(Smc.Grid("gridTipoParticipacao", new SMCPagerModel<InstituicaoNivelTipoOrientacaoParticipacaoViewModel>(Model.TiposParticipacao))
+                    .FieldColumn(w => w.TipoParticipacaoOrientacao, cssClass: "smc-size-md-8 smc-size-xs-8 smc-size-sm-8 smc-size-lg-8")
+                    .FieldColumn(w => w.ObrigatorioOrientacao, cssClass: "smc-size-md-8 smc-size-xs-8 smc-size-sm-8 smc-size-lg-8")
+                    .FieldColumn(w => w.OrigemColaborador, cssClass: "smc-size-md-8 smc-size-xs-8 smc-size-sm-8 smc-size-lg-8")
+                    .HideNavigator()
+                    .HideGridTitle()
+                    .HideRowNumber()
+                    .AllowSort(false)
+            )
+        }
+    }
+    @(Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid1_24, SMCSize.Grid1_24).NumberOfButtonsToShow(2)
+             .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).CssClass("smc-btn-alterar-ico")
+                    .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+                    .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("Salvar", "InstituicaoNivelTipoOrientacao", new { @backUrl = Url.Action("Index", "InstituicaoNivelTipoVinculoAluno") }))
+                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Editar_Tipo_Orientacao"))
+                    .Ajax(isPost: false)
+                    .Tooltip(Smc.GetUIResource("Botao_Alterar_Tipo_Orientacao"))
+                    .Type(SMCButtonType.InputButton)
+                    .SecurityToken(UC_ALN_003_01_03.ASSOCIAR_TIPO_ORIENTACAO)
+                    .Action("Editar", "InstituicaoNivelTipoOrientacao", new { @seq = new SMCEncryptedLong(Model.Seq) }))
+             .AddButton(Smc.Button(SMCButtonBehavior.Excluir).CssClass("smc-btn-excluir-ico")
+                    .Text(Smc.GetUIResource("Botao_Excluir_Tipo_Orientacao"))
+                    .Tooltip(Smc.GetUIResource("Botao_Excluir_Tipo_Orientacao"))
+                    .Ajax(isPost: false)
+                    .SecurityToken(UC_ALN_003_01_03.ASSOCIAR_TIPO_ORIENTACAO)
+                    .Confirm(Smc.GetUIResource("Title_Excluir_Tipo_Orientacao"), string.Format(Smc.GetUIResource("Excluir_TIpo_Orientacao"), Model.TipoOrientacao))
+                    .Action("Excluir", "InstituicaoNivelTipoOrientacao", new { @seq = new SMCEncryptedLong(Model.Seq) }))
+    )
+
+}

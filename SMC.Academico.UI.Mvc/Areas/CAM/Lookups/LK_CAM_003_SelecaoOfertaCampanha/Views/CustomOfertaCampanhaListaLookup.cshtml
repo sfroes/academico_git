@@ -1,0 +1,43 @@
+﻿@using SMC.Academico.Common.Constants;
+@using SMC.Framework;
+@using SMC.Framework.UI.Mvc;
+@using SMC.Framework.UI.Mvc.Html;
+@using SMC.Academico.UI.Mvc.Areas.CAM.Lookups;
+@using SMC.Framework.Model;
+
+@model SMCPagerModel<object>
+
+<div id="gridListarOfertaCampanhaWrapper" data-detail-property="model")>
+    
+    @if (Model != null && Model.Count > 0)
+    {
+        @{
+            var token = (Model.FirstOrDefault() as SelecaoOfertaCampanhaLookupListaViewModel).TipoOfertaToken;
+        }       
+        @(Smc.Grid("gridListarOfertaCampanhaLookup"
+            , new SMCPagerModel<SelecaoOfertaCampanhaLookupListaViewModel>(Model))
+                .HideNavigator()
+                .HidePager()
+                .HideRowNumber()
+                .HideRowsTotalizer()
+                .HideGridTitle()
+                .AllowSelect(a => a.Seq, singleSelect: false)
+                .FieldColumn(x => x.CursoOferta, visible: token != TOKEN_TIPO_OFERTA.TURMA)
+                .FieldColumn(x => x.Localidade, visible: token != TOKEN_TIPO_OFERTA.TURMA)
+                .FieldColumn(x => x.Turno, visible: token != TOKEN_TIPO_OFERTA.TURMA)
+                .FieldColumn(x => x.AreaConcentracao, visible: token == TOKEN_TIPO_OFERTA.LINHA_PESQUISA || token == TOKEN_TIPO_OFERTA.EIXO_TEMATICO || token == TOKEN_TIPO_OFERTA.AREA_CONCENTRACAO)
+                .FieldColumn(x => x.AreaTematica, visible: token == TOKEN_TIPO_OFERTA.AREA_TEMATICA)
+                .FieldColumn(x => x.LinhaPesquisa, visible: token == TOKEN_TIPO_OFERTA.LINHA_PESQUISA || token == TOKEN_TIPO_OFERTA.EIXO_TEMATICO)
+                .FieldColumn(x => x.EixoTematico, visible: token == TOKEN_TIPO_OFERTA.EIXO_TEMATICO)
+                .FieldColumn(x => x.Orientador, visible: token == TOKEN_TIPO_OFERTA.ORIENTADOR)
+                .FieldColumn(x => x.Turma, visible: token == TOKEN_TIPO_OFERTA.TURMA)
+                .Attribute("data-detail-property", SMCLookupHelper.GetCurrentPropertyName(Smc))
+                .Attribute("data-default", "true")
+        )
+    }
+    else
+    {
+        <p style="text-align: center"><i>Nenhum registro foi encontrado.</i></p>
+    }
+
+</div>

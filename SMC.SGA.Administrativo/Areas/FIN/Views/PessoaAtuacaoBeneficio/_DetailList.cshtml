@@ -1,0 +1,89 @@
+﻿@using SMC.SGA.Administrativo.Areas.FIN.Models
+@using SMC.Academico.Common.Areas.FIN.Constants
+@model PessoaAtuacaoBeneficioListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item " + Model.ClasseItemExcluido).Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        if (Model != null)
+        {
+            // Header item
+            using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(m => m.DescricaoBeneficio).Size(SMCSize.Grid24_24)
+            }
+
+            using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(d => d.SituacaoChancelaBeneficio).Size(SMCSize.Grid4_24)
+                @Smc.DisplayFor(d => d.DataInicioVigencia).Size(SMCSize.Grid4_24)
+                @Smc.DisplayFor(d => d.DataFimVigencia).Size(SMCSize.Grid4_24)
+
+                if (Model.ConfiguracaoBeneficio != null)
+                {
+                    @Smc.DisplayFor(d => d.ConfiguracaoBeneficio.TipoDeducao).Size(SMCSize.Grid4_24)
+                    @Smc.DisplayFor(d => d.ConfiguracaoBeneficio.FormaDeducao).Size(SMCSize.Grid4_24)
+                }
+                else
+                {
+                    @Smc.DisplayFor(d => d.TipoDeducao).Size(SMCSize.Grid4_24)
+                    @Smc.DisplayFor(d => d.FormaDeducao).Size(SMCSize.Grid4_24)
+                }
+                @Smc.DisplayFor(d => d.ValorBeneficio).Size(SMCSize.Grid4_24)
+            }
+        }
+    }
+
+    SMCButtonFluentConfiguration buttonExcluir = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Ajax()
+        .Attribute(SMCMvcConsts.MODAL_ID, "modalExcluirPessoaAtuacaoBeneficio")
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Listar_Excluir_Titulo"))
+        .Type(SMCButtonType.Link).CssClass("smc-btn-excluir-ico")
+        .Tooltip(Smc.GetUIResource("Botao_Excluir_Tooltip"))
+        .SecurityToken(UC_FIN_001_03_02.ASSOCIAR_BENEFICIO_PESSOA_ATUACAO)
+        .Enabled(Model.DesabilitarBotaoExcluir)
+        .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoExcluir))
+        .Action("ModalExcluir", "PessoaAtuacaoBeneficio", new { SeqPessoaAtuacaoBeneficio = new SMCEncryptedLong(Model.Seq), SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao), DescricaoBeneficio = Model.DescricaoBeneficio, NomePessoaAtuacao = Model.NomePessoa });
+
+
+    SMCButtonFluentConfiguration buttonEditar = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Ajax()
+        .Attribute(SMCMvcConsts.MODAL_ID, "modalEditarPessoaBeneficio")
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Consulta_Beneficio"))
+        .Type(SMCButtonType.Link).CssClass("smc-btn-alterar-ico")
+        .Tooltip(Smc.GetUIResource("Botao_Alterar_Tooltip"))
+        .SecurityToken(UC_FIN_001_03_02.ASSOCIAR_BENEFICIO_PESSOA_ATUACAO)
+        .Enabled(Model.DesabilitarBotaoAlterar)
+        .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoAlterar))
+        .Action("Editar", "PessoaAtuacaoBeneficio", new { Seq = new SMCEncryptedLong(Model.Seq), SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao) });
+
+    SMCButtonFluentConfiguration buttonConsultar = Smc.Button(SMCButtonBehavior.Visualizar)
+        .DisplayMode(SMCButtonDisplayMode.Icon)
+        .Text(Smc.GetUIResource("Botao_Consultar_Beneficio"))
+        .Tooltip(Smc.GetUIResource("Botao_Consultar_Beneficio_Tooltip"))
+        .Type(SMCButtonType.Link)
+        .SecurityToken(UC_FIN_001_03_03.CONSULTAR_BENEFÍCIO_PESSOA_ATUACAO)
+        .Action("ConsultaBeneficio", "PessoaAtuacaoBeneficio", new { SeqPessoaAtuacaoBeneficio = new SMCEncryptedLong(Model.Seq) });
+
+    @(Smc.Templates.DetailedListButtons().NumberOfButtonsToShow(3).AllowRemove(false).AllowEdit(false).AddButton(buttonEditar).AddButton(buttonExcluir).AddButton(buttonConsultar).Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24))
+}
+
+@using (Smc.ModalWindow("modalExcluirPessoaAtuacaoBeneficio")
+        .Form("formExcluiBeneficio", "ExcluirAssociacaoBeneficio", "PessoaAtuacaoBeneficio", closeOnSubmit: true)
+        .Size(SMCModalWindowSize.Small)
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.Text("Sim").Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.Text("Não"))
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalConsultaPessoaAtuacaoBeneficio")
+        .Size(SMCModalWindowSize.Largest)
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalEditarPessoaBeneficio")
+        .Size(SMCModalWindowSize.Largest)
+        .Form("formEditarPessoaAtuacao", "SalvarPessoaAtuacaoBeneficio", "PessoaAtuacaoBeneficio", config: x => x.Ajax())
+        .Button(SMCButtonBehavior.Salvar, config: btn => btn.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }

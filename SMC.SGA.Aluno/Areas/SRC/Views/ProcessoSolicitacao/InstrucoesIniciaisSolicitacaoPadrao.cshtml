@@ -1,0 +1,24 @@
+﻿@model InstrucoesIniciaisSolicitacaoPadraoPaginaViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_INSTRUCOES_INICIAIS))
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_ARQUIVO_INSTRUCOES_INICIAIS))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    using (Smc.Fieldset("fsJustificativa").Begin())
+    {
+        @Smc.EditorFor(x => x.ExigeJustificativa)
+        @Smc.EditorFor(x => x.SeqJustificativa)
+        @Smc.EditorFor(x => x.ObservacoesJustificativa)
+    }
+    @Html.Partial("_BotoesNavegacao", Model)
+}

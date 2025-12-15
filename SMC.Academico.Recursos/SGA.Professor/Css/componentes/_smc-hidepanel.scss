@@ -1,0 +1,343 @@
+﻿// HIDEPANEL
+
+.smc-hidepanel-button {
+    @extend .fa-commenting;
+
+    :focus {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    &::before {
+        @extend .fa;
+        color: $smc-hidepanel-button-before-color;
+        font-size: 18px;
+        float: left;
+        line-height: 20px;
+        margin-right: 10px;
+    }
+}
+
+.smc-hidepanel-button-expanded {
+    @extend .fa-commenting-o;
+
+    &::before {
+        @extend .fa;
+    }
+}
+
+.smc-hidepanel-panel {
+    clear: both;
+    overflow: hidden;
+    background-color: $smc-hidepanel-panel-background-color;
+    margin-left: 16px;
+    margin-top: 0px;
+    padding: 10px 5px;
+
+    h3, label {
+        color: $smc-hidepanel-panel-label-color !important;
+    }
+
+    h3 {
+        margin-bottom: 10px !important;
+    }
+}
+
+// HIDEPANEL SOMENTE PARA TELA LANÇAMENTO DE NOTAS
+
+.smc-sga-notas-frequencias .smc-hidepanel-button {
+    @extend .fa-comment;
+    background:none;
+    border:none !important;
+    outline:none !important;
+
+    :focus {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    &::before {
+        margin-top: 5px;
+        @extend .fa;
+        color: rgb(7, 68, 88);
+        font-size: 18px;
+        float: left;
+        line-height: 20px;
+        margin-right: 10px;
+    }
+}
+
+.smc-sga-notas-frequencias .smc-hidepanel-button-expanded {
+    @extend .fa-comment-o;
+
+
+    &::before {
+        margin-top: 5px;
+        @extend .fa;
+    }
+}
+
+.smc-sga-notas-frequencias div > button.smc-hidepanel-button-filled {
+    @extend .fa-commenting;
+
+    &::before {
+        margin-top: 5px;
+        @extend .fa;
+        color: $smc-hidepanel-button-before-color;
+        font-size: 18px;
+        float: left;
+        line-height: 20px;
+        margin-right: 10px;
+    }
+}
+
+.smc-sga-notas-frequencias div > button.smc-hidepanel-button-expanded-filled {
+    @extend .fa-commenting-o;
+
+    &::before {
+        margin-top: 5px;
+        @extend .fa;
+        color: $smc-hidepanel-button-before-color;
+        font-size: 18px;
+        float: left;
+        line-height: 20px;
+        margin-right: 10px;
+    }
+}
+
+
+
+.smc-grupo-legenda-sga-notas-frequencias-em-branco > span {
+
+    @extend .fa-comment;
+
+    &::before {
+        @extend .fa;
+        color: rgb(7, 68, 88);
+        font-size: 18px;
+        float: left;
+        line-height: 20px;
+        margin-right: 10px;
+    }
+}
+
+.smc-grupo-legenda-sga-notas-frequencias-preenchida > span {
+    @extend .fa-commenting;
+
+    &::before {
+        @extend .fa;
+        color: $smc-hidepanel-button-before-color;
+        font-size: 18px;
+        float: left;
+        line-height: 20px;
+        margin-right: 10px;
+    }
+}
+
+
+
+.smc-hidepanel-pesquisa-avancada {
+    .smc-hidepanel-button {
+        @extend .smc-editorformodel-advancedfilter !optional;
+        height: 31px;
+
+
+        &:hover {
+            background-color: $smc-cor-principal-06;
+            border: solid 1px $smc-cor-principal !important;
+            color: $smc-cor-principal-06 !important;
+
+            &:before {
+                color: $smc-cor-principal !important;
+            }
+        }
+    }
+
+    .smc-hidepanel-button-expanded {
+        @extend .smc-editorformodel-advancedfilter-expanded !optional;
+    }
+
+    .smc-hidepanel-panel {
+        background-color: $smc-cinza-01;
+        -webkit-box-shadow: 0px 6px 14px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 6px 14px -2px rgba(0,0,0,0.75);
+        box-shadow: 0px 9px 13px -8px rgba(0,0,0,0.75);
+        padding: 0 5px 5px 5px;
+    }
+
+    label {
+        color: $smc-cinza !important;
+    }
+    // .smc-hidepanel-panel {
+    //     &:before {
+    //         border: 10px solid transparent;
+    //         border-right-color: #bf3605;
+    //         content: "";
+    //         left: -20px;
+    //         position: absolute;
+    //     }
+    // }
+}
+
+//Responsividade para posicionamento do botão de Pesquisa Avançada. Exemplo em: http://localhost/Dev/SGA.Administrativo/SRC/SolicitacaoServico?seqProcesso=510FD23CE9CB5C8A874B8EBD81FEBF68
+//Em cada uma das telas que tal componente aparecer, precisará ser personalizado para tal. Buscar posteriormente otimização desta dinâmica.
+
+//LG
+@media (min-width:$smc-size-screen-lg-min) {
+    // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+    //Sem menu lateral
+    .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+        width: 84%;
+
+        .smc-hidepanel-button {
+            margin: -32px -9px 0px 0px !important;
+        }
+    }
+    //Com menu lateral
+    .smc-conteudo-padding {
+        & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            width: 70.5% ;
+
+            .smc-hidepanel-button {
+                margin: -32px 2px 0px 0px !important;
+            }
+        }
+    }
+    
+}
+@media (min-width:1500px) {
+    //Com menu lateral
+    .smc-conteudo-padding {
+        & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            width: 72.5%;
+        }
+    }
+}
+@media (min-width:1700px) {
+    //Com menu lateral
+    .smc-conteudo-padding {
+        & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            width: 75.5%;
+        }
+    }
+}
+//MD
+@media (max-width:1405px) // removido a variaval $smc-size-screen-md-max para customizar a quebra errada
+{
+    // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+
+    //Sem menu lateral
+
+    .smc-buttonset-com-hidepanel {
+        width: 222px;
+    }
+
+    .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+        width: 75%;
+
+        .smc-hidepanel-button {
+            margin: 25px -60px 0px 0px !important;
+        }
+
+        .smc-hidepanel-panel {
+            fieldset {
+                legend {
+                    font-size: 14px;
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
+    //Com menu lateral
+    .smc-conteudo-padding {
+
+        & .smc-buttonset-com-hidepanel {
+            width: 185px;
+        }
+
+        & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            width: 66.5% !important;
+
+            .smc-hidepanel-button {
+                margin: 25px 84px 0px 0px !important;
+            }
+        }
+
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            & .smc-hidepanel-panel {
+                width: 80%;
+                margin-top: 5px;
+            }
+
+            fieldset {
+                legend {
+                    font-size: 14px;
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
+}
+
+//SM
+@media (max-width:$smc-size-screen-sm-max) {
+    // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+    //Sem menu lateral
+    .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+        margin-top: 227px;
+
+        .smc-hidepanel-panel {
+            width: 94%;
+            margin-top: 5px;
+        }
+
+        .smc-hidepanel-button {
+            margin: 25px -4px 0px 0px !important;
+        }
+    }
+    //Com menu lateral
+    .smc-conteudo-padding {
+        & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            .smc-hidepanel-button {
+                margin: 25px 159px 0px 0px !important;
+            }
+        }
+    }
+}
+
+//XS
+@media (max-width:$smc-size-screen-xs-max) {
+    // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+    //Sem menu lateral
+    .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+        margin-top: 626px;
+        width: 92%;
+
+        .smc-hidepanel-panel {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .smc-hidepanel-button {
+            margin: 25px 140px 0px 0px !important;
+        }
+    }
+    //Com menu lateral
+    .smc-conteudo-padding {
+        & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            .smc-hidepanel-button {
+                margin: 25px 159px 0px 0px !important;
+            }
+        }
+    }
+}

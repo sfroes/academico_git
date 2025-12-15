@@ -1,0 +1,21 @@
+﻿namespace SMC.Academico.Common.Constants
+{
+    public class FILTER
+    {
+        public const string INSTITUICAO_ENSINO = "ACADEMICO_INSTITUICAO_ENSINO";
+
+        public const string ALUNO = "ACADEMICO_ALUNO";
+
+        public const string NIVEL_ENSINO = "ACADEMICO_NIVEL_ENSINO";
+
+        public const string HIERARQUIA_ENTIDADE_LOCALIDADES = "ACADEMICO_HIERARQUIA_ENTIDADE_LOCALIDADES";
+
+        public const string HIERARQUIA_ENTIDADE_POLOS_VIRTUAIS = "ACADEMICO_HIERARQUIA_ENTIDADE_POLOS_VIRTUAIS";
+
+        public const string HIERARQUIA_ENTIDADE_UNIDADE_GESTORA = "ACADEMICO_HIERARQUIA_ENTIDADE_UNIDADE_GESTORA";
+
+        public const string HIERARQUIA_ENTIDADE_ORGANIZACIONAL = "ACADEMICO_HIERARQUIA_ENTIDADE_ORGANIZACIONAL";
+
+        public const string PROFESSOR = "ACADEMICO_PROFESSOR";
+    }
+}

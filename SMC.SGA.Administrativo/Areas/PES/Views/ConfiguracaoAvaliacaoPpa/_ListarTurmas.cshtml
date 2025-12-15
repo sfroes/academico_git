@@ -1,0 +1,15 @@
+﻿@model SMCPagerModel<ConsultaConfiguracaoAvaliacaoPpaTurmaListarViewModel>
+
+@(Smc.Grid("gridConsultaTurmas", Model)
+    .AutoGenerateColumns()
+    .ButtonColumn(SMCButtonSetType.Secondary, 2, string.Empty, string.Empty, "smc-grid-coluna-botoes", false,
+    f => Smc.Button(SMCButtonBehavior.Visualizar).CssClass()
+    .DisplayMode(SMCButtonDisplayMode.Icon)
+    .Tooltip(Smc.GetUIResource("Botao_Consultar_Amostras"))
+    .Action("ConsultarAmostra", "ConfiguracaoAvaliacaoPpa",
+            new ConsultaTurmaAmostraFiltroViewModel {
+                SeqConfiguracaoAvaliacaoPpa = new SMCEncryptedLong((f as ConsultaConfiguracaoAvaliacaoPpaTurmaListarViewModel).SeqConfiguracaoAvaliacaoPpa),
+                SeqConfiguracaoAvaliacaoPpaTurma = new SMCEncryptedLong((f as ConsultaConfiguracaoAvaliacaoPpaTurmaListarViewModel).SeqConfiguracaoAvaliacaoPpaTurma),
+            }
+            )
+    ))

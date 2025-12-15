@@ -1,0 +1,31 @@
+﻿@model  ConfiguracaoComponeteMatrizFiltroViewModel
+
+@Html.Partial("_ButtonList", Model)
+
+@Html.Action("ConfiguracaoComponenteMatrizCabecalho", "ConfiguracaoComponenteMatriz", Model.SeqMatrizCurricular)
+
+@using (Smc.Form("formPesquisaDivisaoMatrizCurricular", "BuscarComponentesCurriculares").Ajax("#divListComponente").Begin())
+{
+    @Smc.EditorFor(e => e.SeqMatrizCurricular)
+    @Smc.EditorFor(e => e.SeqCurriculoCursoOferta)
+    @Smc.EditorFor(e => e.SeqDivisaoMatrizCurricular)
+    @Smc.EditorFor(e => e.DescricaoGrupoCurricular)
+    @Smc.EditorFor(e => e.SeqComponenteCurricular)
+    @Smc.EditorFor(e => e.SeqTipoComponente)
+    @Smc.EditorFor(e => e.SomenteComponentesSemConfiguracao).CssClass("smc-sga-hide-label")
+
+
+    @(Smc.ButtonSet().Size(SMCSize.Grid24_24)
+                     .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                     .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon)))
+}
+
+<div id="divListComponente">
+    @Html.Action("BuscarComponentesCurriculares", Model)
+</div>
+
+@Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+                .CssClass("smc-btn-voltar-icotext")
+                .Action("Index", "MatrizCurricular", new { SeqCurriculoCursoOferta = (SMCEncryptedLong)Model.SeqCurriculoCursoOferta })
+                .Type(SMCButtonType.Link)
+                )

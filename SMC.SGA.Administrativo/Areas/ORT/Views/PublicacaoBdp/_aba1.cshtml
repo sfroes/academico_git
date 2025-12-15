@@ -1,0 +1,66 @@
+﻿@model PublicacaoBdpDynamicModel
+
+@Smc.EditorFor(m => m.Seq)
+@Smc.EditorFor(m => m.SeqPublicacaoBdp)
+
+@using (Smc.Fieldset("alunos").Begin())
+{
+    @(Smc.List("alunosList", m => m.Alunos)
+         .HtmlTemplate(
+         @<text>
+             @Smc.EditorFor(m => item.Value.SeqTrabalhoAcademicoAutoria)
+             @Smc.EditorFor(m => item.Value.NomeAutor)
+             @Smc.EditorFor(m => item.Value.NomeAutorFormatado)
+             @Smc.EditorFor(m => item.Value.EmailAutor)
+         </text>)
+    )
+}
+
+@using (Smc.Fieldset("trabalho").Begin())
+{
+    @Smc.EditorFor(m => m.TipoTrabalho)
+    @Smc.EditorFor(m => m.DataDefesa)
+    using (Smc.Div("DownloadAta").CssClass("smc-sga-margin-top-20").Size(SMCSize.Grid4_24).Begin())
+    {
+        SMCButtonFluentConfiguration buttonEmitirAtaDefesa = Smc.Button("btn-emitir-ata-defesa")
+        .CssClass("smc-btn-download-icotext")
+        .Text(Smc.GetUIResource("Botao_Emitir_Ata_Defesa"))
+        .Tooltip(Smc.GetUIResource("Botao_Emitir_Ata_Defesa_Tooltip"))
+        .Type(SMCButtonType.Link)
+        .Attribute("target", "_blank")
+        .Enabled(Model.ArquivoAnexadoAtaDefesa != null)
+        .Action("DownloadFileGuid", "Home", new { @area = "", @guidFile = Model.ArquivoAnexadoAtaDefesa == null ? Guid.NewGuid().ToString() : Model.ArquivoAnexadoAtaDefesa.GuidFile, name = Model.ArquivoAnexadoAtaDefesa == null ? string.Empty : Model.ArquivoAnexadoAtaDefesa.Name, seqEntity = Model.ArquivoAnexadoAtaDefesa == null ? Guid.NewGuid().ToString() : Model.ArquivoAnexadoAtaDefesa.GuidFile, propertyName = "ArquivoAnexadoAtaDefesa" });
+
+        if (Model.ArquivoAnexadoAtaDefesa == null)
+        {
+            buttonEmitirAtaDefesa.ButtonInstructions(Smc.GetUIResource("MensagemAtaDefesaNaoAnexada"));
+        }
+
+        @buttonEmitirAtaDefesa;
+
+    }
+    @Smc.EditorFor(m => m.QuantidadeVolumes)
+    @Smc.EditorFor(m => m.QuantidadePaginas)
+    @Smc.EditorFor(m => m.CodigoAcervo)
+
+}
+
+@Smc.EditorFor(m => m.Arquivos)
+
+@using (Smc.Fieldset("banca").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid23_24).Begin())
+    {
+        if (Model.Banca.Any())
+        {
+            @Smc.DisplayFor(m => m.DescricoesMembros).HideLabel(SMCDisplayHideLabel.All).Size(SMCSize.Grid23_24)
+        }
+        else
+        {
+            using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+            {
+                <p> @Smc.GetUIResource("Label_Nenhum_Registro") </p>
+            }
+        }
+    }
+}

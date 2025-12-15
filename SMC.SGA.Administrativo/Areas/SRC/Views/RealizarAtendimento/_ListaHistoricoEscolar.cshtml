@@ -1,0 +1,14 @@
+﻿@using SMC.Framework.Model;
+
+@model SMCPagerModel<SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoListarViewModel>
+
+@(Smc.Grid("gridHistoricoEscolar", Model)
+     .AutoGenerateColumns()
+     .HideGridTitle()
+     .HideNavigator()
+     .HideNumberOfRowsPerPageSelector()
+     .HidePager()
+     .HideRowNumber()
+     .HideRowsTotalizer()
+)
+

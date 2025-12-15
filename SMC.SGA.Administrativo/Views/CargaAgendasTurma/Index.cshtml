@@ -1,0 +1,16 @@
+﻿@model CargaAgendasTurmaViewModel
+
+@using (Smc.Form("formCargaAgendasTurma", "ExecutarCargaAgendasTurma").Ajax().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(m => m.SeqCicloLetivo)
+
+    var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-btn-formato-link");
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+                           .DisplayMode(SMCButtonDisplayMode.Text)
+                           .Text(Smc.GetUIResource("Botao_ExecutarCarga"))
+                           .Highlight());
+
+    @buttonSet;
+}
+

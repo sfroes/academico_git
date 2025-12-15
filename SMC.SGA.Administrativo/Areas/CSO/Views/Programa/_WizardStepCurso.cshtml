@@ -1,0 +1,12 @@
+﻿@model ReplicaFormacaoEspecificaProgramaViewModel
+
+@Smc.EditorFor(m => m.MensagemInformativa)
+
+@Smc.EditorFor(prop => prop.SeqFormacaoEspecifica)
+@Smc.EditorFor(prop => prop.SeqEntidadeResponsavel)
+@Smc.EditorFor(prop => prop.CategoriasAtividadesSituacoesAtuais)
+@Smc.EditorFor(prop => prop.SeqsCursos)
+@Smc.EditorFor(prop => prop.DataInicioVigenciaFormacaoCurso)
+@Smc.EditorFor(prop => prop.DataFimVigenciaFormacaoCurso)
+
+@Smc.WizardView()

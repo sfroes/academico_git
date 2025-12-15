@@ -1,0 +1,159 @@
+﻿@model EntregaOnlineViewModel
+
+@using (Smc.Header("CabecalhoEntregaOnline", SMCHeaderType.Primary)
+            .Item(p => p.DescricaoOrigemAvaliacao, sizeMD: SMCSize.Grid24_24)
+            .Item(p => p.Sigla, sizeMD: SMCSize.Grid3_24, sizeSM: SMCSize.Grid3_24, sizeXS: SMCSize.Grid6_24, sizeLG: SMCSize.Grid3_24)
+            .Item(p => p.Descricao, sizeMD: SMCSize.Grid16_24, sizeSM: SMCSize.Grid16_24, sizeXS: SMCSize.Grid18_24, sizeLG: SMCSize.Grid16_24)
+            .Item(p => p.Valor, sizeMD: SMCSize.Grid5_24, sizeSM: SMCSize.Grid5_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid5_24)
+            .Item(p => p.Data, sizeMD: SMCSize.Grid12_24, sizeSM: SMCSize.Grid12_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid12_24)
+            .Item(p => p.QuantidadeMaximaPessoasGrupo, sizeMD: SMCSize.Grid12_24, sizeSM: SMCSize.Grid12_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid12_24)
+            .Begin())
+{
+}
+
+@if (Model.UidArquivoAnexadoInstrucao.HasValue || !string.IsNullOrEmpty(Model.Instrucao))
+{
+    using (Smc.Fieldset("Intrucoes").Size(SMCSize.Grid24_24).CssClass("smc-sga-confirmacao-dados").LegendText(Smc.GetUIResource("Instrucoes")).Begin())
+    {
+        using (Smc.Div().Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid23_24, SMCSize.Grid23_24).Begin())
+        {
+            @Smc.DisplayFor(d => d.Instrucao)
+        }
+        using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+        {
+            if (Model.UidArquivoAnexadoInstrucao.HasValue)
+            {
+                @Smc.ButtonSet().AddButton(Smc.Button("btn-download-arquivo-anexo")
+                                                            .CssClass("smc-btn-download-ico")
+                                                            .Text(Smc.GetUIResource("Botao_Download_Arquivo_Anexo"))
+                                                            .Tooltip(Smc.GetUIResource("Botao_Download_Arquivo_Anexo_Tooltip"))
+                                                            .Type(SMCButtonType.Link)
+                                                            .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true)
+                                                            .Attribute("target", "_blank")
+                                                            .Action("DownloadFileGuid", "Home", new { @area = "", @guidFile = Model.UidArquivoAnexadoInstrucao }));
+            }
+        }
+    }
+}
+
+@*@Html.Action("CabecalhoEntregaOnline", "EntregaOnline", new { area = "APR", seqAplicacaoAvaliacao = Model.SeqAplicacaoAvaliacao })*@
+
+@using (Smc.Form("formEntregaOnline", "SalvarEntregaOnline", "EntregaOnline").Ajax().Begin())
+{
+    @Smc.EditorFor(e => e.Seq)
+    @Smc.EditorFor(e => e.SeqAplicacaoAvaliacao)
+    @Smc.EditorFor(e => e.SeqOrigemAvaliacao)
+    @Smc.EditorFor(e => e.HabilitarCampos)
+    @Smc.EditorFor(e => e.HabilitarBotaoNovo)
+    @Smc.EditorFor(e => e.HabilitarBotaoLiberar)
+    @Smc.EditorFor(e => e.HabilitarBotaoNovaEntrega)
+    @Smc.HiddenFor(e => e.Descricao)
+    @Smc.HiddenFor(e => e.Sigla)
+
+    using (Smc.Fieldset("Entrega").Size(SMCSize.Grid24_24).CssClass("smc-sga-confirmacao-dados").LegendText(Smc.GetUIResource("Entrega")).Begin())
+    {
+        @Smc.EditorFor(e => e.SeqArquivoAnexado)
+        @Smc.EditorFor(e => e.ArquivoAnexado).Readonly(!Model.HabilitarCampos)
+        @Smc.EditorFor(e => e.Observacao)
+    }
+
+    using (Smc.Fieldset("Alunos").CssClass("smc-sga-agrupamento-aluno").Size(SMCSize.Grid24_24).LegendText(Smc.GetUIResource("Aluno")).Begin())
+    {
+        @Smc.MasterDetail(m => m.Participantes).HideHeader().MaximumItens((int)Model.QuantidadeMaximaPessoasGrupo)
+    }
+
+    using (Smc.Fieldset("DetalheEntrega").Size(SMCSize.Grid24_24).LegendText(Smc.GetUIResource("DetalheEntrega")).Begin())
+    {
+        @Smc.EditorFor(e => e.DataEntrega)
+        @Smc.EditorFor(e => e.CodigoProtocolo)
+        @Smc.EditorFor(e => e.SituacaoEntrega)
+    }
+
+    #region Botões da Entrega Online
+
+    var botaoSalvar = Smc.Button(SMCButtonBehavior.Salvar)
+                           .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                           .Enabled(Model.HabilitarBotaoNovo)
+                           .Highlight()
+                           .Action("SalvarEntregaOnline")
+                           .Type(SMCButtonType.Submit);
+
+    var botaoLiberarCorrecao = Smc.Button(SMCButtonBehavior.Salvar)
+                              .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                              .Enabled(Model.HabilitarBotaoLiberar)
+                              .Text(Smc.GetUIResource("Botao_Liberar"))
+                              .Tooltip(Smc.GetUIResource("Botao_Liberar_Tooltip"))
+                              .Type(SMCButtonType.Submit);
+
+    if (Model.HabilitarBotaoLiberar)
+    {
+        //botaoLiberarCorrecao.Action("LiberarCorrecao", "EntregaOnline", new { SeqEntregaOnline = new SMCEncryptedLong(Model.Seq), seqAplicacaoAvaliacao = new SMCEncryptedLong(Model.SeqAplicacaoAvaliacao) });
+        botaoLiberarCorrecao.Action("SalvarELiberarCorrecao");
+    }
+
+    var botaoHistoricoSituacao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "HistoricoSituacaoEntrega", new { seqEntregaOnline = new SMCEncryptedLong(Model.Seq), area = "" }, "EntregaOnlineRoute")
+                           .Ajax(isPost: false)
+                           .Attribute(SMCMvcConsts.MODAL_ID, "modalHistoricoSituacoes")
+                           .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Titulo_Modal_HistoricoSituacoes"))
+                           .CssClass("smc-btn-visualizar-icotext")
+                           .Enabled(Model.HabilitarBotaoHistorico)
+                           .Text(Smc.GetUIResource("Botao_Historico_Situacao"))
+                           .Tooltip(Smc.GetUIResource("Botao_Historico_Situacao_Tooltip"))
+                           .Type(SMCButtonType.Link);
+
+    var botaoSolicitarLiberarNovaEntrega = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                           .Ajax(isPost: false)
+                           .Attribute(SMCMvcConsts.MODAL_ID, "modalSolicitaLiberarNovaEntrega")
+                           .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Titulo_Modal_Solicitar_Liberar_Nova_Entrega"))
+                           .CssClass("smc-btn-copiar-icotext")
+                           .Enabled(Model.HabilitarBotaoNovaEntrega)
+                           .Text(Smc.GetUIResource("Botao_Nova_Entrega"))
+                           .Tooltip(Smc.GetUIResource("Botao_Nova_Entrega_Tooltip"))
+                           .Type(SMCButtonType.Link);
+
+    if (Model.HabilitarBotaoNovaEntrega)
+    {
+        botaoSolicitarLiberarNovaEntrega.Action("SolicitarLiberarNovaEntrega", "EntregaOnline", new { seqEntregaOnline = new SMCEncryptedLong(Model.Seq), seqAplicacaoAvaliacao = new SMCEncryptedLong(Model.SeqAplicacaoAvaliacao) });
+    }
+
+    var botaoVoltar = Smc.Button(SMCButtonBehavior.Voltar).Type(SMCButtonType.Link)
+                           .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                           .Url(Url.Action("Index", "Avaliacao", new { SeqTurma = new SMCEncryptedLong(Model.SeqTuma) }), true);
+
+
+    @(Smc.ButtonSet()
+        //.CssClass("smc-fix-alinhamento-bts")
+            .AddButton(botaoSalvar)
+            .AddButton(botaoLiberarCorrecao)
+            .AddButton(botaoSolicitarLiberarNovaEntrega)
+            .AddButton(botaoHistoricoSituacao)
+            .AddButton(botaoVoltar)
+            .Size(SMCSize.Grid24_24));
+
+    #endregion
+
+}
+
+@using (Smc.ModalWindow("modalHistoricoSituacoes")
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Size(SMCModalWindowSize.Large)
+           .Begin()) { }
+
+@using (Smc.ModalWindow("modalSolicitaLiberarNovaEntrega")
+           .Form("frmModalSolicitarLiberarNovaEntrega", "SalvarSolicitarLiberarNovaEntrega", "EntregaOnline", new { area = "APR" }, true, x => x.Ajax())
+           .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().Text(Smc.GetUIResource("Botao_Solicitar_Liberar_Nova_Entrega")))
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Size(SMCModalWindowSize.Medium)
+           .Begin()) { }
+
+
+@section scripts
+{
+    <script type="text/javascript">
+        $("[data-name='ResponsavelEntrega'] option:selected").each(function (i) {
+            if ($(this)[0].value == "True") {
+                $(this).parents().children("div.smc-button").remove();
+            }
+        })
+    </script>
+}

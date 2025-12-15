@@ -1,0 +1,14 @@
+﻿@model CancelamentoSolicitacaoViewModel
+
+@Smc.Action("CabecalhoCancelamentoSolicitacao", "SolicitacaoServico", new { @seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico) })
+
+@Smc.EditorFor(x => x.SeqSolicitacaoServico)
+@Smc.EditorFor(x => x.ExigeMotivosCancelamento)
+@Smc.EditorFor(x => x.ExigeTipoCancelamento)
+@Smc.EditorFor(x => x.HabilitaCampoClassificacaoInvalidadeDocumento)
+@Smc.EditorFor(x => x.SeqMotivoCancelamento).Size(SMCSize.Grid9_24)
+@Smc.EditorFor(x => x.TipoCancelamento).Size(SMCSize.Grid8_24)
+@Smc.EditorFor(x => x.SeqClassificacaoInvalidadeDocumento).Size(SMCSize.Grid7_24)
+@Smc.DisplayFor(x => x.TextoInformativoPermanente).Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa")
+@Smc.DisplayFor(x => x.TextoInformativoTemporario).Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa")
+@Smc.EditorFor(x => x.Observacao).Size(SMCSize.Grid24_24)

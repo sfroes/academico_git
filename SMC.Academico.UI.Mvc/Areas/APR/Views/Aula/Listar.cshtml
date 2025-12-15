@@ -1,0 +1,28 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.APR.Models
+@using SMC.Framework.UI.Mvc
+@using SMC.Academico.Common.Areas.APR.Constants
+@model SMC.Framework.Model.SMCPagerModel<AulaListaViewModel>
+
+@(Smc.Grid("gridAulas")
+    .AutoGenerateColumns(true)
+    .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+        x => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("Editar", new { seq = new SMCEncryptedLong((x as AulaListaViewModel).Seq), seqDivisaoTurma = new SMCEncryptedLong(ViewBag.SeqDivisaoTurma), backUrl = ViewBag.BackUrl }))
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalFiltrarAlunos")
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Editar_Title"))
+                .Ajax(isPost: false)
+                .SecurityToken(UC_APR_006_01_02.MANTER_LANCAMENTO_FREQUENCIA)
+                .Text(Smc.GetUIResource("Botao_Editar"))
+                .Tooltip(Smc.GetUIResource("Botao_Editar_Tooltip"))
+                .Type(SMCButtonType.InputButton)
+                .CssClass("smc-btn-alterar-ico")
+                .Action("FitrarAlunos", null, new { seq = new SMCEncryptedLong((x as AulaListaViewModel).Seq), seqDivisaoTurma = new SMCEncryptedLong(ViewBag.SeqDivisaoTurma ?? 0), BackUrl = ViewBag.BackUrl })
+                .Id("BotaoEditar" + (new SMCEncryptedLong((x as AulaListaViewModel).Seq))),
+
+        x => Smc.Button(SMCButtonBehavior.Excluir)
+                .DisplayMode(SMCButtonDisplayMode.Icon)
+                .Confirm(Smc.GetUIResource("Confirm_Excluir_Titulo"), string.Format(Smc.GetUIResource("Confirm_Excluir_Mensagem"), (x as AulaListaViewModel).DataAula.ToString("dd/MM/yyyy")), SMCWindowButtons.Yes, true)
+                .SecurityToken(UC_APR_006_01_02.MANTER_LANCAMENTO_FREQUENCIA)
+                .Action("Excluir", null, new { Seq = new SMCEncryptedLong((x as AulaListaViewModel).Seq), seqDivisaoTurma = new SMCEncryptedLong(ViewBag.SeqDivisaoTurma ?? 0), BackUrl = ViewBag.BackUrl })
+                .Id("BotaoExcluir" + (new SMCEncryptedLong((x as AulaListaViewModel).Seq))))
+)

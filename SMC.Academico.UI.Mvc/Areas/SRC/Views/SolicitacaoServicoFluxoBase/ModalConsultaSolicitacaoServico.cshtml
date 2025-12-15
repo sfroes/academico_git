@@ -1,0 +1,68 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.SRC.Models;
+@using SMC.Academico.Common.Constants;
+
+@model DadosModalSolicitacaoServicoViewModel
+
+@if (Request.IsAjaxRequest())
+{
+    Layout = null;
+}
+
+@using (Smc.TabSet("ConsultarSolicitacao").Begin())
+{
+    using (Smc.Tab("Identificacao").Action("BuscarDadosIdentificacaoSolicitante", "SolicitacaoServico", new { SeqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao), NumeroProtocolo = Model.Solicitacao.NumeroProtocolo }).Begin())
+    {
+
+    }
+
+    using (Smc.Tab("HistoricoSolicitacao").Action("BuscarHistoricosSolicitacao", "SolicitacaoServico", new { SeqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao) }).Begin())
+    {
+
+    }
+
+    if (Model.ExibirAbaDocumentos)
+    {
+        using (Smc.Tab("DocumentosSolicitacao").Action("BuscarDocumentosSolicitacao", "SolicitacaoServico", new { SeqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao) }).Begin())
+        {
+
+        }
+    }
+
+    if (Model.SolicitacaoPossuiTaxas)
+    {
+        using (Smc.Tab("TaxasSolicitacao").Action("BuscarTaxasSolicitacao", "SolicitacaoServico", new { SeqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), SeqServico = new SMCEncryptedLong(Model.Solicitacao.SeqServico), NumeroProtocolo = Model.Solicitacao.NumeroProtocolo, BackUrl = Model.BackUrl }).Begin())
+        {
+
+        }
+    }
+}
+
+@{
+    var buttonSetVoltar = Smc.ButtonSet();
+
+    if (SMCContext.ApplicationId == SIGLA_APLICACAO.SGA_ALUNO)
+    {
+
+        SMCButtonFluentConfiguration botaoImprimirSolicitacao = Smc.Button(SMCButtonBehavior.Imprimir, "ImprimirDadosSolicitacaoPadrao", new
+        {
+            seqSolicitacaoServico = new SMCEncryptedLong(Model.Solicitacao.Seq),
+            seqConfiguracaoEtapa = new SMCEncryptedLong(Model.Solicitacao.SeqConfiguracaoEtapa),
+            seqServico = new SMCEncryptedLong(Model.Solicitacao.SeqServico),
+        }, "ProcessoSolicitacao")
+                .Type(SMCButtonType.Link)
+                .Highlight()
+                .SecurityToken()
+                .CssClass("smc-btn-imprimir-icotext")
+                .Attribute("target", "_blank");
+
+        buttonSetVoltar.AddButton(botaoImprimirSolicitacao);
+
+        if (!Request.IsAjaxRequest())
+        {
+            buttonSetVoltar.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon));
+        }
+
+    }
+    @buttonSetVoltar;
+
+}

@@ -1,0 +1,24 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.CUR.Models;
+@using SMC.Framework.Model;
+
+@model ComponenteCurricularEmentaViewModel
+
+
+@using (Smc.Header("Cabecalho", SMCHeaderType.Primary)
+                        .Item(prop => prop.CodigoComponente, sizeMD: SMCSize.Grid4_24)
+                        .Item(prop => prop.SiglaComponente, sizeMD: SMCSize.Grid2_24)
+                        .Item(prop => prop.DescricaoComponente, sizeMD: SMCSize.Grid18_24)
+                        .Begin()) { }
+
+
+@using (Smc.Fieldset("DadosEmenta").Size(SMCSize.Grid24_24).LegendText(Smc.GetUIResource("Label_Componente_Curricular_Ementa_Fieldset")).Begin())
+{
+    @if (string.IsNullOrEmpty(Model.DescricaoEmenta))
+    {
+        <label>@Smc.GetUIResource("Label_Componente_Curricular_Ementa_SemRegistro")</label>
+    }
+    else
+    {
+        @Smc.DisplayFor(m => m.DescricaoEmenta).HideLabel().Size(SMCSize.Grid24_24)
+    }
+}

@@ -1,0 +1,128 @@
+﻿@model HomeProfessorViewModel
+
+@{
+    var totalBanners = 0;
+    var carousel = Smc.Carousel("banners")
+        .Infinite()
+        .Interval(5000)
+        .PauseOnHover()
+        .Size(SMCSize.Grid18_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid18_24);
+}
+
+@if (Model != null && Model.ExibirBannerAvaliacaoSemestralCpa)
+{
+    totalBanners++;
+    carousel.AddItem(@<text>
+    <form name="avaliacao_semestral_cpa" method="post" action="@Model.UrlAvaliacaoSemestralCpa" target="_blank">
+        <div id="divBannerAvaliacaoSemestralCPA" class="smc-sga-banner-avaliacao-semestral-cpa @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+            <input type="submit" value="Banner Avaliação Semestral CPA" />
+            <input type="hidden" value="@User.SMCGetCodigoPessoa()" name="codigoPessoa" id="codigoPessoa" />
+        </div>
+    </form>
+    </text>);
+}
+
+@{
+    totalBanners++;
+    carousel.AddItem(@<text>
+    <div id="divBannerFALECOMAGENTE" class="smc-sga-banner-falecomagente @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+        <a href="https://www.pucminas.br/destaques/Paginas/Fale-com-a-PUC-Minas.aspx" target="_blank" title="Fale com a gente">
+
+        </a>
+    </div>
+    </text>);
+}
+
+@(carousel.GenerateArrows(totalBanners > 1).GenerateDots(totalBanners > 1))
+
+<div class="smc-sga-acesso-rapido smc-size-md-5 smc-size-xs-24 smc-size-sm-24 smc-size-lg-5">
+    <p class="smc-sga-acesso-rapido-titulo">Acesso Rápido</p>
+    <div class="smc-sga-acesso-rapido-teams">
+        <a href="https://teams.microsoft.com/dl/launcher/launcher.html?url=teams&amp;type=meetup-join&amp;enableMobilePage=true&amp;suppressPrompt=true" target="_blank" title="Acesso ao Teams">
+            <p>Teams</p>
+        </a>
+    </div>
+    <div class="smc-sga-acesso-rapido-canvas">
+        <a href="https://pucminas.instructure.com/login/microsoft" target="_blank" title="Acesso ao Canvas">
+            <p>Canvas</p>
+        </a>
+    </div>
+</div>
+
+@using (Smc.Div("dataselector-filter-selecaoturma").Size(SMCSize.Grid18_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid16_24).Begin())
+{
+    <h2>@Smc.GetUIResource("Label_Dados_Turmas")</h2>
+
+    using (Smc.Div("DivFiltros").CssClass("smc-sga-externo-filtro").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(x => x.SeqCicloLetivoInicio)
+
+        using (Smc.Form("frmViewPadrao", "SelecaoTurmaPesquisa", Model).Ajax("#divSelecaoTurmaPesquisa").Begin())
+        {
+            using (Smc.HidePanel("filtroAvancado").CssClass("smc-hidepanel-pesquisa-avancada smc-hidepanel").Begin())
+            {
+                @Smc.EditorFor(x => x.SeqNivelEnsino)
+                @Smc.EditorFor(x => x.SeqLocalidade)
+                @Smc.EditorFor(x => x.SeqCurso)
+                @Smc.EditorFor(x => x.SeqTurno)
+            }
+
+            var buttonSet = Smc.ButtonSet().CssClass("smc-sga-externo-botoes-filtro-principal").Size(SMCSize.Grid7_24, SMCSize.Grid10_24, SMCSize.Grid8_24, SMCSize.Grid5_24);
+
+            buttonSet.AddButton(Smc.Button("data-dataselector-search", "SelecaoTurmaPesquisa", "Home")
+                                 .Ajax(isPost: true,
+                                 updateTargetId: "#divSelecaoTurmaPesquisa",
+                                 prepareDataToRequest: "smc.dataselector.prepareSearch('#dataselector-filter-selecaoturma')",
+                                 fieldsContainerToRequest: "#divSelecaoTurmaPesquisa #dataselector-filter-selecaoturma #selectorSelectedValues")
+                                 .CssClass("smc-btn-pesquisar-ico"));
+
+            buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Limpar).DisplayMode(SMCButtonDisplayMode.Icon));
+
+            @buttonSet;
+        }
+
+    }
+
+    using (Smc.Div("divSelecaoTurmaPesquisa").Dependency(name: "SeqCicloLetivoInicio", action: "SelecaoTurmaPesquisa", controller: "Home", area: "", required: true, includedProperties: new string[] { "SeqNivelEnsino", "SeqLocalidade", "SeqCurso", "SeqTurno" }).Attribute("data-id", "divSelecaoTurmaPesquisa").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        if (Model != null && Model.Cursos != null)
+        {
+            @Smc.List("Cursos", m => m.Cursos).CssClass("smc-list-item-grid smc-sga-externo-area-rolagem").Size(SMCSize.Grid24_24).HtmlTemplate(curso => Html.Partial("_HomeCurso", curso.Value))
+
+        }
+        else
+        {
+            <p>Não existe turmas disponíveis.</p>
+        }
+    }
+}
+
+@using (Smc.Div("linksUteis").CssClass("smc-sga-aluno-links-uteis").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    <h2>Links úteis</h2>
+    <ul class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+        <li class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid4_24, SMCSize.Grid12_24, SMCSize.Grid6_24, SMCSize.Grid4_24)">
+            <a target="_blank" class="smc-sga-aluno-logotipo-bdp" title="Biblioteca Digital da PUC Minas" href="https://web.sistemas.pucminas.br/BDP/PUC%20Minas">
+
+            </a>
+        </li>
+        <li class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid4_24, SMCSize.Grid12_24, SMCSize.Grid6_24, SMCSize.Grid4_24)">
+            <a target="_blank" class="smc-sga-aluno-logotipo-periodicocapes " title="Portal de periódicos CAPES" href="http://www-periodicos-capes-gov-br.ez93.periodicos.capes.gov.br/">
+
+            </a>
+        </li>
+    </ul>
+}
+
+@using (Smc.ModalWindow("modalListaFrequencia")
+           .Form("formListaFrequencia", "GerarRelatorio", "ListaFrequencia", new { area = "APR" }, closeOnSubmit: true)
+           .Button(SMCButtonBehavior.Relatorio, config: bnt => bnt.ConditionalDisplay("Colaboradores_Grid", true).Text(Smc.GetUIResource("Botao_Emitir_Relatorio")).CssClass("smc-btn-gerar-relatorio-icotext-destaque").Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true).Attribute("formtarget", "_blank").Highlight())
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Size(SMCModalWindowSize.Large)
+           .Begin()) { }
+
+@using (Smc.ModalWindow("modalVisualizarDivisaoTurma")
+        .Form("formVisualizarDivisaoTurma", closeOnSubmit: true)
+        .Size(SMCModalWindowSize.Large)
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }

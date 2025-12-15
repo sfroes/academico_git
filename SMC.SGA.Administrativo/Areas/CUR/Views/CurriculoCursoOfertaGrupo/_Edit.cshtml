@@ -1,0 +1,14 @@
+﻿@model CurriculoCursoOfertaGrupoDynamicModel
+
+@Smc.EditorFor(m => m.Seq)
+@Smc.EditorFor(m => m.DesconsiderarItensVinculadosAoCurriculoCursoOferta)
+@Smc.EditorFor(m => m.SeqGrupoCurricular)
+@Smc.EditorFor(m => m.SeqCurriculoCursoOferta)
+@Smc.EditorFor(m => m.Obrigatorio)
+@Smc.EditorFor(m => m.ExibidoHistoricoEscolar)
+@Smc.EditorFor(m => m.DesconsiderarIntegralizacao)
+@Html.Partial("_CurriculoCursoOfertaGrupoValor", Model.QuantidadesDisponiveis)
+@using (Smc.Div("CurriculoCursoOvertaGrupoValor").Dependency("SeqGrupoCurricular", "BuscarCurriculoCursoOfertaGrupoValor", "CurriculoCursoOfertaGrupo", "Seq", "SeqCurriculoCursoOferta").Begin())
+{
+    @Html.Partial("_CurriculoCursoOfertaGrupoValor", Model.QuantidadesGrupoCurricularSelecionado)
+}

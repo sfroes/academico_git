@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Info_Credenciais_PUCMail" xml:space="preserve">
+    <value>O PUC Mail é uma parceria entre a PUC Minas e o Google, é uma maneira segura de garantir o recebimento dos comunicados da PUC Minas e as informações necessárias para acesso aos sistemas institucionais. É importante que faça o primeiro acesso para a troca de senha. Se desejar, pode ser configurado o encaminhamento automático das mensagens para outro e-mail.</value>
+  </data>
+  <data name="Info_Credenciais_Wifi" xml:space="preserve">
+    <value>A PUC Minas disponibiliza acesso aos alunos e professores em duas redes sem fio, eduroam e PUCMinas, que compartilham a mesma infraestrutura. A rede PUCMinas atende somente a comunidade interna e a rede eduroam (education roaming), alem de atender a comunidade interna, permite acesso também para pesquisadores e estudantes de outras instituições, nacionais e internacionais, que façam parte desse projeto.</value>
+  </data>
+  <data name="Info_Credenciais_LaboratoriosAcademicos" xml:space="preserve">
+    <value>Esta credencial permite o acesso aos laboratórios físicos de todas as unidades da PUC Minas.</value>
+  </data>
+  <data name="Info_Credenciais_MicrosoftImagine" xml:space="preserve">
+    <value>Em parceria com a Microsoft, a PUC Minas disponibiliza a todos os seus alunos e professores acesso gratuito a diversos softwares para uso em seus computadores pessoais.</value>
+  </data>
+  <data name="Info_Credenciais_Office365" xml:space="preserve">
+    <value>Tenha acesso ao Office 365 Educacional, que inclui pacote Office Online, OneNote, armazenamento no OneDrive, Microsoft Teams, além de outras ferramentas para a sala de aula.</value>
+  </data>
+  <data name="Info_Credenciais_PortalCapes" xml:space="preserve">
+    <value>O Portal de Periódicos, da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (Capes), é uma biblioteca virtual que reúne e disponibiliza a instituições de ensino e pesquisa no Brasil o melhor da produção científica internacional.</value>
+  </data>
+  <data name="Titulo_Credencial_Wifi" xml:space="preserve">
+    <value>Rede Wifi</value>
+  </data>
+  <data name="Titulo_Credencial_LaboratoriosAcademicos" xml:space="preserve">
+    <value>Laboratórios acadêmicos</value>
+  </data>
+  <data name="Titulo_Credencial_MicrosoftImagine" xml:space="preserve">
+    <value>Microsoft Azure Dev Tools For Teaching</value>
+  </data>
+  <data name="Titulo_Credencial_Office365" xml:space="preserve">
+    <value>Office 365 / Teams</value>
+  </data>
+  <data name="Titulo_Credencial_PortalCapes" xml:space="preserve">
+    <value>Portal CAPES</value>
+  </data>
+  <data name="Titulo_Credencial_PUCMail" xml:space="preserve">
+    <value>PUC Mail</value>
+  </data>
+  <data name="Botao_Btnacesso" xml:space="preserve">
+    <value>Acessar</value>
+  </data>
+  <data name="Botao_Btnmanual" xml:space="preserve">
+    <value>Manual do produto</value>
+  </data>
+  <data name="Botao_Btntrocasenha" xml:space="preserve">
+    <value>Trocar senha</value>
+  </data>
+  <data name="Confirma_Alteracao_Senha_Mensagem" xml:space="preserve">
+    <value>As aplicações Canvas, Office 365, Rede Wifi - Eduroam, Portal CAPES, e Laboratórios acadêmicos, compartilham a mesma senha. Em caso de troca de senha, os demais sistemas também serão afetados.</value>
+  </data>
+  <data name="Confirma_Alteracao_Senha_Titulo" xml:space="preserve">
+    <value>Alteração de senha</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Credenciais de acesso</value>
+  </data>
+  <data name="fsSenha_Fieldset_Legenda" xml:space="preserve">
+    <value>Nova senha</value>
+  </data>
+  <data name="Info_Nova_Senha" xml:space="preserve">
+    <value>A nova senha deverá ter mais de 8 caracteres e poderá ter qualquer combinação de letras, números e caracteres especiais.</value>
+  </data>
+  <data name="Info_Credenciais_MicrosoftImagine_Senha" xml:space="preserve">
+    <value>Para troca de senha, leia instruções no manual do produto.</value>
+  </data>
+  <data name="Label_Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Label_TrocaSenha" xml:space="preserve">
+    <value>Troca de senha</value>
+  </data>
+  <data name="MSG_Erro_Senha_Diferente" xml:space="preserve">
+    <value>A senha não está igual à senha de confirmação.</value>
+  </data>
+  <data name="MSG_Erro_Usuario_Sem_PUCMail" xml:space="preserve">
+    <value>Usuário não possui e-mail {0}.</value>
+  </data>
+  <data name="Senha_Alterada_Mensagem" xml:space="preserve">
+    <value>A senha do PUC Mail foi alterada com sucesso!</value>
+  </data>
+  <data name="Senha_Alterada_Titulo" xml:space="preserve">
+    <value>Sucesso</value>
+  </data>
+  <data name="Info_Credenciais_MicrosoftImagine_Login" xml:space="preserve">
+    <value>Usuário de e-mail@sga.pucminas.br</value>
+  </data>
+  <data name="Info_Credenciais_MicrosoftImagine_Suporte" xml:space="preserve">
+    <value>Em caso de problemas acesse: &lt;a target="_blank" href="http://icei.pucminas.br/microsoft-azure" title="http://icei.pucminas.br/microsoft-azure"&gt;http://icei.pucminas.br/microsoft-azure&lt;/a&gt; </value>
+  </data>
+  <data name="Info_Credenciais_Office365_Senha" xml:space="preserve">
+    <value>Após troca de senha, aguarde 15 minutos para realizarmos a sincronização na nuvem.</value>
+  </data>
+  <data name="Info_Credenciais_PortalCapes_Senha" xml:space="preserve">
+    <value>A senha para acesso é a mesma utilizada nos laboratórios da Universidade. É possível realizar troca de senha clicando no link “trocar senha”.</value>
+  </data>
+  <data name="Info_Credenciais_Wifi_Senha" xml:space="preserve">
+    <value>A senha para acesso é a mesma utilizada nos laboratórios da Universidade. É possível realizar troca de senha clicando no link “trocar senha”.</value>
+  </data>
+  <data name="Info_QualMinhaCredencial" xml:space="preserve">
+    <value>A credencial de acesso é chamada de “Código de Pessoa”. A Universidade concede uma a cada usuário no momento do vínculo, destinando esta para a pessoa por tempo indeterminado. Ainda que, ao concluir um curso venha a fazer outro em momento oportuno, o código será o mesmo.</value>
+  </data>
+  <data name="Label_CodigoPessoa" xml:space="preserve">
+    <value>Seu código de pessoa é</value>
+  </data>
+  <data name="Titulo_Qual_Minha_Credencial" xml:space="preserve">
+    <value>Qual minha credencial de acesso?</value>
+  </data>
+  <data name="Info_Credenciais_Canvas" xml:space="preserve">
+    <value>O Canvas é o Ambiente Virtual de Aprendizagem adotado pela PUC Minas para realização de suas atividades acadêmicas. Ele facilita o uso, a criação e o compartilhamento de conteúdo por professores e alunos. A plataforma também disponibiliza o acesso a todo material dos seus cursos através do aplicativo em tablets e/ou smartphones. Assim você pode acompanhar suas aulas a qualquer momento e local. Clique no botão "Acessar" acima para abrir o Canvas.</value>
+  </data>
+  <data name="Info_Credenciais_Canvas_Acesso" xml:space="preserve">
+    <value>O acesso ao Canvas é realizado com as credenciais do Office 365. Na tela de login, clique em "Fazer login com Microsoft", utilize o login indicado e a senha cadastrada para o Office 365. Para cadastrar uma nova senha, clique no botão "Trocar senha".</value>
+  </data>
+  <data name="Titulo_Credencial_Canvas" xml:space="preserve">
+    <value>Canvas</value>
+  </data>
+  <data name="Label_Login_Microsoft" xml:space="preserve">
+    <value>Login Microsoft</value>
+  </data>
+  <data name="Info_Credenciais_LaboratoriosAcademicos_AcessoRemoto" xml:space="preserve">
+    <value>Para acessar os computadores remotamente utilize a conexão VPN. Para obter maiores informações e consultar os computadores disponíveis acesse: &lt;a target="_blank" href="http://www.icei.pucminas.br/acessoremoto" title="www.icei.pucminas.br/acessoremoto"&gt;www.icei.pucminas.br/acessoremoto&lt;/a&gt;</value>
+  </data>
+</root>

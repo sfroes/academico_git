@@ -1,0 +1,38 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.MAT.Models.SolicitacaoMatriculaItemSituacaoViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid22_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            if (Model.ExibirEntidadeResponsavelTurma == true)
+            {
+                @Smc.DisplayFor(m => m.ProgramaTurma).CssClass("smc-listdetailed-conteudo-titulo").Size(SMCSize.Grid24_24).HideLabel()
+            }
+
+            using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+            {
+                @Smc.LegendItem(m => m.Pertence, false)
+            }
+            @Smc.DisplayFor(m => m.TurmaFormatado).CssClass("smc-listdetailed-conteudo-titulo").Size(SMCSize.Grid17_24, SMCSize.Grid22_24, SMCSize.Grid15_24, SMCSize.Grid17_24).HideLabel()
+            @*@Smc.DisplayFor(m => m.SituacaoMotivo).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid6_24).CssClass("smc-sga-totalizador-destaque").HideLabel()*@
+        }
+
+        using (Smc.Div().CssClass("col-md-offset-1 col-lg-offset-1 col-sm-offset-1 smc-sga-divisoes-turma").Size(SMCSize.Grid23_24).Begin())
+        {
+            using (Smc.Div().Size(SMCSize.Grid10_24, SMCSize.Grid12_24, SMCSize.Grid8_24, SMCSize.Grid10_24).Begin())
+            {
+                <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("ParametroDivisoes_Detalhe_Titulo")</label>
+            }
+            using (Smc.Div().Size(SMCSize.Grid9_24, SMCSize.Grid12_24, SMCSize.Grid9_24, SMCSize.Grid10_24).CssClass("smc-margin-left-15").Begin())
+            {
+                <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Fieldset_Modal_SelecaoTurma_Campo_Divisao")</label>
+            }
+
+            @Smc.List("Divisoes" + Model.Seq, m => m.TurmaMatriculaDivisoes).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(divisao => Html.Partial(Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.VISUALIZAR_ITENS_TURMA_DIVISOES), divisao.Value))
+        }
+
+    }
+}

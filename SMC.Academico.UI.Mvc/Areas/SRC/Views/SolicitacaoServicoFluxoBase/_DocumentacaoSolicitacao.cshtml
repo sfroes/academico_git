@@ -1,0 +1,114 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.SRC.Models;
+@using SMC.Academico.Common.Areas.SRC.Constants;
+@using SMC.Academico.Common.Constants;
+@using SMC.Academico.UI.Mvc.Areas.SRC.Views.SolicitacaoServicoFluxoBase.App_LocalResources;
+
+@model DadosModalSolicitacaoServicoViewModel
+
+@Smc.EditorFor(x => x.ExibirComprovanteMatriculaETermoAdesao)
+
+@* Caso seja ExibirComprovanteMatriculaETermoAdesao (ou seja, tem um dos 4 tokens e é do tipo de solicitação de matrícula) *@
+@if (Model.ExibirComprovanteMatriculaETermoAdesao)
+{
+    using (Smc.Fieldset("Documentos").LegendText("Documentos da matrícula").Size(SMCSize.Grid24_24).Begin())
+    {
+        var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-alinha-esquerda");
+
+        // Se for de um dos tokens MATRICULA_INGRESSANTE, RENOVACAO_MATRICULA e MATRICULA_REABERTURA, gera o botão de arquivo de termo de adesão
+        if (Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.MATRICULA_INGRESSANTE ||
+            Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.RENOVACAO_MATRICULA ||
+            Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.MATRICULA_REABERTURA)
+        {
+            var botaoTermoAdesao = Smc.Button("VisualizarContrato")
+                                      .Attribute("target", "_blank")
+                                      .Type(SMCButtonType.Link)
+                                      .CssClass("smc-btn-documento-icotext")
+                                      .Hide(!Model.ExibirComprovanteMatriculaETermoAdesao);
+
+            if(SMCContext.ApplicationId == SIGLA_APLICACAO.SGA_ADMINISTRATIVO)
+            {
+                botaoTermoAdesao.Action("TermoAdesao", "RealizarAtendimento", new { seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoServico), @area = "SRC" });
+            }
+            else
+            {
+                botaoTermoAdesao.Action("TermoAdesao", "ProcessoSolicitacao", new { seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoServico), @area = "SRC" });
+            }
+
+            if (!Model.SolicitacaoPossuiCodigoAdesao)
+            {
+                botaoTermoAdesao.Enabled(false);
+                botaoTermoAdesao.ButtonInstructions(UIResource.MSG_SolicitacaoNaoPossuiTermoAdesaoEArquivoTermoAdesao);
+            }
+
+            buttonSet.AddButton(botaoTermoAdesao);
+        }
+
+        // Se for de um dos tokens MATRICULA_INGRESSANTE, RENOVACAO_MATRICULA, MATRICULA_REABERTURA e PLANO_ESTUDO, gera o botão de comprovante de matrícula
+        if (Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.MATRICULA_INGRESSANTE ||
+            Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.RENOVACAO_MATRICULA ||
+            Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.MATRICULA_REABERTURA ||
+            Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.PLANO_ESTUDO)
+        {
+            var botaoComprovante = Smc.Button("ComprovanteMatriculaRelatorio")
+                   .CssClass("smc-btn-documento-icotext smc-sga-margem-botao-documento")
+                   .Attribute("target", "_blank")
+                   .Type(SMCButtonType.Link)
+                   .Hide(!Model.ExibirComprovanteMatriculaETermoAdesao);
+
+            if (Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.MATRICULA_INGRESSANTE || Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.RENOVACAO_MATRICULA || Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.MATRICULA_REABERTURA)
+            {
+                botaoComprovante.Action("ComprovanteMatriculaRelatorio", "ComprovanteMatricula", new { seqIngressante = new SMCEncryptedLong(Model.SeqPessoaAtuacao), seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoServico), @area = string.Empty });
+            }
+            else if (Model.Solicitacao.TokenTipoServico == TOKEN_TIPO_SERVICO.PLANO_ESTUDO)
+            {
+                botaoComprovante.Action("ComprovanteProcessosRelatorio", "ComprovanteProcessos", new { seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoServico), seqProcessoEtapa = new SMCEncryptedLong(Model.Solicitacao.SeqProcessoEtapaAtual.GetValueOrDefault()), seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao), @area = string.Empty });
+            }
+
+            if (!Model.SolicitacaoComMatriculaEfetivada)
+            {
+                botaoComprovante.Enabled(false).CssClass("laranja");
+                botaoComprovante.ButtonInstructions(UIResource.MSG_SolicitacaoComMatriculaNaoEfetivada).CssClass("banana");
+            }
+
+            buttonSet.AddButton(botaoComprovante);
+
+            @buttonSet;
+        }
+    }
+}
+
+
+@if (Model.DocumentosSolicitacao.Count > 0)
+{
+    using (Smc.Fieldset("Documentos").LegendText("Documentos").CssClass("smc-sga-confirmacao-dados").Begin())
+    {
+        @(Smc.Grid("gridDocumentos", new SMCPagerModel<DadosModalSolicitacaoDocumentoViewModel>(Model.DocumentosSolicitacao))
+            .FieldColumn(x => x.TipoDocumento)
+            .FieldColumn(x => x.DataEntrega)
+            .FieldColumn(x => x.DataPrazoEntrega)
+            .FieldColumn(x => x.FormaEntregaDocumento)
+            .FieldColumn(x => x.VersaoDocumento)
+            .FieldColumn(x => x.SituacaoEntregaDocumento)
+            .FieldColumn(x => x.Observacao)
+            .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-grid-coluna-botoes", true,
+                   f => Smc.Button("btn-download-arquivo-anexo")
+                           .CssClass("smc-btn-download-ico")
+                           .Text(Smc.GetUIResource("Botao_Download_Arquivo_Anexo"))
+                           .Tooltip(Smc.GetUIResource("Botao_Download_Arquivo_Anexo_Tooltip"))
+                           .Type(SMCButtonType.Link)
+                           .Attribute("target", "_blank")
+                           .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true)
+                           .Action("DownloadFileGuid", "Home", new { @area = "", @guidFile = (f as DadosModalSolicitacaoDocumentoViewModel).UidArquivoAnexado })
+                           .Enabled((f as DadosModalSolicitacaoDocumentoViewModel).UidArquivoAnexado.HasValue))
+            .AutoHideNavigator()
+            .HideNumberOfRowsPerPageSelector()
+            .HideRowsTotalizer()
+            .HideGridTitle()
+            .HidePager())
+           
+    }
+}
+else
+{
+    <p style="text-align: center"><i>Não há documentação requerida para esse tipo de solicitação.</i></p>
+}

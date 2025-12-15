@@ -1,0 +1,34 @@
+﻿@model HistoricoEscolarDynamicModel
+
+@Smc.EditorFor(m => m.SeqAluno)
+@Smc.EditorFor(m => m.Seq)
+@Smc.EditorFor(m => m.SeqCicloLetivo)
+@Smc.EditorFor(m => m.ComponenteOptativoMatriz)
+@Smc.EditorFor(m => m.Optativa)
+@Smc.EditorFor(m => m.VinculoAlunoExigeOfertaMatrizCurricular)
+@Smc.EditorFor(m => m.ConsiderarMatriz).Readonly(!Model.VinculoAlunoExigeOfertaMatrizCurricular)
+@Smc.EditorFor(m => m.SeqMatrizCurricular)
+@Smc.EditorFor(e => e.SeqOrigemAvaliacao)
+@Smc.EditorFor(e => e.PercentualFrequencia)
+@Smc.EditorFor(e => e.SomenteLeitura)
+@using (Smc.Fieldset("FsComponente").LegendText(Smc.GetUIResource("ComponenteCurricular_Fieldset_Legenda")).Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(m => m.TiposGestaoDivisaoComponente)
+    @Smc.EditorFor(m => m.SeqComponenteCurricular)
+    @Smc.EditorFor(m => m.ComponenteCurricularGestaoExame)
+    @Smc.EditorFor(m => m.DataExame)
+    @Smc.EditorFor(m => m.ComponenteCurricularExigeAssunto)
+    @Smc.EditorFor(m => m.AssuntoComponente)
+    @Smc.EditorFor(m => m.SeqComponenteCurricularAssunto)
+}
+@Smc.EditorFor(m => m.SeqCriterioAprovacao)
+@using (Smc.Div("DivNotaFalta").Dependency("SeqCriterioAprovacao", "BuscarConfiguracaoNotaFaltaPorCriterioAprovacao", "HistoricoEscolar", includedProperties: new[] { "SeqComponenteCurricular" }).Begin())
+{
+    if (Model.Seq > 0)
+    {
+        @Html.Partial("_NotaFalta", Model)
+    }
+}
+@Smc.EditorFor(m => m.Colaboradores)
+
+@Smc.EditorFor(e => e.Observacao)

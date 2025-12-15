@@ -1,0 +1,80 @@
+﻿@model EfetivacaoPaginaViewModelBase
+@using SMC.Academico.Common.Areas.ALN.Constants
+
+@using (Smc.Div("fieldsetParametros").Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqSolicitacaoMatricula)
+    @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapa)
+    @Smc.EditorFor(prop => prop.SeqSolicitacaoHistoricoNavegacao)
+    @Smc.EditorFor(prop => prop.SeqSituacaoFinalSucesso)
+    @Smc.EditorFor(prop => prop.SeqSituacaoFinalSemSucesso)
+    @Smc.EditorFor(prop => prop.SeqSituacaoFinalCancelada)
+    @Smc.EditorFor(prop => prop.SeqSolicitacaoServicoEtapa)
+    @Smc.EditorFor(prop => prop.SeqPessoaAtuacao)
+    @Smc.EditorFor(prop => prop.SeqProcesso)
+}
+
+@{
+    var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-matricula-linha-botoes");
+
+    if (!string.IsNullOrEmpty(Model.TokenPaginaAnterior))
+    {
+        buttonSet.AddButton((Smc.Button(SMCButtonBehavior.Anterior)
+                        .Action(Model.ActionSalvarEtapa, "Efetivacao", new
+                        {
+                            @area = "MAT",
+                            @tokenRet = Model.TokenPaginaAnterior
+                        })
+                        .Id("paginaAnterior")
+                        .Type(SMCButtonType.Submit)
+                        .Attribute("formnovalidate", "formnovalidate")
+                        .Text(Smc.GetUIResource(Model.ChaveTextoBotaoAnterior))
+                        .Tooltip(Smc.GetUIResource(Model.ChaveTextoBotaoAnterior))
+                        .CssClass("smc-btn-anterior-icotext cancel")));
+    }
+
+    buttonSet.AddButton((Smc.Button("cancelarProcesso")
+                                .Id("cancelarProcesso")
+                                .Type(SMCButtonType.Link)
+                                .Action("Index", "SolicitacaoServico", new { area = "SRC" })
+                                .CssClass("smc-btn-cancelar-icotext")));
+
+    if (Model.Token == MatriculaTokens.REGISTRO_DOCUMENTO_ENTREGUE)
+    {
+        var modelParsed = Model as RegistrarEntregaDocumentoViewModel;
+
+        var btnConfirmar = Smc.Button(SMCButtonBehavior.Salvar)
+                .Action(Model.ActionSalvarEtapa, "Efetivacao", new
+                {
+                    @area = "MAT"
+                })
+                .Id("proximaPagina")
+                .Text(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+                .Confirm(Smc.GetUIResource("TituloConfirmacao"), Smc.GetUIResource("MensagemConfirmacao"), SMCWindowButtons.Yes)
+                .Tooltip(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+                .DisplayMode(SMCButtonDisplayMode.Text)
+                .CssClass("smc-btn-proximo-icotext-destaque");
+
+        if (modelParsed.DocumentosPendentes)
+        {
+            btnConfirmar.Enabled(!Model.DocumentosPendentes).ButtonInstructions(Smc.GetUIResource("Mensagem_Documentos_Pendentes"));
+        }
+
+        buttonSet.AddButton(btnConfirmar);
+    }
+    else
+    {
+        buttonSet.AddButton((Smc.Button(SMCButtonBehavior.Salvar)
+                                .Action(Model.ActionSalvarEtapa, "Efetivacao", new
+                                {
+                                    @area = "MAT"
+                                })
+                                .Id("proximaPagina")
+                                .Text(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+                                .Tooltip(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+                                .DisplayMode(SMCButtonDisplayMode.Text)
+                                .CssClass("smc-btn-proximo-icotext-destaque")));
+    }
+
+    @buttonSet;
+}

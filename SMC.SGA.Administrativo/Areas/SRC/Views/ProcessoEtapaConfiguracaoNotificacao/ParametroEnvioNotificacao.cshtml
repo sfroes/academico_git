@@ -1,0 +1,55 @@
+﻿@model ParametroEnvioNotificacaoViewModel
+
+@Html.Action("CabecalhoConfiguracaoNotificacaoParametroEnvio", "ProcessoEtapaConfiguracaoNotificacao", new { seqProcesso = Model.SeqProcesso, seqEtapa = Model.SeqProcessoEtapa })
+
+@using (Smc.Header("TipoNotificacao", SMCHeaderType.Secondary)
+                                 .Item(prop => prop.TipoNotificacao, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid10_24)
+                                 .Item(prop => prop.EntidadeResponsavel, sizeMD: SMCSize.Grid14_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid14_24)
+                                 .Begin())
+{
+
+}
+
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-display smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-mensagem-multiplas-linhas").Begin())
+{
+    using (Smc.Div().CssClass(" smc-sga-ico-mensagem").Begin())
+    {
+    }
+    <p>@Html.Raw(Smc.GetUIResource("Mensagem_Infromativa_Parametro"))</p>
+}
+
+@using (Smc.Form("FormParametros", "SalvarParametros", "ProcessoEtapaConfiguracaoNotificacao").Ajax().Begin())
+{
+    @Smc.EditorFor(e => e.ProcessoEncerrado)
+    @Smc.EditorFor(e => e.BotoesDesabilitados)
+    @Smc.EditorFor(e => e.SeqProcesso)
+    @Smc.EditorFor(e => e.SeqProcessoEtapaConfiguracaoNotificacao)
+    @Smc.EditorFor(e => e.SeqProcessoEtapa)
+    @Smc.EditorFor(e => e.SeqEtapaSgf)
+    @Smc.EditorFor(e => e.SeqServico)
+    @Smc.EditorFor(e => e.SeqTipoNotificacao)    
+
+    if (Model.ExigeEscalonamento)
+    {
+        @Smc.EditorFor(e => e.ParametroEnvioNotificacaoItem)
+    }
+    else
+    {
+        @Smc.EditorFor(e => e.ParametroEnvioNotificacaoItemSemGrupoEscalonamento).Name("ParametroEnvioNotificacaoItem")
+    }
+
+    var buttonSet = Smc.ButtonSet();
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+                    .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                    .Hide(Model.BotoesDesabilitados)
+                    .Highlight());
+
+    buttonSet.AddButton(Smc.Button("Voltar")
+                    .CssClass("smc-btn-voltar-icotext")
+                    .Type(SMCButtonType.Link)
+                    .Action("Index", "ProcessoEtapaConfiguracaoNotificacao", new { seqProcesso = new SMCEncryptedLong(Model.SeqProcesso), area = "SRC" }));
+    @buttonSet;
+
+}

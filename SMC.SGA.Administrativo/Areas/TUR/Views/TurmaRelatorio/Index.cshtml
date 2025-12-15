@@ -1,0 +1,33 @@
+﻿@model SMC.SGA.Administrativo.Areas.TUR.Models.TurmaRelatorioFiltroViewModel
+
+@section Scripts{
+    <script type="text/javascript" src=@Url.SMCBuscarRecursoAplicacao("Scripts/Relatorio.js")></script>
+}
+
+@using (Smc.Form("frmViewPadrao").Ajax("#divViewPadrao").Begin())
+{
+    //Filtros
+    using (Smc.Fieldset("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqCicloLetivo)
+        @Smc.EditorFor(prop => prop.SeqsEntidadesResponsaveis)
+        @Smc.EditorFor(prop => prop.SeqNivelEnsino)
+
+        @Smc.EditorFor(prop => prop.SeqCursoOferta)
+        @Smc.EditorFor(prop => prop.SeqTipoTurma)
+
+        var buttonSet = Smc.ButtonSet();
+
+        buttonSet.AddButton(Smc.Button("Gerar_Relatorio").Url(Url.Action("GerarRelatorio"))
+                                                         .Ajax(fieldsContainerToRequest: "#divViewPadrao #fieldsetPesquisaViewPadrao", onSuccess: "GerarRelatorio")
+                                                         .CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+                                                         .Text(Smc.GetUIResource("Botao_Relatorio"))
+                                                         .Tooltip(Smc.GetUIResource("Botao_Relatorio_Tooltip"))
+                                                         .Attribute("data-behavior-download", "true"));
+
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Limpar).DisplayMode(SMCButtonDisplayMode.Icon).Attribute("data-clear", "#divViewPadrao"));
+
+        @buttonSet;
+    }
+}
+

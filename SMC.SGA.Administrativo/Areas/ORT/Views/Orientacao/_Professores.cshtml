@@ -1,0 +1,12 @@
+﻿@using SMC.SGA.Administrativo.Areas.ORT.Models
+@model OrientacaoDynamicModel
+
+
+@Smc.HiddenFor(h => h.SeqNivelEnsino)
+@Smc.HiddenFor(h => h.SeqTipoTermoIntercambio)
+@Smc.HiddenFor(h => h.SeqTipoVinculoAluno)
+@Smc.HiddenFor(h => h.SeqTipoOrientacao)
+
+@Smc.EditorFor(m => m.MensagemIformativa)
+
+@Smc.EditorFor(m => m.OrientacoesColaborador)

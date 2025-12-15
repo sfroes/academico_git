@@ -1,0 +1,30 @@
+﻿@model TurmaDivisoesViewModel
+
+@if (Model.DivisoesComponentesDisplay != null)
+{
+    if (Model.DivisoesComponentesDisplay.Count > 0)
+    {
+
+        <label class="smc-listdetailed-conteudo-subtitulo">@Model.DivisaoComponenteDescricao</label>
+               
+            @(Smc.Grid("DivisoesComponentesDisplay" + Model.SeqDivisaoComponente, new SMCPagerModel<TurmaDivisoesDetailDisplayViewModel>(Model.DivisoesComponentesDisplay))
+                                                                                .FieldColumn(f => f.CodigoCompleto, cssClass: "smc-size-md-4 smc-size-xs-4 smc-size-sm-4 smc-size-lg-4")
+                                                                                .FieldColumn(f => f.DescricaoLocalidade, cssClass: "smc-size-md-7 smc-size-xs-7 smc-size-sm-7 smc-size-lg-7")
+                                                                                .FieldColumn(f => f.DivisaoVagas, cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3")
+                                                                                .FieldColumn(f => f.QuantidadeVagasOcupadas, cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3")
+                                                                                .FieldColumn(f => f.InformacoesAdicionais, cssClass: "smc-size-md-7 smc-size-xs-7 smc-size-sm-7 smc-size-lg-7")
+                                                                                .HideGridTitle()
+                                                                                .HideNavigator()
+                                                                                .HideRowNumber()
+                                                                                .Size(SMCSize.Grid24_24))       
+    }
+    else
+    {
+        <label class="smc-listdetailed-conteudo-subtitulo">@Model.DivisaoComponenteDescricao</label>
+
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+        {
+            <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+        }
+    }
+}

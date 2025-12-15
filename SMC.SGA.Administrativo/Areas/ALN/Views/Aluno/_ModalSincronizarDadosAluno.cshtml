@@ -1,0 +1,21 @@
+﻿@model AlunoFiltroDynamicModel
+
+
+
+@using (Smc.ModalWindow("modalMigracao")
+           .Title(Smc.GetUIResource("Titulo_Modal_Sicronizar_Dados_Aluno"))
+           .Form("formSincronziarDadosAluno", "BuscarESincronizarDadosAluno", "Aluno", config: a => a.Ajax())
+           .Button(SMCButtonBehavior.Confirmar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+    .CssClass("sga-modal-selecionar-aluno")
+    .AutoShow()
+    .AllowEscKeyToClose(true)
+    .Begin())
+{
+    @Smc.EditorFor(m => m.CodigoAlunoMigracao).Size(SMCSize.Grid10_24).Required();
+}
+
+@*
+    new SMCEncryptedLong((Model as ConfiguracaoProcessoViewModel).SeqProcesso
+
+*@

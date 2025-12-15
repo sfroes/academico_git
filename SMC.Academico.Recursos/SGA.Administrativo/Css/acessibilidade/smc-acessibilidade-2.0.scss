@@ -1,0 +1,783 @@
+﻿// ********** ----- IDENTIDADE VISUAL ----- ********** //
+@import "../identidade/_smc-identidade-visual.scss";
+
+// ----- ACESSIBILIDADE CONTRASTE ----- //
+//.smc-acessibilidade-contraste {
+//}
+
+// ----- ACESSIBILIDADE AUMENTA COM UM CLIQUE ----- //
+.smc-acessibilidade1 {
+    .smc-btn-download-ico {
+        i::before {
+            font-size: 20px;
+        }
+    }
+
+    .smc-lookup-open-command {
+        top: 23px;
+    }
+
+    .smc-lookup-unico {
+        .smc-lookup-corpo {
+            .smc-lookup-corpo-limpar {
+                .smc-button {
+                    .smc-btn-limpar-ico {
+                        top: 27px;
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-display, .smc-display-collection {
+        label, p, h3, span {
+            font-size: 16px !important;
+        }
+    }
+
+    .smc-listdetailed-conteudo-subtitulo {
+        font-size: 16px !important;
+    }
+
+    .smc-list-cabecalho {
+        .smc-listdetailed-item {
+            p, span {
+                font-size: 16px !important;
+            }
+        }
+    }
+
+    .smc-datagrid-header {
+        span {
+            font-size: 20px !important;
+        }
+    }
+
+    .smc-estilo-sigla-instituicao, .smc-estilo-botao-selecionar-instituicao i::before {
+        font-size: 20px !important;
+    }
+
+    .smc-sga-totalizador-valor {
+        p {
+            font-size: 32px !important;
+        }
+    }
+
+    .smc-detalhe-editavel-tabular {
+        .smc-detalhe-editavel-titulo {
+            font-size: 23px !important;
+        }
+    }
+
+    fieldset {
+        legend {
+            font-size: 23px !important;
+        }
+    }
+
+    .smc-sga-fieldset-secundario {
+        legend {
+            font-size: 18px !important;
+        }
+    }
+
+    .smc-accordion section h3 a {
+        font-size: 23px !important;
+    }
+
+    .smc-sga-accordion-secundario section h3 a, .smc-sga-accordion-secundario section[data-open="True"] h3 a {
+        font-size: 20px !important;
+    }
+
+    .smc-wizard-passo {
+        font-size: 18px !important;
+    }
+
+    .user-footer {
+        height: 130px;
+
+        ul {
+            .btn-default, .btn {
+                width: 100%;
+                padding: 3px 0 3px 0;
+
+                .smc-button {
+                    width: 100%;
+
+                    a {
+                        font-size: 16px !important;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ----- ACESSIBILIDADE AUMENTA COM DOIS CLIQUES ----- //
+.smc-acessibilidade2 {
+    .smc-btn-download-ico {
+        i::before {
+            font-size: 22px;
+        }
+    }
+
+    .smc-lookup-open-command {
+        top: 26px;
+    }
+
+    .smc-lookup-unico {
+        .smc-lookup-corpo {
+            .smc-lookup-corpo-limpar {
+                .smc-button {
+                    .smc-btn-limpar-ico {
+                        top: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-display, .smc-display-collection {
+        label, p, h3, span {
+            font-size: 18px !important;
+        }
+    }
+
+    .smc-listdetailed-conteudo-subtitulo {
+        font-size: 18px !important;
+    }
+
+    .smc-list-cabecalho {
+        .smc-listdetailed-item {
+            p, span {
+                font-size: 18px !important;
+            }
+        }
+    }
+
+    .smc-datagrid-header {
+        span {
+            font-size: 22px !important;
+        }
+    }
+
+    .smc-estilo-sigla-instituicao, .smc-estilo-botao-selecionar-instituicao i::before {
+        font-size: 22px !important;
+    }
+
+    .smc-sga-totalizador-valor {
+        p {
+            font-size: 34px !important;
+        }
+    }
+
+    .smc-uploadFile .smc-uploadFile-controles {
+        height: 40px !important;
+    }
+
+    .smc-detalhe-editavel-tabular {
+        .smc-detalhe-editavel-titulo {
+            font-size: 25px !important;
+        }
+    }
+
+    fieldset {
+        legend {
+            font-size: 25px !important;
+        }
+    }
+
+    .smc-sga-fieldset-secundario {
+        legend {
+            font-size: 20px !important;
+        }
+    }
+
+    .smc-accordion section h3 a {
+        font-size: 25px !important;
+    }
+
+    .smc-sga-accordion-secundario section h3 a, .smc-sga-accordion-secundario section[data-open="True"] h3 a {
+        font-size: 22px !important;
+    }
+
+    .smc-wizard-passo {
+        font-size: 20px !important;
+    }
+
+    .user-footer {
+        height: 130px;
+
+        ul {
+            .btn-default, .btn {
+                width: 100%;
+                padding: 3px 0 3px 0;
+
+                .smc-button {
+                    width: 100%;
+
+                    a {
+                        font-size: 18px !important;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ----- ACESSIBILIDADE REDUZ COM UM CLIQUE ----- //
+.smc-acessibilidade-1 {
+    .smc-btn-download-ico {
+        i::before {
+            font-size: 16px;
+        }
+    }
+
+    .smc-lookup-open-command {
+        top: 18px;
+    }
+
+    .smc-lookup-unico {
+        .smc-lookup-corpo {
+            .smc-lookup-corpo-limpar {
+                .smc-button {
+                    .smc-btn-limpar-ico {
+                        top: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-display, .smc-display-collection {
+        label, p, h3, span {
+            font-size: 12px !important;
+        }
+    }
+
+    .smc-listdetailed-conteudo-subtitulo {
+        font-size: 12px !important;
+    }
+
+    .smc-list-cabecalho {
+        .smc-listdetailed-item {
+            p, span {
+                font-size: 12px !important;
+            }
+        }
+    }
+
+    .smc-datagrid-header {
+        span {
+            font-size: 16px !important;
+        }
+    }
+
+    .smc-estilo-sigla-instituicao, .smc-estilo-botao-selecionar-instituicao i::before {
+        font-size: 16px !important;
+    }
+
+    .smc-sga-totalizador-valor {
+        p {
+            font-size: 24px !important;
+        }
+    }
+
+    .smc-detalhe-editavel-tabular {
+        .smc-detalhe-editavel-titulo {
+            font-size: 19px !important;
+        }
+    }
+
+    fieldset {
+        legend {
+            font-size: 19px !important;
+        }
+    }
+
+    .smc-sga-fieldset-secundario {
+        legend {
+            font-size: 14px !important;
+        }
+    }
+
+    .smc-accordion section h3 a {
+        font-size: 19px !important;
+    }
+
+    .smc-sga-accordion-secundario section h3 a, .smc-sga-accordion-secundario section[data-open="True"] h3 a {
+        font-size: 16px !important;
+    }
+
+    .smc-wizard-passo {
+        font-size: 14px !important;
+    }
+
+    .user-footer {
+        ul {
+            .btn-default, .btn {
+                .smc-button {
+                    a {
+                        font-size: 11px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ----- ACESSIBILIDADE REDUZ COM DOIS CLIQUES ----- //
+.smc-acessibilidade-2 {
+    .smc-btn-download-ico {
+        i::before {
+            font-size: 14px;
+        }
+    }
+
+    .smc-lookup-open-command {
+        top: 15px;
+    }
+
+    .smc-lookup-unico {
+        .smc-lookup-corpo {
+            .smc-lookup-corpo-limpar {
+                .smc-button {
+                    .smc-btn-limpar-ico {
+                        top: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-display, .smc-display-collection {
+        label, p, h3, span {
+            font-size: 10px !important;
+        }
+    }
+
+    .smc-listdetailed-conteudo-subtitulo {
+        font-size: 10px !important;
+    }
+
+    .smc-list-cabecalho {
+        .smc-listdetailed-item {
+            p, span {
+                font-size: 10px !important;
+            }
+        }
+    }
+
+    .smc-datagrid-header {
+        span {
+            font-size: 14px !important;
+        }
+    }
+
+    .smc-estilo-sigla-instituicao, .smc-estilo-botao-selecionar-instituicao i::before {
+        font-size: 14px !important;
+    }
+
+    .smc-sga-totalizador-valor {
+        p {
+            font-size: 20px !important;
+        }
+    }
+
+    .smc-detalhe-editavel-tabular {
+        .smc-detalhe-editavel-titulo {
+            font-size: 17px !important;
+        }
+    }
+
+    fieldset {
+        legend {
+            font-size: 17px !important;
+        }
+    }
+
+    .smc-sga-fieldset-secundario {
+        legend {
+            font-size: 12px !important;
+        }
+    }
+
+    .smc-accordion section h3 a {
+        font-size: 17px !important;
+    }
+
+    .smc-sga-accordion-secundario section h3 a, .smc-sga-accordion-secundario section[data-open="True"] h3 a {
+        font-size: 14px !important;
+    }
+
+    .smc-wizard-passo {
+        font-size: 12px !important;
+    }
+
+    .user-footer {
+        ul {
+            .btn-default, .btn {
+                .smc-button {
+                    a {
+                        font-size: 10px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//LG
+@media (min-width:$smc-size-screen-lg-min) {
+    .smc-acessibilidade1 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: -26px 14px 0 0!important;
+            }
+        }
+        //Com menu lateral
+        .smc-conteudo-padding {
+            & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+                .smc-hidepanel-panel {
+                }
+
+                .smc-hidepanel-button {
+                    margin: -26px 20px 0 0!important;
+                }
+            }
+        }
+    }
+
+    .smc-acessibilidade2 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: -19px 31px 0 0!important;
+            }
+        }
+        //Com menu lateral
+        .smc-conteudo-padding {
+            & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+                .smc-hidepanel-panel {
+                }
+
+                .smc-hidepanel-button {
+                    margin: 5px 31px 0 0!important;
+                }
+            }
+        }
+    }
+
+    .smc-acessibilidade-1 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: -35px -2px 0 0!important;
+            }
+        }
+        //Com menu lateral
+        .smc-conteudo-padding {
+            & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+                .smc-hidepanel-panel {
+                }
+
+                .smc-hidepanel-button {
+                    margin: -36px 2px 0 0!important;
+                }
+            }
+        }
+    }
+
+    .smc-acessibilidade-2 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: -41px -12px 0 0!important;
+            }
+        }
+        //Com menu lateral
+        .smc-conteudo-padding {
+            & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+                .smc-hidepanel-panel {
+                }
+
+                .smc-hidepanel-button {
+                    margin: -42px -5px 0 0!important;
+                }
+            }
+        }
+    }
+}
+
+//MD
+@media (max-width:$smc-size-screen-md-max) {
+    .smc-acessibilidade1 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: 34px -42px 0 0!important;
+            }
+        }
+        //Com menu lateral
+        .smc-conteudo-padding {
+            & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+                .smc-hidepanel-panel {
+                }
+
+                .smc-hidepanel-button {
+                    margin: 34px 102px 0 0!important;
+                }
+            }
+        }
+    }
+
+    .smc-acessibilidade2 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: 43px -33px 0 0!important;
+            }
+        }
+        //Com menu lateral
+        .smc-conteudo-padding {
+            & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+                .smc-hidepanel-panel {
+                }
+
+                .smc-hidepanel-button {
+                    margin: 43px 113px 0 0!important;
+                }
+            }
+        }
+    }
+
+    .smc-acessibilidade-1 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: 19px -58px 0 0!important;
+            }
+        }
+        //Com menu lateral
+        .smc-conteudo-padding {
+            & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+                .smc-hidepanel-panel {
+                }
+
+                .smc-hidepanel-button {
+                    margin: 25px 84px 0 0!important;
+                }
+            }
+        }
+    }
+
+    .smc-acessibilidade-2 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: 10px -67px 0 0!important;
+            }
+        }
+        //Com menu lateral
+        .smc-conteudo-padding {
+            & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+                .smc-hidepanel-panel {
+                }
+
+                .smc-hidepanel-button {
+                    margin: 19px 86px 0 0!important;
+                }
+            }
+        }
+    }
+}
+
+//SM
+@media (max-width:$smc-size-screen-sm-max) {
+    .smc-acessibilidade1 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: 37px 14px 0 0!important;
+            }
+        }
+        //Com menu lateral
+        .smc-conteudo-padding {
+            & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+                .smc-hidepanel-panel {
+                }
+
+                .smc-hidepanel-button {
+                    margin: 37px 177px 0 0!important;
+                }
+            }
+        }
+    }
+
+    .smc-acessibilidade2 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: 49px 25px 0 0!important;
+            }
+        }
+        //Com menu lateral
+        .smc-conteudo-padding {
+            & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+                .smc-hidepanel-panel {
+                }
+
+                .smc-hidepanel-button {
+                    margin: 49px 188px 0 0!important;
+                }
+            }
+        }
+    }
+
+    .smc-acessibilidade-1 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: 17px -2px 0 0!important;
+            }
+        }
+        //Com menu lateral
+        .smc-conteudo-padding {
+            & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+                .smc-hidepanel-panel {
+                }
+
+                .smc-hidepanel-button {
+                    margin: 17px 161px 0 0!important;
+                }
+            }
+        }
+    }
+
+    .smc-acessibilidade-2 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: 5px 11px 0 0!important;
+            }
+        }
+        //Com menu lateral
+        .smc-conteudo-padding {
+            & .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+                .smc-hidepanel-panel {
+                }
+
+                .smc-hidepanel-button {
+                    margin: 5px 152px 0 0!important;
+                }
+            }
+        }
+    }
+}
+
+//XS
+@media (max-width:$smc-size-screen-xs-max) {
+    .smc-acessibilidade1 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: 52px 141px 0 0!important;
+            }
+        }
+
+    }
+
+    .smc-acessibilidade2 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: 79px 152px 0 0!important;
+            }
+        }
+    }
+
+    .smc-acessibilidade-1 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: 7px 125px 0 0!important;
+            }
+        }
+    }
+
+    .smc-acessibilidade-2 {
+        // ------ EM CENTRAL DE SOLICITAÇÕES ----- //
+        //Sem menu lateral
+        .smc-hidepanel-pesquisa-avancada.smc-sga-solicitacao-servico {
+            .smc-hidepanel-panel {
+            }
+
+            .smc-hidepanel-button {
+                margin: -20px 116px 0 0!important;
+            }
+        }
+    }
+}

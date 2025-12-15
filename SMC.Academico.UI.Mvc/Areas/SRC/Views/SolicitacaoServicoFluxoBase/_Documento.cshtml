@@ -1,0 +1,16 @@
+﻿@using SMC.Academico.UI.Mvc;
+
+@model SMC.Academico.UI.Mvc.Areas.SRC.Models.SolicitacaoDocumentoViewModel
+
+@{
+    // Registra o datasource do item da lista detalhada
+    SMC.Framework.UI.Mvc.Helpers.SMCDataSourceHelper.RegisterDataSource(Html.ViewContext.Controller, Model);
+}
+
+@Smc.EditorFor(d => d.SeqDocumentoRequerido)
+@Smc.EditorFor(d => d.SeqTipoDocumento)
+@Smc.EditorFor(d => d.PermiteVarios)
+@Smc.HiddenFor(d => d.DescricaoTipoDocumento)
+@Smc.HiddenFor(d => d.PermiteEntregaPosterior)
+
+@Smc.MasterDetail(d => d.Documentos).CssClass("smc-sga-entrega-documento-legendas").MinimumItens(1).HideButtons(!Model.PermiteVarios).TitleMasterDetail(Model.DescricaoTipoDocumento)

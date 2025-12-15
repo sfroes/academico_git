@@ -1,0 +1,22 @@
+﻿@model GrupoEscalonamentoItemDynamicModel
+
+@Smc.EditorFor(x => x.Seq)
+@Smc.EditorFor(x => x.SeqServico)
+@Smc.EditorFor(x => x.SeqProcesso)
+@Smc.EditorFor(x => x.SeqEscalonamento)
+@Smc.EditorFor(x => x.SeqGrupoEscalonamento)
+@Smc.EditorFor(x => x.NumeroDivisaoParcelas)
+@Smc.EditorFor(x => x.ObrigatorioIdentificarParcela)
+@Smc.EditorFor(x => x.ProcessoExpirado)
+@Smc.EditorFor(x => x.EscalonamentoExpirado)
+
+@Smc.EditorFor(x => x.CamposReadOnly)
+@Smc.EditorFor(x => x.MensagemInformativa)
+@Smc.EditorFor(x => x.ValorPercentualBanco)
+
+@if (!string.IsNullOrEmpty(Model.MensagemToken))
+{
+    @Smc.EditorFor(x => x.MensagemToken)
+}
+
+@Smc.MasterDetail(x => x.Parcelas) @*A regra de se deixar as parcelas readonly esta na ação do botão detaillist do grupo de escalonamento*@

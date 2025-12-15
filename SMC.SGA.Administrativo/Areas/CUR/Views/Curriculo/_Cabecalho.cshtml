@@ -1,0 +1,20 @@
+﻿@model SMC.SGA.Administrativo.Areas.CSO.Models.CursoCabecalhoViewModel
+
+@if (Model.Exibir)
+{
+    if (!string.IsNullOrEmpty(Model.Sigla))
+    {
+        using (Smc.Header("Curso", SMCHeaderType.Primary)
+                  .Item(prop => prop.Sigla, sizeMD: SMCSize.Grid5_24)
+                  .Item(prop => prop.Descricao, sizeMD: SMCSize.Grid10_24)
+                  .Begin())
+        { }
+    }
+    else
+    {
+        using (Smc.Header("Curso", SMCHeaderType.Primary)
+                  .Item(prop => prop.Descricao, sizeMD: SMCSize.Grid10_24)
+                  .Begin())
+        { }
+    }
+}

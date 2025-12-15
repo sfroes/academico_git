@@ -1,0 +1,53 @@
+﻿@model ConfigurarVagasOfertaProcessoSeletivoViewModel
+
+@Html.Action("CabecalhoProcessoSeletivoOferta", new { seqProcessoSeletivo = Model.SeqProcessoSeletivo.ToString(), exibirNivelEnsino = true })
+
+@using (Smc.Form("formConfigurarVagasOfertaProcessoSeletivo").Ajax().Begin())
+{
+    @Smc.EditorFor(m => m.SeqCampanha)
+    @Smc.EditorFor(m => m.SeqProcessoSeletivo)
+    @Smc.EditorFor(m => m.ConvocacoesTree)
+    @Smc.HiddenFor(m => m.selectedValues)
+    @Smc.HiddenFor(m => m.gridListaOfertasProcessoSeletivo)
+
+    @(Smc.Grid("gridListarConfigurarVagas", new SMCPagerModel<ConfigurarVagasOfertaProcessoSeletivoListaViewModel>(Model.ProcessoSeletivoOfertas))
+                            .HideNavigator()
+                            .HidePager()
+                            .HideRowNumber()
+                            .HideRowsTotalizer()
+                            .HideGridTitle()
+                            .Attribute("data-detail-property", SMCLookupHelper.GetCurrentPropertyName(Smc))
+                            .FieldColumn(x => x.TipoOfertaDisplay)
+                            .FieldColumn(x => x.OfertaDisplay)
+                            .ContentColumn(@<text>
+                                @{
+                                                    ViewBag.Index = (ViewBag.Index != null) ? ((int)ViewBag.Index) + 1 : 0;
+                                }
+                                @Html.Partial("_CustomVagasItem", item as ConfigurarVagasOfertaProcessoSeletivoListaViewModel)
+                            </text>, @Smc.GetUIResource("ConfigurarVagasOfertaProcessoSeletivo_Vagas")))
+
+
+    if (Model.Convocacoes.SMCAny())
+    {
+        using (Smc.Div("divConvocacoes")
+                  .ConditionalDisplay("ProcessoSeletivoOfertas", SMCConditionalOperation.NotEqual, requiredValue: null)
+                .Begin())
+        {
+            @Smc.DisplayFor(m => m.MensagemAlertaOfertaConvocacao).HideLabel()
+
+            @Smc.TreeView("ConvocacoesSelecionadas", Model.ConvocacoesTree).Expanded(true).AllowCheck(SMCSelectMode.Checkbox)
+        }
+    }
+
+    @(Smc.ButtonSet()
+                .AddButton(Smc.Button(SMCButtonBehavior.Salvar).CssClass("smc-btn-salvar-icotext-destaque")
+                        .Text(Smc.GetUIResource("Botao_Salvar_Vagas_Processo_Seletivo_Oferta"))
+                        .Tooltip(Smc.GetUIResource("Botao_Salvar_Vagas_Processo_Seletivo_Oferta_Tooltip"))
+                        .Conditional(SMCConditionalBehavior.ReadOnly, "ProcessoSeletivoOfertas", SMCConditionalOperation.Equals, null)
+                        .Action("SalvarVagasProcessoSeletivoOferta", "ProcessoSeletivoOferta")
+                        .Type(SMCButtonType.Submit))                
+                .AddButton(Smc.Button(SMCButtonBehavior.Voltar).CssClass("smc-btn-voltar-icotext")
+                        .Action("Index", "ProcessoSeletivoOferta", new { seqCampanha = (SMCEncryptedLong)Model.SeqCampanha,  seqProcessoSeletivo = (SMCEncryptedLong)Model.SeqProcessoSeletivo }, forceForBackBehavior: true)
+                        .Type(SMCButtonType.Link))
+    )
+}

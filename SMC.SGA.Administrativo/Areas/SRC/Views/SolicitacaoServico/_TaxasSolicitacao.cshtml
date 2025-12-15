@@ -1,0 +1,38 @@
+﻿@model DadosSolicitacaoViewModel
+
+@using (Smc.Fieldset("Taxas").LegendText(@Smc.GetUIResource("Fieldset_Taxas")).CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    @(Smc.Grid("gridTaxas", new SMCPagerModel<TaxaSolicitacaoViewModel>(Model.TaxasSolicitacao))
+                                                                           .HideGridTitle()
+                                                                           .Size(SMCSize.Grid24_24)
+                                                                           .AutoHideNavigator()
+                                                                           .HideNavigator()
+                                                                           .HideNumberOfRowsPerPageSelector()
+                                                                           .HidePager()
+                                                                           .HideRowsTotalizer()
+                                                                           .FieldColumn(x => x.DescricaoTaxa)
+                   .ButtonColumn(SMCButtonSetType.Secondary, 1, null, null, "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3", false,
+                                 f => Smc.Button("GerarBoleto")
+                                   .CssClass("smc-sga-botao-boleto")
+                                   .Type(SMCButtonType.Link)
+                                   .Tooltip(Smc.GetUIResource("Botao_Gerarboleto"))
+                                   .SecurityToken()
+                                   .Attribute("target", "_blank")
+                                   .Enabled((f as TaxaSolicitacaoViewModel).HabilitarBotaoEmitirBoleto)
+                                   .ButtonInstructions(Smc.GetUIResource((f as TaxaSolicitacaoViewModel).MensagemBotaoEmitirBoleto))
+                                   .Action("EmissaoBoletoGerar", "SolicitacaoServico", new { seqTitulo = new SMCEncryptedLong((f as TaxaSolicitacaoViewModel).SeqTituloGra), seqTaxa = new SMCEncryptedLong((f as TaxaSolicitacaoViewModel).SeqTaxaGra), seqServico = new SMCEncryptedLong((f as TaxaSolicitacaoViewModel).SeqServico), seqSolicitacaoServico = new SMCEncryptedLong((f as TaxaSolicitacaoViewModel).SeqSolicitacaoServico), backUrl = (f as TaxaSolicitacaoViewModel).BackUrl, Area = "SRC" }))
+                   .CssClass("smc-sga-alinhamento-botao-secundario")
+    )
+}
+
+@using (Smc.Fieldset("HistoricoTitulo").LegendText(@Smc.GetUIResource("Fieldset_HistoricoTitulos")).CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    @(Smc.Grid("gridHistoricoTitulos", new SMCPagerModel<TituloSolicitacaoViewModel>(Model.TitulosSolicitacao))
+        .AutoGenerateColumns()
+        .HideGridTitle()
+        .HideNavigator()
+        .HideNumberOfRowsPerPageSelector()
+        .HidePager()
+        .HideRowsTotalizer()
+    )
+}

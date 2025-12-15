@@ -1,0 +1,205 @@
+﻿@using SMC.Academico.Common.Areas.ALN.Constants
+@using SMC.SGA.Administrativo.Areas.SRC.Views.SolicitacaoServico.App_LocalResources
+@model DadosSolicitacaoViewModel
+
+@using (Smc.Fieldset("Solicitante").CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Div("DivButtonVisualizarDadosAcademicos").CssClass("smc-sga-lista-turma").Size(SMCSize.Grid24_24).Begin())
+    {
+        var buttonSet = Smc.ButtonSet().Type(SMCButtonSetType.Primary);
+
+        buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            //.Type(SMCButtonSetType.Primary)
+            .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDadosSolicitante")
+            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarDadosSolicitante_Title"))
+            .Text(Smc.GetUIResource("Botao_VisualizarDadosSolicitante"))
+            .CssClass("smc-sga-btn-dados-contato")
+            .Tooltip(Smc.GetUIResource("Botao_VisualizarDadosSolicitante_Tooltip"))
+            .Ajax(isPost: false)
+            .Action("VisualizarDadosSolicitante", "SolicitacaoServico", new { @seqPessoaAtuacao = new SMCEncryptedLong(Model.Solicitante.Seq) }));
+
+        if (Model.Solicitante.EAluno)
+        {
+            buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+             .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDadosAcademicos")
+             .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarDadosAcademicosAluno_Title"))
+             .Ajax(isPost: false)
+             .Text(Smc.GetUIResource("Botao_VisualizarDadosAcademicosAluno"))
+             .Tooltip(Smc.GetUIResource("Botao_VisualizarDadosAcademicosAluno_Tooltip"))
+             .Type(SMCButtonType.InputButton)
+             .CssClass("smc-sga-btn-dados-academicos")
+             .SecurityToken(UC_SRC_004_01_02.CONSULTAR_SOLICITACAO)
+             .Action("VisualizarDadosAcademicosAluno", "Aluno", new { @area = "ALN", seq = new SMCEncryptedLong(Model.Solicitante.Seq) })
+             .CssClass("smc-btn-custom-destaque-grid"));
+        }
+        else
+        {
+            buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDadosAcademicos")
+            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarDadosAcademicosIngressante_Title"))
+            .Ajax(isPost: false)
+            .Text(Smc.GetUIResource("Botao_VisualizarDadosAcademicosIngressante"))
+            .Tooltip(Smc.GetUIResource("Botao_VisualizarDadosAcademicosIngressante_Tooltip"))
+            .Type(SMCButtonType.InputButton)
+            .CssClass("smc-sga-btn-dados-academicos")
+            .SecurityToken(UC_SRC_004_01_02.CONSULTAR_SOLICITACAO)
+            .Action("VisualizarDadosAcademicosIngressante", "Ingressante", new { @area = "ALN", seq = new SMCEncryptedLong(Model.Solicitante.Seq) })
+            .CssClass("smc-btn-custom-destaque-grid"));
+        }
+
+        @buttonSet;
+    }
+
+    using (Smc.Div("DivDadosSolicitante").Size(SMCSize.Grid24_24).Begin())
+    {
+
+        if (Model.Solicitante.EAluno)
+        {
+
+            @Smc.DisplayFor(x => x.Solicitante.TipoAtuacao).Size(SMCSize.Grid7_24, SMCSize.Grid24_24, SMCSize.Grid7_24, SMCSize.Grid4_24)
+            @Smc.DisplayFor(x => x.Solicitante.NumeroRegistroAcademico).Size(SMCSize.Grid5_24, SMCSize.Grid24_24, SMCSize.Grid5_24, SMCSize.Grid4_24)
+            @Smc.DisplayFor(x => x.Solicitante.CodigoAlunoMigracao).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24)
+            @Smc.DisplayFor(x => x.Solicitante.NomeCompleto).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid10_24)
+            @Smc.DisplayFor(x => x.Solicitante.Cpf).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid7_24, SMCSize.Grid4_24)
+            @Smc.DisplayFor(x => x.Solicitante.NumeroPassaporte).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid5_24, SMCSize.Grid4_24)
+            @Smc.DisplayFor(x => x.Solicitante.Telefone).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24)
+            @Smc.DisplayFor(x => x.Solicitante.EnderecoEletronico).Size(SMCSize.Grid18_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid10_24)
+        }
+        else
+        {
+            @Smc.DisplayFor(x => x.Solicitante.TipoAtuacao).Size(SMCSize.Grid5_24, SMCSize.Grid24_24, SMCSize.Grid6_24, SMCSize.Grid6_24)
+            @Smc.DisplayFor(x => x.Solicitante.Seq).Size(SMCSize.Grid5_24, SMCSize.Grid24_24, SMCSize.Grid6_24, SMCSize.Grid4_24)
+            @Smc.DisplayFor(x => x.Solicitante.NomeCompleto).Size(SMCSize.Grid14_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid14_24)
+            @Smc.DisplayFor(x => x.Solicitante.Cpf).Size(SMCSize.Grid5_24, SMCSize.Grid24_24, SMCSize.Grid6_24, SMCSize.Grid4_24)
+            @Smc.DisplayFor(x => x.Solicitante.NumeroPassaporte).Size(SMCSize.Grid5_24, SMCSize.Grid24_24, SMCSize.Grid6_24, SMCSize.Grid4_24)
+            @Smc.DisplayFor(x => x.Solicitante.Telefone).Size(SMCSize.Grid5_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24)
+            @Smc.DisplayFor(x => x.Solicitante.EnderecoEletronico).Size(SMCSize.Grid9_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid10_24)
+        }
+
+
+    }
+
+}
+
+@using (Smc.Fieldset("Solicitacao").CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Div("DivButtonVisualizarDadosProcesso").CssClass("smc-sga-lista-turma").Size(SMCSize.Grid24_24).Begin())
+    {
+        var buttonSet = Smc.ButtonSet().Type(SMCButtonSetType.Primary);
+
+        buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDadosProcesso")
+            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarDadosProcesso_Title"))
+            .Text(Smc.GetUIResource("Botao_VisualizarDadosProcesso"))
+            .CssClass("smc-sga-btn-dados-processo")
+            .Tooltip(Smc.GetUIResource("Botao_VisualizarDadosProcesso_Tooltip"))
+            .Ajax(isPost: false)
+            .Action("VisualizarDadosProcesso", "SolicitacaoServico", new { @seqProcesso = new SMCEncryptedLong(Model.Solicitacao.SeqProcesso), @seqGrupoEscalonamento = new SMCEncryptedLong(Model.Solicitacao.SeqGrupoEscalonamento.GetValueOrDefault()) }));
+
+        @buttonSet;
+    }
+
+
+    @Smc.DisplayFor(x => x.Solicitacao.SeqProcesso)
+
+    using (Smc.Div("Protocolo").CssClass("smc-sga-destaque-texto").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid24_24).Begin())
+    {
+        @Smc.DisplayFor(x => x.Solicitacao.Protocolo).Size(SMCSize.Grid24_24)
+    }
+    @Smc.DisplayFor(x => x.Solicitacao.OrigemSolicitacaoServico).Size(SMCSize.Grid4_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid4_24)
+    @Smc.DisplayFor(x => x.Solicitacao.Processo).Size(SMCSize.Grid14_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid14_24)
+    @Smc.DisplayFor(x => x.Solicitacao.SituacaoDocumentacao).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24)
+    if (!string.IsNullOrEmpty(Model.Solicitacao.GrupoEscalonamento))
+    {
+        @Smc.DisplayFor(x => x.Solicitacao.SeqGrupoEscalonamento)
+        @Smc.DisplayFor(x => x.Solicitacao.GrupoEscalonamento).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid12_24)
+    }
+    if (Model.Solicitante.EAluno && !string.IsNullOrEmpty(Model.Solicitacao.HistoricoAluno))
+    {
+        @Smc.DisplayFor(x => x.Solicitacao.HistoricoAluno).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid12_24)
+    }
+
+    using (Smc.Div("UsuariosResponsaveis").Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid12_24).Begin())
+    {
+        @Smc.DisplayFor(x => x.Solicitacao.UsuarioResponsavel).Size(SMCSize.Grid21_24, SMCSize.Grid20_24, SMCSize.Grid20_24, SMCSize.Grid21_24)
+
+        if (Model.Solicitacao.UsuariosResponsaveis != null && Model.Solicitacao.UsuariosResponsaveis.Any())
+        {
+            var outrosUsuarios = "<ul>";
+
+            foreach (var usuario in Model.Solicitacao.UsuariosResponsaveis)
+            {
+                outrosUsuarios += "<li>" + usuario + "</li>";
+            }
+
+            outrosUsuarios += "</ul>";
+
+            @Smc.Instructions().Text(outrosUsuarios).Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)
+        }
+        else
+        {
+            @Smc.Instructions().Text(UIResource.MSG_NaoExistemUsuariosResponsaveis).Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)
+        }
+    }
+
+    if (Model.Solicitacao.DataPrevistaSolucao.HasValue)
+    {
+        @Smc.DisplayFor(x => x.Solicitacao.DataPrevistaSolucao).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid6_24, SMCSize.Grid8_24)
+    }
+    using (Smc.Accordion("SolicitacoesOriginalAtualizada").CssClass("smc-sga-accordion-secundario").Begin())
+    {
+        var descricaoOriginalPreenchida = !string.IsNullOrEmpty(Model.SolicitacaoOriginal.DescricaoSolicitacao);
+        var descricaoAtualizadaPreenchida = !string.IsNullOrEmpty(Model.SolicitacaoAtualizada.DescricaoSolicitacao);
+
+        using (Smc.AccordionSection("SolicitacaoOriginal").IsOpen(descricaoOriginalPreenchida && !descricaoAtualizadaPreenchida).Size(SMCSize.Grid24_24).Begin())
+        {
+
+            using (Smc.Fieldset("DadosCriacao").CssClass("smc-sga-confirmacao-dados smc-sga-fieldset-secundario").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(x => x.SolicitacaoOriginal.CriadoPor).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+                @Smc.DisplayFor(x => x.SolicitacaoOriginal.DataCriacao).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+            }
+
+            if (!string.IsNullOrEmpty(Model.SolicitacaoOriginal.Justificativa) || !string.IsNullOrEmpty(Model.SolicitacaoOriginal.JustificativaComplementar))
+            {
+                using (Smc.Fieldset("Justificativa").CssClass("smc-sga-confirmacao-dados smc-sga-fieldset-secundario").Size(SMCSize.Grid24_24).Begin())
+                {
+                    @Smc.DisplayFor(x => x.SolicitacaoOriginal.Justificativa).HideLabel()
+                    @Smc.DisplayFor(x => x.SolicitacaoOriginal.JustificativaComplementar).HideLabel()
+                }
+            }
+
+            using (Smc.Fieldset("InformacoesComplementaresOriginal").CssClass("smc-sga-confirmacao-dados smc-sga-fieldset-secundario").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(x => x.SolicitacaoOriginal.DescricaoSolicitacao).HideLabel()
+            }
+        }
+
+        using (Smc.AccordionSection("SolicitacaoAtualizada").Size(SMCSize.Grid24_24).IsOpen(descricaoOriginalPreenchida && descricaoAtualizadaPreenchida).Begin())
+        {
+            @Smc.DisplayFor(x => x.SolicitacaoAtualizada.AtualizadoPor).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+            @Smc.DisplayFor(x => x.SolicitacaoAtualizada.DataAtualizacao).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+
+            using (Smc.Fieldset("InformacoesComplementaresAtualizada").CssClass("smc-sga-confirmacao-dados smc-sga-fieldset-secundario").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(x => x.SolicitacaoAtualizada.DescricaoSolicitacao).HideLabel()
+            }
+        }
+
+    }
+}
+
+@using (Smc.ModalWindow("modalVisualizarDadosSolicitante")
+  .Size(SMCModalWindowSize.Largest)
+  .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+  .Begin()) { }
+
+@using (Smc.ModalWindow("modalVisualizarDadosAcademicos")
+  .Size(SMCModalWindowSize.Largest)
+  .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+  .Begin()) { }
+
+@using (Smc.ModalWindow("modalVisualizarDadosProcesso")
+  .Size(SMCModalWindowSize.Largest)
+  .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+  .Begin()) { }

@@ -1,0 +1,16 @@
+﻿@model CarregarIngressantesViewModel
+@using SMC.AgendadorTarefa.UI.Mvc.Extensions;
+
+@using (Smc.Header("carregarIngressantesHeader", SMCHeaderType.Primary)
+    .Item(m => m.Campanha, false, null, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+    .Item(m => m.ProcessoSeletivo, false, null, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+    .Item(m => m.Chamada, false, null, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+    .Begin())
+{ }
+
+@Smc.FollowUp(Model.SeqAgendamento, Model.SeqUltimoHistoricoAgendamento).HideHeader()
+
+@(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+    .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+    .Action("Index", "Convocacao")
+    .SecurityToken(UC_CAM_001_05_02.MANTER_CONVOCACAO)))

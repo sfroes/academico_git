@@ -1,0 +1,60 @@
+<h1>Apuração de Frequência</h1>
+<sga-apuracao-frequencia-cabecalho></sga-apuracao-frequencia-cabecalho>
+<div id="divMaxizar" [class.smc-sga-tela-maximizada]="maximizar">
+  <h2 *ngIf="maximizar" [innerHTML]="descricaoComponenteSafeHtml"></h2>
+  <sga-apuracao-frequencia-legenda></sga-apuracao-frequencia-legenda>
+  <sga-apuracao-frequencia-filtro
+    [maximizar]="maximizar"
+    (maximizarClick)="clickMaximizar($event)"
+  ></sga-apuracao-frequencia-filtro>
+  <sga-apuracao-frequencia-grid></sga-apuracao-frequencia-grid>
+  <sga-apuracao-frequencia-notificacoes></sga-apuracao-frequencia-notificacoes>
+  <h3 *ngIf="dadosCarregados" style="text-align: center">Carregando...</h3>
+  <div class="smc-buttonset-horizontal-primario smc-buttonset-horizontal-primario-lancamento-nota">
+    <smc-button
+      (s-click)="validarAssertSalvar(assertSalvar)"
+      [s-loading]="processando$ | async"
+      [s-disabled]="!existemItensAlterados"
+      s-label="Salvar"
+      s-button-class="smc-btn-salvar-icotext-destaque smc-btn-salvar"
+    ></smc-button>
+    <smc-button
+      (s-click)="validarAsserVoltar(assertVoltar)"
+      [s-loading]="processando$ | async"
+      s-label="Voltar"
+      s-button-class="smc-btn-voltar-icotext"
+    ></smc-button>
+  </div>
+  <div *ngIf="existemItensAlterados" class="smc-size-md-6 smc-sga-mensagem-lancamento-frequencia">
+    <p class="smc-sga-frequencia-apurada" *ngIf="qtdAulasEmApuracao">Aula(s) em apuração: {{ qtdAulasEmApuracao }}</p>
+    <p class="smc-sga-frequencia-convertida" *ngIf="qtdAulasEmCancelamento">
+      Aula(s) convertida(s) para "não apurada": {{ qtdAulasEmCancelamento }}
+    </p>
+  </div>
+</div>
+
+<smc-modal s-title="Confirmação de apuração de aula" #assertSalvar s-hide-close="true">
+  <div s-modal-body>
+    <p>As seguintes aulas em apuração serão salvas conforme abaixo:</p>
+    <ul>
+      <li *ngFor="let aula of aluasMensagemSalvar">
+        {{ aula }}
+      </li>
+    </ul>
+    <p></p>
+    <p>Confirma a operação?</p>
+  </div>
+  <div s-modal-footer>
+    <smc-button s-label="Sim" s-tooltip="Sim" (s-click)="onSubmit(assertSalvar)"></smc-button>
+    <smc-button #btnAssertSalvarNao s-label="Não" s-tooltip="Não" (s-click)="assertSalvar.close()"></smc-button>
+  </div>
+</smc-modal>
+<smc-modal s-title="Confirmar saída do lançamento de frequência" #assertVoltar s-hide-close="true">
+  <div s-modal-body>
+    <p>Existem dados não gravados, deseja prosseguir?</p>
+  </div>
+  <div s-modal-footer>
+    <smc-button s-label="Sim" s-tooltip="Sim" (s-click)="voltar()"></smc-button>
+    <smc-button #btnAssertVoltarNao s-label="Não" s-tooltip="Não" (s-click)="assertVoltar.close()"></smc-button>
+  </div>
+</smc-modal>

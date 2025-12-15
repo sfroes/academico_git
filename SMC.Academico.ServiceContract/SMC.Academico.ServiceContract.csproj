@@ -1,0 +1,1613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F1A4A21-D8F6-4FCD-A851-4FC7861AC61E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMC.Academico.ServiceContract</RootNamespace>
+    <AssemblyName>SMC.Academico.ServiceContract</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>bin\Debug\SMC.Academico.ServiceContract.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Producao|AnyCPU'">
+    <OutputPath>bin\Producao\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Desenvolvimento|AnyCPU'">
+    <OutputPath>bin\Desenvolvimento\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Qualidade|AnyCPU'">
+    <OutputPath>bin\Qualidade\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|AnyCPU'">
+    <OutputPath>bin\Homologacao\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.StrongName, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e3e8412083d25dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.StrongName.2.0.30\lib\net461\Dapper.StrongName.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.4.1.0\lib\net461\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Shared, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Shared.4.1.0\lib\net461\MiniProfiler.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.AssinaturaDigital.Common, Version=4.2.4.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.AssinaturaDigital.Common.4.2.251111.1\lib\net471\SMC.AssinaturaDigital.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Calendarios.Common">
+      <HintPath>..\..\Referencias\Calendarios\4.2\SMC.Calendarios.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Calendarios.ServiceContract">
+      <HintPath>..\..\Referencias\Calendarios\4.2\SMC.Calendarios.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.DadosMestres.Common">
+      <HintPath>..\..\Referencias\DadosMestres\4.2\SMC.DadosMestres.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.Common">
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.ServiceContract">
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Formularios.Common">
+      <HintPath>..\..\Referencias\Formularios\4.2\SMC.Formularios.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Formularios.ServiceContract">
+      <HintPath>..\..\Referencias\Formularios\4.2\SMC.Formularios.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Core, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Core.4.2.251008.1\lib\net471\SMC.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Data, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Data.4.2.251008.1\lib\net471\SMC.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.DataAnnotations, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.DataAnnotations.4.2.251008.1\lib\net471\SMC.Framework.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Model, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Model.4.2.251008.1\lib\net471\SMC.Framework.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Security, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Security.4.2.251008.1\lib\net471\SMC.Framework.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Service, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Service.4.2.251008.1\lib\net471\SMC.Framework.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Service.Host, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Service.Host.4.2.251008.1\lib\net471\SMC.Framework.Service.Host.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Transaction, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Transaction.4.2.251008.1\lib\net471\SMC.Framework.Transaction.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Unity, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Unity.4.2.251008.1\lib\net471\SMC.Framework.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Inscricoes.ServiceContract, Version=4.2.1.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Inscricoes\4.2\SMC.Inscricoes.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.IntegracaoAcademico.Common">
+      <HintPath>..\..\Referencias\IntegracaoAcademico\4.2\SMC.IntegracaoAcademico.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.IntegracaoAcademico.ServiceContract">
+      <HintPath>..\..\Referencias\IntegracaoAcademico\4.2\SMC.IntegracaoAcademico.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Localidades.Common, Version=4.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Localidades.Common.4.2.251007.1\lib\net471\SMC.Localidades.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Notificacoes.ServiceContract, Version=4.2.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Notificacoes.ServiceContract.4.2.250701.1\lib\net471\SMC.Notificacoes.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Seguranca.ServiceContract, Version=4.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Seguranca\4.2\SMC.Seguranca.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.1\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.3.3.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.13.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.8.13\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.5.5.5\lib\net47\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\ALN\Data\Aluno\AlunoCabecalhoData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\AlunoDadosIngressanteData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\AlunoDadosIntegracaoData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\AlunoDadosSuporteTecnicoData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\AlunoEmitirBoletoData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\AssociacaoFormacaoEspecificaAlunoData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\CancelarMatriculaAlunoData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\ConsultaDadosAlunoData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\AlunoData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\AlunoFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\AlunoListaData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\AlunoOrientacaoListaData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\EmitirBoletoAbertoBoletoData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\EmitirBoletoAbertoData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\EmitirBoletoAbertoParcelaData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\ItemRelatorioDisciplinasCursadasComponenteCurricularData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\ItemRelatorioDisciplinasCursadasEmentaData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\PlanoEstudoItemData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\PlanoEstudoItemSemHistoricoData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\RelatorioDisciplinasCursadasFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\RelatorioDisciplinasCursadasData.cs" />
+    <Compile Include="Areas\ALN\Data\Aluno\SituacaoAlunoData.cs" />
+    <Compile Include="Areas\ALN\Data\FormaIngresso\FormaIngressoFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\HistoricoEscolar\AvaliacaoTrabalhoData.cs" />
+    <Compile Include="Areas\ALN\Data\InstituicaoNivelTipoOrientacao\InstituicaoNivelTipoOrientacaoGambiarraBindDynamicIngressanteFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\PessoaAtuacao\PessoaAtuacaoTermoIntercambiListaData.cs" />
+    <Compile Include="Areas\ALN\Data\PessoaAtuacao\PessoaAtuacaoTermoIntercambioFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\PessoaAtuacao\PessoaAtuacaoTermoIntercambioPeriodoData.cs" />
+    <Compile Include="Areas\ALN\Data\PessoaAtuacao\PessoaAtuacaoTermoIntercambioSalvarPeriodoData.cs" />
+    <Compile Include="Areas\ALN\Data\RelatorioDeclaracaoGenerica\ConfigurarRelatorioDeclaracaoGenericaData.cs" />
+    <Compile Include="Areas\ALN\Data\RelatorioDeclaracaoGenerica\ConfigurarTagsDeclaracaoGenericaData.cs" />
+    <Compile Include="Areas\ALN\Data\RelatorioPrevisaoConclusaoOrientacao\PrevisaoConclusaoOrientacaoRelatorioAlunosData.cs" />
+    <Compile Include="Areas\ALN\Data\RelatorioPrevisaoConclusaoOrientacao\PrevisaoConclusaoOrientacaoRelatorioData.cs" />
+    <Compile Include="Areas\ALN\Data\RelatorioPrevisaoConclusaoOrientacao\RelatorioPrevisaoConclusaoOrientacaoFiltroData.cs" />
+    <Compile Include="Areas\APR\Data\AplicacaoAvaliacao\AplicacaoAvaliacaoFiltroData.cs" />
+    <Compile Include="Areas\APR\Data\AplicacaoAvaliacao\AplicacaoAvaliacaoData.cs" />
+    <Compile Include="Areas\APR\Data\ApuracaoAvaliacao\ApuracaoAvaliacaoData.cs" />
+    <Compile Include="Areas\APR\Data\ApuracaoFrequencia\LancamentoFrequenciaData.cs" />
+    <Compile Include="Areas\APR\Data\ApuracaoFrequencia\LancamentoFrequenciaAulaData.cs" />
+    <Compile Include="Areas\APR\Data\ApuracaoFrequencia\LancamentoFrequenciaAlunoData.cs" />
+    <Compile Include="Areas\APR\Data\ApuracaoFrequencia\ApuracaoFrequenciaGradeData.cs" />
+    <Compile Include="Areas\APR\Data\Aula\AulaOfertaData.cs" />
+    <Compile Include="Areas\APR\Data\Avaliacao\AvaliacaoEditarData.cs" />
+    <Compile Include="Areas\APR\Data\Avaliacao\DetalhesAvaliacaoData.cs" />
+    <Compile Include="Areas\APR\Data\Avaliacao\ConsultaAvaliacoesDivisaoTurmaData.cs" />
+    <Compile Include="Areas\APR\Data\Avaliacao\ConsultaAvaliacoesTurmaData.cs" />
+    <Compile Include="Areas\APR\Data\Avaliacao\AvaliacaoFiltroData.cs" />
+    <Compile Include="Areas\APR\Data\Avaliacao\AvaliacaoData.cs" />
+    <Compile Include="Areas\APR\Data\ComponentesCreditosData.cs" />
+    <Compile Include="Areas\ALN\Data\HistoricoEscolar\RelatorioHistoricoEscolarData.cs" />
+    <Compile Include="Areas\ALN\Data\HistoricoEscolar\TipoMobilidadeData.cs" />
+    <Compile Include="Areas\ALN\Data\HistoricoEscolar\TotaisComponentesCreditosData.cs" />
+    <Compile Include="Areas\ALN\Data\HistoricoEscolar\TrabalhosData.cs" />
+    <Compile Include="Areas\ALN\Data\IdentidadeEstudantil\RelatorioIdentidadeEstudantilData.cs" />
+    <Compile Include="Areas\ALN\Data\IdentidadeEstudantil\IdentidadeEstudantilData.cs" />
+    <Compile Include="Areas\ALN\Data\IdentidadeEstudantil\RelatorioFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\IdentidadeEstudantil\RelatorioListarData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\AssociacaoIngressanteLoteCabecalhoData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\AssociacaoFormacaoEspecificaIngressanteData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\AssociacaoOrientadorIngressanteData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\AssociacaoOrientadorIngressanteItemData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\EtapaListaData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\EtapaPaginaData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\EtapaSituacaoData.cs" />
+    <Compile Include="Areas\ALN\Data\InstituicaoNivelTipoTermoIntercambio\InstituicaoNivelTipoTermoIntercambioFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\TermoIntercambio\DadosSimplificadoTermoIntercambioData.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IAlunoFormacaoService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IAlunoHistoricoCicloLetivoService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IPlanoEstudoService.cs" />
+    <Compile Include="Areas\APR\Data\Aula\ApuracaoFrequenciaData.cs" />
+    <Compile Include="Areas\APR\Data\Aula\AulaData.cs" />
+    <Compile Include="Areas\APR\Data\Aula\AulaFiltroData.cs" />
+    <Compile Include="Areas\APR\Data\Aula\AulaListaData.cs" />
+    <Compile Include="Areas\APR\Data\EntregaOnline\AplicacaoAvaliacaoEntregaOnlineData.cs" />
+    <Compile Include="Areas\APR\Data\EntregaOnline\EntregaOnlineData.cs" />
+    <Compile Include="Areas\APR\Data\EntregaOnline\EntregaOnlineParticipanteData.cs" />
+    <Compile Include="Areas\APR\Data\EntregaOnline\HistoricoSituacaoEntregaOnlineData.cs" />
+    <Compile Include="Areas\APR\Data\EntregaOnline\HistoricoSituacaoEntregaOnlineItemData.cs" />
+    <Compile Include="Areas\APR\Data\HistoricoEscolar\HistoricoEscolarAprovadoFiltroData.cs" />
+    <Compile Include="Areas\APR\Data\HistoricoEscolar\HistoricoEscolarTurmaData.cs" />
+    <Compile Include="Areas\APR\Data\LancamentosAvaliacao\LancamentoAvaliacaoAlunoApuracaoData.cs" />
+    <Compile Include="Areas\APR\Data\LancamentosAvaliacao\LancamentoAvaliacaoAlunosData.cs" />
+    <Compile Include="Areas\APR\Data\LancamentosAvaliacao\LancamentoNotaTurmaAlunoData.cs" />
+    <Compile Include="Areas\APR\Data\LancamentosAvaliacao\LancamentoNotaFechamentoDiarioAlunoData.cs" />
+    <Compile Include="Areas\APR\Data\LancamentosAvaliacao\LancamentoNotaFechamentoDiarioData.cs" />
+    <Compile Include="Areas\APR\Data\LancamentosAvaliacao\LancamentoAvaliacaoData.cs" />
+    <Compile Include="Areas\APR\Interfaces\IApuracaoFrequenciaGradeService.cs" />
+    <Compile Include="Areas\APR\Interfaces\IAvaliacaoService.cs" />
+    <Compile Include="Areas\APR\Interfaces\IAulaService.cs" />
+    <Compile Include="Areas\APR\Interfaces\IEntregaOnlineService.cs" />
+    <Compile Include="Areas\APR\Interfaces\IOrigemAvaliacaoService.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaCopia\CampanhaCopiaCicloLetivoItemData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaCopia\CampanhaCopiaConvocacaoProcessoSeletivoItemData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaCopia\CampanhaCopiaData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaCopia\CampanhaCopiaOfertaListaData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaCopia\CampanhaCopiaOfertaFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaCopia\CampanhaCopiaEtapaProcessoGPIItemData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaCopia\CampanhaCopiaEtapaProcessoGPIData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaCopia\CampanhaCopiaProcessoSeletivoFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaCopia\CampanhaCopiaProcessoSeletivoListaData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaCopia\CampanhaCopiaConvocacaoProcessoSeletivoData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaOferta\CampanhaOfertaAssociacaoData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaOferta\CampanhaOfertaFiltroTelaData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaOferta\OfertaCampanhaLookupListaData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaOferta\VagasCampanhaOfertaData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaOferta\CampanhaOfertaListaData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaOferta\SelecaoOfertaCampanhaLookupFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaOferta\SelecaoOfertaCampanhaLookupListaData.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivo\CicloLetivoTurmaData.cs" />
+    <Compile Include="Areas\CAM\Data\EventoLetivo\DatasEventoLetivoData.cs" />
+    <Compile Include="Areas\CAM\Data\ProcessoSeletivoOferta\ProcessoSeletivoOfertaData.cs" />
+    <Compile Include="Areas\CAM\Data\ProcessoSeletivoOferta\ProcessoSeletivoOfertaFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\ProcessoSeletivoOferta\ProcessoSeletivoOfertaListaData.cs" />
+    <Compile Include="Areas\CAM\Data\ProcessoSeletivoOferta\VagasProcessoSeletivoOfertaData.cs" />
+    <Compile Include="Areas\CAM\Data\ProcessoSeletivo\ProcessoSeletivoCabecalhoData.cs" />
+    <Compile Include="Areas\CAM\Data\ProcessoSeletivo\ProcessoSeletivoData.cs" />
+    <Compile Include="Areas\CAM\Data\ProcessoSeletivo\ProcessoSeletivoFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\ProcessoSeletivo\ProcessoSeletivoListaData.cs" />
+    <Compile Include="Areas\CAM\Data\ProcessoSeletivo\ProcessoSeletivoProcessoMatriculaData.cs" />
+    <Compile Include="Areas\CAM\Data\TipoOferta\TipoOfertaSelecaoOfertaData.cs" />
+    <Compile Include="Areas\CAM\Data\TipoProcessoSeletivo\TipoProcessoSeletivoSelectFiltroData.cs" />
+    <Compile Include="Areas\CAM\Interfaces\IProcessoSeletivoOfertaService.cs" />
+    <Compile Include="Areas\CNC\Data\ApuracaoFormacao\ApuracaoFormacaoData.cs" />
+    <Compile Include="Areas\CNC\Data\ClassificacaoInvalidadeDocumento\ClassificacaoInvalidadeDocumentoData.cs" />
+    <Compile Include="Areas\CNC\Data\ConsultaPublica\ConsultaPublicaData.cs" />
+    <Compile Include="Areas\CNC\Data\ConsultaPublica\ConsultaPublicaHistoricoData.cs" />
+    <Compile Include="Areas\CNC\Data\DeclaracaoGenerica\DeclaracaoGenericaHistoricoListarData.cs" />
+    <Compile Include="Areas\CNC\Data\DeclaracaoGenerica\DeclaracaoGenericaDadosGeraisData.cs" />
+    <Compile Include="Areas\CNC\Data\DeclaracaoGenerica\DeclaracaoGenericaFiltroData.cs" />
+    <Compile Include="Areas\CNC\Data\DeclaracaoGenerica\DeclaracaoGenericaListarData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusaoApostilamento\CabecalhoDocumentoConclusaoApostilamentoAlunoData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusaoApostilamento\CabecalhoDocumentoConclusaoApostilamentoDocumentoData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusaoApostilamento\DocumentoConclusaoApostilamentoData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusaoApostilamento\DocumentoConclusaoApostilamentoFiltroData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusaoApostilamento\DocumentoConclusaoApostilamentoListarData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusaoFormacao\DocumentoConclusaoFormacaoListarData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\DocumentoConclusaoDadosPessoaisData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\DocumentoConclusaoFiltroHistoricoDownloadData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\DocumentoConclusaoHistoricoDownloadListarData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\DocumentoConclusaoHistoricoListarData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\DocumentoConclusaoCabecalhoData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\DocumentoConclusaoConsultaData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\DocumentoConclusaoData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\DocumentoConclusaoFiltroData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\DocumentoConclusaoListarData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\DocumentoConclusaoMensagemData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\DocumentoConclusaoViaAnteriorListarData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\DownloadDocumentoDigitalPaginaData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\DownloadDocumentoDigitalDocumentoConclusaoPaginaData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\EntregaDocumentoDigitalDocumentoConclusaoPaginaData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\EntregaDocumentoDigitalFiliacaoPaginaData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\EntregaDocumentoDigitalFormacaoPaginaData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\EntregaDocumentoDigitalPaginaData.cs" />
+    <Compile Include="Areas\CNC\Data\DocumentoConclusao\EntregaDocumentoDigitalUploadPaginaData.cs" />
+    <Compile Include="Areas\CNC\Data\GrupoRegistro\GrupoRegistroFiltroData.cs" />
+    <Compile Include="Areas\CNC\Data\GrupoRegistro\GrupoRegistroData.cs" />
+    <Compile Include="Areas\CNC\Data\InstituicaoNivelTipoDocumentoAcademico\InstituicaoNivelTipoDocumentoAcademicoData.cs" />
+    <Compile Include="Areas\CNC\Data\InstituicaoNivelTipoDocumentoAcademico\InstituicaoNivelTipoDocumentoFormacaoEspecificaData.cs" />
+    <Compile Include="Areas\CNC\Data\InstituicaoNivelTipoDocumentoAcademico\InstituicaoNivelTipoDocumentoModelosRelatorioData.cs" />
+    <Compile Include="Areas\CNC\Data\Integralizacao\IntegralizacaoConsultaHistoricoData.cs" />
+    <Compile Include="Areas\CNC\Data\Integralizacao\IntegralizacaoConsultaHistoricoFiltroData.cs" />
+    <Compile Include="Areas\CNC\Data\Integralizacao\IntegralizacaoHistoricoSemMatrizData.cs" />
+    <Compile Include="Areas\CNC\Data\Integralizacao\IntegralizacaoMatrizConfiguracaoData.cs" />
+    <Compile Include="Areas\CNC\Data\Integralizacao\IntegralizacaoMatrizCurricularOfertaCabecalhoData.cs" />
+    <Compile Include="Areas\CNC\Data\Integralizacao\IntegralizacaoMatrizDivisaoData.cs" />
+    <Compile Include="Areas\CNC\Data\Integralizacao\IntegralizacaoMatrizGrupoData.cs" />
+    <Compile Include="Areas\CNC\Data\Integralizacao\IntegralizacaoTipoComponenteCurricularData.cs" />
+    <Compile Include="Areas\CNC\Data\SituacaoDocumentoConclusao\SituacaoDocumentoAcademicoFiltroData.cs" />
+    <Compile Include="Areas\CNC\Data\SituacaoDocumentoConclusao\SituacaoDocumentoAcademicoListarData.cs" />
+    <Compile Include="Areas\CNC\Data\SituacaoDocumentoConclusao\SituacaoDocumentoAcademicoData.cs" />
+    <Compile Include="Areas\CNC\Data\SituacaoDocumentoConclusao\SituacaoDocumentoAcademicoGrupoDoctoData.cs" />
+    <Compile Include="Areas\CNC\Data\SolicitacaoDocumentoConclusao\DadosCargaHorariaHistoricoData.cs" />
+    <Compile Include="Areas\CNC\Data\SolicitacaoDocumentoConclusao\SolicitacaoAnaliseEmissaoDocumentoConclusaoAtosCursoData.cs" />
+    <Compile Include="Areas\CNC\Data\SolicitacaoDocumentoConclusao\SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarAtividadeComplementarListarData.cs" />
+    <Compile Include="Areas\CNC\Data\SolicitacaoDocumentoConclusao\SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarEnadeData.cs" />
+    <Compile Include="Areas\CNC\Data\SolicitacaoDocumentoConclusao\SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoListarData.cs" />
+    <Compile Include="Areas\CNC\Data\SolicitacaoDocumentoConclusao\SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoData.cs" />
+    <Compile Include="Areas\CNC\Data\SolicitacaoDocumentoConclusao\SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemData.cs" />
+    <Compile Include="Areas\CNC\Data\SolicitacaoDocumentoConclusao\SolicitacaoAnaliseEmissaoDocumentoConclusaoData.cs" />
+    <Compile Include="Areas\CNC\Data\SolicitacaoDocumentoConclusao\SolicitacaoAnaliseEmissaoDocumentoConclusaoDocumentacaoData.cs" />
+    <Compile Include="Areas\CNC\Data\SolicitacaoDocumentoConclusao\SolicitacaoAnaliseEmissaoDocumentoConclusaoFormacaoConcluidaData.cs" />
+    <Compile Include="Areas\CNC\Data\SolicitacaoDocumentoConclusao\SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemFiltroData.cs" />
+    <Compile Include="Areas\CNC\Data\SolicitacaoDocumentoConclusao\SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarData.cs" />
+    <Compile Include="Areas\CNC\Data\Tag\TagData.cs" />
+    <Compile Include="Areas\CNC\Data\TipoDocumentoAcademico\TipoDocumentoAcademicoTagData.cs" />
+    <Compile Include="Areas\CNC\Interfaces\IClassificacaoInvalidadeDocumentoService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\IDeclaracaoGenericaService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\IDocumentoAcademicoService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\IInstituicaoNivelTipoDocumentoModeloRelatorioService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\IOrgaoRegistroService.cs" />
+    <Compile Include="Areas\CUR\Data\Curriculo\EmissaoCurriculoDigitalSATData.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IDocumentoAcademicoCurriculoService.cs" />
+    <Compile Include="Areas\DCT\Data\Colaborador\ColaboradorGradeVinculosData.cs" />
+    <Compile Include="Areas\MAT\Data\CargaHorariaData.cs" />
+    <Compile Include="Areas\MAT\Data\TurmaOfertadaData.cs" />
+    <Compile Include="Areas\ORG\Data\AssociacaoEntidades\AssociacaoEntidadeData.cs" />
+    <Compile Include="Areas\ORG\Data\AssociacaoEntidades\AssociacaoEntidadeFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\AssociacaoEntidades\AssociacaoEntidadeListarData.cs" />
+    <Compile Include="Areas\ORG\Data\Ato Normativo\DadosAtoNormativoData.cs" />
+    <Compile Include="Areas\ORG\Data\EntidadeImagem\EntidadeImagemData.cs" />
+    <Compile Include="Areas\ORG\Data\EntidadeImagem\EntidadeImagemFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\Entidade\EntidadeRodapeData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoNivelSistemaOrigem\InstituicaoNivelSistemaOrigemData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoNivelSistemaOrigem\InstituicaoNivelSistemaOrigemFiltroData.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IEntidadeImagemService.cs" />
+    <Compile Include="Areas\ORT\Data\ConfiguracaoNumeracaoTrabalho\ConfiguracaoNumeracaoTrabalhoListaData.cs" />
+    <Compile Include="Areas\ORT\Data\ConfiguracaoNumeracaoTrabalho\ConfiguracaoNumeracaoTrabalhoOfertaListaData.cs" />
+    <Compile Include="Areas\ORT\Data\ConfiguracaoNumeracaoTrabalho\ConfiguracaoNumeracaoTrabalhoOfertaData.cs" />
+    <Compile Include="Areas\ORT\Data\ConfiguracaoNumeracaoTrabalho\ConfiguracaoNumeracaoTrabalhoData.cs" />
+    <Compile Include="Areas\ORT\Data\ConfiguracaoNumeracaoTrabalho\ConfiguracaoNumeracaoTrabalhoFiltroData.cs" />
+    <Compile Include="Areas\ORT\Data\PublicacaoBdp\FichaCatalograficaData.cs" />
+    <Compile Include="Areas\ORT\Data\PublicacaoBdp\MudancaTipoTrabalhoAcademicoSATData.cs" />
+    <Compile Include="Areas\ORT\Interfaces\IConfiguracaoNumeracaoTrabalhoService.cs" />
+    <Compile Include="Areas\PES\Data\ConfiguracaoAvaliacaoPpaTurma\ConfiguracaoAvaliacaoPpaTurmaCabecalhoData.cs" />
+    <Compile Include="Areas\PES\Data\ConfiguracaoAvaliacaoPpaTurma\ConfiguracaoAvaliacaoPpaTurmaFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\ConfiguracaoAvaliacaoPpaTurma\ConfiguracaoAvaliacaoPpaTurmaListarData.cs" />
+    <Compile Include="Areas\PES\Data\ConfiguracaoAvaliacaoPpa\AvaliacaoInstitucionalData.cs" />
+    <Compile Include="Areas\PES\Data\ConfiguracaoAvaliacaoPpa\ConfiguracaoAvaliacaoPpaCabecalhoData.cs" />
+    <Compile Include="Areas\PES\Data\ConfiguracaoAvaliacaoPpa\ConfiguracaoAvaliacaoPpaListaData.cs" />
+    <Compile Include="Areas\PES\Data\ConfiguracaoAvaliacaoPpa\ConfiguracaoAvaliacaoPpaData.cs" />
+    <Compile Include="Areas\PES\Data\ConfiguracaoAvaliacaoPpa\ConfiguracaoAvaliacaoPpaFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\EnvioNotificacaoDestinatario\EnvioNotificacaoDestinatarioColaboradorCabecalhoData.cs" />
+    <Compile Include="Areas\PES\Data\EnvioNotificacaoDestinatario\EnvioNotificacaoDestinatarioAlunoCabecalhoData.cs" />
+    <Compile Include="Areas\PES\Data\EnvioNotificacaoDestinatario\EnvioNotificacaoDestinatarioListarData.cs" />
+    <Compile Include="Areas\PES\Data\EnvioNotificacaoDestinatario\EnvioNotificacaoDestinatarioFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\EnvioNotificacao\EnvioNotificacaoData.cs" />
+    <Compile Include="Areas\PES\Data\EnvioNotificacao\EnvioNotificacaoFiltroSelecaoData.cs" />
+    <Compile Include="Areas\PES\Data\EnvioNotificacao\EnvioNotificacaoFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\EnvioNotificacao\EnvioNotificacaoPessoasListarData.cs" />
+    <Compile Include="Areas\PES\Data\EnvioNotificacao\EnvioNotificacaoListarData.cs" />
+    <Compile Include="Areas\PES\Data\EnvioNotificacao\VisualizarDestinatariosNotificacaoData.cs" />
+    <Compile Include="Areas\PES\Data\InstituicaoTipoEntidadeTipoFuncionario\InstituicaoTipoEntidadeTipoFuncionarioData.cs" />
+    <Compile Include="Areas\PES\Data\InstituicaoTipoFuncionario\InstituicaoTipoFuncionarioData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoAmostraPpa\PessoaAtuacaoAmostraPpaCabecalhoData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoAmostraPpa\PessoaAtuacaoAmostraPpaFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoAmostraPpa\PessoaAtuacaoAmostraPpaListaData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoBloqueio\VerificarBloqueioBibliotecaSATData.cs" />
+    <Compile Include="Areas\CNC\Data\TipoApostilamento\TipoApostilamentoData.cs" />
+    <Compile Include="Areas\CNC\Data\TipoDocumentoAcademico\TipoDocumentoAcademicoData.cs" />
+    <Compile Include="Areas\CNC\Data\TipoDocumentoAcademico\TipoDocumentoAcademicoServicoData.cs" />
+    <Compile Include="Areas\CNC\Data\Titulacao\TitulacaoDocumentoComprobatorioData.cs" />
+    <Compile Include="Areas\CNC\Interfaces\IDocumentoConclusaoApostilamentoService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\IDocumentoConclusaoService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\IInstituicaoNivelTipoDocumentoAcademicoService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\ISituacaoDocumentoAcademicoService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\ISolicitacaoDocumentoConclusaoEntregaDigitalService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\ISolicitacaoDocumentoConclusaoService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\ITipoApostilamentoService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\IGrupoRegistroService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\ITipoDocumentoAcademicoService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\ITitulacaoDocumentoComprobatorioService.cs" />
+    <Compile Include="Areas\CSO\Data\CursoFormacaoEspecifica\CursoFormacaoEspecificaNodeData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoFormacaoEspecifica\ReplicarCursoFormacaoEspecificaData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoOfertaLocalidade\CursoOfertaLocalidadeReplicaFormacaoEspecificaProgramaFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\Curso\CursoReplicaFormacaoEspecificaProgramaFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\FormacaoEspecifica\FormacaoEspecificaData.cs" />
+    <Compile Include="Areas\CSO\Data\InstituicaoNivelTurno\InstituicaoNivelTurnoData.cs" />
+    <Compile Include="Areas\CSO\Data\Programa\ProgramaTipoAutorizacaoBdpData.cs" />
+    <Compile Include="Areas\CSO\Data\Programa\ReplicaFormacaoEspecificaProgramaConfirmacaoData.cs" />
+    <Compile Include="Areas\CSO\Data\Programa\ReplicaFormacaoEspecificaProgramaTitulacaoData.cs" />
+    <Compile Include="Areas\CSO\Data\Programa\ReplicaFormacaoEspecificaProgramaTitulacaoCursoData.cs" />
+    <Compile Include="Areas\CSO\Data\Programa\ReplicaFormacaoEspecificaProgramaData.cs" />
+    <Compile Include="Areas\CSO\Data\TipoFormacaoEspecifica\TipoFormacaoEspecificaTipoCursoData.cs" />
+    <Compile Include="Areas\CSO\Interfaces\IInstituicaoNivelTipoFormacaoEspecificaService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\IProgramaTipoAutorizacaoBdpService.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularDispensaFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\AssuntoComponenteMatriz\AssuntoComponeteMatrizCabecalhoData.cs" />
+    <Compile Include="Areas\CUR\Data\AssuntoComponenteMatriz\AssuntoComponeteMatrizListarData.cs" />
+    <Compile Include="Areas\CUR\Data\ConfiguracaoComponenteMatriz\ConfiguracaoComponeteMatrizCabecalhoData.cs" />
+    <Compile Include="Areas\CUR\Data\ConfiguracaoComponenteMatriz\ConfiguracaoComponeteMatrizListarData.cs" />
+    <Compile Include="Areas\CUR\Data\DivisaoComponente\ConfiguracaoDivisaoComponenteData.cs" />
+    <Compile Include="Areas\CUR\Data\DivisaoMatrizCurricularComponente\GrupoCurricularComponenteListarData.cs" />
+    <Compile Include="Areas\CUR\Data\GrupoCurricularComponente\GrupoCurricularComponenteListaData.cs" />
+    <Compile Include="Areas\CUR\Data\GrupoCurricularComponente\GrupoCurricularComponenteFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\GrupoCurricularComponente\GrupoCurricularComponenteData.cs" />
+    <Compile Include="Areas\CUR\Data\GrupoCurricular\GrupoCurricularDescricaoData.cs" />
+    <Compile Include="Areas\CUR\Data\GrupoCurricular\GrupoCurricularInformacaoData.cs" />
+    <Compile Include="Areas\CUR\Data\GrupoCurricular\GrupoCurricularInformacaoFormacaoData.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IComponenteCurricularEmentaService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IGrupoCurricularComponenteService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IInstituicaoNivelTipoDivisaoComponenteCurricularService.cs" />
+    <Compile Include="Areas\DCT\Data\ColaboradorAptoComponente\ColaboradorAptoComponenteFiltroData.cs" />
+    <Compile Include="Areas\DCT\Data\ColaboradorAptoComponente\ColaboradorAptoComponenteData.cs" />
+    <Compile Include="Areas\DCT\Data\ColaboradorVinculoCurso\ColaboradorVinculoCursoFiltroData.cs" />
+    <Compile Include="Areas\DCT\Data\ColaboradorVinculo\ColaboradorVinculoAtividadeData.cs" />
+    <Compile Include="Areas\DCT\Data\ColaboradorVinculo\ColaboradorVinculoFiltroData.cs" />
+    <Compile Include="Areas\DCT\Data\Colaborador\ColaboradorGradeData.cs" />
+    <Compile Include="Areas\DCT\Data\Colaborador\ColaboradorLookupData.cs" />
+    <Compile Include="Areas\DCT\Data\Colaborador\ColaboradorOrientadorFiltroData.cs" />
+    <Compile Include="Areas\DCT\Data\InstituicaoNivelTipoAtividadeColaborador\InstituicaoNivelTipoAtividadeColaboradorFiltroData.cs" />
+    <Compile Include="Areas\DCT\Data\ColaboradorVinculo\RelatorioCertificadoPosDoutorFiltroData.cs" />
+    <Compile Include="Areas\DCT\Data\ColaboradorVinculo\RelatorioCertificadoPosDoutorListaData.cs" />
+    <Compile Include="Areas\DCT\Data\LogAtualizacaoColaborador\RelatorioLogAtualizacaoColaboradorListaData.cs" />
+    <Compile Include="Areas\DCT\Data\LogAtualizacaoColaborador\RelatorioLogAtualizacaoColaboradorFiltroData.cs" />
+    <Compile Include="Areas\DCT\Interfaces\IColaboradorAptoComponenteService.cs" />
+    <Compile Include="Areas\DCT\Interfaces\IColaboradorVinculoCursoService.cs" />
+    <Compile Include="Areas\DCT\Interfaces\ILogAtualizacaoColaboradorService.cs" />
+    <Compile Include="Areas\DCT\Interfaces\ITipoRelatorioService.cs" />
+    <Compile Include="Areas\FIN\Data\Contrato\InformacaoFinanceiraAdesaoContratoData.cs" />
+    <Compile Include="Areas\FIN\Data\MotivoAlteracaoBeneficio\MotivoAlteracaoBeneficioData.cs" />
+    <Compile Include="Areas\FIN\Data\PessoaAtuacaoBeneficio\PessoaAtuacaoBeneficioEnvioNotificacaoData.cs" />
+    <Compile Include="Areas\FIN\Data\PessoaAtuacaoBeneficio\PessoaAtuacaoBeneficioBeneficioHistoricoVigenciaData.cs" />
+    <Compile Include="Areas\FIN\Data\PessoaAtuacaoBeneficio\PessoaAtuacaoBeneficioBeneficioHistoricoSituacaoData.cs" />
+    <Compile Include="Areas\FIN\Data\PessoaAtuacaoBeneficio\PessoaAtuacaoBeneficioControleFinanceiroData.cs" />
+    <Compile Include="Areas\FIN\Data\PessoaAtuacaoBeneficio\PessoaAtuacaoBeneficioAnexoData.cs" />
+    <Compile Include="Areas\FIN\Data\PessoaAtuacaoBeneficio\RelatorioBolsistasFiltroData.cs" />
+    <Compile Include="Areas\FIN\Data\PessoaAtuacaoBeneficio\RelatorioBolsistasData.cs" />
+    <Compile Include="Areas\FIN\Data\PessoaAtuacaoBeneficio\PessoaAtuacaoBeneficioMatriculaData.cs" />
+    <Compile Include="Areas\FIN\Interfaces\IMotivoAlteracaoBeneficio.cs" />
+    <Compile Include="Areas\GRD\Data\DetalheDivisaoTurmaGrade\DetalheDivisaoTurmaGradeData.cs" />
+    <Compile Include="Areas\GRD\Data\DetalheDivisaoTurmaGrade\DetalheDivisaoTurmaGradeLocalData.cs" />
+    <Compile Include="Areas\GRD\Data\DetalheDivisaoTurmaGrade\DetalheDivisaoTurmaGradeProfessorData.cs" />
+    <Compile Include="Areas\GRD\Data\EventoAula\EventoAulaColaboradorData.cs" />
+    <Compile Include="Areas\GRD\Data\EventoAula\EventoAulaLoteData.cs" />
+    <Compile Include="Areas\GRD\Data\EventoAula\EventoAulaFiltroData.cs" />
+    <Compile Include="Areas\GRD\Data\EventoAula\EventoAulaValidacaoColisaoColaboradorData.cs" />
+    <Compile Include="Areas\GRD\Data\EventoAula\EventoAulaDivisaoTurmaData.cs" />
+    <Compile Include="Areas\GRD\Data\EventoAula\EventoAulaTurmaCabecalhoData.cs" />
+    <Compile Include="Areas\GRD\Data\EventoAula\EventoAulaTurmaData.cs" />
+    <Compile Include="Areas\GRD\Data\EventoAula\EventoAulaData.cs" />
+    <Compile Include="Areas\GRD\Data\GradeHorariaCompartilhada\GradeHorariaCompartilhadaItemData.cs" />
+    <Compile Include="Areas\GRD\Data\GradeHorariaCompartilhada\GradeHorariaCompartilhadaData.cs" />
+    <Compile Include="Areas\GRD\Data\GradeHorariaCompartilhada\GradeHorariaCompartilhadaListarData.cs" />
+    <Compile Include="Areas\GRD\Data\GradeHorariaCompartilhada\GradeHorariaCompartilhadaFitroData.cs" />
+    <Compile Include="Areas\GRD\Data\HistoricoDivisaoTurmaConfiguracaoGrade\HistoricoDivisaoTurmaConfiguracaoGradeData.cs" />
+    <Compile Include="Areas\GRD\Data\HistoricoDivisaoTurmaConfiguracaoGrade\HistoricoDivisaoTurmaConfiguracaoGradeFiltroData.cs" />
+    <Compile Include="Areas\GRD\Data\HistoricoDivisaoTurmaConfiguracaoGrade\HistoricoDivisaoTurmaConfiguracaoGradeListarData.cs" />
+    <Compile Include="Areas\GRD\Interfaces\IGradeHorariaCompartilhadService.cs" />
+    <Compile Include="Areas\GRD\Interfaces\IEventoAulaService.cs" />
+    <Compile Include="Areas\GRD\Interfaces\IHistoricoDivisaoTurmaConfiguracaoGradeService.cs" />
+    <Compile Include="Areas\GRD\Interfaces\IGRDDynamicService.cs" />
+    <Compile Include="Areas\MAT\Data\RelatorioAlunosPorComponenteListaData.cs" />
+    <Compile Include="Areas\MAT\Data\RelatorioAlunosPorSituacaoData.cs" />
+    <Compile Include="Areas\MAT\Data\RelatorioAlunosPorComponenteFiltroData.cs" />
+    <Compile Include="Areas\MAT\Data\RelatorioConsolidadoSituacaoData.cs" />
+    <Compile Include="Areas\MAT\Data\RelatorioConsolidadoSituacaoFiltroData.cs" />
+    <Compile Include="Areas\MAT\Data\RelatorioAlunosPorSituacaoFiltroData.cs" />
+    <Compile Include="Areas\MAT\Data\EfetivarRenovacaoMatriculaAutomaticaSATData.cs" />
+    <Compile Include="Areas\MAT\Data\SituacaoItemMatricula\SituacaoItemMatriculaData.cs" />
+    <Compile Include="Areas\MAT\Data\SituacaoMatriculaFiltroData.cs" />
+    <Compile Include="Areas\MAT\Data\SituacaoMatriculData.cs" />
+    <Compile Include="Areas\MAT\Data\SolicitacaoMatricula\DadosSolicitacaoMatriculaRenovacaoData.cs" />
+    <Compile Include="Areas\MAT\Data\SolicitacaoMatricula\DadosSolicitacaoMatriculaRenovacaoFiltroData.cs" />
+    <Compile Include="Areas\MAT\Data\SolicitacaoMatricula\FormacoesEspecificasSolicitacaoMatriculaData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\IngressanteCabecalhoData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\IngressanteFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\IngressanteData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\IngressanteListaData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\IngressanteOfertaData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\IngressanteOrientacaoData.cs" />
+    <Compile Include="Areas\ALN\Data\Ingressante\IngressanteProcessoSeletivoListaData.cs" />
+    <Compile Include="Areas\ALN\Data\InstituicaoNivelTipoOrientacaoParticipacao\InstituicaoNivelTipoOrientacaoParticipacaoFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\InstituicaoNivelTipoOrientacao\InstituicaoNivelTipoOrientacaoFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\InstituicaoNivelTipoVinculoAluno\InstituicaoNivelTipoProcessoSeletivoData.cs" />
+    <Compile Include="Areas\ALN\Data\PessoaAtuacao\PessoaAtuacaoTermoIntercambioData.cs" />
+    <Compile Include="Areas\ALN\Data\TermoIntercambio\TermoIntercambioLookupFiltroData.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IAlunoHistoricoService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IAlunoService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IFormaIngressoService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IInstituicaoNivelTipoOrientacaoParticipacaoService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IInstituicaoNivelTipoOrientacaoService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IInstituicaoNivelTipoTermoIntercambioService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IPeriodoIntercambioService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IPessoaAtuacaoTermoIntercambioService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IPlanoEstudoItemService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\ITipoRelatorioService.cs" />
+    <Compile Include="Areas\APR\Data\BancasAgendadas\BancasAgendadasAreaConhecimentoData.cs" />
+    <Compile Include="Areas\APR\Data\BancasAgendadas\BancasAgendadasFiltroData.cs" />
+    <Compile Include="Areas\APR\Data\BancasAgendadas\BancasAgendadasData.cs" />
+    <Compile Include="Areas\APR\Data\EscalaApuracaoItem\EscalaApuracaoItemFiltroData.cs" />
+    <Compile Include="Areas\APR\Data\HistoricoEscolar\HistoricoEscolarCompletoData.cs" />
+    <Compile Include="Areas\APR\Data\CriterioAprovacao\CriterioAprovacaoFiltroData.cs" />
+    <Compile Include="Areas\APR\Data\HistoricoEscolar\HistoricoEscolarComponenteData.cs" />
+    <Compile Include="Areas\APR\Data\HistoricoEscolar\HistoricoEscolarSituacaoFinalData.cs" />
+    <Compile Include="Areas\APR\Data\HistoricoEscolar\LancamentoHistoricoEscolarDetalhesData.cs" />
+    <Compile Include="Areas\APR\Data\HistoricoEscolar\LancamentoHistoricoEscolarData.cs" />
+    <Compile Include="Areas\APR\Data\HistoricoEscolar\HistoricoEscolarData.cs" />
+    <Compile Include="Areas\APR\Data\HistoricoEscolar\HistoricoEscolarColaboradorData.cs" />
+    <Compile Include="Areas\APR\Data\HistoricoEscolar\HistoricoEscolarFiltroData.cs" />
+    <Compile Include="Areas\APR\Data\HistoricoEscolar\HistoricoEscolarCabecalhoData.cs" />
+    <Compile Include="Areas\APR\Data\HistoricoEscolar\HistoricoEscolarListaData.cs" />
+    <Compile Include="Areas\APR\Data\Material\DownloadMaterialParametrosData.cs" />
+    <Compile Include="Areas\APR\Data\Material\MaterialFiltroData.cs" />
+    <Compile Include="Areas\APR\Data\Material\MaterialData.cs" />
+    <Compile Include="Areas\APR\Data\Material\MaterialVisualizacaoData.cs" />
+    <Compile Include="Areas\APR\Data\Material\OrigemMaterialData.cs" />
+    <Compile Include="Areas\APR\Data\MembroBancaExaminadora\MembroBancaExaminadoraData.cs" />
+    <Compile Include="Areas\APR\Data\OrigemAvaliacao\OrigemAvaliacaoData.cs" />
+    <Compile Include="Areas\APR\Data\TipoMembroBanca\TipoMembroBancaFiltroData.cs" />
+    <Compile Include="Areas\APR\Interfaces\IApuracaoAvaliacaoService.cs" />
+    <Compile Include="Areas\APR\Interfaces\IInstituicaoNivelTipoMembroBancaService.cs" />
+    <Compile Include="Areas\APR\Interfaces\IEscalaApuracaoItemService.cs" />
+    <Compile Include="Areas\APR\Interfaces\IHistoricoEscolarService.cs" />
+    <Compile Include="Areas\APR\Interfaces\IMaterialService.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaCicloLetivo\CampanhaCicloLetivoData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaCicloLetivo\CampanhaCicloLetivoFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaOferta\CampanhaOfertaData.cs" />
+    <Compile Include="Areas\CAM\Data\CampanhaOferta\CampanhaOfertaFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\Campanha\CampanhaConsultarCandidatoCabecalhoData.cs" />
+    <Compile Include="Areas\CAM\Data\Campanha\CampanhaConsultarCanditatoFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\Campanha\CampanhaConsultarCanditatoListaData.cs" />
+    <Compile Include="Areas\CAM\Data\Campanha\CampanhaData.cs" />
+    <Compile Include="Areas\CAM\Data\Campanha\CampanhaFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\Chamada\CargaIngressanteSATData.cs" />
+    <Compile Include="Areas\CAM\Data\Chamada\ChamadaConvocacaoData.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivo\CicloLetivoPlanoEstudoTurmasData.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivo\CicloLetivoPlanoEstudoAtividadeData.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivo\CicloLetivoPlanoEstudoData.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivo\CicloLetivoSituacaoData.cs" />
+    <Compile Include="Areas\CAM\Data\Convocacao\ChamadaData.cs" />
+    <Compile Include="Areas\CAM\Data\Convocacao\ConvocacaoData.cs" />
+    <Compile Include="Areas\CAM\Data\Convocacao\ConvocacaoFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\Convocacao\ConvocadoImpedimentoData.cs" />
+    <Compile Include="Areas\CAM\Data\Convocacao\ConvocadoImpedimentoIngressanteData.cs" />
+    <Compile Include="Areas\CAM\Data\Convocacao\ConvocacaoImpedimentosDeMatriculaData.cs" />
+    <Compile Include="Areas\CAM\Data\Convocacao\ConvocacaoLiberacaoDeMatriculaData.cs" />
+    <Compile Include="Areas\CAM\Data\Convocacao\ConvocacaoListaData.cs" />
+    <Compile Include="Areas\CAM\Data\Convocacao\ConvocadoData.cs" />
+    <Compile Include="Areas\CAM\Data\TipoOferta\TipoOfertaData.cs" />
+    <Compile Include="Areas\CAM\Data\TipoOferta\TipoOfertaUnidadeResponsavelData.cs" />
+    <Compile Include="Areas\CAM\Data\TipoProcessoSeletivoGPI\TipoProcessoSeletivoGpiData.cs" />
+    <Compile Include="Areas\CAM\Data\TipoProcessoSeletivoTipoOferta\TipoProcessoSeletivoTipoOfertaData.cs" />
+    <Compile Include="Areas\CAM\Data\TipoProcessoSeletivo\TipoProcessoSeletivoData.cs" />
+    <Compile Include="Areas\CAM\Data\TipoProcessoSeletivo\TipoProcessoSeletivoFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\TipoProcessoSeletivo\TipoProcessoSeletivoListarData.cs" />
+    <Compile Include="Areas\CAM\Interfaces\ICampanhaOfertaService.cs" />
+    <Compile Include="Areas\CAM\Interfaces\ICampanhaService.cs" />
+    <Compile Include="Areas\CAM\Interfaces\IChamadaService.cs" />
+    <Compile Include="Areas\CAM\Interfaces\IConvocacaoService.cs" />
+    <Compile Include="Areas\CAM\Interfaces\ICampanhaCicloLetivoService.cs" />
+    <Compile Include="Areas\CAM\Interfaces\ITipoOfertaService.cs" />
+    <Compile Include="Areas\CAM\Interfaces\IProcessoSeletivoService.cs" />
+    <Compile Include="Areas\CAM\Interfaces\ITipoProcessoSeletivoService.cs" />
+    <Compile Include="Areas\CSO\Data\Classificacao\ClassificacaoFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\Turno\TurnoFiltroData.cs" />
+    <Compile Include="Areas\CSO\Interfaces\ICursoOfertaLocalidadeTurnoService.cs" />
+    <Compile Include="Areas\CUR\Data\ClassificacaoPeriodico\ClassificacaoPeriodicoData.cs" />
+    <Compile Include="Areas\CUR\Data\CurriculoCursoOfertaGrupo\CurriculoCursoOfertaGrupoFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\Periodico\PeriodicoData.cs" />
+    <Compile Include="Areas\CUR\Data\Periodico\PeriodicoFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\Periodico\PeriodicoListarData.cs" />
+    <Compile Include="Areas\CUR\Data\Periodico\PeriodicoListarLookupData.cs" />
+    <Compile Include="Areas\CUR\Data\QualisPeriodico\QualisPeriodicoData.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IClassificacaoPeriodicoService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IMatrizCurricularOfertaService.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularLegadoData.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IPeriodicoService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IQualisPeriodicoService.cs" />
+    <Compile Include="Areas\FIN\Data\Contrato\AdesaoContratoDadosData.cs" />
+    <Compile Include="Areas\FIN\Data\Contrato\AdesaoContratoData.cs" />
+    <Compile Include="Areas\FIN\Data\Contrato\ContratoCursosListarData.cs" />
+    <Compile Include="Areas\FIN\Data\Contrato\ContratoData.cs" />
+    <Compile Include="Areas\FIN\Data\Contrato\ContratoFiltroData.cs" />
+    <Compile Include="Areas\FIN\Data\Contrato\ContratoListarData.cs" />
+    <Compile Include="Areas\FIN\Data\Contrato\ContratoNiveisEnsinoData.cs" />
+    <Compile Include="Areas\FIN\Data\Contrato\ContratoCursoData.cs" />
+    <Compile Include="Areas\FIN\Data\PessoaAtuacaoBeneficio\PessoaAtuacaoBeneficioResponsavelFinanceiroData.cs" />
+    <Compile Include="Areas\FIN\Data\PessoaAtuacaoBeneficio\PessoaAtuacaoBeneficioData.cs" />
+    <Compile Include="Areas\FIN\Data\PessoaAtuacaoBeneficio\PessoaAtuacaoBeneficioFiltroData.cs" />
+    <Compile Include="Areas\FIN\Data\TermoAdesao\TermoAdesaoCabecalhoData.cs" />
+    <Compile Include="Areas\FIN\Data\TermoAdesao\TermoAdesaoData.cs" />
+    <Compile Include="Areas\FIN\Data\TermoAdesao\TermoAdesaoFiltroData.cs" />
+    <Compile Include="Areas\FIN\Data\TermoAdesao\TermoAdesaoListarCursoData.cs" />
+    <Compile Include="Areas\FIN\Data\TermoAdesao\TermoAdesaoListarCursoOfertaTurnoData.cs" />
+    <Compile Include="Areas\FIN\Data\TermoAdesao\TermoAdesaoListarData.cs" />
+    <Compile Include="Areas\FIN\Data\TermoAdesao\TermoAdesaoListarNivelEnsinoData.cs" />
+    <Compile Include="Areas\FIN\Interfaces\IContratoService.cs" />
+    <Compile Include="Areas\FIN\Interfaces\IPessoaAtuacaoBeneficio.cs" />
+    <Compile Include="Areas\FIN\Interfaces\ITermoAdesaoService.cs" />
+    <Compile Include="Areas\MAT\Data\BoletoMatriculaData.cs" />
+    <Compile Include="Areas\MAT\Data\CabecalhoMenuMatriculaData.cs" />
+    <Compile Include="Areas\MAT\Data\Chancela\ChancelaAtividadeData.cs" />
+    <Compile Include="Areas\MAT\Data\Chancela\ChancelaItemListaData.cs" />
+    <Compile Include="Areas\MAT\Data\Chancela\ChancelaListaData.cs" />
+    <Compile Include="Areas\MAT\Data\Chancela\ChancelaTurmaDivisoesData.cs" />
+    <Compile Include="Areas\MAT\Data\Efetivacao\EfetivacaoAtividadeData.cs" />
+    <Compile Include="Areas\MAT\Data\Efetivacao\EfetivacaoComprovanteData.cs" />
+    <Compile Include="Areas\MAT\Data\Efetivacao\EfetivacaoDadosData.cs" />
+    <Compile Include="Areas\MAT\Data\Efetivacao\EfetivacaoMatriculaData.cs" />
+    <Compile Include="Areas\MAT\Data\Efetivacao\EfetivacaoParcelaData.cs" />
+    <Compile Include="Areas\MAT\Data\Efetivacao\EfetivacaoTurmaData.cs" />
+    <Compile Include="Areas\MAT\Data\IngressanteDesistenteSATData.cs" />
+    <Compile Include="Areas\MAT\Data\Chancela\ChancelaData.cs" />
+    <Compile Include="Areas\MAT\Data\Chancela\ChancelaFiltroData.cs" />
+    <Compile Include="Areas\MAT\Data\Chancela\ChancelaTurmaData.cs" />
+    <Compile Include="Areas\ALN\Data\ItemDeclaracaoMatricula\ItemDeclaracaoMatriculaData.cs" />
+    <Compile Include="Areas\MAT\Data\ParcelaPagamentoResponsavelSolicitacaoMatriculaData.cs" />
+    <Compile Include="Areas\MAT\Data\CondicaoPagamentoSolicitacaoMatriculaData.cs" />
+    <Compile Include="Areas\MAT\Data\ParcelaPagamentoSolicitacaoMatriculaData.cs" />
+    <Compile Include="Areas\MAT\Data\ParcelasPagamentoSolicitacaoMatriculaData.cs" />
+    <Compile Include="Areas\MAT\Data\ProcessamentoPlanoEstudoSATData.cs" />
+    <Compile Include="Areas\MAT\Data\RematriculaJOBData.cs" />
+    <Compile Include="Areas\MAT\Data\SolicitacaoMatriculaItem\SolicitacaoMatriculaItemData.cs" />
+    <Compile Include="Areas\MAT\Data\SolicitacaoMatriculaItem\SolicitacaoMatriculaTurmaAtividadeData.cs" />
+    <Compile Include="Areas\MAT\Data\SolicitacaoMatriculaItem\SolicitacaoMatriculaTurmaAtividadeSituacaoData.cs" />
+    <Compile Include="Areas\MAT\Data\SolicitacaoMatricula\SolicitacaoMatriculaCabecalhoData.cs" />
+    <Compile Include="Areas\MAT\Data\SolicitacaoMatricula\SolicitacaoMatriculaFiltroData.cs" />
+    <Compile Include="Areas\MAT\Data\SolicitacaoMatricula\SolicitacaoMatriculaListaData.cs" />
+    <Compile Include="Areas\MAT\Interfaces\IIngressanteDesistenteService.cs" />
+    <Compile Include="Areas\MAT\Interfaces\ITipoSituacaoMatriculaService.cs" />
+    <Compile Include="Areas\MAT\Interfaces\ISituacaoMatriculaService.cs" />
+    <Compile Include="Areas\DCT\Interfaces\IInstituicaoNivelTipoAtividadeColaboradorService.cs" />
+    <Compile Include="Areas\MAT\Interfaces\ISolicitacaoMatriculaItemService.cs" />
+    <Compile Include="Areas\ORG\Data\Assunto Normativo\AssuntoNormativoFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\Assunto Normativo\AssuntoNormativoData.cs" />
+    <Compile Include="Areas\ORG\Data\Ato Normativo\AtoNormativoEntidadeData.cs" />
+    <Compile Include="Areas\ORG\Data\Ato Normativo\AtoNormativoData.cs" />
+    <Compile Include="Areas\ORG\Data\Ato Normativo\AtoNormativoFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\Ato Normativo\AtoNormativoListarData.cs" />
+    <Compile Include="Areas\ORG\Data\Ato Normativo\AtoNormativoVisualizarData.cs" />
+    <Compile Include="Areas\ORG\Data\EntidadeConfiguracaoNotificacao\EntidadeConfiguracaoNotificacaoData.cs" />
+    <Compile Include="Areas\ORG\Data\EntidadeConfiguracaoNotificacao\EntidadeConfiguracaoNotificacaoListarData.cs" />
+    <Compile Include="Areas\ORG\Data\EntidadeConfiguracaoNotificacao\EntidadeConfiguracaoNotificacaoFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoNivelCalendario\InstituicaoNivelCalendarioData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoNivelCalendario\InstituicaoNivelCalendarioFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoNivelCalendario\InstituicaoNivelCalendarioListaData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoNivelCalendario\InstituicaoNivelTipoEventoData.cs" />
+    <Compile Include="Areas\ORG\Data\Mantenedora\MantenedoraData.cs" />
+    <Compile Include="Areas\ORG\Data\ModeloRelatorio\InstituicaoModeloRelatorioFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\ModeloRelatorio\InstituicaoModeloRelatorioListarData.cs" />
+    <Compile Include="Areas\ORG\Data\ModeloRelatorio\InstituicaoModeloRelatorioData.cs" />
+    <Compile Include="Areas\ORG\Data\ModeloRelatorio\InstituicaoNivelModeloRelatorioData.cs" />
+    <Compile Include="Areas\ORG\Data\NivelEnsino\NivelEnsinoData.cs" />
+    <Compile Include="Areas\ORG\Data\TipoAtoNormativo\TipoAtoNormativoFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\TipoAtoNormativo\TipoAtoNormativoData.cs" />
+    <Compile Include="Areas\ORG\Data\TipoEntidade\TipoEntidadeFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\TipoEntidade\TipoEntidadeData.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IAtoNormativoService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IEntidadeConfiguracaoNotificacaoService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IInstituicaoNivelCalendarioService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IInstituicaoModeloRelatorioService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IInstituicaoNivelModeloRelatorioService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IAssuntoNormativoService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IInstituicaoNivelSistemaOrigemService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IMantenedoraService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\ITipoAtoNormativoService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\ITipoEntidadeService.cs" />
+    <Compile Include="Areas\ORT\Data\AvaliacaoTrabalhoAcademico\AutorData.cs" />
+    <Compile Include="Areas\ORT\Data\AvaliacaoTrabalhoAcademico\AvaliacaoTrabalhoAcademicoBancaExaminadoraData.cs" />
+    <Compile Include="Areas\ORT\Data\AvaliacaoTrabalhoAcademico\AvaliacaoTrabalhoAcademicoCabecalhoData.cs" />
+    <Compile Include="Areas\ORT\Data\AvaliacaoTrabalhoAcademico\AvaliacaoTrabalhoAcademicoFiltroData.cs" />
+    <Compile Include="Areas\ORT\Data\AvaliacaoTrabalhoAcademico\AvaliacaoTrabalhoAcademicoAvaliacaoData.cs" />
+    <Compile Include="Areas\ORT\Data\AvaliacaoTrabalhoAcademico\AvaliacaoTrabalhoAcademicoListaData.cs" />
+    <Compile Include="Areas\ORT\Data\InstituicaoNivelTipoTrabalho\InstituicaoNivelTipoTrabalhoFiltroData.cs" />
+    <Compile Include="Areas\ORT\Data\LancamentoNotaBancaExaminadora\LancamentoNotaBancaExaminadoraData.cs" />
+    <Compile Include="Areas\ORT\Data\OrientacaoColaborador\OrientacaoColaboradorData.cs" />
+    <Compile Include="Areas\ORT\Data\OrientacaoPessoaAtuacao\OrientacaoPessoaAtuacaoData.cs" />
+    <Compile Include="Areas\ORT\Data\OrientacaoTurma\OrientacaoTurmaFiltroData.cs" />
+    <Compile Include="Areas\ORT\Data\OrientacaoTurma\OrientacaoTurmaData.cs" />
+    <Compile Include="Areas\ORT\Data\Orientacao\OrientacaoData.cs" />
+    <Compile Include="Areas\ORT\Data\Orientacao\OrientacaoFiltroData.cs" />
+    <Compile Include="Areas\ORT\Data\Orientacao\OrientacaoListarData.cs" />
+    <Compile Include="Areas\ORT\Data\Orientacao\OrientadoresRelatorioData.cs" />
+    <Compile Include="Areas\ORT\Data\PublicacaoBdp\PublicacaoBdpArquivoData.cs" />
+    <Compile Include="Areas\ORT\Data\PublicacaoBdp\PublicacaoBdpAutorizacaoData.cs" />
+    <Compile Include="Areas\ORT\Data\PublicacaoBdp\PublicacaoBdpData.cs" />
+    <Compile Include="Areas\ORT\Data\PublicacaoBdp\PublicacaoBdpHistoricoSituacaoData.cs" />
+    <Compile Include="Areas\ORT\Data\PublicacaoBdp\PublicacaoBdpIdiomaData.cs" />
+    <Compile Include="Areas\ORT\Data\PublicacaoBdp\PublicacaoBdpPalavraChaveData.cs" />
+    <Compile Include="Areas\ORT\Data\PublicacaoBdp\PublicacaoBdpTipoAutorizacaoData.cs" />
+    <Compile Include="Areas\ORT\Data\TipoOrientacao\TipoOrientacaoData.cs" />
+    <Compile Include="Areas\ORT\Data\TrabalhoAcademico\CabecalhoPublicacaoBdpData.cs" />
+    <Compile Include="Areas\ORT\Data\TrabalhoAcademico\ComprovanteEntregaTrabalhoAcademicoData.cs" />
+    <Compile Include="Areas\ORT\Data\TrabalhoAcademico\TrabalhoAcademicoAutorListaData.cs" />
+    <Compile Include="Areas\ORT\Data\TrabalhoAcademico\TrabalhoAcademicoDivisaoComponenteData.cs" />
+    <Compile Include="Areas\ORT\Data\TrabalhoAcademico\TrabalhoAcademicoAutoriaData.cs" />
+    <Compile Include="Areas\ORT\Data\TrabalhoAcademico\TrabalhoAcademicoData.cs" />
+    <Compile Include="Areas\ORT\Data\TrabalhoAcademico\TrabalhoAcademicoFiltroData.cs" />
+    <Compile Include="Areas\ORT\Data\TrabalhoAcademico\TrabalhoAcademicoIdiomasData.cs" />
+    <Compile Include="Areas\ORT\Data\TrabalhoAcademico\TrabalhoAcademicoListaData.cs" />
+    <Compile Include="Areas\ORT\Data\TrabalhoAcademico\TrabalhoAcademicoMembroBancaData.cs" />
+    <Compile Include="Areas\ORT\Data\TrabalhoAcademico\TrabalhoAcademicoPublicacaoBdpData.cs" />
+    <Compile Include="Areas\ORT\Data\TrabalhoAcademico\VisualizarTrabalhoAcademicoData.cs" />
+    <Compile Include="Areas\ORT\Interfaces\IOrientacaoService.cs" />
+    <Compile Include="Areas\ORT\Interfaces\IPublicacaoBdpService.cs" />
+    <Compile Include="Areas\ORT\Interfaces\ITipoTrabalhoService.cs" />
+    <Compile Include="Areas\APR\Interfaces\IAplicacaoAvaliacaoService.cs" />
+    <Compile Include="Areas\ORT\Interfaces\ITrabalhoAcademicoService.cs" />
+    <Compile Include="Areas\PES\Data\FormacaoAcademica\DocumentoApresentadoFormacaoData.cs" />
+    <Compile Include="Areas\PES\Data\FormacaoAcademica\FomacaoAcademicaData.cs" />
+    <Compile Include="Areas\PES\Data\FormacaoAcademica\FormacaoAcademicaCabecalhoData.cs" />
+    <Compile Include="Areas\PES\Data\FormacaoAcademica\FormacaoAcademicaInsertedData.cs" />
+    <Compile Include="Areas\PES\Data\FormacaoAcademica\FormacaoAcademicaFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\FormacaoAcademica\FormacaoAcademicaListaData.cs" />
+    <Compile Include="Areas\PES\Data\FuncionarioVinculo\FuncionarioVinculoFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\FuncionarioVinculo\FuncionarioVinculoData.cs" />
+    <Compile Include="Areas\PES\Data\FuncionarioVinculo\FuncionarioVinculoListaData.cs" />
+    <Compile Include="Areas\PES\Data\Funcionario\FuncionarioData.cs" />
+    <Compile Include="Areas\PES\Data\Funcionario\FuncionarioFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\Funcionario\FuncionarioListaData.cs" />
+    <Compile Include="Areas\PES\Data\InstituicaoNivelTipoMensagem\InstituicaoNivelTipoMensagemFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\InstituicaoNivelTipoMensagem\InstituicaoNivelTipoMensagemData.cs" />
+    <Compile Include="Areas\PES\Data\Mensagem\MensagemData.cs" />
+    <Compile Include="Areas\PES\Data\Mensagem\MensagemFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\Mensagem\MensagemListaData.cs" />
+    <Compile Include="Areas\PES\Data\Mensagem\MensagemPessoaAtuacaoData.cs" />
+    <Compile Include="Areas\PES\Data\MotivoBloqueio\MotivoBloqueioData.cs" />
+    <Compile Include="Areas\PES\Data\MotivoBloqueio\TipoBloqueioData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoBloqueio\PessoaAtuacaoBloqueioItemData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoDocumento\PessoaAtuacaoDocumentoData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoDocumento\PessoaAtuacaoDocumentoFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoDocumento\PessoaAtuacaoDocumentoListarData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\CondicoesObrigatoriedadeData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\PessoaAtuacaoCondicaoObrigatoriedadeData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\PessoaAtuacaoCabecalhoData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\PessoaAtuacaoDadosOrigemData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\PessoaAtuacaoMensagemHeaderData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\PessoaAtuacaoRegistroDocumentoData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\PessoaAtuacaoRegistroDocumentoItemData.cs" />
+    <Compile Include="Areas\PES\Data\Pessoa\CredenciaisAcessoBotaoData.cs" />
+    <Compile Include="Areas\PES\Data\Pessoa\CredenciaisAcessoData.cs" />
+    <Compile Include="Areas\PES\Data\Pessoa\PessoaExistenteListaData.cs" />
+    <Compile Include="Areas\PES\Data\RealizarEnvioNotificacaoSATData.cs" />
+    <Compile Include="Areas\PES\Data\TipoFuncionario\TipoFuncionarioData.cs" />
+    <Compile Include="Areas\PES\Data\TipoMensagem\TipoMensagemData.cs" />
+    <Compile Include="Areas\PES\Data\TipoMensagem\TipoMensagemFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\TipoMensagem\TipoMensagemListaData.cs" />
+    <Compile Include="Areas\PES\Data\TipoMensagem\TipoMensagemTagData.cs" />
+    <Compile Include="Areas\PES\Data\TipoMensagem\TipoMensagemTipoAtuacaoData.cs" />
+    <Compile Include="Areas\PES\Data\TipoMensagem\TipoMensagemTipoUsoData.cs" />
+    <Compile Include="Areas\PES\Interfaces\IConfiguracaoAvaliacaoPpaService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IConfiguracaoAvaliacaoPpaTurmaService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IEnvioNotificacaoDestinatarioService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IFormacaoAcademicaService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IFuncionarioVinculoService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IInstituicaoNivelTipoMensagemService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IInstituicaoTipoEntidadeTipoFuncionarioService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IInstituicaoTipoFuncionarioService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IMensagemPessoaAtuacaoService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IPessoaAtuacaoAmostraPpaService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IPessoaAtuacaoCondicaoObrigatoriedadeService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IMensagemService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IFuncionarioService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IPessoaAtuacaoDocumentoService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IEnvioNotificacaoService.cs" />
+    <Compile Include="Areas\PES\Interfaces\ITagService.cs" />
+    <Compile Include="Areas\PES\Interfaces\ITipoFuncionarioService.cs" />
+    <Compile Include="Areas\PES\Interfaces\ITipoMensagemService.cs" />
+    <Compile Include="Areas\SRC\Data\ComprovanteProcessos\ComprovanteProcessosAtividadeData.cs" />
+    <Compile Include="Areas\SRC\Data\ComprovanteProcessos\ComprovanteProcessosDadosData.cs" />
+    <Compile Include="Areas\SRC\Data\ComprovanteProcessos\ComprovanteProcessosData.cs" />
+    <Compile Include="Areas\SRC\Data\ComprovanteProcessos\ComprovanteProcessosTurmaData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapaBloqueio\ConfiguracaoEtapaBloqueioData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapaBloqueio\ConfiguracaoEtapaBloqueioFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapaBloqueio\ConfiguracaoEtapaBloqueioListarData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapaPagina\ConfiguracaoEtapaPaginaFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapa\CabecalhoConfiguracaoEtapaData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapaPaginaData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapaPagina\ArquivoSecaoPaginaData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapaPagina\ArquivoSecaoPaginaFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapaPagina\NoArvoreConfiguracaoEtapaData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapa\ConfiguracaoEtapaData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapa\ConfiguracaoEtapaFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapa\ConfiguracaoEtapaListarItemData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapa\ConfiguracaoEtapaListarData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoProcesso\ConfiguracaoProcessoCursoData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoProcesso\ConfiguracaoProcessoData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoProcesso\ConfiguracaoProcessoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoProcesso\ConfiguracaoProcessoListarData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoProcesso\ConfiguracaoProcessoNivelEnsinoData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoProcesso\ConfiguracaoProcessoTipoVinculoAlunoData.cs" />
+    <Compile Include="Areas\SRC\Data\DocumentoRequerido\DocumentoRequeridoData.cs" />
+    <Compile Include="Areas\SRC\Data\DocumentoRequerido\DocumentoRequeridoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\DocumentoRequerido\DocumentoRequeridoListarData.cs" />
+    <Compile Include="Areas\SRC\Data\Escalonamento\EscalonamentoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\Escalonamento\EscalonamentoListarData.cs" />
+    <Compile Include="Areas\SRC\Data\GrupoDocumentoRequerido\GrupoDocumentoRequeridoData.cs" />
+    <Compile Include="Areas\SRC\Data\GrupoDocumentoRequerido\GrupoDocumentoRequeridoItemData.cs" />
+    <Compile Include="Areas\SRC\Data\GrupoDocumentoRequerido\GrupoDocumentoRequeridoItemListarData.cs" />
+    <Compile Include="Areas\SRC\Data\GrupoDocumentoRequerido\GrupoDocumentoRequeridoListarData.cs" />
+    <Compile Include="Areas\SRC\Data\GrupoDocumentoRequerido\GrupoDocumentoRequeridoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\GrupoEscalonamentoItem\GrupoEscalonamentoItemParcelaData.cs" />
+    <Compile Include="Areas\SRC\Data\GrupoEscalonamento\GrupoEscalonamentoCabecalhoData.cs" />
+    <Compile Include="Areas\SRC\Data\GrupoEscalonamento\GrupoEscalonamentoLookupSelectData.cs" />
+    <Compile Include="Areas\SRC\Data\JustificativaSolicitacaoServico\JustificativaSolicitacaoServicoFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\PessoaAtuacaoAnexoData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\PessoaAtuacaoTipoDocumentoData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\PessoaAtuacaoSolicitacaoServicoData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\PessoaAtuacaoVisualizacaoDocumentoData.cs" />
+    <Compile Include="Areas\SRC\Data\ParametroEnvioNotificacao\ParametroEnvioNotificacaoItemData.cs" />
+    <Compile Include="Areas\SRC\Data\ParametroEnvioNotificacao\ParametroEnvioNotificacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\PosicaoConsolidada\PosicaoConsolidadaEtapaData.cs" />
+    <Compile Include="Areas\SRC\Data\PosicaoConsolidada\PosicaoConsolidadaFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\PosicaoConsolidada\PosicaoConsolidadaListarData.cs" />
+    <Compile Include="Areas\SRC\Data\ProcessoEtapaConfiguracaoNotificacao\ProcessoEtapaConfiguracaoNotificacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\ProcessoEtapaConfiguracaoNotificacao\ProcessoEtapaConfiguracaoNotificacaoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\ProcessoEtapaConfiguracaoNotificacao\ProcessoEtapaConfiguracaoNotificacaoListarData.cs" />
+    <Compile Include="Areas\SRC\Data\ProcessoEtapa\ProcessoEtapaFiltroDadoData.cs" />
+    <Compile Include="Areas\SRC\Data\ProcessoEtapa\ProcessoEtapaProcessamentoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\ProcessoEtapa\ProcessoEtapaProcessamentoListarData.cs" />
+    <Compile Include="Areas\SRC\Data\ProcessoEtapa\ProcessoEtapaProcessamentoPessoaListarData.cs" />
+    <Compile Include="Areas\SRC\Data\Processo\CopiarProcessoData.cs" />
+    <Compile Include="Areas\SRC\Data\Processo\CopiarProcessoDetalheEtapaData.cs" />
+    <Compile Include="Areas\SRC\Data\Processo\CopiarProcessoDetalheGrupoEscalonamentoData.cs" />
+    <Compile Include="Areas\SRC\Data\Processo\CopiarProcessoOrigemData.cs" />
+    <Compile Include="Areas\SRC\Data\Processo\GrupoEscalonamentoItemCabecalhoData.cs" />
+    <Compile Include="Areas\SRC\Data\Processo\ProcessoCabecalhoData.cs" />
+    <Compile Include="Areas\SRC\Data\PosicaoConsolidada\ConsultaPosicaoGeralData.cs" />
+    <Compile Include="Areas\SRC\Data\Processo\ProcessoData.cs" />
+    <Compile Include="Areas\SRC\Data\Processo\ProcessoEtapaSGFData.cs" />
+    <Compile Include="Areas\SRC\Data\Processo\ProcessoUnidadeResponsavelDetalheData.cs" />
+    <Compile Include="Areas\SRC\Data\RegistroDocumento\DocumentoAtendimentoData.cs" />
+    <Compile Include="Areas\SRC\Data\RegistroDocumento\DocumentoItemData.cs" />
+    <Compile Include="Areas\SRC\Data\RegistroDocumento\DocumentoData.cs" />
+    <Compile Include="Areas\SRC\Data\RegistroDocumento\GrupoDocumentoData.cs" />
+    <Compile Include="Areas\SRC\Data\RegistroDocumento\RegistroDocumentoAtendimentoDocumentoData.cs" />
+    <Compile Include="Areas\SRC\Data\RegistroDocumento\RegistroDocumentoCabecalhoData.cs" />
+    <Compile Include="Areas\SRC\Data\RegistroDocumento\RegistroDocumentoAtendimentoData.cs" />
+    <Compile Include="Areas\SRC\Data\RegistroDocumento\RegistroDocumentoData.cs" />
+    <Compile Include="Areas\SRC\Data\RelatoriosServicos\DadosRelatorioSolicitacoesBloqueioData.cs" />
+    <Compile Include="Areas\SRC\Data\RelatoriosServicos\DadosRelatorioSolicitacoesBloqueioItemData.cs" />
+    <Compile Include="Areas\SRC\Data\RelatoriosServicos\RelatorioServicoCicloLetivoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\RelatoriosServicos\DadosRelatorioServicoCicloLetivoData.cs" />
+    <Compile Include="Areas\SRC\Data\RelatoriosServicos\RelatorioSolicitacoesBloqueioFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\ConsultarTaxasPorNucleoListarData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\ConsultarTaxasPorNucleoListarItemData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\InstituicaoNivelServicoData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\JustificativaSolicitacaoServicoData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\ServicoMotivoBloqueioParcelaData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\RestricaoSolicitacaoSimultaneaData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\ServicoData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\ServicoListarData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\ServicoParametroEmissaoTaxaData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\ServicoSituacaoReabrirData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\ServicoSituacaoAtenderData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\ServicoSituacaoSolicitarData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\ServicoTaxaData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\ServicoTiposDocumentoData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\ServicoTipoNotificacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoDispensa\AtendimentoDispensaAgrupamentoItensData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoDispensa\SolicitacaoDispensaComponenteCurricularData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoDispensa\SolicitacaoDispensaGrupoCurricularData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoDispensa\SolicitacaoDispensaItensCursadosOutrasInstituicoesData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoDispensa\SolicitacaoDispensaItensDispensadosData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoDispensa\AtendimentoDispensaAgrupamentoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoIntercambio\AtendimentoIntercambioData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoDispensa\SolicitacaoDispensaGrupoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoDispensa\SolicitacaoDispensaGrupoDestinoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoDispensa\SolicitacaoDispensaGrupoOrigemData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoIntercambio\SolicitacaoIntercambioParticipanteData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoReabertura\AtendimentoReaberturaData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\BloqueioEtapaSolicitacaoItemData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\BloqueioEtapaSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\BotoesSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\CabecalhoAtendimentoPadraoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\CabecalhoReaberturaSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\CabecalhoCancelamentoSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\CalculoTotalCargaHorariaData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\CriarSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosConfirmacaoSolicitacaoPadraoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosModalSolicitacaoAtualizadaData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosModalSolicitacaoAtualData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosModalSolicitacaoDocumentoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosModalSolicitacaoHistoricoItemData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosModalSolicitacaoHistoricoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosModalSolicitacaoOriginalData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosModalSolicitacaoServicoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosModalSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosParecerData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\CabecalhoInformacaoProcessoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DocumentoConclusaoSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\HistoricoSolicitacaoEtapaData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\InformacaoProcessoItemData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\InformacaoProcessoListaData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\NotificacaoSolicitacaoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\CancelamentoSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosFinaisSolicitacaoPadraoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosFormularioSolicitacaoPadraoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosNovaSolicitacaoServicoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosSolicitacaoPadraoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosSolicitanteData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\HistoricoNavegacaoItemData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\HistoricoNavegacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoAtividadeComplementarPaginaData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoDispensa\SolicitacaoDispensaItensCursadosData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoCobrancaTaxaData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoCobrancaTaxaItemData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoDispensaSituacaoFuturaAlunoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoDispensaRestricaoSolicitacaoSimultaneaData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoServicoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DetalheNotificacaoSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoServicoPessoaAtuacaoItemListaData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoServicoPessoaAtuacaoListaData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoServicoPessoaAtuacaoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DadosSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\DocumentoSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\HistoricoSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\HistoricoSolicitacaoEtapaItemData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\NotificacaoSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoAtualizadaData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoOriginalData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoServicoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoServicoListarData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitanteData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\ServicoPorAlunoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\TitulosSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\TaxasSolicitacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\TotalizadorSolicitacaoServicoData.cs" />
+    <Compile Include="Areas\SRC\Data\ConfiguracaoEtapaPagina\TextoSecaoPaginaData.cs" />
+    <Compile Include="Areas\SRC\Data\TipoNotificacaoAtributoAgendamento\TipoNotificacaoAtributoAgendamentoData.cs" />
+    <Compile Include="Areas\SRC\Data\TipoNotificacao\TipoNotificacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\TipoNotificacao\TipoNotificacaoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\TipoNotificacao\TipoNotificacaoListarData.cs" />
+    <Compile Include="Areas\SRC\Data\TipoServico\TipoServicoData.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IArquivoSecaoPaginaService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IConfiguracaoEtapaBloqueioService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IConfiguracaoEtapaPaginaService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IConfiguracaoEtapaService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IConfiguracaoProcessoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IDocumentoRequeridoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IGrupoDocumentoRequeridoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IProcessoEtapaConfiguracaoNotificacaoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IEscalonamentoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IGrupoEscalonamentoItemService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IJustificativaSolicitacaoServicoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IPosicaoConsolidadaService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IParametroEnvioNotificacaoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IProcessoUnidadeResponsavelService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\ISolicitacaoHistoricoNavegacaoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\ISolicitacaoHistoricoSituacaoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\ISolicitacaoServicoBoletoTituloService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\ISolicitacaoTrabalhoAcademicoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\ISolicitacaoServicoService.cs" />
+    <Compile Include="Areas\MAT\Data\SolicitacaoMatriculaItem\SolicitacaoMatriculaData.cs" />
+    <Compile Include="Areas\ALN\Data\InstituicaoNivelTipoVinculoAluno\FormaIngressoData.cs" />
+    <Compile Include="Areas\ALN\Data\InstituicaoNivelTipoOrientacao\InstituicaoNivelTipoOrientacaoData.cs" />
+    <Compile Include="Areas\ALN\Data\InstituicaoNivelTipoOrientacaoParticipacao\InstituicaoNivelTipoOrientacaoParticipacaoData.cs" />
+    <Compile Include="Areas\ALN\Data\InstituicaoNivelTipoVinculoAluno\InstituicaoNivelTipoTermoIntercambioData.cs" />
+    <Compile Include="Areas\ALN\Data\InstituicaoNivelTipoVinculoAluno\InstituicaoNivelTipoVinculoAlunoData.cs" />
+    <Compile Include="Areas\ALN\Data\InstituicaoNivelTipoVinculoAluno\InstituicaoNivelTipoVinculoAlunoFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\InstituicaoNivelTipoVinculoAluno\InstituicaoNivelTipoVinculoAlunoListarData.cs" />
+    <Compile Include="Areas\ALN\Data\InstituicaoNivelTipoVinculoAluno\SituacaoMatriculaData.cs" />
+    <Compile Include="Areas\ALN\Data\ParceriaIntercambio\ParceriaIntercambioArquivoData.cs" />
+    <Compile Include="Areas\ALN\Data\ParceriaIntercambio\ParceriaIntercambioData.cs" />
+    <Compile Include="Areas\ALN\Data\ParceriaIntercambio\ParceriaIntercambioFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\ParceriaIntercambio\ParceriaIntercambioInstituicaoExternaData.cs" />
+    <Compile Include="Areas\ALN\Data\ParceriaIntercambio\ParceriaIntercambioInstituicaoExternaFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\ParceriaIntercambio\ParceriaIntercambioListarData.cs" />
+    <Compile Include="Areas\ALN\Data\ParceriaIntercambio\ParceriaIntercambioTipoTermoData.cs" />
+    <Compile Include="Areas\ALN\Data\ParceriaIntercambio\ParceriaIntercambioVigenciaData.cs" />
+    <Compile Include="Areas\ALN\Data\TermoIntercambio\TermoIntercambioArquivoData.cs" />
+    <Compile Include="Areas\ALN\Data\TermoIntercambio\TermoIntercambioCabecalhoData.cs" />
+    <Compile Include="Areas\ALN\Data\TermoIntercambio\TermoIntercambioData.cs" />
+    <Compile Include="Areas\ALN\Data\TermoIntercambio\TermoIntercambioFiltroData.cs" />
+    <Compile Include="Areas\ALN\Data\TermoIntercambio\TermoIntercambioListarData.cs" />
+    <Compile Include="Areas\ALN\Data\TermoIntercambio\TermoIntercambioPessoaData.cs" />
+    <Compile Include="Areas\ALN\Data\TermoIntercambio\TermoIntercambioTipoMobilidadeData.cs" />
+    <Compile Include="Areas\ALN\Data\TermoIntercambio\TermoIntercambioVigenciaData.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IALNDynamicService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IIngressanteService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IInstituicaoNivelTipoVinculoAlunoService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IParceriaIntercambioInstituicaoExternaService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\IParceriaIntercambioService.cs" />
+    <Compile Include="Areas\MAT\Interfaces\ISolicitacaoMatriculaService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\ITermoIntercambioService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\ITipoTermoIntercambioService.cs" />
+    <Compile Include="Areas\ALN\Interfaces\ITipoVinculoAlunoService.cs" />
+    <Compile Include="Areas\APR\Data\CriterioAprovacao\CriterioAprovacaoData.cs" />
+    <Compile Include="Areas\APR\Data\EscalaApuracao\EscalaApuracaoData.cs" />
+    <Compile Include="Areas\APR\Data\EscalaApuracaoItem\EscalaApuracaoItemData.cs" />
+    <Compile Include="Areas\APR\Interfaces\IAPRDynamicService.cs" />
+    <Compile Include="Areas\APR\Interfaces\ICriterioAprovacaoService.cs" />
+    <Compile Include="Areas\APR\Interfaces\IEscalaApuracaoService.cs" />
+    <Compile Include="Areas\APR\Interfaces\IInstituicaoNivelCriterioAprovacaoService.cs" />
+    <Compile Include="Areas\APR\Interfaces\IInstituicaoNivelEscalaApuracaoService.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivoTipoEvento\CicloLetivoTipoEventoFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivoTipoEvento\CicloLetivoTipoEventoListaData.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivoTipoEvento\CicloLetivoTipoEventoData.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivoTipoEvento\CicloLetivoTipoEventoParametroData.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivoTipoEvento\CicloLetivoTipoEventoNivelEnsinoData.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivo\CicloLetivoCopiaFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivo\CicloLetivoData.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivo\CicloLetivoFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\CicloLetivo\CicloLetivoNivelEnsinoData.cs" />
+    <Compile Include="Areas\CAM\Data\EventoLetivo\EventoLetivoEntidadeResponsavelData.cs" />
+    <Compile Include="Areas\CAM\Data\EventoLetivo\EventoLetivoListaData.cs" />
+    <Compile Include="Areas\CAM\Data\EventoLetivo\EventoLetivoData.cs" />
+    <Compile Include="Areas\CAM\Data\EventoLetivo\EventoLetivoFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\EventoLetivo\EventoLetivoLocalidadeData.cs" />
+    <Compile Include="Areas\CAM\Data\EventoLetivo\EventoLetivoNivelEnsinoData.cs" />
+    <Compile Include="Areas\CAM\Data\InstituicaoTipoEvento\InstituicaoTipoEventoFiltroData.cs" />
+    <Compile Include="Areas\CAM\Data\InstituicaoTipoEvento\InstituicaoTipoEventoData.cs" />
+    <Compile Include="Areas\CAM\Data\InstituicaoTipoEvento\InstituicaoTipoEventoParametroData.cs" />
+    <Compile Include="Areas\CAM\Data\InstituicaoTipoEvento\InstituicaoTipoEventoListaData.cs" />
+    <Compile Include="Areas\CAM\Data\RegimeLetivo\RegimeLetivoData.cs" />
+    <Compile Include="Areas\CAM\Interfaces\IEventoLetivoService.cs" />
+    <Compile Include="Areas\CSO\Data\CursoFormacaoEspecifica\CursoFormacaoEspecificaHierarquiaData.cs" />
+    <Compile Include="Areas\CUR\Data\CondicaoObrigatoriedade\CondicaoObrigatoriedadeData.cs" />
+    <Compile Include="Areas\CUR\Data\HistoricoSituacaoMatrizCurricularOferta\HistoricoSituacaoMatrizCurricularOfertaFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricular\MatrizCurricularRelatorioGruposData.cs" />
+    <Compile Include="Areas\CUR\Interfaces\ICondicaoObrigatoriedadeService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IMatrizCurricularDivisaoComponenteService.cs" />
+    <Compile Include="Areas\FIN\Data\BeneficioHistoticoValorAuxilio\BeneficioHistoricoValorAuxilioData.cs" />
+    <Compile Include="Areas\FIN\Data\BeneficioHistoticoValorAuxilio\BeneficioHistoricoValorAuxilioFitroData.cs" />
+    <Compile Include="Areas\FIN\Data\ConfiguracaoBeneficio\ConfiguracaoBeneficioData.cs" />
+    <Compile Include="Areas\FIN\Data\ConfiguracaoBeneficio\ConfiguracaoBeneficioFiltroData.cs" />
+    <Compile Include="Areas\FIN\Data\InstituicaoNivelBeneficio\InstituicaoNivelBeneficioListarBeneficioHistoricoValorAuxilioData.cs" />
+    <Compile Include="Areas\FIN\Data\Beneficio\BeneficioData.cs" />
+    <Compile Include="Areas\FIN\Data\InstituicaoNivelBeneficio\InstituicaoNivelBeneficioListarConfiguracaBeneficioData.cs" />
+    <Compile Include="Areas\FIN\Data\InstituicaoNivelBeneficio\InstituicaoNivelBeneficioData.cs" />
+    <Compile Include="Areas\FIN\Data\InstituicaoNivelBeneficio\InstituicaoNivelBeneficioFiltroData.cs" />
+    <Compile Include="Areas\FIN\Data\InstituicaoNivelBeneficio\InstituicaoNivelBeneficioListaData.cs" />
+    <Compile Include="Areas\FIN\Data\PessoaJuridica\PessoaJuridicaData.cs" />
+    <Compile Include="Areas\FIN\Data\TipoBeneficio\TipoBeneficioData.cs" />
+    <Compile Include="Areas\FIN\Interfaces\IBeneficioHistoticoValorAuxilioService.cs" />
+    <Compile Include="Areas\FIN\Interfaces\IBeneficioService.cs" />
+    <Compile Include="Areas\FIN\Interfaces\IConfiguracaoBeneficioService.cs" />
+    <Compile Include="Areas\FIN\Interfaces\IFINDynamicService.cs" />
+    <Compile Include="Areas\FIN\Interfaces\IInstituicaoNivelBeneficioService.cs" />
+    <Compile Include="Areas\FIN\Interfaces\IPessoaJuridicaService.cs" />
+    <Compile Include="Areas\MAT\Interfaces\IMATDynamicService.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoLocalidadeAgenda\InstituicaoLocalidadeAgendaData.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IInstituicaoLocalidadeAgendaService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\ISituacaoEntidadeService.cs" />
+    <Compile Include="Areas\CUR\Data\CurriculoCursoOfertaGrupo\CurriculoCursoOfertaGrupoValorData.cs" />
+    <Compile Include="Areas\SRC\Data\GrupoEscalonamento\GrupoEscalonamentoData.cs" />
+    <Compile Include="Areas\SRC\Data\GrupoEscalonamento\GrupoEscalonamentoItemData.cs" />
+    <Compile Include="Areas\SRC\Data\GrupoEscalonamento\GrupoEscalonamentoListaData.cs" />
+    <Compile Include="Areas\SRC\Data\GrupoEscalonamento\GrupoEscalonamentoListaItemData.cs" />
+    <Compile Include="Areas\SRC\Data\GrupoEscalonamento\GrupoEscalonamentoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\ProcessoEtapa\ProcessoEtapaCabecalhoData.cs" />
+    <Compile Include="Areas\SRC\Data\ProcessoEtapa\EscalonamentoData.cs" />
+    <Compile Include="Areas\SRC\Data\ProcessoEtapa\ProcessoEtapaData.cs" />
+    <Compile Include="Areas\SRC\Data\Processo\ProcessoUnidadeResponsavelData.cs" />
+    <Compile Include="Areas\SRC\Data\Processo\ProcessoEtapaDetalheData.cs" />
+    <Compile Include="Areas\SRC\Data\Processo\ProcessoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\Processo\ProcessoListaData.cs" />
+    <Compile Include="Areas\SRC\Data\Servico\ServicoFiltroData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoHistoricoNavegacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoHistoricoSituacaoData.cs" />
+    <Compile Include="Areas\SRC\Data\SolicitacaoServico\SolicitacaoServicoEtapaData.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IGrupoEscalonamentoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IProcessoEtapaService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\ISolicitacaoServicoEtapaService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IRegistroDocumentoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\ITextoSecaoPaginaService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\ITipoNotificacaoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\ISolicitacaoDispensaService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\ITipoRelatorioServicoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\ITipoServicoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IServicoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IProcessoService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\ISRCDynamicService.cs" />
+    <Compile Include="Areas\SRC\Interfaces\IViewCentralSolicitacaoServicoService.cs" />
+    <Compile Include="Areas\TUR\Data\DivisaoTurmaColaborador\DivisaoTurmaColaboradorData.cs" />
+    <Compile Include="Areas\TUR\Data\DivisaoTurma\DivisaoTurmaDetalhesColaboradorData.cs" />
+    <Compile Include="Areas\TUR\Data\DivisaoTurma\DivisaoTurmaDetalhesData.cs" />
+    <Compile Include="Areas\TUR\Data\DivisaoTurma\DivisaoTurmaRelatorioAlunoData.cs" />
+    <Compile Include="Areas\TUR\Data\DivisaoTurma\DivisaoTurmaRelatorioCabecalhoData.cs" />
+    <Compile Include="Areas\TUR\Data\DivisaoTurma\DivisaoTurmaRelatorioColaboradorData.cs" />
+    <Compile Include="Areas\TUR\Data\TipoTurma\TipoTurmaData.cs" />
+    <Compile Include="Areas\TUR\Data\TurmaColaborador\TurmaColaboradorData.cs" />
+    <Compile Include="Areas\TUR\Data\TurmaColaborador\TurmaColaboradorRelatorioData.cs" />
+    <Compile Include="Areas\TUR\Data\TurmaHistoricoFechamentoDiario\TurmaHistoricoFechamentoDiarioData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\ConfiguracaoTurmaData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\ConfiguracaoTurmaDivisaoComponenteData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\DiarioTurmaAlunoData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\DiarioTurmaCabecalhoData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\DiarioTurmaProfessorData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\DivisaoTurmaData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\RelatorioTurma\ItemDivisaoComponenteData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\RelatorioTurma\TopicoDivisaoTurmaData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\RelatorioTurma\TopicoDivisaoTurmaCicloLetivoData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\RelatorioTurma\DivisaoTurmaCicloLetivoData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\RelatorioTurma\ColaboradorTurmaConfiguracaoCicloLetivoData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\RelatorioTurma\TurmaConfiguracaoCicloLetivoData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\RelatorioTurma\TurmaCicloLetivoData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\RelatorioTurma\ListarTurmaData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\RelatorioTurma\ListarTurmaFiltroData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaCabecalhoConfiguracoesData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaCabecalhoData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaCabecalhoResponsavelData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaCicloLetivoRelatorioData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaCicloLetivoRelatorioFiltroData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaDivisoesData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaDivisoesDetailData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaFiltroData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaGrupoConfiguracaoData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaHistoricoSituacaoData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaListarData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaListarGrupoCursoData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaMatriculaListarData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaMatriculaListarDetailData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaOfertaMatrizData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaOfertaMatrizDetailData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaParametrosData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaParametrosDetalheData.cs" />
+    <Compile Include="Areas\TUR\Data\Turma\TurmaParametrosOfertaData.cs" />
+    <Compile Include="Areas\TUR\Interfaces\IDivisaoTurmaColaboradorService.cs" />
+    <Compile Include="Areas\TUR\Interfaces\IDivisaoTurmaService.cs" />
+    <Compile Include="Areas\TUR\Interfaces\ITipoTurmaService.cs" />
+    <Compile Include="Areas\TUR\Interfaces\ITURDynamicService.cs" />
+    <Compile Include="Areas\TUR\Interfaces\ITurmaHistoricoFechamentoDiarioService.cs" />
+    <Compile Include="Areas\TUR\Interfaces\ITurmaColaboradorService.cs" />
+    <Compile Include="Areas\TUR\Interfaces\ITurmaService.cs" />
+    <Compile Include="Data\ArquivoAnexadoData.cs" />
+    <Compile Include="Data\PessoaFiliacaoReadOnlyData.cs" />
+    <Compile Include="Data\PessoaIdentificacaoData.cs" />
+    <Compile Include="Data\TipoEventoFiltroData.cs" />
+    <Compile Include="Areas\CAM\Interfaces\ICAMDynamicService.cs" />
+    <Compile Include="Areas\CAM\Interfaces\ICicloLetivoService.cs" />
+    <Compile Include="Areas\CAM\Interfaces\ICicloLetivoTipoEventoService.cs" />
+    <Compile Include="Areas\CAM\Interfaces\IInstituicaoNivelRegimeLetivoService.cs" />
+    <Compile Include="Areas\CAM\Interfaces\IRegimeLetivoService.cs" />
+    <Compile Include="Areas\CNC\Data\Titulacao\TitulacaoData.cs" />
+    <Compile Include="Areas\CNC\Data\Titulacao\TitulacaoFiltroData.cs" />
+    <Compile Include="Areas\CNC\Interfaces\ICNCDynamicService.cs" />
+    <Compile Include="Areas\CNC\Interfaces\ITitulacaoService.cs" />
+    <Compile Include="Areas\CSO\Data\Classificacao\ClassificacaoData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoFormacaoEspecifica\CursoFormacaoEspecificaData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoFormacaoEspecifica\CursoFormacaoEspecificaFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoFormacaoEspecifica\TitulacaoCursoFormacaoEspecificaData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoOfertaLocalidade\CursoOfertaLocalidadeData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoOfertaLocalidade\CursoOfertaLocalidadeFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoOfertaLocalidade\CursoOfertaLocalidadeListaData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoOferta\CursoOfertaData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoOferta\CursoOfertaFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoOferta\CursoOfertaLocalidadeCabecalhoData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoUnidade\CursoUnidadeFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoUnidade\CursoUnidadeData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoUnidade\CursoUnidadeListaData.cs" />
+    <Compile Include="Areas\CSO\Data\Curso\CursoData.cs" />
+    <Compile Include="Areas\CSO\Data\Curso\CursoFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\Curso\CursoListaData.cs" />
+    <Compile Include="Areas\CSO\Data\EntidadeIdioma\EntidadeIdiomaData.cs" />
+    <Compile Include="Areas\CSO\Data\FormacaoEspecifica\FormacaoEspecificaFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\FormacaoEspecifica\FormacaoEspecificaHierarquiaData.cs" />
+    <Compile Include="Areas\CSO\Data\FormacaoEspecifica\FormacaoEspecificaListaData.cs" />
+    <Compile Include="Areas\CSO\Data\FormacaoEspecifica\FormacaoEspecificaNodeData.cs" />
+    <Compile Include="Areas\CSO\Data\GrauAcademico\GrauAcademicoData.cs" />
+    <Compile Include="Areas\CSO\Data\GrauAcademico\GrauAcademicoFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\GrauAcademico\NivelEnsinoGrauAcademicoData.cs" />
+    <Compile Include="Areas\CSO\Data\HierarquiaClassificacao\HierarquiaClassificacaoData.cs" />
+    <Compile Include="Areas\CSO\Data\InstituicaoNivelTipoFormacaoEspecifica\InstituicaoNivelTipoFormacaoEspecificaData.cs" />
+    <Compile Include="Areas\CSO\Data\InstituicaoTipoEntidadeFormacaoEspecifica\InstituicaoTipoEntidadeFormacaoEspecificaFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\InstituicaoTipoEntidadeHierarquiaClassificacao\InstituicaoTipoEntidadeHierarquiaClassificacaoData.cs" />
+    <Compile Include="Areas\CSO\Data\Programa\ProgramaData.cs" />
+    <Compile Include="Areas\CSO\Data\Programa\ProgramaFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\Programa\ProgramaHistoricoNotaData.cs" />
+    <Compile Include="Areas\CSO\Data\Programa\ProgramaListaData.cs" />
+    <Compile Include="Areas\CSO\Data\Programa\ProgramaPropostaData.cs" />
+    <Compile Include="Areas\CSO\Data\TipoClassificacao\TipoClassificacaoPorHierarquiaFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\TipoClassificacao\TipoClassificacaoData.cs" />
+    <Compile Include="Areas\CSO\Data\TipoFormacaoEspecifica\TipoFormacaoEspecificaData.cs" />
+    <Compile Include="Areas\CSO\Data\TipoFormacaoEspecifica\TipoFormacaoEspecificaFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\TipoFormacaoEspecifica\TipoFormacaoEspecificaPorNivelEnsinoFiltroData.cs" />
+    <Compile Include="Areas\CSO\Data\TipoHierarquiaClassificacao\TipoHierarquiaClassificacaoData.cs" />
+    <Compile Include="Areas\CSO\Data\CursoOfertaLocalidade\CursoOfertaLocalidadeTurnoData.cs" />
+    <Compile Include="Areas\CSO\Data\Turno\TurnoData.cs" />
+    <Compile Include="Areas\CSO\Interfaces\ICursoFormacaoEspecificaService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\ICursoOfertaLocalidadeService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\ICursoOfertaService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\ICursoService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\ICursoUnidadeService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\IFormacaoEspecificaService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\IGrauAcademicoService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\IClassificacaoService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\ICSODynamicService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\IHierarquiaClassificacaoService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\IInstituicaoNivelModalidadeService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\IInstituicaoNivelTipoOfertaCursoService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\IInstituicaoNivelTurnoService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\IInstituicaoTipoEntidadeHierarquiaClassificacaoService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\IModalidadeService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\IProgramaService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\ITipoClassificacaoService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\ITipoCursoService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\ITipoFormacaoEspecificaService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\ITipoHierarquiaClassificacaoService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\ITurnoService.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularCabecalhoData.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularData.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularDetalheConfiguracoesData.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularDetalheData.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularDetalheDivisoesData.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularDetalheTopicosData.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularEmentaData.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularEntidadeResponsavelData.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularNivelEnsinoData.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularListaData.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularOrganizacaoData.cs" />
+    <Compile Include="Areas\CUR\Data\ComponenteCurricular\ComponenteCurricularOrgaoReguladorData.cs" />
+    <Compile Include="Areas\CUR\Data\ConfiguracaoComponente\ConfiguracaoComponenteData.cs" />
+    <Compile Include="Areas\CUR\Data\ConfiguracaoComponente\ConfiguracaoComponenteDivisaoData.cs" />
+    <Compile Include="Areas\CUR\Data\ConfiguracaoComponente\ConfiguracaoComponenteDivisaoListarData.cs" />
+    <Compile Include="Areas\CUR\Data\ConfiguracaoComponente\ConfiguracaoComponenteDivisaoOrganizacaoData.cs" />
+    <Compile Include="Areas\CUR\Data\ConfiguracaoComponente\ConfiguracaoComponenteDivisaoOrganizacaoListarData.cs" />
+    <Compile Include="Areas\CUR\Data\ConfiguracaoComponente\ConfiguracaoComponenteFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\ConfiguracaoComponente\ConfiguracaoComponenteListaData.cs" />
+    <Compile Include="Areas\CUR\Data\ConfiguracaoComponente\ConfiguracaoComponenteLookupListaData.cs" />
+    <Compile Include="Areas\CUR\Data\ConsultaDivisoesMatrizCurricular\ConsultaDivisaoMatrizCurricularComponenteItemData.cs" />
+    <Compile Include="Areas\CUR\Data\ConsultaDivisoesMatrizCurricular\ConsultaDivisaoMatrizCurricularItemData.cs" />
+    <Compile Include="Areas\CUR\Data\ConsultaDivisoesMatrizCurricular\ConsultaDivisoesMatrizCurricularData.cs" />
+    <Compile Include="Areas\CUR\Data\CurriculoCursoOfertaGrupo\CurriculoCursoOfertaGrupoData.cs" />
+    <Compile Include="Areas\CUR\Data\CurriculoCursoOfertaGrupo\CurriculoCursoOfertaGrupoTipoConfiguracaoData.cs" />
+    <Compile Include="Areas\CUR\Data\Curriculo\CurriculoCursoOfertaListaData.cs" />
+    <Compile Include="Areas\CUR\Data\Curriculo\CurriculoData.cs" />
+    <Compile Include="Areas\CUR\Data\Curriculo\CurriculoCursoOfertaData.cs" />
+    <Compile Include="Areas\CUR\Data\Curriculo\CurriculoFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\Curriculo\CurriculoListaData.cs" />
+    <Compile Include="Areas\CUR\Data\CurriculoCursoOfertaGrupo\CurriculoCursoOfertaGrupoListaData.cs" />
+    <Compile Include="Areas\CUR\Data\Dispensa\DispensaData.cs" />
+    <Compile Include="Areas\CUR\Data\Dispensa\DispensaComponenteData.cs" />
+    <Compile Include="Areas\CUR\Data\Dispensa\DispensaFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\Dispensa\DispensaHistoricoVigenciaData.cs" />
+    <Compile Include="Areas\CUR\Data\Dispensa\DispensaMatrizExcecaoData.cs" />
+    <Compile Include="Areas\CUR\Data\DivisaoCurricular\DivisaoCurricularItemData.cs" />
+    <Compile Include="Areas\CUR\Data\DivisaoMatrizCurricularComponente\DivisaoMatrizCurricularComponenteCabecalhoData.cs" />
+    <Compile Include="Areas\CUR\Data\DivisaoMatrizCurricularComponente\DivisaoMatrizCurricularComponenteData.cs" />
+    <Compile Include="Areas\CUR\Data\DivisaoMatrizCurricularComponente\DivisaoMatrizCurricularComponenteFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\DivisaoMatrizCurricularComponente\DivisaoMatrizCurricularComponenteGrupoListaData.cs" />
+    <Compile Include="Areas\CUR\Data\DivisaoMatrizCurricularComponente\DivisaoMatrizCurricularComponenteGrupoTreeData.cs" />
+    <Compile Include="Areas\CUR\Data\DivisaoMatrizCurricularComponente\DivisaoMatrizCurricularComponenteListaData.cs" />
+    <Compile Include="Areas\CUR\Data\GrupoConfiguracaoComponente\GrupoConfiguracaoComponenteData.cs" />
+    <Compile Include="Areas\CUR\Data\GrupoConfiguracaoComponente\GrupoConfiguracaoComponenteFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\GrupoConfiguracaoComponente\GrupoConfiguracaoComponenteItemData.cs" />
+    <Compile Include="Areas\CUR\Data\GrupoCurricular\GrupoCurricularCabecalhoData.cs" />
+    <Compile Include="Areas\CUR\Data\GrupoCurricular\GrupoCurricularData.cs" />
+    <Compile Include="Areas\CUR\Data\GrupoCurricular\GrupoCurricularFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\GrupoCurricular\GrupoCurricularListaData.cs" />
+    <Compile Include="Areas\CUR\Data\HistoricoSituacaoMatrizCurricularOferta\HistoricoSituacaoMatrizCurricularOfertaData.cs" />
+    <Compile Include="Areas\CUR\Data\InstituicaoNivelTipoComponenteCurricular\InstituicaoNivelTipoComponenteCurricularData.cs" />
+    <Compile Include="Areas\CUR\Data\InstituicaoNivelTipoComponenteCurricular\InstituicaoNivelTipoDivisaoComponenteData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricularConfiguracaoComponente\MatrizCurricularConfiguracaoComponenteData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricularConfiguracaoComponente\MatrizCurricularConfiguracaoComponenteDivisaoData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricularConfiguracaoComponente\MatrizCurricularConfiguracaoComponenteFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricularDivisaoComponente\MatrizCurricularDivisaoComponenteData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricularOferta\MatrizCurricularOfertaFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricular\MatrizCurricularCabecalhoData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricular\MatrizCurricularData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricular\MatrizCurricularFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricular\MatrizCurricularListaData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricular\MatrizCurricularOfertaCabecalhoData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricular\MatrizCurricularOfertaData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricular\MatrizCurricularOfertaExcecaoLocalidadeData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricular\MatrizCurricularRelatorioCabecalhoData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricular\MatrizCurricularRelatorioDadosData.cs" />
+    <Compile Include="Areas\CUR\Data\MatrizCurricular\MatrizCurricularRelatorioData.cs" />
+    <Compile Include="Areas\CUR\Data\Requisito\RequisitoData.cs" />
+    <Compile Include="Areas\CUR\Data\Requisito\RequisitoFiltroData.cs" />
+    <Compile Include="Areas\CUR\Data\Requisito\RequisitoItemData.cs" />
+    <Compile Include="Areas\CUR\Data\Requisito\RequisitoListaData.cs" />
+    <Compile Include="Areas\CUR\Data\TipoConfiguracaoGrupoCurricular\TipoConfiguracaoGrupoCurricularFilhoData.cs" />
+    <Compile Include="Areas\CUR\Data\TipoConfiguracaoGrupoCurricular\TipoConfiguracaoGrupoCurricularData.cs" />
+    <Compile Include="Areas\CUR\Data\TipoDivisaoComponente\TipoDivisaoComponenteData.cs" />
+    <Compile Include="Areas\CUR\Data\DivisaoCurricular\DivisaoCurricularData.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IComponenteCurricularService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IConfiguracaoComponenteService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IConsultaDivisoesMatrizCurricularService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\ICURDynamicService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\ICurriculoCursoOfertaGrupoService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\ICurriculoCursoOfertaService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\ICurriculoService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IDispensaService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IDivisaoComponenteService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IDivisaoMatrizCurricularComponenteService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IDivisaoMatrizCurricularService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IGrupoConfiguracaoComponenteService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IGrupoCurricularService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IHistoricoSituacaoMatrizCurricularOfertaService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IInstituicaoNivelTipoComponenteCurricularService.cs" />
+    <Compile Include="Areas\CSO\Interfaces\IProgramaPropostaService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IMatrizCurricularConfiguracaoComponenteService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IMatrizCurricularService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IRequisitoService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\ITipoConfiguracaoGrupoCurricularService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\ITipoDivisaoComponenteService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\IDivisaoCurricularService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\ITipoDivisaoCurricularService.cs" />
+    <Compile Include="Areas\CUR\Interfaces\ITipoGrupoCurricularService.cs" />
+    <Compile Include="Areas\DCT\Data\ColaboradorVinculo\ColaboradorResponsavelVinculoData.cs" />
+    <Compile Include="Areas\DCT\Data\ColaboradorVinculo\ColaboradorVinculoCursoData.cs" />
+    <Compile Include="Areas\DCT\Data\ColaboradorVinculo\ColaboradorVinculoFormacaoEspecificaData.cs" />
+    <Compile Include="Areas\DCT\Data\Colaborador\ColaboradorData.cs" />
+    <Compile Include="Areas\DCT\Data\Colaborador\ColaboradorFiltroData.cs" />
+    <Compile Include="Areas\DCT\Data\Colaborador\ColaboradorInstituicaoExternaData.cs" />
+    <Compile Include="Areas\DCT\Data\Colaborador\ColaboradorInstituicaoExternaFiltroData.cs" />
+    <Compile Include="Areas\DCT\Data\Colaborador\ColaboradorListaData.cs" />
+    <Compile Include="Areas\DCT\Data\ColaboradorVinculo\ColaboradorVinculoData.cs" />
+    <Compile Include="Areas\DCT\Data\ColaboradorVinculo\ColaboradorVinculoListaData.cs" />
+    <Compile Include="Areas\DCT\Data\InstituicaoExterna\InstituicaoExternaListaData.cs" />
+    <Compile Include="Areas\DCT\Data\InstituicaoExterna\InstituicaoExternaFiltroData.cs" />
+    <Compile Include="Areas\DCT\Data\InstituicaoTipoEntidadeVinculoColaborador\InstituicaoTipoEntidadeVinculoColaboradorData.cs" />
+    <Compile Include="Areas\DCT\Data\InstituicaoTipoEntidadeVinculoColaborador\InstituicaoTipoEntidadeVinculoColaboradorFiltroData.cs" />
+    <Compile Include="Areas\DCT\Data\InstituicaoTipoEntidadeVinculoColaborador\InstituicaoTipoEntidadeVinculoColaboradorListaData.cs" />
+    <Compile Include="Areas\DCT\Interfaces\ICategoriaInstituicaoEnsinoService.cs" />
+    <Compile Include="Areas\DCT\Interfaces\IColaboradorService.cs" />
+    <Compile Include="Areas\DCT\Interfaces\IColaboradorVinculoService.cs" />
+    <Compile Include="Areas\DCT\Interfaces\IDCTDynamicService.cs" />
+    <Compile Include="Areas\DCT\Interfaces\IInstituicaoExternaService.cs" />
+    <Compile Include="Areas\DCT\Interfaces\IInstituicaoTipoEntidadeVinculoColaboradorService.cs" />
+    <Compile Include="Areas\DCT\Interfaces\ITipoVinculoColaboradorService.cs" />
+    <Compile Include="Areas\ORG\Data\EntidadeClassificacao\EntidadeClassificacaoData.cs" />
+    <Compile Include="Areas\ORG\Data\Entidade\EntidadeCabecalhoData.cs" />
+    <Compile Include="Areas\ORG\Data\Entidade\EntidadeHierarquiaEntidadeItemFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\Entidade\EntidadeHistoricoSituacaoData.cs" />
+    <Compile Include="Areas\ORG\Data\Entidade\EntidadeHierarquiaClassificacaoData.cs" />
+    <Compile Include="Areas\ORG\Data\Entidade\EntidadeHistoricoSituacaoFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\HierarquiaEntidadeItem\HierarquiaEntidadeItemData.cs" />
+    <Compile Include="Areas\ORG\Data\HierarquiaEntidadeItem\HierarquiaEntidadeItemFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\HierarquiaEntidadeItem\HierarquiaEntidadeItemNodeData.cs" />
+    <Compile Include="Areas\ORG\Data\HierarquiaEntidade\HierarquiaEntidadeData.cs" />
+    <Compile Include="Areas\ORG\Data\HierarquiaEntidade\HierarquiaEntidadeFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\HierarquiaEntidade\HierarquiaEntidadeListaData.cs" />
+    <Compile Include="Areas\ORG\Data\Entidade\EntidadeFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\Entidade\EntidadeListaData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoEnsino\InstituicaoEnsinoData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoEnsino\InstituicaoEnsinoFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoEnsino\InstituicaoEnsinoListaData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoNivel\InstituicaoNivelData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoTipoEntidade\InstituicaoTipoEntidadeEnderecoData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoTipoEntidade\InstituicaoTipoEntidadeData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoTipoEntidade\InstituicaoTipoEntidadeEnderecoEletronicoData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoTipoEntidade\InstituicaoTipoEntidadeFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoTipoEntidade\InstituicaoTipoEntidadeListaData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoTipoEntidade\InstituicaoTipoEntidadeSituacaoData.cs" />
+    <Compile Include="Areas\ORG\Data\InstituicaoTipoEntidade\InstituicaoTipoEntidadeTelefoneData.cs" />
+    <Compile Include="Areas\ORG\Data\NivelEnsino\NivelEnsinoFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\NivelEnsino\NivelEnsinoHierarquiaData.cs" />
+    <Compile Include="Areas\ORG\Data\SituacaoEntidade\SituacaoEntidadeData.cs" />
+    <Compile Include="Areas\ORG\Data\TipoAgenda\TipoAgendaData.cs" />
+    <Compile Include="Areas\ORG\Data\TipoAgenda\TipoAgendaFiltroData.cs" />
+    <Compile Include="Areas\ORG\Data\TipoHierarquiaEntidade\TipoHierarquiaEntidadeData.cs" />
+    <Compile Include="Areas\ORG\Data\TipoHierarquiaEntidade\TipoHierarquiaEntidadeItemData.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IEntidadeHistoricoSituacaoService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IHierarquiaEntidadeItemService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IHierarquiaEntidadeService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IEntidadeService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IInstituicaoEnsinoService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IInstituicaoNivelService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IInstituicaoTipoEntidadeService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\INivelEnsinoService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\IORGDynamicService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\ITipoAgendaService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\ITipoHierarquiaEntidadeItemService.cs" />
+    <Compile Include="Areas\ORG\Interfaces\ITipoHierarquiaEntidadeService.cs" />
+    <Compile Include="Areas\ORT\Interfaces\IORTDynamicService.cs" />
+    <Compile Include="Areas\ORT\Interfaces\ITipoOrientacaoService.cs" />
+    <Compile Include="Areas\PES\Data\InstituicaoTipoAtuacao\InstituicaoTipoAtuacaoData.cs" />
+    <Compile Include="Areas\PES\Data\InstituicaoTipoAtuacao\InstituicaoTipoAtuacaoFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\InstituicaoTipoAtuacao\InstituicaoTipoAtuacaoListaData.cs" />
+    <Compile Include="Areas\PES\Data\MotivoBloqueio\MotivoBloqueioFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoBloqueio\PessoaAtuacaoBloqueioCabecalhoData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoBloqueio\PessoaAtuacaoBloqueioCompovanteData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoBloqueio\PessoaAtuacaoBloqueioDesbloqueioData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoBloqueio\PessoaAtuacaoBloqueioDetalheData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoBloqueio\PessoaAtuacaoBloqueioFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoBloqueio\PessoaAtuacaoBloqueioData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoBloqueio\PessoaAtuacaoBloqueioListaData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\PessoaAtuacaoData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoEndereco\PessoaAtuacaoEnderecoData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\PessoaAtuacaoFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacao\PessoaAtuacaoListaData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoEndereco\PessoaAtuacaoEnderecoFiltroLookupData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaAtuacaoEndereco\PessoaAtuacaoEnderecoLookupData.cs" />
+    <Compile Include="Data\PessoaFiliacaoData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaEndereco\PessoaEnderecoData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaEndereco\PessoaEnderecoFiltroLookupData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaEndereco\PessoaEnderecoLookupData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaEnderecoEletronico\PessoaEnderecoEletronicoData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaEnderecoEletronico\PessoaEnderecoEletronicoFiltroLookupData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaEnderecoEletronico\PessoaEnderecoEletronicoLookupData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaTelefone\PessoaTelefoneData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaTelefone\PessoaTelefoneFiltroLookupData.cs" />
+    <Compile Include="Areas\PES\Data\PessoaTelefone\PessoaTelefoneLookupData.cs" />
+    <Compile Include="Areas\PES\Data\Pessoa\PessoaListaData.cs" />
+    <Compile Include="Areas\PES\Data\Pessoa\PessoaData.cs" />
+    <Compile Include="Areas\PES\Data\Pessoa\PessoaFiltroData.cs" />
+    <Compile Include="Areas\PES\Data\ReferenciaFamiliar\ReferenciaFamiliarData.cs" />
+    <Compile Include="Areas\PES\Data\ReferenciaFamiliar\ReferenciaFamiliarFiltroData.cs" />
+    <Compile Include="Areas\CAM\Interfaces\IInstituicaoTipoEventoService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IInstituicaoTipoAtuacaoService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IPESDynamicService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IPessoaAtuacaoBloqueioService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IPessoaAtuacaoEnderecoService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IPessoaAtuacaoService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IPessoaEnderecoEletronicoService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IPessoaEnderecoService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IMotivoBloqueioService.cs" />
+    <Compile Include="Areas\PES\Interfaces\ITipoBloqueioService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IPessoaService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IPessoaTelefoneService.cs" />
+    <Compile Include="Areas\PES\Interfaces\IReferenciaFamiliarService.cs" />
+    <Compile Include="Data\EnderecoData.cs" />
+    <Compile Include="Data\EnderecoEletronicoData.cs" />
+    <Compile Include="Areas\ORG\Data\Entidade\EntidadeData.cs" />
+    <Compile Include="Data\SGADadoFormularioData.cs" />
+    <Compile Include="Data\TelefoneData.cs" />
+    <Compile Include="Interfaces\ICalendarioService.cs" />
+    <Compile Include="Interfaces\ISGFHelperService.cs" />
+    <Compile Include="Interfaces\ITipoEventoService.cs" />
+    <Compile Include="Interfaces\IArquivoAnexadoService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\ALN\Fake\" />
+    <Folder Include="Areas\APR\Fake\" />
+    <Folder Include="Areas\CAM\Fake\" />
+    <Folder Include="Areas\CNC\Fake\" />
+    <Folder Include="Areas\CSO\Fake\" />
+    <Folder Include="Areas\CUR\Fake\" />
+    <Folder Include="Areas\DCT\Fake\" />
+    <Folder Include="Areas\FIN\Fake\" />
+    <Folder Include="Areas\MAT\Fake\" />
+    <Folder Include="Areas\ORG\Fake\" />
+    <Folder Include="Areas\ORT\Fake\" />
+    <Folder Include="Areas\PES\Fake\" />
+    <Folder Include="Areas\SRC\Data\RelatorioConsolidadoServicoCicloLetivo\" />
+    <Folder Include="Areas\SRC\Fake\" />
+    <Folder Include="Areas\TUR\Fake\" />
+    <Folder Include="Fake\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMC.Academico.Common\SMC.Academico.Common.csproj">
+      <Project>{cc1064e4-9968-420b-a793-876145a3ab66}</Project>
+      <Name>SMC.Academico.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Academico.Domain\SMC.Academico.Domain.csproj">
+      <Project>{909CB7A4-A839-4D7A-BD63-643B61FF5C8E}</Project>
+      <Name>SMC.Academico.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*$(TargetName).dll" "$(SolutionDir)..\Referencias\Academico\4.2"  /R /Y /I /D</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

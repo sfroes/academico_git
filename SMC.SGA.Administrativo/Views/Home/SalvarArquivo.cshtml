@@ -1,0 +1,4 @@
+﻿@model long
+
+<p>Arquivo anexado com sucesso!</p>
+<p>Sequencial do arquivo: @Html.ActionLink(Model.ToString(), "DownloadArquivo", new { seq = Model })</p>

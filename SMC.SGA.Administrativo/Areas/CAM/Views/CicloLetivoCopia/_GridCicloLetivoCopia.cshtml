@@ -1,0 +1,19 @@
+﻿@model SMCPagerModel<CicloLetivoCopiaItemViewModel>
+
+@(Smc.Grid("CiclosLetivos")
+             .Action("BuscarCiclosLetivosCopia", "CicloLetivoCopia")
+             .HideNavigator(false)
+             .AutoHideNavigator(false)
+             .FieldColumn(f => f.NiveisEnsino)
+             .FieldColumn(f => f.Ano)
+             .FieldColumn(f => f.Numero)
+             .FieldColumn(f => f.DescricaoRegimeLetivo)
+
+)
+@{
+    var buttonSet = Smc.ButtonSet();
+
+    buttonSet.AddButton(Smc.Button("smc-button-copia").CssClass("smc-btn-copiar-icotext-destaque").Action("CopiarCiclosLetivos").Type(SMCButtonType.Submit).SecurityToken(UC_CAM_002_01_05.COPIAR_CICLO_LETIVO));
+
+    @buttonSet;
+}

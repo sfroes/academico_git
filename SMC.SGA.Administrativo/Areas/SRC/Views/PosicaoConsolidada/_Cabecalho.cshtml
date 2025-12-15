@@ -1,0 +1,25 @@
+﻿@model ProcessoCabecalhoViewModel
+
+@if (Model.ExibirQuantidade)
+{
+    using (Smc.Header("ProcessoCabecalho", SMCHeaderType.Primary)
+                     .Item(prop => prop.DescricaoProcesso, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid10_24)
+                     .Item(prop => prop.DescricaoCicloLetivo, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid3_24)
+                     .Item(prop => prop.DataInicio, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid3_24)
+                     .Item(prop => prop.DataFim, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid3_24)
+                     .Item(prop => prop.DataEncerramento, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid4_24)
+                     .Item(prop => prop.QuantidadeSolicitacoesProcesso, sizeMD: SMCSize.Grid12_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid12_24)
+                     .Begin())
+    { }
+}
+else
+{
+    using (Smc.Header("ProcessoCabecalho", SMCHeaderType.Primary)
+                     .Item(prop => prop.DescricaoProcesso, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid10_24)
+                     .Item(prop => prop.DescricaoCicloLetivo, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid3_24)
+                     .Item(prop => prop.DataInicio, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid3_24)
+                     .Item(prop => prop.DataFim, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid3_24)
+                     .Item(prop => prop.DataEncerramento, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid4_24)
+                     .Begin())
+    { }
+}

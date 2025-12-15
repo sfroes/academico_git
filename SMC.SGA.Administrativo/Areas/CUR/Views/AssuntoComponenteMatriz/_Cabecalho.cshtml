@@ -1,0 +1,7 @@
+﻿@model AssuntoComponenteMatrizCabecalhoViewModel
+
+@using (Smc.Header("AssuntoCabecalho", SMCHeaderType.Primary)
+                   .Item(i => i.DescricaoMatriz, sizeMD: SMCSize.Grid12_24)
+                   .Item(i => i.DescricaoConfiguracaoCompoente, sizeMD: SMCSize.Grid12_24)
+                   .Begin())
+{}

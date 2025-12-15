@@ -1,0 +1,114 @@
+﻿@model ProcessoEtapaConfiguracaoNotificacaoListarViewModel
+
+
+@{
+    foreach (var item in Model.Etapas.OrderBy(o => o.Ordem))
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+        {
+            using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+            {
+                using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+                {
+                    using (Smc.Div().CssClass("smc-sga-display").Size(SMCSize.Grid24_24).Begin())
+                    {
+                        @Smc.DisplayFor(p => item.DescricaoEtapa).Size(SMCSize.Grid17_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid17_24)
+                        @Smc.DisplayFor(p => item.SituacaoEtapa).Size(SMCSize.Grid6_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid6_24)
+
+                        using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24).CssClass("smc-sga-margem-superior").Begin())
+                        {
+                            ///Configuração dos buttoes
+                            SMCButtonFluentConfiguration buttonColocarEmManutencao = (Smc.Button(SMCButtonBehavior.Visualizar)
+                                        .Ajax(isPost: false)
+                                        .Text(Smc.GetUIResource("botao_liberar_etapa"))
+                                        .Action("LiberarEtapa", "ProcessoEtapaConfiguracaoNotificacao", new { SeqEtapa = new SMCEncryptedLong(item.Seq), SeqProcesso = new SMCEncryptedLong(item.SeqProcesso), Area = "SRC" })
+                                        .Tooltip(Smc.GetUIResource("botao_liberar_etapa_tooltip"))
+                                        .Hide(item.ExibirBotaoLiberar)
+                                        .Enabled(item.HabilitaBtnComPermissaoManutencaoProcesso)
+                                        .Confirm(Smc.GetUIResource("title_modal_liberar_etapa"), string.Format(Smc.GetUIResource("mensagem_liberar_etapa"), item.DescricaoEtapa), SMCWindowButtons.Yes, true)
+                                        .SecurityToken(UC_SRC_002_05_02.MANTER_ESCALONAMENTO_ETAPA));
+
+                            SMCButtonFluentConfiguration buttonLiberarEtapa = (Smc.Button(SMCButtonBehavior.Visualizar)
+                                        .Ajax(isPost: false)
+                                        .Text(Smc.GetUIResource("botao_colocar_manutencao"))
+                                        .Action("ColocarManutencaoEtapa", "ProcessoEtapaConfiguracaoNotificacao", new { SeqEtapa = new SMCEncryptedLong(item.Seq), SeqProcesso = new SMCEncryptedLong(item.SeqProcesso), Area = "SRC" })
+                                        .Hide(item.ExibirBotaoManutencao)
+                                        .Enabled(item.HabilitaBtnComPermissaoManutencaoProcesso && item.HabilitarBotaoManuntecao)
+                                        .ButtonInstructions(Smc.GetUIResource(item.MensagemInstruictionBotaoManutencao))
+                                        .Confirm(Smc.GetUIResource("title_modal_etapa_em_manutencao"), string.Format(Smc.GetUIResource("mensagem_etapa_em_manutencao"), item.DescricaoEtapa), SMCWindowButtons.Yes, true)
+                                        .Tooltip(Smc.GetUIResource("botao_colocar_manutencao_tooltip"))
+                                        .SecurityToken(UC_SRC_002_05_02.MANTER_ESCALONAMENTO_ETAPA));
+
+                            SMCButtonFluentConfiguration buttonNovaConfiguracao = (Smc.Button(SMCButtonBehavior.Visualizar)
+                                                   .Text(Smc.GetUIResource("botao_nova_configuracao"))
+                                                   .Enabled(item.HabilitaBtnComPermissaoManutencaoProcesso && item.HabilitarBotaoNovaConfiguracaoNotificacao)
+                                                   .ButtonInstructions(Smc.GetUIResource(item.MensagemBotaoNovaConfiguracaoNotificacao))
+                                                   .Action("Incluir", "ProcessoEtapaConfiguracaoNotificacao", new { SeqEtapa = new SMCEncryptedLong(item.Seq), SeqProcesso = new SMCEncryptedLong(item.SeqProcesso), Area = "SRC" })
+                                                   .Tooltip(Smc.GetUIResource("botao_nova_configuracao_tooltip"))
+                                                   .SecurityToken(UC_SRC_003_02_02.MANTER_CONFIGURACAO_NOTIFICACAO));
+
+                            SMCButtonSetFluentConfiguration buttonSet = (Smc.ButtonSet().Type(SMCButtonSetType.Secondary)
+                                                .NumberOfButtonsToShow(0)
+                                                .Size(SMCSize.Grid1_24));
+
+                            @buttonSet.AddButton(buttonColocarEmManutencao).AddButton(buttonLiberarEtapa).AddButton(buttonNovaConfiguracao)
+                        }
+                    }
+                }
+
+                using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+                {
+                    @(Smc.Grid("gridConfiguracaoNotificacao", new SMCPagerModel<ProcessoEtapaConfiguracaoNotificacaoViewModel>(item.ConfiguracoesNotificacao))
+                    .FieldColumn(f => f.DescricaoTipoNotificacao, cssClass: "smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+                    .FieldColumn(f => f.NomeReduzidoProcessoUnidadeResponsavel, cssClass: "smc-size-md-8 smc-size-xs-8 smc-size-sm-8 smc-size-lg-8")
+                    .FieldColumn(f => f.EnvioAutomatico, cssClass: "smc-size-md-6 smc-size-xs-6 smc-size-sm-6 smc-size-lg-6")
+                    .FieldColumn(f => f.TipoNotificacaoPermiteAgendamento, cssClass: "smc-size-md-6 smc-size-xs-6 smc-size-sm-6 smc-size-lg-6")
+                    .AutoHideNavigator()
+                    .HideGridTitle()
+                    .HideNavigator()
+                    .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+
+                    x => Smc.Button(SMCButtonBehavior.Alterar)
+                            .CssClass("smc-btn-alterar-ico")
+                            .Tooltip(Smc.GetUIResource("botao_edit_grupo_notificacao_tooltip"))
+                            .SecurityToken(UC_SRC_003_02_02.MANTER_CONFIGURACAO_NOTIFICACAO)
+                            .Enabled((x as ProcessoEtapaConfiguracaoNotificacaoViewModel).HabilitaBtnComPermissaoManutencaoProcesso)
+                            .Action("Editar", "ProcessoEtapaConfiguracaoNotificacao", new { Seq = new SMCEncryptedLong((x as ProcessoEtapaConfiguracaoNotificacaoViewModel).Seq), Area = "SRC" }),
+
+                    x => Smc.Button(SMCButtonBehavior.Excluir)
+                            .DisplayMode(SMCButtonDisplayMode.Icon)
+                            .Confirm(Smc.GetUIResource("Exclusao_Configuracao_Notificacao_Title"),
+                            string.Format(Smc.GetUIResource("Exclusao_Configuracao_Notificacao_Confirmacao"), (x as ProcessoEtapaConfiguracaoNotificacaoViewModel).DescricaoTipoNotificacao))
+                            .Tooltip(Smc.GetUIResource("botao_excluir_grupo_notificacao_tooltip"))
+                            .Enabled((x as ProcessoEtapaConfiguracaoNotificacaoViewModel).HabilitaBtnComPermissaoManutencaoProcesso && (x as ProcessoEtapaConfiguracaoNotificacaoViewModel).NotificacaoObrigatoriaNaEtapa == false && (x as ProcessoEtapaConfiguracaoNotificacaoViewModel).HabilitarBotaoExcluir)
+                            .ButtonInstructions(Smc.GetUIResource((x as ProcessoEtapaConfiguracaoNotificacaoViewModel).MensagemBotaoExcluir))
+                            .SecurityToken(UC_SRC_003_02_02.MANTER_CONFIGURACAO_NOTIFICACAO)
+                            .Action("Excluir", "ProcessoEtapaConfiguracaoNotificacao", new
+                                    {
+                                        Seq = new SMCEncryptedLong((x as ProcessoEtapaConfiguracaoNotificacaoViewModel).Seq),
+                                SeqProcesso = new SMCEncryptedLong(item.SeqProcesso),
+                                        Area = "SRC"
+                                    }),
+
+                    x => Smc.Button(SMCButtonBehavior.Alterar)
+                         .Enabled((x as ProcessoEtapaConfiguracaoNotificacaoViewModel).HabilitaBtnComPermissaoManutencaoProcesso && ((x as ProcessoEtapaConfiguracaoNotificacaoViewModel).TipoNotificacaoPermiteAgendamento || !(x as ProcessoEtapaConfiguracaoNotificacaoViewModel).ProcessoEncerrado) ? true : false)
+                         .Hide((x as ProcessoEtapaConfiguracaoNotificacaoViewModel).TipoNotificacaoPermiteAgendamento ? false : true)
+                         .ButtonInstructions((x as ProcessoEtapaConfiguracaoNotificacaoViewModel).ProcessoEncerrado ? Smc.GetUIResource("MSG_ProcessoEncerrado") : string.Empty)
+                         .Text(Smc.GetUIResource("botao_parametrizar_envio_notificacao"))
+                         .Tooltip(Smc.GetUIResource("botao_parametrizar_envio_notificacao_tooltip"))
+                         .SecurityToken(UC_SRC_003_02_03.CONFIGURAR_ENVIO_NOTIFICACAO)
+                         .Action("ParametroEnvioNotificacao", "ProcessoEtapaConfiguracaoNotificacao", new { SeqProcessoEtapaConfiguracaoNotificacao = new SMCEncryptedLong((x as ProcessoEtapaConfiguracaoNotificacaoViewModel).Seq), Area = "SRC" }),
+
+                    x => Smc.Button(SMCButtonBehavior.Alterar)
+                         .Enabled((x as ProcessoEtapaConfiguracaoNotificacaoViewModel).HabilitaBtnComPermissaoManutencaoProcesso && (x as ProcessoEtapaConfiguracaoNotificacaoViewModel).TipoNotificacaoPermiteAgendamento ? true : false)
+                         .Hide((x as ProcessoEtapaConfiguracaoNotificacaoViewModel).TipoNotificacaoPermiteAgendamento ? true : false)
+                         .ButtonInstructions(Smc.GetUIResource("Botao_Instruiction_Nao_Permite_Agendamento"))
+                         .Text(Smc.GetUIResource("botao_parametrizar_envio_notificacao"))
+                         .Tooltip(Smc.GetUIResource("botao_parametrizar_envio_notificacao_tooltip"))
+                         .SecurityToken(UC_SRC_003_02_03.CONFIGURAR_ENVIO_NOTIFICACAO)
+                         .Action("ParametroEnvioNotificacao", "ProcessoEtapaConfiguracaoNotificacao", new { SeqProcessoEtapaConfiguracaoNotificacao = new SMCEncryptedLong((x as ProcessoEtapaConfiguracaoNotificacaoViewModel).Seq), Area = "SRC" })))
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+﻿using SMC.Academico.Common.Areas.MAT.Resources;
+using SMC.Framework.Exceptions;
+
+namespace SMC.Academico.Common.Areas.MAT.Exceptions
+{
+    public class ProcessoRematriculaComVariosEscalonamentosException : SMCApplicationException
+    {
+        public ProcessoRematriculaComVariosEscalonamentosException()
+            : base(ExceptionsResource.ERR_ProcessoRematriculaComVariosEscalonamentosException)
+        { }
+    }
+}

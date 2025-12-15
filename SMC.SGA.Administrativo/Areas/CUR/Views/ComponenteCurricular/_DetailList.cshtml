@@ -1,0 +1,66 @@
+﻿@model ComponenteCurricularListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+        // Header
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-sga-lista-legenda").Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+            {
+                @Smc.LegendItem(m => m.ConfiguracaoComponenteCurricular, false);
+            }
+
+            using (Smc.Div().CssClass("smc-sga-display").Size(SMCSize.Grid13_24, SMCSize.Grid23_24, SMCSize.Grid23_24, SMCSize.Grid13_24).Begin())
+            {
+                @Smc.DisplayFor(m => m.DescricaoTipoComponenteCurricular).HideLabel().CssClass("smc-sga-display-label").Size(SMCSize.Grid24_24)
+                @Smc.DisplayFor(m => m.DescricaoCompleta).HideLabel().CssClass("smc-sga-display-p").Size(SMCSize.Grid24_24)
+            }
+
+            @Smc.DisplayFor(m => m.DescricaoTipoOrganizacao).Size(SMCSize.Grid10_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid10_24)
+        }
+        // Div da esquerda com entidades responsáveis
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid12_24).Begin())
+        {
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_EntidadeResponsavel")</label>
+            if (Model.EntidadesResponsaveis.SMCCount() > 0)
+            {
+                @Smc.DisplayFor(m => m.EntidadesResponsaveis).HideLabel().Size(SMCSize.Grid24_24)
+            }
+            else
+            {
+                using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+                }
+            }
+        }
+        // Div da direita níveis de ensino
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista smc-listdetailed-conteudo-separador-vertical").Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid12_24).Begin())
+        {
+            if (Model.NiveisEnsino.SMCCount() > 0)
+            {
+                <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_NivelEnsino")</label>
+                @Smc.DisplayFor(m => m.NiveisEnsino).HideLabel().Size(SMCSize.Grid24_24)
+            }
+        }
+        // Div inferior da esquerda legado
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid12_24).Begin())
+        {
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_Legado")</label>
+            if (Model.ComponentesLegado.SMCCount() > 0)
+            {
+                @Smc.DisplayFor(m => m.ComponentesLegado).HideLabel().Size(SMCSize.Grid24_24)
+            }
+            else
+            {
+                using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+                }
+            }
+        }
+    }
+    @Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)
+}

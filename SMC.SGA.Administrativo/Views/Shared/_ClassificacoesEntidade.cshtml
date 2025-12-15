@@ -1,0 +1,13 @@
+﻿@model EntidadeViewModel
+
+@if (Model.Hierarquias.SMCCount() > 0)
+{
+    @Smc.HiddenFor(m => m.SeqsHierarquiaEntidadeItem)
+    @Smc.HiddenFor(m => m.SeqEntidadeResponsavel)
+    @(Smc.List("Hierarquia", m => m.Hierarquias)
+        .HtmlTemplate(
+        @<text>
+            @Html.Partial("_ClassificacoesEntidadeItem", item.Value)
+        </text>
+                    ))
+}

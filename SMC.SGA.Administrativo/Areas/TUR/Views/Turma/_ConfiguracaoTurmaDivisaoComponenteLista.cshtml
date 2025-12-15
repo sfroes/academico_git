@@ -1,0 +1,6 @@
+﻿@model ConfiguracaoTurmaDynamicModel
+
+@using (Smc.Fieldset("Divisao").LegendText(@Smc.GetUIResource("fieldset_divisao_configuracao_componente_curricular")).Begin())
+{
+    @Smc.List("DivisaoComponente", x => x.DivisaoComponente).HtmlTemplate(divisao => Html.Partial("_ConfiguracaoTurmaDivisaoComponente", divisao.Value));
+}

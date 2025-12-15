@@ -1,0 +1,734 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERR_ConfiguracaoComponenteInativoException" xml:space="preserve">
+    <value>Não é permitida criação/alteração de configuração de componente ativa se o componente estiver inativo.</value>
+    <comment>RN_CUR_083 - Consistência configuração componente</comment>
+  </data>
+  <data name="ERR_AlterarRequisitoMatrizCurricularAssociada" xml:space="preserve">
+    <value>Alteração não permitida. Este requisito está associado a outras matrizes curriculares.</value>
+  </data>
+  <data name="ERR_ComponenteCurricularAlteracaoEntidadesResponsaveisAssuntoComponentesException" xml:space="preserve">
+    <value>Alteração de entidade responsável não permitida. Esse componente está associado como assunto de componente em uma ou mais matrizes currículares. Para altear, é necessário excluir a associação primeiro.</value>
+    <comment>RN_CUR_033.2.2</comment>
+  </data>
+  <data name="ERR_ComponenteCurricularAlteracaoEntidadesResponsaveisGruposCurricularesException" xml:space="preserve">
+    <value>Alteração de entidade responsável não permitida. Esse componente está associado a um ou mais grupos curriculares. Para alterar, é necessário excluir a associação primeiro.</value>
+    <comment>RN_CUR_033.2.1</comment>
+  </data>
+  <data name="ERR_ComponenteCurricularAlteracaoEntidadesResponsaveisTurmasException" xml:space="preserve">
+    <value>Alteração de entidade responsável não permitida. Existe pelo menos uma configuração desse componente associada a uma ou mais turmas. Para alterar, é necessário excluir a associação primeiro.</value>
+    <comment>RN_CUR_033.2.3</comment>
+  </data>
+  <data name="ERR_ComponenteCurricularConfiguracaoAssociadoDivisaoMatrizCurricularException" xml:space="preserve">
+    <value>Não é permitido alterar o componente curricular, pois ele possui configurações associadas à uma ou mais divisões de matrizes curriculares. Para alterá-lo, é necessário excluir a associação primeiro.</value>
+  </data>
+  <data name="ERR_ComponenteCurricularQuantidadeMaximaEntidadesResponsaveisExcedidaException" xml:space="preserve">
+    <value>Não é permitido associar mais uma entidade responsável ao componente curricular, pois ele já possui a quantidade máxima definida para o seu tipo.</value>
+    <comment>RN_CUR_033.1</comment>
+  </data>
+  <data name="ERR_ComponenteCurricularSemOrganizacaoExceptionException" xml:space="preserve">
+    <value>É necessário preencher ao menos uma organização caso o tipo de organização seja selecionado.</value>
+    <comment>UC_CUR_002_01_02.NV18</comment>
+  </data>
+  <data name="ERR_ConfiguracaoComponenteCargaHorariaDivergenteException" xml:space="preserve">
+    <value>O somatório das cargas horárias dos itens de organização deve ser igual à carga da divisão ou as cargas horárias de todas os itens de organização devem ser iguais à carga horária da Divisão.</value>
+  </data>
+  <data name="ERR_ConfiguracaoComponenteDivisaoAlteracaoProibidaException" xml:space="preserve">
+    <value>Não é permitido alterar uma divisão da configuração do componente curricular, pois esta configuração está associada a uma ou mais divisões de matrizes curriculares. Para alterá-la, é necessário excluir a associação primeiro.</value>
+  </data>
+  <data name="ERR_ConfiguracaoComponenteDivisaoCargaHorariaDivergenteException" xml:space="preserve">
+    <value>O somatório das cargas horárias das divisões deve ser igual à carga do componente curricular.</value>
+  </data>
+  <data name="ERR_ConfiguracaoComponenteOrganizacaoInvalidaException" xml:space="preserve">
+    <value>Tipo de organização da divisão de componente inválida.</value>
+  </data>
+  <data name="ERR_ConfiguracaoComponenteTipoDivisaoComponenteInvalidoException" xml:space="preserve">
+    <value>Tipo de divisão de componente inválida.</value>
+  </data>
+  <data name="ERR_DispensaExcluirMatrizExcecao" xml:space="preserve">
+    <value>Exclusão não permitida. Esta dispensa possui associação de matriz curricular de exceção.</value>
+  </data>
+  <data name="ERR_DispensaListaDataMatrizExcecao" xml:space="preserve">
+    <value>Não é possível prosseguir a associação da matriz de exceção. O período informado não está dentro do período de vigência da respectiva dispensa.</value>
+  </data>
+  <data name="ERR_DispensaListaDataPeriodo" xml:space="preserve">
+    <value>Não é possível prosseguir o cadastro/alteração da dispensa. Não é permitido que intervalos do período de vigência possuam interseção.</value>
+  </data>
+  <data name="ERR_DispensaListaDuplicado" xml:space="preserve">
+    <value>Não é possível prosseguir o cadastro/alteração da dispensa. Não é permitido que o mesmo componente esteja associado em ambos os grupos.</value>
+  </data>
+  <data name="ERR_DispensaListaItensDuplicados" xml:space="preserve">
+    <value>Não é possível prosseguir o cadastro/alteração da dispensa. Foi identificado outro cadastro com as mesmas configurações.</value>
+  </data>
+  <data name="ERR_DispensaListaVazia" xml:space="preserve">
+    <value>Não é possível prosseguir o cadastro/atualização da dispensa. É obrigatório que ambos os grupos possuam pelo menos um componente curricular.</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularGrupoQuantidade" xml:space="preserve">
+    <value>O somatório da quantidades de itens das divisões deve ser igual a quantidade de itens da configuração do grupo curricular.</value>
+  </data>
+  <data name="ERR_ExcluirRequisitoMatrizCurricularAssociada" xml:space="preserve">
+    <value>Exclusão não permitida. Este requisito está associado a outras matrizes curriculares.</value>
+  </data>
+  <data name="ERR_GrupoConfiguracaoAssuntoComponenteException" xml:space="preserve">
+    <value>Não é possível salvar este grupo. Todas as configurações devem ser de componentes que exigem assunto.</value>
+  </data>
+  <data name="ERR_GrupoConfiguracaoComponenteCargaHorariaException" xml:space="preserve">
+    <value>Não é possível salvar este grupo. Todas as configurações de um grupo devem pertencer a componentes de mesma carga horária.</value>
+  </data>
+  <data name="ERR_GrupoConfiguracaoComponenteCurriculoException" xml:space="preserve">
+    <value>Não é possível salvar este grupo. As configurações de um grupo não podem pertencer a componentes de um mesmo currículo.</value>
+  </data>
+  <data name="ERR_GrupoConfiguracaoComponenteDiferentesException" xml:space="preserve">
+    <value>Não é possível salvar este grupo, pois ele deve conter pelo menos duas configurações de componentes curriculares associadas.</value>
+  </data>
+  <data name="ERR_GrupoConfiguracaoComponenteDivisoesEquivalentesException" xml:space="preserve">
+    <value>Não é possível salvar este grupo. Todas as configurações de um grupo devem possuir divisões equivalentes.</value>
+  </data>
+  <data name="ERR_GrupoConfiguracaoComponenteGrupoException" xml:space="preserve">
+    <value>Não é possível salvar este grupo, pois este contém configuração que já está em uso em outro grupo.</value>
+  </data>
+  <data name="ERR_GrupoConfiguracaoComponenteTipoOrganizacaoException" xml:space="preserve">
+    <value>Não é possível salvar este grupo. Todas as configurações de um grupo devem possuir os mesmos tópicos com as mesmas cargas horárias.</value>
+  </data>
+  <data name="ERR_GrupoCurricularAlteracaoTipoInvalidoException" xml:space="preserve">
+    <value>Alteração não permitida. Este grupo tem componentes curriculares de tipos de componentes não previstos para o tipo de grupo informado.</value>
+    <comment>RN_CUR_024 Alteração tipo de grupo curricular</comment>
+  </data>
+  <data name="ERR_GrupoCurricularAssociadoDivisaoMatrizException" xml:space="preserve">
+    <value>Alteração não permitida. Este grupo já está associado à uma divisão de matriz do currículo em questão.</value>
+    <comment>RN_CUR_027</comment>
+  </data>
+  <data name="ERR_HistoricoSituacaoMatrizCurricularOfertaAtivaException" xml:space="preserve">
+    <value>Operação não permitida. Já existe uma matriz, para a mesma oferta de curso, localidade e turno com a situação 'Ativa'.</value>
+  </data>
+  <data name="ERR_HistoricoSituacaoMatrizCurricularOfertaDataFimException" xml:space="preserve">
+    <value>A data fim da situação anterior calculada de acordo com a data início atual fica menor que a data início anterior.</value>
+  </data>
+  <data name="ERR_HistoricoSituacaoMatrizCurricularOfertaSituacaoException" xml:space="preserve">
+    <value>A situação selecionada não corresponde ao fluxo definido.</value>
+  </data>
+  <data name="ERR_MatrizCurricularConfiguracaoComponenteNenhumaDivisao" xml:space="preserve">
+    <value>Inclusão/alteração não realizada. É obrigatório informar uma divisão.</value>
+  </data>
+  <data name="UN_matriz_curricular_01" xml:space="preserve">
+    <value>Inclusão/alteração não permitida. Já existe matriz com mesma descrição e descrição complementar.</value>
+  </data>
+  <data name="ERR_MatrizCurricularEdicaoNaoPermitida" xml:space="preserve">
+    <value>Não é permitido alterar a divisão curricular da matriz. Já existem configurações de componentes e/ou grupos curriculares associados às suas divisões.</value>
+  </data>
+  <data name="ERR_MatrizCurricularModalidadeNaoAssociada" xml:space="preserve">
+    <value>Não é possível prosseguir o cadastro/alteração da matriz curricular. É necessário que o currículo seja associado a um curso oferta com modalidades associadas.</value>
+  </data>
+  <data name="ERR_OfertaCursoInvalidaException" xml:space="preserve">
+    <value>Oferta de curso inválida.</value>
+  </data>
+  <data name="ERR_RequisitoListaItensDuplicados" xml:space="preserve">
+    <value>Não é possível prosseguir o cadastro do requisito. Pois já existe outro requisito idêntico a este e que poderá ser associado.</value>
+  </data>
+  <data name="FK_componente_curricular_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui componente curricular cadastrado.</value>
+  </data>
+  <data name="FK_componente_curricular_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de componente curricular já possui componente curricular cadastrado.</value>
+  </data>
+  <data name="FK_componente_curricular_ementa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Componente curricular já possui ementa cadastrada.</value>
+  </data>
+  <data name="FK_componente_curricular_entidade_01" xml:space="preserve">
+    <value>Exclusão não permitida. Entidade é responsável por componente curricular.</value>
+  </data>
+  <data name="FK_componente_curricular_entidade_02" xml:space="preserve">
+    <value>Exclusão não permitida. Componente curricular já possui entidade responsável cadastrada.</value>
+  </data>
+  <data name="FK_componente_curricular_nivel_ensino_01" xml:space="preserve">
+    <value>Exclusão não permitida. Componente curricular já possui nível de ensino associado.</value>
+  </data>
+  <data name="FK_componente_curricular_nivel_ensino_02" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino está associado a componente curricular.</value>
+  </data>
+  <data name="FK_componente_curricular_organizacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Componente curricular possui organização cadastrada.</value>
+  </data>
+  <data name="FK_condicao_obrigatoriedade_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui condição de obrigatoriedade cadastrada.</value>
+  </data>
+  <data name="FK_configuracao_componente_01" xml:space="preserve">
+    <value>Exclusão não permitida. Componente curricular já possui configuração de componente cadastrada.</value>
+  </data>
+  <data name="FK_curriculo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Curso já possui currículo cadastrado.</value>
+  </data>
+  <data name="FK_curriculo_curso_oferta_01" xml:space="preserve">
+    <value>Exclusão não permitida. Currículo já possui associação de curso oferta.</value>
+  </data>
+  <data name="FK_curriculo_curso_oferta_02" xml:space="preserve">
+    <value>Exclusão não permitida. Curso oferta já foi associado em currículo.</value>
+  </data>
+  <data name="FK_curriculo_curso_oferta_grupo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Currículo x Curso oferta já possui grupos associados.</value>
+  </data>
+  <data name="FK_curriculo_curso_oferta_grupo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo curricular já está associado a Currículo x Curso oferta.</value>
+  </data>
+  <data name="FK_dispensa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo já está associado à uma dispensa (grupo origem).</value>
+  </data>
+  <data name="FK_dispensa_02" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo já está associado à uma dispensa (grupo dispensado).</value>
+  </data>
+  <data name="FK_dispensa_grupo_componente_01" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo já possui componentes associados.</value>
+  </data>
+  <data name="FK_dispensa_grupo_componente_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe componente curricular associado a este grupo.</value>
+  </data>
+  <data name="FK_dispensa_historico_vigencia_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe periodo de vigência cadastrado para esta dispensa.</value>
+  </data>
+  <data name="FK_dispensa_matriz_excecao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe matriz exceção cadastrada para esta dispensa.</value>
+  </data>
+  <data name="FK_dispensa_matriz_excecao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Matriz curricular já possui exceção de dispensa cadastrada. </value>
+  </data>
+  <data name="FK_divisao_componente_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de divisão de componente já possui divisão de componente cadastrada.</value>
+  </data>
+  <data name="FK_divisao_componente_02" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de componente já possui divisão de componente cadastrada.</value>
+  </data>
+  <data name="FK_divisao_curricular_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui divisão curricular cadastrada.</value>
+  </data>
+  <data name="FK_divisao_curricular_02" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já possui divisão curricular cadastrada.</value>
+  </data>
+  <data name="FK_divisao_curricular_03" xml:space="preserve">
+    <value>Exclusão não permitida. Regime letivo já possui divisão curricular cadastrada.</value>
+  </data>
+  <data name="FK_divisao_curricular_04" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de divisão curricular já possui divisão curricular cadastrada.</value>
+  </data>
+  <data name="FK_divisao_curricular_item_01" xml:space="preserve">
+    <value>Exclusão não permitida. Divisão curricular já possui item cadastrado.</value>
+  </data>
+  <data name="FK_divisao_matriz_curricular_grupo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Essa matriz curricular possui configurações de componentes curriculares ou grupos curriculares associados às suas divisões curriculares.</value>
+  </data>
+  <data name="FK_grupo_configuracao_componente_item_01" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo de componente curricular já possui item cadastrado.</value>
+  </data>
+  <data name="FK_grupo_configuracao_componente_item_02" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de componente curricular está associada a um grupo de configurações.</value>
+  </data>
+  <data name="FK_grupo_curricular_01" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo curricular é "pai" de outro grupo curricular.</value>
+  </data>
+  <data name="FK_grupo_curricular_02" xml:space="preserve">
+    <value>Exclusão não permitida. Currículo já possui cadastro de grupos curriculares.</value>
+  </data>
+  <data name="FK_grupo_curricular_03" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de grupo curricular já foi utilizado no cadatro de grupos.</value>
+  </data>
+  <data name="FK_grupo_curricular_04" xml:space="preserve">
+    <value>Exclusão não permitida. Formação específica já foi associada a grupo curricular.</value>
+  </data>
+  <data name="FK_grupo_curricular_05" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de configuração de grupo curricular já foi utilizada no cadastro de grupo curricular.</value>
+  </data>
+  <data name="FK_grupo_curricular_beneficio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo curricular possui benefício associado.</value>
+  </data>
+  <data name="FK_grupo_curricular_beneficio_02" xml:space="preserve">
+    <value>Exclusão não permitida. Benefício está associado a grupo curricular.</value>
+  </data>
+  <data name="FK_grupo_curricular_componente_01" xml:space="preserve">
+    <value>Exclusão não permitida. Componente curricular já foi associado a grupo curricular.</value>
+  </data>
+  <data name="FK_grupo_curricular_componente_02" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo curricular já possui associação com componente curricular.</value>
+  </data>
+  <data name="FK_grupo_curricular_condicao_obrigatoriedade_01" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo curricular possui condição de obrigatoriedade associada.</value>
+  </data>
+  <data name="FK_grupo_curricular_condicao_obrigatoriedade_02" xml:space="preserve">
+    <value>Exclusão não permitida. Condição de obrigatoriedade está associada a grupo curricular.</value>
+  </data>
+  <data name="FK_instituicao_nivel_condicao_obrigatoriedade_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de condição de obrigatoriedade para esta instituição x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_condicao_obrigatoriedade_02" xml:space="preserve">
+    <value>Exclusão não permitida. Condição de obrigatoriedade já foi associada a uma instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_componente_curricular_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de tipo de componente curricular para esta instituição x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_componente_curricular_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de componente curricular já foi associado a uma instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_componente_curricular_03" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de entidade está configurada como responsável de componente curricular.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_componente_curricular_04" xml:space="preserve">
+    <value>Exclusão não permitida. Critério de aprovação está configurado como critério padrão para um tipo de componente x instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_divisao_componente_01" xml:space="preserve">
+    <value>Exclusão não permitida. Associação de tipo de componente curricular com a instituição x nível de ensino já possui tipo de divisão de componente configurado.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_divisao_componente_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de divisão de componente já foi associado a uma instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_divisao_curricular_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de divisão curricular já foi associado a uma instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_divisao_curricular_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de tipo de divisão curricular para esta instituição x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_grupo_curricular_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de tipo de grupo curricular para esta instituição x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_grupo_curricular_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de grupo curricular já foi associado a uma instituição de ensino x nível de ensino.</value>
+  </data>
+  <data name="FK_matriz_curricular_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe matriz curricular associada.</value>
+  </data>
+  <data name="FK_matriz_curricular_divisao_componente_02" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração já associada a uma matriz curricular.</value>
+  </data>
+  <data name="FK_matriz_curricular_requisito_01" xml:space="preserve">
+    <value>Exclusão não permitida. Matriz curricular já possui requisitos cadastrados.</value>
+  </data>
+  <data name="FK_matriz_curricular_requisito_02" xml:space="preserve">
+    <value>Exclusão não permitida. Requisito já está associado à matriz curricular.</value>
+  </data>
+  <data name="FK_requisito_01" xml:space="preserve">
+    <value>Exclusão não permitida. Componente curricular já possui requisitos cadastrados.</value>
+  </data>
+  <data name="FK_requisito_02" xml:space="preserve">
+    <value>Exclusão não permitida. Item da divisão curricular já possui requisitos cadastrados.</value>
+  </data>
+  <data name="FK_requisito_item_01" xml:space="preserve">
+    <value>Exclusão não permitida. Requisito já possui itens cadastrados.</value>
+  </data>
+  <data name="FK_requisito_item_02" xml:space="preserve">
+    <value>Exclusão não permitida. Componente curricular já está associado a um item de requisito.</value>
+  </data>
+  <data name="FK_requisito_item_03" xml:space="preserve">
+    <value>Exclusão não permitida. Item da divisão curricular já está associado a um item de requisito.</value>
+  </data>
+  <data name="FK_tipo_configuracao_grupo_curricular_subgrupo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de configuração de grupo curricular permite o cadastro de sub-grupo.</value>
+  </data>
+  <data name="FK_tipo_configuracao_grupo_curricular_subgrupo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de configuração de grupo curricular pode ser sub-grupo de outro tipo de configuração.</value>
+  </data>
+  <data name="FK_tipo_divisao_componente_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de componente curricular já possui tipo de divisão de componente cadastrada.</value>
+  </data>
+  <data name="FK_tipo_divisao_componente_02" xml:space="preserve">
+    <value>Exclusão não permitida. Modalidade já foi utilizada no cadastro de tipo de divisão de componente curricular.</value>
+  </data>
+  <data name="FK_tipo_divisao_componente_03" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de orientação já foi utilizado no cadastro de tipo de divisão de componente curricular.</value>
+  </data>
+  <data name="FK_tipo_grupo_curricular_componente_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de grupo curricular já possui tipo de componente curricular associado.</value>
+  </data>
+  <data name="FK_tipo_grupo_curricular_componente_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de componente curricular já foi associado a um tipo de grupo curricular.</value>
+  </data>
+  <data name="UN_componente_curricular_ementa_01" xml:space="preserve">
+    <value>Já existe ementa cadastrada para este componente curricular nesta data de início.</value>
+  </data>
+  <data name="UN_componente_curricular_entidade_01" xml:space="preserve">
+    <value>Entidade já está associada ao componente curricular.</value>
+  </data>
+  <data name="UN_componente_curricular_nivel_ensino_01" xml:space="preserve">
+    <value>Nível de ensino já está associado ao componente curricular.</value>
+  </data>
+  <data name="UN_componente_curricular_organizacao_01" xml:space="preserve">
+    <value>Já existe organização cadastrada para este componente curricular com esta descrição.</value>
+  </data>
+  <data name="UN_condicao_obrigatoriedade_01" xml:space="preserve">
+    <value>Já existe condição de obrigatoriedade cadastrada com esta descrição para esta instituição de ensino.</value>
+  </data>
+  <data name="UN_configuracao_componente_01" xml:space="preserve">
+    <value>Já existe uma configuração para este componente com a mesma descrição e descrição complementar</value>
+  </data>
+  <data name="UN_configuracao_componente_02" xml:space="preserve">
+    <value>Já existe configuração de componente cadastrada com este código.</value>
+  </data>
+  <data name="UN_curriculo_01" xml:space="preserve">
+    <value>Já existe currículo cadastrado com este código.</value>
+  </data>
+  <data name="UN_curriculo_02" xml:space="preserve">
+    <value>Já existe currículo cadastrado com esta combinação de descrição e descrição complementar neste curso.</value>
+  </data>
+  <data name="UN_curriculo_curso_oferta_01" xml:space="preserve">
+    <value>Não é permitido associar a mesma oferta de curso a um currículo mais de uma vez.</value>
+  </data>
+  <data name="UN_curriculo_curso_oferta_grupo_01" xml:space="preserve">
+    <value>Grupo curricular já está associado à esta oferta de curso no currículo.</value>
+  </data>
+  <data name="UN_dispensa_01" xml:space="preserve">
+    <value>Já existe dispensa cadastrada com estes grupos.</value>
+  </data>
+  <data name="UN_dispensa_matriz_excecao_01" xml:space="preserve">
+    <value>Matriz curricular já está configurada como exceção desta dispensa.</value>
+  </data>
+  <data name="UN_divisao_componente_01" xml:space="preserve">
+    <value>Já existe divisão de componente cadastrada com este número.</value>
+  </data>
+  <data name="UN_divisao_curricular_01" xml:space="preserve">
+    <value>Já existe divisão curricular cadastrada com esta descrição para este nível de ensino e instituição.</value>
+  </data>
+  <data name="UN_divisao_curricular_item_01" xml:space="preserve">
+    <value>Já existe item de divisão curricular cadastrado com esta descrição nesta divisão curricular.</value>
+  </data>
+  <data name="UN_grupo_configuracao_componente_01" xml:space="preserve">
+    <value>Já existe grupo de configuração de componente deste tipo cadastrado com esta descrição.</value>
+  </data>
+  <data name="UN_grupo_configuracao_componente_item_01" xml:space="preserve">
+    <value>Não é possível salvar este grupo, pois este contém configuração que já está em uso em outro grupo.</value>
+  </data>
+  <data name="UN_grupo_curricular_01" xml:space="preserve">
+    <value>Já existe grupo curricular com esta descrição neste currículo.</value>
+  </data>
+  <data name="UN_grupo_curricular_componente_01" xml:space="preserve">
+    <value>Componente curricular já está associado a este grupo curricular.</value>
+  </data>
+  <data name="UN_instituicao_nivel_condicao_obrigatoriedade_01" xml:space="preserve">
+    <value>Condição de obrigatoriedade já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_componente_curricular_01" xml:space="preserve">
+    <value>Tipo de componente curricular já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_divisao_componente_01" xml:space="preserve">
+    <value>Tipo de divisão de componente já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_divisao_curricular_01" xml:space="preserve">
+    <value>Tipo de divisão curricular já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_grupo_curricular_01" xml:space="preserve">
+    <value>Tipo de grupo curricular já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_matriz_curricular_02" xml:space="preserve">
+    <value>Inclusão não permitida. Já existe matriz com o mesmo código.</value>
+  </data>
+  <data name="UN_matriz_curricular_oferta_01" xml:space="preserve">
+    <value>Inclusão não permitida. Já existe oferta de curso para esta localidade e turno.</value>
+  </data>
+  <data name="UN_matriz_curricular_requisito_01" xml:space="preserve">
+    <value>Requisito já está associado a esta matriz curricular.</value>
+  </data>
+  <data name="UN_dispensa_grupo_componente_01" xml:space="preserve">
+    <value>Componente curricular já está associado a este grupo de dispensa.</value>
+  </data>
+  <data name="UN_tipo_componente_curricular_01" xml:space="preserve">
+    <value>Já existe tipo de componente curricular cadastrado com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_configuracao_grupo_curricular_01" xml:space="preserve">
+    <value>Já existe configuração de grupo curricular com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_configuracao_grupo_curricular_02" xml:space="preserve">
+    <value>Já existe configuração de grupo curricular com este token.</value>
+  </data>
+  <data name="UN_tipo_divisao_componente_01" xml:space="preserve">
+    <value>Já existe tipo de divisão de componente cadastrado com esta descrição para este tipo de componente.</value>
+  </data>
+  <data name="UN_tipo_divisao_curricular_01" xml:space="preserve">
+    <value>Já existe tipo de divisão curricular cadastrado com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_grupo_curricular_01" xml:space="preserve">
+    <value>Já existe tipo de grupo curricular cadastrado com esta descrição.</value>
+  </data>
+  <data name="ERR_RequisitoSemItensException" xml:space="preserve">
+    <value>Não é possível prosseguir o cadastro do requisito. É obrigatório informar pelo menos um item do requisito.</value>
+    <comment>RN_CUR_058.3 Cadastro - Requisito</comment>
+  </data>
+  <data name="ERR_PeriodicoArquivoTipoInvalidoException" xml:space="preserve">
+    <value>Formato de arquivo não permitido. O arquivo deverá estar no formato Excel (extensão ".xlsx").</value>
+  </data>
+  <data name="ERR_PeriodicoArquivoInvalidoException" xml:space="preserve">
+    <value>Operação não permitida. O arquivo deverá conter, nesta ordem, as colunas ISSN, Título, Área de
+Avaliação e Estrato.</value>
+  </data>
+  <data name="ERR_ConfiguracaoComponenteCoRequisitoInvalidoException" xml:space="preserve">
+    <value>Seleção não permitida.{0}</value>
+  </data>
+  <data name="ERR_ConfiguracaoComponenteGerarOrientacaoInvalidoException" xml:space="preserve">
+    <value>Seleção não permitida. É necessário possuir orientador para solicitar a(s) atividade(s): {0}</value>
+  </data>
+  <data name="ERR_PeriodicoArquivoDataInvalidaException" xml:space="preserve">
+    <value>Operação não permitida. Já existe Classificação CAPES cadastrada para este período ou parte dele.</value>
+  </data>
+  <data name="ERR_ComponenteCurricularObrigatorioEntidadeResponsavel" xml:space="preserve">
+    <value>Operação não permitida. É obrigatório informar pelo menos uma entidade responsável.</value>
+  </data>
+  <data name="ERR_RequisitoQuantidadeCargaHorariaInvalidaException" xml:space="preserve">
+    <value>A carga horária deste item deve ser menor ou igual ao somatório das cargas horárias da matriz curricular do componente selecionado.</value>
+  </data>
+  <data name="ERR_RequisitoQuantidadeCreditoInvalidaException" xml:space="preserve">
+    <value>A quantidade de créditos deste item deve ser menor ou igual ao somatório dos créditos da matriz o do componente selecionado.</value>
+  </data>
+  <data name="ERR_RequisitoSemDivisaoException" xml:space="preserve">
+    <value>O componente selecionado não está configurado em nenhuma divisão da matriz curricular.</value>
+  </data>
+  <data name="ERR_CurriculoSiglaCursoObrigatoriaException" xml:space="preserve">
+    <value>Não é possível criar ou atualizar um currículo de um curso sem sigla.</value>
+  </data>
+  <data name="ERR_ConfiguracaoComponenteAtividadeSemComponenteException" xml:space="preserve">
+    <value>Matriz curricular oferta sem configuração de componente. Por favor entre em contato com a secretaria.</value>
+  </data>
+  <data name="ERR_ConfiguracaoComponenteAtividadeSemMatrizException" xml:space="preserve">
+    <value>Ingressante sem matriz curricular oferta. Por favor entre em contato com  a secretaria.</value>
+  </data>
+  <data name="ERR_MatrizCurriculaOfertaInexistenteException" xml:space="preserve">
+    <value>Não existe matriz ativa para {0} no dia {1}.</value>
+  </data>
+  <data name="ERR_ConfiguracaoComponentePreRequisitoInvalidoException" xml:space="preserve">
+    <value>Seleção não permitida.{0}</value>
+  </data>
+  <data name="UN_periodico_01" xml:space="preserve">
+    <value>Operação não permitida. Já existe um períódico com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_componente_curricular_02" xml:space="preserve">
+    <value>Já existe tipo de componente curricular cadastrado com esta sigla.</value>
+  </data>
+  <data name="ERR_DispensaDataFimInvalidaException" xml:space="preserve">
+    <value>Não é possível prosseguir o cadastro/alteração da dispensa. Não é permitido que a data fim da vigência seja menor que a data atual.</value>
+  </data>
+  <data name="ERR_DispensaSolicitacaoServicoAssociadaException" xml:space="preserve">
+    <value>Operação não permitida. Esta dispensa foi associada a uma solicitação de dispensa.</value>
+  </data>
+  <data name="ERR_ComponenteCurricularAlteracaoDescricaoTurmaDiarioFechadoException" xml:space="preserve">
+    <value>Não é permitido alterar a descrição do componente curricular pois o mesmo está vinculado à turmas que possuem o diário fechado.</value>
+  </data>
+  <data name="ERR_MatrizCurricularOfertaAlunoAssociadoExcluirException" xml:space="preserve">
+    <value>Operação não permitida. Existem alunos associados às ofertas de matriz:&lt;br/&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="ERR_MatrizCurricularOfertaConfiguracaoAlunoAssociadoExcluirException" xml:space="preserve">
+    <value>Operação não permitida. Existem alunos associados à oferta de matriz das configurações:&lt;br /&gt;&lt;br /&gt;{0}</value>
+  </data>
+  <data name="FK_divisao_componente_03" xml:space="preserve">
+    <value>Exclusão não permitida. Organização de componente já está associado a alguma divisão de configuração de componente curricular.</value>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoComponenteCurricularExigeCargaHoraria" xml:space="preserve">
+    <value>Existe tipo de divisão com o parâmetro "Permite carga horária grade" igual a sim, nesse caso o parâmetro "Exibe carga horária?" do componente também deve ser sim.</value>
+  </data>
+  <data name="ERR_RequisitoGrupoCurricularComMesmoComponenteSelecionadoException" xml:space="preserve">
+    <value>Não é possível incluir grupo curricular em que um de seus componentes seja o componente curricular selecionado.</value>
+  </data>
+  <data name="UN_divisao_matriz_curricular_componente_01" xml:space="preserve">
+    <value>Esta configuração de componente já está associada a esse componente neste grupo curricular.</value>
+  </data>
+  <data name="ERR_RequisitoCoRequisitoSemComponenteTipoGestaoTurmaException" xml:space="preserve">
+    <value>É permitido incluir Có-Requisito somente para componentes com divisão de componente com tipo gestão turma. </value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteJaAssociadaTurmaException" xml:space="preserve">
+    <value>Alteração não permitida. Já existe turma ofertada para o curso '{0} - {1} - {2}' associada a essa configuração de componente curricular.</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteAssuntoJaAssociadoTurmaException" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe uma oferta de turma para esse componente curricular substituto para o curso '{0} - {1} - {2}'.</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteNotaEscalaSelecionadosException" xml:space="preserve">
+    <value>Para cada divisão da configuração do componente, é permitido cadastrar ou a Nota Máxima ou a Escala de Apuração.</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteApuracaoFrequenciaException" xml:space="preserve">
+    <value>O critério de aprovação selecionado exige apuração por frequência, portanto pelo menos uma divisão da configuração deve ter apuração por frequência também.</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteApuracaoNotaException" xml:space="preserve">
+    <value>O critério de aprovação selecionado exige apuração por nota, portanto pelo menos uma divisão da configuração deve ter nota máxima e as demais divisões escalas de apuração de tipo diferente de "Conceito".</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteConceitoException" xml:space="preserve">
+    <value>O critério de aprovação selecionado possui escala de apuração de tipo diferente de "Conceito", portanto todas as divisões da configuração devem ter escala de tipo diferente de "Conceito" também.</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteNotaMaximaException" xml:space="preserve">
+    <value>O somatório das notas máximas das divisões deve ser igual à nota máxima do critério de aprovação selecionado.</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteSubstitutoException" xml:space="preserve">
+    <value>O componente tipo assunto deverá ter a mesma carga horária e/ou quantidade de créditos da configuração à qual está sendo associado.</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteComApenasEscalaException" xml:space="preserve">
+    <value>O critério selecionado possui apenas escala de apuração, portanto todas as divisões da configuração só podem ter escala associada, e pelo menos uma divisão tem que ter a escala do critério em questão. </value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteComEscalaNotaException" xml:space="preserve">
+    <value>O critério selecionado possui nota máxima e escala de apuração, portanto cada divisão da configuração deve ter ou nota ou escala associada, e as que tiverem escala devem ter o tipo de escala de apuração diferente de "Conceito".</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteCriterioSemNotaEscalaException" xml:space="preserve">
+    <value>Não é permitido inserir nota máxima ou escala de apuração nas divisões da configuração se o critério selecionado não possui nota máxima e não possui escala de apuração.</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteNotaOuEscalaObrigatorioException" xml:space="preserve">
+    <value>Não é permitido salvar uma divisão de configuração que não tenha nota máxima nem escala associada. </value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteSemCriterioSelecionadoException" xml:space="preserve">
+    <value>Não é permitido inserir nota máxima ou escala de apuração nas divisões da configuração se não há critério selecionado. </value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteCriterioAprovacaoException" xml:space="preserve">
+    <value>Os critérios de aprovação selecionados para os níveis de ensino devem ter a mesma parametrização de apuração por frequência e de apuração por nota.</value>
+  </data>
+  <data name="ERR_RequisitoItensDupliacadosException" xml:space="preserve">
+    <value>Não é possível prosseguir o cadastro do requisito. Pois existe itens duplicados.</value>
+  </data>
+  <data name="ERR_AssuntoJaOfertadoEmTurmaException" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe turma ofertada para o curso {0} - {1} - {2} associada a esse assunto de componente curricular.</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteSubstitutoRepeditosMesmoGrupoCurricularException" xml:space="preserve">
+    <value>Associação não permitida. Este assunto já foi associado a esta configuração de componente neste grupo curricular</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteComApenasNotaMaximaException" xml:space="preserve">
+    <value>O critério selecionado possui apenas nota máxima, portanto todas as divisões da configuração só podem ter nota associada.</value>
+  </data>
+  <data name="FK_matriz_curricular_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe matriz curricular cadastrada com esta divisão curricular.</value>
+  </data>
+  <data name="FK_matriz_curricular_03" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe matriz curricular cadastrada com esta modalidade.</value>
+  </data>
+  <data name="FK_matriz_curricular_04" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe matriz curricular cadastrada com este componente como padrão.</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteAssociadaTurmaException" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe turma ofertada para o curso '{0} - {1} - {2}' associada a essa configuração de componente curricular.</value>
+  </data>
+  <data name="ERR_GrupoConfiguracaoComponenteExclusaoNaoPermitidaException" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe turma ofertada para este componente para a matriz {0}: {1}</value>
+  </data>
+  <data name="ERR_DivisaoMatrizCurricularComponenteNaoEncontradaException" xml:space="preserve">
+    <value>Não foi possível recuperar os dados do componente curricular na matriz curricular. Confirme se o componente está corretamente configurado na matriz curricular.</value>
+  </data>
+  <data name="ERR_ConfiguracaoComponenteComTurmaException" xml:space="preserve">
+    <value>Não é permitida a exclusão de um grupo com configurações associadas a turmas compartilhadas (codigo(s) de turma: {0}).</value>
+  </data>
+  <data name="FK_documento_academico_curriculo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Documento Acadêmico é um documento XML de currículo.</value>
+  </data>
+  <data name="FK_documento_academico_curriculo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Currículo já possui documentos academicos emitidos.</value>
+  </data>
+  <data name="ERR_ComponenteCurricularAssociadoComoAssuntoNaMatrizException" xml:space="preserve">
+    <value>Alteração não permitida. Esse componente curricular está associado como assunto a uma ou mais configurações de componente em matriz.</value>
+    <comment>RN_CUR_036</comment>
+  </data>
+  <data name="ERR_DadosCurriculoNaoLocalizadoException" xml:space="preserve">
+    <value>Dados não encontrados: sequência do curso, oferta, localidade, grau acadêmico e data de referência</value>
+  </data>
+</root>

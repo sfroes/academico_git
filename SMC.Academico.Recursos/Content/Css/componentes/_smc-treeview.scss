@@ -1,0 +1,92 @@
+﻿// TREEVIEW COM ÍCONES PERSONALIZADOS
+
+.smc-sga-treeview-header {
+    background-color: transparent !important;
+
+    .fancytree-expander {
+        display: none;
+    }
+
+    span.fancytree-title {
+        width: 100%;
+        background-color: transparent !important;
+
+        .smc-header-tipo-primary {
+            margin-top: 15px;
+        }
+    }
+}
+
+%smc-sga-treeview-ico {
+    @extend .fa;
+    color: $smc-cor-secundaria-01;
+    margin: 0 7px 0 0;
+}
+
+.smc-sga-check-disable {
+    .fancytree-title {
+        &:before {
+            content: " ";
+            width: 18px;
+            height: 18px;
+            background: $smc-cinza-03;
+            border: solid 1px $smc-cinza-05;
+            display: block;
+            float: left;
+            margin: 0 7px 0 -4px;
+            cursor: no-drop;
+        }
+    }
+}
+
+.smc-sga-treeview-ico-link {
+    .fancytree-title {
+        .smc-treeview-item {
+            a{
+                text-decoration:underline;
+            }
+            a:before {
+                @extend %smc-sga-treeview-ico;
+                @extend .fa-link;
+            }
+
+            a:after {
+                @extend %smc-sga-treeview-ico;
+                @extend .fa-external-link;
+                content: "\f08e";
+                // display: block;
+                // float: right;
+                font-size: 11px;
+                margin: 3px 0 0 5px;
+                position: absolute;
+                color: $smc-cor-principal-04;
+            }
+        }
+    }
+
+    .fancytree-checkbox {
+        display: none;
+    }
+}
+
+.smc-sga-treeview-ico-pasta {
+    .fancytree-title {
+        .smc-treeview-item {
+            a:before {
+                @extend %smc-sga-treeview-ico;
+                @extend .fa-folder-open-o;
+            }
+        }
+    }
+}
+
+.smc-sga-treeview-ico-arquivo {
+    .fancytree-title {
+        .smc-treeview-item {
+            a:before {
+                @extend %smc-sga-treeview-ico;
+                @extend .fa-file-o;
+            }
+        }
+    }
+}

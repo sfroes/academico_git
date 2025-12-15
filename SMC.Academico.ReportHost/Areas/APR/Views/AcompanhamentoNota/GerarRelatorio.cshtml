@@ -1,0 +1,273 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.APR.Models
+@model RelatorioAcompanhamentoNotaViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Corpo report</title>
+    <style>
+        .report-table {
+            width: 100%;
+            font-size: 13px;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .report-table-legend {
+            width: 100%;
+            font-size: 13px;
+            border-collapse: collapse;
+            margin-bottom: 5px;
+        }
+
+        .report-header-flex {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+            .report-header-flex td {
+                font-size: 15px;
+            }
+
+                .report-header-flex td:first-child {
+                    text-align: left;
+                    width: 80%;
+                }
+
+                .report-header-flex td:last-child {
+                    text-align: right;
+                    width: 20%;
+                }
+
+        .report-table tr td {
+            padding: 6px;
+            text-align: right;
+        }
+
+            .report-table tr td:first-child {
+                text-align: left;
+            }
+
+        .report-table-header {
+            background-color: #f1f1f1;
+            border-bottom: 1px solid #cecece;
+            font-weight: 600;
+        }
+
+        .report-table tbody tr {
+            border-bottom: 2px solid #ccc;
+        }
+
+            .report-table tbody tr:nth-of-type(even) {
+                background-color: #f1f1f1;
+            }
+    </style>
+</head>
+<body>
+    @{
+        if (@Model.TemTurma)
+        {
+
+            var colspanTurma = (@Model.Turma.Avaliacoes.Count + 4) + (@Model.Turma.ExibirFaltas ? 1 : 0);
+
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <td colspan="@colspanTurma">
+                            <table class="report-table-legend">
+                                <thead>
+                                    <tr class="report-header-flex"><td><b>@Model.Turma.DescricaoTurma</b></td>
+                                    <td><b>Ciclo letivo: @Model.Turma.DescricaoCicloLetivo</b></td>
+                                    </tr>
+                                    <tr class="report-header-flex">
+                                        <td>Professor(es): @Model.Turma.Professores</td>
+                                        <td><b>Situação do diário: @Model.Turma.SituacaoDiario</b></td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="report-table-header">
+                        <td>Nome</td>
+                        @foreach (var item in @Model.Turma.Avaliacoes)
+                        {
+                            <td>@item.Sigla</td>
+                        }
+                        <td>Total Parcial</td>
+                        <td>Total Final</td>
+                        @if (Model.Turma.ExibirFaltas)
+                        {
+                            <td>Total de Faltas</td>
+                        }
+                        <td>Situação</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (var aluno in @Model.Turma.Alunos)
+                        {
+                            <tr>
+                                <td>@aluno.RA - @aluno.Nome</td>
+                                @foreach (var apuracao in aluno.Apuracoes)
+                                {
+                                    <td>@apuracao.Nota</td>
+
+                                }
+                                <td>@aluno.TotalParcial</td>
+                                <td>@aluno.TotalFinal</td>
+                                @if (aluno.ExibirFaltas)
+                                {
+                                    <td>@aluno.Faltas</td>
+                                }
+                                <td>@aluno.Situacao</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            if (@Model.Turma.DivisoesTuma.Count > 0)
+            {
+                foreach (var divisao in @Model.Turma.DivisoesTuma)
+                {
+                    var colspanDivisao = (@divisao.Avaliacoes.Count + 2) + (@Model.Turma.ExibirFaltas ? 1 : 0);
+
+                    <table class="report-table">
+                        <thead>
+                            <tr>
+                                <td colspan="@colspanDivisao">
+                                    <table class="report-table-legend">
+                                        <thead>
+                                            <tr>
+                                                <td>
+                                                    <b>@Model.DivisaoTurma.DescricaoTurma</b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>@divisao.CodificacaoDescricaoTurma</b>
+                                                </td>
+                                            </tr>
+                                            <tr class="report-header-flex">
+                                                <td>Professor(es): @divisao.Professores</td>
+                                                <td>Total de pontos: @divisao.TotalPontos</td>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr class="report-table-header">
+                                <td>Aluno</td>
+                                @{
+                                    foreach (var item in divisao.Avaliacoes)
+                                    {
+                                        <td>@item.Sigla</td>
+                                    }}
+                                <td>Total na DT</td>
+                                @if (divisao.ExibirFaltas)
+                                {
+                                    <td>Faltas</td>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @{
+                                foreach (var aluno in divisao.Alunos)
+                                {
+                                    <tr>
+                                        <td>@aluno.RA - @aluno.Nome</td>
+                                        @foreach (var apuracao in aluno.Apuracoes)
+                                        {
+                                            <td>@apuracao.Nota</td>
+
+                                        }
+                                        <td>@aluno.TotalDT</td>
+                                        @if (aluno.ExibirFaltas)
+                                        {
+                                            <td>@aluno.Faltas</td>
+                                        }
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                }
+            }
+
+        }
+        else
+        {
+            var colspanDivisao = (@Model.DivisaoTurma.Avaliacoes.Count + 2) + (Model.DivisaoTurma.ExibirFaltas ? 1 : 0);
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <td colspan="@colspanDivisao">
+                            <table class="report-table-legend">
+                                <thead>
+                                    <tr class="report-header-flex">
+                                        <td>
+                                            <b>@Model.DivisaoTurma.DescricaoTurma</b>
+                                        </td>
+                                        <td>
+                                            <b>Ciclo letivo: @Model.DivisaoTurma.DescricaoCicloLetivo</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b>@Model.DivisaoTurma.CodificacaoDescricaoTurma</b>
+                                        </td>
+                                    </tr>
+                                    <tr class="report-header-flex">
+                                        <td>Professor(es): @Model.DivisaoTurma.Professores</td>
+                                        <td>Total de pontos: @Model.DivisaoTurma.TotalPontos</td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="report-table-header">
+                        <td>Aluno</td>
+                        @{
+                            foreach (var item in @Model.DivisaoTurma.Avaliacoes)
+                            {
+                                <td>@item.Sigla</td>
+                            }}
+                        <td>Total na DT</td>
+                        @if (Model.DivisaoTurma.ExibirFaltas)
+                        {
+                            <td>Faltas</td>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                        foreach (var aluno in @Model.DivisaoTurma.Alunos)
+                        {
+                            <tr>
+                                <td>@aluno.RA - @aluno.Nome</td>
+                                @foreach (var apuracao in aluno.Apuracoes)
+                                {
+                                    <td>@apuracao.Nota</td>
+
+                                }
+                                <td>@aluno.TotalDT</td>
+                                @if (aluno.ExibirFaltas)
+                                {
+                                    <td>@aluno.Faltas</td>
+                                }
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        }
+    }
+</body>
+</html>

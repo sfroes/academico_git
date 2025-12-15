@@ -1,0 +1,57 @@
+﻿@model CampanhaOfertaFiltroViewModel
+
+@Html.Action("CabecalhoCampanhaOferta", Model.SeqCampanha)
+
+@using (Smc.Form("formPesquisaCampanhaOferta", "ListarCampanhaOfertas").Ajax("#divGridCampanhaOferta").Begin())
+{
+    using (Smc.Fieldset("filtroCampanhaOferta").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(m => m.SeqTipoOferta)
+        @Smc.EditorFor(m => m.Oferta)
+        @Smc.HiddenFor(m => m.SeqCampanha)
+
+        @(Smc.ButtonSet().Size(SMCSize.Grid24_24)
+                                                            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                                                            .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+                                                            .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                                                                    .Tooltip(Smc.GetUIResource("Botao_Associar_Oferta_Tooltip"))
+                                                                    .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                                                    .Type(SMCButtonType.Link)
+                                                                    .SecurityToken(UC_CAM_001_01_04.ASSOCIAR_OFERTA_CAMPANHA)
+                                                                    .Url(Url.Action("Incluir", new
+                                                                    {
+                                                                        seqCampanha = (SMCEncryptedLong)Model.SeqCampanha
+                                                                    })))
+        )
+    }
+}
+
+@using (Smc.Form("formCampanhaOferta", "ConfigurarVagas").Begin())
+{
+    <div id="divGridCampanhaOferta">
+        @Html.Action("ListarCampanhaOfertas", Model)
+    </div>
+
+    @Smc.HiddenFor(m => m.SeqCampanha)
+    @(Smc.ButtonSet()
+                                        .AddButton(Smc.Button(SMCButtonBehavior.Configurar)
+                                                .CssClass("smc-btn-alterar-icotext-destaque")
+                                                .Text(Smc.GetUIResource("Botao_Configurar_Vagas"))
+                                                .Tooltip(Smc.GetUIResource("Botao_Configurar_Vagas"))
+                                                .Attribute("id", "btnConfigVaga")
+                                                .Action("ConfigurarVagas", "CampanhaOferta")
+                                                .Type(SMCButtonType.Submit)
+                                                .Enabled(false)
+                                                .Conditional(SMCConditionalBehavior.ReadOnly, "gridCampanhaOferta_Grid", SMCConditionalOperation.Equals, false))
+                                        .AddButton(Smc.Button("Voltar")
+                                                .CssClass("smc-btn-voltar-icotext")
+                                                .Action("Index", "Campanha")
+                                                .Type(SMCButtonType.Link))
+    )
+}
+
+@section scripts
+{
+    @* Reseta o conditional do botão de configurar vagas ao efetuar um novo filtro *@
+    <script src="@Url.SMCBuscarRecursoGlobalAplicacao("Scripts/Areas/CAM/Index.js")" type="text/javascript"></script>
+}

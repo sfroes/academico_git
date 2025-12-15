@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSHistoricoEscolarBancasAvaliacoes" targetNamespace="http://tempuri.org/DSHistoricoEscolar.xsd" xmlns:mstns="http://tempuri.org/DSHistoricoEscolar.xsd" xmlns="http://tempuri.org/DSHistoricoEscolar.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSHistoricoEscolarBancasAvaliacoes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="_DSHistoricoEscolarBancasAvaliacoes" msprop:Generator_UserDSName="DSHistoricoEscolarBancasAvaliacoes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSHistoricoEscolarBancasAvaliacoes" msprop:Generator_TableClassName="DSHistoricoEscolarBancasAvaliacoesDataTable" msprop:Generator_TableVarName="tableDSHistoricoEscolarBancasAvaliacoes" msprop:Generator_TablePropName="DSHistoricoEscolarBancasAvaliacoes" msprop:Generator_RowDeletingName="DSHistoricoEscolarBancasAvaliacoesRowDeleting" msprop:Generator_RowChangingName="DSHistoricoEscolarBancasAvaliacoesRowChanging" msprop:Generator_RowEvHandlerName="DSHistoricoEscolarBancasAvaliacoesRowChangeEventHandler" msprop:Generator_RowDeletedName="DSHistoricoEscolarBancasAvaliacoesRowDeleted" msprop:Generator_UserTableName="DSHistoricoEscolarBancasAvaliacoes" msprop:Generator_RowChangedName="DSHistoricoEscolarBancasAvaliacoesRowChanged" msprop:Generator_RowEvArgName="DSHistoricoEscolarBancasAvaliacoesRowChangeEvent" msprop:Generator_RowClassName="DSHistoricoEscolarBancasAvaliacoesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SeqConfiguracaoComponente" msprop:Generator_ColumnVarNameInTable="columnSeqConfiguracaoComponente" msprop:Generator_ColumnPropNameInRow="SeqConfiguracaoComponente" msprop:Generator_ColumnPropNameInTable="SeqConfiguracaoComponenteColumn" msprop:Generator_UserColumnName="SeqConfiguracaoComponente" type="xs:long" minOccurs="0" />
+              <xs:element name="SeqTrabalhoAcademico" msprop:Generator_ColumnVarNameInTable="columnSeqTrabalhoAcademico" msprop:Generator_ColumnPropNameInRow="SeqTrabalhoAcademico" msprop:Generator_ColumnPropNameInTable="SeqTrabalhoAcademicoColumn" msprop:Generator_UserColumnName="SeqTrabalhoAcademico" type="xs:long" minOccurs="0" />
+              <xs:element name="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_UserColumnName="Data" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Resultado" msprop:Generator_ColumnVarNameInTable="columnResultado" msprop:Generator_ColumnPropNameInRow="Resultado" msprop:Generator_ColumnPropNameInTable="ResultadoColumn" msprop:Generator_UserColumnName="Resultado" type="xs:string" minOccurs="0" />
+              <xs:element name="EsconderComissao" msprop:Generator_ColumnVarNameInTable="columnEsconderComissao" msprop:Generator_ColumnPropNameInRow="EsconderComissao" msprop:Generator_ColumnPropNameInTable="EsconderComissaoColumn" msprop:Generator_UserColumnName="EsconderComissao" type="xs:boolean" minOccurs="0" />
+              <xs:element name="SeqAplicacaoAvaliacao" msprop:Generator_ColumnVarNameInTable="columnSeqAplicacaoAvaliacao" msprop:Generator_ColumnPropNameInRow="SeqAplicacaoAvaliacao" msprop:Generator_ColumnPropNameInTable="SeqAplicacaoAvaliacaoColumn" msprop:Generator_UserColumnName="SeqAplicacaoAvaliacao" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

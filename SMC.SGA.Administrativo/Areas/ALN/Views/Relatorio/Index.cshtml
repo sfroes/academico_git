@@ -1,0 +1,130 @@
+﻿@using SMC.Academico.Common.Areas.ALN.Enums
+@model RelatorioFiltroViewModel
+
+@using (Smc.Form("frmViewPadrao", "BuscarAlunosRelatorio", Model).Ajax("#divViewPadrao").Begin())
+{
+    using (Smc.Fieldset("fieldsetTipoRelatorio").Size(SMCSize.Grid24_24).CssClass("smc-fieldset-filter smc-filtro-relatorio").Begin())
+    {
+        <h4>@Smc.GetUIResource("Configuracoes_Relatorio")</h4>
+
+        using (Smc.Fieldset("fieldsetParametrosRelatorio").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            @Smc.EditorFor(prop => prop.TipoRelatorio).Size(SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24)
+            using (Smc.Div().Size(SMCSize.Grid16_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").ConditionalDisplay("TipoRelatorio", SMCConditionalOperation.Equals, TipoRelatorio.IdentidadeEstudantil).Begin())
+            {
+                <p>@Html.Raw(Smc.GetUIResource("MSG_Informacao_Identidade_Estudantil"))</p>
+            }
+
+            @Smc.EditorFor(prop => prop.SeqCicloLetivo).Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+            @Smc.EditorFor(prop => prop.ImprimirComponenteCurricularSemCreditos).Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+            @Smc.EditorFor(prop => prop.ExibirMediaNotas).Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+            @Smc.EditorFor(prop => prop.ExibeProfessor).Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+            @Smc.EditorFor(prop => prop.ExibirNaDeclaracao).Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+            @Smc.EditorFor(prop => prop.ExibirEmentasComponentesCurriculares).Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24)
+            @Smc.EditorFor(prop => prop.TituloListagem).Size(SMCSize.Grid10_24, SMCSize.Grid10_24, SMCSize.Grid10_24, SMCSize.Grid10_24)
+            @Smc.EditorFor(prop => prop.ExibirCampoAssinatura).Size(SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24)
+            @Smc.EditorFor(prop => prop.SeqNivelEnsinoPorGrupoDocumentoAcademico).Size(SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24)
+            @Smc.EditorFor(prop => prop.SeqTipoDocumentoAcademico).Size(SMCSize.Grid7_24, SMCSize.Grid7_24, SMCSize.Grid7_24, SMCSize.Grid7_24)
+            @Smc.EditorFor(prop => prop.IdiomaDocumentoAcademico).Size(SMCSize.Grid5_24, SMCSize.Grid5_24, SMCSize.Grid5_24, SMCSize.Grid5_24)
+        }
+    }
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-mensagem-flex").Begin())
+    {
+        var buttonSet = Smc.ButtonSet().Type(SMCButtonSetType.Primary);
+
+        buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                 .Attribute(SMCMvcConsts.MODAL_ID, "modalMigracao")
+                 .Ajax(isPost: false)
+                 .CssClass("smc-sga-btn-sincroniza-aluno")
+                 .Text(Smc.GetUIResource("Botao_Sincronizar_Aluno"))
+                 .Tooltip(Smc.GetUIResource("Botao_Sincronizar_Aluno"))
+                 .Type(SMCButtonType.Link)
+                 .SecurityToken(UC_ALN_001_01_03.IMPORTAR_ALUNO)
+                 .Action("ModalSincronizarDadosAluno", "Aluno", new { area = "ALN" }));
+        @buttonSet;
+
+        <p>@Html.Raw(Smc.GetUIResource("MSG_Informacao_Filtro"))</p>
+    }
+
+    //Filtros
+    using (Smc.Fieldset("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.NumeroRegistroAcademico)
+        @Smc.EditorFor(prop => prop.CodigoAlunoMigracao)
+        @Smc.EditorFor(prop => prop.Nome)
+        @Smc.EditorFor(prop => prop.SeqCicloLetivoIngresso)
+        @Smc.EditorFor(prop => prop.SeqSituacaoMatricula)
+        @Smc.EditorFor(prop => prop.SeqEntidadesResponsaveis)
+
+        @Smc.EditorFor(prop => prop.SeqsEntidadesResponsaveis)
+
+        @Smc.EditorFor(prop => prop.SeqCursoOferta)
+        @Smc.EditorFor(prop => prop.SeqLocalidade)
+        @Smc.EditorFor(prop => prop.SeqTurno)
+        @Smc.EditorFor(prop => prop.SeqNivelEnsino)
+        @Smc.EditorFor(prop => prop.SeqTipoVinculoAluno)
+
+        var buttonSet = Smc.ButtonSet();
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight());
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Limpar).DisplayMode(SMCButtonDisplayMode.Icon).Attribute("data-clear", "#divViewPadrao"));
+        buttonSet.AddButton(Smc.Button("Gerar_Relatorio").Url(Url.Action("GerarRelatorio"))
+                                                         .Ajax(fieldsContainerToRequest: "#divViewPadrao #fieldsetParametrosRelatorio #TipoRelatorio", onSuccess: "GerarRelatorio")
+                                                         .CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+                                                         .Text(Smc.GetUIResource("Botao_Relatorio"))
+                                                         .Tooltip(Smc.GetUIResource("Botao_Relatorio_Tooltip"))
+                                                         .Attribute("data-behavior-download", "true")
+                                                         .ConditionalDisplay("TipoRelatorio", SMCConditionalOperation.NotEqual, TipoRelatorio.DeclaracaoGenerica));
+        buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Url(Url.Action("ConfigurarRelatorioDeclaracaoGenerica"))
+                                                          .Ajax(fieldsContainerToRequest: "#divViewPadrao #fieldsetParametrosRelatorio #TipoRelatorio")
+                                                          .Attribute(SMCMvcConsts.MODAL_ID, "modalConfigurarRelatorio")
+                                                          .Type(SMCButtonType.Link)
+                                                          .Text(Smc.GetUIResource("Botao_Configurar_Relatorio"))
+                                                          .Tooltip(Smc.GetUIResource("Botao_Configurar_Relatorio"))
+                                                          .CssClass("smc-sga-btn-config-relatorio")
+                                                          .ConditionalDisplay("TipoRelatorio", SMCConditionalOperation.Equals, TipoRelatorio.DeclaracaoGenerica));
+        buttonSet.CssClass("smc-sga-buttonset-assinatura");
+
+        @buttonSet;
+
+    }
+
+    using (Smc.Div("divViewPadrao").Attribute("data-id", "divViewPadrao").Size(SMCSize.Grid24_24).Begin())
+    {
+    }
+}
+
+@using (Smc.ModalWindow("modalMigracao")
+        .Title(Smc.GetUIResource("Title_Sincronizar_Aluno"))
+        .Form("Sincronizar", "BuscarESincronizarDadosAluno", "Aluno", null, true, x => x.Ajax())
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalConfigurarRelatorio")
+        .Size(SMCModalWindowSize.Largest)
+        .Title(Smc.GetUIResource("Title_Configurar_Relatorio"))
+        .Form("ConfigurarRelatorio", closeOnSubmit: true)
+        .Button("Gerar_Relatorio", config: bnt => bnt.Type(SMCButtonType.Link).CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+            .Url(Url.Action("EmitirRelatorioDeclaracaoGenerica"))
+            .Ajax(fieldsContainerToRequest: "#ConfigurarRelatorio", onSuccess: "GerarRelatorio")
+            .Text(Smc.GetUIResource("Botao_Emitir_Relatorio_Declaracao_Generica"))
+            .Tooltip(Smc.GetUIResource("Botao_Emitir_Relatorio_Declaracao_Generica_Tooltip"))
+            .Attribute("data-behavior-download", "true")
+            .Attribute("data-closeonsubmit", "true")
+            )
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.Type(SMCButtonType.Link).CssClass("smc-btn-enviar-assinatura-icotext-destaque")
+            .Url(Url.Action("EnviarParaAssinatura"))
+            .Id("btn_EnviarParaAssinatura")
+            .Ajax(fieldsContainerToRequest: "#ConfigurarRelatorio")
+            .Text(Smc.GetUIResource("Botao_Enviar_Para_Assinatura"))
+            .Tooltip(Smc.GetUIResource("Botao_Enviar_Para_Assinatura"))
+            .Attribute("data-closeonsubmit", "true")
+            )
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{ }
+
+@section Scripts{
+    <script type="text/javascript" src=@Url.SMCBuscarRecursoAplicacao("Scripts/Relatorio.js")></script>
+}

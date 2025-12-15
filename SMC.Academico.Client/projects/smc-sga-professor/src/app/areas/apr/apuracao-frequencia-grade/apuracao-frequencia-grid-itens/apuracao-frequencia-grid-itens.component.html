@@ -1,0 +1,46 @@
+<form [formGroup]="form">
+  <div class="smc-sga-grid-lancamento-nota-rolagem" formArrayName="alunos">
+    <div
+      *ngFor="let aluno of alunos$ | async; index as indexAluno"
+      class="smc-sga-grid-lancamento-nota-linha"
+      [formGroupName]="indexAluno"
+    >
+      <ng-container *ngIf="aluno.mostrar">
+        <div class="smc-sga-grid-lancamento-nota-coluna-ra">
+          <p>{{ aluno.numeroRegistroAcademico }}</p>
+        </div>
+        <div class="smc-sga-grid-lancamento-nota-aluno smc-sga-grid-lancamento-nota-aluno-fixa">
+          <p>{{ aluno.nome }}</p>
+          <span *ngIf="!aluno.alunoFormado && aluno.alunoHistoricoEscolar" class="smc-sga-tag">
+            Histórico escolar
+          </span>
+          <span *ngIf="aluno.alunoFormado" class="smc-sga-tag"> Formado </span>
+        </div>
+        <ng-container formArrayName="apuracoes">
+          <ng-container
+            *ngFor="let apuracao of aluno.apuracoes; index as indexApuracao"
+            [formGroupName]="indexApuracao"
+          >
+            <div
+              class="smc-sga-grid-lancamento-frequencia-coluna-avaliacoes smc-sga-alinha-centro"
+              *ngIf="apuracao.mostrar"
+            >
+              <sga-apuracao-frequencia-grid-item-apuracao
+                [formApuracao]="recuperarApuracao(indexAluno, indexApuracao)"
+              ></sga-apuracao-frequencia-grid-item-apuracao>
+            </div>
+          </ng-container>
+        </ng-container>
+        <div class="smc-sga-grid-lancamento-frequencia-coluna-padrao smc-sga-alinha-centro">
+          <p>{{ recuperarTotal(indexAluno) }}</p>
+        </div>
+        <div class="smc-sga-grid-lancamento-frequencia-coluna-padrao smc-sga-alinha-centro">
+          <p>{{ recuperarPercentual(indexAluno) | number: "1.0-0" }}%</p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <!-- <pre *ngIf="devEnv">
+    {{ form.value | json }}
+  </pre> -->
+</form>

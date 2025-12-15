@@ -1,0 +1,19 @@
+﻿using SMC.Academico.ServiceContract.Areas.CSO.Data;
+using SMC.Framework.Mapper;
+using System.Collections.Generic;
+
+namespace SMC.Academico.ServiceContract.Areas.ORT.Data
+{
+    public class ConfiguracaoNumeracaoTrabalhoListaData : ISMCMappable
+    {
+        public long Seq { get; set; }
+
+        public string EntidadeResponsavel { get; set; }
+
+        public string Descricao { get; set; }
+
+        public int NumeroUltimaNumeracao { get; set; }
+
+        public List<ConfiguracaoNumeracaoTrabalhoOfertaListaData> Ofertas { get; set; }
+    }
+}

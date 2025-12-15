@@ -1,0 +1,52 @@
+<div
+  (click)="toggleMenu = !toggleMenu && aulaAtiva && colisaoProfessor()"
+  (mouseleave)="toggleMenu = false"
+  class="smc-sga-grid-lancamento-frequencia-coluna-avaliacoes-header-dia-aula smc-sga-alinha-centro"
+  [title]="hint"
+>
+  <span
+    [class.smc-legend-circle-fill]="!aulaEmCancelamento"
+    [class.smc-legend-circle]="aulaEmCancelamento"
+    [ngClass]="{
+      'smc-legend-green2': aula.situacaoApuracaoFrequencia === 'Executada',
+      'smc-legend-yellow2': aula.situacaoApuracaoFrequencia === 'Não apurada',
+      'smc-legend-red2': aula.situacaoApuracaoFrequencia === 'Não executada',
+      'smc-legend-blue3': aula.situacaoApuracaoFrequencia === 'Em apuração',
+      'smc-legend-grey': aula.situacaoApuracaoFrequencia === 'Em cancelamento'
+    }"
+  ></span>
+  <p class="smc-sga-grid-lancamento-nota-coluna-avaliacoes-sigla">
+    {{ aula.sigla }}
+  </p>
+  <span
+    *ngIf="aulaAtiva && colisaoProfessor()"
+    class="fa"
+    [ngClass]="{
+      'smc-sga-grid-menu-aula-fechado': !toggleMenu,
+      'smc-sga-grid-menu-aula-aberto': toggleMenu
+    }"
+  ></span>
+  <div *ngIf="toggleMenu" class="smc-sga-grid-menu-aula">
+    <ul [style.display]="toggleMenu ? 'block' : 'none'">
+      <li (click)="alterarFrequencia(presente)"><span class="smc-sga-legenda-desbloqueio"></span>Todos presentes</li>
+      <li (click)="alterarFrequencia(ausente)"><span class="smc-sga-legenda-bloqueio"></span>Todos ausentes</li>
+      <li *ngIf="validarLimparTodos(aula)" (click)="alterarFrequencia(null)">
+        <span class="fa fa-circle-o"></span>Limpar todos
+      </li>
+    </ul>
+  </div>
+</div>
+<smc-modal s-title="Aluno(s) com histórico escolar" #modalAlunoHistorico s-hide-close="true">
+  <div s-modal-body>
+    <p>Existe(m) aluno(s) com histórico escolar para essa turma, ao salvar, os dados serão atualizados.</p>
+    <p>Deseja continuar?</p>
+  </div>
+  <div s-modal-footer>
+    <smc-button
+      s-label="Sim"
+      s-tooltip="Sim"
+      (s-click)="alterarFrequencia(this.frequenciaSelecionadaAlunoHistorico, true)"
+    ></smc-button>
+    <smc-button #btnAssertSalvarNao s-label="Não" s-tooltip="Não" (s-click)="modalAlunoHistorico.close()"></smc-button>
+  </div>
+</smc-modal>

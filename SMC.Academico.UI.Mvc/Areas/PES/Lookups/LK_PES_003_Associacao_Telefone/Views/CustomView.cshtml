@@ -1,0 +1,12 @@
+﻿@using SMC.Framework.UI.Mvc.Html.DataSelector
+
+@{object s = ViewBag.DataSelectorSelectedValue; }
+
+@Smc.DataSelectorGrid(s, true, x => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, TempData.Peek("LOOKUP_GUID_JANELA"))
+            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Editar_Telefone_Pessoa"))
+            .Ajax(isPost: false)
+            .CssClass("smc-btn-alterar-ico")
+            .Text(Smc.GetUIResource("Botao_Editar_Telefone_Pessoa"))
+            .Tooltip(Smc.GetUIResource("Botao_Editar_Telefone_Pessoa"))
+            .Action("Editar", "PessoaTelefoneRoute", new { seq = new SMCEncryptedLong((x as SMC.Academico.UI.Mvc.Areas.PES.Lookups.PessoaTelefoneLookupViewModel).Seq), area = string.Empty }))

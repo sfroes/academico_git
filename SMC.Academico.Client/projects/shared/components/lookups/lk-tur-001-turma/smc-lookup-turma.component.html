@@ -1,0 +1,24 @@
+<ng-template #filtro [formGroup]="filterForm">
+  <smc-lookup-ciclo-letivo
+    formControlName="seqCicloLetivoInicio"
+    class="smc-size-md-9"
+    [s-readonly]="disableCicloLetivo"
+  ></smc-lookup-ciclo-letivo>
+  <po-multiselect
+    formControlName="seqsEntidadesResponsaveis"
+    class="smc-size-md-15"
+    p-label="Entidade responsável"
+    [p-options]="dataSourceEntidadesResponsaveis"
+  ></po-multiselect>
+  <smc-lookup-curso-oferta formControlName="seqCursoOferta" class="smc-size-md-18"></smc-lookup-curso-oferta>
+  <po-input formControlName="codigoFormatado" class="smc-size-md-6" p-label="Turma"></po-input>
+  <po-input formControlName="descricaoConfiguracao" class="smc-size-md-20" p-label="Descrição da turma"></po-input>
+</ng-template>
+<smc-lookup
+  [s-advanced-search-template]="filtro"
+  [s-selector]="seletor"
+  [s-advanced-list-columns]="colunasBuscaAvancada"
+  s-search-by-key="false"
+  s-label="Turma"
+>
+</smc-lookup>

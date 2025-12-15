@@ -1,0 +1,9 @@
+﻿@model AvaliacaoTrabalhoAcademicoBancaExaminadoraDynamicModel
+
+@if (Model.AlunoFormado)
+{
+	using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-margin-top-5").Begin())
+	{
+		<p class="smc-sga-msg-conteudo-linha">@Smc.GetUIResource("Mensagem_Informacoes_Edicao")</p>
+	}
+}

@@ -1,0 +1,61 @@
+﻿@model PaginaEmissaoBoletoParcelaMatriculaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid22_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+        @Smc.DisplayFor(x => x.NomeParcela).Size(SMCSize.Grid4_24)
+        @Smc.DisplayFor(x => x.ValorParcela).Size(SMCSize.Grid4_24)
+        @Smc.DisplayFor(x => x.ValorBeneficio).Size(SMCSize.Grid4_24)
+        @Smc.DisplayFor(x => x.ValorOutros).Size(SMCSize.Grid4_24)
+        @Smc.DisplayFor(x => x.ValorPagar).Size(SMCSize.Grid4_24)
+        @Smc.DisplayFor(x => x.DataVencimento).Size(SMCSize.Grid4_24)
+    }
+        @(Smc.Grid("gridBoletos", new SMCPagerModel<PaginaEmissaoBoletoParcelaResponsavelMatriculaViewModel>(Model.Titulos))
+    .Size(SMCSize.Grid24_24)
+    .CssClass("smc-listdetailed-conteudo-lista ")
+    .AutoGenerateColumns(false)
+    .AllowExportToExcel(false)
+    .AllowExportToPDF(false)
+    .AllowRefresh(false)
+    .AllowSort(false)
+    .AutoHideNavigator(true)
+    .HideGridTitle(true)
+    .HideNavigator(true)
+    .HideNumberOfRowsPerPageSelector(true)
+    .HidePager()
+    .HideRowNumber(true)
+    .HideRowsTotalizer(true)
+    .ContentColumn(
+    @<text>
+        @{
+            var itemParsed = item as PaginaEmissaoBoletoParcelaResponsavelMatriculaViewModel;
+
+            if (item.SeqTitulo != 0)
+            {
+                @(Smc.Button("GerarBoleto", "EmissaoBoletoGerar", new { seqTitulo = new SMCEncryptedLong(itemParsed.SeqTitulo), seqServico = new SMCEncryptedLong(itemParsed.SeqServico) })
+                        .Text(itemParsed.DescricaoTitulo)
+                        .Tooltip(itemParsed.DescricaoTitulo)
+                        .CssClass("smc-sga-botao-boleto")
+                        .Type(SMCButtonType.Link)
+                        .SecurityToken()
+                        .Attribute("target", "_blank"))
+            }
+            else
+            {
+                @itemParsed.DescricaoTitulo
+            }
+        }
+    </text>, header: Smc.GetUIResource("Boleto"))
+    .ContentColumn(
+    @<text>
+        @item.NomeResponsavel
+    </text>, header: Smc.GetUIResource("ResponsavelFinanceiro"))
+        )
+
+
+            }
+}

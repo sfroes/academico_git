@@ -1,0 +1,27 @@
+﻿@using SMC.SGA.Administrativo.Areas.CNC.Models;
+@using SMC.Academico.Common.Areas.CNC.Constants;
+
+@model SMCPagerModel<DocumentoConclusaoListarViewModel>
+
+@(Smc.Grid("gridDocumentoConclusao", Model)
+     .AutoGenerateColumns()
+     .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+
+              x => Smc.Button(SMCButtonBehavior.Visualizar)
+                .DisplayMode(SMCButtonDisplayMode.Icon)
+                .Tooltip(Smc.GetUIResource("botao_consultar_documento_conclusao_tooltip"))
+                .SecurityToken(UC_CNC_002_01_03.CONSULTAR_DOCUMENTO_CONCLUSAO)
+                .Action("Consultar", "DocumentoConclusao", new { Seq = new SMCEncryptedLong((x as DocumentoConclusaoListarViewModel).Seq), Area = "CNC" }),
+
+              x => Smc.Button(SMCButtonBehavior.Excluir)
+                .Hide(true)
+                .Enabled((x as DocumentoConclusaoListarViewModel).HabilitarBotaoExcluir)
+                .ButtonInstructions(Smc.GetUIResource((x as DocumentoConclusaoListarViewModel).MensagemBotaoExcluir))
+                .DisplayMode(SMCButtonDisplayMode.Icon)
+                .Confirm(Smc.GetUIResource("Exclusao_Documento_Conclusao_Title"), Smc.GetUIResource("Exclusao_Documento_Conclusao_Confirmacao"))
+                .Tooltip(Smc.GetUIResource("botao_excluir_documento_conclusao_tooltip"))
+                .SecurityToken(UC_CNC_002_01_02.MANTER_DOCUMENTO_CONCLUSAO_ANTIGO)
+                .Action("Excluir", "DocumentoConclusao", new { Seq = new SMCEncryptedLong((x as DocumentoConclusaoListarViewModel).Seq), Area = "CNC" })
+                )
+)
+

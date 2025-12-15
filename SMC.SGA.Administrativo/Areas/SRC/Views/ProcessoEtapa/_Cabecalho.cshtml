@@ -1,0 +1,44 @@
+﻿@model  ProcessoEtapaCabecalhoViewModel
+
+@using (Smc.Header("ProcessoEtapaCabecalho", SMCHeaderType.Primary).CssClass("smc-header-botao")
+              .Item(prop => prop.SeqProcesso, sizeSM: SMCSize.Grid3_24, sizeMD: SMCSize.Grid3_24, sizeLG: SMCSize.Grid3_24, sizeXS: SMCSize.Grid3_24)
+              .Item(prop => prop.DescricaoProcesso, sizeSM: SMCSize.Grid21_24, sizeMD: SMCSize.Grid21_24, sizeLG: SMCSize.Grid21_24, sizeXS: SMCSize.Grid21_24)
+              .Item(prop => prop.DescricaoCicloLetivo, sizeSM: SMCSize.Grid3_24, sizeMD: SMCSize.Grid3_24, sizeLG: SMCSize.Grid3_24, sizeXS: SMCSize.Grid3_24)
+              .Item(prop => prop.DataInicio, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+              .Item(prop => prop.DataFim, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+              .Item(prop => prop.DataEncerramento, sizeSM: SMCSize.Grid8_24, sizeMD: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24, sizeXS: SMCSize.Grid8_24)
+              .Begin())
+{
+    SMCButtonFluentConfiguration buttonLiberarEtapa = Smc.Button(SMCButtonBehavior.Visualizar)
+          .Text(Smc.GetUIResource("Botao_Liberar_Etapa"))
+          .Ajax(isPost: false)
+          .Tooltip(Smc.GetUIResource("Botao_Liberar_Etapa"))
+          .Type(SMCButtonType.Link)
+          .Action("LiberarEtapa", "ProcessoEtapa", new { SeqProcessoEtapa = new SMCEncryptedLong(Model.Seq), Area = "SRC" })
+          .Hide(Model.EsconderBotaoLiberar)
+          .SecurityToken(UC_SRC_002_01_03.MANTER_ETAPA_PROCESSO)
+          .Confirm(Smc.GetUIResource("title_modal_liberar_etapa"), string.Format(Smc.GetUIResource("mensagem_liberar_etapa"), Model.DescricaoEtapaSgf), SMCWindowButtons.Yes, true);
+
+    SMCButtonFluentConfiguration buttonColocarManutencao = Smc.Button(SMCButtonBehavior.Visualizar)
+           .Text(Smc.GetUIResource("Botao_Colocar_Manutencao"))
+           .Ajax(isPost: false)
+           .Tooltip(Smc.GetUIResource("Botao_Colocar_Manutencao"))
+           .Type(SMCButtonType.Link)
+           .Action("ColocarManutencaoEtapa", "ProcessoEtapa", new { SeqProcessoEtapa = new SMCEncryptedLong(Model.Seq), Area = "SRC" })
+           .Hide(Model.EsconderBotaoManutencao)
+           .Enabled(Model.HabilitarBotaoManutencao)
+           .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoManutencao))
+           .SecurityToken(UC_SRC_002_01_03.MANTER_ETAPA_PROCESSO)
+           .Confirm(Smc.GetUIResource("title_modal_etapa_em_manutencao"), string.Format(Smc.GetUIResource("mensagem_etapa_em_manutencao"), Model.DescricaoEtapaSgf), SMCWindowButtons.Yes, true);
+
+    SMCButtonSetFluentConfiguration buttonSet = (Smc.ButtonSet().Type(SMCButtonSetType.Secondary)
+    .NumberOfButtonsToShow(0));
+
+    buttonSet.AddButton(buttonLiberarEtapa);
+    buttonSet.AddButton(buttonColocarManutencao);
+
+    using (Smc.Div("").Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+    {
+        @buttonSet
+    }
+}

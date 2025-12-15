@@ -1,0 +1,163 @@
+﻿@using SMC.Academico.Common.Areas.SRC.Constants
+@using SMC.Academico.Common.Areas.SRC.Enums;
+
+@model SolicitacaoUploadViewModel
+
+@{var ExibirDocumentoPermiteUpload = true;}
+
+@section MenuLateral {
+    @Html.Action("MenuPaginas", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.INSTRUCOES))
+
+@using (Smc.Form("frmPagina").Ajax("divUpload").Begin())
+{
+    using (Smc.Div("divUpload").Attribute("data-id", "divUpload").Begin())
+    {
+        @(Smc.Legend("legenda", SMCOrientation.Horizontal).CssClass("smc-sga-legenda")
+                    .Items(new List<SMCLegendItem>()
+                    {
+                new SMCLegendItem() {
+                CssClass = "smc-legenda-status-aguardandoentrega",
+                Description = SMC.Academico.Common.Areas.SRC.Enums.SituacaoEntregaDocumentoAluno.AguardandoRegistroDocumento.SMCGetDescription()
+                },
+                new SMCLegendItem()
+                {
+                CssClass = "smc-legenda-status-deferido",
+                Description = SMC.Academico.Common.Areas.SRC.Enums.SituacaoEntregaDocumentoAluno.RegistroDocumentoOK.SMCGetDescription()
+                },
+                new SMCLegendItem()
+                {
+                CssClass = "smc-legenda-status-pendente",
+                Description = SMC.Academico.Common.Areas.SRC.Enums.SituacaoEntregaDocumentoAluno.EntregaPresencialmente.SMCGetDescription()
+                }
+                    })
+        )
+
+        if (Model.DocumentosObrigatoriosNaoEntregues != null && Model.DocumentosObrigatoriosNaoEntregues.Any())
+        {
+            using (Smc.Fieldset("obrigatorios").Begin())
+            {
+                var obrigatorio = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                     .Action("AnexarDocumentos", null, new
+                                     {
+                                         @seqSolicitacaoServico = Model.SeqSolicitacaoMatricula,
+                                         @seqConfiguracaoEtapa = (SMC.Framework.UI.Mvc.SMCEncryptedLong)Model.SeqConfiguracaoEtapa,
+                                         @backUrl = Url.Action("EntrarEtapa", null, new { @SeqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoMatricula), @SeqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa) }),
+                                         @area = string.Empty,
+                                         @seqPessoaAtuacao = Model.SeqPessoaAtuacao,
+                                         @grupoObrigatorio = true,
+                                         @exibirDocumentoPermiteUpload = ExibirDocumentoPermiteUpload
+                                     })
+                                     .Ajax(isPost: false)
+                                     .CssClass("smc-sga-btn-inline")
+                                     .Attribute(SMCMvcConsts.MODAL_ID, "modalAnexarDocumentos")
+                                     .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Anexar_Documentos"))
+                                     .Text(Smc.GetUIResource("Label_Anexar_Documentos"))
+                                     .Tooltip(Smc.GetUIResource("Label_Anexar_Documentos"));
+
+                if (Model.DesabilitaBotaoDocumentosObrigatorios)
+                {
+                    obrigatorio.Enabled(false).ButtonInstructions(Smc.GetUIResource("Instruction_Anexar_Documentos"));
+                }
+
+                @(Smc.ButtonSet().AddButton(obrigatorio))
+                @Html.Partial("_SolicitacaoUploadDocumentosItem", Model.DocumentosObrigatoriosNaoEntregues)
+            }
+        }
+
+        if (Model.GruposDocumentosObrigatoriosNaoEntregues != null && Model.GruposDocumentosObrigatoriosNaoEntregues.Any())
+        {
+            foreach (var grupo in Model.GruposDocumentosObrigatoriosNaoEntregues)
+            {
+                var totalDocsEntreguesNoGrupo = Model.GruposDocumentosObrigatorios.FirstOrDefault(c => c.Key.Seq == grupo.Key.Seq).Value.Sum(c => c.NumeroDocumentosDeferidoAguardandoEntrega);
+
+                if (totalDocsEntreguesNoGrupo < grupo.Key.NumeroMinimoDocumentosRequerido)
+                {
+                    TempData["__GrupoDocumentoObrigatorio"] = grupo.Key;
+                    using (Smc.Fieldset("grupoObrigatorios_" + grupo.Key.Seq).LegendText(grupo.Key.Descricao).CssClass("smc-sga-fieldset-secundario").Begin())
+                    {
+                        var gruposDocumentos = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                .Action("AnexarDocumentos", null, new
+                                {
+                                    @seqSolicitacaoServico = Model.SeqSolicitacaoMatricula,
+                                    @seqConfiguracaoEtapa = (SMC.Framework.UI.Mvc.SMCEncryptedLong)Model.SeqConfiguracaoEtapa,
+                                    @backUrl = Url.Action("EntrarEtapa", null, new { @SeqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoMatricula), @SeqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa) }),
+                                    @area = string.Empty,
+                                    @seqPessoaAtuacao = Model.SeqPessoaAtuacao,
+                                    @grupoDocumento = new SMCEncryptedLong(grupo.Key.Seq),
+                                    @exibirDocumentoPermiteUpload = ExibirDocumentoPermiteUpload
+                                })
+                                .Ajax(isPost: false)
+                                .CssClass("smc-sga-btn-inline")
+                                .Attribute(SMCMvcConsts.MODAL_ID, "modalAnexarDocumentos")
+                                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Anexar_Documentos"))
+                                .Text(Smc.GetUIResource("Label_Anexar_Documentos"))
+                                .Tooltip(Smc.GetUIResource("Label_Anexar_Documentos"));
+
+                        if (Model.GrupoDesabilitaBotaoUploadDocumentos(grupo))
+                        {
+                            gruposDocumentos.Enabled(false).ButtonInstructions(Smc.GetUIResource("Instruction_Anexar_Documentos"));
+                        }
+
+                        @(Smc.ButtonSet().AddButton(gruposDocumentos))
+                        @Html.Partial("_SolicitacaoUploadDocumentosItem", grupo.Value)
+                    }
+                }
+            }
+        }
+
+        if (Model.DocumentosOpcionaisNaoEntregues != null && Model.DocumentosOpcionaisNaoEntregues.Any())
+        {
+            if (Model.DocumentosOpcionaisNaoEntregues.Count > 0)
+            {
+                using (Smc.Fieldset("opcionais").Begin())
+                {
+                    var opcionais = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                       .Action("AnexarDocumentos", null, new
+                                       {
+                                           @seqSolicitacaoServico = Model.SeqSolicitacaoMatricula,
+                                           @seqConfiguracaoEtapa = (SMC.Framework.UI.Mvc.SMCEncryptedLong)Model.SeqConfiguracaoEtapa,
+                                           @backUrl = Url.Action("EntrarEtapa", null, new { @SeqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoMatricula), @SeqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa) }),
+                                           @area = string.Empty,
+                                           @seqPessoaAtuacao = Model.SeqPessoaAtuacao,
+                                           @exibirDocumentoPermiteUpload = ExibirDocumentoPermiteUpload
+                                       })
+                                       .Ajax(isPost: false)
+                                       .CssClass("smc-sga-btn-inline")
+                                       .Attribute(SMCMvcConsts.MODAL_ID, "modalAnexarDocumentos")
+                                       .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Anexar_Documentos"))
+                                       .Text(Smc.GetUIResource("Label_Anexar_Documentos"))
+                                       .Tooltip(Smc.GetUIResource("Label_Anexar_Documentos"));
+
+                    if (Model.DesabilitaBotaoDocumentosOpcionais)
+                    {
+                        opcionais.Enabled(false).ButtonInstructions(Smc.GetUIResource("Instruction_Anexar_Documentos"));
+                    }
+
+                    @(Smc.ButtonSet().AddButton(opcionais))
+                    @Html.Partial("_SolicitacaoUploadDocumentosItem", Model.DocumentosOpcionaisNaoEntregues)
+                }
+            }
+        }
+
+        if (Model.ExibirTermoEntregaDocumentacao)
+        {
+            using (Smc.Fieldset("termoEntregaDocumentacao").CssClass("smc-sgaaluno-termoentregadocumentacao").Begin())
+            {
+                @Smc.EditorFor(x => x.AceiteTermoEntregaDocumentacao).CssClass("smc-sga-check-aceite")
+                <span class="smc-sga-termo-conteudo smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">@Model.DescricaoTermoEntregaDocumentacao</span>
+            }
+        }
+
+        @Html.Partial("_BotoesNavegacao", Model)
+    }
+}
+
+@using (Smc.ModalWindow("modalAnexarDocumentos")
+        .Form("formAnexarDocumentos", "SalvarRegistroDocumentos", "Matricula", closeOnSubmit: true, config: frm => frm.Ajax())
+        .Size(SMCModalWindowSize.Largest)
+        .Button(SMCButtonBehavior.Salvar, "SalvarRegistroDocumentos", "Matricula", new { area = "MAT" }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }

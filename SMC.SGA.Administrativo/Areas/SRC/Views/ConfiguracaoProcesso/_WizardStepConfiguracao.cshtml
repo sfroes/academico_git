@@ -1,0 +1,24 @@
+﻿@model ConfiguracaoProcessoViewModel
+
+@Smc.EditorFor(m => m.ExibirSecaoNivelEnsino)
+@Smc.EditorFor(m => m.ExibirSecaoCursos)
+@Smc.EditorFor(m => m.ListarDepartamentosGruposProgramas)
+@Smc.EditorFor(m => m.SeqsEntidadesResponsaveis)
+@Smc.EditorFor(m => m.SeqsNiveisEnsino)
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.MasterDetail(m => m.TiposVinculoAluno).MinimumItens(1)
+}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.MasterDetail(m => m.NiveisEnsino).MinimumItens(1)
+}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.MasterDetail(m => m.Cursos).MinimumItens(1)
+}
+
+@Smc.WizardView()

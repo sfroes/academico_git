@@ -1,0 +1,9 @@
+﻿@using SMC.Academico.Common.Areas.SRC.Enums
+@using SMC.Academico.UI.Mvc.Areas.SRC.Models;
+
+@model DadosModalSolicitacaoHistoricoItemViewModel
+
+@if (Model.SituacaoFinalEtapa == SituacaoFinalEtapa.Sim)
+{
+    @Smc.LegendItem(x => x.SituacaoFinalEtapa)
+}

@@ -1,0 +1,104 @@
+﻿@using SMC.SGA.Administrativo.Areas.MAT.Views.Chancela.App_LocalResources
+@using SMC.Academico.Common.Areas.CNC.Constants
+@model SMCPagerModel<ChancelaItemListaViewModel>
+
+@{
+    Func<object, SMCButtonFluentConfiguration> funcBotaoChancela = x =>
+    {
+        var itemParsed = x as ChancelaItemListaViewModel;
+        SMCButtonFluentConfiguration botao;
+
+        if (itemParsed.TokenEtapaSGF.Contains(MatriculaTokens.EFETIVACAO))
+        {
+            botao = Smc.Button("Reabrir", "ReabrirChancela", new { seqSolicitacaoServico = new SMCEncryptedLong(itemParsed.Seq) }, "Chancela")
+                       .CssClass("smc-btn-custom-destaque-grid smc-btn-chancela").Type(SMCButtonType.Link);
+        }
+        else
+        {
+            botao = Smc.Button("Chancelar", "EntrarEtapa", new { seqSolicitacaoServico = new SMCEncryptedLong(itemParsed.Seq), seqConfiguracaoEtapa = new SMCEncryptedLong(itemParsed.SeqConfiguracaoEtapa) }, "Chancela")
+                       .CssClass("smc-btn-custom-destaque-grid smc-btn-chancela").Type(SMCButtonType.Link);
+        }
+
+
+
+        if (!itemParsed.EscalonamentoVigente)
+        {
+            botao.Enabled(false).ButtonInstructions(Smc.GetUIResource("Botao_Chancelar_Escalonamento_Vigente"));
+        }
+
+        if (!itemParsed.EtapaChancelaLiberada)
+        {
+            botao.Enabled(false).ButtonInstructions(Smc.GetUIResource("Botao_Chancelar_Etapa_Liberada"));
+        }
+
+        if (itemParsed.Bloqueado)
+        {
+            botao.Enabled(false).ButtonInstructions(Smc.GetUIResource("Botao_Chancelar_Instructions"));
+        }
+
+        if (!itemParsed.EtapaPermiteChancela)
+        {
+            botao.Enabled(false).ButtonInstructions(Smc.GetUIResource("Botao_Chancelar_Etapa_PermiteChancela"));
+        }
+
+        if (itemParsed.SolicitacaoComAtendimentoIniciado && !itemParsed.UsuarioLogadoEResponsavelAtualPelaSolicitacao)
+        {
+            botao.Confirm(UIResource.MSG_Titulo_Confirmacao, UIResource.MSG_ConfirmacaoSolicitacaoPossuiUsuarioResponsavel);
+        }
+        else
+        {
+            if (!itemParsed.UsuarioLogadoEResponsavelAtualPelaSolicitacao)
+            {
+                botao.Confirm(UIResource.MSG_Titulo_Confirmacao, UIResource.MSG_ConfirmacaoInicioAtendimento);
+            }
+        }
+
+        return botao;
+    };
+
+    Func<object, SMCButtonFluentConfiguration> funcBotaoPlanoEstudo = x =>
+    {
+        var itemParsed = x as ChancelaItemListaViewModel;
+
+        var botao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "VisualizarTurmaAtividade", new { @seqSolicitacaoMatricula = new SMCEncryptedLong(itemParsed.Seq), @seqConfiguracaoEtapa = new SMCEncryptedLong(itemParsed.SeqConfiguracaoEtapa), @erro = false, @area = string.Empty, @desconsideraEtapa = true }, "SolicitacaoMatriculaItemRoute")
+                        .CssClass("smc-btn-custom-destaque-grid").Text(UIResource.Botao_PlanoEstudo).Ajax().Type(SMCButtonType.Link);
+
+        botao.Attribute(SMCMvcConsts.MODAL_ID, "_modalPlanoEstudos");
+        botao.Attribute(SMCMvcConsts.MODAL_TITLE, UIResource.ModalPlanoEstudo_Title);
+        botao.Enabled(itemParsed.PermiteVisualizarPlanoEstudo);
+        botao.Hide(!itemParsed.PermiteVisualizarPlanoEstudo);
+
+        return botao;
+    };
+
+    Func<object, SMCButtonFluentConfiguration> funcBotaoIntegralizacao = x =>
+    {
+        var itemParsed = x as ChancelaItemListaViewModel;
+
+// INTEGRALIZAÇÃO CURRICULAR
+var botao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                       .Action("ConsultaIntegralizacaoCurricular", "IntegralizacaoCurricularRoute", new { @seqPessoaAtuacao = itemParsed.SeqPessoaAtuacao, Area = "" })
+                       .Ajax(isPost: false)
+                       .Attribute(SMCMvcConsts.MODAL_ID, "modalIntegralizacaoCurricular")
+                       .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Integralizacao_Curricular"))
+                       .Text(Smc.GetUIResource("Botao_Integralizacao_Curricular"))
+                       .SecurityToken(UC_CNC_001_02_01.EXIBIR_INTEGRALIZACAO_CURRICULAR)
+                       .Tooltip(Smc.GetUIResource("Botao_Integralizacao_Curricular_Tooltip"));
+
+
+        botao.Hide(!itemParsed.ExibirIntegralizacao);
+
+        return botao;
+    };
+
+    @(Smc.Grid<ChancelaItemListaViewModel>("gridChancela", Model)
+                                    .AutoGenerateColumns()
+                                    .HideRowNumber()
+                                    .GridRowConfiguration((x, y) =>
+                                    {
+                                        if ((y as ChancelaItemListaViewModel).Destaque)
+                                            x.CssClass = "smc-sga-item-disponivel";
+                                    })
+                                    .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-sga-col-btn-instruction smc-grid-coluna-botoes", true, funcBotaoChancela, funcBotaoPlanoEstudo, funcBotaoIntegralizacao))
+
+}

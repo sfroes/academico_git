@@ -1,0 +1,6 @@
+﻿@model ReaberturaSolicitacaoViewModel
+
+@Smc.Action("CabecalhoReaberturaSolicitacao", "SolicitacaoServico", new { @seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico) })
+
+@Smc.EditorFor(x => x.SeqSolicitacaoServico)
+@Smc.EditorFor(x => x.Observacao).Size(SMCSize.Grid24_24)

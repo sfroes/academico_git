@@ -1,0 +1,13 @@
+﻿@model SMC.SGA.Administrativo.Areas.ORG.Models.EntidadeDynamicModel
+
+@using (Smc.Div().CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Fieldset("DadosEntidade").Begin())
+    {
+        @Smc.DisplayFor(m => m.NomeTipoEntidadeSelecionada)
+        @Smc.DisplayFor(m => m.Nome)
+        @Smc.DisplayFor(m => m.Sigla)
+        @Smc.DisplayFor(m => m.NomeReduzido)
+
+    }
+}

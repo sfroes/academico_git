@@ -1,0 +1,1649 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Repository</name>
+    </assembly>
+    <members>
+        <member name="M:SMC.Framework.Repository.SMCDataFilterGenericHelper`1.GetSpecificationFilter(SMC.Framework.Specification.SMCSpecification{`0},System.String[])">
+            <summary>
+            Recupera o specification aplicando o filtro de dados
+            </summary>
+            <param name="specification">Specification enviado via parâmetro pelo desenvolvedor</param>
+            <param name="findIncludes">Informa se encontrou includes</param>
+            <param name="includes">Includes</param>
+            <returns>Specification com o filtro aplicado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCDataFilterGenericHelper`1.SetFilterGlobal(System.String,System.Int64)">
+            <summary>
+            Seta o filtro global
+            </summary>
+            <param name="token">Token </param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCDataFilterGenericHelper`1.EnableFilter(System.String)">
+            <summary>
+            Inicializa o contexto com os filtros e relacionamentos
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCDataFilterGenericHelper`1.DisableFilter(System.String)">
+            <summary>
+            Desabilita o filtro de dados
+            </summary>
+            <param name="token">Token para desabilitar</param>
+        </member>
+        <member name="T:SMC.Framework.Repository.Exceptions.SMCMsdtcException">
+            <summary>
+            	Erro de MSDTC
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Repository.Exceptions.SMCPermissionDeniedException">
+            <summary>
+            	Erro de permissão
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCRepositoryExceptionMessageHelper.GetConstraintErrorMessage(System.String,System.Reflection.Assembly)">
+            <summary>
+            Recupera a mensagem de erro específica para a unique que gerou o erro.
+            </summary>
+            <param name="uniqueKeyConstraintName">Nome da constraint de unique violada.</param>
+            <param name="assembly">Assembly que contém os resources de mensagens.</param>
+            <returns>Mensagem de erro específica para a unique que gerou o erro ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCRepositoryExceptionMessageHelper.TryGetErrorMessageFromAssembly(System.Reflection.Assembly,System.String,System.String@)">
+            <summary>
+            Tenta recupera a mensagem de erro de uma unique key dentro dos resouces de um assembly.
+            </summary>
+            <param name="assembly">Assembly que contém os resources.</param>
+            <param name="uniqueKeyConstraintName">Nome da constraint de unique key.</param>
+            <param name="errorMessage">Mensam de erro da unique key.</param>
+            <returns>Verdadeiro se a mensagem de erro foi encontrada, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCRepositoryExceptionMessageHelper.GetValidationPriority(SMC.Framework.Util.SMCAssemblyInfo,SMC.Framework.Util.SMCAssemblyInfo)">
+            <summary>
+            Recupera a ordem de prioridade para validação do assembly.
+            </summary>
+            <param name="assembly">Ordem de validação do assembly.</param>
+            <param name="referenceAssembly">Assembly corrente de referência.</param>
+            <returns>Ordem de validação do assembly.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCRepositoryExceptionMessageHelper.GetUniqueKeyConstraintName(System.String,System.Text.RegularExpressions.Regex[])">
+            <summary>
+            Recupera o nome da constraint a partir da mensagem de erro.
+            </summary>
+            <param name="originalMessage">Messagem original de erro com o nome da constraint.</param>
+            <returns>Nome da constraint ou nulo, caso não tenha sido encontrado.</returns>
+        </member>
+        <member name="T:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException">
+            <summary>
+            Erro para falhas com chaves estrangeiras (número: 547).
+            Acontece quando a primarykey não existe na tabela referenciada pela foreignkey,
+            ou quando um registro está sendo referenciado por outras tabelas.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException.ConstraintRegex">
+            <summary>
+            Contém a regular expression para identificar o nome da constraint, considerando o padrão:
+            REFERENCE constraint ""FK_participante_papel_02"
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException._message547Pattern">
+            <summary>
+            Regex para a mensagem de erro padrão do SQLServer com o número 547.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException._message547Pattern2">
+            <summary>
+            Regex para a mensagem de erro padrão do SQLServer com o número .
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException.#ctor(System.Data.SqlClient.SqlException,System.Type)">
+            <summary>
+            Cria um novo objeto do tipo "ForeignKeyViolationException".
+            </summary>
+            <param name="message">Mensagem de erro original.</param>
+        </member>
+        <member name="P:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException.EntityType">
+            <summary>
+            Tipo da entidade que tentou ser excluída.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException.RelatedEntityType">
+            <summary>
+            Recupera a entidade associada.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException.GetErrorMessage(System.String,System.Type)">
+            <summary>
+            Recupera a mensagem de erro específica para a unique que gerou o erro.
+            </summary>
+            <param name="originalMessage">Mensagem de erro original.</param>
+            <param name="entityType">Tipo de entidade associada ao erro.</param>
+            <returns>Mensagem de erro específica para a unique que gerou o erro ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="P:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException.Message">
+            <summary>
+            Recupera a mensagem de erro
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException.GetMessage(System.Type,System.Type,System.String)">
+            <summary>
+            Recupera a mensagem de erro.
+            </summary>
+            <param name="entityType">Entidade que tentou ser excluída.</param>
+            <param name="relatedType">Entidade relacionada.</param>
+            <param name="uniqueKeyConstraintName">Chave única.</param>
+            <returns>Mensagem de erro de exclusão.</returns>
+        </member>
+        <member name="F:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException._constraintName">
+            <summary>
+            Armazena o nome da foreignkey que foi violada.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException.ConstraintName">
+            <summary>
+            Recupera o nome da foreignkey que foi violada.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException.RelatedEntities">
+            <summary>
+            Armazena as entidade relacionadas com a foreignkey violada.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException._originalMessage">
+            <summary>
+            Armazena a mensagem original de erro.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException.SMC#Framework#Exceptions#ISMCAdditionalInfo#OriginalMessage">
+            <summary>
+            Recupera a mensagem original de erro.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Repository.Exceptions.SMCForeignKeyViolationException.SMC#Framework#Exceptions#ISMCAdditionalInfo#AdditionalInfo">
+            <summary>
+            Recupera informações adicionais da exceção.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Repository.Exceptions.SMCInvalidDatabaseException">
+            <summary>
+            	Erro para falha ao acessar o banco (número: 4060).
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCInvalidDatabaseException.#ctor(System.String)">
+            <summary>
+            	Cria um novo objeto do tipo "InvalidDatabaseException".
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Repository.Exceptions.SMCLoginFailedException">
+            <summary>
+            	Erro para falha de login no banco (número: 18456).
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCLoginFailedException.#ctor(System.String)">
+            <summary>
+            	Cria um novo objeto do tipo "LoginFailedException".
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Repository.Exceptions.SMCPrimaryKeyViolationException">
+            <summary>
+            	Erro para falha de primarykey (número: 2627).
+            	Quando uma chave duplicada está sendo inserida.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCPrimaryKeyViolationException.#ctor(System.String)">
+            <summary>
+            	Cria um novo objeto do tipo "PrimaryKeyViolationException".
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Repository.Exceptions.SMCRepositoryException">
+            <summary>
+            	Classe base para todas as falhas de banco.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCRequiredFieldDataBaseException.#ctor(System.String,System.Exception)">
+            <summary>
+            	Cria um novo objeto do tipo "SMCRequiredFieldDataBaseException".
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCRequiredFieldDataBaseException.#ctor(System.String)">
+            <summary>
+            	Cria um novo objeto do tipo "SMCRequiredFieldDataBaseException".
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Repository.Exceptions.SMCUniqueIndexViolationException">
+            <summary>
+            Erro para falha de uniquekey (número: 2601).
+            Quando um valor existente para uma chave única está sendo inserida.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCUniqueIndexViolationException.#ctor(System.Data.SqlClient.SqlException,System.Type)">
+            <summary>
+            Cria um novo objeto do tipo "UniqueIndexViolationException".
+            </summary>
+            <param name="sqlException">SqlException original.</param>
+            <param name="entityType">Tipo de entidade associada ao erro.</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCUniqueIndexViolationException.GetErrorMessage(System.String,System.Type)">
+            <summary>
+            Recupera a mensagem de erro específica para a unique que gerou o erro.
+            </summary>
+            <param name="originalMessage">Mensagem de erro original.</param>
+            <param name="entityType">Tipo de entidade associada ao erro.</param>
+            <returns>Mensagem de erro específica para a unique que gerou o erro ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="F:SMC.Framework.Repository.Exceptions.SMCUniqueIndexViolationException._message2601Pattern">
+            <summary>
+            Regex para a mensagem de erro padrão do SQLServer com o número 2601.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Repository.Exceptions.SMCUniqueIndexViolationException._message2601_1Pattern">
+            <summary>
+            Regex para a mensagem de erro padrão do SQLServer com o número 2601.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Repository.Exceptions.SMCUniqueIndexViolationException._message2627Pattern">
+            <summary>
+            Regex para a mensagem de erro padrão do SQLServer com o número 2627.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.Exceptions.SMCUniqueIndexViolationException.GetDefaultErrorMessage(System.String)">
+            <summary>
+            Recupera a mensagem de erro padrão para a unique.
+            </summary>
+            <param name="uniqueKeyConstraintName">Nome da constraint de unique violada.</param>
+            <returns>Mensagem de erro padrão para erro de unique.</returns>
+        </member>
+        <member name="T:SMC.Framework.Repository.SMCRepositoryExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepositoryExtensions.SMCRepositoryException(System.Exception,System.Type)">
+            <summary>
+            Recupera uma exceção customizada de acordo com o erro do sql.
+            Utiliza em classe de repositório.
+            </summary>
+            <param name="ex">Exceção original.</param>
+            <param name="entityType">Tipo da entidade associada ao erro.</param>
+            <returns>Exceção customizada se for uma exceção de banco, caso contrário, nulo.</returns>
+        </member>
+        <member name="T:SMC.Framework.Repository.ISMCRelationalDatabaseProvider">
+            <summary>
+            Interface para os providers que acessar bancos relacionais.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRelationalDatabaseProvider.GetConstraintReferences``1(``0,System.String,System.String[]@)">
+            <summary>
+            Recupera as informações da constraint baseado no modelo e no nome da constraint.
+            </summary>
+            <typeparam name="T">Tipo da classe de modelo.</typeparam>
+            <param name="model">Entidade que possui o relacionamento.</param>
+            <param name="constraintName">Nome da constraint.</param>
+            <param name="relatedEntities">Descrição das entidades correlacionadas.</param>
+            <returns>Tipo da entidade relacionada.</returns>
+        </member>
+        <member name="T:SMC.Framework.Repository.ISMCRepositoryProvider">
+            <summary>
+            Define métodos para um provider de repositório (utilizado por uma tecnologia específica).
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.SearchByKey``1(SMC.Framework.Specification.SMCSpecification{``0},System.String[])">
+            <summary>
+            Recupera a entidade que atende ao critério especificado.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="specification">Critério para a pesquisa da entidade procurada.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Entidade que atende ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.SearchProjectionByKey``2(SMC.Framework.Specification.SMCSpecification{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Recupera a entidade que atende ao critério especificado.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <typeparam name="TResult">Tipo do resultado esperado.</typeparam>
+            <param name="specification">Critério para a pesquisa da entidade procurada.</param>
+            <param name="projection">Função de projeção para retorno da operação.</param>
+            <returns>Entidade que atende ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.SearchBySpecification``1(SMC.Framework.Specification.SMCSpecification{``0},System.String[])">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.SearchProjectionBySpecification``2(SMC.Framework.Specification.SMCSpecification{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Boolean)">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <typeparam name="TResult">Tipo do resultado esperado.</typeparam>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="projection">Função de projeção para retorno da operação.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.SearchByDepth``1(SMC.Framework.Specification.SMCSpecification{``0},System.Int32,System.String[])">
+            <summary>
+            Utilizado para buscar N níveis em uma árvore ou auto relacionamento
+            </summary>
+            <param name="specification"></param>
+            <param name="depth">Nível da profundidade que será buscado.</param>
+            <param name="includes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.SearchBySpecification``1(SMC.Framework.Specification.SMCSpecification{``0},System.Int32@,System.String[])">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="total">Total de entidades encontradas na pesquisa.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.SearchProjectionBySpecification``2(SMC.Framework.Specification.SMCSpecification{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Int32@,System.Boolean)">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <typeparam name="TResult">Tipo do resultado esperado.</typeparam>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="projection">Função de projeção para retorno da operação.</param>
+            <param name="total">Total de entidades encontradas na pesquisa.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Insert``1(``0)">
+            <summary>
+            Inclui uma nova entidade ao repositório.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="item">Nova entidade a ser incluída.</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Update``1(``0,System.String[])">
+            <summary>
+            Edita uma entidade existente do repositório.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="item">Entidade a ser alterada.</param>
+            <param name="rejectsProperties">Ignora as propriedades no Update</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.UpdateFields``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}}[])">
+            <summary>
+            Atualiza somente alguns campos
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="entity"></param>
+            <param name="properties">Propriedades que serão atualizadas. NAO PRECISA PASSAR OS CAMPOS DE AUDITORIA</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Delete``1(``0)">
+            <summary>
+            Exclui uma entidade existente do repositório.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="item">Entidade que será excluída do repositório.</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.ExecuteFunction``1(System.String,System.Collections.Generic.IList{SMC.Framework.Repository.SMCFuncParameter})">
+            <summary>
+            Executa comando em uma Stored Procedure. Não retorna dados (somente por parâmetro)
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="functionName">nome da procedure ou função</param>
+            <param name="parametros">parametros é opcional</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.ExecuteFunctionReader``1(System.String,System.Collections.Generic.IList{SMC.Framework.Repository.SMCFuncParameter})">
+            <summary>
+            Executa uma Stored Procedure que retorna dados.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="functionName">nome da procedure ou função</param>
+            <param name="parametros">parametros é opcional</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Count``1">
+            <summary>
+            Recupera o total de entidades cadastradas.
+            </summary>
+            <returns>Total de entidades cadastradas.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Count``1(SMC.Framework.Specification.SMCSpecification{``0})">
+            <summary>
+            Recupera o total de entidades cadastradas que atendem à especificação informada.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <returns>Total de entidades cadastradas que atendem à especificação informada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Average``1(System.Linq.Expressions.Expression{System.Func{``0,System.Int32}})">
+            <summary>
+            Recupera a média de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="property">Propriedade para cálculo da média.</param>
+            <returns>Média da propriedade informada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.RawQuery``1(System.String,System.Int32,SMC.Framework.Repository.SMCFuncParameter[])">
+            <summary>
+            Faz query sql no BD.
+            Utilize no último caso. Converse com o pessoal da equipe primeiro.
+            </summary>
+            <typeparam name="TResult">Tipo do objeto de retorno</typeparam>
+            <param name="query">Consulta a ser executada</param>
+            <param name="timeOutComand">Timeout em segundos</param>
+            <param name="parameters">Parametros da query</param>
+            <returns>Lista com os objetos retornados</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.RawQuery``1(System.String,SMC.Framework.Repository.SMCFuncParameter[])">
+            <summary>
+            Faz query sql no BD com timeout padrão de 5 minutos.
+            Utilize no último caso. Converse com o pessoal da equipe primeiro.
+            </summary>
+            <typeparam name="TResult">Tipo do objeto de retorno</typeparam>
+            <param name="query">Consulta a ser executada</param>
+            <param name="parameters">Parametros da query</param>
+            <returns>Lista com os objetos retornados</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Average``1(SMC.Framework.Specification.SMCSpecification{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Int32}})">
+            <summary>
+            Recupera a média de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="property">Propriedade para cálculo da média.</param>
+            <returns>Média da propriedade informada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Average``1(System.Linq.Expressions.Expression{System.Func{``0,System.Double}})">
+            <summary>
+            Recupera a média de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="property">Propriedade para cálculo da média.</param>
+            <returns>Média da propriedade informada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Average``1(SMC.Framework.Specification.SMCSpecification{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Double}})">
+            <summary>
+            Recupera a média de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="property">Propriedade para cálculo da média.</param>
+            <returns>Média da propriedade informada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.BulkSaveEntity``1(System.Collections.Generic.List{``0},System.Int32)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="itens"></param>
+             <param name="batchSize"></param>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.BulkDeleteEntity``1(System.Collections.Generic.List{``0},System.Int32)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="itens"></param>
+            <param name="batchSize"></param>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.BulkInsertEntity``1(System.Collections.Generic.List{``0},System.Int32)">
+            <summary>
+            Realiza a gravação em lote de entidades.
+            Este método utiliza uma conexão própria para realizar a operação e não atualiza os sequenciais das entidades gravadas.
+            </summary>
+            <typeparam name="TEntity">Tipo da entidade a ser gravada</typeparam>
+            <param name="itens">Entidades a serem gravadas</param>
+            <param name="batchSize">Tamanho dos lotes de gravação</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Max``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Recupera o valor máximo de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <typeparam name="TResult">Tipo do resultado.</typeparam>
+            <param name="property">Propriedade com o valor máximo.</param>
+            <returns>Valor máximo para a propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Max``2(SMC.Framework.Specification.SMCSpecification{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Recupera o valor máximo de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <typeparam name="TResult">Tipo do resultado.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="property">Propriedade com o valor máximo.</param>
+            <returns>Valor máximo para a propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Min``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Recupera o valor mínimo de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <typeparam name="TResult">Tipo do resultado.</typeparam>
+            <param name="property">Propriedade com o valor mínimo.</param>
+            <returns>Valor mínimo para a propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Min``2(SMC.Framework.Specification.SMCSpecification{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Recupera o valor mínimo de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <typeparam name="TResult">Tipo do resultado.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="property">Propriedade com o valor mínimo.</param>
+            <returns>Valor mínimo para a propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Sum``1(System.Linq.Expressions.Expression{System.Func{``0,System.Int32}})">
+            <summary>
+            Recupera a soma de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="property">Propriedade para soma.</param>
+            <returns>Soma dos valores da propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Sum``1(System.Linq.Expressions.Expression{System.Func{``0,System.Decimal}})">
+            <summary>
+            Recupera a soma de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="property">Propriedade para soma.</param>
+            <returns>Soma dos valores da propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Sum``1(SMC.Framework.Specification.SMCSpecification{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Int32}})">
+            <summary>
+            Recupera a soma de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="property">Propriedade para soma.</param>
+            <returns>Soma dos valores da propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Sum``1(SMC.Framework.Specification.SMCSpecification{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Decimal}})">
+            <summary>
+            Recupera a soma de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="property">Propriedade para soma.</param>
+            <returns>Soma dos valores da propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Sum``1(System.Linq.Expressions.Expression{System.Func{``0,System.Double}})">
+            <summary>
+            Recupera a soma de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="property">Propriedade para soma.</param>
+            <returns>Soma dos valores da propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.Sum``1(SMC.Framework.Specification.SMCSpecification{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Double}})">
+            <summary>
+            Recupera a soma de uma propriedade de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="property">Propriedade para soma.</param>
+            <returns>Soma dos valores da propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.GroupBy``2(SMC.Framework.Specification.SMCSpecification{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Realiza o agrupamento de uma entidade em um resultado.
+            </summary>
+            <typeparam name="TEntity">Tipo da entidade.</typeparam>
+            <typeparam name="TResult">Resultado do agrupamento.</typeparam>
+            <param name="specification">Especificação para filtro da entidade.</param>
+            <param name="property">Propriedade para agrupamento.</param>
+            <returns>Resultado da consulta agrupando os elementos pela chave informada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepositoryProvider.CountGroupBy``2(SMC.Framework.Specification.SMCSpecification{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Realiza uma consulta e conta os elementos agrupando-os.
+            </summary>
+            <typeparam name="TEntity">Tipo do elemento.</typeparam>
+            <typeparam name="TResult">Resultado do agrupamento.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="property">Chave do agrupamento.</param>
+            <returns>Agrupamento com a quantidade de itens.</returns>
+        </member>
+        <member name="T:SMC.Framework.Repository.ISMCRepository`1">
+            <summary>
+            Define métodos para um repositório genérico.
+            </summary>
+            <typeparam name="TEntity">Entidade manipulada pelo repositório.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchByKey(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera a entidade que atendem ao critério especificado.
+            </summary>
+            <param name="specification">Critério para a pesquisa da entidade procurada.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Entidade que atende ao critério informado ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchByKey(SMC.Framework.Specification.SMCSpecification{`0},System.Enum)">
+            <summary>
+            Recupera a entidade que atendem ao critério especificado.
+            </summary>
+            <param name="specification">Critério para a pesquisa da entidade procurada.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Entidade que atende ao critério informado ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchProjectionByKey``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Recupera a entidade que atendem ao critério especificado.
+            </summary>
+            <typeparam name="TResult">Tipo do resultado esperado.</typeparam>
+            <param name="specification">Critério para a pesquisa da entidade procurada.</param>
+            <param name="projection">Função de projeção para retorno da operação.</param>
+            <returns>Entidade que atende ao critério informado ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchBySpecification(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchBySpecification(SMC.Framework.Specification.SMCSpecification{`0},System.Enum)">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchProjectionBySpecification``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean)">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <typeparam name="TResult">Tipo do resultado esperado.</typeparam>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="projection">Função de projeção para retorno da operação.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchByDepth(SMC.Framework.Specification.SMCSpecification{`0},System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Utilizado para buscar N níveis em uma árvore ou auto relacionamento
+            </summary>
+            <param name="specification"></param>
+            <param name="depth">Nível da profundidade que será buscado.</param>
+            <param name="includes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchBySpecification(SMC.Framework.Specification.SMCSpecification{`0},System.Int32@,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="total">Total de entidades encontradas na pesquisa.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchBySpecification(SMC.Framework.Specification.SMCSpecification{`0},System.Int32@,System.Enum)">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="total">Total de entidades encontradas na pesquisa.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchProjectionBySpecification``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Int32@,System.Boolean)">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <typeparam name="TResult">Tipo do resultado esperado.</typeparam>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="projection">Função de projeção para retorno da operação.</param>
+            <param name="total">Total de entidades encontradas na pesquisa.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchAll``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera todos as entidades (TrueSpecification). Pode-se ordenar e fazer includes
+            </summary>
+            <param name="orderBy">Expressão para ordenação das entidades.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Todas as entidades.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchAll``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Enum)">
+            <summary>
+            Recupera todos as entidades (TrueSpecification). Pode-se ordenar e fazer includes
+            </summary>
+            <param name="orderBy">Expressão para ordenação das entidades.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Todas as entidades.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchProjectionAll``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,``1}},System.Boolean)">
+            <summary>
+            Recupera todos as entidades (TrueSpecification). Pode-se ordenar e fazer includes
+            </summary>
+            <typeparam name="TResult">Tipo do resultado esperado.</typeparam>
+            <typeparam name="TKey"></typeparam>
+            <param name="projection">Função de projeção para retorno da operação.</param>
+            <param name="orderBy">Expressão para ordenação das entidades.</param>
+            <param name="isDistinct"></param>
+            <returns>Todas as entidades.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.Insert(`0)">
+            <summary>
+            Inclui uma nova entidade ao repositório.
+            </summary>
+            <param name="item">Nova entidade a ser incluída.</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.DynamicSaveEntity(`0,System.String[])">
+            <summary>
+            Método utilizado no Dynamic
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.DynamicDeleteEntity(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Método utilizado no Dynamic
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.DynamicSearchEntity(SMC.Framework.Model.SMCPageSetting,System.Collections.Generic.Dictionary{System.String,System.Object},System.String[],System.Int32@)">
+            <summary>
+            Método utilizado no dynamic
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.Update(`0,System.String[])">
+            <summary>
+            Edita uma entidade existente do repositório.
+            </summary>
+            <param name="item">Entidade a ser alterada.</param>
+            <param name="rejectsUpdate">Ignora a propriedade no Update</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.UpdateFields``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}}[])">
+            <summary>
+            Atualiza somente alguns campos
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="entity"></param>
+            <param name="properties">Propriedades que serão atualizadas. NAO PRECISA PASSAR OS CAMPOS DE AUDITORIA</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.Delete(`0)">
+            <summary>
+            Exclui uma entidade existente do repositório.
+            </summary>
+            <param name="item">Entidade que será excluída do repositório.</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.ExecuteFunction``1(System.String,System.Collections.Generic.IList{SMC.Framework.Repository.SMCFuncParameter})">
+            <summary>
+            Método que executa um comando em uma Stored Procedure ou função. Exemplo: Insert
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.ExecuteFunction(System.String,System.Collections.Generic.IList{SMC.Framework.Repository.SMCFuncParameter})">
+            <summary>
+            Método que executa um comando em uma Stored Procedure ou função. Exemplo: Insert
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.ExecuteFunctionReader(System.String,System.Collections.Generic.IList{SMC.Framework.Repository.SMCFuncParameter})">
+            <summary>
+            Método que executa um select em uma Stored Procedure ou função.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.Count">
+            <summary>
+            Recupera o total de entidades cadastradas.
+            </summary>
+            <returns>Total de entidades cadastradas.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.Count(SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Recupera o total de entidades cadastradas que atendem à especificação informada.
+            </summary>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <returns>Total de entidades cadastradas que atendem à especificação informada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.Average(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Double}})">
+             <summary>
+            
+             </summary>
+             <param name="specification"></param>
+             <param name="property"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.Average(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">
+             <summary>
+            
+             </summary>
+             <param name="specification"></param>
+             <param name="property"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.Max``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+             <summary>
+            
+             </summary>
+             <typeparam name="TResult"></typeparam>
+             <param name="property"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.Max``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.Min``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+             <summary>
+            
+             </summary>
+             <typeparam name="TResult"></typeparam>
+             <param name="property"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.Sum(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Double}})">
+             <summary>
+            
+             </summary>
+             <param name="specification"></param>
+             <param name="property"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.Sum(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Decimal}})">
+             <summary>
+            
+             </summary>
+             <param name="specification"></param>
+             <param name="property"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.Sum(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">
+             <summary>
+            
+             </summary>
+             <param name="specification"></param>
+             <param name="property"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.GroupBy``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+             <summary>
+            
+             </summary>
+             <typeparam name="TResult"></typeparam>
+             <param name="specification"></param>
+             <param name="property"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.CountGroupBy``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+             <summary>
+            
+             </summary>
+             <typeparam name="TResult"></typeparam>
+             <param name="specification"></param>
+             <param name="property"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.RawQuery``1(System.String,SMC.Framework.Repository.SMCFuncParameter[])">
+            <summary>
+            Faz query sql no BD com timeout padrão de 5 minutos.
+            Utilize no último caso. Converse com o pessoal da equipe primeiro.
+            </summary>
+            <typeparam name="TResult">Tipo do objeto de retorno</typeparam>
+            <param name="query">Consulta a ser executada</param>
+            <param name="parameters">Parametros da query</param>
+            <returns>Lista com os objetos retornados</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.RawQuery``1(System.String,System.Int32,SMC.Framework.Repository.SMCFuncParameter[])">
+            <summary>
+            Faz query sql no BD.
+            Utilize no último caso. Converse com o pessoal da equipe primeiro.
+            </summary>
+            <typeparam name="TResult">Tipo do objeto de retorno</typeparam>
+            <param name="query">Consulta a ser executada</param>
+            <param name="timeOutComand">Timeout em segundos</param>
+            <param name="parameters">Parametros da query</param>
+            <returns>Lista com os objetos retornados</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.BulkSaveEntity``1(System.Collections.Generic.List{``0},System.Int32)">
+             <summary>
+            
+             </summary>
+             <param name="itens"></param>
+             <param name="batchSize"></param>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.BulkInsertEntity``1(System.Collections.Generic.List{``0},System.Int32)">
+            <summary>
+            Realiza a gravação em lote de entidades.
+            Este método utiliza uma conexão própria para realizar a operação e não atualiza os sequenciais das entidades gravadas.
+            </summary>
+            <typeparam name="TEntityBulk">Tipo da entidade a ser gravada</typeparam>
+            <param name="itens">Entidades a serem gravadas</param>
+            <param name="batchSize">Tamanho dos lotes de gravação</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.InitializeContext">
+            <summary>
+            Inicializa o contexto com os filtros e relacionamentos
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchAllAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+             <summary>
+            
+             </summary>
+             <param name="orderBy"></param>
+             <param name="includes"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchBySpecificationAsync(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+             <summary>
+            
+             </summary>
+             <param name="specification"></param>
+             <param name="includes"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.SearchByKeyAsync(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+             <summary>
+            
+             </summary>
+             <param name="specification"></param>
+             <param name="includes"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.InsertAsync(`0)">
+             <summary>
+            
+             </summary>
+             <param name="item"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.UpdateAsync(`0)">
+             <summary>
+            
+             </summary>
+             <param name="item"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.DeleteAsync(`0)">
+             <summary>
+            
+             </summary>
+             <param name="item"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.ISMCRepository`1.ExecuteSqlCommandAsync(System.String,System.Collections.Generic.IList{SMC.Framework.Repository.SMCFuncParameter},System.Int32)">
+            <summary>
+            Faz INSERT ou UPDATE
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SMC.Framework.Repository.SMCRepositoryProviderEventArgs">
+            <summary>
+            Classe que representa os argumentos de um evento da classe SMCRepositoryProvider.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepositoryProviderEventArgs.#ctor(System.Object)">
+            <summary>
+            Cria um novo objeto SMCRepositoryProviderEventArgs.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Repository.SMCRepositoryProviderEventArgs.Entity">
+            <summary>
+            Entidade afetada pela operação.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Repository.SMCRepositoryIocMapping._repositories">
+            <summary>
+            Armazena a classe de configuração de repositórios.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Repository.SMCRepositoryIocMapping.Repositories">
+            <summary>
+            Configura os repositórios.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepositoryIocMapping.EnsureDefaults">
+            <summary>
+            Garante que os mapeamentos padrão são mapeados.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Repository.SMCRepositoryIocMapping.SMCRepositoryMapping">
+            <summary>
+            Classe de configuração de repositories.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepositoryIocMapping.SMCRepositoryMapping.#ctor(SMC.Framework.Ioc.ISMCIocContainer)">
+            <summary>
+            Cria uma nova intância de SMCRepositoryMapping.
+            </summary>
+            <param name="container">Container de Ioc.</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepositoryIocMapping.SMCRepositoryMapping.Register``2">
+            <summary>
+            Configura a classe com o mapeamento para repositórios.
+            </summary>
+            <typeparam name="TInterface">Interface do repositório.</typeparam>
+            <typeparam name="TImplementation">Implementação do repositório.</typeparam>
+            <returns>Classe de configuração de repositorios.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepositoryIocMapping.SMCRepositoryMapping.Register``2(System.String)">
+            <summary>
+            Configura a classe com o mapeamento para repositórios.
+            </summary>
+            <typeparam name="TInterface">Interface do repositório.</typeparam>
+            <typeparam name="TImplementation">Implementação do repositório.</typeparam>
+            <param name="name">Nome do mapeamento.</param>
+            <returns>Classe de configuração de repositorios.</returns>
+        </member>
+        <member name="T:SMC.Framework.Repository.SMCRepository`1">
+            <summary>
+            Classe base para todos os repositórios.
+            </summary>
+            <typeparam name="TEntity">Entidade associada ao repositório.</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Repository.SMCRepository`1._type">
+            <summary>
+            Tipo do repositório
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Repository.SMCRepository`1._containerManager">
+            <summary>
+            Armazena a classe de gerenciamento de instancias de objetos criados por IoC.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Repository.SMCRepository`1.ProviderName">
+            <summary>
+            Nome do provider.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Repository.SMCRepository`1.Provider">
+            <summary>
+            Recupera o provider para acesso à base.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchByKey(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera a entidade que atendem ao critério especificado (use a chave porque será retornar somente um registro sem orderBy)
+            </summary>
+            <param name="specification">Critério para a pesquisa da entidade procurada.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Entidade que atende ao critério informado ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchByKey(SMC.Framework.Specification.SMCSpecification{`0},System.Enum)">
+            <summary>
+            Recupera a entidade que atendem ao critério especificado (use a chave porque será retornar somente um registro sem orderBy)
+            </summary>
+            <param name="specification">Critério para a pesquisa da entidade procurada.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Entidade que atende ao critério informado ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchProjectionByKey``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Recupera a entidade que atendem ao critério especificado (use a chave porque será retornar somente um registro sem orderBy)
+            </summary>
+            <typeparam name="TResult">Tipo do resultado esperado.</typeparam>
+            <param name="projection">Função de projeção para retorno da operação.</param>
+            <param name="specification">Critério para a pesquisa da entidade procurada.</param>
+            <returns>Entidade que atende ao critério informado ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchProjectionBySpecification``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean)">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <typeparam name="TResult">Tipo do resultado esperado.</typeparam>
+            <param name="projection">Função de projeção para retorno da operação.</param>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchByDepth(SMC.Framework.Specification.SMCSpecification{`0},System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Utilizado para buscar N níveis em uma árvore ou auto relacionamento
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.DynamicSearch``1(SMC.Framework.Specification.SMCSpecification{``0},System.Int32@,System.String[])">
+            <summary>
+            Método utilizado novo Dynamic.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchBySpecification(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchBySpecification(SMC.Framework.Specification.SMCSpecification{`0},System.Enum)">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchBySpecification(SMC.Framework.Specification.SMCSpecification{`0},System.Int32@,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="total">Total de entidades encontradas na pesquisa.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchBySpecification(SMC.Framework.Specification.SMCSpecification{`0},System.Int32@,System.Enum)">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="total">Total de entidades encontradas na pesquisa.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchProjectionBySpecification``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Int32@,System.Boolean)">
+            <summary>
+            Recupera entidades que atendem ao critério especificado.
+            </summary>
+            <typeparam name="TResult">Tipo do resultado esperado.</typeparam>
+            <param name="specification">Critério para a pesquisa das entidades procuradas.</param>
+            <param name="projection">Função de projeção para retorno da operação.</param>
+            <param name="total">Total de entidades encontradas na pesquisa.</param>
+            <returns>Lista de entidades que atendem ao critério de pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchAll``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Enum)">
+            <summary>
+            Recupera todas as entidades cadastradas.
+            </summary>
+            <param name="orderBy">Cláusula de ordenação da entidade.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Entidades cadastradas.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchAll``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera todas as entidades cadastradas.
+            </summary>
+            <param name="orderBy">Cláusula de ordenação da entidade.</param>
+            <param name="includes">Propriedades a serem incluídas na consulta.</param>
+            <returns>Entidades cadastradas.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchProjectionAll``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean)">
+            <summary>
+            Recupera todas as entidades cadastradas.
+            </summary>
+            <typeparam name="TResult">Tipo do resultado.</typeparam>
+            <param name="projection">Projeção.</param>
+            <param name="isDistinct"></param>
+            <returns>Entidades cadastradas.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchProjectionAll``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,``1}},System.Boolean)">
+            <summary>
+            Recupera todas as entidades cadastradas.
+            </summary>
+            <typeparam name="TResult">Tipo do resultado.</typeparam>
+            <typeparam name="TKey"></typeparam>
+            <param name="projection">Projeção.</param>
+            <param name="orderBy">Cláusula de ordenação da entidade.</param>
+            <param name="isDistinct"></param>
+            <returns>Entidades cadastradas.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Count">
+            <summary>
+            Recupera o total de entidades cadastradas.
+            </summary>
+            <returns>Total de entidades cadastradas.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Count(SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Recupera o total de entidades cadastradas que atendem à especificação informada.
+            </summary>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <returns>Total de entidades cadastradas que atendem à especificação informada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Insert(`0)">
+            <summary>
+            Inclui uma nova entidade ao repositório.
+            </summary>
+            <param name="item">Nova entidade a ser incluída.</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.DynamicSaveEntity(`0,System.String[])">
+            <summary>
+            Método utilizado no Dynamic
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.DynamicDeleteEntity(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Método utilizado no Dynamic
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.DynamicSearchEntity(SMC.Framework.Model.SMCPageSetting,System.Collections.Generic.Dictionary{System.String,System.Object},System.String[],System.Int32@)">
+            <summary>
+            Método utilizado no Dynamic
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SaveEntity(`0,System.String[])">
+            <summary>
+            Método utilizado pelo Dynamic
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.DeleteEntity(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Método utilizado pelo Dynamic
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Update(`0,System.String[])">
+            <summary>
+            Edita uma entidade existente do repositório.
+            </summary>
+            <param name="item">Entidade a ser alterada.</param>
+            <param name="rejectsUpdate">Propriedades que serão ignoradas no Update</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.UpdateFields``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}}[])">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <typeparam name="TProperty"></typeparam>
+             <param name="entity"></param>
+             <param name="properties">Campos que serão atualizados. Não necessita passar os campos de auditoria</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Delete(`0)">
+            <summary>
+            Exclui uma entidade existente do repositório.
+            </summary>
+            <param name="item">Entidade que será excluída do repositório.</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Dispose">
+            <summary>
+            Limpa a classe de gerenciamento de IoC.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Create``1">
+            <summary>
+            Cria uma instância de uma classe.
+            </summary>
+            <typeparam name="TInterface">Tipo da instância.</typeparam>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Create``1(System.String)">
+            <summary>
+            Cria uma instância de uma classe utilizando uma mapeamento especificado pelo nome.
+            </summary>
+            <typeparam name="TInterface">Tipo da instância.</typeparam>
+            <param name="name">Nome do mapeamento no container de IoC.</param>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.InitializeContext">
+            <summary>
+            Inicializa o contexto com os filtros e relacionamentos
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.ExecuteFunction``1(System.String,System.Collections.Generic.IList{SMC.Framework.Repository.SMCFuncParameter})">
+            <summary>
+            Método que executa um comando em uma Stored Procedure ou função. Exemplo: Insert
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.ExecuteFunction(System.String,System.Collections.Generic.IList{SMC.Framework.Repository.SMCFuncParameter})">
+            <summary>
+            Método que executa um comando em uma Stored Procedure ou função. Exemplo: Insert
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.ExecuteFunctionReader(System.String,System.Collections.Generic.IList{SMC.Framework.Repository.SMCFuncParameter})">
+            <summary>
+            Método que executa um select em uma Stored Procedure ou função.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Max``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Recupera o valor máximo de um campo.
+            </summary>
+            <typeparam name="TResult">Tipo do resultado.</typeparam>
+            <param name="property">Expressão para recuperar o campo.</param>
+            <returns>Valor máximod do campo.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Max``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Recupera o valor máximo de um campo.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.RawQuery``1(System.String,System.Int32,SMC.Framework.Repository.SMCFuncParameter[])">
+            <summary>
+            Faz query sql no BD.
+            Utilize no último caso. Converse com o pessoal da equipe primeiro.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.RawQuery``1(System.String,SMC.Framework.Repository.SMCFuncParameter[])">
+            <summary>
+            Faz query sql no BD.
+            Utilize no último caso. Converse com o pessoal da equipe primeiro.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="query"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.BulkInsertEntity``1(System.Collections.Generic.List{``0},System.Int32)">
+            <summary>
+            Realiza a gravação em lote de entidades.
+            Este método utiliza uma conexão própria para realizar a operação e não atualiza os sequenciais das entidades gravadas.
+            </summary>
+            <typeparam name="TEntityBulk">Tipo da entidade a ser gravada</typeparam>
+            <param name="itens">Entidades a serem gravadas</param>
+            <param name="batchSize">Tamanho dos lotes de gravação</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Invoke``1(System.Func{``0},System.String,System.String,System.Int32)">
+            <summary>
+            Método de suporte para executar uma operação fazendo o tratamento de erro e tratamento de performance.
+            </summary>
+            <typeparam name="T">Tipo do resultado.</typeparam>
+            <param name="func">Função a ser executada.</param>
+            <param name="memberName">Nome do método de origem.</param>
+            <param name="filePath">Caminho do arquivo.</param>
+            <param name="lineNumber">Linha do erro.</param>
+            <returns>Resultado da execução do método.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Invoke(System.Action,System.String,System.String,System.Int32)">
+            <summary>
+            Método de suporte para executar uma operação fazendo o tratamento de erro e tratamento de performance.
+            </summary>
+            <param name="action">Função a ser executada.</param>
+            <param name="memberName">Nome do método de origem.</param>
+            <param name="filePath">Caminho do arquivo.</param>
+            <param name="lineNumber">Linha do erro.</param>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.GetIncludes``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+            Recupera os includes em string a partir de includes em lambda.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="includes">Includes em labda.</param>
+            <returns>Includes em string.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.GetIncludes(System.Enum)">
+            <summary>
+            Recupera os includes em string a partir de includes em enum.
+            </summary>
+            <param name="includes">Includes em enum.</param>
+            <returns>Includes em string.</returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Provider_Inserting(System.Object,SMC.Framework.Repository.SMCRepositoryProviderEventArgs)">
+            <summary>
+            Tratamento do evento do provider antes da inclusão.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Provider_Inserted(System.Object,SMC.Framework.Repository.SMCRepositoryProviderEventArgs)">
+            <summary>
+            Tratamento do evento do provider depois da inclusão.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Provider_Updating(System.Object,SMC.Framework.Repository.SMCRepositoryProviderEventArgs)">
+            <summary>
+            Tratamento do evento do provider antes da atualização.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Provider_Updated(System.Object,SMC.Framework.Repository.SMCRepositoryProviderEventArgs)">
+            <summary>
+            Tratamento do evento do provider depois da atualização.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Provider_Deleting(System.Object,SMC.Framework.Repository.SMCRepositoryProviderEventArgs)">
+            <summary>
+            Tratamento do evento do provider antes da exclusão.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.Provider_Deleted(System.Object,SMC.Framework.Repository.SMCRepositoryProviderEventArgs)">
+            <summary>
+            Tratamento do evento do provider depois da exclusão.
+            </summary>
+        </member>
+        <member name="E:SMC.Framework.Repository.SMCRepository`1.Inserting">
+            <summary>
+            Evento disparado antes da inclusão.
+            </summary>
+        </member>
+        <member name="E:SMC.Framework.Repository.SMCRepository`1.Inserted">
+            <summary>
+            Evento disparado depois da inclusão.
+            </summary>
+        </member>
+        <member name="E:SMC.Framework.Repository.SMCRepository`1.Updating">
+            <summary>
+            Evento disparado antes da edição.
+            </summary>
+        </member>
+        <member name="E:SMC.Framework.Repository.SMCRepository`1.Updated">
+            <summary>
+            Evento disparado depois da edição.
+            </summary>
+        </member>
+        <member name="E:SMC.Framework.Repository.SMCRepository`1.Deleting">
+            <summary>
+            Evento disparado antes da exclusão.
+            </summary>
+        </member>
+        <member name="E:SMC.Framework.Repository.SMCRepository`1.Deleted">
+            <summary>
+            Evento disparado depois da exclusão.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.OnInserting(SMC.Framework.Repository.SMCRepositoryEventArgs{`0})">
+            <summary>
+            Dispara o evento antes da inclusão.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.OnInserted(SMC.Framework.Repository.SMCRepositoryEventArgs{`0})">
+            <summary>
+            Dispara o evento depois da inclusão.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.OnUpdating(SMC.Framework.Repository.SMCRepositoryEventArgs{`0})">
+            <summary>
+            Dispara o evento antes da edição.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.OnUpdated(SMC.Framework.Repository.SMCRepositoryEventArgs{`0})">
+            <summary>
+            Dispara o evento depois da edição.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.OnDeleting(SMC.Framework.Repository.SMCRepositoryEventArgs{`0})">
+            <summary>
+            Dispara o evento antes da exclusão.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.OnDeleted(SMC.Framework.Repository.SMCRepositoryEventArgs{`0})">
+            <summary>
+            Dispara o evento depois da exclusão.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchAllAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+             <summary>
+            
+             </summary>
+             <param name="orderBy"></param>
+             <param name="includes"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchBySpecificationAsync(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+             <summary>
+            
+             </summary>
+             <param name="specification"></param>
+             <param name="includes"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.SearchByKeyAsync(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+             <summary>
+            
+             </summary>
+             <param name="specification"></param>
+             <param name="includes"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.InsertAsync(`0)">
+             <summary>
+            
+             </summary>
+             <param name="item"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.UpdateAsync(`0)">
+             <summary>
+            
+             </summary>
+             <param name="item"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepository`1.DeleteAsync(`0)">
+             <summary>
+            
+             </summary>
+             <param name="item"></param>
+             <returns></returns>
+        </member>
+        <member name="T:SMC.Framework.Repository.SMCRepositoryEventArgs`1">
+            <summary>
+            Classe que representa os argumentos de um evento de repositório.
+            </summary>
+            <typeparam name="TEntity">Tipo da entidade do repositório.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Repository.SMCRepositoryEventArgs`1.#ctor(`0)">
+            <summary>
+            Cria um novo objeto SMCRepositoryEventArgs.
+            </summary>
+            <param name="entity">Entidade que está sendo manipulada.</param>
+        </member>
+        <member name="P:SMC.Framework.Repository.SMCRepositoryEventArgs`1.Entity">
+            <summary>
+            Entidade que está sendo manipulada.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Repository.SMCFuncResult`1">
+            <summary>
+            Classe utilizada para retornar o resultado de uma função. Utilizada no repository.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Repository.SMCFuncResult`1.ResultList">
+            <summary>
+            Utilizado no ExecuteFuncionReader
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Repository.SMCFuncResult`1.Parameters">
+            <summary>
+            Parâmetro retornados pela procedure (caso exista parâmetros de saída)
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Repository.SMCFuncResult`1.ResultInt">
+            <summary>
+            Utilizado no ExecuteFuncion
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.SMCConverterHelper">
+            <summary>
+            Classe com métodos de suporte para conversão.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.SMCConverterHelper.ToDbType(System.Type)">
+            <summary>
+            Recupera um DbType associado a um type específico.
+            </summary>
+            <param name="type">Tipo que será convertido para DbType.</param>
+            <returns>DbType associado ao tipo informado.</returns>
+        </member>
+        <member name="M:SMC.Framework.SMCConverterHelper.ToSqlDbType(System.Type)">
+            <summary>
+            Recupera um DbType associado a um type específico.
+            </summary>
+            <param name="type">Tipo que será convertido para DbType.</param>
+            <returns>DbType associado ao tipo informado.</returns>
+        </member>
+        <member name="T:SMC.Framework.Exceptions.SMCDuplicatedEntityException">
+            <summary>
+            Representa uma exceção quando são encontradas mais de uma entidade com a chave informada.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Exceptions.SMCDuplicatedEntityException.#ctor(System.Type,System.Object)">
+            <summary>
+            Cria uma nova instância de SMCDuplicatedEntityException com o tipo da entidade e a chave da entidade.
+            </summary>
+            <param name="entityType">Tipo da entidade.</param>
+            <param name="entityKey">Chave da entidade.</param>
+        </member>
+        <member name="F:SMC.Framework.Exceptions.SMCDuplicatedEntityException._entityType">
+            <summary>
+            Armazena o tipo da entidade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Exceptions.SMCDuplicatedEntityException.EntityType">
+            <summary>
+            Tipo da entidade.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Exceptions.SMCDuplicatedEntityException._entityKey">
+            <summary>
+            Armazena a chave da entidade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Exceptions.SMCDuplicatedEntityException.EntityKey">
+            <summary>
+            Chave da entidade.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Exceptions.SMCEntityNotFoundException">
+            <summary>
+            Representa uma exceção quando a entidade não foi encontrada.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Exceptions.SMCEntityNotFoundException.#ctor(System.Type,System.Object)">
+            <summary>
+            Cria uma instância de SMCEntityNotFoundException com a chave da entidade.
+            </summary>
+            <param name="entityType">Tipo da entidade.</param>
+            <param name="entityKey">Chave da entidade.</param>
+        </member>
+        <member name="F:SMC.Framework.Exceptions.SMCEntityNotFoundException._entityType">
+            <summary>
+            Armazena o tipo da entidade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Exceptions.SMCEntityNotFoundException.EntityType">
+            <summary>
+            Tipo da entidade.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Exceptions.SMCEntityNotFoundException._entityKey">
+            <summary>
+            Armazena a chave da entidade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Exceptions.SMCEntityNotFoundException.EntityKey">
+            <summary>
+            Chave da entidade.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Exceptions.Resources.ExceptionsResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Exceptions.Resources.ExceptionsResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Exceptions.Resources.ExceptionsResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Exceptions.Resources.ExceptionsResource.SMCDuplicatedEntityException">
+            <summary>
+              Looks up a localized string similar to Existem mais de uma entidade &apos;{0}&apos; com a chave &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Exceptions.Resources.ExceptionsResource.SMCEntityNotFoundException">
+            <summary>
+              Looks up a localized string similar to Não foi encontrada entidade &apos;{0}&apos; com a chave &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Exceptions.Resources.ExceptionsResource.SMCUniqueIndexViolationException">
+            <summary>
+              Looks up a localized string similar to Não foi possível realizar a operação pois existe outra entidade cadastrada com a mesma chave única. {0}.
+            </summary>
+        </member>
+    </members>
+</doc>

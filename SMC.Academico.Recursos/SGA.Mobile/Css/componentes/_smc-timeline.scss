@@ -1,0 +1,180 @@
+﻿.smc-timeline-seta {
+    display: none;
+}
+
+.smc-timeline-data {
+   // padding: 0px 5px 0px 35px !important;
+    height: 41px !important;
+    //margin-left: 20px !important;
+
+    &:before {
+        width: 0;
+        height: 0;
+        content: '';
+        background-color: $smc-cor-principal-03;
+        border-radius: 50px;
+        position: relative;
+        margin-left: -67px;
+        margin-top: 13px;
+        border: 2px solid $smc-branco;
+        padding: 4px 4px;
+        line-height: 0;
+        font-size: 0;
+        float: left;
+    }
+
+    span {
+        margin-left: 3px;
+        margin-top: 9px;
+        margin-bottom: 0;
+        position: inherit;
+        display: block;
+        float: left;
+        width:80px;
+    }
+
+    &:after {
+        content: '';
+        display: inline-flex;
+        margin-left: -137px;
+        margin-top: -1px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 21px 18px 20px 0;
+        border-color: transparent $smc-cor-principal-03 transparent transparent;
+    }
+}
+
+.smc-timeline-datahoje {
+    background-color: $smc-cor-secundaria-06 !important;
+    border: 1px solid $smc-cor-secundaria-06 !important;
+
+    &:before {
+        background-color: $smc-cor-secundaria-06 !important;
+    }
+
+    &:after {
+        border-color: transparent $smc-cor-secundaria-06 transparent transparent !important;
+    }
+}
+
+// TIPOS DE ITENS DA TIMELINE
+.smc-timeline-base-itens {
+    .smc-timeline-ico {
+        width: 8.33333%;
+        @extend .fa;
+        color: $smc-preto;
+        font-size: 18px;
+        position: absolute;
+        margin-top: 5px;
+    }
+
+    .smc-timeline-titulo {
+        width: 91.66667%;
+        margin-left: 8.33333%;
+        color: $smc-cinza;
+    }
+
+    .smc-timeline-post {
+        width: 91.66667%;
+        margin-left: 8.33333%;
+        color: $smc-cinza;
+    }
+
+    
+}
+.smc-timeline-dataitem {
+    width: 100%;
+    font-weight: bold;
+    font-size: 12px;
+    color: $smc-cor-principal;
+    border-bottom: solid 1px $smc-cinza-04;
+    padding-bottom: 5px;
+
+    @extend .fa;
+    @extend .fa-clock-o;
+
+    &::before {
+        margin: 0 6px 0 0;
+    }
+
+    span {
+        font-size: 12px;
+    }
+}
+.smc-timeline-conteudo-principal {
+    display: inline-block !important;
+}
+
+.smc-timeline-tipo-comunicacao {
+    @extend .smc-timeline-base-itens;
+
+    .smc-timeline-ico {
+        @extend .fa-comment-o;
+    }
+}
+
+.smc-timeline-tipo-agendamento {
+    @extend .smc-timeline-base-itens;
+
+    .smc-timeline-ico {
+        @extend .fa-calendar;
+    }
+}
+
+.smc-timeline-tipo-alertas {
+    @extend .smc-timeline-base-itens;
+
+    .smc-timeline-ico {
+        @extend .fa-exclamation-triangle;
+    }
+}
+
+.smc-timeline-tipo-novidades {
+    @extend .smc-timeline-base-itens;
+
+    .smc-timeline-ico {
+        @extend .fa-star;
+    }
+}
+
+.smc-timeline-tipo-notas {
+    @extend .smc-timeline-base-itens;
+
+    .smc-timeline-ico {
+        @extend .fa-bar-chart;
+    }
+}
+
+.smc-timeline-tipo-material {
+    @extend .smc-timeline-base-itens;
+
+    .smc-timeline-ico {
+        @extend .fa-files-o;
+    }
+}
+
+
+// RESPONSIVIDADE
+@media (min-width:768px) and (max-width:991px) {
+    .smc-timeline .smc-timeline-list > li .smc-timeline-data {
+        width: 40%!important;
+    }
+}
+
+@media (min-width:0px) and (max-width:$smc-size-screen-xs-max) {
+    .smc-timeline .smc-timeline-list > li .smc-timeline-data {
+        width: 35%!important;
+    }
+
+    .smc-timeline-base-itens .smc-timeline-post,
+    .smc-timeline-tipo-comunicacao .smc-timeline-post,
+    .smc-timeline-tipo-agendamento .smc-timeline-post,
+    .smc-timeline-tipo-alertas .smc-timeline-post,
+    .smc-timeline-tipo-novidades .smc-timeline-post,
+    .smc-timeline-tipo-notas .smc-timeline-post,
+    .smc-timeline-tipo-material .smc-timeline-post {
+        width: 81%!important;
+    }
+}

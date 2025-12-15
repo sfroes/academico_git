@@ -1,0 +1,16 @@
+﻿@model OfertaCursoCicloLetivoAssociacaoCursoUnidadeTurnoViewModel
+
+@if (Model != null && Model.SeqAssociacaoCursoUnidadeTurno != 0) { Smc.SetViewMode(SMCViewMode.Edit); }
+
+@using (Smc.Fieldset("fieldsetAssociacaoCursoUnidadeTurno").Begin())
+{
+    @Smc.FieldEditorFor(prop => prop.SeqOfertaCursoCicloLetivo)
+    @Smc.FieldEditorFor(prop => prop.SeqAssociacaoCursoUnidadeTurno)
+
+    @Smc.FieldEditorFor(prop => prop.SeqCurso)
+    @Smc.FieldEditorFor(prop => prop.SeqModalidade)
+    @Smc.FieldEditorFor(prop => prop.SeqUnidadeLocalidadeSelecionada)
+    @Smc.FieldEditorFor(prop => prop.SeqFormacao)
+    @Smc.FieldEditorFor(prop => prop.SeqTurno)
+    @Smc.FieldEditorFor(prop => prop.SeqCurriculoPadraoSelecionado)
+}

@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AgendamentoBancaIndisponivel" xml:space="preserve">
+    <value>Não é permitido o agendamento de banca examinadora, pois já existe uma avaliação válida cadastrada.</value>
+  </data>
+  <data name="AlteracaoAtaNaoPermitidaAlunoFormado" xml:space="preserve">
+    <value>A ata não poderá ser alterada pois o aluno já está formado.</value>
+  </data>
+  <data name="ApuracaoAvaliacaoNaoPermitida" xml:space="preserve">
+    <value>A apuração da avaliação não poderá ser realizada. Pois, a avaliação está cancelada ou avaliação está agendada para uma data futura ou já foi apurada ou a situação atual da formação do aluno não permite.</value>
+  </data>
+  <data name="AutorizacaoNovoDepositoAssociada" xml:space="preserve">
+    <value>Este trabalho possui autorização de novo depósito associado a ele e desta forma não poderá ter sua avaliação alterada</value>
+  </data>
+  <data name="AvaliacaoTrabalhoAcademicoBancaExaminadora_Modal_Titulo" xml:space="preserve">
+    <value>Banca Examinadora</value>
+  </data>
+  <data name="Botao_Adicionar_Ata_Defesa" xml:space="preserve">
+    <value>Adicionar ata de defesa</value>
+  </data>
+  <data name="Botao_Adicionar_Ata_Defesa_Tooltip" xml:space="preserve">
+    <value>Adicionar ata de defesa</value>
+  </data>
+  <data name="Botao_Agendamento_Banca" xml:space="preserve">
+    <value>Agendamento de banca</value>
+  </data>
+  <data name="Botao_Agendamento_Banca_Tooltip" xml:space="preserve">
+    <value>Agendamento de banca</value>
+  </data>
+  <data name="Botao_Alterar_Aplicacao_Avaliacao_Banca" xml:space="preserve">
+    <value>Alterar banca examinadora</value>
+  </data>
+  <data name="Botao_Alterar_Ata_Defesa" xml:space="preserve">
+    <value>Alterar ata de defesa</value>
+  </data>
+  <data name="Botao_Alterar_Ata_Defesa_Tooltip" xml:space="preserve">
+    <value>Alterar ata de defesa</value>
+  </data>
+  <data name="Botao_Editar" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="Botao_Editar_Aplicacao_Avaliacao_Banca" xml:space="preserve">
+    <value>Alterar banca examinadora</value>
+  </data>
+  <data name="Botao_Emitir_Ata_Defesa" xml:space="preserve">
+    <value>Emitir ata de defesa</value>
+  </data>
+  <data name="Botao_Emitir_Ata_Defesa_Tooltip" xml:space="preserve">
+    <value>Emitir ata de defesa</value>
+  </data>
+  <data name="Botao_Excluir_Aplicacao_Avaliacao_Banca" xml:space="preserve">
+    <value>Excluir banca examinadora</value>
+  </data>
+  <data name="Botao_Excluir_Nota_Lancada" xml:space="preserve">
+    <value>Excluir nota lançada</value>
+  </data>
+  <data name="Botao_Lancamento_Nota" xml:space="preserve">
+    <value>Lançamento de nota</value>
+  </data>
+  <data name="Botao_Lancar_Nota_Banca_Examinadora" xml:space="preserve">
+    <value>Lançamento de nota</value>
+  </data>
+  <data name="Botao_Novo" xml:space="preserve">
+    <value>Nova Banca Examinadora</value>
+  </data>
+  <data name="Botao_Novo_Tooltip" xml:space="preserve">
+    <value>Nova banca examinadora</value>
+  </data>
+  <data name="Botao_VisualizarDetalhesCancelamento" xml:space="preserve">
+    <value>Detalhes do cancelamento</value>
+  </data>
+  <data name="DetalhesCancelamentoBanca_Fieldset_Legenda" xml:space="preserve">
+    <value>Detalhes do cancelamento</value>
+  </data>
+  <data name="DivisoesComponente_Detalhe_Titulo" xml:space="preserve">
+    <value>Divisões Componentes</value>
+  </data>
+  <data name="EdicaoBancaCancelada" xml:space="preserve">
+    <value>Não é permitido a alteração de dados de banca examinadora cancelada.</value>
+  </data>
+  <data name="Editar_Title" xml:space="preserve">
+    <value>Alterar Banca Examinadora</value>
+  </data>
+  <data name="EmissaoAtaDefesaNaoPermitida" xml:space="preserve">
+    <value>Esta avaliação não possui ata de defesa.</value>
+  </data>
+  <data name="Excluir_Aplicacao_Avaliacao_Banca_Confirmacao" xml:space="preserve">
+    <value>Deseja realmente excluir esta Banca Examinadora?</value>
+  </data>
+  <data name="Excluir_Lancamento_Nota_Avaliacao_Banca_Confirmacao" xml:space="preserve">
+    <value>A exclusão da apuração da avaliação fará com que a nota ou conceito já lançados para a avaliação sejam apagados. Deseja continuar?</value>
+  </data>
+  <data name="ExclusaoApuracaoAvaliacaoNaoPermitida" xml:space="preserve">
+    <value>A apuração da avaliação não poderá ser excluída, pois a avaliação ainda não foi apurada ou a situação atual da formação do aluno não permite ou o aluno já solicitou o cadastra do trabalho no BDP.</value>
+  </data>
+  <data name="ExclusaoAvaliacaoApurada" xml:space="preserve">
+    <value>Não é permitido a exclusão, pois a avaliação já foi apurada!</value>
+  </data>
+  <data name="Incluir_Title" xml:space="preserve">
+    <value>Cadastrar Banca Examinadora</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Avaliações do Trabalho Acadêmico</value>
+  </data>
+  <data name="Label_Divisoes" xml:space="preserve">
+    <value>Divisões</value>
+  </data>
+  <data name="Listar_Excluir_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão da avaliação do trabalho acadêmico "{0}"?</value>
+  </data>
+  <data name="Listar_Excluir_Titulo" xml:space="preserve">
+    <value>Excluir Avaliação do Trabalho Acadêmico</value>
+  </data>
+  <data name="MembrosBancaExaminadora_Detalhe_Titulo" xml:space="preserve">
+    <value>Membros</value>
+  </data>
+  <data name="Membros_Label" xml:space="preserve">
+    <value>Banca examinadora</value>
+  </data>
+  <data name="MSG_Confirma_Alteracao_Ata" xml:space="preserve">
+    <value>Confirma a alteração do arquivo da ata de defesa? Esta alteração não poderá ser desfeita.</value>
+  </data>
+  <data name="MSG_Sucesso_Alteracao_Ata" xml:space="preserve">
+    <value>Alteração de arquivo de ata efetuada com sucesso!</value>
+  </data>
+  <data name="MSG_Sucesso_Inclusao_Ata" xml:space="preserve">
+    <value>Inclusão de arquivo de ata efetuada com sucesso!</value>
+  </data>
+  <data name="Title_Adicionar_Ata_Defesa" xml:space="preserve">
+    <value>Adicionar Ata de Defesa</value>
+  </data>
+  <data name="Title_Alterar_Ata_Defesa" xml:space="preserve">
+    <value>Alterar ata de defesa</value>
+  </data>
+  <data name="Title_Confirma_Alteracao_Ata" xml:space="preserve">
+    <value>Confirmação</value>
+  </data>
+  <data name="Title_Editar_Banca_Examinadora" xml:space="preserve">
+    <value>Alterar Banca Examinadora</value>
+  </data>
+  <data name="Title_Excluir_Aplicacao_Avaliacao_Banca" xml:space="preserve">
+    <value>Excluir Banca Examinadora</value>
+  </data>
+  <data name="Title_Excluir_Lancamento_Nota_Avaliacao_Banca" xml:space="preserve">
+    <value>Excluir Lançamento de Nota</value>
+  </data>
+  <data name="Title_Lancar_Nota_Banca_Examinadora" xml:space="preserve">
+    <value>Lançamento de Nota</value>
+  </data>
+  <data name="Title_VisualizarDetalhesCancelamentoBanca" xml:space="preserve">
+    <value>Visualização de Detalhes do Cancelamento</value>
+  </data>
+</root>

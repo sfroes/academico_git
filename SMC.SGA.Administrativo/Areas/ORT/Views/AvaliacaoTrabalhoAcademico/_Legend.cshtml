@@ -1,0 +1,15 @@
+﻿@model AvaliacaoTrabalhoAcademicoAvaliacaoViewModel
+
+@if (Model.BancaEstaCancelada)
+{
+    using (Smc.Div().CssClass("smc-sga-lista-legenda").Size(SMCSize.Grid1_24,SMCSize.Grid1_24,SMCSize.Grid1_24,SMCSize.Grid1_24).Begin())
+    {
+        @Smc.LegendItem(m => m.Legenda, false);
+    }
+}
+else
+{
+    //Criado para alinhar colunas de lista que não possuem legenda
+    using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+    {   }
+}

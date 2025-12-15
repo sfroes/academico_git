@@ -1,0 +1,27 @@
+<div class="smc-sga-grid-agrupamento-header">
+  <div class="smc-sga-grid-lancamento-frequencia-header">
+    <div class="smc-sga-grid-lancamento-nota-coluna-ra">
+      <p>RA</p>
+    </div>
+    <div class="smc-sga-grid-lancamento-nota-aluno smc-sga-grid-lancamento-nota-aluno-fixa">
+      <p>Aluno</p>
+    </div>
+    <div *ngFor="let dia of dias$ | async" class="smc-sga-grid-lancamento-frequencia-coluna-avaliacoes-header-dia">
+      <div class="smc-sga-grid-lancamento-frequencia-coluna-avaliacoes-header-dia-titulo">
+        {{ dia.descricaoFormatada }}
+      </div>
+      <ng-container *ngFor="let aula of dia.aulas">
+        <sga-apuracao-frequencia-grid-header-aula
+          *ngIf="aula.mostrar"
+          [aula]="aula"
+        ></sga-apuracao-frequencia-grid-header-aula>
+      </ng-container>
+    </div>
+    <div class="smc-sga-grid-lancamento-frequencia-coluna-padrao smc-sga-alinha-centro">
+      <p>Total faltas</p>
+    </div>
+    <div class="smc-sga-grid-lancamento-frequencia-coluna-padrao smc-sga-alinha-centro">
+      <p>%</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+﻿@model  ConfiguracaoComponeteMatrizFiltroViewModel
+
+@{
+    SMCButtonFluentConfiguration buttonConfiguracaoGrupo = Smc.Button(SMCButtonBehavior.Visualizar)
+    .Text(Smc.GetUIResource("GRUPO_MatrizCurricularConfiguracaoComponente"))
+    .Tooltip(Smc.GetUIResource("GRUPO_MatrizCurricularConfiguracaoComponente"))
+    .SecurityToken(UC_CUR_001_05_04.PESQUISAR_CONFIGURACAO_GRUPO_MATRIZ)
+    .Action("Index", "MatrizCurricularConfiguracaoComponente", new { SeqMatrizCurricular = (SMCEncryptedLong)Model.SeqMatrizCurricular, SeqCurriculoCursoOferta = (SMCEncryptedLong)Model.SeqCurriculoCursoOferta });
+
+    SMCButtonFluentConfiguration buttonConsultaDivisoesMatrizCurricular = Smc.Button(SMCButtonBehavior.Visualizar)
+    .Text(Smc.GetUIResource("GRUPO_ConsultaDivisoesMatrizCurricular"))
+    .Tooltip(Smc.GetUIResource("GRUPO_ConsultaDivisoesMatrizCurricular"))
+    .SecurityToken(UC_CUR_001_05_04.PESQUISAR_CONFIGURACAO_GRUPO_MATRIZ)
+    .Action("Index", "ConsultaDivisoesMatrizCurricular", new { SeqMatrizCurricular = (SMCEncryptedLong)Model.SeqMatrizCurricular, SeqCurriculoCursoOferta = (SMCEncryptedLong)Model.SeqCurriculoCursoOferta });
+
+    SMCButtonFluentConfiguration buttonRequisitos = Smc.Button(SMCButtonBehavior.Visualizar)
+    .Text(Smc.GetUIResource("GRUPO_Requisito"))
+    .Tooltip(Smc.GetUIResource("GRUPO_Requisito"))
+    .SecurityToken(UC_CUR_001_05_04.PESQUISAR_CONFIGURACAO_GRUPO_MATRIZ)
+    .Action("Index", "Requisito", new { SeqMatrizCurricular = (SMCEncryptedLong)Model.SeqMatrizCurricular, SeqCurriculoCursoOferta = (SMCEncryptedLong)Model.SeqCurriculoCursoOferta });
+
+    SMCButtonSetFluentConfiguration buttonSet = (Smc.ButtonSet().Type(SMCButtonSetType.Primary)
+    .NumberOfButtonsToShow(0)
+    .Size(SMCSize.Grid1_24));
+
+    using (Smc.Div().CssClass("smc-btn-configurar-topo-pagina").Begin())
+    {
+        buttonSet.AddButton(buttonConfiguracaoGrupo);
+        buttonSet.AddButton(buttonConsultaDivisoesMatrizCurricular);
+        buttonSet.AddButton(buttonRequisitos);
+
+        @buttonSet
+    }
+}

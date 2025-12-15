@@ -1,0 +1,28 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+
+@model  CabecalhoFormacaoAcademicaViewModel
+
+@using (Smc.Header("TermoIntercambio", SMCHeaderType.Primary)
+                        .Item(prop => prop.Nome, sizeMD: SMCSize.Grid12_24)
+                        .Item(prop => prop.CpfOuPassaporte, sizeMD: SMCSize.Grid4_24)                       
+                        .Begin())
+{
+    @*using (Smc.Div().CssClass("smc-sga-header-detalhes smc-sga-header-detalhes-separador").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-sga-header-detalhes-titulo-grid-thead").Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid8_24).Begin())
+        {
+            if (Model.Vigencias != null && Model.Vigencias.Count > 0)
+            {
+                <h3>@Smc.GetUIResource("TituloVigencias")</h3>
+                @(Smc.Grid("gridVigencias", new SMCPagerModel<ParceriaIntercambioVigenciaViewModel>(Model.Vigencias.OrderByDescending(a => a.Seq).Take(1)))
+                         .CssClass("smc-sga-header-detalhes-grid-completo")
+                         .FieldColumn(w => w.DataInicio)
+                         .FieldColumn(w => w.DataFim)
+                         .HideGridTitle()
+                         .HideNavigator()
+                         .HideRowNumber()
+                         .AllowSort())
+            }
+        }
+    }*@
+}

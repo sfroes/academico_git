@@ -1,0 +1,44 @@
+﻿@model TurmaParametrosOfertaViewModel
+
+<label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("CriterioAprovacao_Detalhe_Titulo")</label>
+
+@if (Model.SeqCriterioAprovacao != 0)
+{ 
+using (Smc.Div().CssClass("smc-sga-turma-parametros").Size(SMCSize.Grid24_24).Begin())
+{
+        @Smc.DisplayFor(m => m.SeqCriterioAprovacao)
+        @Smc.DisplayFor(m => m.CriterioNotaMaxima)
+        @Smc.DisplayFor(m => m.CriterioPercentualNotaAprovado)
+        @Smc.DisplayFor(m => m.CriterioPercentualFrequenciaAprovado)
+        @Smc.DisplayFor(m => m.CriterioDescricaoEscalaApuracao)
+    }
+
+}
+else
+{
+    using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+    {
+        <p>@Smc.GetUIResource("Label_Nenhum_Registro_CriterioAprovacao")</p>
+    }
+}
+
+<label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("DivisoesComponente_Detalhe_Titulo")</label>
+@if (Model.DivisoesComponente != null)
+{
+    @*@Smc.List("DivisoesComponente", m => m.DivisoesComponente).HtmlTemplate(divisao => Html.Partial("_StepParametrosOfertaDivisoes", divisao.Value));*@
+    @(Smc.Grid("DivisoesComponente" + Model.SeqOfertaMatriz, new SMCPagerModel<TurmaParametrosDetalheViewModel>(Model.DivisoesComponente))
+                                .AutoGenerateColumns()
+                                .HideGridTitle()
+                                .HideNavigator()
+                                .HideRowNumber()
+                                    .Size(SMCSize.Grid24_24))
+
+
+}
+else
+{
+    using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+    {
+        <p>@Smc.GetUIResource("Label_Nenhum_Registro_DivisoesComponente")</p>
+    }
+}

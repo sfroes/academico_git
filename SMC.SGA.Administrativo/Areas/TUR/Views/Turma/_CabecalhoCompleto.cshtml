@@ -1,0 +1,37 @@
+﻿@model TurmaCabecalhoViewModel
+
+@{
+    var header = Smc.Header("Turma", SMCHeaderType.Primary)
+            .Item(prop => prop.CodigoFormatado, sizeMD: SMCSize.Grid4_24)
+            .Item(prop => prop.CicloLetivoInicio, sizeMD: SMCSize.Grid5_24)
+            //.Item(prop => prop.CicloLetivoFim, sizeMD: SMCSize.Grid4_24)
+            .Item(prop => prop.Vagas, sizeMD: SMCSize.Grid4_24);
+
+    if (!string.IsNullOrEmpty(Model.DescricaoTipoTurma))
+    {
+        header.Item(prop => prop.DescricaoTipoTurma, sizeMD: SMCSize.Grid6_24);
+    }
+    
+    header.Item(prop => prop.SituacaoTurmaAtual, sizeMD: SMCSize.Grid5_24);
+
+    if (Model.SituacaoTurmaAtual == SMC.Academico.Common.Areas.TUR.Enums.SituacaoTurma.Cancelada)
+    {
+        header.Item(prop => prop.SituacaoJustificativa, sizeMD: SMCSize.Grid24_24);
+        //.Item(prop => prop.MensagemSituacaoCancelada, sizeMD: SMCSize.Grid24_24, cssClass: "smc-display smc-sga-mensagem smc-sga-mensagem-alerta smc-sga-mensagem-multiplas-linhas")
+    }
+
+}
+
+@using (header.Begin()) { 
+
+    if (Model.TurmaConfiguracoesCabecalho != null)
+    {
+
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-header-detalhes smc-sga-header-detalhes-separador").Begin())
+        {
+
+            @*@(Smc.Legend("ConfiguracaoPrincipal", SMCOrientation.Vertical).CssClass("smc-sga-legenda").Items<SMC.Academico.Common.Enums.LegendaPrincipal>())*@
+            @Smc.List("Configuracoes" + Model.Seq, m => m.TurmaConfiguracoesCabecalho).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(cabecalho => Html.Partial("_CabecalhoConfiguracaoCompleto", cabecalho.Value))
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<po-select
+    [class]="class"
+    [class.smc-input-required]="required"
+    [name]="name"
+    (p-change)="onChange.emit($event)"
+    [p-disabled]="disabled"
+    [p-label]="label"
+    [(ngModel)]="value"
+    [p-options]="poOptions"
+    [p-required]="required"
+    [p-readonly]="readonly"
+    [p-placeholder]="placeholder">
+</po-select>

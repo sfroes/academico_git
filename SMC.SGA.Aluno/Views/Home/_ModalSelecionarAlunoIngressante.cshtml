@@ -1,0 +1,12 @@
+﻿<script>
+    var timer = function () {
+        if (window.jQuery && window.jQuery.ui) {
+            smc.core.displayLoadingPanel();
+            window.location.href = "@Url.Action("Index", "Home", new { @area = "MAT" })";
+        } else {
+            window.setTimeout(timer, 100);
+        }
+    };
+    timer();
+
+</script>

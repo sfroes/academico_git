@@ -1,0 +1,36 @@
+﻿@using SMC.Academico.Common.Areas.SRC.Enums
+@model DadosSolicitacaoViewModel
+
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+            {
+    <p>@Smc.GetUIResource("Informativo_Historico_Solicitacao")</p>
+}
+
+@using (Smc.Div("").Size(SMCSize.Grid6_24).Begin())
+{
+    <p class="smc-sga-titulo-legenda"> @Smc.GetUIResource("Label_Possui_Bloqueio")</p>
+    @(Smc.Legend("PossuiBloqueio", SMCOrientation.Horizontal).Items<PossuiBloqueio>())
+}
+
+@using (Smc.Div("").Size(SMCSize.Grid18_24).Begin())
+{
+    <p class="smc-sga-titulo-legenda"> @Smc.GetUIResource("Label_Situacao_Final_Etapa")</p>
+    @(Smc.Legend("SituacaoFinalEtapa", SMCOrientation.Horizontal).Items<SituacaoFinalEtapa>())
+}
+
+@(Smc.List("Historicos", Model.HistoricosSolicitacao)
+                                    .HtmlTemplate(
+    @<text>
+        @Html.Partial("_HistoricoSolicitacaoItem", item)
+    </text>))
+
+@using (Smc.ModalWindow("modalConsultarHistoricoNavegacao")
+                                    .Size(SMCModalWindowSize.Large)
+                                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+                                    .Begin()) { }
+
+@using (Smc.ModalWindow("modalConsultarBloqueioEtapa")
+                                    .Size(SMCModalWindowSize.Large)
+                                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+                                    .Begin()) { }

@@ -1,0 +1,12 @@
+﻿@model PublicacaoBdpAutorizacaoViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+{
+    <p>@Html.Raw(Smc.GetUIResource("Mensagem_Informativa_Autorizacao"))</p>
+}
+
+@Smc.EditorFor(e => e.Seq)
+
+@Smc.EditorFor(e => e.DataAutorizacao).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid6_24)
+
+@Smc.DisplayFor( e => e.TextoAutorizacao).Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).CssClass("smc-sga-campo-desabilitado")

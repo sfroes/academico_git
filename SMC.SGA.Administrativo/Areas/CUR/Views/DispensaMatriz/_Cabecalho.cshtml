@@ -1,0 +1,7 @@
+﻿@model DispensaCabecalhoViewModel
+
+@using (Smc.Div().CssClass("smc-header smc-header-tipo-primary").Begin())
+{
+    @Smc.DisplayFor(m => m.GrupoOrigensDisplay).Size(SMCSize.Grid12_24).CssClass("smc-display-collection")
+    @Smc.DisplayFor(m => m.GrupoDispensadosDisplay).Size(SMCSize.Grid12_24).CssClass("smc-display-list-line smc-display-collection")
+}

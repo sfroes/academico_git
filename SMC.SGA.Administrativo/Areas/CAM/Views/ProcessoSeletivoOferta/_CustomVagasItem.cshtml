@@ -1,0 +1,9 @@
+﻿@model ConfigurarVagasOfertaProcessoSeletivoListaViewModel
+
+@Smc.EditorFor(m => m.Seq).Name("ProcessoSeletivoOfertas[" + ViewBag.Index + "].Seq")
+@Smc.EditorFor(m => m.TipoOferta).Name("ProcessoSeletivoOfertas[" + ViewBag.Index + "].TipoOferta")
+@Smc.EditorFor(m => m.TipoOfertaToken).Name("ProcessoSeletivoOfertas[" + ViewBag.Index + "].TipoOfertaToken")
+@Smc.EditorFor(m => m.Oferta).Name("ProcessoSeletivoOfertas[" + ViewBag.Index + "].Oferta")
+@Smc.EditorFor(m => m.Vagas).Name("ProcessoSeletivoOfertas[" + ViewBag.Index + "].Vagas").HideLabel()
+@Smc.EditorFor(m => m.VagasBase).Name("ProcessoSeletivoOfertas[" + ViewBag.Index + "].VagasBase")
+@Smc.EditorFor(m => m.SeqCampanhaOferta).Name("ProcessoSeletivoOfertas[" + ViewBag.Index + "].SeqCampanhaOferta")

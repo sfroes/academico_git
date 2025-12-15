@@ -1,0 +1,30 @@
+﻿@model ConfiguracaoEtapaBloqueioViewModel
+
+@using (Smc.Header("CabecalhoConfiguracaoEtapaBloqueio", SMCHeaderType.Primary)
+       .Item(i => i.DescricaoConfiguracaoEtapa, sizeMD: SMCSize.Grid24_24).Begin())
+{
+}
+
+@Smc.EditorFor(m => m.SeqConfiguracaoEtapa)
+@Smc.EditorFor(m => m.DescricaoConfiguracaoEtapa)
+@Smc.EditorFor(m => m.SeqProcessoEtapa)
+@Smc.EditorFor(m => m.DescricaoEtapaSgf)
+@Smc.EditorFor(m => m.CamposReadyOnly)
+@Smc.EditorFor(m => m.SolicitacaoAssociada)
+
+@Smc.EditorFor(m => m.Seq)
+@Smc.EditorFor(m => m.SeqMotivoBloqueio)
+@Smc.EditorFor(m => m.GeraCancelamentoSolicitacao)
+@Smc.EditorFor(m => m.ImpedeInicioEtapa)
+@Smc.EditorFor(m => m.ImpedeFimEtapa)
+@Smc.EditorFor(m => m.AmbitoBloqueio)
+                        
+
+       
+
+     
+
+      
+
+       
+

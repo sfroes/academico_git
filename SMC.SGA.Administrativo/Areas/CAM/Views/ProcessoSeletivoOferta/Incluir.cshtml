@@ -1,0 +1,35 @@
+﻿@model ProcessoSeletivoOfertaViewModel
+
+@Html.Action("CabecalhoProcessoSeletivoOferta", Model.SeqProcessoSeletivo)
+
+
+@using (Smc.Form("formSelecaoOferta", "Salvar").Ajax().Begin())
+{
+    @Smc.EditorFor(m => m.SeqCampanha)
+    @Smc.EditorFor(m => m.SeqProcessoSeletivo)
+    @Smc.EditorFor(m => m.SeqEntidadeResponsavel)
+    @Smc.EditorFor(m => m.Ofertas)
+
+    if (Model.Convocacoes != null && Model.Convocacoes.Any())
+    {
+        using (Smc.Div("divConvocacoes")
+                  .ConditionalDisplay("Ofertas", SMCConditionalOperation.NotEqual, requiredValue: null)
+                 .Begin())
+        {
+            @Smc.DisplayFor(m => m.MensagemInfoAssociarConvocacao).HideLabel()
+
+            @(Smc.Grid("gridConvocacoes", new SMCPagerModel<ConvocacaoViewModel>(Model.Convocacoes))
+                                 .AllowSelect(f => f.Seq).HideGridTitle(false)
+                                 .AutoGenerateColumns()
+                                 .HideRowNumber()
+                                 .HideNavigator()
+                                 .HidePager()
+                                 .HideRowsTotalizer()
+            )
+        }
+    }
+    @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Salvar).CssClass("smc-btn-salvar-icotext-destaque"))
+            .AddButton(Smc.Button(SMCButtonBehavior.Voltar).CssClass("smc-btn-voltar-icotext"))
+    )
+}

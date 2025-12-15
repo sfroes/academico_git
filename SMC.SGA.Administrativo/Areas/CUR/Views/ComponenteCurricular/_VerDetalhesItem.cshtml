@@ -1,0 +1,21 @@
+﻿@model ComponenteCurricularDetalheConfiguracoesViewModel
+
+@using (Smc.Div("divItem").CssClass("smc-listdetailed-item").Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div("divItem").CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div("divItem").CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.DescricaoCompleta).HideLabel().CssClass("smc-listdetailed-conteudo-titulo").Size(SMCSize.Grid24_24)
+        }
+        if (Model.Divisoes.Count > 0)
+        {
+            using (Smc.Div("divItem").CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+            {
+                <label class="smc-listdetailed-conteudo-subtitulo smc-size-md-11 smc-size-xs-11 smc-size-sm-11 smc-size-lg-11">@Smc.GetUIResource("Label_Divisoes")</label>
+                <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_CargaHorariaGrade")</label>
+                @Smc.List("Divisoes", Model.Divisoes).HtmlTemplate(item => Html.Partial("_VerDetalhesItemDivisao", item))
+            }
+        }
+    }
+}

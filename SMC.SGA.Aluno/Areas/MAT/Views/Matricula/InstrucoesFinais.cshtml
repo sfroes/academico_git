@@ -1,0 +1,85 @@
+﻿@model PaginaInstrucoesFinaisMatriculaViewModel
+
+@section MenuLateral {
+    @Html.Action("MenuPaginas", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(MatriculaTokens.PAGINA_INSTRUCOES_FINAIS_MATRICULA_INSTRUCOES))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    if (Model.Parcelas == null || !Model.Parcelas.Any())
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-margin-top-5").Begin())
+        {
+            <p class="smc-sga-msg-conteudo-linha">@Smc.GetUIResource("Mensagem_Informacoes_Sem_Debitos_Financeiros")</p>
+        }
+    }
+    else
+    {
+        using (Smc.Fieldset("fsPagamentoMatricula").Begin())
+        {
+            if (Model.BoletoZerado && Model.BoletoComValor)
+            {
+                @(Smc.SGFTemplate().Secao().Token(MatriculaTokens.PAGINA_EMISSAO_BOLETO_MATRICULA_INSTRUCOES_BOLETO_ZERADO_PAGAR))
+            }
+            else if (Model.BoletoZerado)
+            {
+                @(Smc.SGFTemplate().Secao().Token(MatriculaTokens.PAGINA_EMISSAO_BOLETO_MATRICULA_INSTRUCOES_BOLETO_ZERADO))
+            }
+            else if (Model.BoletoComValor)
+            {
+                @(Smc.SGFTemplate().Secao().Token(MatriculaTokens.PAGINA_EMISSAO_BOLETO_MATRICULA_INSTRUCOES_BOLETO_A_PAGAR))
+            }
+
+            @Smc.DisplayFor(x => x.ValorTotalMatricula).CssClass("smc-sga-totalizador-destaque").Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid4_24)
+
+            if (Model.BeneficioDeferidoCobranca)
+            {
+                using (Smc.Div().Size(SMCSize.Grid20_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-margin-top-5").Begin())
+                {
+                    <p class="smc-sga-msg-conteudo-linha">@Smc.GetUIResource("Mensagem_Informacoes_Beneficio_Cobranca")</p>
+                }
+            }
+            else
+            {
+                if (Model.BeneficioIncluiDesbloqueioTemporario)
+                {
+                    using (Smc.Div().Size(SMCSize.Grid20_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-margin-top-5").Begin())
+                    {
+                        <p class="smc-sga-msg-conteudo-linha">@Smc.GetUIResource("Mensagem_Informacoes_Beneficio")</p>
+                    }
+                }
+            }
+
+            @Smc.List("listaParcelas", Model.Parcelas).HtmlTemplate(item => Html.Partial("_InstrucoesFinaisExibicaoBloqueio", item)).Size(SMCSize.Grid24_24)
+        }
+    }
+
+    using (Smc.Div("divAdesao").Begin())
+    {
+        @Html.Partial("_InstrucoesFinaisAdesaoContrato", Model)
+    }
+
+    var buttonSet = Smc.ButtonSet().CssClass("smc-sga-matricula-linha-botoes").Size(SMCSize.Grid24_24);
+
+    if(!string.IsNullOrEmpty(Model.BackUrl))
+    {
+        buttonSet.AddButton(Smc.Button("sairProcesso")
+                .Id("sairProcesso")
+                .Type(SMCButtonType.Link)
+                .Url(Model.BackUrl)
+                .CssClass("smc-btn-proximo-icotext-destaque"));
+    }
+    else
+    {
+        buttonSet.AddButton(Smc.Button("sairProcesso")
+                .Id("sairProcesso")
+                .Type(SMCButtonType.Link)
+                .Action("Index", "Home", new { area = "MAT" })
+                .CssClass("smc-btn-proximo-icotext-destaque"));
+    }
+
+    @buttonSet;
+
+}

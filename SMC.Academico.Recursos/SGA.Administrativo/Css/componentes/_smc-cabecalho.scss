@@ -1,0 +1,186 @@
+﻿@mixin label {
+    color: #333 !important;
+    font-weight: 400 !important;
+    font-size: 11px !important;
+}
+
+.smc-header-tipo-primary-new {
+    padding: 10px 5px;
+    margin-bottom: 15px;
+    border: 0;
+    background: #efefef;
+    width: 100%;
+    position: relative;
+
+    &:before {
+        background: #efefef;
+        position: absolute;
+        display: block;
+        width: 100vw;
+        height: 100%;
+        left: -50px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        content: "";
+        z-index: 0;
+
+        @media screen and (max-width: 991px) {
+            left: -25px;
+        }
+    }
+
+    > .smc-header-grupo-itens {
+        position: relative;
+        z-index: 2;
+
+        > .smc-header-item {
+            min-height: auto;
+            padding-left: 0 !important;
+            margin-left: 0 !important;
+
+            > label {
+                @include label;
+            }
+
+            p {
+                font-weight: 600;
+                color: #333;
+            }
+        }
+    }
+
+    div.smc-sga-header-detalhes-separador {
+        border-top: solid 1px #cfcfcf !important;
+
+        .smc-sga-header-detalhes-titulo-grid {
+            padding-left: 0;
+            padding-right: 0;
+
+            h3 {
+                padding-left: 0;
+                background: none;
+                @include label;
+                border-top: 1px solid #cfcfcf;
+                border-bottom: 1px solid #cfcfcf;
+                margin-top: 5px;
+                padding: 10px 0;
+            }
+
+            .smc-buttonset-horizontal-secundario {
+                right: 0 !important;
+                top: 9px !important;
+            }
+
+            .smc-sga-header-detalhes-custom-grid {
+                .smc-datagrid {
+                    tbody {
+                        tr {
+                            td {
+                                padding-left: 0;
+                                border: 0;
+                                box-shadow: none !important;
+
+                                p {
+                                    color: #333;
+                                    font-weight: 600;
+                                }
+                            }
+
+                            &:nth-of-type(odd) {
+                                background: #e7e7e7 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div[data-control-child='smc-list'] {
+        > div {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: center;
+            padding-left: 0;
+            padding-right: 0;
+
+            > div {
+                width: auto;
+                padding-left: 0;
+                padding-right: 0;
+
+                .smc-sga-header-detalhes-offset {
+                    margin-left: 0;
+                }
+
+                > .smc-display {
+                    > p {
+                        font-weight: 600;
+                    }
+                }
+
+                .smc-display-legend {
+                    margin-left: 0;
+
+                    .smc-sga-legenda-configuracao-principal {
+                        border: 1px solid;
+                        border-radius: 30px;
+                        padding: 3px 8px;
+                        font-size: 11px;
+                        font-family: 'sf_ui_displayregular';
+                        font-weight: 600;
+                        margin-left: 5px;
+
+                        &:before {
+                            margin: 0 !important;
+                            content: "Principal";
+                        }
+                    }
+                }
+
+                &:last-child {
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    .smc-sga-round-percent {
+        div {
+            > input {
+                color: #333 !important;
+            }
+
+            > canvas {
+                margin-top: -5px;
+            }
+        }
+    }
+}
+
+.smc-header-tipo-primary.smc-header-botao {
+    .smc-sga-header-btn-container {
+        position: relative;
+
+        .smc-buttonset-horizontal-secundario {
+            text-align: right;
+            position: absolute;
+            right: 0;
+        }
+    }
+}
+
+.smc-modal-content {
+    .smc-header-tipo-primary {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding-left: 5px !important;
+
+        &:before {
+            left: -25px !important;
+        }
+    }
+}

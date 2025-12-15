@@ -1,0 +1,28 @@
+﻿@using SMC.Framework.Model;
+@model SMCPagerModel<EntidadeConfiguracaoNotificacaoListarViewModel>
+
+@(Smc.Grid("gridEntidadeConfiguracaoNotificacao", Model)
+                    .AutoGenerateColumns()
+                    .AllowSort(false)
+                    .AutoHideNavigator()
+                    .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+
+                        x => Smc.Button(SMCButtonBehavior.Alterar)
+                                .CssClass("smc-btn-alterar-ico")
+                                .Tooltip(Smc.GetUIResource("botao_edit_entidade_configuracao_notificacao_tooltip"))
+                                .SecurityToken(UC_ORG_002_09_02.MANTER_CONFIGURACAO_NOTIFICACAO_ENTIDADE)
+                                .Action("Editar", "EntidadeConfiguracaoNotificacao", new { Seq = new SMCEncryptedLong((x as EntidadeConfiguracaoNotificacaoListarViewModel).Seq), Area = "ORG" }),
+
+                        x => Smc.Button(SMCButtonBehavior.Excluir)
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .Confirm(Smc.GetUIResource("Exclusao_Entidade_Configuracao_Notificacao_Title"),
+                                string.Format(Smc.GetUIResource("Exclusao_Entidade_Configuracao_Notificacao_Confirmacao"), (x as EntidadeConfiguracaoNotificacaoListarViewModel).DescricaoTipoNotificacao))
+                                .Tooltip(Smc.GetUIResource("botao_excluir_entidade_configuracao_notificacao_tooltip"))
+                                .SecurityToken(UC_ORG_002_09_02.MANTER_CONFIGURACAO_NOTIFICACAO_ENTIDADE)
+                                .Action("Excluir", "EntidadeConfiguracaoNotificacao", new
+                                {
+                                    Seq = new SMCEncryptedLong((x as EntidadeConfiguracaoNotificacaoListarViewModel).Seq),
+                                    Area = "ORG"
+                                }))
+)
+

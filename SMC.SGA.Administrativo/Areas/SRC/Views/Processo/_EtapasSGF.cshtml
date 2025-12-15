@@ -1,0 +1,18 @@
+﻿@using SMC.SGA.Administrativo.Areas.SRC.Models
+
+@model ProcessoDynamicModel
+
+@if (Model.EtapasSGF != null && Model.EtapasSGF.SMCCount() > 0)
+{
+    using (Smc.Fieldset("FieldsetEtapasSGF").Size(SMCSize.Grid24_24).CssClass("smc-detalhe-editavel-tabular").LegendText(@Smc.GetUIResource("Fieldset_EtapasSGF")).Begin())
+    {
+        using (Smc.Div().CssClass("smc-detalhe-editavel-header smc-size-md-24").Begin())
+        {
+            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid16_24)">@Smc.GetUIResource("Label_Descricao")</label>
+            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid4_24)">@Smc.GetUIResource("Label_Obrigatorio")</label>
+            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid4_24)">@Smc.GetUIResource("Label_Associar")</label>
+        }
+
+        @Smc.List("etapasSGF", m => m.EtapasSGF).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(h => Html.Partial("_EtapasSGFItem", h.Value))
+    }
+}

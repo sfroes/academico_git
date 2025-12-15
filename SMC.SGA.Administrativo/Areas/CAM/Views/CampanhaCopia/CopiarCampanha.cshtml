@@ -1,0 +1,40 @@
+﻿@using SMC.SGA.Administrativo.Areas.CAM.Views.CampanhaCopia.App_LocalResources
+@using SMC.SGA.Administrativo.Areas.CAM.Controllers
+@model CampanhaCopiaViewModel
+
+@using (Smc.Wizard("wizardCopiarCampanha")
+  .ButtonSet(1, SMCButtonSetGroupedStyle.Arrow, false, "smc-wizard-salvar-arrow", item => Smc.Button(SMCButtonBehavior.Salvar)
+      .Action("SalvarCopiaCampanha", "CampanhaCopia")
+      .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+      .Highlight())
+  .ButtonSet(1, alwaysVisible: true, cssClass: "smc-wizard-voltar-arrow smc-sga-clear-none", buttons: item => @Smc.Button(SMCButtonBehavior.Voltar)
+      .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+      .Action("Index", "Campanha"))//, new { seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqCampanhaOrigem) })
+      .Begin())
+{
+    using (Smc.WizardStep(0).Description(Smc.GetUIResource(UIResource.Wizard_CopiarCampanha_StepCampanha_Funcionalidade)).Title(Smc.GetUIResource(UIResource.Wizard_CopiarCampanha_StepCampanha)).Action("WizardStepCampanha").Begin())
+    {
+
+    }
+    using (Smc.WizardStep(1).Description(Smc.GetUIResource(UIResource.Wizard_CopiarCampanha_StepOferta_Funcionalidade)).Title(Smc.GetUIResource(UIResource.Wizard_CopiarCampanha_StepOferta)).Action("WizardStepOferta").Begin())
+    {
+
+    }
+    using (Smc.WizardStep(2).Description(Smc.GetUIResource(UIResource.Wizard_CopiarCampanha_StepProcessoSeletivo_Funcionalidade)).Title(Smc.GetUIResource(UIResource.Wizard_CopiarCampanha_StepProcessoSeletivo)).Action("WizardStepProcessoSeletivo").Begin())
+    {
+
+    }
+    using (Smc.WizardStep(3).Description(Smc.GetUIResource(UIResource.Wizard_CopiarCampanha_StepProcessoGPI_Funcionalidade)).Title(UIResource.Wizard_CopiarCampanha_StepProcessoGPI).Action("WizardStepProcessoGPI").Begin())
+    {
+
+    }
+    using (Smc.WizardStep(4).Description(Smc.GetUIResource(UIResource.Wizard_CopiarCampanha_StepConvocacao_Funcionalidade)).Title(UIResource.Wizard_CopiarCampanha_StepConvocacao).Action("WizardStepConvocacao").Begin())
+    {
+
+    }
+    using (Smc.WizardStep(5).Description(Smc.GetUIResource(UIResource.Wizard_CopiarCampanha_StepConfirmacao_Funcionalidade)).Title(UIResource.Wizard_CopiarCampanha_StepConfirmacao).Action("WizardStepConfirmacao").Begin())
+    {
+
+    }
+
+}

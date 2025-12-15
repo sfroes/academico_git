@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CicloLetivoFim" xml:space="preserve">
+    <value>Ciclo letivo fim</value>
+  </data>
+  <data name="CicloLetivoInicio" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="CodigoCompleto" xml:space="preserve">
+    <value>Codificação da turma</value>
+  </data>
+  <data name="CodigoFormatado" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="CodigoFormatado_FillInstructions" xml:space="preserve">
+    <value>Preencher com "Código" + "." + "Número".</value>
+  </data>
+  <data name="ConfiguracaoComponente" xml:space="preserve">
+    <value>Configuração do componente</value>
+  </data>
+  <data name="CriterioDescricaoEscalaApuracao" xml:space="preserve">
+    <value>Escala de apuração</value>
+  </data>
+  <data name="CriterioNotaMaxima" xml:space="preserve">
+    <value>Nota máxima</value>
+  </data>
+  <data name="CriterioPercentualFrequenciaAprovado" xml:space="preserve">
+    <value>% de frequência para aprovação</value>
+  </data>
+  <data name="CriterioPercentualNotaAprovado" xml:space="preserve">
+    <value>% de nota para aprovação</value>
+  </data>
+  <data name="DescricaoCicloLetivoFim" xml:space="preserve">
+    <value>Ciclo letivo fim</value>
+  </data>
+  <data name="DescricaoCicloLetivoInicio" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="DescricaoConfiguracao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="DescricaoConfiguracaoComponente" xml:space="preserve">
+    <value>Configuração do componente</value>
+  </data>
+  <data name="DescricaoLocalidade" xml:space="preserve">
+    <value>Localidade</value>
+  </data>
+  <data name="DescricaoTipoTurma" xml:space="preserve">
+    <value>Tipo de turma</value>
+  </data>
+  <data name="DivisaoCompleto" xml:space="preserve">
+    <value>Divisão</value>
+  </data>
+  <data name="DivisaoComponenteDescricao" xml:space="preserve">
+    <value>Divisão</value>
+  </data>
+  <data name="DivisaoDescricao" xml:space="preserve">
+    <value>Divisão</value>
+  </data>
+  <data name="DivisaoVagas" xml:space="preserve">
+    <value>Vagas</value>
+  </data>
+  <data name="ERR_Expression" xml:space="preserve">
+    <value>A turma deve utilizar apenas números (1 a 9), seguindo o critério código(.)número</value>
+  </data>
+  <data name="GrupoNumero" xml:space="preserve">
+    <value>Grupo</value>
+  </data>
+  <data name="Informacao" xml:space="preserve">
+    <value>Informações</value>
+  </data>
+  <data name="InformacoesAdicionais" xml:space="preserve">
+    <value>Informações adicionais</value>
+  </data>
+  <data name="Localidade" xml:space="preserve">
+    <value>Localidade</value>
+  </data>
+  <data name="MensagemSituacaoCancelada" xml:space="preserve">
+    <value>Atenção</value>
+  </data>
+  <data name="OfertaCompleto" xml:space="preserve">
+    <value>Oferta</value>
+  </data>
+  <data name="OfertaMatriz" xml:space="preserve">
+    <value>Oferta de matriz curricular</value>
+  </data>
+  <data name="OfertaMatrizPrincipal" xml:space="preserve">
+    <value>Oferta principal</value>
+  </data>
+  <data name="QuantidadeVagas" xml:space="preserve">
+    <value>Vagas</value>
+  </data>
+  <data name="ReservaVagas" xml:space="preserve">
+    <value>Reserva de vagas</value>
+  </data>
+  <data name="SeqCicloLetivoFim" xml:space="preserve">
+    <value>Ciclo letivo fim</value>
+  </data>
+  <data name="SeqCicloLetivoInicio" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="SeqComponenteCurricularAssunto" xml:space="preserve">
+    <value>Assunto de componente</value>
+  </data>
+  <data name="DescricaoComponenteCurricularAssunto" xml:space="preserve">
+    <value>Assunto de componente</value>
+  </data>
+  <data name="SeqConfiguracaoComponente" xml:space="preserve">
+    <value>Configuração do componente</value>
+  </data>
+  <data name="SeqCriterioAprovacao" xml:space="preserve">
+    <value>Critério de aprovação</value>
+  </data>
+  <data name="SeqMatrizCurricularOferta" xml:space="preserve">
+    <value>Oferta de matriz curricular</value>
+  </data>
+  <data name="SeqTipoTurma" xml:space="preserve">
+    <value>Tipo de turma</value>
+  </data>
+  <data name="SituacaoJustificativa" xml:space="preserve">
+    <value>Justificativa do cancelamento</value>
+  </data>
+  <data name="SituacaoTurmaAtual" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="SituacaoTurmaDiario" xml:space="preserve">
+    <value>Situação do diário</value>
+  </data>
+  <data name="Turma" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="TurmaComOrientacao" xml:space="preserve">
+    <value>Turma com orientação</value>
+  </data>
+  <data name="TurmaDynamicModel" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="TurmaGrupoConfiguracaoViewModel_Descricao" xml:space="preserve">
+    <value>Configuração de componente</value>
+  </data>
+  <data name="Class_ReabrirDiarioViewModel_Observacao" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="DataInclusao" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="DescricaoSituacao" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Usuario" xml:space="preserve">
+    <value>Usuário</value>
+  </data>
+  <data name="DiarioSituacao" xml:space="preserve">
+    <value>Situação do diário</value>
+  </data>
+  <data name="QuantidadeVagasOcupadas" xml:space="preserve">
+    <value>Vagas ocupadas</value>
+  </data>
+  <data name="InformativoTurmaCompartilhada" xml:space="preserve">
+    <value>Atenção</value>
+  </data>
+  <data name="MensagemExigeAssunto" xml:space="preserve">
+    <value>Atenção</value>
+  </data>
+  <data name="MensagemSelecaoAssunto" xml:space="preserve">
+    <value>Atenção</value>
+  </data>
+  <data name="MensagemConfirmarCancelarTurma" xml:space="preserve">
+    <value>Atenção</value>
+  </data>
+  <data name="DataFimPeriodoLetivo" xml:space="preserve">
+    <value>Data fim</value>
+  </data>
+  <data name="DataInicioPeriodoLetivo" xml:space="preserve">
+    <value>Data início</value>
+  </data>
+  <data name="PercentualFrequenciaAprovado" xml:space="preserve">
+    <value>Frequência para aprovação (%)</value>
+  </data>
+  <data name="PercentualNotaAprovado" xml:space="preserve">
+    <value>Nota para aprovação (%)</value>
+  </data>
+  <data name="DescricaoEscalaApuracao" xml:space="preserve">
+    <value>Escala de apuração</value>
+  </data>
+  <data name="MateriaLecionadaObrigatoria" xml:space="preserve">
+    <value>Matéria lecionada obrigatória?</value>
+  </data>
+  <data name="PermiteAvaliacaoParcial" xml:space="preserve">
+    <value>Permite avaliação parcial</value>
+  </data>
+</root>

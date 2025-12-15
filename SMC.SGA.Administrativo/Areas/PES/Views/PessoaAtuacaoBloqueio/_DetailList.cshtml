@@ -1,0 +1,123 @@
+﻿@model PessoaAtuacaoBloqueioListarDynamicModel
+
+@using (Smc.ModalWindow("modalDesbloqueio")
+                   .Form("formDesbloqueio", "SalvarPessoaAtuacaoBloqueioDesbloqueio", "PessoaAtuacaoBloqueioDesbloqueio", new { area = "PES" }, closeOnSubmit: true)
+                   .Size(SMCModalWindowSize.Largest)
+                   .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                   .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+                   .Begin()) { }
+
+@{
+    Func<PessoaAtuacaoBloqueioDetalheDynamicModel, SMCButtonFluentConfiguration> botaoDesbloqueio = (a) =>
+    {
+        var btn = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                  .Attribute(SMCMvcConsts.MODAL_ID, "modalDesbloqueio")
+                  .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_DesbloquearPessoaAtuacaoBloqueio"))
+                  .Ajax(isPost: false)
+                  .Text(Smc.GetUIResource("Botao_DesbloquearPessoaAtuacaoBloqueio"))
+                  .Tooltip(Smc.GetUIResource("Botao_DesbloquearPessoaAtuacaoBloqueio"))
+                  .SecurityToken(UC_PES_004_03_03.DESBLOQUEAR)
+                  .Action("Editar", "PessoaAtuacaoBloqueioDesbloqueio", new { seq = new SMCEncryptedLong(a.Seq), area = "PES" });
+
+        if ((a.SituacaoBloqueio == SMC.Academico.Common.Areas.PES.Enums.SituacaoBloqueio.Desbloqueado && a.TipoDesbloqueio == SMC.Academico.Common.Areas.PES.Enums.TipoDesbloqueio.Temporario) ||
+             a.SituacaoBloqueio == SMC.Academico.Common.Areas.PES.Enums.SituacaoBloqueio.Bloqueado)
+        {
+            if (a.FormaDesbloqueioMotivo == SMC.Academico.Common.Areas.PES.Enums.FormaBloqueio.Integracao)
+            {
+                btn.Enabled(false).ButtonInstructions(Smc.GetUIResource("ButtonInstructions_DesbloqueioDesabilitadoIntegracao"));
+            }
+            else if (!a.HabilitaBotaoDesbloqueio &&
+                     (a.FormaDesbloqueioMotivo == SMC.Academico.Common.Areas.PES.Enums.FormaBloqueio.Manual || a.FormaDesbloqueioMotivo == SMC.Academico.Common.Areas.PES.Enums.FormaBloqueio.Ambos))
+            {
+                btn.Enabled(false).ButtonInstructions(Smc.GetUIResource("ButtonInstructions_DesbloqueioDesabilitadoManual"));
+            }
+        }
+        else if ((a.SituacaoBloqueio == SMC.Academico.Common.Areas.PES.Enums.SituacaoBloqueio.Desbloqueado && a.TipoDesbloqueio == SMC.Academico.Common.Areas.PES.Enums.TipoDesbloqueio.Efetivo) ||
+        a.FormaDesbloqueioMotivo == SMC.Academico.Common.Areas.PES.Enums.FormaBloqueio.Integracao)
+        {
+            btn.Enabled(false)
+               .ButtonInstructions(Smc.GetUIResource("ButtonInstructions_DesbloqueioDesabilitado"));
+        }
+
+        return btn;
+    };
+}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.SeqPessoaAtuacao).Size(SMCSize.Grid2_24, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid2_24)
+            @Smc.DisplayFor(m => m.NomeCompleto).Size(SMCSize.Grid8_24, SMCSize.Grid18_24, SMCSize.Grid18_24, SMCSize.Grid8_24)
+            @Smc.DisplayFor(m => m.TipoAtuacao).Size(SMCSize.Grid4_24, SMCSize.Grid12_24, SMCSize.Grid8_24, SMCSize.Grid4_24)
+            @Smc.DisplayFor(m => m.CpfOuPassaporte).Size(SMCSize.Grid4_24, SMCSize.Grid12_24, SMCSize.Grid8_24, SMCSize.Grid4_24)
+            using (Smc.Div("DivButtonVisualizar").Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid4_24).CssClass("smc-btn-custom-destaque-lista-detalhada").Begin())
+            {
+                var buttonSet = Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-margem-superior");
+
+                if (Model.EhAluno)
+                {
+                    buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                     .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDadosAcademicos")
+                     .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarDadosAcademicosAluno_Title"))
+                     .Ajax(isPost: false)
+                     .Text(Smc.GetUIResource("Botao_VisualizarDadosAcademicosAluno"))
+                     .Tooltip(Smc.GetUIResource("Botao_VisualizarDadosAcademicosAluno_Tooltip"))
+                     .Type(SMCButtonType.Link).CssClass("smc-btn-visualizar-icotext")
+                     .SecurityToken(UC_ALN_001_01_01.PESQUISAR_ALUNO)
+                     .Action("VisualizarDadosAcademicosAluno", "Aluno", new { @area = "ALN", seq = new SMCEncryptedLong(Model.SeqPessoaAtuacao) })
+                    .CssClass("smc-btn-custom-destaque-grid"));
+                }
+                else
+                {
+                    buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                    .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDadosAcademicos")
+                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarDadosAcademicosIngressante_Title"))
+                    .Ajax(isPost: false)
+                    .Text(Smc.GetUIResource("Botao_VisualizarDadosAcademicosIngressante"))
+                    .Tooltip(Smc.GetUIResource("Botao_VisualizarDadosAcademicosIngressante_Tooltip"))
+                    .Type(SMCButtonType.Link).CssClass("smc-btn-visualizar-icotext")
+                    .SecurityToken(UC_ALN_002_01_01.PESQUISAR_INGRESSANTE)
+                    .Action("VisualizarDadosAcademicosIngressante", "Ingressante", new { @area = "ALN", seq = new SMCEncryptedLong(Model.SeqPessoaAtuacao) })
+                    .CssClass("smc-btn-custom-destaque-grid"));
+                }
+                @buttonSet
+            }
+        }
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            @(Smc.Grid("gridBloqueios", new SMCPagerModel<PessoaAtuacaoBloqueioDetalheDynamicModel>(Model.Bloqueios.OrderBy(x => x.DescricaoTipoBloqueio).ThenBy(x => x.DescricaoMotivoBloqueio).ThenBy(x => x.DataBloqueio)))
+                        .FieldColumn(f => f.Seq)
+                        .FieldColumn(f => f.DescricaoTipoBloqueio)
+                        .FieldColumn(f => f.DescricaoMotivoBloqueio)
+                        .FieldColumn(f => f.Descricao)
+                        .FieldColumn(f => f.SituacaoBloqueio)
+                        .FieldColumn(f => f.DataBloqueio)
+                        .HideGridTitle()
+                        .HideNavigator()
+                        .ButtonColumn(SMCButtonSetType.Secondary, 0, "", "", "", true,
+                                x => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { Seq = new SMCEncryptedLong((x as PessoaAtuacaoBloqueioDetalheDynamicModel).Seq) }, "PessoaAtuacaoBloqueio")
+                                    .Text(Smc.GetUIResource("Botao_AlterarPessoaAtuacaoBloqueio"))
+                                    .Tooltip(Smc.GetUIResource("Botao_AlterarPessoaAtuacaoBloqueio_Tooltip"))
+                                    .SecurityToken(UC_PES_004_03_02.MANTER_BLOQUEIO),
+
+                                x => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new { Seq = new SMCEncryptedLong((x as PessoaAtuacaoBloqueioDetalheDynamicModel).Seq) }, "PessoaAtuacaoBloqueio")
+                                    .Text(Smc.GetUIResource("Botao_ExcluirPessoaAtuacaoBloqueio"))
+                                    .Tooltip(Smc.GetUIResource("Botao_ExcluirPessoaAtuacaoBloqueio_Tooltip"))
+                                    .Confirm(Smc.GetUIResource("Title_Excluir_Pessoa_Atuacao_Bloqueio"), string.Format(Smc.GetUIResource("Excluir_Pessoa_Atuacao_Bloqueio"), (x as PessoaAtuacaoBloqueioDetalheDynamicModel).Descricao))
+                                    .SecurityToken(UC_PES_004_03_02.MANTER_BLOQUEIO),
+
+                                x => botaoDesbloqueio((x as PessoaAtuacaoBloqueioDetalheDynamicModel)))
+            )
+        }
+
+    }
+}
+
+@using (Smc.ModalWindow("modalVisualizarDadosAcademicos")
+              .Size(SMCModalWindowSize.Largest)
+              .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+              .Begin()) { }

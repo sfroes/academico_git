@@ -1,0 +1,16 @@
+﻿@model RequisitosInvalidos
+
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model.Requisitos)
+{
+    <div><b>@item.Key</b> não cumpriu os requisitos dos componentes curriculares abaixo:</div>
+    foreach (var componente in item.Value)
+    {
+        @Html.Raw(componente)<br />
+    }
+    <br />
+}
+<p>Deseja mesmo registrar o depósito para agendamento da defesa?</p>

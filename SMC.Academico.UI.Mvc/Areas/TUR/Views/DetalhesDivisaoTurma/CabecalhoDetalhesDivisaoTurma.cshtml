@@ -1,0 +1,7 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.TUR.Models.DetalhesDivisaoTurmaViewModel
+
+@using (Smc.Header("TurmaHeader", SMCHeaderType.Primary)
+                                   .Item(prop => prop.TurmaDescricaoFormatado, sizeMD: SMCSize.Grid24_24)
+                                   .Item(prop => prop.DescricaoFormatada, sizeMD: SMCSize.Grid24_24)
+                                   .Begin())
+{ }

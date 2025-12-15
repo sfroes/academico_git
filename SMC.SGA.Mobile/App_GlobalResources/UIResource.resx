@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Botao_Cancelarprocesso" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="Botao_Chancelar_Escalonamento_Vigente" xml:space="preserve">
+    <value>Essa solicitação não poderá ser chancelada, pois a etapa de chancela esta fora do período de vigência.</value>
+  </data>
+  <data name="Botao_Chancelar_Etapa_Liberada" xml:space="preserve">
+    <value>Essa solicitação não poderá ser chancelada, pois a etapa de chancela não esta liberada.</value>
+  </data>
+  <data name="Botao_Chancelar_Etapa_PermiteChancela" xml:space="preserve">
+    <value>Essa solicitação não poderá ser chancelada, pois a situação da solicitação não permite alteração na chancela.</value>
+  </data>
+  <data name="Botao_Chancelar_Instructions" xml:space="preserve">
+    <value>Essa solicitação não poderá ser chancelada pois há bloqueio(s) associado(s) ao solicitante que impede(m) a realização da chancela do plano de estudos.</value>
+  </data>
+  <data name="Botao_Navegacao_Anterior" xml:space="preserve">
+    <value>Página anterior</value>
+  </data>
+  <data name="Botao_Navegacao_Proximo" xml:space="preserve">
+    <value>Próxima página</value>
+  </data>
+  <data name="Botao_PlanoEstudo" xml:space="preserve">
+    <value>Plano de estudo</value>
+  </data>
+  <data name="Botao_PostagemMaterial" xml:space="preserve">
+    <value>Postagem de material</value>
+  </data>
+  <data name="Botao_PostagemMaterial_Tooltip" xml:space="preserve">
+    <value>Postagem de material</value>
+  </data>
+  <data name="Botao_Reabrir" xml:space="preserve">
+    <value>Reabrir chancela</value>
+  </data>
+  <data name="Botao_Reabrir_Instructions" xml:space="preserve">
+    <value>Reabrir chancela</value>
+  </data>
+  <data name="Botao_Sairprocesso" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="Botao_Selecionar" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="Chancela_Index_Title" xml:space="preserve">
+    <value>Chancela de Matrícula</value>
+  </data>
+  <data name="ERR_DiarioJaFechado" xml:space="preserve">
+    <value>O diário desta turma já está fechado.</value>
+  </data>
+  <data name="ERR_NaoProfessor" xml:space="preserve">
+    <value>Não é possível fechar o diário desta turma, pois você não é o professor da mesma.</value>
+  </data>
+  <data name="gridChancela_Grid_Titulo" xml:space="preserve">
+    <value>Solicitações</value>
+  </data>
+  <data name="Label_Nenhum_Registro" xml:space="preserve">
+    <value>Nenhum registro retornado.</value>
+  </data>
+  <data name="Label_Protocolo" xml:space="preserve">
+    <value>Protocolo</value>
+  </data>
+  <data name="Label_Selecionar" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="Label_Voltar" xml:space="preserve">
+    <value>Voltar</value>
+  </data>
+  <data name="LancamentosNaoEncontrados" xml:space="preserve">
+    <value>Não foram encontrados dados para atualizar.</value>
+  </data>
+  <data name="LancamentosNotaDescricao_Detalhe_Titulo" xml:space="preserve">
+    <value>Lançamentos</value>
+  </data>
+  <data name="LancamentosNota_Detalhe_Titulo" xml:space="preserve">
+    <value>Lançamentos</value>
+  </data>
+  <data name="LancamentosSeqEscalaApuracaoItem_Detalhe_Titulo" xml:space="preserve">
+    <value>Lançamentos</value>
+  </data>
+  <data name="Lancamentos_Detalhe_Titulo" xml:space="preserve">
+    <value>Lançamentos</value>
+  </data>
+  <data name="Layout_Rodape_Mensagem_SMC" xml:space="preserve">
+    <value>GTI - Gerência de Tecnologia da Informação</value>
+  </data>
+  <data name="Layout_Texto_Aguarde" xml:space="preserve">
+    <value>Aguarde...</value>
+  </data>
+  <data name="Layout_Texto_Copyright" xml:space="preserve">
+    <value>© {0} - Todos direitos reservados.</value>
+  </data>
+  <data name="Layout_Titulo_Logotipo_GTI" xml:space="preserve">
+    <value>Gerência de Tecnologia da Informação</value>
+  </data>
+  <data name="Layout_Titulo_Logotipo_SMC" xml:space="preserve">
+    <value>Sociedade Mineira de Cultura</value>
+  </data>
+  <data name="MateriaLecionada" xml:space="preserve">
+    <value>Matéria lecionada</value>
+  </data>
+  <data name="MensagemDiarioFechadoSucesso" xml:space="preserve">
+    <value>O diário da turma foi fechado com sucesso!</value>
+  </data>
+  <data name="MensagemSucesso" xml:space="preserve">
+    <value>As informações foram salvas com sucesso.</value>
+  </data>
+  <data name="ModalPlanoEstudo_Title" xml:space="preserve">
+    <value>Plano de Estudo</value>
+  </data>
+  <data name="SeqInstituicaoEnsino" xml:space="preserve">
+    <value>Instituição de ensino</value>
+  </data>
+  <data name="SiglaAplicacao" xml:space="preserve">
+    <value>SGA</value>
+  </data>
+  <data name="Texto_Passo_Atual" xml:space="preserve">
+    <value>Passo {0} de {1}</value>
+  </data>
+  <data name="TituloTurma" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="TituloTurmas" xml:space="preserve">
+    <value>Turmas</value>
+  </data>
+  <data name="Titulo_Modal_Selecao_Instituicao" xml:space="preserve">
+    <value>Selecionar Instituição de Ensino</value>
+  </data>
+  <data name="Botao_Integralizacao_Curricular" xml:space="preserve">
+    <value>Visualizar integralização curricular</value>
+  </data>
+  <data name="Botao_Integralizacao_Curricular_Tooltip" xml:space="preserve">
+    <value>Visualizar integralização curricular</value>
+  </data>
+  <data name="Modal_Title_Integralizacao_Curricular" xml:space="preserve">
+    <value>Consulta Integralização Curricular</value>
+  </data>
+  <data name="Botao_Selecionarinstituicao" xml:space="preserve">
+    <value>Selecionar instituição</value>
+  </data>
+  <data name="Botao_Chancelar" xml:space="preserve">
+    <value>Chancelar</value>
+  </data>
+  <data name="Botao_Divisao_Turma" xml:space="preserve">
+    <value>Mais informações</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Campo_Divisao" xml:space="preserve">
+    <value>Codificação</value>
+  </data>
+  <data name="Titulo_Legenda_TurmaOfertaMatricula" xml:space="preserve">
+    <value>Pertence ao currículo</value>
+  </data>
+  <data name="listaAtividades_Fieldset_Legenda" xml:space="preserve">
+    <value>Atividades acadêmicas</value>
+  </data>
+  <data name="listaTurmas_Fieldset_Legenda" xml:space="preserve">
+    <value>Turmas</value>
+  </data>
+  <data name="ParametroDivisoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Divisões de turma</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoAtividade_Lista_Titulo" xml:space="preserve">
+    <value>Atividades acadêmicas</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Botao_Pesquisar" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Campo_Curriculo" xml:space="preserve">
+    <value>Exibir somente turma pertencente ao currículo</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Campo_Divisao1" xml:space="preserve">
+    <value>Codificação</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Campo_Turma" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Campo_Vagas" xml:space="preserve">
+    <value>Vagas: </value>
+  </data>
+  <data name="Fieldset_Modal_SelecaoTurma_Lista_Titulo" xml:space="preserve">
+    <value>Turmas ofertadas - </value>
+  </data>
+  <data name="Informativo_Atividade_Existe_PreRequisito" xml:space="preserve">
+    <value>As atividades acadêmicas que não podem ser selecionadas possuem pré-requisitos ainda não cumpridos.</value>
+  </data>
+  <data name="Informativo_Turma_Atividade" xml:space="preserve">
+    <value>Existem itens da sua solicitação de matrícula que foram indeferidos ou cancelados. Clique em “Exibir itens” para visualizá-los.</value>
+  </data>
+  <data name="Informativo_Turma_Convocado" xml:space="preserve">
+    <value>Você foi convocado para a(s) turma(s) abaixo. Nesta etapa do processo, não é possível realizar alterações na solicitação de matrícula. Favor prosseguir e, caso queira, requerer a alteração na 3ª Etapa - Efetivação de Matrícula.</value>
+  </data>
+  <data name="Informativo_Turma_Existe_PreRequisito" xml:space="preserve">
+    <value>As turmas que não podem ser selecionadas possuem pré-requisitos ainda não cumpridos.</value>
+  </data>
+  <data name="Informativo_Turma_Pesquisar" xml:space="preserve">
+    <value>Para atualizar o resultado da pesquisa, de acordo com os filtros informados abaixo, clique no botão "Pesquisar".</value>
+  </data>
+  <data name="Informativo_Turma_Todas_Canceladas" xml:space="preserve">
+    <value>Não é possível prosseguir no Processo de Matrícula, pois os itens da solicitação foram cancelados.</value>
+  </data>
+  <data name="Colaboradores_Professores_Detalhe_Titulo" xml:space="preserve">
+    <value>Professores</value>
+  </data>
+  <data name="Title_Divisao_Turma" xml:space="preserve">
+    <value>Detalhes da Divisão de Turma</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Colaborador" xml:space="preserve">
+    <value>Nenhum colaborador disponível.</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Turma" xml:space="preserve">
+    <value>Nenhuma turma disponível.</value>
+  </data>
+  <data name="Label_Componente_Curricular_Ementa_Fieldset" xml:space="preserve">
+    <value>Ementa</value>
+  </data>
+  <data name="Label_Componente_Curricular_Ementa_SemRegistro" xml:space="preserve">
+    <value>Nenhuma ementa registrada para este componente curricular.</value>
+  </data>
+  <data name="Modal_Solicitacao_Administrativo_Informativo" xml:space="preserve">
+    <value>A consulta completa com todos os dados da solicitação de serviço está disponível através da Central de Solicitações.</value>
+  </data>
+  <data name="Modal_Solicitacao_Fieldset_Identificacao" xml:space="preserve">
+    <value>Identificação</value>
+  </data>
+  <data name="Modal_Solicitacao_Fieldset_Justificativa" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="Modal_Solicitacao_Fieldset_Situacao" xml:space="preserve">
+    <value>Situação atual</value>
+  </data>
+  <data name="Modal_Solicitacao_Fieldset_Solicitacao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Modal_Solicitacao_Fieldset_Solicitacao_Servico" xml:space="preserve">
+    <value>Solicitação</value>
+  </data>
+  <data name="GridAvaliacao_Grid_Titulo" xml:space="preserve">
+    <value>Avaliações</value>
+  </data>
+  <data name="GridSituacoes_Grid_Titulo" xml:space="preserve">
+    <value>Situações</value>
+  </data>
+</root>

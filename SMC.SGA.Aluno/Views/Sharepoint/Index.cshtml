@@ -1,0 +1,112 @@
+﻿@using SMC.Formularios.Common.Areas.TMP.Enums
+@using SMC.Academico.Common.Areas.ORT.Constants
+@using SMC.Academico.Common.Areas.ALN.Constants
+@using SMC.Academico.Common.Areas.CNC.Constants
+@model HomeAlunoViewModel
+@{
+    var totalBanners = 0;
+    var carousel = Smc.Carousel("banners")
+        .Infinite()
+        .Interval(5000)
+        .PauseOnHover()
+        .Size(SMCSize.Grid18_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid18_24);
+}
+
+@if (Model != null && Model.ExisteRematriculaAberta)
+{
+    totalBanners++;
+    carousel.AddItem(@<text>
+    <a href="@Url.Action("Index", "Home", new { @area = "MAT", seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoRematricula.Value) })"></a>
+    <p class="col-md-offset-5 col-lg-offset-6 col-sm-offset-6 col-xs-offset-4  @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+        @if (Model.TipoMatricula == SMC.Academico.Common.Areas.MAT.Enums.TipoMatricula.RenovacaoMatricula)
+        {
+            @Smc.GetUIResource("Index_Texto_Banner_RenovacaoMatricula") <br /> <span>@string.Format(Smc.GetUIResource("MSG_Rematricula_Aberta"), Model.DataInicioRematricula.Value.ToShortDateString())</span>
+        }
+        else
+        {
+            @Smc.GetUIResource("Index_Texto_Banner_ReaberturaMatricula") <br /> <span>@string.Format(Smc.GetUIResource("MSG_Reabertura_Aberta"), Model.DataInicioRematricula.Value.ToShortDateString())</span>
+        }
+    </p>
+    </text>, "smc-sga-banner-matricula");
+}
+
+@if (Model != null && Model.ExibirBannerAvaliacaoCpa)
+{
+    totalBanners++;
+    carousel.AddItem(@<text>
+    <form name="avaliacao_cpa" method="post" action="@Model.UrlAvaliacaoCpa" target="_blank">
+        <div id="divBannerAvaliacaoCPA" class="smc-sga-banner-avaliacao-cpa @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+            <input type="submit" value="Banner Avaliação CPA" />
+            <input type="hidden" value="@Model.CodigoAmostraPpa" name="amostra" id="amostra" />
+        </div>
+    </form>
+    </text>);
+}
+
+@{
+    totalBanners++;
+    carousel.AddItem(@<text>
+    <div id="divBannerFALECOMAGENTE" class="smc-sga-banner-falecomagente @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+        <a href="https://www.pucminas.br/destaques/Paginas/Fale-com-a-PUC-Minas.aspx" target="_blank">
+
+        </a>
+    </div>
+    </text>);
+//carousel.AddItem("https://www.sistemas.pucminas.br/sga4/SilverStream/objectstore/images/smc-sgagrad-banner-contatos-regimeremoto.jpeg", "https://www.pucminas.br/destaques/Paginas/Fale-com-a-PUC-Minas.aspx");
+}
+
+@{
+    totalBanners++;
+    carousel.AddItem(@<text>
+    <div id="divBannerRegimeRemoto" class="smc-sga-banner-regimeremoto @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+        <a href="https://www.pucminas.br/guiacanvas/Paginas/default.aspx" target="_blank" title="Guia Regime Remoto">
+
+        </a>
+    </div>
+    </text>);
+}
+
+@(carousel.GenerateArrows(totalBanners > 1).GenerateDots(totalBanners > 1))
+
+<div class="smc-sga-acesso-rapido smc-size-md-5 smc-size-xs-24 smc-size-sm-24 smc-size-lg-5">
+    <p class="smc-sga-acesso-rapido-titulo">Acesso Rápido</p>
+    <div class="smc-sga-acesso-rapido-teams">
+        <a href="https://teams.microsoft.com/dl/launcher/launcher.html?url=teams&amp;type=meetup-join&amp;enableMobilePage=true&amp;suppressPrompt=true" target="_blank" title="Acesso ao Teams">
+            <p>Teams</p>
+        </a>
+    </div>
+    <div class="smc-sga-acesso-rapido-canvas">
+        <a href="https://pucminas.instructure.com/login/microsoft" target="_blank" title="Acesso ao Canvas">
+            <p>Canvas</p>
+        </a>
+    </div>
+</div>
+@using (Smc.Form("frmViewPadrao", "SalvarArquivo", "Sharepoint", Model).Ajax("#divArquivo").Begin())
+{
+    using (Smc.Div("divFile").Begin())
+    {
+        @Smc.EditorFor(x => x.Arquivo)
+
+        using (Smc.Div("divArquivo").Dependency(name: "Arquivo", action: "SalvarArquivo", controller: "Sharepoint", area: "", required: true).Attribute("data-id", "divArquivo").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            if (Model.LinkUrl != null)
+            {
+                using (Smc.Div().CssClass("smc-sga-externo-agrupamento-primario").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <a href="@Model.LinkUrl" class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">@Model.LinkUrl</a>
+                }
+            }
+        }
+    }
+}
+
+@using (Smc.Div("linksUteis").CssClass("smc-sga-externo-separador").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    <h2>Links úteis</h2>
+    <ul class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+        <li class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24)">
+            <a target="_blank" class="smc-sga-aluno-logotipo-bdp" title="Biblioteca Digital da PUC Minas" href="https://web.sistemas.pucminas.br/BDP/PUC%20Minas">
+            </a>
+        </li>
+    </ul>
+}

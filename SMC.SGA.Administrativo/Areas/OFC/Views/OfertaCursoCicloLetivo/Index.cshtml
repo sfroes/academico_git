@@ -1,0 +1,55 @@
+﻿@model OfertaCursoCicloLetivoFiltroViewModel
+
+@section Scripts {
+    <script src="~/Content/Scripts/Shared/HidePanelPesquisa.js"></script>
+}
+
+@using (Smc.Form("formPesquisaOfertaCursoCicloLetivo", "ListarOfertaCursoCicloLetivo").Ajax("#divGridOfertaCursoCicloLetivo").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaOfertaCursoCicloLetivo").Begin())
+    {
+        <li id="fieldsPesquisa" class="smc-sga-pesquisa-detalhada smc-formeegrid-12-24">
+            <ul>
+                @Smc.FieldEditorFor(prop => prop.Seq).Focus()
+                @Smc.FieldEditorFor(prop => prop.Descricao)
+
+                @Smc.FieldEditorFor(prop => prop.SeqNivelEnsino)
+
+                <li class="smc-sga-alinhamento-hidepanel-direita">
+                    @using (Smc.HidePanel("hidePanelBuscaDetalhada").Header("Mais Detalhes").Begin())
+                    {
+                        using (Smc.Fieldset("fieldsetPesquisaDetalhadaParticipantesPerfil").Begin())
+                        {
+                            @Smc.FieldEditorFor(prop => prop.AnoInicio)
+                            @Smc.FieldEditorFor(prop => prop.AnoFim)
+                            @Smc.FieldEditorFor(prop => prop.SeqCicloLetivoSelecionado)
+                            @Smc.FieldEditorFor(prop => prop.SeqFormaIngressoSelecionado)
+
+                            using (Smc.FieldButtonSet().Size(SMCSize.Grid24_24).Begin())
+                            {
+                                @Smc.FieldButton(SMCButtonBehavior.Pesquisar).Highlight().DisplayMode(SMCButtonDisplayMode.TextAndIcon).Id("BtnPesquisarSecundario")
+                                @Smc.FieldButton(SMCButtonBehavior.Limpar).DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                            }
+                        }
+                    }
+                </li>
+            </ul>
+        </li>
+
+        using (Smc.FieldButtonSet().Size(SMCSize.Grid6_24).Begin())
+        {
+            @Smc.FieldButton(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.Icon).Highlight().Id("btnPesquisarPrincipal")
+            @Smc.FieldButton(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon).Id("btnLimparPrincipal")
+
+            @(Smc.FieldButton(SMCButtonBehavior.Novo)
+                     .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                     .Type(SMCButtonType.Link)
+                     .Url(Url.Action("Incluir"))
+            )
+        }
+    }
+}
+
+<div id="divGridOfertaCursoCicloLetivo">
+    @Html.Action("ListarOfertaCursoCicloLetivo")
+</div>

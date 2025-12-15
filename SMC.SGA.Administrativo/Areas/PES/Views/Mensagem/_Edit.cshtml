@@ -1,0 +1,28 @@
+﻿@model MensagemDynamicModel
+
+@using (Smc.Div("divCampos").Begin())
+{
+    @Smc.EditorFor(m => m.Seq)
+    @Smc.EditorFor(m => m.SeqPessoaAtuacao)
+    @Smc.EditorFor(m => m.SeqMensagem)
+    @Smc.EditorFor(m => m.SeqArquivoAnexado)
+    @Smc.EditorFor(m => m.ArquivoObrigatorio)
+    @Smc.EditorFor(m => m.SeqTipoMensagem)
+
+    @Smc.EditorFor(m => m.DataLimiteInicioVigencia)
+    @Smc.EditorFor(M => M.PermitirOcorrenciaCicloLetivoAnterior)
+    @Smc.EditorFor(m => m.DataInicioVigenciaCicloAnterior)
+
+    @Smc.EditorFor(d => d.DataInicioVigencia)
+    @Smc.EditorFor(d => d.DataFimObrigatoria)
+    @Smc.EditorFor(d => d.DataFimVigencia)
+    @Smc.EditorFor(d => d.TipoMensagemBloqueado)
+
+    using (Smc.Div("divTiposUso").Dependency("SeqTipoMensagem", "BuscarTiposUso", "Mensagem").Begin())
+    {
+    }
+
+    @Smc.EditorFor(m => m.Descricao)
+    @Smc.EditorFor(m => m.ArquivoAnexado)
+    @Smc.EditorFor(m => m.AlunoFormado)
+}

@@ -1,0 +1,17 @@
+﻿@model SMCPagerModel<SMCTimelineItem>
+
+@if (Model.Count > 0)
+{
+    @(Smc.Timeline(Model)
+                    .Ajax("ListarTimeline", "Home")
+                    .DisplayMode(SMCTimelineDisplayMode.Date)
+                    .DateTimeDisplayMode(SMCDateTimeMode.Time)
+    )
+}
+else
+{
+    using (Smc.Div("timeline").CssClass("form-group smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+    {
+        <p>Ainda não foram registradas atividades em sua linha do tempo.</p>
+    }
+}

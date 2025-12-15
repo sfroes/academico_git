@@ -1,0 +1,67 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.SRC.Models.SolicitacaoServicoPaginaViewModelBase
+@Smc.MultiTabChecker("EntrarEtapa_" + Model.SeqSolicitacaoServico + "_" + Model.SeqConfiguracaoEtapa)
+@using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+
+    using (Smc.Header("DadosProcesso", SMCHeaderType.Primary)
+                        .Item(prop => prop.Protocolo, sizeMD: SMCSize.Grid4_24)
+                        .Item(prop => prop.DescricaoProcesso, sizeMD: SMCSize.Grid12_24)
+                        .Item(prop => prop.DescricaoEtapa, sizeMD: SMCSize.Grid8_24)
+                        .Begin()) { }
+
+
+    //Item transformado em header
+
+    using (Smc.Div().CssClass("stepwizard smc-sga-stepwizard").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("anchor stepwizard-row setup-panel").Begin())
+        {
+            foreach (var pagina in @Model.FluxoPaginas)
+            {
+                string cssClass = "";
+                string url = "";
+                if (Model.Ordem == pagina.Ordem)
+                {
+                    cssClass += "smc-sga-processo-passo-atual smc-wizard-step";
+                }
+                else if (Model.Ordem > pagina.Ordem)
+                {
+                    cssClass += "smc-sga-processo-passo-concluido smc-wizard-step";
+
+                    url = Url.Action("EntrarEtapa", "ProcessoSolicitacao", new
+                    {
+                        area = "SRC",
+                        seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico),
+                        seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa),
+                        tokenRet = pagina.Token
+                    });
+                }
+                else
+                {
+                    cssClass += "smc-sga-processo-passo-emaberto smc-wizard-step";
+                }
+
+                using (Smc.Div().CssClass(cssClass).Attribute("title", pagina.Titulo).Begin())
+                {
+                    if (!Model.EtapaFinalizada && !string.IsNullOrEmpty(url) && !Model.Bloqueios.Any())
+                    {
+                        <span class="btn btn-primary btn-circle"></span>
+                        <a class="hidden-xs smc-wizard-passo" href="@url">@pagina.Titulo</a>
+                    }
+                    else
+                    {
+                        <span class="btn btn-primary btn-circle"></span>
+                        <p class="hidden-xs smc-wizard-passo">@pagina.Titulo</p>
+                    }
+                }
+            }
+        }
+    }
+
+    //Item removido, pois não há necessidade de mostrar o passo ao usuário, já que foi transformado em wizard
+
+    @*using (Smc.Div().CssClass("smc-sga-painel-lateral-processo-contador").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+                <span>@String.Format(Smc.GetUIResource("Texto_Passo_Atual"), Model.NumeroPaginaAtual.ToString(), Model.FluxoPaginas.Count.ToString())</span>
+            }*@
+}

@@ -1,0 +1,209 @@
+﻿@using SMC.SGA.Administrativo.Areas.FIN.Models
+@using SMC.Academico.Common.Areas.FIN.Constants
+@using SMC.Academico.Common.Areas.FIN.Enums
+@model PessoaAtaucaoBeneficioConsultaViewModel
+
+@{
+    SMCButtonFluentConfiguration buttonExcluir = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Ajax()
+        .Attribute(SMCMvcConsts.MODAL_ID, "modalExcluirPessoaAtuacaoBeneficio")
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Listar_Excluir_Titulo"))
+        .Text(Smc.GetUIResource("Botao_Excluir"))
+        .Type(SMCButtonType.Link)
+        .Tooltip(Smc.GetUIResource("Botao_Excluir_Tooltip"))
+        .SecurityToken(UC_FIN_001_03_02.ASSOCIAR_BENEFICIO_PESSOA_ATUACAO)
+        .Enabled(Model.DesabilitarBotaoExcluir)
+        .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoExcluir))
+        .Action("ModalExcluir", "PessoaAtuacaoBeneficio", new { SeqPessoaAtuacaoBeneficio = new SMCEncryptedLong(Model.Seq), SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao), DescricaoBeneficio = Model.DescricaoBeneficio, NomePessoaAtuacao = Model.NomePessoa });
+
+
+    SMCButtonFluentConfiguration buttonAlterarVigencia = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Ajax()
+        .Attribute(SMCMvcConsts.MODAL_ID, "modalAlterarVigencia")
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Listar_Alterar_Vigencia"))
+        .Text(Smc.GetUIResource("Botao_Alterar_Vigencia"))
+        .Type(SMCButtonType.Link)
+        .Tooltip(Smc.GetUIResource("Botao_Alterar_Vigencia_Tooltip"))
+        .SecurityToken(UC_FIN_001_03_02.ASSOCIAR_BENEFICIO_PESSOA_ATUACAO)
+        .Enabled(Model.HabilitarBotaoAlterarVigencia)
+        .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoAlterarVigencia))
+        .Action("AlterarVigencia", "PessoaAtuacaoBeneficio", new { SeqPessoaAtuacaoBeneficio = new SMCEncryptedLong(Model.Seq) });
+
+
+    SMCButtonFluentConfiguration buttonEditar = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Ajax()
+        .Attribute(SMCMvcConsts.MODAL_ID, "modalEditarPessoaBeneficio")
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Consulta_Beneficio"))
+        .Text(Smc.GetUIResource("Botao_Alterar"))
+        .Type(SMCButtonType.Link)
+        .Tooltip(Smc.GetUIResource("Botao_Alterar_Tooltip"))
+        .SecurityToken(UC_FIN_001_03_02.ASSOCIAR_BENEFICIO_PESSOA_ATUACAO)
+        .Enabled(Model.HabilitarBotaoAlterar)
+        .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoAlterar))
+        .Action("Editar", "PessoaAtuacaoBeneficio", new { Seq = new SMCEncryptedLong(Model.Seq), SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao) });
+
+    SMCButtonSetFluentConfiguration buttonSet = (Smc.ButtonSet().Type(SMCButtonSetType.Primary).NumberOfButtonsToShow(0));
+    buttonSet.AddButton(buttonEditar);
+    buttonSet.AddButton(buttonAlterarVigencia);
+    buttonSet.AddButton(buttonExcluir);
+    @buttonSet
+}
+@Html.Action("CabecalhoPessoaAtuacaoBeneficio", "PessoaAtuacaoBeneficio", new { @SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao) })
+
+@{
+    var header = Smc.Header("PessoaAtuacaoBeneficio", SMCHeaderType.Primary);
+
+    header.Item(prop => prop.DescricaoBeneficio, sizeMD: SMCSize.Grid14_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid12_24);
+    header.Item(prop => prop.DescricaoConfiguracaoBeneficio, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid12_24);
+    if (!Model.Aluno)
+    {
+        header.Item(prop => prop.IncideParcelaMatricula, sizeMD: SMCSize.Grid7_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid5_24);
+    }
+    header.Item(prop => prop.DataInicioVigencia, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid7_24, sizeLG: SMCSize.Grid4_24);
+    header.Item(prop => prop.DataFimVigencia, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid7_24, sizeLG: SMCSize.Grid4_24);
+    header.Item(prop => prop.DescricaoTipoDeducao, sizeMD: SMCSize.Grid5_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid14_24, sizeLG: SMCSize.Grid4_24);
+    header.Item(prop => prop.DescricaoFormaDeducao, sizeMD: SMCSize.Grid5_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid5_24);
+    header.Item(prop => prop.ValorBeneficio, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid3_24);
+    header.Item(prop => prop.ExibeValoresTermoAdesao, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid10_24, sizeLG: SMCSize.Grid4_24);
+    
+    using (header.Begin()) { }
+}
+
+
+@using (Smc.TabSet("tabPublicacaoBdp").Begin())
+{
+    using (Smc.Tab("tab01").Title(Smc.GetUIResource("Tab_Dados do Benefício")).Begin())
+    {
+
+
+        using (Smc.Fieldset("Situacoes").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_situacoes")).Begin())
+        {
+
+            @(Smc.Grid("gridSituacoes" + Model.Seq, new SMCPagerModel<PessoaAtuacaoBeneficioBeneficioHistoricoSituacaoViewModel>(Model.HistoricoSituacoes))
+                                                                                                                        .HideGridTitle()
+                                                                                                                        .HideNavigator()
+                                                                                                                        .HideRowNumber()
+                                                                                                                        .FieldColumn(f => f.SituacaoChancelaBeneficio, cssClass: "smc-size-md-4")
+                                                                                                                        .FieldColumn(f => f.DataInicioSituacao, cssClass: "smc-size-md-3")
+                                                                                                                        .FieldColumn(f => f.UsuarioInclusao, cssClass: "smc-size-md-4")
+                                                                                                                        .FieldColumn(f => f.Observacao, cssClass: "smc-size-md-13")
+                                                                                                                        .GridRowConfiguration((x, y) =>
+                                                                                                                        {
+                                                                                                                            if ((y as PessoaAtuacaoBeneficioBeneficioHistoricoSituacaoViewModel).Atual)
+                                                                                                                            {
+                                                                                                                                x.CssClass += " smc-sga-item-disponivel";
+                                                                                                                            }
+                                                                                                                        }))
+        }
+
+        if (Model.IdAssociarResponsavelFinanceiro != (int)AssociarResponsavelFinanceiro.NaoPermite)
+        {
+            using (Smc.Fieldset("ResponsavelFinanceiro").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_responsaveis")).Begin())
+            {
+
+                @(Smc.Grid("gridResposaveis" + Model.Seq, new SMCPagerModel<PessoaAtuacaoBeneficioResponsavelFinanceiroViewModel>(Model.ResponsaveisFinanceiro))
+                                                                                                                                    .HideGridTitle()
+                                                                                                                                    .HideNavigator()
+                                                                                                                                    .HideRowNumber()
+                                                                                                                                    .FieldColumn(f => f.ResponsaveisFinanceiro.RazaoSocial, cssClass: "smc-size-md-17")
+                                                                                                                                    .FieldColumn(f => f.ValorPercentual, cssClass: "smc-size-md-5"))
+            }
+        }
+
+        if (Model.IdDeducaoValorParcelaTitular)
+        {
+            using (Smc.Fieldset("ContratoFinanceiro").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_contrato")).Begin())
+            {
+
+                @(Smc.Grid("gridResposaveis" + Model.Seq, new SMCPagerModel<PessoaAtaucaoBeneficioControleFinanceiroViewModel>(Model.ControlesFinanceiros))
+                                                                                                                                    .HideGridTitle()
+                                                                                                                                    .HideNavigator()
+                                                                                                                                    .HideRowNumber()
+                                                                                                                                    .FieldColumn(f => f.SeqContratoBeneficioFinanceiro, cssClass: "smc-size-md-6")
+                                                                                                                                    .FieldColumn(f => f.CicloLetivo, cssClass: "smc-size-md-3")
+                                                                                                                                    .FieldColumn(f => f.DataInicio, cssClass: "smc-size-md-5")
+                                                                                                                                    .FieldColumn(f => f.DataFim, cssClass: "smc-size-md-5")
+                                                                                                                                    .FieldColumn(f => f.DataExclusao, cssClass: "smc-size-md-5")
+                                                                                                                                    .GridRowConfiguration((x, y) =>
+                                                                                                                                    {
+                                                                                                                                        if ((y as PessoaAtaucaoBeneficioControleFinanceiroViewModel).DataExclusao.HasValue)
+                                                                                                                                        {
+                                                                                                                                            x.CssClass += " smc-sga-item-tachado";
+                                                                                                                                        }
+                                                                                                                                    }))
+            }
+        }
+
+        using (Smc.Fieldset("Vigencia").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_vigencias")).Begin())
+        {
+
+            @(Smc.Grid("gridVigencias" + Model.Seq, new SMCPagerModel<PessoaAtuacaoBeneficioBeneficioHistoricoVigenciaViewModel>(Model.HistoricoVigencias))
+                                                                                                        .HideGridTitle()
+                                                                                                        .HideNavigator()
+                                                                                                        .HideRowNumber()
+                                                                                                        .FieldColumn(f => f.DataInicioVigencia, cssClass: "smc-size-md-3")
+                                                                                                        .FieldColumn(f => f.DataFimVigencia, cssClass: "smc-size-md-2")
+                                                                                                        .FieldColumn(f => f.UsuarioInclusao, cssClass: "smc-size-md-4")
+                                                                                                        .FieldColumn(f => f.DataInclusao, cssClass: "smc-size-md-2")
+                                                                                                        .FieldColumn(f => f.DescricaoMotivoAlteracaoBeneficio, cssClass: "smc-size-md-5")
+                                                                                                        .FieldColumn(f => f.Observacao, cssClass: "smc-size-md-8")
+                                                                                                        .GridRowConfiguration((x, y) =>
+                                                                                                        {
+                                                                                                            if ((y as PessoaAtuacaoBeneficioBeneficioHistoricoVigenciaViewModel).Atual)
+                                                                                                            {
+                                                                                                               x.CssClass += " smc-sga-item-disponivel";
+                                                                                                            }
+                                                                                                        }))
+        }
+
+        using (Smc.Fieldset("Anexos").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_anexos")).Begin())
+        {
+
+            @(Smc.Grid("gridAnexos" + Model.Seq, new SMCPagerModel<PessoaAtuacaoBeneficioAnexoViewModel>(Model.ArquivosAnexo))
+                                                                                                        .HideGridTitle()
+                                                                                                        .HideNavigator()
+                                                                                                        .HideRowNumber()
+                                                                                                        .FieldColumn(f => f.DataInclusao, cssClass: "smc-size-md-3")
+                                                                                                        .FieldColumn(f => f.Observacao, cssClass: "smc-size-md-19")
+                                                                                                        .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-grid-coluna-botoes", true,
+                                                                                                        f => Smc.Button("btn-download-arquivo-anexo")
+                                                                                                                        .CssClass("smc-btn-download-ico")
+                                                                                                                        .Text(Smc.GetUIResource("Botao_Download_Arquivo_Anexo"))
+                                                                                                                        .Tooltip(Smc.GetUIResource("Botao_Download_Arquivo_Anexo_Tooltip"))
+                                                                                                                        .Type(SMCButtonType.Link)
+                                                                                                                        .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true)
+                                                                                                                        .Action("DownloadFileGuid", "Home", new { @area = "", @guidFile = (f as PessoaAtuacaoBeneficioAnexoViewModel).UidArquivoAnexado })
+                                                                                                                        .Enabled((f as PessoaAtuacaoBeneficioAnexoViewModel).UidArquivoAnexado.HasValue)))
+        }
+
+    }
+    using (Smc.Tab("tab02").Title(Smc.GetUIResource("Tab_Notificações")).Action("BuscarNotificacoesPessoaAtuacaoBeneficio", "PessoaAtuacaoBeneficio", new { SeqPessoaAtuacaoBeneficio = new SMCEncryptedLong(Model.Seq) }).Begin())
+    {
+       
+    }
+}
+
+@(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+     .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+     .Action("Index", "PessoaAtuacaoBeneficio", new { SeqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao) })))
+
+@using (Smc.ModalWindow("modalEditarPessoaBeneficio")
+        .Size(SMCModalWindowSize.Largest)
+        .Form("formEditarPessoaAtuacao", "SalvarPessoaAtuacaoBeneficio", "PessoaAtuacaoBeneficio", config: x => x.Ajax())
+        .Button(SMCButtonBehavior.Salvar, config: btn => btn.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: btn => btn.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalExcluirPessoaAtuacaoBeneficio")
+        .Form("formExcluiBeneficio", "ExcluirAssociacaoBeneficio", "PessoaAtuacaoBeneficio", closeOnSubmit: true)
+        .Size(SMCModalWindowSize.Small)
+        .Button(SMCButtonBehavior.Salvar, config: btn => btn.Text("Sim").Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: btn => btn.Text("Não"))
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalAlterarVigencia")
+        .Form("formAlterarVigencia", "SalvarAlterarVigencia", "PessoaAtuacaoBeneficio", config: x => x.Ajax())
+        .Size(SMCModalWindowSize.Large)
+        .Button(SMCButtonBehavior.Salvar, config: btn => btn.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: btn => btn.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }

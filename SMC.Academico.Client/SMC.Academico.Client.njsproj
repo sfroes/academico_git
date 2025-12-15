@@ -1,0 +1,768 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>SMC.Academico.Client</Name>
+    <RootNamespace>SMC.Academico.Client</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>52fde432-ffd7-491b-8116-e0598c3e93a0</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <EnableTypeScript>true</EnableTypeScript>
+    <StartWebBrowser>False</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".browserslistrc" />
+    <Content Include=".editorconfig" />
+    <Content Include=".prettierrc" />
+    <Content Include="angular.json" />
+    <Content Include="CreateLinksScss.ps1" />
+    <Content Include="karma.conf.js" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\smc-lookup-instituicao-externa.component.html" />
+    <Content Include="projects\shared\components\lookups\lk-tur-001-turma\smc-lookup-turma.component.html" />
+    <Content Include="projects\shared\components\lookups\lk-cam-002-ciclo-letivo\smc-lookup-ciclo-letivo.component.html" />
+    <Content Include="projects\shared\components\lookups\lk-dct-001-colaborador\smc-lookup-colaborador.component.html" />
+    <Content Include="projects\shared\components\lookups\smc-lookup\smc-lookup-busca-avancada\smc-lookup-busca-avancada.component.html" />
+    <Content Include="projects\shared\components\lookups\smc-lookup\smc-lookup-busca-simples\smc-lookup-busca-simples.component.html" />
+    <Content Include="projects\shared\components\lookups\smc-lookup\smc-lookup.component.html" />
+    <Content Include="projects\shared\components\smc-button\smc-button.component.html" />
+    <Content Include="projects\shared\components\smc-calendar\smc-calendar.component.html" />
+    <Content Include="projects\shared\components\smc-modal\smc-modal.component.html" />
+    <Content Include="projects\shared\components\smc-pager\smc-pager.component.html" />
+    <Content Include="projects\shared\components\smc-select\smc-select.component.html" />
+    <Content Include="projects\shared\components\smc-table\smc-table.component.html" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view-item-header\smc-tree-view-item-header.component.html" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view-item\smc-tree-view-item.component.html" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view.component.html" />
+    <Content Include="projects\shared\css\smc-estilo-base.scss" />
+    <Content Include="projects\shared\css\smc-sga-logotipo-login.png" />
+    <Content Include="projects\smc-sga-administrativo\e2e\protractor.conf.js" />
+    <Content Include="projects\smc-sga-administrativo\e2e\tsconfig.json" />
+    <Content Include="projects\smc-sga-administrativo\src\app\app.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\situacao-aula-lote-filtro\situacao-aula-lote-filtro.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\situacao-aula-lote-lista\situacao-aula-lote-lista.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\situacao-aula-lote.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\blocos-interface\bi-grd-001\bi-grd-001.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-add-reduzido\evento-aula-agendamento-add-reduzido.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-add\evento-aula-agendamento-add.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-associar-professor\evento-aula-agendamento-associar-professor.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-delete\evento-aula-agendamento-delete.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-detalhes\evento-aula-agendamento-detalhes.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-colaborador-substituto\evento-aula-agendamento-edit-colaborador-substituto.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-simulacao\evento-aula-agendamento-simulacao.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-bi-tree-local\evento-aula-bi-tree-local.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-turma-cabecalho\evento-aula-turma-cabecalho.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-calendario\evento-aula-calendario.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-divisao-turma\evento-aula-divisao-turma.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-filtro\evento-aula-filtro.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-lista-divisao-turma\evento-aula-lista-divisao-turma.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-notificacoes\evento-aula-notificacoes.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhada-filtro\grade-horario-compartilhada-filtro.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhada-lista\grade-horario-compartilhada-lista.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhada.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhado-add\grade-horario-compartilhado-add.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\components\footer\footer.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\components\header\header.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\components\menu\menu.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\home\home.component.html" />
+    <Content Include="projects\smc-sga-administrativo\src\assets\.gitkeep" />
+    <Content Include="projects\smc-sga-administrativo\src\assets\recursos\scripts\smc-developwarning.js" />
+    <Content Include="projects\smc-sga-administrativo\src\favicon.ico" />
+    <Content Include="projects\smc-sga-administrativo\src\index.html" />
+    <Content Include="projects\smc-sga-administrativo\src\styles.scss" />
+    <Content Include="projects\smc-sga-administrativo\tsconfig.app.json" />
+    <Content Include="projects\smc-sga-administrativo\tslint.json" />
+    <Content Include="projects\smc-sga-aluno\e2e\protractor.conf.js" />
+    <Content Include="projects\smc-sga-aluno\e2e\tsconfig.json" />
+    <Content Include="projects\smc-sga-aluno\src\app\app.component.html" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\components\footer\footer.component.html" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\components\header\header.component.html" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\components\menu\menu.component.html" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\home\home.component.html" />
+    <Content Include="projects\smc-sga-aluno\src\assets\.gitkeep" />
+    <Content Include="projects\smc-sga-aluno\src\favicon.ico" />
+    <Content Include="projects\smc-sga-aluno\src\index.html" />
+    <Content Include="projects\smc-sga-aluno\src\styles.scss" />
+    <Content Include="projects\smc-sga-aluno\tsconfig.app.json" />
+    <Content Include="projects\smc-sga-aluno\tslint.json" />
+    <Content Include="projects\smc-sga-professor\e2e\protractor.conf.js" />
+    <Content Include="projects\smc-sga-professor\e2e\tsconfig.json" />
+    <Content Include="projects\smc-sga-professor\src\app\app.component.html" />
+    <Content Include="projects\smc-sga-professor\src\app\app.component.sass" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-legenda\apuracao-frequencia-legenda.component.html" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-notificacoes\apuracao-frequencia-notificacoes.component.html" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-alerta\lancamento-nota-alerta.component.html" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-cabecalho\lancamento-nota-cabecalho.component.html" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-cabecalho\lancamento-nota-cabecalho.component.sass" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-filtro\lancamento-nota-filtro.component.html" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-observacao\lancamento-nota-observacao.component.html" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-observacao\lancamento-nota-observacao.component.scss" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota.component.html" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota.component.scss" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\components\footer\footer.component.html" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\components\footer\footer.component.sass" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\components\header\header.component.html" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\components\header\header.component.sass" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\components\menu\menu.component.html" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\components\menu\menu.component.sass" />
+    <Content Include="projects\shared\components\smc-assert\smc-assert.component.html" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\home\home.component.html" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\home\home.component.sass" />
+    <Content Include="projects\smc-sga-professor\src\assets\.gitkeep" />
+    <Content Include="projects\smc-sga-professor\src\assets\recursos\node_modules\jquery\dist\jquery.js" />
+    <Content Include="projects\smc-sga-professor\src\assets\recursos\scripts\smc-developwarning.js" />
+    <Content Include="projects\smc-sga-professor\src\favicon.ico" />
+    <Content Include="projects\smc-sga-professor\src\index.html" />
+    <Content Include="projects\smc-sga-professor\src\styles.scss" />
+    <Content Include="projects\smc-sga-professor\tsconfig.app.json" />
+    <Content Include="projects\smc-sga-professor\tslint.json" />
+    <Content Include="README.md" />
+    <Content Include="tsconfig.base.json" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tsconfig.spec.json" />
+    <Content Include="tslint.json" />
+    <Content Include="util-deprecate\browser.js" />
+    <Content Include="util-deprecate\History.md" />
+    <Content Include="util-deprecate\LICENSE" />
+    <Content Include="util-deprecate\node.js" />
+    <Content Include="util-deprecate\package.json" />
+    <Content Include="util-deprecate\README.md" />
+    <Content Include="projects\shared\components\lookups\lk-tur-001-turma\smc-lookup-turma.component.spec.ts" />
+    <Content Include="projects\shared\components\lookups\lk-tur-001-turma\smc-lookup-turma.component.ts" />
+    <Content Include="projects\shared\components\lookups\lk-tur-001-turma\smc-lookup-turma.model.ts" />
+    <Content Include="projects\shared\components\lookups\lk-tur-001-turma\smc-lookup-turma.module.ts" />
+    <Content Include="projects\shared\components\lookups\lk-tur-001-turma\smc-lookup-turma.service.spec.ts" />
+    <Content Include="projects\shared\components\lookups\lk-tur-001-turma\smc-lookup-turma.service.ts" />
+    <Content Include="projects\shared\components\lookups\lk-cam-002-ciclo-letivo\smc-lookup-ciclo-letivo.component.spec.ts" />
+    <Content Include="projects\shared\components\lookups\lk-cam-002-ciclo-letivo\smc-lookup-ciclo-letivo.component.ts" />
+    <Content Include="projects\shared\components\lookups\lk-cam-002-ciclo-letivo\smc-lookup-ciclo-letivo.model.ts" />
+    <Content Include="projects\shared\components\lookups\lk-cam-002-ciclo-letivo\smc-lookup-ciclo-letivo.module.ts" />
+    <Content Include="projects\shared\components\lookups\lk-cam-002-ciclo-letivo\smc-lookup-ciclo-letivo.service.spec.ts" />
+    <Content Include="projects\shared\components\lookups\lk-cam-002-ciclo-letivo\smc-lookup-ciclo-letivo.service.ts" />
+    <Content Include="projects\shared\components\lookups\smc-lookup\smc-lookup-base.component.ts" />
+    <Content Include="projects\shared\components\lookups\smc-lookup\smc-lookup-busca-avancada\smc-lookup-busca-avancada.component.spec.ts" />
+    <Content Include="projects\shared\components\lookups\smc-lookup\smc-lookup-busca-avancada\smc-lookup-busca-avancada.component.ts" />
+    <Content Include="projects\shared\components\lookups\smc-lookup\smc-lookup-busca-simples\smc-lookup-busca-simples.component.spec.ts" />
+    <Content Include="projects\shared\components\lookups\smc-lookup\smc-lookup-busca-simples\smc-lookup-busca-simples.component.ts" />
+    <Content Include="projects\shared\components\lookups\smc-lookup\smc-lookup.component.ts" />
+    <Content Include="projects\shared\components\lookups\smc-lookup\smc-lookup.module.ts" />
+    <Content Include="projects\shared\components\smc-button\smc-button.component.spec.ts" />
+    <Content Include="projects\shared\components\smc-button\smc-button.component.ts" />
+    <Content Include="projects\shared\components\smc-button\smc-button.module.ts" />
+    <Content Include="projects\shared\components\smc-calendar\smc-calendar.component.spec.ts" />
+    <Content Include="projects\shared\components\smc-calendar\smc-calendar.component.ts" />
+    <Content Include="projects\shared\components\smc-calendar\smc-calendar.module.ts" />
+    <Content Include="projects\shared\components\smc-modal\smc-modal-base.component.ts" />
+    <Content Include="projects\shared\components\smc-modal\smc-modal-service.ts" />
+    <Content Include="projects\shared\components\smc-modal\smc-modal.component.spec.ts" />
+    <Content Include="projects\shared\components\smc-modal\smc-modal.component.ts" />
+    <Content Include="projects\shared\components\smc-modal\smc-modal.module.ts" />
+    <Content Include="projects\shared\components\smc-pager\smc-pager.component.spec.ts" />
+    <Content Include="projects\shared\components\smc-pager\smc-pager.component.ts" />
+    <Content Include="projects\shared\components\smc-pager\smc-pager.module.ts" />
+    <Content Include="projects\shared\components\smc-select\smc-select.component.spec.ts" />
+    <Content Include="projects\shared\components\smc-select\smc-select.component.ts" />
+    <Content Include="projects\shared\components\smc-select\smc-select.module.ts" />
+    <Content Include="projects\shared\components\smc-table\smc-table.component.spec.ts" />
+    <Content Include="projects\shared\components\smc-table\smc-table.component.ts" />
+    <Content Include="projects\shared\components\smc-table\smc-table.module.ts" />
+    <Content Include="projects\shared\enum\smc-color-class.enum.ts" />
+    <Content Include="projects\shared\interceptors\authentication\authentication.interceptor.spec.ts" />
+    <Content Include="projects\shared\interceptors\authentication\authentication.interceptor.ts" />
+    <Content Include="projects\shared\interceptors\error\error.interceptor.spec.ts" />
+    <Content Include="projects\shared\interceptors\error\error.interceptor.ts" />
+    <Content Include="projects\shared\interceptors\mini-profiler\mini-profiler.interceptor.spec.ts" />
+    <Content Include="projects\shared\interceptors\mini-profiler\mini-profiler.interceptor.ts" />
+    <Content Include="projects\shared\interceptors\session-error\session-error.interceptor.spec.ts" />
+    <Content Include="projects\shared\interceptors\session-error\session-error.interceptor.ts" />
+    <Content Include="projects\shared\models\smc-key-value.model.ts" />
+    <Content Include="projects\shared\models\smc-page-setting.model.ts" />
+    <Content Include="projects\shared\models\smc-pager-data.model.ts" />
+    <Content Include="projects\shared\modules\po-ui.module.ts" />
+    <Content Include="projects\shared\validators\smc-validator.directive.ts" />
+    <Content Include="projects\smc-sga-administrativo\e2e\src\app.e2e-spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\e2e\src\app.po.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\app-routing.module.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\app.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\app.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\app.constants.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\app.module.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-add\evento-aula-agendamento-add.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-add\evento-aula-agendamento-add.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-delete\evento-aula-agendamento-delete.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-delete\evento-aula-agendamento-delete.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-detalhes\evento-aula-agendamento-detalhes.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-detalhes\evento-aula-agendamento-detalhes.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-turma-cabecalho\evento-aula-turma-cabecalho.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-turma-cabecalho\evento-aula-turma-cabecalho.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-calendario\evento-aula-calendario.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-calendario\evento-aula-calendario.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-divisao-turma\evento-aula-divisao-turma.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-divisao-turma\evento-aula-divisao-turma.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-filtro\evento-aula-filtro.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-filtro\evento-aula-filtro.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-lista-divisao-turma\evento-aula-lista-divisao-turma.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-lista-divisao-turma\evento-aula-lista-divisao-turma.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-notificacoes\evento-aula-notificacoes.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-notificacoes\evento-aula-notificacoes.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula.module.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\grd.module.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-agendamento-add.model.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-agendamento-professor.model.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-turma-cabecalho.model.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-agendamento-horario.model.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula.model.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-turma.model.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-divisao-turma.model.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\services\evento-aula.service.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\services\evento-aula.service.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\components\footer\footer.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\components\footer\footer.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\components\header\header.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\components\header\header.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\components\menu\menu.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\components\menu\menu.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\home\home.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\home\home.component.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\home\home.module.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\po-ui.module.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\services\front.service.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\services\front.service.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\shared\shared.module.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\environments\environment.prod.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\environments\environment.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\main.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\polyfills.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\test.ts" />
+    <Content Include="projects\smc-sga-aluno\e2e\src\app.e2e-spec.ts" />
+    <Content Include="projects\smc-sga-aluno\e2e\src\app.po.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\app-routing.module.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\app.component.spec.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\app.component.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\app.constants.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\app.module.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\components\footer\footer.component.spec.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\components\footer\footer.component.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\components\header\header.component.spec.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\components\header\header.component.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\components\menu\menu.component.spec.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\components\menu\menu.component.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\home\home.component.spec.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\home\home.component.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\home\home.module.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\po-ui.module.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\services\front.service.spec.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\services\front.service.ts" />
+    <Content Include="projects\smc-sga-aluno\src\app\shared\shared.module.ts" />
+    <Content Include="projects\smc-sga-aluno\src\environments\environment.prod.ts" />
+    <Content Include="projects\smc-sga-aluno\src\environments\environment.ts" />
+    <Content Include="projects\smc-sga-aluno\src\main.ts" />
+    <Content Include="projects\smc-sga-aluno\src\polyfills.ts" />
+    <Content Include="projects\smc-sga-aluno\src\test.ts" />
+    <Content Include="projects\smc-sga-professor\e2e\src\app.e2e-spec.ts" />
+    <Content Include="projects\smc-sga-professor\e2e\src\app.po.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\app-routing.module.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\app.component.spec.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\app.component.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\app.constants.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\app.module.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apr.module.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-alerta\lancamento-nota-alerta.component.spec.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-alerta\lancamento-nota-alerta.component.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-cabecalho\lancamento-nota-cabecalho.component.spec.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-cabecalho\lancamento-nota-cabecalho.component.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-filtro\lancamento-nota-filtro.component.spec.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-filtro\lancamento-nota-filtro.component.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-observacao\lancamento-nota-observacao.component.spec.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-observacao\lancamento-nota-observacao.component.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota.component.spec.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota.component.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota.module.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\models\lancamento-nota-aluno-apuracao.model.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\models\lancamento-nota-aluno-totais-divisao-turma.model.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\models\lancamento-nota-aluno-totais-turma.model.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\models\lancamento-nota-aluno.model.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\models\lancamento-nota-avaliacao.model.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\models\lancamento-nota-diario-aluno.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\models\lancamento-nota-fechamento-diario.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\models\lancamento-nota-retorno-apuracao.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\models\lancamento-nota-retorno.model.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\models\lancamento-nota-situacao-final.model.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\models\lancamento-nota.model.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\services\lancamento-nota-map.service.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\services\lancamento-nota-resolver-service.spec.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\services\lancamento-nota-resolver.service.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\services\lancamento-nota.service.spec.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\services\lancamento-nota.service.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\components\footer\footer.component.spec.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\components\footer\footer.component.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\components\header\header.component.spec.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\components\header\header.component.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\components\menu\menu.component.spec.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\components\menu\menu.component.ts" />
+    <Content Include="projects\shared\components\smc-assert\smc-assert.component.spec.ts" />
+    <Content Include="projects\shared\components\smc-assert\smc-assert.component.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\home\home.component.spec.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\home\home.component.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\home\home.module.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\po-ui.module.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\services\front.service.spec.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\services\front.service.ts" />
+    <Content Include="projects\shared\services\load\smc-load.service.spec.ts" />
+    <Content Include="projects\shared\services\load\smc-load.service.ts" />
+    <Content Include="projects\shared\services\notification\smc-notification.service.spec.ts" />
+    <Content Include="projects\shared\services\notification\smc-notification.service.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\shared\shared.module.ts" />
+    <Content Include="projects\shared\utils\util.ts" />
+    <Content Include="projects\smc-sga-professor\src\environments\environment.prod.ts" />
+    <Content Include="projects\smc-sga-professor\src\environments\environment.ts" />
+    <Content Include="projects\smc-sga-professor\src\main.ts" />
+    <Content Include="projects\smc-sga-professor\src\polyfills.ts" />
+    <Content Include="projects\smc-sga-professor\src\test.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="out-tsc\" />
+    <Folder Include="out-tsc\e2e\" />
+    <Folder Include="projects\" />
+    <Folder Include="projects\shared\" />
+    <Folder Include="projects\shared\components\lookups\" />
+    <Folder Include="projects\shared\components\lookups\lk-cso-005-oferta-curso-localidade\" />
+    <Folder Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\" />
+    <Folder Include="projects\shared\components\lookups\lk-cso-001-oferta-curso\" />
+    <Folder Include="projects\shared\components\lookups\lk-tur-001-turma\" />
+    <Folder Include="projects\shared\components\lookups\lk-cam-002-ciclo-letivo\" />
+    <Folder Include="projects\shared\components\lookups\lk-dct-001-colaborador\" />
+    <Folder Include="projects\shared\components\lookups\smc-lookup\" />
+    <Folder Include="projects\shared\components\lookups\smc-lookup\smc-lookup-busca-avancada\" />
+    <Folder Include="projects\shared\components\lookups\smc-lookup\smc-lookup-busca-simples\" />
+    <Folder Include="projects\shared\components\smc-assert\smc-assert\" />
+    <Folder Include="projects\shared\components\smc-button\" />
+    <Folder Include="projects\shared\components\smc-calendar\" />
+    <Folder Include="projects\shared\components\smc-modal\" />
+    <Folder Include="projects\shared\components\smc-pager\" />
+    <Folder Include="projects\shared\components\smc-select\" />
+    <Folder Include="projects\shared\components\smc-table\" />
+    <Folder Include="projects\shared\components\smc-tree-view\" />
+    <Folder Include="projects\shared\components\smc-tree-view\services\" />
+    <Folder Include="projects\shared\components\smc-tree-view\smc-tree-view-item-header\" />
+    <Folder Include="projects\shared\components\smc-tree-view\smc-tree-view-item\" />
+    <Folder Include="projects\shared\components\util-test\" />
+    <Folder Include="projects\shared\interceptors\authentication\" />
+    <Folder Include="projects\shared\components\" />
+    <Folder Include="projects\shared\interceptors\error\" />
+    <Folder Include="projects\shared\models\" />
+    <Folder Include="projects\shared\modules\" />
+    <Folder Include="projects\shared\css\" />
+    <Folder Include="projects\shared\enum\" />
+    <Folder Include="projects\shared\pipe\" />
+    <Folder Include="projects\shared\pipe\boolean\" />
+    <Folder Include="projects\shared\pipe\safeHtml\" />
+    <Folder Include="projects\shared\services\load\" />
+    <Folder Include="projects\shared\interceptors\mini-profiler\" />
+    <Folder Include="projects\shared\interceptors\" />
+    <Folder Include="projects\shared\services\" />
+    <Folder Include="projects\shared\interceptors\session-error\" />
+    <Folder Include="projects\shared\services\notification\" />
+    <Folder Include="projects\shared\validators\" />
+    <Folder Include="projects\smc-sga-administrativo\" />
+    <Folder Include="projects\smc-sga-administrativo\e2e\" />
+    <Folder Include="projects\smc-sga-administrativo\e2e\src\" />
+    <Folder Include="projects\smc-sga-administrativo\src\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\apr\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\models\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\services\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\situacao-aula-lote-filtro\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\situacao-aula-lote-lista\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\blocos-interface\bi-grd-001\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-add-reduzido\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-add\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-add\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-associar-professor\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-delete\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-detalhes\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-colaborador-substituto\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-colaborador\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-horario\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-local\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-simulacao\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-bi-tree-local\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-index\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-listar\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-turma-cabecalho\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-calendario\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-divisao-turma\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-filtro\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-lista-divisao-turma\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-notificacoes\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhada-filtro\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhada-lista\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhado-add\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\models\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\services\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\services\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\areas\grd\blocos-interface\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\shared\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\shared\components\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\shared\components\footer\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\shared\components\header\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\shared\components\menu\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\shared\home\" />
+    <Folder Include="projects\smc-sga-administrativo\src\app\shared\services\" />
+    <Folder Include="projects\smc-sga-administrativo\src\assets\" />
+    <Folder Include="projects\smc-sga-administrativo\src\assets\recursos\" />
+    <Folder Include="projects\smc-sga-administrativo\src\assets\recursos\node_modules\" />
+    <Folder Include="projects\smc-sga-administrativo\src\assets\recursos\node_modules\jquery\" />
+    <Folder Include="projects\smc-sga-administrativo\src\assets\recursos\node_modules\jquery\dist\" />
+    <Folder Include="projects\smc-sga-administrativo\src\assets\recursos\scripts\" />
+    <Folder Include="projects\smc-sga-administrativo\src\environments\" />
+    <Folder Include="projects\smc-sga-aluno\" />
+    <Folder Include="projects\smc-sga-aluno\e2e\" />
+    <Folder Include="projects\smc-sga-aluno\e2e\src\" />
+    <Folder Include="projects\smc-sga-aluno\src\" />
+    <Folder Include="projects\smc-sga-aluno\src\app\" />
+    <Folder Include="projects\smc-sga-aluno\src\app\areas\" />
+    <Folder Include="projects\smc-sga-aluno\src\app\shared\" />
+    <Folder Include="projects\smc-sga-aluno\src\app\shared\components\" />
+    <Folder Include="projects\smc-sga-aluno\src\app\shared\components\footer\" />
+    <Folder Include="projects\smc-sga-aluno\src\app\shared\components\header\" />
+    <Folder Include="projects\smc-sga-aluno\src\app\shared\components\menu\" />
+    <Folder Include="projects\smc-sga-aluno\src\app\shared\home\" />
+    <Folder Include="projects\smc-sga-aluno\src\app\shared\services\" />
+    <Folder Include="projects\smc-sga-aluno\src\assets\" />
+    <Folder Include="projects\smc-sga-aluno\src\assets\recursos\" />
+    <Folder Include="projects\smc-sga-aluno\src\environments\" />
+    <Folder Include="projects\smc-sga-professor\" />
+    <Folder Include="projects\smc-sga-professor\e2e\" />
+    <Folder Include="projects\smc-sga-professor\e2e\src\" />
+    <Folder Include="projects\smc-sga-professor\src\" />
+    <Folder Include="projects\smc-sga-professor\src\app\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-cabecalho\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-filtro\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-header-aula\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-header\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-item-apuracao\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-itens\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-legenda\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-notificacoes\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\models\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\services\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-alerta\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-cabecalho\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-filtro\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\lancamento-nota-observacao\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\models\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\lancamento-nota\services\" />
+    <Folder Include="projects\smc-sga-professor\src\app\areas\apr\services\" />
+    <Folder Include="projects\smc-sga-professor\src\app\shared\" />
+    <Folder Include="projects\smc-sga-professor\src\app\shared\components\" />
+    <Folder Include="projects\smc-sga-professor\src\app\shared\components\footer\" />
+    <Folder Include="projects\smc-sga-professor\src\app\shared\components\header\" />
+    <Folder Include="projects\smc-sga-professor\src\app\shared\components\menu\" />
+    <Folder Include="projects\shared\components\smc-assert\" />
+    <Folder Include="projects\smc-sga-professor\src\app\shared\home\" />
+    <Folder Include="projects\smc-sga-professor\src\app\shared\services\" />
+    <Folder Include="projects\shared\utils\" />
+    <Folder Include="projects\smc-sga-professor\src\assets\" />
+    <Folder Include="projects\smc-sga-professor\src\assets\recursos\" />
+    <Folder Include="projects\smc-sga-professor\src\assets\recursos\node_modules\" />
+    <Folder Include="projects\smc-sga-professor\src\assets\recursos\node_modules\jquery\" />
+    <Folder Include="projects\smc-sga-professor\src\assets\recursos\node_modules\jquery\dist\" />
+    <Folder Include="projects\smc-sga-professor\src\assets\recursos\scripts\" />
+    <Folder Include="projects\smc-sga-professor\src\environments\" />
+    <Folder Include="util-deprecate\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-simulacao\evento-aula-agendamento-simulacao.component.spec.ts" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-simulacao\evento-aula-agendamento-simulacao.component.ts" />
+    <Content Include="out-tsc\e2e\app.e2e-spec.js" xmlns="" />
+    <Content Include="out-tsc\e2e\app.e2e-spec.js.map" xmlns="" />
+    <Content Include="out-tsc\e2e\app.po.js" xmlns="" />
+    <Content Include="out-tsc\e2e\app.po.js.map" xmlns="" />
+    <Content Include="projects\shared\components\smc-assert\smc-assert\smc-assert.component.scss" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\services\evento-aula-data.service.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\services\evento-aula-data.service.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\assets\recursos\node_modules\jquery\dist\jquery.js" xmlns="" />
+    <Content Include=".gitignore" xmlns="" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\smc-lookup-instituicao-externa.component.spec.ts" />
+    <TypeScriptCompile Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\smc-lookup-instituicao-externa.component.ts" />
+    <TypeScriptCompile Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\smc-lookup-instituicao-externa.model.ts" />
+    <TypeScriptCompile Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\smc-lookup-instituicao-externa.module.ts" />
+    <TypeScriptCompile Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\smc-lookup-instituicao-externa.service.spec.ts" />
+    <TypeScriptCompile Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\smc-lookup-instituicao-externa.service.ts" />
+    <TypeScriptCompile Include="projects\shared\components\lookups\lk-dct-001-colaborador\smc-lookup-colaborador.component.spec.ts" />
+    <TypeScriptCompile Include="projects\shared\components\lookups\lk-dct-001-colaborador\smc-lookup-colaborador.component.ts" />
+    <TypeScriptCompile Include="projects\shared\components\lookups\lk-dct-001-colaborador\smc-lookup-colaborador.model.ts" />
+    <TypeScriptCompile Include="projects\shared\components\lookups\lk-dct-001-colaborador\smc-lookup-colaborador.module.ts" />
+    <TypeScriptCompile Include="projects\shared\components\lookups\lk-dct-001-colaborador\smc-lookup-colaborador.service.spec.ts" />
+    <TypeScriptCompile Include="projects\shared\components\lookups\lk-dct-001-colaborador\smc-lookup-colaborador.service.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\index.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\services\smc-tree-view.service.spec.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\services\smc-tree-view.service.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\smc-tree-view-base.component.spec.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\smc-tree-view-base.component.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\smc-tree-view-item-header\smc-tree-view-item-header.component.spec.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\smc-tree-view-item-header\smc-tree-view-item-header.component.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\smc-tree-view-base.model.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\smc-tree-view-item\smc-tree-view-item.component.spec.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\smc-tree-view-item\smc-tree-view-item.component.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\smc-tree-view-item\smc-tree-view-item.interface.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\smc-tree-view.component.spec.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\smc-tree-view.component.ts" />
+    <TypeScriptCompile Include="projects\shared\components\smc-tree-view\smc-tree-view.module.ts" />
+    <TypeScriptCompile Include="projects\shared\components\util-test\util-expect.spec.ts" />
+    <TypeScriptCompile Include="projects\shared\enum\smc-key-code.enum.ts" />
+    <TypeScriptCompile Include="projects\shared\models\primeng-multiselect-options.model.ts" />
+    <TypeScriptCompile Include="projects\shared\models\smc-tokens-seguranca.moldes.ts" />
+    <TypeScriptCompile Include="projects\shared\pipe\boolean.pipe.spec.ts" />
+    <TypeScriptCompile Include="projects\shared\pipe\boolean.pipe.ts" />
+    <TypeScriptCompile Include="projects\shared\pipe\boolean\boolean.pipe.spec.ts" />
+    <TypeScriptCompile Include="projects\shared\pipe\boolean\boolean.pipe.ts" />
+    <TypeScriptCompile Include="projects\shared\pipe\pipe.module.ts" />
+    <TypeScriptCompile Include="projects\shared\pipe\safeHtml\safeHtml.pipe.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\apr.module.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\models\situacao-aula-lote-filtro.model.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\models\situacao-aula-lote-lista.model.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\services\situacao-aula-lote-data.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\services\situacao-aula-lote-data.service.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\services\situacao-aula-lote.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\services\situacao-aula-lote.service.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\situacao-aula-lote-filtro\situacao-aula-lote-filtro.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\situacao-aula-lote-filtro\situacao-aula-lote-filtro.component.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\situacao-aula-lote-lista\situacao-aula-lote-lista.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\situacao-aula-lote-lista\situacao-aula-lote-lista.component.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\situacao-aula-lote.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\situacao-aula-lote.component.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\apr\situacao-aula-lote\situacao-aula-lote.module.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\blocos-interface\bi-grd-001\bi-grd-001.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\blocos-interface\bi-grd-001\bi-grd-001.component.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-add-reduzido\evento-aula-agendamento-add-min.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-add-reduzido\evento-aula-agendamento-add-reduzido.component.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-associar-professor\evento-aula-agendamento-associar-professor.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-associar-professor\evento-aula-agendamento-associar-professor.component.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-colaborador-substituto\evento-aula-agendamento-edit-colaborador-substituto.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-colaborador-substituto\evento-aula-agendamento-edit-colaborador-substituto.component.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-bi-tree-local\evento-aula-bi-tree-local.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-bi-tree-local\evento-aula-bi-tree-local.component.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-routing.module.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhada-filtro\grade-horario-compartilhada-filtro.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhada-filtro\grade-horario-compartilhada-filtro.component.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhada-lista\grade-horario-compartilhada-lista.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhada-lista\grade-horario-compartilhada-lista.component.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhada.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhada.component.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhada.module.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhado-add\grade-horario-compartilhado-add.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\grade-horario-compartilhada\grade-horario-compartilhado-add\grade-horario-compartilhado-add.component.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-agendamento-delete.model.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-agendamento-edit.model.ts" />
+    <Content Include="projects\shared\components\smc-calendar\smc-calendar-custom-formatter.ts" xmlns="" />
+    <Content Include="projects\shared\pipe\boolean.pipe.spec.ts" xmlns="" />
+    <Content Include="projects\shared\pipe\boolean.pipe.ts" xmlns="" />
+    <Content Include="projects\shared\pipe\pipe.module.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-agendamento-delete.model.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-agendamento-edit.model.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-index\evento-aula-index.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-index\evento-aula-index.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-index\evento-aula-index.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-listar\evento-aula-listar.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-listar\evento-aula-listar.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-listar\evento-aula-listar.component.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\smc-lookup\smc-lookup.service.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-routing.module.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-001-oferta-curso\smc-lookup-curso-oferta.component.html" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-001-oferta-curso\smc-lookup-curso-oferta.component.spec.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-001-oferta-curso\smc-lookup-curso-oferta.component.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-001-oferta-curso\smc-lookup-curso-oferta.model.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-001-oferta-curso\smc-lookup-curso-oferta.module.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-001-oferta-curso\smc-lookup-curso-oferta.service.spec.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-001-oferta-curso\smc-lookup-curso-oferta.service.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-add-reduzido\evento-aula-agendamento-add-min.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-add-reduzido\evento-aula-agendamento-add-reduzido.component.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-005-oferta-curso-localidade\smc-lookup-curso-oferta-localidade.component.html" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-005-oferta-curso-localidade\smc-lookup-curso-oferta-localidade.component.spec.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-005-oferta-curso-localidade\smc-lookup-curso-oferta-localidade.component.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-005-oferta-curso-localidade\smc-lookup-curso-oferta-localidade.model.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-005-oferta-curso-localidade\smc-lookup-curso-oferta-localidade.module.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-005-oferta-curso-localidade\smc-lookup-curso-oferta-localidade.service.spec.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-cso-005-oferta-curso-localidade\smc-lookup-curso-oferta-localidade.service.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-dct-001-colaborador\smc-lookup-colaborador.component.spec.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-dct-001-colaborador\smc-lookup-colaborador.component.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-dct-001-colaborador\smc-lookup-colaborador.model.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-dct-001-colaborador\smc-lookup-colaborador.module.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-dct-001-colaborador\smc-lookup-colaborador.service.spec.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-dct-001-colaborador\smc-lookup-colaborador.service.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\smc-lookup-instituicao-externa.component.spec.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\smc-lookup-instituicao-externa.component.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\smc-lookup-instituicao-externa.model.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\smc-lookup-instituicao-externa.module.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\smc-lookup-instituicao-externa.service.spec.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\lk-dct-002-instituicao-externa\smc-lookup-instituicao-externa.service.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\blocos-interface\bi-grd-001\bi-grd-001.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\blocos-interface\bi-grd-001\bi-grd-001.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-simulacao.model.ts" xmlns="" />
+    <Content Include="projects\shared\components\lookups\smc-lookup\smc-lookup-cache.service.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-notificacao.model.ts" xmlns="" />
+    <Content Include="projects\shared\components\smc-tree-view\index.ts" xmlns="" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view-base.component.spec.ts" xmlns="" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view-base.component.ts" xmlns="" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view.component.spec.ts" xmlns="" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view.component.ts" xmlns="" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view.module.ts" xmlns="" />
+    <Content Include="projects\shared\components\smc-tree-view\services\smc-tree-view.service.spec.ts" xmlns="" />
+    <Content Include="projects\shared\components\smc-tree-view\services\smc-tree-view.service.ts" xmlns="" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view-item\smc-tree-view-item.component.spec.ts" xmlns="" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view-item\smc-tree-view-item.component.ts" xmlns="" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view-item\smc-tree-view-item.interface.ts" xmlns="" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view-item-header\smc-tree-view-item-header.component.spec.ts" xmlns="" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view-item-header\smc-tree-view-item-header.component.ts" xmlns="" />
+    <Content Include="projects\shared\components\util-test\util-expect.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-bi-tree-local\evento-aula-bi-tree-local.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-bi-tree-local\evento-aula-bi-tree-local.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-feriado.model.ts" xmlns="" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-agendamento-tabela-horario.model.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-agendamento-types.model.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-colaborador-vinculos.model.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-colaborador.model.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-local.model.ts" />
+    <Content Include="projects\shared\components\smc-tree-view\smc-tree-view-base.model.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-agendamento-tabela-horario.model.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-local.model.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-validacao-colisao-colaborador.model.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula.directive.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-colaborador\evento-aula-agendamento-edit-colaborador.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-colaborador\evento-aula-agendamento-edit-colaborador.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-colaborador\evento-aula-agendamento-edit-colaborador.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-horario\evento-aula-agendamento-edit-horario.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-horario\evento-aula-agendamento-edit-horario.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-horario\evento-aula-agendamento-edit-horario.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-local\evento-aula-agendamento-edit-local.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-local\evento-aula-agendamento-edit-local.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-administrativo\src\app\areas\grd\evento-aula\evento-aula-agendamento-edit-local\evento-aula-agendamento-edit-local.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grade.module.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-cabecalho\apuracao-frequencia-cabecalho.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-cabecalho\apuracao-frequencia-cabecalho.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-cabecalho\apuracao-frequencia-cabecalho.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-filtro\apuracao-frequencia-filtro.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-filtro\apuracao-frequencia-filtro.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-filtro\apuracao-frequencia-filtro.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\services\apuracao-frequencia.service.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\services\apuracao-frequencia.service.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid\apuracao-frequencia-grid.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid\apuracao-frequencia-grid.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid\apuracao-frequencia-grid.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-header\apuracao-frequencia-grid-header.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-header\apuracao-frequencia-grid-header.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-header\apuracao-frequencia-grid-header.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-itens\apuracao-frequencia-grid-itens.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-itens\apuracao-frequencia-grid-itens.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-itens\apuracao-frequencia-grid-itens.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\models\apuracao-frequencia-aluno.model.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\models\apuracao-frequencia-apuracao.model.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\models\apuracao-frequencia-aula.model.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\models\apuracao-frequencia-dia.model.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\models\apuracao-frequencia.model.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\services\apuracao-frequencia-data.service.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\services\apuracao-frequencia-data.service.ts" xmlns="" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-turma-cabecalho-associar-professor.model.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-turma-cabecalho-configuracoes.model.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-administrativo\src\app\areas\grd\moldels\evento-aula-turma-colaboradores-associar-professor.model.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-legenda\apuracao-frequencia-legenda.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-legenda\apuracao-frequencia-legenda.component.ts" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-legenda\apuracao-frequencia-legenda.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-legenda\apuracao-frequencia-legenda.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-legenda\apuracao-frequencia-legenda.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-header-aula\apuracao-frequencia-grid-header-aula.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-header-aula\apuracao-frequencia-grid-header-aula.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-header-aula\apuracao-frequencia-grid-header-aula.component.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-item-apuracao\apuracao-frequencia-grid-item-apuracao.component.html" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-item-apuracao\apuracao-frequencia-grid-item-apuracao.component.spec.ts" xmlns="" />
+    <Content Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-grid-item-apuracao\apuracao-frequencia-grid-item-apuracao.component.ts" xmlns="" />
+    <TypeScriptCompile Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-notificacoes\apuracao-frequencia-notificacoes.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\apuracao-frequencia-notificacoes\apuracao-frequencia-notificacoes.component.ts" />
+    <TypeScriptCompile Include="projects\smc-sga-professor\src\app\areas\apr\apuracao-frequencia-grade\models\apuracao-frequencia-types.model.ts" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

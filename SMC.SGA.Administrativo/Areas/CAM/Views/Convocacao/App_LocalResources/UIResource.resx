@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Botao_Novo" xml:space="preserve">
+    <value>Nova convocação</value>
+  </data>
+  <data name="Botao_Novo_Tooltip" xml:space="preserve">
+    <value>Nova convocação</value>
+  </data>
+  <data name="Editar_Title" xml:space="preserve">
+    <value>Alterar Convocação</value>
+  </data>
+  <data name="Incluir_Title" xml:space="preserve">
+    <value>Nova Convocação</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Cadastro de Convocação</value>
+  </data>
+  <data name="Listar_Excluir_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão da convocação?</value>
+  </data>
+  <data name="Listar_Excluir_Titulo" xml:space="preserve">
+    <value>Excluir Convocação</value>
+  </data>
+  <data name="MSG_Titulo_Sucesso" xml:space="preserve">
+    <value>Sucesso</value>
+  </data>
+  <data name="MSG_Titulo_Erro" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="Botao_cadastrar_ofertas_convocacao" xml:space="preserve">
+    <value>Cadastrar ofertas da convocação</value>
+  </data>
+  <data name="Botao_consulta_candidatos" xml:space="preserve">
+    <value>Consultar candidatos</value>
+  </data>
+  <data name="Botao_consulta_posicao_consolidada" xml:space="preserve">
+    <value>Consulta posição consolidada</value>
+  </data>
+  <data name="Chamadas_Grid_Titulo" xml:space="preserve">
+    <value>Chamadas</value>
+  </data>
+  <data name="Botao_Carregar_Ingressantes" xml:space="preserve">
+    <value>Carregar ingressantes</value>
+  </data>
+  <data name="Botao_Consultar_Candidatos" xml:space="preserve">
+    <value>Consultar candidatos</value>
+  </data>
+  <data name="Botao_Consultar_Posicao_Consolidada" xml:space="preserve">
+    <value>Consultar posição consolidada</value>
+  </data>
+  <data name="Botao_Convocar_Candidatos" xml:space="preserve">
+    <value>Convocar candidatos</value>
+  </data>
+  <data name="Botao_Desfazer_Convocacao" xml:space="preserve">
+    <value>Desfazer convocação</value>
+  </data>
+  <data name="Botao_Liberar_Para_Matricula" xml:space="preserve">
+    <value>Liberar para matrícula</value>
+  </data>
+  <data name="CarregarIngressantes_Title" xml:space="preserve">
+    <value>Carregar Ingressantes</value>
+  </data>
+  <data name="Excluir_Liberar_Convocacao" xml:space="preserve">
+    <value>Confirma a liberação  de matrícula da convocação "{0}" ?</value>
+  </data>
+  <data name="Title_Liberar_Convocacao" xml:space="preserve">
+    <value>Confirmar liberação de matrícula</value>
+  </data>
+  <data name="Botao_Liberar_Para_Matricula_Tooltip" xml:space="preserve">
+    <value>Liberar para matrícula</value>
+  </data>
+  <data name="Liberação_Ingressantes_Concluida" xml:space="preserve">
+    <value>Liberação de ingressantes concluída.</value>
+  </data>
+  <data name="gridIngressantesComImpedimento" xml:space="preserve">
+    <value>Impedimentos</value>
+  </data>
+  <data name="Botao_Liberar_Matricula_Aguardando_Carregamento" xml:space="preserve">
+    <value>Os ingressantes desta chamada ainda não foram carregados.</value>
+  </data>
+  <data name="Botao_Liberar_Matricula_Instrucoes" xml:space="preserve">
+    <value>Os ingressantes desta chamada já foram liberados para matrícula.</value>
+  </data>
+  <data name="Editar_Sucesso" xml:space="preserve">
+    <value>{0} alterada com sucesso.</value>
+  </data>
+  <data name="Liberar_Matricula_Title" xml:space="preserve">
+    <value>Impedimentos da Liberação de Ingressantes para Matrícula</value>
+  </data>
+  <data name="Botao_ConsultarCandidatos" xml:space="preserve">
+    <value>Consultar candidatos</value>
+  </data>
+  <data name="Botao_ConsultarCandidatos_Tooltip" xml:space="preserve">
+    <value>Consultar candidatos</value>
+  </data>
+  <data name="MSG_Sem_ConvocadosGPI" xml:space="preserve">
+    <value>Não existem convocados no GPI para efetuar a carga de ingressantes.</value>
+  </data>
+  <data name="MSG_Asset_Modificar_GrupoEscalonamento" xml:space="preserve">
+    <value>A carga de ingressantes já foi realizada para esta chamada. O novo grupo de escalonamento informado será atualizado em todos os ingressantes já carregados. Deseja continuar?</value>
+  </data>
+  <data name="Encerrar_Chamada" xml:space="preserve">
+    <value>Os ingressantes desta chamada já foram liberados para matrícula. Deseja encerrá-la?</value>
+  </data>
+  <data name="MSG_Chamada_Encerrada" xml:space="preserve">
+    <value>Chamada encerrada com sucesso.</value>
+  </data>
+  <data name="MSG_Confirmacao_Encerrar_Chamada" xml:space="preserve">
+    <value>Não existem ingressantes para serem liberados para matrícula. Deseja encerrar a chamada?</value>
+  </data>
+  <data name="gridIngressantesComImpedimento_Grid_Titulo" xml:space="preserve">
+    <value>Impedimentos</value>
+  </data>
+  <data name="MSG_Grupo_escalonamento_Nao_Pode_Ser_Alterado" xml:space="preserve">
+    <value>O grupo de escalonamento não pode ser alterado quando a situação da chamada for {0}.</value>
+  </data>
+</root>

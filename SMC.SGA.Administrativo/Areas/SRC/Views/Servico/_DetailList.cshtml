@@ -1,0 +1,41 @@
+﻿@using SMC.Framework.Model;
+
+@model SMCPagerModel<ServicoListarViewModel>
+
+@(Smc.Grid("gridServico", Model)
+     .AutoGenerateColumns()
+     .AllowSort()
+     .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-grid-coluna-botoes", true,
+
+        x => Smc.Button(SMCButtonBehavior.Alterar)
+                .CssClass("smc-btn-alterar-ico")
+                .Tooltip(Smc.GetUIResource("botao_edit_servico_tooltip"))
+                .SecurityToken(UC_SRC_001_01_02.MANTER_SERVICO)
+                .Action("Editar", "Servico", new { Seq = new SMCEncryptedLong((x as ServicoListarViewModel).Seq), Area = "SRC" }),
+
+        x => Smc.Button(SMCButtonBehavior.Excluir)
+                .DisplayMode(SMCButtonDisplayMode.Text)
+                .Confirm(Smc.GetUIResource("Exclusao_Servico_Title"),
+                string.Format(Smc.GetUIResource("Exclusao_Servico_Confirmacao"), (x as ServicoListarViewModel).Descricao))
+                .Tooltip(Smc.GetUIResource("botao_excluir_servico_tooltip"))
+                .SecurityToken(UC_SRC_001_01_02.MANTER_SERVICO)
+                .Action("Excluir", "Servico", new { Seq = new SMCEncryptedLong((x as ServicoListarViewModel).Seq), Area = "SRC" }),
+
+         //x => Smc.Button(SMCButtonBehavior.Alterar)
+         //        .Text(Smc.GetUIResource("botao_consultar_processos"))
+         //        .Tooltip(Smc.GetUIResource("botao_consultar_processos_tooltip"))
+         //        .SecurityToken(UC_SRC_002_01_01.PESQUISAR_PROCESSOS)
+         //        .Action("Index", "Processo", new { SeqTipoServico = new SMCEncryptedLong((x as ServicoListarViewModel).SeqTipoServico.Value), SeqServico = new SMCEncryptedLong((x as ServicoListarViewModel).Seq), Area = "SRC" }),
+
+         x => Smc.Button(SMCButtonBehavior.Alterar)
+                .Text(Smc.GetUIResource("botao_consultar_taxas_nucleo"))
+                .Tooltip(Smc.GetUIResource("botao_consultar_taxas_nucleo_tooltip"))
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalConsultarTaxasPorNucleo")
+                .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Botao_Consultar_Taxas_Nucleo_Title"))
+                .Ajax(isPost: false, updateTargetId: "#divGridServicos")
+                .SecurityToken(UC_SRC_001_01_01.PESQUISAR_SERVICO)
+                .Hide((x as ServicoListarViewModel).EsconderBotaoConsultarTaxas)
+                .Action("ConsultarTaxasPorNucleo", "Servico", new { Seq = new SMCEncryptedLong((x as ServicoListarViewModel).Seq), Area = "SRC" }))
+)
+

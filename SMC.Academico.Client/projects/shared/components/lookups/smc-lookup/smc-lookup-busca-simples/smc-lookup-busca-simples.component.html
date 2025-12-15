@@ -1,0 +1,55 @@
+<div class="smc-lookup smc-lookup-unico" id="SeqCicloLetivoIngresso">
+  <div class="smc-lookup-corpo">
+    <div class="smc-lookup-corpo-acoes">
+      <div class="smc-lookup-input-width">
+        <div class="po-field-container-title" [class.smc-lookup-required]="required && !readonly">
+          <span class="po-field-title">{{ label }}</span>
+        </div>
+        <div class="po-field-container-content">
+          <input class="smc-horizontal-align-left ui-autocomplete-input"
+                 placeholder="Pesquisar..."
+                 type="text"
+                 [disabled]="readonly"
+                 [required]="required"
+                 [(ngModel)]="valueSelecioando"
+                 autocomplete="off"
+                 (ngModelChange)="buscaSimples()"
+                 (blur)="onBlur()"
+                 (focus)="onFocus()"
+                 (keydown)="onKeyDown($event)"
+                 [readOnly]="readonly" />
+
+
+            <smc-button *ngIf="!readonly"
+                        class="smc-lookup-pesquisar"
+                        (s-click)="buscaAvancada.emit()"
+                        s-label="Busca detalhada"
+                        s-tooltip="Busca detalhada"
+                        s-button-class="smc-btn-custom smc-btn-lookup-open-modal
+        smc-lookup-open-command"></smc-button>
+
+
+
+        <smc-button *ngIf="!readonly"
+                    class="smc-lookup-corpo-limpar"
+                    (s-click)="limparPesquisa()"
+                    s-label="Limpar"
+                    s-tooltip="Limpar"
+                    s-button-class="smc-btn-custom smc-btn-limpar-ico"></smc-button>
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div *ngIf="exibirResultado" class="smc-lookup-resultado" [class.smc-sga-carregando-local]="loading">
+    <ul class="smc-ul-resultado">
+      <ng-container *ngFor="let item of listaResultado">
+        <li class="smc-ul-resultado-item" (click)="itemSelecionado(item)">{{ item.value }}</li>
+      </ng-container>
+    </ul>
+  </div>
+</div>

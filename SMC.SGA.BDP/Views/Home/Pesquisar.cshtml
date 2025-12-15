@@ -1,0 +1,73 @@
+﻿@using SMC.SGA.BDP.Views.Home.App_LocalResources
+@model SMCPagerModel<ResultadoViewModel>
+
+
+@using (Smc.Div("divDados").Begin())
+{
+    if (Model.Count > 0)
+    {
+
+        @(Smc.List("listResultados", Model).GroupByProperty(g => g.SeqTipoTrabalho,@<text><h3>@item.DescricaoTipoTrabalho</h3></text>)
+                    .HtmlTemplate(
+                            @<text>
+                                <div class="smc-bdp-lista-resultados">
+                                    <div class="smc-display smc-listdetailed-conteudo-titulo" data-control="display" data-type="smc-display">
+                                        <h3>@(item.Data <= DateTime.Now ? item.TituloPortugues : item.Titulo)</h3>
+                                    </div>
+                                    @if (item.Coorientadores.SMCAny())
+                                                    {
+                                        @Smc.DisplayFor(d => item.AutoresDisplay).Size(SMCSize.Grid10_24)
+                                        @Smc.DisplayFor(d => item.OrientadoresDisplay).Size(SMCSize.Grid5_24)
+                                        @Smc.DisplayFor(d => item.CoorientadoresDisplay).Size(SMCSize.Grid5_24)
+                                                        if (item.Data <= DateTime.Now)
+                                                        {
+                                            @Smc.DisplayFor(m => item.DataDefesa).Size(SMCSize.Grid4_24);
+                                                        }
+                                                        else
+                                                        {
+                                            @Smc.DisplayFor(m => item.DataPrevistaDefesa).Size(SMCSize.Grid4_24);
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                        @Smc.DisplayFor(m => item.AutoresDisplay).Size(SMCSize.Grid10_24)
+                                        @Smc.DisplayFor(m => item.OrientadoresDisplay).Size(SMCSize.Grid10_24)
+                                                        if (item.Data <= DateTime.Now)
+                                                        {
+                                            @Smc.DisplayFor(m => item.DataDefesa).Size(SMCSize.Grid4_24);
+                                                        }
+                                                        else
+                                                        {
+                                            @Smc.DisplayFor(m => item.DataPrevistaDefesa).Size(SMCSize.Grid4_24);
+                                                        }
+                                                    }
+                                    <div class="smc-bdp-btn-ver-mais">
+                                        @*<a data-ajax="true" data-ajax-method="Get"
+                                           data-ajax-mode="replace" data-ajax-url="@Url.Action("Visualizar", new { seq = SMCDESCrypto.EncryptNumberForURL(item.Seq) })"
+                                           data-behavior="data-modal-open" data-idmodal="modalVisualizarDetalhes"
+                                           data-modal-title="@item.TituloModal" href="@Url.Action("Visualizar", new { seq = SMCDESCrypto.EncryptNumberForURL(item.Seq) })"
+                                           title="@item.TituloModal">@Smc.GetUIResource("Link_Ver_Detalhes")</a>*@
+
+                                    <a href="@Url.Action("Visualizar", new { seq = SMCDESCrypto.EncryptNumberForURL(item.Seq)})" target = "_blank" title="@(item.Data <= DateTime.Now ? item.TituloPortugues : item.Titulo)">@Smc.GetUIResource("Link_Ver_Detalhes")</a>
+                                    </div>
+                                </div>
+                            </text>).Pager("divDados", "ListarResultados", "Home").AllowSort()
+        )
+    }
+    else
+    {
+        <div class="smc-bdp-txt-no-results">
+            <p>Nenhum item encontrado</p>
+        </div>
+
+    }
+}
+
+@(Smc.ButtonSet().Size(SMCSize.Grid24_24)
+                    .AddButton(Smc.Button("Voltar", "Index").CssClass("smc-bdp-btn-voltar").Type(SMCButtonType.Link))
+)
+@*@using (Smc.ModalWindow("modalVisualizarDetalhes")
+            .Size(SMCModalWindowSize.Largest)
+            .Button(SMCButtonBehavior.Fechar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon)).Begin())
+    {
+    }*@

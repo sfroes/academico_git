@@ -1,0 +1,39 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.SRC.Models.SolicitacaoServicoPaginaViewModelBase
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@{
+    var lista = Smc.List("listaBloqueios", Model.Bloqueios).HtmlTemplate(@<text>
+    @Html.Partial("_ExibicaoBloqueioItem", item)
+    </text>);
+}
+
+@if (ViewBag.ExibeEmModal != null && ((bool)ViewBag.ExibeEmModal))
+{
+    using (Smc.ModalWindow("modalBloqueios").Title(Smc.GetUIResource("Titulo_Modal_Bloqueios")).Size(SMCModalWindowSize.Large).AutoShow().Begin())
+    {
+        <p>@Smc.GetUIResource("Mensagem_Bloqueio")</p>
+        @lista
+    }
+}
+else
+{
+    @section MenuFluxo {
+        @Html.Action("MenuFluxo", Model)
+    }
+
+    <p>@Smc.GetUIResource("Mensagem_Bloqueio")</p>
+    @lista
+
+    var buttonSet = Smc.ButtonSet().CssClass("smc-sga-matricula-linha-botoes").Size(SMCSize.Grid24_24);
+
+    buttonSet.AddButton(Smc.Button("cancelarProcesso")
+                        .Id("cancelarProcesso")
+                        .Type(SMCButtonType.Link)
+                        .Action("Index", "SolicitacaoServico", new { area = "SRC" })
+                        .CssClass("smc-btn-cancelar-icotext"));
+
+    @buttonSet;
+}

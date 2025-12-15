@@ -1,0 +1,124 @@
+﻿@*<div class="smc-menu-dinamico-controls" data-type="smc-menu-controls">
+    <span class="smc-menu-dinamico-ico-referencia"></span>
+    <span class="smc-menu-fixer" data-type="smc-menu-fixer"></span>
+</div>*@
+
+
+@*@{
+        //Criação da estrutura do novo Menu
+        var ListaMenu = new List<SMCMenuItem>();
+
+        //Item início
+        SMCMenuItem Inicio = new SMCMenuItem { Text = "Início", ActionName = "Index", ControllerName = "Home", RouteValues = new { area = string.Empty }, Order = 1 };
+        Inicio.Options.CssClass = "smc-menu-item-inicio";
+        ListaMenu.Add(Inicio);
+
+        //Item Formulários
+        SMCMenuItem Formularios = new SMCMenuItem { Text = "Formulários", Order = 3 };
+        Formularios.Options.CssClass = "smc-menu-setinha smc-menu-item-formularios";
+        ListaMenu.Add(Formularios);
+        {
+            // Item Campos
+            SMCMenuItem Campos = new SMCMenuItem { Text = "Campos" };
+            Campos.Options.CssClass = "smc-menu-setinha smc-menu-item-campos";
+            Formularios.Children.Add(Campos);
+            {
+                Campos.Children.Add(new SMCMenuItem { Text = "Editor For", IsImportant = false, ActionName = "EditorFor", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+                Campos.Children.Add(new SMCMenuItem { Text = "TextField", IsImportant = false, ActionName = "TextField", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+                Campos.Children.Add(new SMCMenuItem { Text = "TextArea", IsImportant = false, ActionName = "TextArea", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+                Campos.Children.Add(new SMCMenuItem { Text = "TextEditor", IsImportant = false, ActionName = "TextEditor", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+                Campos.Children.Add(new SMCMenuItem { Text = "DatePicker", IsImportant = false, ActionName = "DatePicker", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+                Campos.Children.Add(new SMCMenuItem { Text = "Math", IsImportant = false, ActionName = "Math", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+                Campos.Children.Add(new SMCMenuItem { Text = "Select", IsImportant = false, ActionName = "Select", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+                Campos.Children.Add(new SMCMenuItem { Text = "MultiSelect", IsImportant = false, ActionName = "MultiSelect", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+                Campos.Children.Add(new SMCMenuItem { Text = "CheckBox", IsImportant = false, ActionName = "CheckBox", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+                Campos.Children.Add(new SMCMenuItem { Text = "RadioButton", IsImportant = false, ActionName = "RadioButton", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+                Campos.Children.Add(new SMCMenuItem { Text = "Lookup", IsImportant = false, ActionName = "Lookup", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+                Campos.Children.Add(new SMCMenuItem { Text = "Upload", IsImportant = false, ActionName = "Upload", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+                Campos.Children.Add(new SMCMenuItem { Text = "Mestre/Detalhe", IsImportant = false, ActionName = "MestreDetalhe", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+            }
+            Formularios.Children.Add(new SMCMenuItem { Text = "Botões / ButtonSet", IsImportant = false, ActionName = "Button", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+            Formularios.Children.Add(new SMCMenuItem { Text = "Form / Fieldset", IsImportant = false, ActionName = "Form", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+            Formularios.Children.Add(new SMCMenuItem { Text = "Captcha", IsImportant = false, ActionName = "Captcha", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+            Formularios.Children.Add(new SMCMenuItem { Text = "Address/StateCity", IsImportant = false, ActionName = "Endereco", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+            Formularios.Children.Add(new SMCMenuItem { Text = "Telefone", IsImportant = false, ActionName = "Telefone", ControllerName = "Formularios", RouteValues = new { area = string.Empty } });
+        }
+
+        //Item Container
+        SMCMenuItem Containers = new SMCMenuItem { Text = "Containers", Order = 4 };
+        Containers.Options.CssClass = "smc-menu-setinha smc-menu-item-containers";
+        ListaMenu.Add(Containers);
+        {
+            Containers.Children.Add(new SMCMenuItem { Text = "Div", IsImportant = false, ActionName = "Div", ControllerName = "Containers", RouteValues = new { area = string.Empty } });
+            Containers.Children.Add(new SMCMenuItem { Text = "Abas", IsImportant = false, ActionName = "Abas", ControllerName = "Containers", RouteValues = new { area = string.Empty } });
+            Containers.Children.Add(new SMCMenuItem { Text = "HidePanel", IsImportant = false, ActionName = "HidePanel", ControllerName = "Containers", RouteValues = new { area = string.Empty } });
+            Containers.Children.Add(new SMCMenuItem { Text = "Painel Lateral", IsImportant = false, ActionName = "PainelLateral", ControllerName = "Containers", RouteValues = new { area = string.Empty } });
+            Containers.Children.Add(new SMCMenuItem { Text = "Acordeon", IsImportant = false, ActionName = "Acordeom", ControllerName = "Containers", RouteValues = new { area = string.Empty } });
+            Containers.Children.Add(new SMCMenuItem { Text = "Gadgets", IsImportant = false, ActionName = "Gadgets", ControllerName = "Containers", RouteValues = new { area = string.Empty } });
+            Containers.Children.Add(new SMCMenuItem { Text = "Wizard", IsImportant = false, ActionName = "Wizard", ControllerName = "Containers", RouteValues = new { area = string.Empty } });
+            Containers.Children.Add(new SMCMenuItem { Text = "Header", IsImportant = false, ActionName = "Header", ControllerName = "Containers", RouteValues = new { area = string.Empty } });
+        }
+
+        //Item Janelas
+        SMCMenuItem Janelas = new SMCMenuItem { Text = "Janelas", Order = 5 };
+        Janelas.Options.CssClass = "smc-menu-setinha smc-menu-item-informativos";
+        ListaMenu.Add(Janelas);
+        {
+            Janelas.Children.Add(new SMCMenuItem { Text = "Janela de Contexto", IsImportant = false, ActionName = "JanelaContexto", ControllerName = "Janelas", RouteValues = new { area = string.Empty } });
+            Janelas.Children.Add(new SMCMenuItem { Text = "Janela Modal", IsImportant = false, ActionName = "JanelaModal", ControllerName = "Janelas", RouteValues = new { area = string.Empty } });
+        }
+
+        //Item Navegação
+        SMCMenuItem Navegacao = new SMCMenuItem { Text = "Navegação", Order = 6 };
+        Navegacao.Options.CssClass = "smc-menu-setinha smc-menu-item-navegacao";
+        ListaMenu.Add(Navegacao);
+        {
+            Navegacao.Children.Add(new SMCMenuItem { Text = "Menu Principal", IsImportant = false, ActionName = "MenuDinamico", ControllerName = "Navegacao", RouteValues = new { area = string.Empty } });
+            Navegacao.Children.Add(new SMCMenuItem { Text = "Menu de Contexto", IsImportant = false, ActionName = "MenuContexto", ControllerName = "Navegacao", RouteValues = new { area = string.Empty } });
+            Navegacao.Children.Add(new SMCMenuItem { Text = "Menu de Favoritos", IsImportant = false, ActionName = "MenuFavoritos", ControllerName = "Navegacao", RouteValues = new { area = string.Empty } });
+            //Navegacao.Children.Add(new SMCMenuItem { Text = "Menu Navegável", IsImportant = false, ActionName = "MenuNavegavel", ControllerName = "Navegacao", RouteValues = new { area = string.Empty } });
+            Navegacao.Children.Add(new SMCMenuItem { Text = "Busca de Funcionalidade", IsImportant = false, ActionName = "BuscaFuncionalidades", ControllerName = "Navegacao", RouteValues = new { area = string.Empty } });
+            Navegacao.Children.Add(new SMCMenuItem { Text = "Grupo de Navegação", IsImportant = false, ActionName = "GrupoNavegacao1", ControllerName = "Navegacao", RouteValues = new { area = string.Empty } });
+        }
+
+        //Item Apresentação de Dados
+        SMCMenuItem ApresentacaoDeDados = new SMCMenuItem { Text = "Apresentação de Dados", Order = 7 };
+        ApresentacaoDeDados.Options.CssClass = "smc-menu-setinha smc-menu-item-dados";
+        ListaMenu.Add(ApresentacaoDeDados);
+        {
+            ApresentacaoDeDados.Children.Add(new SMCMenuItem { Text = "Lista Simples", IsImportant = false, ActionName = "ListaSimples", ControllerName = "Dados", RouteValues = new { area = string.Empty } });
+            ApresentacaoDeDados.Children.Add(new SMCMenuItem { Text = "Lista Detalhada", IsImportant = false, ActionName = "ListaDetalhada", ControllerName = "Dados", RouteValues = new { area = string.Empty } });
+            ApresentacaoDeDados.Children.Add(new SMCMenuItem { Text = "Grid", IsImportant = false, ActionName = "Grid", ControllerName = "Dados", RouteValues = new { area = string.Empty } });
+            ApresentacaoDeDados.Children.Add(new SMCMenuItem { Text = "Treeview", IsImportant = false, ActionName = "Treeview", ControllerName = "Dados", RouteValues = new { area = string.Empty } });
+            ApresentacaoDeDados.Children.Add(new SMCMenuItem { Text = "Timeline", IsImportant = false, ActionName = "Timeline", ControllerName = "Dados", RouteValues = new { area = string.Empty } });
+            ApresentacaoDeDados.Children.Add(new SMCMenuItem { Text = "Totalizador", IsImportant = false, ActionName = "Totalizer", ControllerName = "Dados", RouteValues = new { area = string.Empty } });
+        }
+
+        //Item Mensagens
+        SMCMenuItem Mensagens = new SMCMenuItem { Text = "Mensagens", Order = 8 };
+        Mensagens.Options.CssClass = "smc-menu-setinha smc-menu-item-informativos";
+        ListaMenu.Add(Mensagens);
+        {
+            Mensagens.Children.Add(new SMCMenuItem { Text = "Mensagens Informativas", IsImportant = false, ActionName = "Mensagem", ControllerName = "Mensagens", RouteValues = new { area = string.Empty } });
+            Mensagens.Children.Add(new SMCMenuItem { Text = "Mensagens de Alerta", IsImportant = false, ActionName = "Alerta", ControllerName = "Mensagens", RouteValues = new { area = string.Empty } });
+        }
+
+        int i = 1;
+        foreach (var item in ListaMenu)
+        {
+            item.Options.Id = i.ToString(); i++;
+            foreach (var sub in item.Children)
+            {
+                sub.Options.Id = i.ToString(); i++;
+                foreach (var fin in sub.Children)
+                {
+                    fin.Options.Id = i.ToString(); i++;
+                }
+            }
+        }
+
+    }
+
+    <!-- componente menu -->
+    @Smc.DynamicMenu(ListaMenu, true, orientation: SMCOrientation.Horizontal)
+*@

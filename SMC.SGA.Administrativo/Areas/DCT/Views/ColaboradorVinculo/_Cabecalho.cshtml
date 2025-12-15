@@ -1,0 +1,11 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Models
+@model  PessoaAtuacaoCabecalhoViewModel
+
+@using (Smc.Header("PessoaAtuacao", SMCHeaderType.Primary)
+            .Item(p => p.Seq, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24)
+            .Item(p => p.NomeCompleto, sizeMD: SMCSize.Grid16_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid16_24, sizeLG: SMCSize.Grid16_24)
+            .Item(p => p.CpfOuPassaporte, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24)
+            .Begin())
+{
+
+}

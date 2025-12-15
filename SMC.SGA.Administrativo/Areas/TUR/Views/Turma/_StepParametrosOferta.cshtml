@@ -1,0 +1,62 @@
+﻿@model TurmaParametrosOfertaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Fieldset("fieldsetParametroOferta").LegendText(Smc.GetUIResource("ParametroOferta_Detalhe_Titulo")).Begin())
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.RadioButton("ParametrosConteudo", Model.SeqOfertaMatriz, Model.Selecionado).CssClass("smc-sga-margin-top--5")
+            @Smc.DisplayFor(m => m.DescricaoOfertaMatriz).HideLabel().Size(SMCSize.Grid23_24, SMCSize.Grid21_24, SMCSize.Grid22_24, SMCSize.Grid23_24)
+            @Smc.DisplayFor(m => m.DivisaoMatrizCurricularCompleto).HideLabel().Size(SMCSize.Grid23_24, SMCSize.Grid21_24, SMCSize.Grid22_24, SMCSize.Grid23_24)
+        }
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-conteudo-lista-item-destaque smc-sga-turma-parametros").Begin())
+        {
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("CriterioAprovacao_Detalhe_Titulo")</label>
+
+            if (Model.SeqCriterioAprovacao != 0)
+            {
+                @Smc.DisplayFor(m => m.SeqCriterioAprovacao)
+                @Smc.DisplayFor(m => m.CriterioNotaMaxima)
+                @Smc.DisplayFor(m => m.CriterioPercentualNotaAprovado)
+                @Smc.DisplayFor(m => m.CriterioPercentualFrequenciaAprovado)
+                @Smc.DisplayFor(m => m.CriterioDescricaoEscalaApuracao)
+            }
+            else
+            {
+                using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <p>@Smc.GetUIResource("Label_Nenhum_Registro_CriterioAprovacao")</p>
+                }
+            }
+
+        }
+        //using (Smc.Fieldset("fieldsetDivisoesComponentes").LegendText(Smc.GetUIResource("DivisoesComponente_Detalhe_Titulo")).Begin())
+        //{
+
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-conteudo-lista-item-destaque smc-sga-turma-parametros").Begin())
+        {
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("DivisoesComponente_Detalhe_Titulo")</label>
+            if (Model.DivisoesComponente != null)
+            {
+                @*@Smc.List("DivisoesComponente", m => m.DivisoesComponente).HtmlTemplate(divisao => Html.Partial("_StepParametrosOfertaDivisoes", divisao.Value));*@
+                @(Smc.Grid("DivisoesComponente" + Model.SeqOfertaMatriz, new SMCPagerModel<TurmaParametrosDetalheViewModel>(Model.DivisoesComponente))
+                        .AutoGenerateColumns()
+                        .HideGridTitle()
+                        .HideNavigator()
+                        .HideRowNumber()
+                            .Size(SMCSize.Grid24_24))
+
+
+            }
+            else
+            {
+                using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <p>@Smc.GetUIResource("Label_Nenhum_Registro_DivisoesComponente")</p>
+                }
+            }
+        }
+    }
+
+}

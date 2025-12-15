@@ -1,0 +1,281 @@
+<h1>Lançamento Notas</h1>
+<app-lancamento-nota-cabecalho
+  [descricaoOrigemAvaliacao]="model.descricaoOrigemAvaliacao"
+  [diarioFechado]="model.diarioFechado"
+  [materiaLecionada]="formNotas.value.materiaLecionada"
+  [permiteMateriaLecionada]="model.permiteMateriaLecionada"
+  [processandoMateriaLecionada]="procesandoMateraLecionada"
+  mostrarComandoMateriaLecionada="true"
+  (valorMateriaLecionada)="valorMateriaLecionada($event)"
+>
+</app-lancamento-nota-cabecalho>
+
+<div
+  *ngIf="model.materiaLecionadaObrigatoria"
+  class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24 smc-sga-mensagem smc-sga-mensagem-informativa"
+>
+  <p>O cadastro de matéria lecionada é <b>obrigatório</b> e deve ser realiazado antes do fechamento do diário</p>
+</div>
+<div class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+  <div class="smc-size-md-16 smc-size-xs-24 smc-size-sm-24 smc-size-lg-16">
+    <p class="smc-sga-titulo-legenda">Aluno sem comparecimento</p>
+    <div class="smc-legend-box smc-legend-orientation-horizontal">
+      <ul class="smc-legend-content">
+        <li class="smc-legend-content-title">
+          <span></span>
+        </li>
+        <li class="smc-legend-hexagon-fill smc-legend-blue4">
+          <span title="Digite *">
+            Digite * (asterisco) no campo nota para informar o <u>não comparecimento</u> do aluno na avaliação
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="model.origemAvaliacaoTurma" class="smc-size-md-8 smc-size-xs-24 smc-size-sm-8 smc-size-lg-8">
+    <p class="smc-sga-titulo-legenda">Situação do aluno</p>
+    <div class="smc-legend-box smc-legend-orientation-horizontal">
+      <ul class="smc-legend-content">
+        <li class="smc-legend-content-title">
+          <span></span>
+        </li>
+        <li
+          class="smc-sga-legenda-historico-divergente"
+          style="cursor: pointer"
+          title="Para mais informações click"
+          (click)="abrirModalHistorico(modalAlerta)"
+        >
+          <span>Situação Final diferente do Histórico Escolar</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="divMaxizar" [class.smc-sga-tela-maximizada]="maximizar">
+  <h2 *ngIf="maximizar" [innerHTML]="descricaoComponenteSafeHtml"></h2>
+  <app-lancamento-nota-filtro
+    [avaliacoes]="model.avaliacoes"
+    (filtrarAvaliacao)="filtarAvaliacoes($event)"
+    (filtrarAluno)="filtrarAlunos($event)"
+  >
+  </app-lancamento-nota-filtro>
+
+  <form [formGroup]="formNotas">
+    <div class="smc-sga-lancamento-nota-estrutura smc-size-lg-24 smc-size-sm-24 smc-size-xs-24 smc-size-md-24">
+      <div>
+        <div class="smc-size-lg-24 smc-size-sm-24 smc-size-xs-24 smc-size-md-24">
+          <span
+            (click)="maximizar = !maximizar"
+            [class.smc-sga-btn-maximizar]="!maximizar"
+            [class.smc-sga-btn-minimizar]="maximizar"
+          ></span>
+        </div>
+        <div
+          #divTela
+          class="smc-sga-lancamento-nota-tabela smc-size-lg-24 smc-size-sm-24 smc-size-xs-24 smc-size-md-24"
+        >
+          <div class="smc-sga-grid-agrupamento-header">
+            <div #divHeader class="smc-sga-grid-lancamento-nota-header">
+              <div class="smc-sga-grid-lancamento-nota-coluna-ra">
+                <p>RA</p>
+              </div>
+              <div class="smc-sga-grid-lancamento-nota-aluno smc-sga-grid-lancamento-nota-aluno-fixa">
+                <p>Aluno</p>
+              </div>
+              <div class="smc-sga-grid-lancamento-nota-coluna-padrao" *ngIf="model.origemAvaliacaoTurma">
+                <p>Total parcial</p>
+              </div>
+              <ng-container *ngFor="let avaliacao of model.avaliacoes">
+                <div class="smc-sga-grid-lancamento-nota-coluna-avaliacoes" *ngIf="avaliacao.mostrar">
+                  <p
+                    [class.link]="avaliacao.entregaWeb"
+                    [title]="avaliacao.descricaoFormatada"
+                    (click)="avaliacao.entregaWeb && abrirAvaliacaoWeb(avaliacao, assert)"
+                  >
+                    {{ avaliacao.sigla }}
+                  </p>
+                </div>
+              </ng-container>
+              <div class="smc-sga-grid-lancamento-nota-coluna-padrao">
+                <p>Total</p>
+              </div>
+              <div class="smc-sga-grid-lancamento-nota-coluna-padrao" *ngIf="model.apuracaoFrequencia">
+                <p>Faltas</p>
+              </div>
+              <div class="smc-sga-grid-lancamento-nota-coluna-situacao" *ngIf="model.origemAvaliacaoTurma">
+                <p>Situação final</p>
+              </div>
+              <div class="smc-sga-grid-lancamento-nota-coluna-padrao">
+                <p *ngIf="!model.origemAvaliacaoTurma"></p>
+              </div>
+            </div>
+          </div>
+          <ng-container formArrayName="alunos">
+            <div class="smc-sga-grid-lancamento-nota-rolagem">
+              <div
+                #elementosLinha
+                *ngFor="let aluno of model.alunos; index as indexAluno"
+                formGroupName="{{ indexAluno }}"
+                class="smc-sga-grid-lancamento-nota-linha"
+              >
+                <ng-container *ngIf="aluno.mostrar">
+                  <div class="smc-sga-grid-lancamento-nota-coluna-ra">
+                    <p>{{ aluno.numeroRegistroAcademico }}</p>
+                  </div>
+                  <div
+                    [class.smc-aluno-highlight]="formNotas.get('alunos.' + indexAluno).dirty"
+                    class="smc-sga-grid-lancamento-nota-aluno smc-sga-grid-lancamento-nota-aluno-fixa"
+                  >
+                    <p>{{ aluno.nome }}</p>
+                    <span *ngIf="exibirTag(aluno)" class="smc-sga-tag">{{ exibirDescriacoTag(aluno) }}</span>
+                  </div>
+                  <div
+                    class="smc-sga-grid-lancamento-nota-coluna-padrao"
+                    [class.smc-sga-carregando-local]="!aluno.totalDivisaoTurmaCalculado"
+                    *ngIf="model.origemAvaliacaoTurma"
+                  >
+                    <p>{{ aluno.totalParcial === "*" ? "*" : (aluno.totalParcial | number: "1.2") }}</p>
+                  </div>
+                  <ng-container formArrayName="apuracoes">
+                    <ng-container *ngFor="let apuracao of aluno.apuracoes; index as indexApuracao">
+                      <div
+                        class="smc-sga-grid-lancamento-nota-coluna-avaliacoes"
+                        *ngIf="model.avaliacoes[indexApuracao].mostrar"
+                        formGroupName="{{ indexApuracao }}"
+                      >
+                        <po-input
+                          [p-disabled]="exibirApuracaoDesabilitada(indexApuracao, aluno)"
+                          [p-error-pattern]="'Máx. ' + model.avaliacoes[indexApuracao].valor + ' ou *'"
+                          p-pattern="^(\*|[0-9]+|[0-9]+,[0-9]?[0-9]?)$"
+                          formControlName="nota"
+                          #nota
+                          [id]="'nota.' + indexAluno + '.' + indexApuracao"
+                          [class.smc-campo-highlight]="
+                            formNotas.get('alunos.' + indexAluno + '.apuracoes.' + indexApuracao + '.nota').dirty
+                          "
+                          class="smc-size-xs-24"
+                        >
+                        </po-input>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+                  <div
+                    class="smc-sga-grid-lancamento-nota-coluna-padrao"
+                    [class.smc-sga-carregando-local]="!aluno.totalCalculado"
+                  >
+                    <p [title]="exibirTotalHistorico(aluno)">{{ aluno.total | number: "1.2" }}</p>
+                  </div>
+                  <div class="smc-sga-grid-lancamento-nota-coluna-padrao" *ngIf="model.apuracaoFrequencia">
+                    <p>{{ aluno.faltas }}</p>
+                  </div>
+                  <div
+                    class="smc-sga-grid-lancamento-nota-coluna-situacao"
+                    [class.smc-sga-carregando-local]="!aluno.situacaoFinalCalculada"
+                    *ngIf="model.origemAvaliacaoTurma"
+                  >
+                    <p [title]="exibirSituacaoHistorico(aluno)">{{ aluno.descricaoSituacaoFinal }}</p>
+                  </div>
+                  <div class="smc-sga-grid-lancamento-nota-coluna-padrao smc-sga-alinha-centro">
+                    <div>
+                      <button
+                        [ngClass]="exibirLegendaObservacaoAluno(indexAluno)"
+                        [disabled]="aluno.processandoAtualizacaoHistorico || tokenSegurancaComentarioApuracao"
+                        (click)="abrirModalObservacao(indexAluno, modalObservacao)"
+                        title="Observação"
+                        type="button"
+                      ></button>
+                      <button
+                        *ngIf="model.origemAvaliacaoTurma"
+                        [disabled]="
+                          model.diarioFechado ||
+                          aluno.formado ||
+                          aluno.processandoAtualizacaoHistorico ||
+                          formNotas.get('alunos.' + indexAluno).invalid
+                        "
+                        [ngClass]="exibirLegendaHistoricoAluno(aluno)"
+                        (click)="validarAssertAtualizacaoHistorico(indexAluno, modalAlerta, assert)"
+                        title="Atualizar histórico escolar"
+                        type="button"
+                      >
+                        <i></i>
+                      </button>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="smc-buttonset-horizontal-primario smc-buttonset-horizontal-primario-lancamento-nota">
+    <div class="smc-button">
+      <button
+        (click)="validarAssertSalvar(assert, modalAlerta)"
+        [disabled]="model.diarioFechado || !formNotas.valid || formNotas.pristine"
+        class="smc-btn-salvar-icotext-destaque smc-btn-salvar"
+        title="Salvar"
+      >
+        <i></i>Salvar
+      </button>
+    </div>
+    <div *ngIf="model.origemAvaliacaoTurma" class="smc-button">
+      <button
+        (click)="validarAssertFecharDiario(assertLista, modalAlerta)"
+        [disabled]="model.alunos.length == 0 || model.diarioFechado || !model.responsavelTurma || !formNotas.valid"
+        class="smc-btn-custom smc-btn-confirmar-icotext-destaque"
+        [title]="
+          model.responsavelTurma ? 'Fechar diário' : 'Fechar diário (disponível apenas para o responsável da turma)'
+        "
+      >
+        <i></i>Fechar diário
+      </button>
+    </div>
+    <div class="smc-button">
+      <button
+        [class.smc-btn-desabilitado]="!model.diarioFechado"
+        class="smc-btn-custom smc-btn-gerar-relatorio-icotext-destaque"
+        title="Emitir relatório"
+        (click)="emitirRelatorio()"
+        [disabled]="!model.diarioFechado"
+      >
+        <i></i>Emitir relatório
+      </button>
+    </div>
+    <div class="smc-button">
+      <button (click)="validarAssertVoltar(assert)" class="smc-btn-voltar-icotext" title="Voltar"><i></i>Voltar</button>
+    </div>
+  </div>
+  <div *ngIf="this.formNotas.get('alunos').dirty" class="smc-size-md-6 smc-sga-mensagem-lancamento-nota">
+    <p>Alunos com registros alterados: {{ registrosAlterados }}</p>
+  </div>
+</div>
+
+<app-lancamento-nota-observacao
+  #modalObservacao
+  [diarioFechado]="model.diarioFechado"
+  [descricaoOrigemAvaliacao]="model.descricaoOrigemAvaliacao"
+  [avaliacoes]="model.avaliacoes"
+  (alunoAlterado)="atualizarObservacao($event)"
+>
+</app-lancamento-nota-observacao>
+<app-lancamento-nota-alerta #modalAlerta> </app-lancamento-nota-alerta>
+<app-smc-assert #assert> </app-smc-assert>
+<app-smc-assert #assertLista>
+  <div *ngIf="nomesAlunoAlerta.length && mensagemAlerta">
+    <div
+      class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24 smc-sga-mensagem smc-sga-mensagem-informativa"
+    >
+      <p>{{ mensagemAlerta }}.</p>
+    </div>
+    <div>
+      <p>Aluno(s) sem nota:</p>
+      <ul class="smc-sga-lista-alunos-fechamento-diario">
+        <li *ngFor="let nome of nomesAlunoAlerta">{{ nome }}</li>
+      </ul>
+    </div>
+  </div>
+</app-smc-assert>

@@ -1,0 +1,34 @@
+﻿@model InformacaoProcessoListarViewModel
+
+@Html.Action("CabecalhoInformacaoProcesso", "SolicitacaoServico", new { @seqProcesso = new SMCEncryptedLong(Model.SeqProcesso), @seqGrupoEscalonamento = new SMCEncryptedLong(Model.SeqGrupoEscalonamento.GetValueOrDefault()) })
+
+@if (Model.ExibirData)
+{
+
+    @(Smc.Grid("gridInformacoesProcesso", Model.InformacoesProcesso)
+             .FieldColumn(x => x.DescricaoEtapa)
+             .FieldColumn(x => x.SituacaoEtapa)
+             .FieldColumn(x => x.TipoPrazoEtapa)
+             .FieldColumn(x => x.DataInicio)
+             .FieldColumn(x => x.DataFim)
+             .HideGridTitle()
+             .HideNumberOfRowsPerPageSelector()
+             .HideRowNumber()
+             .HidePager()
+             .HideNavigator()
+             .HideRowsTotalizer())
+}
+else if (Model.ExibirPrazo)
+{
+    @(Smc.Grid("gridInformacoesProcesso", Model.InformacoesProcesso)
+             .FieldColumn(x => x.DescricaoEtapa)
+             .FieldColumn(x => x.SituacaoEtapa)
+             .FieldColumn(x => x.TipoPrazoEtapa)
+             .FieldColumn(x => x.NumeroDiasPrazoEtapa)
+             .HideGridTitle()
+             .HideNumberOfRowsPerPageSelector()
+             .HideRowNumber()
+             .HidePager()
+             .HideNavigator()
+             .HideRowsTotalizer())
+}

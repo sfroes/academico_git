@@ -1,0 +1,67 @@
+﻿@using SMC.SGA.Administrativo.Areas.CNC.Models;
+
+@model DocumentoConclusaoApostilamentoViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24)
+                 .Dependency("SeqTipoApostilamento", "BuscarBotaoTokenApostilamento", "DocumentoConclusaoApostilamento", "CNC", true, "SeqDocumentoConclusao")
+                 .Begin())
+{
+}
+
+@if (!string.IsNullOrEmpty(Model.Mensagem))
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-display smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-mensagem-multiplas-linhas").Begin())
+    {
+        using (Smc.Div().CssClass(" smc-sga-ico-mensagem").Begin())
+        { }
+
+        @Smc.DisplayFor(m => m.Mensagem)
+    }
+}
+
+@if (!string.IsNullOrEmpty(Model.MensagemTipoFormacaoEspecifica))
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-display smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-mensagem-multiplas-linhas").Begin())
+    {
+        using (Smc.Div().CssClass(" smc-sga-ico-mensagem").Begin())
+        { }
+
+        @Smc.DisplayFor(m => m.MensagemTipoFormacaoEspecifica)
+    }
+}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24)
+                 .Dependency("SeqTipoApostilamento", "BuscarMensagemTokenApostilamento", "DocumentoConclusaoApostilamento", "CNC", true)
+                 .Begin())
+{
+}
+
+@using (Smc.Form("formDocumentoConclusaoApostilamento", "Salvar").Ajax().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(m => m.SeqDocumentoConclusao)
+    @Smc.EditorFor(m => m.TokenTipoApostilamento)
+    @Smc.EditorFor(m => m.SeqArquivoAnexado)
+    @Smc.EditorFor(m => m.CamposReadyOnly)
+
+    @Smc.EditorFor(m => m.Seq)
+    @Smc.EditorFor(m => m.SeqTipoApostilamento)
+    @Smc.EditorFor(m => m.SeqAlunoFormacao)
+    @Smc.EditorFor(m => m.ArquivoAnexado)
+    @Smc.EditorFor(m => m.Descricao)
+    @Smc.EditorFor(m => m.Justificativa)
+    @Smc.EditorFor(m => m.DataInclusao)
+    @Smc.EditorFor(m => m.UsuarioInclusao)
+
+    var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24);
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+                           .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                           .Highlight());
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+             .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+             .Type(SMCButtonType.Link)
+             .Url(Url.Action("Index", "DocumentoConclusaoApostilamento", new { SeqDocumentoConclusao = new SMCEncryptedLong((Model as DocumentoConclusaoApostilamentoViewModel).SeqDocumentoConclusao) }), true));
+
+    @buttonSet;
+}

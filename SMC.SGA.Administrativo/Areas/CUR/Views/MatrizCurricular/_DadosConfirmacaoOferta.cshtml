@@ -1,0 +1,33 @@
+﻿@model MatrizCurricularOfertaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.Codigo)
+            @Smc.DisplayFor(m => m.SeqCursoOfertaLocalidade).Size(SMCSize.Grid12_24)
+            @Smc.DisplayFor(m => m.SeqCursoOfertaTurno)
+            @Smc.DisplayFor(m => m.DataInicioVigencia).Size(SMCSize.Grid4_24)
+        }
+
+
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_OfertasExcecoes")</label>
+
+            if (Model.ExcecoesLocalidade.SMCCount() > 0)
+            {
+                @Smc.List("Excecoes" + Model.Codigo, Model.ExcecoesLocalidade).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(excecoes => Html.Partial("_DadosConfirmacaoOfertaExcecoes", excecoes))
+            }
+            else
+            {
+                using (Smc.Div().CssClass("smc-list-group-no-results smc-sga-borda-inferior").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+                }
+            }
+        }
+    }
+}

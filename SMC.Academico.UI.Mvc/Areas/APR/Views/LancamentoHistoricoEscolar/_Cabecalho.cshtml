@@ -1,0 +1,22 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.APR.Models
+
+@model  LancamentoHistoricoEscolarCabecalhoViewModel
+
+@{
+	if (Model.TurmaCabecalho != null && Model.TurmaCabecalho.Count > 0)
+	{
+		var turmaGroup = Model.TurmaCabecalho.GroupBy(t => t.DescricaoTurma);
+		var header = Smc.Header("TermoIntercambio", SMCHeaderType.Primary);
+
+		foreach (var grupo in turmaGroup)
+		{
+			header.Item(Smc.GetUIResource("TituloTurma"), @grupo.Key);
+			header.Item("", grupo.Select(g => g.DescricaoOfertaTurno).ToList());
+		}
+		@using (header.Begin())
+		{
+
+		}
+	}
+}
+

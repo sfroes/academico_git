@@ -1,0 +1,12 @@
+﻿@model CabecalhoConfiguracaoEtapaBloqueioViewModel
+
+@using (Smc.Header("CabecalhoConfiguracaoEtapaBloqueio", SMCHeaderType.Primary)
+       .Item(i => i.SeqProcesso, sizeMD: SMCSize.Grid3_24)
+       .Item(i => i.DescricaoProcesso, sizeMD: SMCSize.Grid21_24)
+       .Item(i => i.SeqEtapaSgf, sizeMD: SMCSize.Grid3_24)
+       .Item(i => i.DescricaoEtapaSgf, sizeMD: SMCSize.Grid10_24)
+       .Item(i => i.SituacaoEtapa, sizeMD: SMCSize.Grid4_24)
+       .Item(i => i.DescricaoConfiguracaoEtapa, sizeMD: SMCSize.Grid7_24).Begin())
+{
+
+}

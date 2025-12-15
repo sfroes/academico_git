@@ -1,0 +1,27 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Models
+@model  ConsultaTurmaAmostraViewModel
+
+@{
+    var header = Smc.Header(Model.NomeCabecalho, SMCHeaderType.Primary)
+
+    // cabecalho comum
+    .Item(prop => prop.DescricaoConfiguracaoAvaliacaoPpa, sizeMD: SMCSize.Grid10_24)
+    .Item(prop => prop.EntidadeResponsavel, sizeMD: SMCSize.Grid10_24)
+    .Item(prop => prop.TipoAvaliacao, sizeMD: SMCSize.Grid4_24);
+
+
+    // cabecalho consulta turma
+    if (Model.ExibirTurma)
+    {
+        header.Item(prop => prop.Turma, sizeMD: SMCSize.Grid4_24);
+        header.Item(prop => prop.DescricaoTurma, sizeMD: SMCSize.Grid20_24);
+    }
+    // cabecalho editar data limite resposta
+    if (Model.ExibirDatas)
+    {
+        header.Item(prop => prop.DataInicio, sizeMD: SMCSize.Grid4_24).Size(SMCSize.Grid4_24);
+        header.Item(prop => prop.DataFim, sizeMD: SMCSize.Grid4_24).Size(SMCSize.Grid4_24);
+    }
+}
+
+@using (header.Begin()) { }

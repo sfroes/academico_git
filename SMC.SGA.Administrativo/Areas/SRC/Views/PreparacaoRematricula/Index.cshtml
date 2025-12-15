@@ -1,0 +1,18 @@
+﻿@model PreparacaoRematriculaViewModel
+@using SMC.AgendadorTarefa.UI.Mvc.Extensions;
+
+@using (Smc.Header("carregarIngressantesHeader", SMCHeaderType.Primary)
+    .Item(m => m.SeqProcesso, false, null, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24)
+    .Item(m => m.DescricaoTipoServico, false, null, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24)
+    .Item(m => m.Descricao, false, null, SMCSize.Grid14_24, SMCSize.Grid14_24, SMCSize.Grid14_24, SMCSize.Grid14_24)
+    .Item(m => m.DataInicio, false, null, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24)
+    .Item(m => m.DataFim, false, null, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24)
+    .Item(m => m.DescricaoCicloLetivo, false, null, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24)
+    .Begin())
+{ }
+
+@Smc.FollowUp(Model.SeqAgendamento.Value, Model.SeqUltimoHistoricoAgendamento).HideHeader()
+
+@(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+        .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+        .Action("Index", "Convocacao")))

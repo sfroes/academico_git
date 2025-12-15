@@ -1,0 +1,15 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+
+@model ParceriaIntercambioListarDynamicModel
+
+@{
+    SMCButtonFluentConfiguration buttonTermoIntercambio = Smc.Button("btn-termo-intercambio")
+        .Text(Smc.GetUIResource("Botao_Novo_Termo_Intercambio"))
+        .Tooltip(Smc.GetUIResource("Botao_Novo_Termo_Intercambio"))
+        .Type(SMCButtonType.Link)
+        .CssClass("smc-btn-custom-destaque")
+        .SecurityToken(UC_ALN_004_01_03.PESQUISAR_TERMO_INTERCAMBIO)
+        .Action("Index", "TermoIntercambio", new { seqParceriaIntercambio = new SMCEncryptedLong(Model.Seq) });
+} 
+
+@Smc.Templates.DetailedListButtons().AddButton(buttonTermoIntercambio).Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)

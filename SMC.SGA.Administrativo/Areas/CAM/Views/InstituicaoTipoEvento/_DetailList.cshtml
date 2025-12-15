@@ -1,0 +1,29 @@
+﻿@model InstituicaoTipoEventoListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.Seq)
+            @Smc.DisplayFor(m => m.DescricaoTipoEvento).Size(SMCSize.Grid8_24)
+            @Smc.DisplayFor(m => m.DescricaoTipoAgenda).Size(SMCSize.Grid8_24)
+            @Smc.DisplayFor(m => m.AbrangenciaEvento).Size(SMCSize.Grid8_24)
+
+        }
+
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            @(Smc.Grid("gridParametros", new SMCPagerModel<InstituicaoTipoEventoParametroViewModel>(Model.Parametros))
+                .AutoGenerateColumns()
+                .HideGridTitle()
+                .HideNavigator()
+            )
+        }
+
+    }
+    @Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)
+
+}

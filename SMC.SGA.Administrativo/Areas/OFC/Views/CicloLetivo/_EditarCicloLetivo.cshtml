@@ -1,0 +1,18 @@
+﻿@model CicloLetivoViewModel
+
+@using (Smc.Form("formCadastroCicloLetivo").ConfirmUnloadWithoutSaveChanges().Begin())
+{
+    using (Smc.Fieldset("fieldsetCadastroCicloLetivo").Begin())
+    {
+        @Smc.FieldEditorFor(prop => prop.Seq)
+        @Smc.FieldEditorFor(prop => prop.Descricao).Focus()
+        
+        @Smc.FieldEditorFor(prop => prop.SeqNivelEnsino)
+
+        @Smc.FieldEditorFor(prop => prop.RegimeLetivoSelecionado)
+        @Smc.FieldEditorFor(prop => prop.AnoCiclo)
+        @Smc.FieldEditorFor(prop => prop.NumeroCiclo)
+    }
+
+    @Html.Partial("_BotoesEdicaoPadrao")
+}

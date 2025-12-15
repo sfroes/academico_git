@@ -1,0 +1,41 @@
+﻿@model CurriculoDynamicModel
+
+@if (Model.IsNew())
+{
+    if (string.IsNullOrEmpty(Model.SiglaCurso))
+    {
+        using (Smc.Header("Curso", SMCHeaderType.Primary)
+                .Item(m => m.DescricaoCurso, sizeMD: SMCSize.Grid10_24).Begin())
+        { }
+    }
+    else
+    {
+        using (Smc.Header("Curso", SMCHeaderType.Primary)
+                .Item(m => m.SiglaCurso, sizeMD: SMCSize.Grid5_24)
+                .Item(m => m.DescricaoCurso, sizeMD: SMCSize.Grid10_24).Begin())
+        { }
+    }
+}
+
+@Smc.HiddenFor(m => m.NumeroSequencial)
+@Smc.HiddenFor(m => m.PermiteCreditoComponenteCurricular)
+
+@Smc.EditorFor(m => m.Seq)
+@Smc.EditorFor(m => m.Codigo)
+@Smc.EditorFor(m => m.Descricao)
+@Smc.EditorFor(m => m.Ativo)
+@Smc.EditorFor(m => m.DescricaoComplementar)
+
+@using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+{
+    <p>@Smc.GetUIResource("Mensagem_Oferta_Curso")</p>
+}
+
+@if (Model.PermiteCreditoComponenteCurricular)
+{
+    @Smc.EditorFor(m => m.CursosOferta)
+}
+else
+{
+    @Smc.EditorFor(m => m.CursoOfertaSemCredito).Name("CursosOferta")
+}

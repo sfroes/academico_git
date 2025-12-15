@@ -1,0 +1,106 @@
+﻿@model PaginaAdesaoContratoMatriculaViewModel
+
+@section MenuLateral {
+    @Html.Action("MenuPaginas", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(MatriculaTokens.PAGINA_ADESAO_CONTRATO_MATRICULA_INSTRUCOES))
+
+@using (Smc.Form("frmPagina").CssClass("smc-sga-confirmacao-dados").Ajax().Begin())
+{
+    using (Smc.Fieldset("fsDadosIngressante").Begin())
+    {
+        @Smc.DisplayFor(x => x.Nome).Size(SMCSize.Grid8_24)
+        @Smc.DisplayFor(x => x.RG).Size(SMCSize.Grid3_24)
+        @Smc.DisplayFor(x => x.CPF).Size(SMCSize.Grid3_24)
+        @Smc.DisplayFor(x => x.Passaporte).Size(SMCSize.Grid4_24)
+        @Smc.DisplayFor(x => x.ResponsavelFinanceiro).Size(SMCSize.Grid6_24)
+    }
+
+    using (Smc.Fieldset("fsInformacoesAcademicas").Begin())
+    {
+        @Smc.DisplayFor(x => x.EntidadeResponsavel).Size(SMCSize.Grid12_24)
+        @Smc.DisplayFor(x => x.OfertaCurso).Size(SMCSize.Grid12_24)
+        @Smc.DisplayFor(x => x.Modalidade).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.PrazoConclusaoMeses).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.Inicio).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.TerminoPrevisto).Size(SMCSize.Grid6_24)
+    }
+    var primeiro = Model.InformacoesFinanceiras.FirstOrDefault();
+    if (primeiro != null)
+    {
+        using (Smc.Fieldset("fsInformacoesFinanceiras").Begin())
+        {
+            @Smc.DisplayFor(x => x.InformacoesFinanceiras.FirstOrDefault().ValorTotalCurso).Size(SMCSize.Grid5_24)
+            @Smc.DisplayFor(x => x.InformacoesFinanceiras.FirstOrDefault().QuantidadeParcelas).Size(SMCSize.Grid4_24)
+            @Smc.DisplayFor(x => x.InformacoesFinanceiras.FirstOrDefault().ValorParcela).Size(SMCSize.Grid5_24)
+            @Smc.DisplayFor(x => x.InformacoesFinanceiras.FirstOrDefault().DiaVencimentoParcelas).Size(SMCSize.Grid5_24)
+
+            if (Model.InformacoesBeneficios != null && Model.InformacoesBeneficios.Any())
+            {
+                @*@(Smc.List("Beneficios", Model.InformacoesBeneficios).HtmlTemplate(@<text>*@
+                        @Html.Partial("_AdesaoContratoBeneficios", Model.InformacoesBeneficios)
+                @*</text>))*@
+            }
+        }
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+        {
+            <p>@Smc.GetUIResource("Mensagem_Informacoes_Financeiras")</p>
+        }
+    }
+
+    using (Smc.Div("divAdesao").Begin())
+    {
+
+        using (Smc.Fieldset("fsTermoAdesao").Begin())
+        {
+            <span class="smc-sga-termo-conteudo smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">@Model.TermoAdesao</span>
+            @Smc.ButtonSet().Type(SMCButtonSetType.Secondary).Size(SMCSize.Grid4_24).CssClass("smc-sga-botao-aceite").AddButton(
+                      Smc.Button("VisualizarContrato",
+                            "AdesaoContratoVisualizar",
+                            new { seqArquivoContrato = new SMCEncryptedLong(Model.SeqArquivoContrato) })
+                            .Attribute("target", "_blank")
+                            .Type(SMCButtonType.Link)
+                            .CssClass("smc-btn-documento-icotext")
+                            .Attribute("onclick", "lerContrato();"))
+            @Smc.EditorFor(x => x.AceitoTermo).CssClass("smc-sga-check-aceite")
+        }
+    }
+
+    // Desabilita o botão próximo para atender à regra de negócio NV04
+    @section scripts
+    {
+        <script type="text/javascript">
+            var leuContrato = false;
+            var aderiuTermo = false;
+
+            function lerContrato() {
+                leuContrato = true;
+                liberarBotao();
+            }
+
+            function liberarBotao() {
+                if (leuContrato && aderiuTermo) {
+                    $('#proximaPagina').closest(".smc-button ").removeClass("smc-btn-disabled");
+                    $('#proximaPagina').removeAttr('disabled');
+                    $('#proximaPagina').closest('div').find('[data-type="smc-instructions"]').hide();
+                }
+                else {
+                    $('#proximaPagina').closest(".smc-button ").addClass("smc-btn-disabled");
+                    $("#proximaPagina").attr("disabled", "disabled");
+                    $('#proximaPagina').closest('div').find('[data-type="smc-instructions"]').show();
+                }
+            }
+
+            $("[name='AceitoTermo']").on("change.adesao", function () {
+                aderiuTermo = $(this).is(":checked");
+                liberarBotao();
+            });
+
+            liberarBotao();
+
+        </script>
+    }
+
+    @Html.Partial("_BotoesNavegacao", Model)
+}

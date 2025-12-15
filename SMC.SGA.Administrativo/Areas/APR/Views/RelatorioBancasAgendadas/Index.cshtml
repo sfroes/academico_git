@@ -1,0 +1,37 @@
+﻿@model SMC.SGA.Administrativo.Areas.APR.Models.RelatorioBancasAgendadasFiltroViewModel
+
+@using (Smc.Form("frmViewPadrao", "GerarRelatorio").Attribute("target", "_blank").Begin())
+{
+    //Filtros
+    using (Smc.Fieldset("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqEntidadesResponsaveis)
+        @Smc.EditorFor(prop => prop.SeqNiveisEnsino)
+        @Smc.EditorFor(prop => prop.SeqTipoEvento)
+
+        @Smc.EditorFor(prop => prop.SituacaoBanca)
+        @Smc.EditorFor(prop => prop.ExibirBancasComNota)
+
+        //  using (Smc.Fieldset("fieldsetPeriodo").CssClass("smc-sga-fieldset-inline").Size(SMCSize.Grid8_24).Begin())
+        //  {
+        @Smc.EditorFor(prop => prop.DataInicio)
+        @Smc.EditorFor(prop => prop.DataFim)
+        //}
+        @Smc.EditorFor(prop => prop.Ordenacao)
+
+
+        @Smc.EditorFor(prop => prop.SeqColaborador)
+        @Smc.EditorFor(prop => prop.TipoMembroBanca)
+
+        var buttonSet = Smc.ButtonSet();
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Relatorio)
+                                    .CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+                                    .Text(Smc.GetUIResource("Botao_Relatorio"))
+                                    .Tooltip(Smc.GetUIResource("Botao_Relatorio_Tooltip"))
+                                    .Type(SMCButtonType.Submit));
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Limpar).DisplayMode(SMCButtonDisplayMode.Icon));
+
+        @buttonSet;
+
+    }
+}

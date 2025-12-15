@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSDisciplinaCursada" targetNamespace="http://tempuri.org/DSDisciplinaCursada.xsd" xmlns:mstns="http://tempuri.org/DSDisciplinaCursada.xsd" xmlns="http://tempuri.org/DSDisciplinaCursada.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSDisciplinaCursada" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSDisciplinaCursada" msprop:Generator_UserDSName="DSDisciplinaCursada">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSDisciplinaCursada" msprop:Generator_TableClassName="DSDisciplinaCursadaDataTable" msprop:Generator_TableVarName="tableDSDisciplinaCursada" msprop:Generator_TablePropName="_DSDisciplinaCursada" msprop:Generator_RowDeletingName="DSDisciplinaCursadaRowDeleting" msprop:Generator_RowChangingName="DSDisciplinaCursadaRowChanging" msprop:Generator_RowEvHandlerName="DSDisciplinaCursadaRowChangeEventHandler" msprop:Generator_RowDeletedName="DSDisciplinaCursadaRowDeleted" msprop:Generator_UserTableName="DSDisciplinaCursada" msprop:Generator_RowChangedName="DSDisciplinaCursadaRowChanged" msprop:Generator_RowEvArgName="DSDisciplinaCursadaRowChangeEvent" msprop:Generator_RowClassName="DSDisciplinaCursadaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SeqAluno" msprop:Generator_ColumnVarNameInTable="columnSeqAluno" msprop:Generator_ColumnPropNameInRow="SeqAluno" msprop:Generator_ColumnPropNameInTable="SeqAlunoColumn" msprop:Generator_UserColumnName="SeqAluno" type="xs:long" minOccurs="0" />
+              <xs:element name="SeqHistoricoEscolar" msprop:Generator_ColumnVarNameInTable="columnSeqHistoricoEscolar" msprop:Generator_ColumnPropNameInRow="SeqHistoricoEscolar" msprop:Generator_ColumnPropNameInTable="SeqHistoricoEscolarColumn" msprop:Generator_UserColumnName="SeqHistoricoEscolar" type="xs:long" minOccurs="0" />
+              <xs:element name="Aluno" msprop:Generator_ColumnVarNameInTable="columnAluno" msprop:Generator_ColumnPropNameInRow="Aluno" msprop:Generator_ColumnPropNameInTable="AlunoColumn" msprop:Generator_UserColumnName="Aluno" type="xs:string" minOccurs="0" />
+              <xs:element name="CursoOferta" msprop:Generator_ColumnVarNameInTable="columnCursoOferta" msprop:Generator_ColumnPropNameInRow="CursoOferta" msprop:Generator_ColumnPropNameInTable="CursoOfertaColumn" msprop:Generator_UserColumnName="CursoOferta" type="xs:string" minOccurs="0" />
+              <xs:element name="Programa" msprop:Generator_ColumnVarNameInTable="columnPrograma" msprop:Generator_ColumnPropNameInRow="Programa" msprop:Generator_ColumnPropNameInTable="ProgramaColumn" msprop:Generator_UserColumnName="Programa" type="xs:string" minOccurs="0" />
+              <xs:element name="NivelEnsino" msprop:Generator_ColumnVarNameInTable="columnNivelEnsino" msprop:Generator_ColumnPropNameInRow="NivelEnsino" msprop:Generator_ColumnPropNameInTable="NivelEnsinoColumn" msprop:Generator_UserColumnName="NivelEnsino" type="xs:string" minOccurs="0" />
+              <xs:element name="Instituicao" msprop:Generator_ColumnVarNameInTable="columnInstituicao" msprop:Generator_ColumnPropNameInRow="Instituicao" msprop:Generator_ColumnPropNameInTable="InstituicaoColumn" msprop:Generator_UserColumnName="Instituicao" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoVinculo" msprop:Generator_ColumnVarNameInTable="columnTipoVinculo" msprop:Generator_ColumnPropNameInRow="TipoVinculo" msprop:Generator_ColumnPropNameInTable="TipoVinculoColumn" msprop:Generator_UserColumnName="TipoVinculo" type="xs:string" minOccurs="0" />
+              <xs:element name="ExibirEmentasComponentesCurriculares" msprop:Generator_ColumnVarNameInTable="columnExibirEmentasComponentesCurriculares" msprop:Generator_ColumnPropNameInRow="ExibirEmentasComponentesCurriculares" msprop:Generator_ColumnPropNameInTable="ExibirEmentasComponentesCurricularesColumn" msprop:Generator_UserColumnName="ExibirEmentasComponentesCurriculares" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

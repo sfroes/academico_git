@@ -1,0 +1,20 @@
+﻿@using SMC.SGA.Administrativo.Areas.ORT.Models
+@model TrabalhoAcademicoDynamicModel
+
+@if (Model.Seq != 0)
+{
+    if (Model.ExisteAvaliacaoCadastrada && !Model.ExistePublicacaoBdp)
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-margin-top-5").Begin())
+        {
+            <p class="smc-sga-msg-conteudo-linha">@Smc.GetUIResource("Mensagem_Existe_Avaliacao_Trabalho_Academico")</p>
+        }
+    }
+    else if (Model.ExistePublicacaoBdp)
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-margin-top-5").Begin())
+        {
+            <p class="smc-sga-msg-conteudo-linha">@Smc.GetUIResource("Mensagem_Existe_Publicacao_Bdp")</p>
+        }
+    }
+}

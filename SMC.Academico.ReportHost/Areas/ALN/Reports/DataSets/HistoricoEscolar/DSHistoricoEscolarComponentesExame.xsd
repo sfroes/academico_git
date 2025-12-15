@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSHistoricoEscolarComponentesExame" targetNamespace="http://tempuri.org/DSHistoricoEscolarComponentesExame.xsd" xmlns:mstns="http://tempuri.org/DSHistoricoEscolarComponentesExame.xsd" xmlns="http://tempuri.org/DSHistoricoEscolarComponentesExame.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSHistoricoEscolarComponentesExame" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSHistoricoEscolarComponentesExame" msprop:Generator_UserDSName="DSHistoricoEscolarComponentesExame">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSHistoricoEscolarComponentesExame" msprop:Generator_TableClassName="DSHistoricoEscolarComponentesExameDataTable" msprop:Generator_TableVarName="tableDSHistoricoEscolarComponentesExame" msprop:Generator_RowChangedName="DSHistoricoEscolarComponentesExameRowChanged" msprop:Generator_TablePropName="_DSHistoricoEscolarComponentesExame" msprop:Generator_RowDeletingName="DSHistoricoEscolarComponentesExameRowDeleting" msprop:Generator_RowChangingName="DSHistoricoEscolarComponentesExameRowChanging" msprop:Generator_RowEvHandlerName="DSHistoricoEscolarComponentesExameRowChangeEventHandler" msprop:Generator_RowDeletedName="DSHistoricoEscolarComponentesExameRowDeleted" msprop:Generator_RowClassName="DSHistoricoEscolarComponentesExameRow" msprop:Generator_UserTableName="DSHistoricoEscolarComponentesExame" msprop:Generator_RowEvArgName="DSHistoricoEscolarComponentesExameRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Seq" msprop:Generator_ColumnVarNameInTable="columnSeq" msprop:Generator_ColumnPropNameInRow="Seq" msprop:Generator_ColumnPropNameInTable="SeqColumn" msprop:Generator_UserColumnName="Seq" type="xs:long" minOccurs="0" />
+              <xs:element name="DescricaoComponente" msprop:Generator_ColumnVarNameInTable="columnDescricaoComponente" msprop:Generator_ColumnPropNameInRow="DescricaoComponente" msprop:Generator_ColumnPropNameInTable="DescricaoComponenteColumn" msprop:Generator_UserColumnName="DescricaoComponente" type="xs:string" minOccurs="0" />
+              <xs:element name="Nota" msprop:Generator_ColumnVarNameInTable="columnNota" msprop:Generator_ColumnPropNameInRow="Nota" msprop:Generator_ColumnPropNameInTable="NotaColumn" msprop:Generator_UserColumnName="Nota" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoEscalaApuracaoItem" msprop:Generator_ColumnVarNameInTable="columnDescricaoEscalaApuracaoItem" msprop:Generator_ColumnPropNameInRow="DescricaoEscalaApuracaoItem" msprop:Generator_ColumnPropNameInTable="DescricaoEscalaApuracaoItemColumn" msprop:Generator_UserColumnName="DescricaoEscalaApuracaoItem" type="xs:string" minOccurs="0" />
+              <xs:element name="DataExame" msprop:Generator_ColumnVarNameInTable="columnDataExame" msprop:Generator_ColumnPropNameInRow="DataExame" msprop:Generator_ColumnPropNameInTable="DataExameColumn" msprop:Generator_UserColumnName="DataExame" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Credito" msprop:Generator_ColumnVarNameInTable="columnCredito" msprop:Generator_ColumnPropNameInRow="Credito" msprop:Generator_ColumnPropNameInTable="CreditoColumn" msprop:Generator_UserColumnName="Credito" type="xs:short" minOccurs="0" />
+              <xs:element name="Observacao" msprop:Generator_ColumnVarNameInTable="columnObservacao" msprop:Generator_ColumnPropNameInRow="Observacao" msprop:Generator_ColumnPropNameInTable="ObservacaoColumn" msprop:Generator_UserColumnName="Observacao" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,34 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+
+@model  InstituicaoNivelTipoVinculoAlunoListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+
+    // Header de Componente
+    using (Smc.Div().CssClass("smc-list-item smc-list-cabecalho").Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-item").Begin())
+        {
+            @Smc.DisplayFor(m => m.NivelEnsino).Size(SMCSize.Grid9_24, SMCSize.Grid24_24, SMCSize.Grid9_24, SMCSize.Grid9_24)
+            @Smc.DisplayFor(m => m.Vinculo).Size(SMCSize.Grid5_24, SMCSize.Grid24_24, SMCSize.Grid5_24, SMCSize.Grid5_24)
+            @Html.Partial("_DetailListButtons", Model)
+
+
+        }
+    }
+
+    // Itens de lista de componente
+    if (Model.TiposOrientacao.SMCCount() > 0)
+    {
+        @Smc.List("TiposOrientacao" + Model.Seq, Model.TiposOrientacao).HtmlTemplate(tipoOrientacao => Html.Partial("_TipoOrientacao", tipoOrientacao))
+    }
+    else
+    {
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+        {
+            <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+        }
+    }
+}
+

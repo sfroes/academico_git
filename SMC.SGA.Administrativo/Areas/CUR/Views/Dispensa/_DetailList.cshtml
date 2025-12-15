@@ -1,0 +1,39 @@
+﻿@model DispensaListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+
+            if (Model.Associado == SMC.Academico.Common.Areas.CUR.Enums.MatrizExcecaoDispensa.MatrizAssociado)
+            {
+                using (Smc.Div().CssClass("smc-sga-lista-legenda").Size(SMCSize.Grid1_24, SMCSize.Grid24_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+                {
+                    @Smc.LegendItem(m => m.Associado, false);
+                }
+            }
+
+            using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid11_24, SMCSize.Grid24_24, SMCSize.Grid11_24, SMCSize.Grid11_24).Begin())
+            {
+                if (Model.GrupoDispensados.SMCCount() > 0)
+                {
+                    <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_GrupoDispensados")</label>
+                    @Smc.DisplayFor(m => m.GrupoDispensados).HideLabel().Size(SMCSize.Grid24_24)
+                }
+            }
+
+            using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista smc-listdetailed-conteudo-separador-vertical").Size(SMCSize.Grid11_24, SMCSize.Grid24_24, SMCSize.Grid11_24, SMCSize.Grid11_24).Begin())
+            {
+                if (Model.GrupoOrigens.SMCCount() > 0)
+                {
+                    <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_GrupoOrigens")</label>
+                    @Smc.DisplayFor(m => m.GrupoOrigens).HideLabel().Size(SMCSize.Grid24_24)
+                }
+            }
+            @Smc.DisplayFor(m => m.ModoExibicaoHistoricoEscolar).Size(SMCSize.Grid24_24)
+        }
+    }
+    @Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)
+}

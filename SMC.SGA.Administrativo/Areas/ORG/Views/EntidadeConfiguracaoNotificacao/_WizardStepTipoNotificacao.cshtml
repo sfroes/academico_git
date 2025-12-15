@@ -1,0 +1,14 @@
+﻿@model EntidadeConfiguracaoNotificacaoViewModel
+
+@Smc.HiddenFor(e => e.ExisteRegistroEnvioNotificacaoConfiguracao)
+@Smc.EditorFor(e => e.SeqEntidade).Size(SMCSize.Grid12_24)
+@Smc.EditorFor(e => e.SeqTipoNotificacao).Size(SMCSize.Grid12_24)
+@Smc.EditorFor(e => e.DataInicioValidade).Size(SMCSize.Grid6_24)
+@Smc.EditorFor(e => e.DataFimValidade).Size(SMCSize.Grid6_24)
+
+@using (Smc.Div("divObservacao")
+    .Dependency("SeqTipoNotificacao", "BuscarObservacaoTipoNotificacao", "EntidadeConfiguracaoNotificacao", false).Begin())
+{
+}
+
+@Smc.WizardView()

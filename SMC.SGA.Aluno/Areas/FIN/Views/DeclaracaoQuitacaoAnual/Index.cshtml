@@ -1,0 +1,29 @@
+﻿@using SMC.SGA.Aluno.Areas.FIN.Models
+
+@model DeclaracaoQuitacaoAnualViewModel
+
+@using (Smc.Form("formGerar").Attribute("target", "_blank").Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(prop => prop.AnoReferencia)
+    @Smc.EditorFor(prop => prop.Cpf)
+
+    var buttonSet = Smc.ButtonSet();
+    buttonSet.AddButton(Smc.Button("Gerar_Relatorio").Url(Url.Action("EmitirDeclaracao"))
+                                                     .Type(SMCButtonType.Submit)
+                                                     .Text(Smc.GetUIResource("Botao_Relatorio"))
+                                                     .Tooltip(Smc.GetUIResource("Botao_Relatorio_Tooltip"))
+                                                     .Attribute("target", "_blank")
+                                                     .SecurityToken(UC_FIN_004_01_01.EMITIR_BOLETO_ABERTO)
+                                                     //.Attribute("data-behavior-download", "true")
+                                                     );
+    //buttonSet.AddButton(Smc.Button("Gerar_Relatorio").Url(Url.Action("BaixarDeclaracao"))
+    //                                                 .Type(SMCButtonType.Submit)
+    //                                                 .Text(Smc.GetUIResource("Botao_Baixar_Relatorio"))
+    //                                                 .Tooltip(Smc.GetUIResource("Botao_Baixar_Relatorio_Tooltip"))
+    //                                                 .SecurityToken(UC_FIN_004_01_01.EMITIR_BOLETO_ABERTO)
+    //                                                 //.Attribute("target", "_blank")
+    //                                                 .Attribute("data-behavior-download", "true")
+    //                                                 );
+    @buttonSet;
+
+}

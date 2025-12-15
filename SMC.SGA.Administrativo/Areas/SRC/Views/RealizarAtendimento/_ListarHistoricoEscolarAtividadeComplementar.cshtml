@@ -1,0 +1,13 @@
+﻿@using SMC.Framework.Model;
+
+@model SMCPagerModel<SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarAtividadeComplementarListarViewModel>
+
+@(Smc.Grid("gridAtividadeComplementar", Model)
+     .AutoGenerateColumns()
+     .HideGridTitle()
+     .HideNavigator()
+     .HideNumberOfRowsPerPageSelector()
+     .HidePager()
+     .HideRowNumber()
+     .HideRowsTotalizer()
+)

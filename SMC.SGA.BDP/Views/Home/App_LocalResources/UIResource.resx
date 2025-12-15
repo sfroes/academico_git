@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Index_Btn_Pesquisar" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="Index_EmPublicacao" xml:space="preserve">
+    <value>Em processo de publicação</value>
+  </data>
+  <data name="Index_FuturasDefesas" xml:space="preserve">
+    <value>Futuras defesas</value>
+  </data>
+  <data name="Index_InstrucoesPublicacao" xml:space="preserve">
+    <value>Instruções para o autor</value>
+  </data>
+  <data name="Index_Label_InstrucoesPesquisa" xml:space="preserve">
+    <value>Para que a consulta seja realizada, preencha pelo menos um campo de pesquisa a seguir:</value>
+  </data>
+  <data name="Index_Label_SelecionePesquisa" xml:space="preserve">
+    <value>Selecione o que deseja pesquisar e escolha a primeira letra do nome:</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Consulta ao acervo</value>
+  </data>
+  <data name="Index_UltimasPublicacoes" xml:space="preserve">
+    <value>Publicações dos últimos 30 dias</value>
+  </data>
+  <data name="InstrucoesPublicacao_Title" xml:space="preserve">
+    <value>Como Publicar seu trabalho na Biblioteca Digital</value>
+  </data>
+  <data name="Label_InstrucoesPublicacao" xml:space="preserve">
+    <value>Você, aluno que foi aprovado na defesa de sua Dissertação ou Tese em um dos Programas de Pós-graduação da {0}, e irá realizar o registro dos dados do seu trabalho para disponibilizar na Biblioteca Digital. Basta seguir o roteiro:</value>
+  </data>
+  <data name="Label_InstrucoesPublicacao_Passo1" xml:space="preserve">
+    <value>Logar no Portal do Aluno (&lt;a href="https://web.sistemas.pucminas.br/SGA.Aluno"&gt;https://web.sistemas.pucminas.br/SGA.Aluno&lt;/a&gt;)</value>
+  </data>
+  <data name="Label_InstrucoesPublicacao_Passo2" xml:space="preserve">
+    <value>Preencher o formulário de cadastramento em “Publicações BDP” que se encontra no final da página principal.</value>
+  </data>
+  <data name="Label_InstrucoesPublicacao_Passo3" xml:space="preserve">
+    <value>Anexar o arquivo do trabalho em formato .PDF.</value>
+  </data>
+  <data name="Label_PalavrasChaveEstrangeira" xml:space="preserve">
+    <value>Palavras-chave em {0}</value>
+  </data>
+  <data name="Label_ResumoEstrangeiro" xml:space="preserve">
+    <value>Resumo em {0}</value>
+  </data>
+  <data name="Label_TituloEstrangeiro" xml:space="preserve">
+    <value>Título em {0}</value>
+  </data>
+  <data name="Mensagem_Email_Sucesso" xml:space="preserve">
+    <value>E-mail enviado com sucesso!</value>
+  </data>
+  <data name="Pesquisar_Consulta_Erro" xml:space="preserve">
+    <value>Para que a consulta avançada ao acervo possa ser realizada, pelo menos um campo de pesquisa deverá ser informado.</value>
+  </data>
+  <data name="Pesquisar_Filtro_AreaConhecimento" xml:space="preserve">
+    <value>&lt;label&gt;Área de conhecimento:&lt;/label&gt;&lt;span&gt;{0}&lt;/span&gt;</value>
+  </data>
+  <data name="Pesquisar_Filtro_Letra" xml:space="preserve">
+    <value>Letra "{0}" em {1}</value>
+  </data>
+  <data name="Pesquisar_Filtro_Periodo" xml:space="preserve">
+    <value>&lt;label&gt;Período de defesa:&lt;/label&gt;&lt;span&gt;{0} a {1}&lt;/span&gt;</value>
+  </data>
+  <data name="Pesquisar_Filtro_Programa" xml:space="preserve">
+    <value>&lt;label&gt;Programa:&lt;/label&gt;&lt;span&gt;{0}&lt;/span&gt;</value>
+  </data>
+  <data name="Pesquisar_Filtro_TipoTrabalho" xml:space="preserve">
+    <value>&lt;label&gt;Tipo de trabalho:&lt;/label&gt;&lt;span&gt;{0}&lt;/span&gt;</value>
+  </data>
+  <data name="Pesquisar_Label_Filtros_Pesquisa" xml:space="preserve">
+    <value>Filtros utilizados na consulta:</value>
+  </data>
+  <data name="Pesquisar_Letra_Erro" xml:space="preserve">
+    <value>Para que a consulta ao acervo pela primeira letra do nome possa ser realizada, pelo menos um dos tipos de participação no trabalho, ou seja, autor, orientador e coorientador deverá ser informado.</value>
+  </data>
+  <data name="Pesquisar_PalavraChave_Erro" xml:space="preserve">
+    <value>Para que uma busca rápida ao acervo, pesquisando pelo título, resumo ou palavra-chave possa ser realizada, pelo menos uma palavra deverá ser informada.</value>
+  </data>
+  <data name="Pesquisar_Title" xml:space="preserve">
+    <value>Busca por:</value>
+  </data>
+  <data name="Pesquisar_Filtro_PalavraChave" xml:space="preserve">
+    <value>&lt;label&gt;Título, Resumo ou Palavra-chave:&lt;/label&gt;&lt;span&gt;{0}&lt;/span&gt;</value>
+  </data>
+  <data name="Pesquisa_Filtro_EmPublicacao" xml:space="preserve">
+    <value>Trabalhos Acadêmicos em Processo de Publicação</value>
+  </data>
+  <data name="Pesquisa_Filtro_FuturasDefesas" xml:space="preserve">
+    <value>Futuras defesas</value>
+  </data>
+  <data name="Pesquisa_Filtro_UltimasPublicacoes" xml:space="preserve">
+    <value>Publicações dos últimos 30 dias</value>
+  </data>
+  <data name="_Visualizar_Label_BancaExaminadora" xml:space="preserve">
+    <value>Banca Examinadora</value>
+  </data>
+  <data name="_Visualizar_Label_VisualizarTrabalho" xml:space="preserve">
+    <value>Visualizar documento</value>
+  </data>
+  <data name="_ListarResultados_DataDefesa" xml:space="preserve">
+    <value>Data de Defesa</value>
+  </data>
+  <data name="_ListarResultados_DataPrevistaDefesa" xml:space="preserve">
+    <value>Data Prevista para Defesa</value>
+  </data>
+  <data name="Label_InstrucoesPublicacao_Passo4" xml:space="preserve">
+    <value>Realizar o registro de sua autorização para a publicação na Biblioteca.</value>
+  </data>
+  <data name="Pesquisar_Consulta_Datas_Erro" xml:space="preserve">
+    <value>Para que a consulta ao acervo possa ser realizada com intervalo de datas de defesa, é necessário que a data início e data fim sejam informadas.</value>
+  </data>
+  <data name="Label_InstrucoesPublicacao_Descritivo" xml:space="preserve">
+    <value>Após o recebimento do termo, a secretaria libera o trabalho, que é então encaminhado à Biblioteca Universitária para revisão dos dados informados e assim este será liberado para consulta no BDP.</value>
+  </data>
+  <data name="Index_Btn_Limpar" xml:space="preserve">
+    <value>Limpar</value>
+  </data>
+  <data name="Link_Ver_Detalhes" xml:space="preserve">
+    <value>Ver detalhes</value>
+  </data>
+  <data name="Label_ObservacaoFormulario" xml:space="preserve">
+    <value>O formulário citado no passo 2 acima, só estará disponível após o registro da aprovação na banca examinadora no sistema Acadêmico Administrativo. Caso seu trabalho não esteja sendo exibido, entrar em contato com a secretaria de seu curso.</value>
+  </data>
+  <data name="Label_ObservacaoAutorizacao" xml:space="preserve">
+    <value>Após o registro da autorização citada no passo 4 acima, a secretaria será notificada automaticamente e realizará a liberação do trabalho para à Biblioteca Universitária. Os dados informados serão revisados e assim a Dissertação/Tese será liberado para consulta no BDP.</value>
+  </data>
+  <data name="Label_Observacoes" xml:space="preserve">
+    <value>Observações:</value>
+  </data>
+  <data name="Botao_Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+</root>

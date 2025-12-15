@@ -1,0 +1,176 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.PES.Models.CredenciaisAcesso.CredenciaisAcessoViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Smc.Div("divCredenciaisAcesso").CssClass("smc-sga-credencial-acesso col-md-offset-2 col-xs-offset-1 col-sm-offset-1 col-lg-offset-2").Size(SMCSize.Grid20_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid20_24).Begin())
+{
+    if (Model.CodigoPessoa.HasValue)
+    {
+        using (Smc.Div("divQualMinhaCredencial").CssClass("smc-sga-credencial-acesso-box").Size(SMCSize.Grid24_24).Begin())
+        {
+            <h2>@Smc.GetUIResource("Titulo_Qual_Minha_Credencial")</h2>
+            <label>@Smc.GetUIResource("Label_CodigoPessoa"): @Model.CodigoPessoa</label>
+            using (Smc.Div("divCredenciaisAcessoConteudo").CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+            {
+                <p>@Smc.GetUIResource("Info_QualMinhaCredencial")</p>
+            }
+        }
+    }
+
+    if (!string.IsNullOrEmpty(Model.UsuarioPucMail))
+    {
+        using (Smc.Div("divCredenciaisAcessoBox").CssClass("smc-sga-credencial-acesso-box").Size(SMCSize.Grid24_24).Begin())
+        {
+            <h2>@Smc.GetUIResource("Titulo_Credencial_PUCMail")</h2>
+            <label>@Smc.GetUIResource("Label_Login"): @Model.UsuarioPucMail</label>
+
+            using (Smc.Div("divCredenciaisAcessoTrocaSenha").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.ButtonSet().CssClass("smc-sga-buttonset-esquerda").AddButton(Smc.Button("btnTrocaSenha").CssClass("smc-btn-custom-destaque").Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Attribute(SMCMvcConsts.MODAL_ID, "modalTrocaSenhaWebmail").Attribute(SMCMvcConsts.MODAL_TITLE, "Alterar senha")).AddButton(Smc.Button("btnAcesso").CssClass("smc-btn-proximo-icotext").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("https://mail.google.com/a/sga.pucminas.br"))
+            }
+
+            using (Smc.Div("divCredenciaisAcessoConteudo").CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+            {
+                <p>@Smc.GetUIResource("Info_Credenciais_PUCMail")</p>
+
+                using (Smc.ModalWindow("modalTrocaSenhaWebmail").Form("frmSalvarSenha", "SalvarSenhaWebmail", config: x => x.Ajax()).Button(SMCButtonBehavior.Salvar, config: x => x.Highlight().DisplayMode(SMCButtonDisplayMode.TextAndIcon)).Button(SMCButtonBehavior.Fechar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon)).Begin())
+                {
+                    <p>@Smc.GetUIResource("Info_Nova_Senha")</p>
+
+                    using (Smc.Fieldset("fsSenha").Begin())
+                    {
+                        @Smc.EditorFor(x => x.Senha)
+                        @Smc.EditorFor(x => x.ConfirmacaoSenha)
+                    }
+                }
+
+            }
+        }
+    }
+
+    if (!string.IsNullOrEmpty(Model.UsuarioOffice365))
+    {
+        using (Smc.Div("divCredenciaisAcessoBox").CssClass("smc-sga-credencial-acesso-box").Size(SMCSize.Grid24_24).Begin())
+        {
+            <h2>@Smc.GetUIResource("Titulo_Credencial_Office365")</h2>
+            <label>@Smc.GetUIResource("Label_Login"): @Model.UsuarioOffice365</label>
+            using (Smc.Div("divCredenciaisAcessoTrocaSenha").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.ButtonSet().CssClass("smc-sga-buttonset-esquerda").AddButton(Smc.Button("btnTrocaSenha").CssClass("smc-btn-custom-destaque").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("https://icei.pucminas.br/sgl/").Confirm(Smc.GetUIResource("Confirma_Alteracao_Senha_Titulo"), Smc.GetUIResource("Confirma_Alteracao_Senha_Mensagem"))).AddButton(Smc.Button("btnAjuda").CssClass("smc-btn-ajuda-icotext").Type(SMCButtonType.Link).Action("IntegracaoCSC", "SuporteTecnicoRoute", new { @area = "" }).Text("Suporte técnico").Tooltip("Suporte técnico").Attribute("target", "_blank")).AddButton(Smc.Button("btnAcesso").CssClass("smc-btn-proximo-icotext").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("https://login.microsoftonline.com/?whr=sga.pucminas.br"))
+            }
+            using (Smc.Div("divCredenciaisAcessoConteudo").CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+            {
+                <p>@Smc.GetUIResource("Info_Credenciais_Office365")</p>
+                <p>@Smc.GetUIResource("Info_Credenciais_Office365_Senha")</p>
+            }
+            using (Smc.Div("divCredenciaisAcessoTrocaSenha").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.ButtonSet().CssClass("smc-sga-buttonset-esquerda").AddButton(Smc.Button("btnManual").CssClass("smc-btn-documento-icotext").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("http://portal.pucminas.br/documentos/gti/office365.pdf").Text("Orientações de acesso").Tooltip("Orientações de acesso")).AddButton(Smc.Button("btnManual").CssClass("smc-btn-documento-icotext").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("https://smcgtipucminas.sharepoint.com/:b:/s/gtitie/Ef28TPwwAmFFiEgp4X7E6cIBYF6tBuBCvTba493KGu0T5g?e=jdXmpOa&download=1").Text("Manual de uso do Teams").Tooltip("Manual de uso do Teams"))
+            }
+        }
+    }
+
+    if (!string.IsNullOrEmpty(Model.UsuarioCanvas))
+    {
+        using (Smc.Div("divCredenciaisAcessoBox").CssClass("smc-sga-credencial-acesso-box").Size(SMCSize.Grid24_24).Begin())
+        {
+            <h2>@Smc.GetUIResource("Titulo_Credencial_Canvas")</h2>
+            <label>@Smc.GetUIResource("Label_Login_Microsoft"): @Model.UsuarioCanvas</label>
+            using (Smc.Div("divCredenciaisAcessoTrocaSenha").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.ButtonSet().CssClass("smc-sga-buttonset-esquerda").AddButton(Smc.Button("btnTrocaSenha").CssClass("smc-btn-custom-destaque").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("https://icei.pucminas.br/sgl/").Confirm(Smc.GetUIResource("Confirma_Alteracao_Senha_Titulo"), Smc.GetUIResource("Confirma_Alteracao_Senha_Mensagem"))).AddButton(Smc.Button("btnAjuda").CssClass("smc-btn-ajuda-icotext").Type(SMCButtonType.Link).Action("IntegracaoCSC", "SuporteTecnicoRoute", new { @area = "" }).Text("Suporte técnico").Tooltip("Suporte técnico").Attribute("target", "_blank")).AddButton(Smc.Button("btnAcesso").CssClass("smc-btn-proximo-icotext").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("https://pucminas.instructure.com/login/microsoft"))
+            }
+            using (Smc.Div("divCredenciaisAcessoConteudo").CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+            {
+                <p>@Smc.GetUIResource("Info_Credenciais_Canvas")</p>
+                <p>@Smc.GetUIResource("Info_Credenciais_Canvas_Acesso")</p>
+            }
+        }
+    }
+
+    if (!string.IsNullOrEmpty(Model.UsuarioEduroam))
+    {
+        using (Smc.Div("divCredenciaisAcessoBox").CssClass("smc-sga-credencial-acesso-box").Size(SMCSize.Grid24_24).Begin())
+        {
+            <h2>@Smc.GetUIResource("Titulo_Credencial_Wifi")</h2>
+            <label>@Smc.GetUIResource("Label_Login"): @Model.UsuarioEduroam</label>
+            using (Smc.Div("divCredenciaisAcessoTrocaSenha").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.ButtonSet().CssClass("smc-sga-buttonset-esquerda").AddButton(Smc.Button("btnTrocaSenha").CssClass("smc-btn-custom-destaque").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("https://icei.pucminas.br/sgl/").Confirm(Smc.GetUIResource("Confirma_Alteracao_Senha_Titulo"), Smc.GetUIResource("Confirma_Alteracao_Senha_Mensagem")))
+            }
+            using (Smc.Div("divCredenciaisAcessoConteudo").CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+            {
+                <p>@Smc.GetUIResource("Info_Credenciais_Wifi")</p>
+                <p>@Smc.GetUIResource("Info_Credenciais_Wifi_Senha")</p>
+            }
+            using (Smc.Div("divCredenciaisAcessoTrocaSenha").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.ButtonSet().CssClass("smc-sga-buttonset-esquerda").AddButton(Smc.Button("btnManual").CssClass("smc-btn-documento-icotext").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("https://pucminas.br/wifi"))
+            }
+        }
+    }
+
+    if (!string.IsNullOrEmpty(Model.UsuarioPortalCapes))
+    {
+        using (Smc.Div("divCredenciaisAcessoBox").CssClass("smc-sga-credencial-acesso-box").Size(SMCSize.Grid24_24).Begin())
+        {
+            <h2>@Smc.GetUIResource("Titulo_Credencial_PortalCapes")</h2>
+            <label>@Smc.GetUIResource("Label_Login"): @Model.UsuarioPortalCapes</label>
+            using (Smc.Div("divCredenciaisAcessoBotoes").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.ButtonSet().CssClass("smc-sga-buttonset-esquerda").AddButton(Smc.Button("btnTrocaSenha").CssClass("smc-btn-custom-destaque").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("https://icei.pucminas.br/sgl/").Confirm(Smc.GetUIResource("Confirma_Alteracao_Senha_Titulo"), Smc.GetUIResource("Confirma_Alteracao_Senha_Mensagem")))
+            }
+            using (Smc.Div("divCredenciaisAcessoConteudo").CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+            {
+                <p> @Smc.GetUIResource("Info_Credenciais_PortalCapes") </p>
+                <p> @Smc.GetUIResource("Info_Credenciais_PortalCapes_Senha") </p>
+            }
+            using (Smc.Div("divCredenciaisAcessoBotoes").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.ButtonSet().CssClass("smc-sga-buttonset-esquerda").AddButton(Smc.Button("btnManual").CssClass("smc-btn-documento-icotext").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("http://portal.pucminas.br/documentos/gti/cafe.pdf"))
+            }
+        }
+    }
+
+    if (!string.IsNullOrEmpty(Model.UsuarioLaboratoriosAcademicos))
+    {
+        using (Smc.Div("divCredenciaisAcessoBox").CssClass("smc-sga-credencial-acesso-box").Size(SMCSize.Grid24_24).Begin())
+        {
+            <h2>@Smc.GetUIResource("Titulo_Credencial_LaboratoriosAcademicos")</h2>
+            <label>@Smc.GetUIResource("Label_Login"): @Model.UsuarioLaboratoriosAcademicos</label>
+            using (Smc.Div("divCredenciaisAcessoTrocaSenha").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.ButtonSet().CssClass("smc-sga-buttonset-esquerda").AddButton(Smc.Button("btnTrocaSenha").CssClass("smc-btn-custom-destaque").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("https://icei.pucminas.br/sgl/").Confirm(Smc.GetUIResource("Confirma_Alteracao_Senha_Titulo"), Smc.GetUIResource("Confirma_Alteracao_Senha_Mensagem")))
+            }
+            using (Smc.Div("divCredenciaisAcessoConteudo").CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+            {
+                <p>@Smc.GetUIResource("Info_Credenciais_LaboratoriosAcademicos")</p>
+                <p>@Html.Raw(Smc.GetUIResource("Info_Credenciais_LaboratoriosAcademicos_AcessoRemoto"))</p>
+            }
+        }
+    }
+
+    if (!string.IsNullOrEmpty(Model.UsuarioMicrosoftImagine))
+    {
+        using (Smc.Div("divCredenciaisAcessoBox").CssClass("smc-sga-credencial-acesso-box").Size(SMCSize.Grid24_24).Begin())
+        {
+            <h2>@Smc.GetUIResource("Titulo_Credencial_MicrosoftImagine")</h2>
+            <label>@Smc.GetUIResource("Label_Login"): @Model.UsuarioMicrosoftImagine</label>
+            using (Smc.Div("divCredenciaisAcessoTrocaSenha").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.ButtonSet().CssClass("smc-sga-buttonset-esquerda").AddButton(Smc.Button("btnAcesso").CssClass("smc-btn-proximo-icotext").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("https://portal.azure.com/#home"))
+            }
+            using (Smc.Div("divCredenciaisAcessoConteudo").CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+            {
+                <p>@Smc.GetUIResource("Info_Credenciais_MicrosoftImagine")</p>
+            }
+            using (Smc.Div("divCredenciaisAcessoTrocaSenha").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.ButtonSet().CssClass("smc-sga-buttonset-esquerda").AddButton(Smc.Button("btnManual").CssClass("smc-btn-documento-icotext").Attribute("target", "_blank").Type(SMCButtonType.Link).Url("http://portal.pucminas.br/documentos/gti/imagine.pdf"))
+            }
+            <label>@Html.Raw(Smc.GetUIResource("Info_Credenciais_MicrosoftImagine_Suporte"))</label>
+        }
+    }
+}

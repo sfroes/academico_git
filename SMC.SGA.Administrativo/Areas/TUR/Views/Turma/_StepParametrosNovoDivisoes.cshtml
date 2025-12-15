@@ -1,0 +1,13 @@
+﻿@model  TurmaParametrosDetalheViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqDivisaoComponente)
+    @Smc.DisplayFor(prop => prop.DivisaoComponenteDescricao)
+    @Smc.EditorFor(prop => prop.PermiteGrupo)
+    @Smc.EditorFor(prop => prop.QuantidadeGrupos)
+    @Smc.EditorFor(prop => prop.QuantidadeProfessores)
+    @Smc.EditorFor(prop => prop.ApurarFrequencia)
+    @Smc.EditorFor(prop => prop.NotaMaxima)
+    @Smc.EditorFor(prop => prop.SeqEscalaApuracao)
+}

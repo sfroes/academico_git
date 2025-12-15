@@ -1,0 +1,1709 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Service</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.Service.Client.SMCChannelEndpointBehavior">
+            <summary>
+            Classe para configuração de endpoint de client de serviço.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Client.SMCChannelEndpointBehavior.ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)">
+            <summary>
+            Configura o endpoint do client.
+            </summary>
+            <param name="endpoint">Endpoint.</param>
+            <param name="clientRuntime">Client.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Client.SMCWebApiInterceptor">
+            <summary>
+            Implementação do proxy de WebApi
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCClientMessageInspector">
+            <summary>
+            Classe que recupera o retorno da chamada de métodos do serviço
+            para interceptar mensagens de erro.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCClientMessageInspector.ActionPattern">
+            <summary>
+            Padrão para actions.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCClientMessageInspector.AfterReceiveReply(System.ServiceModel.Channels.Message@,System.Object)">
+            <summary>
+            Executado após a chamada do método do serviço.
+            </summary>
+            <param name="reply">Mensagem de resposta.</param>
+            <param name="correlationState">Correlation state.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCClientMessageInspector.BeforeSendRequest(System.ServiceModel.Channels.Message@,System.ServiceModel.IClientChannel)">
+            <summary>
+            Executado antes da chamada do método do serviço.
+            </summary>
+            <param name="request">Mensagem.</param>
+            <param name="channel">Canal de comunicação.</param>
+            <returns>Nulo.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCClientMessageInspector.GetClientAddress">
+            <summary>
+            Método de suporte para recuperar o endereço do cliente lendo da thread.
+            </summary>
+            <returns>Endereço do cliente.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCClientMessageInspector.GetApplicationId">
+            <summary>
+            Recupera a sigla da aplicação.
+            </summary>
+            <returns>Sigla da aplicação.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCClientMessageInspector.ReadFaultDetail(System.ServiceModel.Channels.Message)">
+            <summary>
+            Cria uma exceção a partir de uma mensagem de erro.
+            </summary>
+            <param name="reply">Mensagem de erro.</param>
+            <returns>Erro criado pela mensagem.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCWebApiElement">
+            <summary>
+            Elemento que repesenta um endpoint de WebApi
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCWebApiElement.Name">
+            <summary>
+            Define a url da api com o nome da interface
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCWebApiElement.Url">
+            <summary>
+            Configura a URL para a api até a controller
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCWebApiElementCollection.CreateNewElement">
+            <summary>
+            Cria um novo elemento para a coleção.
+            </summary>
+            <returns>Novo elemento para a coleção.</returns>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCWebApiElementCollection.ElementName">
+            <summary>
+            Recupera o nome de cada elemento de configuração.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCWebApiElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Recupera a chave de identificação do item.
+            </summary>
+            <param name="element">Elemento de configuração.</param>
+            <returns>Chave de identificação do item.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCWebApiSection">
+            <summary>
+            Define os endpoints das WebApi
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCWebApiSection.SectionName">
+            <summary>
+            Armazena o nome da seção.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCWebApiSection.apisProperty">
+            <summary>
+            Propriedade que possui as informação das apis
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCWebApiSection.#ctor">
+            <summary>
+            Cria um novo SMCWebSection.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCWebApiSection.Apis">
+            <summary>
+            Recupera o elemento que possui as informações das apis.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCWebApiSection.Current">
+            <summary>
+            Recupera a configuração corrente da seção.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.DataFilters.SMCDataFilterProviderService">
+            <summary>
+            Define métodos para o serviço dos DOMINIOS que provê informações para o SEGURANCA.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.DataFilters.SMCDataFilterProviderService.DataFilterProviderDomainService">
+            <summary>
+            Domain service para filtro de dados.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.DataFilters.SMCDataFilterProviderService.GetDataFilter(System.String)">
+            <summary>
+            Recupera os itens de filtro de dados.
+            </summary>
+            <param name="token">Chave do item.</param>
+            <returns>Itens de filtro de dados para a chave informada.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCDynamicServiceHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCDynamicServiceHelper.DynamicSearchEntity``2(System.Type,System.Collections.Generic.Dictionary{System.String,System.Object},System.String[])">
+            <summary>
+            Busca sem paginação
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCDynamicServiceHelper.DynamicPagedSearchEntity``2(System.Type,System.Type,SMC.Framework.Model.SMCPageSetting,System.Collections.Generic.Dictionary{System.String,System.Object},System.String[],System.Int32@)">
+            <summary>
+            Busca com paginação
+            </summary>
+            <param name="entityType"></param>
+            <param name="returnObjType">Tipo de Retorno</param>
+            <param name="pageSettings">Informações para paginação</param>
+            <param name="filters">Filtros</param>
+            <param name="includes">Includes</param>
+            <param name="total"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Exceptions.SMCFaultException">
+            <summary>
+            Representa uma exceção quando um construtor não é encontrado para um determinado tipo.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Exceptions.SMCFaultException.#ctor(System.Type)">
+            <summary>
+            Cria uma nova exceção SMCFaultException.
+            </summary>
+            <param name="type">Tipo do objeto.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Exceptions.SMCFaultException.#ctor(SMC.Framework.SMCExceptionData)">
+            <summary>
+            Cria uma nova exceção SMCFaultException.
+            </summary>
+            <param name="exceptionData">Exceção original.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Exceptions.SMCFaultException.#ctor(System.String,System.Exception,System.Type)">
+            <summary>
+            Cria uma nova exceção SMCFaultException.
+            </summary>
+            <param name="message">Mensagem de erro.</param>
+            <param name="innerException">Exceção original.</param>
+            <param name="typeInnerException">Quando trafega o erro pelo WCF o erro fica genérico. Então, é passado o nome do Type que era para ser a exceção.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Exceptions.SMCInvalidDynamicTypeException">
+            <summary>
+            Representa uma exceção há um erro no Dynamic.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Exceptions.SMCInvalidDynamicTypeException.#ctor(System.String)">
+            <summary>
+            Cria um novo objeto SMCInvalidDynamicTypeException.
+            </summary>
+            <param name="detail">Detalhes da exceção</param>
+        </member>
+        <member name="F:SMC.Framework.Service.Exceptions.SMCInvalidDynamicTypeException._detail">
+            <summary>
+            Armazena os detalhes da exceção.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Exceptions.SMCInvalidDynamicTypeException.Detail">
+            <summary>
+            Detalhes da exceção.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Exceptions.SMCServiceParameterNotFoundInPropertyException">
+            <summary>
+            Representa uma excessão no serviço dynamic cujo parâmetro não foi encontrado em uma propriedade para buscar seu valor.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Exceptions.SMCServiceParameterNotFoundInPropertyException.#ctor(System.String,System.Type)">
+            <summary>
+            Cria um novo objeto SMC.Framework.Service.Exceptions.SMCServiceParameterNotFoundInPropertyException
+            </summary>
+            <param name="parameterName"></param>
+            <param name="propertyType"></param>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCFaultExceptionExtension">
+            <summary>
+            Classe de suporte para tratamento de exceções FaultException de SMCExceptionData.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCFaultExceptionExtension.SMCCreate(System.ServiceModel.FaultException{SMC.Framework.SMCExceptionData})">
+            <summary>
+            Cria uma exceção nova baseado nos dados da classe SMCExceptionData.
+            </summary>
+            <param name="ex">Exceção original.</param>
+            <returns>Exceção nova baseado nos dados da classe SMCExceptionData.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCFaultExceptionExtension.SMCCreate(SMC.Framework.SMCExceptionData)">
+            <summary>
+            Cria uma exceção nova baseado nos dados da classe SMCExceptionData.
+            </summary>
+            <param name="exceptionData">Exceção original.</param>
+            <returns>Exceção nova baseado nos dados da classe SMCExceptionData.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCOperationContextExtension">
+            <summary>
+            Classe com métodos de extensão para operation context.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCOperationContextExtension.SMCAddOperationContextHeader``1(System.ServiceModel.OperationContextScope,System.String,``0)">
+            <summary>
+            Adiciona um item ao header da mensagem.
+            </summary>
+            <typeparam name="T">Tipo do valor.</typeparam>
+            <param name="context">Contexto de execução corrente.</param>
+            <param name="headerName">Nome do cabeçalho.</param>
+            <param name="value">Valor a ser inserido.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceClientIocContainerExtensions">
+            <summary>
+            Classe com métodos de extensão para o registro do Ioc para serviços.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceClientIocContainerExtensions.RegisterServiceClient``1(SMC.Framework.Ioc.ISMCIocContainer)">
+            <summary>
+            Registra o resource de metadados.
+            </summary>
+            <typeparam name="TService">Tipo da interface do serviço.</typeparam>
+            <param name="container">Container com configurações de Ioc.</param>
+            <returns>Container de IoC.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceClientIocContainerExtensions.RegisterServiceClient``1(SMC.Framework.Ioc.ISMCIocContainer,System.String)">
+            <summary>
+            Registra o resource de metadados.
+            </summary>
+            <typeparam name="TService">Tipo da interface do serviço.</typeparam>
+            <param name="container">Container com configurações de Ioc.</param>
+            <param name="name">Nome do mapeamento.</param>
+            <returns>Container de IoC.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Formatters.SMCPagerDataFormatter">
+            <summary>
+            Formatador para serialização json do SMCPagerData para inclusão das propriedades Itens e Total.
+            Como o SMCPagerData implementar IEnumerable, ele é serializado por pardão como uma coleção sem a propriedade total.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Formatters.SMCPagerDataFormatter.CanWriteType(System.Type)">
+            <summary>
+            Verifica se o tipo é um SMCPagerData
+            </summary>
+            <param name="type">Tipo a ser verificado</param>
+            <returns>True se o tipo for SMCPagerData</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Formatters.SMCPagerDataFormatter.WriteToStreamAsync(System.Type,System.Object,System.IO.Stream,System.Net.Http.HttpContent,System.Net.TransportContext)">
+            <summary>
+            Formata a serialização de um SMCPagerData
+            </summary>
+            <param name="type">Tipo a ser serializado</param>
+            <param name="value">Valor a ser serializado</param>
+            <param name="writeStream">Saída da serialização</param>
+            <param name="content">Content da resposta</param>
+            <param name="transportContext">Contexto</param>
+            <returns>Task que irá realizar a serialização do resultado</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCClaimsMessageHeader">
+            <summary>
+            Representa o cabeçalho com as claims do usuário autenticado.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCClaimsMessageHeader.Key">
+            <summary>
+            Chave de identificação do header.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCClaimsMessageHeader.#ctor">
+            <summary>
+            Cria um novo header SMCClaimsMessageHeader com o valor nulo.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCClaimsMessageHeader.#ctor(System.String)">
+            <summary>
+            Cria um novo header SMCClaimsMessageHeader com o valor das claims do usuário.
+            </summary>
+            <param name="claims">Valor das claims do usuário</param>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCClaimsMessageHeader.Name">
+            <summary>
+            Recupera o nome do header.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCApplicationIdMessageHeader">
+            <summary>
+            Representa o cabeçalho com a sigla da aplicação.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCApplicationIdMessageHeader.Key">
+            <summary>
+            Chave de identificação do header.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCApplicationIdMessageHeader.#ctor">
+            <summary>
+            Cria um novo header SMCApplicationMessageHeader com o valor nulo.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCApplicationIdMessageHeader.#ctor(System.String)">
+            <summary>
+            Cria um novo header SMCApplicationMessageHeader com o valor da sigla da aplicação.
+            </summary>
+            <param name="applicationId">Valor da sigla da aplicação.</param>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCApplicationIdMessageHeader.Name">
+            <summary>
+            Recupera o nome do header.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCClientAddressMessageHeader">
+            <summary>
+            Representa o cabeçalho com o endereço do cliente.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCClientAddressMessageHeader.Key">
+            <summary>
+            Chave de identificação do header.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCClientAddressMessageHeader.#ctor">
+            <summary>
+            Cria um novo header SMCIdentityMessageHeader com o valor nulo.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCClientAddressMessageHeader.#ctor(System.String)">
+            <summary>
+            Cria um novo header SMCIdentityMessageHeader com o valor da identidade do usuário.
+            </summary>
+            <param name="clientIdentity">Valor da identidade do usuário</param>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCClientAddressMessageHeader.Name">
+            <summary>
+            Recupera o nome do header.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCAuthenticationTypeMessageHeader">
+            <summary>
+            Representa o cabeçalho com a forma de autenticação do usuário autenticado.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCAuthenticationTypeMessageHeader.Key">
+            <summary>
+            Chave de identificação do header.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCAuthenticationTypeMessageHeader.#ctor">
+            <summary>
+            Cria um novo header SMCAuthenticationTypeMessageHeader com o valor nulo.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCAuthenticationTypeMessageHeader.#ctor(System.String)">
+            <summary>
+            Cria um novo header SMCAuthenticationTypeMessageHeader com a forma de autenticação do usuário autenticado.
+            </summary>
+            <param name="authenticationType">Forma de autenticação do usuário autenticado.</param>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCAuthenticationTypeMessageHeader.Name">
+            <summary>
+            Recupera o nome do header.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCMessageHeader">
+            <summary>
+            Emcapsula uma mensagem de header sopa.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCMessageHeader.Value">
+            <summary>
+            Recupera o valor do header.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCMessageHeader.Namespace">
+            <summary>
+            Recupera o namespace do header.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCMessageHeader.#ctor">
+            <summary>
+            Cria o novo header.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCMessageHeader.#ctor(System.String)">
+            <summary>
+            Cria o novo header baseado no valor.
+            </summary>
+            <param name="value">Valor do header.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCMessageHeader.OnWriteHeaderContents(System.Xml.XmlDictionaryWriter,System.ServiceModel.Channels.MessageVersion)">
+            <summary>
+            Escreve o conteúdo do header na mensagem.
+            </summary>
+            <param name="writer">Writer.</param>
+            <param name="messageVersion">Versão da mensagem.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCMessageHeader.ReadHeaderContents(System.Xml.XmlDictionaryReader)">
+            <summary>
+            Realiza a leitura do valor do header no xml.
+            </summary>
+            <param name="reader">Classe de leitura do xml.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCIdentityMessageHeader">
+            <summary>
+            Representa o cabeçalho com a identidade do usuário autenticado.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCIdentityMessageHeader.Key">
+            <summary>
+            Chave de identificação do header.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCIdentityMessageHeader.#ctor">
+            <summary>
+            Cria um novo header SMCIdentityMessageHeader com o valor nulo.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCIdentityMessageHeader.#ctor(System.String)">
+            <summary>
+            Cria um novo header SMCIdentityMessageHeader com o valor da identidade do usuário.
+            </summary>
+            <param name="identityName">Valor da identidade do usuário</param>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCIdentityMessageHeader.Name">
+            <summary>
+            Recupera o nome do header.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceHostIocMapping">
+            <summary>
+            Classe que contém o mapeamento de Ioc para as aplicações serviços.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceHostIocMapping.#ctor">
+            <summary>
+            Cria um novo objeto.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCServiceHostIocMapping._services">
+            <summary>
+            Armazena a classe de configuração de worflows.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCServiceHostIocMapping.Services">
+            <summary>
+            Configura os worflows.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceHostIocMapping.EnsureDefaults">
+            <summary>
+            Garante que os mapeamentos padrão são mapeados.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceHostIocMapping.SMCServiceIocMapping">
+            <summary>
+            Classe de configuração de workflows.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceHostIocMapping.SMCServiceIocMapping.#ctor(SMC.Framework.Ioc.ISMCIocContainer)">
+            <summary>
+            Cria um novo objeto SMCWorkflowIocMapping.
+            </summary>
+            <param name="container">Container com o mapeamento Ioc.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceHostIocMapping.SMCServiceIocMapping.Map``1">
+            <summary>
+            Configura a classe com o mapeamento para workflows.
+            </summary>
+            <typeparam name="TMapping">Mapeamento para repositórios.</typeparam>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceIocMapping">
+            <summary>
+            Classe que contém o mapeamento de Ioc para as aplicações serviços.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.#ctor">
+            <summary>
+            Cria um novo objeto.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCServiceIocMapping._services">
+            <summary>
+            Armazena a classe de configuração de services.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCServiceIocMapping.Services">
+            <summary>
+            Configura os services.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCServiceIocMapping._apis">
+            <summary>
+            Armazena a classe de configuração de web apis.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCServiceIocMapping.Apis">
+            <summary>
+            Configura os services.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCServiceIocMapping._worflows">
+            <summary>
+            Armazena a classe de configuração de worflows.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCServiceIocMapping.Worflows">
+            <summary>
+            Configura os worflows.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCServiceIocMapping._repositories">
+            <summary>
+            Armazena a classe de configuração de repositórios.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCServiceIocMapping.Repositories">
+            <summary>
+            Configura os repositórios.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCServiceIocMapping._unitOfWork">
+            <summary>
+            Armazena a classe de configuração de unit of work.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCServiceIocMapping.UnitOfWork">
+            <summary>
+            Configura o unit of work.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCServiceIocMapping._domainServices">
+            <summary>
+            Armazena a classe de configuração de domain services.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCServiceIocMapping.DomainServices">
+            <summary>
+            Configura os domains services.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCServiceIocMapping._transformers">
+            <summary>
+            Armazena a classe de configuração de transformadores padrão.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCServiceIocMapping.Transformers">
+            <summary>
+            Configura os domains services.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCServiceIocMapping.MapAuthorizationService">
+            <summary>
+            Define se o mapeamento do serviço de authorização deve ser desabilitado. O padrão é false.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.EnsureDefaults">
+            <summary>
+            Garante que os mapeamentos padrão são mapeados.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceIocMapping.SMCServiceIocMappingConfiguration">
+            <summary>
+            Classe de configuração de services.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCServiceIocMappingConfiguration.#ctor(SMC.Framework.Ioc.ISMCIocContainer)">
+            <summary>
+            Cria um novo objeto SMCServiceIocMapping.
+            </summary>
+            <param name="container">Container com o mapeamento Ioc.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCServiceIocMappingConfiguration.Register``1(System.Boolean)">
+            <summary>
+            Configura o service.
+            </summary>
+            <typeparam name="TService">Interface do service.</typeparam>
+            <param name="useMock">Verdadeiro se mock deve ser utilizado. O padrão é false.</param>
+            <returns>Classe de configuração de Ioc.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCServiceIocMappingConfiguration.Register``1(System.String,System.Boolean)">
+            <summary>
+            Configura o service.
+            </summary>
+            <typeparam name="TService">Interface do service.</typeparam>
+            <param name="name">Nome do mapeamento.</param>
+            <param name="useMock">Verdadeiro se mock deve ser utilizado. O padrão é false.</param>
+            <returns>Classe de configuração de Ioc.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCServiceIocMappingConfiguration.Register``2(System.Boolean)">
+            <summary>
+            Configura uma interface que pode utilizar mock.
+            </summary>
+            <typeparam name="TService">Interface que será registrada.</typeparam>
+            <typeparam name="TImplementation">Implementação da interface.</typeparam>
+            <param name="useServiceClient">Verdadeiro se mock deve ser utilizado. O padrão é false.</param>
+            <returns>Classe de configuração de Ioc.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCServiceIocMappingConfiguration.Register``2(System.String,System.Boolean)">
+            <summary>
+            Configura uma interface que pode utilizar mock.
+            </summary>
+            <typeparam name="TService">Interface que será registrada.</typeparam>
+            <typeparam name="TImplementation">Implementação da interface.</typeparam>
+            <param name="name">Nome do mapeamento.</param>
+            <param name="useServiceClient">Verdadeiro se mock deve ser utilizado. O padrão é false.</param>
+            <returns>Classe de configuração de Ioc.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceIocMapping.SMCWebApiIocMappingConfiguration">
+            <summary>
+            Classe de configuração de WebApi.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCWebApiIocMappingConfiguration.#ctor(SMC.Framework.Ioc.ISMCIocContainer)">
+            <summary>
+            Cria um novo objeto SMCWebApiIocMapping.
+            </summary>
+            <param name="container">Container com o mapeamento Ioc.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCWebApiIocMappingConfiguration.Register``1(System.String)">
+            <summary>
+            Configura o web api proxy.
+            </summary>
+            <typeparam name="TService">Interface do service.</typeparam>
+            <returns>Classe de configuração de Ioc.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceIocMapping.SMCStateWorkflowIocMapping">
+            <summary>
+            Classe de configuração de workflows.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCStateWorkflowIocMapping.#ctor(SMC.Framework.Ioc.ISMCIocContainer)">
+            <summary>
+            Cria um novo objeto SMCWorkflowIocMapping.
+            </summary>
+            <param name="container">Container com o mapeamento Ioc.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCStateWorkflowIocMapping.Map``1">
+            <summary>
+            Configura a classe com o mapeamento para workflows.
+            </summary>
+            <typeparam name="TMapping">Mapeamento para repositórios.</typeparam>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceIocMapping.SMCUnitOfWorkMapping">
+            <summary>
+            Classe de configuração de unit of work.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCUnitOfWorkMapping.#ctor(SMC.Framework.Ioc.ISMCIocContainer)">
+            <summary>
+            Cria uma nova intância de SMCUnitOfWorkMapping.
+            </summary>
+            <param name="container">Container de Ioc.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCUnitOfWorkMapping.Register``1">
+            <summary>
+            Registra o unit of work.
+            </summary>
+            <typeparam name="TUnitOfWork">Tipo que implementa unit of work.</typeparam>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceIocMapping.SMCDomainServiceMapping">
+            <summary>
+            Classe de configuração de domain services.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCDomainServiceMapping.#ctor(SMC.Framework.Ioc.ISMCIocContainer)">
+            <summary>
+            Cria uma nova intância de SMCDomainServiceMapping.
+            </summary>
+            <param name="container">Container de Ioc.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCDomainServiceMapping.Register``1">
+            <summary>
+            Registra o domain service.
+            </summary>
+            <typeparam name="TDomainService">Tipo que herda de domain service.</typeparam>
+            <returns>Classe de configuração de domain services.</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceIocMapping.SMCRepositoryMapping">
+            <summary>
+            Classe de configuração de repositories.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCRepositoryMapping.#ctor(SMC.Framework.Ioc.ISMCIocContainer)">
+            <summary>
+            Cria uma nova intância de SMCRepositoryMapping.
+            </summary>
+            <param name="container">Container de Ioc.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCRepositoryMapping.Map``1">
+            <summary>
+            Configura a classe com o mapeamento para repositórios.
+            </summary>
+            <typeparam name="TMapping">Mapeamento para repositórios.</typeparam>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceIocMapping.SMCTransformersMapping">
+            <summary>
+            Classe de configuração de repositories.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCTransformersMapping.#ctor">
+            <summary>
+            Cria uma nova intância de SMCTranformersMapping.
+            </summary>            
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceIocMapping.SMCTransformersMapping.Register``3">
+            <summary>
+            Configura a classe com o mapeamento para repositórios.
+            </summary>
+            <typeparam name="TypeObjectSource">Tipo do objeto de origem.</typeparam>
+            <typeparam name="TypeObjectDestination">Tipo de objeto de destino.</typeparam>
+            <typeparam name="Transformer">Transformador responsável por transformar o objeto de origem em objeto de destino.</typeparam>
+        </member>
+        <member name="T:SMC.Framework.Service.ISMCService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.ISMCService.DynamicSearchEntity(System.String,SMC.Framework.Model.SMCPageSetting,System.Collections.Generic.Dictionary{System.String,System.Object},System.String[],System.Int32@)">
+            <summary>
+            
+            </summary>
+            <returns>Retorna entidades do Domain. Necessários transforma-los</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Jobs.ISMCJobService">
+            <summary>
+            Contrato de serviço do job.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Jobs.ISMCJobService.Start(SMC.Framework.Jobs.Service.SMCJobModel)">
+            <summary>
+            Inicia a execução do job.
+            </summary>
+            <param name="model">Modelo postado.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Jobs.SMCJobServiceBase">
+            <summary>
+            Classe base do serviço de Job
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Jobs.SMCJobServiceBase.Create``1">
+            <summary>
+            Cria uma instância de uma classe.
+            </summary>
+            <typeparam name="TInterface">Interface do Repositório</typeparam>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Jobs.SMCJobServiceBase.Create``1(System.String)">
+            <summary>
+            Cria uma instância de uma classe utilizando uma mapeamento especificado pelo nome.
+            </summary>
+            <typeparam name="TInterface">Tipo da instância.</typeparam>
+            <param name="name">Nome do mapeamento no container de IoC.</param>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Jobs.SMCJobServiceBase.Dispose">
+            <summary>
+            Limpa os recursos utilizados pela classe.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Jobs.SMCJobServiceBase.OnDispose">
+            <summary>
+            Limpa os recursos utilizados pela classe.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Jobs.SMCJobServiceBase.SMC#Framework#Ioc#ISMCContainerManager#Create(System.Type)">
+            <summary>
+            Cria uma instância de uma classe.
+            </summary>
+            <param name="type">Tipo da instância.</param>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.Jobs.SMCJobServiceBase.SMC#Framework#Ioc#ISMCContainerManager#Create(System.Type,System.String,SMC.Framework.Ioc.SMCConstructorParams[])">
+            <summary>
+            Cria uma instância de uma classe utilizando uma mapeamento especificado pelo nome.
+            </summary>
+            <param name="type">Tipo da instância.</param>
+            <param name="name">Nome do mapeamento no container de IoC.</param>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="P:SMC.Framework.Service.Jobs.SMCJobServiceBase.User">
+            <summary>
+            Usuário corrente.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Messaging.Ioc.SMCIocMapping">
+            <summary>
+            Classe de mapeamento de Ioc para mensagem.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Messaging.Ioc.SMCIocMapping.SegurancaMonitoramentoIocName">
+            <summary>
+            Nome utilizado pelo Ioc de monitoramento.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Messaging.Ioc.SMCIocMapping.Configure(SMC.Framework.Ioc.ISMCIocContainer)">
+            <summary>
+            Configura o mapeamento para mensagens.
+            </summary>
+            <param name="container">Container de Ioc.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Messaging.ISMCMessageQueueService">
+            <summary>
+            Contrato para as filas de mensagens assíncronas.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Messaging.ISMCMessageQueueService.Receive(SMC.Framework.Messaging.SMCQueueMessage)">
+            <summary>
+            Envia uma mensagem para a fila.
+            </summary>
+            <param name="message">Mensagem a ser enviada para a fila.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Messaging.SMCMessageQueueClient">
+            <summary>
+            Classe com métodos de suporte para envio de mensagens para fila.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Messaging.SMCMessageQueueClient.Name">
+            <summary>
+            Nome da fila.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Messaging.SMCMessageQueueClient.MessageQueueService">
+            <summary>
+            Serviço de fila de mensagens.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Messaging.SMCMessageQueueClient.Send(SMC.Framework.Messaging.SMCQueueMessage)">
+            <summary>
+            Envia uma mensagem para o serviço de fila de mensagens.
+            </summary>
+            <param name="message">Mensagem a ser enviada.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceClientFactory`1">
+            <summary>
+            Factory para criar clients de acesso a serviços WCF.
+            </summary>
+            <typeparam name="TContract">Tipo do contrato do serviço.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceClientFactory`1.#ctor">
+            <summary>
+            Cria um novo objeto SMCServiceClientFactory.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceClientFactory`1.#ctor(System.String)">
+            <summary>
+            Cria um novo objeto SMCServiceClientFactory.
+            </summary>
+            <param name="name">Nome do mapeamento.</param>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCServiceClientFactory`1._name">
+            <summary>
+            Armazena o nome do mapeamento.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCServiceClientFactory`1.Name">
+            <summary>
+            Recupera o nome associado ao mapeamento da factory.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCServiceClientFactory`1._factory">
+            <summary>
+            Armazena a instância da factory para criação do client.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCServiceClientFactory`1.Factory">
+            <summary>
+            Recupera a instância da factory para criação do client.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceClientFactory`1.CheckAbortFactory">
+            <summary>
+            Verifica se o serviço esta em Faulted
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceClientFactory`1.Create">
+            <summary>
+            Cria um client para acesso a um serviço WCF.
+            </summary>
+            <returns>Instância do serviço WCF.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceClientFactory`1.RetryCreate">
+            <summary>
+            Tentando evitar o Faulted State. Faz o Abort, dispose e tenta criar novamente.
+            https://docs.microsoft.com/en-us/dotnet/framework/wcf/samples/use-close-abort-release-wcf-client-resources
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceClientFactory`1.CreateContract">
+            <summary>
+            Método de suporte para criação do contrato.
+            </summary>
+            <returns>Cria o contrato utilizando a factory.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceClientFactory`1.Dispose">
+            <summary>
+            Libera o recurso e trata exceção
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Resources.ExceptionsResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Resources.ExceptionsResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Resources.ExceptionsResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Resources.ExceptionsResource.SMCFaultException">
+            <summary>
+              Looks up a localized string similar to Não existe construtor para esse tipo ({0}). Possível solução é mudar o construtor da exceção disparada..
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Resources.ExceptionsResource.SMCInvalidDynamicTypeException">
+            <summary>
+              Looks up a localized string similar to Erro no Dynamic. Tipo não encontrado. Detalhes: {0}.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.Handlers.SMCDistributedTransactionHandler">
+            <summary>
+            Handler que trata propagação da transação em chamada a WebApi
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Handlers.SMCDistributedTransactionHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Tratamento de uma chamada de WebApi para propagação do identity
+            </summary>
+            <param name="request">Request a ser processado</param>
+            <param name="cancellationToken">Cancellation token do request</param>
+            <returns>Resposta do resquest devolvida pelo pipe</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Handlers.SMCClaimsIdentityHandler">
+            <summary>
+            Handler que trata propagação do identity em chamada a WebApi
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Handlers.SMCClaimsIdentityHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Tratamento de uma chamada de WebApi para propagação do identity
+            </summary>
+            <param name="request">Request a ser processado</param>
+            <param name="cancellationToken">Cancellation token do request</param>
+            <returns>Resposta do resquest devolvida pelo pipe</returns>
+        </member>
+        <member name="T:SMC.Framework.Service.Security.SMCServiceContextIocMapping">
+            <summary>
+            Configura o mapeamento de Ioc para o contexto do serviço.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Security.SMCServiceContextIocMapping.Configure(SMC.Framework.Ioc.ISMCIocContainer)">
+            <summary>
+            Configura o mapeamento de Ioc para o contexto do serviço.
+            </summary>
+            <param name="container">Container de mapeamento de Ioc.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Security.SMCContextStateExtension">
+            <summary>
+            Extensão para armazenar a coleção de propriedades da operation context.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Security.SMCContextStateExtension.#ctor">
+            <summary>
+            Cria um novo objeto SMCContextPropertyCollectionExtension.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Security.SMCContextStateExtension._items">
+            <summary>
+            Armazena as propriedades do contexto da operação.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Security.SMCContextStateExtension.Items">
+            <summary>
+            Propriedades do contexto da operação.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.Security.SMCContextStateExtension.Attach(System.ServiceModel.OperationContext)">
+            <summary>
+            Disparado quando a extensão é acoplada ao contexto.
+            </summary>
+            <param name="owner">Contexto corrente.</param>
+        </member>
+        <member name="M:SMC.Framework.Service.Security.SMCContextStateExtension.Detach(System.ServiceModel.OperationContext)">
+            <summary>
+            Disparado quando a extensão é desacoplada ao contexto.
+            </summary>
+            <param name="owner">Contexto corrente.</param>
+        </member>
+        <member name="T:SMC.Framework.Service.Security.SMCServiceContext">
+            <summary>
+            Contexto para serviços Wcf.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Security.SMCServiceContext.State">
+            <summary>
+            Armazena o estado do contexto.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Security.SMCServiceContext.Item(System.String)">
+            <summary>
+            Permite atribuir ou ler uma propriedade do contexto corrente.
+            </summary>
+            <param name="key">Chave de identificação da propriedade.</param>
+            <returns>Valor da propriedade.</returns>
+        </member>
+        <member name="P:SMC.Framework.Service.Security.SMCServiceContext.SMC#Framework#Security#ISMCContext#User">
+            <summary>
+            Recupera o usuário corrente.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Security.SMCServiceContext.SMC#Framework#Security#ISMCContext#HostName">
+            <summary>
+            Recupera o nome da servidor.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Security.SMCServiceContext.ClientAddress">
+            <summary>
+            Recupera o endereço do cliente.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Security.SMCServiceContext.ApplicationId">
+            <summary>
+            Recupera a sigla da aplicação.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Service.Security.SMCServiceContext.SMC#Framework#Security#ISMCContext#SessionId">
+            <summary>
+            Recupera o id da sessão atual.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Security.SMCServiceContext.ClientAddressKey">
+            <summary>
+            Chave do item da thread que possui endereço do cliente.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.Security.SMCServiceContext.ApplicationIdKey">
+            <summary>
+            Chave do item da thread que possui a sigla da aplicação.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceBase">
+            <summary>
+            Classe base para todos os serviços.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Service.SMCServiceBase._manager">
+            <summary>
+            Armazena a classe de gerenciamento de instancias de objetos criados por IoC.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.Create``1">
+            <summary>
+            Cria uma instância de uma classe.
+            </summary>
+            <typeparam name="TInterface">Interface do Repositório</typeparam>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.Create``1(System.String)">
+            <summary>
+            Cria uma instância de uma classe utilizando uma mapeamento especificado pelo nome.
+            </summary>
+            <typeparam name="TInterface">Tipo da instância.</typeparam>
+            <param name="name">Nome do mapeamento no container de IoC.</param>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.Dispose">
+            <summary>
+            Limpa os recursos utilizados pela classe.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.OnDispose">
+            <summary>
+            Limpa os recursos utilizados pela classe.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.SMC#Framework#Ioc#ISMCContainerManager#Create(System.Type)">
+            <summary>
+            Cria uma instância de uma classe.
+            </summary>
+            <param name="type">Tipo da instância.</param>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.SMC#Framework#Ioc#ISMCContainerManager#Create(System.Type,System.String,SMC.Framework.Ioc.SMCConstructorParams[])">
+            <summary>
+            Cria uma instância de uma classe utilizando uma mapeamento especificado pelo nome.
+            </summary>
+            <param name="type">Tipo da instância.</param>
+            <param name="name">Nome do mapeamento no container de IoC.</param>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="P:SMC.Framework.Service.SMCServiceBase.User">
+            <summary>
+            Usuário corrente.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.SaveEntity``2(System.Action{``1},``0)">
+            <summary>
+            Método de apoio para salvar uma entidade de domínio.
+            </summary>
+            <typeparam name="TDto">Tipo do objeto de transporte(Data)</typeparam>
+            <typeparam name="TDomain">Tipo do objeto de domínio.</typeparam>
+            <param name="action">Ação(Método) para salvar entidade.</param>
+            <param name="dto">Objeto de transporte(Data).</param>
+            <returns>Objeto de transporte de retorno.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.SaveEntity``1(System.Action{``0},SMC.Framework.Mapper.ISMCMappable)">
+            <summary>
+            Método de apoio para salvar uma entidade de domínio.
+            </summary>
+            <typeparam name="TDomain">Tipo do objeto de domínio.</typeparam>
+            <param name="action">Ação(Método) para salvar entidade.</param>
+            <param name="dto">Objeto de transporte(Data).</param>
+            <returns>Sequencial do Objeto de domínio salvo/alterado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.InvokeAction``1(System.Action{``0},SMC.Framework.Mapper.ISMCMappable)">
+            <summary>
+            Invoca o método passado como parâmetro
+            </summary>
+            <typeparam name="TDomain">Tipo do objeto de domínio.</typeparam>
+            <param name="action">Ação(Método) para salvar entidade.</param>
+            <param name="dto">Objeto de transporte(Data).</param>
+            <returns>Objeto de domínio salvo/alterado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.GetCacheResult``1(System.Func{``0},System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Verifica se o resultado encontra-se em cache e caso não esteja então busca utilizando a func
+            </summary>
+            <param name="func">função que retorna dados</param>
+            <param name="keyCache">chave da cache</param>
+            <param name="tempo">Tempo para a cache expirar</param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.InvokeAsync``1(System.Func{``0})">
+            <summary>
+            A função passada como parâmetro que será
+            tratada por uma task. Se usar esse método a assinatura do seu método também deve ser ASYNC e deve utilizar o await
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="function"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.InvokeTask``1(System.Func{``0})">
+            <summary>
+            A função passada como parâmetro que será
+            tratada por uma task. É chamado o wait e é dado o return no result da Task
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="function"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.InvokeTask``1(System.Func{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            A função passada como parâmetro que será
+            tratada por uma task. É chamado o wait e é dado o return no result da Task
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="function"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.DynamicSearchEntity(System.String,SMC.Framework.Model.SMCPageSetting,System.Collections.Generic.Dictionary{System.String,System.Object},System.String[],System.Int32@)">
+            <summary>
+            
+            </summary>
+            <returns>Retorna entidades do modelo. Necessários transforma-los</returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.DynamicSearchEntity(System.Type,System.Type,SMC.Framework.Model.SMCPageSetting,System.Collections.Generic.Dictionary{System.String,System.Object},System.String[],System.Int32@)">
+            <summary>
+            
+            </summary>
+            <param name="entityType"></param>
+            <param name="returnObjType">Tipo de Retorno</param>
+            <param name="pageSettings">Informações para paginação</param>
+            <param name="filters">Filtros</param>
+            <param name="includes">Includes</param>
+            <param name="total"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.DynamicSaveEntity(SMC.Framework.Dynamic.SMCDynamicObject)">
+            <summary>
+            
+            </summary>
+            <param name="dynamicObj"></param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.DynamicDeleteEntity(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            
+            </summary>
+            <param name="domainType"></param>
+            <param name="seq"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.HealthCheck(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="interfaceService"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.GetContextHealthCheck">
+            <summary>
+            Alguns dominios possuem mais de um contexto e nesse caso é necessário especificar em cada serviço qual contexto será utilizado.
+            Se tiver somente um lembre-se de colocar no web.config do Host na variável EFContexto.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.InvokeServices(System.Type,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="serviceType"></param>
+            <param name="assemblyQualifiedName">Interface do serviço. Utilizado quando é sistema (SGA, GPI e etc).</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceBase.InvokeServices(System.Collections.Generic.IList{System.Type},System.String)">
+            <summary>
+            Test q foi chamado pelo Sistema (SGA.Academico)
+            </summary>
+            <param name="services"></param>
+            <param name="assemblyQualifiedName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SMC.Framework.Service.SMCServiceWinBase">
+            <summary>
+            Classe base para o serviço windows. 
+            Contém SMCContainerManager e SetLog (para Event Log do Windows). 
+            Para liberar recurso sobreescreva o método OnDispose.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceWinBase.SetLog(System.String,System.String,System.Diagnostics.EventLogEntryType)">
+            <summary>
+            Grava no Event Log do windows
+            </summary>
+            <param name="nomeServico">É o nome da Fonte que será exibido no Event Log</param>
+            <param name="msg"></param>
+            <param name="error"></param>
+        </member>
+        <member name="M:SMC.Framework.Service.SMCServiceWinBase.OnDispose">
+            <summary>
+            Esse método é chamado tanto para o Dispose como para o Finalizar (método interno)
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Extensions.SMCServiceBaseExtension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Extensions.SMCServiceBaseExtension.SearchBySpecification``3(SMC.Framework.Domain.SMCDomainServiceBase{``2},``1,System.Enum)">
+            <summary>
+            Faz o mapeamento do data para o Specification e utiliza o DomainService para fazer o SearchBySpecification.
+            </summary>
+            <typeparam name="TSpec">Tipo da specification</typeparam>
+            <typeparam name="TFilter">Tipo do filtro</typeparam>
+            <typeparam name="TEntity">Tipo da entidade</typeparam>
+            <param name="domainService">Domain service a ser utilizado</param>
+            <param name="filters">Filtros a serem utilizados</param>
+            <param name="includes">Includes a serem feitos</param>
+            <returns>Registros filtrados do banco</returns>
+        </member>
+        <member name="M:SMC.Framework.Extensions.SMCServiceBaseExtension.SearchBySpecification``4(SMC.Framework.Domain.SMCDomainServiceBase{``3},``1,System.Enum)">
+            <summary>
+            Faz o mapeamento do data para o Specification e utiliza o DomainService para fazer o SearchBySpecification.
+            </summary>
+            <typeparam name="TSpec">Tipo da specification</typeparam>
+            <typeparam name="TFilter">Tipo do filtro</typeparam>
+            <typeparam name="TResult">Tipo do resultado</typeparam>
+            <typeparam name="TEntity">Tipo da entidade</typeparam>
+            <param name="domainService">Domain service a ser utilizado</param>
+            <param name="filters">Filtros a serem utilizados</param>
+            <param name="includes">Includes a serem feitos</param>
+            <returns>Registros filtrados do banco</returns>
+        </member>
+        <member name="M:SMC.Framework.Extensions.SMCServiceBaseExtension.SearchBySpecification``3(SMC.Framework.Domain.SMCDomainServiceBase{``2},``1,System.Linq.Expressions.Expression{System.Func{``2,System.Object}}[])">
+            <summary>
+            Faz o mapeamento do data para o Specification e utiliza o DomainService para fazer o SearchBySpecification.
+            </summary>
+            <typeparam name="TSpec">Tipo da specification</typeparam>
+            <typeparam name="TFilter">Tipo do filtro</typeparam>
+            <typeparam name="TEntity">Tipo da entidade</typeparam>
+            <param name="domainService">Domain service a ser utilizado</param>
+            <param name="filters">Filtros a serem utilizados</param>
+            <param name="includes">Includes a serem feitos</param>
+            <returns>Registros filtrados do banco</returns>
+        </member>
+        <member name="M:SMC.Framework.Extensions.SMCServiceBaseExtension.SearchBySpecification``3(SMC.Framework.Domain.SMCDomainServiceBase{``2},``1,System.Enum,System.Linq.Expressions.Expression{System.Func{``2,System.Object}}[])">
+            <summary>
+            Faz o mapeamento do data para o Specification e utiliza o DomainService para fazer o SearchBySpecification.
+            </summary>
+            <typeparam name="TSpec">Tipo da specification</typeparam>
+            <typeparam name="TFilter">Tipo do filtro</typeparam>
+            <typeparam name="TEntity">Tipo da entidade</typeparam>
+            <param name="domainService">Domain service a ser utilizado</param>
+            <param name="filters">Filtros a serem utilizados</param>
+            <param name="enumIncludes">Enumerador com os includes.</param>
+            <param name="funcIncludes">Includes com lambda expression.</param>
+            <returns>Registros filtrados do banco</returns>
+        </member>
+        <member name="M:SMC.Framework.Extensions.SMCServiceBaseExtension.SearchBySpecification``4(SMC.Framework.Domain.SMCDomainServiceBase{``3},``1,System.Enum,System.Linq.Expressions.Expression{System.Func{``3,System.Object}}[])">
+            <summary>
+            Faz o mapeamento do data para o Specification e utiliza o DomainService para fazer o SearchBySpecification.
+            </summary>
+            <typeparam name="TSpec">Tipo da specification</typeparam>
+            <typeparam name="TFilter">Tipo do filtro</typeparam>
+            <typeparam name="TResult">Tipo do resultado</typeparam>
+            <typeparam name="TEntity">Tipo da entidade</typeparam>
+            <param name="domainService">Domain service a ser utilizado</param>
+            <param name="filters">Filtros a serem utilizados</param>
+            <param name="enumIncludes">Enumerador com os includes</param>
+            <param name="funcIncludes">Includes com lambda</param>
+            <returns>Registros filtrados do banco</returns>
+        </member>
+        <member name="M:SMC.Framework.Extensions.SMCServiceBaseExtension.SearchByKey``2(SMC.Framework.Domain.SMCDomainServiceBase{``0},System.Int64,System.Enum)">
+            <summary>
+            Faz o mapeamento do data para o Specification e utiliza o DomainService para fazer o SearchBySpecification.
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="domainService"></param>
+            <param name="seq"></param>
+            <param name="enumIncludes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Extensions.SMCServiceBaseExtension.DeleteEntity``1(SMC.Framework.Domain.SMCDomainServiceBase{``0},System.Int64)">
+            <summary>
+            Metodo de apoio para deletar uma entidade
+            </summary>
+            <typeparam name="TEntity">Tipo da entidade a ser deletada.</typeparam>
+            <param name="domainService">Domain service da entidade.</param>
+            <param name="seq">Sequencial da entidade que deseja deletar.</param>        
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SMC.Framework.Extensions.SMCServiceBaseExtension.SaveEntity``2(SMC.Framework.Domain.SMCDomainServiceBase{``0},System.Object)" -->
+        <member name="M:SMC.Framework.Extensions.SMCServiceBaseExtension.SaveEntity``1(SMC.Framework.Domain.SMCDomainServiceBase{``0},System.Object,SMC.Framework.Validation.SMCValidator{``0}[])">
+            <summary>
+            Método de apoio para salvar uma entidade. OBS: senão passar nenhuma validador, será realizado o validador padrão do framework.
+            </summary>
+            <typeparam name="TEntity">Tipo de entidade a ser salva.</typeparam>
+            <param name="domainService">Domain service da entidade.</param>
+            <param name="filterData">Objeto a ser salvo.</param>
+            <param name="validatorTypes">Validadores para ser executados.</param>        
+            <returns>Sequencial gerado após salvar.</returns>
+        </member>
+        <member name="F:SMC.Framework.Util.SMCServiceHelper.DYN_SEARCH">
+            <summary>
+            BuscarX onde X é a entidade, quando o usuário não deseja usar o método genérico de busca.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Util.SMCServiceHelper.DYN_EXCLUIR">
+            <summary>
+            ExcluirX onde X é a entidade, quando o usuário não deseja usar o método genérico de exclusão.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Util.SMCServiceHelper.DYN_SAVE">
+            <summary>
+            SalvarX onde X é a entidade, quando o usuário não deseja usar o método genérico de inserção.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Util.SMCServiceHelper.ENTITY_NAME">
+            <summary>
+            Nome da entidade (deve ser AssemblyQualifiedName)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Util.SMCServiceHelper.SERVICE_QUALIFIED_NAME">
+            <summary>
+            Nome do serviço (deve ser AssemblyQualifiedName)
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Util.SMCServiceHelper.SERVICE_NAME">
+            <summary>
+            Nome do Método
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.RenameServiceToEntity(System.Type,System.String)">
+            <summary>
+            Pega o namespace do ServiceContract e tenta encaixar o entityName (tentando formar um AssemblyQualifiedName)
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.GetCustomMethodSearch(System.Type,System.String)">
+            <summary>
+            Verifica se possui um método customizado de busca.
+            Seguindo a conveção Buscar{NOME_ENTIDADE}, exemplo, BuscarPessoa
+            </summary>
+            <param name="serviceType">Tipo de serviço</param>
+            <param name="entityName">Nome da entidade</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.RenameServiceToEntity(System.String,System.String,System.String)">
+            <summary>
+            Pega o namespace do ServiceContract e tenta encaixar o entityName (tentando formar um AssemblyQualifiedName)
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.ExecuteService``3(System.Func{``0,``2},``1)">
+            <summary>
+            Executa serviço padrão.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte</typeparam>
+            <typeparam name="TOut">Tipo do objeto de visão.</typeparam>
+            <typeparam name="TOutService">Tipo de objeto de transporte de saída.</typeparam>
+            <param name="func">Chamada do serviço</param>
+            <param name="viewModel">Viewmodel de entrada.</param>
+            <returns>Viewmodel de retorno.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.ExecuteService``2(System.Func{System.Int64,``0},System.Int64)">
+            <summary>
+            Executa serviço padrão.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte</typeparam>
+            <typeparam name="TOut">Tipo do objeto de visão.</typeparam>
+            <param name="func">Chamada do serviço</param>
+            <param name="seq">Sequencial.</param>
+            <returns>Viewmodel de retorno.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.ExecuteService``3(System.Func{System.Int64,``2,``0},System.Int64,``2)">
+            <summary>
+            Executa serviço padrão.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte</typeparam>
+            <typeparam name="TOut">Tipo do objeto de visão.</typeparam>
+            <typeparam name="TInService">Tipo de objeto de transporte de saída.</typeparam>
+            <param name="func">Chamada do serviço</param>
+            <param name="seq">Sequencial.</param>
+            <param name="inService">Outro parâmetro do serviço</param>
+            <returns>Viewmodel de retorno.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.ExecuteService``2(System.Func{``0,System.Int64},``1)">
+            <summary>
+            Executa serviço padrão.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte</typeparam>
+            <typeparam name="TOut">Tipo do objeto de visão.</typeparam>
+            <param name="func">Chamada do serviço</param>
+            <param name="viewModel">Viewmodel de entrada.</param>
+            <returns>Viewmodel de retorno.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.ExecuteService``4(System.Func{``0,SMC.Framework.Model.SMCPagerData{``1}},``2)">
+            <summary>
+            Executa serviço padrão.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte</typeparam>
+            <typeparam name="TInFilter">Tipo do objeto de filtro transporte.</typeparam>
+            <typeparam name="TOut">Tipo do objeto detalhe de retorno.</typeparam>
+            <typeparam name="TOutFilter">Tipo do objeto de filtro</typeparam>
+            <param name="func">Chamada do serviço</param>
+            <param name="viewModel">Viewmodel de entrada.</param>
+            <returns>Viewmodel de retorno.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.ExecuteService``2(System.Func{System.Int64,SMC.Framework.Model.SMCPagerData{``0}},System.Int64)">
+            <summary>
+            Executa serviço padrão.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte</typeparam>        
+            <typeparam name="TOut">Tipo do objeto detalhe de retorno.</typeparam>        
+            <param name="func">Chamada do serviço</param>
+            <param name="seq">Seq de entrada.</param>
+            <returns>Viewmodel de retorno.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.ExecuteService``4(System.Func{``0,System.Collections.Generic.List{``1}},``2)">
+            <summary>
+            Executa serviço padrão.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte</typeparam>
+            <typeparam name="TInFilter">Tipo do objeto de filtro transporte.</typeparam>
+            <typeparam name="TOut">Tipo do objeto detalhe de retorno.</typeparam>
+            <typeparam name="TOutFilter">Tipo do objeto de filtro</typeparam>
+            <param name="func">Chamada do serviço</param>
+            <param name="viewModel">Viewmodel de entrada.</param>
+            <returns>Viewmodel de retorno.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.ExecuteService``2(System.Func{System.Int64,System.Collections.Generic.List{``0}},System.Int64)">
+            <summary>
+            Executa serviço padrão.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte</typeparam>        
+            <typeparam name="TOut">Tipo do objeto detalhe de retorno.</typeparam>        
+            <param name="func">Chamada do serviço</param>
+            <param name="seq">Sequencial de entrada.</param>
+            <returns>Viewmodel de retorno.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.ExecuteService``2(System.Func{System.Int64,``0[]},System.Int64)">
+            <summary>
+            Executa serviço padrão.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte</typeparam>        
+            <typeparam name="TOut">Tipo do objeto detalhe de retorno.</typeparam>        
+            <param name="func">Chamada do serviço</param>
+            <param name="seq">Sequencial de entrada.</param>
+            <returns>Viewmodel de retorno.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.ExecuteService``2(System.Func{System.Int64,System.Nullable{System.Int64},System.Collections.Generic.List{``0}},System.Int64,System.Nullable{System.Int64})">
+            <summary>
+            Executa serviço padrão.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte</typeparam>        
+            <typeparam name="TOut">Tipo do objeto detalhe de retorno.</typeparam>        
+            <param name="func">Chamada do serviço</param>
+            <param name="seq">Sequencial de entrada.</param>
+            <param name="seqSuperior">Sequencial superior de entrada.</param>
+            <returns>Viewmodel de retorno.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.InvokeFunc``1(System.Func{``0,System.Int64},SMC.Framework.Mapper.ISMCMappable)">
+            <summary>
+            Invoca a função de salvar entidade.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>
+            <param name="func">Método de serviço para salvar entidade.</param>
+            <param name="viewModel">Objeto viewmodel.</param>
+            <returns>Sequencial do objeto de entidade após salvar/atualizar entidade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.InvokeFunc``1(System.Func{System.Int64,``0},System.Int64)">
+            <summary>
+            Invoca a função de salvar entidade.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>
+            <param name="func">Método de serviço para salvar entidade.</param>
+            <param name="seq">Sequencial.</param>
+            <returns>Sequencial do objeto de entidade após salvar/atualizar entidade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.InvokeFunc``1(System.Func{System.Int64,System.Collections.Generic.List{``0}},System.Int64)">
+            <summary>
+            Invoca a função de salvar entidade.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>
+            <param name="func">Método de serviço para salvar entidade.</param>
+            <param name="seq">Sequencial.</param>
+            <returns>Sequencial do objeto de entidade após salvar/atualizar entidade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.InvokeFunc``1(System.Func{System.Int64,``0[]},System.Int64)">
+            <summary>
+            Invoca a função de salvar entidade.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>
+            <param name="func">Método de serviço para salvar entidade.</param>
+            <param name="seq">Sequencial.</param>
+            <returns>Sequencial do objeto de entidade após salvar/atualizar entidade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.InvokeFunc``1(System.Func{System.Int64,System.Nullable{System.Int64},System.Collections.Generic.List{``0}},System.Int64,System.Nullable{System.Int64})">
+            <summary>
+            Invoca a função de salvar entidade.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>
+            <param name="func">Método de serviço para salvar entidade.</param>
+            <param name="seq">Sequencial.</param>
+            <param name="seqSuperior">Sequencial superior</param>
+            <returns>Sequencial do objeto de entidade após salvar/atualizar entidade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.InvokeFunc``2(System.Func{System.Int64,``1,``0},System.Int64,``1)">
+            <summary>
+            Invoca a função de salvar entidade.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>
+            <typeparam name="TInService">Tipo do objeto do segundo parâmetro.</typeparam>
+            <param name="func">Método de serviço para salvar entidade.</param>
+            <param name="seq">Sequencial.</param>
+            <param name="inService">Parâmetro.</param>
+            <returns>Sequencial do objeto de entidade após salvar/atualizar entidade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.InvokeFunc``2(System.Func{``1,SMC.Framework.Model.SMCPagerData{``0}},SMC.Framework.Mapper.ISMCMappable)">
+            <summary>
+            Invoca a função de salvar entidade.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>
+            <typeparam name="TInFilter">Tipo do objeto de filtro transporte.</typeparam>
+            <param name="func">Método de serviço para salvar entidade.</param>
+            <param name="viewModel">Objeto viewmodel.</param>
+            <returns>Objeto de transporte de retorno após salvar/atualizar entidade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.InvokeFunc``1(System.Func{System.Int64,SMC.Framework.Model.SMCPagerData{``0}},System.Int64)">
+            <summary>
+            Invoca a função de salvar entidade.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>        
+            <param name="func">Método de serviço para salvar entidade.</param>
+            <param name="seq">Sequencial.</param>
+            <returns>Objeto de transporte de retorno após salvar/atualizar entidade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.InvokeFunc``2(System.Func{``1,System.Collections.Generic.List{``0}},SMC.Framework.Mapper.ISMCMappable)">
+            <summary>
+            Invoca a função de salvar entidade.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>
+            <typeparam name="TInFilter">Tipo do objeto de filtro transporte.</typeparam>
+            <param name="func">Método de serviço para salvar entidade.</param>
+            <param name="viewModel">Objeto viewmodel.</param>
+            <returns>Objeto de transporte de retorno após salvar/atualizar entidade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.InvokeFunc``2(System.Func{``0,``1},SMC.Framework.Mapper.ISMCMappable)">
+            <summary>
+            Invoca a função de salvar entidade.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>
+            <typeparam name="TOut">Tipo do objeto de transporte de saída.</typeparam>
+            <param name="func">Método de serviço para salvar entidade.</param>
+            <param name="viewModel">Objeto viewmodel.</param>
+            <returns>Objeto de transporte de retorno após salvar/atualizar entidade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.TransformerDtoToViewModel``2(``0)">
+            <summary>
+            Transforma o objeto de transporte no objeto viewmodel.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>
+            <typeparam name="TOut">Tipo do objeto viewmodel.</typeparam>
+            <param name="objectDTO">Objeto de transporte.</param>
+            <returns>Objeto ViewModel referente a entidade desejada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.TransformerSMCPagerDataToSMCPagerModel``3(SMC.Framework.Model.SMCPagerData{``0},``2)">
+            <summary>
+            Transforma o objeto de transporte no objeto viewmodel.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>
+            <typeparam name="TOut">Tipo do objeto viewmodel.</typeparam>
+            <typeparam name="TOutFilter">Tipo do objeto de filtro</typeparam>
+            <param name="objectDTO">Objeto de transporte.</param>
+            <param name="filter">Filtro</param>
+            <returns>Objeto ViewModel referente a entidade desejada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.TransformerSMCPagerDataToSMCPagerModel``2(SMC.Framework.Model.SMCPagerData{``0})">
+            <summary>
+            Transforma o objeto de transporte no objeto viewmodel.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>
+            <typeparam name="TOut">Tipo do objeto viewmodel.</typeparam>        
+            <param name="objectDTO">Objeto de transporte.</param>        
+            <returns>Objeto ViewModel referente a entidade desejada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.TransformerViewModelToDto``1(SMC.Framework.Mapper.ISMCMappable)">
+            <summary>
+            Transforma o objeto viewmode no objeto de transporte.
+            </summary>
+            <typeparam name="TIn">Tipo do objeto de transporte.</typeparam>
+            <param name="viewModel">Objeto viewmodel.</param>
+            <returns>Objeto de transporte referente a entidade desejada.</returns>
+        </member>
+        <member name="T:SMC.Framework.Util.SMCServiceHelper.ServiceResults">
+            <summary>
+            Possui os itens e o pageSetting
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Util.SMCServiceHelper.ServiceResults.PageSettings">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Util.SMCServiceHelper.ServiceResults.Entities">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Util.SMCServiceHelper.ServiceResults.MethodRet">
+            <summary>
+            Método utilizado para buscar. Tem informação sobre o retorno
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Util.SMCServiceHelper.ServiceResults.#ctor(SMC.Framework.Model.SMCPageSetting,System.Object,System.Reflection.MethodInfo)">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

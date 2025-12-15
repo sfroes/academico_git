@@ -1,0 +1,39 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.PES.Models.SuporteTecnico.IntegracaoCSCViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Smc.Form("frmSuporteTecnico").Begin())
+{
+    @Smc.HiddenFor(x => x.Token)
+    @Smc.HiddenFor(x => x.CodigoPessoa)
+    @Smc.HiddenFor(x => x.DataAcesso)
+    @Smc.HiddenFor(x => x.CodigoEstabelecimento)
+
+    for (int i = 0; i < Model.CodigosServicosUsuarios.Count; i++)
+    {
+        @Html.HiddenFor(model => Model.CodigosServicosUsuarios[i])
+    }
+
+    @Smc.HiddenFor(x => x.NumeroRegistroAcademico)
+    @Smc.HiddenFor(x => x.NomeCurso)
+    @Smc.HiddenFor(x => x.DescricaoTurno)
+    @Smc.HiddenFor(x => x.DescricaoUnidade)
+    @Smc.HiddenFor(x => x.IgnoreCache)
+    @Smc.HiddenFor(x => x.Mobile)
+
+    @(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+        .Text("")
+        .Id("BotaoCSC")
+        .Url(Model.UrlGestaoXChamados)));
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#BotaoCSC").trigger("click");
+        });
+    </script>
+}

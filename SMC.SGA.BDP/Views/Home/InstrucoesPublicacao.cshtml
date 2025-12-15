@@ -1,0 +1,34 @@
+﻿@model PesquisaViewModel
+
+<div class="smc-bdp-resultado-integra smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24 ">
+    <p>
+        @Smc.GetUIResource("Label_InstrucoesPublicacao", parametros: new string[] { Model.DescricaoInstituicaoLogada })
+    </p>
+    <ol>
+        <li>
+            @Html.Raw(Smc.GetUIResource("Label_InstrucoesPublicacao_Passo1"))
+        </li>
+        <li>
+            @Smc.GetUIResource("Label_InstrucoesPublicacao_Passo2")
+        </li>
+        <li>
+            @Smc.GetUIResource("Label_InstrucoesPublicacao_Passo3")
+        </li>
+        <li>
+            @Smc.GetUIResource("Label_InstrucoesPublicacao_Passo4")
+        </li>
+    </ol>
+    <p> @Smc.GetUIResource("Label_Observacoes")</p>
+    <ul>
+        <li>
+            @Smc.GetUIResource("Label_ObservacaoFormulario")
+        </li>
+        <li>
+            @Smc.GetUIResource("Label_ObservacaoAutorizacao")
+        </li>
+    </ul>
+    @*<p>
+        @Smc.GetUIResource("Label_InstrucoesPublicacao_Descritivo")
+    </p>*@
+    @(Smc.ButtonSet().Size(SMCSize.Grid24_24).AddButton(Smc.Button("Voltar", "Index").CssClass("smc-bdp-btn-voltar").Type(SMCButtonType.Link)))
+</div>

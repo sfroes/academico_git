@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArquivosAnexo_Detalhe_Titulo" xml:space="preserve">
+    <value>Documentos em anexo</value>
+  </data>
+  <data name="Botao_Novo" xml:space="preserve">
+    <value>Associar benefício</value>
+  </data>
+  <data name="Botao_Novo_Tooltip" xml:space="preserve">
+    <value>Associar benefício</value>
+  </data>
+  <data name="ControlesFinanceiros_Detalhe_Titulo" xml:space="preserve">
+    <value>Contrato financeiro</value>
+  </data>
+  <data name="Editar_Title" xml:space="preserve">
+    <value>Alterar Associação de Benefício</value>
+  </data>
+  <data name="HistoricoSituacoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Histórico de situação</value>
+  </data>
+  <data name="Incluir_Title" xml:space="preserve">
+    <value>Associação de Benefício</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Associação de Benefício a Pessoa</value>
+  </data>
+  <data name="Label_ResponsavelFinanceiro" xml:space="preserve">
+    <value>Responsável Financeiro</value>
+  </data>
+  <data name="Listar_Excluir_Confirmacao" xml:space="preserve">
+    <value>Comfirma a exclusão da associação do benefício "{0}" a pessoa "{1}"?</value>
+  </data>
+  <data name="Listar_Excluir_Titulo" xml:space="preserve">
+    <value>Excluir Associação de Benefício a Pessoa</value>
+  </data>
+  <data name="MensagemConfirmacaoAluno" xml:space="preserve">
+    <value>A condição de pagamento configurada para o respectivo benefício é diferente da condição de pagamento do aluno no sistema financeiro. O deferimento do benefício poderá ser realizado somente após o ajuste da condição de pagamento no sistema financeiro. Entre em contato com a Divisão Financeira solicitando que a condição de pagamento seja atualizada, conforme a parametrização do benefício em questão.</value>
+  </data>
+  <data name="MensagemConfirmacaoIngressante" xml:space="preserve">
+    <value>A condição de pagamento padronizada para esse benefício é diferente da condição de pagamento selecionada pelo ingressante no processo de matrícula. Ao confirmar a associação do benefício será necessário alterar a condição de pagamento e atualizar o arquivo do termo de adesão com a nova condição de pagamento. Ao confirmar a alteração, entre em contato com o programa responsável pelo ingressante, avisando que o mesmo deverá ser comunicado sobre a atualização do termo de adesão, devido ao benefício concedido. Confirma a alteração?</value>
+  </data>
+  <data name="MensagemDesabilitaBotaoExcluir" xml:space="preserve">
+    <value>Exclusão não permitida. O registro já foi excluído anteriormente.</value>
+  </data>
+  <data name="ResponsaveisFinanceiro_DataSelector_Botao_Abrir" xml:space="preserve">
+    <value>Associar responsável</value>
+  </data>
+  <data name="ResponsaveisFinanceiro_DataSelector_Botao_Abrir_Tooltip" xml:space="preserve">
+    <value>Associar responsável</value>
+  </data>
+  <data name="ResponsaveisFinanceiro_Detalhe_Titulo" xml:space="preserve">
+    <value>Responsável financeiro</value>
+  </data>
+  <data name="Texto_MensagemInformativa" xml:space="preserve">
+    <value>Ao desmarcar o campo "Incide na parcela de matrícula?", o benefício não será incidido na parcela de matrícula do ingressante. E o mês/ano da data de início
+deverá ser maior que o mês/ano da data de admissão do ingressante.</value>
+  </data>
+  <data name="Botao_Excluir_Tooltip" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="MensagemExcluiPessoaAtuacaoSucesso" xml:space="preserve">
+    <value>Pessoa atuação benefício excluído com sucesso.</value>
+  </data>
+  <data name="MensagemDesabilitaBotaoAlterar" xml:space="preserve">
+    <value>Alteração não permitida. Não é possível alterar a associação de um benefício que se encontre na situações: "Deferido" ou "Excluído</value>
+  </data>
+  <data name="Botao_Alterar_Tooltip" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="Botao_Consultar_Beneficio" xml:space="preserve">
+    <value>Consultar Benefício</value>
+  </data>
+  <data name="Botao_Consultar_Beneficio_Tooltip" xml:space="preserve">
+    <value>Consultar Benefício</value>
+  </data>
+  <data name="Title_Consulta_Beneficio" xml:space="preserve">
+    <value>Consultar Benefício</value>
+  </data>
+  <data name="Botao_Download_Arquivo_Anexo" xml:space="preserve">
+    <value>Baixar arquivo anexo</value>
+  </data>
+  <data name="Botao_Download_Arquivo_Anexo_Tooltip" xml:space="preserve">
+    <value>Baixar arquivo anexo</value>
+  </data>
+  <data name="fieldset_anexos" xml:space="preserve">
+    <value>Documentos em anexo</value>
+  </data>
+  <data name="fieldset_contrato" xml:space="preserve">
+    <value>Contrato financeiro</value>
+  </data>
+  <data name="fieldset_responsaveis" xml:space="preserve">
+    <value>Responsável Financeiro</value>
+  </data>
+  <data name="fieldset_situacoes" xml:space="preserve">
+    <value>Histórico de Situação</value>
+  </data>
+  <data name="fieldset_vigencias" xml:space="preserve">
+    <value>Histórico de Vigência</value>
+  </data>
+  <data name="MensagmAlteracaoSucesso" xml:space="preserve">
+    <value>Pessoa atuação benefício alterado com sucesso.</value>
+  </data>
+  <data name="MensagemDesabilitaBotaoAlterarVigencia" xml:space="preserve">
+    <value>Opção indisponível. Somente é possível alterar vigência de benefícios deferidos.</value>
+  </data>
+  <data name="Botao_Alterar" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="Botao_Alterar_Vigencia" xml:space="preserve">
+    <value>Alterar período de vigência</value>
+  </data>
+  <data name="Botao_Alterar_Vigencia_Tooltip" xml:space="preserve">
+    <value>Alterar período de vigência</value>
+  </data>
+  <data name="Botao_Excluir" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="Listar_Alterar_Vigencia" xml:space="preserve">
+    <value>Alterar Período de Vigência</value>
+  </data>
+  <data name="MensagemDesabilitaBotaoAlterarAluno" xml:space="preserve">
+    <value>Alteração não permitida. Não é possível alterar benefício para alunos que se encontram em situações que não possuem vínculo ativo.</value>
+  </data>
+  <data name="MensagemDesabilitaBotaoAlterarIngressante" xml:space="preserve">
+    <value>Alteração não permitida. Não é possível alterar benefício para ingressantes que se encontram nas situações: "Matriculado", "Desistente" ou "Cancelado".</value>
+  </data>
+  <data name="MensagemDesabilitaBotaoAlterarVigenciaAluno" xml:space="preserve">
+    <value>Alteração não permitida. Não é possível alterar vigência para alunos que se encontram em situações que não possuem vínculo ativo.</value>
+  </data>
+  <data name="MensagemDesabilitaBotaoAlterarVigenciaIngressante" xml:space="preserve">
+    <value>Alteração não permitida. Não é possível alterar vigência para ingressantes que se encontram nas situações: "Matriculado", "Desistente" ou "Cancelado".</value>
+  </data>
+  <data name="Tab_Dados do Benefício" xml:space="preserve">
+    <value>Dados do Benefício</value>
+  </data>
+  <data name="Tab_Notificações" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="Botao_VisualizarDetalheNotificacao" xml:space="preserve">
+    <value>Visualizar detalhes da notificação</value>
+  </data>
+  <data name="Botao_VisualizarDetalheNotificacao_Tooltip" xml:space="preserve">
+    <value>Visualizar detalhes da notificação</value>
+  </data>
+  <data name="fieldset_notificacoes" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="VisualizarDetalheNotificacao_Title" xml:space="preserve">
+    <value>Detalhes da notificação</value>
+  </data>
+  <data name="Nenhuma_Notificacao" xml:space="preserve">
+    <value>Não há notificações associadas ao benfício do aluno.</value>
+  </data>
+</root>

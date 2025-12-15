@@ -1,0 +1,75 @@
+﻿@using SMC.SGA.Administrativo.Areas.ORT.Models
+@model AvaliacaoTrabalhoAcademicoAvaliacaoViewModel
+
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+
+
+            @Html.Partial("_Legend", Model)
+            using (Smc.Div().Size(SMCSize.Grid15_24, SMCSize.Grid23_24, SMCSize.Grid15_24, SMCSize.Grid18_24).Begin())
+            {
+                @Smc.DisplayFor(a => a.DataInicioAplicacaoAvaliacao)
+                @Smc.DisplayFor(a => a.Hora)
+                @Smc.DisplayFor(a => a.Local)
+
+
+                if (Model.MostrarNotaConceito)
+                {
+                    @Smc.DisplayFor(m => m.NotaConceito)
+                }
+
+                @Smc.DisplayFor(a => a.AtaDefesa)
+            }
+
+            if (Model.BancaEstaCancelada)
+            {
+                using (Smc.Div("DivButtonVisualizar").Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid5_24).CssClass("smc-btn-custom-destaque-lista-detalhada").Begin())
+                {
+                    var buttonSet = Smc.ButtonSet().Type(SMCButtonSetType.Secondary);
+
+                    buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                            .Attribute(SMCMvcConsts.MODAL_ID, "modalDetalhesMotivoCancelamentoBancaExaminadora")
+                                            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_VisualizarDetalhesCancelamentoBanca"))
+                                            .Ajax(isPost: false)
+                                            .Text(Smc.GetUIResource("Botao_VisualizarDetalhesCancelamento"))
+                                            .Tooltip(Smc.GetUIResource("Botao_VisualizarDetalhesCancelamento"))
+                                            .Type(SMCButtonType.Link).CssClass("smc-btn-visualizar-icotext")
+                                            .SecurityToken(UC_ORT_002_02_03.PESQUISAR_AVALIACAO_TRABALHO_ACADEMICO)
+                                            .Action("VisualizarDetalhesCancelamentoBanca", "AvaliacaoTrabalhoAcademico", new { seq = new SMCEncryptedLong(Model.Seq) })
+                                            .CssClass("smc-btn-custom-destaque-grid"));
+
+                    @buttonSet;
+
+
+                }
+            }
+        }
+
+        // Detalhes de lista
+        using (Smc.Div().CssClass("col-md-offset-1 col-lg-offset-1 col-sm-offset-1 smc-listdetailed-conteudo-lista").Size(SMCSize.Grid23_24).Begin())
+        {
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Membros_Label")</label>
+            if (Model.MostrarMembrosBancaExaminadora && Model.MembrosBancaExaminadora.Any())
+            {
+
+                @Smc.DisplayFor(m => m.DescricoesMembros).HideLabel(SMCDisplayHideLabel.All).CssClass("col-md-offset-4 col-lg-offset-4 col-sm-offset-4").Size(SMCSize.Grid23_24)
+            }
+            else
+            {
+                using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <p> @Smc.GetUIResource("Label_Nenhum_Registro") </p>
+                }
+            }
+
+        }
+    }
+    @Html.Partial("_DetailListButtons", Model)
+}
+

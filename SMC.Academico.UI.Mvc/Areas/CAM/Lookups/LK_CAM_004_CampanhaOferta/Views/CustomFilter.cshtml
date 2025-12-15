@@ -1,0 +1,16 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.CAM.Lookups.CampanhaOfertaLookupFiltroViewModel
+
+@Smc.HiddenFor(m => m.Ativas)
+@Smc.HiddenFor(m => m.SeqNivelEnsino)
+@Smc.HiddenFor(m => m.Seq)
+@Smc.HiddenFor(m => m.Descricao)
+@Smc.HiddenFor(m => m.SeqCicloLetivo)
+@Smc.HiddenFor(m => m.CicloLetivoSomenteLeitura)
+@Smc.HiddenFor(m => m.SeqEntidadeResponsavelSomenteLeitura)
+@Smc.HiddenFor(m => m.SeqCampanhaSomenteLeitura)
+@Smc.HiddenFor(m => m.SeqProcessoSeletivoSomenteLeitura)
+
+@Smc.EditorFor(m => m.CicloLetivo)
+@Smc.EditorFor(m => m.SeqEntidadeResponsavel)
+@Smc.EditorFor(m => m.SeqCampanha)
+@Smc.EditorFor(m => m.SeqProcessoSeletivo)

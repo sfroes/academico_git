@@ -1,0 +1,49 @@
+﻿@using SMC.SGA.Administrativo.Areas.FIN.Models
+
+@model  PosicaoConsolidadaListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            if (!string.IsNullOrEmpty(Model.GrupoEscalonamento))
+            {
+                @Smc.DisplayFor(m => m.GrupoEscalonamento).Size(SMCSize.Grid16_24)
+                @Smc.DisplayFor(m => m.QuantidadeSolicitacoes).Size(SMCSize.Grid8_24)
+            }
+            else
+            { 
+                using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+                {
+                    <p>@Smc.GetUIResource("Label_Nenhum_Grupo_Escalonamento")</p>
+                }
+            }
+        }
+
+        // Div com os detalhes
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+            {
+                @(Smc.Grid("gridEtapas", new SMCPagerModel<PosicaoConsolidadaEtapaViewModel>(Model.Etapas))
+                .FieldColumn(w => w.Etapa)
+                .FieldColumn(w => w.NaoIniciada)
+                .FieldColumn(w => w.EmAndamento)
+                .FieldColumn(w => w.FinalizadaComSucesso)
+                .FieldColumn(w => w.FinalizadaSemSucesso)
+                .FieldColumn(w => w.Cancelada)
+                .FieldColumn(w => w.Total)
+                .HideNavigator()
+                .HideGridTitle()
+                .HideRowNumber()
+                .AllowSort(false)
+                )
+            }
+        }
+    } 
+}
+
+

@@ -1,0 +1,979 @@
+/* You can add global styles to this file, and also import other style files */
+$smc-caminho-fonte-aplicacao: "../../Fonts/";
+@import "../../shared/css/smc-estilo-base.scss";
+@import "../../../../SMC.Academico.Recursos/SGA.Professor/Css/identidade/_smc-identidade-visual.scss";
+@import "../../../../../Framework4.2/SMC.Recursos/Css/sass-padrao/font-awesome/scss/font-awesome.scss";
+
+.po-field-container-bottom-text-error {
+  position: absolute;
+  font-size: 8px;
+  top: 23px;
+  border-radius: 3px;
+  background-color: #ffe1e0;
+  width: 100%;
+  margin-left: -5px;
+  padding: 0 2px;
+  z-index: 1;
+}
+
+.po-field-container-icon-error {
+  display: none;
+}
+
+.po-button {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+// TELA MAXIMIZADA
+.smc-sga-tela-maximizada {
+  .smc-sga-grid-lancamento-nota-rolagem {
+    max-height: calc(100vh - 220px);
+    overflow-y: initial;
+    margin-right: 0;
+  }
+
+  .smc-sga-grid-lancamento-nota-header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
+
+  .smc-sga-grid-agrupamento-header {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+  }
+}
+
+@media (max-width: 767px) {
+  .smc-sga-tela-maximizada {
+    .smc-sga-grid-lancamento-nota-rolagem {
+      max-height: calc(100vh - 300px);
+      overflow-y: auto;
+      margin-right: 0;
+    }
+  }
+}
+//CLASSES PARA FILTRO ALUNO E AVALIAÇÕES
+@media (max-width: 767px) {
+  .smc-sga-filtro-aluno:before {
+    margin: 14px 8px 10px 6px !important;
+  }
+
+  .smc-sga-lancamento-nota-tabela {
+    overflow-x: hidden !important;
+  }
+}
+
+.smc-sga-filtro-aluno {
+  background-color: $smc-cinza-03;
+  padding-top: 5px;
+  margin-bottom: -14px;
+
+  &:before {
+    @extend .fa;
+    @extend .fa-filter;
+    float: left;
+    font-size: 20px;
+    margin: 14px 10px 10px 15px;
+    color: $smc-cor-principal-01;
+  }
+
+  po-multiselect-item {
+    display: block;
+    clear: both;
+  }
+
+  .po-field-title {
+    font-family: "sf_ui_displayregular";
+    color: #626262;
+    font-size: 12px;
+    margin-right: 0;
+    margin-left: 5px;
+    min-height: 0;
+    float: left;
+    font-weight: normal;
+    margin-bottom: -25px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .po-input {
+    height: 48px !important;
+    margin-top: -6px;
+    padding-top: 15px;
+    margin-bottom: 0;
+  }
+
+  .po-input {
+    background-color: #fff !important;
+    border: 1px solid #b3b3b3 !important;
+  }
+
+  .po-disclaimer .po-disclaimer-label,
+  .po-disclaimer .po-disclaimer-remove {
+    background-color: #cfdf97;
+    position: relative !important;
+  }
+
+  .po-disclaimer .po-disclaimer-label,
+  .po-disclaimer .po-disclaimer-remove {
+    height: 22px;
+    line-height: 22px;
+    margin-top: 2px;
+  }
+}
+
+.po-disclaimer .po-disclaimer-remove:before {
+  top: 0;
+}
+
+.smc-legend-hexagon-fill:before {
+  font-size: 13px;
+  display: contents;
+}
+
+.po-field-icon {
+  color: $smc-preto;
+}
+
+.po-field-container-content.po-multiselect-show > .po-input {
+  border: 1px solid $smc-cinza-02 !important;
+}
+
+.po-multiselect-checkbox-input-checked + .po-multiselect-checkbox-label:before {
+  background-color: $smc-branco;
+  border: 1px solid $smc-cinza-07;
+  color: $smc-preto;
+}
+
+// GRID
+// Estrutura do grid
+.smc-sga-lancamento-nota-estrutura {
+  padding: 0;
+}
+// Estrutura da tabela
+.smc-sga-grid-agrupamento-header {
+  display: grid;
+}
+
+.smc-sga-grid-lancamento-nota-rolagem {
+  display: grid;
+}
+
+.smc-sga-lancamento-nota-tabela {
+  padding: 0;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 15px;
+}
+//cabeçalho
+%base-estrutura-header {
+  background-color: $smc-cor-principal-06;
+
+  > div {
+    border-right: 1px solid $smc-branco;
+    min-height: 27px;
+    background-color: $smc-cor-principal-06;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    p {
+      font-size: 12px;
+      color: $smc-cor-principal-01;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.smc-sga-grid-lancamento-nota-header {
+  @extend %base-estrutura-header;
+  display: flex;
+
+  > div {
+    width: 100%;
+
+    .link {
+      text-decoration: underline;
+      color: $smc-cor-principal-01;
+      cursor: pointer;
+
+      &:before {
+        @extend .fa;
+        @extend .fa-external-link;
+        float: right;
+        padding: 5px;
+        font-size: 10px;
+        color: $smc-cor-principal-04;
+      }
+
+      &:hover,
+      p:hover {
+        color: $smc-cor-principal-04;
+      }
+    }
+  }
+}
+
+.smc-sga-grid-lancamento-frequencia-header {
+  @extend %base-estrutura-header;
+  display: flex;
+
+  > div {
+    display: flex;
+    flex: auto;
+    background-color: $smc-cor-principal-06;
+
+    p {
+      padding: 0 0 0 6px;
+      font-size: 12px;
+      color: #074458;
+      font-weight: bold;
+      margin-bottom: 0;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 16px;
+      text-overflow: ellipsis;
+      white-space: pre;
+    }
+
+    .link {
+      text-decoration: underline;
+      color: $smc-cor-principal-01;
+      cursor: pointer;
+
+      &:before {
+        @extend .fa;
+        @extend .fa-external-link;
+        float: right;
+        padding: 5px;
+        font-size: 10px;
+        color: $smc-cor-principal-04;
+      }
+
+      &:hover,
+      p:hover {
+        color: $smc-cor-principal-04;
+      }
+    }
+  }
+}
+
+%base-estrutura-linha {
+  padding: 0;
+
+  > div {
+    border-right: 1px solid $smc-cinza-04;
+    border-bottom: 1px solid $smc-cinza-04;
+    height: 35px;
+    background-color: $smc-branco;
+
+    &:first-child {
+      border-left: 1px solid $smc-cinza-04;
+    }
+
+    .po-field-container-content {
+      padding: 1px 0 0 0;
+    }
+
+    p {
+      margin-top: 6px;
+      margin-left: 5px;
+    }
+  }
+}
+//Linhas de conteúdo
+.smc-sga-grid-lancamento-nota-linha {
+  @extend %base-estrutura-linha;
+  display: flex;
+
+  > div {
+    width: 100%;
+  }
+}
+
+.smc-sga-grid-lancamento-nota-coluna-padrao {
+  min-width: 60px;
+  max-width: 80px;
+}
+
+.smc-sga-grid-lancamento-frequencia-coluna-padrao {
+  min-width: 70px;
+  max-width: 80px;
+}
+
+.smc-sga-grid-lancamento-nota-coluna-situacao {
+  min-width: 60px;
+  max-width: 165px;
+}
+
+.smc-sga-grid-lancamento-nota-aluno {
+  min-width: 300px;
+
+  p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    span {
+      padding: 0 10px;
+
+      &:before {
+        position: absolute;
+        top: 9px;
+        left: 9px;
+      }
+
+      &.smc-sga-legenda-formado {
+        &:before {
+          left: 6px;
+        }
+      }
+    }
+  }
+}
+
+.smc-sga-grid-lancamento-nota-coluna-avaliacoes {
+  min-width: 60px;
+  max-width: 100px;
+}
+
+.smc-sga-grid-lancamento-frequencia-coluna-avaliacoes-header-dia {
+  max-width: max-content;
+  position: relative;
+  text-align: center;
+  background-color: #0084a5 !important;
+}
+
+.smc-sga-grid-lancamento-frequencia-coluna-avaliacoes-header-dia-titulo {
+  padding: 3px 18px 0 18px;
+  font-size: 12px;
+  color: $smc-branco;
+  font-weight: 500;
+  margin-bottom: 0;
+  background-color: #0084a5;
+  position: absolute;
+  width: 100%;
+}
+
+.smc-sga-grid-lancamento-frequencia-coluna-avaliacoes-header-dia-aula {
+  min-width: 99.75px;
+  // max-width: 99px;
+  display: inline-block;
+  margin-top: 20px;
+  background-color: $smc-cor-principal-06;
+}
+
+.smc-sga-grid-lancamento-frequencia-coluna-avaliacoes {
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.smc-sga-grid-lancamento-nota-coluna-avaliacoes-sigla {
+  display: inline;
+  margin-right: 15px;
+}
+
+.smc-sga-grid-lancamento-nota-coluna-ra {
+  left: 0;
+  top: 0;
+  position: sticky;
+  z-index: 2;
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.smc-sga-grid-lancamento-nota-aluno-fixa {
+  left: 100px;
+  position: sticky;
+  z-index: 2;
+}
+//MENSAGEM TOTAL DE ALTERAÇÕES (ícone que é exibido à frente do nome ao salvar)
+%icone-destaque {
+  @extend .fa;
+  @extend .fa-circle;
+  color: $smc-cor-secundaria-03;
+  font-size: 11px;
+}
+
+.smc-sga-mensagem-lancamento-nota {
+  border: 1px solid $smc-cor-secundaria-03;
+  float: right;
+  margin-top: 3px;
+  margin-right: 7px;
+
+  &:after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-color: transparent transparent transparent $smc-cor-secundaria-03;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: -5px;
+  }
+
+  p {
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    color: $smc-preto;
+  }
+
+  &:before {
+    @extend %icone-destaque;
+    float: left;
+    margin: 7px 8px 5px 5px;
+  }
+}
+
+.smc-sga-mensagem-lancamento-frequencia {
+  border: 1px solid $smc-cor-secundaria-03;
+  float: right;
+  margin-top: 3px;
+  margin-right: 7px;
+
+  &:after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-color: transparent transparent transparent $smc-cor-secundaria-03;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: -5px;
+  }
+
+  p.smc-sga-frequencia-apurada {
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    color: $smc-preto;
+
+    &:before {
+      @extend %icone-destaque;
+      color: #003b87 !important;
+      float: left;
+      margin: 3px 8px 0 5px;
+    }
+  }
+
+  p.smc-sga-frequencia-convertida {
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    color: $smc-preto;
+
+    &:before {
+      @extend .fa;
+      @extend .fa-circle-o;
+      margin: 3px 8px 0 5px;
+      float: left;
+      color: $smc-cinza-07;
+      font-size: 11px;
+    }
+  }
+}
+
+.smc-legend-grey {
+  &::before {
+    color: $smc-cinza-07;
+  }
+}
+
+.smc-aluno-highlight {
+  &:before {
+    @extend %icone-destaque;
+    //float: right;
+    margin: 11px 11px 0 0;
+    right: 0;
+    position: absolute;
+  }
+}
+
+%base-botoes-somente-icone {
+  @extend .fa;
+  color: $smc-cor-secundaria-01;
+  margin-top: 3px;
+  display: inline-block;
+  border: 1px solid $smc-cor-secundaria-01;
+  padding: 6px;
+  border-radius: 3px;
+  background-color: $smc-branco;
+
+  &:hover {
+    color: $smc-cor-principal-hover;
+    border-color: $smc-cor-principal-hover;
+  }
+}
+
+.smc-btn-historico {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-file-text-o;
+  margin-left: 3px;
+
+  &[disabled] {
+    background-color: $smc-cinza-03;
+    border-color: $smc-cinza-03;
+    color: $smc-cinza-05;
+    cursor: no-drop;
+  }
+}
+
+.smc-btn-historico-preenchido {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-file-text;
+  margin-left: 3px;
+
+  &[disabled] {
+    background-color: $smc-cinza-03;
+    border-color: $smc-cinza-03;
+    color: $smc-cinza-05;
+    cursor: no-drop;
+  }
+}
+
+.smc-btn-historico-divergente {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-file-text;
+  margin-left: 3px;
+  color: $smc-cor-secundaria-titulos !important;
+  border-color: $smc-cor-secundaria-titulos !important;
+
+  &[disabled] {
+    background-color: $smc-cinza-03;
+    border-color: $smc-cinza-03;
+    color: $smc-cinza-05;
+    cursor: no-drop;
+  }
+}
+
+.smc-btn-comentario {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-comment-o;
+
+  &[disabled] {
+    background-color: $smc-cinza-03;
+    border-color: $smc-cinza-03;
+    color: $smc-cinza-05;
+    cursor: no-drop;
+  }
+}
+
+.smc-btn-comentario-preenchido {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-comment;
+
+  &:before {
+    color: $smc-cor-secundaria-01;
+  }
+
+  &[disabled] {
+    background-color: $smc-cinza-03;
+    border-color: $smc-cinza-03;
+    color: $smc-cinza-05;
+    cursor: no-drop;
+  }
+}
+
+.smc-sga-grid-menu-aula {
+  background-color: $smc-branco;
+  border-radius: 0 0 3px 3px;
+  position: absolute;
+  margin-left: -5px;
+  z-index: 3;
+  display: block;
+  width: 120px;
+  border: 1px solid #bad6da;
+  margin-top: -1px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+
+  ul {
+    list-style-type: none;
+
+    li {
+      padding: 5px;
+      text-align: left;
+      height: 30px;
+      border-bottom: solid 1px $smc-cinza-04;
+      cursor: pointer;
+      font-size: 11px;
+      color: $smc-cinza-08;
+
+      &:first-child {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        height: 35px;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: $smc-cor-principal-06;
+      }
+
+      span {
+        margin-right: 5px;
+        width: 15px;
+        float: left;
+
+        &::before {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@mixin smc-frequencia($cor-frequencia) {
+  border: none !important;
+
+  .smc-sga-carregando-local {
+    background-color: $smc-branco;
+    height: 26px !important;
+    margin-top: -25px;
+  }
+
+  &:before {
+    font-size: 18px;
+  }
+
+  &:hover {
+    background-color: transparent;
+    border: none;
+  }
+
+  &:focus {
+    box-shadow: none;
+    color: $cor-frequencia;
+  }
+
+  &[disabled] {
+    border: none !important;
+    background-color: transparent !important;
+    color: $cor-frequencia !important;
+  }
+}
+
+.smc-sga-grid-menu-aula-aberto {
+  @extend .fa;
+  @extend .fa-sort-asc;
+
+  &::before {
+    position: relative;
+    top: 3px;
+  }
+}
+
+.smc-sga-grid-menu-aula-fechado {
+  @extend .fa;
+  @extend .fa-sort-desc;
+
+  &::before {
+    position: relative;
+    top: -3px;
+  }
+}
+
+.smc-btn-frequencia-branco {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-circle-o;
+  color: $smc-cinza-05;
+  @include smc-frequencia($smc-cinza-05);
+}
+
+.smc-btn-frequencia-falta {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-ban;
+  color: $smc-vermelho;
+  @include smc-frequencia($smc-vermelho);
+}
+
+.smc-btn-frequencia-presente {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-check-circle-o;
+  color: $smc-verde;
+  @include smc-frequencia($smc-verde);
+}
+
+//Novos botões
+///TODO: Glênia
+// .smc-btn-frequencia-ausencia {
+//   @extend %base-botoes-somente-icone;
+//   @extend .fa-file-text-o;
+//   @include smc-frequencia($smc-cor-principal-02);
+//   color: $smc-cor-principal-02;
+// }
+
+.smc-btn-frequencia-abono {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-file-text-o;
+  @include smc-frequencia(#00b09e);
+  color: #00b09e;
+}
+
+.smc-btn-frequencia-sancao {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-file-text-o;
+  @include smc-frequencia(#ea502f);
+  color: #ea502f;
+
+  &:hover {
+    color: #ff8827 !important;
+  }
+}
+
+.smc-display {
+  label {
+    display: block;
+    width: 100%;
+  }
+
+  p {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+///Prime daqui para baixo
+///TODO: Glênia
+.p-multiselect-chip {
+  width: 100%;
+}
+
+.smc-multiselect-agrupado {
+  .p-multiselect-header {
+    height: 45px;
+
+    .p-checkbox {
+      position: relative;
+      margin-top: 10px;
+      margin-left: 0;
+      margin-bottom: 10px;
+      z-index: 2;
+    }
+
+    .p-multiselect-filter-container {
+      //  margin-left: -24px !important;
+      margin-top: 5px !important;
+
+      .p-multiselect-filter {
+        margin-left: 30px;
+      }
+    }
+
+    .p-multiselect-close {
+      margin-top: 1px;
+    }
+  }
+
+  .p-multiselect-token,
+  .smc-legend-circle-fill {
+    margin-left: 0 !important;
+  }
+
+  .p-multiselect-panel,
+  .p-multiselect-filter-container {
+    margin-left: 0 !important;
+    line-height: 0;
+  }
+
+  .p-checkbox.p-component {
+    position: absolute;
+    top: 5px;
+  }
+
+  .ng-star-inserted {
+    margin-left: 30px;
+  }
+
+  .p-multiselect-panel .p-multiselect-items .p-multiselect-item {
+    min-height: 45px;
+    padding-top: 14px;
+  }
+}
+
+.smc-campo-filtro {
+  background-color: #fff !important;
+  border: 1px solid #b3b3b3 !important;
+  margin-top: 2px;
+  margin-bottom: 6px;
+  border-radius: 3px;
+  margin-right: 8px;
+
+  label {
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .p-multiselect {
+    border: none;
+  }
+
+  .p-multiselect-label {
+    font-size: 14px;
+  }
+
+  .p-inputtext {
+    border: none;
+    width: 100%;
+  }
+
+  input[type="text"],
+  input {
+    height: 24px !important;
+    margin-bottom: 5px;
+  }
+}
+
+.p-inputtext {
+  font-size: 14px !important;
+  font-family: "segoe_uiregular", Arial, sans-serif;
+}
+
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none !important;
+  border: none;
+}
+
+//BOTÃO DE ALERTAS + CONTADOR DE ALERTAS
+.smc-sga-painelalertas-estrutura-botao {
+  position: fixed;
+  right: 4px;
+  top: 240px;
+  z-index: 9;
+  display: block;
+}
+
+.smc-sga-painelalertas-botao {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #0083a2;
+  font-size: 0;
+  @extend .fa;
+  @extend .fa-bell-o;
+  color: $smc-branco;
+
+  &:before {
+    font-size: 20px;
+    padding: 9px;
+    margin-top: -1px;
+    display: block;
+  }
+
+  &:hover {
+    color: $smc-cor-secundaria-02;
+    text-decoration: none;
+  }
+}
+
+.smc-sga-painelalertas-totalizador {
+  padding: 1px;
+  width: 12px;
+  height: 14px;
+  background-color: red;
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 50px;
+  position: absolute;
+  left: 23px;
+  top: 20px;
+}
+
+.smc-sga-painelalertas {
+  background-color: $smc-cinza-02;
+  border-radius: 5px;
+  border: 1px solid $smc-cinza-04;
+  padding: 15px;
+  min-height: 50px;
+  max-height: 220px;
+  z-index: 2;
+  position: fixed;
+  right: 0;
+  top: 280px;
+  overflow-y: auto;
+
+  h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: $smc-cor-secundaria-01;
+
+    &:before {
+      @extend .fa;
+      @extend .fa-bell-o;
+      margin-right: 10px;
+    }
+  }
+
+  .smc-sga-painelalertas-itens {
+    overflow-x: auto;
+    max-height: 150px;
+  }
+
+  ul {
+    margin-bottom: 10px;
+    margin-left: 30px;
+  }
+
+  span {
+    font-size: 12px;
+  }
+}
+
+.smc-sga-tag {
+  margin-bottom: 2px;
+  float: left;
+  background-color: #dcdcdc;
+  font-size: 10px !important;
+  border-radius: 4px;
+  margin-left: 6px;
+  color: #505050 !important;
+  margin-top: 7px;
+  padding: 2px 5px;
+  align-self: flex-start;
+}
+
+.smc-sga-grid-lancamento-nota-aluno {
+  display: flex;
+}
+
+.smc-sga-grid-lancamento-frequencia-coluna-avaliacoes-header-dia {
+  .po-modal-body {
+    p {
+      color: #333 !important;
+      font-weight: normal !important;
+      font-size: 14px !important;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      padding: 5px 0 !important;
+      height: auto;
+    }
+  }
+}
+
+.po-textarea {
+  font-size: 14px !important;
+  color: #626262;
+  font-family: "sf_ui_displayregular";
+  line-height: 20px;
+  padding: 5px;
+}

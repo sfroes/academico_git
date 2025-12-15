@@ -1,0 +1,17 @@
+﻿@model ServicoViewModel
+
+@Smc.EditorFor(m => m.ExibirCampoTipoTransacao)
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    if (Model.ExibirCampoTipoTransacao)
+    {
+        @Smc.MasterDetail(m => m.InstituicaoNivelServicos).MinimumItens(1)
+    }
+    else
+    {
+        @Smc.MasterDetail(m => m.InstituicaoNivelServicosSemTipoTransacao).MinimumItens(1).Name("InstituicaoNivelServicos")
+    }
+}
+
+@Smc.WizardView()

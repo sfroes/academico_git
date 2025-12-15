@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERR_ClassificacaoInvalidadeDocumentoNaoLocalizadoException" xml:space="preserve">
+    <value>Classificação invalidade do documento não localizado.</value>
+  </data>
+  <data name="ERR_CodigoVerificacaoNaoLocalizadoException" xml:space="preserve">
+    <value>Não foi identificado diploma digital para o código de validação e nome do diplomado informados na pesquisa</value>
+  </data>
+  <data name="ERR_DocumentoConclusaoEntregaInformacaoNaoEncontradaException" xml:space="preserve">
+    <value>Não foi identificada a informação "{0}".</value>
+  </data>
+  <data name="ERR_DocumentoConclusaoSemDataExpedicaoDiplomaException" xml:space="preserve">
+    <value>Não foi identificada a data de expedição do diploma. Informação obrigatória quando a situação do aluno é igual a Formado.</value>
+  </data>
+  <data name="ERR_ExtensaoArquivoEntregaDigitalException" xml:space="preserve">
+    <value>O arquivo "{0}" não é permitido. Favor enviar o arquivo em uma das seguintes extensões: doc, docx, xls, xlsx, jpg, jpeg, png, pdf, rar, zip, ps.</value>
+  </data>
+  <data name="ERR_ExtensaoNaoPermitidaException" xml:space="preserve">
+    <value>O arquivo "{0}" não é permitido. Favor enviar o arquivo em uma das seguintes extensões: doc, docx, xls, xlsx, jpg, jpeg, png, pdf, rar, zip, ps.</value>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoDocumentoAcademicoConfiguracaoGADException" xml:space="preserve">
+    <value>Operação não permitida. Não foi identificado a configuração do GAD</value>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoDocumentoArquivoInvalidoException" xml:space="preserve">
+    <value>Arquivo não permitido. Somente é permitido arquivo com extensão .dotx.</value>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoDocumentoArquivoSemTemplatePadraoException" xml:space="preserve">
+    <value>É obrigatório parametrizar ao menos um template para o idioma Português.</value>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoDocumentoAssinaturaObrigatoriaException" xml:space="preserve">
+    <value>Operação não permitida. O tipo de documento de conclusão exige o tramite de assinatura. É obrigatório informar pelo menos um tipo de assinatura.</value>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoDocumentoFormacaoException" xml:space="preserve">
+    <value>Não é permitido mais de uma parametrização para o mesmo tipo documento academico</value>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoDocumentoFormacaoObrigatoriaException" xml:space="preserve">
+    <value>Operação não permitida. É obrigatório informar pelo menos um tipo de formação específica.</value>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoDocumentoModeloPapelObrigatorioException" xml:space="preserve">
+    <value>Operação não permitida. É obrigatório informar pelo menos um tipo de modelo de documento x tipo de papel.</value>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoDocumentoNenhumTipoVinculoException" xml:space="preserve">
+    <value>Não foi localizado no Acadêmico nenhum tipo de vínculo de funcionário com os vínculos a seguir cadastrados no fluxo do GAD: {0}.</value>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoDocumentoSemTagTipoVinculoException" xml:space="preserve">
+    <value>Não há nenhuma tag de tipo de vínculo de funcionário cadastrada na configuração do GAD selecionada.</value>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoDocumentoTagSemVinculoGADException" xml:space="preserve">
+    <value>Não foi localizado nenhum tipo de vínculo de funcionário com os vínculos a seguir cadastrados no fluxo do GAD:
+{0} .</value>
+  </data>
+  <data name="ERR_InstituicaoNivelTipoDocumentoTemplateException" xml:space="preserve">
+    <value>Não é permitido mais de um template para o mesmo idioma.</value>
+  </data>
+  <data name="ERR_NumeroSerieInvalidadoAnteriormenteException" xml:space="preserve">
+    <value>Operação não permitida. O número de série informado foi invalidado anteriormente.</value>
+  </data>
+  <data name="ERR_NumeroSerieJaUtilizadoException" xml:space="preserve">
+    <value>Operação não permitida. O número de série informado está associado a outro documento de conclusão do mesmo grupo de número de série.</value>
+  </data>
+  <data name="ERR_NumeroSerieNaoConstaLoteException" xml:space="preserve">
+    <value>Operação não permitida. O número de série informado não consta nos lotes de número do respectivo grupo.</value>
+  </data>
+  <data name="ERR_PermissaoConfigurarRelatorioException" xml:space="preserve">
+    <value>Você não possui permissão para emitir o tipo de declaração '{0}' para o nível de ensino '{1}'.</value>
+  </data>
+  <data name="ERR_RestauracaoNaoPermitidaException" xml:space="preserve">
+    <value>Opção indisponível. A restauração não poderá ser realizada, pois foi gerado novo documento de conclusão para o aluno com as mesmas características.</value>
+  </data>
+  <data name="ERR_ServicoJaAssociadoEmOutroTipoDocumentoException" xml:space="preserve">
+    <value>Operação não permitida. Foi identificado que um dos serviços informados está associado a outro tipo de documento de conclusão.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoCargaHorariaMenorException" xml:space="preserve">
+    <value>Operação não permitida. A Carga Horária Integralizada é menor que a Carga Horária do Currículo.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoCodigoMigracaoDuplicadoException" xml:space="preserve">
+    <value>Sincronismo não disponível. Foi identificado que o Código de Migração do Aluno está associado em mais de 1 (um) cadastro.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoCodigoMigracaoNaoEncontradoException" xml:space="preserve">
+    <value>Opção indisponível. Não foi identificado o código de aluno migração.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoConfiguracaoGADNaoEncontradaException" xml:space="preserve">
+    <value>Operação não permitida. Não foi encontrada configuração de diploma GAD na parametrização do tipo de documento de conclusão. </value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoDadosEnadeNaoEncontradoException" xml:space="preserve">
+    <value>Opção indisponível. Não foi identificada a situação-enade.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoDadosPessoaisDiferente2Exception" xml:space="preserve">
+    <value>Operação não permitida. Essa emissão irá gerar histórico escolar final e foi identificado que o aluno já possui diploma digital que encontra-se Válido ou Emissão em Andamento. E a identificação dos dados pessoais utilizados no diploma é diferente da identificação considerada na emissão do histórico.&lt;br&gt;
+ Analise a divergência dos dados pessoais e se for necessário emitir uma nova via do diploma:&lt;br&gt;
+* Primeiramente anule o diploma relatando o motivo e,&lt;br&gt;
+* Inicie novamente a emissão dos documentos através de novo serviço/protocolo.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoDadosPessoaisDiferenteException" xml:space="preserve">
+    <value>Operação não permitida. Essa emissão irá gerar nova via de histórico escolar e foi identificado que o aluno já possui diploma digital que encontra-se Válido ou Emissão em Andamento. E a identificação dos dados pessoais utilizados no diploma é diferente da identificação considerada na emissão do histórico.&lt;br&gt;
+Analise a divergência dos dados pessoais e se for necessário emitir uma nova via do diploma:&lt;br&gt;
+* Primeiramente anule o diploma relatando o motivo e,&lt;br&gt;
+* Inicie novamente a emissão dos documentos através de novo serviço/protocolo.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoDataColacaoMenorException" xml:space="preserve">
+    <value>Operação não permitida. Há divergências nas datas de ingresso, conclusão e/ou colação. Verifique a ordem cronológica das respectivas datas.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoDocumentacaoComprobatoriaExcedenteException" xml:space="preserve">
+    <value>Operação não permitida. Verifique se os tipos selecionados de documentação comprobatória são permitidos para emissão. ({0})</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoDocumentacaoComprobatoriaObrigatoriaException" xml:space="preserve">
+    <value>Operação não permitida. É obrigatório anexar pelo menos 1 (uma) documentação comprobatória ao emitir um diploma de 1 via.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoEmissaoHistoricoInvalidoException" xml:space="preserve">
+    <value>Operação não permitida. Essa emissão irá gerar nova via de histórico escolar e foi identificado que o aluno já possui diploma e histórico escolar que encontra-se Válido ou Emissão em Andamento.&lt;br&gt;
+Se for necessário emitir uma nova via de histórico devido a atualização de dados:&lt;br&gt;
+* Primeiramente anule o diploma e histórico escolar relatando o motivo e,&lt;br&gt;
+* Inicie novamente a emissão dos documentos através de novo serviço/protocolo.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoExtensaoNaoPermitidaException" xml:space="preserve">
+    <value>O arquivo '{0}' não é permitido. Favor enviar o arquivo no formato PDF/A.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoGraduacaoSemDiplomaDigitalException" xml:space="preserve">
+    <value>Operação não permitida. O nível de ensino GRADUAÇÃO deve estar configurado com o tipo de documento DIPLOMA_DIGITAL.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoHistoricoEscolarNaoEncontradoException" xml:space="preserve">
+    <value>Operação não permitida. Os dados do histórico escolar para o aluno em questão não foram retornados. Verifique as seguintes condições no SGA (Legado):&lt;/br&gt;
+· Se há lançamentos no histórico escolar do aluno ou,&lt;/br&gt;
+· A situação do respectivo currículo é diferente de "Implantado", nesse caso procure a equipe do CRA/Apoio para "Validação do Currículo".</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoInformacaoNaoEncontradaException" xml:space="preserve">
+    <value>Opção indisponível. Não foi identificada a informação "{0}".</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoInstituicaoSemCredenciamentoException" xml:space="preserve">
+    <value>Opção indisponível. Não foi identificado o Ato Normativo de Credenciamento da Instituição de Ensino.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoNovaViaException" xml:space="preserve">
+    <value>Operação não permitida. Essa emissão irá gerar nova via do documento e foi identificado que o documento anterior encontra-se Válido ou Emissão em Andamento. Invalide o documento anterior e relate o motivo, para que seja possível emitir nova via.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoParametrizacaoOrgaoRegistroNaoEncontradaException" xml:space="preserve">
+    <value>Opção indisponível. Não foi identificada a parametrização do orgão de registro na Instituição x Nível de Ensino x Tipo de documento de conclusão.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoParametrizacaoTipoDocumentoNaoEncontradaException" xml:space="preserve">
+    <value>Opção indisponível. Não foi identificada a parametrização da Instituição x Nível de Ensino x Tipo de documento de conclusão.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoReabeturaNaoPermitidaException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível reabrir a solicitação e os documentos associados, visto que foram identificados outros documentos para o aluno e que encontram-se "Em andamento" ou "Válido</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoSemDadosException" xml:space="preserve">
+    <value>Não foi possível recuperar os dados da solicitação</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoSemDataExpedicaoDiplomaException" xml:space="preserve">
+    <value>Não foi identificada a data de expedição do diploma. Informação obrigatória quando a situação do aluno é igual a Formado.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoSemGrauAcademicoException" xml:space="preserve">
+    <value>É obrigatória a identificação do grau-acadêmico para pesquisa dos atos normativos.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoTipoDocumentoNaoEncontradoException" xml:space="preserve">
+    <value>Operação não permitida. Não foi encontrado tipo de docuemento referente ao token '{0}'.</value>
+  </data>
+  <data name="ERR_SolicitacaoDocumentoConclusaoTipoIdentidadeNaoInformadaException" xml:space="preserve">
+    <value>Não foi selecionada a cédula de identidade desejada. Selecione e tente novamente.</value>
+  </data>
+  <data name="ERR_TamanhoArquivoEntregaDigitalException" xml:space="preserve">
+    <value>O arquivo "{0}" possui {1}, o máximo permitido é 5MB.</value>
+  </data>
+  <data name="ERR_TamanhoArquivoExcedidoException" xml:space="preserve">
+    <value>Tamanho máximo de arquivo é 25 MB</value>
+  </data>
+  <data name="ERR_TemplateProtocoloEntregaDocumentoConclusaoNaoEncontradoException" xml:space="preserve">
+    <value>Template de protocolo de entrega de documento de conclusão não foi parametrizado para esta instituição e nível de ensino.</value>
+  </data>
+  <data name="ERR_TipoDocumentoAcademicoNaoLocalizadoException" xml:space="preserve">
+    <value>Tipo de documento acadêmico não localizado</value>
+  </data>
+  <data name="ERR_TitulacaoSemDocumentoComprobatorioException" xml:space="preserve">
+    <value>Tipo de documento obrigatório</value>
+  </data>
+  <data name="ERR_TokenMotivoSolicitacaoIndeferidaNaoEncontradoException" xml:space="preserve">
+    <value>Token do motivo de cancelamento da solicitação de serviço {0} não foi encontrado.</value>
+  </data>
+  <data name="ERR_TokenSituacaoDocumentoAcademicoNaoEncontradoException" xml:space="preserve">
+    <value>Token da situação do documento acadêmico {0}, não foi encontrado.</value>
+  </data>
+  <data name="FK_apuracao_formacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Aluno-formação possui apuração associada.</value>
+  </data>
+  <data name="FK_classificacao_invalidade_documento_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe cadastro de classificação de invalidade de documento para esta instituição de ensino.</value>
+  </data>
+  <data name="FK_declaracao_generica_01" xml:space="preserve">
+    <value>Exclusão não permitida. Documento acadêmico é uma declaração genérica.</value>
+  </data>
+  <data name="FK_declaracao_generica_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe declaração genérica cadastrada para esta pessoa atuação.</value>
+  </data>
+  <data name="FK_declaracao_generica_03" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe declaração genérica cadastrada com esses dados pessoais da pessoa atuação.</value>
+  </data>
+  <data name="FK_documento_academico_01" xml:space="preserve">
+    <value>Exclusão não permitida. Existe documento acadêmico cadastrado com este tipo de documento acadêmico.</value>
+  </data>
+  <data name="FK_documento_academico_02" xml:space="preserve">
+    <value>Exclusão não permitida. Este documento acadêmico é via anterior de outro documento acadêmico.</value>
+  </data>
+  <data name="FK_documento_academico_03" xml:space="preserve">
+    <value>Exclusão não permitida. Esta solicitação de serviço já deu origem a documento acadêmico.</value>
+  </data>
+  <data name="FK_documento_academico_04" xml:space="preserve">
+    <value>Exclusão não permitida. Este histórico de situação é o atual do documento acadêmico.</value>
+  </data>
+  <data name="FK_documento_academico_historico_situacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Este documento acadêmico possui histórico de situação cadastrado.</value>
+  </data>
+  <data name="FK_documento_academico_historico_situacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Situação de documento acadêmico já foi utilizada em histórico de situação.</value>
+  </data>
+  <data name="FK_documento_academico_historico_situacao_03" xml:space="preserve">
+    <value>Exclusão não permitida. Classificação de invalidade do documento já está em uso em histórico de situação.</value>
+  </data>
+  <data name="FK_documento_conclusao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Documento acadêmico é um documento de conclusão.</value>
+  </data>
+  <data name="FK_documento_conclusao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Existe documento de conclusão cadastrado para este aluno.</value>
+  </data>
+  <data name="FK_documento_conclusao_03" xml:space="preserve">
+    <value>Exclusão não permitida. Existe documento de conclusão cadastrado com estes dados pessoais.</value>
+  </data>
+  <data name="FK_documento_conclusao_04" xml:space="preserve">
+    <value>Exclusão não permitida. Existe documento de conclusão cadastrado informando este órgão de registro.</value>
+  </data>
+  <data name="FK_documento_conclusao_05" xml:space="preserve">
+    <value>Exclusão não permitida. Existe documento de conclusão cadastrado informando este grupo de registro.</value>
+  </data>
+  <data name="FK_documento_conclusao_apostilamento_01" xml:space="preserve">
+    <value>Exclusão não permitida. Este documento de conclusão possui cadastro de apostilamento.</value>
+  </data>
+  <data name="FK_documento_conclusao_apostilamento_02" xml:space="preserve">
+    <value>Exclusão não permitida. Este tipo de apostilamento já foi utilizado no cadastro de um documento de conclusão.</value>
+  </data>
+  <data name="FK_documento_conclusao_apostilamento_03" xml:space="preserve">
+    <value>Exclusão não permitida. Arquivo anexado a um apostilamento.</value>
+  </data>
+  <data name="FK_documento_conclusao_formacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Este documento de conclusão possui cadastro de formação específica.</value>
+  </data>
+  <data name="FK_documento_conclusao_formacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Esta formação do aluno já está associada a um documento de conclusão.</value>
+  </data>
+  <data name="FK_documento_conclusao_formacao_03" xml:space="preserve">
+    <value>Exclusão não permitida. Apostilamento foi associado a uma formação do documento de conclusão.</value>
+  </data>
+  <data name="FK_grupo_registro_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui cadastro de grupo de registro.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_docto_formacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de formação específica para este tipo de documento nesta instituição e nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_docto_formacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de formação específica já foi configurada para um tipo de documento em uma instituição e nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_docto_modelo_relatorio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe parametrização de modelo de relatório para esta IE x NE x TD.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_docto_modelo_relatorio_02" xml:space="preserve">
+    <value>Exclusão não permitida. Arquivo anexado está associado como modelo de relatório de uma IE x NE x TD.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_docto_tipo_funcionario_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe parametrização de tipo de funcionário para esta IE x NE x TD.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_docto_tipo_funcionario_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de funcionário já está associado para emissão de documentos por instituição e nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_documento_academico_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de tipo de documento acadêmico para esta instituição e nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_documento_academico_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de documento de acadêmico já foi configurado por instituição e nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_documento_academico_03" xml:space="preserve">
+    <value>Exclusão não permitida. Orgão de registro já está configurado para algum documento acadêmico.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_documento_academico_04" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo de registro está configurado para uso em uma instituição de ensino x nível de ensino x tipo de documento.</value>
+  </data>
+  <data name="FK_orgao_registro_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino possui orgão de registro cadastrado.</value>
+  </data>
+  <data name="FK_situacao_documento_academico_grupo_docto_01" xml:space="preserve">
+    <value>Exclusão não permitida. Existem grupos de documentos configurados para esta situação.</value>
+  </data>
+  <data name="FK_solicitacao_documento_conclusao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço é uma solicitação de documento de conclusão.</value>
+  </data>
+  <data name="FK_solicitacao_documento_conclusao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de documento de conclusão já foi utilizado no cadastro de uma solicitação de documento de conclusão.</value>
+  </data>
+  <data name="FK_tipo_apostilamento_01" xml:space="preserve">
+    <value>Exclusão não permitida. Existem tipos de apostilamento cadastrados para esta instituição de ensino.</value>
+  </data>
+  <data name="FK_tipo_documento_academico_01" xml:space="preserve">
+    <value>Exclusão não permitida. Existem tipos de documento acadêmico cadastrados para esta instituição de ensino.</value>
+  </data>
+  <data name="FK_tipo_documento_academico_servico_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de serviço para este tipo de documento acadêmico.</value>
+  </data>
+  <data name="FK_tipo_documento_academico_servico_02" xml:space="preserve">
+    <value>Exclusão não permitida. Existem configurações de tipo de documento acadêmico que utilizam este serviço.</value>
+  </data>
+  <data name="FK_tipo_documento_academico_tag_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe tag configurada para este tipo de documento acadêmico.</value>
+  </data>
+  <data name="FK_tipo_documento_academico_tag_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tag já está associada a algum tipo de documento acadêmico.</value>
+  </data>
+  <data name="FK_titulacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Grau acadêmico já foi associado a titulação.</value>
+  </data>
+  <data name="FK_titulacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Existem titulações específicas associadas a este curso.</value>
+  </data>
+  <data name="FK_titulacao_documento_comprobatorio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Titulação possui documentos comprobatorios associados.</value>
+  </data>
+  <data name="UN_apuracao_formacao_01" xml:space="preserve">
+    <value>Já existe apuração de formação para este aluno-formação com esta situação e data de inicio e de exclusão.</value>
+  </data>
+  <data name="UN_classificacao_invalidade_documento_01" xml:space="preserve">
+    <value>Já existe classificação de invalidade de documento com esta descrição nesta instituição de ensiono.</value>
+  </data>
+  <data name="UN_classificacao_invalidade_documento_02" xml:space="preserve">
+    <value>Já existe classificação de invalidade de documento com este token nesta instituição de ensiono.</value>
+  </data>
+  <data name="UN_documento_conclusao_01" xml:space="preserve">
+    <value>Já existe documento de conclusão com este número de registro.</value>
+  </data>
+  <data name="UN_documento_conclusao_formacao_01" xml:space="preserve">
+    <value>Essa formação específica já está associada a este documento de conclusão.</value>
+  </data>
+  <data name="UN_grupo_registro_01" xml:space="preserve">
+    <value>Já existe grupo de registro com esta descrição nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_docto_formacao_01" xml:space="preserve">
+    <value>Essa formação específica já está configurada para este tipo de documento acadêmico nesta instituição e nível de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_docto_modelo_relatorio_01" xml:space="preserve">
+    <value>Já existe configuração de modelo de relatório para este idioma.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_docto_tipo_funcionario_01" xml:space="preserve">
+    <value>Este tipo de funcionário já está associado para assinatura deste tipo de documento acadêmico nesta instituição x nível de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_documento_academico_01" xml:space="preserve">
+    <value>Esse tipo de documento acadêmico já está configurado para esta instituição e nível de ensino.</value>
+  </data>
+  <data name="UN_orgao_registro_01" xml:space="preserve">
+    <value>Já existe orgão de registro cadastrado com esta descrição para esta instituição de ensino.</value>
+  </data>
+  <data name="UN_orgao_registro_02" xml:space="preserve">
+    <value>Já existe orgão de registro cadastrado com esta sigla para esta instituição de ensino.</value>
+  </data>
+  <data name="UN_situacao_documento_academico_01" xml:space="preserve">
+    <value>Já existe situação de documento de acadêmico com esta descrição.</value>
+  </data>
+  <data name="UN_situacao_documento_academico_02" xml:space="preserve">
+    <value>Já existe situação de documento de acadêmico com este token.</value>
+  </data>
+  <data name="UN_situacao_documento_academico_03" xml:space="preserve">
+    <value>Já existe situação de documento de acadêmico com esta ordem.</value>
+  </data>
+  <data name="UN_situacao_documento_academico_grupo_docto_01" xml:space="preserve">
+    <value>Já existe associação deste grupo de documentos com a situação.</value>
+  </data>
+  <data name="UN_tipo_apostilamento_01" xml:space="preserve">
+    <value>Já existe tipo de apostilamento cadastrado com esta descrição para esta instituição de ensino.</value>
+  </data>
+  <data name="UN_tipo_apostilamento_02" xml:space="preserve">
+    <value>Já existe tipo de apostilamento cadastrado com este token para esta instituição de ensino.</value>
+  </data>
+  <data name="UN_tipo_documento_academico_01" xml:space="preserve">
+    <value>Já existe tipo de documento acadêmico cadastrado com esta descrição para esta instituição de ensino.</value>
+  </data>
+  <data name="UN_tipo_documento_academico_02" xml:space="preserve">
+    <value>Já existe tipo de documento acadêmico cadastrado com este token para esta instituição de ensino.</value>
+  </data>
+  <data name="UN_tipo_documento_academico_servico_01" xml:space="preserve">
+    <value>Esse serviço já está configurado para este tipo de documento de acadêmico.</value>
+  </data>
+  <data name="UN_tipo_documento_academico_tag_01" xml:space="preserve">
+    <value>Esta tag já está configurada para este tipo de documento acadêmico.</value>
+  </data>
+  <data name="UN_titulacao_01" xml:space="preserve">
+    <value>Já existe titulação cadastrada com este título feminino para este curso ou grau acadêmico.</value>
+  </data>
+  <data name="UN_titulacao_02" xml:space="preserve">
+    <value>Já existe titulação cadastrada com este título masculino para este curso ou grau acadêmico.</value>
+  </data>
+  <data name="UN_titulacao_03" xml:space="preserve">
+    <value>Já existe titulação cadastrada com este título abreviado para este curso ou grau acadêmico.</value>
+  </data>
+  <data name="UN_titulacao_documento_comprobatorio_01" xml:space="preserve">
+    <value>Não é permitido informar o documento comprobatório mais de uma vez para a mesma titulação.</value>
+  </data>
+</root>

@@ -1,0 +1,12 @@
+﻿@model SelecaoDisciplinasParaDispensaViewModel
+
+    @section MenuLateral {
+        @Html.Action("MenuPaginas", Model)
+    }
+
+    @(Smc.SGFTemplate().Secao().Token(MatriculaTokens.SOLICITACAO_DISPENSA_DISCIPLINA))
+
+    @using (Smc.Form("frmPagina").Ajax().Begin())
+    {
+        @Html.Partial("_BotoesNavegacao", Model)
+    }

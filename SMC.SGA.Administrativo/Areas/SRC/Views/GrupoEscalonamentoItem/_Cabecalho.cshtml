@@ -1,0 +1,45 @@
+﻿@model GrupoEscalonamentoItemCabecalhoViewModel
+
+@{
+    var header = Smc.Header("ProcessoCabecalho", SMCHeaderType.Primary).CssClass("smc-header-botao")
+            .Item(prop => prop.SeqProcesso, sizeMD: SMCSize.Grid2_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid2_24)
+            .Item(prop => prop.DescricaoProcesso, sizeMD: SMCSize.Grid22_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid22_24)
+            .Item(prop => prop.DataInicio, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid4_24)
+            .Item(prop => prop.DataFim, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid4_24)
+            .Item(prop => prop.DataEncerramento, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid4_24)
+            .Item(prop => prop.DescricaoEtapa, sizeMD: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24)
+            .Item(prop => prop.DescricaoGrupoEscalonamento, sizeMD: SMCSize.Grid9_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid13_24)
+            .Item(prop => prop.Ativo, sizeMD: SMCSize.Grid2_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid2_24)
+            .Item(prop => prop.DataInicioEscalonamento, sizeMD: SMCSize.Grid5_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid3_24)
+            .Item(prop => prop.DataFimEscalonamento, sizeMD: SMCSize.Grid5_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid3_24);
+
+    if (Model.NumeroDivisaoParcelas.HasValue)
+    {
+        header.Item(prop => prop.NumeroDivisaoParcelas, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid3_24);
+    }
+}
+
+@using (header.Begin())
+{
+    SMCButtonFluentConfiguration buttonValidarGrupoEscalonamento = Smc.Button(SMCButtonBehavior.Visualizar)
+                .Text(Smc.GetUIResource("Botao_Validar_Grupo_Escalonamento"))
+                .Ajax(isPost: false)
+                .Tooltip(Smc.GetUIResource("Botao_Validar_Grupo_Escalonamento"))
+                .Type(SMCButtonType.Link)
+                .Action("ValidarGrupoEscalonamento", "GrupoEscalonamentoItem", new { Seq = new SMCEncryptedLong(Model.Seq), SeqProcesso = new SMCEncryptedLong(Model.SeqProcesso), SeqGrupoEscalonamento = new SMCEncryptedLong(Model.SeqGrupoEscalonamento) })
+                .Hide(Model.EsconderBotaoValidarGrupo)
+                .Enabled(Model.HabilitarBotaoValidarGrupo)
+                .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoValidarGrupo))
+                .SecurityToken(UC_SRC_002_06_03.CONFIGURAR_PARCELAS)
+                .Confirm(Smc.GetUIResource("title_modal_validar_grupo_escalonamento"), string.Format(Smc.GetUIResource("mensagem_validar_grupo_escalonamento"), Model.DescricaoGrupoEscalonamento), SMCWindowButtons.Yes, true);
+
+    SMCButtonSetFluentConfiguration buttonSet = (Smc.ButtonSet().Type(SMCButtonSetType.Secondary)
+                                      .NumberOfButtonsToShow(0));
+
+    buttonSet.AddButton(buttonValidarGrupoEscalonamento);
+   
+    using (Smc.Div("").Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+    {
+        @buttonSet
+    }
+}

@@ -1,0 +1,1182 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.Domain.DataFilters.SMCDataFilterProviderDomainService">
+            <summary>
+            Domain service para consulta dos items utilizados no filtro de dados.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.DataFilters.SMCDataFilterProviderDomainService.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="providerName"></param>
+        </member>
+        <member name="M:SMC.Framework.Domain.DataFilters.SMCDataFilterProviderDomainService.GetDataFilter(System.String)">
+            <summary>
+            Recupera os itens de filtro de dados.
+            </summary>
+            <param name="token">Chave do filtro.</param>
+            <returns>Itens de filtro de dados para a chave informada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.DataFilters.SMCDataFilterProviderDomainService.GetItems(System.Type,System.String,System.Boolean,System.String)">
+            <summary>
+            Recupera os itens para o filtro informado.
+            </summary>
+            <param name="targetType">Entidade para consulta.</param>
+            <param name="token"></param>
+            <param name="isSelfRelationship"></param>
+            <param name="includeFilter"></param>
+            <returns>Items para o filtro informado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.DataFilters.SMCDataFilterProviderDomainService.GetItemsGeneric``1(System.String,System.Boolean,System.String)">
+            <summary>
+            Recupera os itens para o filtro informado.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="token">Token do filtro.</param>
+            <param name="isSelfRelationship"></param>
+            <param name="includeFilter"></param>
+            <returns>Itens para o filtro informado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.DataFilters.SMCDataFilterProviderDomainService.Search``1(SMC.Framework.Repository.ISMCRepository{``0},System.String,SMC.Framework.ISMCFilterConfig{``0},System.Boolean,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="isSelfRelationship"></param>
+            <param name="token"></param>
+            <param name="includeFilter"></param>
+            <param name="repository"></param>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.DataFilters.SMCDataFilterProviderDomainService.GetDescriptionProperties(System.Type,System.Reflection.PropertyInfo@)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="descriptionProperty"></param>
+        </member>
+        <member name="M:SMC.Framework.Domain.DataFilters.SMCDataFilterProviderDomainService.GetKeySelfRelationshipDescription(System.Type,System.Reflection.PropertyInfo@)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="seqPaiProperty"></param>
+        </member>
+        <member name="M:SMC.Framework.Domain.DataFilters.SMCDataFilterProviderDomainService.GetKeyDescriptionProperties(System.Type,System.Reflection.PropertyInfo@,System.Reflection.PropertyInfo@)">
+            <summary>
+            Recupera a chave e descrição da entidade.
+            </summary>
+            <param name="type">Tipo da entidade.</param>
+            <param name="seqProperty">Propriedade que possui a chave.</param>
+            <param name="descriptionProperty">Propriedade que possui a descrição.</param>
+        </member>
+        <member name="T:SMC.Framework.Domain.SMCDomainServiceBase">
+            <summary>
+            Classe base do domain service.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Domain.SMCDomainServiceBase._manager">
+            <summary>
+            Armazena a classe de gerenciamento de instancias de objetos criados por IoC.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Domain.SMCDomainServiceBase._providerName">
+            <summary>
+            Nome do contexto
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Domain.SMCDomainServiceBase.Scheduler">
+            <summary>
+            Utilizado para o SAT
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.#ctor(System.String)">
+            <summary>
+            Nome do contexto
+            </summary>
+            <param name="providerName"></param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.Create``1">
+            <summary>
+            Cria uma instância de uma classe.
+            </summary>
+            <typeparam name="TInterface">Interface do Repositório</typeparam>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.CreateApiClient(System.String)">
+            <summary>
+            Cria uma instância de um cliente de api rest
+            </summary>
+            <param name="name">Nome da url configurada web.config</param>
+            <returns>Api client da url informada</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.CreateRepository``1">
+            <summary>
+            Criando repositorio
+            </summary>
+            <typeparam name="TInterface"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.Create``1(System.String)">
+            <summary>
+            Cria uma instância de uma classe utilizando uma mapeamento especificado pelo nome.
+            </summary>
+            <typeparam name="TInterface">Tipo da instância.</typeparam>
+            <param name="name">Nome do mapeamento no container de IoC.</param>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.Dispose">
+            <summary>
+            Limpa os recursos utilizados pela classe.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.OnDispose">
+            <summary>
+            Limpa os recursos utilizados pela classe.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.SMC#Framework#Ioc#ISMCContainerManager#Create(System.Type)">
+            <summary>
+            Cria uma instância de uma classe.
+            </summary>
+            <param name="type">Tipo da instância.</param>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.SMC#Framework#Ioc#ISMCContainerManager#Create(System.Type,System.String,SMC.Framework.Ioc.SMCConstructorParams[])">
+            <summary>
+            Cria uma instância de uma classe utilizando uma mapeamento especificado pelo nome.
+            </summary>
+            <param name="type">Tipo da instância.</param>
+            <param name="name">Nome do mapeamento no container de IoC.</param>
+            <param name="args"></param>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="P:SMC.Framework.Domain.SMCDomainServiceBase.User">
+            <summary>
+            Usuário corrente.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.GetFilter(System.String)">
+            <summary>
+            Busca o filtro de dados dado a Token
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.IsSelfRelationship(System.String)">
+            <summary>
+            Busca se o filtro configurado é referente a um filtro de hierarquia.
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.InitializeContext">
+            <summary>
+            Inicializa o contexto com os filtros e relacionamentos
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.GetCacheResult``1(System.Func{``0},System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Verifica se o resultado encontra-se em cache e caso não esteja então busca utilizando a func
+            </summary>
+            <param name="func">função que retorna dados</param>
+            <param name="keyCache">chave da cache</param>
+            <param name="tempo">Tempo para a cache expirar</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.EnsureFileIntegrity``2(System.Collections.Generic.ICollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Nullable{System.Int64}}},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Garante que os arquivos estejam integros, efetuando o load dos dados do arquivo caso seja necessário
+            Este método deve ser chamado para todo o arquivo no modelo e/ou em seus detalhes
+            </summary>
+            <param name="modelCollection">Coleção de itens referentes ao Modelo</param>
+            <param name="funcSeqFile">Expressão para o sequencial do arquivo</param>
+            <param name="funcFile">Expressão para a propriedade de arquivo (deve implementar ISMCFile)</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.EnsureFileIntegrity``2(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Nullable{System.Int64}}},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Garante que o arquivo está integro, efetuando o load dos dados do arquivo caso seja necessário
+            Este método deve ser chamado para todo o arquivo no modelo e/ou em seus detalhes
+            </summary>
+            <param name="model">Modelo</param>
+            <param name="funcSeqFile">Expressão para o sequencial do arquivo</param>
+            <param name="funcFile">Expressão para a propriedade de arquivo (deve implementar ISMCFile)</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase.EnsureFileIntegrity``2(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Collections.Generic.IEnumerable{``1}}})">
+            <summary>
+            Caso seja enviado apenas uma lista de sequenciais dos arquivos anexados, carrega os conteúdos dos arquivos do banco de dados
+            Este método deve ser chamado para todo o arquivo no modelo e/ou em seus detalhes
+            </summary>
+            <param name="model">Modelo</param>
+            <param name="funcFileList">Expressão para a propriedade dos arquivos (deve implementar ISMCFile)</param>
+        </member>
+        <member name="T:SMC.Framework.Domain.SMCDomainServiceBase`1">
+            <summary>
+            Classe domain service para entidades
+            </summary>
+            <typeparam name="TEntity">Tipo da entidade que utilizará do domain service.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.#ctor(System.String)">
+            <summary>
+            Inicializa os filtros
+            </summary>
+            <param name="providerName">nome do contexto. Utilize o FullName</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.InitializeFilters">
+            <summary>
+            Método de suporte para carregar e configurar os filtros de dados.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.GetDataFilter(System.String)">
+            <summary>
+            Recupera o valor do filtro de dados.
+            </summary>
+            <param name="token">Token do filtro.</param>
+            <returns>Valor</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchByKey(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Pesquisa por uma entidade que atende à especificação informada.
+            </summary>
+            <param name="specification">Especificação para pesquisa da entidade.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Primeira entidade que atendeu à especificação informada ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchByKey(SMC.Framework.Specification.SMCSpecification{`0},System.Enum)">
+            <summary>
+            Pesquisa por uma entidade que atende à especificação informada.
+            </summary>
+            <param name="specification">Especificação para pesquisa da entidade.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Primeira entidade que atendeu à especificação informada ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchByKey``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Pesquisa por uma entidade que atende à especificação informada.
+            </summary>
+            <typeparam name="TRepository">Tipo do repositório.</typeparam>
+            <param name="specification">Especificação para pesquisa da entidade.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Primeira entidade que atendeu à especificação informada ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchByKey``1(SMC.Framework.Specification.SMCSpecification{`0},System.Enum)">
+            <summary>
+            Pesquisa por uma entidade que atende à especificação informada.
+            </summary>
+            <typeparam name="TRepository">Tipo do repositório.</typeparam>
+            <param name="specification">Especificação para pesquisa da entidade.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Primeira entidade que atendeu à especificação informada ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchProjectionByKey``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Pesquisa por uma entidade que atende à especificação informada.
+            </summary>
+            <typeparam name="TResult">Tipo do resultado.</typeparam>
+            <param name="specification">Especificação para pesquisa da entidade.</param>
+            <param name="projection">Propriedades que serão incluídas na consulta.</param>
+            <returns>Primeira entidade que atendeu à especificação informada ou nulo, caso não seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchAll">
+            <summary>
+            Recupera todas as entidades cadastradas no repositório.
+            </summary>
+            <returns>Todas as entidades cadastradas no repositório (sem orderBy)</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchAll(System.Int32@)">
+            <summary>
+            Recupera todas as entidades cadastradas no repositório.
+            </summary>
+            <param name="total">Total de registros.</param>
+            <returns>Todas as entidades cadastradas no repositório (sem orderBy)</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchAll``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera todas as entidades cadastradas no repositório.
+            </summary>
+            <param name="orderBy">Propriedade para ordenação.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Todas as entidades cadastradas no repositório.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchAll``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Enum)">
+            <summary>
+            Recupera todas as entidades cadastradas no repositório.
+            </summary>
+            <param name="orderBy">Propriedade para ordenação.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Todas as entidades cadastradas no repositório.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchAll``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Int32@,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera todas as entidades cadastradas no repositório.
+            </summary>
+            <param name="orderBy">Propriedade para ordenação.</param>
+            <param name="total">Total de registros.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Todas as entidades cadastradas no repositório.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchProjectionAll``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean)">
+            <summary>
+            Recupera todas as entidades cadastradas no repositório.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="projection"></param>
+            <param name="isDistinct"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchProjectionAll``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,``1}},System.Boolean)">
+            <summary>
+            Recupera todas as entidades cadastradas no repositório.
+            </summary>
+            <typeparam name="TResult">Tipo do resultado esperado.</typeparam>
+            <param name="projection">Projeção para a consulta.</param>
+            <param name="orderBy">Propriedade para ordenação.</param>
+            <returns>Todas as entidades cadastradas no repositório.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchBySpecification(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera as entidades que atenderam ao filtro especificado.
+            </summary>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Entidades que atenderam ao filtro especificado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchBySpecification(SMC.Framework.Specification.SMCSpecification{`0},System.Enum)">
+            <summary>
+            Recupera as entidades que atenderam ao filtro especificado.
+            </summary>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Entidades que atenderam ao filtro especificado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchProjectionBySpecification``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean)">
+            <summary>
+            Recupera as entidades que atenderam ao filtro especificado.
+            </summary>
+            <typeparam name="TResult">Tipo do resultado.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="projection">Função de projeção.</param>
+            <returns>Entidades que atenderam ao filtro especificado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchProjectionBySpecification``2(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``1}},System.Boolean)">
+            <summary>
+            Recupera as entidades que atenderam ao filtro especificado.
+            </summary>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="projection">Função de projeção.</param>
+            <returns>Entidades que atenderam ao filtro especificado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchByDepth(SMC.Framework.Specification.SMCSpecification{`0},System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+             Recupera as entidades que atenderam ao filtro especificado.
+             Utilizado na busca em árvore e auto-relacionamento
+            </summary>
+            <param name="specification"></param>
+            <param name="depth">Define o nível de profundidade que será buscado em uma árvore ou no auto relacionamento</param>
+            <param name="includes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchBySpecification``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera as entidades que atenderam ao filtro especificado.
+            </summary>
+            <typeparam name="TRepository">Tipo do repositório.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Entidades que atenderam ao filtro especificado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchBySpecification``1(SMC.Framework.Specification.SMCSpecification{`0},System.Enum)">
+            <summary>
+            Recupera as entidades que atenderam ao filtro especificado.
+            </summary>
+            <typeparam name="TRepository">Tipo do repositório.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Entidades que atenderam ao filtro especificado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchBySpecification(SMC.Framework.Specification.SMCSpecification{`0},System.Int32@,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera as entidades que atenderam ao filtro especificado.
+            </summary>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="total">Total de registros encontrados.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Entidades que atenderam ao filtro especificado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchBySpecification(SMC.Framework.Specification.SMCSpecification{`0},System.Int32@,System.Enum)">
+            <summary>
+            Recupera as entidades que atenderam ao filtro especificado.
+            </summary>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="total">Total de registros encontrados.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Entidades que atenderam ao filtro especificado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchProjectionBySpecification``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Int32@,System.Boolean)">
+            <summary>
+            Recupera as entidades que atenderam ao filtro especificado.
+            </summary>
+            <typeparam name="TResult">Tipo do resultado.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="projection">Função de projeção.</param>
+            <param name="total">Total de registros encontrados.</param>
+            <returns>Entidades que atenderam ao filtro especificado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchBySpecification``1(SMC.Framework.Specification.SMCSpecification{`0},System.Int32@,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Recupera as entidades que atenderam ao filtro especificado.
+            </summary>
+            <typeparam name="TRepository">Tipo do repositório.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="total">Total de registros encontrados.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Entidades que atenderam ao filtro especificado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchBySpecification``1(SMC.Framework.Specification.SMCSpecification{`0},System.Int32@,System.Enum)">
+            <summary>
+            Recupera as entidades que atenderam ao filtro especificado.
+            </summary>
+            <typeparam name="TRepository">Tipo do repositório.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <param name="total">Total de registros encontrados.</param>
+            <param name="includes">Propriedades que serão incluídas na consulta.</param>
+            <returns>Entidades que atenderam ao filtro especificado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.InsertEntity``1(`0,``0[])">
+            <summary>
+            Insere uma entidades no repositório.
+            </summary>
+            <typeparam name="TValidator">Tipo do validador.</typeparam>
+            <param name="entity">Entidade a ser inserida.</param>
+            <returns>Entidade inserida.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SaveEntity``1(`0,``0[])">
+            <summary>
+            Insere ou atualiza uma entidade no repositório.
+            </summary>
+            <typeparam name="TValidator">Tipo do validador.</typeparam>
+            <param name="entity">Entidade a ser inserida ou atualizada.</param>
+            <returns>Entidade inserida ou atualizada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.InsertEntity``2(`0,``1[])">
+            <summary>
+            Insere uma entidades no repositório.
+            </summary>
+            <typeparam name="TRepository">Tipo do repositório.</typeparam>
+            <typeparam name="TValidator">Tipo do validador.</typeparam>
+            <param name="entity">Entidade a ser inserida.</param>
+            <returns>Entidade inserida.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.InsertEntity(`0)">
+            <summary>
+            Insere uma entidades no repositório.
+            </summary>
+            <param name="entity">Entidade a ser inserida.</param>
+            <returns>Entidade inserida.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.InsertEntity``1(`0)">
+            <summary>
+            Insere uma entidades no repositório.
+            </summary>
+            <typeparam name="TRepository">Tipo do repositório.</typeparam>
+            <param name="entity">Entidade a ser inserida.</param>
+            <returns>Entidade inserida.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.BulkSaveEntity``1(System.Collections.Generic.List{``0},System.Int32)">
+             <summary>
+            
+             </summary>
+             <typeparam name="TEntitySeq"></typeparam>
+             <param name="entities"></param>
+             <param name="batchSize"></param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.BulkDeleteEntity``1(System.Collections.Generic.List{``0},System.Int32)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntitySeq"></typeparam>        
+            <param name="entities"></param>
+            <param name="batchSize"></param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.BulkInsertEntity``1(System.Collections.Generic.List{``0},System.Int32)">
+            <summary>
+            Realiza a gravação em lote de entidades.
+            Este método utiliza uma conexão própria para realizar a operação e não atualiza os sequenciais das entidades gravadas.
+            </summary>
+            <typeparam name="TEntityBulk">Tipo da entidade a ser gravada</typeparam>
+            <param name="itens">Entidades a serem gravadas</param>
+            <param name="batchSize">Tamanho dos lotes de gravação</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SaveEntity(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Insere ou atualiza uma entidade no repositório.
+            </summary>
+            <param name="entity">Entidade a ser inserida ou atualizada.</param>
+            <param name="rejectsUpdate">Utilizado somente no Update para ignorar uma propriedade no Update</param>
+            <returns>Entidade inserida ou atualizada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.UpdateInIsolatedContext(`0)">
+            <summary>
+            Insere ou atualiza uma entidade no repositório.
+            </summary>
+            <param name="entity">Entidade a ser inserida ou atualizada.</param>
+            <returns>Entidade inserida ou atualizada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.UpdateEntity``1(`0,``0[])">
+            <summary>
+            Atualiza uma entidade no repositório.
+            </summary>
+            <typeparam name="TValidator">Tipo do validador.</typeparam>
+            <param name="entity">Entidade a ser atualizada.</param>
+            <returns>Entidade atualizada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.UpdateFields``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+            Atualiza somente alguns campos da entidade.
+            Não utiliza o ChangeTrack e não precisa passar os campos de auditorias.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <param name="properties">Propriedades que serão atualizadas. NAO PRECISA PASSAR OS CAMPOS DE AUDITORIA</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.UpdateEntity``2(`0,``1[])">
+            <summary>
+            Atualiza uma entidade no repositório.
+            </summary>
+            <typeparam name="TRepository">Tipo do repositório.</typeparam>
+            <typeparam name="TValidator">Tipo do validador.</typeparam>
+            <param name="entity">Entidade a ser atualizada.</param>
+            <returns>Entidade atualizada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.UpdateEntity(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Atualiza uma entidade no repositório.
+            </summary>
+            <param name="entity">Entidade a ser atualizada.</param>
+            <param name="expRejectsUpdate">Utilizado somente no Update para ignorar uma propriedade no Update</param>
+            <returns>Entidade atualizada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.UpdateEntity``1(`0)">
+            <summary>
+            Atualiza uma entidade no repositório.
+            </summary>
+            <typeparam name="TRepository">Tipo do repositório.</typeparam>
+            <param name="entity">Entidade a ser atualizada.</param>
+            <returns>Entidade atualizada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.DeleteEntity(`0)">
+            <summary>
+            Exclui uma entidade no repositório.
+            </summary>
+            <param name="entity">Entidade a ser excluída.</param>
+            <returns>Entidade excluída.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.DeleteEntity``1(`0)">
+            <summary>
+            Exclui uma entidade no repositório.
+            </summary>
+            <typeparam name="TRepository">Tipo do repositório.</typeparam>
+            <param name="entity">Entidade a ser excluída.</param>
+            <returns>Entidade excluída.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.Count">
+            <summary>
+            Recupera a quantidade de entidades cadastradas no repositório.
+            </summary>
+            <returns>Quantidade de entidades cadastradas no repositório.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.Count``1">
+            <summary>
+            Recupera a quantidade de entidades cadastradas no repositório.
+            </summary>
+            <typeparam name="TRepository">Tipo do repositório.</typeparam>
+            <returns>Quantidade de entidades cadastradas no repositório.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.Count(SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Recupera a quantidade de entidades que atendem à especificação informada.
+            </summary>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <returns>Quantidade de entidades que atendem à especificação informada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.Count``1(SMC.Framework.Specification.SMCSpecification{`0})">
+            <summary>
+            Recupera a quantidade de entidades cadastradas no repositório.
+            </summary>
+            <typeparam name="TRepository">Tipo do repositório.</typeparam>
+            <param name="specification">Especificação para filtro das entidades.</param>
+            <returns>Quantidade de entidades cadastradas no repositório.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.Max``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Recupera o valor máximo de um campo confirmo projeção informada.
+            </summary>
+            <typeparam name="TResult">Tipo do resultado.</typeparam>
+            <param name="projection">Expressão para projeção.</param>
+            <returns>Valor máximo encontrado de acordo com a projeção.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.Max``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Recupera o valor máximo de um campo confirmo projeção informada.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.Min``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Recupera o valor minimo de uma propriedade.
+            </summary>
+            <typeparam name="TResult">Tipo da propriedade que será verificada.</typeparam>
+            <param name="property">Propriedade que possui o valor para aplicação da função max.</param>
+            <returns>Valor máximo para a propriedade informada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.Sum(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">
+            <summary>
+            Faz a SOMA dado uma condição.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.Sum(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Double}})">
+            <summary>
+            Faz a SOMA dado uma condição.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.Average(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">
+            <summary>
+            Faz a MÉDIA dado uma condição.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.Average(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Double}})">
+            <summary>
+            Faz a MÉDIA dado uma condição.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.GroupBy``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+             <summary>
+            
+             </summary>
+             <typeparam name="TResult"></typeparam>
+             <param name="specification"></param>
+             <param name="property"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.CountGroupBy``1(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+             <summary>
+            
+             </summary>
+             <typeparam name="TResult"></typeparam>
+             <param name="specification"></param>
+             <param name="property"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.ExecuteFunction``1(System.String,System.Collections.Generic.IList{SMC.Framework.Repository.SMCFuncParameter})">
+            <summary>
+            Método que executa um comando em uma Stored Procedure ou função. Exemplo: Insert
+            Lembre-se de importar a procedure ou função no Entity
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.ExecuteFunction(System.String,System.Collections.Generic.IList{SMC.Framework.Repository.SMCFuncParameter})">
+            <summary>
+            Método que executa um comando em uma Stored Procedure ou função. Exemplo: Insert
+            Lembre-se de importar a procedure ou função no Entity
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.ExecuteFunctionReader(System.String,System.Collections.Generic.IList{SMC.Framework.Repository.SMCFuncParameter})">
+            <summary>
+            Método que executa um select em uma Stored Procedure ou função.
+            Lembre-se de importar a procedure ou função no Entity
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.RawQuery``1(System.String,System.Int32,SMC.Framework.Repository.SMCFuncParameter[])">
+            <summary>
+            Faz query sql no BD.
+            Utilize no último caso. Converse com o pessoal da equipe primeiro.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="query"></param>
+            <param name="timeOutCommand">Tempo em milisegundos para executar uma operação</param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.RawQuery``1(System.String,SMC.Framework.Repository.SMCFuncParameter[])">
+            <summary>
+            Faz query sql no BD.
+            Utilize no último caso. Converse com o pessoal da equipe primeiro.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="query"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.EnableFilter(System.String)">
+            <summary>
+            Inicializa o contexto com os filtros e relacionamentos
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchAllAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+             <summary>
+            
+             </summary>
+             <param name="orderBy"></param>
+             <param name="includes"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchBySpecificationAsync(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+             <summary>
+            
+             </summary>
+             <param name="specification"></param>
+             <param name="includes"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.SearchByKeyAsync(SMC.Framework.Specification.SMCSpecification{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+             <summary>
+            
+             </summary>
+             <param name="specification"></param>
+             <param name="includes"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.InsertEntityAsync(`0)">
+            <summary>
+            Insere uma entidades no repositório.
+            </summary>
+            <param name="entity">Entidade a ser inserida.</param>
+            <returns>Entidade inserida.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.UpdateEntityAsync(`0)">
+            <summary>
+            Atualiza uma entidade no repositório.
+            </summary>
+            <param name="entity">Entidade a ser atualizada.</param>
+            <returns>Entidade atualizada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBase`1.DeleteEntityAsync(`0)">
+             <summary>
+            
+             </summary>
+             <param name="entity"></param>
+             <returns></returns>
+        </member>
+        <member name="T:SMC.Framework.Domain.SMCScheduleHelper">
+            <summary>
+            Classe para registro de feedback no SAT.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Domain.SMCScheduleHelper.SeqCurrentSchedulerHistory">
+            <summary>
+            Quando setado, assume este como o sequencial do histórico de execução atual
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCScheduleHelper.LogInfo(SMC.Framework.Jobs.Service.SMCSchedulerHistoryModel)">
+            <summary>
+            Escreve log de informação no feedback.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCScheduleHelper.LogWaring(System.String,System.Nullable{System.Int64},System.String,System.Nullable{System.Int64},System.Nullable{System.DateTime})">
+            <summary>
+            Escre log de aviso no feedback
+            </summary>
+            <param name="log">Mensgaem da log</param>
+            <param name="originID">(Opcional)Id do item processado que gerou a log</param>
+            <param name="originName">(Opcional)Node do item processado que gerou a log</param>
+            <param name="seqSchedulerHistory">(Opcional, utiliza a propriedade SeqCurrentSchedulerHistory caso não seja informado)Sequencial do histórico de agendamento atual</param>
+            <param name="date">(Opcional, assume a hora corrente caso não informado)Hora do feedback</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCScheduleHelper.LogError(SMC.Framework.Jobs.Service.SMCSchedulerHistoryModel)">
+            <summary>
+            Escreve log de erro no feedback.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCScheduleHelper.LogError(System.String,System.Nullable{System.Int64},System.String,System.Nullable{System.Int64},System.Nullable{System.DateTime})">
+            <summary>
+            Escre log de erro no feedback
+            </summary>
+            <param name="log">Mensgaem da log</param>
+            <param name="originID">(Opcional)Id do item processado que gerou a log</param>
+            <param name="originName">(Opcional)Node do item processado que gerou a log</param>
+            <param name="seqSchedulerHistory">(Opcional, utiliza a propriedade SeqCurrentSchedulerHistory caso não seja informado)Sequencial do histórico de agendamento atual</param>
+            <param name="date">(Opcional, assume a hora corrente caso não informado)Hora do feedback</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCScheduleHelper.CreateModel(System.String,System.Nullable{System.Int64},System.String,System.Nullable{System.Int64},System.Nullable{System.DateTime})">
+            <summary>
+            
+            </summary>
+            <param name="log"></param>
+            <param name="originID"></param>
+            <param name="originName"></param>
+            <param name="seqSchedulerHistory"></param>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCScheduleHelper.LogSucess(SMC.Framework.Jobs.Service.SMCSchedulerHistoryModel)">
+            <summary>
+            Escreve log de sucesso no feedback.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCScheduleHelper.LogSucess(System.String,System.Nullable{System.Int64},System.String,System.Nullable{System.Int64},System.Nullable{System.DateTime})">
+            <summary>
+            Escre log de sucesso ou informação no feedback
+            </summary>
+            <param name="log">Mensgaem da log</param>
+            <param name="originID">(Opcional)Id do item processado que gerou a log</param>
+            <param name="originName">(Opcional)Node do item processado que gerou a log</param>
+            <param name="seqSchedulerHistory">(Opcional, utiliza a propriedade SeqCurrentSchedulerHistory caso não seja informado)Sequencial do histórico de agendamento atual</param>
+            <param name="date">(Opcional, assume a hora corrente caso não informado)Hora do feedback</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCScheduleHelper.Progress(SMC.Framework.Jobs.Service.SMCSchedulerHistoryModel)">
+            <summary>
+            Escreve percentual de conclusão de um agendamento.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCScheduleHelper.Progress(System.Int16,System.Nullable{System.Boolean},System.Boolean,System.Nullable{System.Int64})">
+            <summary>
+            Atualiza o progresso do histórico de agendamento
+            </summary>
+            <param name="progress">Precentual de progresso</param>
+            <param name="success">(Opcional)Quando setado, atualiza se a execução ocorreu com sucesso ou falha</param>
+            <param name="inProgress">Quando setado, caso o progresso informado seja 100, assume o progresso atual como 99 para não finalizar a tarefa</param>
+            <param name="seqSchedulerHistory">(Opcional, utiliza a propriedade SeqCurrentSchedulerHistory caso não seja informado)Sequencial do histórico de agendamento atual</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCScheduleHelper.Dispose">
+            <summary>
+            Limpando os objetos
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCScheduleHelper.ExceptionEnd(SMC.Framework.Jobs.Service.SMCSchedulerHistoryModel)">
+            <summary>
+            Escreve log de erro no feedback e define o progresso em 100%.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Domain.SMCWebJobBase`2">
+            <summary>
+            Classe base para implementação de um job web
+            </summary>
+            <typeparam name="WebJobFilterModel">Filtro do job web</typeparam>
+            <typeparam name="WebJobModel">Entidade que será processada pelo job web</typeparam>
+        </member>
+        <member name="F:SMC.Framework.Domain.SMCWebJobBase`2._manager">
+            <summary>
+            Armazena a classe de gerenciamento de instancias de objetos criados por IoC.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCWebJobBase`2.Create``1">
+            <summary>
+            Cria uma instância de uma classe.
+            </summary>
+            <typeparam name="TInterface">Interface do Repositório</typeparam>
+            <returns>Instância da classe.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCWebJobBase`2.CreateApiClient(System.String)">
+            <summary>
+            Cria uma instância de um cliente de api rest
+            </summary>
+            <param name="name">Nome da url configurada web.config</param>
+            <returns>Api client da url informada</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCWebJobBase`2.GetItems(`0)">
+            <summary>
+            Método utilizado para recuperar os registros do lote a ser processado
+            </summary>
+            <param name="filter">Tipo do filtro do job</param>
+            <returns>Itens a serem processados</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCWebJobBase`2.ProcessItem(`1)">
+            <summary>
+            Método utilizado para processa um item do lote
+            </summary>
+            <param name="item">Item a ser processado</param>
+            <returns>True caso o item seja processado com sucesso.
+            Caso contrário, o processamento do próximo item ocorrerá normalmente,
+            mas o histórico de execução será marcado como falha.</returns>
+        </member>
+        <member name="P:SMC.Framework.Domain.SMCWebJobBase`2.UnhandledErrorMesage">
+            <summary>
+            Template da mensagem de erro recebendo a exceção como parâmetro "Mensagem {0}" onde 0 é a exceção
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Domain.SMCWebJobBase`2.Scheduler">
+            <summary>
+            SchedulerHelper do DomainService
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Domain.SMCWebJobBase`2.Filter">
+            <summary>
+            Filtro utilizado na consulta
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Domain.SMCWebJobBase`2.Batch">
+            <summary>
+            Itens a serem processados
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Domain.SMCWebJobBase`2.Progress">
+            <summary>
+            Progresso da tarefa atual
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Domain.SMCWebJobBase`2.Index">
+            <summary>
+            Index do item sendo processado
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCWebJobBase`2.Execute(`0)">
+            <summary>
+            Executa a GetItems(filter) para alimentar o Batch com os itens a serem processados.
+            Processa os itens do Batch com a ProcessItem.
+            Reporta o progresso como itemAtual / total de itens * 100 a cada item processado.
+            Dá baixa do histórico preenchendo o progresso como 100, data término com a data e hora atuais e
+            sucesso caso todos os itens sejam processados com sucesso.
+            </summary>
+            <param name="filter">Filtro para recuperar os itens do Batch</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCWebJobBase`2.HandleJobCanceled(SMC.Framework.Exceptions.SMCWebJobCanceledException)">
+            <summary>
+            Executa o comportamento padrão para trantar o cancelamento do WebJob imprimindo um aviso e dando baixa como falha no histórico.
+            </summary>
+            <param name="ex">Exception de job cancelado</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCWebJobBase`2.HandleJobFailed(System.Exception)">
+            <summary>
+            Executa o tratamento padrão para falhas no job. Encerrando o job como falha.
+            </summary>
+            <param name="ex">Exception do job</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCWebJobBase`2.OnJobFinished(System.Boolean)">
+            <summary>
+            Método para tratamento do término do job.
+            Combina o resultado deste método com o resultado do processamento dos intens para definir o estado final do job.
+            </summary>
+            <param name="success">Status de processamento dos itens</param>
+            <example>success(estado de processamento dos itens)=true E OnJobFinished=false == Tarefa finalizada com falha</example>
+            <returns>Verdadeiro caso validação final tenha sucesso</returns>
+        </member>
+        <member name="T:SMC.Framework.Domain.SMCDomainServiceBaseExtensions">
+            <summary>
+            Métodos de extensão para <see cref="T:SMC.Framework.Domain.SMCDomainServiceBase`1"/>
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBaseExtensions.SearchByKey``1(SMC.Framework.Domain.SMCDomainServiceBase{``0},System.Int64,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+            Pesquisa por uma entidade que possua um ID long.
+            </summary>
+            <typeparam name="TEntity">Tipo da entidade.</typeparam>
+            <param name="domainService">Referência para o domain service.</param>
+            <param name="key">Chave da entidade.</param>
+            <param name="includes">Includes.</param>
+            <returns>Entidade do identificador caso seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBaseExtensions.SearchByKey``1(SMC.Framework.Domain.SMCDomainServiceBase{``0},System.Int64,System.Enum)">
+            <summary>
+            Pesquisa por uma entidade que possua um ID long.
+            </summary>
+            <typeparam name="TEntity">Tipo da entidade.</typeparam>
+            <param name="domainService">Referência para o domain service.</param>
+            <param name="key">Chave da entidade.</param>
+            <param name="includes">Includes.</param>
+            <returns>Entidade do identificador caso seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBaseExtensions.SearchProjectionByKey``2(SMC.Framework.Domain.SMCDomainServiceBase{``0},System.Int64,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Executa uma projeção de uma entidade baseada em uma chave primária.
+            </summary>
+            <typeparam name="TEntity">Tipo da entidade.</typeparam>
+            <typeparam name="TResult">Tipo do resultado.</typeparam>
+            <param name="domainService">Referência para o domain service.</param>
+            <param name="key">Chave da entidade.</param>
+            <param name="projection">Projeção.</param>
+            <returns>Projeção da entidade do identificador caso seja encontrada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBaseExtensions.IsValid``1(SMC.Framework.Domain.SMCDomainServiceBase{``0},``0)">
+            <summary>
+            Verifica se o modelo está válido, recuperando todos os validadores existentes no mesmo assembly da classe do modelo.
+            </summary>
+            <typeparam name="TModel">Tipo do modelo que será validado.</typeparam>
+            <param name="domainService">Classe de serviço de domínio.</param>
+            <param name="model">Modelo que será validado.</param>
+            <returns>Verdadeiro se o modelo está válido, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBaseExtensions.IsValid``2(SMC.Framework.Domain.SMCDomainServiceBase{``0},``0)">
+            <summary>
+            Verifica se o modelo está válido, recuperando seu validador através de reflection.
+            </summary>
+            <typeparam name="TModel">Tipo do modelo que será validado.</typeparam>
+            <typeparam name="TValidator">Tipo do validador do modelo.</typeparam>
+            <param name="domainService">Classe de serviço de domínio.</param>
+            <param name="model">Modelo que será validado.</param>
+            <returns>Verdadeiro se o modelo está válido, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBaseExtensions.IsValid``2(SMC.Framework.Domain.SMCDomainServiceBase{``0},``0,``1)">
+            <summary>
+            Verifica se o modelo está válido, recuperando seu validador através de reflection.
+            </summary>
+            <typeparam name="TModel">Tipo do modelo que será validado.</typeparam>
+            <typeparam name="TValidator">Tipo do validador do modelo.</typeparam>
+            <param name="domainService">Classe de serviço de domínio.</param>
+            <param name="model">Modelo que será validado.</param>
+            <param name="validator">Validador para o modelo.</param>
+            <returns>Verdadeiro se o modelo está válido, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBaseExtensions.IsValid``2(SMC.Framework.Domain.SMCDomainServiceBase{``0},``0,``1[])">
+            <summary>
+            Verifica se o modelo está válido, recuperando seu validador através de reflection.
+            </summary>
+            <typeparam name="TModel">Tipo do modelo que será validado.</typeparam>
+            <typeparam name="TValidator">Tipo do validador do modelo.</typeparam>
+            <param name="domainService">Classe de serviço de domínio.</param>
+            <param name="model">Modelo que será validado.</param>
+            <param name="validators">Validador para o modelo.</param>
+            <returns>Verdadeiro se o modelo está válido, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBaseExtensions.SearchTreeNode``3(SMC.Framework.Domain.SMCDomainServiceBase{``0},SMC.Framework.Specification.SMCSpecification{``1},System.Func{SMC.Framework.Specification.SMCSpecification{``1},``2[]})">
+            <summary>
+            Efetua a busca dos itens para montagem de uma árvore (carga completa, sem ser sob demanda)
+            </summary>
+            <typeparam name="TEntity">Tipo da entidade.</typeparam>
+            <typeparam name="TFilter">Tipo do filtro</typeparam>
+            <typeparam name="TResult">Tipo da entidade de retorno</typeparam>
+            <param name="domainService">Domain Service de extensão</param>
+            <param name="specBase">Critério de pesquisa para buscar todos os elementos da árvore</param>
+            <param name="searchBySpec">Função para executar o search by specification e retornar os objetos do tipo TResult</param>
+            <returns>Lista de elementos do tipo TResult, contendo os nós da árvore</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBaseExtensions.SearchTreeNodeOnDemand``3(SMC.Framework.Domain.SMCDomainServiceBase{``0},SMC.Framework.Specification.SMCSpecification{``1},SMC.Framework.Specification.SMCSpecification{``1},System.Boolean,System.Func{SMC.Framework.Specification.SMCSpecification{``1},``2[]})">
+            <summary>
+            Efetua a busca dos itens para montagem de uma árvoew sob demanda
+            </summary>
+            <typeparam name="TEntity">Tipo da entidade</typeparam>
+            <typeparam name="TFilter">Tipo do filtro</typeparam>
+            <typeparam name="TResult">Tipo da entidade de retorno</typeparam>
+            <param name="domainService">Domain Service de extensão</param>
+            <param name="specBase">Critério de pesquisa para buscar todos os elementos da árvore</param>
+            <param name="specFilter">Critério para filtrar os elementos que são retornados pelo specBase. Ex: busca por nome, busca por pai (seqPai), etc.</param>
+            <param name="isHierarchySearch">Caso a chamada ao método seja feita para uma busca sob demanda, informar true</param>
+            <param name="searchBySpec">Função para executar o search by specification e retornar os objetos do tipo TResult</param>
+            <returns>Lista de elementos do tipo TResult, contendo os nós da árvore</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDomainServiceBaseExtensions.SearchTreeNodeOnDemand``3(SMC.Framework.Domain.SMCDomainServiceBase{``0},System.Collections.Generic.List{``2},SMC.Framework.Specification.SMCSpecification{``1},SMC.Framework.Specification.SMCSpecification{``1},System.Boolean,System.Func{SMC.Framework.Specification.SMCSpecification{``1},``2[]})">
+            <summary>
+            Efetua a busca dos itens para montagem de uma árvoew sob demanda
+            </summary>
+            <typeparam name="TEntity">Tipo da entidade</typeparam>
+            <typeparam name="TFilter">Tipo do filtro</typeparam>
+            <typeparam name="TResult">Tipo da entidade de retorno</typeparam>
+            <param name="domainService">Domain Service de extensão</param>
+            <param name="lista">Lista contendo todos os elementos que serão retornados</param>
+            <param name="specBase">Critério de pesquisa para buscar todos os elementos da árvore</param>
+            <param name="specFilter">Critério para filtrar os elementos que são retornados pelo specBase. Ex: busca por nome, busca por pai (seqPai), etc.</param>
+            <param name="isHierarchySearch">Caso a chamada ao método seja feita para uma busca sob demanda, informar true</param>
+            <param name="searchBySpec">Função para executar o search by specification e retornar os objetos do tipo TResult</param>
+            <returns>Lista de elementos do tipo TResult, contendo os nós da árvore</returns>
+        </member>
+        <member name="T:SMC.Framework.Domain.Dynamic.ISMCDynamichDomain">
+            <summary>
+            Define métodos para o domain service dynamic.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.Dynamic.ISMCDynamichDomain.DynamicSaveEntity(SMC.Framework.Dynamic.SMCDynamicObject)">
+            <summary>
+            Salva a entidade no repositório.
+            </summary>
+            <param name="dynamicObj">Objeto a ser saldo.</param>
+            <returns>Seq do objeto salvo.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.Dynamic.ISMCDynamichDomain.DynamicDeleteEntity(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Exclui a entidade do repositótio.
+            </summary>
+            <param name="seq">Identificação da entidade.</param>
+            <param name="parameters">Parametros.</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.Dynamic.ISMCDynamichDomain.HealthCheck">
+            <summary>
+            HealthCheck
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SMC.Framework.Domain.Dynamic.ISMCDynamicSearchDomain`1">
+            <summary>
+            Define métodos para o domain service dynamic.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.Dynamic.ISMCDynamicSearchDomain`1.DynamicSearchEntity(SMC.Framework.Model.SMCPageSetting,System.Collections.Generic.Dictionary{System.String,System.Object},System.String[],System.Int32@)">
+            <summary>
+            Pesquisa entidades no repositório.
+            </summary>
+            <param name="pageSetting">Informações para paginação.</param>
+            <param name="filters">Filtros.</param>
+            <param name="includes">Includes.</param>
+            <param name="total">Retorna o total de registros que atenderam ao filtro.</param>
+            <returns>Entidades que atenderam ao filtro, para a página informada.</returns>
+        </member>
+        <member name="T:SMC.Framework.Domain.SMCDynamicDomain`1">
+            <summary>
+            Domain service para o dynamic.
+            </summary>
+            <typeparam name="TEntity">Tipo da entidade.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDynamicDomain`1.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="context">Nome completo do contexto que será utilizado pelo Dynamic</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDynamicDomain`1.DynamicSearchEntity(SMC.Framework.Model.SMCPageSetting,System.Collections.Generic.Dictionary{System.String,System.Object},System.String[],System.Int32@)">
+            <summary>
+            Pesquisa entidades no repositório.
+            </summary>
+            <param name="pageSetting">Informações para paginação.</param>
+            <param name="filters">Filtros.</param>
+            <param name="includes">Includes.</param>
+            <param name="total">Retorna o total de registros que atenderam ao filtro.</param>
+            <returns>Entidades que atenderam ao filtro, para a página informada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDynamicDomain`1.DynamicSaveEntity(SMC.Framework.Dynamic.SMCDynamicObject)">
+            <summary>
+            Salva a entidade no repositório.
+            </summary>
+            <param name="dynamicObj">Objeto a ser saldo.</param>
+            <returns>Seq do objeto salvo.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDynamicDomain`1.IsValid(SMC.Framework.Domain.SMCDynamicDomain{`0},`0)">
+            <summary>
+            Verifica se o modelo está válido, recuperando todos os validadores existentes no mesmo assembly da classe do modelo.
+            </summary>
+            <typeparam name="TEntity">Tipo do modelo que será validado.</typeparam>
+            <param name="domainService">Classe de serviço de domínio.</param>
+            <param name="model">Modelo que será validado.</param>
+            <returns>Verdadeiro se o modelo está válido, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDynamicDomain`1.DynamicDeleteEntity(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Exclui a entidade do repositótio.
+            </summary>
+            <param name="seq">Identificação da entidade.</param>
+            <param name="parameters">Parametros.</param>
+        </member>
+        <member name="M:SMC.Framework.Domain.SMCDynamicDomain`1.HealthCheck">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SMC.Framework.Domain.Exceptions.SMCInvalidEntityException">
+            <summary>
+            Exceção que ocorre quando ao validar uma entidade ocorre erros de validação.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Domain.Exceptions.SMCInvalidEntityException.ErrorsValidation">
+            <summary>
+            Recupera os erros retornados pelo validations.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Domain.Exceptions.SMCInvalidEntityException.#ctor(System.Collections.Generic.List{SMC.Framework.Validation.SMCValidationResults})">
+            <summary>
+            Construtor da exceção.
+            </summary>
+            <param name="_errorsValidation">Lista de erros</param>
+        </member>
+    </members>
+</doc>

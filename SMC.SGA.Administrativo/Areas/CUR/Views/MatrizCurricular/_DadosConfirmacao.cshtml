@@ -1,0 +1,31 @@
+﻿@model MatrizCurricularDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Fieldset("fieldsetOfertasMatriz").LegendText(@Smc.GetUIResource("Label_Dados_Matriz")).Begin())
+    {
+        @Smc.DisplayFor(m => m.SeqDivisaoCurricular)
+        @Smc.DisplayFor(m => m.QuantidadeMesesPrevistoConclusao)
+        @Smc.DisplayFor(m => m.QuantidadeMesesLimiteConclusao)
+        @Smc.DisplayFor(m => m.QuantidadeMesesSolicitacaoProrrogacao)
+        @Smc.DisplayFor(m => m.SeqModalidade)
+        @Smc.DisplayFor(m => m.Descricao)
+        @Smc.DisplayFor(m => m.DescricaoComplementar)
+        @Smc.DisplayFor(m => m.SeqComponenteCurricularPadrao)
+    }
+
+    using (Smc.Fieldset("fieldsetOfertasMatriz").LegendText(@Smc.GetUIResource("Label_Ofertas")).Begin())
+    {
+        if (Model.Ofertas.SMCCount() > 0)
+        {
+            @Smc.List("Ofertas" + Model.Seq, Model.Ofertas).Size(SMCSize.Grid24_24).HtmlTemplate(oferta => Html.Partial("_DadosConfirmacaoOferta", oferta))
+        }
+        else
+        {
+            using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+            {
+                <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+            }
+        }
+    }
+}

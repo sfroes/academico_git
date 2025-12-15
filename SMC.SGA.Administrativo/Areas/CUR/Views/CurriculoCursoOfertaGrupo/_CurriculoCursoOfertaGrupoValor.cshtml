@@ -1,0 +1,8 @@
+﻿@model CurriculoCursoOfertaGrupoValorViewModel
+
+@Smc.HiddenFor(m => m.QuantidadeCreditoObrigatorio).Name(string.Format("{0}.QuantidadeCreditoObrigatorio", Model.Prefixo))
+@Smc.HiddenFor(m => m.QuantidadeCreditoOptativo).Name(string.Format("{0}.QuantidadeCreditoOptativo", Model.Prefixo))
+@Smc.HiddenFor(m => m.QuantidadeHoraAulaObrigatoria).Name(string.Format("{0}.QuantidadeHoraAulaObrigatoria", Model.Prefixo))
+@Smc.HiddenFor(m => m.QuantidadeHoraAulaOptativa).Name(string.Format("{0}.QuantidadeHoraAulaOptativa", Model.Prefixo))
+@Smc.HiddenFor(m => m.QuantidadeHoraRelogioObrigatoria).Name(string.Format("{0}.QuantidadeHoraRelogioObrigatoria", Model.Prefixo))
+@Smc.HiddenFor(m => m.QuantidadeHoraRelogioOptativa).Name(string.Format("{0}.QuantidadeHoraRelogioOptativa", Model.Prefixo))

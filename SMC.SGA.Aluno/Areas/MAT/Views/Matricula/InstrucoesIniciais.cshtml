@@ -1,0 +1,17 @@
+﻿@model PaginaInstrucoesIniciaisViewModel
+
+@section MenuLateral {
+    @Html.Action("MenuPaginas", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(MatriculaTokens.PAGINA_INSTRUCOES_INICIAIS_MATRICULA_INSTRUCOES))
+
+@using (Smc.Div().CssClass("smc-sga-destaque-label").Begin())
+{ 
+    @(Smc.SGFTemplate().Secao().Token(MatriculaTokens.PAGINA_INSTRUCOES_INICIAIS_MATRICULA_ARQUIVOS))
+}
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    @Html.Partial("_BotoesNavegacao", Model)
+}

@@ -1,0 +1,336 @@
+﻿<span style="display: none">Teste2</span>
+@*@Smc.MenuPrincipal(orientation: SMCOrientation.Vertical)*@
+
+
+<div class="smc-menu-dinamico-controls" data-type="smc-menu-controls">
+    <span class="smc-menu-dinamico-ico-referencia">Comando de exibição do menu principal do sistema</span>
+    <span class="smc-menu-fixer" data-type="smc-menu-fixer"></span>
+    <span class="smc-menu-dinamico-ico-pesquisa">Comando de exibição da pesquisa no sistema</span>
+</div>
+
+<aside class="smc-megamenu">
+    <section class="sidebar">
+        <div class="smc-megamenu-estruturaprincipal">
+            <!-- <div class="smc-menu-dinamico-hidden" data-type="smc-menu-hidden"></div>
+                   <div class="smc-menu-dinamico-principal-seta"></div>
+            <div class="smc-menu-dinamico-principal-seta-borda"></div>-->
+            <!-- AO CLICAR NO BOTÃO DE PESQUISA DENTRO DO MENU - QUADRADO AZUL, DEVE APARECER ESTE PAINEL PARA PESQUISA GERAL -->
+            <div class="painel-submenu">
+                <ul class="smc-megamenu-nivel2 smc-megamenu-submenu">
+                    <li class="filtro">@Smc.SearchMenu()</li>
+                </ul>
+            </div>
+            <ul class="smc-menu-dinamico-principal sidebar-menu">
+                <li class="smc-menu-dinamico-link-submenu">
+                    <a>Aluno</a>
+                    <div class="painel-submenu">
+                        <ul class="smc-megamenu-nivel2 smc-megamenu-submenu">
+                            <li class="filtro">@Smc.SearchMenu()</li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/ALN/Aluno">Aluno</a>
+                            </li>
+                            <li>
+                                <a class="smc-megamenu-seta smc-megamenu-item-selecionado">Cadastros Básicos</a>
+
+                                <ul class="smc-megamenu-submenu-itens">
+                                    <li>
+                                        <a href="http://localhost/Dev/SGA.Administrativo/ALN/TipoTermoIntercambio">Tipo de Termo de Intercâmbio</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://localhost/Dev/SGA.Administrativo/ALN/TipoVinculoAluno">Tipo de Vínculo de Aluno</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/ALN/Ingressante">Ingressante</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/ALN/ParceriaIntercambio">Parceria de Intercâmbio</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/ALN/Relatorio">Relatórios</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="smc-menu-dinamico-link-submenu">
+                    <a>Aproveitamento</a>
+                    <div class="painel-submenu">
+                        <ul class="smc-megamenu-nivel2 smc-megamenu-submenu">
+                            <li class="filtro">@Smc.SearchMenu()</li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/APR/CriterioAprovacao">Critério de Aprovação</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/APR/EscalaApuracao">Escala de Apuração</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="smc-menu-dinamico-item-seta"></div>
+                </li>
+                <li class="smc-menu-dinamico-link-submenu">
+                    <a>Parâmetros<div class="smc-megamenu-novomenu">!</div></a>
+                    <div class="painel-submenu">
+
+                        <ul class="smc-megamenu-nivel2 smc-megamenu-submenu">
+                            <li class="filtro">@Smc.SearchMenu()</li>
+                            <li>
+                                <a>Por Instituição</a>
+                                <ul class="smc-megamenu-submenu-itens">
+                                    <li>
+                                        <a href="http://localhost/Dev/SGA.Administrativo/PES/InstituicaoMotivoBloqueio">Motivo Bloqueio</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://localhost/Dev/SGA.Administrativo/PES/InstituicaoTipoAtuacao">Tipo de Atuação</a>
+                                    </li>
+                                </ul>
+                                <div class="smc-menu-dinamico-item-seta"></div>
+                            </li>
+                            <li>
+                                <a class="smc-megamenu-seta smc-megamenu-item-selecionado">Por Nível de Ensino</a>
+                                <div class="painel-submenu-n2">
+                                    <ul class="smc-megamenu-submenu-itens">
+                                        <li class="smc-megamenu-nomeagrupamento">
+                                            <h4>Por Nível de Ensino</h4>
+                                        </li>
+                                        <li>
+                                            <a href="http://localhost/Dev/SGA.Administrativo/ORG/InstituicaoNivel">Associar Nível Ensino</a>
+                                        </li>
+                                        <li>
+                                            <a class="smc-megamenu-submenu-itens-agrupamento">Aluno</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/ALN/InstituicaoNivelTipoVinculoAluno">Tipo de Vínculo de Aluno x Nível de Ensino</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="smc-megamenu-submenu-itens-agrupamento">Aproveitamento</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/APR/InstituicaoNivelCriterioAprovacao">Critério de Aprovação x Nível de Ensino<div class="smc-megamenu-novomenu-item">NOVO</div></a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/APR/InstituicaoNivelEscalaApuracao">Escala de Apuração x Nível de Ensino</a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/APR/InstituicaoNivelTipoMembroBanca">Tipo de Membro de Banca x Nível de Ensino</a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/APR/InstituicaoNivelTipoOrigemAvaliacao">Tipo de Origem de Avaliação x Nível de Ensino</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="smc-megamenu-submenu-itens-agrupamento">Campanha</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/CAM/InstituicaoNivelRegimeLetivo">Regime Letivo x Nível de Ensino</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="smc-megamenu-submenu-itens-agrupamento">Conclusão de Curso</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/CNC/InstituicaoNivelTipoDocumentoAcademico">Tipo de Documento de Acadêmico x Nível de Ensino</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="smc-megamenu-submenu-itens-agrupamento">Curso</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoNivelHierarquiaClassificacao">Hierarquia de Classificação x Nível de Ensino</a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoNivelModalidade">Modalidade x Nível de Ensino</a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoNivelTipoCurso">Tipo de Curso x Nível de Ensino</a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoNivelTipoFormacaoEspecifica">Tipo de Formação Específica x Nível de Ensino</a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoNivelTipoOfertaCurso">Tipo de Oferta de Curso x Nível de Ensino</a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoNivelTurno">Turno x Nível de Ensino</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="smc-megamenu-submenu-itens-agrupamento">Estrutura Curricular</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/CUR/InstituicaoNivelCondicaoObrigatoriedade">Condição de Obrigatoriedade x Nível de Ensino</a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/CUR/InstituicaoNivelTipoComponenteCurricular">Tipo de Componente Curricular x Nível de Ensino</a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/CUR/InstituicaoNivelTipoDivisaoCurricular">Tipo de Divisão Curricular x Nível de Ensino</a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/CUR/InstituicaoNivelTipoGrupoCurricular">Tipo de Grupo Curricular x Nível de Ensino</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="smc-megamenu-submenu-itens-agrupamento">Estrutura Organizacional</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/ORG/InstituicaoNivelCalendario">Calendário AGD x Nível de Ensino</a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/ORG/InstituicaoNivelModeloRelatorio">Modelo Word x Nível de Ensino</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="smc-megamenu-submenu-itens-agrupamento">Financeiro</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/FIN/InstituicaoNivelBeneficio">Benefício x Nível de Ensino</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="smc-megamenu-submenu-itens-agrupamento">Orientação</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/ORT/InstituicaoNivelTipoTrabalho">Tipo de Trabalho x Nível de Ensino</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a>Pessoa</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/PES/InstituicaoNivelTipoMensagem">Tipo de Mensagem x Nível de Ensino</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a>Turma</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://localhost/Dev/SGA.Administrativo/TUR/InstituicaoNivelTipoTurma">Tipo de Turma x Nível de Ensino</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="smc-menu-dinamico-item-seta"></div>
+                            </li>
+                            <li>
+                                <a>Por Tipo de Entidade</a>
+                                <ul class="smc-megamenu-submenu-itens">
+                                    <li>
+                                        <a href="http://localhost/Dev/SGA.Administrativo/ORG/InstituicaoTipoEntidade">Associar Tipo de Entidade</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoTipoEntidadeHierarquiaClassificacao">Hierarquia de Classificação x Tipo de Entidade</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoTipoEntidadeFormacaoEspecifica">Tipo de Formação Específica x Tipo de Entidade</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </li>
+
+                <li class="smc-menu-dinamico-link-submenu">
+                    <a>Parâmetros Por Nível de Ensino</a>
+                    <div class="painel-submenu">
+                        <ul class="smc-megamenu-nivel2 smc-megamenu-submenu smc-megamenu-itenssemagrupamento">
+                            <li class="filtro">@Smc.SearchMenu()</li>
+                            <li class="smc-megamenu-nomeagrupamento">
+                                <h4>Parâmetros Por Nível de Ensino</h4>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/ORG/InstituicaoNivel">Associar Nível Ensino</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/FIN/InstituicaoNivelBeneficio">Benefício</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/ORG/InstituicaoNivelCalendario">Calendário AGD</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/CUR/InstituicaoNivelCondicaoObrigatoriedade">Condição de Obrigatoriedade</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/APR/InstituicaoNivelCriterioAprovacao">Critério de Aprovação</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/APR/InstituicaoNivelEscalaApuracao">Escala de Apuração</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoNivelHierarquiaClassificacao">Hierarquia de Classificação</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoNivelModalidade">Modalidade</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/ORG/InstituicaoNivelModeloRelatorio">Modelo Word</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/CAM/InstituicaoNivelRegimeLetivo">Regime Letivo</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/APR/InstituicaoNivelTipoMembroBanca">Tipo de Membro de Banca</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/APR/InstituicaoNivelTipoOrigemAvaliacao">Tipo de Origem de Avaliação</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/CNC/InstituicaoNivelTipoDocumentoAcademico">Tipo de Documento de Acadêmico</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoNivelTipoCurso">Tipo de Curso </a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoNivelTipoFormacaoEspecifica">Tipo de Formação Específica</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoNivelTipoOfertaCurso">Tipo de Oferta de Curso</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/CUR/InstituicaoNivelTipoComponenteCurricular">Tipo de Componente Curricular</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/CUR/InstituicaoNivelTipoDivisaoCurricular">Tipo de Divisão Curricular</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/CUR/InstituicaoNivelTipoGrupoCurricular">Tipo de Grupo Curricular</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/ORT/InstituicaoNivelTipoTrabalho">Tipo de Trabalho</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/PES/InstituicaoNivelTipoMensagem">Tipo de Mensagem</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/TUR/InstituicaoNivelTipoTurma">Tipo de Turma</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/ALN/InstituicaoNivelTipoVinculoAluno">Tipo de Vínculo de Aluno</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/Dev/SGA.Administrativo/CSO/InstituicaoNivelTurno">Turno</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</aside>
+

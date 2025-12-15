@@ -1,0 +1,21 @@
+﻿@model TurmaDynamicModel
+
+@Html.Partial("_Cabecalho", Model.Cabecalho)
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @*if (!string.IsNullOrEmpty(Model.MensagemOfertaCriterios))
+        {
+            @Smc.DisplayFor(m => m.MensagemOfertaCriterios).HideLabel().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-alerta")
+        }*@
+
+    if (Model.ExigeAssuntoComponente)
+    {
+        @Smc.DisplayFor(m => m.MensagemExigeAssunto).HideLabel().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-alerta")
+    }
+    @(Smc.Legend("ConfiguracaoPrincipal", SMCOrientation.Vertical).CssClass("smc-sga-legenda").Items<SMC.Academico.Common.Enums.LegendaPrincipal>())
+    @(Smc.List("OfertasMatriz" + Model.Seq, m => m.TurmaOfertasMatriz)
+                            .CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24)
+                            .HtmlTemplate(oferta => Html.Partial("_StepOfertaMatrizDetail", oferta.Value))
+    )
+}

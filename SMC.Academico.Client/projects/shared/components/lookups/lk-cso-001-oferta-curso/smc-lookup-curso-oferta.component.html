@@ -1,0 +1,71 @@
+<ng-template #filtro [formGroup]="filterForm">
+  <fieldset class="smc-size-md-24">
+    <legend>Curso</legend>
+    <po-input
+      formControlName="seqCurso"
+      class="smc-size-md-2"
+      p-label="ID"
+      [p-disabled]="isReadOnly(seqCurso)"
+    ></po-input>
+    <po-input formControlName="nome" class="smc-size-md-7" p-label="Nome" [p-disabled]="isReadOnly(nome)"></po-input>
+    <po-multiselect
+      formControlName="seqsEntidadesResponsaveis"
+      class="smc-size-md-7"
+      [p-options]="dataSourceEntidadesResponsaveis"
+      [p-disabled]="isReadOnly(seqsEntidadesResponsaveis)"
+      p-placeholder="Selecionar..."
+      p-label="Entidade responsável"
+    ></po-multiselect>
+    <po-multiselect
+      formControlName="seqNivelEnsino"
+      class="smc-size-md-4"
+      [p-options]="dataSourceNivelEnsino"
+      [p-disabled]="isReadOnly(seqNivelEnsino)"
+      p-placeholder="Selecionar..."
+      p-label="Nível de ensino"
+    ></po-multiselect>
+    <smc-select
+      formControlName="seqSituacaoAtual"
+      class="smc-size-md-4"
+      [s-options]="dataSourceSituacao"
+      [s-disabled]="isReadOnly(seqSituacaoAtual) || !filterForm.value.seqNivelEnsino?.length"
+      s-label="Situação"
+    ></smc-select>
+  </fieldset>
+
+  <fieldset class="smc-size-md-24">
+    <legend>Oferta de curso</legend>
+    <smc-select
+      formControlName="seqTipoFormacaoEspecifica"
+      class="smc-size-md-6"
+      [s-options]="dataSourceTiposFormacaoEspecifica"
+      [s-disabled]="isReadOnly(seqTipoFormacaoEspecifica)"
+      s-label="Tipo de formação"
+    ></smc-select>
+    <!-- <smc-select formControlName="seqGrauAcademico"
+                  class="smc-size-md-12"
+                  [s-options]="dataSourceGrauAcademico"
+                  [s-disabled]="isReadOnly(seqGrauAcademico)"
+                  s-label="Grau"></smc-select> -->
+    <po-input
+      formControlName="descricao"
+      class="smc-size-md-12"
+      p-label="Descrição"
+      [p-disabled]="isReadOnly(descricao)"
+    ></po-input>
+    <smc-select
+      formControlName="ativo"
+      class="smc-size-md-6"
+      [s-options]="dataSourceAtivo"
+      [s-disabled]="isReadOnly(seqTipoFormacaoEspecifica)"
+      s-label="Ativo"
+    ></smc-select>
+  </fieldset>
+</ng-template>
+<smc-lookup
+  [s-advanced-search-template]="filtro"
+  [s-advanced-list-columns]="colunasBuscaAvancada"
+  [s-label]="label"
+  [s-selector]="seletor"
+>
+</smc-lookup>

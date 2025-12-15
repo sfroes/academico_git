@@ -1,0 +1,24 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.APR.Models
+
+@model  AulaOfertaViewModel
+
+@using (Smc.Div().Begin())
+{
+    if (!string.IsNullOrEmpty(Model.DescricaoCursoOfertaLocalidadeTurno))
+    {
+        using (Smc.Div().CssClass("smc-list-item smc-list-cabecalho").Size(SMCSize.Grid24_24).Begin())
+        {
+        @Smc.DisplayFor(m => m.DescricaoCursoOfertaLocalidadeTurno).CssClass("smc-listdetailed-conteudo-titulo smc-sga-margem-superior smc-listdetailed-item").Size(SMCSize.Grid24_24).HideLabel()
+        }
+    }
+    using (Smc.Div().CssClass("smc-detalhe-editavel-header").Size(SMCSize.Grid24_24).Begin())
+    {
+        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid2_24)">@Smc.GetUIResource("Label_Situacao")</label>
+        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid2_24)">@Smc.GetUIResource("Label_NumeroRegistroAcademico")</label>
+        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid16_24, SMCSize.Grid12_24, SMCSize.Grid16_24, SMCSize.Grid16_24)">@Smc.GetUIResource("Label_NomeAluno")</label>
+        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24, SMCSize.Grid12_24, SMCSize.Grid2_24, SMCSize.Grid2_24)">@Smc.GetUIResource("Label_NumeroFaltas")</label>
+        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24, SMCSize.Grid12_24, SMCSize.Grid2_24, SMCSize.Grid2_24)">@Smc.GetUIResource("Label_Total")</label>
+    }
+    var detailView = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.AULA_PATH + "_DetailApuracaoFrequencia");
+    @Smc.List("Apuracao", m => m.ApuracoesFrequencia).HtmlTemplate(item => @Html.Partial(detailView, item.Value))
+}

@@ -1,0 +1,11 @@
+﻿@using SMC.SGA.Administrativo.Areas.CAM.Views.CampanhaCopia.App_LocalResources
+@model CampanhaCopiaViewModel
+
+@using (Smc.Div("divConvocacao").Begin())
+{
+    @Smc.GetUIResource(UIResource.MSG_Copia_Campanha_Convocacao)
+}
+
+@Smc.List("Processos", r => r.ProcessosSeletivos).HtmlTemplate(item => Html.Partial("_ConvocacaoProcessos", item.Value)).CssClass("smc-sga-convocacao-processos")
+
+@Smc.WizardView()

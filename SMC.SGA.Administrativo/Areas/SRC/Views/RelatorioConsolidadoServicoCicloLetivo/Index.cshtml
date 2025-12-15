@@ -1,0 +1,14 @@
+﻿@model RelatorioConsolidadoServicoCicloLetivoFiltroViewModel
+
+@using (Smc.Form("frmViewPadrao", "GerarRelatorio", Model).Begin())
+{
+    //Filtros
+    using (Smc.Fieldset("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqCicloLetivo)
+        @Smc.EditorFor(prop => prop.SeqServico)
+        @Smc.EditorFor(prop => prop.SeqsEntidadeResponsavel)
+
+        @Html.Partial("_BotoesRelatorioPadrao", true)
+    }
+}

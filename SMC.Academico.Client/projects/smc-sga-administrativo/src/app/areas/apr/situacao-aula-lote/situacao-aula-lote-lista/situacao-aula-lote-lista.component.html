@@ -1,0 +1,47 @@
+<div class="smc-size-md-24 smc-size-lg-24 smc-size-xs-24 smc-size-sm-24">
+  <po-table [p-columns]="colunas" p-selectable="true" p-hide-columns-manager="true" [p-items]="listaAulas"></po-table>
+  <div *ngIf="listaAulas.length > 0" class="smc-size-md-24 smc-size-lg-24 smc-size-xs-24 smc-size-sm-24 smc-buttonset-horizontal-primario">
+    <div *ngIf="exibirMensagemInformativa" class="smc-sga-mensagem-local-informa">
+      <p>Sem permissão para alterar situação de aula já apurada</p>
+    </div>
+    <smc-button
+      s-label="Liberar correção de apuração"
+      [s-disabled]="desabilitarBtnLiberarCorrecao"
+      [s-loading]="carregando"
+      (s-click)="alterarAula('LiberarCorrecao')"
+    ></smc-button>
+    <smc-button
+      s-label="Alterar para não apurada"
+      [s-disabled]="desabilitarBtnNaoApurada"
+      [s-loading]="carregando"
+      (s-click)="alterarAula('NaoApurada')"
+    ></smc-button>
+    <smc-button
+      s-label="Alterar para não executada"
+      [s-disabled]="desabilitarBtnNaoExecutada"
+      [s-loading]="carregando"
+      (s-click)="alterarAula('NaoExecutada')"
+    ></smc-button>
+    <smc-button
+      s-label="Liberar apuração de aula"
+      [s-disabled]="desabilitarBtnLiberarApuracao"
+      [s-loading]="carregando"
+      (s-click)="alterarAula('liberarApuracaoAula')"
+    ></smc-button>
+  </div>
+</div>
+<!-- Assert de confirmação -->
+<smc-modal s-title="Atenção!" #modalConfirmacao s-hide-close="true">
+  <div s-modal-body>{{ mensagemAssert }}</div>
+  <div s-modal-footer>
+    <smc-button s-label="Sim" s-tooltip="Sim" (s-click)="onSubmitAulas()"></smc-button>
+    <smc-button #btNaoNew s-label="Não" s-tooltip="Não" (s-click)="modalConfirmacao.close()"></smc-button>
+  </div>
+</smc-modal>
+<!-- Assert de sem seleção -->
+<smc-modal s-title="Atenção!" #modalAlert s-hide-close="true">
+  <div s-modal-body>{{ mensagemAlert }}</div>
+  <div s-modal-footer>
+    <smc-button #btNaoNew s-label="ok" s-tooltip="ok" (s-click)="modalAlert.close()"></smc-button>
+  </div>
+</smc-modal>

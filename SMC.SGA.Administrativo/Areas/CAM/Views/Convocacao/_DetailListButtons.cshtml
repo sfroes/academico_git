@@ -1,0 +1,33 @@
+﻿@model ConvocacaoListarDynamicModel
+
+@{
+    SMCButtonFluentConfiguration buttonCadastrarOfertasConvocacao = Smc.Button("btn-cadastrar-ofertas-convocacao")
+        .Text(Smc.GetUIResource("Botao_cadastrar_ofertas_convocacao"))
+        .Tooltip(Smc.GetUIResource("Botao_cadastrar_ofertas_convocacao"))
+        .Type(SMCButtonType.Link)
+        .CssClass("smc-btn-custom-destaque")
+        .SecurityToken(UC_CAM_001_05_02.MANTER_CONVOCACAO)
+        .Action("Convocacao", "CadastrarOfertasConvocacao", new { seqConvocacao = new SMCEncryptedLong(Model.Seq) });
+
+    SMCButtonFluentConfiguration buttonConsultaPosicaoConsolidada = Smc.Button("btn-consulta-posicao-consolidada")
+        .Text(Smc.GetUIResource("Botao_consulta_posicao_consolidada"))
+        .Tooltip(Smc.GetUIResource("Botao_consulta_posicao_consolidada"))
+        .Type(SMCButtonType.Link)
+        .CssClass("smc-btn-custom-destaque")
+        .SecurityToken()
+        .Action("Convocacao", "ConsultaPosicaoConsolidada", new { seqConvocacao = new SMCEncryptedLong(Model.Seq) });
+
+    SMCButtonFluentConfiguration buttonConsultarCandidatos = Smc.Button("btn-consultar-candidatos")
+        .Text(Smc.GetUIResource("Botao_consulta_candidatos"))
+        .Tooltip(Smc.GetUIResource("Botao_consulta_candidatos"))
+        .Type(SMCButtonType.Link)
+        .CssClass("smc-btn-custom-destaque")
+        .SecurityToken(UC_CAM_001_03_01.CONSULTAR_CANDIDATO)
+        .Action("Convocacao", "ConsultaCandidatos", new { seqConvocacao = new SMCEncryptedLong(Model.Seq) });
+}
+
+@(Smc.Templates.DetailedListButtons()
+    //.AddButton(buttonCadastrarOfertasConvocacao)
+    //.AddButton(buttonConsultaPosicaoConsolidada)
+    //.AddButton(buttonConsultarCandidatos)
+    .Size(SMCSize.Grid1_24, SMCSize.Grid4_24, SMCSize.Grid2_24, SMCSize.Grid1_24))

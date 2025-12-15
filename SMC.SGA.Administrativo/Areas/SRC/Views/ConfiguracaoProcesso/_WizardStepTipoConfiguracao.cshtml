@@ -1,0 +1,7 @@
+﻿@model ConfiguracaoProcessoViewModel
+
+@Smc.HiddenFor(m => m.Seq)
+@Smc.EditorFor(m => m.SeqTipoConfiguracao)
+@Smc.EditorFor(m => m.Descricao).Size(SMCSize.Grid14_24)
+
+@Smc.WizardView()

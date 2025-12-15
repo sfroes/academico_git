@@ -1,0 +1,54 @@
+﻿@model CopiarProcessoViewModel
+
+@Smc.EditorFor(m => m.ExibirSecaoGrupoEscalonamento)
+@Smc.EditorFor(m => m.TokenTipoServico)
+@Smc.EditorFor(m => m.TokenServico)
+
+@using (Smc.Form("formCopiarProcesso", "SalvarCopiaProcesso").Ajax().Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-display smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-mensagem-multiplas-linhas").Begin())
+    {
+        using (Smc.Div().CssClass(" smc-sga-ico-mensagem").Begin())
+        { }
+
+        @Smc.DisplayFor(d => d.MensagemInformativa)
+    }
+
+    using (Smc.Fieldset("Origem").Begin())
+    {
+        @Smc.EditorFor(m => m.ProcessoOrigem.Seq)
+        @Smc.EditorFor(m => m.ProcessoOrigem.Descricao)
+        @Smc.EditorFor(m => m.ProcessoOrigem.SeqServico)
+        @Smc.EditorFor(m => m.ProcessoOrigem.DescricaoCicloLetivo)
+        @Smc.EditorFor(m => m.ProcessoOrigem.DataInicio)
+        @Smc.EditorFor(m => m.ProcessoOrigem.DataFim)
+        @Smc.EditorFor(m => m.ProcessoOrigem.ValorPercentualServicoAdicional)
+    }
+
+    using (Smc.Fieldset("Destino").Begin())
+    {
+        @Smc.EditorFor(m => m.Seq)
+        @Smc.EditorFor(m => m.Descricao)
+        @Smc.EditorFor(m => m.SeqCicloLetivo)
+        @Smc.EditorFor(m => m.DataInicio)
+        @Smc.EditorFor(m => m.DataFim)
+        @Smc.EditorFor(m => m.ValorPercentualServicoAdicional)
+    }
+    
+    @Smc.MasterDetail(m => m.EtapasCopiar, SMC.Framework.UI.Mvc.DataAnnotations.SMCDetailType.Block).HideButtons()
+
+    @Smc.MasterDetail(m => m.GruposEscalonamentoCopiar).HideButtons()
+
+    var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24);
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+                           .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                           .Highlight());
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+             .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+             .Type(SMCButtonType.Link)
+             .Url(Url.Action("Index", "Processo"), true));
+
+    @buttonSet;
+}

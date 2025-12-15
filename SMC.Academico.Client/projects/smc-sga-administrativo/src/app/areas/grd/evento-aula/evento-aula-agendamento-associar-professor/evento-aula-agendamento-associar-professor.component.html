@@ -1,0 +1,113 @@
+<smc-modal s-size="lg" s-title="Associar Professor Responsável" (s-on-close)="fecharModal()">
+  <div s-modal-body *ngIf="formAssociar">
+    <form [formGroup]="formAssociar">
+      <div class="smc-header smc-header-tipo-primary">
+        <div class="smc-header-grupo-itens">
+          <div class="smc-header-item smc-size-md-4">
+            <label>Turma</label>
+            <p>{{ dadosTurmaCabecalhoAssociarProfessor.codigoFormatado }}</p>
+          </div>
+          <div class="smc-header-item smc-size-md-5">
+            <label>Ciclo letivo início</label>
+            <p>{{ dadosTurmaCabecalhoAssociarProfessor.cicloLetivoInicio }}</p>
+          </div>
+          <div class="smc-header-item smc-size-md-4">
+            <label>Vagas</label>
+            <p>{{ dadosTurmaCabecalhoAssociarProfessor.vagas }}</p>
+          </div>
+          <div class="smc-header-item smc-size-md-6">
+            <label>Tipo de turma</label>
+            <p>{{ dadosTurmaCabecalhoAssociarProfessor.descricaoTipoTurma }}</p>
+          </div>
+          <div class="smc-header-item smc-size-md-5">
+            <label>Situação</label>
+            <p>{{ dadosTurmaCabecalhoAssociarProfessor.situacaoTurmaAtual }}</p>
+          </div>
+        </div>
+        <div
+          class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24 smc-sga-header-detalhes smc-sga-header-detalhes-separador"
+        >
+          <div
+            class="smc-list-item-grid"
+            *ngFor="let item of dadosTurmaCabecalhoAssociarProfessor.configuacoesComponente"
+          >
+            <div class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+              <div class="smc-size-md-1 smc-size-xs-2 smc-size-sm-1 smc-size-lg-1">
+                <div class="smc-display-legend" *ngIf="item.configuracaoPrincipal">
+                  <div class="smc-sga-legenda-configuracao-principal" title="Configuração Principal">
+                    <span title="Configuração Principal"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="smc-size-md-23 smc-size-xs-23 smc-size-sm-23 smc-size-lg-23">
+                <div class="smc-display">
+                  <p>{{ item.descricaoConfiguracaoComponente }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <fieldset class="smc-size-md-24 smc-size-lg-24 smc-sga-fieldset-secundario-agendamento">
+        <legend>Professor Responsável</legend>
+        <div class="smc-detalhe-botao-adicionar">
+          <smc-button
+            s-button-class="smc-btn-novo-ico"
+            s-label="Novo professor"
+            (s-click)="addProfessor()"
+          ></smc-button>
+        </div>
+        <div class="smc-detalhe-editavel-painel-nao-encontrado" *ngIf="getProfessores().length == 0">
+          <span>{{ mensagemItensMasterDetail }}</span>
+        </div>
+        <div
+          *ngIf="dadosTurmaCabecalhoAssociarProfessor.colaboradoresTurma"
+          formArrayName="colaborador"
+          class="smc-sga-mestre-tabular"
+        >
+          <div *ngFor="let professor of getProfessores(); let indexProfessor = index">
+            <div [formGroupName]="indexProfessor">
+              <div class="smc-size-md-24">
+                <smc-lookup-colaborador
+                  formControlName="seq"
+                  class="smc-size-lg-23 smc-size-sm-23"
+                  s-label="Professor"
+                  [seq-turma]="seqTurma"
+                  [s-required]="true"
+                ></smc-lookup-colaborador>
+                <div class="smc-size-md-1 smc-size-lg-1 smc-sga-detalhe-botoes">
+                  <smc-button
+                    s-button-class="smc-btn-excluir-ico"
+                    s-label="Excluir"
+                    (s-click)="removeProfessor(indexProfessor)"
+                  ></smc-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <div s-modal-footer>
+    <smc-button
+      s-button-class="smc-btn-salvar-icotext-destaque"
+      s-label="Salvar"
+      s-tooltip="Salvar"
+      s-type="submit"
+      [s-disabled]="formAssociar?.invalid || formAssociar?.pending || formAssociar?.pristine"
+      [s-loading]="validacaoAssociacaoProfessor$ | async"
+      (s-click)="onSubmit()"
+    ></smc-button>
+    <smc-button
+      s-button-class="smc-btn-fechar-icotext"
+      s-label="Fechar"
+      s-tooltip="Fechar"
+      (s-click)="fecharModal()"
+    ></smc-button>
+  </div>
+</smc-modal>
+
+<po-modal #modalVisualizarComponenteCurricular p-size="xl" p-title="Detalhes do Componente Curricular">
+  <div *ngIf="htmlDetalhe" [innerHTML]="htmlDetalhe"></div>
+</po-modal>

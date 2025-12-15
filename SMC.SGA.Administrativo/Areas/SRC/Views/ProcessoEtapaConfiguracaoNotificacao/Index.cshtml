@@ -1,0 +1,40 @@
+﻿@model ProcessoEtapaConfiguracaoNotificacaoFiltroViewModel
+
+@Html.Action("CabecalhoProcesso", "ProcessoEtapaConfiguracaoNotificacao", new { seqProcesso = Model.SeqProcesso })
+
+@using (Smc.Form("filtroConfiguracaoNotificacao", "ListarConfiguracaoNotificacao").Ajax("#divConfiguracaoNotificacao").Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Fieldset("filtros").CssClass("smc-fieldset-filter").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(m => m.ExigeEscalonamento)
+
+        @Smc.EditorFor(m => m.SeqProcesso)
+        @Smc.EditorFor(m => m.SeqProcessoUnidadeResponsavel)
+        @Smc.EditorFor(m => m.SeqTipoNotificacao)
+        @Smc.EditorFor(m => m.PermiteAgendamento)
+        @Smc.EditorFor(m => m.AuxiliarTipoNotificacaoPermiteAgendamento)
+        @Smc.EditorFor(m => m.AuxiliarPermiteAgendamento)
+        @Smc.EditorFor(m => m.SeqsGrupoEscalonamento)
+
+        @(Smc.ButtonSet()
+           .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+           .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+        )
+    }
+}
+
+@using (Smc.Div("divConfiguracaoNotificacao").Begin())
+{
+    @Html.Action("ListarConfiguracaoNotificacao", Model)
+}
+
+@{
+    var buttonSet = Smc.ButtonSet();
+
+    buttonSet.AddButton(Smc.Button("Voltar")
+                            .CssClass("smc-btn-voltar-icotext")
+                            .Type(SMCButtonType.Link)
+                            .Action("Index", "Processo", new { area = "SRC" }));
+
+    @buttonSet;
+}

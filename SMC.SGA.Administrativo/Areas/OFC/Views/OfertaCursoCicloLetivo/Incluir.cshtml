@@ -1,0 +1,12 @@
+﻿@model OfertaCursoCicloLetivoViewModel
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            smc.selects.disable('SeqTipoVinculoSelecionado');
+            smc.selects.disable('SeqTipoOfertaCursoSelecionada');
+        });
+    </script>
+}
+
+@Html.Partial("_EditarOfertaCursoCicloLetivo", Model)

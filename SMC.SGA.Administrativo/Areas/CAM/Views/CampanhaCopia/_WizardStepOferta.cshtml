@@ -1,0 +1,28 @@
+﻿@using SMC.SGA.Administrativo.Areas.CAM.Views.CampanhaCopia.App_LocalResources
+@model CampanhaCopiaViewModel
+
+@using (Smc.Div("divSelecaoOferta").Begin())
+{
+    @Smc.GetUIResource(UIResource.MSG_Copia_Campanha_Selecao_Oferta)
+}
+
+@using (Smc.Div("divOferta").Begin())
+{
+    @(Smc.Grid("gridCampanhaOferta", Model.CampanhaOfertas)
+                        .AllowSelect(f => f.Seq)
+                        .AutoGenerateColumns()
+                        .HideRowNumber()
+                        .HidePager()
+                        .HideRowsTotalizer()
+                        .HideNumberOfRowsPerPageSelector()
+                        .HideNavigator()
+    )
+
+}
+
+@using (Smc.Div("divSelecaoOfertaMensagem").Begin())
+{
+    @Smc.GetUIResource(UIResource.MSG_Copia_Campanha_Selecao_Oferta_Mensagem)
+}
+
+@Smc.WizardView()

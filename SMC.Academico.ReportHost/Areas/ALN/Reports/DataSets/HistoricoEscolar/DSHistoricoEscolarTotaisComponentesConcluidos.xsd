@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSHistoricoEscolarTotaisComponentesConcluidos" targetNamespace="http://tempuri.org/DSHistoricoEscolarTotaisComponentesConcluidos.xsd" xmlns:mstns="http://tempuri.org/DSHistoricoEscolarTotaisComponentesConcluidos.xsd" xmlns="http://tempuri.org/DSHistoricoEscolarTotaisComponentesConcluidos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSHistoricoEscolarTotaisComponentesConcluidos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSHistoricoEscolarTotaisComponentesConcluidos" msprop:Generator_UserDSName="DSHistoricoEscolarTotaisComponentesConcluidos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSHistoricoEscolarTotaisComponentesConcluidos" msprop:Generator_TableClassName="DSHistoricoEscolarTotaisComponentesConcluidosDataTable" msprop:Generator_TableVarName="tableDSHistoricoEscolarTotaisComponentesConcluidos" msprop:Generator_RowChangedName="DSHistoricoEscolarTotaisComponentesConcluidosRowChanged" msprop:Generator_TablePropName="_DSHistoricoEscolarTotaisComponentesConcluidos" msprop:Generator_RowDeletingName="DSHistoricoEscolarTotaisComponentesConcluidosRowDeleting" msprop:Generator_RowChangingName="DSHistoricoEscolarTotaisComponentesConcluidosRowChanging" msprop:Generator_RowEvHandlerName="DSHistoricoEscolarTotaisComponentesConcluidosRowChangeEventHandler" msprop:Generator_RowDeletedName="DSHistoricoEscolarTotaisComponentesConcluidosRowDeleted" msprop:Generator_RowClassName="DSHistoricoEscolarTotaisComponentesConcluidosRow" msprop:Generator_UserTableName="DSHistoricoEscolarTotaisComponentesConcluidos" msprop:Generator_RowEvArgName="DSHistoricoEscolarTotaisComponentesConcluidosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Situacao" msprop:Generator_ColumnVarNameInTable="columnSituacao" msprop:Generator_ColumnPropNameInRow="Situacao" msprop:Generator_ColumnPropNameInTable="SituacaoColumn" msprop:Generator_UserColumnName="Situacao" type="xs:string" minOccurs="0" />
+              <xs:element name="QuantidadeComponente" msprop:Generator_ColumnVarNameInTable="columnQuantidadeComponente" msprop:Generator_ColumnPropNameInRow="QuantidadeComponente" msprop:Generator_ColumnPropNameInTable="QuantidadeComponenteColumn" msprop:Generator_UserColumnName="QuantidadeComponente" type="xs:long" minOccurs="0" />
+              <xs:element name="TotalCargaHoraria" msprop:Generator_ColumnVarNameInTable="columnTotalCargaHoraria" msprop:Generator_ColumnPropNameInRow="TotalCargaHoraria" msprop:Generator_ColumnPropNameInTable="TotalCargaHorariaColumn" msprop:Generator_UserColumnName="TotalCargaHoraria" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalCredito" msprop:Generator_ColumnVarNameInTable="columnTotalCredito" msprop:Generator_ColumnPropNameInRow="TotalCredito" msprop:Generator_ColumnPropNameInTable="TotalCreditoColumn" msprop:Generator_UserColumnName="TotalCredito" type="xs:int" minOccurs="0" />
+              <xs:element name="MediaNota" msprop:Generator_ColumnVarNameInTable="columnMediaNota" msprop:Generator_ColumnPropNameInRow="MediaNota" msprop:Generator_ColumnPropNameInTable="MediaNotaColumn" msprop:Generator_UserColumnName="MediaNota" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MediaNotaCreditoMaiorZero" msprop:Generator_ColumnVarNameInTable="columnMediaNotaCreditoMaiorZero" msprop:Generator_ColumnPropNameInRow="MediaNotaCreditoMaiorZero" msprop:Generator_ColumnPropNameInTable="MediaNotaCreditoMaiorZeroColumn" msprop:Generator_UserColumnName="MediaNotaCreditoMaiorZero" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Seq" msprop:Generator_ColumnVarNameInTable="columnSeq" msprop:Generator_ColumnPropNameInRow="Seq" msprop:Generator_ColumnPropNameInTable="SeqColumn" msprop:Generator_UserColumnName="Seq" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

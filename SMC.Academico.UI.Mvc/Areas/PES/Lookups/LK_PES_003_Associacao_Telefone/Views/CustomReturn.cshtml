@@ -1,0 +1,32 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.CUR.Lookups;
+@using SMC.Framework.UI.Mvc;
+@using SMC.Framework.UI.Mvc.Html;
+@using SMC.Academico.UI.Mvc.Areas.PES.Lookups
+@using System.Collections.Generic
+
+@model List<SMC.Academico.UI.Mvc.Areas.PES.Lookups.PessoaTelefoneLookupViewModel>
+
+    @using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+            {
+                @(Smc.Grid("gridLookupPessoasTelefone", new SMCPagerModel<PessoaTelefoneLookupViewModel>(Model))
+            .HideNavigator()
+            .HidePager()
+            .HideRowNumber()
+            .HideRowsTotalizer()
+            .HideGridTitle()
+            .Attribute("data-detail-property", SMCLookupHelper.GetCurrentPropertyName(Smc))
+            .FieldColumn(x => x.TipoTelefone)
+            .FieldColumn(x => x.CodigoPais)
+            .FieldColumn(x => x.CodigoArea)
+            .FieldColumn(x => x.Numero)
+            .FieldColumn(x => x.Seq, null, null, false)
+            .FieldColumn(x => x.SeqPessoaTelefone, null, null, false)
+            .FieldColumn(x => x.SeqTelefone, null, null, false)
+            .ButtonColumn(SMCButtonSetType.Secondary, null, false, x => Smc.Button(SMCButtonBehavior.ExcluirElemento).DisplayMode(SMCButtonDisplayMode.Icon)))
+            }
+        }
+    }

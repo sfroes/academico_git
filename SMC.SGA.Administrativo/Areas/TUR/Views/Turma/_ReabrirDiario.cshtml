@@ -1,0 +1,12 @@
+﻿@model ReabrirDiarioViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(m => m.Seq)
+    @Smc.EditorFor(m => m.SeqTurma)
+    @Smc.EditorFor(m => m.DiarioFechado)
+    @Smc.EditorFor(m => m.DescricaoSituacao).Size(SMCSize.Grid6_24);
+    @Smc.EditorFor(m => m.DataInclusao).Size(SMCSize.Grid6_24);
+    @Smc.EditorFor(m => m.Usuario).Size(SMCSize.Grid12_24);
+    @Smc.EditorFor(m => m.Observacao).Size(SMCSize.Grid24_24);
+}

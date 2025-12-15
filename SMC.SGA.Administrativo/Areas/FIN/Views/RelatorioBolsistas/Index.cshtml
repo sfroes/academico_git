@@ -1,0 +1,30 @@
+﻿@using SMC.SGA.Administrativo.Areas.FIN.Models
+@using SMC.Academico.Common.Areas.FIN.Constants
+
+@model RelatorioBolsistasFiltroViewModel
+
+@section Scripts{
+    <script type="text/javascript" src=@Url.SMCBuscarRecursoAplicacao("Scripts/Relatorio.js")></script>
+}
+
+
+@using (Smc.Form("frmViewPadrao", "GerarRelatorio", "RelatorioBolsistas", new { area = "FIN" }).Begin())
+{
+    //Filtros
+    using (Smc.Fieldset("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.DataInicioReferencia)
+        @Smc.EditorFor(prop => prop.DataFimReferencia)
+        //@Smc.EditorFor(prop => prop.AlunoSelecionado)
+        @Smc.EditorFor(prop => prop.TipoAtuacoes)
+        @Smc.EditorFor(prop => prop.SeqCicloLetivoIngresso)
+        @Smc.EditorFor(prop => prop.SeqsEntidadesResponsaveis)
+        @Smc.EditorFor(prop => prop.SeqNivelEnsino)
+        @Smc.EditorFor(prop => prop.SeqsBeneficios)
+        @Smc.EditorFor(prop => prop.SituacaoBeneficio)
+        @Smc.EditorFor(prop => prop.ExibirParcelasEmAberto).SecurityToken(UC_FIN_001_06_01.EXIBICAO_FILTROS_INFORMACOES_FINANCEIRAS)
+        @Smc.EditorFor(prop => prop.ExibirReferenciaContrato).SecurityToken(UC_FIN_001_06_01.EXIBICAO_FILTROS_INFORMACOES_FINANCEIRAS)
+
+        @Html.Partial("_BotoesRelatorioBolsistas", true)
+    }
+}

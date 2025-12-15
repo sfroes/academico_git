@@ -1,0 +1,21 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.CNC.Models.IntegralizacaoMatrizDivisaoViewModel
+
+@{
+    if (Model.Grupos.SMCCount() > 0)
+    {
+        using (Smc.Accordion("DivisaoComGrupos").AllowMultipleOpen(true).CssClass("smc-sga-accordion-secundario").Size(SMCSize.Grid24_24).Begin())
+        {
+            foreach (var item in Model.Grupos)
+            {
+                var headerCompleto = "<div class=\"smc-sga-accordion-header-display\"><label class='titlePrincipal'>Grupo:&nbsp</label><p>" + item.DescricaoGrupo + "</p></div>" +
+                                     "<div class=\"smc-sga-accordion-header-display\"><label class='titleSub'>Configuração:&nbsp</label><p>" + item.ConfiguracaoGrupo + "</p></div>" +
+                                     "<div class=\"smc-sga-accordion-header-display\"><label class='titleSub'>Concluído:&nbsp</label><p>" + item.PercentualConclusaoGrupoFormatado + "</p></div>";
+                using (Smc.AccordionSection("Grupo" + Guid.NewGuid().ToString()).Title(f => headerCompleto).IsOpen(false).Begin())
+                {
+                    var viewGrupo = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.INTEGRALIZACAO_CURRICULAR_GRUPO);
+                    @Html.Partial(viewGrupo, item);
+                }
+            }
+        }
+    }
+}

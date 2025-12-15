@@ -1,0 +1,8 @@
+﻿@model RegistroDocumentosAtendimentoDocumentoViewModel
+
+@{
+    // Registra o datasource do item da lista detalhada
+    SMC.Framework.UI.Mvc.Helpers.SMCDataSourceHelper.RegisterDataSource(Html.ViewContext.Controller, Model);
+}
+
+@Smc.MasterDetail(d => d.Documentos).MinimumItens(1).HideButtons(true).TitleMasterDetail(Model.DescricaoTipoDocumento)

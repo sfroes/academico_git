@@ -1,0 +1,149 @@
+﻿@model SMCPagerModel<SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel>
+
+@if (Model != null && Model.Any())
+{
+    if (Model.FirstOrDefault().DocumentoAcademico == "DIPLOMA_DIGITAL")
+    {
+        @(Smc.Grid("gridMensagensDiploma", Model)
+             .AutoGenerateColumns()
+             .HideRowNumber()
+             .AutoHideNavigator()
+             .HideNavigator()
+             .HideGridTitle()
+             .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+
+                x => Smc.Button(SMCButtonBehavior.Alterar)
+                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                        .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirNovaMensagemDiploma")
+                        .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Editar_Mensagem"))
+                        .Ajax(isPost: false, updateTargetId: "#divGridMensagensDiploma")
+                        .SecurityToken(UC_SRC_004_18_01.REALIZAR_ATENDIMENTO_DOCTO_CONCLUSAO_ANALISE_EMISSAO)
+                        .Enabled((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).HabilitarBotaoEditar)
+                        .Action("EditarMensagem", "RealizarAtendimento", new
+                        {
+                            Seq = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).Seq),
+                            TokenTipoDocumentoAcademico = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).TokenTipoDocumentoAcademico,
+                            SeqTipoDocumentoSolicitado = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqTipoDocumentoSolicitado,
+                            SeqPessoaAtuacao = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqPessoaAtuacao),
+                            SeqInstituicaoEnsino = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqInstituicaoEnsino),
+                            SeqInstituicaoNivel = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqInstituicaoNivel),
+                            SeqSolicitacaoServico = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqSolicitacaoServico),
+                            NumeroVia = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).NumeroVia,
+                            DocumentoAcademico = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).DocumentoAcademico,
+                            Area = "SRC"
+                        }),
+
+                x => Smc.Button(SMCButtonBehavior.Excluir)
+                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                        .Ajax(isPost: false, updateTargetId: "#divGridMensagensDiploma")
+                        .SecurityToken(UC_SRC_004_18_01.REALIZAR_ATENDIMENTO_DOCTO_CONCLUSAO_ANALISE_EMISSAO)
+                        .Enabled((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).HabilitarBotaoExcluir)
+                        .Action("ExcluirMensagem", "RealizarAtendimento", new
+                        {
+                            Seq = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).Seq),
+                            SeqSolicitacaoServico = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqSolicitacaoServico),
+                            ExisteDocumentoConclusao = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).ExisteDocumentoConclusao,
+                            TokenTipoDocumentoAcademico = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).TokenTipoDocumentoAcademico,
+                            SeqTipoDocumentoSolicitado = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqTipoDocumentoSolicitado,
+                            NumeroVia = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).NumeroVia,
+                            SeqPessoaAtuacao = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqPessoaAtuacao),
+                            SeqInstituicaoEnsino = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqInstituicaoEnsino),
+                            SeqInstituicaoNivel = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqInstituicaoNivel),
+                            ReutilizarDados = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).ReutilizarDados,
+                            NomePais = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).NomePais,
+                            DescricaoViaAnterior = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).DescricaoViaAnterior,
+                            DescricaoViaAtual = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).DescricaoViaAtual,
+                            CodigoUnidadeSeo = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).CodigoUnidadeSeo,
+                            DescricaoGrauAcademico = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).DescricaoGrauAcademico,
+                            DocumentoAcademico = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).DocumentoAcademico,
+                            Area = "SRC"
+                        }))
+             )
+    }
+    else
+    {
+        @(Smc.Grid("gridMensagensHistorico", Model)
+             .AutoGenerateColumns()
+             .HideRowNumber()
+             .AutoHideNavigator()
+             .HideNavigator()
+             .HideGridTitle()
+             .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+
+                x => Smc.Button(SMCButtonBehavior.Alterar)
+                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                        .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirNovaMensagemHistorico")
+                        .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Editar_Mensagem"))
+                        .Ajax(isPost: false, updateTargetId: "#divGridMensagensHistorico")
+                        .SecurityToken(UC_SRC_004_18_01.REALIZAR_ATENDIMENTO_DOCTO_CONCLUSAO_ANALISE_EMISSAO)
+                        .Enabled((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).HabilitarBotaoEditar)
+                        .Action("EditarMensagem", "RealizarAtendimento", new
+                        {
+                            Seq = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).Seq),
+                            TokenTipoDocumentoAcademico = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).TokenTipoDocumentoAcademico,
+                            SeqTipoDocumentoSolicitado = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqTipoDocumentoSolicitado,
+                            SeqPessoaAtuacao = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqPessoaAtuacao),
+                            SeqInstituicaoEnsino = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqInstituicaoEnsino),
+                            SeqInstituicaoNivel = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqInstituicaoNivel),
+                            SeqSolicitacaoServico = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqSolicitacaoServico),
+                            NumeroVia = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).NumeroVia,
+                            DocumentoAcademico = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).DocumentoAcademico,
+                            Area = "SRC"
+                        }),
+
+                x => Smc.Button(SMCButtonBehavior.Excluir)
+                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                        .Ajax(isPost: false, updateTargetId: "#divGridMensagensHistorico")
+                        .SecurityToken(UC_SRC_004_18_01.REALIZAR_ATENDIMENTO_DOCTO_CONCLUSAO_ANALISE_EMISSAO)
+                        .Enabled((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).HabilitarBotaoExcluir)
+                        .Action("ExcluirMensagem", "RealizarAtendimento", new
+                        {
+                            Seq = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).Seq),
+                            SeqSolicitacaoServico = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqSolicitacaoServico),
+                            ExisteDocumentoConclusao = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).ExisteDocumentoConclusao,
+                            TokenTipoDocumentoAcademico = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).TokenTipoDocumentoAcademico,
+                            SeqTipoDocumentoSolicitado = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqTipoDocumentoSolicitado,
+                            NumeroVia = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).NumeroVia,
+                            SeqPessoaAtuacao = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqPessoaAtuacao),
+                            SeqInstituicaoEnsino = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqInstituicaoEnsino),
+                            SeqInstituicaoNivel = new SMCEncryptedLong((x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).SeqInstituicaoNivel),
+                            ReutilizarDados = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).ReutilizarDados,
+                            NomePais = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).NomePais,
+                            DescricaoViaAnterior = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).DescricaoViaAnterior,
+                            DescricaoViaAtual = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).DescricaoViaAtual,
+                            CodigoUnidadeSeo = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).CodigoUnidadeSeo,
+                            DescricaoGrauAcademico = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).DescricaoGrauAcademico,
+                            DocumentoAcademico = (x as SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel).DocumentoAcademico,
+                            Area = "SRC"
+                        }))
+             )
+    }
+}
+else
+{
+    <div class="smc-grid" data-control="grid" data-type="smc-datagrid-container" id="gridMensagens_Grid" data-configurated="true">
+        <div data-type="smc-datagrid-loading"></div>
+        <div class="smc-datagrid" data-type="smc-datagrid" style="overflow: auto;">
+            <table>
+                <caption></caption>
+                <thead>
+                    <tr data-row-number="1">
+                        <th class="smc-datagrid-alinhamento-esquerda smc-datagrid-alinhamento-vertical-topo" scope="col">Tipo </th>
+                        <th class="smc-datagrid-alinhamento-esquerda smc-datagrid-alinhamento-vertical-topo" scope="col">Descrição</th>
+                        <th class="smc-datagrid-alinhamento-centro smc-datagrid-alinhamento-vertical-topo smc-grid-coluna-botoes" scope="col"></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <input data-type="smc-pager-filter-field" name="exportAction" type="hidden" value="">
+        <div>
+        </div>
+    </div>
+}
+
+
+
+
+

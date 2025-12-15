@@ -1,0 +1,30 @@
+﻿@model SMCPagerModel<OfertaCursoCicloLetivoListaViewModel>
+
+@(Smc.Grid("gridOfertaCursoCicloLetivo")
+     .Action("ListarOfertaCursoCicloLetivo", "OfertaCursoCicloLetivo")
+     .AutoGenerateColumns()
+         .ButtonColumn(SMCButtonSetType.Secondary, 2, "smc-btn-configurar-ico", "", "smc-sga-grid-coluna-botoes",
+                    item => Smc.FieldButton(SMCButtonBehavior.Alterar, "Editar", new { @seqOfertaCursoCicloLetivo = SMCDESCrypto.EncryptNumberForURL((item as OfertaCursoCicloLetivoListaViewModel).Seq) }, "OfertaCursoCicloLetivo")
+                               .DisplayMode(SMCButtonDisplayMode.Icon),
+                                
+                    item => Smc.FieldButton(SMCButtonBehavior.Excluir, "Excluir", new { @seqOfertaCursoCicloLetivo = SMCDESCrypto.EncryptNumberForURL((item as OfertaCursoCicloLetivoListaViewModel).Seq) }, "OfertaCursoCicloLetivo")
+                               .DisplayMode(SMCButtonDisplayMode.Icon)
+                               .Ajax(isPost: true, updateTargetId: "#divGridOfertaCursoCicloLetivo")
+                               .Confirm(Smc.GetUIResource("Exclusao_Oferta_Curso_Ciclo_Letivo_Title"),
+                                        string.Format(Smc.GetUIResource("Exclusao_Oferta_Curso_Ciclo_Letivo_Confirmacao"), (item as OfertaCursoCicloLetivoListaViewModel).Descricao)),                                
+
+                    item => Smc.FieldButton("AssociacaoPolo", "AssociacaoPolo", new { @seqOfertaCursoCicloLetivo = SMCDESCrypto.EncryptNumberForURL((item as OfertaCursoCicloLetivoListaViewModel).Seq) }, "OfertaCursoCicloLetivo")
+                               .Type(SMCButtonType.Link)
+                               .Text(Smc.GetUIResource("Menu_Configurar_Configurar_Associar_Polo_Label"))
+                               .Hide(!(item as OfertaCursoCicloLetivoListaViewModel).ExibirAssociacaoPolo),
+
+                    item => Smc.FieldButton("AssociacaoLocalidade", "AssociacaoLocalidade", new { @seqOfertaCursoCicloLetivo = SMCDESCrypto.EncryptNumberForURL((item as OfertaCursoCicloLetivoListaViewModel).Seq) }, "OfertaCursoCicloLetivo")
+                               .Type(SMCButtonType.Link)
+                               .Text(Smc.GetUIResource("Menu_Configurar_Configurar_Associar_Localidade_Label")),
+                               
+                    item => Smc.FieldButton("AssociacaoCursoUnidadeTurno", "AssociacaoCursoUnidadeTurno", new { @seqOfertaCursoCicloLetivo = SMCDESCrypto.EncryptNumberForURL((item as OfertaCursoCicloLetivoListaViewModel).Seq) }, "OfertaCursoCicloLetivo")
+                               .Type(SMCButtonType.Link)
+                               .Text(Smc.GetUIResource("Menu_Configurar_Associar_Curso_Unidade_Turno_Label"))
+                  )
+)
+

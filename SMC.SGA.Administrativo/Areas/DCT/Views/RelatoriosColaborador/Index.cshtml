@@ -1,0 +1,24 @@
+﻿@model RelatorioFiltroViewModel
+
+
+@using (Smc.Form("frmViewPadrao", "GerarRelatorio", Model).Begin())
+{
+    using (Smc.Fieldset("fieldsetTipoRelatorio").Size(SMCSize.Grid24_24).CssClass("smc-fieldset-filter smc-filtro-relatorio").Begin())
+    {
+        using (Smc.Fieldset("fieldsetParametrosRelatorio").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            @Smc.EditorFor(prop => prop.TipoRelatorio)
+            @Smc.EditorFor(prop => prop.DataInicioReferencia)
+            @Smc.EditorFor(prop => prop.DataFimReferencia)
+            @Smc.EditorFor(prop => prop.SeqsEntidadesResponsaveis)
+            @Smc.EditorFor(prop => prop.SeqColaborador)
+            @Smc.EditorFor(prop => prop.SeqEntidadeResponsavel)
+            @Smc.EditorFor(prop => prop.SeqColaboradorPosDoutorando)
+            @Smc.EditorFor(prop => prop.SeqColaboradorVinculo)
+        }
+    }
+
+    @Html.Partial("_BotoesRelatorioPadrao", true)
+
+    
+}

@@ -1,0 +1,21 @@
+﻿@model ColaboradorVinculoCursoViewModel
+
+@using (Smc.Form("formColaboradorVinculoCurso", "Salvar", "ColaboradorVinculoCurso").Begin())
+{
+    @Smc.EditorFor(e => e.Seq)
+    @Smc.EditorFor(e => e.SeqColaborador)
+    @Smc.EditorFor(e => e.SeqColaboradorVinculo)
+    @Smc.EditorFor(e => e.seqEntidadeVinculo)
+    @Smc.EditorFor(e => e.CursoOfertasLocalidades)
+
+    @Html.Action("CabecalhoColaboradorVinculoCurso", new { Model.SeqColaborador, Model.SeqColaboradorVinculo })
+
+    @Smc.EditorFor(m => m.Cursos)
+
+    var buttonSet = Smc.ButtonSet();
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().Hide(Smc.GetViewMode() == SMCViewMode.ReadOnly));
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Index", "ColaboradorVinculo", new { SeqColaborador = new SMCEncryptedLong(Model.SeqColaborador) }, forceForBackBehavior: true).Highlight(Smc.GetViewMode() == SMCViewMode.ReadOnly));
+
+    @buttonSet;
+}

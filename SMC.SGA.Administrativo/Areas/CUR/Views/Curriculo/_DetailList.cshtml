@@ -1,0 +1,22 @@
+﻿@model CurriculoListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.DescricaoCompleta).CssClass("smc-listdetailed-conteudo-titulo").HideLabel().Size(SMCSize.Grid20_24)
+            @Smc.DisplayFor(m => m.Ativo).Size(SMCSize.Grid4_24)
+        }
+        if (Model.CursosOferta.SMCCount() > 0)
+        {
+            using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+            {
+                <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("CurriculoCursoOferta_Lista_Titulo")</label>
+                @Smc.List("OfertasCurso", Model.CursosOferta).HtmlTemplate(item => Html.Partial("_OfertasCurso", item))
+            }
+        }
+    }
+    @Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)
+}

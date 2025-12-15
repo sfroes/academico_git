@@ -1,0 +1,50 @@
+﻿@model SMC.SGA.Administrativo.Areas.FIN.Models.ConfiguracaoBeneficioDynamicModel
+@{
+    var tipoDeducao = Smc.EditorFor(m => m.TipoDeducao).Readonly(Model.AssociacaoPessoaBeneficio);
+    var formaDeducao = Smc.EditorFor(m => m.FormaDeducao).Readonly(Model.AssociacaoPessoaBeneficio);
+    var valorDeducao = Smc.EditorFor(m => m.ValorDeducao).Readonly(Model.AssociacaoPessoaBeneficio);
+    var valorDeducaoMoeda = Smc.EditorFor(m => m.ValorDeducaoMoeda).Readonly(Model.AssociacaoPessoaBeneficio);
+    var valorDeducaoPercentual = Smc.EditorFor(m => m.ValorDeducaoPercentual).Readonly(Model.AssociacaoPessoaBeneficio);
+    var dataInicioValidade = Smc.EditorFor(m => m.DataInicioValidade).Readonly(Model.AssociacaoPessoaBeneficio);
+    var dataFimValidade = Smc.EditorFor(m => m.DataFimValidade);
+    //var incluirDesbloqueioTemporario = Smc.EditorFor(m => m.IncluirDesbloqueioTemporario).Readonly(Model.AssociacaoPessoaBeneficio);
+    //var recebeCobranca = Smc.EditorFor(m => m.RecebeCobranca).Readonly(Model.AssociacaoPessoaBeneficio);
+    //var JustificativaNaoRecebeCobranca = Smc.EditorFor(m => m.JustificativaNaoRecebeCobranca).Readonly(Model.AssociacaoPessoaBeneficio);
+    var mensagemInformativa = Smc.EditorFor(m => m.MensagemInformativa).Readonly(Model.AssociacaoPessoaBeneficio);
+
+    //Demais condições
+    valorDeducaoMoeda.ConditionalRequired("TipoDeducao", SMCConditionalOperation.NotEqual, SMC.Academico.Common.Areas.FIN.Enums.TipoDeducao.Variavel);
+    valorDeducaoPercentual.ConditionalRequired("TipoDeducao", SMCConditionalOperation.NotEqual, SMC.Academico.Common.Areas.FIN.Enums.TipoDeducao.Variavel);
+    valorDeducaoPercentual.ConditionalDisplay("FormaDeducao", SMCConditionalOperation.Equals, SMC.Academico.Common.Areas.FIN.Enums.FormaDeducao.PercentualBolsa);
+    valorDeducaoMoeda.ConditionalDisplay("FormaDeducao", SMCConditionalOperation.NotEqual, SMC.Academico.Common.Areas.FIN.Enums.FormaDeducao.PercentualBolsa);
+    //formaDeducao.ConditionalRequired("TipoDeducao", SMCConditionalOperation.NotEqual, SMC.Academico.Common.Areas.FIN.Enums.TipoDeducao.Variavel);
+}
+
+@if (!Model.AssociacaoPessoaBeneficio)
+{
+    //formaDeducao.ConditionalReadonly("TipoDeducao", SMCConditionalOperation.Equals, SMC.Academico.Common.Areas.FIN.Enums.TipoDeducao.Variavel);
+    valorDeducaoMoeda.ConditionalRequired("TipoDeducao", SMCConditionalOperation.NotEqual, SMC.Academico.Common.Areas.FIN.Enums.TipoDeducao.Variavel);
+    valorDeducaoPercentual.ConditionalRequired("TipoDeducao", SMCConditionalOperation.NotEqual, SMC.Academico.Common.Areas.FIN.Enums.TipoDeducao.Variavel);
+    //formaDeducao.ConditionalReadonly("TipoDeducao", SMCConditionalOperation.Equals, SMC.Academico.Common.Areas.FIN.Enums.TipoDeducao.Variavel);
+}
+
+@tipoDeducao
+@formaDeducao
+@valorDeducao
+@valorDeducaoPercentual
+@valorDeducaoMoeda
+@dataInicioValidade
+@dataFimValidade
+@*@incluirDesbloqueioTemporario
+@recebeCobranca
+@JustificativaNaoRecebeCobranca*@
+@mensagemInformativa
+
+
+@Smc.EditorFor(m => m.AssociacaoPessoaBeneficio)
+@Smc.EditorFor(m => m.DataBanco).Readonly(Model.AssociacaoPessoaBeneficio)
+@Smc.EditorFor(m => m.FlagUltimaConfiguracao).Readonly(Model.AssociacaoPessoaBeneficio)
+@Smc.EditorFor(m => m.Seq).Readonly(Model.AssociacaoPessoaBeneficio)
+@Smc.EditorFor(m => m.SeqBeneficio).Readonly(Model.AssociacaoPessoaBeneficio)
+@Smc.EditorFor(m => m.SeqInstituicaoNivel).Readonly(Model.AssociacaoPessoaBeneficio)
+@Smc.EditorFor(m => m.SeqInstituicaoNivelBeneficio).Readonly(Model.AssociacaoPessoaBeneficio)

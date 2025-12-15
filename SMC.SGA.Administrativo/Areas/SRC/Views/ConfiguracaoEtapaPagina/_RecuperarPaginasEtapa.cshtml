@@ -1,0 +1,20 @@
+﻿@model RecuperarPaginaEtapaViewModel
+
+@using (Smc.Div("fieldsetRecuperarPaginaEtapa").CssClass("smc-sga-add-pagina").Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapa)
+    if (Model.PaginasDisponiveis != null && Model.PaginasDisponiveis.Count > 0)
+    {
+        //@Smc.EditorFor(prop => prop.SeqPaginas)
+        @Smc.MasterDetail(prop => prop.PaginasDisponiveis).HideButtons().HideHeader()
+    }
+    else
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-display smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-mensagem-multiplas-linhas").Begin())
+        {
+            using (Smc.Div().CssClass(" smc-sga-ico-mensagem").Begin()){ }
+
+            <label>@Smc.GetUIResource("Mensagem_Paginas_Ja_Adicionada")</label>          
+        }      
+    }
+}

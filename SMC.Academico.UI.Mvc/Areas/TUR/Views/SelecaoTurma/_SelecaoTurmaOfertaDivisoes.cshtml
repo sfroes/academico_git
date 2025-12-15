@@ -1,0 +1,84 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.TUR.Models.SelecaoTurmaOfertaDivisaoViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+        {
+            if (Model.PermitirGrupo && Model.DivisoesTurmas.Count() > 1)
+            {
+                @Smc.DisplayFor(m => m.DivisaoTurmaDescricao).Size(SMCSize.Grid10_24, SMCSize.Grid11_24, SMCSize.Grid12_24, SMCSize.Grid9_24).HideLabel()
+                @Smc.EditorFor(m => m.SeqDivisaoTurma).Size(SMCSize.Grid8_24, SMCSize.Grid10_24, SMCSize.Grid10_24, SMCSize.Grid10_24).HideLabel() //.DisplayText(@Smc.GetUIResource("Fieldset_Modal_SelecaoTurma_Campo_Divisao"))
+                @Smc.EditorFor(m => m.SeqConfiguracaoComponente)
+                @Smc.EditorFor(m => m.Seq)
+                @Smc.HiddenFor(m => m.PermitirGrupo)
+                @Smc.EditorFor(m => m.PreRequisito)
+                @Smc.EditorFor(m => m.SeqDivisaoTurmaTemp)
+                @Smc.EditorFor(m => m.SeqDivisaoComponente)
+                @Smc.EditorFor(m => m.SeqTurmaControle)
+
+                if (Model.SeqDivisaoTurmaTemp > 0)
+                {
+                    @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-alinhamento-botao-secundario")
+									 .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+											.Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDivisaoTurma")
+											.Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Divisao_Turma"))
+											.Ajax(isPost: false)
+											.SecurityToken(SMC.Academico.Common.Areas.TUR.Constants.UC_TUR_001_06_01.VISUALIZAR_DETALHES_DIVISAO_TURMA)
+											.CssClass("smc-btn-visualizar-icotext").Tooltip(Smc.GetUIResource("Tooltip_Divisao_Turma"))
+											.Text(Smc.GetUIResource("Botao_Divisao_Turma"))
+											.Action("VisualizarDivisaoTurmaDetalhes", "DetalhesDivisaoTurmaRoute", new { seqDivisaoTurma = new SMCEncryptedLong(Model.SeqDivisaoTurmaTemp), seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao), area = string.Empty }))
+                    )
+                }
+                else
+                {
+                    if (Model.DivisoesTurmas.Count() > 0)
+                    {
+                        @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-alinhamento-botao-secundario").Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid4_24)
+                                             .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                    .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDivisaoTurma")
+                                                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Divisao_Turma"))
+                                                    .Ajax(isPost: false)
+                                                    .SecurityToken(SMC.Academico.Common.Areas.TUR.Constants.UC_TUR_001_06_01.VISUALIZAR_DETALHES_DIVISAO_TURMA)
+                                                    .CssClass("smc-btn-visualizar-icotext").Tooltip(Smc.GetUIResource("Tooltip_Divisao_Turma"))
+                                                    .Text(Smc.GetUIResource("Botao_Divisao_Turma"))
+                                                    .Action("VisualizarDivisaoTurmaDetalhes", "DetalhesDivisaoTurmaRoute", new { seqDivisaoTurma = new SMCEncryptedLong(Model.DivisoesTurmas[0].Seq), seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao), area = string.Empty }))
+                        )
+                    }
+                }
+                //using (Smc.Div("DivButtonVisualizar").Dependency("SeqDivisaoTurmaTemp", "VisualizarDivisaoTurmaDependency", "DetalhesDivisaoTurmaRoute", "SeqPessoaAtuacao").CssClass("smc-sga-fieldset-inline-recuo-topo").Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid4_24).Begin())
+                //{
+
+                //}
+
+            }
+            else
+            {
+                @Smc.DisplayFor(m => m.DivisaoTurmaDescricao).Size(SMCSize.Grid10_24, SMCSize.Grid11_24, SMCSize.Grid12_24, SMCSize.Grid9_24).HideLabel()
+                @Smc.DisplayFor(m => m.SeqDivisaoTurma).Size(SMCSize.Grid8_24, SMCSize.Grid10_24, SMCSize.Grid10_24, SMCSize.Grid10_24).HideLabel() //.Label(@Smc.GetUIResource("Fieldset_Modal_SelecaoTurma_Campo_Divisao"))
+                @Smc.EditorFor(m => m.SeqConfiguracaoComponente)
+                @Smc.EditorFor(m => m.Seq)
+                @Smc.EditorFor(m => m.SeqTurmaControle)
+
+                if (Model.SeqDivisaoTurma.HasValue)
+                {
+                    using (Smc.Div("DivButtonVisualizar").CssClass("smc-sga-fieldset-inline-recuo-topo").Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid4_24).Begin())
+                    {
+                        @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-alinhamento-botao-secundario")
+									 .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+											.Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDivisaoTurma")
+											.Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Divisao_Turma"))
+											.Ajax(isPost: false)
+											.SecurityToken(SMC.Academico.Common.Areas.TUR.Constants.UC_TUR_001_06_01.VISUALIZAR_DETALHES_DIVISAO_TURMA)
+											.CssClass("smc-btn-visualizar-icotext").Tooltip(Smc.GetUIResource("Tooltip_Divisao_Turma"))
+											.Text(Smc.GetUIResource("Botao_Divisao_Turma"))
+											.Action("VisualizarDivisaoTurmaDetalhes", "DetalhesDivisaoTurmaRoute", new { seqDivisaoTurma = new SMCEncryptedLong(Model.SeqDivisaoTurma.Value), seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao), area = string.Empty }))
+                            )
+
+                    }
+                }
+            }
+        }
+    }
+}

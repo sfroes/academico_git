@@ -1,0 +1,267 @@
+﻿// As importações devem ocorrer NECESSARIAMENTE nesta ordem
+// ********** ----- IDENTIDADE VISUAL (APLICAÇÃO) ----- ********** //
+@import "identidade/_smc-identidade-visual.scss";
+
+// ********** ----- Recursos compatilhados ------ ********** //
+@import "../../Content/Css/smc-login-sga.scss";
+
+// ********** ----- ESTILO CUSTOMIZADO (APLICAÇÃO) ----- ********** //
+@import "smc-estilo.scss";
+
+.smc-login-texto-reenvio-senha {
+    span {
+        margin-bottom: 15px !important;
+        color: #333 !important;
+    }
+}
+
+#fieldsetFormularioRedefinirSenha {
+    div.smc-size-md-12 {
+        width: 100%;
+    }
+}
+
+//ajustando login -  alteração senha
+
+.smc-login-body {
+    //width: 98% !important;
+}
+
+.smc-login-conteudo {
+    margin-top: 50px;
+    height: 100%;
+    min-height: 680px;
+    /* margin: 50%; */
+    //border: 5px solid blue;
+    padding-left: 10%;
+    width: 100%;
+    padding-right: 0;
+    padding: 0;
+    //padding-left: 5%;
+}
+
+div#SMCColunaEstrutural1 {
+    border: 0px solid #51ff51;
+    //width: 25%;
+    height: 150px;
+    padding: 0;
+}
+
+section.smc-login-section {
+   // width: 50%;
+    //border: 1px solid red;
+}
+
+div#SMCColunaEstrutural2 {
+    border: 0px solid green;
+   // width: 25%;
+    height: 150px;
+    padding: 0;
+}
+
+@media screen and (max-width: 956px) {
+
+    .smc-login-body {
+        background-size: 260px;
+        background-position: -71px -105px;
+    }
+
+    div#SMCColunaEstrutural1,
+    div#SMCColunaEstrutural2 {
+        //width: 5%;
+        display: none;
+    }
+
+    section.smc-login-section {
+       // width: 90%;
+    }
+}
+
+@media (max-width: 767px) {
+    .smc-login-body {
+        background-size: 320px;
+        background-position: -155px -275px;
+        //width: 97% !important;
+    }
+
+    div#SMCLoginContentAlteraSenha {
+        width: 100%;
+        padding: 0 10%;
+    }
+}
+
+
+//tela redefinição de senha fieldset
+@media screen and (min-width: 768px) {
+
+    div#SMCLoginContentAlteraSenha {
+        width: auto;
+    }
+
+
+    .smc-login-conteudo {
+        min-height: 610px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .smc-login-section {
+        //border: 1px solid red;
+        width: 650px;
+    }
+
+    .smc-login-section h2 {
+       // width: 320px; 
+    }
+
+
+    //testando condicional has para manipular o h2
+    //redefine senha
+    section.smc-login-section:has(h2 ~ form#formularioRedefinirSenha) h2 {
+        // color: red;
+        width: 320px;
+    }
+    //altera senha
+    section.smc-login-section:has(div > h2 ~ form#formularioAlterarSenha) h2 {
+        // color: red;
+        width: 320px;
+    }
+
+    section.smc-login-section:has(h2 ~ form#formularioLembrarSenha) h2 {
+        // color: red;
+        width: 100%;
+    }
+
+    form#formularioAlterarSenha,
+    form#formularioRedefinirSenha {
+        // border: 1px solid green;
+        width: 320px;
+    }
+
+    .smc-orientacao-senha {
+        //border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        padding: 20px;
+        margin: 15px 0;
+        flex: 1;
+        position: absolute;
+        left: 327px;
+        display: block;
+        width: 100%;
+        top: -278px;
+        color: #333 !important;
+        background: #fff;
+
+        &:before {
+            content: "";
+            bottom: -9px;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 11px 11px 0 11px;
+            border-color: #dbdbdb transparent transparent transparent;
+            right: 40px;
+            left: -15px;
+            top: 119px;
+            transform: rotate(90deg);
+        }
+
+        &:after {
+            content: "";
+            bottom: -9px;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 11px 11px 0 11px;
+            border-color: #ffffff transparent transparent transparent;
+            right: 40px;
+            left: -14px;
+            top: 119px;
+            transform: rotate(90deg);
+        }
+    }
+
+    #SMCColunaEstrutural1,
+    #SMCColunaEstrutural2 {
+        width: 0!important;
+    }
+}
+
+div#SMCLoginContentAlteraSenha1 {
+    border: 1px solid pink;
+    display: none;
+}
+
+div#SMCLoginContentAlteraSenha2 {
+    border: 1px solid pink;
+    display: none;
+}
+
+//fim tela redefinição de senha
+
+//Ajuste geral ligin
+
+.row {
+    margin: 0;
+}
+
+//Informe qual dos e-mails abaixo está ativo para receber uma nova senha.
+.smc-login-lista-itens {
+    border: solid 3px #dbeaf2 !important;
+    background: #fcfcfc!important;
+    display: inline-block;
+    width: 100%!important;
+}
+
+.smc-detalhe-editavel-tabular 
+.smc-detalhe-editavel-organizador > div > 
+.smc-detalhe-editavel-linha-dados > div.smc-size-md-24 {
+    display: flex;
+}
+
+//botoes de ação
+.smc-login-btn-acao-principal {
+    margin: 0 0 30px 0;
+    float: left;
+    //border: 1px solid green;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+@media screen and (max-width: 765px) {
+
+    div#SMCLoginContentAlteraSenha {
+        width: 100% !important;
+    }
+
+    h2 {
+        padding: 0 7px;
+    }
+
+    .smc-login-section {
+        padding: 0 7%;
+    }
+}
+
+.smc-login-footer-conteudo {
+    .smc-login-footer-logo-smc {
+        background-image: url(../../Content/Images/img-logo-smc.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 89px;
+        height: 38px;
+        margin-top: 14px;
+
+        &:before {
+            display: none !important;
+        }
+    }
+}
+
+.smc-btn-cadastrar {
+    margin-top: 0 !important;
+}

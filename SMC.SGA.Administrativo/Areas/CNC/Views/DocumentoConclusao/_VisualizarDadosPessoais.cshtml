@@ -1,0 +1,20 @@
+﻿@using SMC.SGA.Administrativo.Areas.CNC.Models;
+
+@model DocumentoConclusaoDadosPessoaisViewModel
+
+@using (Smc.Fieldset("DadosPessoais").CssClass("smc-sga-fieldset-espacamentos margin-top-10").Begin())
+{
+    @Smc.EditorFor(x => x.Nome)
+    @Smc.EditorFor(x => x.NomeSocial)
+    @Smc.EditorFor(x => x.Sexo)
+    @Smc.EditorFor(x => x.DataNascimento)
+    @Smc.EditorFor(x => x.DataInclusao)
+    @Smc.EditorFor(x => x.UsuarioInclusao)
+
+    @Smc.EditorFor(x => x.NumeroIdentidade)
+    @Smc.EditorFor(x => x.OrgaoEmissorIdentidade)
+    @Smc.EditorFor(x => x.UfIdentidade)
+    @Smc.EditorFor(x => x.DataExpedicaoIdentidade)
+    @Smc.EditorFor(x => x.Nacionalidade)
+    @Smc.EditorFor(x => x.Naturalidade)
+}

@@ -1,0 +1,65 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+
+@model AlunoListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item smc-sga-lista-detalhada").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-header-conteudo").Begin())
+        {
+            using (Smc.Div().Size(SMCSize.Grid19_24, SMCSize.Grid15_24, SMCSize.Grid16_24, SMCSize.Grid20_24).Begin())
+            {
+                @Smc.DisplayFor(m => m.NumeroRegistroAcademico).Size(SMCSize.Grid3_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid4_24)
+                @Smc.DisplayFor(m => m.Nome).Size(SMCSize.Grid9_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid7_24)
+                @Smc.DisplayFor(m => m.CpfOuPassaporte).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid5_24)
+                @Smc.DisplayFor(m => m.DescricaoSituacaoMatricula).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24)
+                if (Model.Falecido)
+                {
+                    @Smc.DisplayFor(m => m.Falecido).Size(SMCSize.Grid4_24, SMCSize.Grid24_24, SMCSize.Grid6_24, SMCSize.Grid2_24)
+                }
+            }
+
+            using (Smc.Div("DivButtonVisualizar").Size(SMCSize.Grid5_24, SMCSize.Grid9_24, SMCSize.Grid8_24, SMCSize.Grid4_24).CssClass("smc-btn-custom-destaque-lista-detalhada").Begin())
+            {
+                var buttonSet = Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-margem-superior");
+
+                buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                            .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_CUSTOM)
+                            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_VisualizarDadosAcademicosIngressante"))
+                            .Ajax(isPost: false)
+                            .Text(Smc.GetUIResource("Botao_VisualizarDadosAcademicosIngressante"))
+                            .Tooltip(Smc.GetUIResource("Botao_VisualizarDadosAcademicosIngressante"))
+                            .Type(SMCButtonType.Link).CssClass("smc-btn-visualizar-icotext")
+                            .SecurityToken(UC_ALN_001_01_01.PESQUISAR_ALUNO)
+                            .Action("VisualizarDadosAcademicosAluno", "Aluno", new { seq = new SMCEncryptedLong(Model.Seq) })
+                            .CssClass("smc-btn-custom-destaque-grid"));
+
+                @buttonSet;
+            }
+            using (Smc.Div().Size(SMCSize.Grid19_24, SMCSize.Grid15_24, SMCSize.Grid16_24, SMCSize.Grid20_24).Begin())
+            {
+                using (Smc.Div().Size(SMCSize.Grid4_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid4_24).Begin())
+                {
+                    if (!string.IsNullOrEmpty(Model.DescricaoParceriaIntercambio))
+                    {
+                        @Smc.Instructions().Text(Model.DescricaoParceriaIntercambio).CssClass("smc-sga-instruction smc-sga-instruction-vinculo-ingressante-lista")
+                    }
+                    @Smc.DisplayFor(m => m.DescricaoVinculo)
+                }
+                @Smc.DisplayFor(m => m.DadosVinculo).Size(SMCSize.Grid20_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid20_24)
+            }
+
+        }
+        @Smc.DisplayFor(m => m.Emails).Size(SMCSize.Grid24_24)
+    }
+    @Html.Partial("_DetailListButtons", Model)
+}
+
+@using (Smc.ModalWindow("modalMigracao")
+        .Title(Smc.GetUIResource("Observacao_Modal_Titulo"))
+        .Form("AlterarObservacao", "SalvarObservacao", "AcompanhamentoProcesso", null, true, x => x.Ajax())
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{ }

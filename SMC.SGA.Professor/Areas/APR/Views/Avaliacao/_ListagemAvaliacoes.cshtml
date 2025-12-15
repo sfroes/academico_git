@@ -1,0 +1,51 @@
+﻿@model SMCPagerModel<AvaliacaoListarViewModel>
+
+@(Smc.Legend("legenda", SMCOrientation.Horizontal).Items<SMC.Academico.Common.Areas.APR.Enums.TipoEntregaAvaliacao>().Size(SMCSize.Grid24_24))
+
+@(Smc.Grid("gridAvaliacao")
+    .HideRowNumber()
+    .ContentColumn(
+                @<text>
+                    @{
+                      var itemParsed = item as AvaliacaoListarViewModel;
+
+                      if (itemParsed.AplicacoesAvaliacao.FirstOrDefault().EntregaWeb)
+                      {
+                        @Smc.Legend("EntregaOnline", SMCOrientation.Horizontal).CssClass("smc-sga-legenda-avaliacoes").Item(SMCGeometricShapes.Circle, SMCLegendColors.Green2, null);
+                      }
+
+                    }
+                </text>, cssClass: SMCSizeHelper.GetSizeClasses(SMCSize.Grid1_24))
+  .FieldColumn(x => x.Sigla, cssClass: SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24))
+  .FieldColumn(x => x.Descricao, cssClass: SMCSizeHelper.GetSizeClasses(SMCSize.Grid8_24))
+  .FieldColumn(x => x.Valor, cssClass: SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24))
+  .FieldColumn(x => x.Media, cssClass: SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24))
+  .FieldColumn(x => x.TotalNotasLancadas, cssClass: SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24))
+  .FieldColumn(x => x.Data, cssClass: SMCSizeHelper.GetSizeClasses(SMCSize.Grid7_24))
+  .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", false,
+
+  x => Smc.Button(SMCButtonBehavior.Alterar)
+  .DisplayMode(SMCButtonDisplayMode.Icon)
+  .Text(Smc.GetUIResource("Botao_Editar_Avaliacao"))
+  .Tooltip(Smc.GetUIResource("Botao_Editar_Avaliacao_Tooltip"))
+  .Action("Edit", "Avaliacao", new { seq = (SMCEncryptedLong)(x as AvaliacaoListarViewModel).Seq })
+  .Enabled((x as AvaliacaoListarViewModel).HabilitarBotoes)
+  .ButtonInstructions(Smc.GetUIResource((x as AvaliacaoListarViewModel).MensagemDiarioFechado)),
+ 
+  x => Smc.Button(SMCButtonBehavior.Excluir).Ajax(isPost: false)
+  .DisplayMode(SMCButtonDisplayMode.Icon)
+  .Text(Smc.GetUIResource("Botao_Excluir_Avaliacao"))
+  .Tooltip(Smc.GetUIResource("Botao_Excluir_Avaliacao_Tooltip"))
+  .Confirm(Smc.GetUIResource("Botao_Excluir_Avaliacao_Titulo"), string.Format(Smc.GetUIResource("Botao_Excluir_Avaliacao_Confirmacao"), (x as AvaliacaoListarViewModel).Descricao))
+  .Action("Delete", "Avaliacao", new { seq = (SMCEncryptedLong)(x as AvaliacaoListarViewModel).Seq, seqOrigemAvaliacao = (SMCEncryptedLong)(x as AvaliacaoListarViewModel).AplicacoesAvaliacao.FirstOrDefault().SeqOrigemAvaliacao })
+  .Enabled((x as AvaliacaoListarViewModel).HabilitarBotoes)
+  .ButtonInstructions(Smc.GetUIResource((x as AvaliacaoListarViewModel).MensagemDiarioFechado)),
+  
+   x => Smc.Button("CorrecaoEntregaOnline").Type(SMCButtonType.Link)
+  .CssClass("smc-sga-professor-correcao-entrega-online")
+  .Text(Smc.GetUIResource("Botao_CorrecaoEntregaOnline"))
+  .Tooltip(Smc.GetUIResource("Botao_CorrecaoEntregaOnline_Tooltip"))
+  .Action("Index", "EntregaOnline", new { seqAplicacaoAvaliacao = (SMCEncryptedLong)(x as AvaliacaoListarViewModel).AplicacoesAvaliacao.FirstOrDefault().Seq, seqOrigemAvaliacao = (SMCEncryptedLong)(x as AvaliacaoListarViewModel).AplicacoesAvaliacao.FirstOrDefault().SeqOrigemAvaliacao, area="APR" })
+  .Enabled((x as AvaliacaoListarViewModel).AplicacoesAvaliacao.FirstOrDefault().EntregaWeb))
+)
+

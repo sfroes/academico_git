@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AtendimentoIntercambioViewModel_DescricaoInstituicaoExterna" xml:space="preserve">
+    <value>Instituição de ensino externa</value>
+  </data>
+  <data name="AtendimentoIntercambioViewModel_DescricaoTipoTermo" xml:space="preserve">
+    <value>Tipo de termo</value>
+  </data>
+  <data name="AtendimentoIntercambioViewModel_SeqTipoTermoIntercambio" xml:space="preserve">
+    <value>Tipo de termo de intercâmbio</value>
+  </data>
+  <data name="AtendimentoParecerAssertViewModel_DescricaoProcesso" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="AtendimentoParecerAssertViewModel_NomeSolicitante" xml:space="preserve">
+    <value>Solicitante</value>
+  </data>
+  <data name="AtendimentoParecerAssertViewModel_OrientacoesDeferimento" xml:space="preserve">
+    <value>Orientações quando realizado o deferimento da solicitação</value>
+  </data>
+  <data name="AtendimentoParecerViewModel_Parecer" xml:space="preserve">
+    <value>Parecer</value>
+  </data>
+  <data name="AtendimentoParecerViewModel_Situacao" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="AtendimentoParecerViewModel_Situacao_FALSE" xml:space="preserve">
+    <value>Indeferido</value>
+  </data>
+  <data name="AtendimentoParecerViewModel_Situacao_TRUE" xml:space="preserve">
+    <value>Deferido</value>
+  </data>
+  <data name="AtendimentoReaberturaViewModel_SeqGrupoEscalonamentoMatricula" xml:space="preserve">
+    <value>Grupo de escalonamento</value>
+  </data>
+  <data name="AtendimentoReaberturaViewModel_SeqProcessoEscalonamentoReabertura" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="ConsultaDadosAlunoTermoIntercambioViewModel_DataFim" xml:space="preserve">
+    <value>Fim do intercâmbio</value>
+  </data>
+  <data name="ConsultaDadosAlunoTermoIntercambioViewModel_DataInicio" xml:space="preserve">
+    <value>Início do intercâmbio</value>
+  </data>
+  <data name="ConsultaDadosAlunoTermoIntercambioViewModel_DescricaoTermoIntercambio" xml:space="preserve">
+    <value>Termo de intercâmbio</value>
+  </data>
+  <data name="ConsultaDadosAlunoTermoIntercambioViewModel_DescricaoTipoIntercambio" xml:space="preserve">
+    <value>Tipo de termo</value>
+  </data>
+  <data name="ConsultaDadosAlunoTermoIntercambioViewModel_InstituicaoExterna" xml:space="preserve">
+    <value>Instituição de ensino externa</value>
+  </data>
+  <data name="DocumentosAtendimentoItemViewModel_DescricaoTipoDocumento" xml:space="preserve">
+    <value>Tipo de documento</value>
+  </data>
+  <data name="PessoaFiliacaoViewModel_TipoParentesco" xml:space="preserve">
+    <value>Parentesco</value>
+  </data>
+  <data name="RealizarAtendimentoPadraoCabecalhoViewModel_DadosVinculo" xml:space="preserve">
+    <value>Dados do vínculo</value>
+  </data>
+  <data name="RealizarAtendimentoPadraoCabecalhoViewModel_DescricaoJustificativa" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="RealizarAtendimentoPadraoCabecalhoViewModel_DescricaoSolicitacao" xml:space="preserve">
+    <value>Solicitação</value>
+  </data>
+  <data name="RealizarAtendimentoPadraoCabecalhoViewModel_DescricaoVinculo" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="RealizarAtendimentoPadraoCabecalhoViewModel_FormacoesEspecificas" xml:space="preserve">
+    <value>Formações específicas</value>
+  </data>
+  <data name="SelecaoChancelaPlanoViewModel_DescricaoSituacaoAtualFormatada" xml:space="preserve">
+    <value>Situação da solicitação</value>
+  </data>
+  <data name="SeqGrauAcademicoSelecionado" xml:space="preserve">
+    <value>Grau acadêmico</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoAtosCursoViewModel_AtoAutorizacaoCurso" xml:space="preserve">
+    <value>Autorização</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoAtosCursoViewModel_AtoReconhecimentoCurso" xml:space="preserve">
+    <value>Reconhecimento do curso</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoAtosCursoViewModel_AtoRenovacaoReconhecimentoCurso" xml:space="preserve">
+    <value>Renovação reconhecimento</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoAtosCursoViewModel_CodigoCursoOfertaLocalidade" xml:space="preserve">
+    <value>Código de Migração da Oferta de Curso</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoAtosCursoViewModel_CodigoOrgaoRegulador" xml:space="preserve">
+    <value>Código do Órgão Regulador</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoAtosCursoViewModel_DataConclusao" xml:space="preserve">
+    <value>Data Conclusão</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoAtosCursoViewModel_DescricaoGrauAcademico" xml:space="preserve">
+    <value>Grau Acadêmico</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoAtosCursoViewModel_SeqCursoOfertaLocalidade" xml:space="preserve">
+    <value>ID da Oferta de Curso por Localidade</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarAtividadeComplementarListarViewModel_CargaHoraria" xml:space="preserve">
+    <value>CH</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarAtividadeComplementarListarViewModel_NomeDocente" xml:space="preserve">
+    <value>Docente</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarAtividadeComplementarListarViewModel_TitulacaoDocente" xml:space="preserve">
+    <value>Titulação</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarEnadeViewModel_Ano" xml:space="preserve">
+    <value>Ano</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarEnadeViewModel_Categoria" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarEnadeViewModel_Condicao" xml:space="preserve">
+    <value>Condição</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarEnadeViewModel_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoListarViewModel_CargaHoraria" xml:space="preserve">
+    <value>CH</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoListarViewModel_Disciplina" xml:space="preserve">
+    <value>Disciplina</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoListarViewModel_FormaIntegralizacao" xml:space="preserve">
+    <value>Forma Integralização</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoListarViewModel_NomeDocente" xml:space="preserve">
+    <value>Docente</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoListarViewModel_Nota" xml:space="preserve">
+    <value>NA</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoListarViewModel_Periodo" xml:space="preserve">
+    <value>Período letivo</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoListarViewModel_TitulacaoDocente" xml:space="preserve">
+    <value>Titulação</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoViewModel_CargaHorariaCurso" xml:space="preserve">
+    <value>CH do currículo</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoViewModel_CargaHorariaCursoFormatada" xml:space="preserve">
+    <value>CH do currículo</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoViewModel_CargaHorariaCursoIntegralizada" xml:space="preserve">
+    <value>CH integralizada</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoViewModel_CargaHorariaCursoIntegralizadaFormatada" xml:space="preserve">
+    <value>CH integralizada</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoViewModel_CodigoCurriculo" xml:space="preserve">
+    <value>Código do currículo</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoViewModel_DataColacao" xml:space="preserve">
+    <value>Data da colação</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoViewModel_DataConclusao" xml:space="preserve">
+    <value>Data da conclusão</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoViewModel_DataIngresso" xml:space="preserve">
+    <value>Data do ingresso</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoViewModel_DescricaoFormaIngresso" xml:space="preserve">
+    <value>Forma de ingresso</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoViewModel_DescricaoSituacaoAtualEnade" xml:space="preserve">
+    <value>Situação atual do enade</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoViewModel_DescricaoSituacaoAtualMatricula" xml:space="preserve">
+    <value>Situação atual de matrícula</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoViewModel_DescricaoTipoHistorico" xml:space="preserve">
+    <value>Tipo do histórico</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoDocumentacaoViewModel_ArquivoAnexado" xml:space="preserve">
+    <value>Anexo</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoDocumentacaoViewModel_Observacao" xml:space="preserve">
+    <value>Observações</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoDocumentacaoViewModel_SeqTipoDocumento" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoFormacaoConcluidaViewModel_DataColacaoGrau" xml:space="preserve">
+    <value>Colação</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoFormacaoConcluidaViewModel_DataConclusao" xml:space="preserve">
+    <value>Conclusão</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoFormacaoConcluidaViewModel_DescricaoDocumentoConclusao" xml:space="preserve">
+    <value>Descrição documento</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoFormacaoConcluidaViewModel_DescricaoFormacaoEspecifica" xml:space="preserve">
+    <value>Formação</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoFormacaoConcluidaViewModel_DescricaoTitulacao" xml:space="preserve">
+    <value>Titulação</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoFormacaoConcluidaViewModel_DescricoesFormacaoEspecifica" xml:space="preserve">
+    <value>Formação</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoFormacaoConcluidaViewModel_NumeroRA" xml:space="preserve">
+    <value>RA</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoFormacaoConcluidaViewModel_NumeroViaGerada" xml:space="preserve">
+    <value>Via que será gerada</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoFormacaoConcluidaViewModel_SituacaoAlunoFormacao" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel_DescricaoDecode" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemListarViewModel_DescricaoTipoMensagem" xml:space="preserve">
+    <value>Tipo </value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemViewModel_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoMensagemViewModel_SeqTipoMensagem" xml:space="preserve">
+    <value>Tipo </value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_CargaHorariaCurso" xml:space="preserve">
+    <value>Carga horária do curso (hora-relógio)</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_CargaHorariaIntegralizada" xml:space="preserve">
+    <value>Carga horária integralizada (hora-relógio)</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_CodigoAlunoMigracao" xml:space="preserve">
+    <value>Cód. migração</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_CodigoCursoOfertaLocalidade" xml:space="preserve">
+    <value>Código da oferta de curso (SGA)</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_CodigoPessoaCAD" xml:space="preserve">
+    <value>Cód. pessoa (CAD)</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_Cotutela" xml:space="preserve">
+    <value>Co-tutela</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DataAdmissao" xml:space="preserve">
+    <value>Data de ingresso</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DataDefesa" xml:space="preserve">
+    <value>Data da defesa</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DataEmissaoHistorico" xml:space="preserve">
+    <value>Data emissão histórico escolar</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DataEnade" xml:space="preserve">
+    <value>Data ENADE</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DataExpedicaoIdentidade" xml:space="preserve">
+    <value>Data expedição</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DataInclusaoDadosPessoais" xml:space="preserve">
+    <value>Atualizado em</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DataValidadePassaporte" xml:space="preserve">
+    <value>Data validade</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DescricaoCursoDocumento" xml:space="preserve">
+    <value>Descrição documento</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DescricaoCursoOferta" xml:space="preserve">
+    <value>Oferta de curso</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DescricaoCursoOfertaLocalidade" xml:space="preserve">
+    <value>Oferta de curso por localidade</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DescricaoFormaIngresso" xml:space="preserve">
+    <value>Forma de ingresso</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DescricaoGrauAcademico" xml:space="preserve">
+    <value>Grau acadêmico</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DescricaoModalidade" xml:space="preserve">
+    <value>Modalidade</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DescricaoNacionalidade" xml:space="preserve">
+    <value>Nacionalidade</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DescricaoTipoDocumentoAcademico" xml:space="preserve">
+    <value>Tipo de documento solicitado</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DescricaoTipoDocumentoSolicitado" xml:space="preserve">
+    <value>Tipo documento solicitado</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DescricaoTitulacao" xml:space="preserve">
+    <value>Titulação</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_DescricaoViaAnterior" xml:space="preserve">
+    <value>Via anterior</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_EmissaoPermitida" xml:space="preserve">
+    <value>Emissão permitida?</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_FiliacaoDisplay" xml:space="preserve">
+    <value>Filiação</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_FormacoesEspecificasConcluidas" xml:space="preserve">
+    <value>Formações específicas concluídas</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_FormatoHistoricoEscolar" xml:space="preserve">
+    <value>Formato envio</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_InformacaoViaAnterior" xml:space="preserve">
+    <value>Via anterior</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_MotivoEmissaoNaoPermitida" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_Naturalidade" xml:space="preserve">
+    <value>Naturalidade</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_NomeAluno" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_NomePaisEmissaoPassaporte" xml:space="preserve">
+    <value>País de emissão</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_NomeSocial" xml:space="preserve">
+    <value>Nome social autorizado CAD</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_NumeroDocumento" xml:space="preserve">
+    <value>Número documento</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_NumeroIdentidade" xml:space="preserve">
+    <value>Nro da identidade</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_NumeroIdentidadeEstrangeira" xml:space="preserve">
+    <value>Identidade estrangeira</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_NumeroPassaporte" xml:space="preserve">
+    <value>Passaporte</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_NumeroRA" xml:space="preserve">
+    <value>RA</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_NumeroVia" xml:space="preserve">
+    <value>Via que será gerada</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_NumeroViaAnterior" xml:space="preserve">
+    <value>Número da via anterior</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_NumeroViaGerada" xml:space="preserve">
+    <value>Via que será gerada</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_ObservacoesEmissaoNaoPermitida" xml:space="preserve">
+    <value>Observações</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_OrgaoEmissorIdentidade" xml:space="preserve">
+    <value>Órgão emissor</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_ReconhecimentoCurso" xml:space="preserve">
+    <value>Reconhecimento do curso</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_ReutilizarDados" xml:space="preserve">
+    <value>Dados do Registro e Publicação DOU devem ser reaproveitados?</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_SeqTipoDocumentoSolicitado" xml:space="preserve">
+    <value>Tipo documento solicitado</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_SituacaoEnade" xml:space="preserve">
+    <value>Situação ENADE</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_TipoDocumento" xml:space="preserve">
+    <value>Tipo documento</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_TipoIdentidade" xml:space="preserve">
+    <value>Selecione qual Cédula de Identidade deverá ser enviada na emissão</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_TipoPapelImpressao" xml:space="preserve">
+    <value>Tipo de papel</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_UfIdentidade" xml:space="preserve">
+    <value>Estado emissor</value>
+  </data>
+  <data name="SolicitacaoAnaliseEmissaoDocumentoConclusaoViewModel_UsuarioInclusaoDadosPessoais" xml:space="preserve">
+    <value>Atualizado por</value>
+  </data>
+  <data name="SolicitacaoAtividadeComplementarPaginaViewModel_SeqDivisaoComponente" xml:space="preserve">
+    <value>Atividade complementar</value>
+  </data>
+  <data name="SolicitacaoDadosAnexosViewModel_DescricaoJustificativa" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="SolicitacaoDadosAnexosViewModel_ObservacoesJustificativa" xml:space="preserve">
+    <value>Observações da justificativa</value>
+  </data>
+  <data name="SolicitacaoDadosAnexosViewModel_SituacaoSolicitacao_FALSE" xml:space="preserve">
+    <value>Indeferido</value>
+  </data>
+  <data name="SolicitacaoDadosAnexosViewModel_SituacaoSolicitacao_TRUE" xml:space="preserve">
+    <value>Deferido</value>
+  </data>
+  <data name="SolicitacaoDispensaGrupoDestinoViewModel_SeqSolicitacaoDispensaDestino" xml:space="preserve">
+    <value>Componente a ser dispensado</value>
+  </data>
+  <data name="SolicitacaoDispensaGrupoOrigemExternaViewModel_SeqSolicitacaoDispensaOrigemExterna" xml:space="preserve">
+    <value>Componente cursado em outra instituição</value>
+  </data>
+  <data name="SolicitacaoDispensaGrupoOrigemInternaViewModel_SeqSolicitacaoDispensaOrigemInterna" xml:space="preserve">
+    <value>Componente cursado na instituição</value>
+  </data>
+  <data name="SolicitacaoDispensaGrupoViewModel_ModoExibicaoHistoricoEscolar" xml:space="preserve">
+    <value>Modo de exibição</value>
+  </data>
+  <data name="SolicitacaoIntercambioParticipanteViewModel_SeqInstituicaoExterna" xml:space="preserve">
+    <value>Instituição de ensino</value>
+  </data>
+</root>

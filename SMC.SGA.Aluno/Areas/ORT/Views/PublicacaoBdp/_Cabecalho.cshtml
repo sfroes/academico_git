@@ -1,0 +1,10 @@
+﻿@model CabecalhoPublicacaoBdpViewModel
+
+@using (Smc.Header("Publicacao", SMCHeaderType.Primary)
+                    .Item(prop => prop.EntidadeResponsavel, sizeMD: SMCSize.Grid12_24)
+                    .Item(prop => prop.OfertaCursoLocalidadeTurno, sizeMD: SMCSize.Grid12_24)
+                    .Item(prop => prop.AreaConhecimento, sizeMD: SMCSize.Grid12_24)
+                    .Item(prop => prop.AreaConcentracao, sizeMD: SMCSize.Grid12_24)
+                    .Begin())
+{ }
+

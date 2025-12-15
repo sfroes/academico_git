@@ -1,0 +1,14 @@
+<po-container *ngIf="hasItems" p-no-padding p-no-shadow>
+  <ul class="po-tree-view">
+    <smc-tree-view-item
+      *ngFor="let item of items; trackBy: trackByFunction"
+      [class.smc-tree-view-item-single-item]="selectableSingleItem"
+      [s-all-selectable-items]="allSelectedItmes"
+      [s-item]="item"
+      [s-selectable]="selectable"
+      [s-select-sheet-only]="selectSheetOnly"
+      [s-selectable-single-item]="selectableSingleItem"
+    >
+    </smc-tree-view-item>
+  </ul>
+</po-container>

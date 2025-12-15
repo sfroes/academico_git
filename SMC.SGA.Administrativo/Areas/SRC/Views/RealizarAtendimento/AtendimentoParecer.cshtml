@@ -1,0 +1,22 @@
+﻿@model AtendimentoParecerViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_ATENDIMENTO_PARECER))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    using (Smc.Fieldset("fsDadosParecer").Begin())
+    {
+        @Smc.EditorFor(x => x.Situacao)
+        @Smc.EditorFor(x => x.Parecer)
+    }
+
+    @Html.Partial("_BotoesNavegacao", Model)
+}

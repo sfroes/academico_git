@@ -1,0 +1,108 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.APR.Models
+
+@model  HistoricoEscolarNotaViewModel
+
+@using (Smc.Div().CssClass("smc-detalhe-editavel-organizador").Begin())
+{
+    using (Smc.Div().Begin())
+    {
+        using (Smc.Div().CssClass("smc-detalhe-editavel-linha-dados").Begin())
+        {
+
+            @Smc.HiddenFor(m => m.Seq)
+            @Smc.HiddenFor(m => m.SeqPessoaAtuacao)
+            @Smc.HiddenFor(m => m.SeqAlunoHistorico)
+            @Smc.HiddenFor(m => m.IndicadorApuracaoFrequencia)
+            @Smc.HiddenFor(m => m.IndicadorApuracaoNota)
+            @Smc.HiddenFor(m => m.IndicadorPermiteAlunoSemNota)
+            @Smc.HiddenFor(m => m.TipoArredondamento)
+            @Smc.HiddenFor(m => m.SeqEscalaApuracao)
+            @Smc.HiddenFor(m => m.NotaMaxima)
+            @Smc.HiddenFor(m => m.PercentualMinimoFrequencia)
+            @Smc.HiddenFor(m => m.PercentualMinimoNota)
+            @Smc.HiddenFor(m => m.CargaHoraria)
+            @Smc.HiddenFor(m => m.SeqComponenteCurricular)
+            @Smc.HiddenFor(m => m.SeqComponenteCurricularAssunto)
+            @Smc.HiddenFor(m => m.Credito)
+            @Smc.HiddenFor(m => m.Aprovado)
+            @Smc.HiddenFor(m => m.Faltas)
+            @Smc.HiddenFor(m => m.AlunoFormado)
+            @Smc.HiddenFor(m => m.SomenteLeitura)
+
+            @Smc.EditorFor(m => m.NumeroRegistroAcademico).Size(SMCSize.Grid2_24)
+            if (Model.MostrarLancamentosNota)
+            {
+                if (Model.MostrarLacamentosSemNota)
+                {
+                    @Smc.EditorFor(m => m.NomeAlunoFormatado).Size(SMCSize.Grid10_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid10_24)
+                    @Smc.EditorFor(m => m.SemNota).Size(SMCSize.Grid2_24)
+                }
+                else
+                {
+                    @Smc.EditorFor(m => m.NomeAlunoFormatado).Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid12_24)
+                }
+                @if (Model.AlunoFormado)
+                {
+                    @Smc.EditorFor(m => m.Nota).Size(SMCSize.Grid2_24).Attribute("title", Smc.GetUIResource("AlunoFormado_Tooltip"))
+                }
+                else
+                {
+                    @Smc.EditorFor(m => m.Nota).Size(SMCSize.Grid2_24)
+                }
+
+            }
+            else if (Model.MostrarLancamentosNotaDescricao)
+            {
+                if (Model.MostrarLacamentosSemNota)
+                {
+                    @Smc.EditorFor(m => m.NomeAlunoFormatado).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid6_24)
+                    @Smc.EditorFor(m => m.SemNota).Size(SMCSize.Grid2_24)
+                }
+                else
+                {
+                    @Smc.EditorFor(m => m.NomeAlunoFormatado).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid8_24)
+                }
+                @if (Model.AlunoFormado)
+                {
+                    @Smc.EditorFor(m => m.Nota).Size(SMCSize.Grid2_24).Attribute("title", Smc.GetUIResource("AlunoFormado_Tooltip"))
+                    @Smc.EditorFor(m => m.DescricaoEscalaApuracaoItem).Size(SMCSize.Grid4_24).Attribute("title", Smc.GetUIResource("AlunoFormado_Tooltip"))
+                }
+                else
+                {
+                    @Smc.EditorFor(m => m.Nota).Size(SMCSize.Grid2_24)
+                    @Smc.EditorFor(m => m.DescricaoEscalaApuracaoItem).Size(SMCSize.Grid4_24)
+                }
+            }
+            else if (Model.MostrarLancamentosSeqEscalaApuracaoItem)
+            {
+                if (Model.MostrarLacamentosSemNota)
+                {
+                    @Smc.EditorFor(m => m.NomeAlunoFormatado).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid6_24)
+                    @Smc.EditorFor(m => m.SemNota).Size(SMCSize.Grid2_24)
+                }
+                else
+                {
+                    @Smc.EditorFor(m => m.NomeAlunoFormatado).Size(SMCSize.Grid10_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid10_24)
+                }
+                @Smc.EditorFor(m => m.SeqEscalaApuracaoItem).Size(SMCSize.Grid4_24)
+            }
+
+            var size = SMCSize.Grid5_24;
+            @if ((bool)ViewBag.ExibirCampoCargaHorariaRealizada)
+            {
+                size = SMCSize.Grid3_24;
+                @Smc.EditorFor(m => m.CargaHorariaRealizada).Size(SMCSize.Grid2_24)
+            }
+            else
+            {
+                @Smc.HiddenFor(m => m.CargaHorariaRealizada)
+            }
+            @Smc.EditorFor(m => m.SomaFaltasApuracao).Size(SMCSize.Grid2_24)
+            @Smc.EditorFor(m => m.DescricaoSituacaoHistoricoEscolar).Size(size)
+            using (Smc.HidePanel("hidePanelObservacao").Header("").AutoShow(!string.IsNullOrEmpty(Model.Observacao)).Begin())
+            {
+                @Smc.EditorFor(m => m.Observacao).Size(SMCSize.Grid24_24)
+            }
+        }
+    }
+}

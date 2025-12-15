@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AssociacaoCursoUnidadeTurnoLote_Texto_Informativo_Campos_Periodo_Oferta" xml:space="preserve">
+    <value>Informe o período em que a oferta será realizada. Lembre-se: as datas informadas serão aplicadas a todos os cursos selecionados.</value>
+  </data>
+  <data name="AssociacaoCursoUnidadeTurnoLote_Title" xml:space="preserve">
+    <value>Associação de Curso / Unidade / Turno em Lote</value>
+  </data>
+  <data name="AssociacaoCursoUnidadeTurno_AssociacaoLote" xml:space="preserve">
+    <value>Associação em Lote</value>
+  </data>
+  <data name="AssociacaoCursoUnidadeTurno_AssociacaoUnica" xml:space="preserve">
+    <value>Associação Única</value>
+  </data>
+  <data name="AssociacaoCursoUnidadeTurno_Botao_AssociarCursoUnidadeTurno" xml:space="preserve">
+    <value>Associar curso/Unidade/Turno</value>
+  </data>
+  <data name="AssociacaoCursoUnidadeTurno_Botao_AssociarCursoUnidadeTurno_Tooltip" xml:space="preserve">
+    <value>Associar curso / Unidade / Turno</value>
+  </data>
+  <data name="AssociacaoCursoUnidadeTurno_Botao_Salvar" xml:space="preserve">
+    <value>Associar</value>
+  </data>
+  <data name="AssociacaoCursoUnidadeTurno_Incluir_Associacao_Modal_Title" xml:space="preserve">
+    <value>Associação de Curso/Unidade/Turno</value>
+  </data>
+  <data name="AssociacaoCursoUnidadeTurno_Title" xml:space="preserve">
+    <value>Associação de Curso / Unidade / Turno</value>
+  </data>
+  <data name="AssociacaoLocalidade_Associar_Localidade_Modal_Title" xml:space="preserve">
+    <value>Associação de Localidade</value>
+  </data>
+  <data name="AssociacaoLocalidade_Botao_Open" xml:space="preserve">
+    <value>Associar localidade</value>
+  </data>
+  <data name="AssociacaoLocalidade_Botao_Open_Tooltip" xml:space="preserve">
+    <value>Associar localidade</value>
+  </data>
+  <data name="AssociacaoLocalidade_Botao_Salvar" xml:space="preserve">
+    <value>Associar</value>
+  </data>
+  <data name="AssociacaoLocalidade_Title" xml:space="preserve">
+    <value>Associação de Localidade</value>
+  </data>
+  <data name="AssociacaoPolo_Associar_Polo_Modal_Title" xml:space="preserve">
+    <value>Associação de Polo</value>
+  </data>
+  <data name="AssociacaoPolo_Botao_Open" xml:space="preserve">
+    <value>Associar polo</value>
+  </data>
+  <data name="AssociacaoPolo_Botao_Open_Tooltip" xml:space="preserve">
+    <value>Associar polo</value>
+  </data>
+  <data name="AssociacaoPolo_Botao_Salvar" xml:space="preserve">
+    <value>Associar</value>
+  </data>
+  <data name="AssociacaoPolo_Title" xml:space="preserve">
+    <value>Associação de Polo</value>
+  </data>
+  <data name="Editar_Title" xml:space="preserve">
+    <value>Alterar Oferta de Curso por Ciclo Letivo</value>
+  </data>
+  <data name="Incluir_Title" xml:space="preserve">
+    <value>Nova Oferta de Curso por Ciclo Letivo</value>
+  </data>
+  <data name="Index_Botao_Novo" xml:space="preserve">
+    <value>Nova oferta de curso</value>
+  </data>
+  <data name="Index_Botao_Novo_Tooltip" xml:space="preserve">
+    <value>Nova oferta de curso por ciclo letivo</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Cadastro de Oferta de Curso por Ciclo Letivo</value>
+  </data>
+  <data name="_AssociarLocalidade_Texto_Selecione_Localidades" xml:space="preserve">
+    <value>Localize e selecione uma ou mais localidades</value>
+  </data>
+  <data name="_AssociarPolo_Texto_Selecione_Polos" xml:space="preserve">
+    <value>Localize e selecione um ou mais polos</value>
+  </data>
+  <data name="_BotaoConfigurarOfertaCursoCicloLetivo_Botao_Configurar_AssociarCursoUnidadeTurno_Label" xml:space="preserve">
+    <value>Associação de Curso/Unidade/Turno</value>
+  </data>
+  <data name="_BotaoConfigurarOfertaCursoCicloLetivo_Botao_Configurar_AssociarLocalidade_Label" xml:space="preserve">
+    <value>Associação de Localidade</value>
+  </data>
+  <data name="_BotaoConfigurarOfertaCursoCicloLetivo_Botao_Configurar_AssociarPolo_Label" xml:space="preserve">
+    <value>Associação de Polo</value>
+  </data>
+  <data name="_BotaoConfigurarOfertaCursoCicloLetivo_Botao_Configurar_Editar_Label" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="_ListarAssociacaoCursoUnidadeTurnoLote_gridAssociacaoCursoUnidadeTurnoLote_Grid_Titulo" xml:space="preserve">
+    <value>Cursos/Unidades/Turnos</value>
+  </data>
+  <data name="_ListarAssociacaoCursoUnidadeTurno_Editar_Associacao_Modal_Title" xml:space="preserve">
+    <value>Associação de Curso/Unidade/Turno</value>
+  </data>
+  <data name="_ListarAssociacaoCursoUnidadeTurno_Exclusao_Curso_Unidade_Turno_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão da associação curso/unidade "{0}/{1}"?</value>
+  </data>
+  <data name="_ListarAssociacaoCursoUnidadeTurno_Exclusao_Curso_Unidade_Turno_Title" xml:space="preserve">
+    <value>Excluir Associação de Curso/Unidade</value>
+  </data>
+  <data name="_ListarAssociacaoCursoUnidadeTurno_gridAssociacaoCursoUnidadeTurno_Grid_Titulo" xml:space="preserve">
+    <value>Cursos associados</value>
+  </data>
+  <data name="_ListarAssociacaoLocalidade_Exclusao_Associacao_Localidade_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão da localidade "{0}"?</value>
+  </data>
+  <data name="_ListarAssociacaoLocalidade_Exclusao_Associacao_Localidade_Title" xml:space="preserve">
+    <value>Excluir Localidade</value>
+  </data>
+  <data name="_ListarAssociacaoLocalidade_gridAssociacaoLocalidade_Grid_Titulo" xml:space="preserve">
+    <value>Localidades</value>
+  </data>
+  <data name="_ListarAssociacaoPolo_Exclusao_Associacao_Polo_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão do polo "{0}"?</value>
+  </data>
+  <data name="_ListarAssociacaoPolo_Exclusao_Associacao_Polo_Title" xml:space="preserve">
+    <value>Excluir Polo</value>
+  </data>
+  <data name="_ListarAssociacaoPolo_gridAssociacaoPolo_Grid_Titulo" xml:space="preserve">
+    <value>Polos</value>
+  </data>
+  <data name="_ListarCicloLetivo_Exclusao_Ciclo_Letivo_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão da oferta de curso por ciclo letivo "{0}"?</value>
+  </data>
+  <data name="_ListarCicloLetivo_Exclusao_Ciclo_Letivo_Title" xml:space="preserve">
+    <value>Excluir Oferta de Curso por Ciclo Letivo</value>
+  </data>
+  <data name="_ListarCicloLetivo_gridCicloLetivo_Grid_Titulo" xml:space="preserve">
+    <value>Ofertas de Cursos por Ciclo Letivo</value>
+  </data>
+  <data name="_ListarOfertaCursoCicloLetivo_Exclusao_Oferta_Curso_Ciclo_Letivo_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão da oferta "{0}"?</value>
+  </data>
+  <data name="_ListarOfertaCursoCicloLetivo_Exclusao_Oferta_Curso_Ciclo_Letivo_Title" xml:space="preserve">
+    <value>Excluir Oferta de Curso por Ciclo Letivo</value>
+  </data>
+  <data name="_ListarOfertaCursoCicloLetivo_gridOfertaCursoCicloLetivo_Grid_Titulo" xml:space="preserve">
+    <value>Ofertas Cursos por Ciclo Letivo</value>
+  </data>
+  <data name="_ListarOfertaCursoCicloLetivo_Menu_Configurar_Associar_Curso_Unidade_Turno_Label" xml:space="preserve">
+    <value>Associação de Curso/Unidade/Turno</value>
+  </data>
+  <data name="_ListarOfertaCursoCicloLetivo_Menu_Configurar_Configurar_Associar_Localidade_Label" xml:space="preserve">
+    <value>Associação de Localidade</value>
+  </data>
+  <data name="_ListarOfertaCursoCicloLetivo_Menu_Configurar_Configurar_Associar_Polo_Label" xml:space="preserve">
+    <value>Associação de Polo</value>
+  </data>
+</root>

@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG_BloqueioChancelaEtapa" xml:space="preserve">
+    <value>Essa solicitação não poderá ser chancelada, pois há bloqueio(s) associado(s) ao solicitante que impede(m) a realização da chancela do plano de estudos.</value>
+  </data>
+  <data name="MSG_BloqueioEfetivacaoEtapa" xml:space="preserve">
+    <value>Essa solicitação não poderá ser efetivada, pois há bloqueio(s) associado(s) ao solicitante que impede(m) a realização da efetivação do plano de estudos.</value>
+  </data>
+  <data name="MSG_GrupoChancelaValidade" xml:space="preserve">
+    <value>Essa solicitação não poderá ser chancelada, pois a etapa de chancela esta fora do período de vigência.</value>
+  </data>
+  <data name="MSG_GrupoEfetivacaoValidade" xml:space="preserve">
+    <value>Essa solicitação não poderá ser efetivada, pois a etapa de efetivação esta fora do período de vigência.</value>
+  </data>
+  <data name="MSG_InstructionEncerrarEtapa_1" xml:space="preserve">
+    <value>Opção indisponível. A etapa está encerrada.</value>
+  </data>
+  <data name="MSG_InstructionEncerrarEtapa_2" xml:space="preserve">
+    <value>Opção indisponível. Todos os escalonamentos da etapa foram encerrados.</value>
+  </data>
+  <data name="MSG_InstructionEncerrarEtapa_3" xml:space="preserve">
+    <value>Opção indisponível. Os escalonamentos associados a essa etapa que estão com o prazo de vigência expirado estão associados a grupos de escalonamentos, cujos escalonamentos de etapas anteriores não foram encerrados.</value>
+  </data>
+  <data name="MSG_InstructionEncerrarEtapa_4" xml:space="preserve">
+    <value>Opção indisponível. Para o encerramento da etapa é necessário que as etapas anteriores estejam encerrados.</value>
+  </data>
+  <data name="MSG_InstructionEncerrarEtapa_5" xml:space="preserve">
+    <value>Opção indisponível. O encerramento é permitido somente quando há escalonamentos expirados para a etapa.</value>
+  </data>
+  <data name="MSG_InstructionEncerrarEtapa_6" xml:space="preserve">
+    <value>Opção indisponível. O encerramento é permitido somente se a etapa estiver expirado.</value>
+  </data>
+  <data name="MSG_SituacaoCancelado" xml:space="preserve">
+    <value>Essa solicitação não poderá ser chancelada, pois a situaçao da solicitação não permite alteração na chancela.</value>
+  </data>
+  <data name="MSG_SituacaoCanceladoEfetivacao" xml:space="preserve">
+    <value>Essa solicitação não poderá ser efetivada, pois a situaçao da solicitação não permite efetivação.</value>
+  </data>
+  <data name="MSG_SituacaoEtapa" xml:space="preserve">
+    <value>Essa solicitação não poderá ser efetuada, pois a etapa não esta liberada.</value>
+  </data>
+  <data name="MSG_Solicitacao_Cancelada_Automaticamente" xml:space="preserve">
+    <value>A solicitação foi cancelada automaticamente durante o encerramento da etapa, devido identificação de bloqueios vigentes para o solicitante que geram o cancelamento da solicitação, conforme parametrização do processo de bloqueios x etapa.</value>
+  </data>
+  <data name="MSG_SolicitacaoHistoricoServico" xml:space="preserve">
+    <value>O processo foi reiniciado a partir da última etapa em que a solicitação parou, mediante a alteração do grupo de escalonamento, de {0} para {1}.</value>
+  </data>
+  <data name="MSG_TipoDiferenteMatricula" xml:space="preserve">
+    <value>Essa solicitação não poderá ser chancelada, pois o tipo de serviço é diferente de matricula de ingressante.</value>
+  </data>
+  <data name="MSG_TipoDiferenteMatriculaEfetivacao" xml:space="preserve">
+    <value>Essa solicitação não poderá ser efetivada, pois o tipo de serviço é diferente de matricula de ingressante.</value>
+  </data>
+  <data name="MSG_Solicitacao_Chancela_Automatica" xml:space="preserve">
+    <value>Durante o encerramento da etapa de chancela, o procedimento da chancela da solicitação foi realizado automaticamente para os itens com a situação classificada como “Finalizada com sucesso”.</value>
+  </data>
+  <data name="MSG_Solicitacao_FinalizadaSemSucesso_Automaticamente" xml:space="preserve">
+    <value>A solicitação foi finalizada sem sucesso automaticamente durante o encerramento da etapa.</value>
+  </data>
+  <data name="MSG_NaoExisteSituacaoEtapaSGF" xml:space="preserve">
+    <value>ERRO: CONTATE O ADMINISTRADOR</value>
+  </data>
+  <data name="MSG_SituacaoFinalItemMatriculaNaoEncontrada" xml:space="preserve">
+    <value>Não foi possível identificar a situação final de item de matrícula igual a etapa finalizada sem sucesso.</value>
+  </data>
+  <data name="MSG_InstructionEncerrarProcesso_1" xml:space="preserve">
+    <value>Opção indisponível. O processo está encerrado.</value>
+  </data>
+  <data name="MSG_InstructionEncerrarProcesso_2" xml:space="preserve">
+    <value>Opção indisponível. Para o encerramento do processo é necessário que todas as etapas sejam previamente encerradas.</value>
+  </data>
+  <data name="MSG_InstructionConfigurarEtapa" xml:space="preserve">
+    <value>Opção indisponível. Para a configuração das etapas é necessário que a configuração do processo seja previamente cadastrada.</value>
+  </data>
+  <data name="MSG_ConfirmacaoRetornarEtapaAnterior" xml:space="preserve">
+    <value>A solicitação selecionada encontra-se na {0}. Confirma o retorno da solicitação para {1}?</value>
+  </data>
+  <data name="MSG_ConfirmacaoRetornarEtapaAnteriorEmissaoDocumentoConclusao" xml:space="preserve">
+    <value>Atenção. Não é permitido retornar na etapa de Assinatura e Registro, nesse caso será retornado para a etapa anterior à etapa de Assinatura e Registro. Confirma retornar?</value>
+  </data>
+  <data name="MSG_InstructionExcluirProcesso_1" xml:space="preserve">
+    <value>Opção indisponível. O processo está encerrado.</value>
+  </data>
+  <data name="MSG_InstructionExcluirProcesso_2" xml:space="preserve">
+    <value>Opção indisponível. Há solicitação associada ao processo.</value>
+  </data>
+  <data name="MSG_InstructionExcluirEtapa_1" xml:space="preserve">
+    <value>Opção indisponível. A etapa está encerrada.</value>
+  </data>
+  <data name="MSG_InstructionExcluirEtapa_2" xml:space="preserve">
+    <value>Opção indisponível. Há solicitação associada ao processo.</value>
+  </data>
+  <data name="MSG_InstructionExcluirEtapa_3" xml:space="preserve">
+    <value>Opção indisponível. A etapa é obrigatória e não pode ser excluída.</value>
+  </data>
+  <data name="MSG_CamposGrupoEscalonamento_GrupoAtivo" xml:space="preserve">
+    <value>O grupo está ativo. Para alterar os dados do grupo é necessário que o mesmo esteja inativo.</value>
+  </data>
+  <data name="MSG_CamposGrupoEscalonamento_EtapaEncerrada" xml:space="preserve">
+    <value>A etapa está encerrada.</value>
+  </data>
+  <data name="MSG_CamposGrupoEscalonamento_SolicitacaoAssociada" xml:space="preserve">
+    <value>Existe solicitação de serviço associado ao grupo. Para alterar o escalonamento é necessário que a situação da etapa seja diferente de liberada.</value>
+  </data>
+  <data name="MSG_CamposConfigurarParcela_EscalonamentoEncerrado" xml:space="preserve">
+    <value>O escalonamento está encerrado.</value>
+  </data>
+  <data name="MSG_CamposConfigurarParcela_GrupoAtivo" xml:space="preserve">
+    <value>O grupo de escalonamento está ativo. Para alterar a configuração de parcela é necessário que o mesmo esteja inativo.</value>
+  </data>
+  <data name="MSG_CamposConfigurarParcela_ProcessoEncerrado" xml:space="preserve">
+    <value>O processo está encerrado.</value>
+  </data>
+  <data name="MSG_CamposConfigurarParcela_SolicitacaoAssociada" xml:space="preserve">
+    <value>Para alterar a configuração de parcela de um escalonamento vigente e, que possui solicitações associadas, é necessário que a respectiva etapa esteja em manutenção.</value>
+  </data>
+  <data name="MSG_InstructionCopiarProcesso" xml:space="preserve">
+    <value>Opção indisponível. Não é possível copiar um processo que possua etapas em manutenção.</value>
+  </data>
+  <data name="MSG_CamposGrupoEscalonamento_ProcessoEncerrado" xml:space="preserve">
+    <value>O processo está encerrrado.</value>
+  </data>
+  <data name="MSG_CamposGrupoEscalonamento_SolicitacaoAssociadaBloquearEscalonamento" xml:space="preserve">
+    <value>Existe solicitação de serviço associada ao grupo. Para alterar o escalonamento é necessário que a situação da etapa seja diferente de liberada ou &lt;/br&gt; encerrada.</value>
+  </data>
+  <data name="MSG_InstructionEmitirBoletoDiferenteEmAberto" xml:space="preserve">
+    <value>Não é possível emitir o boleto, pois a situação do mesmo no
+sistema financeiro é igual a: {0}.</value>
+  </data>
+  <data name="MSG_Documentos_Solicitados" xml:space="preserve">
+    <value>Documentos solicitados:</value>
+  </data>
+  <data name="MSG_InstructionEmitirBoletoSemTitulo" xml:space="preserve">
+    <value>Não é possível emitir o boleto. Não há título financeiro criado para a solicitação de serviço. Verifique se a confirmação da solicitação foi concluída pelo solicitante.</value>
+  </data>
+  <data name="MSG_DocumentoConclusaoEmissaoPendente" xml:space="preserve">
+    <value>Emissão pendente</value>
+  </data>
+  <data name="MSG_DocumentoConclusaoOpcaoIndisponivel" xml:space="preserve">
+    <value>Opção indisponível</value>
+  </data>
+</root>

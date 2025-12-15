@@ -1,0 +1,42 @@
+﻿@model PaginaInstrucoesFinaisMatriculaViewModel
+
+@{
+    var buttonSet = Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-botoes-secundarios").AddButton(
+        Smc.Button("VisualizarContrato",
+                   "AdesaoContratoVisualizar",
+                   new { seqArquivoContrato = new SMCEncryptedLong(Model.SeqArquivoContrato) })
+                   .Attribute("target", "_blank")
+                   .Type(SMCButtonType.Link)
+                   .CssClass("smc-btn-documento-icotext")
+                   //.SecurityToken(UC_MAT_003_13_01.PAGINA_CONTRATO_PRESTACAO_SERVICOS_EDUCACIONAIS)
+                   .Attribute("onclick", "$('#btn_aderir_contrato').removeAttr('disabled');")).AddButton(
+            Smc.Button("VisualizarTermo", "VisualizarTermoAdesao",
+                       new { seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoMatricula) },
+                       "Matricula")
+                       .CssClass("smc-btn-documento-icotext")
+                       .Attribute("target", "_blank")
+                       .SecurityToken()
+                       .Type(SMCButtonType.Link));
+
+
+    if (Model.CodigoAdesao.HasValue || Model.DataAdesao.HasValue)
+    {
+        if (Model.Parcelas != null && Model.Parcelas.Any())
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+            {
+                <p class="smc-sga-msg-conteudo-linha">@Smc.GetUIResource("Mensagem_Informacoes_Financeiras")</p>
+            }
+        }
+
+        using (Smc.Fieldset("fsDadosContrato").Begin())
+        {
+            @buttonSet
+            @Smc.DisplayFor(x => x.DataAdesao).Size(SMCSize.Grid8_24)
+            @Smc.DisplayFor(x => x.CodigoAdesao).Size(SMCSize.Grid16_24)
+            @Smc.HiddenFor(x => x.DataAdesao)
+            @Smc.HiddenFor(x => x.CodigoAdesao)
+           
+        }
+    }
+}

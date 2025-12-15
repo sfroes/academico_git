@@ -1,0 +1,354 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Data</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.Data.Exceptions.SMCEmptyConnectionStringException">
+            <summary>
+            Representa uma exceção quando uma string de conexão não é encontrada no app.config
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Data.Exceptions.SMCEmptyConnectionStringException.#ctor(System.String)">
+            <summary>
+            Cria um novo objeto SMCEmptyConnectionStringException
+            </summary>
+            <param name="connectionName">Nome da string de conexão</param>
+        </member>
+        <member name="F:SMC.Framework.Data.Exceptions.SMCEmptyConnectionStringException._connectionName">
+            <summary>
+            Armazena o nome da string de conexão
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Data.Exceptions.SMCEmptyConnectionStringException.ConnectionName">
+            <summary>
+            Nome da string de conexão
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Data.SMCDataReaderExtension">
+            <summary>
+            Contém métodos de suporte para recuperar um campo de um datareader.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDataReaderExtension.SMCGetValue``1(System.Data.IDataReader,System.String)">
+            <summary>
+            Recupera um valor de um campo de um datareader.
+            </summary>
+            <typeparam name="T">Tipo do valor que está no campo.</typeparam>
+            <param name="reader">DataReader.</param>
+            <param name="fieldName">Nome do campo.</param>
+            <returns>Valor do campo.</returns>
+        </member>
+        <member name="T:SMC.Framework.Data.Resources.ExceptionsResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Data.Resources.ExceptionsResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Data.Resources.ExceptionsResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Data.Resources.ExceptionsResource.SMCEmptyConnectionStringException">
+            <summary>
+              Looks up a localized string similar to Não foi encontrada uma string de conexão com o nome &apos;{0}&apos; no arquivo de configuração..
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Data.SMCDbRepositoryProvider">
+            <summary>
+            Classe de suporte para acesso à base de dados.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Data.SMCDbRepositoryProvider._commandTimeOut">
+            <summary>
+            Armazena o timeout padrão para comandos.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Data.SMCDbRepositoryProvider._connection">
+            <summary>
+            Armazena o objeto de conexão com a base.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.#ctor(System.Data.Common.DbConnection)">
+            <summary>
+            Cria um novo repositório a partir de uma conexão existente.
+            </summary>
+            <param name="connection">Objeto de conexão com a base.</param>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.#ctor(System.String)">
+            <summary>
+            Cria um novo repositório a partir do nome da conexão configurada no arquivo de configuração.
+            </summary>
+            <param name="connectionString">String de conexão.</param>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.CreateConnection(System.String)">
+            <summary>
+            Método de suporte para criação do objeto de conexão pela connectionString.
+            </summary>
+            <param name="connectionString">String de conexão.</param>
+            <returns>Connection criada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.CreateCommand(System.String,System.Data.CommandType)">
+            <summary>
+            Cria um comando a partir do texto e do tipo de comando.
+            </summary>
+            <param name="commandText">Comando a ser executado.</param>
+            <param name="commandType">Tipo do comando (o padrão é StoredProcedure).</param>
+            <returns>Comando criado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.AddParameter``1(System.Data.Common.DbCommand,System.String,``0)">
+            <summary>
+            Adiciona um novo parâmetro a um comando existente.
+            </summary>
+            <param name="command">Comando onde será adicionado o parâmetro.</param>
+            <param name="parameterName">Nome do parâmetro.</param>
+            <param name="value">Valor do parâmetro.</param>
+            <returns>Parametro criado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.AddReturnValueParameter(System.Data.Common.DbCommand,System.Data.DbType)">
+            <summary>
+            Adiciona um novo parâmetro de retorno a um comando existente.
+            </summary>
+            <param name="command">Comando onde será adicionado o parâmetro.</param>
+            <param name="dbType">Tipo do parâmetro.</param>
+            <returns>Parametro criado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.AddParameter(System.Data.Common.DbCommand,System.String,System.Object,System.Data.DbType,System.Data.ParameterDirection)">
+            <summary>
+            Adiciona um novo parâmetro a um comando existente.
+            </summary>
+            <param name="command">Comando onde será adicionado o parâmetro.</param>
+            <param name="parameterName">Nome do parâmetro.</param>
+            <param name="value">Valor do parâmetro.</param>
+            <param name="dbType">Tipo do parâmetro.</param>
+            <param name="direction">Direção do parâmetro (o padrão é Input).</param>
+            <returns>Parametro criado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.GetParameter``1(System.Data.Common.DbCommand,System.String)">
+            <summary>
+            Recupera um parametro de output
+            </summary>
+            <typeparam name="T">Tipo do parametro</typeparam>
+            <param name="command">Comando que foi executado</param>
+            <param name="parameterName">Nome do parametro</param>
+            <returns>Valor do parametro</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.ExecuteNonQuery(System.Data.Common.DbCommand)">
+            <summary>
+            Executa um comando que não possui retorno.
+            </summary>
+            <param name="command">Comando que será executado.</param>
+            <returns>Número de registros afetados.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.ExecuteScalar``1(System.Data.Common.DbCommand)">
+            <summary>
+            Executa um comando que retorna um valor único escalar.
+            </summary>
+            <param name="command">Comando que será executado.</param>
+            <returns>Valor único escalar resultado da execução.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.ExecuteReader(System.Data.Common.DbCommand)">
+            <summary>
+            Executa um comando que retorna um DataReader.
+            </summary>
+            <param name="command">Comando que será executado.</param>
+            <returns>DataReader para acesso ao resultado da consulta.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.ExecuteReaderJSON(System.Data.Common.DbCommand)">
+            <summary>
+             Executa um comando que retorna um conjunto de valores em JSON
+            </summary>
+            <param name="command">Comando que será executado.</param>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.ExecuteReader``1(System.Data.Common.DbCommand,System.Func{System.Data.IDataReader,``0})">
+            <summary>
+            Executa um comando que retorna uma lista de T.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="command">Comando que será executado.</param>
+            <param name="func">Função de mapeamento do datareader para a entidade.</param>
+            <returns>Lista das entidades.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.Dispose">
+            <summary>
+            Realiza um dispose na conexão com o banco.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbRepositoryProvider.Throw``1(System.Func{``0})">
+            <summary>
+            Encapsula a função dentro de um Try Catch
+            </summary>
+            <param name="metodo"></param>
+        </member>
+        <member name="F:SMC.Framework.Data.SMCSqlDbRepositoryProvider._commandTimeOut">
+            <summary>
+            Armazena o timeout padrão para comandos.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Data.SMCSqlDbRepositoryProvider._connection">
+            <summary>
+            Armazena o objeto de conexão com a base.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.#ctor(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Cria um novo repositório a partir de uma conexão existente.
+            </summary>
+            <param name="connection">Objeto de conexão com a base.</param>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.#ctor(System.String)">
+            <summary>
+            Cria um novo repositório a partir do nome da conexão configurada no arquivo de configuração.
+            </summary>
+            <param name="connectionString">String de conexão.</param>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.CreateConnection(System.String)">
+            <summary>
+            Método de suporte para criação do objeto de conexão pela connectionString.
+            </summary>
+            <param name="connectionString">String de conexão.</param>
+            <returns>Connection criada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.CreateCommand(System.String,System.Data.CommandType)">
+            <summary>
+            Cria um comando a partir do texto e do tipo de comando.
+            </summary>
+            <param name="commandText">Comando a ser executado.</param>
+            <param name="commandType">Tipo do comando (o padrão é StoredProcedure).</param>
+            <returns>Comando criado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.AddParameter``1(System.Data.SqlClient.SqlCommand,System.String,``0)">
+            <summary>
+            Adiciona um novo parâmetro a um comando existente.
+            </summary>
+            <param name="command">Comando onde será adicionado o parâmetro.</param>
+            <param name="parameterName">Nome do parâmetro.</param>
+            <param name="value">Valor do parâmetro.</param>
+            <returns>Parametro criado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.AddReturnValueParameter(System.Data.SqlClient.SqlCommand,System.Data.SqlDbType)">
+            <summary>
+            Adiciona um novo parâmetro de retorno a um comando existente.
+            </summary>
+            <param name="command">Comando onde será adicionado o parâmetro.</param>
+            <param name="dbType">Tipo do parâmetro.</param>
+            <returns>Parametro criado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.AddParameter(System.Data.SqlClient.SqlCommand,System.String,System.Object,System.Data.SqlDbType,System.Data.ParameterDirection)">
+            <summary>
+            Adiciona um novo parâmetro a um comando existente.
+            </summary>
+            <param name="command">Comando onde será adicionado o parâmetro.</param>
+            <param name="parameterName">Nome do parâmetro.</param>
+            <param name="value">Valor do parâmetro.</param>
+            <param name="dbType">Tipo do parâmetro.</param>
+            <param name="direction">Direção do parâmetro (o padrão é Input).</param>
+            <returns>Parametro criado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.AddParameter(System.Data.SqlClient.SqlCommand,System.String,System.Object,System.Data.SqlDbType,System.Int32,System.Data.ParameterDirection)">
+            <summary>
+            Adiciona um novo parâmetro a um comando existente.
+            </summary>
+            <param name="command">Comando onde será adicionado o parâmetro.</param>
+            <param name="parameterName">Nome do parâmetro.</param>
+            <param name="value">Valor do parâmetro.</param>
+            <param name="size">Size</param>
+            <param name="dbType">Tipo do parâmetro.</param>
+            <param name="direction">Direção do parâmetro (o padrão é Input).</param>
+            <returns>Parametro criado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.GetParameter``1(System.Data.SqlClient.SqlCommand,System.String)">
+            <summary>
+            Recupera um parametro de output
+            </summary>
+            <typeparam name="T">Tipo do parametro</typeparam>
+            <param name="command">Comando que foi executado</param>
+            <param name="parameterName">Nome do parametro</param>
+            <returns>Valor do parametro</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.ExecuteNonQuery(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Executa um comando que não possui retorno.
+            </summary>
+            <param name="command">Comando que será executado.</param>
+            <returns>Número de registros afetados.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.ExecuteScalar``1(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Executa um comando que retorna um valor único escalar.
+            </summary>
+            <param name="command">Comando que será executado.</param>
+            <returns>Valor único escalar resultado da execução.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.ExecuteReader(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Executa um comando que retorna um DataReader.
+            </summary>
+            <param name="command">Comando que será executado.</param>
+            <returns>DataReader para acesso ao resultado da consulta.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.ExecuteReader``1(System.Data.SqlClient.SqlCommand,System.Func{System.Data.IDataReader,``0})">
+            <summary>
+            Executa um comando que retorna uma lista de T.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <param name="command">Comando que será executado.</param>
+            <param name="func">Função de mapeamento do datareader para a entidade.</param>
+            <returns>Lista das entidades.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.Dispose">
+            <summary>
+            Realiza um dispose na conexão com o banco.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCSqlDbRepositoryProvider.Throw``1(System.Func{``0})">
+            <summary>
+            Encapsula a função dentro de um Try Catch
+            </summary>
+            <param name="metodo"></param>
+        </member>
+        <member name="T:SMC.Framework.Data.SMCDbHelper">
+            <summary>
+            Inclusão de classe de suporte para execução rápida de comandos (para projetos de teste).
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Data.SMCDbHelper.SMCDbDefaultRepository">
+            <summary>
+            Provider interno que acesso à connection string chamada Default.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbHelper.SMCDbDefaultRepository.ExecuteReaderJSON(System.String)">
+            <summary>
+            Executa um comando que retorna um conjunto de valores em JSON
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbHelper.ExecuteScalar``1(System.String)">
+            <summary>
+            Executa um comando que retorna uma variável escalar.
+            </summary>
+            <typeparam name="T">Tipo da variável de retorno.</typeparam>
+            <param name="commandText">Consulta a ser executada.</param>
+            <returns>Variável escalar.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbHelper.ExecuteReader``1(System.String,System.Func{System.Data.IDataReader,``0})">
+            <summary>
+            Executa um comando que retorna um conjunto de valores como resultado.
+            </summary>
+            <typeparam name="T">Tipo do resultado.</typeparam>
+            <param name="commandText">Consulta a ser executada.</param>
+            <param name="func">Função de transformação de cada registro em T.</param>
+            <returns>Conjunto de objetos T.</returns>
+        </member>
+        <member name="M:SMC.Framework.Data.SMCDbHelper.ExecuteReaderJSON(System.String)">
+            <summary>
+            Executa um comando que retorna um conjunto de valores em JSON
+            </summary>
+        </member>
+    </members>
+</doc>

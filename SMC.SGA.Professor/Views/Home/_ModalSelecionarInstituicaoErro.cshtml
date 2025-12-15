@@ -1,0 +1,6 @@
+﻿@model Exception
+
+@(Smc.Message(SMCMessageType.Error, "erroProfessor", "Ocorreu um erro", Model.Message)
+    .Button("Deslogar", "Logout", "Home", new { area = "" }, x => x.Type(SMCButtonType.Link))
+    .HideCloseButton()
+    .AutoShow())

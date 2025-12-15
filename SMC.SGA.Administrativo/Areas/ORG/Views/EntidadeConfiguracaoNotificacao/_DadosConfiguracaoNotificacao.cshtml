@@ -1,0 +1,24 @@
+﻿@model EntidadeConfiguracaoNotificacaoViewModel
+
+@using (Smc.Wizard("WizardIncluir")
+            .ButtonSet(1, SMCButtonSetGroupedStyle.Arrow, false, "smc-wizard-salvar-arrow",
+                          item => Smc.Button(SMCButtonBehavior.Salvar)
+                                .Type(SMCButtonType.Submit)
+                                .Action("Salvar", "EntidadeConfiguracaoNotificacao")
+                                .Ajax(isPost: true)
+                                .DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+
+                   .ButtonSet(1, SMCButtonSetGroupedStyle.Arrow, cssClass: "smc-wizard-cancelar-arrow", alwaysVisible: true, buttons:
+                          item => Smc.Button(SMCButtonBehavior.Cancelar)
+                                    .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                    .Action("Index", "EntidadeConfiguracaoNotificacao"))
+
+ .Begin())
+ {
+    using (Smc.WizardStep(0).Title(Smc.GetUIResource("WizardStepTipoNotificacao_Title")).Action("WizardStepTipoNotificacao").Begin())
+    { }
+    using (Smc.WizardStep(1).Title(Smc.GetUIResource("WizardStepConfiguracaoEmail_Title")).Action("WizardStepConfiguracaoEmail").Begin())
+    { }
+    using (Smc.WizardStep(2).Title(Smc.GetUIResource("WizardStepConfiguracaoConfirmacao_Title")).Action("WizardStepConfirmacao").Begin())
+    { }
+ }

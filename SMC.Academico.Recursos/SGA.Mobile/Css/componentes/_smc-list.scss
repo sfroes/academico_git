@@ -1,0 +1,114 @@
+﻿// LISTA DETALHADA
+
+.smc-list {
+    margin-top: 0;
+}
+
+.smc-listdetailed-item {
+    border-left: 3px solid $smc-cor-secundaria-01;
+
+    .smc-buttonset-vertical-secundario {
+        padding-top: 5px;
+        margin-left: 6px;
+    }
+}
+
+.smc-sga-divisoes-turma { // classe específica para seleção de turma pelo aluno
+    .smc-button {
+        margin-top: -8px;
+    }
+}
+
+.smc-listdetailed-conteudo-titulo, .smc-listdetailed-conteudo-titulo-linhaunica {
+    p {
+        font: normal normal normal 16px/16px "sf_ui_displayregular",Arial,sans-serif !important;
+        //font: normal bold normal 14px/14px "sf_ui_displayregular",Arial,sans-serif !important;
+        color: $smc-cor-principal-05 !important;
+    }
+}
+
+
+.smc-listdetailed-conteudo-titulo {
+    p {
+        padding-top: 10px !important;
+    }
+}
+
+.smc-listdetailed-conteudo-titulo-linhaunica {
+    p {
+        padding: 8px 0 1px 0 !important;
+    }
+}
+
+
+.smc-listdetailed-conteudo-subtitulo { // padrão de títulos
+    //font: normal normal bold 12px/12px "sf_ui_displayregular",Arial,sans-serif !important;
+    font: normal normal bold 14px/14px "sf_ui_displayregular",Arial,sans-serif !important;
+    color: $smc-cor-principal-01 !important;
+}
+
+.smc-listdetailed-conteudo-valor-secundario {
+    margin: 5px 0px 10px 0px !important;
+}
+
+label.smc-listdetailed-conteudo-subtitulo {
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+.smc-listdetailed-conteudo-lista {
+    // grid dentro da lista detalhada
+    .smc-datagrid-header {
+        background-color: transparent;
+
+        span:first-child {
+            color: $smc-cor-principal-02;
+        }
+    }
+
+    .smc-datagrid {
+        thead {
+            box-shadow: none;
+            background: $smc-cinza-01 !important;
+
+            tr th {
+                background-color: transparent !important;
+                padding: 5px 10px 0 10px !important;
+                border-top: 4px solid $smc-cinza-02;
+            }
+        }
+
+        tbody tr {
+            background: $smc-cinza-01 !important;
+            height: 20px !important;
+
+            td {
+                border-right: none !important;
+                border-bottom: 1px solid $smc-cinza-02 !important;
+                box-shadow: none !important;
+                color: $smc-preto !important;
+                padding-top: 0;
+            }
+        }
+    }
+}
+
+.smc-list-cabecalho-topo {
+    border-radius: 0;
+}
+// seleção multipla do checkbox
+.smc-list-item { // ver em tela de seleção de turma
+    label {
+        margin-right: 5px;
+    }
+
+    .smc-size-md-1 {
+        .smc-checkbox {
+            border: 3px solid $smc-cinza-02;
+            height: 37px;
+            width: 44px;
+            padding-left: 10px;
+            background-color: $smc-branco;
+        }
+    }
+}

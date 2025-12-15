@@ -1,0 +1,7 @@
+﻿@model ConfiguracaoComponenteDivisaoListarViewModel
+
+@using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.DisplayFor(m => m.DescricaoFormatada).CssClass("smc-listdetailed-conteudo-subtitulo-destaque smc-sga-itens-lista-ajuste").HideLabel().Size(SMCSize.Grid12_24)
+    @Smc.DisplayFor(m => m.CargaHorariaGradeFormatada).HideLabel()
+}

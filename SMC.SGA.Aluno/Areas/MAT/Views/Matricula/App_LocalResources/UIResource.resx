@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Excluir_Turma_Selecionado" xml:space="preserve">
+    <value>Confirma a exclusão da seleção da turma "{0}" ?</value>
+  </data>
+  <data name="ParametroDivisoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Divisões de turma</value>
+  </data>
+  <data name="Texto_Bloqueio" xml:space="preserve">
+    <value>Bloqueio</value>
+  </data>
+  <data name="Title_Excluir_Turma_Selecionado" xml:space="preserve">
+    <value>Excluir Seleção de Turma</value>
+  </data>
+  <data name="TurmaAlterarSelecaoAluno_Title" xml:space="preserve">
+    <value>Alterar Divisões da Turma</value>
+  </data>
+  <data name="TurmaMatrizOferta_Lista_Titulo" xml:space="preserve">
+    <value>Turmas ofertadas - </value>
+  </data>
+  <data name="Botao_Aderircontrato" xml:space="preserve">
+    <value>Aderir contrato</value>
+  </data>
+  <data name="Botao_Visualizarcontrato" xml:space="preserve">
+    <value>Visualizar contrato</value>
+  </data>
+  <data name="Botao_Visualizartermo" xml:space="preserve">
+    <value>Visualizar termo</value>
+  </data>
+  <data name="fsDadosIngressante_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados do contratante</value>
+  </data>
+  <data name="fsInformacoesAcademicas_Fieldset_Legenda" xml:space="preserve">
+    <value>Informações acadêmicas</value>
+  </data>
+  <data name="fsInformacoesFinanceiras_Fieldset_Legenda" xml:space="preserve">
+    <value>Informações financeiras</value>
+  </data>
+  <data name="Texto_Meses" xml:space="preserve">
+    <value>meses</value>
+  </data>
+  <data name="Label_Selecionar" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="Botao_Aderircontrato_Instrucoes" xml:space="preserve">
+    <value>Para realizar a adesão é necessário visualizar o contrato.</value>
+  </data>
+  <data name="Mensagem_Informacoes_Financeiras" xml:space="preserve">
+    <value>* Os valores apresentados originários não levam em consideração eventuais benefícios ou reajustes
+conforme previstos na lei 9.870/99 e no contrato.</value>
+  </data>
+  <data name="fsCondicoes_Fieldset_Legenda" xml:space="preserve">
+    <value>Condição de pagamento</value>
+  </data>
+  <data name="Texto_Valores_Integrais" xml:space="preserve">
+    <value>* Os valores apresentados originários não levam em consideração eventuais benefícios ou reajustes conforme previstos na lei 9.870/99 e no contrato.</value>
+  </data>
+  <data name="Botao_Visualizar_Turma_Atividade" xml:space="preserve">
+    <value>Exibir itens</value>
+  </data>
+  <data name="Title_Modal_Visualizar_Turma_Atividade" xml:space="preserve">
+    <value>Turmas e Atividades</value>
+  </data>
+  <data name="Botao_Selecionar" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="fsDadosAdesao_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados da adesão do contrato</value>
+  </data>
+  <data name="Boleto" xml:space="preserve">
+    <value>Boleto</value>
+  </data>
+  <data name="fsPagamentoMatricula_Fieldset_Legenda" xml:space="preserve">
+    <value>Pagamento de matrícula</value>
+  </data>
+  <data name="fsDadosContrato_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados do contrato</value>
+  </data>
+  <data name="Title_Divisao_Turma" xml:space="preserve">
+    <value>Detalhes da Divisão de Turma</value>
+  </data>
+  <data name="Tooltip_Divisao_Turma" xml:space="preserve">
+    <value>Mais informações</value>
+  </data>
+  <data name="fsTermoAdesao_Fieldset_Legenda" xml:space="preserve">
+    <value>Contrato e termo de adesão</value>
+  </data>
+  <data name="Tooltip_Alterar" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="Label_Banco_Agencia_Cedente" xml:space="preserve">
+    <value>BANCO / AGÊNCIA / CÓDIGO CEDENTE</value>
+  </data>
+  <data name="Label_Cedente" xml:space="preserve">
+    <value>BENEFICIÁRIO</value>
+  </data>
+  <data name="Label_Data_Pagamento" xml:space="preserve">
+    <value>DATA DO PAGAMENTO</value>
+  </data>
+  <data name="Label_Data_Processamento" xml:space="preserve">
+    <value>DATA DO PROCESSAMENTO</value>
+  </data>
+  <data name="Label_Data_Vencimento" xml:space="preserve">
+    <value>DATA DE VENCIMENTO</value>
+  </data>
+  <data name="Label_Demonstrativo_Despesas" xml:space="preserve">
+    <value>DEMONSTRATIVO DE DESPESAS</value>
+  </data>
+  <data name="Label_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Label_Mensagens" xml:space="preserve">
+    <value>MENSAGENS</value>
+  </data>
+  <data name="Label_Nosso_Numero" xml:space="preserve">
+    <value>NOSSO NÚMERO / CÓDIGO DO DOCUMENTO</value>
+  </data>
+  <data name="Label_Quantidade" xml:space="preserve">
+    <value>Qtd</value>
+  </data>
+  <data name="Label_Sacado" xml:space="preserve">
+    <value>PAGADOR</value>
+  </data>
+  <data name="Label_TipoDespesa" xml:space="preserve">
+    <value>Tipo de despesa</value>
+  </data>
+  <data name="Label_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Label_Total_Geral" xml:space="preserve">
+    <value>Total Geral</value>
+  </data>
+  <data name="Label_Valor" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="Label_Valor_Cobrado" xml:space="preserve">
+    <value>VALOR COBRADO</value>
+  </data>
+  <data name="Label_Valor_Documento" xml:space="preserve">
+    <value>VALOR DO DOCUMENTO</value>
+  </data>
+  <data name="Texto_Recibo_Sacado" xml:space="preserve">
+    <value>RECIBO DO SACADO</value>
+  </data>
+  <data name="ExibicaoBloqueio_Title" xml:space="preserve">
+    <value>Bloqueios</value>
+  </data>
+  <data name="Titulo_Modal_Bloqueios" xml:space="preserve">
+    <value>Bloqueios</value>
+  </data>
+  <data name="Mensagem_Bloqueio" xml:space="preserve">
+    <value>Prezado(a), existe um ou mais bloqueios que impedem a realização da matrícula.</value>
+  </data>
+  <data name="TurmaMatrizSelecionada_Lista_Titulo" xml:space="preserve">
+    <value>Turmas selecionadas</value>
+  </data>
+  <data name="Botao_Divisao_Turma" xml:space="preserve">
+    <value>Mais informações</value>
+  </data>
+  <data name="AtividadeAcademicaSelecionada_Lista_Titulo" xml:space="preserve">
+    <value>Atividades acadêmicas</value>
+  </data>
+  <data name="Botao_Gerarboleto_Tooltip" xml:space="preserve">
+    <value>Este boleto será enviado para seu endereço de correspondência. Caso você não o receba, a segunda via deverá ser emitida nesta página.</value>
+  </data>
+  <data name="Mensagem_Informacoes_Beneficio" xml:space="preserve">
+    <value>ATENÇÃO: Para o benefício que você possui, não é necessário efetuar o pagamento de nenhuma parcela de matrícula para concluir sua solicitação.</value>
+  </data>
+  <data name="Botao_Gerarboleto" xml:space="preserve">
+    <value>Emitir boleto</value>
+  </data>
+  <data name="Excluir_Atividade_Selecionado" xml:space="preserve">
+    <value>Confirma a exclusão da seleção da atividade acadêmica "{0}" ?</value>
+  </data>
+  <data name="Title_Excluir_Atividade_Selecionado" xml:space="preserve">
+    <value>Excluir Seleção de Atividade Acadêmica</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Atividade_Selecionada" xml:space="preserve">
+    <value>Nenhuma atividade acadêmica selecionada</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Turma_Selecionada" xml:space="preserve">
+    <value>Nenhuma turma selecionada</value>
+  </data>
+  <data name="Label_Selecionar_Atividade" xml:space="preserve">
+    <value>Selecionar atividade acadêmica</value>
+  </data>
+  <data name="Label_Selecionar_Turma" xml:space="preserve">
+    <value>Selecionar turma</value>
+  </data>
+  <data name="Modal_Title_Selecionar_Atividade" xml:space="preserve">
+    <value>Selecionar Atividade Acadêmica</value>
+  </data>
+  <data name="Modal_Title_Selecionar_Turma" xml:space="preserve">
+    <value>Selecionar Turma</value>
+  </data>
+  <data name="Botao_Gerarboleto_PagoPendente" xml:space="preserve">
+    <value>Emissão do boleto não permitida. Não há valor a pagar ou existe débito em folha ou boleto com a situação igual a Pago/Pendente não poderá ser emitido.</value>
+  </data>
+  <data name="Botao_Gerarboleto_ResponsavelDiferente" xml:space="preserve">
+    <value>Emissão do boleto não permitida. O boleto está associado a outro responsável financeiro.</value>
+  </data>
+  <data name="Mensagem_Informacoes_Beneficio_Cobranca" xml:space="preserve">
+    <value>Não é necessária a emissão do boleto, em função do seu benefício.</value>
+  </data>
+  <data name="Texto_Sem_Condicoes_Pagamento" xml:space="preserve">
+    <value>Não existem condições de pagamento cadastradas. Gentileza procurar a secretaria acadêmica.</value>
+  </data>
+  <data name="AdesaoContratoRenovacao_TituloConfirmacaoRenovacao" xml:space="preserve">
+    <value>Adesão de Contrato</value>
+  </data>
+  <data name="Botao_Confirmar" xml:space="preserve">
+    <value>Aderir e confirmar</value>
+  </data>
+  <data name="ButtonInstructions_Confirmar" xml:space="preserve">
+    <value>Para aderir e confirmar, você deve visualizar o contrato e estar de acordo com o termo de adesão do contrato.</value>
+  </data>
+  <data name="ButtonInstructions_ConfirmarRenovacao" xml:space="preserve">
+    <value>Para aderir e confirmar, você deve estar de acordo com o termo de renovação de adesão ao contrato.</value>
+  </data>
+  <data name="MensagemConfirmacao" xml:space="preserve">
+    <value>Após efetuar a adesão, não será possível alterar, nesta etapa, nenhuma das informações fornecidas anteriormente.&lt;br/&gt;&lt;br/&gt;Confirma a adesão ao Contrato de Prestação de Serviços Educacionais?</value>
+  </data>
+  <data name="MensagemConfirmacaoRenovacao" xml:space="preserve">
+    <value>Para aderir e confirmar, você deve estar de acordo com o termo de renovação de adesão ao contrato.</value>
+  </data>
+  <data name="MensagemLentidao" xml:space="preserve">
+    <value>Após confirmar a adesão ao contrato, aguarde, pois o processamento poderá demorar alguns instantes.</value>
+  </data>
+  <data name="TituloConfirmacaoRenovacao" xml:space="preserve">
+    <value>Adesão de Contrato</value>
+  </data>
+  <data name="Mensagem_Informacoes_Escalonamento_Encerrado" xml:space="preserve">
+    <value>Não é possível emitir o boleto pois a etapa está encerrada.</value>
+  </data>
+  <data name="Mensagem_Informacoes_Sem_Debitos_Financeiros" xml:space="preserve">
+    <value>Aluno sem débitos financeiros com a instituição.</value>
+  </data>
+  <data name="TituloConfirmacao" xml:space="preserve">
+    <value>Adesão de Contrato</value>
+  </data>
+  <data name="MSG_Titulo_Erro" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="grupoObrigatorios_Fieldset_Legenda" xml:space="preserve">
+    <value>Grupo de documentos obrigatórios</value>
+  </data>
+  <data name="obrigatorios_Fieldset_Legenda" xml:space="preserve">
+    <value>Documentos obrigatórios</value>
+  </data>
+  <data name="opcionais_Fieldset_Legenda" xml:space="preserve">
+    <value>Documentos opcionais</value>
+  </data>
+  <data name="Label_Anexar_Documentos" xml:space="preserve">
+    <value>Anexar documentos</value>
+  </data>
+  <data name="Modal_Title_Anexar_Documentos" xml:space="preserve">
+    <value>Anexar Documentos</value>
+  </data>
+  <data name="termoEntregaDocumentacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Termo de entrega da documentação</value>
+  </data>
+  <data name="Texto_Minimo_Requerido_Grupo" xml:space="preserve">
+    <value>Mínimo de itens obrigatórios: {0}</value>
+  </data>
+  <data name="Instruction_Anexar_Documentos" xml:space="preserve">
+    <value>Não é possível anexar o documento, pois a entrega deve ser feita presencialmente.</value>
+  </data>
+  <data name="Mensagem_EntregareiAte" xml:space="preserve">
+    <value>Entregarei até {0}</value>
+  </data>
+  <data name="Mensagem_EntregareiPosteriormente" xml:space="preserve">
+    <value>Entregarei posteriormente</value>
+  </data>
+  <data name="Mensagem_Aceite_Termo" xml:space="preserve">
+    <value>Para prosseguir com alguma documentação pendente, é necessário aceitar o termo de entrega da documentação</value>
+  </data>
+  <data name="Mensagem_Entregar_Documentos_Ou_Aceite_Entrega_Posteriormente" xml:space="preserve">
+    <value>Não é possível prosseguir. É necessário realizar a entrega de todos os documentos obrigatórios requeridos ou informar que serão entregues posteriormente.</value>
+  </data>
+  <data name="Excluir_Turma_Item_Selecionado" xml:space="preserve">
+    <value>Confirma a exclusão da turma "{0}" ?</value>
+  </data>
+  <data name="MensagemConfirmacaoAdesaoResidencia" xml:space="preserve">
+    <value>Após efetuar a adesão, não será possível alterar nenhuma das informações fornecidas anteriormente.&lt;br/&gt;&lt;br/&gt; Confirma a adesão ao Contrato de Prestação de Serviços Educacionais?" 
+</value>
+  </data>
+</root>

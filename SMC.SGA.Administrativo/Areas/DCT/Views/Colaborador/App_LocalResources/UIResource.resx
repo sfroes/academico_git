@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Aba_Title_0" xml:space="preserve">
+    <value>Dados Pessoais</value>
+  </data>
+  <data name="Aba_Title_1" xml:space="preserve">
+    <value>Contatos</value>
+  </data>
+  <data name="ContatosEnderecoEletronico_Fieldset_Legenda" xml:space="preserve">
+    <value>Endereço eletrônico</value>
+  </data>
+  <data name="ContatosEndereco_Fieldset_Legenda" xml:space="preserve">
+    <value>Endereço</value>
+  </data>
+  <data name="ContatosTelefone_Fieldset_Legenda" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="Contatos_Fieldset_Legenda" xml:space="preserve">
+    <value>Contatos</value>
+  </data>
+  <data name="DadosPessoais_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados pessoais</value>
+  </data>
+  <data name="DOCUMENTORG_Fieldset_Legenda" xml:space="preserve">
+    <value>Identidade</value>
+  </data>
+  <data name="Incluir_Title" xml:space="preserve">
+    <value>Novo Professor/Pesquisador</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Cadastro de Professor/Pesquisador</value>
+  </data>
+  <data name="Listar_Excluir_Titulo" xml:space="preserve">
+    <value>Excluir Professor/Pesquisador</value>
+  </data>
+  <data name="NACIONALIDADE_Fieldset_Legenda" xml:space="preserve">
+    <value>Nacionalidade</value>
+  </data>
+  <data name="NATURALIDADE_Fieldset_Legenda" xml:space="preserve">
+    <value>Naturalidade</value>
+  </data>
+  <data name="DOCUMENTOTITULOELEITOR_Fieldset_Legenda" xml:space="preserve">
+    <value>Título de eleitor</value>
+  </data>
+  <data name="Editar_Title" xml:space="preserve">
+    <value>Alterar Professor/Pesquisador</value>
+  </data>
+  <data name="DOCUMENTOPISPASEP_Fieldset_Legenda" xml:space="preserve">
+    <value>PIS/PASEP</value>
+  </data>
+  <data name="Filiacao_Detalhe_Titulo" xml:space="preserve">
+    <value>Filiação</value>
+  </data>
+  <data name="NECESSIADESESPECIAIS_Fieldset_Legenda" xml:space="preserve">
+    <value>Necessidades especiais</value>
+  </data>
+  <data name="Aba_Title_2" xml:space="preserve">
+    <value>Instituições</value>
+  </data>
+  <data name="gridPadrao_Grid_Titulo" xml:space="preserve">
+    <value>Professores/Pesquisadores</value>
+  </data>
+  <data name="FILTROVINCULO_Fieldset_Legenda" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="Listar_Excluir_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão do professor/pesquisador "{0}"?</value>
+  </data>
+  <data name="MascaraVinculo" xml:space="preserve">
+    <value>{0} - {1} - Início: {2:d}</value>
+    <comment>&lt;Entidade&gt; + " - " +  &lt;Tipo de Vínculo&gt; + " - Início: " +  &lt;Data Início&gt;.</comment>
+  </data>
+  <data name="InstituicoesExternas_Fieldset_Legenda" xml:space="preserve">
+    <value>Instituições</value>
+  </data>
+  <data name="Label_Fim" xml:space="preserve">
+    <value>Fim</value>
+  </data>
+  <data name="Label_Inicio" xml:space="preserve">
+    <value>Início</value>
+  </data>
+  <data name="Vinculos_Detalhe_Titulo" xml:space="preserve">
+    <value>Vínculos</value>
+  </data>
+  <data name="Vinculos_Fieldset_Legenda" xml:space="preserve">
+    <value>Vínculos</value>
+  </data>
+  <data name="Botao_CadastroVinculoColaborador" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="Botao_Novo" xml:space="preserve">
+    <value>Novo professor/pesquisador</value>
+  </data>
+  <data name="Botao_Novo_Tooltip" xml:space="preserve">
+    <value>Novo professor/pesquisador</value>
+  </data>
+  <data name="ColaboradoresResponsaveis_Detalhe_Titulo" xml:space="preserve">
+    <value>Professores responsáveis</value>
+  </data>
+  <data name="Cursos_Detalhe_Titulo" xml:space="preserve">
+    <value>Ofertas de curso por localidade/tipos de atividade</value>
+  </data>
+  <data name="FormacoesEspecificas_Detalhe_Titulo" xml:space="preserve">
+    <value>Formações específicas</value>
+  </data>
+  <data name="Vinculo_Fieldset_Legenda" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="DOCUMENTOPASSAPORTE_Fieldset_Legenda" xml:space="preserve">
+    <value>Passaporte</value>
+  </data>
+  <data name="DOCUMENTOCNH_Fieldset_Legenda" xml:space="preserve">
+    <value>Carteira de motorista</value>
+  </data>
+  <data name="DOCUMENTOMILITAR_Fieldset_Legenda" xml:space="preserve">
+    <value>Documento militar</value>
+  </data>
+  <data name="Label_VinculosAtivos" xml:space="preserve">
+    <value>Vínculos</value>
+  </data>
+  <data name="Modal_Editar_Titulo" xml:space="preserve">
+    <value>Oferta de curso por localidade/tipo de atividade</value>
+  </data>
+  <data name="Botao_CadastroVinculoColaborador_Tooltip" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="fsFiltrosAgrupados_Fieldset_Legenda" xml:space="preserve">
+    <value>Vínculo / Instituição Externa</value>
+  </data>
+  <data name="FILTROATIVIDADE_Fieldset_Legenda" xml:space="preserve">
+    <value>Atividades</value>
+  </data>
+  <data name="FILTROINSTITUICAO_Fieldset_Legenda" xml:space="preserve">
+    <value>Instituição</value>
+  </data>
+  <data name="Enderecos_DataSelector_Botao_Abrir" xml:space="preserve">
+    <value>Incluir/Alterar endereço</value>
+  </data>
+  <data name="EnderecoCorrespondencia" xml:space="preserve">
+    <value>*Correspondência</value>
+  </data>
+  <data name="EnderecosEletronicos_DataSelector_Botao_Abrir" xml:space="preserve">
+    <value>Incluir/Alterar endereço eletrônico</value>
+  </data>
+  <data name="EnderecosEletronicos_DataSelector_Botao_Abrir_Tooltip" xml:space="preserve">
+    <value>Incluir/Alterar endereço eletrônico</value>
+  </data>
+  <data name="Enderecos_DataSelector_Botao_Abrir_Tooltip" xml:space="preserve">
+    <value>Incluir/Alterar endereço</value>
+  </data>
+  <data name="Telefones_DataSelector_Botao_Abrir" xml:space="preserve">
+    <value>Incluir/Alterar telefone</value>
+  </data>
+  <data name="Telefones_DataSelector_Botao_Abrir_Tooltip" xml:space="preserve">
+    <value>Incluir/Alterar telefone</value>
+  </data>
+  <data name="Mensagem_Step_1" xml:space="preserve">
+    <value>Se sim, selecione a pessoa através do botão de seleção à equerda de seu nome. Se não, selecione a opção “Nenhum resultado satisfatório”. Em seguida pressione o botão “Próximo”.</value>
+  </data>
+  <data name="Mensagem_Step_4" xml:space="preserve">
+    <value>Informe as instituições representadas pela pessoa que está sendo cadastrada. Em seguida, pressione o botão "Próximo".</value>
+  </data>
+  <data name="Mensagem_Step_5" xml:space="preserve">
+    <value>Informe os vínculos da pessoa que está sendo cadastrada. É necessário selecionar uma "Entidade responsável" para que o campo "Tipo de vínculo" seja habilitado. Após o preenchimento de todos os dados obrigatórios, pressione o botão "Próximo".</value>
+  </data>
+  <data name="Mensagem_Step_6" xml:space="preserve">
+    <value>Todas as informações necessárias foram informadas. Confira todos dos dados da pessoa cadastrada abaixo e em seguida, pressione o botão "Salvar".</value>
+  </data>
+  <data name="Wizard_Title_0" xml:space="preserve">
+    <value>Identificação</value>
+  </data>
+  <data name="Wizard_Title_1" xml:space="preserve">
+    <value>Dados Pessoais</value>
+  </data>
+  <data name="Wizard_Title_2" xml:space="preserve">
+    <value>Contatos</value>
+  </data>
+  <data name="Wizard_Title_3" xml:space="preserve">
+    <value>Instituições</value>
+  </data>
+  <data name="Wizard_Title_4" xml:space="preserve">
+    <value>Vínculos</value>
+  </data>
+  <data name="Wizard_Title_5" xml:space="preserve">
+    <value>Formação Acadêmica</value>
+  </data>
+  <data name="InstituicoesExternas_Detalhe_Titulo" xml:space="preserve">
+    <value>Instituições</value>
+  </data>
+  <data name="Label_NenhumVinculoAtivo" xml:space="preserve">
+    <value>Nenhum vínculo ativo</value>
+  </data>
+  <data name="Operacao" xml:space="preserve">
+    <value>Operação</value>
+  </data>
+  <data name="MascaraVinculoPeriodo" xml:space="preserve">
+    <value>{0} - {1} - Período: {2:d} à {3:d}</value>
+    <comment>&lt;Entidade&gt; + " - " +  &lt;Tipo de Vínculo&gt; + " -  "(Período: " + &lt;Data Início&gt; + " à " + &lt;Data Fim&gt; + ")"</comment>
+  </data>
+  <data name="FiliacaoReadOnly_Detalhe_Titulo" xml:space="preserve">
+    <value>Filiação</value>
+  </data>
+  <data name="PESQUISA_Fieldset_Legenda" xml:space="preserve">
+    <value>Pesquisa</value>
+  </data>
+  <data name="Wizard_Title_6" xml:space="preserve">
+    <value>Confirmação</value>
+  </data>
+  <data name="FormacaoAcademica_Fieldset_Legenda" xml:space="preserve">
+    <value>Formação acadêmica</value>
+  </data>
+  <data name="Botao_CadastroFormacaoAcademica_Tooltip" xml:space="preserve">
+    <value>Formação acadêmica</value>
+  </data>
+  <data name="Botao_CadastroFormacaoAcademica" xml:space="preserve">
+    <value>Formação acadêmica</value>
+  </data>
+  <data name="Botao_CadastroComponenteAptoLecionar" xml:space="preserve">
+    <value>Componentes Aptos a Lecionar</value>
+  </data>
+  <data name="Botao_CadastroComponenteAptoLecionar_Tooltip" xml:space="preserve">
+    <value>Componentes Aptos a Lecionar</value>
+  </data>
+  <data name="REGISTROPROFISSIONAL_Fieldset_Legenda" xml:space="preserve">
+    <value>Registro Profissional</value>
+  </data>
+  <data name="DOCUMENTOIDENTIDADEESTRANGEIRA_Fieldset_Legenda" xml:space="preserve">
+    <value>Identidade Estrangeira</value>
+  </data>
+  <data name="Botao_Notificacoes" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="Botao_Notificacoes_Tooltip" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+</root>

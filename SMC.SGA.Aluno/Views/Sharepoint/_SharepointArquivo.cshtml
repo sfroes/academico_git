@@ -1,0 +1,11 @@
+﻿@model HomeAlunoViewModel
+
+@if (Model.LinkUrl != null)
+{
+    using (Smc.Div().CssClass("smc-sga-externo-agrupamento-primario").Size(SMCSize.Grid24_24).Begin())
+    {
+        <a href="@Model.LinkUrl" class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)"> @Model.LinkUrl</a>
+    }
+}
+
+

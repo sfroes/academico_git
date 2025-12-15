@@ -1,0 +1,25 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.CUR.Lookups;
+@using SMC.Framework.UI.Mvc;
+@using SMC.Framework.UI.Mvc.Html;
+
+@model SMC.Framework.Model.SMCPagerModel<object>
+<div data-type="smc-datagrid-container" data-default="true">
+    @if (Model != null && Model.Count > 0)
+    {
+        @(Smc.List("SelectedValues", Model).GroupByProperty(x => ((OfertaMatrizCurricularLookupViewModel)x).SeqMatrizCurricular,
+                                                                        @<text>
+                                                                            @Html.ExternalPartial(SMC.Academico.UI.Mvc.AcademicoExternalViews._MATRIZ_CURRICULAR_005_DETAIL_HEADER, (item as OfertaMatrizCurricularLookupViewModel))
+                                                                        </text>)
+                                                          .HtmlTemplate(
+                                                            @<text>
+                                                                @Html.ExternalPartial(SMC.Academico.UI.Mvc.AcademicoExternalViews._MATRIZ_CURRICULAR_005_DETAIL_LIST, (item as OfertaMatrizCurricularLookupViewModel))
+                                                            </text>).AllowSelect(x => ((OfertaMatrizCurricularLookupViewModel)x).Seq, true, SMCListSelectPosition.Before)
+        )
+    }
+    else
+    {
+
+        <span>Não foram encontrados resultados para sua busca. Por favor, modifique seu filtro.</span>
+
+    }
+</div>

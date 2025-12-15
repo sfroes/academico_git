@@ -1,0 +1,109 @@
+﻿@using SMC.SGA.Administrativo.Areas.FIN.Models
+@using SMC.Academico.Common.Areas.FIN.Constants
+@using SMC.Academico.Common.Areas.FIN.Enums
+@model PessoaAtuacaoBeneficioDynamicModel
+
+@{
+    var chaceladoAutoriado = SMCAuthorizationHelper.Authorize(new string[] { UC_FIN_001_03_02.PERMITE_ALTERAR_CHANCELA_BENEFICIO });
+}
+
+@Smc.EditorFor(m => m.IdAssociarResponsavelFinanceiro)
+@Smc.EditorFor(m => m.IdDeducaoValorParcelaTitular)
+@Smc.EditorFor(m => m.IdExisteResponsaveisFinanceiros)
+@Smc.EditorFor(m => m.Aluno)
+
+@Smc.EditorFor(m => m.Seq)
+@Smc.EditorFor(m => m.SeqPessoaAtuacao)
+@Smc.EditorFor(e => e.CamposSomenteLeituraSituacaoBeneficio)
+@Smc.EditorFor(m => m.CamposSomenteLeituraTokenChancela)
+@Smc.EditorFor(e => e.ExisteConfiguracaoBeneficio)
+@Smc.EditorFor(e => e.DesablilitarDataFim)
+
+@if (!Model.Aluno)
+{
+    @Smc.EditorFor(m => m.MensagemInformativa)
+}
+
+@{
+    if (Model.Seq > 0)
+    {
+        if (chaceladoAutoriado && Model.SeqSituacaoChancelaBeneficioAtual != (int)SituacaoChancelaBeneficio.AguardandoChancela
+            && (Model.ControlesFinanceiros.SMCCount() > 0))
+        {
+            @Smc.EditorFor(m => m.SeqBeneficio)
+        }
+        else
+        {
+            @Smc.EditorFor(m => m.SeqBeneficio).Readonly()
+        }
+    }
+    else
+    {
+        @Smc.EditorFor(m => m.SeqBeneficio)
+    }
+}
+@Smc.EditorFor(m => m.SeqConfiguracaoBeneficio)
+@if (!Model.Aluno)
+{
+    @Smc.EditorFor(m => m.IncideParcelaMatricula)
+    @Smc.EditorFor(m => m.IncideParcelaMatriculaBanco)
+}
+@Smc.EditorFor(m => m.DataInicioVigencia)
+@Smc.EditorFor(m => m.DataFimVigencia)
+@Smc.EditorFor(m => m.TipoDeducaoDescricao)
+@Smc.EditorFor(m => m.IdTipoDeducao)
+@Smc.EditorFor(m => m.FormaDeducaoDescricao)
+@Smc.EditorFor(m => m.FormaDeducao)
+@Smc.EditorFor(m => m.IdFormaDeducao)
+@Smc.EditorFor(e => e.DesabilitaCampoValorPorConfiguracaoBeneficio)
+@Smc.EditorFor(e => e.SeqSituacaoChancelaBeneficioAtualBanco)
+@Smc.EditorFor(e => e.DesabilitarJustificativa)
+@Smc.EditorFor(e => e.JustificativaBanco)
+@{
+    if (Model.Seq == 0)
+    {
+        @(Smc.EditorFor(m => m.ValorBeneficio)
+        .ConditionalReadonly("IdTipoDeducao", SMCConditionalOperation.NotEqual, TipoDeducao.Variavel)
+        .ConditionalRequired("IdTipoDeducao", SMCConditionalOperation.NotEqual, (int)TipoDeducao.Variavel))
+        @(Smc.EditorFor(m => m.ValorBeneficioPercentual)
+        .ConditionalReadonly("IdTipoDeducao", SMCConditionalOperation.NotEqual, null, true, (int)TipoDeducao.Variavel)
+        .ConditionalReadonly("DesabilitaCampoValorPorConfiguracaoBeneficio", SMCConditionalOperation.Equals, null, true, true)
+        .ConditionalRequired("IdTipoDeducao", SMCConditionalOperation.Equals, (int)TipoDeducao.Variavel)
+        .ConditionalDisplay("IdFormaDeducao", SMCConditionalOperation.Equals, (int)FormaDeducao.PercentualBolsa))
+        @(Smc.EditorFor(m => m.ValorBeneficioMoeda)
+        .ConditionalReadonly("IdTipoDeducao", SMCConditionalOperation.NotEqual, null, true, (int)TipoDeducao.Variavel)
+        .ConditionalRequired("IdTipoDeducao", SMCConditionalOperation.Equals, (int)TipoDeducao.Variavel)
+        .ConditionalDisplay("IdFormaDeducao", SMCConditionalOperation.NotEqual, (int)FormaDeducao.PercentualBolsa))
+    }
+    else
+    {
+        @Smc.EditorFor(m => m.ValorBeneficio).Readonly((Model.IdTipoDeducao == (int)TipoDeducao.Fixo))
+        @Smc.EditorFor(m => m.ValorBeneficioPercentual).Readonly((Model.IdTipoDeducao == (int)TipoDeducao.Fixo || Model.IdTipoDeducao == 0)).Required((Model.IdTipoDeducao == (int)TipoDeducao.Variavel))
+        @Smc.EditorFor(m => m.ValorBeneficioMoeda).Readonly((Model.IdTipoDeducao == (int)TipoDeducao.Fixo || Model.IdTipoDeducao == 0)).Required((Model.IdTipoDeducao == (int)TipoDeducao.Variavel))
+    }
+}
+
+@Smc.EditorFor(e => e.SeqSituacaoChancelaBeneficioAtual)
+@Smc.EditorFor(e => e.ExibeValoresTermoAdesao)
+@Smc.EditorFor(e => e.Justificativa)
+
+@*@using (Smc.Div("HistoricoSituacoes").Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.MasterDetail(m => m.HistoricoSituacoes).HideButtons().MinimumItens(0)
+}*@
+
+@using (Smc.Div("ResponsaveisFin").Size(SMCSize.Grid24_24).Dependency("SeqBeneficio", "BuscarResponsaveisFinanceiroBeneficio", "PessoaAtuacaoBeneficio", "FIN", true, new string[] { "Seq" }).Begin())
+{
+    @Html.Partial("_ResponsaveisFinanceiros", Model)
+}
+
+@using (Smc.Div("ArquivosAnexos").Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.MasterDetail(m => m.ArquivosAnexo)
+}
+
+@*@using (Smc.Div("ControlesFinanceiros").Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.MasterDetail(m => m.ControlesFinanceiros).HideButtons().MinimumItens(0)
+}*@
+

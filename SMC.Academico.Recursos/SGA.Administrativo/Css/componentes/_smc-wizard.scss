@@ -1,0 +1,123 @@
+﻿.btn-circle {
+    border-radius: 3px;
+    padding: 3px 0;
+}
+
+.stepwizard::before {
+    height: 3px;
+    background-color: $smc-cinza-03;
+}
+
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    opacity: 1;
+    border: 1px solid $smc-cinza-03;
+    background-color: $smc-cinza-01;
+    color: $smc-cinza-07;
+}
+
+.btn-primary {
+    background-color: $smc-cinza-05;
+    border: none;
+    font-size: 16px;
+
+    &:hover {
+        background-color: $smc-cor-principal-hover !important;
+        color: $smc-branco;
+    }
+}
+
+.smc-wizard-selecionado {
+    background-color: $smc-cor-secundaria-01;
+}
+
+.smc-wizard-passo {
+    font-weight: normal;
+    width: 160px;
+    margin: 0 auto;
+}
+
+.smc-wizard-step {
+    & > p {
+        width: 100%;
+    }
+}
+// Classe aplicada a wizard da tela de turma
+.smc-sga-wizard-turma, .smc-sga-colaborador {
+    .smc-wizard-step {
+        width: 14.2%;
+
+        & > p {
+            font-size: 14px;
+        }
+    }
+
+    .smc-detalhe-editavel-tabular {
+        margin-top: -4px;
+    }
+}
+// Classe aplicada a wizard da tela de associação de tipo de componente curricular em "Tipo de Componente Curricular x Instituição e Nível de Ensino"
+.smc-sga-wizard-tipo-comp-curricular {
+    .smc-wizard-step {
+        width: 33.3%;
+    }
+}
+
+// Classe aplicada a wizard da tela de Ingressante
+.smc-sga-wizard-ingressante {
+    .smc-wizard-step {
+        width: 16.7%;
+    }
+}
+
+
+.smc-sga-wizard-orientacao, .smc-sga-wizard-efetivacao {
+    .smc-wizard-step {
+        width: 25%;
+    }
+}
+
+.smc-wizard {
+    .smc-form {
+        display: block;
+    }
+}
+
+.smc-wizard .content {
+    margin: 0;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+
+//SM
+@media (max-width:$smc-size-screen-sm-max) {
+    //Oculta texto descritivo da etapa do wizard na faixa SM com menu lateral aberto
+    .smc-conteudo-padding {
+        .smc-sga-wizard-turma {
+            .smc-wizard-step {
+                & > p {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+#wizardEnvioNotificacao {
+
+    .smc-wizard-barra-acoes {
+        display: flex;
+        align-items: center;
+
+        .smc-btn-proximo-icotext-destaque {
+            margin-left: auto;
+        }
+
+        .smc-buttonset-horizontal-primario {
+            clear: inline-end;
+        }
+
+        .smc-btn-proximo-icotext-destaque + .smc-buttonset-horizontal-primario {
+            margin-left: auto;
+        }
+    }
+}

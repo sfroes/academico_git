@@ -1,0 +1,210 @@
+<smc-modal s-size="xl" s-title="Novo Agendamento" (s-on-close)="fecharModal()">
+  <div s-modal-body *ngIf="formAgendamento">
+    <form [formGroup]="formAgendamento">
+      <div class="smc-size-md-24 smc-size-lg-24">
+        <fieldset class="smc-size-md-24 smc-size-lg-24 smc-sga-fieldset-agendamento">
+          <legend>Dados da divisão de turma</legend>
+          <smc-select class="smc-size-md-24 smc-size-lg-24"
+                      formControlName="seqDivisaoTurma"
+                      s-label="Divisão de turma"
+                      s-auto-select-single-item="true"
+                      s-required="true"
+                      [s-options]="dataSourceDivisoes">
+          </smc-select>
+          <sga-bi-grd-001 [s-dados]="divisaoSelecionada"></sga-bi-grd-001>
+        </fieldset>
+      </div>
+      <div class="smc-size-md-24 smc-size-lg-24">
+        <fieldset class="smc-size-md-24 smc-size-lg-24 smc-sga-fieldset-agendamento">
+          <legend>Configuração da recorrência</legend>
+          <smc-select class="smc-size-lg-4 smc-size-md-4"
+                      formControlName="idtTipoRecorrencia"
+                      s-required="true"
+                      s-label="Tipo de recorrência"
+                      [s-disabled]="tipoRecorrenciaDisabled || camposDisabled"
+                      [s-options]="dataSourceTipoOcorrencia"
+                      (s-change)="onChangeTipoRecorrencia($event)">
+          </smc-select>
+          <po-input class="smc-size-lg-5 smc-size-md-5"
+                    formControlName="repetir"
+                    p-required="true"
+                    p-label="Repetir a cada"
+                    [class.smc-sga-agendamento-repetir-semana]="!tipoRecorrenciaMensal"
+                    [class.smc-sga-agendamento-repetir-mensal]="tipoRecorrenciaMensal"
+                    [p-disabled]="repetirDisabled || camposDisabled">
+          </po-input>
+          <smc-select *ngIf="tipoRecorrenciaMensal"
+                      class="smc-size-lg-4 smc-size-md-4"
+                      formControlName="idtTipoInicioRecorrencia"
+                      s-label="Na semana"
+                      s-required="true"
+                      [s-disabled]="camposDisabled"
+                      [s-options]="dataSourceTipoInicioOcorrencia"></smc-select>
+          <po-datepicker [ngClass]="{
+              'smc-size-lg-5 smc-size-md-5': !tipoRecorrenciaMensal,
+              'smc-size-lg-4 smc-size-md-4': tipoRecorrenciaMensal,
+              'smc-sga-ico-desabilitado': datasComecoTerminoDisabled || camposDisabled
+            }"
+                         formControlName="comeca"
+                         p-label="Começa em"
+                         p-required="true"
+                         p-error-pattern="A data informada deverá estar dentro do periodo letivo da turma."
+                         [p-disabled]="datasComecoTerminoDisabled || camposDisabled"
+                         [p-min-date]="inicioPeriodoLetivo"
+                         [p-max-date]="fimPeriodoLetivo">
+          </po-datepicker>
+          <po-datepicker [ngClass]="{
+              'smc-size-lg-5 smc-size-md-5': !tipoRecorrenciaMensal,
+              'smc-size-lg-4 smc-size-md-4': tipoRecorrenciaMensal,
+              'smc-sga-ico-desabilitado': datasComecoTerminoDisabled || camposDisabled
+            }"
+                         formControlName="termina"
+                         p-required="true"
+                         p-label="Termina em"
+                         [p-error-pattern]="msgErroDataTermino"
+                         [p-disabled]="datasComecoTerminoDisabled || camposDisabled"
+                         [p-min-date]="formAgendamento.get('comeca').value"
+                         [p-max-date]="fimPeriodoLetivo">
+          </po-datepicker>
+          <smc-select [ngClass]="{
+              'smc-size-lg-5 smc-size-md-5': !tipoRecorrenciaMensal,
+              'smc-size-lg-3 smc-size-md-3': tipoRecorrenciaMensal
+            }"
+                      formControlName="turno"
+                      s-label="Turno"
+                      s-required="true"
+                      [s-disabled]="camposDisabled"
+                      [s-options]="dataSourceTurno"
+                      (s-change)="filtrarTabelaHorario()"></smc-select>
+          <po-checkbox-group class="smc-size-md-24 smc-size-lg-24 smc-sga-agendamento-diasemana"
+                             p-columns="4"
+                             p-label="Dia(s) da semana"
+                             p-required="true"
+                             formControlName="diasSemana"
+                             [p-disabled]="camposDisabled"
+                             [p-options]="dataSourceDiasSemana"
+                             (p-change)="filtrarTabelaHorario()">
+          </po-checkbox-group>
+          <po-multiselect formControlName="horarios"
+                          class="smc-size-md-24 smc-size-lg-24"
+                          p-label="Horário(s)"
+                          p-filter-mode="contains"
+                          p-required="true"
+                          [p-disabled]="camposDisabled || horarioDisabled"
+                          [p-options]="dataSourceTabelaHorario"></po-multiselect>
+          <sga-evento-aula-bi-tree-local *ngIf="turmaIntegradaSEF"
+                                         class="smc-size-md-24 smc-size-lg-24"
+                                         s-label="Local"
+                                         s-readonly="true"
+                                         (s-selected)="localSelecionado($event)"></sga-evento-aula-bi-tree-local>
+          <po-input *ngIf="!turmaIntegradaSEF"
+                    formControlName="local"
+                    p-label="Local"
+                    class="smc-size-md-24 smc-size-lg-24"></po-input>
+          <fieldset class="smc-size-md-24 smc-size-lg-24 smc-sga-fieldset-secundario-agendamento">
+            <legend>Professor(es)</legend>
+            <div class="smc-sga-msg-instrucao">
+              <p>Professor(es) fora do período de vínculo ativo não será(ão) alocado(s) ao(s) agendamento(s).</p>
+            </div>
+            <div class="smc-detalhe-botao-adicionar">
+              <smc-button s-button-class="smc-btn-novo-ico"
+                          s-label="Novo professor"
+                          [s-disabled]="camposDisabled"
+                          (s-click)="addProfessor()"></smc-button>
+            </div>
+            <div formArrayName="colaboradores" class="smc-sga-mestre-tabular">
+              <div *ngFor="let professor of getProfessores(); let indexProfessor = index">
+                <div [formGroupName]="indexProfessor">
+                  <div class="smc-size-md-24">
+                    <smc-select formControlName="seqColaborador"
+                                class="smc-size-md-21"
+                                s-label="Pesquisador/Professor"
+                                [s-disabled]="camposDisabled"
+                                [s-options]="dataSourceColaboradores"></smc-select>
+                    <div class="smc-size-md-3 smc-size-lg-3 smc-sga-detalhe-botoes">
+                      <smc-button s-button-class="smc-btn-excluir-ico"
+                                  s-label="Excluir"
+                                  [s-disabled]="camposDisabled"
+                                  (s-click)="removeProfessor(indexProfessor)"></smc-button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </fieldset>
+      </div>
+    </form>
+    <div class="smc-size-md-24 smc-size-lg-24">
+      <!-- <pre>{{ formAgendamento.value | json }}</pre> -->
+    </div>
+  </div>
+  <div s-modal-footer>
+    <div *ngIf="mensagemInformativa" [class]="classeMensagemInformativa">
+      <p (click)="exibirModalMensagemInformativa()" [innerHtml]="mensagemInformativa | safeHtml"></p>
+    </div>
+    <smc-button s-button-class="smc-btn-salvar-icotext-destaque"
+                s-label="Salvar e Novo"
+                s-tooltip="Salvar e Novo"
+                s-type="submit"
+                [s-disabled]="!formValido"
+                [s-loading]="validacaoBackend$ | async"
+                (s-click)="salvarNovo()"></smc-button>
+    <smc-button s-button-class="smc-btn-salvar-icotext-destaque"
+                s-label="Salvar"
+                s-tooltip="Salvar"
+                s-type="submit"
+                [s-disabled]="!formValido"
+                [s-loading]="validacaoBackend$ | async"
+                (s-click)="salvar()"></smc-button>
+    <smc-button s-button-class="smc-sga-btn-simular-agendamento"
+                s-label="Simular agendamentos"
+                s-tooltip="Simular agendamentos"
+                [s-disabled]="!formValido"
+                [s-loading]="validacaoBackend$ | async"
+                (s-click)="abrirSimulacao()"></smc-button>
+    <smc-button s-button-class="smc-btn-fechar-icotext"
+                s-label="Fechar"
+                s-tooltip="Fechar"
+                (s-click)="fecharModal()"></smc-button>
+    <!-- Assert de confirmação -->
+    <smc-modal s-title="Atenção!" #confirmar s-hide-close="true">
+      <div s-modal-body>{{ mensagemAssert }}</div>
+      <div s-modal-footer>
+        <smc-button s-label="Sim" s-tooltip="Sim" (s-click)="onSubmit()"></smc-button>
+        <smc-button #btNao s-label="Não" s-tooltip="Não" (s-click)="confirmar.close()"></smc-button>
+      </div>
+    </smc-modal>
+    <!-- Assert de confirmação e novo -->
+    <smc-modal s-title="Atenção!" #confirmarNew s-hide-close="true">
+      <div s-modal-body>{{ mensagemAssert }}</div>
+      <div s-modal-footer>
+        <smc-button s-label="Sim" s-tooltip="Sim" (s-click)="onSubmitNew(confirmarNew)"></smc-button>
+        <smc-button #btNaoNew s-label="Não" s-tooltip="Não" (s-click)="confirmarNew.close()"></smc-button>
+      </div>
+    </smc-modal>
+  </div>
+</smc-modal>
+<!-- Assert de mensagem informativa -->
+<smc-modal #modalMensagemInformativa s-title="Alteração de horário não realizada!">
+  <div s-modal-body>
+    <p>Coincidência(s) de horário(s) ocorrida(s):</p>
+    <ng-container *ngIf="alunosCoincidentes.length > 0">
+      <p>Para o(s) aluno(s):</p>
+      <ul class="smc-sga-lista-bullet">
+        <li *ngFor="let aluno of alunosCoincidentes">{{ aluno }}</li>
+      </ul>
+    </ng-container>
+    <br />
+    <ng-container *ngIf="protocolosCoincidentes.length > 0">
+      <p>No(s) protocolo(s) de serviço número:</p>
+      <ul class="smc-sga-lista-bullet">
+        <li *ngFor="let protocolo of protocolosCoincidentes">{{ protocolo }}</li>
+      </ul>
+    </ng-container>
+  </div>
+  <div s-modal-footer>
+    <smc-button #btNao s-label="Ok" s-tooltip="Ok" (s-click)="modalMensagemInformativa.close()"></smc-button>
+  </div>
+</smc-modal>
+<sga-evento-aula-agendamento-simulacao (s-submit-simulacao)="confirmar.open()"></sga-evento-aula-agendamento-simulacao>

@@ -1,0 +1,52 @@
+﻿@model PeriodicoListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().Size(SMCSize.Grid23_24).Begin())
+            {
+                @Smc.DisplayFor(m => m.Descricao).Size(SMCSize.Grid24_24)
+            }
+
+            using (Smc.Div().Size(SMCSize.Grid1_24).Begin())
+            {
+                var buttonSet = Smc.ButtonSet().Type(SMCButtonSetType.Secondary);
+
+                buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                  .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+                  .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Editar_Title"))
+                  .Ajax(isPost: false)
+                  .CssClass("smc-btn-alterar-ico")
+                  .Type(SMCButtonType.Link)
+                  .SecurityToken(UC_CUR_002_06_03.MANTER_PERIODICO_CAPES)
+                  .Action("Editar", "Periodico", new { seq = new SMCEncryptedLong(Model.Seq) }));
+
+                buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Excluir)
+                  .CssClass("smc-btn-excluir-ico")
+                  .Type(SMCButtonType.Link)
+                  .SecurityToken(UC_CUR_002_06_03.MANTER_PERIODICO_CAPES)
+                  .Action("Excluir", "Periodico", new { seq = new SMCEncryptedLong(Model.Seq) })
+                  .Confirm(Smc.GetUIResource("Excluir_Title"), string.Format(Smc.GetUIResource("Excluir_Periodico_Capes"), Model.Descricao)));
+
+                @buttonSet;
+
+            }
+
+        }
+
+        // Div da lista detalhada
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            @(Smc.Grid("QualisPeriodico" + Model.Seq, new SMCPagerModel<QualisPeriodicoViewModel>(Model.QualisPeriodico))
+                                              .AutoGenerateColumns()
+                                              .HideGridTitle()
+                                              .HideNavigator()
+                                              .HideRowNumber()
+                                              .Size(SMCSize.Grid24_24))
+        }
+    }
+}

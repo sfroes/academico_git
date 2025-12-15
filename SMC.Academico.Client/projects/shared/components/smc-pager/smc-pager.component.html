@@ -1,0 +1,35 @@
+<div class="smc-pager">
+  <div class="smc-pager-numero-itens col-md-5 col-sm-5 hidden-xs">
+    Itens p/ página:
+    <po-select
+      class="smc-select smc-select-simple"
+      (p-change)="changePageSize($event)"
+      [(ngModel)]="pageSize"
+      [p-options]="pages">
+    </po-select>
+  </div>
+  <nav class="col-md-14 col-sm-14 col-xs-24">
+    <ul *ngIf="totalItens >= pageSize">
+      <li>
+        <a (click)="firstPage()" class="smc-pager-ico-paginaprimeira" title="Primeira">«</a>
+      </li>
+      <li>
+        <a (click)="previousPage()" class="smc-pager-ico-paginaanterior" title="Anterior">‹</a>
+      </li>
+      <li class="smc-pager-numero-ativo">
+        <p>Pág:</p>
+        <div class="smc-pager-numero">
+          <po-input [(ngModel)]="currentPage"></po-input>
+        </div>
+        <p>de {{getPages()}}</p>
+      </li>
+      <li>
+        <a (click)="nextPage()" class="smc-pager-ico-paginaproxima" title="Próxima">›</a>
+      </li>
+      <li>
+        <a (click)="lastPage()" class="smc-pager-ico-paginaultima" title="Última">»</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="smc-pager-totalizador col-md-5 col-sm-85 hidden-xs">{{getPageStatus()}}</div>
+</div>

@@ -1,0 +1,148 @@
+﻿@model AlunoListarDynamicModel
+@using SMC.Academico.Common.Areas.FIN.Constants
+@using SMC.Academico.Common.Areas.PES.Constants
+@using SMC.Academico.Common.Areas.APR.Constants
+@using SMC.Academico.Common.Areas.CNC.Constants
+
+@{
+
+    // ASSOCIAÇÃO DE CONDIÇÃO DE OBRIGATORIEDADE
+    SMCButtonFluentConfiguration buttonPessoaAtuacaoCondicaoObrigatoriedade = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+        .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("Salvar", "PessoaAtuacaoCondicaoObrigatoriedade", new { @backUrl = Url.Action("Index") }))
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_PessoaAtuacaoCondicaoObrigatoriedade"))
+        .Ajax(isPost: false)
+        .Text(Smc.GetUIResource("Botao_PessoaAtuacaoCondicaoObrigatoriedade"))
+        .Tooltip(Smc.GetUIResource("Botao_PessoaAtuacaoCondicaoObrigatoriedade"))
+        .Type(SMCButtonType.InputButton).CssClass("smc-btn-custom-destaque")
+        .SecurityToken(UC_ALN_002_08_01.ASSOCIAR_CONDICAO_OBRIGATORIEDADE)
+        .Action("Incluir", "PessoaAtuacaoCondicaoObrigatoriedade", new { seqPessoaAtuacao = new SMCEncryptedLong(Model.Seq), area = "PES" });
+
+    // ASSOCIAÇÃO DE FORMAÇÃO ESPECIFICA
+    SMCButtonFluentConfiguration buttonAssociacaoFormacaoEspecificaAluno = Smc.Button(SMCButtonBehavior.Visualizar)
+            .Action("AssociacaoFormacoesEspecificasAluno", "Aluno", new { seqAluno = new SMCEncryptedLong(Model.Seq) })
+            .Text(Smc.GetUIResource("Botao_AssociacaoFormacaoEspecificaAluno"))
+            .Type(SMCButtonType.Link)
+            .Tooltip(Smc.GetUIResource("Botao_AssociacaoFormacaoEspecificaAluno_Tooltip"))
+            .SecurityToken(UC_ALN_001_04_01.ASSOCIAR_FORMACAO_ESPECIFICA_ALUNO);
+    if (!Model.PermiteFormacaoEspecifica)
+    {
+        buttonAssociacaoFormacaoEspecificaAluno.Enabled(Model.PermiteFormacaoEspecifica);
+        buttonAssociacaoFormacaoEspecificaAluno.ButtonInstructions(Smc.GetUIResource("ButtonInstructions_PermiteFormacaoEspecifica"));
+    }
+
+    // CANCELAR MATRICULA
+    var buttonCancelarMatricula = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, "modalCancelarMatricula")
+            .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("CancelarMatricula", "Aluno", new { @backUrl = Url.Action("Index") }))
+            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_CancelarMatricula"))
+            .Action("CancelarMatricula", "Aluno", new { seqAluno = new SMCEncryptedLong(Model.Seq) })
+            .Ajax(isPost: false)
+            .Text(Smc.GetUIResource("Botao_Cancelarmatricula"))
+            .Tooltip(Smc.GetUIResource("Botao_Cancelarmatricula"))
+            .SecurityToken(UC_ALN_001_09_01.CANCELAR_MATRICULA)
+            .Enabled(Model.PermiteCancelarMatricula)
+            .ButtonInstructions(!Model.PermiteCancelarMatricula ?
+                                    string.Format(Smc.GetUIResource("ButtonInstructions_PermiteCancelarMatricula"), Model.DescricaoSituacaoMatricula.Split('-')[1].Trim()) :
+                                    string.Empty);
+
+    // CONSULTA DADOS DO ALUNO (MATRICULA)
+    SMCButtonFluentConfiguration buttonVisualizarDadosMatricula = Smc.Button(SMCButtonBehavior.Visualizar)
+                    .Action("ConsultaDadosAluno", "Aluno", new { Seq = new SMCEncryptedLong(Model.Seq) })
+                    .Text(Smc.GetUIResource("Botao_VisualizarDadosMatricula"))
+                    .Type(SMCButtonType.Link)
+                    .Tooltip(Smc.GetUIResource("Botao_VisualizarDadosMatricula_Tooltip"))
+                    .SecurityToken(UC_ALN_001_02_02.VISUALIZAR_DADOS_MATRICULA);
+
+    // MENSAGENS
+    SMCButtonFluentConfiguration buttonMensagem = Smc.Button(SMCButtonBehavior.Visualizar)
+                    .Action("Index", "Mensagem", new { seqPessoaAtuacao = new SMCEncryptedLong(Model.Seq), area = "PES" })
+                    .Text(Smc.GetUIResource("Botao_Mensagens"))
+                    .Type(SMCButtonType.Link)
+                    .Tooltip(Smc.GetUIResource("Botao_Mensagens_Tooltip"))
+                    .SecurityToken(UC_PES_005_02_01.PESQUISAR_MENSAGEM);
+
+    // HISTORICO ESCOLAR
+    SMCButtonFluentConfiguration buttonHistoricoEscolar = Smc.Button(SMCButtonBehavior.Visualizar)
+                        .Action("Index", "HistoricoEscolar", new { SeqAluno = new SMCEncryptedLong(Model.Seq), area = "APR" })
+                        .Text(Smc.GetUIResource("Botao_HistoricoEscolar"))
+                        .Type(SMCButtonType.Link)
+                        .Tooltip(Smc.GetUIResource("Botao_HistoricoEscolar_Tooltip"))
+                        .SecurityToken(UC_APR_002_08_01.PESQUISAR_HISTORICO_ESCOLAR);
+
+    // ASSOCIAÇÃO DE BENEFÍCIO
+    SMCButtonFluentConfiguration buttonAssociacaoBeneficio = Smc.Button(SMCButtonBehavior.Visualizar)
+                        .Action("Index", "PessoaAtuacaoBeneficio", new { seqPessoaAtuacao = new SMCEncryptedLong(Model.Seq), Area = "FIN" })
+                        .Text(Smc.GetUIResource("Botao_AssociacaoBenificio"))
+                        .Type(SMCButtonType.Link)
+                        .Tooltip(Smc.GetUIResource("Botao_AssociacaoBenificio_Tooltip"))
+                        .SecurityToken(UC_FIN_001_03_01.PESQUISAR_ASSOCIACAO_BENEFICIO_PESSOA_ATUACAO);
+
+    //REGISTRAR DOCUMENTOS
+    SMCButtonFluentConfiguration buttonRegistrarDocumentos = Smc.Button(SMCButtonBehavior.Visualizar)
+                        .Action("Index", "PessoaAtuacaoDocumento", new { seqPessoaAtuacao = new SMCEncryptedLong(Model.Seq), Area = "PES" })
+                        .Text(Smc.GetUIResource("Botao_PessoaAtuacaoDocumento"))
+                        .Type(SMCButtonType.Link)
+                        .Tooltip(Smc.GetUIResource("Botao_PessoaAtuacaoDocumento_Tooltip"))
+                        .SecurityToken(UC_PES_001_11_01.PESQUISAR_DOCUMENTOS_PESSOA_ATUACAO);
+
+    if (!Model.PermiteAssociacaoBeneficio)
+    {
+        buttonAssociacaoBeneficio.Enabled(Model.PermiteAssociacaoBeneficio);
+        buttonAssociacaoBeneficio.ButtonInstructions(Smc.GetUIResource("ButtonInstructions_PermiteAssociarBeneficio"));
+    }
+
+    if (!Model.VinculoInstituicaoNivelEnsinoExigeCurso)
+    {
+        buttonAssociacaoBeneficio.Enabled(false);
+        buttonAssociacaoBeneficio.ButtonInstructions(Smc.GetUIResource("ButtonInstructions_NaoPermiteAssociarBeneficioExigeCurso"));
+    }
+
+    // VISUALIZAR DOCUMENTOS
+    SMCButtonFluentConfiguration buttonVisualizarDocumento = Smc.Button(SMCButtonBehavior.Visualizar)
+                .Action("VisualizarDocumento", "PessoaAtuacao", new { seqPessoaAtuacao = new SMCEncryptedLong(Model.Seq), Area = "PES" })
+                .Text(Smc.GetUIResource("Botao_VisualizarDocumento"))
+                .Type(SMCButtonType.Link)
+                .Tooltip(Smc.GetUIResource("Botao_VisualizarDocumento_Tooltip"))
+                .SecurityToken(UC_PES_001_04_01.VISUALIZAR_DOCUMENTOS_PESSOA_ATUACAO);
+
+    // INTEGRALIZAÇÃO CURRICULAR
+    SMCButtonFluentConfiguration buttonIntegralizacao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                        .Action("ConsultaIntegralizacaoCurricular", "IntegralizacaoCurricularRoute", new { @seqPessoaAtuacao = Model.Seq, Area = "" })
+                        .Ajax(isPost: false)
+                        .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_CUSTOM)
+                        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Integralizacao_Curricular"))
+                        .Text(Smc.GetUIResource("Botao_Integralizacao_Curricular"))
+                        .Tooltip(Smc.GetUIResource("Botao_Integralizacao_Curricular_Tooltip"))
+                        .SecurityToken(UC_CNC_001_02_01.EXIBIR_INTEGRALIZACAO_CURRICULAR);
+
+
+    // Notificações
+    SMCButtonFluentConfiguration buttonNotificacao = Smc.Button(SMCButtonBehavior.Visualizar)
+                        .Action("Index", "EnvioNotificacaoDestinatario", new { seqPessoaAtuacao = new SMCEncryptedLong(Model.Seq), Area = "PES" })
+                        .Text(Smc.GetUIResource("Botao_Notificacoes"))
+                        .Type(SMCButtonType.Link)
+                        .Tooltip(Smc.GetUIResource("Botao_Notificacoes_Tooltip"))
+                        .SecurityToken(UC_PES_008_02_01.VISUALIZAR_NOTIFICACAO_POR_PESSOA_ATUACAO);
+}
+
+@(Smc.Templates.DetailedListButtons()
+                        .AddButton(buttonAssociacaoBeneficio)
+                        .AddButton(buttonCancelarMatricula)
+                        .AddButton(buttonPessoaAtuacaoCondicaoObrigatoriedade)
+                        .AddButton(buttonVisualizarDadosMatricula)
+                        .AddButton(buttonRegistrarDocumentos)
+                        .AddButton(buttonVisualizarDocumento)
+                        .AddButton(buttonAssociacaoFormacaoEspecificaAluno)
+                        .AddButton(buttonHistoricoEscolar)
+                        .AddButton(buttonIntegralizacao)
+                        .AddButton(buttonMensagem)
+                        .AddButton(buttonNotificacao)
+                        .Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24))
+
+@using (Smc.ModalWindow("modalCancelarMatricula")
+           .Form("formCancelarMatricula", closeOnSubmit: true, config: frm => frm.Ajax())
+           .Size(SMCModalWindowSize.Large)
+           .Button(SMCButtonBehavior.Salvar, "CancelarMatricula", "Aluno", new { @seqAluno = Model.Seq }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }

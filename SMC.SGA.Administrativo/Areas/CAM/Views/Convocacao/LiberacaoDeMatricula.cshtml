@@ -1,0 +1,38 @@
+﻿@model  ConvocacaoImpedimentosDeMatriculaViewModel
+@using (Smc.ModalWindow("modalLiberacao").AutoShow().Size(SMCModalWindowSize.Auto).Title(Smc.GetUIResource("Liberar_Matricula_Title")).Button(SMCButtonBehavior.Fechar, config: bnt => bnt.Id("btnFecharLiberacao").DisplayMode(SMCButtonDisplayMode.TextAndIcon)).Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+            {
+                using (Smc.Div().CssClass("smc-sga-display").Size(SMCSize.Grid24_24).Begin())
+                {
+                    @Smc.DisplayFor(p => p.DescricaoCampanha).Size(SMCSize.Grid24_24)
+                    @Smc.DisplayFor(p => p.DescricaoProcessoSeletivo).Size(SMCSize.Grid18_24)
+                    @Smc.DisplayFor(p => p.NumeroConvocados).Size(SMCSize.Grid6_24)
+                }
+            }
+        }
+    }
+
+    using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+    {
+        if (!Model.SemImpedimento)
+        {
+            if (Model.Impedimentos.Count > 0)
+            {
+                using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+                {
+                    @(Smc.Grid("gridIngressantesComImpedimento", new SMCPagerModel<ConvocadoImpedimentoIngressanteViewModel>(Model.Impedimentos))
+                                .AutoGenerateColumns()
+                                .AutoHideNavigator()
+                                .HideNavigator()
+                                .HideRowNumber()
+                    )
+                }
+            }
+        }
+    }
+}

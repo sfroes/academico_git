@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Botao_ConfigurarParcelas" xml:space="preserve">
+    <value>Configurar parcelas</value>
+  </data>
+  <data name="Botao_ConfigurarParcelas_Tooltip" xml:space="preserve">
+    <value>Configurar parcelas</value>
+  </data>
+  <data name="Botao_Novo" xml:space="preserve">
+    <value>Novo grupo de escalonamento</value>
+  </data>
+  <data name="Botao_Novo_Tooltip" xml:space="preserve">
+    <value>Novo grupo de escalonamento</value>
+  </data>
+  <data name="Editar_Title" xml:space="preserve">
+    <value>Alterar Grupo de Escalonamento</value>
+  </data>
+  <data name="gridGrupoEscalonamento_Grid_Titulo" xml:space="preserve">
+    <value>Escalonamentos</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Cadastro de Grupo de Escalonamento</value>
+  </data>
+  <data name="Incluir_Title" xml:space="preserve">
+    <value>Novo Grupo de Escalonamento</value>
+  </data>
+  <data name="Itens_Detalhe_Titulo" xml:space="preserve">
+    <value>Escalonamentos</value>
+  </data>
+  <data name="Listar_Excluir_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão do grupo de escalonamento "{0}"?</value>
+  </data>
+  <data name="Listar_Excluir_Titulo" xml:space="preserve">
+    <value>Excluir Grupo de Escalonamento</value>
+  </data>
+  <data name="Titulo_ConfigurarParcelas" xml:space="preserve">
+    <value>Configurar Parcelas</value>
+  </data>
+  <data name="Botao_Copiar_Grupo_Escalonamento" xml:space="preserve">
+    <value>Copiar grupo de escalonamento</value>
+  </data>
+  <data name="Title_Copiar_Grupo_Escalonamento" xml:space="preserve">
+    <value>Copiar Grupo de Escalonamento</value>
+  </data>
+  <data name="Copia_Informacao_Titulo" xml:space="preserve">
+    <value>Cópia de Grupo de escalonamento</value>
+  </data>
+  <data name="Botao_Associar_Solicitacao_Grupo_Escalonamento" xml:space="preserve">
+    <value>Associar solicitação</value>
+  </data>
+  <data name="Botao_Associar_Solicitacao_Grupo_Escalonamento_Tooltip" xml:space="preserve">
+    <value>Associar solicitação</value>
+  </data>
+  <data name="Title_Associar_Solicitacao_Grupo_Escalonamento" xml:space="preserve">
+    <value>Associar Solicitação</value>
+  </data>
+  <data name="PROCESSO_Fieldset_Legenda" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="SOLICITANTE_Fieldset_Legenda" xml:space="preserve">
+    <value>Solicitante</value>
+  </data>
+  <data name="Botao_Instruction_Nao_Permite_Associar_Solicitacao_Etapas_Encerradas" xml:space="preserve">
+    <value>Opção indisponível. As etapas estão encerradas.</value>
+  </data>
+  <data name="Botao_Instruction_Nao_Permite_Associar_Solicitacao_Etapas_Expiradas" xml:space="preserve">
+    <value>Opção indisponível. A associação de solicitação não pode ser realizada quando o período de vigência de todas as etapas estiver expirado.</value>
+  </data>
+  <data name="Botao_Instruction_Nao_Permite_Associar_Solicitacao_Processo_Fora_Vigencia" xml:space="preserve">
+    <value>Opção indisponível. O processo não está vigente.</value>
+  </data>
+  <data name="botao_excluir_grupo_escalonamento_tooltip" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="Botao_Instruction_Excluir_Quantidades_Solicitações" xml:space="preserve">
+    <value>Opção indisponível. O Grupo possui solicitações associadas.</value>
+  </data>
+  <data name="Botao_Instruction_Excluir_Solicitacao_Etapas_Encerradas" xml:space="preserve">
+    <value>Opção indisponível. Todas as etapas foram encerradas.</value>
+  </data>
+  <data name="MensagemInformativa" xml:space="preserve">
+    <value>Existe solicitação de serviço associado ao grupo, para alterar o escalonamento é necessário que a situação da etapa esteja em manutenção.</value>
+  </data>
+  <data name="Botao_Instruction_Nao_Permite_Associar_Servico_Reabrir" xml:space="preserve">
+    <value>Opção indisponível. O tipo do processo não permite que uma solicitação seja reaberta.</value>
+  </data>
+  <data name="Botao_Instruction_Nao_Permite_Notificacao_Etapas_Encerradas" xml:space="preserve">
+    <value>Opção indisponível. As etapas estão encerradas.</value>
+  </data>
+  <data name="Botao_Instruction_Nao_Permite_Notificacao_Etapas_Expiradas" xml:space="preserve">
+    <value>Opção indisponível. O envio de notificação não poderá ser realizado quando o período de vigência de todas as etapas do grupo estiver expirado.</value>
+  </data>
+  <data name="Botao_Instruction_Nao_Permite_Notificacao_Processo_Fora_Vigencia" xml:space="preserve">
+    <value>Opção indisponível. O processo não está vigente.</value>
+  </data>
+  <data name="Botao_Instruction_Nao_Permite_Notificacao_Tipo" xml:space="preserve">
+    <value>Opção indisponível. Não está parametrizado para o processo o tipo de notificação: Alteração prazos de vigência de um processo. Esse tipo de notificação deverá ser parametrizado para a 1º Etapa.</value>
+  </data>
+  <data name="Botao_Instruction_Nao_Permite_Notificacao_Zero_Solicitacao" xml:space="preserve">
+    <value>Opção indisponível. Não há solicitações associadas ao grupo de escalonamento.</value>
+  </data>
+  <data name="Botao_Notificacao_Periodo_Grupo_Escalonamento" xml:space="preserve">
+    <value>Enviar notificação sobre os prazos de vigência</value>
+  </data>
+  <data name="MensagemInformativaAssociacao" xml:space="preserve">
+    <value>Ao salvar a associação da solicitação ao grupo de escalonamento, será enviada a notificação com os prazos de vigência do novo grupo.</value>
+  </data>
+  <data name="Mensagem_Enviar_Notificacao_Grupo_Escalonamento_Assert" xml:space="preserve">
+    <value>Ao confirmar será enviada uma notificação com os prazos de vigência do respectivo grupo de escalonamento. Será enviado para todas as solicitações associadas ao grupo e que não foram finalizadas.</value>
+  </data>
+  <data name="Title_Modal_EnviarNotificacao" xml:space="preserve">
+    <value>Atenção</value>
+  </data>
+  <data name="Botao_Instruction_Nao_Permite_Associar_Parcelas_Vencimento_Escalonamento" xml:space="preserve">
+    <value>Opção indisponível. As configurações de parcela do grupo não foram parametrizadas corretamente.</value>
+  </data>
+  <data name="MSG_Processo_Encerrado" xml:space="preserve">
+    <value>Opção indisponível. O processo está encerrado.</value>
+  </data>
+  <data name="Botao_Instruction_Grupo_Escalonamento_Inativo" xml:space="preserve">
+    <value>Opção indisponível. O grupo de escalonamento está inativo.</value>
+  </data>
+  <data name="MSG_Assert_Contato_Financeiro" xml:space="preserve">
+    <value>É necessário entrar em contato com  o setor financeiro para a criação da condição de pagamentos. Você deverá informar a oferta de curso, o ciclo letivo do processo e as origens: "Puc Minas" e "Acadêmico".
+Para processos de Matrícula de Disciplina Isolada você deverá informar também o fator de divisão e para qual mês ele deverá ser válido. Deseja continuar?</value>
+  </data>
+  <data name="MSG_Assert_Copiar_Grupo" xml:space="preserve">
+    <value>O novo grupo é criado inativo. Para ativá-lo é necessário que ele seja alterado. Deseja continuar?</value>
+  </data>
+  <data name="Botao_Instruction_Nao_Permite_Associar_Solicitacao_Processo_Encerrado" xml:space="preserve">
+    <value>Opção indisponível. O processo está encerrado.</value>
+  </data>
+  <data name="Botao_Instruction_Nao_Permite_Notificacao_Processo_Encerrado" xml:space="preserve">
+    <value>Opção indisponível. O processo está encerrado.</value>
+  </data>
+  <data name="MSG_Grupo_Escalonamento_Inativo" xml:space="preserve">
+    <value>Opção indisponível. O grupo de escalonamento está inativo.</value>
+  </data>
+  <data name="Botao_Ativar_Grupo_Escalonamento" xml:space="preserve">
+    <value>Ativar grupo</value>
+  </data>
+  <data name="Botao_Desativar_Grupo_Escalonamento" xml:space="preserve">
+    <value>Desativar grupo</value>
+  </data>
+  <data name="mensagem_validar_grupo_escalonamento" xml:space="preserve">
+    <value>Confirma a validação do grupo "{0}"?</value>
+  </data>
+  <data name="mensagem_desativar_grupo_escalonamento" xml:space="preserve">
+    <value>Confirma a desativação do grupo "{0}"?</value>
+  </data>
+  <data name="title_modal_validar_grupo_escalonamento" xml:space="preserve">
+    <value>Validar grupo</value>
+  </data>
+  <data name="title_modal_desativar_grupo_escalonamento" xml:space="preserve">
+    <value>Desativar grupo</value>
+  </data>
+  <data name="Mensagem_Sucesso_Validar_Grupo" xml:space="preserve">
+    <value>Grupo de escalonamento validado com sucesso.</value>
+  </data>
+  <data name="Mensagem_Sucesso_Desativar_Grupo" xml:space="preserve">
+    <value>Grupo de escalonamento desativado com sucesso.</value>
+  </data>
+  <data name="MensagemFatorDivisão" xml:space="preserve">
+    <value>A data fim do escalonamento da primeira etapa deve ser menor ou igual à data de vencimento das parcelas. Lembre-se, que a data de vencimento da parcela deverá ser de acordo com o fator de divisão, seguindo a seguinte regra:
+&lt;/br&gt;
+- Fator de divisão = 4: a data de vencimento deve estar dentro do primeiro mês do ciclo letivo
+&lt;/br&gt;
+- Fator de divisão = 3: a data de vencimento deve estar dentro do segundo mês do ciclo letivo
+&lt;/br&gt;
+- Fator de divisão = 2: a data de vencimento deve estar dentro do terceiro mês do ciclo letivo
+&lt;/br&gt;
+- Fator de divisão = 1: a data de vencimento deve estar dentro do quarto mês do ciclo letivo ou demais meses.</value>
+  </data>
+  <data name="MSG_Assert_Parcelas_FatorDivisao" xml:space="preserve">
+    <value>Atenção. O valor do campo Fator de Divisão, e/ou Escalonamento por Etapa foi alterado, por esse motivo a situação do grupo será atualizado para inativo e, para ativá-lo:
+&lt;p&gt;
+- Realize as configurações de parcela de acordo com o novo fator de divisão e/ou novo escalonamento.
+&lt;p&gt;
+- Clique em Validar Grupo de Escalonamento para que o mesmo seja ativado.
+&lt;p&gt;
+Deseja continuar?</value>
+  </data>
+  <data name="Botao_Validar_Grupo_Escalonamento" xml:space="preserve">
+    <value>Validar grupo</value>
+  </data>
+  <data name="Botao_Instruction_Grupo_Escalonamento_Sem_Parcelas" xml:space="preserve">
+    <value>Opção indisponível. Para validar o grupo é necessário realizar a configuração de parcela.</value>
+  </data>
+  <data name="MensagemTokenDisciplinaIsolada" xml:space="preserve">
+    <value>A data fim do escalonamento da primeira etapa deve ser menor que a data de vencimento das parcelas.
+&lt;p&gt;
+- Se a data fim do escalonamento for menor que a data início do ciclo letivo, o fator de divisão poderá ser menor ou igual ao número de meses que o &lt;/br&gt; ciclo letivo do processo possui.
+&lt;p&gt;
+- Se a data fim do escalonamento estiver no último mês do ciclo letivo, o fator de divisão só poderá ser igual a 1.
+&lt;p&gt;
+- Se a data fim do escalonamento estiver nos demais meses do ciclo letivo, o fator de divisão poderá ser menor ou igual ao "número de meses que o &lt;/br&gt; ciclo letivo possui" menos "a ordem em que o mês da data fim do escalonamento se encontra no ciclo letivo".
+&lt;p&gt;
+- Caso já exista alguma solicitação do grupo de escalonamento com condição de pagamento associada, o
+campo Fator de Divisão ficará &lt;/br&gt;desabilitado.</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+</root>

@@ -1,0 +1,8 @@
+﻿@model ServicoViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.MasterDetail(m => m.TiposNotificacao).CssClass("smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24")
+}
+
+@Smc.WizardView()

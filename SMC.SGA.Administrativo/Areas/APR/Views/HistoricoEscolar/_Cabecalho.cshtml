@@ -1,0 +1,49 @@
+﻿@model HistoricoEscolarCabecalhoViewModel
+
+@{
+	var header = Smc.Header("HistoricoEscolarCabecalho", SMCHeaderType.Primary)
+		.Item(p => p.NumeroRegistroAcademico, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid6_24, sizeSM: SMCSize.Grid6_24, sizeLG: SMCSize.Grid4_24)
+		.Item(p => p.NomeAluno, sizeMD: SMCSize.Grid20_24, sizeXS: SMCSize.Grid18_24, sizeSM: SMCSize.Grid18_24, sizeLG: SMCSize.Grid20_24);
+
+	if (Model.ExibirOfertaMatriz == true)
+	{
+		header.Item(prop => prop.OfertaMatriz, sizeMD: SMCSize.Grid20_24)
+			  .Item(prop => prop.SituacaoOfertaMatriz, sizeMD: SMCSize.Grid4_24);
+	}
+	else
+	{
+		if (Model.ExibirDisciplinaIsolada)
+		{
+			header.Item(prop => prop.VinculoDisciplinaIsolada, sizeMD: SMCSize.Grid24_24);
+		}
+		else
+
+		{
+			header.Item(prop => prop.NomeCursoOferta, sizeMD: SMCSize.Grid8_24)
+				  .Item(prop => prop.NomeLocalidade, sizeMD: SMCSize.Grid8_24)
+				  .Item(prop => prop.DescricaoTurno, sizeMD: SMCSize.Grid8_24);
+		}
+	}
+}
+
+@using (header.Begin())
+{ }
+
+@using (Smc.Div("TotaisCrgaHoraria").CssClass("smc-sga-totalizador").Size(SMCSize.Grid6_24, SMCSize.Grid12_24, SMCSize.Grid8_24, SMCSize.Grid4_24).Begin())
+{
+	<span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("_Cabecalho_Label_CargaHoraria")</span>
+	@Smc.DisplayFor(m => m.TotalCargaHorariaObrigatoria).CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+	@Smc.DisplayFor(m => m.TotalCargaHorariaOptativa).CssClass("smc-sga-totalizador-valor-destaque").HideLabel().Size(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+	<span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("_Cabecalho_Label_Obrigatoria")</span>
+	<span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("_Cabecalho_Label_Optativa")</span>
+}
+
+@using (Smc.Div("TotaisCreditos").CssClass("smc-sga-totalizador").Size(SMCSize.Grid6_24, SMCSize.Grid12_24, SMCSize.Grid8_24, SMCSize.Grid4_24).Begin())
+{
+	<span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("_Cabecalho_Label_Creditos")</span>
+	@Smc.DisplayFor(m => m.TotalCreditosObrigatorios).CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+	@Smc.DisplayFor(m => m.TotalCreditosOptativos).CssClass("smc-sga-totalizador-valor-destaque").HideLabel().Size(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+	<span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("_Cabecalho_Label_Obrigatorios")</span>
+	<span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("_Cabecalho_Label_Optativos")</span>
+}
+

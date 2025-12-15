@@ -1,0 +1,24 @@
+﻿@model AtendimentoReaberturaViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_ATENDIMENTO_REABERTURA))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    using (Smc.Fieldset("fsDadosReabertura").Begin())
+    {
+        @Smc.EditorFor(x => x.GrupoEscalonamentoAtivo)
+        @Smc.EditorFor(x => x.SeqProcessoSomenteLeitura)
+        @Smc.EditorFor(x => x.SeqProcessoEscalonamentoReabertura)
+        @Smc.EditorFor(x => x.SeqGrupoEscalonamentoMatricula)
+    }
+
+    @Html.Partial("_BotoesNavegacao", Model)
+}

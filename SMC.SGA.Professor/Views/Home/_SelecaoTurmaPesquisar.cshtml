@@ -1,0 +1,10 @@
+﻿@model HomeProfessorViewModel
+@if (Model.Cursos != null)
+{
+    @Smc.List("Cursos", m => m.Cursos).CssClass("smc-list-item-grid smc-sga-externo-area-rolagem").Size(SMCSize.Grid24_24).HtmlTemplate(curso => Html.Partial("_HomeCurso", curso.Value))
+
+}
+else
+{
+    <p>Não existe turmas disponíveis.</p>
+}

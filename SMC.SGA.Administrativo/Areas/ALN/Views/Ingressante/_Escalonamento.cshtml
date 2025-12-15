@@ -1,0 +1,5 @@
+﻿@model IngressanteDynamicModel
+
+@Smc.EditorFor(m => m.GrupoEscalonamentoAtivo)
+@Smc.HiddenFor(m => m.SeqProcesso)
+@Smc.EditorFor(m => m.SeqGrupoEscalonamento).Readonly(Model.DadosAcademicosSomenteLeitura)

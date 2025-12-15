@@ -1,0 +1,40 @@
+﻿@model DivisaoTurmaColaboradorProfessorViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    
+    using (Smc.Div().Size(SMCSize.Grid21_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid22_24).Begin())
+    {
+        @Smc.DisplayFor(m => m.NomeColaborador).HideLabel().Size(SMCSize.Grid20_24);
+        @Smc.DisplayFor(m => m.QuantidadeCargaHoraria).HideLabel().Size(SMCSize.Grid4_24);
+    }    
+
+    using (Smc.Div().Size(SMCSize.Grid3_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid2_24).CssClass("smc-sga-alinhamento-botao-secundario").Begin())
+    {
+        @(Smc.ButtonSet()
+        .Type(SMCButtonSetType.Secondary)
+        .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "Editar", new { seq = new SMCEncryptedLong(Model.Seq) }, "TurmaColaboradorDivisao")
+                    .Ajax(isPost: false)
+                    .CssClass("smc-btn-alterar-ico")
+                    .Attribute(SMCMvcConsts.MODAL_ID, "modalAlterarProfessor")
+                    .Type(SMCButtonType.Link)
+                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("ProfessorDivisao_Modal_Titulo"))
+                    .Tooltip(Smc.GetUIResource("Botao_AlterarProfessorDivisao_Tooltip"))
+                    .SecurityToken(UC_TUR_001_02_02.ASSOCIAR_PROFESSOR_DIVISAO_TURMA)
+                    .Enabled(Model.HabilitarBotaoEditar)
+                    .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoEditar))
+                    .Hide(Model.GeraOrientacao))
+        .AddButton(Smc.Button(SMCButtonBehavior.Excluir, "Desassociar", new { seq = new SMCEncryptedLong(Model.Seq), seqTurma = new SMCEncryptedLong(Model.SeqTurma) }, "TurmaColaboradorDivisao")
+                    .CssClass("smc-btn-excluir-ico")
+                    .Tooltip(Smc.GetUIResource("Botao_ExcluirProfessorDivisao_Tooltip"))
+                    .Confirm(Smc.GetUIResource("Title_ExcluirProfessorDivisao"), string.Format(Smc.GetUIResource("Excluir_Professor_Divisao"), Model.NomeColaborador))
+                    .SecurityToken(UC_TUR_001_02_02.ASSOCIAR_PROFESSOR_DIVISAO_TURMA)
+                    .Enabled(Model.HabilitarBotaoExcluir)
+                    .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoExcluir))
+                    .Hide(Model.GeraOrientacao))
+        )
+
+    }
+
+
+}

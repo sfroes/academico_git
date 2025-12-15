@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Aba_Title_0" xml:space="preserve">
+    <value>Informações Gerais</value>
+  </data>
+  <data name="Aba_Title_1" xml:space="preserve">
+    <value>Informações por Idioma</value>
+  </data>
+  <data name="Aba_Title_2" xml:space="preserve">
+    <value>Informações de Autorização</value>
+  </data>
+  <data name="alunos_Fieldset_Legenda" xml:space="preserve">
+    <value>Aluno(s)</value>
+  </data>
+  <data name="Editar_Title" xml:space="preserve">
+    <value>Conferência e Liberação do Trabalho para Consulta</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Conferência e Liberação do Trabalho para Consulta</value>
+  </data>
+  <data name="_DetailList_Label_Liberado" xml:space="preserve">
+    <value>A consulta dos dados do trabalho somente estará disponível após a autorização do aluno para a publicação na Biblioteca Digital.</value>
+  </data>
+  <data name="trabalho_Fieldset_Legenda" xml:space="preserve">
+    <value>Trabalho</value>
+  </data>
+  <data name="banca_Fieldset_Legenda" xml:space="preserve">
+    <value>Banca Examinadora</value>
+  </data>
+  <data name="_EditarCabecalho_Botao_Liberarconferencia" xml:space="preserve">
+    <value>Liberar para conferência da biblioteca</value>
+  </data>
+  <data name="_aba2_Idiomas_Detalhe_Titulo" xml:space="preserve">
+    <value>Informações por Idioma</value>
+  </data>
+  <data name="Modal_Editar_Titulo" xml:space="preserve">
+    <value>Alterar Informações por Idioma</value>
+  </data>
+  <data name="_EditarCabecalho_Botao_Retornaraluno" xml:space="preserve">
+    <value>Retornar trabalho para correção do aluno</value>
+  </data>
+  <data name="_EditarCabecalho_Botao_RetornarAluno_FillInstructions" xml:space="preserve">
+    <value>É necessário salvar as alterações primeiramente para retornar o trabalho para correções do aluno</value>
+  </data>
+  <data name="_EditarCabecalho_Botao_Liberarconsulta" xml:space="preserve">
+    <value>Liberar para consulta</value>
+  </data>
+  <data name="_EditarCabecalho_Botao_Liberarconferencia_FillInstructions" xml:space="preserve">
+    <value>É necessário salvar as alterações primeiramente para que o trabalho seja liberado para conferência da biblioteca</value>
+  </data>
+  <data name="_EditarCabecalho_Botao_Liberarconsulta_FillInstructions" xml:space="preserve">
+    <value>É necessário salvar as alterações primeiramente para que o trabalho seja liberado para consulta.</value>
+  </data>
+  <data name="Label_TipoTrabalho" xml:space="preserve">
+    <value>Tipo de trabalho</value>
+  </data>
+  <data name="Idiomas_Modal_Editar_Titulo" xml:space="preserve">
+    <value>Alterar Informações por Idioma</value>
+  </data>
+  <data name="MensagemConfirmacaoLiberarBiblioteca_Mensagem" xml:space="preserve">
+    <value>Ao liberar o trabalho para conferência da biblioteca a situação do aluno será alterada para “Formado”. Deseja continuar?</value>
+  </data>
+  <data name="MensagemConfirmacaoLiberarBiblioteca_Titulo" xml:space="preserve">
+    <value>Confirma a liberação do trabalho para biblioteca?</value>
+  </data>
+  <data name="MensagemConfirmacaoLiberarConsulta_Mensagem" xml:space="preserve">
+    <value>Ao liberar o trabalho para consulta, os dados não poderão mais ser alterados e o trabalho será carregado para o Pergarmum. Deseja continuar?</value>
+  </data>
+  <data name="MensagemConfirmacaoLiberarConsulta_Titulo" xml:space="preserve">
+    <value>Confirma a liberação do trabalho para consulta?</value>
+  </data>
+  <data name="Botao_ImprimirTermoAutorizacao_Tooltip" xml:space="preserve">
+    <value>Emitir termo de autorização de publicação</value>
+  </data>
+  <data name="_DetailList_Label_Liberado_Impressao_Autorizacao" xml:space="preserve">
+    <value>A impressão do termo de autorização somente estará disponível após a autorização da secretaria.</value>
+  </data>
+  <data name="Botao_Emitir_Ata_Defesa" xml:space="preserve">
+    <value>Ata de defesa</value>
+  </data>
+  <data name="Botao_Emitir_Ata_Defesa_Tooltip" xml:space="preserve">
+    <value>Ata de defesa</value>
+  </data>
+  <data name="MensagemAtaDefesaNaoAnexada" xml:space="preserve">
+    <value>Ata de defesa não anexada.</value>
+  </data>
+  <data name="Mensagem_Informativa_Idioma_Trabalho" xml:space="preserve">
+    <value>As informações registradas para o "Idioma do Trabalho" é que serão consideradas no Histórico Escolar e para consulta do trabalho na Biblioteca Digital.</value>
+  </data>
+  <data name="Arquivos_Detalhe_Titulo" xml:space="preserve">
+    <value>Arquivos</value>
+  </data>
+  <data name="TiposAutorizacao_Detalhe_Titulo" xml:space="preserve">
+    <value>Tipos Autorização</value>
+  </data>
+  <data name="MensagemRetornarAluno_Mensagem" xml:space="preserve">
+    <value>Ao retornar o trabalho para correção do aluno, após alterações este deverá realizar novamente a autorização de publicação no BDP. Deseja continuar?</value>
+  </data>
+  <data name="MensagemRetornarAluno_Titulo" xml:space="preserve">
+    <value>Atenção!</value>
+  </data>
+  <data name="_aba3_Autorizacoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Autorizações</value>
+  </data>
+  <data name="Assunto_Detalhe_Titulo" xml:space="preserve">
+    <value>Assunto(s)</value>
+  </data>
+  <data name="Title_Modal_EmissaoFichaCatalografica" xml:space="preserve">
+    <value>Emitir Ficha Catalográfica</value>
+  </data>
+  <data name="Botao_ImprimirFichaCatalografica" xml:space="preserve">
+    <value>Gerar ficha catalográfica</value>
+  </data>
+  <data name="Botao_ParametrosFichaCatalografica_Tooltip" xml:space="preserve">
+    <value>Abrir tela de parâmetros para gerar a ficha catalográfica</value>
+  </data>
+</root>

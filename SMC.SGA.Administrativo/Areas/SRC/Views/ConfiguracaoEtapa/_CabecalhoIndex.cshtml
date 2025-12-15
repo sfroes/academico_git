@@ -1,0 +1,13 @@
+﻿@model CabecalhoConfiguracaoEtapaViewModel
+
+@using (Smc.Header("CabecalhoConfiguracaoEtapa", SMCHeaderType.Primary).CssClass("smc-header-botao")
+        .Item(prop => prop.SeqProcesso, sizeMD: SMCSize.Grid2_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid2_24)
+        .Item(prop => prop.DescricaoProcesso, sizeMD: SMCSize.Grid22_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid20_24, sizeLG: SMCSize.Grid22_24)
+        .Item(prop => prop.DescricaoCicloLetivo, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24)
+        .Item(prop => prop.DataInicio, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24)
+        .Item(prop => prop.DataFim, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24)
+        .Item(prop => prop.DataEncerramento, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24)
+        .Begin())
+{
+            
+}

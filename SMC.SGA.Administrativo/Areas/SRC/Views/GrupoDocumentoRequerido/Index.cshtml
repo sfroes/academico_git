@@ -1,0 +1,35 @@
+﻿@model GrupoDocumentoRequeridoFiltroViewModel
+
+@Html.Action("Cabecalho", new { seqConfiguracaoEtapa = (SMCEncryptedLong)Model.SeqConfiguracaoEtapa })
+
+@(Smc.ButtonSet().Type(SMCButtonSetType.Primary)
+               .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+               .Enabled(Model.HabilitarBotaoNovo)
+               .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoNovo))
+               .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirNovoGrupoDocumentoRequerido")
+               .Text(Smc.GetUIResource("Botao_Incluir_Novo_Grupo_Documento_Requerido"))
+               .Tooltip(Smc.GetUIResource("Botao_Incluir_Novo_Grupo_Documento_Requerido_Tooltip"))
+               .Ajax(isPost: false, updateTargetId: "modalIncluirNovoGrupoDocumentoRequerido")
+               .CssClass("smc-btn-novo-icotext-destaque")
+               .SecurityToken(UC_SRC_002_04_13.CONFIGURAR_ETAPA_MANTER_GRUPO_DOCUMENTOS)
+               .Url(Url.Action("Incluir", "GrupoDocumentoRequerido", new { SeqConfiguracaoEtapa = new SMCEncryptedLong((Model as GrupoDocumentoRequeridoFiltroViewModel).SeqConfiguracaoEtapa) })))
+)
+
+@using (Smc.Div("divGridGruposDocumentosRequeridos").Attribute("data-id", "divGridGruposDocumentosRequeridos").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Smc.ActionList("ListarGruposDocumentosRequeridos", Model, false)
+}
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button("Voltar", "Index", new { seqProcesso = (SMCEncryptedLong)Model.SeqProcesso }, "ConfiguracaoEtapa")
+    .Type(SMCButtonType.Link)
+    .CssClass("smc-btn-voltar-icotext"))
+)
+
+@using (Smc.ModalWindow("modalIncluirNovoGrupoDocumentoRequerido")
+                    .Title(Smc.GetUIResource("Botao_Incluir_Novo_Grupo_Documento_Requerido_Tooltip"))
+                    .Form("Incluir", "Salvar", "GrupoDocumentoRequerido", null, true, x => x.Ajax("#divGridGruposDocumentosRequeridos", fieldsContainerToRequest: "#divGridGruposDocumentosRequeridos"))
+                    .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Botao_Cancelar")).Tooltip(Smc.GetUIResource("Botao_Cancelar")))
+                    .Begin())
+{ }

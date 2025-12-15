@@ -1,0 +1,53 @@
+UC; Descrição
+UC_PES_001_03_01.Pesquisar_Referencia_Familiar;Este caso de uso tem como objetivo pesquisar referências familiares de uma pessoa em uma atuação, permitindo também a exclusão.
+UC_PES_001_03_02.Manter_Referencia_Familiar;Este caso de uso tem como objetivo cadastrar ou alterar referências familiares de uma pessoa em uma atuação.
+UC_PES_001_04_01.Visualizar_Documentos_Pessoa_Atuacao;Este caso de uso tem como objetivo visualizar e entregar documentos de uma pessoa, registrar a entrega e validá-los.
+UC_PES_001_04_02.Registrar_Documento;Este caso de uso tem como objetivo visualizar e entregar documentos de uma pessoa, registrar a entrega e validá-los.
+UC_PES_001_04_02.Validacao_CRA;Verificar o documento requerido em questão foi parametrizado para ser validado por outro setor, em pelo menos uma das solicitações selecionadas na interface.     <b>1. </b>Se foi, exibir as situações:  <b>- Aguardando entrega</b>;  - <b>Deferido</b>;  - <b>Indeferido</b>;  - Verificar se o documento pode ser entregue posteriormente, em <b>TODAS </b>as solicitações selecionadas na interface. Se sim, exibir também a situação: <b>Pendente</b>.
+UC_PES_001_04_02.Validacao_Secretaria;Verificar se o documento requerido em questão foi parametrizado em todas as solicitações selecionadas na interface para <b>NÃO</b> ser validado por outro setor.     <b>1. </b>Se foi, exibir as situações:  <b>- Aguardando entrega</b>;  - <b>Deferido</b>;  - <b>Indeferido</b>;  - Verificar se o documento pode ser entregue posteriormente, em <b>TODAS </b>as solicitações selecionadas na interface. Se sim, exibir também a situação: <b>Pendente</b>.      <b>2. </b>Se foi parametrizado em pelo menos uma das solicitações selecionadas na interface para ser validado por outro setor, exibir as situações:   <b>- Aguardando entrega</b>;  <b>- Aguardando análise do setor responsável</b>;  - Verificar se o documento pode ser entregue posteriormente, em <b>TODAS </b>as solicitações selecionadas na interface. Se sim, exibir também a situação: <b>Pendente</b>.  
+UC_PES_001_09_01.Pesquisar_Pessoa_Relatorio_Identidade_Academica;Esse caso de uso tem como objetivo selecionar pessoas para emissão da identidade acadêmica.
+UC_PES_001_09_02.Exibir_Relatorio_Identidade_Academica;Esse caso de uso tem como objetivo a emissão da identidade acadêmica.
+UC_PES_001_10_01.Consulta_Credenciais_Acesso;Esse caso de uso tem como objetivo permitir que a pessoa (aluno ou professor)consulte as suas credenciais de acesso da instituição    Credenciais de:  - Webmail  - Rede Eduroam wi-fi  - Office 365  - Portal CAPES  - Rede academica (laboratorios)
+UC_PES_001_11_01.Pesquisar_Documentos_Pessoa_Atuacao;Este caso de uso tem como objetivo visualizar os documentos registrados para uma pessoa-atuação.
+UC_PES_001_11_02.Manter_Documentos_Pessoa_Atuacao;Este caso de uso tem como objetivo manter os documentos registrados para uma pessoa-atuação.
+UC_PES_002_01_01.Pesquisar_Formacao_Academica;Pesquisar as titulações que compoem a formação acadêmica de uma pesssoa x atuação.
+UC_PES_002_01_02.Manter_Formacao_Academica;Tem como objetivo consultar, alterar,incluir e excluir as titulações  que compoem a formação acadêmca de uma pessoa x atuação.
+UC_PES_003_01_01.Manter_Tipo_Atuacao_Instituicao;Este caso de uso tem como objetivo manter o cadastro de parâmetro de tipo de atuação por Instituição, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_PES_003_02_01.Manter_Motivo_Bloqueio_Instituicao;Este caso de uso tem como objetivo, consultar, cadastrar ou alterar a parametrização de motivo de bloqueio por instituição de ensino, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão).
+UC_PES_003_03_01.Pesquisar_Tipo_Mensagem_Instituicao_Nivel;Esse caso de uso tem por objetivo pesquisar as configurações de tipo de mensagem por instituição e nível de ensino.
+UC_PES_003_03_02.Manter_Tipo_Mensagem_Instituicao_Nivel;Esse caso de uso tem como objetivo a associação de um tipo de mensagem a uma instituição x nível de ensino.
+UC_PES_003_04_01.Manter_Tipo_Vinculo_Funcionario_Instituicao;Este caso de uso tem como objetivo, consultar, cadastrar ou alterar a parametrização de tipos de vínculo de funcionário por instituição de ensino, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão).
+UC_PES_003_05_01.Manter_Tipo_Vinculo_Funcionario_Instituicao_Tipo_Entidade;Este caso de uso tem como objetivo manter a associação dos tipos de vínculo de funcionário ao tipo de entidade da Instituição de Ensino logada, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão).
+UC_PES_004_01_01.Manter_Tipo_Bloqueio;Este caso de uso tem como objetivo manter o cadastro de tipos de bloqueio permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)
+UC_PES_004_02_01.Manter_Motivo_Bloqueio;Este caso de uso tem como objetivo manter o cadastro de motivos de bloqueio permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)
+UC_PES_004_03_01.Ata_Colacao_Grau_Academico_Cadastro;Ata Colação Grau Acadêmico - Cadastro
+UC_PES_004_03_01.Ata_Colacao_Grau_Academico_Desbloqueio;Ata Colação Grau Acadêmico - Desbloqueio
+UC_PES_004_03_01.Entrega_Diploma_Danificado_Desbloqueio;Entrega Diploma Danificado - Desbloqueio
+UC_PES_004_03_01.Material_Pendente_Biblioteca_Desbloqueio;Material Pendente Biblioteca - Desbloqueio
+UC_PES_004_03_01.Pagamento_Taxa_Servico_Academico_Desbloqueio;Pagamento Taxa Serviço Acadêmico - Desbloqueio
+UC_PES_004_03_01.Parcela_Matricula_Desbloqueio;Parcela de Matrícula - Desbloqueio
+UC_PES_004_03_01.Parcela_Pre_Matricula_Desbloqueio;Parcela de Pré-Matrícula - Desbloqueio
+UC_PES_004_03_01.Parcela_Servico_Adicional_Desbloqueio;Parcela de Serviço Adicional - Desbloqueio
+UC_PES_004_03_01.Pesquisar_Bloqueio;Este caso de uso tem como objetivo pesquisar os bloqueios de uma pessoa em uma atuação, permitindo também a exclusão.  
+UC_PES_004_03_02.Manter_Bloqueio;Este caso de uso tem como objetivo cadastrar ou alterar bloqueios de uma pessoa em uma atuação.  
+UC_PES_004_03_03.Desbloquear;Este caso de uso tem como objetivo cadastrar ou alterar desbloqueios de uma pessoa em uma atuação.
+UC_PES_005_01_01.Pesquisar_Tipo_Mensagem;Esse caso de uso tem como objetivo pesquisar os tipos de mensagem cadastrados.
+UC_PES_005_01_02.Manter_Tipo_Mensagem;Esse caso de uso tem como objetivo a inclusão e/ou alteração de um tipo de mensagem.
+UC_PES_005_02_01.Pesquisar_Mensagem;Esse caso de uso tem como objetivo a pesquisa de mensagens de uma pessoa.
+UC_PES_005_02_02.Manter_Mensagem;Esse caso de uso tem como objetivo a manutenção (inclusão / alteração) de uma mensagem enviada.
+UC_PES_005_02_02.Permitir_Ocorrencia_Ciclo_Letivo_Anterior;O acesso ao token permite inclusão de mensagens para alunos em ciclo letivos anteriores ao atual.
+UC_PES_005_03_01.Manter_Tag;Este caso de uso tem como objetivo manter o cadastro de Tag, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_PES_006_01_01.Manter_Tipo_Vinculo_Funcionario;Este caso de uso tem como objetivo manter o cadastro de tipos de vínculo de funcionários, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_PES_006_02_01.Pesquisar_Funcionario;Este caso de uso tem como objetivo consultar os funcionários permitindo também a exclusão.
+UC_PES_006_02_02.Manter_Funcionario;Este caso de uso tem como objetivo cadastrar ou alterar os dados de um funcionário.
+UC_PES_006_02_03.Pesquisar_Vinculo_Funcionario;Este caso de uso tem como objetivo consultar os vínculos de um funcionário, permitindo também a exclusão.
+UC_PES_006_02_04.Manter_Vinculo_Funcionario;Este caso de uso tem como objetivo cadastrar ou alterar os dados do vínculo de um funcionário.
+UC_PES_007_01_01.Pesquisar_Configuracao_Avaliacao;Este caso de uso tem o objetivo de pesquisar as configurações de avaliações cadastradas para os programas.
+UC_PES_007_01_02.Manter_Configuracao_Avaliacao;Caso de uso para inclusão e alteração das configurações de avaliação.
+UC_PES_007_01_03.Consultar_Turmas_Configuracao;Permite consultar as turmas da configuração.
+UC_PES_007_01_04.Consultar_Amostras;Permite consultar as amostras geradas para a configuração.
+UC_PES_007_01_05.Alterar_Data_Limite_Resposta;Permitir a alteração da data de limite de resposta.
+UC_PES_008_01_01.Pesquisar_Notificacao;Este caso de uso tem como objetivo pesquisar notificações enviadas.
+UC_PES_008_01_02.Enviar_Notificacao;Este caso de uso tem o objetivo enviar notificação.
+UC_PES_008_02_01.Visualizar_Notificacao_Por_Pessoa_Atuacao;Este caso de uso tem como objetivo exibir as notificações enviadas para a pessoa-atuação.
+UC_PES_008_03_01.Visualizar_Dados_Envio_Notificacao;Este caso de uso tem como objetivo exibir od dados das notificações enviadas.

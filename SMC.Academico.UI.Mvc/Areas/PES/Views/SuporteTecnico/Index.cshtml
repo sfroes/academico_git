@@ -1,0 +1,70 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.PES.Models.SuporteTecnico.SuporteTecnicoViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Smc.Form("frmSuporteTecnico").Ajax().Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-alerta").Begin())
+    {
+        @if (Model.Mobile)
+        {
+            <p>
+                @Smc.GetUIResource("Texto_Credenciais_Acesso_Mobile")
+            </p>
+        }
+        else
+        {
+            <p>
+                @Smc.GetUIResource("Texto_Credenciais_Acesso")
+
+                <a href="@Url.Action("index", "CredenciaisAcessoRoute", new { @area = "" })"> credenciais de acesso</a>
+            </p>
+        }
+        <p>
+            @Smc.GetUIResource("Texto_Microsoft_Teams")
+        </p>
+    }
+
+    @Smc.EditorFor(x => x.CatalogoServicoId)
+    @Smc.EditorFor(x => x.Email)
+    @Smc.EditorFor(x => x.Telefone)
+    @Smc.EditorFor(x => x.Descricao)
+
+    using (Smc.Div("divButton").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        @Smc.HiddenFor(x => x.LoginSolicitante)
+        @Smc.HiddenFor(x => x.NumeroMatricula)
+        @Smc.HiddenFor(x => x.CodigoPessoa)
+        @Smc.HiddenFor(x => x.CodigoOrigem)
+        @Smc.HiddenFor(x => x.DescricaoOrigem)
+        @Smc.HiddenFor(x => x.CodigoEstabelecimento)
+        @Smc.HiddenFor(x => x.Nome)
+        @Smc.HiddenFor(x => x.Professor)
+        @Smc.HiddenFor(x => x.Mobile)
+
+        @if (Model.Mobile)
+        {
+            @(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+                                       .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                       .Highlight()
+                                       .Action("IncluirSuporteMobile", "SuporteTecnicoRoute", new { Area = "" })
+                                       .Text(Smc.GetUIResource("Botao_Chamado"))
+                                       .Tooltip(Smc.GetUIResource("Botao_Chamado"))));
+        }
+        else
+        {
+
+            @(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+                                        .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                        .Highlight()
+                                        .Action("IncluirSuporte", "SuporteTecnicoRoute", new { Area = "" })
+                                        .Text(Smc.GetUIResource("Botao_Chamado"))
+                                        .Tooltip(Smc.GetUIResource("Botao_Chamado")))
+                                        .AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+                                        .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                        .Action("Index", "Home", new { Area = "" }, true)));
+        }
+    }
+}

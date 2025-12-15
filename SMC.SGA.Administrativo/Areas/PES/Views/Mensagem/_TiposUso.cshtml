@@ -1,0 +1,14 @@
+﻿@model List<string>
+
+@if (Model.Count > 0)
+{
+    using (Smc.Fieldset("TipoUso").CssClass("smc-sga-fildsets-header").Size(SMCSize.Grid12_24).LegendText(@Smc.GetUIResource("TiposUso")).Begin())
+    {
+            <ul class="smc-display-collection">
+                @foreach (var tipo in Model)
+                {
+                    <li>@tipo</li>
+                }
+            </ul>
+    }
+}

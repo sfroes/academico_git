@@ -1,0 +1,14 @@
+﻿@model  ReplicarCursoFormacaoEspecificaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-display smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-mensagem-multiplas-linhas").Begin())
+{
+    using (Smc.Div().CssClass(" smc-sga-ico-mensagem").Begin())
+    { }
+
+    @Smc.DisplayFor(p => p.Mensagem)
+}
+
+@Smc.EditorFor(p => p.SeqCurso)
+@Smc.EditorFor(p => p.SeqFormacaoEspecifica)
+@Smc.EditorFor(p => p.SeqsCursosOfertasLocalidades)
+

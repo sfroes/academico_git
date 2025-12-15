@@ -1,0 +1,35 @@
+﻿@model PesquisaViewModel
+
+@using (Smc.Div("filters").Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Form("formFilters").Ajax("#divDados").Begin())
+    {
+        using (Smc.Fieldset("fsFiltro").CssClass("smc-fieldset-filter").Begin())
+        {
+            <div class="smc-bdp-instrucoes-filtro-alfabetico">@Smc.GetUIResource("Label_InstrucoesPesquisa")</div>
+
+            @Smc.EditorFor(e => e.Nome)
+            @Smc.EditorFor(e => e.TipoPesquisaTrabalho)
+            @Smc.EditorFor(e => e.TituloResumo)
+            @Smc.EditorFor(e => e.SeqsTipoTrabalho)
+            @Smc.EditorFor(e => e.SeqAreaConhecimento)
+            @Smc.EditorFor(e => e.SeqPrograma)
+            @Smc.EditorFor(e => e.DataInicio)
+            @Smc.EditorFor(e => e.DataFim)
+
+            <!-- Campos hidden para ordenação-->
+            @Smc.EditorFor(e => e.Titulo)
+            @Smc.EditorFor(e => e.Autor)
+            @Smc.EditorFor(e => e.Orientador)
+            @Smc.EditorFor(e => e.Data)
+
+            @(Smc.ButtonSet()
+              .AddButton(@Smc.Button(SMCButtonBehavior.Enviar).Highlight().Text(Smc.GetUIResource("Btn_Pesquisar")).Action("PesquisaDetalhada", routeValues: new { PesquisaDetalhada = true }))
+              .AddButton(@Smc.Button("Voltar", "Index").Text(Smc.GetUIResource("Btn_Limpar")).CssClass("smc-bdp-btn-voltar").Type(SMCButtonType.Link)))
+        }
+    }
+}
+
+@using (Smc.Div("divDados").Begin())
+{
+}

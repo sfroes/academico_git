@@ -1,0 +1,15 @@
+﻿@using SMC.SGA.Administrativo.Areas.CNC.Models;
+
+@model SMCPagerModel<DeclaracaoGenericaListarViewModel>
+
+@(Smc.Grid("griDeclaracaoGenerica")
+    .AutoGenerateColumns(true)
+    .HideRowNumber()
+    .AllowSort(true)
+    
+    .ButtonColumn(SMCButtonSetType.Secondary, 2, null, null, "smc-grid-coluna-botoes", false,
+                    f => Smc.Button(SMCButtonBehavior.Visualizar).DisplayMode(SMCButtonDisplayMode.Icon)
+                 .CssClass("smc-btn-custom")
+                 .Action("Consultar", "DeclaracaoGenerica", new { seqDocumento = new SMCEncryptedLong((f as DeclaracaoGenericaListarViewModel).Seq)} )
+    )
+)

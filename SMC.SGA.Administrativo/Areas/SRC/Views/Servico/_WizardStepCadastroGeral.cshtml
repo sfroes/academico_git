@@ -1,0 +1,30 @@
+﻿@model ServicoViewModel
+
+@Smc.EditorFor(m => m.CamposReadyOnly)
+@Smc.EditorFor(m => m.CampoOrigemReadOnly)
+
+@Smc.EditorFor(m => m.Seq)
+@Smc.EditorFor(m => m.SeqTipoServico)
+@Smc.EditorFor(m => m.SeqTemplateProcessoSgf)
+@Smc.EditorFor(m => m.Descricao)
+@Smc.EditorFor(m => m.Token)
+@Smc.EditorFor(m => m.TokenAcessoAtendimento)
+@Smc.EditorFor(m => m.TokenPermissaoManutencaoProcesso)
+@Smc.EditorFor(m => m.TipoAtuacao)
+@Smc.EditorFor(m => m.OrigemSolicitacaoServico)
+@Smc.EditorFor(m => m.ValidarSituacaoFutura)
+@Smc.EditorFor(m => m.ExigeJustificativaSolicitacao)
+@Smc.EditorFor(m => m.PermiteReabrirSolicitacao)
+@Smc.EditorFor(m => m.TipoPrazoReabertura)
+@Smc.EditorFor(m => m.NumeroDiasPrazoReabertura)
+@Smc.EditorFor(m => m.AcaoLiberacaoTrabalho)
+@Smc.EditorFor(m => m.IntegracaoFinanceira)
+@Smc.EditorFor(m => m.ObrigatorioIdentificarParcela)
+@Smc.EditorFor(m => m.OrientacaoDeferimento)
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.MasterDetail(m => m.Justificativas).MinimumItens(1)
+}
+
+@Smc.WizardView()

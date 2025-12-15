@@ -1,0 +1,164 @@
+﻿@model SMC.Academico.ServiceContract.Areas.MAT.Data.BoletoMatriculaData
+@using SMC.Financeiro.UI.Mvc.BoletoBancario.Html
+@using SMC.Framework.Extensions
+@using SMC.Financeiro.ServiceContract.BLT.Data
+
+@{
+    Layout = "";
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    @*<link rel="stylesheet" type="text/css" href="@Url.SMCBuscarRecursoGlobalAplicacao("Css/smc-boleto-bancario.css")" />*@
+    <link rel="stylesheet" type="text/css" href="E:/Aplicativos/Recursos/Academico/4.0/Content/Css/smc-boleto-bancario.css" />
+</head>
+
+
+<body>
+    @using (Smc.Div().CssClass("smc-titulo-instituicao-boleto").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+
+        using (Smc.Div().Size(SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24).CssClass("smc-titulo-instituicao-boleto-img").Begin())
+        {
+            @*<img src="@Url.SMCBuscarRecursoGlobalAplicacao("Images/smc-puc-minas-brasao-preto.png")" alt="Pontifícia Universidade Católica de Minas Gerais" />*@
+            <img src="E:/Aplicativos/Recursos/Academico/4.0/Content/Images/smc-puc-minas-brasao-preto.png" alt="Pontifícia Universidade Católica de Minas Gerais" />
+        }
+
+        using (Smc.Div().Size(SMCSize.Grid18_24, SMCSize.Grid18_24, SMCSize.Grid18_24, SMCSize.Grid18_24).Begin())
+        {
+            <h1 >Pontifícia Universidade Católica de Minas Gerais</h1>
+        }
+    }
+
+    @using (Smc.Div().CssClass("smc-cabecalho-boleto").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-cabecalho-boleto-conteudo smc-separador-vertical").Size(SMCSize.Grid10_24, SMCSize.Grid10_24, SMCSize.Grid10_24, SMCSize.Grid10_24).Begin())
+        {
+            <label>@Smc.GetUIResource("Label_Sacado")</label>
+            <p>@Model.SeqIngressante - @Model.Sacado.Nome</p>
+        }
+        using (Smc.Div().CssClass("smc-cabecalho-boleto-conteudo smc-separador-vertical").Size(SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24, SMCSize.Grid6_24).Begin())
+        {
+            <label>@Smc.GetUIResource("Label_Data_Processamento")</label>
+            <p class="smc-alinhamento-direita">@Model.DataProcessamentoTitulo</p>
+        }
+        using (Smc.Div().CssClass("smc-cabecalho-boleto-conteudo").Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-separador-horizontal").Size(SMCSize.Grid24_24).Begin())
+            {
+                <label>@Smc.GetUIResource("Label_Data_Vencimento")</label>
+                <p class="smc-alinhamento-direita">@Model.DataVencimentoTitulo</p>
+            }
+            using (Smc.Div().CssClass().Size(SMCSize.Grid24_24).Begin())
+            {
+                <label>@Smc.GetUIResource("Label_Valor_Documento")</label>
+                <p class="smc-alinhamento-direita">@Model.ValorCobradoTitulo</p>
+            }
+        }
+    }
+
+    @using (Smc.Div().CssClass("smc-demonstrativo-boleto").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-separador-horizontal").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-separador-vertical smc-alinhamento-centro ").Size(SMCSize.Grid16_24, SMCSize.Grid16_24, SMCSize.Grid16_24, SMCSize.Grid16_24).Begin())
+            {
+                <span class="smc-texto-destaque">@Smc.GetUIResource("Label_Demonstrativo_Despesas")</span>
+            }
+            using (Smc.Div().CssClass("smc-alinhamento-centro ").Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24).Begin())
+            {
+                <span class="smc-texto-destaque">@Smc.GetUIResource("Label_Mensagens")</span>
+            }
+        }
+
+        using (Smc.Div().CssClass("smc-separador-horizontal").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-separador-vertical").Size(SMCSize.Grid16_24, SMCSize.Grid16_24, SMCSize.Grid16_24, SMCSize.Grid16_24).Begin())
+            {
+                <span>@Model.DescricaoProcesso</span><br />
+                <span>@Model.DescricaoVinculo</span>
+                <span>@Model.DescricaoParcela</span>
+                @*<span>@ViewBag.Evento</span>*@
+                <table class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+                    <thead>
+                        <tr>
+                            <td>@Smc.GetUIResource("Label_Descricao")</td>
+                            <td>@Smc.GetUIResource("Label_Valor")</td>
+                            <td>@Smc.GetUIResource("Label_TipoDespesa")</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Taxas != null)
+                        {
+                            foreach (LancamentoTituloData taxa in Model.Taxas)
+                            {
+                                <tr>
+                                    <td class="smc-size-md-15 smc-size-xs-15 smc-size-sm-15 smc-size-lg-15">@taxa.Descricao</td>
+                                    <td class="smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3">@taxa.Valor.SMCMoeda()</td>
+                                    <td class="smc-size-md-6 smc-size-xs-6 smc-size-sm-6 smc-size-lg-6">@taxa.DescricaoDebitoCredito</td>
+                                </tr>
+                            }
+                        }
+                        <tr>
+                            <td class="smc-texto-bold smc-alinhamento-direita smc-size-md-15 smc-size-xs-15 smc-size-sm-15 smc-size-lg-15">@Smc.GetUIResource("Label_Total_Geral")</td>
+                            <td class="smc-texto-bold  smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3">@Model.ValorCobradoTitulo</td>
+                            <td class="smc-alinhamento-direita smc-size-md-6 smc-size-xs-6 smc-size-sm-6 smc-size-lg-6"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                using (Smc.Div().Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24).Begin())
+                {
+                    <p>@Model.Titulo.MensagemAluno</p>
+                }
+            }
+            using (Smc.Div().Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24).Begin())
+            {
+
+            }
+        }
+        using (Smc.Div().CssClass("smc-conteudo-boleto").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-separador-horizontal smc-separador-vertical").Size(SMCSize.Grid16_24, SMCSize.Grid16_24, SMCSize.Grid16_24, SMCSize.Grid16_24).Begin())
+            {
+                <label>@Smc.GetUIResource("Label_Cedente")</label>
+                <p>@Model.Cedente.Nome</p>
+            }
+            using (Smc.Div().CssClass("smc-separador-horizontal").Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24).Begin())
+            {
+                <label>@Smc.GetUIResource("Label_Valor_Cobrado")</label>
+                <p class="smc-alinhamento-direita smc-texto-bold">@Model.ValorCobradoTitulo</p>
+            }
+
+            using (Smc.Div().CssClass("smc-separador-vertical").Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24).Begin())
+            {
+                <label>@Smc.GetUIResource("Label_Nosso_Numero")</label>
+                <p class="smc-alinhamento-direita">@Model.NossoNumero</p>
+            }
+            using (Smc.Div().CssClass("smc-separador-vertical").Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24).Begin())
+            {
+                <label>@Smc.GetUIResource("Label_Banco_Agencia_Cedente")</label>
+                <p p class="smc-alinhamento-direita">@Model.Banco.Numero / @{@Model.AgenciaCedente} / @Model.Cedente.Codigo</p>
+    }
+    using (Smc.Div().Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid8_24).Begin())
+    {
+        <label class="smc-alinhamento-direita">@Smc.GetUIResource("Label_Data_Pagamento")</label>
+            <p class="smc-alinhamento-direita"></p>
+            }
+        }
+    }
+    @using (Smc.Div().CssClass("smc-separador-boleto").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+
+        <p class="smc-alinhamento-direita">@Smc.GetUIResource("Texto_Recibo_Sacado")</p>
+
+    }
+    @using (Smc.Div().CssClass("smc-boleto").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+
+        @Html.SMCRenderFichaCompensacao(Model)
+    }
+</body>
+</html>

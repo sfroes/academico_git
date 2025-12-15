@@ -1,0 +1,69 @@
+<smc-modal s-size="xl" s-title="Novo Agendamento" (s-on-close)="fecharModal()">
+  <div s-modal-body>
+    <form [formGroup]="formGrade">
+      <div class="smc-size-md-24 smc-size-lg-24">
+        <fieldset class="smc-size-md-24 smc-size-lg-24 smc-sga-fieldset-agendamento">
+          <legend>Compartilhamento</legend>
+          <smc-lookup-ciclo-letivo class="smc-size-lg-4 smc-size-sm-4"></smc-lookup-ciclo-letivo>
+          <po-multiselect
+            class="smc-size-md-10 smc-size-lg-10"
+            p-label="Entidade Responsável"
+            p-filter-mode="contains"
+          ></po-multiselect>
+          <po-input p-label="Descrição" class="smc-size-md-10 smc-size-lg-10"></po-input>
+        </fieldset>
+      </div>
+      <div class="smc-size-md-24 smc-size-lg-24">
+        <fieldset class="smc-size-md-24 smc-size-lg-24 smc-sga-fieldset-agendamento">
+          <legend>Divisões que compartilham grade</legend>
+          <div class="smc-detalhe-botao-adicionar">
+            <smc-button
+              s-button-class="smc-btn-novo-ico"
+              s-label="Novo professor"
+              (s-click)="addCompartilhamento()"
+            ></smc-button>
+          </div>
+          <div>{{ formGrade.value | json }}</div>
+          <div formArrayName="compartilhamentos" class="smc-sga-mestre-tabular">
+            <div *ngFor="let compartilhamento of getCompartilhamento(); let indexCompartilhamento = index">
+              <div [formGroupName]="indexCompartilhamento">
+                <div class="smc-size-md-24">
+                  <smc-select
+                    formControlName="seqDivisoes"
+                    class="smc-size-md-21"
+                    s-label="Pesquisador/Professor"
+                  ></smc-select>
+                  <div class="smc-size-md-3 smc-size-lg-3 smc-sga-detalhe-botoes">
+                    <smc-button
+                      s-button-class="smc-btn-excluir-ico"
+                      s-label="Excluir"
+                      (s-click)="removeCompartilhamento(indexCompartilhamento)"
+                    ></smc-button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+  </div>
+  <div s-modal-footer>
+    <div *ngIf="mensagemInformativa" [class]="classeMensagemInformativa">
+      <p (click)="exibirModalMensagemInformativa()" [innerHtml]="mensagemInformativa"></p>
+    </div>
+    <smc-button
+      s-button-class="smc-btn-salvar-icotext-destaque"
+      s-label="Salvar"
+      s-tooltip="Salvar"
+      s-type="submit"
+      (s-click)="salvar()"
+    ></smc-button>
+    <smc-button
+      s-button-class="smc-btn-fechar-icotext"
+      s-label="Fechar"
+      s-tooltip="Fechar"
+      (s-click)="fecharModal()"
+    ></smc-button>
+  </div>
+</smc-modal>

@@ -1,0 +1,15 @@
+<h1>Agendamento de Aula</h1>
+
+<sga-evento-aula-filtro
+  (pesquisarTurmaSelecionada)="exibirGrade($event)"
+  (novoAgendamento)="abrirModalAgendamento()"
+></sga-evento-aula-filtro>
+<router-outlet></router-outlet>
+<div class="smc-buttonset-horizontal-primario">
+  <smc-button
+    *ngIf="origemTurma"
+    s-button-class="smc-btn-voltar-icotext"
+    s-label="Voltar"
+    (s-click)="voltar()"
+  ></smc-button>
+</div>

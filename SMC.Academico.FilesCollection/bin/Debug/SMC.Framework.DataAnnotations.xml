@@ -1,0 +1,741 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.DataAnnotations</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.DataAnnotations.SMCGridLegendAttribute">
+            <summary>
+            Representa uma configuração de coluna de legenda
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCGridLegendAttribute.CssClass">
+            <summary>
+            Classe css para o header da coluna
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCGridLegendAttribute.DisplayDescription">
+            <summary>
+            Exibir ou não a Descrição do item de legenda
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCGridLegendAttribute.#ctor(System.Boolean,System.String)">
+            <summary>
+            Construtor
+            </summary>
+            <param name="displayDescription">Exibir ou não a descrição do item de legenda</param>
+            <param name="cssClass">Classe css para a coluna</param>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCIgnoreMetadataAttribute">
+            <summary>
+            Será ignorado pelo metadata, logo não será renderizado por nenhum componentes.
+                /// Marca uma propriedade como ignorada por controles que geram HTML automaticamente para cada propriedade.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCKeyModelAttribute">
+            <summary>
+            Define se a propriedade é chave da entidade.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCMaxDateAttribute">
+            <summary>
+            Identifica a data máxima permitida para a propriedade.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCMaxDateAttribute.#ctor(SMC.Framework.SMCUnitOfTime,System.Int32)">
+            <summary>
+            Cria um novo objeto SMCMaxDateAttribute.
+            </summary>
+            <param name="unitOfTime">Define a unidade de medida utilizada na validação da data.</param>
+            <param name="timeSpan">Define o valor de tempo a partir da data atual para validar a propriedade, considerando a unidade de medida informada.</param>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCMaxDateAttribute.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Cria um novo objeto SMCMaxDateAttribute.
+            </summary>
+            <param name="maxDay">Dia máximo.</param>
+            <param name="maxMonth">Mês máximo.</param>
+            <param name="maxYear">Ano máximo.</param>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCMaxDateAttribute.#ctor(System.String)">
+            <summary>
+            Cria um novo objeto SMCMaxDateAttribute
+            </summary>
+            <param name="maxDateProperty">Nome da propriedade que será usada como referência para a data máxima permitida</param>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCMaxDateAttribute._maxDay">
+            <summary>
+            Armazena a data máxima permitida.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMaxDateAttribute.MaxDay">
+            <summary>
+            Data máxima permitida.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCMaxDateAttribute._maxMonth">
+            <summary>
+            Armazena a data máxima permitida.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMaxDateAttribute.MaxMonth">
+            <summary>
+            Data máxima permitida.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCMaxDateAttribute._maxYear">
+            <summary>
+            Armazena a data máxima permitida.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMaxDateAttribute.MaxYear">
+            <summary>
+            Data máxima permitida.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCMaxDateAttribute._unitOfTime">
+            <summary>
+            Armazena a unidade de medida utilizada para validação da data.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMaxDateAttribute.UnitOfTime">
+            <summary>
+            Unidade de medida utilizada para validação da data.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCMaxDateAttribute._timeSpan">
+            <summary>
+            Armazena o valor de tempo a partir da data atual para validar a propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMaxDateAttribute.TimeSpan">
+            <summary>
+            Valor de tempo a partir da data atual para validar a propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMaxDateAttribute.Exclusive">
+            <summary>
+            Define se a data para validação deve ser excluída como data válida.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMaxDateAttribute.MaxDateProperty">
+            <summary>
+            Propriedade que indica qual será a data máxima do objeto (pra ser usado em com períodos de data)
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCFilterParameterAttribute">
+            <summary>
+            Classe usada para definir parâmetros num modelo (usada pelo Dynamic)
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCFilterParameterAttribute.#ctor(System.String)">
+            <summary>
+            Define parâmetro com o nome informado
+            </summary>        
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCFilterParameterAttribute.#ctor(System.String,System.Boolean)">
+            <summary>
+            Define parâmetro com o nome informado
+            </summary>        
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCSumAttribute">
+            <summary>
+            Propriedade que será somada em um grid.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCAverageAttribute">
+            <summary>
+            Propriedade que será somada em um grid.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCLegendItemAttribute">
+            <summary>
+            Configura o item de enum para gerar a legenda
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLegendItemAttribute.Color">
+            <summary>
+            Cor da legenda
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLegendItemAttribute.Shape">
+            <summary>
+            Forma geométrica da legenda
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLegendItemAttribute.Description">
+            <summary>
+            Descrição da legenda
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLegendItemAttribute.Order">
+            <summary>
+            Ordem do item de legenda na legenda
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLegendItemAttribute.IsFilled">
+            <summary>
+            Indica se o shape será preenchido ou não
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLegendItemAttribute.CssClass">
+            <summary>
+            Classe css para item de legenda customizado
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCLegendItemAttribute.#ctor(SMC.Framework.SMCGeometricShapes,SMC.Framework.SMCLegendColors,System.String,System.Boolean,System.Int32)">
+            <summary>
+            Representa as configurações de um item de legenda para ser utilizada em um item de enum
+            </summary>
+            <param name="shape">Forma a ser utilizada</param>
+            <param name="color">Cor da legenda</param>
+            <param name="description">Descrição da legenda</param>
+            <param name="isFilled">Shape será preenchido ou não</param>
+            <param name="order">Ordem do item de legenda na legenda</param>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCLegendItemAttribute.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Representa as configurações de um item de legenda para ser utilizada em um item de enum
+            </summary>
+            <param name="cssClass">Classe para item de legenda customizado</param>
+            <param name="description">Descrição da legenda</param>
+            <param name="order">Ordem do item de legenda na legenda</param>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCLinkTarget">
+            <summary>
+            Target do link a ser gerado
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLinkAttribute.Action">
+            <summary>
+            Action para gerar a url do link
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLinkAttribute.Controller">
+            <summary>
+            Controller para gerar a url do link
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLinkAttribute.Area">
+            <summary>
+            Area para gerar a url do link
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLinkAttribute.Properties">
+            <summary>
+            Propriedades a serem incluídas no RouteValues
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLinkAttribute.Target">
+            <summary>
+            Target do link
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLinkAttribute.ModalWindowTitleResourceKey">
+            <summary>
+            Chave de resource para o título da janela modal
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLinkAttribute.CssClass">
+            <summary>
+            Classe CSS Customizada
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLinkAttribute.CustomURL">
+            <summary>
+            Url Customizada. 
+            Utilizar passagem de parâmetros como {0}, {1}, {2}, etc, para parâmetros 0, 1, 2....
+            Ex: mailto:{0} => irá colocar o valor da primeira propriedade no local de {0}
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCLinkAttribute.QueryString">
+            <summary>
+            Query String customizada que será adicionada à URL
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCLinkAttribute.#ctor(SMC.Framework.DataAnnotations.SMCLinkTarget)">
+            <summary>
+            Anotação para informar que a propriedade deve gerar um link (utilizado no DisplayFor)
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCLinkAttribute.#ctor(System.String,System.String,SMC.Framework.DataAnnotations.SMCLinkTarget,System.String[])">
+            <summary>
+            Anotação para informar que a propriedade deve gerar um link (utilizado no DisplayFor)
+            </summary>
+            <param name="action">Action para gerar a url do link</param>
+            <param name="controller">Controller para gerar a url do link</param>
+            <param name="properties">Propriedades a serem incluídas no RouteValues</param>
+            <param name="target">Target do link</param>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCLinkAttribute.#ctor(System.String,SMC.Framework.DataAnnotations.SMCLinkTarget,System.String[])">
+            <summary>
+            Anotação para informar que a propriedade deve gerar um link (utilizado no DisplayFor)
+            </summary>
+            <param name="customUrl">Url a ser utilizada no link. Para informra o valor de uma propriedade na URL, utilize {0}, {1}, etc. Ex: mailto:{0}</param>
+            <param name="properties">Propriedades a serem incluídas no RouteValues</param>
+            <param name="target">Target do link</param>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCReadOnlyViewAttribute">
+            <summary>
+            Define se uma action é para uma página Visualizar (readonly)
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCReadOnlyViewAttribute.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCSortablePropertyAttribute">
+            <summary>
+            Define se a propriedade permite ordenação na exibição de listagens.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCSortablePropertyAttribute._allowSorting">
+            <summary>
+            Armazena se a ordenação é permitida para o campo.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCSortablePropertyAttribute._default">
+            <summary>
+            Armazena se é a propriedade default para ordenação
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCSortablePropertyAttribute._sortFieldName">
+            <summary>
+            Nome do campo de ordenação na camada de domínio
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCSortablePropertyAttribute.#ctor">
+            <summary>
+            Cria um novo objeto SMCAllowSortingAttribute.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCSortablePropertyAttribute.#ctor(System.Boolean)">
+            <summary>
+            Cria um novo objeto SMCAllowSortingAttribute.
+            </summary>
+            <param name="allow">Verdadeiro se a ordenação é permitida.</param>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCSortablePropertyAttribute.#ctor(System.Boolean,System.Boolean,SMC.Framework.SMCSortDirection)">
+            <summary>
+            Cria um novo objeto SMCAllowSortingAttribute.
+            </summary>
+            <param name="allow">Verdadeiro se a ordenação é permitida.</param>
+            <param name="isDefault">Verdadeiro se a propriedade é ordenada por default</param>
+            <param name="sort"></param>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCSortablePropertyAttribute.#ctor(System.Boolean,System.Boolean,System.String,SMC.Framework.SMCSortDirection)">
+            <summary>
+            Cria um novo objeto SMCAllowSortingAttribute.
+            </summary>
+            <param name="allow">Verdadeiro se a ordenação é permitida.</param>
+            <param name="isDefault">Verdadeiro se a propriedade é ordenada por default</param>
+            <param name="sortFieldName">Nome do campo na camada de domínio</param>
+            <param name="sort"></param>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCSortablePropertyAttribute.SortFieldName">
+            <summary>
+            Nome do campo de ordenação na camada de domínio
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCSortablePropertyAttribute.AllowSorting">
+            <summary>
+            Define se a ordenação é permitida para o campo.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCSortablePropertyAttribute.SortDirection">
+            <summary>
+            Define se a ordenação é permitida para o campo.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCSortablePropertyAttribute.IsDefault">
+            <summary>
+            Informa se é a propriedade default para ordenação
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCSecurityTokenAttribute">
+            <summary>
+            Atributo que customiza uma CLASSE com Security Token.
+            Utilizado no Dynamic.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCSecurityTokenAttribute.#ctor(System.String)">
+            <summary>
+            É atribuido para todas as outras ações o mesmo token de autenticação do Index
+            </summary>
+            <param name="indexToken"></param>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCSecurityTokenAttribute.IndexToken">
+            <summary>
+            Token de segurança para a página de listagem (Index).
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCSecurityTokenAttribute.SaveToken">
+            <summary>
+            Token de segurança para a criação de um novo registro (Create).
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCSecurityTokenAttribute.DeleteToken">
+            <summary>
+            Token de segurança para a página de exclusão (Delete).
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCDateTimeModeAttribute">
+            <summary>
+            Define se a hora deve ser considerada no tratamento das datas.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCDescriptionModelAttribute">
+            <summary>
+            Define se a propriedade é a descrição da entidade.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCDropDownAttribute">
+            <summary>
+            	Atributo utilizado em uma propriedade ForeignKey para gerar uma lista de seleção com a classe associada.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCDropDownAttribute.#ctor(System.Type,System.String,System.String,System.String)">
+            <summary>
+            	Construtor da classe.
+            </summary>
+            <param name = "associatedType">Entidade associada à foreignKey.</param>
+            <param name = "dataValueField">Propriedade da entidade que será definida como valor.</param>
+            <param name = "dataTextField">Propriedade da entidade que será definida como texto para exibição.</param>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCFilterKeyAttribute">
+            <summary>
+            Define se a propriedade é usada como chave do filtro.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCFilterKeyAttribute.#ctor">
+            <summary>
+            Cria um novo objeto SMCFilterKeyAttribute.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCForeignKeyAttribute">
+            <summary>
+            	Atributo utilizado em uma propriedade ForeignKey para gerar uma lista de seleção com a classe associada.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCForeignKeyAttribute.#ctor(System.Type)">
+            <summary>
+            	Construtor da classe.
+            </summary>
+            <param name = "associatedType">Entidade associada à foreignKey.</param>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCForeignKeyAttribute.AssociatedType">
+            <summary>
+            	Tipo associado à ForeignKey.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCGridFilterAttribute">
+            <summary>
+            	Atributo para as propriedades das entidades que serão utilizadas como filtro.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCGridFilterAttribute.#ctor(System.String)">
+            <summary>
+            	Define a propriedade como filtro para a listagem.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCGridFilterAttribute.#ctor(System.String,System.String,System.String)">
+            <summary>
+            	Construtor para classes derivadas.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCGridFilterAttribute.#ctor(System.String,System.String,System.String,SMC.Framework.DataAnnotations.FilterType)">
+            <summary>
+            	Construtor para classes derivadas.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCGridFilterAttribute.Order">
+            <summary>
+            	Ordem de exibição do filtro.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCGridFilterAttribute.Type">
+            <summary>
+            	Tipo do filtro.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCGridFilterAttribute.DisplayName">
+            <summary>
+            	Nome a ser exibido.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCGridFilterAttribute.EntityTypeName">
+            <summary>
+            	Entidade associada à propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCGridFilterAttribute.EntityPropertyName">
+            <summary>
+            	Propriedade da entidade associada ao filtro.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCGridFilterAttribute.PropertyName">
+            <summary>
+            	Propriedade utilizada para filtro.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.FilterType">
+            <summary>
+            	Define os tipos de filtro disponíveis.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCHiddenPropertyAttribute">
+            <summary>
+            Define se a propriedade é escondida para visualização e edição.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCHiddenPropertyAttribute.#ctor">
+            <summary>
+            Cria um novo objeto SMCHiddenAttribute.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCHiddenPropertyAttribute.#ctor(SMC.Framework.SMCViewMode)">
+            <summary>
+            Cria um novo objeto SMCHiddenAttribute.
+            </summary>
+            <param name="viewMode">Modo da view.</param>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCHiddenPropertyAttribute._viewMode">
+            <summary>
+            Armazena o modo da view onde a propriedade é oculta.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCHiddenPropertyAttribute.ViewMode">
+            <summary>
+            Modo da view onde a propriedade é oculta.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCMaxDateNowAttribute">
+            <summary>
+            Define se a comparação da data máxima deve utilizar a data atual.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCMaxDateNowAttribute.#ctor">
+            <summary>
+            Cria um novo objeto SMCMaxDateNowAttribute.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCMaxValueAttribute">
+            <summary>
+            Valor máximo válido.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMaxValueAttribute.MaxValueProperty">
+            <summary>
+            Pega o nome da propriedade que possui o valor máximo.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCMaxValueAttribute.#ctor(System.String)">
+            <summary>
+            Cria um novo atributo definindo uma propriedade para o valor máximo.
+            </summary>
+            <param name="maxValueProperty">Nome da propriedade com o valor máximo.</param>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCMinDateAttribute">
+            <summary>
+            Identifica a data mínima permitida para a propriedade.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCMinDateAttribute.#ctor(SMC.Framework.SMCUnitOfTime,System.Int32)">
+            <summary>
+            Cria um novo objeto SMCMinDateAttribute.
+            </summary>
+            <param name="unitOfTime">Define a unidade de medida utilizada na validação da data.</param>
+            <param name="timeSpan">Define o valor de tempo a partir da data atual para validar a propriedade, considerando a unidade de medida informada.</param>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCMinDateAttribute.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Cria um novo SMCMinDateAttribute. 
+            </summary>
+            <param name="minDay">Dia mínimo.</param>
+            <param name="minMonth">Mês mínimo.</param>
+            <param name="minYear">Ano mínimo.</param>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCMinDateAttribute.#ctor(System.String)">
+            <summary>
+            Cria um novo SMCMinDateAttribute
+            </summary>
+            <param name="minDateProperty">Nome da propriedade a ser usadda como referência para o valor mínimo</param>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCMinDateAttribute._minDay">
+            <summary>
+            Armazena a data máxima permitida.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMinDateAttribute.MinDay">
+            <summary>
+            Data máxima permitida.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCMinDateAttribute._minMonth">
+            <summary>
+            Armazena a data máxima permitida.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMinDateAttribute.MinMonth">
+            <summary>
+            Data máxima permitida.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCMinDateAttribute._minYear">
+            <summary>
+            Armazena a data máxima permitida.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMinDateAttribute.MinYear">
+            <summary>
+            Data máxima permitida.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCMinDateAttribute._unitOfTime">
+            <summary>
+            Armazena a unidade de medida utilizada para validação da data.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMinDateAttribute.UnitOfTime">
+            <summary>
+            Unidade de medida utilizada para validação da data.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCMinDateAttribute._timeSpan">
+            <summary>
+            Armazena o valor de tempo a partir da data atual para validar a propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMinDateAttribute.TimeSpan">
+            <summary>
+            Valor de tempo a partir da data atual para validar a propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMinDateAttribute.Exclusive">
+            <summary>
+            Define se a data para validação deve ser excluída como data válida.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMinDateAttribute.MinDateProperty">
+            <summary>
+            Indica a propriedade pra ser usada com referencia para a data mínima
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCMinDateNowAttribute">
+            <summary>
+            Define se a comparação da data mínima deve utilizar a data atual.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCMinDateNowAttribute.#ctor">
+            <summary>
+            Cria um novo objeto SMCMinDateNowAttribute.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCMinValueAttribute">
+            <summary>
+            Valor mínimo válido.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCMinValueAttribute.MinValueProperty">
+            <summary>
+            Pega o nome da propriedade que possui o valor mínimo.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCMinValueAttribute.#ctor(System.String)">
+            <summary>
+            Cria um novo atributo definindo uma propriedade para o valor mínimo.
+            </summary>
+            <param name="minValueProperty">Nome da propriedade com o valor mínimo.</param>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCOrderModelAttribute">
+            <summary>
+            Define a ordem de exibição da propriedade.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCOrderModelAttribute.#ctor(System.Int32)">
+            <summary>
+            Cria um novo objeto SMCOrderAttribute.
+            </summary>
+            <param name="order">Ordem do campo na interface.</param>
+        </member>
+        <member name="F:SMC.Framework.DataAnnotations.SMCOrderModelAttribute._order">
+            <summary>
+            Armazena a ordem do campo na interface.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCOrderModelAttribute.Order">
+            <summary>
+            Ordem do campo na interface.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCScaffoldColumnAttribute">
+            <summary>
+            	Atributo utilizado em uma propriedade para definir se será exibido no crud.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.DataAnnotations.SMCScaffoldColumnAttribute.#ctor(System.Boolean)">
+            <summary>
+            	Construtor da classe.
+            </summary>
+            <param name = "scaffold"></param>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCScaffoldColumnAttribute.ShowInList">
+            <summary>
+            	Define se deve ser exibido na listagem.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.DataAnnotations.SMCScaffoldColumnAttribute.AllowSorting">
+            <summary>
+            	Define se o campo permite ordenação.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.DataAnnotations.SMCUIAttributeBase">
+            <summary>
+            Classe base para os atributos de interface do framework.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Model.SMCMetadataAttribute">
+            <summary>
+            Atributo que define a classe de resource para uma entidade ou propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Model.SMCMetadataAttribute.ResourceType">
+            <summary>
+            Classe de resource para entidade.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Model.SMCMetadataResourceAttribute">
+            <summary>
+            Atributo que define a classe de resource para uma entidade ou propriedade.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Model.SMCMetadataResourceAttribute.#ctor(System.Type,System.Type)">
+            <summary>
+            Cria um novo objeto SMCMetadataResourceAttribute.
+            </summary>
+            <param name="entityMetadataType">Tipo que contém os metadados para as entidades.</param>
+            <param name="messagesType">Tipo que contém as mensagens utilizadas pelo sistema.</param>
+        </member>
+        <member name="F:SMC.Framework.Model.SMCMetadataResourceAttribute._entityMetadataType">
+            <summary>
+            Armazena o tipo que contém os metadados para as entidades.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Model.SMCMetadataResourceAttribute.EntityMetadataType">
+            <summary>
+            Tipo que contém os metadados para as entidades.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Model.SMCMetadataResourceAttribute._messagesType">
+            <summary>
+            Armazena o tipo que contém as mensagens utilizadas pelo sistema.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Model.SMCMetadataResourceAttribute.MessagesType">
+            <summary>
+            Tipo que contém as mensagens utilizadas pelo sistema.
+            </summary>
+        </member>
+    </members>
+</doc>

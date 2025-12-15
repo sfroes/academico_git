@@ -1,0 +1,25 @@
+﻿@model PublicacaoBdpListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    @Smc.DisplayFor(m => m.EntidadeResponsavel).CssClass("smc-listdetailed-conteudo-titulo")
+    @Smc.DisplayFor(m => m.OfertaCursoLocalidadeTurno).CssClass("smc-listdetailed-conteudo-titulo")
+}
+
+@*@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-header-grid").Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid5_24, SMCSize.Grid5_24, SMCSize.Grid5_24, SMCSize.Grid5_24).Begin())
+    {
+        <span>Tipo do Trabalho</span>
+    }
+
+    using (Smc.Div().Size(SMCSize.Grid10_24, SMCSize.Grid10_24, SMCSize.Grid10_24, SMCSize.Grid10_24).Begin())
+    {
+        <span>Título</span>
+    }
+
+    using (Smc.Div().Size(SMCSize.Grid9_24, SMCSize.Grid9_24, SMCSize.Grid9_24, SMCSize.Grid9_24).Begin())
+    {
+        <span>Aluno(s)</span>
+    }
+}*@

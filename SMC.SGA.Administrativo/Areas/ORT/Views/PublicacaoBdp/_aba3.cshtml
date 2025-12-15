@@ -1,0 +1,7 @@
+﻿@model PublicacaoBdpDynamicModel
+
+
+@(Smc.MasterDetail(m => m.Autorizacoes, SMC.Framework.UI.Mvc.DataAnnotations.SMCDetailType.Tabular)
+        .HideButtons()
+        .ReadOnly()
+)

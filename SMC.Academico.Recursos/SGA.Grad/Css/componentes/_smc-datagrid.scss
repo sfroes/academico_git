@@ -1,0 +1,948 @@
+﻿.smc-grid-detalhes-coluna-botoes {
+    width: 100px;
+}
+
+%smc-grid-borda-interna {
+    border-top: $smc-grid-border-top;
+    border-bottom: $smc-grid-border-bottom;
+    border-left: $smc-grid-border-left;
+    border-right: $smc-grid-border-right;
+}
+
+.smc-sgagrad-grid-linha-interna {
+    margin-top: 1px;
+}
+
+.smc-grid {
+    width: $smc-grid-table-width;
+    border: $smc-grid-table-border;
+
+    tbody {
+
+        tr:nth-child(1) {
+            font-size: $smc-grid-thead-tr-th-font-size !important;
+            padding: $smc-grid-thead-tr-th-padding;
+            background-color: $smc-grid-cor-header !important;
+            text-align: $smc-grid-thead-tr-th-text-align !important;
+            color: $smc-grid-cor-header-texto !important;
+            font-weight: $smc-grid-thead-tr-th-font-weight;
+            -ms-word-wrap: $smc-grid-thead-tr-th-word-wrap;
+            word-wrap: $smc-grid-thead-tr-th-word-wrap;
+            height: $smc-grid-thead-tr-th-height !important;
+            vertical-align: middle;
+
+            span, p, td {
+                text-align: $smc-grid-thead-tr-th-text-align !important;
+                color: $smc-grid-cor-header-texto !important;
+                font-size: $smc-grid-thead-tr-th-font-size !important;
+            }
+        }
+
+
+        & tr:nth-child(2n) {
+            background: $smc-grid-cor-alternada !important;
+            height: $smc-grid-tbody-tr-td-height;
+        }
+
+        & tr:nth-child(2n+1) {
+            background: $smc-grid-cor-linha;
+            height: $smc-grid-tbody-tr-td-height;
+        }
+
+        tr:hover {
+            background-color: $smc-grid-cor-linha-hover;
+        }
+
+        tr td {
+            @extend %smc-grid-borda-interna;
+            vertical-align: $smc-grid-thead-tr-th-vertical-align;
+            min-height: $smc-grid-tbody-tr-td-height;
+            padding: $smc-grid-tbody-tr-td-padding;
+            color: $smc-grid-tbody-tr-td-color;
+
+            a {
+                color: $smc-cor-secundaria-01 !important;
+
+                &:hover {
+                    color: $smc-cor-secundaria-01 !important;
+                }
+            }
+
+            span, p, font {
+                font-size: 14px !important;
+                color: $smc-grid-tbody-tr-td-color;
+            }
+
+            .smc-display {
+                padding: 0;
+            }
+
+            &:last-child {
+                border-right: none;
+            }
+
+            & > div > p {
+                margin: 0;
+            }
+        }
+    }
+
+    tfoot {
+        background-color: $smc-grid-cor-paginador-background;
+        border-left: 1px solid $smc-cor-principal;
+        border-right: 1px solid $smc-cor-principal;
+        border-bottom: 1px solid $smc-cor-principal;
+
+        .smc-grid-paginador {
+            clear: both;
+            line-height: $smc-grid-tfoot-grid-paginador-line-height;
+            margin: $smc-grid-tfoot-grid-paginador-margin;
+            overflow: $smc-grid-tfoot-grid-paginador-overflow;
+            vertical-align: $smc-grid-tfoot-grid-paginador-vertical-align;
+
+            ul {
+                margin: $smc-grid-tfoot-grid-paginador-ul-margin;
+                width: $smc-grid-tfoot-grid-paginador-ul-width;
+                float: $smc-grid-tfoot-grid-paginador-ul-float;
+            }
+
+            li {
+                float: $smc-grid-tfoot-grid-paginador-ul-li-float;
+                display: $smc-grid-tfoot-grid-paginador-ul-li-display;
+            }
+        }
+
+        .smc-grid-paginador .smc-grid-pagina li div {
+            margin: $smc-grid-tfoot-grid-paginador-pagina-li-div-margin;
+        }
+
+        .smc-grid-paginador .smc-grid-pagina li div input {
+            height: $smc-grid-tfoot-grid-paginador-pagina-li-div-input-height !important;
+        }
+
+        .smc-grid-numero-itens {
+            float: $smc-grid-tfoot-grid-numero-itens-float;
+            margin: $smc-grid-tfoot-grid-numero-itens-margin;
+            color: $smc-grid-cor-grid-paginador;
+        }
+
+        .smc-grid-pagina {
+            margin: $smc-grid-tfoot-grid-pagina-margin;
+            width: $smc-grid-tfoot-grid-pagina-width;
+        }
+
+        .smc-grid-navega-pagina {
+            font-size: $smc-grid-tfoot-grid-navega-pagina-font-size;
+            height: $smc-grid-tfoot-grid-navega-pagina-height;
+            line-height: $smc-grid-tfoot-grid-navega-pagina-line-height;
+            margin: $smc-grid-tfoot-grid-navega-pagina-margin;
+            cursor: pointer;
+            font-weight: $smc-grid-tfoot-grid-navega-pagina-font-weight;
+        }
+
+        .smc-grid-totalizador {
+            text-align: $smc-grid-tfoot-grid-totalizador-text-align;
+            margin: $smc-grid-tfoot-grid-totalizador-margin;
+            width: $smc-grid-tfoot-grid-totalizador-width;
+        }
+    }
+}
+
+.smc-sgagrad-grid-agrupador {
+    width: $smc-grid-table-width;
+    border: $smc-grid-table-border;
+
+    > tbody {
+
+        > tr:nth-child(1) {
+            font-size: $smc-grid-thead-tr-th-font-size !important;
+            padding: $smc-grid-thead-tr-th-padding;
+            background-color: $smc-grid-cor-header !important;
+            text-align: $smc-grid-thead-tr-th-text-align !important;
+            color: $smc-grid-cor-header-texto !important;
+            font-weight: $smc-grid-thead-tr-th-font-weight;
+            -ms-word-wrap: $smc-grid-thead-tr-th-word-wrap;
+            word-wrap: $smc-grid-thead-tr-th-word-wrap;
+            height: $smc-grid-thead-tr-th-height !important;
+            vertical-align: middle;
+
+            span {
+                text-align: $smc-grid-thead-tr-th-text-align !important;
+                color: $smc-grid-cor-header-texto !important;
+                font-size: $smc-grid-thead-tr-th-font-size !important;
+            }
+        }
+
+
+        & tr:nth-child(2n),
+        & tr:nth-child(2n+1) {
+            background-color: $smc-branco;
+            height: $smc-grid-tbody-tr-td-height;
+        }
+
+        tr:hover {
+            background-color: $smc-branco;
+        }
+
+        tr td {
+            @extend %smc-grid-borda-interna;
+            vertical-align: $smc-grid-thead-tr-th-vertical-align;
+            min-height: $smc-grid-tbody-tr-td-height;
+            padding: $smc-grid-tbody-tr-td-padding;
+            color: $smc-grid-tbody-tr-td-color;
+        }
+    }
+}
+
+.smc-sgagrad-grid-horario {
+    width: 89%;
+    border: $smc-grid-table-border;
+    margin-top: -15px;
+    background-color: $smc-branco;
+    z-index: 1;
+    position: relative;
+
+    > tbody {
+
+        > tr:nth-child(1) {
+            font-size: $smc-grid-thead-tr-th-font-size !important;
+            padding: 0 10px;
+            background-color: $smc-grid-cor-header !important;
+            color: $smc-grid-cor-header-texto !important;
+            font-weight: $smc-grid-thead-tr-th-font-weight;
+            height: 20px !important;
+
+            td:nth-child(1) {
+                background-color: $smc-cinza-01 !important;
+            }
+
+            span {
+                color: $smc-grid-cor-header-texto !important;
+                font-size: $smc-grid-thead-tr-th-font-size !important;
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+
+        > tr:nth-child(2), > tr:nth-child(3), > tr:nth-child(4), > tr:nth-child(5), > tr:nth-child(6) {
+            td:nth-child(1) {
+                font-size: $smc-grid-thead-tr-th-font-size !important;
+                padding: 0 10px;
+                background-color: $smc-cor-secundaria-03 !important;
+                color: $smc-grid-cor-header-texto !important;
+                font-weight: $smc-grid-thead-tr-th-font-weight;
+                height: 20px !important;
+
+                span {
+                    color: $smc-grid-cor-header-texto !important;
+                    font-size: $smc-grid-thead-tr-th-font-size !important;
+                }
+            }
+        }
+
+        > tr:nth-child(7), > tr:nth-child(8), > tr:nth-child(9), > tr:nth-child(10), > tr:nth-child(11) {
+            td:nth-child(1) {
+                font-size: $smc-grid-thead-tr-th-font-size !important;
+                padding: 0 10px;
+                background-color: $smc-cor-principal-04 !important;
+                color: $smc-grid-cor-header-texto !important;
+                font-weight: $smc-grid-thead-tr-th-font-weight;
+                height: 20px !important;
+
+                span {
+                    color: $smc-branco !important;
+                    font-size: $smc-grid-thead-tr-th-font-size !important;
+                }
+            }
+        }
+
+        > tr:nth-child(12), > tr:nth-child(13), > tr:nth-child(14), > tr:nth-child(15) {
+            td:nth-child(1) {
+                font-size: $smc-grid-thead-tr-th-font-size !important;
+                padding: 0 10px;
+                background-color: $smc-cor-principal-10 !important;
+                color: $smc-branco !important;
+                font-weight: $smc-grid-thead-tr-th-font-weight;
+                height: 20px !important;
+
+                span {
+                    color: $smc-branco !important;
+                    font-size: $smc-grid-thead-tr-th-font-size !important;
+                }
+            }
+        }
+
+        tr td {
+            @extend %smc-grid-borda-interna;
+            vertical-align: $smc-grid-thead-tr-th-vertical-align;
+            min-height: 20px;
+            padding: 0;
+            color: $smc-grid-tbody-tr-td-color;
+
+            p {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.smc-grid-totalizador {
+    td p, td span, span {
+        margin: $smc-grid-tfoot-grid-totalizador-margin;
+        font-weight: 600 !important;
+        font-size: 14px;
+    }
+
+    td span{
+        margin-right:20px;
+    }
+
+    td {
+        border-bottom: 1px solid $smc-cinza-04;
+        border-right: 1px solid $smc-cinza-04;
+        font-weight: 600 !important;
+        font-size: 14px;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+}
+
+/// GRID SEM HEADER
+
+.smc-sgagrad-grid-semheader {
+    > tbody {
+        > tr:first-child {
+            display: none !important;
+        }
+
+        tr td {
+            padding: 0;
+            border-bottom: none;
+        }
+    }
+}
+
+.smc-grid {
+    .smc-sga-mensagem {
+        margin: -13px 0px 0px 0;
+    }
+}
+
+.smc-sgagrad-grid-unico {
+    td {
+        border-bottom: none !important;
+    }
+}
+// classes para as páginas vindas do GRA
+.smc-sgagrad-gra-pagamento {
+    tr:first-child {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+    }
+
+    tr td p table {
+        margin-top: -6px;
+    }
+}
+
+.smc-sgagrad-gra-divisaopagamento {
+    color: $smc-cor-principal-04;
+    margin: 20px 0 5px 0 !important;
+    font-size: 20px;
+}
+
+.smc-sgagrad-gra-curso {
+    p, span {
+        color: $smc-cor-principal-04;
+        margin: 5px 0 5px 0;
+        font-size: 20px;
+    }
+}
+
+// GRID DO CADASTRO DE GRUPO FAMILIAR PARA BOLSA
+.smc-sgagrad-grid-grupo-multilinhas {
+    background-color: transparent !important;
+
+    tr, td, tr:nth-child(2n), tbody > tr:nth-child(2) {
+        background-color: transparent !important;
+    }
+
+    tbody tr:first-child {
+        border-bottom: 1px solid $smc-cinza-03 !important;
+    }
+
+    tbody tr:last-child {
+        border-bottom: none !important;
+        background-color: transparent !important;
+    }
+}
+
+.smc-sgagrad-grid-grupo-multilinhas-cabecalho {
+    tbody tr p {
+        margin: 0;
+    }
+
+    td {
+        border: none !important;
+    }
+
+    > tbody > tr:nth-child(1) {
+        border-bottom: none !important;
+
+        table > tbody > tr {
+            border-bottom: none !important;
+        }
+    }
+
+    tbody tr:nth-child(2n), tbody tr:nth-child(2n+1) {
+        border-bottom: 1px solid $smc-cinza-04;
+    }
+}
+
+// CLASSE PARA GRID DE NOTAS E FALTAS
+.smc-sgagrad-agrupamento-primario {
+    tbody {
+        tr {
+            td:first-child {
+                p {
+                    color: $smc-cor-principal-04;
+                    //margin: 20px 0 5px -5px;
+                    font-size: 20px;
+                    margin: 0 30px 0 10px;
+                    width: 95%;
+                    white-space: pre-line;
+                }
+            }
+        }
+
+        td {
+            p {
+                color: $smc-preto;
+                margin: 27px 0 5px -5px;
+            }
+
+            a {
+                color: $smc-cor-secundaria-01;
+                text-decoration: underline !important;
+                font-style: italic;
+
+                &:hover {
+                    color: $smc-cor-secundaria-04;
+                }
+            }
+        }
+    }
+}
+
+.smc-sgagrad-agrupamento-primario-notas {
+    td:first-child {
+        p {
+            color: $smc-cor-principal-04;
+            margin: 20px 0 5px -5px;
+            font-size: 20px !important;
+        }
+
+        td {
+            p {
+                color: $smc-preto;
+                margin: 27px 0 5px -5px;
+            }
+
+            a {
+                color: $smc-cor-secundaria-01;
+                text-decoration: underline !important;
+                font-style: italic;
+
+                &:hover {
+                    color: $smc-cor-secundaria-04;
+                }
+            }
+        }
+    }
+}
+
+// GRID CALENDÁRIO
+// grid do mês
+
+.smc-sgagrad-calendario-navegacao {
+    width: 50%;
+    background-color: $smc-cor-principal-02;
+    padding-top: 5px;
+
+    table {
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    a {
+        margin-top: -3px;
+    }
+}
+
+.smc-sgagrad-calendario-navegacao-expandido {
+    background-color: $smc-cor-principal-02;
+    padding-top: 2px;
+    margin-bottom: 3px;
+    display: block;
+    padding-bottom: 1px;
+
+    table {
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 1px;
+    }
+
+    span {
+        color: $smc-branco;
+    }
+
+    a {
+        margin-top: -3px;
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+.smc-sgagrad-calendario-estrutura {
+    width: 50%;
+}
+
+.smc-sgagrad-calendario-mes {
+    width: 100%;
+
+    table {
+        width: 100%;
+    }
+
+    > tbody > tr > td {
+        background-color: $smc-branco !important;
+    }
+
+    & tr:first-child {
+        font-size: 16px !important;
+        padding: 16px 15px;
+        background: $smc-cor-scheduler-cabecalho;
+        text-align: left;
+        color: $smc-cor-scheduler-cabecalho-texto;
+        font-weight: bold;
+        height: 40px;
+
+        & tr > th {
+            text-align: center !important;
+            border: 1px solid $smc-cor-scheduler-borda;
+
+            &:first-child, &:last-child {
+                background-color: $smc-cor-scheduler-cabecalho-fimdesemana;
+            }
+        }
+    }
+
+    & tr:nth-child(2) {
+        background-color: $smc-cor-scheduler-coluna-fimdesemana;
+        font-size: 12px;
+        height: 25px;
+
+        th {
+            background-color: $smc-cor-scheduler-coluna-fimdesemana;
+            width: 14%;
+
+            &:first-child {
+                width: 15% !important;
+            }
+        }
+    }
+
+    & tbody {
+        background-color: $smc-branco;
+        text-align: right;
+
+        & > tr:nth-child(2n), & tr:hover {
+            background: $smc-branco;
+        }
+
+        & > tr > td {
+            background-color: $smc-branco;
+            width: 31px !important;
+            height: 14%;
+            padding: 3px;
+            border: 1px solid $smc-cor-scheduler-borda;
+
+            &:hover {
+                background-color: $smc-branco;
+            }
+
+            strong a {
+                color: $smc-cor-principal-01 !important;
+            }
+
+            &:first-child, &:last-child {
+                background-color: $smc-cor-scheduler-coluna-fimdesemana;
+                width: 15% !important;
+
+                &:hover {
+                    background-color: $smc-cor-scheduler-coluna-fimdesemana-borda !important;
+                }
+            }
+        }
+
+        &:hover {
+            background-color: $smc-cor-scheduler-celula-hover;
+            cursor: pointer;
+        }
+    }
+
+    & .smc-scheduler-calendar-dia-atual {
+        border: 2px solid $smc-cor-scheduler-diaatual-borda;
+        background-color: $smc-cor-scheduler-diaatual-background;
+        font-weight: bold;
+        color: $smc-cor-scheduler-diaatual-texto;
+    }
+}
+
+//
+
+.smc-sgagrad-grid-linha {
+    > tbody tr:nth-child(2n+1), > tbody tr:nth-child(2n) {
+        background-color: transparent !important;
+
+        td {
+            border-bottom: none;
+            font-size: 14px !important;
+            font-weight: normal;
+            color: $smc-cinza-08 !important;
+
+            span {
+                font-size: 14px !important;
+                font-weight: normal;
+                color: $smc-cinza-08 !important;
+            }
+        }
+    }
+
+    span {
+        font-size: 14px !important;
+        font-weight: normal;
+        color: $smc-cinza-08 !important;
+    }
+}
+
+.smc-sgagrad-grid-espacamento {
+    margin-bottom: -10px;
+
+    tbody tr td {
+        padding: 5px !important;
+    }
+}
+
+.smc-sgagrad-grid-zeraespacamento {
+    p {
+        margin: 0;
+    }
+}
+
+.smc-sga-grid-inicial {
+    background-color: transparent !important;
+    border-collapse: separate;
+    border-spacing: 0 5px !important;
+
+
+    .smc-sga-ingressante-etapas-descricao {
+        width: 90%;
+        float: left;
+
+        a {
+            color: $smc-cor-secundaria-04;
+
+            :hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    tr {
+        background-color: transparent !important;
+        height: 36px !important;
+    }
+
+    td:first-child {
+        border-radius: 0;
+        border-top: 1px solid $smc-cinza-03 !important;
+        border-bottom: 1px solid $smc-cinza-03 !important;
+        border-left: 1px solid $smc-cinza-03 !important;
+        border-right: none;
+        width: 50px;
+        text-align: center;
+    }
+
+    td:last-child {
+        border-radius: 0;
+        border-top: 1px solid $smc-cinza-03 !important;
+        border-bottom: 1px solid $smc-cinza-03 !important;
+        border-right: 1px solid $smc-cinza-03 !important;
+        border-left: none;
+    }
+
+    td {
+        border-bottom: 1px solid $smc-cinza-03 !important;
+        border-top: 1px solid $smc-cinza-03 !important;
+        border-left: none !important;
+        border-right: none !important;
+
+        a, p {
+            margin-top: 5px !important;
+            padding-top: 2px !important;
+            padding-left: 15px !important;
+        }
+    }
+}
+
+// GRID HISTÓRICO
+.smc-sgagrad-grid-historico {
+    > tbody {
+        > tr:nth-child(1) {
+            display: none;
+        }
+    }
+
+
+    .smc-sgagrad-grid-cabecalho {
+        tbody {
+            tr:nth-child(1) {
+                padding-left: 5px;
+            }
+
+            tr:nth-child(2) {
+                font-size: $smc-grid-thead-tr-th-font-size !important;
+                padding: $smc-grid-thead-tr-th-padding;
+                background-color: $smc-grid-cor-header !important;
+                text-align: $smc-grid-thead-tr-th-text-align !important;
+                color: $smc-grid-cor-header-texto !important;
+                font-weight: $smc-grid-thead-tr-th-font-weight;
+                -ms-word-wrap: $smc-grid-thead-tr-th-word-wrap;
+                word-wrap: $smc-grid-thead-tr-th-word-wrap;
+                height: $smc-grid-thead-tr-th-height !important;
+                vertical-align: middle;
+
+                span {
+                    text-align: $smc-grid-thead-tr-th-text-align !important;
+                    color: $smc-grid-cor-header-texto !important;
+                    font-size: $smc-grid-thead-tr-th-font-size !important;
+                }
+            }
+        }
+    }
+
+    .smc-sgagrad-grid-conteudo {
+
+        td {
+            border-bottom: 1px solid $smc-cinza-04;
+            padding-top: 10px;
+            padding-left: 5px;
+
+            span, p, font {
+                font-size: 14px !important;
+            }
+        }
+
+        tbody {
+            & tr:nth-child(2n) {
+                background: $smc-grid-cor-alternada !important;
+                height: $smc-grid-tbody-tr-td-height;
+            }
+
+            & tr:nth-child(2n+1) {
+                background: $smc-grid-cor-linha;
+                height: $smc-grid-tbody-tr-td-height;
+            }
+        }
+    }
+}
+
+// GRID PARCELAS DE MATRÍCULA
+.smc-sgagrad-grid-parcelas {
+    tbody {
+        tr:nth-child(2), tr:nth-child(3), tr:nth-child(4) {
+            td:nth-child(1), td:nth-child(3) {
+                background-color: $smc-cinza-02 !important;
+            }
+
+            td:nth-child(2), td:nth-child(4) {
+                background-color: $smc-branco !important;
+            }
+        }
+    }
+}
+
+// GRID QUADRO DE HORÁRIOS
+.smc-sgagrad-grid-quadrohorario {
+    width: 100%;
+    border: $smc-grid-table-border;
+    margin-top: -15px;
+    background-color: $smc-branco;
+
+    & > table > tbody > tr {
+        > :nth-child(1), > :nth-child(1) > td, > td {
+            background-color: transparent;
+        }
+    }
+
+    font {
+        font-size: 14px;
+    }
+
+    img {
+        margin-left: 5px;
+        margin-top: -2px;
+    }
+
+    .smc-sagrad-grid-quadrohorario-disciplina {
+        tbody, tr, td, tr:nth-child(1) {
+            background-color: transparent !important;
+            border-bottom: none;
+        }
+    }
+
+    > tbody {
+
+        > tr:nth-child(1) {
+            font-size: $smc-grid-thead-tr-th-font-size !important;
+            padding: 0 10px;
+            background-color: $smc-grid-cor-header !important;
+            color: $smc-grid-cor-header-texto !important;
+            font-weight: $smc-grid-thead-tr-th-font-weight;
+            height: 20px !important;
+
+            td:nth-child(1), td:nth-child(7) {
+                background-color: $smc-cinza-01 !important;
+            }
+
+            span {
+                color: $smc-grid-cor-header-texto !important;
+                font-size: $smc-grid-thead-tr-th-font-size !important;
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+
+        > tr:nth-child(2), > tr:nth-child(3), > tr:nth-child(4), > tr:nth-child(5), > tr:nth-child(6) {
+            td:nth-child(1), td:nth-child(7) {
+                font-size: $smc-grid-thead-tr-th-font-size !important;
+                padding: 0 10px;
+                //background-color: $smc-cor-secundaria-03;
+                background-color: $smc-cor-principal-04 !important;
+                color: $smc-grid-cor-header-texto !important;
+                font-weight: $smc-grid-thead-tr-th-font-weight;
+                height: 20px !important;
+
+                span {
+                    color: $smc-branco;
+                    //font-size: $smc-grid-thead-tr-th-font-size !important;
+                    font-size: 13px !important;
+                }
+            }
+        }
+
+        > tr:nth-child(7), > tr:nth-child(8), > tr:nth-child(9), > tr:nth-child(10), > tr:nth-child(11) {
+            td:nth-child(1), td:nth-child(7) {
+                font-size: $smc-grid-thead-tr-th-font-size !important;
+                padding: 0 10px;
+                //background-color: $smc-cor-principal-04;
+                background-color: $smc-cor-principal-04 !important;
+                color: $smc-grid-cor-header-texto !important;
+                font-weight: $smc-grid-thead-tr-th-font-weight;
+                height: 20px !important;
+
+                span {
+                    color: $smc-branco;
+                    //font-size: $smc-grid-thead-tr-th-font-size !important;
+                    font-size: 13px !important;
+                }
+            }
+        }
+
+        > tr:nth-child(12), > tr:nth-child(13), > tr:nth-child(14), > tr:nth-child(15), > tr:nth-child(16), > tr:nth-child(17), > tr:nth-child(18) {
+            td:nth-child(1), td:nth-child(7) {
+                font-size: $smc-grid-thead-tr-th-font-size !important;
+                padding: 0 10px;
+                //background-color: $smc-cor-principal-10;
+                background-color: $smc-cor-principal-04 !important;
+                color: $smc-branco !important;
+                font-weight: $smc-grid-thead-tr-th-font-weight;
+                height: 20px !important;
+
+                span {
+                    color: $smc-branco;
+                    //font-size: $smc-grid-thead-tr-th-font-size !important;
+                    font-size: 13px !important;
+                }
+            }
+        }
+
+        tr td {
+            @extend %smc-grid-borda-interna;
+            vertical-align: $smc-grid-thead-tr-th-vertical-align;
+            min-height: 20px;
+            padding: 0;
+            color: $smc-grid-tbody-tr-td-color;
+
+            p {
+                text-align: center;
+            }
+        }
+    }
+}
+
+// GRID FALTAS
+.smc-sgagrad-ajuste-linha {
+    tbody tr:first-child td {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .smc-sgagrad-grid-linha tbody tr:first-child {
+        border-bottom: 1px solid $smc-cinza-03;
+        padding-bottom: 4px !important;
+    }
+
+    .smc-sgagrad-grid-linha tbody tr:first-child p {
+        margin-bottom: 10px;
+    }
+
+    .smc-sgagrad-grid-linha tbody tr {
+        background-color: transparent !important;
+        height: 0;
+    }
+
+    .smc-sgagrad-grid-linha tbody tr:last-child td {
+        padding: 0;
+    }
+
+    .smc-sgagrad-grid-linha tbody tr:last-child td p {
+        margin: 0;
+    }
+
+
+    table tbody tr td {
+        border-bottom: none;
+    }
+}
+
+.smc-sgagrad-grid-zera-margem, .smc-sgagrad-grid-zera-margem  p{
+    margin: 0;
+}
+
+.smc-sgagrad-grid-separador {
+    border-bottom: 1px solid $smc-cinza-03;
+}

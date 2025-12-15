@@ -1,0 +1,1477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DSIdentidadeAcademica">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>e30b1b87-e215-4a02-b66a-c7f4e5622841</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DSIdentidadeAcademica">
+      <Query>
+        <DataSourceName>DSIdentidadeAcademica</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SeqAlunoEsquerda">
+          <DataField>SeqAlunoEsquerda</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="SeqAlunoDireita">
+          <DataField>SeqAlunoDireita</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="SeqColaboradorEsquerda">
+          <DataField>SeqColaboradorEsquerda</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="SeqColaboradorDireita">
+          <DataField>SeqColaboradorDireita</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="SeqProgramaEsquerda">
+          <DataField>SeqProgramaEsquerda</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="SeqProgramaDireita">
+          <DataField>SeqProgramaDireita</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="NomeEsquerda">
+          <DataField>NomeEsquerda</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NomeDireita">
+          <DataField>NomeDireita</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RegistroDVEsquerda">
+          <DataField>RegistroDVEsquerda</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RegistroDVDireita">
+          <DataField>RegistroDVDireita</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataValidadeEsquerda">
+          <DataField>DataValidadeEsquerda</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataValidadeDireita">
+          <DataField>DataValidadeDireita</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DescricaoTipoEntidadeResponsavelEsquerda">
+          <DataField>DescricaoTipoEntidadeResponsavelEsquerda</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DescricaoTipoEntidadeResponsavelDireita">
+          <DataField>DescricaoTipoEntidadeResponsavelDireita</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DescricaoEntidadeResponsavelEsquerda">
+          <DataField>DescricaoEntidadeResponsavelEsquerda</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DescricaoEntidadeResponsavelDireita">
+          <DataField>DescricaoEntidadeResponsavelDireita</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DescricaoUnidadeDireita">
+          <DataField>DescricaoUnidadeDireita</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DescricaoUnidadeEsquerda">
+          <DataField>DescricaoUnidadeEsquerda</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CodigoDireita">
+          <DataField>CodigoDireita</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CodigoEsquerda">
+          <DataField>CodigoEsquerda</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CodigoBarraDireita">
+          <DataField>CodigoBarraDireita</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CodigoBarraEsquerda">
+          <DataField>CodigoBarraEsquerda</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Frente">
+          <DataField>Frente</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DSIdentidadeAcademica</rd:DataSetName>
+        <rd:SchemaPath>D:\SMC\Academico\SMC.Academico.ReportHost\Areas\PES\Reports\DataSets\IdentidadeAcademica\DSIdentidadeAcademica.xsd</rd:SchemaPath>
+        <rd:TableName>IdentidadeAcademica</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>20cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>12.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Bloco">
+                          <ReportItems>
+                            <Rectangle Name="rtFrente">
+                              <ReportItems>
+                                <Rectangle Name="Rectangle1">
+                                  <ReportItems>
+                                    <Image Name="Logo">
+                                      <Source>Database</Source>
+                                      <Value>=Convert.FromBase64String(Parameters!ImagemCabecalho.Value)</Value>
+                                      <MIMEType>image/png</MIMEType>
+                                      <Sizing>FitProportional</Sizing>
+                                      <Top>0.35788cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>1.4cm</Height>
+                                      <Width>2.13325cm</Width>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                      </Style>
+                                    </Image>
+                                    <Textbox Name="Textbox1">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=IIf(Fields!SeqAlunoEsquerda.Value = 0, "IDENTIDADE ACADÊMICA", "IDENTIDADE ESTUDANTIL")</Value>
+                                              <Style>
+                                                <FontSize>12pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                                      <Top>0.60537cm</Top>
+                                      <Left>2.56399cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>6.3876cm</Width>
+                                      <ZIndex>1</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox2">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=IIf(Fields!SeqAlunoEsquerda.Value = 0, "PROFESSOR(A)/PESQUISADOR(A)", "ALUNO(A)")</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>7pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                                      <Top>1.88488cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>4.43276cm</Width>
+                                      <ZIndex>2</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="NomeEsquerda">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!NomeEsquerda.Value</Value>
+                                              <Style>
+                                                <FontSize>7pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>NomeEsquerda</rd:DefaultName>
+                                      <Top>2.20788cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>8.56552cm</Width>
+                                      <ZIndex>3</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox3">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=IIf(Fields!SeqAlunoEsquerda.Value = 0, "CÓDIGO", "REGISTRO - DV")</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>7pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                                      <Top>2.59438cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>3.5503cm</Width>
+                                      <ZIndex>4</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Nome2">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!RegistroDVEsquerda.Value</Value>
+                                              <Style>
+                                                <FontSize>7pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Nome</rd:DefaultName>
+                                      <Top>2.91738cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>3.5503cm</Width>
+                                      <ZIndex>5</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox4">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!DescricaoTipoEntidadeResponsavelEsquerda.Value</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>7pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                                      <Top>3.33563cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>3.5503cm</Width>
+                                      <ZIndex>6</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Nome3">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!DescricaoEntidadeResponsavelEsquerda.Value</Value>
+                                              <Style>
+                                                <FontSize>7pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Nome</rd:DefaultName>
+                                      <Top>3.65863cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>8.56552cm</Width>
+                                      <ZIndex>7</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Nome4">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!DescricaoUnidadeEsquerda.Value</Value>
+                                              <Style>
+                                                <FontSize>7pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Nome</rd:DefaultName>
+                                      <Top>4.36813cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.95548cm</Height>
+                                      <Width>8.56552cm</Width>
+                                      <ZIndex>8</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox5">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>UNIDADE</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>7pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                                      <Top>4.10863cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>3.5503cm</Width>
+                                      <ZIndex>9</ZIndex>
+                                      <Visibility>
+                                        <Hidden>=Fields!DescricaoTipoEntidadeResponsavelEsquerda.Value = "PROGRAMA"</Hidden>
+                                      </Visibility>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox6">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>DATA DE VALIDADE</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>7pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                                      <Top>2.59438cm</Top>
+                                      <Left>5.647cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>3.28224cm</Width>
+                                      <ZIndex>10</ZIndex>
+                                      <Visibility>
+                                        <Hidden>=Fields!DataValidadeEsquerda.Value Is Nothing</Hidden>
+                                      </Visibility>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Nome5">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!DataValidadeEsquerda.Value</Value>
+                                              <Style>
+                                                <FontSize>7pt</FontSize>
+                                                <Format>d</Format>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Nome</rd:DefaultName>
+                                      <Top>2.91738cm</Top>
+                                      <Left>5.647cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>3.28224cm</Width>
+                                      <ZIndex>11</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </ReportItems>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Top>0.3cm</Top>
+                                  <Left>0.3cm</Left>
+                                  <Height>5.5cm</Height>
+                                  <Width>9.3cm</Width>
+                                  <Visibility>
+                                    <Hidden>=Fields!NomeEsquerda.Value Is Nothing</Hidden>
+                                  </Visibility>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                      <Width>2pt</Width>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
+                                <Rectangle Name="Rectangle5">
+                                  <ReportItems>
+                                    <Image Name="Logo3">
+                                      <Source>Database</Source>
+                                      <Value>=System.Convert.FromBase64String(Parameters!ImagemCabecalho.Value)</Value>
+                                      <MIMEType>image/png</MIMEType>
+                                      <Sizing>FitProportional</Sizing>
+                                      <Top>0.35788cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>1.4cm</Height>
+                                      <Width>2.13325cm</Width>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                      </Style>
+                                    </Image>
+                                    <Textbox Name="Textbox14">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=IIf(Fields!SeqAlunoDireita.Value = 0, "IDENTIDADE ACADÊMICA", "IDENTIDADE ESTUDANTIL")</Value>
+                                              <Style>
+                                                <FontSize>12pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                                      <Top>0.60537cm</Top>
+                                      <Left>2.56399cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>6.36877cm</Width>
+                                      <ZIndex>1</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox15">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=IIf(Fields!SeqAlunoDireita.Value = 0, "PROFESSOR(A)/PESQUISADOR(A)", "ALUNO(A)")</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>7pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                                      <Top>1.88488cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>4.43276cm</Width>
+                                      <ZIndex>2</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Nome12">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!NomeDireita.Value</Value>
+                                              <Style>
+                                                <FontSize>7pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Nome</rd:DefaultName>
+                                      <Top>2.20788cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>8.54669cm</Width>
+                                      <ZIndex>3</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox16">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=IIf(Fields!SeqAlunoDireita.Value = 0, "CÓDIGO", "REGISTRO - DV")</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>7pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                                      <Top>2.59438cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>3.5503cm</Width>
+                                      <ZIndex>4</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Nome13">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!RegistroDVDireita.Value</Value>
+                                              <Style>
+                                                <FontSize>7pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Nome</rd:DefaultName>
+                                      <Top>2.91738cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>3.5503cm</Width>
+                                      <ZIndex>5</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox17">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!DescricaoTipoEntidadeResponsavelDireita.Value</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>7pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                                      <Top>3.33563cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>3.5503cm</Width>
+                                      <ZIndex>6</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Nome14">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!DescricaoEntidadeResponsavelDireita.Value</Value>
+                                              <Style>
+                                                <FontSize>7pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Nome</rd:DefaultName>
+                                      <Top>3.65863cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>8.54669cm</Width>
+                                      <ZIndex>7</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Nome15">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!DescricaoUnidadeDireita.Value</Value>
+                                              <Style>
+                                                <FontSize>7pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Nome</rd:DefaultName>
+                                      <Top>4.36813cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.95548cm</Height>
+                                      <Width>8.54669cm</Width>
+                                      <ZIndex>8</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox18">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>UNIDADE</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>7pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                                      <Top>4.10863cm</Top>
+                                      <Left>0.36724cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>3.5503cm</Width>
+                                      <ZIndex>9</ZIndex>
+                                      <Visibility>
+                                        <Hidden>=Fields!DescricaoTipoEntidadeResponsavelDireita.Value = "PROGRAMA"</Hidden>
+                                      </Visibility>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox19">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>DATA DE VALIDADE</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>7pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                                      <Top>2.59438cm</Top>
+                                      <Left>5.61525cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>3.28224cm</Width>
+                                      <ZIndex>10</ZIndex>
+                                      <Visibility>
+                                        <Hidden>=Fields!DataValidadeDireita.Value Is Nothing</Hidden>
+                                      </Visibility>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Nome16">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!DataValidadeDireita.Value</Value>
+                                              <Style>
+                                                <FontSize>7pt</FontSize>
+                                                <Format>d</Format>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Nome</rd:DefaultName>
+                                      <Top>2.91738cm</Top>
+                                      <Left>5.61525cm</Left>
+                                      <Height>0.45cm</Height>
+                                      <Width>3.28224cm</Width>
+                                      <ZIndex>11</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </ReportItems>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Top>0.3cm</Top>
+                                  <Left>10.3cm</Left>
+                                  <Height>5.5cm</Height>
+                                  <Width>9.3cm</Width>
+                                  <ZIndex>1</ZIndex>
+                                  <Visibility>
+                                    <Hidden>=Fields!NomeDireita.Value Is Nothing</Hidden>
+                                  </Visibility>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                      <Width>2pt</Width>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
+                                <Rectangle Name="Rectangle9">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Top>0.3cm</Top>
+                                  <Left>9.6cm</Left>
+                                  <Height>5.5cm</Height>
+                                  <Width>0.7cm</Width>
+                                  <ZIndex>2</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
+                              </ReportItems>
+                              <KeepTogether>true</KeepTogether>
+                              <Height>6.3cm</Height>
+                              <Width>20cm</Width>
+                              <Visibility>
+                                <Hidden>=Fields!Frente.Value = False</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Rectangle>
+                            <Rectangle Name="rtVerso">
+                              <ReportItems>
+                                <Rectangle Name="Rectangle4">
+                                  <ReportItems>
+                                    <Textbox Name="tbxObservacaoAlunoDireita">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>OBSERVAÇÕES:</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value />
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>• Esta carteira é pessoal e intransferível.
+• Uso exclusivo para identificação junto às Unidades da PUC Minas, enquanto aluno matriculado.</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Normal</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <Top>0.34389cm</Top>
+                                      <Left>0.21724cm</Left>
+                                      <Height>2.00736cm</Height>
+                                      <Width>8.53025cm</Width>
+                                      <Visibility>
+                                        <Hidden>=Fields!SeqAlunoDireita.Value = 0</Hidden>
+                                      </Visibility>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Nome7">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!CodigoDireita.Value</Value>
+                                              <Style>
+                                                <FontSize>8pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Nome</rd:DefaultName>
+                                      <Top>3.25746cm</Top>
+                                      <Left>0.21724cm</Left>
+                                      <Height>0.5cm</Height>
+                                      <Width>8.61019cm</Width>
+                                      <ZIndex>1</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Image Name="CodigoBarra2">
+                                      <Source>Database</Source>
+                                      <Value>=System.Convert.FromBase64String(Fields!CodigoBarraDireita.Value)</Value>
+                                      <MIMEType>image/bmp</MIMEType>
+                                      <Sizing>Fit</Sizing>
+                                      <Top>3.88385cm</Top>
+                                      <Left>1.75cm</Left>
+                                      <Height>1cm</Height>
+                                      <Width>5.5cm</Width>
+                                      <ZIndex>2</ZIndex>
+                                      <Visibility>
+                                        <Hidden>=Fields!CodigoBarraDireita.Value Is Nothing</Hidden>
+                                      </Visibility>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                      </Style>
+                                    </Image>
+                                    <Textbox Name="tbxObservacaoColaboradorDireita">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>OBSERVAÇÕES:</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value />
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>• Esta carteira é pessoal e intransferível.
+• Uso exclusivo para identificação junto às Unidades da PUC Minas.</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Normal</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <Top>0.34389cm</Top>
+                                      <Left>0.21724cm</Left>
+                                      <Height>2.00736cm</Height>
+                                      <Width>8.56552cm</Width>
+                                      <ZIndex>3</ZIndex>
+                                      <Visibility>
+                                        <Hidden>=Fields!SeqColaboradorDireita.Value = 0</Hidden>
+                                      </Visibility>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </ReportItems>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Top>0.45cm</Top>
+                                  <Left>10.45cm</Left>
+                                  <Height>5.5cm</Height>
+                                  <Width>9.3cm</Width>
+                                  <Visibility>
+                                    <Hidden>=Fields!CodigoDireita.Value Is Nothing</Hidden>
+                                  </Visibility>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                      <Width>2pt</Width>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
+                                <Rectangle Name="Rectangle3">
+                                  <ReportItems>
+                                    <Textbox Name="tbxObservacaoAlunoEsquerda">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>OBSERVAÇÕES:</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value />
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>• Esta carteira é pessoal e intransferível.
+• Uso exclusivo para identificação junto às Unidades da PUC Minas, enquanto aluno matriculado.</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Normal</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <Top>0.34389cm</Top>
+                                      <Left>0.21724cm</Left>
+                                      <Height>2.00736cm</Height>
+                                      <Width>8.51066cm</Width>
+                                      <Visibility>
+                                        <Hidden>=Fields!SeqAlunoEsquerda.Value = 0</Hidden>
+                                      </Visibility>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Nome6">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!CodigoEsquerda.Value</Value>
+                                              <Style>
+                                                <FontSize>8pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Nome</rd:DefaultName>
+                                      <Top>3.25746cm</Top>
+                                      <Left>0.21724cm</Left>
+                                      <Height>0.5cm</Height>
+                                      <Width>8.55533cm</Width>
+                                      <ZIndex>1</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Image Name="CodigoBarra">
+                                      <Source>Database</Source>
+                                      <Value>=Convert.FromBase64String(Fields!CodigoBarraEsquerda.Value)</Value>
+                                      <MIMEType>image/bmp</MIMEType>
+                                      <Sizing>Fit</Sizing>
+                                      <Top>3.88385cm</Top>
+                                      <Left>1.75cm</Left>
+                                      <Height>1cm</Height>
+                                      <Width>5.5cm</Width>
+                                      <ZIndex>2</ZIndex>
+                                      <Visibility>
+                                        <Hidden>=Fields!CodigoBarraDireita.Value Is Nothing</Hidden>
+                                      </Visibility>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                      </Style>
+                                    </Image>
+                                    <Textbox Name="tbxObservacaoColaboradorEsquerda">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>OBSERVAÇÕES:</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value />
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>• Esta carteira é pessoal e intransferível.
+• Uso exclusivo para identificação junto às Unidades da PUC Minas.</Value>
+                                              <Style>
+                                                <FontStyle>Normal</FontStyle>
+                                                <FontSize>8pt</FontSize>
+                                                <FontWeight>Normal</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <Top>0.34389cm</Top>
+                                      <Left>0.21724cm</Left>
+                                      <Height>2.00736cm</Height>
+                                      <Width>8.51066cm</Width>
+                                      <ZIndex>3</ZIndex>
+                                      <Visibility>
+                                        <Hidden>=Fields!SeqColaboradorEsquerda.Value = 0</Hidden>
+                                      </Visibility>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </ReportItems>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Top>0.45cm</Top>
+                                  <Left>0.45cm</Left>
+                                  <Height>5.5cm</Height>
+                                  <Width>9.3cm</Width>
+                                  <ZIndex>1</ZIndex>
+                                  <Visibility>
+                                    <Hidden>=Fields!CodigoEsquerda.Value Is Nothing</Hidden>
+                                  </Visibility>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                      <Width>2pt</Width>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
+                                <Rectangle Name="EspacadorVerso">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Top>3.15968cm</Top>
+                                  <Height>0.51563cm</Height>
+                                  <Width>10.45cm</Width>
+                                  <ZIndex>2</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
+                              </ReportItems>
+                              <KeepTogether>true</KeepTogether>
+                              <Top>6.3cm</Top>
+                              <Height>6.3cm</Height>
+                              <Width>20cm</Width>
+                              <ZIndex>1</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!Frente.Value = True</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Rectangle>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DSIdentidadeAcademica</DataSetName>
+            <Height>12.6cm</Height>
+            <Width>20cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>12.6cm</Height>
+        <Style />
+      </Body>
+      <Width>20cm</Width>
+      <Page>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>0.5cm</LeftMargin>
+        <RightMargin>0.5cm</RightMargin>
+        <TopMargin>0.8cm</TopMargin>
+        <BottomMargin>3cm</BottomMargin>
+        <ColumnSpacing>0cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="ImagemCabecalho">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NomeInstituicao">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>2</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>ImagemCabecalho</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>NomeInstituicao</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>017ac142-5a80-4247-b75b-3fe41a08106d</rd:ReportID>
+</Report>

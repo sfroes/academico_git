@@ -1,0 +1,15 @@
+﻿@model ChancelaAtividadeViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid22_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+        {
+        }
+        @Smc.DisplayFor(m => m.Descricao).CssClass("smc-listdetailed-conteudo-titulo-linhaunica").Size(SMCSize.Grid19_24).HideLabel()
+        @Smc.EditorFor(x => x.SeqItem)
+        @Smc.EditorFor(x => x.SeqSituacaoItemMatricula).CssClass("smc-select-alinhamento-titulo").Size(SMCSize.Grid4_24).HideLabel().Readonly((bool)ViewBag.ChancelaFinalizada)
+        @Smc.HiddenFor(x => x.Descricao)
+    }
+}

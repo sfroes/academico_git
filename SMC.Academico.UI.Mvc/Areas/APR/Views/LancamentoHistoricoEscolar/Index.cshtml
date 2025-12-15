@@ -1,0 +1,152 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.APR.Models
+@using SMC.Framework;
+@using SMC.Framework.UI.Mvc.Html;
+@using SMC.Academico.Common.Areas.APR.Enums;
+
+@model  LancamentoHistoricoEscolarViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var buttonSet2 = Smc.ButtonSet();
+}
+
+@section Scripts{
+    <script type="text/javascript" src="@Url.SMCBuscarRecursoGlobalAplicacao("Scripts/Areas/APR/LancamentoHistoricoEscolar/Index.js")"></script>
+}
+
+@Html.Action("BuscarLancamentoHistoricoEscolarCabecalho", new { seqTurma = new SMCEncryptedLong(Model.SeqTurma) })
+
+@using (Smc.Form("lancarNotasFrequencia", "Salvar", "LancamentoHistoricoEscolarRoute", new { area = "" }).Begin())
+{
+    using (Smc.Div("divLancamentoNotas").Begin())
+    {
+        @Smc.HiddenFor(m => m.SeqTurma)
+        @Smc.HiddenFor(m => m.SeqOrigemAvaliacao)
+        @Smc.HiddenFor(m => m.SomenteEscalaApuracao)
+        @Smc.EditorFor(m => m.MateriaLecionada)
+
+        if (Model.MateriaLecionadaObrigatoria)
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+            {
+                <p>@Html.Raw(Smc.GetUIResource("MateriaLecionadaObrigatoria_FillInstructions"))</p>
+            }
+        }
+
+        @Smc.EditorFor(m => m.BackUrl)
+
+        ViewBag.ExibirCampoCargaHorariaRealizada = Model.ExibirCampoCargaHorariaRealizada;
+
+        @Smc.EditorFor(m => m.ExibirCampoCargaHorariaRealizada)
+
+        if (!Model.TurmaSemAluno && Model.Lancamentos != null && Model.Lancamentos.Any())
+        {
+            @Smc.EditorFor(m => m.EscalaApuracao)
+            @Smc.EditorFor(m => m.SituacoesFinais)
+
+            if (Model.SomenteLeitura)
+            {
+                using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+                {
+                    <p>@Smc.GetUIResource("SomenteLeitura_FillInstructions")</p>
+                }
+            }
+
+            using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+            {
+                <p class="smc-sga-titulo-legenda">@Smc.GetUIResource("Titulo_Legenda")</p>
+                @(Smc.Legend("LegendaObservacao", SMCOrientation.Horizontal).Items<SituacaoObservacaoHistoricoEscolar>())
+            }
+
+            using (Smc.Fieldset("FieldsetLancamentosNota").Size(SMCSize.Grid24_24).CssClass("smc-detalhe-editavel-tabular smc-sga-notas-frequencias").LegendText(@Smc.GetUIResource("Fieldset_Lancamentos_Nota")).Begin())
+            {
+                using (Smc.Div().CssClass("smc-detalhe-editavel-header smc-size-md-24").Begin())
+                {
+                    <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24)">@Smc.GetUIResource("Label_RA")</label>
+                    if (Model.MostrarLancamentosNota)
+                    {
+                        if (Model.MostrarLacamentosSemNota)
+                        {
+                            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid10_24)">@Smc.GetUIResource("Label_Nome")</label>
+                            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24)">@Smc.GetUIResource("Label_SemNota")</label>
+                        }
+                        else
+                        {
+                            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24)">@Smc.GetUIResource("Label_Nome")</label>
+                        }
+                        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24)">
+                            @Smc.GetUIResource("Label_Nota")
+                            @if (!string.IsNullOrEmpty(Model.NotaMaxima))
+                            {
+                                @Smc.Instructions().Text(string.Format(Smc.GetUIResource("Label_Nota_Maxima"), Model.NotaMaxima))
+                            }
+                        </label>
+                    }
+                    else if (Model.MostrarLancamentosNotaDescricao)
+                    {
+                        if (Model.MostrarLacamentosSemNota)
+                        {
+                            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid6_24)">@Smc.GetUIResource("Label_Nome")</label>
+                            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24)">@Smc.GetUIResource("Label_SemNota")</label>
+                        }
+                        else
+                        {
+                            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid8_24)">@Smc.GetUIResource("Label_Nome")</label>
+                        }
+                        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24)">
+                            @Smc.GetUIResource("Label_Nota")
+                            @if (!string.IsNullOrEmpty(Model.NotaMaxima))
+                            {
+                                @Smc.Instructions().Text(string.Format(Smc.GetUIResource("Label_Nota_Maxima"), Model.NotaMaxima))
+                            }
+                        </label>
+                        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid4_24)">@Smc.GetUIResource("Label_EscalaApuracaoItem")</label>
+                    }
+                    else if (Model.MostrarLancamentosSeqEscalaApuracaoItem)
+                    {
+                        if (Model.MostrarLacamentosSemNota)
+                        {
+                            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid6_24)">@Smc.GetUIResource("Label_Nome")</label>
+                            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24)">@Smc.GetUIResource("Label_SemNota")</label>
+                        }
+                        else
+                        {
+                            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid10_24)">@Smc.GetUIResource("Label_Nome")</label>
+                        }
+                        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid4_24)">@Smc.GetUIResource("Label_EscalaApuracaoItem")</label>
+                    }
+
+                    if (Model.ExibirCampoCargaHorariaRealizada)
+                    {
+                        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24)">@Smc.GetUIResource("Label_CargaHorariaRealizada")</label>
+                        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24)">@Smc.GetUIResource("Label_Falta")</label>
+                        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid3_24)">@Smc.GetUIResource("Label_SituacaoFinal")</label>
+                    }
+                    else
+                    {
+                        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid2_24)">@Smc.GetUIResource("Label_Falta")</label>
+                        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid5_24)">@Smc.GetUIResource("Label_SituacaoFinal")</label>
+                    }
+                    <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid1_24)">@Smc.GetUIResource("Label_Observacao")</label>
+                }
+                var detailView = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.LANCAMENTO_HISTORICOESCOLAR_PATH + "_DetailHistoricoEscolarNota");
+                @Smc.List("LancamentosNota", m => m.Lancamentos).HtmlTemplate(item => @Html.Partial(detailView, item.Value))
+            }
+        }
+
+        buttonSet2.AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Enabled(Model.HabilitaSalvar).Highlight());
+
+
+        buttonSet2.AddButton(Smc.Button("FecharDiario").Text(Smc.GetUIResource("FecharDiario")).CssClass("smc-btn-confirmar-icotext-destaque").Action("FecharDiarioTurma", "LancamentoHistoricoEscolarRoute", new { seqTurma = new SMCEncryptedLong(Model.SeqTurma), area = "", backUrl = Model.BackUrl, alunosPendentes = Model.AlunosPendentes }).Ajax(fieldsContainerToRequest: "divLancamentoNotas").Type(SMCButtonType.Link).Enabled(Model.HabilitaFecharDiario && Model.HabilitaSalvar));
+
+        buttonSet2.AddButton(Smc.Button("EmitirRelatorio")
+.CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+.Text(Smc.GetUIResource("EmitirRelatorio"))
+.Action("DiarioTurmaRelatorio", "DiarioTurmaRelatorio", new { seqTurma = new SMCEncryptedLong(Model.SeqTurma) })
+.Attribute("target", "_blank").Type(SMCButtonType.Link));
+    }
+
+    buttonSet2.AddButton(Smc.Button(SMCButtonBehavior.Voltar).Type(SMCButtonType.Link).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Url(Model.BackUrl, true));
+
+    @buttonSet2;
+}

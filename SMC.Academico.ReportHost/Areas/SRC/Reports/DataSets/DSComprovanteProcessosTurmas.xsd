@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSComprovanteProcessosTurmas" targetNamespace="http://tempuri.org/DSComprovanteProcessosTurmas.xsd" xmlns:mstns="http://tempuri.org/DSComprovanteProcessosTurmas.xsd" xmlns="http://tempuri.org/DSComprovanteProcessosTurmas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSComprovanteProcessosTurmas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSComprovanteProcessosTurmas" msprop:Generator_UserDSName="DSComprovanteProcessosTurmas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Turmas" msprop:Generator_TableClassName="TurmasDataTable" msprop:Generator_TableVarName="tableTurmas" msprop:Generator_RowChangedName="TurmasRowChanged" msprop:Generator_TablePropName="Turmas" msprop:Generator_RowDeletingName="TurmasRowDeleting" msprop:Generator_RowChangingName="TurmasRowChanging" msprop:Generator_RowEvHandlerName="TurmasRowChangeEventHandler" msprop:Generator_RowDeletedName="TurmasRowDeleted" msprop:Generator_RowClassName="TurmasRow" msprop:Generator_UserTableName="Turmas" msprop:Generator_RowEvArgName="TurmasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Seq" msprop:Generator_ColumnVarNameInTable="columnSeq" msprop:Generator_ColumnPropNameInRow="Seq" msprop:Generator_ColumnPropNameInTable="SeqColumn" msprop:Generator_UserColumnName="Seq" type="xs:long" minOccurs="0" />
+              <xs:element name="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" msprop:Generator_UserColumnName="Descricao" type="xs:string" minOccurs="0" />
+              <xs:element name="SeqDivisao" msprop:Generator_ColumnVarNameInTable="columnSeqDivisao" msprop:Generator_ColumnPropNameInRow="SeqDivisao" msprop:Generator_ColumnPropNameInTable="SeqDivisaoColumn" msprop:Generator_UserColumnName="SeqDivisao" type="xs:long" minOccurs="0" />
+              <xs:element name="DescricaoDivisao" msprop:Generator_ColumnVarNameInTable="columnDescricaoDivisao" msprop:Generator_ColumnPropNameInRow="DescricaoDivisao" msprop:Generator_ColumnPropNameInTable="DescricaoDivisaoColumn" msprop:Generator_UserColumnName="DescricaoDivisao" type="xs:string" minOccurs="0" />
+              <xs:element name="SituacaoMotivo" msprop:Generator_ColumnVarNameInTable="columnSituacaoMotivo" msprop:Generator_ColumnPropNameInRow="SituacaoMotivo" msprop:Generator_ColumnPropNameInTable="SituacaoMotivoColumn" msprop:Generator_UserColumnName="SituacaoMotivo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

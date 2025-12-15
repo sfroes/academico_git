@@ -1,0 +1,131 @@
+﻿@using SMC.SGA.Administrativo.Models
+@model DadosSolicitanteViewModel
+
+@using (Smc.Fieldset("Identificacao").CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid2_24, SMCSize.Grid24_24, SMCSize.Grid4_24, SMCSize.Grid2_24).CssClass("smc-sga-foto-usuario").Begin())
+    {
+        if (Model.Identificacao.ArquivoFoto != null)
+        {
+            <img src="data:image/png;base64,@Convert.ToBase64String(Model.Identificacao.ArquivoFoto.FileData)" />         
+        }
+    }
+    @Smc.DisplayFor(x => x.TipoAtuacao).Size(SMCSize.Grid5_24, SMCSize.Grid24_24, SMCSize.Grid6_24, SMCSize.Grid5_24)
+    @Smc.DisplayFor(x => x.NomeCompleto).Size(SMCSize.Grid17_24, SMCSize.Grid24_24, SMCSize.Grid14_24, SMCSize.Grid17_24)
+}
+
+@using (Smc.Fieldset("DadosContato").CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Fieldset("Enderecos").CssClass("smc-sga-fieldset-secundario").Begin())
+    {
+        @(Smc.Grid("gridEnderecos", new SMCPagerModel<EnderecoViewModel>(Model.Enderecos))
+                     .FieldColumn(x => x.TipoEndereco)
+                     .FieldColumn(x => x.NomePais)
+                     .FieldColumn(x => x.Cep)
+                     .FieldColumn(x => x.Logradouro)
+                     .FieldColumn(x => x.Numero)
+                     .FieldColumn(x => x.Complemento)
+                     .FieldColumn(x => x.Bairro)
+                     .FieldColumn(x => x.NomeCidade)
+                     .FieldColumn(x => x.SiglaUf)
+                     .FieldColumn(x => x.Correspondencia)
+                     .HideGridTitle()
+                     .HideNavigator()
+                     .HideNumberOfRowsPerPageSelector()
+                     .HidePager()
+                     .HideRowsTotalizer())
+    }
+    using (Smc.Fieldset("Telefones").CssClass("smc-sga-fieldset-secundario").Size(SMCSize.Grid12_24).Begin())
+    {
+        @(Smc.Grid("gridTelefones", new SMCPagerModel<TelefoneViewModel>(Model.Telefones))
+                     .FieldColumn(x => x.TipoTelefone)
+                     .FieldColumn(x => x.CodigoPais)
+                     .FieldColumn(x => x.CodigoArea)
+                     .FieldColumn(x => x.Numero)
+                     .HideGridTitle()
+                     .HideNavigator()
+                     .HideNumberOfRowsPerPageSelector()
+                     .HidePager()
+                     .HideRowsTotalizer())
+    }
+    using (Smc.Fieldset("EnderecosEletronicos").CssClass("smc-sga-fieldset-secundario").Size(SMCSize.Grid12_24).Begin())
+    {
+        @(Smc.Grid("gridElderecosEletronicos", new SMCPagerModel<EnderecoEletronicoCategoriaViewModel>(Model.EnderecosEletronicos))
+                     .FieldColumn(x => x.TipoEnderecoEletronico)
+                     .FieldColumn(x => x.Descricao)
+                     .HideGridTitle()
+                     .HideNavigator()
+                     .HideNumberOfRowsPerPageSelector()
+                     .HidePager()
+                     .HideRowsTotalizer())
+    }
+}
+
+@using (Smc.Fieldset("DadosPessoais").CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    @Smc.DisplayFor(x => x.Identificacao.DataNascimento).Size(SMCSize.Grid4_24)
+    @Smc.DisplayFor(x => x.Identificacao.Falecido).Size(SMCSize.Grid4_24)
+    @Smc.DisplayFor(x => x.Identificacao.EstadoCivil).Size(SMCSize.Grid4_24)
+    @Smc.DisplayFor(x => x.Identificacao.Sexo).Size(SMCSize.Grid4_24)
+    @Smc.DisplayFor(x => x.Identificacao.RacaCor).Size(SMCSize.Grid4_24)
+    @Smc.DisplayFor(x => x.Identificacao.Cpf).Size(SMCSize.Grid4_24)
+
+    using (Smc.Fieldset("Passaporte").CssClass("smc-sga-fieldset-secundario").Size(SMCSize.Grid12_24).Begin())
+    {
+        @Smc.DisplayFor(x => x.Identificacao.NumeroPassaporte).Size(SMCSize.Grid8_24)
+        @Smc.DisplayFor(x => x.Identificacao.DataValidadePassaporte).Size(SMCSize.Grid8_24)
+        @Smc.DisplayFor(x => x.Identificacao.PaisEmissaoPassaporte).Size(SMCSize.Grid8_24)
+    }
+    using (Smc.Fieldset("Nacionalidade").CssClass("smc-sga-fieldset-secundario").Size(SMCSize.Grid12_24).Begin())
+    {
+        @Smc.EditorFor(x => x.Identificacao.CodigoPaisNacionalidade)//os campos de naturalidade tem conditional display conforme valor deste campo
+
+        @Smc.DisplayFor(x => x.Identificacao.TipoNacionalidade).Size(SMCSize.Grid12_24)
+        @Smc.DisplayFor(x => x.Identificacao.PaisNacionalidade).Size(SMCSize.Grid12_24)
+    }
+    using (Smc.Fieldset("Naturalidade").CssClass("smc-sga-fieldset-secundario").Size(SMCSize.Grid12_24).Begin())
+    {
+        @Smc.DisplayFor(x => x.Identificacao.UfNaturalidade).Size(SMCSize.Grid4_24)
+        @Smc.DisplayFor(x => x.Identificacao.CidadeNaturalidade).Size(SMCSize.Grid20_24)
+        @Smc.DisplayFor(x => x.Identificacao.DescricaoNaturalidadeEstrangeira).Size(SMCSize.Grid24_24)
+    }
+    using (Smc.Fieldset("Identidade").CssClass("smc-sga-fieldset-secundario").Size(SMCSize.Grid12_24).Begin())
+    {
+        @Smc.DisplayFor(x => x.Identificacao.NumeroIdentidade).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.Identificacao.OrgaoEmissorIdentidade).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.Identificacao.UfIdentidade).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.Identificacao.DataExpedicaoIdentidade).Size(SMCSize.Grid6_24)
+    }
+    using (Smc.Fieldset("CarteiraMotorista").CssClass("smc-sga-fieldset-secundario").Size(SMCSize.Grid12_24).Begin())
+    {
+        @Smc.DisplayFor(x => x.Identificacao.NumeroRegistroCnh).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.Identificacao.CategoriaCnh).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.Identificacao.DataEmissaoCnh).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.Identificacao.DataVencimentoCnh).Size(SMCSize.Grid6_24)
+    }
+    using (Smc.Fieldset("TituloEleitor").CssClass("smc-sga-fieldset-secundario").Size(SMCSize.Grid12_24).Begin())
+    {
+        @Smc.DisplayFor(x => x.Identificacao.NumeroTituloEleitor).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.Identificacao.NumeroZonaTituloEleitor).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.Identificacao.NumeroSecaoTituloEleitor).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.Identificacao.UfTituloEleitor).Size(SMCSize.Grid6_24)
+    }
+    using (Smc.Fieldset("PISPASEP").CssClass("smc-sga-fieldset-secundario").Size(SMCSize.Grid12_24).Begin())
+    {
+        @Smc.DisplayFor(x => x.Identificacao.TipoPisPasep).Size(SMCSize.Grid8_24)
+        @Smc.DisplayFor(x => x.Identificacao.NumeroPisPasep).Size(SMCSize.Grid8_24)
+        @Smc.DisplayFor(x => x.Identificacao.DataPisPasep).Size(SMCSize.Grid8_24)
+    }
+    using (Smc.Fieldset("DocumentoMilitar").CssClass("smc-sga-fieldset-secundario").Size(SMCSize.Grid12_24).Begin())
+    {
+        @Smc.DisplayFor(x => x.Identificacao.NumeroDocumentoMilitar).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.Identificacao.CsmDocumentoMilitar).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.Identificacao.TipoDocumentoMilitar).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(x => x.Identificacao.UfDocumentoMilitar).Size(SMCSize.Grid6_24)
+    }
+    using (Smc.Fieldset("NecessidadesEspeciais").CssClass("smc-sga-fieldset-secundario").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.DisplayFor(x => x.Identificacao.NecessidadeEspecial).Size(SMCSize.Grid8_24)
+        @Smc.DisplayFor(x => x.Identificacao.TipoNecessidadeEspecial).Size(SMCSize.Grid8_24)
+    }
+}

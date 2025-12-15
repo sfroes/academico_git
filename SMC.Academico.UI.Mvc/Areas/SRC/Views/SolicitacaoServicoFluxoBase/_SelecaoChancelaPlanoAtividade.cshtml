@@ -1,0 +1,34 @@
+﻿@using SMC.Academico.Common.Areas.MAT.Enums;
+@model SMC.Academico.UI.Mvc.Areas.SRC.Models.SelecaoChancelaPlanoAtividadeViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid22_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid24_24, SMCSize.Grid2_24, SMCSize.Grid1_24).CssClass("smc-sga-legenda-agrupamento smc-sga-legenda-agrupamento-legendas").Begin())
+        {
+            @Smc.LegendItem(m => m.Pertence)              
+            if (Model.LegendaPertencePlanoEstudo.GetValueOrDefault()) {
+                @Smc.LegendItem(m => m.SituacaoPlanoEstudo)
+            }
+        }
+
+
+        @Smc.DisplayFor(m => m.Descricao).CssClass("smc-listdetailed-conteudo-titulo-linhaunica").Size(SMCSize.Grid18_24, SMCSize.Grid24_24, SMCSize.Grid17_24, SMCSize.Grid18_24).HideLabel()
+        @Smc.EditorFor(x => x.SeqItem)
+        var exibirNaoAlterado = ((bool)ViewBag.ChancelaFinalizada) || Model.SituacaoPlanoEstudo == MatriculaPertencePlanoEstudo.NaoAlterado;
+
+        if (exibirNaoAlterado)
+        {
+            @Smc.HiddenFor(x => x.SeqSituacaoItemMatricula)
+        }
+        else
+        {
+            @Smc.EditorFor(x => x.SeqSituacaoItemMatricula).CssClass("smc-select-alinhamento-titulo").Size(SMCSize.Grid4_24, SMCSize.Grid24_24, SMCSize.Grid4_24, SMCSize.Grid4_24).HideLabel()
+        }
+
+        @Smc.HiddenFor(x => x.Descricao)
+        @Smc.HiddenFor(m => m.LegendaPertencePlanoEstudo)
+
+    }
+}

@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC6ED213-B6A7-4334-ACF4-0D94A1451333}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMC.Academico.Recursos</RootNamespace>
+    <AssemblyName>SMC.Academico.Recursos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SMC.Framework.Service.Host, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Service.Host.4.2.251008.1\lib\net471\SMC.Framework.Service.Host.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConsultaDiploma\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="ConsultaDiploma\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="ConsultaDiploma\Images\diploma-cod-validacao.png" />
+    <Content Include="ConsultaDiploma\Images\smc-img-background-superior.png" />
+    <Content Include="ConsultaDiploma\Images\smc-img-logotipo-pucminas.png" />
+    <Content Include="ConsultaDiploma\Images\smc-img-logotipo-pucminas.svg" />
+    <Content Include="Content\Css\smc-acessibilidade.css">
+      <DependentUpon>smc-acessibilidade.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-acessibilidade.min.css">
+      <DependentUpon>smc-acessibilidade.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-impressao.css">
+      <DependentUpon>smc-impressao.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-impressao.min.css">
+      <DependentUpon>smc-impressao.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Images\img-logo-smc-bdp.svg" />
+    <Content Include="Content\Images\img-logo-smc.svg" />
+    <Content Include="Content\Images\smc-img-logo-csm.png" />
+    <Content Include="Content\Images\smc-img-logo-gti-min.png" />
+    <Content Include="Content\Images\smc-img-logo-sga.png" />
+    <Content Include="Content\Images\smc-puc-minas-brasao-preto.png" />
+    <Content Include="Content\Images\smc-sga-ico-canvas.png" />
+    <Content Include="Content\Images\smc-sga-ico-teams.png" />
+    <Content Include="Content\Images\smc-sga-img-background-login.png" />
+    <Content Include="Content\Images\smc-sga-img-loader-embed-texto.png" />
+    <Content Include="Content\Images\smc-sga-img-loader-embed.gif" />
+    <Content Include="Content\Images\smc-sga-img-msg-contatos.png" />
+    <Content Include="Content\Images\smc-sga-img-msg-dados.png" />
+    <Content Include="Content\Images\smc-sga-img-msg-identificacao.png" />
+    <Content Include="Content\Images\smc-sga-img-msg-info.png" />
+    <Content Include="Content\Images\smc-sga-img-msg-selecao.png" />
+    <Content Include="Content\Images\smc-sga-img-textura-topo.png" />
+    <Content Include="Content\Images\smc-sga-logotipo-login.png" />
+    <Content Include="Content\Scripts\Areas\APR\LancamentoHistoricoEscolar\Index.js" />
+    <Content Include="Content\Scripts\Areas\FIN\AdesaoTermo.js" />
+    <Content Include="Content\Scripts\Areas\SRC\SolicitacaoDispensaItensCursados.js" />
+    <Content Include="Content\Scripts\Areas\SRC\SolicitacaoDispensaItensDispensados.js" />
+    <Content Include="SGA.Administrativo\Css\smc-megamenu.css">
+      <DependentUpon>smc-megamenu.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.Administrativo\Css\smc-megamenu.min.css">
+      <DependentUpon>smc-megamenu.css</DependentUpon>
+    </Content>
+    <Content Include="SGA.Administrativo\Scripts\Areas\ALN\Ingressante\IngressanteDynamic.js" />
+    <Content Include="SGA.Administrativo\Scripts\Areas\ALN\InstituicaoNivelTipoVinculoAluno.js" />
+    <Content Include="Content\Scripts\Areas\CAM\Index.js" />
+    <Content Include="SGA.Administrativo\Scripts\Areas\CAM\Convocacao.js" />
+    <Content Include="SGA.Administrativo\Scripts\Areas\CSO\TipoFormacaoEspecifica\TipoFormacaoEspecifica.js" />
+    <Content Include="SGA.Administrativo\Scripts\Areas\ORG\InstituicaoTipoEntidade.js" />
+    <Content Include="SGA.Administrativo\Css\smc-login-sga.css">
+      <DependentUpon>smc-login-sga.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.Administrativo\Css\smc-login-sga.min.css">
+      <DependentUpon>smc-login-sga.css</DependentUpon>
+    </Content>
+    <Content Include="SGA.Administrativo\Scripts\Areas\PES\EnvioNotificacao\EnvioNotificacao.js" />
+    <Content Include="SGA.Administrativo\Scripts\Areas\TUR\Turma.js" />
+    <Content Include="SGA.Administrativo\Scripts\Curso.js" />
+    <Content Include="SGA.Administrativo\Scripts\PublicacaoBdp.js" />
+    <Content Include="SGA.Administrativo\Scripts\Relatorio.js" />
+    <Content Include="SGA.Aluno\Images\banner-fale-com-a-gente.png" />
+    <Content Include="SGA.Aluno\Images\banner-fale-com-a-gente_02.png" />
+    <Content Include="SGA.Aluno\Images\banner-fale-com-a-gente_03.png" />
+    <Content Include="SGA.Aluno\Images\banner-fale-com-a-gente_04.png" />
+    <Content Include="SGA.Aluno\Images\banner-guia-regime-remoto-01.png" />
+    <Content Include="SGA.Aluno\Images\banner-guia-regime-remoto-02.png" />
+    <Content Include="SGA.Aluno\Images\banner-guia-regime-remoto-03.png" />
+    <Content Include="SGA.Aluno\Images\banner-guia-regime-remoto-04.png" />
+    <Content Include="SGA.Aluno\Images\banner-SGA-CPA-pós-012023.png" />
+    <Content Include="SGA.Aluno\Images\img-avaliacao-cpa-semestral-2-2022.png" />
+    <Content Include="SGA.Aluno\Images\img-avaliacao-cpa-semestral-xs-2-2022.png" />
+    <Content Include="SGA.Aluno\Images\img-avaliacao-cpa-semestral-xs.png" />
+    <Content Include="SGA.Aluno\Images\img-avaliacao-cpa-semestral.png" />
+    <Content Include="SGA.Aluno\Images\SGA-CPA-pós-012023.png" />
+    <Content Include="SGA.Aluno\Images\sga2_banner-pos-1171x160px_cpa_2025_1_ALUNO.png" />
+    <Content Include="SGA.Aluno\Images\sga2_banner-pos_837x160px_cpa_2025_1_ALUNO.png" />
+    <Content Include="SGA.Aluno\Images\sga_POS_1171x160px_cpa_2025_2_ALUNO.jpg" />
+    <Content Include="SGA.Aluno\Images\smc-banner-cpa-pos-2-2023-xs.png" />
+    <Content Include="SGA.Aluno\Images\smc-banner-cpa-pos-2-2023.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-6dobem-1171x160.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-6dobem-xs837x160.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-CPA_PUCMINAS-1171x160-02.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-CPA_PUCMINAS-1171x160-03.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-CPA_PUCMINAS-1171x160-04.jpg" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-CPA_PUCMINAS-1171x160.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-CPA_PUCMINAS-xs837x160-02.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-CPA_PUCMINAS-xs837x160-03.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-CPA_PUCMINAS-xs837x160-04.jpg" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-CPA_PUCMINAS-xs837x160.png" />
+    <Content Include="SGA.Aluno\Images\web_POS_837x160px_cpa_2025_2_ALUNO.jpg" />
+    <Content Include="SGA.Grad\Imagens\Logo-PUCMinas.png" />
+    <Content Include="SGA.Grad\Imagens\smc-sgagrad-img-sge.png" />
+    <Content Include="SGA.Mobile\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.Mobile\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="SGA.Mobile\Images\banner-estado-saude-covid19.png" />
+    <Content Include="SGA.Mobile\Images\banner_cpa_processo_avaliacao-xs.png" />
+    <Content Include="SGA.Mobile\Images\banner_cpa_processo_avaliacao.png" />
+    <Content Include="SGA.Mobile\Images\smc-img-banners-complemento.png" />
+    <Content Include="SGA.Mobile\Images\smc-img-banners-complemento2.png" />
+    <Content Include="SGA.Mobile\Images\smc-img-banners-matricula-747x215.png" />
+    <Content Include="SGA.Mobile\Images\smc-img-banners-matricula-991x160.png" />
+    <Content Include="SGA.Mobile\Images\smc-img-banners-matricula-991x215.png" />
+    <Content Include="SGA.Mobile\Images\smc-img-logo-sga-aluno.png" />
+    <Content Include="SGA.Mobile\Images\smc-sga-aluno-textura-topo.png" />
+    <Content Include="SGA.Mobile\Images\smc-sga-banner-covid19-botao.png" />
+    <Content Include="SGA.Mobile\Images\smc-sga-banner-covid19-ilustracao.png" />
+    <Content Include="SGA.Mobile\Images\smc-sga-banner-covid19-logo.png" />
+    <Content Include="SGA.Mobile\Images\smc-sga-banner-matricula00.png" />
+    <Content Include="SGA.Mobile\Images\smc-sga-img-background.png" />
+    <Content Include="SGA.Mobile\Images\smc-sga-img-inicio.png" />
+    <Content Include="SGA.Mobile\Images\smc-sga-img-logotipo-bdp.png" />
+    <Content Include="SGA.Aluno\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.Aluno\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="SGA.Aluno\Images\banner-estado-saude-covid19.png" />
+    <Content Include="SGA.Aluno\Images\banner_cpa_processo_avaliacao-xs.png" />
+    <Content Include="SGA.Aluno\Images\smc-img-banners-complemento.png" />
+    <Content Include="SGA.Aluno\Images\smc-img-banners-complemento2.png" />
+    <Content Include="SGA.Aluno\Images\smc-img-banners-matricula-747x215.png" />
+    <Content Include="SGA.Aluno\Images\smc-img-banners-matricula-991x160.png" />
+    <Content Include="SGA.Aluno\Images\smc-img-banners-matricula-991x215.png" />
+    <Content Include="SGA.Aluno\Images\smc-img-logo-sga-aluno.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-aluno-textura-topo.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-covid19-botao.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-covid19-ilustracao.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-covid19-logo.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-banner-matricula00.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-img-background.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-img-inicio.png" />
+    <Content Include="SGA.Aluno\Images\smc-sga-img-logotipo-bdp.png" />
+    <Content Include="SGA.BDP\Images\smc-bdp-ico-defesas-v2.png" />
+    <Content Include="SGA.BDP\Images\smc-bdp-ico-futuras-defesas.png" />
+    <Content Include="SGA.BDP\Images\smc-bdp-ico-instrucao-v2.png" />
+    <Content Include="SGA.BDP\Images\smc-bdp-ico-instrucoes.png" />
+    <Content Include="SGA.BDP\Images\smc-bdp-ico-processo-publicacao.png" />
+    <Content Include="SGA.BDP\Images\smc-bdp-ico-processo-v2.png" />
+    <Content Include="SGA.BDP\Images\smc-bdp-ico-ultimas-publicacoes.png" />
+    <Content Include="SGA.BDP\Images\smc-bdp-img-background.png" />
+    <Content Include="SGA.BDP\Images\smc-bdp-logotipo-sem-assinatura.png" />
+    <Content Include="SGA.BDP\Images\smc-bdp-logotipo.png" />
+    <Content Include="SGA.Grad\Css\smc-impressao.css">
+      <DependentUpon>smc-impressao.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.Grad\Css\smc-impressao.min.css">
+      <DependentUpon>smc-impressao.css</DependentUpon>
+    </Content>
+    <Content Include="SGA.Grad\Css\smc-login-sga.css">
+      <DependentUpon>smc-login-sga.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.Grad\Css\smc-login-sga.min.css">
+      <DependentUpon>smc-login-sga.css</DependentUpon>
+    </Content>
+    <Content Include="SGA.Grad\Css\smc-recursos-matricula.css">
+      <DependentUpon>smc-recursos-matricula.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.Grad\Css\smc-recursos-matricula.min.css">
+      <DependentUpon>smc-recursos-matricula.css</DependentUpon>
+    </Content>
+    <Content Include="SGA.Grad\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.Grad\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="SGA.Grad\Css\smc-recursos.scss" />
+    <Content Include="SGA.Grad\Imagens\smc-img-logo-sga-aluno.png" />
+    <Content Include="SGA.Grad\Imagens\smc-sga-aluno-textura-topo.png" />
+    <Content Include="SGA.Grad\Images\smc-img-banners-complemento.png" />
+    <Content Include="SGA.Grad\Images\smc-img-banners-complemento2.png" />
+    <Content Include="SGA.Grad\Images\smc-img-banners-matricula-747x215.png" />
+    <Content Include="SGA.Grad\Images\smc-img-banners-matricula-991x160.png" />
+    <Content Include="SGA.Grad\Images\smc-img-banners-matricula-991x215.png" />
+    <Content Include="SGA.Grad\Images\smc-img-logo-sga-aluno.png" />
+    <Content Include="SGA.Grad\Images\smc-sga-aluno-textura-topo.png" />
+    <Content Include="SGA.Grad\Images\smc-sga-banner-matricula00.png" />
+    <Content Include="SGA.Grad\Images\smc-sga-img-background.png" />
+    <Content Include="SGA.Grad\Images\smc-sga-img-inicio.png" />
+    <Content Include="SGA.Grad\Images\smc-sga-img-logotipo-bdp.png" />
+    <Content Include="SGA.Grad\Images\smc-sgagrad-ico-canvas.png" />
+    <Content Include="SGA.Grad\Images\smc-sgagrad-ico-teams.jpg" />
+    <Content Include="SGA.Grad\Images\smc-sgagrad-ico-teams.png" />
+    <Content Include="SGA.Grad\smc-recursos.min.css" />
+    <Content Include="SGA.Professor\Css\smc-login-sga.css">
+      <DependentUpon>smc-login-sga.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.Professor\Css\smc-login-sga.min.css">
+      <DependentUpon>smc-login-sga.css</DependentUpon>
+    </Content>
+    <Content Include="SGA.Professor\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.Professor\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="SGA.Aluno\Css\smc-login-sga.css">
+      <DependentUpon>smc-login-sga.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.Aluno\Css\smc-login-sga.min.css">
+      <DependentUpon>smc-login-sga.css</DependentUpon>
+    </Content>
+    <Content Include="SGA.BDP\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.BDP\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-boleto-bancario.css">
+      <DependentUpon>smc-boleto-bancario.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-boleto-bancario.min.css">
+      <DependentUpon>smc-boleto-bancario.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-login-sga.css">
+      <DependentUpon>smc-login-sga.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-login-sga.min.css">
+      <DependentUpon>smc-login-sga.css</DependentUpon>
+    </Content>
+    <Content Include="SGA.Aluno\Css\smc-login-sga.css">
+      <DependentUpon>smc-login-sga.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.Aluno\Css\smc-login-sga.min.css">
+      <DependentUpon>smc-login-sga.css</DependentUpon>
+    </Content>
+    <Content Include="SGA.Administrativo\Scripts\InstituicaoTipoEntidadeFormacaoEspecifica.js" />
+    <Content Include="compilerconfig.json" />
+    <Content Include="SGA.Administrativo\Css\identidade\_smc-fonte.scss" />
+    <Content Include="SGA.Administrativo\Css\identidade\_smc-identidade-visual.scss" />
+    <Content Include="SGA.Administrativo\Css\smc-estilo.scss" />
+    <Content Include="SGA.Administrativo\Css\smc-login-sga.scss" />
+    <Content Include="SGA.Administrativo\Css\smc-recursos.scss" />
+    <Content Include="SGA.Administrativo\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="SGA.Administrativo\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\identidade\_smc-fonte.scss" />
+    <Content Include="Content\Css\identidade\_smc-identidade-visual.scss" />
+    <Content Include="Content\Css\smc-estilo.scss" />
+    <Content Include="Content\Css\smc-recursos.scss" />
+    <Content Include="Content\Css\smc-login-sga.scss" />
+    <Content Include="SGA.Administrativo\Css\componentes\_smc-hidepanel.scss" />
+    <Content Include="SGA.Administrativo\Css\componentes\_smc-list.scss" />
+    <Content Include="SGA.Administrativo\Css\componentes\_smc-tabs.scss" />
+    <Content Include="SGA.Administrativo\Css\componentes\_smc-datagrid.scss" />
+    <Content Include="SGA.Administrativo\Css\componentes\_smc-wizard.scss" />
+    <Content Include="SGA.Administrativo\Css\componentes\_smc-header.scss" />
+    <Content Include="Content\Fonts\sf-ui-display-regular-webfont.woff" />
+    <Content Include="Content\Fonts\sf-ui-display-regular-webfont.woff2" />
+    <Content Include="SGA.Administrativo\Css\componentes\_smc-buttons.scss" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SGA.Aluno\Css\componentes\_smc-buttons.scss" />
+    <Content Include="SGA.Aluno\Css\componentes\_smc-header.scss" />
+    <Content Include="SGA.Aluno\Css\componentes\_smc-list.scss" />
+    <Content Include="SGA.Aluno\Css\identidade\_smc-fonte.scss" />
+    <Content Include="SGA.Aluno\Css\identidade\_smc-identidade-visual.scss" />
+    <Content Include="SGA.Aluno\Css\smc-estilo.scss" />
+    <Content Include="SGA.Aluno\Css\smc-login-sga.scss" />
+    <Content Include="SGA.Aluno\Css\smc-recursos.scss" />
+    <Content Include="Content\Css\smc-boleto-bancario.scss" />
+    <Content Include="SGA.BDP\Css\identidade\_smc-fonte.scss" />
+    <Content Include="SGA.BDP\Css\identidade\_smc-identidade-visual.scss" />
+    <Content Include="SGA.BDP\Css\smc-estilo.scss" />
+    <Content Include="SGA.BDP\Css\smc-login-bdp.scss" />
+    <Content Include="SGA.BDP\Css\smc-recursos.scss" />
+    <Content Include="SGA.BDP\Fonts\sf-ui-display-regular-webfont.woff" />
+    <Content Include="SGA.BDP\Fonts\sf-ui-display-regular-webfont.woff2" />
+    <Content Include="SGA.Professor\Css\componentes\_smc-buttons.scss" />
+    <Content Include="SGA.Professor\Css\componentes\_smc-header.scss" />
+    <Content Include="SGA.Professor\Css\componentes\_smc-list.scss" />
+    <Content Include="SGA.Professor\Css\identidade\_smc-fonte.scss" />
+    <Content Include="SGA.Professor\Css\identidade\_smc-identidade-visual.scss" />
+    <Content Include="SGA.Professor\Css\smc-estilo.scss" />
+    <Content Include="SGA.Professor\Css\smc-login-sga.scss" />
+    <Content Include="SGA.Professor\Css\smc-recursos.scss" />
+    <Content Include="Content\Css\componentes\_smc-treeview.scss" />
+    <Content Include="SGA.Aluno\Css\componentes\_smc-datagrid.scss" />
+    <Content Include="SGA.Aluno\Css\componentes\_smc-timeline.scss" />
+    <Content Include="SGA.Aluno\Css\componentes\_smc-wizard.scss" />
+    <Content Include="Content\Css\smc-acessibilidade.scss" />
+    <Content Include="SGA.BDP\Css\acessibilidade\smc-acessibilidade-2.0.scss" />
+    <Content Include="SGA.Aluno\Css\componentes\_smc-legend.scss" />
+    <Content Include="SGA.Administrativo\Css\acessibilidade\smc-acessibilidade-2.0.scss" />
+    <Content Include="Content\Css\smc-impressao.scss" />
+    <Content Include="SGA.Aluno\Css\acessibilidade\smc-acessibilidade-2.0.scss" />
+    <Content Include="Content\Css\componentes\_smc-accordion.scss" />
+    <Content Include="SGA.Grad\Css\acessibilidade\smc-acessibilidade-2.0.scss" />
+    <Content Include="SGA.Grad\Css\componentes\_smc-buttons.scss" />
+    <Content Include="SGA.Grad\Css\componentes\_smc-datagrid.scss" />
+    <Content Include="SGA.Grad\Css\componentes\_smc-header.scss" />
+    <Content Include="SGA.Grad\Css\componentes\_smc-legend.scss" />
+    <Content Include="SGA.Grad\Css\componentes\_smc-list.scss" />
+    <Content Include="SGA.Grad\Css\componentes\_smc-timeline.scss" />
+    <Content Include="SGA.Grad\Css\componentes\_smc-wizard.scss" />
+    <Content Include="SGA.Grad\Css\identidade\_smc-fonte.scss" />
+    <Content Include="SGA.Grad\Css\identidade\_smc-identidade-visual.scss" />
+    <Content Include="SGA.Grad\Css\smc-estilo.scss" />
+    <Content Include="SGA.Grad\Css\smc-login-sga.scss" />
+    <Content Include="SGA.Grad\Fontes\sf-ui-display-regular-webfont.woff" />
+    <Content Include="SGA.Grad\Fontes\sf-ui-display-regular-webfont.woff2" />
+    <Content Include="SGA.Grad\Css\smc-impressao.scss" />
+    <Content Include="SGA.Grad\Css\smc-recursos-matricula.scss" />
+    <Content Include="SGA.Grad\Css\identidade\_smc-identidade-visual-matricula.scss" />
+    <Content Include="SGA.Grad\Css\smc-estilo-matricula.scss" />
+    <Content Include="SGA.Aluno\Css\componentes\_smc-hidepanel.scss" />
+    <Content Include="SGA.Professor\Css\componentes\_smc-hidepanel.scss" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\Css\componentes\_smc-dashboard-sat.scss" />
+    <Content Include="SGA.Mobile\Css\componentes\_smc-buttons.scss" />
+    <Content Include="SGA.Mobile\Css\componentes\_smc-datagrid.scss" />
+    <Content Include="SGA.Mobile\Css\componentes\_smc-header.scss" />
+    <Content Include="SGA.Mobile\Css\componentes\_smc-hidepanel.scss" />
+    <Content Include="SGA.Mobile\Css\componentes\_smc-legend.scss" />
+    <Content Include="SGA.Mobile\Css\componentes\_smc-list.scss" />
+    <Content Include="SGA.Mobile\Css\componentes\_smc-timeline.scss" />
+    <Content Include="SGA.Mobile\Css\componentes\_smc-wizard.scss" />
+    <Content Include="SGA.Mobile\Css\identidade\_smc-fonte.scss" />
+    <Content Include="SGA.Mobile\Css\identidade\_smc-identidade-visual.scss" />
+    <Content Include="SGA.Mobile\Css\smc-estilo.scss" />
+    <Content Include="SGA.Mobile\Css\smc-recursos.scss" />
+    <Content Include="SGA.Professor\Fonts\sf-ui-display-regular-webfont.woff" />
+    <Content Include="SGA.Professor\Fonts\sf-ui-display-regular-webfont.woff2" />
+    <Content Include="SGA.Administrativo\Css\smc-megamenu.scss" />
+    <Content Include="ConsultaDiploma\Css\smc-recursos.scss" />
+    <Content Include="ConsultaDiploma\Css\smc-estilo.scss" />
+    <Content Include="ConsultaDiploma\Fonts\segoeui.ttf" />
+    <Content Include="ConsultaDiploma\Fonts\unisanslight-webfont.woff" />
+    <Content Include="ConsultaDiploma\Fonts\unisanslight-webfont.woff2" />
+    <Content Include="ConsultaDiploma\Fonts\UniSansLight.ttf" />
+    <Content Include="ConsultaDiploma\Fonts\unisansregular-webfont.woff" />
+    <Content Include="ConsultaDiploma\Fonts\unisansregular-webfont.woff2" />
+    <Content Include="ConsultaDiploma\Fonts\UniSansRegular.ttf" />
+    <Content Include="ConsultaDiploma\Css\acessibilidade\smc-acessibilidade-2.0.scss" />
+    <Content Include="ConsultaDiploma\Css\identidade\_smc-fonte.scss" />
+    <Content Include="ConsultaDiploma\Css\identidade\_smc-identidade-visual.scss" />
+    <Content Include="SGA.Administrativo\Css\componentes\_smc-lista-detalhada.scss" />
+    <Content Include="SGA.Administrativo\Css\componentes\_smc-cabecalho.scss" />
+    <Content Include="SGA.Administrativo\Css\componentes\_smc-detalhe-editavel.scss" />
+    <Content Include="SGA.Administrativo\Css\componentes\smc-flex-helpers.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SGA.Professor\Images\banner-fale-com-a-gente.png" />
+    <Content Include="SGA.Professor\Images\banner-fale-com-a-gente_02.png" />
+    <Content Include="SGA.Professor\Images\banner-fale-com-a-gente_03.png" />
+    <Content Include="SGA.Professor\Images\banner-fale-com-a-gente_04.png" />
+    <Content Include="SGA.Professor\Images\banner-guia-regime-remoto-01.png" />
+    <Content Include="SGA.Professor\Images\banner-guia-regime-remoto-02.png" />
+    <Content Include="SGA.Professor\Images\banner-guia-regime-remoto-03.png" />
+    <Content Include="SGA.Professor\Images\banner-guia-regime-remoto-04.png" />
+    <Content Include="SGA.Professor\Images\img-avaliacao-cpa-semestral-2-2022.png" />
+    <Content Include="SGA.Professor\Images\img-avaliacao-cpa-semestral-xs-2-2022.png" />
+    <Content Include="SGA.Professor\Images\sga_POS_1171x160px_cpa_2025_2_PROF.jpg" />
+    <Content Include="SGA.Professor\Images\smc-banner-cpa-pos-2-2023-xs.png" />
+    <Content Include="SGA.Professor\Images\smc-banner-cpa-pos-2-2023.png" />
+    <Content Include="SGA.Professor\Images\smc-banner-cpa-pos-professor-2-2023-xs.png" />
+    <Content Include="SGA.Professor\Images\smc-banner-cpa-pos-professor-2-2023.png" />
+    <Content Include="SGA.Professor\Images\smc-banner-cpa-pos-professor-2-2024-xs.jpg" />
+    <Content Include="SGA.Professor\Images\smc-banner-cpa-pos-professor-2-2024.jpg" />
+    <Content Include="SGA.Professor\Images\smc-img-logo-sga-aluno.png" />
+    <Content Include="SGA.Professor\Images\smc-img-logo-sga-professor.png" />
+    <Content Include="SGA.Professor\Images\smc-sga-aluno-textura-topo.png" />
+    <Content Include="SGA.Professor\Images\smc-sga-banner-6dobem-1171x160.png" />
+    <Content Include="SGA.Professor\Images\smc-sga-banner-6dobem-xs837x160.png" />
+    <Content Include="SGA.Professor\Images\smc-sga-banner-covid19-botao.png" />
+    <Content Include="SGA.Professor\Images\smc-sga-banner-covid19-ilustracao.png" />
+    <Content Include="SGA.Professor\Images\smc-sga-banner-covid19-logo.png" />
+    <Content Include="SGA.Professor\Images\smc-sga-img-background.png" />
+    <Content Include="SGA.Professor\Images\smc-sga-img-inicio.png" />
+    <Content Include="SGA.Professor\Images\smc-sga-img-logotipo-bdp.png" />
+    <Content Include="SGA.Professor\Images\smc-sga-img-logotipo-periodicocapes.png" />
+    <Content Include="SGA.Professor\Images\smc-sga-logotipo-login.png" />
+    <Content Include="SGA.Professor\Images\web_POS_837x160px_cpa_2025_2_PROF.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SGA.Aluno\Scripts\" />
+    <Folder Include="SGA.BDP\Css\componentes\" />
+    <Folder Include="SGA.Grad\Scripts\" />
+    <Folder Include="SGA.Mobile\Scripts\" />
+    <Folder Include="SGA.Professor\Scripts\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Producao|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Desenvolvimento|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Qualidade|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55752</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Recursos/Academico/4.0</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets'))" />
+  </Target>
+  <Import Project="..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets" Condition="Exists('..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

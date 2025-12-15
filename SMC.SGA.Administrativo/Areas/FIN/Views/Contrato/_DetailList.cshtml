@@ -1,0 +1,43 @@
+﻿@using SMC.SGA.Administrativo.Areas.FIN.Models
+
+@model  ContratoListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.NumeroRegistro).Size(SMCSize.Grid4_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid4_24) 
+            @Smc.DisplayFor(m => m.Descricao).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid12_24) 
+            @Smc.DisplayFor(m => m.DataInicioValidade).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid4_24) 
+            @Smc.DisplayFor(m => m.DataFimValidade).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid4_24)
+        }
+
+        // Div com os detalhes
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            if (Model.Cursos != null && Model.Cursos.Count > 0)
+            {
+                using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+                {
+                    @Smc.DisplayFor(m => m.Cursos).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24).CssClass("smc-display-list-line")
+                }
+            }
+
+            if (Model.NiveisEnsino != null && Model.NiveisEnsino.Count > 0)
+            {
+                using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+                {
+                    @Smc.DisplayFor(m => m.NiveisEnsino).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24).CssClass("smc-display-list-line")
+                }
+            }
+        }
+    }
+
+    @Html.Partial("_DetailListButtons", Model)
+}
+
+
+ 

@@ -1,0 +1,36 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.ORG.Models
+@using SMC.SGA.Administrativo.Areas.CSO.Models
+
+@model ProgramaDynamicModel
+
+@if (Model.AtivaAbaAtoNormativo && Smc.GetViewMode() == SMCViewMode.Edit)
+{
+    @(Smc.Grid("gridAtoNormativo", new SMCPagerModel<AtoNormativoVisualizarViewModel>(Model.AtoNormativo))
+        .AutoGenerateColumns(false)
+        .FieldColumn(x => x.DescricaoAssuntoNormativo)
+        .FieldColumn(x => x.DescricaoTipoAtoNormativo)
+        .FieldColumn(x => x.NumeroDocumento)
+        .FieldColumn(x => x.DataDocumento)
+        .FieldColumn(x => x.DescricaoGrauAcademico, visible: Model.HabilitaColunaGrauAcademico)
+        .HideGridTitle()
+        .HideRowNumber()
+        .HideNavigator()
+        .HidePager()
+
+        .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-grid-coluna-botoes", true,
+
+        x => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_CUSTOM)
+            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_VisualizarAtoNormativo"))
+            .Ajax(isPost: false)
+            .Tooltip(Smc.GetUIResource("Botao_Visualizar_Ato"))
+            .Type(SMCButtonType.Link)
+            .Action("Visualizar", "AtoNormativo", new
+            {
+                Seq = SMCEncryptedLong.GetStringValue((x as AtoNormativoVisualizarViewModel).Seq),
+                SeqProgramaOrigem = SMCEncryptedLong.GetStringValue(Model.Seq),
+                Area = "ORG"
+            })
+            .CssClass("smc-btn-visualizar-ico")));
+}
+

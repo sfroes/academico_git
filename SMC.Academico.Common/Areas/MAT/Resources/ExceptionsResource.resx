@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERR_AlunoMobilidadeSemTermoIntercambioException" xml:space="preserve">
+    <value>O aluno {0} está matriculado em mobilidade, mas não foi possível identificar o seu período de intercâmbio.</value>
+  </data>
+  <data name="ERR_AlunoPossuiDefesaAgendadaException" xml:space="preserve">
+    <value>Não foi criada solicitação para o aluno {0}, pois ele já possui defesa agendada e não possui pendências</value>
+  </data>
+  <data name="ERR_AlunoSemMatrizAssociadaException" xml:space="preserve">
+    <value>Não foi criada solicitação para o aluno {0}, pois ele não possui oferta de matriz associada.</value>
+  </data>
+  <data name="ERR_AtividadeAcademicaComHistoricoEscolarException" xml:space="preserve">
+    <value>Efetivação não permitida. A(s) atividade(s) abaixo possui(em) histórico escolar:&lt;br /&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="ERR_ChancelaBloqueioEtapa" xml:space="preserve">
+    <value>Essa solicitação não poderá ser chancelada, pois há bloqueio(s) associado(s) ao solicitante que impede(m) a realização da chancela do plano de estudos.</value>
+  </data>
+  <data name="ERR_ChancelaDivisoesSituacaoDiferenteException" xml:space="preserve">
+    <value>Chancela nao permitida. &lt;br /&gt;{0}</value>
+  </data>
+  <data name="ERR_ChancelaExclusaoTurmaComHistoricoLancadoException" xml:space="preserve">
+    <value>Exclusão não permitida. A(s) turma(s) abaixo possui(em) nota lançada no histórico escolar:&lt;br /&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="ERR_ChancelaItemAguardandoChancela" xml:space="preserve">
+    <value>Chancela não permitida. Existe item na situação "{0}".</value>
+  </data>
+  <data name="ERR_ChancelaNenhumItemSituacaoFinal" xml:space="preserve">
+    <value>Chancela não permitida. Pelo menos um item deve estar na situação {0}.</value>
+  </data>
+  <data name="ERR_CondicaoPagamentoRequeridoException" xml:space="preserve">
+    <value>Para prosseguir é necessário selecionar uma condição de pagamento.</value>
+  </data>
+  <data name="ERR_CondicaoPagamentoTermoAderidoException" xml:space="preserve">
+    <value>Você já aderiu à um termo de contrato. Não é possível alterar a condição de pagamento.</value>
+  </data>
+  <data name="ERR_ConfiguracaoProcessoNaoEncontradaException" xml:space="preserve">
+    <value>Não foi encontrada uma configuração_processo para o aluno {0}.</value>
+  </data>
+  <data name="ERR_EditarTurmaGrupoChancelaIndeferidaException" xml:space="preserve">
+    <value>Não é possível realizar alteração. A turma em questão está indeferida.</value>
+  </data>
+  <data name="ERR_EditarTurmaSemGrupoInvalidoException" xml:space="preserve">
+    <value>Não é possível realizar alteração. Esta turma não possui grupos.</value>
+  </data>
+  <data name="ERR_ErroAntesChamarServicoIntegracaoFinanceiroException" xml:space="preserve">
+    <value>Erro ao tentar chamar o serviço de Integração Financeiro: Não foi encontrado um 'CursoOfertaLocalidade' para a Campanha Oferta {0}</value>
+  </data>
+  <data name="ERR_ExclusaoTurmaComHistoricoEscolarException" xml:space="preserve">
+    <value>Não é possível excluir esta turma. Ela já possui lançamento de nota no histórico escolar.</value>
+  </data>
+  <data name="ERR_IngressanteJaMatriculadoException" xml:space="preserve">
+    <value>A efetivação não pode ser efetuada pois este ingressante já se encontra matriculado no mesmo ciclo letivo, tipo de vínculo e entidade responsável.</value>
+  </data>
+  <data name="ERR_InscricaoOfertaGPINaoEncontradaException" xml:space="preserve">
+    <value>Não foi encontrado o sequencial da inscrição da oferta do GPI no 'IngressanteOferta'.</value>
+  </data>
+  <data name="ERR_JaExisteSolicitacaoRematriculaParaAlunoException" xml:space="preserve">
+    <value>Não é possível abrir solicitação de matrícula para o aluno {0} pois o mesmo já possui uma solicitação de matrícula para este processo.</value>
+  </data>
+  <data name="ERR_ListaSeqSituacaoEtapaVaziaException" xml:space="preserve">
+    <value>O serviço 'SituacaoEtapaService', do SGF, não retornou a lista dos sequenciais de Situação Etapa: 'ListaSeqSituacaoEtapaPorListaSeqEtapa'</value>
+  </data>
+  <data name="ERR_ProcessoAnteriorNaoEncerradoException" xml:space="preserve">
+    <value>Antes de preparar a renovação de matrícula é necessário encerrar o processo de renovação do ciclo anterior.</value>
+  </data>
+  <data name="ERR_ProcessoNaoRematriculaException" xml:space="preserve">
+    <value>Não é possível executar a preparação para um processo que não seja de renovação.</value>
+  </data>
+  <data name="ERR_ProcessoRematriculaComVariosEscalonamentosException" xml:space="preserve">
+    <value>Processo de renovação não possui grupo de escalonamento válido ou possui mais de um.</value>
+  </data>
+  <data name="ERR_ProcessoSeletivoOfertaNaoEncontradaException" xml:space="preserve">
+    <value>Não foi encontrado registro em 'ProcessoSeletivoOferta' para liberar a vaga ocupada.</value>
+  </data>
+  <data name="ERR_RegistroDocumentoPendenteException" xml:space="preserve">
+    <value>Existe documentação pendente de ser entregue. A solicitação de matrícula não pode ser efetivada até que todos os documentos obrigatórios sejam devidamente enviados.</value>
+  </data>
+  <data name="ERR_RestricaoSolicitacaoSimultaneaParaAlunoException" xml:space="preserve">
+    <value>Não foi criada solicitação para o(a) aluno(a) {0}, pois existe em aberto solicitações que restringem a criação da solicitação de renovação de matrícula: {1}.</value>
+    <comment>JOB_MAT_009.3.2</comment>
+  </data>
+  <data name="ERR_SelecionarAtividadeCanceladoInvalidoException" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatória a seleção ou exclusão de pelo menos uma turma ou uma atividade
+acadêmica.</value>
+  </data>
+  <data name="ERR_SelecionarAtividadeInvalidoException" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatório selecionar pelo menos uma turma ou uma atividade acadêmica.</value>
+  </data>
+  <data name="ERR_SelecionarTurmaAtividadeAlteracaoPlanoEstudoInvalidoException" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatório solicitar uma alteração no plano e mantê-lo com pelo menos um item.</value>
+  </data>
+  <data name="ERR_SelecionarTurmaInvalidoException" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatório selecionar pelo menos uma turma.</value>
+  </data>
+  <data name="ERR_SituacaoAtualSolicitacaoNaoPermiteChancela" xml:space="preserve">
+    <value>A situação atual da solicitação não permite que a chancela seja efetuada.</value>
+  </data>
+  <data name="ERR_SituacaoMatriculaInvalidaException" xml:space="preserve">
+    <value>Situação de matrícula informada é inválida.</value>
+  </data>
+  <data name="ERR_TermoAdesaoNaoEncontradoException" xml:space="preserve">
+    <value>Não foi encontrado um termo de adesão para o aluno {0}.</value>
+  </data>
+  <data name="ERR_TermoAdesaoRequeridoException" xml:space="preserve">
+    <value>Você deve aceitar o termo de adesão antes de continuar, marcando a opção "Aceito os termos de adesão".</value>
+  </data>
+  <data name="ERR_TermoDeAdesaoNaoPendente" xml:space="preserve">
+    <value>Não é possível prosseguir. Foi realizada uma alteração no plano de estudo do solicitante após a adesão do contrato e para finalizar a efetivação é necessário que o documento “Termo de Adesão ao Contrato de Prestação de Serviços Educacionais” esteja validado com o valor “Pendente”. O documento atualizado deve ser gerado na aba “Emissão de documentos da matrícula” e anexado na interface Registrar Documentos de Aluno.</value>
+  </data>
+  <data name="ERR_TokenSituacaoMatriculaInvalidoException" xml:space="preserve">
+    <value>Token de situação de matrícula informado é inválido ou não foi configurado.</value>
+  </data>
+  <data name="FK_situacao_item_matricula_01" xml:space="preserve">
+    <value>Exclusão não permitida. Etapa do processo já possui situações de item de matrícula configuradas.</value>
+  </data>
+  <data name="FK_situacao_matricula_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe situação de matrícula cadastrada para este tipo de situação de matrícula.</value>
+  </data>
+  <data name="FK_solicitacao_matricula_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço é uma solicitação de matrícula.</value>
+  </data>
+  <data name="FK_solicitacao_matricula_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe solicitação de matrícula associado a este termo de adesão.</value>
+  </data>
+  <data name="FK_solicitacao_matricula_item_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de matrícula já possui itens.</value>
+  </data>
+  <data name="FK_solicitacao_matricula_item_02" xml:space="preserve">
+    <value>Exclusão não permitida. Divisão de turma já possui solicitação de matrícula.</value>
+  </data>
+  <data name="FK_solicitacao_matricula_item_03" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de componente já possui solicitação de matrícula.</value>
+  </data>
+  <data name="FK_solicitacao_matricula_item_historico_situacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe item de solicitação com esta situação.</value>
+  </data>
+  <data name="FK_solicitacao_matricula_item_historico_situacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Item de solicitação de matrícula já possui historico de situação.</value>
+  </data>
+  <data name="UN_situacao_item_matricula_01" xml:space="preserve">
+    <value>Já existe situação de item de matrícula com esta descrição.</value>
+  </data>
+  <data name="UN_situacao_matricula_01" xml:space="preserve">
+    <value>Já existe situação de matrícula com esta descrição.</value>
+  </data>
+  <data name="UN_situacao_matricula_02" xml:space="preserve">
+    <value>Já existe situação de matrícula com este token.</value>
+  </data>
+  <data name="UN_solicitacao_matricula_item_01" xml:space="preserve">
+    <value>Já existe item de solicitação de matrícula com esta configuração de componente ou divisão de turma.</value>
+  </data>
+  <data name="UN_tipo_situacao_matricula_01" xml:space="preserve">
+    <value>Já existe tipo de situação de matrícula com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_situacao_matricula_02" xml:space="preserve">
+    <value>Já existe tipo de situação de matrícula com este token.</value>
+  </data>
+</root>

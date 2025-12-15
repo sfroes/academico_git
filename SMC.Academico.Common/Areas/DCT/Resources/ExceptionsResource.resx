@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERR_ColaboradorIntervaloDatasIncompletoException" xml:space="preserve">
+    <value>Para pesquisa de professores/pesquisadores por vínculo e com intervalo de datas, é necessário que a data início e data fim sejam informadas.</value>
+  </data>
+  <data name="ERR_ColaboradorSemVinculoAtivoException" xml:space="preserve">
+    <value>Os colaboradores a seguir não possuem vínculo ativo na data informada:&lt;br /&gt;&lt;br /&gt;{0}</value>
+  </data>
+  <data name="ERR_ColaboradorTipoVinculoRequerDataFimException" xml:space="preserve">
+    <value>O tipo de vínculo selecionado requer data fim.</value>
+    <comment>UC_DCT_001_06_04.NV16</comment>
+  </data>
+  <data name="ERR_ColaboradorVinculoAssociadoEventoAulaPosterior" xml:space="preserve">
+    <value>Este colaborador esta associado a um evento de aula posterior a data do fim do vínculo.</value>
+  </data>
+  <data name="ERR_ColaboradorVinculoDatasPeriodoException" xml:space="preserve">
+    <value>Todos os registros devem respeitar as datas de início e fim do vínculo.</value>
+  </data>
+  <data name="ERR_ColaboradorVinculoEntidadeTipoDataCoincidenteException" xml:space="preserve">
+    <value>{0} não permitida. Para este professor/pesquisador já existe um vínculo para mesma entidade, tipo e período coincidentes.</value>
+  </data>
+  <data name="ERR_ColaboradorVinculoIntervaloResponsavelException" xml:space="preserve">
+    <value>A data de início de um professor responsável deverá ser um dia após a data fim do período de supervisão do professor anterior.</value>
+  </data>
+  <data name="ERR_ColaboradorVinculoMesmaFormacaoDatasCoincidentesException" xml:space="preserve">
+    <value>{0} não permitida. A mesma formação específica não pode ser associada mais de uma vez em períodos coincidentes.</value>
+  </data>
+  <data name="ERR_ColaboradorVinculoObrigatorioException" xml:space="preserve">
+    <value>Alteração não permitida. O professor possui um contrato ativo com a instituição de ensino. Portanto, a instituição de ensino deverá estar associada ativamente ao professor em questão.</value>
+  </data>
+  <data name="ERR_ColaboradorVinculoResponsavelObrigatorioException" xml:space="preserve">
+    <value>É obrigatório ao menos um porfessor responsável.</value>
+  </data>
+  <data name="ERR_ColaboradorVinculoSupervisaoSobrepostaException" xml:space="preserve">
+    <value>Os periodos de supervisão dos professores responsáveis estão coincidindo. Um periodo só pode começar após o outro ter findado.</value>
+    <comment>UC_DCT_001_06_04.NV15</comment>
+  </data>
+  <data name="ERR_ExclusaoColaboradorVinculoNaoPermitidaException" xml:space="preserve">
+    <value>Exclusão não permitida. Este vínculo foi carregado automaticamente no sistema devido a existência de contrato deste professor com a instituição, mesmo que este não esteja mais ativo.</value>
+  </data>
+  <data name="ERR_NaoExisteProfessorAssociadoException" xml:space="preserve">
+    <value>Não foi encontrado nenhum professor associado à este login.</value>
+  </data>
+  <data name="ERR_TemplateCertificadoPosDoutorNaoEncontradoException" xml:space="preserve">
+    <value>O modelo deste relatório para a instituição de ensino informada não foi encontrado.</value>
+  </data>
+  <data name="FK_colaborador_01" xml:space="preserve">
+    <value>Exclusão não permitida. Atuação de colaborador existente.</value>
+  </data>
+  <data name="FK_colaborador_apto_componente_01" xml:space="preserve">
+    <value>Exclusão não permitida. Professor possui componentes curriculares aptos a lecionar.</value>
+  </data>
+  <data name="FK_colaborador_apto_componente_02" xml:space="preserve">
+    <value>Exclusão não permitida. Componente curricular possui professores associados como aptos a lecionar.</value>
+  </data>
+  <data name="FK_colaborador_instituicao_externa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe associação deste colaborador com uma instituição externa.</value>
+  </data>
+  <data name="FK_colaborador_instituicao_externa_02" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição externa já possui colaboradores associados.</value>
+  </data>
+  <data name="FK_colaborador_vinculo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Colaborador já possui vínculos cadastrados.</value>
+  </data>
+  <data name="FK_colaborador_vinculo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe vínculo de colaborador cadastrado com este tipo de vínculo.</value>
+  </data>
+  <data name="FK_colaborador_vinculo_03" xml:space="preserve">
+    <value>Exclusão não permitida. Entidade já possui vínculo com colaboradores.</value>
+  </data>
+  <data name="FK_colaborador_vinculo_curso_01" xml:space="preserve">
+    <value>Exclusão não permitida. Vínculo já possui cursos associados.</value>
+  </data>
+  <data name="FK_colaborador_vinculo_curso_02" xml:space="preserve">
+    <value>Exclusão não permitida. Curso x Oferta x Localidade já possui vínculo de colaborador cadastrado.</value>
+  </data>
+  <data name="FK_colaborador_vinculo_formacao_especifica_01" xml:space="preserve">
+    <value>Exclusão não permitida. Vínculo já possui formação específica associada.</value>
+  </data>
+  <data name="FK_colaborador_vinculo_formacao_especifica_02" xml:space="preserve">
+    <value>Exclusão não permitida. Formação específica já possui colaborador associado.</value>
+  </data>
+  <data name="FK_instituicao_externa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Categora de instituição já possui instituição externa cadastrada.</value>
+  </data>
+  <data name="FK_instituicao_externa_02" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já foi configurada como instituição externa.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_atividade_colaborador_01" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já possui tipo de atividade de colaborador configurado.</value>
+  </data>
+  <data name="FK_professor_01" xml:space="preserve">
+    <value>Exclusão não é permitida. Este professor possui contrato com a instituição, mesmo que este não esteja mais ativo.</value>
+  </data>
+  <data name="UN_categoria_instituicao_ensino_01" xml:space="preserve">
+    <value>Já existe categora de instituição de ensino cadastrada com esta descrição.</value>
+  </data>
+  <data name="UN_colaborador_apto_componente_01" xml:space="preserve">
+    <value>Componente curricular já está associado ao professor/pesquisador.</value>
+  </data>
+  <data name="UN_colaborador_instituicao_externa_01" xml:space="preserve">
+    <value>Já existe associação deste colaborador com esta instituição externa.</value>
+  </data>
+  <data name="UN_colaborador_vinculo_01" xml:space="preserve">
+    <value>Já existe vínculo deste colaborador com este tipo de vínculo, nesta mesma entidade e data de início.</value>
+  </data>
+  <data name="UN_colaborador_vinculo_curso_01" xml:space="preserve">
+    <value>Já existe vínculo deste colaborador com este curso.</value>
+  </data>
+  <data name="UN_colaborador_vinculo_formacao_especifica_01" xml:space="preserve">
+    <value>Já existe vínculo deste colaborador com esta formação específica nesta data de início.</value>
+  </data>
+  <data name="UN_instituicao_externa_01" xml:space="preserve">
+    <value>Já existe instituição externa cadastrada com este nome, sigla e país.</value>
+  </data>
+  <data name="UN_instituicao_externa_02" xml:space="preserve">
+    <value>Já existe instituição externa cadastrada com este código CAPES.</value>
+  </data>
+  <data name="UN_instituicao_externa_03" xml:space="preserve">
+    <value>Já existe instituição externa cadastrada com este código e-MEC.</value>
+  </data>
+  <data name="UN_instituicao_externa_04" xml:space="preserve">
+    <value>Já existe instituição externa cadastrada associada à esta instituição de ensino (interna).</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_atividade_colaborador_01" xml:space="preserve">
+    <value>Tipo atividade colaborador já está associado à este nível de ensino x instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_tipo_entidade_vinculo_colaborador_01" xml:space="preserve">
+    <value>Tipo de vínculo de colaborador já está associado à este tipo de entidade x instituição de ensino.</value>
+  </data>
+  <data name="UN_professor_01" xml:space="preserve">
+    <value>Já existe registro de professor com este código do Administrativo (sistema legado).</value>
+  </data>
+  <data name="UN_tipo_vinculo_colaborador_01" xml:space="preserve">
+    <value>Já existe tipo de vinculo de colaborador cadastrado com esta descrição.</value>
+  </data>
+</root>

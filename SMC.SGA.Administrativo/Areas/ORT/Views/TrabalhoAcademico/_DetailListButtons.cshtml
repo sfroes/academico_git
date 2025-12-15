@@ -1,0 +1,106 @@
+﻿@model TrabalhoAcademicoListarDynamicModel
+
+@{
+    SMCButtonFluentConfiguration buttonAlterarTrabalhoAcademico = Smc.Button(SMCButtonBehavior.Alterar)
+       .SecurityToken(UC_ORT_002_02_02.MANTER_TRABALHO_ACADEMICO)
+       .Text(Smc.GetUIResource("Botao_Alterar_Trabalho_Academico"))
+       .Tooltip(Smc.GetUIResource("Botao_Alterar_Trabalho_Academico_Tooltip"))
+       .Action("Editar", "TrabalhoAcademico", new { seq = new SMCEncryptedLong(Model.Seq) })
+       .DisplayMode(SMCButtonDisplayMode.Icon);
+
+    if (Model.DataAutorizacaoSegundoDeposito.HasValue)
+    {
+        buttonAlterarTrabalhoAcademico.Enabled(false).ButtonInstructions(Smc.GetUIResource("MSG_Botao_Excluir_Bloqueio_SegundoDeposito"));
+    }
+
+    SMCButtonFluentConfiguration buttonAvaliacaoTrabalho = Smc.Button("btn-avaliacao-trabalho")
+        .SecurityToken(UC_ORT_002_02_04.MANTER_AGENDAMENTO_BANCA_EXAMINADORA)
+        .Text(Smc.GetUIResource("Botao_Novo_Avaliacao_Trabalho"))
+        .Tooltip(Smc.GetUIResource("Botao_Novo_Avaliacao_Trabalho"))
+        .Type(SMCButtonType.Link)
+        .CssClass("smc-btn-custom-destaque")
+        .Action("Index", "AvaliacaoTrabalhoAcademico", new { seqTrabalhoAcademico = new SMCEncryptedLong(Model.Seq), dataDepositosecretaria = Model.Data });
+
+    SMCButtonFluentConfiguration buttonEmitirComprovanteEntrega = Smc.Button(SMCButtonBehavior.Visualizar, "btn-emitir-comprovante-entrega")
+        .Text(Smc.GetUIResource("Botao_Novo_Emitir_Comprovante_Entrega"))
+        .Tooltip(Smc.GetUIResource("Botao_Novo_Emitir_Comprovante_Entrega"))
+        .Attribute("target", "_blank")
+        .Type(SMCButtonType.Link)
+        .CssClass("smc-btn-custom-destaque")
+        .Action("Index", "RelatorioEmitirComprovanteEntrega", new { seqTrabalho = new SMCEncryptedLong(Model.Seq) });
+
+    /// NV08 Este comando estará disponível somente quando a data de entrega do trabalho na
+    /// secretaria tiver sido informada.
+    /// Caso não esteja disponível, deverá conter uma mensagem informativa:
+    /// "A emissão do comprovante de entrega não pode ser realizada, pois a data de entrega do
+    /// Trabalho ainda não foi registrada".
+    if (Model.Data == null || !Model.Data.HasValue)
+    {
+        buttonEmitirComprovanteEntrega.Enabled(false).ButtonInstructions(Smc.GetUIResource("MensagemComprovanteEntregaIndisponivel"));
+    }
+
+    SMCButtonFluentConfiguration buttonExcluirTrabalhoAcademico = Smc.Button(SMCButtonBehavior.Excluir)
+        .SecurityToken(UC_ORT_002_02_02.MANTER_TRABALHO_ACADEMICO)
+        .Text(Smc.GetUIResource("Botao_Excluir_Trabalho_Academico"))
+        .Tooltip(Smc.GetUIResource("Botao_Excluir_Trabalho_Academico_Tooltip"))
+        .Confirm(Smc.GetUIResource("Title_Excluir_Trabalho_Academico"), string.Format(Smc.GetUIResource("Listar_Excluir_Confirmacao"), Model.NomesAutores.FirstOrDefault()))
+        .Action("Excluir", "TrabalhoAcademico", new { seq = new SMCEncryptedLong(Model.Seq) })
+        .DisplayMode(SMCButtonDisplayMode.Icon);
+
+    if (Model.Data.HasValue && Model.GeraFinanceiroEntregaTrabalho)
+    {
+        buttonExcluirTrabalhoAcademico.Enabled(false).ButtonInstructions(Smc.GetUIResource("MSG_Botao_Excluir_Bloqueado"));
+    }else if(Model.DataAutorizacaoSegundoDeposito.HasValue)
+    {
+        buttonExcluirTrabalhoAcademico.Enabled(false).ButtonInstructions(Smc.GetUIResource("MSG_Botao_Excluir_Bloqueio_SegundoDeposito"));
+    }
+
+
+    SMCButtonFluentConfiguration buttonInserirNovoDeposito = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+        .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("SalvarSegundoDeposito", "TrabalhoAcademico"))
+        .Attribute(SMCMvcConsts.MODAL_TITLE, "Incluir Autorização Novo Depósito")
+        .Ajax(isPost: false)
+        .Text(Smc.GetUIResource("Botao_Incluir_Autorizacao_Deposito"))
+        .Type(SMCButtonType.InputButton).CssClass("smc-btn-custom-destaque")
+        .SecurityToken(UC_ORT_002_02_09.MANTER_AUTORIZACAO_NOVO_DEPOSITO)
+        .Action("IncluirSegundoDeposito", "TrabalhoAcademico", new { seqTrabalhoAcademico = new SMCEncryptedLong(Model.Seq) });
+
+    if (Model.DataAutorizacaoSegundoDeposito.HasValue)
+    {
+        buttonInserirNovoDeposito.Text(Smc.GetUIResource("Botao_Incluir_Autorizacao_Novo_Deposito"));
+    }
+
+}
+
+@{
+    SMCDetailedListItemButtonsFluentConfiguration botoes = Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24);
+
+    botoes.AllowRemove(false);
+    botoes.AllowEdit(false);
+    botoes.AddButton(buttonAlterarTrabalhoAcademico);
+    botoes.AddButton(buttonExcluirTrabalhoAcademico);
+    botoes.AddButton(buttonAvaliacaoTrabalho);
+
+    // ORT_002_02_01 - NV11
+    // Este botão somente será exibido para os trabalhos conforme regra abaixo:
+    // Parametrizado para gerar transação financeira na entrega do trabalho
+    // Parametrizado para ser obrigatória a publicação do trabalho na biblioteca
+    // Possuir apuração e a mesma for ‘REPROVADA’
+    // Não existir uma autorização de novo depósito
+    if (!Model.DataAutorizacaoSegundoDeposito.HasValue
+        && Model.PublicacaoBibliotecaObrigatoria
+        && Model.GeraFinanceiroEntregaTrabalho
+        && Model.ApuracaoReprovada
+        )
+    {
+        botoes.AddButton(buttonInserirNovoDeposito);
+    }
+
+    if (Model.GeraFinanceiroEntregaTrabalho)
+    {
+        botoes.AddButton(buttonEmitirComprovanteEntrega);
+    }
+
+    @botoes;
+}

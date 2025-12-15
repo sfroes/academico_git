@@ -1,0 +1,269 @@
+﻿@mixin label {
+    color: #074458 !important;
+    font-weight: 400 !important;
+    font-size: 11px !important;
+}
+
+.smc-list-conteudo {
+    ul {
+        .smc-list-item {
+            &:nth-of-type(even) {
+                .smc-sga-lista-detalhada {
+                    .smc-listdetailed-conteudo {
+                        background: #efefef !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.smc-sga-lista-detalhada {
+    margin-top: 0;
+    margin-bottom: 7px;
+    border: 1px solid #cecece;
+    border-left: 3px solid #074458;
+
+    .smc-listdetailed-conteudo {
+        border: 0;
+        background: #fafafa;
+        padding-bottom: 9px;
+
+        .smc-display {
+            padding: 4px 0 2px 0;
+
+            > label {
+                @include label;
+            }
+
+            > p {
+                font-weight: 600;
+                margin: 2px 0 0 0;
+            }
+        }
+
+        .smc-listdetailed-header-conteudo {
+            padding: 6px 6px 6px 6px !important;
+            border-bottom: 0 !important;
+
+            .smc-listdetailed-conteudo-titulo {
+                p {
+                    color: #333 !important;
+                    margin: 3px 0 0 0;
+                    padding-left: 0;
+                    font-weight: 600 !important;
+                    font-size: 14px !important;
+                }
+            }
+        }
+
+        .smc-listdetailed-conteudo-lista {
+            label {
+                @include label;
+            }
+
+            .smc-list-no-results,
+            .smc-datagrid-no-results,
+            .smc-treeview-no-results,
+            .smc-detalhe-editavel-painel-nao-encontrado {
+                border-top: 1px solid #dfdfdf;
+                font-size: 13px;
+                color: #333;
+            }
+
+            .smc-grid {
+                .smc-datagrid {
+                    table {
+                        tbody {
+                            tr {
+                                td {
+                                    border-bottom: 1px solid #dfdfdf !important;
+                                }
+
+                                &:last-child {
+                                    td {
+                                        border-bottom: 0 !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .smc-listdetailed-conteudo-separador-horizontal {
+            .smc-display-collection {
+                padding-left: 0;
+                margin-left: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+
+                > div {
+                    > .smc-display {
+                        padding-top: 0;
+                        margin-top: 0;
+                        padding-bottom: 2px;
+                    }
+                }
+            }
+        }
+
+        .smc-sga-header-detalhes-titulo-grid {
+            h3 {
+                background: none;
+                color: #333 !important;
+                font-weight: 400 !important;
+                font-size: 11px !important;
+                border-top: 1px solid #cfcfcf;
+                border-bottom: 1px solid #cfcfcf;
+                margin-top: 5px;
+                padding: 10px 5px;
+            }
+        }
+
+        .smc-listdetailed-custom-grid {
+            .smc-listdetailed-conteudo-subtitulo {
+                @include label;
+                padding-left: 5px;
+            }
+
+            div[data-control-child='smc-list'] {
+                &:nth-of-type(odd) {
+                    > div {
+                        background: #f4f4f4 !important;
+                    }
+                }
+
+                > div,
+                > div > div {
+                    padding-left: 0;
+                    padding-right: 0;
+
+                    .smc-display {
+                        p {
+                            color: #333;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+
+        .smc-list-item-grid {
+            > div[data-type='smc-submitlist-body'] {
+                .smc-listdetailed-conteudo-destaque {
+                    background-color: transparent !important;
+
+                    label {
+                        color: #333 !important;
+                        margin: 3px 0 0 0;
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+
+        .smc-grid {
+            padding-top: 5px;
+            background-color: transparent !important;
+
+            .smc-datagrid {
+                table {
+                    thead {
+                        tr {
+                            th {
+                                height: 15px;
+                                padding: 0px 10px !important;
+                                @include label;
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            td {
+                                border-bottom: 0 !important;
+                                padding: 7px 5px;
+
+                                .smc-display {
+                                    p {
+                                        color: #333;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .smc-display-collection {
+            padding: 5px 15px;
+
+            h3, label {
+                @include label;
+            }
+
+            p {
+                font-weight: 600;
+                padding: 2px 0;
+
+                &:before {
+                    margin: 8px 5px 0 0px;
+                }
+            }
+        }
+    }
+
+    .smc-sga-config-componente-turma {
+        margin: 10px 0 0 0;
+        padding: 4px 0 10px 0;
+        border-bottom: solid 1px #dcdcdc;
+
+        div[data-control-child='smc-list'] {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+
+            > div {
+                width: auto;
+
+                .smc-sga-header-detalhes-offset {
+                    margin-left: 0;
+                }
+
+                > .smc-display {
+                    > p {
+                        font-weight: 600;
+                    }
+                }
+
+                .smc-display-legend {
+                    margin-left: 0;
+
+                    .smc-sga-legenda-configuracao-principal {
+                        border: 1px solid;
+                        border-radius: 30px;
+                        padding: 3px 8px;
+                        font-size: 11px;
+                        font-family: 'sf_ui_displayregular';
+                        font-weight: 600;
+
+                        &:before {
+                            margin: 0 !important;
+                            content: "Principal";
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .dropdown {
+        .dropdown-menu {
+            min-width: 230px;
+        }
+    }
+}

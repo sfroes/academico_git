@@ -1,0 +1,21 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.SRC.Models.RegistroDocumentoCabecalhoViewModel
+
+@{
+
+    var header = Smc.Header("RegistroDocumentosCabecalho", SMCHeaderType.Primary);
+
+    header.Item(prop => prop.Solicitante, sizeSM: SMCSize.Grid12_24, sizeMD: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24);
+
+    if (!string.IsNullOrEmpty(Model.Cpf))
+    {
+        header.Item(prop => prop.Cpf, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24);
+    }
+    if (!string.IsNullOrEmpty(Model.NumeroPassaporte))
+    {
+        header.Item(prop => prop.NumeroPassaporte, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24);
+    }
+
+    header.Item(prop => prop.DescricaoProcesso, sizeSM: SMCSize.Grid24_24, sizeMD: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24, sizeXS: SMCSize.Grid24_24);
+}
+
+@using (header.Begin()) { }

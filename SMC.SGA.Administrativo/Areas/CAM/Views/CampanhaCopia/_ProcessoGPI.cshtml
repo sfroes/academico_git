@@ -1,0 +1,33 @@
+﻿@using SMC.SGA.Administrativo.Areas.CAM.Views.CampanhaCopia.App_LocalResources
+
+@model CampanhaCopiaProcessoSeletivoListaViewModel
+
+@using (Smc.Fieldset("fieldsetProcesso").LegendText(Model.Descricao).Begin())
+{
+    var sanitizedId = TagBuilder.CreateSanitizedId(TempData["SMCEditorRenamedField"] + ".CopiarProcessoGPI");
+
+    @Smc.EditorFor(prop => prop.Seq)
+
+    if (Model.SeqProcessoGpi.HasValue)
+    {
+
+        @Smc.EditorFor(prop => prop.CopiarProcessoGPI).Size(SMCSize.Grid24_24)
+
+        using (Smc.Fieldset("fieldsetProcessoGPI").ConditionalDisplay(sanitizedId, true).Begin())
+        {
+            @Smc.EditorFor(prop => prop.DescricaoProcessoGPI).Size(SMCSize.Grid18_24)
+            @Smc.EditorFor(prop => prop.SeqCicloLetivoReferenciaProcessoGPI).Size(SMCSize.Grid6_24)
+            @Smc.EditorFor(prop => prop.DataInicioInscricaoProcessoGPI).Size(SMCSize.Grid4_24)
+            @Smc.EditorFor(prop => prop.DataFimInscricaoProcessoGPI).Size(SMCSize.Grid4_24)
+            @Smc.EditorFor(prop => prop.CopiarNotificacoesGPI).Size(SMCSize.Grid14_24)
+            @Smc.EditorFor(prop => prop.EtapasGPI).Size(SMCSize.Grid24_24)
+        }
+    }
+    else
+    {
+        using (Smc.Div("divMensagemVinculoGpi").Begin())
+        {
+            @Smc.GetUIResource(UIResource.MSG_Mensagem_Vinculo_Gpi)
+        }
+    }
+}

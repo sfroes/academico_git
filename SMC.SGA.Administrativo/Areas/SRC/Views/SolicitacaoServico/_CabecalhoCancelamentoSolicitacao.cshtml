@@ -1,0 +1,9 @@
+﻿@model CabecalhoCancelamentoSolicitacaoViewModel
+
+@using (Smc.Header("Solicitacao", SMCHeaderType.Primary)
+                                                 .Item(x => x.Protocolo, sizeMD: SMCSize.Grid4_24)
+                                                 .Item(x => x.Solicitante, sizeMD: SMCSize.Grid8_24)
+                                                 .Item(x => x.Processo, sizeMD: SMCSize.Grid12_24)
+                                                 .Item(x => x.EtapaAtual, sizeMD: SMCSize.Grid10_24)
+                                                 .Item(x => x.SituacaoAtual, sizeMD: SMCSize.Grid6_24)
+                                         .Begin()) { }

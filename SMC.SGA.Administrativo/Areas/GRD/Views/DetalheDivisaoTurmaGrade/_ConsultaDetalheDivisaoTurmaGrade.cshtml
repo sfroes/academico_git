@@ -1,0 +1,128 @@
+﻿@model DetalheDivisaoTurmaGradeViewModel
+
+@using (Smc.Header("CabecalhoDadosTurma", SMCHeaderType.Primary)
+       .Item(i => i.CodigoTurma, sizeMD: SMCSize.Grid5_24)
+       .Item(i => i.DescricaoCicloLetivoInicio, sizeMD: SMCSize.Grid5_24)
+       .Item(i => i.DescricaoTipoTurma, sizeMD: SMCSize.Grid5_24)
+       .Item(i => i.SituacaoTurmaAtual, sizeMD: SMCSize.Grid5_24)
+       .Begin())
+{
+
+}
+
+@using (Smc.Header("CabecalhoDadosDivisaoTurma", SMCHeaderType.Primary)
+       .Item(i => i.TurmaDescricaoFormatado, sizeMD: SMCSize.Grid24_24)
+       .Item(i => i.DescricoesCursoOfertaLocalidadeTurno, sizeMD: SMCSize.Grid24_24, hideDescription: true)
+       .Item(i => i.DescricaoLocalidade, sizeMD: SMCSize.Grid6_24)
+       .Item(i => i.QuantidadeVagasOcupadas, sizeMD: SMCSize.Grid3_24)
+       .Item(i => i.CargaHorariaGrade, sizeMD: SMCSize.Grid3_24)
+       .Item(i => i.CargaHorariaLancada, sizeMD: SMCSize.Grid3_24)
+       .Item(i => i.DataInicioPeriodoLetivo, sizeMD: SMCSize.Grid4_24)
+       .Item(i => i.DataFimPeriodoLetivo, sizeMD: SMCSize.Grid4_24)
+       .Item(i => i.TipoDistribuicaoAula, sizeMD: SMCSize.Grid6_24)
+       .Item(i => i.AulaSabado, sizeMD: SMCSize.Grid4_24)
+       .Item(i => i.TipoPulaFeriado, sizeMD: SMCSize.Grid4_24)
+       .Item(i => i.DescricaoTabelaHorario, sizeMD: SMCSize.Grid4_24)
+       .Begin())
+{
+
+}
+
+@if (Model.Professores != null && Model.Professores.Any())
+{
+    @(Smc.Grid("gridProfessores", new SMCPagerModel<DetalheDivisaoTurmaGradeProfessorViewModel>(Model.Professores))
+     .AutoGenerateColumns()
+     .AllowSort()
+     .HideGridTitle()
+     .HideNavigator()
+     .HideRowsTotalizer()
+     .HidePager()
+     .HideRowNumber()
+    )
+}
+else
+{
+    using (Smc.Div().CssClass("smc-header smc-header-tipo-primary").Attribute("data-control", "header").Attribute("data-header-type", "Primary").Attribute("data-type", "smc-header").Begin())
+    {
+        using (Smc.Div().CssClass("smc-header-grupo-itens").Begin())
+        {
+
+            using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+            {
+                <span class="smc-datagrid-no-results">@Smc.GetUIResource("Mensagem_Divisao_Sem_Professores")</span>
+            }
+        }
+    }
+}
+
+@if (Model.LocaisAula != null && Model.LocaisAula.Any())
+{
+    @(Smc.Grid("gridLocais", new SMCPagerModel<DetalheDivisaoTurmaGradeLocalViewModel>(Model.LocaisAula))
+      .AutoGenerateColumns()
+      .AllowSort()
+      .HideGridTitle()
+      .HideNavigator()
+      .HideRowsTotalizer()
+      .HidePager()
+      .HideRowNumber()
+    )
+}
+else
+{
+    using (Smc.Div().CssClass("smc-header smc-header-tipo-primary").Attribute("data-control", "header").Attribute("data-header-type", "Primary").Attribute("data-type", "smc-header").Begin())
+    {
+        using (Smc.Div().CssClass("smc-header-grupo-itens").Begin())
+        {
+
+            using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+            {
+                <span class="smc-datagrid-no-results">@Smc.GetUIResource("Mensagem_Divisao_Sem_Locais")</span>
+            }
+        }
+    }
+}
+
+@*@{
+        using (Smc.Div().CssClass("smc-header smc-header-tipo-primary").Attribute("data-control", "header").Attribute("data-header-type", "Primary").Attribute("data-type", "smc-header").Begin())
+        {
+            using (Smc.Div().CssClass("smc-header-grupo-itens").Begin())
+            {
+                var numeroLinha = 1;
+
+                foreach (var professor in Model.Professores)
+                {
+                    using (Smc.Div().CssClass("smc-header-item smc-size-md-15").Attribute("data-control-child", "header").Begin())
+                    {
+                        if (numeroLinha == 1)
+                        {
+                            <label>@Smc.GetMetadataResource("NomeProfessor")</label>
+                        }
+
+                        <p>@professor.NomeProfessor</p>
+                    }
+
+                    using (Smc.Div().CssClass("smc-header-item smc-size-md-5").Attribute("data-control-child", "header").Begin())
+                    {
+                        if (numeroLinha == 1)
+                        {
+                            <label>@Smc.GetMetadataResource("DescricaoFormacao")</label>
+                        }
+
+                        <p>@professor.DescricaoFormacao</p>
+                    }
+
+                    using (Smc.Div().CssClass("smc-header-item smc-size-md-4").Attribute("data-control-child", "header").Begin())
+                    {
+                        if (numeroLinha == 1)
+                        {
+                            <label>@Smc.GetMetadataResource("CargaHoraria")</label>
+                        }
+
+                        <p>@professor.CargaHoraria</p>
+                    }
+
+                    numeroLinha++;
+                }
+            }
+        }
+    }*@

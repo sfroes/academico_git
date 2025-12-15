@@ -1,0 +1,98 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Views.ConfiguracaoAvaliacaoPpa.App_LocalResources
+@model SMC.SGA.Administrativo.Areas.PES.Models.ConfiguracaoAvaliacaoPpaListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        // Dados do trabalho
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(t => t.Seq)
+                @Smc.DisplayFor(t => t.DescricaoCicloLetivo)
+                @Smc.DisplayFor(t => t.NomeEntidadeResponsavel)
+                @Smc.DisplayFor(t => t.DescricaoNivelEnsino)
+                @Smc.DisplayFor(t => t.Descricao)
+                @Smc.DisplayFor(t => t.TipoAvaliacaoPpa)
+                @Smc.DisplayFor(t => t.DataInicioVigencia)
+                @Smc.DisplayFor(t => t.DataFimVigencia)
+                @Smc.DisplayFor(t => t.DataLimiteRespostas)
+                @Smc.DisplayFor(t => t.CodigoDescricaoAvaliacaoPpa)
+                @Smc.DisplayFor(t => t.CodigoDescricaoOrigemAvaliacaoPpa)
+                @Smc.DisplayFor(t => t.CodigoDescricaoInstrumentoPpa)
+                @Smc.DisplayFor(t => t.CodigoInstrumentoPpa)
+                @Smc.DisplayFor(t => t.CodigoAplicacaoQuestionarioSgq)
+                @Smc.DisplayFor(t => t.SeqEspecieAvaliadorPpa)
+                @Smc.DisplayFor(t => t.CargaRealizada)
+            }
+        }
+    }
+
+    using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24)
+                    .CssClass("smc-buttonset-vertical-secundario")
+                    .Begin())
+    {
+
+        SMCButtonFluentConfiguration btnAlterarDataModal = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+            .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("SalvarDataLimiteResposta", "ConfiguracaoAvaliacaoPpa", new { @backUrl = Url.Action("Index") }))
+            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_AlterarDataLimiteResposta"))
+            .Ajax(isPost: false)
+            .Text("Alterar Data Limite")
+            .Tooltip("Alterar Data")
+            .Type(SMCButtonType.InputButton).CssClass("smc-btn-custom-destaque")
+            .SecurityToken(UC_PES_007_01_05.ALTERAR_DATA_LIMITE_RESPOSTA)
+            .Action("AlterarDataLimite", "ConfiguracaoAvaliacaoPpa", new { seqConfiguracaoAvaliacaoPpa = SMCDESCrypto.EncryptNumberForURL(Model.Seq) });
+
+        SMCButtonFluentConfiguration btnConsultarTurma = Smc.Button(SMCButtonBehavior.Alterar)
+            .DisplayMode(SMCButtonDisplayMode.Text)
+            .Text("Consultar Turmas")
+            .Tooltip("Consultar Turma")
+            .SecurityToken(UC_PES_007_01_03.CONSULTAR_TURMAS_CONFIGURACAO)
+            .Action("ConsultarTurma", "ConfiguracaoAvaliacaoPpa", Model.FiltroConfiguracaoAvaliacaoPpaTurma );
+
+        SMCButtonFluentConfiguration btnConsultarAmostras = Smc.Button(SMCButtonBehavior.Alterar)
+            .DisplayMode(SMCButtonDisplayMode.Text)
+            .Text("Consultar Amostras")
+            .Tooltip("Consultar Amostra")
+            .SecurityToken(UC_PES_007_01_04.CONSULTAR_AMOSTRAS)
+            .Action("ConsultarAmostra", "ConfiguracaoAvaliacaoPpa", new { seqConfiguracaoAvaliacaoPpa = SMCDESCrypto.EncryptNumberForURL(Model.Seq) });
+
+        SMCButtonFluentConfiguration btnExcluir = Smc.Button(SMCButtonBehavior.Excluir)
+            .DisplayMode(SMCButtonDisplayMode.Icon)
+            .Confirm(Smc.GetUIResource(UIResource.Excluir_ConfiguracaoAvaliacaoPpa_Titulo),
+            string.Format(Smc.GetUIResource(UIResource.Excluir_ConfiguracaoAvaliacaoPpa_Mensagem), Model.Descricao))
+            .Action("Excluir", "ConfiguracaoAvaliacaoPpa", new { Seq = new SMCEncryptedLong(Model.Seq) });
+
+
+        if (Model.TipoAvaliacaoPpa == SMC.Academico.Common.Areas.PES.Enums.TipoAvaliacaoPpa.SemestralDisciplina)
+        {
+            btnConsultarAmostras.Hide();
+        }
+        else
+        {
+            btnConsultarTurma.Hide();
+        }
+
+        if (Model.DataInicioVigencia <= DateTime.Now)
+        {
+            btnExcluir.Enabled(false)
+            .ButtonInstructions(Smc.GetUIResource("ButtonInstructions_NaoPermiteExcluirConfiguracao"));
+        }
+
+
+        @(Smc.ButtonSet()
+            .Type(SMCButtonSetType.Secondary).Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)
+            .CssClass("smc-sga-externo-botoes-grid")
+            .AddButton(btnExcluir)
+            .AddButton(btnConsultarTurma)
+            .AddButton(btnConsultarAmostras)
+            .AddButton(btnAlterarDataModal)
+            .NumberOfButtonsToShow(1)
+        );
+
+
+    }
+}

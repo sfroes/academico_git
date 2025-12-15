@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Aba_Title_0" xml:space="preserve">
+    <value>Dados Gerais</value>
+  </data>
+  <data name="Aba_Title_1" xml:space="preserve">
+    <value>Classificações</value>
+  </data>
+  <data name="Aba_Title_2" xml:space="preserve">
+    <value>Dados do Contato</value>
+  </data>
+  <data name="Aba_Title_3" xml:space="preserve">
+    <value>Ato Normativo</value>
+  </data>
+  <data name="Botao_AlterarSituacaoPrograma" xml:space="preserve">
+    <value>Alterar situação</value>
+  </data>
+  <data name="Botao_AlterarSituacaoPrograma_Tooltip" xml:space="preserve">
+    <value>Alterar situação</value>
+  </data>
+  <data name="Botao_CursosPrograma" xml:space="preserve">
+    <value>Cadastrar curso</value>
+  </data>
+  <data name="Botao_CursosPrograma_Tooltip" xml:space="preserve">
+    <value>Cadastrar curso</value>
+  </data>
+  <data name="Botao_FormacoesEspecificasPrograma" xml:space="preserve">
+    <value>Cadastrar formação específica</value>
+  </data>
+  <data name="Botao_FormacoesEspecificasPrograma_Tooltip" xml:space="preserve">
+    <value>Cadastrar formação específica</value>
+  </data>
+  <data name="Botao_Novo" xml:space="preserve">
+    <value>Novo programa</value>
+  </data>
+  <data name="Botao_Novo_Tooltip" xml:space="preserve">
+    <value>Novo programa</value>
+  </data>
+  <data name="Botao_PropostasPrograma" xml:space="preserve">
+    <value>Cadastrar proposta</value>
+  </data>
+  <data name="Botao_PropostasPrograma_Tooltip" xml:space="preserve">
+    <value>Cadastrar proposta</value>
+  </data>
+  <data name="Botao_Visualizar_Ato" xml:space="preserve">
+    <value>Consultar Ato Normativo</value>
+  </data>
+  <data name="DadosOutrosIdiomas_Detalhe_Titulo" xml:space="preserve">
+    <value>Informações em outros idiomas</value>
+  </data>
+  <data name="DataSelector_Botao_Abrir" xml:space="preserve">
+    <value>Associar</value>
+  </data>
+  <data name="Editar_Title" xml:space="preserve">
+    <value>Alterar Programa</value>
+  </data>
+  <data name="fieldsetConfirmacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Confirmação</value>
+  </data>
+  <data name="fieldsetCursoOfertaLocalidade_Fieldset_Legenda" xml:space="preserve">
+    <value>Oferta de Curso por Localidade</value>
+  </data>
+  <data name="fieldsetCurso_Fieldset_Legenda" xml:space="preserve">
+    <value>Curso</value>
+  </data>
+  <data name="GRUPO_Alterar" xml:space="preserve">
+    <value>Alterar Programa</value>
+  </data>
+  <data name="HistoricoNotas_Detalhe_Titulo" xml:space="preserve">
+    <value>Avaliação CAPES</value>
+  </data>
+  <data name="Incluir_Title" xml:space="preserve">
+    <value>Novo Programa</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Cadastro de Programa</value>
+  </data>
+  <data name="Label_Cursos" xml:space="preserve">
+    <value>Cursos</value>
+  </data>
+  <data name="Listar_Excluir_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão do programa "{0}"?</value>
+  </data>
+  <data name="Listar_Excluir_Titulo" xml:space="preserve">
+    <value>Excluir Programa</value>
+  </data>
+  <data name="MensagemSucessoReplicarFormacaoEspecificaPrograma" xml:space="preserve">
+    <value>Replicação da formação específica do programa realizada com sucesso.</value>
+  </data>
+  <data name="MSG_MensagemInformativaConfirmacao" xml:space="preserve">
+    <value>Confirma a replicação da formação {0} para os seguintes Cursos e Ofertas de Curso por Localidade?</value>
+  </data>
+  <data name="MSG_MensagemInformativaCurso" xml:space="preserve">
+    <value>Selecione para quais cursos a formação {0} deverá ser replicada.</value>
+  </data>
+  <data name="MSG_MensagemInformativaCursoOfertaLocalidade" xml:space="preserve">
+    <value>Selecione para quais Ofertas de Curso por Localidade, a formação {0} deverá ser replicada.</value>
+  </data>
+  <data name="MSG_MensagemInformativaTitulacao" xml:space="preserve">
+    <value>Informe a titulação que a formação {0}, concede por curso.</value>
+  </data>
+  <data name="ReplicarFormacaoEspecificaPrograma_Title" xml:space="preserve">
+    <value>Replicar Formação Específica de Programa</value>
+  </data>
+  <data name="SITUACAOENTIDADE_Fieldset_Legenda" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="TiposAutorizacaoBdp_Detalhe_Titulo" xml:space="preserve">
+    <value>Tipo de autorização para publicação do trabalho no BDP</value>
+  </data>
+  <data name="Title_VisualizarAtoNormativo" xml:space="preserve">
+    <value>Visualizar Ato Normativo</value>
+  </data>
+  <data name="Wizard_Replicar_Formacao_Especifica_Programa_StepConfirmacao" xml:space="preserve">
+    <value>Confirmação</value>
+  </data>
+  <data name="Wizard_Replicar_Formacao_Especifica_Programa_StepCurso" xml:space="preserve">
+    <value>Curso</value>
+  </data>
+  <data name="Wizard_Replicar_Formacao_Especifica_Programa_StepCursoOfertaLocalidade" xml:space="preserve">
+    <value>Oferta de Curso por Localidade</value>
+  </data>
+  <data name="Wizard_Replicar_Formacao_Especifica_Programa_StepTitulacao" xml:space="preserve">
+    <value>Titulação</value>
+  </data>
+</root>

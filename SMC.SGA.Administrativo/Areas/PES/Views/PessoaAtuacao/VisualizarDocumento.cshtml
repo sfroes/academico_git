@@ -1,0 +1,27 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Views.PessoaAtuacao.App_LocalResources
+@using SMC.DadosMestres.Common.Areas.PES.Enums
+
+@model PessoaAtuacaoVisualizacaoDocumentoViewModel
+
+@Html.Action("CabecalhoPessoaAtuacao", "PessoaAtuacao", new { @seqPessoaAtuacao = Model.SeqPessoaAtuacao })
+
+@(Smc.Legend("SituacaoEntregaDocumento", SMCOrientation.Horizontal).Items<SituacaoEntregaDocumento>())
+
+@if (Model.TiposDocumento.Count > 0)
+{
+    @Smc.List("TiposDocumento", Model.TiposDocumento).HtmlTemplate(item => @Html.Partial("_ListarTipoDocumento", item))
+}
+else
+{
+    using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+    {
+        @UIResource.MSG_Aluno_Nao_Possui_Solicitacao_Documentacao_Requerida
+    }
+}
+@{
+    var buttonSet = Smc.ButtonSet();
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Index", "Aluno", new { @area = "ALN" }, true).Highlight(Smc.GetViewMode() == SMCViewMode.ReadOnly));
+
+    @buttonSet;
+}

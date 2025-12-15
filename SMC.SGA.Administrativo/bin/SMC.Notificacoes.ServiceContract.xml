@@ -1,0 +1,344 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Notificacoes.ServiceContract</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.ArquivoAnexadoData">
+            <summary>
+            Representa um arquivo anexado a uma notificação ou configuração de notificação
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.ArquivoAnexadoData.Nome">
+            <summary>
+            Nome do arquivo
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.ArquivoAnexadoData.Tipo">
+            <summary>
+            Tipo do arquivo
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.ArquivoAnexadoData.Tamanho">
+            <summary>
+            Tamanho do arquivo
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.ArquivoAnexadoData.Conteudo">
+            <summary>
+            Conteúdo do arquivo
+            </summary>
+        </member>
+        <member name="T:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.ConfiguracaoTipoNotificacaoData">
+            <summary>
+            Representa uma notificação
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.ConfiguracaoTipoNotificacaoData.ValidaTags">
+            <summary>
+            Define se o serviço deverá validar ou não as tags informadas.
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.FiltroNotificacaoMobileData.ValorParametroFiltro">
+            <summary>
+            Parâmetro usado para identificar quais devices devem ser comunicados
+            Ex.: se a notificação usar CPF como parametro, essa string deverá receber o cpf para verificar se há alguma notificação pendente na base
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.FiltroNotificacaoMobileData.NumeroRegistrosParaRetornar">
+            <summary>
+            Numero de registros a serem retornados
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.FiltroNotificacaoMobileData.SeqNotificacaoMaisRecente">
+            <summary>
+            Ultima notificacao que o dispositivo possui, e assim permitir que sejam retornada somente as notificações que ainda não foram sincronizadas
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoData.DataPrevistaEnvio">
+            <summary>
+            Data prevista do envio da notificação
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoData.DadosMerge">
+            <summary>
+            Dicionário contendo os dados para merge da mensagem de acordo com a chave
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoData.MensagemReenvio">
+            <summary>
+            Corpo da mensagem sem o merge dos dados
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoData.SeqConfiguracaoNotificacao">
+            <summary>
+            Sequencial da configuração da notificação a ser enviada
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoData.PrioridadeEnvio">
+            <summary>
+            Prioridade para envio da notificação
+            </summary>
+        </member>
+        <member name="T:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoEmailData">
+            <summary>
+            Representa uma notificação por e-mail
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoEmailData.Arquivos">
+            <summary>
+            Lista de arquivos a serem enviados junto à notificação
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoEmailData.Destinatarios">
+            <summary>
+            Lista de destinatários para envio da notificação
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoEmailData.SeqLayouMensagemEmail">
+            <summary>
+            Sequencial do layout a ser utilizado para envio da mensagem por email
+            </summary>
+        </member>
+        <member name="T:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoEmailDestinatarioData">
+            <summary>
+            Representa um destinatário para envio de notificação
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoEmailDestinatarioData.Seq">
+            <summary>
+            Sequencial do envio de notificação destinatario
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoEmailDestinatarioData.EmailDestinatario">
+            <summary>
+            E-mail do destinatário
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoEmailDestinatarioData.EmailCopia">
+            <summary>
+            E-mail para ser enviado com cópia
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoEmailDestinatarioData.EmailCopiaOculta">
+            <summary>
+            E-mail para ser enviado com cópia oculta
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoMobileDestinatarioData.Seq">
+            <summary>
+            Sequencial do envio de notificação destinatario
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.Notificacao.RespostaSmsData.IdMovile">
+            <summary>
+            Identificador desta mensagem na Movile
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.Notificacao.RespostaSmsData.DataResposta">
+            <summary>
+            Data de recebimento da mensagem
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.Notificacao.RespostaSmsData.Mensagem">
+            <summary>
+            Mensagem enviada pelo usuário
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.Notificacao.RespostaSmsData.SeqNotificacaoSmsDestinatario">
+            <summary>
+            Sequencial da mensagem destinatário de origem
+            </summary>
+        </member>
+        <member name="T:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.TipoNotificacaoData">
+            <summary>
+            Representa uma notificação por e-mail
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.UrlCurtaData.Seq">
+            <summary>
+            Sequencial na tabela
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.UrlCurtaData.SeqUnidadeResponsavel">
+            <summary>
+            Sequencial(FK) da tabela unidade_responsavel
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.UrlCurtaData.Url">
+            <summary>
+            Url real
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.UrlCurtaData.BaseUrlCurta">
+            <summary>
+            Enum que determina qual a url base da url curta
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.UrlCurtaData.NomeCustomizado">
+            <summary>
+            Nome customizado da URL curta
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.UrlCurtaData.Dominio">
+            <summary>
+            Domínio da url encurtada
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.UrlCurtaData.Protocolo">
+            <summary>
+            Protocolo da url encurtada (padrão deverá ser o http)
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.UrlCurtaData.UrlEncurtada">
+            <summary>
+            Url completa encurtada
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.UrlCurtaData.DataValidade">
+            <summary>
+            data de validade da url encurtada (deverá ser apagada após ultrapassar a validade)
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.UrlCurtaData.QuantidadeAcessos">
+            <summary>
+            Quantidade de acessos que a URL curta teve
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.UrlCurtaData.DataUltimoAcesso">
+            <summary>
+            Data do último acesso da url curta
+            </summary>
+        </member>
+        <member name="P:SMC.Notificacoes.ServiceContract.Areas.NTF.Data.UrlCurtaData.Observacao">
+            <summary>
+            Observação
+            </summary>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.ILayoutMensagemEmailService.BuscarLayoutMensagemEmail(SMC.Notificacoes.ServiceContract.Areas.NTF.Data.LayoutMensagemEmailFiltroData)">
+            <summary>
+            Retorna uma lista de LayoutMensagemEmail
+            </summary>
+            <param name="filtro"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.ILayoutMensagemEmailService.SalvarLayoutMensagemEmail(SMC.Notificacoes.ServiceContract.Areas.NTF.Data.LayoutMensagemEmailData)">
+            <summary>
+            Salva um LayoutMensagemEmail
+            </summary>
+            <param name="layoutMensagemEmailVO"></param>
+            <returns>Identificador do layoutMensagemEmail salvo</returns>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoMobileService.BuscarNotificacoesMobile(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Buscar as ultimas notificações mobile enviadas para dispositivos de um aplicativo 
+            que estejam configurados para receber as mensagens a partir de um parâmetro
+            </summary>
+            <param name="tokenAplicativo">Token do aplicativo para recuperar as notificações enviadas</param>
+            <param name="tokenAplicativoNotificacao">Token do aplicativo notificação para recuperar as notificações enviadas</param>
+            <param name="valorParametro">Valor do parâmetro a ser consultado</param>
+            <param name="numeroRegistros">Numero de registros a ser recuperado</param>
+            <param name="seqNotificacaoMaisRecente">seq a partir do qual serão considerados novas notificações</param>
+            <returns>Lista de notificações enviadas</returns>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.BuscarTiposNotificacaoPorUnidadeResponsavel(System.Int64,System.Int64)">
+            <summary>
+            Procura por tipos de notificações de uma unidade responsável
+            </summary>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.BuscarTiposNoficicacaoPorGrupoAplicacao(System.Int64)">
+            <summary>
+            Procura por tipos de notificações de um grupo de aplicação
+            </summary>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.BuscarTagPorGrupoAplicacao(System.Int64)">
+            <summary>
+            Busca por tags de um grupo de aplicação
+            </summary>
+            <param name="grupoAplicacao"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.BuscarConfiguracaoTipoNotificacao(System.Int64)">
+            <summary>
+            Busca a configuraão de acordo com o sequencial
+            </summary>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.VerificarConfiguracaoPossuiNotificacoes(System.Int64[])">
+            <summary>
+            Verifica se a configuração de um tipo de notificação já possui alguma notificação enviada.
+            </summary>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.VerificarListaConfiguracaoPossuiNotificacoes(System.Int64[])">
+            <summary>
+            Verifica se a configuração de um tipo de notificação já possui alguma notificação enviada, 
+            retornando uma lista de configurações que possuem notificação enviada para evitar várias consultas ao mesmo serviço
+            </summary>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.VerificarUsoTagConfiguracao(System.Int64,System.String)">
+            <summary>
+            Verifica o uso da tag informada numa configuração de email informada
+            </summary>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.VerificarUsoTagConfiguracoes(System.Int64[],System.String)">
+            <summary>
+            Verifica se uma tag está sendo usada em um conjunto de notificações
+            </summary>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.VerificarTagValidaParaAplicacao(System.Int64,System.String)">
+            <summary>
+            Verifica se uma tag é válida para um grupo de aplicação
+            </summary>
+            <param name="seqGrupoAplicacao">Sequencial do grupo de aplicação</param>
+            <param name="tag">Tag a ser validada</param>
+            <returns>TRUE se tag é válida, FALSE caso contrário</returns>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.VerificarTagsInvalidas(System.Int64[])">
+            <summary>
+            Verifica se todas as configurações informadas possuem apenas tags válidas.
+            </summary>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.ConsultaNotificacao(System.Int64)">
+            <summary>
+            Consulta os dados de uma notificação.
+            </summary>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.ConsultaNotificacoes(SMC.Notificacoes.ServiceContract.Areas.NTF.Data.NotificacaoEmailDestinatarioFiltroData)">
+            <summary>
+            Consulta os dados de varias notificações.
+            </summary>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.BuscarUnidadesResponsaveisKeyValue">
+            <summary>
+            Retorna a lista de pares ordenados cahve/valor de unidades responsáveis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.BuscarLayoutNotificacaoEmailPorSiglaGrupoAplicacao(System.String)">
+            <summary>
+            Retorna uma lista de LayoutNotificacaoEmail para select
+            </summary>
+            <param name="siglaGrupoAplicacao">Sigla do grupo de aplicação para filtro</param>
+            <returns>Listagem de LayoutNotificacaoEmail para select</returns>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.BuscarLayoutNotificacaoEmailPorSeqGrupoAplicacao(System.Int64)">
+            <summary>
+            Retorna uma lista de LayoutNotificacaoEmail para select
+            </summary>
+            <param name="seqGrupoAplicacao">Sequencial do grupo de aplicação para filtro</param>
+            <returns>Listagem de LayoutNotificacaoEmail para select</returns>
+        </member>
+        <member name="M:SMC.Notificacoes.ServiceContract.Areas.NTF.Interfaces.INotificacaoService.SimularMergeLayoutMensagemEmail(System.Int64,System.Nullable{System.Int64},System.String)">
+            <summary>
+            Realiza uma simulação do merge de layout com uma mensagem
+            A simulação será realizada com o layout informado como parâmetro e:
+            - a mensagem configurada na notificação de email informada como parâmetro
+            OU
+            - a mensagem informada como parâmetro
+            </summary>
+            <param name="seqLayoutMensagemEmail">Sequencial do layout para simular</param>
+            <param name="seqConfiguracaoNotificacaoEmail">Sequencial da configuração da notificação para simular (opcional)</param>
+            <param name="mensagem">Descrição da mensagem para simular (opcional)</param>
+            <returns>String com o retorno da simulação</returns>
+        </member>
+    </members>
+</doc>

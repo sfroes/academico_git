@@ -1,0 +1,11 @@
+<div class="smc-size-md-24 smc-size-lg-24 smc-size-sm-24 smc-size-xs-24 smc-sga-filtro-aluno">
+  <po-multiselect [p-options]="avaliacoesOptions" p-required="true" p-hide-search="true"
+    p-placeholder="Selecione uma avaliação..." p-label="Avaliações" [(ngModel)]="seqsAplicacaoAvaliacao"
+    class="smc-size-lg-8 smc-size-md-8 smc-size-sm-8 smc-size-xs-22" (ngModelChange)="avaliacaoChange()">
+  </po-multiselect>
+  <po-input p-label="RA" [(ngModel)]="ra" p-mask="9999999"
+    class="smc-size-lg-3 smc-size-md-3 smc-size-sm-4 smc-size-xs-6" (ngModelChange)="alunoChange()"></po-input>
+  <po-input p-label="Nome aluno" [(ngModel)]="nome" class="smc-size-lg-11 smc-size-md-11 smc-size-sm-10 smc-size-xs-17"
+    (ngModelChange)="alunoChange()">
+  </po-input>
+</div>

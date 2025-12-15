@@ -1,0 +1,28 @@
+﻿@using SMC.SGA.Administrativo.Areas.CNC.Models;
+@using SMC.Academico.Common.Areas.CNC.Constants;
+
+@model DocumentoConclusaoApostilamentoFiltroViewModel
+
+@Html.Action("CabecalhoDocumentoConclusaoApostilamentoAluno", new { seqDocumentoConclusao = (SMCEncryptedLong)Model.SeqDocumentoConclusao })
+
+@Html.Action("CabecalhoDocumentoConclusaoApostilamentoDocumento", new { seqDocumentoConclusao = (SMCEncryptedLong)Model.SeqDocumentoConclusao })
+
+@(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Novo)
+               .Enabled(Model.HabilitarBotaoNovo)
+               .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoNovo))
+               .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+               .Tooltip(Smc.GetUIResource("Botao_Incluir_Novo_Documento_Conclusao_Apostilamento"))
+               .Type(SMCButtonType.Link)
+               .SecurityToken(UC_CNC_002_01_05.MANTER_APOSTILAMENTO)
+               .Url(Url.Action("Incluir", "DocumentoConclusaoApostilamento", new { SeqDocumentoConclusao = new SMCEncryptedLong((Model as DocumentoConclusaoApostilamentoFiltroViewModel).SeqDocumentoConclusao), Area = "CNC" }))))
+
+@using (Smc.Div("divGridDocumentosConclusaoApostilamento").Attribute("data-id", "divGridDocumentosConclusaoApostilamento").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Smc.ActionList("ListarDocumentosConclusaoApostilamento", Model, false)
+}
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button("Voltar", "Consultar", new { Seq = (SMCEncryptedLong)Model.SeqDocumentoConclusao }, "DocumentoConclusao")
+    .Type(SMCButtonType.Link)
+    .CssClass("smc-btn-voltar-icotext"))
+)

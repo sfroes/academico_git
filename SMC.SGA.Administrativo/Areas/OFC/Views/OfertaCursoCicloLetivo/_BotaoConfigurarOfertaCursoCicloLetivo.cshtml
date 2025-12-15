@@ -1,0 +1,61 @@
+﻿@model OfertaCursoCicloLetivoBotaoConfigurarViewModel 
+
+@{
+    List<Link> listaLinks = new List<Link>();
+
+    Dictionary<string, object> parametros = new Dictionary<string, object>();
+    parametros.Add("seqOfertaCursoCicloLetivo", Model.SeqOfertaCursoCicloLetivo);
+    
+    Link AssociarLocalidade = new Link()
+    {
+        Label = Smc.GetUIResource(string.Format(Link.LABEL_RESOURCE, "AssociarLocalidade")),
+        Controller = "OfertaCursoCicloLetivo",
+        Action = "AssociacaoLocalidade",
+        Parameters = parametros
+    };    
+    
+    Link AssociarPolo = new Link()
+    {
+        Label = Smc.GetUIResource(string.Format(Link.LABEL_RESOURCE, "AssociarPolo")),
+        Controller = "OfertaCursoCicloLetivo",
+        Action = "AssociacaoPolo",
+        Parameters = parametros
+    };
+
+    Link AssociarCursoUnidadeTurno = new Link()
+    {
+        Label = Smc.GetUIResource(string.Format(Link.LABEL_RESOURCE, "AssociarCursoUnidadeTurno")),
+        Controller = "OfertaCursoCicloLetivo",
+        Action = "AssociacaoCursoUnidadeTurno",
+        Parameters = parametros
+    };
+
+    Link Editar = new Link()
+    {
+        Label = Smc.GetUIResource(string.Format(Link.LABEL_RESOURCE, "Editar")),
+        Controller = "OfertaCursoCicloLetivo",
+        Action = "Editar",
+        Parameters = parametros
+    };    
+    
+    switch (Model.Action)
+    {
+        case OfertaCursoCicloLetivoActionsEnum.AssociarLocalidade:
+            listaLinks = new List<Link>() { Editar, AssociarPolo, AssociarCursoUnidadeTurno };
+            break;
+        case OfertaCursoCicloLetivoActionsEnum.AssociarPolo:
+            listaLinks = new List<Link>() { Editar, AssociarLocalidade, AssociarCursoUnidadeTurno };
+            break;
+        case OfertaCursoCicloLetivoActionsEnum.AssociarCursoUnidadeTurno:
+            listaLinks = new List<Link>() { Editar, AssociarPolo, AssociarLocalidade };
+            break;
+        case OfertaCursoCicloLetivoActionsEnum.Editar:
+            listaLinks = new List<Link>() { AssociarPolo, AssociarLocalidade, AssociarCursoUnidadeTurno };
+            break;
+        default:
+            listaLinks = new List<Link>() { Editar, AssociarPolo, AssociarLocalidade, AssociarCursoUnidadeTurno };
+            break;
+    }
+
+    @Html.Partial("_BotaoConfigurar", listaLinks);
+}

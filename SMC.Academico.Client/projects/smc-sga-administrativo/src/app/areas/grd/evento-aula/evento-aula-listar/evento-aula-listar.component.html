@@ -1,0 +1,44 @@
+<div *ngIf="carregado" class="smc-size-lg-24 smc-size-sm-24 smc-size-xs-24 smc-size-md-24">
+  <div id="divMaxizar" [class.smc-sga-tela-maximizada]="maximizar">
+    <h2 *ngIf="maximizar">
+      {{ dadosCabecalhoTurma.descricaoConfiguracaoComponente }}
+    </h2>
+    <div class="smc-size-lg-24 smc-size-sm-24 smc-size-xs-24 smc-size-md-24">
+      <span
+        (click)="maximizar = !maximizar"
+        [class.smc-sga-btn-maximizar]="!maximizar"
+        [class.smc-sga-btn-minimizar]="maximizar"
+      ></span>
+    </div>
+    <sga-evento-aula-turma-cabecalho
+      *ngIf="!maximizar"
+      [e-dadosCabecalho]="dadosCabecalhoTurma"
+    ></sga-evento-aula-turma-cabecalho>
+    <sga-evento-aula-notificacoes></sga-evento-aula-notificacoes>
+    <div class="smc-size-lg-24 smc-size-sm-24 smc-size-xs-24 smc-size-md-24">
+      <po-tabs>
+        <po-tab p-label="Calendário" p-active="true">
+          <sga-evento-aula-divisao-turma
+            class="smc-size-md-5 smc-sga-calendario-divisao"
+            [e-divisoesTurma]="divisoesTurma"
+            (e-checekDivisaoTurma)="habilitarDivisao($event)"
+          ></sga-evento-aula-divisao-turma>
+          <sga-evento-aula-calendario
+            [e-eventos-turma]="eventosTurma"
+          ></sga-evento-aula-calendario>
+        </po-tab>
+        <po-tab p-label="Lista">
+          <sga-evento-aula-divisao-turma
+            class="smc-size-md-5"
+            [e-divisoesTurma]="divisoesTurma"
+            (e-checekDivisaoTurma)="habilitarDivisao($event)"
+          ></sga-evento-aula-divisao-turma>
+          <sga-evento-aula-lista-divisao-turma
+            [e-divioesTurma]="divisoesTurma"
+            class="smc-size-md-19"
+          ></sga-evento-aula-lista-divisao-turma>
+        </po-tab>
+      </po-tabs>
+    </div>
+  </div>
+</div>

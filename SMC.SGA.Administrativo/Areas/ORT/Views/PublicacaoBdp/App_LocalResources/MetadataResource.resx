@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Autores" xml:space="preserve">
+    <value>Aluno(s)</value>
+  </data>
+  <data name="EntidadeResponsavel" xml:space="preserve">
+    <value>Entidade responsável</value>
+  </data>
+  <data name="MembroBancaExaminadoraViewModel_DescricaoTipoMembro" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="MembroBancaExaminadoraViewModel_Instituicao" xml:space="preserve">
+    <value>Instituição</value>
+  </data>
+  <data name="MembroBancaExaminadoraViewModel_Nome" xml:space="preserve">
+    <value>Membro</value>
+  </data>
+  <data name="OfertaCursoLocalidadeTurno" xml:space="preserve">
+    <value>Oferta de curso por localidade e turno</value>
+  </data>
+  <data name="PublicacaoBdpAutorViewModel_EmailAutor" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="PublicacaoBdpAutorViewModel_NomeAutor" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="PublicacaoBdpAutorViewModel_NomeAutorFormatado" xml:space="preserve">
+    <value>Nome formatado</value>
+  </data>
+  <data name="PublicacaoBdpCabecalhoViewModel_AreaConcentracao" xml:space="preserve">
+    <value>Formação específica</value>
+  </data>
+  <data name="PublicacaoBdpCabecalhoViewModel_AreaConhecimento" xml:space="preserve">
+    <value>Área de conhecimento</value>
+  </data>
+  <data name="PublicacaoBdpCabecalhoViewModel_DescricaoSituacao" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="PublicacaoBdpDynamicModel_CodigoAcervo" xml:space="preserve">
+    <value>Código do acervo</value>
+  </data>
+  <data name="PublicacaoBdpDynamicModel_DataAutorizacao" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="PublicacaoBdpDynamicModel_DataDefesa" xml:space="preserve">
+    <value>Data defesa</value>
+  </data>
+  <data name="PublicacaoBdpDynamicModel_QuantidadePaginas" xml:space="preserve">
+    <value>Número de páginas</value>
+  </data>
+  <data name="PublicacaoBdpDynamicModel_QuantidadeVolumes" xml:space="preserve">
+    <value>Número de volumes</value>
+  </data>
+  <data name="PublicacaoBdpDynamicModel_TipoAutorizacao" xml:space="preserve">
+    <value>Tipo de autorização</value>
+  </data>
+  <data name="PublicacaoBdpDynamicModel_TipoTrabalho" xml:space="preserve">
+    <value>Tipo de trabalho</value>
+  </data>
+  <data name="PublicacaoBdpFiltroDynamicModel_SeqsTurnos" xml:space="preserve">
+    <value>Turno</value>
+  </data>
+  <data name="PublicacaoBdpFiltroDynamicModel_SeqTipoSituacao" xml:space="preserve">
+    <value>Tipo de Situação</value>
+  </data>
+  <data name="PublicacaoBdpFiltroDynamicModel_Situacao" xml:space="preserve">
+    <value>Situação da publicação no BDP</value>
+  </data>
+  <data name="TipoTrabalho" xml:space="preserve">
+    <value>Tipo de trabalho</value>
+  </data>
+  <data name="Titulo" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="PublicacaoBdpFiltroDynamicModel_Group_SituacaoMatricula" xml:space="preserve">
+    <value>Situação da matrícula</value>
+  </data>
+  <data name="PublicacaoBdpFiltroDynamicModel_SeqAluno" xml:space="preserve">
+    <value>Aluno</value>
+  </data>
+  <data name="PublicacaoBdpCabecalhoViewModel_DataSituacao" xml:space="preserve">
+    <value>Data da situação</value>
+  </data>
+  <data name="PublicacaoBdpDynamicModel_Titulo_FillInstructions" xml:space="preserve">
+    <value>Este campo deverá conter o título que foi registrado em ata da defesa. Se esta informação foi alterada após a defesa, o novo título deverá ser cadastrado em "Informações por Idioma". Na Biblioteca Digital e no Histórico Escolar o título a ser exibido é o que estiver registrado para o idioma "Português".</value>
+  </data>
+  <data name="PublicacaoBdpListarDynamicModel_DataDefesa" xml:space="preserve">
+    <value>Data de defesa</value>
+  </data>
+  <data name="PublicacaoBdpDynamicModel_Titulo" xml:space="preserve">
+    <value>Título registrado na ata de defesa</value>
+  </data>
+  <data name="PublicacaoBdpDynamicModel_ArquivoAnexadoAtaDefesa" xml:space="preserve">
+    <value>Ata de defesa</value>
+  </data>
+  <data name="PublicacaoBdpDynamicModel_Arquivo" xml:space="preserve">
+    <value>Anexar o arquivo do trabalho em formato PDF</value>
+  </data>
+  <data name="PublicacaoBdpDynamicModel_CodigoAutorizacao" xml:space="preserve">
+    <value>Código de autorização</value>
+  </data>
+  <data name="PublicacaoBdpArquivoViewModel_TipoAutorizacao" xml:space="preserve">
+    <value>Tipo de autorização</value>
+  </data>
+  <data name="PublicacaoBdpTipoAutorizacaoViewModel_TipoDescricao" xml:space="preserve">
+    <value>Tipos Autorização</value>
+  </data>
+  <data name="PublicacaoBdpAutorizacaoViewModel_CodigoAutorizacao" xml:space="preserve">
+    <value>Código de autorização</value>
+  </data>
+  <data name="PublicacaoBdpAutorizacaoViewModel_DataAutorizacao" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="PublicacaoBdpAutorizacaoViewModel_TipoAutorizacao" xml:space="preserve">
+    <value>Tipo de autorização</value>
+  </data>
+  <data name="FichaCatalograficaViewModel_PossuiIlustracao" xml:space="preserve">
+    <value>Trabalho possui ilustração?</value>
+  </data>
+  <data name="FichaCatalograficaViewModel_SeqBibliotecario" xml:space="preserve">
+    <value>Bibliotecário</value>
+  </data>
+</root>

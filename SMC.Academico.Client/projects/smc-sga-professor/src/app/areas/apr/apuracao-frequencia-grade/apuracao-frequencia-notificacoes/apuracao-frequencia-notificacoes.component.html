@@ -1,0 +1,36 @@
+<div class="smc-sga-painelalertas-estrutura-botao" *ngIf="listaDatasExpiradas.length || listaDatasDentroPrazo.length">
+  <a class="smc-sga-painelalertas-botao" (click)="exibirNotificacao()">Painel alertas</a>
+  <span class="smc-sga-painelalertas-totalizador">{{ listaDatasExpiradas.length + listaDatasDentroPrazo.length }}</span>
+</div>
+<div [hidden]="!exibir" class="smc-size-lg-10 smc-size-sm-18 smc-size-xs-22 smc-size-md-8 smc-sga-painelalertas">
+  <h3>Alertas e Inconsistências</h3>
+  <div *ngIf="listaDatasExpiradas.length" class="smc-size-lg-12">
+    <h4>Aulas com o prazo expirado</h4>
+    <div class="smc-sga-painelalertas-itens">
+      <ul>
+        <li *ngFor="let notificacao of listaDatasExpiradas">
+          <a (click)="selecionarDia(notificacao)">
+            <span>
+              {{ notificacao }}
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div *ngIf="listaDatasDentroPrazo.length" class="smc-size-lg-12">
+    <h4>Aulas dentro do prazo de apuração</h4>
+    <div class="smc-sga-painelalertas-itens">
+      <ul>
+        <li *ngFor="let notificacao of listaDatasDentroPrazo">
+          <a (click)="selecionarDia(notificacao)">
+            <span>
+              {{ notificacao }}
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <h5>* Atenção o prazo limite para apuração de frequencia é de {{ quantidadeDiasPrazoApuracaoFrequencia }} dia{{ quantidadeDiasPrazoApuracaoFrequencia != 1 ? 's' : '' }}</h5>
+</div>

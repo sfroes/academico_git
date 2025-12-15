@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERR_AtoNormativoCamposZeradosException" xml:space="preserve">
+    <value>Operação não permitida. Não é aceito número de identificação igual a "0"</value>
+  </data>
+  <data name="ERR_AtoNormativoEntidadeInformacaoNaoEncontradaException" xml:space="preserve">
+    <value>Opção indisponível. Não foram encontrados dados para o Ato Normativo: {0}.</value>
+  </data>
+  <data name="ERR_AtoNormativoEntidadeObrigatoriaException" xml:space="preserve">
+    <value>Obrigatório associar entidade.</value>
+  </data>
+  <data name="ERR_EntidadeConfiguracaoNotificacaoExcluirException" xml:space="preserve">
+    <value>Exclusão não permitida. Existem registros de envio de notificação com a configuração em questão. Para não enviar mais esta notificação, finalize o período de vigência da notificação informando a data fim.</value>
+  </data>
+  <data name="ERR_EntidadeConfiguracaoNotificacaoJaEnviadaException" xml:space="preserve">
+    <value>O Tipo de Notificação não pode ser alterado, pois já existem registros de envio desta notificação. Para não enviar mais este tipo de notificação, finalize o período de vigência da notificação informando a data fim.</value>
+  </data>
+  <data name="ERR_EntidadeConfiguracaoNotificacaoNaoEncotradaException" xml:space="preserve">
+    <value>Configuração de notificação não encontrada para a entidade.</value>
+  </data>
+  <data name="ERR_EntidadeConfiguracaoNotificacaoTagException" xml:space="preserve">
+    <value>A(s) tag(s) {0} não existe(m) para o tipo de notificação "{1}".</value>
+  </data>
+  <data name="ERR_EntidadeEnderecoEletronicoObrigatorioException" xml:space="preserve">
+    <value>Endereço eletrônico {0} obrigatório.</value>
+  </data>
+  <data name="ERR_EntidadeEnderecoObrigatorioException" xml:space="preserve">
+    <value>Endereço {0} obrigatório.</value>
+  </data>
+  <data name="ERR_EntidadeHistoricoSituacaoExclusaoException" xml:space="preserve">
+    <value>Exclusão não permitida. Este é o último registro de histórico de situações da entidade.</value>
+  </data>
+  <data name="ERR_EntidadeMesmaSiglaException" xml:space="preserve">
+    <value>Já existe {0} cadastrada com esta sigla</value>
+  </data>
+  <data name="ERR_EntidadeMesmoNomeException" xml:space="preserve">
+    <value>Já existe {0} cadastrada com este nome</value>
+  </data>
+  <data name="ERR_EntidadeTelefoneObrigatorioException" xml:space="preserve">
+    <value>Telefone {0} obrigatório.</value>
+  </data>
+  <data name="ERR_ExisteEventoAgendaException" xml:space="preserve">
+    <value>Alteração não permitida.  Existe evento letivo lançado para a agenda "{0}".</value>
+  </data>
+  <data name="ERR_HierarquiaEntidadeInvalidaException" xml:space="preserve">
+    <value>Hierarquia entidade inválida.</value>
+  </data>
+  <data name="ERR_HierarquiaEntidadeItemAlteracaoHierarquiaInvalidaException" xml:space="preserve">
+    <value>Alteração de hierarquia de entidade inválida.</value>
+  </data>
+  <data name="ERR_HierarquiaEntidadeItemAssociacaoEntidadeExternadaException" xml:space="preserve">
+    <value>Associação de nó não permitida, entidades de tipos externados não podem ser vinculados a Hierarquias que seguem um Tipo de Hierarquia vinculado a uma visão.</value>
+  </data>
+  <data name="ERR_HierarquiaEntidadeItemAssociacaoEntidadeInativaException" xml:space="preserve">
+    <value>Associação de nó não permitida, a entidade selecionada está inativa.</value>
+  </data>
+  <data name="ERR_HierarquiaEntidadeItemAssociacaoTipoEntidadeIncompativelException" xml:space="preserve">
+    <value>Associação de nó não permitida de acordo com o tipo fornecido, favor fornecer o tipo esperado de acordo com a montagem do tipo de hierarquia.</value>
+  </data>
+  <data name="ERR_HierarquiaEntidadeItemExclusaoExternalizadaException" xml:space="preserve">
+    <value>Não é possível excluir a entidade {0}, pois existem itens abaixo dela que são externalizadas.</value>
+    <comment>RN_ORG_012</comment>
+  </data>
+  <data name="ERR_HierarquiaEntidadeNaoConfiguradaException" xml:space="preserve">
+    <value>Não foi encontrada configuração de hierarquia de entidade na visão "{0}" válida para a instituição de ensino.</value>
+  </data>
+  <data name="ERR_HierarquiaEntidadeTipoAlteradoException" xml:space="preserve">
+    <value>Já existe uma árvore de entidades montada para esta hierarquia. Para alterar o tipo de hierarquia, antes a árvore deve ser excluída.</value>
+  </data>
+  <data name="ERR_HierarquiaEntidadeVisaoDuplicadaException" xml:space="preserve">
+    <value>Já existe outra hierarquia de entidade de "{0}" para a instituição de ensino com período de vigência coincidente ao informado.</value>
+  </data>
+  <data name="ERR_InstituicaoEnsinoInformacaoNaoEncontradaException" xml:space="preserve">
+    <value>Opção indisponível. Não foram encontrados dados da Instituição de Ensino: {0}.</value>
+  </data>
+  <data name="ERR_InstituicaoNivelSistemaOrigemInclusao" xml:space="preserve">
+    <value>Sistema de Origem GAD já está associado à este nível de ensino x instituição de ensino x tipo de uso</value>
+  </data>
+  <data name="ERR_InstituicaoTipoEntidadeSituacaoCategoriaDuplicadaException" xml:space="preserve">
+    <value>Não é permitido associar situações com a mesma categoria.</value>
+  </data>
+  <data name="ERR_MantenedoraInformacaoNaoEncontradaException" xml:space="preserve">
+    <value>Opção indisponível. Dados da Mantenedora não encontrados para: {0}.</value>
+  </data>
+  <data name="ERR_ObrigatorioAgendaDistintaAlteracao" xml:space="preserve">
+    <value>Alteração não permitida. Para o tipo de agenda "{0}" deve existir uma agenda distinta por localidade. A agenda "{1}" já foi cadastrada.</value>
+  </data>
+  <data name="ERR_ObrigatorioAgendaDistintaInclusao" xml:space="preserve">
+    <value>Inclusão não permitida. Para o tipo de agenda "{0}" deve existir uma agenda distinta por localidade. A agenda "{1}" já foi cadastrada.</value>
+  </data>
+  <data name="ERR_ObrigatorioMesmaAgendaAlteracao" xml:space="preserve">
+    <value>Alteração não permitida. As agendas do tipo "{0}" devem ser as mesmas para todas as localidades. Existe localidade com agenda distinta.</value>
+  </data>
+  <data name="ERR_ObrigatorioMesmaAgendaInclusao" xml:space="preserve">
+    <value>Inclusão não permitida. As agendas do tipo "{0}" devem ser as mesmas para todas as localidades. Existe localidade com agenda distinta.</value>
+  </data>
+  <data name="ERR_TipoEntidadeNaoAssociadoInstituicaoException" xml:space="preserve">
+    <value>É necessário fazer associação dos Tipos de Entidade à instituição de ensino antes de efetuar esta ação.</value>
+  </data>
+  <data name="ERR_TipoEntidadeNaoConfiguradoException" xml:space="preserve">
+    <value>Tipo de entidade "{0}" não foi configurado para a instituição de ensino logada.</value>
+  </data>
+  <data name="ERR_TipoHierarquiaEntidadeInvalidaException" xml:space="preserve">
+    <value>Parâmetro tipo hierraquia de entidade inválido!</value>
+  </data>
+  <data name="ERR_TipoHierarquiaEntidadeNaoConfigurouTipoException" xml:space="preserve">
+    <value>Tipo de entidade externada não foi configurado corretamente no tipo de hierarquia de entidade vigente para a visão "{0}".</value>
+  </data>
+  <data name="ERR_TipoHierarquiaEntidadeNaoPossuiFilhos" xml:space="preserve">
+    <value>Antes de cadastrar uma hierarquia de entidade, é necessário fazer a montagem da hierarquia do respectivo tipo de hierarquia entidade</value>
+  </data>
+  <data name="ERR_TipoHierarquiaEntidadeSemArvoreException" xml:space="preserve">
+    <value>A hierarquia de entidade na visão "{0}" não possui árvore cadastrada. Favor configurar a hierarquia corretamente antes de realizar este cadastro.</value>
+  </data>
+  <data name="FK_ato_normativo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui ato normativo cadastrado.</value>
+  </data>
+  <data name="FK_ato_normativo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe ato normativo cadastrado com este tipo de ato normativo.</value>
+  </data>
+  <data name="FK_ato_normativo_03" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe ato normativo cadastrado com este assunto normativo.</value>
+  </data>
+  <data name="FK_ato_normativo_04" xml:space="preserve">
+    <value>Exclusão não permitida. Arquivo está associado a um ato normativo.</value>
+  </data>
+  <data name="FK_ato_normativo_entidade_01" xml:space="preserve">
+    <value>Exclusão não permitida. Ato normativo já possui entidades associadas.</value>
+  </data>
+  <data name="FK_ato_normativo_entidade_02" xml:space="preserve">
+    <value>Exclusão não permitida. Entidade está associada a um ato normativo.</value>
+  </data>
+  <data name="FK_entidade_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de entidade já possui entidade cadastrada.</value>
+  </data>
+  <data name="FK_entidade_configuracao_notificacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Entidade já possui configuração de notificação cadastrada.</value>
+  </data>
+  <data name="FK_entidade_imagem_01" xml:space="preserve">
+    <value>Exclusão não permitida. Entidade já possui imagens associadas.</value>
+  </data>
+  <data name="FK_entidade_imagem_02" xml:space="preserve">
+    <value>Exclusão não permitida. Arquivo anexado é uma imagem de uma entidade.</value>
+  </data>
+  <data name="FK_hierarquia_entidade_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo hierarquia de entidade já possui hierarquia de entidade cadastrada.</value>
+  </data>
+  <data name="FK_hierarquia_entidade_02" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui hierarquia de entidade cadastrada.</value>
+  </data>
+  <data name="FK_hierarquia_entidade_item_01" xml:space="preserve">
+    <value>Exclusão não permitida. Essa hierarquia já possui uma árvore de entidade montada. Para excluí-lo, antes a árvore deve ser excluída.</value>
+  </data>
+  <data name="FK_hierarquia_entidade_item_03" xml:space="preserve">
+    <value>Exclusão não permitida. A entidade já foi associada a uma hierarquia.</value>
+  </data>
+  <data name="FK_instituicao_ensino_01" xml:space="preserve">
+    <value>Exclusão não permitida. Mantenedora já possui instituição de ensino cadastrada.</value>
+  </data>
+  <data name="FK_instituicao_ensino_03" xml:space="preserve">
+    <value>Exclusão não permitida. Categoria de instituição de ensino já possui instituição de ensino cadastrada.</value>
+  </data>
+  <data name="FK_instituicao_ensino_04" xml:space="preserve">
+    <value>Exclusão não permitida. Hierarquia de classificação está associada a uma instituição de ensino como a hierarquia a ser utilizada no cadastro de formação acadêmica das pessoas desta instituição.</value>
+  </data>
+  <data name="FK_instituicao_localidade_agenda_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de agenda já possui configuração em alguma localidade.</value>
+  </data>
+  <data name="FK_instituicao_localidade_agenda_02" xml:space="preserve">
+    <value>Exclusão não permitida. Localidade já possui configurações de agenda.</value>
+  </data>
+  <data name="FK_instituicao_modelo_relatorio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de modelo de relatório para esta instituição.</value>
+  </data>
+  <data name="FK_instituicao_nivel_01" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já está configurado para uso em instituição de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_02" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui configuração de nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_calendario_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de calendário para esta instituição x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_modelo_relatorio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de modelo de relatório para esta instituição x nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_nivel_tipo_evento_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe configuração de tipo de evento para este calendário x instituição e nível de ensino.</value>
+  </data>
+  <data name="FK_instituicao_tipo_entidade_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui configuração de tipo de entidade.</value>
+  </data>
+  <data name="FK_instituicao_tipo_entidade_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de entidade já está configurado para uso em instituição de ensino.</value>
+  </data>
+  <data name="FK_instituicao_tipo_entidade_situacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Situação de entidade já está configurada para uso de um tipo de entidade x instituição de ensino.</value>
+  </data>
+  <data name="FK_tipo_agenda_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui tipo de agenda cadastrado.</value>
+  </data>
+  <data name="FK_tipo_hierarquia_entidade_01" xml:space="preserve">
+    <value>Exclusão não permitida. Instituição de ensino já possui tipo de hierarquia de entidade cadastrada.</value>
+  </data>
+  <data name="FK_tipo_hierarquia_entidade_item_01" xml:space="preserve">
+    <value>Exclusão não permitida. Esse tipo de hierarquia já possui uma árvore de tipos de entidade montada. Para excluí-lo, antes a árvore deve ser excluída.</value>
+  </data>
+  <data name="FK_tipo_hierarquia_entidade_item_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de entidade já está configurado em uma hierarquia de tipo de entidade.</value>
+  </data>
+  <data name="UN_assunto_normativo_01" xml:space="preserve">
+    <value>Já existe um assunto normativo com esta descrição.</value>
+  </data>
+  <data name="UN_assunto_normativo_02" xml:space="preserve">
+    <value>Já existe um assunto normativo com este token.</value>
+  </data>
+  <data name="UN_ato_normativo_01" xml:space="preserve">
+    <value>Este ato normativo já está cadastrado nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_ato_normativo_entidade_01" xml:space="preserve">
+    <value>Entidade já está associada ao ato normativo.</value>
+  </data>
+  <data name="UN_entidade_01" xml:space="preserve">
+    <value>Já existe imagem para o tipo de imagem e entidade informados.</value>
+  </data>
+  <data name="UN_entidade_02" xml:space="preserve">
+    <value>Já existe entidade cadastrada com esta sigla.</value>
+  </data>
+  <data name="UN_entidade_classificacao_01" xml:space="preserve">
+    <value>Esta entidade já possui esta classificação.</value>
+  </data>
+  <data name="UN_entidade_historico_situacao_01" xml:space="preserve">
+    <value>Já existe esta situação cadastrada para esta entidade nesta data.</value>
+  </data>
+  <data name="UN_entidade_idioma_01" xml:space="preserve">
+    <value>Já existe cadastro desta informação para este programa neste idioma.</value>
+  </data>
+  <data name="UN_entidade_imagem_01" xml:space="preserve">
+    <value>Operação não permitida, já existe imagem para o tipo de imagem e entidade informados.</value>
+  </data>
+  <data name="UN_hierarquia_entidade_01" xml:space="preserve">
+    <value>Já existe hierarquia de entidade com desta descrição nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_hierarquia_entidade_item_01" xml:space="preserve">
+    <value>Já existe esta entidade configurada neste nível da árvore de hierarquia de entidades.</value>
+  </data>
+  <data name="UN_instituicao_localidade_agenda_01" xml:space="preserve">
+    <value>Tipo de agenda já está configurado para esta localidade.</value>
+  </data>
+  <data name="UN_instituicao_modelo_relatorio_01" xml:space="preserve">
+    <value>Este modelo de relatório já está configurado para esta instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_01" xml:space="preserve">
+    <value>Este nível de ensino já está associado nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_calendario_01" xml:space="preserve">
+    <value>Este calendário já está parametrizado nesta instituição e nível de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_calendario_02" xml:space="preserve">
+    <value>Já existe uma parametrização com este tipo de uso para esta instituição e nível de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_modelo_relatorio_01" xml:space="preserve">
+    <value>Este modelo de relatório já está configurado para este nível de ensino nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_nivel_sistema_origem_01" xml:space="preserve">
+    <value>Nível de Ensino já está associado a um Sistema de Origem GAD.</value>
+  </data>
+  <data name="UN_instituicao_nivel_tipo_evento" xml:space="preserve">
+    <value>Tipo de evento já está configurado para este calendário x instituição e nível de ensino.</value>
+  </data>
+  <data name="UN_instituicao_tipo_entidade_01" xml:space="preserve">
+    <value>Este tipo de entidade já está associado nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_tipo_entidade_endereco_01" xml:space="preserve">
+    <value>Este tipo de endereço já está configurado para este tipo de entidade nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_tipo_entidade_endereco_eletronico_01" xml:space="preserve">
+    <value>Este tipo de endereço eletrônico já está configurado para este tipo de entidade nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_tipo_entidade_situacao_01" xml:space="preserve">
+    <value>Esta situação já está configurada para este tipo de entidade nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_instituicao_tipo_entidade_telefone_01" xml:space="preserve">
+    <value>Este tipo de telefone já está configurado para este tipo de entidade nesta instituição de ensino.</value>
+  </data>
+  <data name="UN_mantenedora_01" xml:space="preserve">
+    <value>Já existe mantenedora cadastrada com este nome.</value>
+  </data>
+  <data name="UN_mantenedora_02" xml:space="preserve">
+    <value>Já existe mantenedora cadastrada com esta sigla.</value>
+  </data>
+  <data name="UN_nivel_ensino_01" xml:space="preserve">
+    <value>Já existe nível de ensino cadastrado com esta descrição.</value>
+  </data>
+  <data name="UN_nivel_ensino_02" xml:space="preserve">
+    <value>Já existe nível de ensino cadastrado com este token.</value>
+  </data>
+  <data name="UN_nivel_ensino_03" xml:space="preserve">
+    <value>Já existe nível de ensino cadastrado com esta sigla.</value>
+  </data>
+  <data name="UN_situacao_entidade_01" xml:space="preserve">
+    <value>Já existe situação de entidade cadastrada com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_agenda_01" xml:space="preserve">
+    <value>Já existe tipo de agenda com esta descrição para esta instituição de ensino.</value>
+  </data>
+  <data name="UN_tipo_ato_normativo_01" xml:space="preserve">
+    <value>Já existe um tipo de ato normativo com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_ato_normativo_02" xml:space="preserve">
+    <value>Já existe tipo de ato normativo cadastrado com este token.</value>
+  </data>
+  <data name="UN_tipo_entidade_01" xml:space="preserve">
+    <value>Já existe tipo de entidade cadastrado com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_entidade_02" xml:space="preserve">
+    <value>Já existe tipo de entidade cadastrado com este token.</value>
+  </data>
+  <data name="UN_tipo_hierarquia_entidade_01" xml:space="preserve">
+    <value>Já existe tipo de hierarquia de entidade cadatrada com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_hierarquia_entidade_item_01" xml:space="preserve">
+    <value>Já existe este tipo de entidade configurada neste nível da árvore de hierarquia de tipos de entidade.</value>
+  </data>
+</root>

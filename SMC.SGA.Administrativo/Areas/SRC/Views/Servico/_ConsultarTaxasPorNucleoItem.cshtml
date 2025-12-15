@@ -1,0 +1,30 @@
+﻿@model ConsultarTaxasPorNucleoListarViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().Size(SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid22_24, SMCSize.Grid8_24).Begin())
+            {
+                @Smc.DisplayFor(p => p.DescricaoOrigemCompleta).Size(SMCSize.Grid24_24)
+            }
+
+            using (Smc.Div().Size(SMCSize.Grid16_24, SMCSize.Grid16_24, SMCSize.Grid22_24, SMCSize.Grid16_24).Begin())
+            {
+                @Smc.DisplayFor(p => p.DescricaoTaxa).Size(SMCSize.Grid24_24)
+            }
+        }
+
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            @(Smc.Grid("gridValores", new SMCPagerModel<ConsultarTaxasPorNucleoListarItemViewModel>(Model.TaxasPorNucleo))
+            .AutoGenerateColumns()
+            .AutoHideNavigator()
+            .HideGridTitle()
+            .HideNavigator()
+            )
+        }
+    }
+}

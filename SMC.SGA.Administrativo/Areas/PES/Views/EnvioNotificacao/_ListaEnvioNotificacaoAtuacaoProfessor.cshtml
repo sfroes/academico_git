@@ -1,0 +1,17 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Models
+
+@model SMCPagerModel<EnvioNotificacaoPessoasListarViewModel>
+
+@(Smc.Grid("gridEnvioNotificacoesAtuacaoProfessor", Model)
+
+        .AllowSelect(x => x.Seq).Size(SMCSize.Grid11_24, SMCSize.Grid11_24, SMCSize.Grid11_24, SMCSize.Grid11_24)
+        .AutoGenerateColumns(false)
+        .FieldColumn(x => x.Seq)
+        .FieldColumn(x => x.Nome)
+        .FieldColumn(x => x.Entidade)
+        .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", true,
+        x => Smc.Button(SMCButtonBehavior.Visualizar)
+        .DisplayMode(SMCButtonDisplayMode.Icon)
+        .Action("Index", "ColaboradorVinculo", new { area = "DCT",  SeqColaborador = new SMCEncryptedLong((x as EnvioNotificacaoPessoasListarViewModel).Seq), BackUrl = ViewBag.BackUrl })
+        .Attribute("target", "_blank"))
+        .HideRowNumber())

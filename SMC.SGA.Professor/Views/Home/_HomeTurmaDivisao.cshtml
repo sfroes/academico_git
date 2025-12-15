@@ -1,0 +1,75 @@
+﻿@model HomeTurmaDivisaoViewModel
+
+@using (Smc.Div().CssClass("smc-sga-externo-agrupamento-terciario").Size(SMCSize.Grid24_24).Begin())
+{
+    <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid20_24, SMCSize.Grid18_24, SMCSize.Grid20_24, SMCSize.Grid20_24)">@Model.DivisaoTurmaRelatorioDescricao</label>
+
+    SMCButtonFluentConfiguration buttonListaFrequencia = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "Index", new { seqDivisaoTurma = new SMCEncryptedLong(Model.Seq), selecionarProfessor = true, Area = "APR" }, "ListaFrequencia")
+         .Text(Smc.GetUIResource("Botao_ListaFrequencia"))
+         .Type(SMCButtonType.Link)
+         .Ajax(isPost: false)
+         .Attribute(SMCMvcConsts.MODAL_ID, "modalListaFrequencia")
+         .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Lista_Frequencia"))
+         .Tooltip(Smc.GetUIResource("Botao_ListaFrequencia_Tooltip"));
+
+    SMCButtonFluentConfiguration buttonMaterial = Smc.Button("PostagemMaterial", "Index", new { seqOrigem = SMCDESCrypto.EncryptNumberForURL(Model.Seq), tipoOrigemMaterial = SMC.Academico.Common.Areas.APR.Enums.TipoOrigemMaterial.DivisaoTurma, Area = "APR" }, "Material")
+         .Text(Smc.GetUIResource("Botao_PostagemMaterial"))
+         .Type(SMCButtonType.Link)
+         .Tooltip(Smc.GetUIResource("Botao_PostagemMaterial_Tooltip"))
+         .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_004_01_01.PESQUISAR_MATERIAL);
+
+    SMCButtonFluentConfiguration buttonAvaliacao = Smc.Button("Avaliacao")
+         .Action("Index", "Avaliacao", new { SeqOrigemAvaliacao = new SMCEncryptedLong(Model.SeqOrigemAvaliacao), Area = "APR", backUrl = Url.Action("Index") })
+         .Text(Smc.GetUIResource("Botao_Avaliacao_Divisao_Turma"))
+         .Hide(Model.HideAvaliacao)
+         .Type(SMCButtonType.Link)
+         .Tooltip(Smc.GetUIResource("Botao_Avaliacao_Divisao_Turma_Tooltip"))
+         .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_001_01_01.PESQUISAR_AVALIACAO_TURMA);
+
+    SMCButtonFluentConfiguration buttonLancamentoNota = Smc.Button("LancamentoNota")
+          .Url(Url.Content("~/App/APR/LancamentoNota?seqOrigemAvaliacao=" + new SMCEncryptedLong(Model.SeqOrigemAvaliacao)))
+          .Text(Smc.GetUIResource("Botao_Lancamento_Nota"))
+          .Hide(Model.HideLancamentoNota)
+          .Type(SMCButtonType.Link)
+          .Tooltip(Smc.GetUIResource("Botao_Lancamento_Nota_Tooltip"))
+          .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_001_05_01.LANCAMENTO_NOTA);
+
+    SMCButtonFluentConfiguration buttonLancamentoFrequencia = Smc.Button("LancamentoNota")
+          .Url(Url.Content("~/App/APR/ApuracaoFrequenciaGrade/" + new SMCEncryptedLong(Model.SeqOrigemAvaliacao)))
+          .Text(Smc.GetUIResource("Botao_Lancamento_Frequencia"))
+          .Hide(Model.HideLancamentoFrequencia)
+          .Enabled(!Model.DiarioFechado)
+          .ButtonInstructions(Model.FillInsttuctionLacamentoFrequencia)
+          .Type(SMCButtonType.Link)
+          .Tooltip(Smc.GetUIResource("Botao_Lancamento_Frequencia_Tooltip"))
+          .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_006_02_01.LANÇAMENTO_FREQUENCIA_GRADE);
+
+    SMCButtonFluentConfiguration buttonDetalhesDivisao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                    .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDivisaoTurma")
+                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Divisao_Turma"))
+                    .Ajax(isPost: false)
+                    .SecurityToken(SMC.Academico.Common.Areas.TUR.Constants.UC_TUR_001_06_01.VISUALIZAR_DETALHES_DIVISAO_TURMA)
+                    .Tooltip(Smc.GetUIResource("Botao_DetalhesDivisao_Tooltip"))
+                    .Text(Smc.GetUIResource("Botao_DetalhesDivisao"))
+                    .Action("VisualizarDivisaoTurmaDetalhes", "DetalhesDivisaoTurmaRoute", new { seqDivisaoTurma = new SMCEncryptedLong(Model.Seq), area = string.Empty });
+
+    SMCButtonFluentConfiguration botaoAcompanhamentoNota = Smc.Button("LancamentoNota")
+           .Action("RelatorioAcompanhamento", "Home", new { seqOrigemAvaliacao = new SMCEncryptedLong(Model.SeqOrigemAvaliacao) })
+           .Text(Smc.GetUIResource("Botao_Acompanhamento_Nota"))
+           .Type(SMCButtonType.Link)
+           .Attribute("target", "_blank")
+           .Tooltip(Smc.GetUIResource("Botao_Acompanhamento_Nota_Tooltip"))
+           .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_001_17_01.EXIBIR_RELATORIO_ACOMPANHAMENTO_NOTA);
+
+    @(Smc.ButtonSet()
+    .Size(SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24, SMCSize.Grid2_24)
+    .CssClass("smc-sga-externo-botoes-grid")
+    .AddButton(buttonAvaliacao)
+    .AddButton(botaoAcompanhamentoNota)
+    .AddButton(buttonListaFrequencia)
+    .AddButton(buttonDetalhesDivisao)
+    .AddButton(buttonLancamentoNota)
+    .AddButton(buttonLancamentoFrequencia)
+    .AddButton(buttonMaterial)
+    .NumberOfButtonsToShow(0));
+}

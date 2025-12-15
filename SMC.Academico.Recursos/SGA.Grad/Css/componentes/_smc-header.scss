@@ -1,0 +1,83 @@
+﻿// EADER PRIMÁRIO
+
+.smc-header-tipo-primary {
+    border-left: 5px solid $smc-cor-secundaria-01;
+
+    .smc-display-collection {
+        margin-top: -10px;
+
+        h3 {
+            margin: 0 5px 5px 5px;
+            font: normal normal bold 14px/14px "segoe_uiregular",Arial,sans-serif !important;
+            color: $smc-cor-principal;
+        }
+    }
+}
+
+//.smc-sga-totalizador, .smc-sga-totalizador-destaque {
+//    border: 1px solid $smc-cinza-03;
+//    background-color: $smc-branco;
+//    padding: 7px 0 10px 0;
+//
+//    p {
+//        text-align: center;
+//        width: 100%;
+//        font-weight: bold !important;
+//        color: $smc-cor-principal-04 !important;
+//    }
+//}
+//
+//.smc-sga-totalizador { // totalizadores http://localhost/Dev/SGA.Administrativo/CUR/CurriculoCursoOfertaGrupo?seqCurriculoCursoOferta=384F9C8FCB58D09F
+//    margin-bottom: 0;
+//    margin-top: 2px;
+//
+//    p {
+//        margin-top: 5px !important;
+//        margin-bottom: -4px !important;
+//        font-size: 12px !important;
+//    }
+//}
+//
+//.smc-sga-totalizador-destaque {
+//    margin: 5px 0 15px 0;
+//
+//    label {
+//        text-align: center;
+//        margin-top: 6px;
+//        width: 100%;
+//        color: $smc-cinza-07 !important;
+//    }
+//}
+
+.smc-sga-totalizador-titulo {
+    text-align: center;
+    color: $smc-cor-principal;
+    line-height: 16px;
+}
+
+.smc-sga-totalizador-valor {
+    text-align: center;
+    color: $smc-cor-principal-04;
+    padding-top: 0 !important;
+
+    p {
+        font-size: 30px;
+    }
+}
+
+.smc-sga-totalizador-valor-destaque {
+    @extend .smc-sga-totalizador-valor;
+    color: $smc-cor-principal-10;
+}
+
+.smc-sga-totalizador-texto-detalhe { //http://localhost/Dev/SGA.Administrativo/CUR/CurriculoCursoOfertaGrupo
+    text-align: center;
+    font-size: 11px;
+    padding: 0;
+    line-height: 10px;
+    color: $smc-cinza-07;
+}
+
+.smc-sga-totalizador {
+    min-height: 90px !important;
+}

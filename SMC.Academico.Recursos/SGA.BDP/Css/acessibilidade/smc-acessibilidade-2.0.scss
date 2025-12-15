@@ -1,0 +1,200 @@
+﻿// ********** ----- IDENTIDADE VISUAL ----- ********** //
+@import "../identidade/_smc-identidade-visual.scss";
+
+// classe que englobará toda a variação de cores e estrutural da aplicação
+.smc-acessibilidade-contraste {
+    header {
+        background: $smc-contraste-background;
+    }
+
+    .smc-bdp-titulo-content:before {
+        color: $smc-contraste-color;
+    }
+
+    .smc-bdp-box-filtros {
+        border-color: $smc-contraste-color;
+    }
+
+    .smc-bdp-campos-filtro-avancado {
+        .smc-bdp-btn-pesquisar, .smc-bdp-btn-voltar {
+            background: $smc-contraste-background;
+            border-color: $smc-contraste-color !important;
+        }
+    }
+
+    .smc-bdp-filtro-alfabetico {
+        .smc-button + .smc-button:before {
+            color: $smc-contraste-color;
+        }
+    }
+
+    .smc-bdp-titulo-filtro-alfabetico {
+        background: $smc-contraste-background;
+    }
+
+    .smc-bdp-footer-sobre, .smc-bdp-footer-contato, .smc-bdp-footer-links {
+        h3 {
+            border-color: $smc-contraste-color !important;
+        }
+    }
+}
+// ----- ACESSIBILIDADE AUMENTA COM UM CLIQUE ----- //
+.smc-acessibilidade1 {
+    .smc-busca-funcionalidade {
+        .smc-button {
+            .smc-btn-pesquisar {
+                font-size: 20px !important;
+            }
+        }
+    }
+
+    .smc-bdp-campos-filtro-avancado .smc-bdp-btn-pesquisar, .smc-bdp-btn-voltar {
+        font-size: 20px !important;
+    }
+
+    .smc-bdp-footer-links {
+        ul {
+            li {
+                a {
+                    font-size: 16px !important;
+                }
+            }
+        }
+    }
+
+    .smc-bdp-footer-sobre, .smc-bdp-footer-contato, .smc-bdp-footer-links {
+        h3 {
+            font-size: 20px !important;
+        }
+    }
+
+    .smc-bdp-footer-contato {
+        form {
+            div {
+                .smc-btn-enviar {
+                    font-size: 20px !important;
+                }
+            }
+        }
+    }
+}
+// ----- ACESSIBILIDADE AUMENTA COM DOIS CLIQUES ----- //
+.smc-acessibilidade2 {
+    .smc-busca-funcionalidade {
+        .smc-button {
+            .smc-btn-pesquisar {
+                font-size: 22px !important;
+            }
+        }
+    }
+
+    .smc-bdp-campos-filtro-avancado .smc-bdp-btn-pesquisar, .smc-bdp-btn-voltar {
+        font-size: 22px !important;
+    }
+
+    .smc-bdp-footer-links {
+        ul {
+            li {
+                a {
+                    font-size: 18px !important;
+                }
+            }
+        }
+    }
+
+    .smc-bdp-footer-sobre, .smc-bdp-footer-contato, .smc-bdp-footer-links {
+        h3 {
+            font-size: 22px !important;
+        }
+    }
+
+    .smc-bdp-footer-contato {
+        form {
+            div {
+                .smc-btn-enviar {
+                    font-size: 22px !important;
+                }
+            }
+        }
+    }
+}
+// ----- ACESSIBILIDADE REDUZ COM UM CLIQUE ----- //
+.smc-acessibilidade-1 {
+    .smc-busca-funcionalidade {
+        .smc-button {
+            .smc-btn-pesquisar {
+                font-size: 16px !important;
+            }
+        }
+    }
+
+    .smc-bdp-campos-filtro-avancado .smc-bdp-btn-pesquisar, .smc-bdp-btn-voltar {
+        font-size: 16px !important;
+    }
+
+    .smc-bdp-footer-links {
+        ul {
+            li {
+                a {
+                    font-size: 11px !important;
+                }
+            }
+        }
+    }
+
+    .smc-bdp-footer-sobre, .smc-bdp-footer-contato, .smc-bdp-footer-links {
+        h3 {
+            font-size: 16px !important;
+        }
+    }
+
+    .smc-bdp-footer-contato {
+        form {
+            div {
+                .smc-btn-enviar {
+                    font-size: 16px !important;
+                }
+            }
+        }
+    }
+}
+// ----- ACESSIBILIDADE REDUZ COM DOIS CLIQUES ----- //
+.smc-acessibilidade-2 {
+    .smc-busca-funcionalidade {
+        .smc-button {
+            .smc-btn-pesquisar {
+                font-size: 14px !important;
+            }
+        }
+    }
+
+    .smc-bdp-campos-filtro-avancado .smc-bdp-btn-pesquisar, .smc-bdp-btn-voltar {
+        font-size: 14px !important;
+    }
+
+    .smc-bdp-footer-links {
+        ul {
+            li {
+                a {
+                    font-size: 10px !important;
+                }
+            }
+        }
+    }
+
+    .smc-bdp-footer-sobre, .smc-bdp-footer-contato, .smc-bdp-footer-links {
+        h3 {
+            font-size: 14px !important;
+        }
+    }
+
+    .smc-bdp-footer-contato {
+        form {
+            div {
+                .smc-btn-enviar {
+                    font-size: 14px !important;
+                }
+            }
+        }
+    }
+}

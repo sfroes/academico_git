@@ -1,0 +1,31 @@
+<po-modal class="smc-sga-estrutura-lookup-modal"
+  [p-primary-action]="acaoFechar"
+  [p-secondary-action]="acaoSalvar" p-size="xl"
+  p-title="Pesquisar">
+    <fieldset class="smc-fieldset-filter">
+      <ng-content *ngTemplateOutlet="template"></ng-content>
+      <div class="smc-buttonset-horizontal-primario">
+        <smc-button
+          [s-disabled]="searchDisabled || filterForm?.invalid"
+          (s-click)="onSearch()"
+          s-label="Pesquisar"
+          s-tooltip="Pesquisar"
+          s-button-class="smc-btn-pesquisar-icotext-destaque">
+        </smc-button>
+        <smc-button (s-click)="clear.emit()" s-label="Limpar" s-tooltip="Limpar"
+          s-button-class="smc-btn-limparenviar-ico"></smc-button>
+      </div>
+    </fieldset>
+    <div [hidden]="!(autoSearch || searched)">
+      <smc-table
+        [s-advancedListColumns]="advancedListColumns"
+        [s-advancedListData]="advancedListData"
+        [s-selector]="selector"
+        [s-clear-page-settings]="search"
+        (s-page-settings-changed)="changePageSettings($event)"
+        (s-selected)="acaoSalvar.disabled=false"
+        s-selectable="true"
+        s-single-select="true">
+      </smc-table>
+    </div>
+</po-modal>

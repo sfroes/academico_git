@@ -1,0 +1,54 @@
+<div class="smc-size-lg-24 smc-size-md-24 smc-sga-calendario-navegacao">
+  <div class="smc-sga-calendario-navegacao-setas">
+    <div class="smc-size-lg-10 smc-size-md-10">
+      <smc-button s-button-class="smc-sga-calendario-mes" s-tooltip="Mês" s-label="Mês" [class.smc-sga-calendario-mes-destaque]="viewMonthHighlight" (s-click)="callView(CalendarView.Month)"></smc-button>
+      <smc-button s-button-class="smc-sga-calendario-semana" s-tooltip="Semana" s-label="Semana" [class.smc-sga-calendario-semana-destaque]="viewWeekHighlight" (s-click)="callView(CalendarView.Week)"></smc-button>
+      <smc-button class="smc-sga-calendario-hoje" mwlCalendarToday
+                  [(viewDate)]="viewDate" s-label="Hoje" s-tooltip="Hoje"></smc-button>
+      </div>
+      <div class="smc-size-lg-14 smc-size-md-14">
+        <smc-button mwlCalendarPreviousView
+                    [(viewDate)]="viewDate"
+                    [view]="view"
+                    s-label="Anterior"
+                    s-tooltip="Anterior"
+                    class="smc-btn-calendario-botao-anterior"></smc-button>
+        <smc-button mwlCalendarNextView
+                    [(viewDate)]="viewDate"
+                    [view]="view"
+                    s-label="Próximo"
+                    s-tooltip="Próximo"
+                    class="smc-btn-calendario-botao-proximo"></smc-button>
+        <p>{{ viewDate | calendarDate: view + "ViewTitle":"pt-br" }}</p>
+      </div>
+    </div>
+  </div>
+
+<div [ngSwitch]="view" class="smc-size-md-24">
+  <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month"
+                           [locale]="locale"
+                           [viewDate]="viewDate"
+                           [events]="events"
+                           [cellTemplate]="cellTemplate"
+                           (beforeViewRender)="beforeViewRenderMonth.emit($event)">
+  </mwl-calendar-month-view>
+  <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week"
+                          [locale]="locale"
+                          [viewDate]="viewDate" [events]="events"
+                          [hourSegmentTemplate]="weekHourSegmentTemplate"
+                          [dayStartHour]="7"
+                          [eventTemplate]="weekEventTemplate"
+                          [currentTimeMarkerTemplate]="weekCurrentTimeMarkerTemplate"
+                          (beforeViewRender)="beforeViewRenderWeek.emit($event)">
+  </mwl-calendar-week-view>
+  <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day"
+                         [locale]="locale"
+                         [viewDate]="viewDate"
+                         [events]="events"
+                         [hourSegmentTemplate]="dayHourSegmentTemplate"
+                         [eventTemplate]="dayEventTemplate"
+                         [currentTimeMarkerTemplate]="weekCurrentTimeMarkerTemplate"
+                         (beforeViewRender)="beforeViewRenderDay.emit($event)">
+  </mwl-calendar-day-view>
+</div>
+

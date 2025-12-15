@@ -1,0 +1,1208 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Security.DirectoryServices</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElement">
+            <summary>
+            Classe com configuração dos elementos de AD.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElement.Name">
+            <summary>
+            Nome do mapeamento do AD.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElement.Path">
+            <summary>
+            Endereço do AD.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElement.Username">
+            <summary>
+            Usuário para acesso ao AD.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElement.Password">
+            <summary>
+            Senha do usuário para acesso ao AD.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElement.Domain">
+            <summary>
+            Domínio do usuário para acesso ao AD.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElement.Default">
+            <summary>
+            Recupera o item default.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElementCollection">
+            <summary>
+            Classe com a configuração de elementos AD.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElementCollection.ElementName">
+            <summary>
+            Recupera o nome de cada item da coleção (add).
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElementCollection.Item(System.Int32)">
+            <summary>
+            Recupera um elemento pelo índice.
+            </summary>
+            <param name="index">Índice do elemento.</param>
+            <returns>Elemento que possui o índice informado.</returns>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElementCollection.Item(System.String)">
+            <summary>
+            Recupera um item pela chave.
+            </summary>
+            <param name="key">Chave do item.</param>
+            <returns>Item que possui a chave informada.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElementCollection.CreateNewElement">
+            <summary>
+            Cria um novo elemento.
+            </summary>
+            <returns>Elemento criado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Recupera a chave de um elemento.
+            </summary>
+            <param name="element">Elemento.</param>
+            <returns>Chave do elemento.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElementCollection.IsReadOnly">
+            <summary>
+            Define se a classe é somente leitura.
+            </summary>
+            <returns>Falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElementCollection.Add(SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectoryElement)">
+            <summary>
+            Adiciona um novo item na coleção.
+            </summary>
+            <param name="item">Item a ser adicionado.</param>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectorySection">
+            <summary>
+            Classe com a seção de configuração do AD.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectorySection.SectionName">
+            <summary>
+            Armazena o nome da seção.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectorySection.Addresses">
+            <summary>
+            Recupera o elemento que possui as informações de Accounts.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectorySection.Current">
+            <summary>
+            Recupera a configuração corrente do AD.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectorySection.Item(System.String)">
+            <summary>
+            Recupera um item pela chave.
+            </summary>
+            <param name="key">Chave do item.</param>
+            <returns>Item que possui a chave informada ou o item padrão.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Configuration.SMCActiveDirectorySection.IsReadOnly">
+            <summary>
+            Recupera se o item é somente leitura.
+            </summary>
+            <returns>Falso.</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryEmtpyAuthException">
+            <summary>
+            Representa uma exceção quando o usuário ou senha são passados em branco para a autenticação no AD
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryEmtpyAuthException.#ctor">
+            <summary>
+            Cria um novo objeto SMCActiveDirectoryEmtpyAuthException
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryInvalidFilterExpressionException">
+            <summary>
+            Representa um erro quando a expressão de filtro está inválida.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryInvalidFilterExpressionException.#ctor(System.String)">
+            <summary>
+            Cria um novo objeto SMCActiveDirectoryInvalidFilterExpressionException.
+            </summary>
+            <param name="message">Mensagem de erro.</param>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryMissingConfigException">
+            <summary>
+            Representa uma exceção quando o element LdapAddress não é configura corretamente.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryMissingConfigException.#ctor">
+            <summary>
+            Cria um novo objeto SMCDirectoryServicesMissingConfigException.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryDomainFormatException">
+            <summary>
+            Representa uma exceção quando a formatação do domínio de autenticação é inválida
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryDomainFormatException.#ctor">
+            <summary>
+            Cria um novo objeto SMCDomainFormatException
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryUnauthorizedAccessException">
+            <summary>
+            Representa um erro quando o acesso é negado ao ad.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryUnauthorizedAccessException.#ctor(System.String,System.Exception)">
+            <summary>
+            Cria um novo objeto ActiveDirectoryUnauthorizedAccessException.
+            </summary>
+            <param name="userIdentity">Identidade do usuário.</param>
+            <param name="innerException">Exceção original.</param>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryUnauthorizedAccessException._userIdentity">
+            <summary>
+            Armazena a identidade do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryUnauthorizedAccessException.UserIdentity">
+            <summary>
+            Identidade do usuário.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryUserNotFoundException">
+            <summary>
+            Representa um erro quando o usuário não é encontrado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryUserNotFoundException.#ctor(System.String)">
+            <summary>
+            Cria um novo objeto ActiveDirectoryUserNotFoundException.
+            </summary>
+            <param name="userIdentity">Identificação do usuário.</param>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryUserNotFoundException._userIdentity">
+            <summary>
+            Armazena a identificação do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectoryUserNotFoundException.UserIdentity">
+            <summary>
+            Identificação do usuário.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectotyUpdateException">
+            <summary>
+            Representa um erro quando há uma falha genérica na atualização do ad.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Exceptions.SMCActiveDirectotyUpdateException.#ctor(System.String,System.Exception)">
+            <summary>
+            Cria um novo objeto ActiveDirectotyUpdateException.
+            </summary>
+            <param name="message">Mensagem de erro.</param>
+            <param name="innerException">Exceção original.</param>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryCompositeFilter">
+            <summary>
+            Classe para filtro com operação composta.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryCompositeFilter.#ctor(SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter,SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter)">
+            <summary>
+            Cria um novo objeto SMCActiveDirectoryCompositeFilter.
+            </summary>
+            <param name="leftFilter">Filtro da esquerda.</param>
+            <param name="rightFilter">Filtro da direita.</param>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryCompositeFilter.LeftFilter">
+            <summary>
+            Filtro da esquerda.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryCompositeFilter.RightFilter">
+            <summary>
+            Filtro da direita.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryCompositeFilter.Operator">
+            <summary>
+            Operador do filtro.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryCompositeFilter.GetFilterExpression">
+            <summary>
+            Recupera a expressão do filtro.
+            </summary>
+            <returns>Expressão do filtro.</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryAndFilter">
+            <summary>
+            Classe para filtro com operação de AND.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryAndFilter.#ctor(SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter,SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter)">
+            <summary>
+            Cria um novo objeto SMCActiveDirectoryAndFilter.
+            </summary>
+            <param name="leftFilter">Filtro da esquerda.</param>
+            <param name="rightFilter">Filtro da direita.</param>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryAndFilter.Operator">
+            <summary>
+            Operador do filtro.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter">
+            <summary>
+            Classe de suporte para criação de filtros para o AD.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter.GetFilterExpression">
+            <summary>
+            Recupera a expressão do filtro.
+            </summary>
+            <returns>Expressão do filtro.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter.ToString">
+            <summary>
+            Retorna a expressão do filtro.
+            </summary>
+            <returns>Expressão do filtro.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter.op_BitwiseAnd(SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter,SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter)">
+            <summary>
+            Operação de AND entre dois filtros.
+            </summary>
+            <param name="leftFilter">Filtro da esquerda.</param>
+            <param name="rightFilter">Filtro da direira.</param>
+            <returns>Filtro de AND.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter.op_BitwiseOr(SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter,SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter)">
+            <summary>
+            Operação de OR entre dois filtros.
+            </summary>
+            <param name="leftFilter">Filtro da esquerda.</param>
+            <param name="rightFilter">Filtro da direira.</param>
+            <returns>Filtro de OR.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter.op_LogicalNot(SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter)">
+            <summary>
+            Operação de NOT para um filtro.
+            </summary>
+            <param name="filter">Filtro.</param>
+            <returns>Filtro de NOT.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter.op_Implicit(SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter)~System.String">
+            <summary>
+            Retorna a representação em string do filtro.
+            </summary>
+            <param name="filter">Filtro.</param>
+            <returns>Representação em string do filtro.</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryNotFilter">
+            <summary>
+            Classe para filtro com operação de NOT.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryNotFilter.#ctor(SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter)">
+            <summary>
+            Cria um novo objeto SMCActiveDirectoryNotFilter.
+            </summary>
+            <param name="filter">Filtro da esquerda.</param>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryNotFilter.Filter">
+            <summary>
+            Filtro.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryNotFilter.GetFilterExpression">
+            <summary>
+            Recupera a expressão do filtro.
+            </summary>
+            <returns>Expressão do filtro.</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryOrFilter">
+            <summary>
+            Classe para filtro com operação de OR.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryOrFilter.#ctor(SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter,SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter)">
+            <summary>
+            Cria um novo objeto SMCActiveDirectoryOrFilter.
+            </summary>
+            <param name="leftFilter">Filtro da esquerda.</param>
+            <param name="rightFilter">Filtro da direita.</param>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryOrFilter.Operator">
+            <summary>
+            Operador do filtro.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryPropertyComparison">
+            <summary>
+            Define as formas de comparação de propriedades do AD.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryPropertyComparison.EqualTo">
+            <summary>
+            Igual a.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryPropertyComparison.ApproximatelyEqualTo">
+            <summary>
+            Aproximadamente igual a.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryPropertyComparison.LessThanOrEqualTo">
+            <summary>
+            Menor ou igual a.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryPropertyComparison.GreaterThanOrEqualTo">
+            <summary>
+            Maior ou igual a.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryPropertyFilter">
+            <summary>
+            Classe para geração do filtro de propriedade do AD.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryPropertyFilter.#ctor(System.String,System.String,SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryPropertyComparison)">
+            <summary>
+            Cria um novo objeto SMCActiveDirectoryPropertyFilter.
+            </summary>
+            <param name="propertyName">Nome da propriedade.</param>
+            <param name="propertyValue">Valor da propriedade.</param>
+            <param name="comparison">Forma de comparação.</param>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryPropertyFilter.PropertyName">
+            <summary>
+            Nome da propriedade
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryPropertyFilter.PropertyValue">
+            <summary>
+            Valor para comparação
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryPropertyFilter.Comparison">
+            <summary>
+            Forma de comparação.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryPropertyFilter.GetFilterExpression">
+            <summary>
+            Recupera a expressão do filtro.
+            </summary>
+            <returns>Expressão do filtro.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryPropertyFilter.GetComparisonSymbol">
+            <summary>
+            Recupera o símbolo para a forma de comparação da propriedade.
+            </summary>
+            <returns>Forma de comparação da propriedade.</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Resources.ExceptionsResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Resources.ExceptionsResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Resources.ExceptionsResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Resources.ExceptionsResource.SMCActiveDirectoryDomainFormatException">
+            <summary>
+              Looks up a localized string similar to Usuário para autenticação de rede deve ser domain\\username.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Resources.ExceptionsResource.SMCActiveDirectoryEmtpyAuthException">
+            <summary>
+              Looks up a localized string similar to Usuário e senha não podem ser nulos..
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Resources.ExceptionsResource.SMCActiveDirectoryMissingConfigException">
+            <summary>
+              Looks up a localized string similar to O elemento LdapAddress não foi configurado no arquivo de configuração da aplicação..
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Resources.ExceptionsResource.SMCActiveDirectoryUnauthorizedAccessException">
+            <summary>
+              Looks up a localized string similar to Operating system denies access to {0} in Active Directory..
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.Resources.ExceptionsResource.SMCActiveDirectoryUserNotFoundException">
+            <summary>
+              Looks up a localized string similar to User {0} not found in Active Directory.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties">
+            <summary>
+            Classe que mantém as chaves das propriedades do AD.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.All">
+            <summary>
+            Todas as propriedades.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.ReadOnlyProperties">
+            <summary>
+            Propriedades somente leitura.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.AccountName">
+            <summary>
+            SAMAccountName:string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.ActiveDirectoryPath">
+            <summary>
+            ADsPath:CN.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.CommonName">
+            <summary>
+            cn:string
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.Company">
+            <summary>
+            company:string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.Department">
+            <summary>
+            department:string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.DepartmentNumber">
+            <summary>
+            departmentNumber:string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.Description">
+            <summary>
+            description:string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.DistinguishedName">
+            <summary>
+            distinguishedName:DN (distinguished name).
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.EmployeeID">
+            <summary>
+            employeeID:string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.EmployeeType">
+            <summary>
+            employeeType:string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.EmployeeNumber">
+            <summary>
+            employeeNumber:string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.Info">
+            <summary>
+            info:string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.Mail">
+            <summary>
+            mail:string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.ModifyTimeStamp">
+            <summary>
+            modifyTimeStamp:DateTime.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.OfficeName">
+            <summary>
+            physicalDeliveryOfficeName:string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.TelephoneNumber">
+            <summary>
+            telephonenumber:string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.Title">
+            <summary>
+            title:string.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperties.ThumbnailPhoto">
+            <summary>
+            thumbnailPhoto:byte[].
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperty">
+            <summary>
+            CLasse que representa uma propriedade de um usuário do AD.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperty.#ctor(System.String)">
+            <summary>
+            Cria um novo objeto ActiveDirectoryProperty.
+            </summary>
+            <param name="name">Chave de identificação da propriedade.</param>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperty.#ctor(System.String,System.Object)">
+            <summary>
+            Cria um novo objeto ActiveDirectoryProperty.
+            </summary>
+            <param name="name">Chave de identificação da propriedade.</param>
+            <param name="value">Valor da propriedade.</param>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperty._name">
+            <summary>
+            Armazena a chave de identificação da propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperty.Name">
+            <summary>
+            Chave de identificação da propriedade.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperty._value">
+            <summary>
+            Armazena o valor da propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperty.Value">
+            <summary>
+            Valor da propriedade.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperty._isDirty">
+            <summary>
+            Armazena se a propriedade foi alterada.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperty.IsDirty">
+            <summary>
+            Define se a propriedade foi alterada.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperty.SubmitChanges">
+            <summary>
+            Configura a classe como atualizada.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperty.Equals(System.Object)">
+            <summary>
+            Compara a propriedade com outra.
+            </summary>
+            <param name="obj">Objeto a ser comparado.</param>
+            <returns>Verdadeiro se o objeto possui a mesma chave.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperty.GetHashCode">
+            <summary>
+            Recupera o hashcode do elemento.
+            </summary>
+            <returns>Hashcode do elemento.</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryPropertyKeyAttribute">
+            <summary>
+            Atributo que informa a chave de identificação da propriedade no ad.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryPropertyKeyAttribute.#ctor(System.String)">
+            <summary>
+            Cria um novo objeto SMCActiveDirectoryPropertyKeyAttribute.
+            </summary>
+            <param name="propertyKey">Chave de identificação da propriedade no AD.</param>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryPropertyKeyAttribute._propertyKey">
+            <summary>
+            Armazena a chave de identificação da propriedade no AD.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryPropertyKeyAttribute.PropertyKey">
+            <summary>
+            Chave de identificação da propriedade no AD.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryPropertyUpdateResult">
+            <summary>
+            Classe que representa um erro de atualização do AD.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryPropertyUpdateResult.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Cria um novo objeto ActiveDirectoryUpdateError.
+            </summary>
+            <param name="propertyName">Nome da propriedade.</param>
+            <param name="errorMessage">Mensagem de erro.</param>
+            <param name="exception">Exceção.</param>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryPropertyUpdateResult._propertyName">
+            <summary>
+            Armazena o nome da propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryPropertyUpdateResult.PropertyName">
+            <summary>
+            Nome da propriedade.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryPropertyUpdateResult._errorMessage">
+            <summary>
+            Armazena a mensagem de erro.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryPropertyUpdateResult.ErrorMessage">
+            <summary>
+            Mensagem de erro.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryPropertyUpdateResult._exception">
+            <summary>
+            Armazena a exceção que originou o erro.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryPropertyUpdateResult.Exception">
+            <summary>
+            Exceção que originou o erro.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryPropertyUpdateResult.Success">
+            <summary>
+            Verifica se a atualização foi realizada com sucesso.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateOptions">
+            <summary>
+            Classe com opções de atualização do usuário.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateOptions.#ctor">
+            <summary>
+            Cria um novo objeto ActiveDirectoryUpdateOptions.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateOptions.TransactionMode">
+            <summary>
+            Define o modo como será feita a atualização das propriedades.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateOptions.UpdateOnlyModifiedProperties">
+            <summary>
+            Define se devem ser atualizadas somente as propriedades modificadas.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateOptions._default">
+            <summary>
+            Armazena as configurações padrão.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateOptions.Default">
+            <summary>
+            Configurações padrão.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateResult">
+            <summary>
+            Classe que representa o resultado de uma atualizaçao do AD.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateResult.#ctor(SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser)">
+            <summary>
+            Cria um novo objeto ActiveDirectoryUpdateResult.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateResult._user">
+            <summary>
+            Armazena o usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateResult.User">
+            <summary>
+            Usuário.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateResult._properties">
+            <summary>
+            Mantém a lista de erros.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateResult.AddSuccess(System.String)">
+            <summary>
+            Adiciona sucesso na atualização da propriedade.
+            </summary>
+            <param name="propertyName">Nome da propriedade.</param>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateResult.AddError(System.String,System.String,System.Exception)">
+            <summary>
+            Adiciona um novo erro ao resultado.
+            </summary>
+            <param name="propertyName">Chave de identificação do erro.</param>
+            <param name="message">Mensagem de erro.</param>
+            <param name="exception">Exceção que gerou o erro.</param>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateResult.Success">
+            <summary>
+            Verifica se a atualização foi realizada com sucesso.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateResult.Properties">
+            <summary>
+            Retorna a lista de erros.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateTransactionMode">
+            <summary>
+            Opções de configuração da atualização do ad.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateTransactionMode.Atomic">
+            <summary>
+            A operação de atualização de todas as propriedades é atômica.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateTransactionMode.ContinueOnError">
+            <summary>
+            A operação continuará mesmo em caso de erro.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateTransactionMode.StopOnError">
+            <summary>
+            A operação parará em caso de erro, mas as atualizações feitas serão persistidas.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser">
+            <summary>
+            Classe que representa um usuário do AD.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.#ctor(SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProperty[])">
+            <summary>
+            Cria um novo objeto ActiveDirectoryUser.
+            </summary>
+            <param name="properties">Propriedades do usuário.</param>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser._properties">
+            <summary>
+            Armazena as propriedades do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.Properties">
+            <summary>
+            Propriedades do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.Item(System.String)">
+            <summary>
+            Indexador para buscar e atualizar uma propriedade do usuário.
+            </summary>
+            <param name="propertyName">Nome da propriedade.</param>
+            <returns>Valor da propriedade.</returns>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.ModifiedProperties">
+            <summary>
+            Recupera as propriedades alteradas.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.SubmitChanges">
+            <summary>
+            Configura a classe como atualizada.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.AccountName">
+            <summary>
+            Nome da conta do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.CommonName">
+            <summary>
+            Nome do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.Company">
+            <summary>
+            Nome da empresa do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.Department">
+            <summary>
+            Departamento do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.DepartmentNumber">
+            <summary>
+            Número do departamento do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.Description">
+            <summary>
+            Descrição do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.DistinguishedName">
+            <summary>
+            Nome do usuário no domínio.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.EmployeeID">
+            <summary>
+            ID do empregado.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.EmployeeType">
+            <summary>
+            Tipo do empregado.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.EmployeeNumber">
+            <summary>
+            Número do empregado.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.Info">
+            <summary>
+            Informações do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.Mail">
+            <summary>
+            E-mail do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.ModifyTimeStamp">
+            <summary>
+            Data da última modificação do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.OfficeName">
+            <summary>
+            Nome do centro de custo da pessoa.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.TelephoneNumber">
+            <summary>
+            Número do telefone do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.Title">
+            <summary>
+            Cargo do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.ThumbnailPhoto">
+            <summary>
+            Foto do usuário.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.Equals(System.Object)">
+            <summary>
+            Compara o usuário com outro.
+            </summary>
+            <param name="obj">Objeto a ser comparado.</param>
+            <returns>Verdadeiro se o objeto possui a mesma chave.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser.GetHashCode">
+            <summary>
+            Recupera o hashcode do elemento.
+            </summary>
+            <returns>Hashcode do elemento.</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider">
+            <summary>
+            Classe de suporte para acesso ao AD.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.#ctor">
+            <summary>
+            Cria um novo objeto ActiveDirectoryProvider.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.#ctor(System.String)">
+            <summary>
+            Cria um novo objeto ActiveDirectoryProvider.
+            </summary>
+            <param name="directoryName">Nome do endereço do AD configurado no config.</param>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Cria um novo objeto ActiveDirectoryProvider.
+            </summary>
+            <param name="directoryPath">Caminho do AD.</param>
+            <param name="domain">Domínio do usuário que fará a autenticação.</param>
+            <param name="username">Nome do usuário que fará a autenticação.</param>
+            <param name="password">Senha do usuário que fará a autenticação.</param>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider._directoryEntry">
+            <summary>
+            Armazena a classe de acesso ao AD.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.DirectoryPath">
+            <summary>
+            Caminho do servidor AD.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.Domain">
+            <summary>
+            Dominio do usuário que acessará o AD.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.Username">
+            <summary>
+            Nome do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.Password">
+            <summary>
+            Senha do usuário.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.DefaultFindPageSize">
+            <summary>
+            Valor padrão do tamanho da página nas consultas do AD.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.Escape(System.String)">
+            <summary>
+            Método de suporte para fazer o escape dos valores do AD.
+            </summary>
+            <param name="value">Valor original.</param>
+            <returns>Valor com os caracteres especiais substituídos pela sequencia de escape.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.GetUser(System.String,System.Linq.Expressions.Expression{System.Func{SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser,System.Object}}[])">
+            <summary>
+            Recupera as propriedades solicitadas para o usuário informado.
+            </summary>
+            <param name="userIdentifier">Identificação do usuário.</param>
+            <param name="properties">Propriedades que devem ser recuperadas.</param>
+            <returns>Valores das propriedades para o usuário informado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.GetUser(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Recupera as propriedades solicitadas para o usuário informado.
+            </summary>
+            <param name="userIdentifier">Identificação do usuário.</param>
+            <param name="properties">Propriedades que devem ser recuperadas.</param>
+            <returns>Valores das propriedades para o usuário informado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.GetUsers(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Recupera as propriedades solicitadas para os usuários informados.
+            </summary>
+            <param name="usersIdentifiers">Identificação dso usuários.</param>
+            <param name="properties">Propriedades que devem ser recuperadas.</param>
+            <returns>Valores das propriedades para os usuários informados.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.GetUsersFilter(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Método de suporte para recuperar um filtro para consultar vários usuários simultâneamente.
+            </summary>
+            <param name="usersIdentifiers">Login dos usuários.</param>
+            <returns>Filtro para consultar os usuários informados.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.GetUsers(System.Linq.Expressions.Expression{System.Func{SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser,System.Boolean}},System.Linq.Expressions.Expression{System.Func{SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser,System.Object}}[])">
+            <summary>
+            Recupera as propriedades solicitadas para os usuários que atendem ao filtro informado.
+            </summary>
+            <param name="filterExpression">Filtro.</param>
+            <param name="properties">Propriedades a serem retornadas.</param>
+            <returns>Lista de usuários que atendem ao filtro informado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.GetUsers(System.Linq.Expressions.Expression{System.Func{SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser,System.Boolean}},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Recupera as propriedades solicitadas para os usuários que atendem ao filtro informado.
+            </summary>
+            <param name="filterExpression">Filtro.</param>
+            <param name="properties">Propriedades a serem retornadas.</param>
+            <returns>Lista de usuários que atendem ao filtro informado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.GetUsers(SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Recupera as propriedades solicitadas para os usuários que atendem ao filtro informado.
+            </summary>
+            <param name="filter">Filtro.</param>
+            <param name="properties">Propriedades a serem retornadas.</param>
+            <returns>Lista de usuários que atendem ao filtro informado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.SafeFindAll(System.DirectoryServices.DirectorySearcher)">
+            <summary>
+            Método de suporte para consulta no AD de forma segunda, considerando o limite de paginação.
+            </summary>
+            <param name="searcher">Classe de pesquisa.</param>
+            <returns>Resultado da pesquisa.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.UpdateUser(SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser,SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUpdateOptions)">
+            <summary>
+            Atualiza as propriedades de um usuário.
+            </summary>
+            <param name="user">Usuário a ser atualizado.</param>
+            <param name="options">Configurações de atualização.</param>
+            <returns>Verdadeiro se o usuário foi atualizado com sucesso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.CreateDirectoryEntry">
+            <summary>
+            Cria o acesso ao AD considerando os parâmetros informados.
+            </summary>
+            <returns>Classe de acesso ao AD.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.CreateSearcher(System.Linq.Expressions.Expression{System.Func{SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser,System.Boolean}},System.Collections.Generic.IEnumerable{System.String},System.Boolean@)">
+            <summary>
+            Cria a classe de consulta no ad.
+            </summary>
+            <param name="filterExpression">Expressão para filtro.</param>
+            <param name="properties">Propriedades a serem incluídas.</param>
+            <param name="loadADsPath">Define se a propriedade ADSPath deve ser carregada.</param>
+            <returns>Classe de pesquisa no ad.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.CreateSearcher(SMC.Framework.Security.DirectoryServices.Filters.SMCActiveDirectoryFilter,System.Collections.Generic.IEnumerable{System.String},System.Boolean@)">
+            <summary>
+            Cria a classe de consulta no ad.
+            </summary>
+            <param name="filter">Filtro para consulta.</param>
+            <param name="properties">Propriedades a serem incluídas.</param>
+            <param name="loadADsPath">Define se a propriedade ADSPath deve ser carregada.</param>
+            <returns>Classe de pesquisa no ad.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.CreateActiveDirectoryUser(System.DirectoryServices.DirectorySearcher,System.DirectoryServices.SearchResult,System.Boolean)">
+            <summary>
+            Método de suporte para criar um usuário a partir de um resultado de consulta do ad.
+            </summary>
+            <param name="directorySearcher">Informações da consulta.</param>
+            <param name="searchResult">Resultado da consulta do ad.</param>
+            <param name="loadActiveDirectoryPath">Define se a propriedade ADsPath deve ser retornada.</param>
+            <returns>Usuário criado a partir da consulta do ad.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.CreateFilterFromExpression(System.Linq.Expressions.Expression{System.Func{SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser,System.Boolean}})">
+            <summary>
+            Cria o filtro a partir de uma expressão.
+            </summary>
+            <param name="filterExpression">Expressão para filtro.</param>
+            <returns>Filtro criado a partir da expressão.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.GetUserFilter">
+            <summary>
+            Recupera o filtro padrão utilizado para recuperar somente os usuários.
+            </summary>
+            <returns>Filtro padrão utilizado para recuperar somente os usuários.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryProvider.Dispose">
+            <summary>
+            Limpa os recursos utilizados pela classe.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.Util.SMCActiveDirectoryExpressionsHelper">
+            <summary>
+            Classe de suporte para recuperar informações do AD a partir de expressões.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Util.SMCActiveDirectoryExpressionsHelper.GetFilter(System.Linq.Expressions.Expression{System.Func{SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser,System.Boolean}})">
+            <summary>
+            Método de suporte para criar um filtro baseado em uma expressão.
+            </summary>
+            <param name="expression">Expressão para criação do filtro.</param>
+            <returns>Filtro para pesquisa do usuário.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Util.SMCActiveDirectoryExpressionsHelper.GetPropertyKey(System.Linq.Expressions.Expression{System.Func{SMC.Framework.Security.DirectoryServices.SMCActiveDirectoryUser,System.Object}})">
+            <summary>
+            Recupera o chave da propriedade a partir de uma expressão.
+            </summary>
+            <param name="expression">Expressão que dá acesso à propriedade.</param>
+            <returns>Chave da propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Util.SMCActiveDirectoryExpressionsHelper.GetFilterFromExpression(System.Linq.Expressions.Expression)">
+            <summary>
+            Método de suporte para criar um filtro baseado em uma expressão.
+            </summary>
+            <param name="expression">Expressão para criação do filtro.</param>
+            <returns>Filtro para pesquisa do usuário.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Util.SMCActiveDirectoryExpressionsHelper.GetFilterFromBinaryExpression(System.Linq.Expressions.BinaryExpression)">
+            <summary>
+            Recupera o filtro de uma expressão binária.
+            </summary>
+            <param name="binaryExpression">Expressão binária.</param>
+            <returns>Filtro da expressão binária.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Util.SMCActiveDirectoryExpressionsHelper.GetFilterFromMethodCallExpression(System.Linq.Expressions.MethodCallExpression)">
+            <summary>
+            Recupera o filtro de uma chamada de método.
+            </summary>
+            <param name="methodCallExpression">Expressão de chamada de método.</param>
+            <returns>Filtro da expressão de chamada de método.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Util.SMCActiveDirectoryExpressionsHelper.GetPropertyFilter(System.Linq.Expressions.Expression,System.Linq.Expressions.Expression,System.Linq.Expressions.ExpressionType,System.String)">
+            <summary>
+            Cria uma expressão de filtro para uma propriedade.
+            </summary>
+            <param name="memberExpression">Expressão com a propriedade.</param>
+            <param name="constantExpression">Expressão com o valor para comparação.</param>
+            <param name="expressionType">Tipo da expressão.</param>
+            <param name="format">Formato do valor da propriedade,</param>
+            <returns>Filtro para uma propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Util.SMCActiveDirectoryExpressionsHelper.GetComparisonType(System.Linq.Expressions.ExpressionType)">
+            <summary>
+            Recupera o tipo de comparação dado um tipo de expressão.
+            </summary>
+            <param name="expressionType">Tipo de expressão.</param>
+            <returns>Tipo de comparação.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Util.SMCActiveDirectoryExpressionsHelper.GetPropertyKey(System.Linq.Expressions.Expression)">
+            <summary>
+            Recupera o nome da propriedade.
+            </summary>
+            <param name="expression">Expressão que contém a propriedade.</param>
+            <returns>Nome da propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.Util.SMCActiveDirectoryExpressionsHelper.GetRawValue(System.Linq.Expressions.Expression,System.String,System.Boolean@)">
+            <summary>
+            Recupera o valor da propriedade.
+            </summary>
+            <param name="expression">Expressão com o valor.</param>
+            <param name="format">Formato da constant.</param>
+            <param name="isNull">Define se o valor da constante é null.</param>
+            <returns>Valor da propriedade.</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.DirectoryServices.SMCDirectoryServicesHelper">
+            <summary>
+            Classe de suporte com métodos de acesso ao AD.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.DirectoryServices.SMCDirectoryServicesHelper.Authenticate(System.String,System.String,System.String)">
+            <summary>
+            Método de suporte para autenticar o usuário no AD.
+            </summary>
+            <param name="username">Login.</param>
+            <param name="password">Senha.</param>
+            <param name="ldapAddress">Endereço LDAP.</param>
+            <returns>Verdadeiro se o usuário foi autenticado com sucesso.</returns>
+        </member>
+    </members>
+</doc>

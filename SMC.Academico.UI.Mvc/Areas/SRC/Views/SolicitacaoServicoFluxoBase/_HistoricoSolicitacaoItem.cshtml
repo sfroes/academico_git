@@ -1,0 +1,22 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.SRC.Models;
+
+@model DadosModalSolicitacaoHistoricoViewModel
+
+@(Smc.Grid("gridHistoricosSolicitacao", new SMCPagerModel<DadosModalSolicitacaoHistoricoItemViewModel>(Model.Historicos))
+                          .ContentColumn(
+                        @<text>
+                            @{ var view = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.DADOS_MODAL_SOLICITACAO_SERVICO_HISTORICO_SITUACAO_FINAL_ETAPA_ITEM); }
+                            @Html.Partial(view, (item as DadosModalSolicitacaoHistoricoItemViewModel))
+                        </text>)
+                                             .FieldColumn(x => x.Etapa)
+                                             .FieldColumn(x => x.Situacao)
+                                             .FieldColumn(x => x.DataInicio)
+                                             .FieldColumn(x => x.UsuarioResponsavel)
+                                             .FieldColumn(x => x.Observacao)
+                                             .HideGridTitle()
+                                             .HideNavigator()
+                                             .HideNumberOfRowsPerPageSelector()
+                                             .HidePager()
+                                             .HideRowNumber()
+                                             .HideRowsTotalizer()
+)

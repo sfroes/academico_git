@@ -1,0 +1,109 @@
+﻿@model ProcessoListarDynamicModel
+
+@using SMC.Academico.Common.Areas.SRC.Enums
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-sga-display").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(p => p.Seq).Size(SMCSize.Grid2_24)
+                @Smc.DisplayFor(p => p.DescricaoTipoServico).Size(SMCSize.Grid10_24)
+                @Smc.DisplayFor(p => p.Descricao).Size(SMCSize.Grid12_24)
+                @Smc.DisplayFor(p => p.DescricaoCicloLetivo).Size(SMCSize.Grid4_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid4_24)
+                @Smc.DisplayFor(p => p.DataInicio).Size(SMCSize.Grid6_24, SMCSize.Grid8_24, SMCSize.Grid4_24, SMCSize.Grid6_24)
+                @Smc.DisplayFor(p => p.DataFim).Size(SMCSize.Grid6_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid6_24)
+                @Smc.DisplayFor(p => p.DataEncerramento).Size(SMCSize.Grid6_24, SMCSize.Grid8_24, SMCSize.Grid8_24, SMCSize.Grid6_24)
+                //@Smc.DisplayFor(p => p.UnidadesResponsaveis).Size(SMCSize.Grid18_24).CssClass("smc-listdetailed-conteudo-subtitulo")
+            }
+        }
+
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            @(Smc.Grid("gridEtapas", new SMCPagerModel<ProcessoEtapaDetalheViewModel>(Model.Etapas))
+                                                   .AutoGenerateColumns()
+                                                   .AutoHideNavigator()
+                                                   .HideNavigator()
+                                                   .HideGridTitle()
+                                                   .GridRowConfiguration((x, y) =>
+                                                   {
+                                                       if ((y as ProcessoEtapaDetalheViewModel).ExibirAcessoEtapa && !(y as ProcessoEtapaDetalheViewModel).DescricaoEtapa.Contains("1º Etapa"))
+                                                           x.CssClass = "smc-sga-item-disponivel";
+                                                   })
+                                                   .ButtonColumn(SMCButtonSetType.Secondary, 0, "", "", "smc-size-md-1 smc-size-xs-1 smc-size-sm-1 smc-size-lg-1", true,
+
+                                //x => Smc.Button(SMCButtonBehavior.Alterar)
+                                //    .Text(Smc.GetUIResource("Botao_AcessarEtapa"))
+                                //    .CssClass("smc-btn-custom-destaque-grid")
+                                //    .Tooltip(Smc.GetUIResource("Botao_AcessarEtapa_Tooltip"))
+                                //    .SecurityToken(UC_SRC_004_01_01.PESQUISAR_SOLICITACAO)
+                                //    .Enabled((x as ProcessoEtapaDetalheViewModel).ExibirAcessoEtapa).Hide((x as ProcessoEtapaDetalheViewModel).DescricaoEtapa.Contains("1º Etapa"))
+                                //    .Action("Index", "SolicitacaoServico", new { SeqProcesso = new SMCEncryptedLong((x as ProcessoEtapaDetalheViewModel).SeqProcesso) }),
+
+                                ///Configuração dos buttoes
+                                x => Smc.Button(SMCButtonBehavior.Visualizar)
+                                    .Text(Smc.GetUIResource("botao_liberar_etapa"))
+                                    .Action("LiberarEtapa", "Processo", new { SeqEtapa = new SMCEncryptedLong((x as ISMCSeq).Seq), Area = "SRC" })
+                                    .Ajax(isPost: false)
+                                    .Tooltip(Smc.GetUIResource("botao_liberar_etapa_tooltip"))
+                                    .Hide((x as ProcessoEtapaDetalheViewModel).ExibirBotaoLiberar)
+                                    .Enabled((x as ProcessoEtapaDetalheViewModel).HabilitaBtnComPermissaoManutencaoProcesso)
+                                    .Confirm(Smc.GetUIResource("title_modal_liberar_etapa"), string.Format(Smc.GetUIResource("mensagem_liberar_etapa"), (x as ProcessoEtapaDetalheViewModel).DescricaoEtapa), SMCWindowButtons.Yes, true)
+                                    .SecurityToken(UC_SRC_002_05_02.MANTER_ESCALONAMENTO_ETAPA),
+
+                                x => Smc.Button(SMCButtonBehavior.Visualizar)
+                                    .Text(Smc.GetUIResource("botao_colocar_manutencao"))
+                                    .Action("ColocarManutencaoEtapa", "Processo", new { SeqEtapa = new SMCEncryptedLong((x as ISMCSeq).Seq), Area = "SRC" })
+                                    .Ajax(isPost: false)
+                                    .Hide((x as ProcessoEtapaDetalheViewModel).ExibirBotaoManutencao)
+                                    .Enabled((x as ProcessoEtapaDetalheViewModel).HabilitarBotaoManuntecao && (x as ProcessoEtapaDetalheViewModel).HabilitaBtnComPermissaoManutencaoProcesso)
+                                    .ButtonInstructions(Smc.GetUIResource((x as ProcessoEtapaDetalheViewModel).MensagemInstruictionBotaoManutencao))
+                                    .Confirm(Smc.GetUIResource("title_modal_etapa_em_manutencao"), string.Format(Smc.GetUIResource("mensagem_etapa_em_manutencao"), (x as ProcessoEtapaDetalheViewModel).DescricaoEtapa), SMCWindowButtons.Yes, true)
+                                    .Tooltip(Smc.GetUIResource("botao_colocar_manutencao_tooltip"))
+                                    .SecurityToken(UC_SRC_002_05_02.MANTER_ESCALONAMENTO_ETAPA),
+
+                                x => Smc.Button(SMCButtonBehavior.Alterar)
+                                    .CssClass("smc-btn-custom-ico-destaque smc-btn-custom-ico-grid")
+                                    .Tooltip(Smc.GetUIResource("Botao_ProcessoEtapa_Tooltip"))
+                                    .Text(Smc.GetUIResource("Botao_ProcessoEtapa"))
+                                    .Enabled((x as ProcessoEtapaDetalheViewModel).HabilitaBtnComPermissaoManutencaoProcesso)
+                                    .SecurityToken(UC_SRC_002_01_03.MANTER_ETAPA_PROCESSO)
+                                    .Action("Editar", "ProcessoEtapa", new { Seq = new SMCEncryptedLong((x as ISMCSeq).Seq) }),
+
+                                x => Smc.Button(SMCButtonBehavior.Alterar)
+                                    .Text(Smc.GetUIResource("Botao_EncerrarEtapa"))
+                                    .CssClass("smc-btn-custom-destaque-grid")
+                                    .Tooltip(Smc.GetUIResource("Botao_EncerrarEtapa"))
+                                    .SecurityToken(UC_SRC_002_01_01.ENCERRAR_ETAPA)
+                                    .Hide(!((x as ProcessoEtapaDetalheViewModel).TipoPrazoEtapa == TipoPrazoEtapa.PeriodoVigencia || (x as ProcessoEtapaDetalheViewModel).TipoPrazoEtapa == TipoPrazoEtapa.Escalonamento))
+                                    .Enabled((x as ProcessoEtapaDetalheViewModel).HabilitaEncerrarEtapa && (x as ProcessoEtapaDetalheViewModel).HabilitaBtnComPermissaoManutencaoProcesso)
+                                    .ButtonInstructions((x as ProcessoEtapaDetalheViewModel).InstructionEncerrarEtapa)
+                                    .Ajax(isPost: false)
+                                    .Action("EncerrarEtapa", "ProcessoEtapa", new { seqEtapa = new SMCEncryptedLong((x as ProcessoEtapaDetalheViewModel).Seq) }),
+
+                                x => Smc.Button(SMCButtonBehavior.Excluir)
+                                     .Text(Smc.GetUIResource("Botao_ExcluirEtapa"))
+                                     .Tooltip(Smc.GetUIResource("Botao_ExcluirEtapa"))
+                                     .SecurityToken(UC_SRC_002_01_03.MANTER_ETAPA_PROCESSO)
+                                     .Enabled((x as ProcessoEtapaDetalheViewModel).HabilitaExcluirEtapa && (x as ProcessoEtapaDetalheViewModel).HabilitaBtnComPermissaoManutencaoProcesso)
+                                     .ButtonInstructions((x as ProcessoEtapaDetalheViewModel).InstructionExcluirEtapa)
+                                     .Confirm(Smc.GetUIResource("Exclusao_Etapa_Title"),
+                                     string.Format(Smc.GetUIResource("Exclusao_Etapa_Confirmacao"), (x as ProcessoEtapaDetalheViewModel).DescricaoEtapa))                      
+                                     .Action("Excluir", "ProcessoEtapa", new { Seq = new SMCEncryptedLong((x as ProcessoEtapaDetalheViewModel).Seq) })
+                       )
+            )
+        }
+    }
+
+    @(Smc.Templates.DetailedListButtons()
+        .EnableEdit(Model.HabilitaBtnComPermissaoManutencaoProcesso)
+        .UrlEdit(new UrlHelper(Request.RequestContext).Action(Model.DataEncerramento.HasValue && Model.DataEncerramento.Value < DateTime.Now ? "Visualizar" : "Editar", new { seq = new SMCEncryptedLong(Model.Seq) }))
+        .EnableRemove(Model.HabilitaBtnComPermissaoManutencaoProcesso && Model.HabilitaBtnExcluirProcesso, Model.InstructionExcluirProcesso)
+        .Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24))
+}
+
+

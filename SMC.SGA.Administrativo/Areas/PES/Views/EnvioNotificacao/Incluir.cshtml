@@ -1,0 +1,38 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Views.EnvioNotificacao.App_LocalResources
+
+@model EnvioNotificacaoViewModel
+
+@using (Smc.Wizard("wizardEnvioNotificacao")
+        .ButtonSet(1, SMCButtonSetGroupedStyle.Arrow, false, "",
+                      item => Smc.Button(SMCButtonBehavior.Confirmar)
+                            .Type(SMCButtonType.Submit)
+                            .Action("SalvarEEnviarNotificacao", "EnvioNotificacao")
+                            .Ajax(isPost: true)
+                            .DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+
+               .ButtonSet(1, SMCButtonSetGroupedStyle.Arrow, cssClass: "smc-wizard-cancelar-arrow", alwaysVisible: true, buttons:
+                      item => Smc.Button(SMCButtonBehavior.Cancelar)
+                                .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                .Action("Index", "EnvioNotificacao"))
+
+    .Begin())
+{
+    using (Smc.WizardStep(0).Description(Smc.GetUIResource(UIResource.Wizard_EnvioNotificacao_Passo1)).Title(UIResource.Wizard_EnvioNotificacao_Passo1).Action("WizardStepFiltroSelecao").Begin())
+    {
+
+    }
+    using (Smc.WizardStep(1).Description(Smc.GetUIResource(UIResource.Wizard_EnvioNotificacao_Passo2)).Title(UIResource.Wizard_EnvioNotificacao_Passo2).Action("WizardStepConfiguracao").Begin())
+    {
+
+    }
+
+    using (Smc.WizardStep(2).Description(Smc.GetUIResource(UIResource.Wizard_EnvioNotificacao_Passo3)).Title(UIResource.Wizard_EnvioNotificacao_Passo3).Action("WizardStepConfirmacao").Begin())
+    {
+
+    }
+
+}
+
+@section Scripts{
+    <script type="text/javascript" src=@Url.SMCBuscarRecursoAplicacao("Scripts/Areas/PES/EnvioNotificacao/EnvioNotificacao.js")></script>
+}

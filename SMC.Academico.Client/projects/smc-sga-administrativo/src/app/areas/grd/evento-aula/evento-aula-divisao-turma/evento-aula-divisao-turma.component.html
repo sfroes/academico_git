@@ -1,0 +1,58 @@
+<div class="smc-size-md-24 smc-sga-agendamento-lista-disciplina-agrupamento">
+  <h3>Divisão turma</h3>
+  <ul class="smc-size-md-24 smc-sga-agendamento-lista-disciplina">
+    <li *ngFor="let item of divisoesTurma">
+      <div class="smc-size-md-23">
+        <div class="smc-size-md-1 smc-sga-agendamento-lista-disciplina-check">
+          <input
+            type="checkbox"
+            class="smc-sga-input-checkbox"
+            [checked]="item.visivel"
+            (click)="statusCheckbox($event)"
+            [value]="item.seq"
+          />
+        </div>
+        <div class="smc-size-md-23 smc-sga-agendamento-lista-disciplina-descricao">
+          <span class="smc-sga-agendamento-bullet {{ item.cor }}"></span>
+          <span>
+            {{ item.grupoFormatado }} -
+            {{ item.descricaoLocalidade }}
+          </span>
+          <ng-container
+            *ngIf="
+              item.cargaHorariaLancada >= item.cargaHorariaGrade;
+              then cargaHorariaCompleta;
+              else cargaHorariaIncompleta
+            "
+          ></ng-container>
+          <ng-template #cargaHorariaCompleta>
+            <p
+              p-tooltip="CH Lançada alcançada, divisão disponível para agendamentos de aulas complementares."
+              class="smc-sga-agendamento-cargahoraria smc-sga-agendamento-cargahoraria-completa"
+            >
+              CH (Grade/Lançada): {{ item.cargaHorariaGrade }} / {{ item.cargaHorariaLancada }} h
+            </p>
+          </ng-template>
+          <ng-template #cargaHorariaIncompleta>
+            <p
+              p-tooltip="CH Lançada menor que a CH Grade, divisão disponível em novos agendamentos."
+              class="smc-sga-agendamento-cargahoraria"
+            >
+              CH (Grade/Lançada): {{ item.cargaHorariaGrade }} / {{ item.cargaHorariaLancada }} h
+            </p>
+          </ng-template>
+        </div>
+      </div>
+      <smc-button
+        [s-disabled]="tokenSegurancaDetalhes"
+        (s-click)="abrirModalDetalheDivisaoTurma(item.seq, modalDetalhesDivisaoTurma)"
+        s-button-class="smc-btn-visualizar-ico"
+        s-tooltip="Visualizar"
+        class="smc-size-md-1"
+      ></smc-button>
+    </li>
+  </ul>
+  <po-modal #modalDetalhesDivisaoTurma p-size="xl" p-title="Detalhes da Divisão de Turma">
+    <div *ngIf="htmlDetalhe" [innerHTML]="htmlDetalhe"></div>
+  </po-modal>
+</div>

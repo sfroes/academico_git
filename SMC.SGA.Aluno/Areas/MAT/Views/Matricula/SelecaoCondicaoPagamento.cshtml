@@ -1,0 +1,29 @@
+﻿@model PaginaSelecaoCondicaoPagamentoMatriculaViewModel
+
+@section MenuLateral {
+    @Html.Action("MenuPaginas", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(MatriculaTokens.PAGINA_SELECAO_CONDICAO_PAGAMENTO_MATRICULA_INSTRUCOES))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    @*@Smc.DisplayFor(x => x.ValorTotal).CssClass("smc-sga-totalizador-destaque").Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid4_24)*@
+    if (Model.CondicoesPagamento == null || Model.CondicoesPagamento.Count == 0)
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin()) {
+            <p>@Smc.GetUIResource("Texto_Sem_Condicoes_Pagamento")</p>
+        }
+    }
+    else
+    {
+        @Smc.EditorFor(x => x.SeqCondicaoPagamento).CssClass("form-group")
+        @Smc.EditorFor(x => x.TermoAderido)
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+        {
+            <p>@Smc.GetUIResource("Texto_Valores_Integrais")</p>
+        }
+    }
+
+    @Html.Partial("_BotoesNavegacao", Model)
+}

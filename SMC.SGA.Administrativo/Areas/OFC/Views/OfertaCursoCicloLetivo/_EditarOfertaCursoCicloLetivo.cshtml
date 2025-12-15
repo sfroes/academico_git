@@ -1,0 +1,18 @@
+﻿@model OfertaCursoCicloLetivoViewModel
+
+@using (Smc.Form("formCadastroOfertaCursoCicloLetivo").ConfirmUnloadWithoutSaveChanges().Begin())
+{
+    using (Smc.Fieldset("fieldsetCadastroOfertaCursoCicloLetivo").Begin())
+    {
+        @Smc.FieldEditorFor(prop => prop.Seq)
+        @Smc.FieldEditorFor(prop => prop.Descricao).Focus()
+        
+        @Smc.FieldEditorFor(prop => prop.SeqCicloLetivoSelecionado)
+        @Smc.FieldEditorFor(prop => prop.SeqFormaIngressoSelecionada)
+        @Smc.FieldEditorFor(prop => prop.SeqTipoVinculoSelecionado)
+        @Smc.FieldEditorFor(prop => prop.SeqTipoOfertaCursoSelecionada)
+        @Smc.FieldEditorFor(prop => prop.DataReferenciaOferta)
+    }
+
+    @Html.Partial("_BotoesEdicaoPadrao")
+}

@@ -1,0 +1,27 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.CUR.Lookups;
+@using SMC.Framework;
+@model ConfiguracaoComponenteLookupViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.ConfiguracaoComponenteDescricaoCompleta).Size(SMCSize.Grid20_24)
+            @Smc.DisplayFor(m => m.Ativo).Size(SMCSize.Grid4_24)
+        }
+
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {           
+            @(Smc.Grid("gridDivisoesComponente", new SMCPagerModel<ConfiguracaoComponenteDivisaoLookupViewModel>(Model.DivisoesComponente))
+                    .AutoGenerateColumns()
+                    .HideNavigator()
+                    .HidePager()
+                    .HideRowNumber()
+                    .HideRowsTotalizer()
+                    .HideGridTitle()
+            )
+        }
+    }
+}

@@ -1,0 +1,61 @@
+﻿@model TurmaDynamicModel
+
+@Html.Partial("_Cabecalho", Model.Cabecalho)
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @(Smc.Legend("ConfiguracaoPrincipal", SMCOrientation.Vertical).CssClass("smc-sga-legenda").Items<SMC.Academico.Common.Enums.LegendaPrincipal>())
+
+}
+
+@using (Smc.Header("ConfiguracaoPrincipal ", SMCHeaderType.Primary)
+    .Item(prop => prop.LegendaConfiguracaoPrincipal, cssClass: "hidden")
+
+
+    .Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-header-detalhes").Begin())
+    {
+        using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+        {
+            @Smc.LegendItem(m => m.LegendaConfiguracaoPrincipal, false)
+        }
+        @Smc.DisplayFor(m => m.DescricaoConfiguracaoPrincipal).HideLabel().Size(SMCSize.Grid22_24, SMCSize.Grid20_24, SMCSize.Grid21_24, SMCSize.Grid22_24)
+
+
+        using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24).Begin())
+        {
+            @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).AddButton(@Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_CUSTOM).Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarComponenteCurricular_Title")).Text(Smc.GetUIResource("Botao_VisualizarComponenteCurricular")).Tooltip(Smc.GetUIResource("Botao_VisualizarComponenteCurricular")).Ajax(isPost: false).Action("VerDetalhesPartial", "ComponenteCurricular", new { @area = "CUR", @seq = new SMCEncryptedLong(Model.SeqComponenteCurricularPrincipal.Value) }).CssClass("smc-btn-visualizar-ico").SecurityToken(SMC.Academico.Common.Areas.CUR.Constants.UC_CUR_002_03_01.VISUALIZAR_DETALHES_COMPONENTE_CURRICULAR))
+            )
+        }
+
+    }
+}
+
+
+@using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+{
+    if (!Model.ExisteSolicitacaoMatriculaOuPlanoEstudo && !string.IsNullOrEmpty(Model.MensagemConfiguracaoCompartilhada))
+    {
+        @Smc.DisplayFor(m => m.MensagemConfiguracaoCompartilhada).HideLabel().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-alerta smc-sga-mensagem-multiplas-linhas")
+    }
+
+    if (Model.GrupoConfiguracoesCompartilhadas.SMCCount() > 0)
+    {
+        using (Smc.Fieldset("FieldsetConfiguracaoCompartilhada").Size(SMCSize.Grid24_24).CssClass("smc-detalhe-editavel-tabular smc-sga-notas-frequencias").LegendText(@Smc.GetUIResource("FieldsetConfiguracaoCompartilhada")).Begin())
+        {
+            <h4>@Smc.GetUIResource("GridConfiguracaoCompartilhada_Coluna")</h4>
+
+            @Smc.List("GridConfiguracaoCompartilhada", m => m.GrupoConfiguracoesCompartilhadas).HtmlTemplate(item => @Html.Partial("_DetailListConfiguracaoCompartilhado", item.Value))
+
+        }
+
+    }
+    else
+    {
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+        {
+            <p>@Smc.GetUIResource("Label_Nenhum_Registro_Compartilhado")</p>
+        }
+    }
+}

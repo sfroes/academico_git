@@ -1,0 +1,33 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+
+@model ParceriaIntercambioDynamicModel
+
+@Smc.EditorFor(prop => prop.Seq)
+@Smc.EditorFor(prop => prop.Descricao)
+@Smc.EditorFor(prop => prop.TipoParceriaIntercambio)
+@Smc.EditorFor(prop => prop.ProcessoNegociacao)
+@*@Smc.EditorFor(prop => prop.InstituicoesExternas.RetornarInstituicaoEnsinoLogada)
+@Smc.EditorFor(prop => prop.ListarSomenteInstituicoesEnsino)*@
+
+@using (Smc.Div().Size(SMCSize.Grid12_24).Begin())
+{
+    if (Model.Seq == 0)
+    {
+        @Smc.MasterDetail(prop => prop.Vigencias, SMC.Framework.UI.Mvc.DataAnnotations.SMCDetailType.Modal).CssClass("smc-sga-mestre-detalhe-bloqueio-botoes").MaximumItens(1)
+    }
+    else
+    {
+        @Smc.MasterDetail(prop => prop.Vigencias, SMC.Framework.UI.Mvc.DataAnnotations.SMCDetailType.Modal).CssClass("smc-sga-mestre-detalhe-bloqueio-botoes").MinimumItens(1)
+    }
+}
+
+@Smc.EditorFor(prop => prop.TiposTermo)
+
+@using (Smc.Fieldset("Instituicoes").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("Instituicoes_Detalhe_Titulo")).Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqInstituicaoEnsino)
+    @Smc.EditorFor(prop => prop.InstituicaoEnsino).HideLabel()
+    @Smc.EditorFor(prop => prop.InstituicoesExternas).HideLabel()
+}
+
+@Smc.EditorFor(prop => prop.Arquivos)

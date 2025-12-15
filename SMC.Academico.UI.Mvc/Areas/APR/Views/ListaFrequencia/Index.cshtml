@@ -1,0 +1,35 @@
+﻿@model  SMC.Academico.UI.Mvc.Areas.APR.Models.ListaFrequenciaFiltroViewModel
+
+@using (Smc.Form("frmViewPadrao", "GerarRelatorio", Model).Ajax("#divViewPadrao").Begin())
+{
+
+    using (Smc.Header("Turma", SMCHeaderType.Primary)
+        .Item(prop => prop.TurmaDescricao, sizeMD: SMCSize.Grid24_24)
+        .Item(p => p.DescricoesCursoOfertaLocalidadeTurno, sizeMD: SMCSize.Grid24_24, hideDescription: true)
+        .Begin())
+    {
+    }
+    //Filtros
+    using (Smc.Fieldset("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter smc-filtro-relatorio").Begin())
+    {
+        <h4>@Smc.GetUIResource("Configuracoes_Relatorio")</h4>
+
+        @Smc.EditorFor(prop => prop.DiaEmissao)
+        @Smc.EditorFor(prop => prop.HoraInicio)
+        @Smc.EditorFor(prop => prop.HoraFim)
+        @Smc.EditorFor(prop => prop.SeqNivelEnsino)
+        @Smc.EditorFor(prop => prop.SeqDivisaoTurma)
+        @Smc.EditorFor(prop => prop.DisponibilizarGrade)
+        @Smc.EditorFor(prop => prop.SeqGradeHoraria)
+        @Smc.EditorFor(prop => prop.DataInicioPeriodoLetivo)
+        @Smc.EditorFor(prop => prop.DataFimPeriodoLetivo)
+    }
+
+    @(Smc.Grid("Colaboradores", Model.Colaboradores)
+                                .AutoGenerateColumns()
+                                .AllowSelect()
+                                .HidePager()
+                                .HideRowNumber()
+                                .HideNumberOfRowsPerPageSelector()
+                                .CssClass("smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24"))
+}

@@ -1,0 +1,7 @@
+﻿@model AvaliacaoTrabalhoAcademicoBancaExaminadoraDynamicModel
+
+@using (Smc.Fieldset("DetalhesCancelamentoBanca").Begin())
+{
+    @Smc.DisplayFor(m => m.DataCancelamento).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid6_24, SMCSize.Grid6_24)
+    @Smc.DisplayFor(m => m.MotivoCancelamento).Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)
+} 

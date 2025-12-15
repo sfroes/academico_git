@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSBloqueios" targetNamespace="http://tempuri.org/DSBloqueios.xsd" xmlns:mstns="http://tempuri.org/DSBloqueios.xsd" xmlns="http://tempuri.org/DSBloqueios.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSBloqueios" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSBloqueios" msprop:Generator_UserDSName="DSBloqueios">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSBloqueios" msprop:Generator_TableClassName="DSBloqueiosDataTable" msprop:Generator_TableVarName="tableDSBloqueios" msprop:Generator_RowChangedName="DSBloqueiosRowChanged" msprop:Generator_TablePropName="_DSBloqueios" msprop:Generator_RowDeletingName="DSBloqueiosRowDeleting" msprop:Generator_RowChangingName="DSBloqueiosRowChanging" msprop:Generator_RowEvHandlerName="DSBloqueiosRowChangeEventHandler" msprop:Generator_RowDeletedName="DSBloqueiosRowDeleted" msprop:Generator_RowClassName="DSBloqueiosRow" msprop:Generator_UserTableName="DSBloqueios" msprop:Generator_RowEvArgName="DSBloqueiosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Seq" msprop:Generator_ColumnVarNameInTable="columnSeq" msprop:Generator_ColumnPropNameInRow="Seq" msprop:Generator_ColumnPropNameInTable="SeqColumn" msprop:Generator_UserColumnName="Seq" type="xs:long" minOccurs="0" />
+              <xs:element name="NumeroProtocolo" msprop:Generator_ColumnVarNameInTable="columnNumeroProtocolo" msprop:Generator_ColumnPropNameInRow="NumeroProtocolo" msprop:Generator_ColumnPropNameInTable="NumeroProtocoloColumn" msprop:Generator_UserColumnName="NumeroProtocolo" type="xs:string" minOccurs="0" />
+              <xs:element name="SolicitanteSeqPessoaAtuacao" msprop:Generator_ColumnVarNameInTable="columnSolicitanteSeqPessoaAtuacao" msprop:Generator_ColumnPropNameInRow="SolicitanteSeqPessoaAtuacao" msprop:Generator_ColumnPropNameInTable="SolicitanteSeqPessoaAtuacaoColumn" msprop:Generator_UserColumnName="SolicitanteSeqPessoaAtuacao" type="xs:string" minOccurs="0" />
+              <xs:element name="EtapaSituacaoAtual" msprop:Generator_ColumnVarNameInTable="columnEtapaSituacaoAtual" msprop:Generator_ColumnPropNameInRow="EtapaSituacaoAtual" msprop:Generator_ColumnPropNameInTable="EtapaSituacaoAtualColumn" msprop:Generator_UserColumnName="EtapaSituacaoAtual" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoMotivoBloqueio" msprop:Generator_ColumnVarNameInTable="columnTipoMotivoBloqueio" msprop:Generator_ColumnPropNameInRow="TipoMotivoBloqueio" msprop:Generator_ColumnPropNameInTable="TipoMotivoBloqueioColumn" msprop:Generator_UserColumnName="TipoMotivoBloqueio" type="xs:string" minOccurs="0" />
+              <xs:element name="Referente" msprop:Generator_ColumnVarNameInTable="columnReferente" msprop:Generator_ColumnPropNameInRow="Referente" msprop:Generator_ColumnPropNameInTable="ReferenteColumn" msprop:Generator_UserColumnName="Referente" type="xs:string" minOccurs="0" />
+              <xs:element name="DataBloqueioFormatada" msprop:Generator_ColumnVarNameInTable="columnDataBloqueioFormatada" msprop:Generator_ColumnPropNameInRow="DataBloqueioFormatada" msprop:Generator_ColumnPropNameInTable="DataBloqueioFormatadaColumn" msprop:Generator_UserColumnName="DataBloqueioFormatada" type="xs:string" minOccurs="0" />
+              <xs:element name="Impede" msprop:Generator_ColumnVarNameInTable="columnImpede" msprop:Generator_ColumnPropNameInRow="Impede" msprop:Generator_ColumnPropNameInTable="ImpedeColumn" msprop:Generator_UserColumnName="Impede" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

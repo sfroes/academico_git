@@ -1,0 +1,13 @@
+﻿@model HistoricoNavegacaoViewModel
+
+@using (Smc.Header("Etapa", SMCHeaderType.Primary)
+                            .Item(x => x.Etapa)
+                            .Begin()) { }
+
+@(Smc.Grid("gridPaginas", new SMCPagerModel<HistoricoNavegacaoItemViewModel>(Model.Paginas))
+        .AutoGenerateColumns()
+        .HideGridTitle()
+        .HideNavigator()
+        .HideNumberOfRowsPerPageSelector()
+        .HidePager()
+        .HideRowsTotalizer())

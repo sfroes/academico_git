@@ -1,0 +1,38 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Views.PessoaAtuacao.App_LocalResources
+@model PessoaAtuacaoRegistroDocumentoViewModel
+
+@Smc.EditorFor(x => x.SeqPessoaAtuacao)
+@Smc.EditorFor(x => x.SeqTipoDocumento)
+@Smc.HiddenFor(x => x.DescricaoTipoDocumento)
+@Smc.HiddenFor(x => x.SeqsSolicitacoesServico)
+@Smc.MasterDetail(x => x.Documentos).CssClass("smc-sga-registro-documentos-detalhe").HideButtons(!Model.PermiteVarios).HideHeader()
+
+@Smc.WizardView()
+
+<script type="text/javascript">
+    $(document).on("focus", ".smc-academico-situacao-entrega-documento > select", function () {
+        $(this).data('valorAntigo', $(this).val());
+    });
+
+    $(document).on("change", ".smc-academico-situacao-entrega-documento > select", function () {
+        var select = $(this);
+        var linha = $(this).closest(".smc-detalhe-editavel-linha-dados");
+        var upload = $(linha).find("[data-name='ArquivoAnexado']");
+
+        var controlUpload = smc.core.uicontrol(upload);
+        var controlSelect = smc.core.uicontrol(select);
+
+        if ((controlSelect.getValue() == 1 || controlSelect.getValue() == 6) && controlUpload.getValue() != null)
+        {
+            if (controlSelect.getValue() == 1)
+            {
+                smc.core.alertError('@UIResource.Titulo_Inserir_Erro', '@UIResource.ERR_ArquivoAnexadoValidacaoAguardandoEntrega');
+            }
+            if (controlSelect.getValue() == 6)
+            {
+                smc.core.alertError('@UIResource.Titulo_Inserir_Erro', '@UIResource.ERR_ArquivoAnexadoValidacaoPendente');
+            }
+            controlSelect.setValue($(select).data("valorAntigo"));
+        }
+    });
+</script>

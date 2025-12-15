@@ -1,0 +1,25 @@
+﻿@using System.Configuration
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Redirecionando</title>
+</head>
+<body>
+    <p>Redirecionando...</p>
+    <form id="frm-redirect" method="post" action="@ConfigurationManager.AppSettings["UrlTermoCiencia"]">
+        <input type="hidden" value="@User.SMCGetCodigoPessoa()" name="codPessoa" />
+        <input type="hidden" value="SGA" name="codSistema" />
+        <input type="hidden" value="@Url.Action("Index", "Home", null, Request.Url.Scheme)" name="dscPagSeguinte" />
+        <input type="hidden" value="S" name="indEmpregado" />
+    </form>
+    <script>
+        document.getElementById("frm-redirect").submit();
+    </script>
+</body>
+</html>

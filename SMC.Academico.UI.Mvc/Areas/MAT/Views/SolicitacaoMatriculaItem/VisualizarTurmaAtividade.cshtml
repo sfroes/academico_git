@@ -1,0 +1,42 @@
+﻿@using SMC.Academico.Common.Areas.MAT.Enums;
+@model SMC.Academico.UI.Mvc.Areas.MAT.Models.SolicitacaoMatriculaItemViewModel
+
+@using (Smc.Header("ProcessoEtapaCabecalho", SMCHeaderType.Primary)
+                        .Item(prop => prop.Etapa, sizeSM: SMCSize.Grid24_24, sizeMD: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24)
+                        .Begin())
+{ }
+
+@if (Model.Turmas.Count() > 0 || Model.Atividades.Count() > 0)
+{
+    using (Smc.Div("divLegenda").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div("PertenceCurriculo").Size(SMCSize.Grid8_24).Begin())
+        {
+            <p class="smc-sga-titulo-legenda"> @Smc.GetUIResource("Titulo_Legenda_TurmaOfertaMatricula")</p>
+            @(Smc.Legend("PertenceCurriculo", SMCOrientation.Horizontal).Items<TurmaOfertaMatricula>())
+        }
+    }
+}
+
+@if (Model.Turmas.Count() > 0)
+{
+    using (Smc.Fieldset("listaTurmas").CssClass("smc-sga-lista-turma").Begin())
+    {
+        @Smc.List("gridTurmas", m => m.Turmas).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(divisao => Html.Partial(Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.VISUALIZAR_ITENS_TURMA_DETAIL), divisao.Value))
+    }
+}
+
+@if (Model.Atividades.Count() > 0)
+{
+    using (Smc.Fieldset("listaAtividades").Begin())
+    {
+        @Smc.List("gridAtividades", m => m.Atividades).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(divisao => Html.Partial(Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.VISUALIZAR_ITENS_ATIVIDADE_DETAIL), divisao.Value))
+    }
+}
+
+
+@using (Smc.ModalWindow("modalVisualizarDivisaoTurma")
+.Form("formVisualizarDivisaoTurma", closeOnSubmit: true)
+.Size(SMCModalWindowSize.Large)
+.Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+.Begin()) { }

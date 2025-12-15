@@ -1,0 +1,26 @@
+﻿@model GrupoEscalonamentoCopiarViewModel
+
+@Smc.EditorFor(x => x.Mensagem)
+@Smc.EditorFor(x => x.SeqGrupoEscalonamento)
+
+@using (Smc.Header("Grupo", SMCHeaderType.Primary)
+    .Item(i => i.DescricaoGrupoEscalonamento)
+    .Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-header-detalhes smc-sga-header-detalhes-separador").Begin())
+    {
+        @(Smc.Grid("gridItens", new SMCPagerModel<GrupoEscalonamentoCopiarListarItemViewModel>(Model.Itens))
+                .CssClass("smc-sga-header-detalhes-grid-completo")
+                .FieldColumn(a => a.DescricaoEtapa)
+                //.FieldColumn(a => a.DescricaoEscalonamentos)
+                .FieldColumn(a => a.DescricaoEscalonamento)
+                .FieldColumn(a => a.QuantidadeParcelas)
+                .HideGridTitle()
+                .HideNavigator()
+                .HideNumberOfRowsPerPageSelector()
+                .HidePager()
+                .HideRowsTotalizer())
+    }
+
+}
+@Smc.EditorFor(x => x.Descricao)

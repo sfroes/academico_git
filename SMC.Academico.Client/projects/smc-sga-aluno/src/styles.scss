@@ -1,0 +1,1013 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../../../../SMC.Academico.Recursos/SGA.Professor/Css/identidade/_smc-identidade-visual.scss";
+@import "../../../../../Framework4.2/SMC.Recursos/Css/sass-padrao/font-awesome/scss/font-awesome.scss";
+
+:root {
+  --color-input-border-text-focusable: #ececec;
+  --color-textarea-border-focusable: #ececec;
+  --color-checkbox-group-box-shadow-color-focusable: #ececec;
+  --color-checkbox-group-border-input-active: #333;
+  --color-checkbox-group-background-color-active: #333;
+  --color-checkbox-group-box-shadow-color-focusable: #ececec #bad6da;
+  --color-accordion-header-color-primary: $smc-cor-principal-01;
+  --color-primary-alpha-50: rgba(26, 130, 159, 0.68);
+  --color-primary: rgba(98,98,98, 0.5);
+}
+
+// CONFIGURAÇÕES GERAIS
+a {
+  cursor: pointer;
+}
+
+:focus, a:focus {
+  outline: none;
+}
+
+.smc-sga-alinha-centro {
+  text-align: center;
+}
+// PADRONIZAÇÃO DA MODAL
+.po-modal {
+  z-index: 1041;
+
+  .po-modal-content {
+    max-width: 90%;
+    box-shadow: none;
+    padding: 0 20px;
+  }
+
+  .po-modal-body {
+    max-width: 100%;
+    max-height: calc(100vh - 200px);
+    overflow: auto;
+    padding: 0 5px;
+  }
+
+  .po-modal-title {
+    font-family: "sf_ui_displayregular" !important;
+    font-size: 21px !important;
+    color: $smc-cor-secundaria-01;
+  }
+}
+
+.po-modal-xl {
+  width: 90%;
+}
+
+.po-modal-overlay {
+  background: rgba(98,98,98,0.7);
+}
+
+.po-modal-body::-webkit-scrollbar {
+  border-radius: 0;
+  height: 4px;
+  opacity: .6;
+  width: 5px;
+  background: rgba(98,98,98,0.2);
+}
+
+
+.po-icon-close {
+  color: $smc-branco;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  margin-top: 1px;
+  line-height: -2px;
+  margin-left: 1px;
+}
+
+.po-modal-header-close-button {
+  background-color: $smc-cinza-06;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+}
+
+.po-button-primary {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none !important;
+  font-size: 12px;
+  margin: 1px 2px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  background-repeat: no-repeat;
+  height: 31px;
+  padding: 2px 8px 0 8px;
+  background-color: #0083a2;
+  border: solid 1px #0083a2;
+  color: #fff !important;
+}
+
+.po-button-primary:hover {
+  background-color: #bad6da;
+}
+
+.po-field-title {
+  font-family: "sf_ui_displayregular";
+  color: $smc-preto;
+  float: left;
+  margin-bottom: -8px;
+}
+//Esta classe aqui é para adequar os botões das modais
+.smc-sga-modal-ajuste-botoes {
+  .po-modal-footer {
+
+    po-button[ng-reflect-label ='Cancelar'] {
+      button {
+        &:before {
+          margin-right: 6px;
+          @extend .fa;
+          @extend .fa-times;
+        }
+      }
+    }
+
+    po-button[ng-reflect-label ='Ok'] {
+      button {
+        background-color: $smc-cor-secundaria-01;
+        border: solid 1px $smc-cor-secundaria-01;
+        color: $smc-branco;
+
+        &:before {
+          margin-right: 6px;
+          @extend .fa;
+          @extend .fa-floppy-o;
+        }
+      }
+    }
+  }
+}
+/////
+
+.po-checkbox-group-item {
+  padding: 0px 8px 0px 0;
+  line-height: 4px;
+  min-height: 18px;
+}
+
+.po-checkbox-group-item > label {
+  margin-top: 16px;
+}
+
+.po-input {
+  box-shadow: inset 0 0px 0px 0;
+}
+
+.po-textarea {
+  box-shadow: inset 0 0px 0px 0;
+  resize: vertical;
+}
+
+.po-toaster {
+  //padding: 31px 16px 16px;
+  z-index: 2147483641;
+}
+// Cores e ícones (Mensagens de Aviso)
+$smc-mensagem-informa-cor-background: #D9EDF7!default;
+$smc-mensagem-informa-cor-borda: #59aac3!default;
+$smc-mensagem-informa-cor-texto: #5c7f8f!default;
+
+// Cores e ícones(Mensagens de Erro)
+$smc-mensagem-erro-cor-background: #F2DEDE!default;
+$smc-mensagem-erro-cor-borda: #c43937!default;
+$smc-mensagem-erro-cor-texto: #92302e!default;
+
+// Cores e ícones (Mensagens de Informação)
+$smc-mensagem-aviso-cor-background: #FCF8E3!default;
+$smc-mensagem-aviso-cor-borda: #e4a445!default;
+$smc-mensagem-aviso-cor-texto: #A38147!default;
+
+// Cores e ícones(Mensagens de Sucesso)
+$smc-mensagem-sucesso-cor-background: #DFF0D8!default;
+$smc-mensagem-sucesso-cor-borda: #63ad4b!default;
+$smc-mensagem-sucesso-cor-texto: #546d3e!default;
+
+.smc-sga-mensagem::before {
+  margin: 0;
+}
+
+%base-mensagem-fixa {
+  padding: 10px 10px;
+
+  div {
+    &:before {
+      @extend .fa;
+      font-size: 20px;
+      margin-left: 10px;
+    }
+  }
+
+  span {
+    &:before {
+      display: none !important;
+    }
+  }
+}
+
+.po-toaster-info {
+  @extend %base-mensagem-fixa;
+  background-color: $smc-mensagem-informa-cor-background;
+  color: $smc-mensagem-informa-cor-texto;
+  border: 2px solid $smc-mensagem-informa-cor-borda;
+
+  div {
+    &:before {
+      @extend .fa-comment;
+      color: $smc-mensagem-informa-cor-borda !important;
+    }
+  }
+}
+
+.po-toaster-warning {
+  @extend %base-mensagem-fixa;
+  background-color: $smc-mensagem-aviso-cor-background;
+  color: $smc-mensagem-aviso-cor-texto;
+  border: 2px solid $smc-mensagem-aviso-cor-borda;
+
+  div {
+    &:before {
+      @extend .fa-exclamation-triangle;
+      color: $smc-mensagem-aviso-cor-borda !important;
+    }
+  }
+}
+
+.po-toaster-success {
+  @extend %base-mensagem-fixa;
+  background-color: $smc-mensagem-sucesso-cor-background;
+  color: $smc-mensagem-sucesso-cor-texto;
+  border: 2px solid $smc-mensagem-sucesso-cor-borda;
+
+  div {
+    &:before {
+      @extend .fa-check;
+      color: $smc-mensagem-sucesso-cor-borda !important;
+    }
+  }
+}
+
+.po-toaster-error {
+  @extend %base-mensagem-fixa;
+  background-color: $smc-mensagem-erro-cor-background;
+  color: $smc-mensagem-erro-cor-texto;
+  border: 2px solid $smc-mensagem-erro-cor-borda;
+
+  div {
+    &:before {
+      @extend .fa-times-circle;
+      color: $smc-mensagem-erro-cor-borda !important;
+    }
+  }
+}
+
+.po-toaster-message {
+  font-weight: normal !important;
+  font-family: "sf_ui_displayregular" !important;
+  font-size: 12px;
+}
+
+
+.po-overlay-absolute, .po-overlay-fixed {
+  background-color: rgba(51,51,51,0.96);
+  z-index: 2147483641;
+}
+
+.po-loading-overlay-content {
+  background-color: transparent;
+  box-shadow: -1 1px 4px 0 var(--color-loading-overlay-box-shadow-content);
+  text-align: center;
+}
+
+.po-loading-icon {
+  display: none;
+}
+
+.po-loading {
+  &:before {
+    font-size: 3em;
+    @extend .fa;
+    color: $smc-cor-principal-03;
+    @extend .fa-spinner;
+    @extend .fa-pulse;
+    @extend .fa-3x;
+    @extend .fa-fw;
+  }
+}
+
+.po-loading-label {
+  font-size: 14px;
+  color: $smc-cor-principal-03;
+  margin-top: 3px;
+  font-family: 'segoe_uiregular';
+}
+
+.po-field-container-bottom-text-error {
+  position: absolute;
+  font-size: 8px;
+  top: 23px;
+  border-radius: 3px;
+  background-color: #ffe1e0;
+  width: 100%;
+  margin-left: -5px;
+  padding: 0 2px;
+  z-index: 1;
+}
+
+.po-field-container-icon-error {
+  display: none;
+}
+
+.po-button {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.po-modal-footer {
+  padding: 10px 8px 25px 8px;
+
+  .po-button-primary {
+    position: relative;
+    top: -1px;
+  }
+}
+
+.po-modal-footer .po-button {
+  margin: 1px 2px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  height: 31px;
+  padding: 1px 10px;
+  border: solid 1px $smc-cor-secundaria-01;
+  color: $smc-cor-secundaria-01;
+}
+
+.po-modal-footer .po-button:hover {
+  background-color: $smc-cor-principal-04;
+  border: solid 1px $smc-cor-secundaria-01;
+  color: $smc-branco;
+}
+
+.po-modal-footer .po-button:disabled {
+  background-color: $smc-cinza-03 !important;
+  border-color: $smc-cinza-03 !important;
+  color: $smc-cinza-05 !important;
+  cursor: no-drop;
+}
+
+.smc-buttonset-horizontal-primario {
+  &-lancamento-nota {
+    clear: none;
+  }
+}
+
+
+
+
+.smc-sga-lista-alunos-fechamento-diario {
+  li {
+    padding-left: 20px;
+
+    &:before {
+      @extend .fa;
+      @extend .fa-circle;
+      color: $smc-cor-secundaria-01;
+      font-size: 7px;
+      line-height: 2px;
+      margin: 9px 5px 0px 0;
+      float: left;
+    }
+  }
+}
+//COMANDO MAXIMIZAR E MINIMIZAR CONTEÚDO
+%base-btn-max-min {
+  float: right;
+  cursor: pointer;
+
+  &:before {
+    @extend .fa;
+    margin-bottom: 3px;
+    float: right;
+    margin-top: -3px;
+    color: $smc-cor-principal-01;
+  }
+
+  &:hover {
+    color: $smc-cor-secundaria-01;
+
+    &:before {
+      color: $smc-cor-secundaria-01;
+    }
+  }
+}
+
+.smc-sga-btn-maximizar {
+  @extend %base-btn-max-min;
+
+  &:before {
+    @extend .fa-expand;
+  }
+}
+
+.smc-sga-btn-minimizar {
+  @extend %base-btn-max-min;
+
+  &:before {
+    @extend .fa-compress;
+  }
+}
+// TELA MAXIMIZADA
+.smc-sga-tela-maximizada {
+  position: fixed;
+  background-color: $smc-branco;
+  z-index: 1041;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 20px;
+  background-image: url('../../shared/css/smc-sga-logotipo-login.png');
+  background-repeat: no-repeat;
+  background-position: 16px 6px;
+  background-size: 85px;
+
+  h2 {
+    margin-left: 100px;
+    font-size: 17px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .smc-sga-grid-lancamento-nota-rolagem {
+    max-height: calc(100vh - 220px);
+    overflow-y: initial;
+    margin-right: 0;
+  }
+
+  .smc-sga-grid-lancamento-nota-header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
+
+  .smc-sga-grid-agrupamento-header {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+  }
+}
+
+@media (max-width: 767px) {
+  .smc-sga-tela-maximizada {
+    .smc-sga-grid-lancamento-nota-rolagem {
+      max-height: calc(100vh - 300px);
+      overflow-y: auto;
+      margin-right: 0;
+    }
+  }
+}
+//CLASSES PARA FILTRO ALUNO E AVALIAÇÕES
+@media (max-width: 767px) {
+  .smc-sga-filtro-aluno:before {
+    margin: 14px 8px 10px 6px !important;
+  }
+
+  .smc-sga-lancamento-nota-tabela {
+    overflow-x: hidden !important;
+  }
+}
+
+.smc-sga-filtro-aluno {
+  background-color: $smc-cinza-03;
+  padding-top: 5px;
+  margin-bottom: -14px;
+
+  &:before {
+    @extend .fa;
+    @extend .fa-filter;
+    float: left;
+    font-size: 20px;
+    margin: 14px 10px 10px 15px;
+    color: $smc-cor-principal-01;
+  }
+
+  po-multiselect-item {
+    display: block;
+    clear: both;
+  }
+
+  .po-field-title {
+    font-family: "sf_ui_displayregular";
+    color: #626262;
+    font-size: 12px;
+    margin-right: 0;
+    margin-left: 5px;
+    min-height: 0;
+    float: left;
+    font-weight: normal;
+    margin-bottom: -25px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .po-input {
+    height: 48px !important;
+    margin-top: -6px;
+    padding-top: 15px;
+    margin-bottom: 0;
+  }
+
+  .po-input {
+    background-color: #fff !important;
+    border: 1px solid #b3b3b3 !important;
+  }
+
+  .po-disclaimer .po-disclaimer-label, .po-disclaimer .po-disclaimer-remove {
+    background-color: #cfdf97;
+    position: relative !important;
+  }
+
+  .po-disclaimer .po-disclaimer-label, .po-disclaimer .po-disclaimer-remove {
+    height: 22px;
+    line-height: 22px;
+    margin-top: 2px;
+  }
+}
+
+.smc-legend-hexagon-fill:before {
+  font-size: 13px;
+  display: contents;
+}
+
+.po-field-icon {
+  color: $smc-preto;
+}
+
+.po-field-container-content.po-multiselect-show > .po-input {
+  border: 1px solid $smc-cinza-02 !important;
+}
+
+.po-multiselect-checkbox-input-checked + .po-multiselect-checkbox-label:before {
+  background-color: $smc-branco;
+  border: 1px solid $smc-cinza-07;
+  color: $smc-preto;
+}
+
+.po-multiselect-container {
+  margin-top: -8px;
+}
+// GRID
+// Estrutura do grid
+.smc-sga-lancamento-nota-estrutura {
+  padding: 0;
+}
+// Estrutura da tabela
+.smc-sga-grid-agrupamento-header {
+  display: grid;
+}
+
+.smc-sga-grid-lancamento-nota-rolagem {
+  display: grid;
+}
+
+.smc-sga-lancamento-nota-tabela {
+  padding: 0;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 15px;
+}
+//cabeçalho
+%base-estrutura-header {
+  background-color: $smc-cor-principal-06;
+ // height: 25px;
+
+  > div {
+    border-right: 1px solid $smc-branco;
+    //height: 25px;
+    min-height:27px;
+    background-color: $smc-cor-principal-06;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    p {
+      padding: 3px 0 0 6px;
+      font-size: 12px;
+      color: $smc-cor-principal-01;
+      font-weight: bold;
+      margin-bottom:0;
+    }
+  }
+}
+
+.smc-sga-grid-lancamento-nota-header {
+  @extend %base-estrutura-header;
+  display: flex;
+
+  > div {
+    width: 100%;
+
+    .link {
+      text-decoration: underline;
+      color: $smc-cor-principal-01;
+      cursor: pointer;
+
+      &:before {
+        @extend .fa;
+        @extend .fa-external-link;
+        float: right;
+        padding: 5px;
+        font-size: 10px;
+        color: $smc-cor-principal-04;
+      }
+
+      &:hover, p:hover {
+        color: $smc-cor-principal-04;
+      }
+    }
+  }
+}
+
+%base-estrutura-linha {
+  // display: block;
+  padding: 0;
+
+  > div {
+    border-right: 1px solid $smc-cinza-04;
+    border-bottom: 1px solid $smc-cinza-04;
+    height: 35px;
+    background-color: $smc-branco;
+    // display: inline-block;
+    &:first-child {
+      border-left: 1px solid $smc-cinza-04;
+    }
+
+    .po-field-container-content {
+      padding: 1px 0 0 0;
+    }
+
+    p {
+      margin-top: 6px;
+      margin-left: 5px;
+    }
+  }
+}
+//Linhas de conteúdo
+.smc-sga-grid-lancamento-nota-linha {
+  @extend %base-estrutura-linha;
+  display: flex;
+
+  > div {
+    width: 100%;
+  }
+}
+
+
+.smc-sga-grid-lancamento-nota-coluna-padrao {
+  min-width: 60px;
+  max-width: 80px;
+}
+
+.smc-sga-grid-lancamento-nota-coluna-situacao {
+  min-width: 60px;
+  max-width: 165px;
+}
+
+.smc-sga-grid-lancamento-nota-aluno {
+  min-width: 300px;
+
+  p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    span {
+      padding: 0 10px;
+
+      &:before {
+        position: absolute;
+        top: 9px;
+        left: 9px;
+      }
+
+      &.smc-sga-legenda-formado {
+        &:before {
+          left: 6px;
+        }
+      }
+    }
+  }
+}
+
+.smc-sga-grid-lancamento-nota-coluna-avaliacoes {
+  min-width: 60px;
+  max-width: 100px;
+}
+
+.smc-sga-grid-lancamento-nota-coluna-ra {
+  left: 0;
+  top: 0;
+  position: sticky;
+  z-index: 2;
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.smc-sga-grid-lancamento-nota-aluno-fixa {
+  left: 100px;
+  position: sticky;
+  z-index: 2;
+}
+// GRID PADRÃO PARA DEMAIS EXIBIÇÕES
+.smc-sga-grid-estrutura {
+  padding: 0;
+}
+//cabeçalho
+.smc-sga-grid-header {
+  @extend %base-estrutura-header;
+  display: block;
+
+  > div {
+    display: inline-block;
+  }
+}
+//Linhas de conteúdo
+.smc-sga-grid-linha {
+  @extend %base-estrutura-linha;
+  padding: 0;
+
+  > div {
+    display: inline-block;
+  }
+}
+//MENSAGEM TOTAL DE ALTERAÇÕES (ícone que é exibido à frente do nome ao salvar)
+%icone-destaque {
+  @extend .fa;
+  @extend .fa-circle;
+  color: $smc-cor-secundaria-03;
+  font-size: 11px;
+}
+
+.smc-sga-mensagem-lancamento-nota {
+  border: 1px solid $smc-cor-secundaria-03;
+  float: right;
+  margin-top: 3px;
+  margin-right: 7px;
+
+  &:after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-color: transparent transparent transparent $smc-cor-secundaria-03;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: -5px;
+  }
+
+  p {
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    color: $smc-preto;
+  }
+
+  &:before {
+    @extend %icone-destaque;
+    float: left;
+    margin: 7px 8px 5px 5px;
+  }
+}
+
+.smc-aluno-highlight {
+  &:before {
+    @extend %icone-destaque;
+    float: right;
+    margin: 11px 11px 0 0;
+  }
+}
+
+.smc-campo-highlight {
+  .po-input {
+    border: 2px solid $smc-cor-secundaria-03;
+  }
+}
+// LOADING LOCAL
+.smc-sga-carregando-local {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: $smc-branco;
+  text-align: center;
+  overflow: hidden;
+  height: 34px !important;
+  padding: 7px;
+  color: transparent;
+
+  &:before {
+    font-size: 12px;
+    @extend .fa;
+    color: $smc-cor-principal;
+    @extend .fa-spinner;
+    @extend .fa-pulse;
+    @extend .fa-3x;
+    @extend .fa-fw;
+  }
+}
+
+%base-botoes-somente-icone {
+  @extend .fa;
+  color: $smc-cor-secundaria-01;
+  margin-top: 3px;
+  display: inline-block;
+  border: 1px solid $smc-cor-secundaria-01;
+  padding: 6px;
+  border-radius: 3px;
+  background-color: $smc-branco;
+
+  &:hover {
+    color: $smc-cor-principal-hover;
+    border-color: $smc-cor-principal-hover;
+  }
+}
+
+.smc-btn-historico {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-file-text-o;
+  margin-left: 3px;
+
+  &[disabled] {
+    background-color: $smc-cinza-03;
+    border-color: $smc-cinza-03;
+    color:$smc-cinza-05;
+    cursor:no-drop;
+  }
+}
+
+.smc-btn-historico-preenchido {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-file-text;
+  margin-left: 3px;
+
+  &[disabled] {
+    background-color: $smc-cinza-03;
+    border-color: $smc-cinza-03;
+    color: $smc-cinza-05;
+    cursor: no-drop;
+  }
+}
+
+.smc-btn-historico-divergente {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-file-text;
+  margin-left: 3px;
+  color: $smc-cor-secundaria-titulos !important;
+  border-color: $smc-cor-secundaria-titulos !important;
+
+  &[disabled] {
+    background-color: $smc-cinza-03;
+    border-color: $smc-cinza-03;
+    color: $smc-cinza-05;
+    cursor: no-drop;
+  }
+}
+
+.smc-btn-comentario {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-comment-o;
+
+  &[disabled] {
+    background-color: $smc-cinza-03;
+    border-color: $smc-cinza-03;
+    color: $smc-cinza-05;
+    cursor: no-drop;
+  }
+}
+
+.smc-btn-comentario-preenchido {
+  @extend %base-botoes-somente-icone;
+  @extend .fa-comment;
+
+  &:before {
+    color: $smc-cor-secundaria-01;
+  }
+
+  &[disabled] {
+    background-color: $smc-cinza-03;
+    border-color: $smc-cinza-03;
+    color:$smc-cinza-05;
+    cursor:no-drop;
+  }
+}
+//po-input.ng-dirty.smc-highlight, po-textarea.ng-dirty.smc-highlight {
+//  .po-input {
+//    border: 1.5px solid #0083a2;
+//  }
+//
+//  .po-textarea {
+//    border: 1.5px solid #0083a2 !important;
+//  }
+//}
+//.header div {
+//  float: left;
+//  font-size: 12px !important;
+//  padding: 5px;
+//  background-color: #bad6da;
+//  text-align: left;
+//  color: #004058;
+//  font-weight: bold;
+//  -ms-word-wrap: break-word;
+//  word-wrap: break-word;
+//  height: 28px;
+//  vertical-align: middle;
+//}
+//
+//.header {
+//  display: flex;
+//  position: sticky;
+//  position: -webkit-sticky;
+//  top: 0;
+//  z-index: 2;
+//}
+//
+//.linhas {
+//  p {
+//    padding: 11px 5px 5px 5px;
+//  }
+//
+//  label {
+//    display: none;
+//  }
+//
+//  input {
+//    margin-top: 5px;
+//  }
+//}
+//
+//.linhas > div {
+//  float: left;
+//  border-right: 1px solid #cecece;
+//  border-bottom: 1px solid #cecece;
+//  height: 43px;
+//  display: grid;
+//}
+//
+//.smc-hidepanel {
+//  width: auto !important;
+//  border: none !important;
+//}
+//
+//.colunaObs {
+//  width: 50px !important;
+//}
+//
+//.coluna {
+//  width: 100px
+//}
+//
+//.colunaNome {
+//  padding: 0px;
+//}
+//
+//.divTela {
+//  width: 100%;
+//  // height: 400px;
+//  overflow: auto;
+//  // display: grid; /* This is a (hacky) way to make the .grid element size to fit its content */
+//  //display: inline-table;
+//}
+//
+//.grid-col-fixed-ra {
+//  position: sticky;
+//  left: 0px;
+//  z-index: 1;
+//  background: #fff;
+//}
+//
+//.grid-col-fixed-nome {
+//  position: sticky;
+//  left: 100px;
+//  z-index: 1;
+//  background: #fff;
+//}
+//
+//.grid {
+//  display: flex;
+//}
+//
+//.carregando {
+//  background-color: #d9edf7;
+//}

@@ -1,0 +1,18 @@
+﻿@using SMC.Notificacoes.UI.Mvc.Extensions
+@model EnvioNotificacaoViewModel
+
+@using (Smc.Div("configuracaoEnvioNotificacao").Begin())
+{
+    @Smc.DisplayFor(x => x.Observacao)
+    @Smc.EditorFor(x => x.SeqLayoutEmail)
+    using (Smc.Div().CssClass("smc-sga-notificacoes-display-desabilitado").Begin())
+    {
+        @Smc.ConfiguracaoTipoNotificacao(prop => prop.ConfiguracaoNotificacao).HiddenFields(f => f.DescricaoTipoNotificacao, f => f.Seq, f => f.Descricao, f => f.DataFimValidade, f => f.DataInicioValidade, f => f.Emails)
+    }
+}
+
+@Smc.HiddenFor(x => x.SelectedValues)
+@Smc.HiddenFor(x => x.TipoAtuacao)
+@Smc.HiddenFor(x => x.Token)
+
+@Smc.WizardView()

@@ -1,0 +1,121 @@
+﻿@model PaginaEmissaoBoletoParcelaMatriculaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid22_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(x => x.NomeParcela).Size(SMCSize.Grid6_24)
+            @Smc.DisplayFor(x => x.DataVencimento).Size(SMCSize.Grid6_24)
+            @Smc.DisplayFor(x => x.NomeBeneficio).Size(SMCSize.Grid12_24)
+
+            @Smc.DisplayFor(x => x.ValorParcela).Size(SMCSize.Grid6_24)
+            @Smc.DisplayFor(x => x.ValorOutros).Size(SMCSize.Grid6_24)
+            @Smc.DisplayFor(x => x.ValorBeneficio).Size(SMCSize.Grid6_24)
+            @Smc.DisplayFor(x => x.ValorPagar).Size(SMCSize.Grid6_24)
+        }
+
+        if (Model.Titulos != null && Model.Titulos.Count > 0)// && Model.Titulos.Count != Model.Titulos.Count(c => !c.ValorTitulo.HasValue))
+        {
+            @(Smc.Grid("gridBoletos", new SMCPagerModel<PaginaEmissaoBoletoParcelaResponsavelMatriculaViewModel>(Model.Titulos))//.Where(w=> w.ValorTitulo.HasValue)))
+                             .Size(SMCSize.Grid24_24)
+                             .CssClass("smc-listdetailed-conteudo-lista")
+                             .AutoGenerateColumns(false)
+                             .AllowExportToExcel(false)
+                             .AllowExportToPDF(false)
+                             .AllowRefresh(false)
+                             .AllowSort(false)
+                             .AutoHideNavigator(true)
+                             .HideGridTitle(true)
+                             .HideNavigator(true)
+                             .HideNumberOfRowsPerPageSelector(true)
+                             .HidePager()
+                             .HideRowNumber(true)
+                             .HideRowsTotalizer(true)
+                            .FieldColumn(x => x.NomeResponsavel)
+                            .FieldColumn(x => x.SituacaoTitulo)
+                             .ContentColumn(
+                            @<text>
+                                @{
+                                    var itemParsed = item as PaginaEmissaoBoletoParcelaResponsavelMatriculaViewModel;
+
+                                    if (Model.EscalonamentoPossuiDataEncerramento)
+                                    {
+                                        @(Smc.ButtonSet().CssClass("smc-sga-alinhamento-botao-secundario").Type(SMCButtonSetType.Secondary)
+                                                            .AddButton(Smc.Button("GerarBoleto")
+                                                                                .Enabled(false)
+                                                                                .ButtonInstructions(Smc.GetUIResource("Mensagem_Informacoes_Escalonamento_Encerrado"))
+                                                                                .CssClass("smc-sga-botao-boleto")
+                                                                                .Type(SMCButtonType.InputButton)
+                                                                                .SecurityToken()
+                                                                                .Attribute("target", "_blank"))
+                                        )
+                                    }
+                                    else if (Model.BeneficioDeferidoCobranca || Model.BeneficioIncluiDesbloqueioTemporario)
+                                    {
+                                        @(Smc.ButtonSet().CssClass("smc-sga-alinhamento-botao-secundario").Type(SMCButtonSetType.Secondary)
+                                                            .AddButton(Smc.Button("GerarBoleto")
+                                                                                .Enabled(false)
+                                                                                .ButtonInstructions(Smc.GetUIResource("Mensagem_Informacoes_Beneficio_Cobranca"))
+                                                                                .CssClass("smc-sga-botao-boleto")
+                                                                                .Type(SMCButtonType.InputButton)
+                                                                                .SecurityToken()
+                                                                                .Attribute("target", "_blank"))
+                                        )
+                                    }
+                                    else
+                                    {
+                                        if (itemParsed.SeqResponsavel == 0 || 
+                                           (itemParsed.SeqResponsavel != Model.SeqIngressante && itemParsed.SeqResponsavel != Model.CodigoMigracaoAluno))
+                                        {
+                                            @(Smc.ButtonSet().CssClass("smc-sga-alinhamento-botao-secundario").Type(SMCButtonSetType.Secondary)
+                                                                .AddButton(Smc.Button("GerarBoleto")
+                                                                                    .Enabled(false)
+                                                                                    .ButtonInstructions(Smc.GetUIResource("Botao_Gerarboleto_ResponsavelDiferente"))
+                                                                                    .CssClass("smc-sga-botao-boleto")
+                                                                                    .Type(SMCButtonType.InputButton)
+                                                                                    .SecurityToken()
+                                                                                    .Attribute("target", "_blank"))
+                                            )
+                                        }
+                                        else
+                                        {
+                                            if (itemParsed.SeqTitulo <= 0 || itemParsed.ValorTitulo <= 0 ||
+                                                itemParsed.SituacaoTitulo == SMC.Financeiro.Common.Areas.GRA.Enums.SituacaoTitulo.Baixado ||
+                                                itemParsed.SituacaoTitulo == SMC.Financeiro.Common.Areas.GRA.Enums.SituacaoTitulo.Pendente)
+                                            {
+                                                @(Smc.ButtonSet().CssClass("smc-sga-alinhamento-botao-secundario").Type(SMCButtonSetType.Secondary)
+                                                                            .AddButton(Smc.Button("GerarBoleto")
+                                                                                        .Enabled(false)
+                                                                                        .ButtonInstructions(Smc.GetUIResource("Botao_Gerarboleto_PagoPendente"))
+                                                                                        .CssClass("smc-sga-botao-boleto")
+                                                                                        .Type(SMCButtonType.InputButton)
+                                                                                        .SecurityToken()
+                                                                                        .Attribute("target", "_blank"))
+                                                )
+                                            }
+                                            else
+                                            {
+                                                @(Smc.ButtonSet().CssClass("smc-sga-alinhamento-botao-secundario").Type(SMCButtonSetType.Secondary)
+                                                                                .AddButton(Smc.Button("GerarBoleto", "EmissaoBoletoGerar", new { seqTitulo = new SMCEncryptedLong(itemParsed.SeqTitulo), seqServico = new SMCEncryptedLong(itemParsed.SeqServico), seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoMatricula), parcela = SMCDESCrypto.EncryptForURL(itemParsed.DescricaoTitulo) })
+                                                                                                    .CssClass("smc-sga-botao-boleto")
+                                                                                                    .Type(SMCButtonType.Link)
+                                                                                                    .Tooltip(Smc.GetUIResource("Botao_Gerarboleto"))
+                                                                                                    .SecurityToken()
+                                                                                                    .Attribute("target", "_blank"))
+                                                )
+
+                                            }
+                                        }
+                                    }
+                                }
+                            </text>, header: Smc.GetUIResource("Boleto")
+                                                       , cssClass: "smc-size-md-4 smc-size-xs-4 smc-size-sm-4 smc-size-lg-4"
+                                           )
+                                )
+        }
+
+    }
+}

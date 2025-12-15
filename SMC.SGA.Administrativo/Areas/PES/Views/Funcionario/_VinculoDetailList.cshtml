@@ -1,0 +1,13 @@
+﻿@model FuncionarioVinculoListaViewModel
+
+@if (string.IsNullOrEmpty(Model.DescricaoEntidadeCadastrada)) 
+{
+    @Smc.DisplayFor(d=>d.Descricao).Size(SMCSize.Grid24_24)
+}
+else
+{
+    @Smc.DisplayFor(d=>d.Descricao).Size(SMCSize.Grid12_24)
+    @Smc.DisplayFor(d=>d.DescricaoEntidadeCadastrada).Size(SMCSize.Grid12_24)
+
+}
+

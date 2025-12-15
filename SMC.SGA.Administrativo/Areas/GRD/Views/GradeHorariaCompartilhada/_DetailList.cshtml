@@ -1,0 +1,50 @@
+﻿@using SMC.Academico.Common.Areas.GRD.Constants;
+@model GradeHorariaCompartilhadaListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        // Div da superior com dados pessoais
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(d => d.CicloLetivo).Size(SMCSize.Grid4_24)
+            @Smc.DisplayFor(d => d.EntidadeResponsavel).Size(SMCSize.Grid10_24)
+            @Smc.DisplayFor(d => d.Descricao).Size(SMCSize.Grid10_24)
+        }
+        // Div da inferior com vínculos
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista smc-listdetailed-conteudo-separador-horizontal").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(d => d.Divisoes)
+        }
+    }
+
+    using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24).Begin())
+    {
+
+        var buttonAlterar = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+        .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("Salvar", "GradeHorariaCompartilhada", new { @backUrl = Url.Action("Index", "GradeHorariaCompartilhada") }))
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Editar_Title"))
+        .CssClass("smc-btn-alterar-ico")
+        .Ajax(isPost: true)
+        .Type(SMCButtonType.InputButton)
+        .SecurityToken(UC_GRD_001_04_02.MANTER_GRADE_COMPARTILHADA)
+        .Action("Editar", "GradeHorariaCompartilhada", new { Seq = SMCEncryptedLong.GetStringValue(Model.Seq) });
+
+        var buttonExcluir = Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new { Seq = SMCEncryptedLong.GetStringValue(Model.Seq) }, "GradeHorariaCompartilhada")
+            .DisplayMode(SMCButtonDisplayMode.Icon)
+            .Enabled(Model.PerimiteExclusao)
+            .ButtonInstructions(Model.FillIntructionBotaoExclusao)
+            .Confirm(Smc.GetUIResource("Listar_Excluir_Titulo"), string.Format(Smc.GetUIResource("Listar_Excluir_Confirmacao"), Model.Descricao))
+            .SecurityToken(UC_GRD_001_04_02.MANTER_GRADE_COMPARTILHADA);
+
+        @(Smc.ButtonSet()
+            .Size(SMCSize.Grid24_24)
+            .Type(SMCButtonSetType.Secondary)
+            .Orientation(SMCOrientation.Vertical)
+            .NumberOfButtonsToShow(2)
+            .AddButton(buttonAlterar)
+            .AddButton(buttonExcluir));
+    }
+}

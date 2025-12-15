@@ -1,0 +1,6 @@
+﻿@model AssociacaoEntidadesCabecalhoViewModel
+
+@using (Smc.Header("Curso", SMCHeaderType.Primary)
+                    .Item(prop => prop.Seq, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24)
+                    .Item(prop => prop.Descricao, sizeMD: SMCSize.Grid18_24, sizeXS: SMCSize.Grid20_24, sizeSM: SMCSize.Grid18_24, sizeLG: SMCSize.Grid18_24)
+                    .Begin()) { }

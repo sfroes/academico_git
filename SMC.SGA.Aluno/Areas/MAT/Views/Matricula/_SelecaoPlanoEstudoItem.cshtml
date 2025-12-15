@@ -1,0 +1,13 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.MAT.Models.DivisaoTurmaSelecionadaItemViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid22_24).CssClass("smc-listdetailed-item smc-sga-list-detailed-plano").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("col-md-offset-2 col-lg-offset-2 col-sm-offset-2 smc-sga-divisoes-turma").Size(SMCSize.Grid23_24).Begin())
+        {
+            @Smc.DisplayFor(c => c.NomePeriodoFormatado).CssClass("smc-listdetailed-conteudo-subtitulo smc-sga-plano-estudo-legend").HideLabel()
+            @Smc.List("Divisoes" + Model.NomePeriodoFormatado, m => m.TurmaOfertadaItens).CssClass("smc-list-item-grid smc-sga-plano-estudo-container").Size(SMCSize.Grid24_24).HtmlTemplate(divisao => Html.Partial("_TurmaSelecionadaItem", divisao.Value))
+        }
+    }
+}

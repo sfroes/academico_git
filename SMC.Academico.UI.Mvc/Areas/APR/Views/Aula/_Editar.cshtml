@@ -1,0 +1,50 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.APR.Models
+@using SMC.Framework.UI.Mvc
+@using SMC.Academico.Common.Areas.APR.Constants
+@using SMC.Academico.UI.Mvc.Areas.APR.Views.Aula.App_LocalResources
+@model AulaViewModel
+
+
+@{
+    var header = Smc.Header("HeaderDivisao", SMCHeaderType.Primary)
+            .Item(p => p.DescricaoTurma, sizeMD: SMCSize.Grid24_24)
+			.Item(p => p.DescricoesCursoOfertaLocalidadeTurno, sizeMD: SMCSize.Grid24_24, hideDescription: true);
+}
+
+@using (header.Begin())
+{
+}
+
+@using (Smc.Form("formApuracoes").Size(SMCSize.Grid24_24).Ajax().Begin())
+{
+    @Smc.EditorFor(x => x.Seq)
+    @Smc.EditorFor(x => x.BackUrl)
+    @Smc.EditorFor(x => x.SeqDivisaoTurma)
+    @Smc.EditorFor(x => x.DataAula)
+
+    if (Model.AlunoFormado == true)
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+        {
+            <p>@Smc.GetUIResource("AlunoFormado_FillInstructions")</p>
+        }
+    }
+
+    using (Smc.Div("DivLegenda").Size(SMCSize.Grid24_24).Begin())
+    {
+    <p class="smc-sga-titulo-legenda">@Smc.GetUIResource(UIResource.Titulo_Legenda_ApuracoesFrequencia)</p>
+    @(Smc.Legend("Status", SMCOrientation.Horizontal).Items<SMC.Academico.Common.Areas.APR.Enums.SituacaoAlunoHistoricoEscolar>().Size(SMCSize.Grid24_24))
+    }
+
+    using (Smc.Fieldset("FieldsetApuracaoFrequencia").Size(SMCSize.Grid24_24).CssClass("smc-detalhe-editavel-tabular smc-sga-notas-frequencias").LegendText(@Smc.GetUIResource("Fieldset_Apuracao_Frequencia")).Begin())
+    {
+        var detailView = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.AULA_PATH + "_DetailOferta");
+        @Smc.List("Ofertas", m => m.Ofertas).HtmlTemplate(item => @Html.Partial(detailView, item.Value))
+    }
+    @(Smc.Templates.SaveButtons()
+        .AllowBack(true)
+        .AllowSaveNew(false)
+        .AllowSaveQuit(false)
+        .UrlBack(Url.Action("Index", new { seqDivisaoTurma = new SMCEncryptedLong(Model.SeqDivisaoTurma), backUrl = Model.BackUrl }))
+        .UrlSave(Url.Action("Salvar")))
+}

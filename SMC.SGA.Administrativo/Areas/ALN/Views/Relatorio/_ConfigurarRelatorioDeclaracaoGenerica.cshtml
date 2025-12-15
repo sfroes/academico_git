@@ -1,0 +1,26 @@
+﻿@model ConfigurarRelatorioDeclaracaoGenericaViewModel
+
+
+@using (Smc.Header("Configurar", SMCHeaderType.Primary)
+        .Item(prop => prop.NomeCivil, sizeMD: SMCSize.Grid7_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24)
+        .Item(prop => prop.NomeSocial, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24)
+        .Item(prop => prop.DescricaoNivelEnsino, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid3_24, sizeLG: SMCSize.Grid3_24)
+        .Item(prop => prop.DescricaoTipoDocumentoAcademico, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24)
+        .Item(prop => prop.DescricaoIdioma, sizeMD: SMCSize.Grid2_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24)
+
+        .Begin())
+{
+}
+
+@Smc.HiddenFor(m => m.TipoRelatorio)
+@Smc.HiddenFor(m => m.SeqNivelEnsinoPorGrupoDocumentoAcademico)
+@Smc.HiddenFor(m => m.SeqTipoDocumentoAcademico)
+@Smc.HiddenFor(m => m.IdiomaDocumentoAcademico)
+@Smc.HiddenFor(m => m.SeqAluno)
+@Smc.HiddenFor(m => m.SeqDadosPessoais)
+@Smc.HiddenFor(m => m.CodigoUnidadeSeo)
+@Smc.HiddenFor(m => m.NomeAlunoOficial)
+@Smc.HiddenFor(m => m.CodigoAlunoMigracao)
+
+@Smc.DisplayFor(m => m.MensagemInformativa)
+@Smc.MasterDetail(m => m.Tags).HideButtons().CssClass("smc-sga-detalhe-editavel smc-sga-tags-documento")

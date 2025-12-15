@@ -1,0 +1,327 @@
+﻿@using SMC.Framework.UI.Mvc.Html;
+@using SMC.Formularios.UI.Mvc;
+@using SMC.Academico.Common.Areas.MAT.Enums;
+@using SMC.Academico.Common.Areas.SRC.Constants;
+@using SMC.Academico.Common.Areas.CNC.Constants;
+
+@model SMC.Academico.UI.Mvc.Areas.SRC.Models.SelecaoChancelaPlanoViewModel
+
+@{
+    ViewBag.ChancelaFinalizada = Model.ChancelaFinalizada;
+    ViewBag.SeqPessoaAtuacaoParam = Model.SeqPessoaAtuacao;
+    ViewBag.SeqProcessoEtapaParam = Model.SeqProcessoEtapa;
+
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+
+    bool AlgumPertenceAoPlano = Model.Turmas.Any(a => a.LegendaPertencePlanoEstudo == true) || Model.Atividades.Any(a => a.LegendaPertencePlanoEstudo == true);
+    ViewBag.AlgumPertenceAoPlano = AlgumPertenceAoPlano;
+}
+
+@{
+    var header = Smc.Header("headerChancela", SMCHeaderType.Primary).CssClass("smc-header-botao smc-header-botao-solicitacao-servico");
+    header.Item(x => x.Protocolo, sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid4_24);
+    header.Item(x => x.DescricaoProcesso, sizeMD: SMCSize.Grid12_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid12_24);
+    header.Item(prop => prop.DescricaoSituacaoAtualFormatada, sizeMD: SMCSize.Grid5_24, sizeLG: SMCSize.Grid6_24, sizeSM: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24);
+
+    header.Item(x => x.Nome, sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid8_24);
+    header.Item(x => x.FormacoesEspecificas, sizeMD: SMCSize.Grid16_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid16_24);
+
+    // Se aluno = dados do vinculo
+    if (!string.IsNullOrWhiteSpace(Model.DescricaoVinculo))
+    {
+        header.Item(x => x.DescricaoVinculo, sizeMD: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24);
+    }
+
+    // Se ingressante = dados da oferta campanha
+    if (!string.IsNullOrWhiteSpace(Model.DescricaoOfertaCampanha))
+    {
+        header.Item(x => x.DescricaoOfertaCampanha, sizeMD: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24);
+    }
+
+    if (Model.ExibirJustificativa == true && !string.IsNullOrWhiteSpace(Model.DescricaoJustificativa))
+    {
+        header.Item(prop => prop.DescricaoJustificativa, sizeMD: SMCSize.Grid24_24);
+    }
+}
+@using (header.Begin())
+{
+    if (SMCContext.ApplicationId == SMC.Academico.Common.Constants.SIGLA_APLICACAO.SGA_ADMINISTRATIVO)
+    {
+        @Smc.ButtonSet().AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                            .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDadosSolicitante")
+                            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarDadosSolicitante_Title"))
+                            .Text(Smc.GetUIResource("Botao_VisualizarDadosSolicitante"))
+                            .CssClass("smc-sga-btn-dados-contato")
+                            .Tooltip(Smc.GetUIResource("Botao_VisualizarDadosSolicitante_Tooltip"))
+                            .Ajax(isPost: false)
+                            .Action("VisualizarDadosSolicitante", "SolicitacaoServico", new { @seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao) }));
+    }
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.INSTRUCOES_CHANCELA))
+
+@using (Smc.Form("frmSalvarChancela").Ajax().Begin())
+{
+
+    using (Smc.Div("fieldsetParametros").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqSolicitacaoServico)
+
+        @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapa)
+
+        @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapaPagina)
+
+        @Smc.EditorFor(prop => prop.SeqSolicitacaoHistoricoNavegacao)
+
+        @Smc.EditorFor(prop => prop.SeqSituacaoFinalSucesso)
+
+        @Smc.EditorFor(prop => prop.SeqSituacaoFinalSemSucesso)
+
+        @Smc.EditorFor(prop => prop.SeqSituacaoFinalCancelada)
+
+        @Smc.EditorFor(prop => prop.SeqSolicitacaoServicoEtapa)
+
+        @Smc.EditorFor(prop => prop.SeqPessoaAtuacao)
+
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+
+        @Smc.EditorFor(prop => prop.SeqServico)
+
+        @Smc.EditorFor(prop => prop.DescricaoServico)
+        @*@Smc.EditorFor(prop => prop.Protocolo)*@
+        @Smc.HiddenFor(prop => prop.Seq)
+        @Smc.HiddenFor(prop => prop.SeqProcessoEtapa)
+        @Smc.HiddenFor(prop => prop.Orientador)
+        @Smc.EditorFor(prop => prop.TokenEtapa)
+        @Smc.HiddenFor(prop => prop.TokenServico)
+        @Smc.HiddenFor(prop => prop.SeqSituacaoInicioChancela)
+        @Smc.HiddenFor(prop => prop.SeqSituacaoFinalSucessoChancela)
+        @Smc.HiddenFor(prop => prop.Nome)
+        @Smc.HiddenFor(prop => prop.ExibirCancelados)
+        @Smc.EditorFor(prop => prop.backUrl)
+        @Smc.HiddenFor(prop => prop.SeqCicloLetivo)
+    }
+
+    if (Model.ExibirCancelados == true)
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+        {
+            <p class="smc-sga-msg-conteudo-botao">@Smc.GetUIResource("Informativo_Turma_Atividade")</p>
+
+            var buttonSetCancelados = Smc.ButtonSet().CssClass("smc-mensagem-botoes");
+
+            buttonSetCancelados.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarTurma")
+                                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Visualizar_PlanoEnsinoCancelado"))
+                                .Ajax(isPost: false)
+                                .CssClass("smc-sga-mob-btn-visualizar-ico")
+                                .Text(Smc.GetUIResource("Botao_Visualizar_Turma_Atividade"))
+                                .Tooltip(Smc.GetUIResource("Botao_Visualizar_Turma_Atividade"))
+                                .Action("VisualizarTurmaAtividade", "SolicitacaoMatriculaItemRoute", new { seqSolicitacaoMatricula = Model.SeqSolicitacaoServico, seqConfiguracaoEtapa = Model.SeqConfiguracaoEtapa, erro = true, area = string.Empty, @desconsideraEtapa = true }));
+
+            @buttonSetCancelados;
+        }
+    }
+
+    var buttonSetTopo = Smc.ButtonSet().Size(SMCSize.Grid24_24);
+
+    if (Model.ExibirIntegralizacao == true)
+    {
+        // INTEGRALIZAÇÃO CURRICULAR
+        buttonSetTopo.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Action("ConsultaIntegralizacaoCurricular", "IntegralizacaoCurricularRoute", new { @seqPessoaAtuacao = Model.SeqIngressante, Area = "" })
+                .Ajax(isPost: false)
+                .CssClass("smc-btn-visualizar-icotext")
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalDadosAdicionais")
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Integralizacao_Curricular"))
+                .Text(Smc.GetUIResource("Botao_Integralizacao_Curricular"))
+                .SecurityToken(UC_CNC_001_02_01.EXIBIR_INTEGRALIZACAO_CURRICULAR)
+                .Tooltip(Smc.GetUIResource("Botao_Integralizacao_Curricular_Tooltip")));
+    }
+
+    if (Model.ExibirVisualizacaoDadosIntercambio == true)
+    {
+        // Visualizar dados de intercâmbio
+        buttonSetTopo.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Action("VisualizarDadosIntercambioAluno", "AlunoRoute", new { seqPeriodoIntercambio = Model.SeqPeriodoIntercambio, Area = "" })
+                .Ajax(isPost: false)
+                .CssClass("smc-btn-visualizar-icotext")
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalDadosAdicionais")
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Dados_Intercambio"))
+                .Text(Smc.GetUIResource("Botao_Dados_Intercambio"))
+                .Tooltip(Smc.GetUIResource("Botao_Dados_Intercambio_Tooltip")));
+    }
+
+    if (Model.ExigirCurso == true && Model.ExigirMatrizCurricularOferta == true && !Model.ChancelaFinalizada && Model.ExibirSelecaoTurmaAtividade && !AlgumPertenceAoPlano)
+    {
+        buttonSetTopo.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                       .Action("PesquisarSelecaoTurma", "SelecaoTurmaRoute", new { @seqSolicitacaoMatricula = Model.Seq, @seqIngressante = Model.SeqIngressante, @seqProcesso = Model.SeqProcesso, @seqProcessoEtapa = Model.SeqProcessoEtapa, @backUrl = Model.backUrl, @area = string.Empty })
+                       .Ajax(isPost: false)
+                       .CssClass("smc-btn-confirmar-icotext")
+                       .SecurityToken(SMC.Academico.Common.Areas.MAT.Constants.UC_MAT_003_09_01.SELECIONAR_TURMAS)
+                       .Attribute(SMCMvcConsts.MODAL_ID, "modalSelecionarTurma")
+                       .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Selecionar_Turma"))
+                       .Text(Smc.GetUIResource("Label_Selecionar_Turma"))
+                       .Tooltip(Smc.GetUIResource("Label_Selecionar_Turma")))
+                    .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                      .Action("PesquisarSelecaoAtividade", "SelecaoAtividadeRoute", new { @seqSolicitacaoMatricula = Model.Seq, @seqIngressante = Model.SeqIngressante, @seqProcessoEtapa = Model.SeqProcessoEtapa, @backUrl = Model.backUrl, @area = string.Empty })
+                      .Ajax(isPost: false)
+                      .CssClass("smc-btn-confirmar-icotext")
+                      .SecurityToken(SMC.Academico.Common.Areas.MAT.Constants.UC_MAT_003_10_01.SELECIONAR_ATIVIDADES_ACADEMICAS)
+                      .Attribute(SMCMvcConsts.MODAL_ID, "modalSelecionarAtividade")
+                      .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Selecionar_Atividade"))
+                      .Text(Smc.GetUIResource("Label_Selecionar_Atividade"))
+                      .Tooltip(Smc.GetUIResource("Label_Selecionar_Atividade")));
+    }
+
+    if ((Model.ExibirIntegralizacao == true) || (Model.ExigirCurso == true && Model.ExigirMatrizCurricularOferta == true && !Model.ChancelaFinalizada && Model.ExibirSelecaoTurmaAtividade))
+    {
+        @buttonSetTopo;
+    }
+
+    using (Smc.Div("divLegenda").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div("PertenceCurriculo").Size(SMCSize.Grid8_24).Begin())
+        {
+            <p class="smc-sga-titulo-legenda"> @Smc.GetUIResource("Titulo_Legenda_TurmaOfertaMatricula")</p>
+            @(Smc.Legend("PertenceCurriculo", SMCOrientation.Horizontal).Items<TurmaOfertaMatricula>())
+        }
+
+        if (Model.LegendaPertencePlanoEstudo == true)
+        {
+            using (Smc.Div("SituacaoItemMatricula").Size(SMCSize.Grid16_24).Begin())
+            {
+                <p class="smc-sga-titulo-legenda">@Smc.GetUIResource("Titulo_Legenda_SituacaoItemMatricula")</p>
+                @(Smc.Legend("SituacaoItemMatricula", SMCOrientation.Horizontal).Items<MatriculaPertencePlanoEstudo>())
+            }
+        }
+    }
+
+    if (Model.Turmas != null && Model.Turmas.Count() > 0)
+    {
+        using (Smc.Fieldset("listaTurmas").CssClass("smc-sga-fieldset-list-submit").Begin())
+        {
+            var view1 = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews._CHANCELA_PLANO_TURMA);
+            @(Smc.List("gridTurmas", m => m.Turmas)
+                .CssClass("smc-list-submit")
+                .Size(SMCSize.Grid24_24)
+                .HtmlTemplate(item => Html.Partial(view1, item.Value)))
+        }
+    }
+
+    if (Model.Atividades != null && Model.Atividades.Count() > 0)
+    {
+        using (Smc.Fieldset("listaAtividades").CssClass("smc-sga-fieldset-list-submit").Begin())
+        {
+            var viewAtividade = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews._CHANCELA_PLANO_ATIVIDADES);
+            @(Smc.List("gridAtividades", m => m.Atividades)
+                .CssClass("smc-list-submit")
+                .Size(SMCSize.Grid24_24)
+                .HtmlTemplate(item => Html.Partial(viewAtividade, item.Value)))
+
+        }
+    }
+
+    @Smc.EditorFor(x => x.Observacao)
+
+    var buttonSet = Smc.ButtonSet();
+
+    if (Model.Orientador)
+    {
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().Action("SalvarChancelaPlanoEstudo", "ChancelaRoute", new { @area = "" }).Text(Smc.GetUIResource("Botao_Chancelar")).Tooltip(Smc.GetUIResource("Botao_Chancelar")));
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Index", "ChancelaRoute", new { @area = "" }, forceForBackBehavior: true));
+    }
+    else
+    {
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().Action("SalvarChancelaPlanoEstudo", "RealizarAtendimento", new { @area = "SRC" }).Text(Smc.GetUIResource("Botao_Chancelar")).Tooltip(Smc.GetUIResource("Botao_Chancelar")));
+
+        if (Session["_SGA_Retornar_SeqProcesso"] != null)
+        {
+            buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Index", "SolicitacaoServico", new { @seqProcesso = Model.SeqProcesso, @area = "SRC" }, forceForBackBehavior: true));
+        }
+        else
+        {
+            buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Index", "SolicitacaoServico", new { @area = "SRC" }, forceForBackBehavior: true));
+        }
+    }
+    @buttonSet;
+}
+
+@using (Smc.ModalWindow("modalVisualizarDivisaoTurma")
+    .Form("formVisualizarDivisaoTurma", closeOnSubmit: true)
+    .Size(SMCModalWindowSize.Large)
+    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+    .Begin()) { }
+
+@using (Smc.ModalWindow("modalSelecionarTurma")
+    .Form("frmModalSelecaoTurma", "SalvarSelecaoTurma", "SelecaoTurmaRoute", new { area = string.Empty }, closeOnSubmit: true, config: x => x.Ajax())
+    .Size(SMCModalWindowSize.Largest)
+    .Button(SMCButtonBehavior.Salvar, "SalvarSelecaoTurma", "SelecaoTurmaRoute", new { area = string.Empty }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+    .Begin()) { }
+
+@using (Smc.ModalWindow("modalSelecionarAtividade")
+    .Form("frmModalSelecaoAtividade", "SalvarSelecaoAtividade", "SelecaoAtividadeRoute", new { area = string.Empty }, closeOnSubmit: true, config: x => x.Ajax())
+    .Size(SMCModalWindowSize.Largest)
+    .Button(SMCButtonBehavior.Salvar, "SalvarSelecaoAtividade", "SelecaoAtividadeRoute", new { area = string.Empty }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+    .Begin()) { }
+
+@using (Smc.ModalWindow("modalAlterarTurma")
+    .Form("formTurmaAlterar", "TurmaAlterarSelecaoAlunoSalvar", closeOnSubmit: true, config: x => x.Ajax())
+    .Size(SMCModalWindowSize.Largest)
+    .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+    .Begin()) { }
+
+@using (Smc.ModalWindow("modalDadosAdicionais")
+    .Size(SMCModalWindowSize.Largest)
+    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+    .Begin()) { }
+
+@using (Smc.ModalWindow("modalVisualizarDadosSolicitante")
+    .Size(SMCModalWindowSize.Largest)
+    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+    .Begin()) { }
+
+@using (Smc.ModalWindow("modalVisualizarTurma")
+    .Form("formVisualizarTurma", closeOnSubmit: true)
+    .Size(SMCModalWindowSize.Largest)
+    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+    .Begin()) { }
+
+
+@section scripts
+{
+    <script type="text/javascript">
+        // Informa se já está atualizando para a mesma situação para evitar stack overflow
+        var atualizandoTodosMesmaSituacao = false;
+
+        // Quando alterar um item, salva no session storage o valor do combo para o caso de refresh na tela ja voltar selecionado a opcao escolhida
+        $(document).on("change", '[data-name="SeqSituacaoItemMatricula"]', function () {
+            var currentElement = $(this);
+            var idElemento = $(currentElement).attr("id");
+            var val = $(currentElement).val();
+            var todosMesmaSituacao = $(currentElement).closest(".smc-sga-divisoes-turma").attr("data-todos-mesma-situacao") == "true";
+
+            @*smc.storage.get().setItem("__Chancela_" + "@Model.SeqSolicitacaoServico" + "_" + idElemento, val);*@
+
+            // Verifica se todos tem que ficar na mesma situação
+            if (todosMesmaSituacao && !atualizandoTodosMesmaSituacao) {
+                atualizandoTodosMesmaSituacao = true;
+                $(currentElement).closest(".smc-sga-divisoes-turma").find('[data-name="SeqSituacaoItemMatricula"]').val(val).trigger("change");
+                atualizandoTodosMesmaSituacao = false;
+            }
+        });
+
+        @*
+        $(document).ready(function () {
+            $('[data-name="SeqSituacaoItemMatricula"]').each(function () {
+                var idElemento = $(this).attr("id");
+                var valStorage = smc.storage.get().getItem("__Chancela_" + "@Model.SeqSolicitacaoServico" + "_" + idElemento);
+                if (valStorage != null && valStorage != "")
+                    $(this).val(valStorage).trigger("change");
+            });
+        });*@
+    </script>    
+}

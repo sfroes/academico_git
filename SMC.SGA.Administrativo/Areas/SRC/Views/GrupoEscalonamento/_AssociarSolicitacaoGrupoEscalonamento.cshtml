@@ -1,0 +1,8 @@
+﻿@model GrupoEscalonamentoAssociarSolicitacaoViewModel
+
+@Html.Action("CabecalhoAssociarSolicitacaoGrupoEscalonamento", "GrupoEscalonamento")
+
+@Smc.EditorFor(x => x.SeqProcesso)
+@Smc.EditorFor(x => x.SeqGrupoEscalonamento)
+@Smc.EditorFor(x => x.MensageInformativaAssociacao)
+@Smc.EditorFor(x => x.SeqSolicitacaoServico)

@@ -1,0 +1,97 @@
+﻿@using SMC.Formularios.UI.Mvc;
+@using SMC.Academico.Common.Areas.SRC.Constants;
+@using SMC.Academico.Common.Areas.CNC.Constants;
+
+@model SMC.Academico.UI.Mvc.Areas.SRC.Models.SolicitacaoAtividadeComplementarPaginaViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_UPLOAD))
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_ARQUIVO_UPLOAD))
+
+@Smc.EditorFor(m => m.Artigo)
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+
+    if (Model.ExibirIntegralizacao == true)
+    {
+        var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24);
+
+        // INTEGRALIZAÇÃO CURRICULAR
+        SMCButtonFluentConfiguration buttonIntegralizacao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Action("ConsultaIntegralizacaoCurricular", "IntegralizacaoCurricularRoute", new { @seqPessoaAtuacao = Model.SeqPessoaAtuacao, Area = "" })
+                .Ajax(isPost: false)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalIntegralizacaoCurricular")
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Integralizacao_Curricular"))
+                .Text(Smc.GetUIResource("Botao_Integralizacao_Curricular"))
+                .SecurityToken(UC_CNC_001_02_01.EXIBIR_INTEGRALIZACAO_CURRICULAR)
+                .Tooltip(Smc.GetUIResource("Botao_Integralizacao_Curricular_Tooltip"));
+
+        @buttonSet.AddButton(buttonIntegralizacao);
+    }
+
+    @Smc.EditorFor(m => m.SeqDivisaoComponente)
+    @Smc.EditorFor(m => m.Descricao)
+    @Smc.EditorFor(m => m.SeqCicloLetivo)
+    @Smc.EditorFor(m => m.CargaHoraria)
+    @Smc.EditorFor(m => m.DataInicio)
+    @Smc.EditorFor(m => m.DataFim)
+
+    using (Smc.Fieldset("informacoesArtigo").ConditionalDisplayAttribute("SeqTipoDivisaoComponente", "artigo", "true").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(m => m.TipoPublicacao)
+
+        using (Smc.Div("conferencia").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.EditorFor(m => m.DescricaoEvento)
+            @Smc.EditorFor(m => m.AnoRealizacaoEvento)
+            @Smc.EditorFor(m => m.NaturezaArtigo)
+            @Smc.EditorFor(m => m.TipoEvento)
+            @Smc.EditorFor(m => m.EstadoCidade)
+        }
+
+        using (Smc.Div("periodico").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.EditorFor(m => m.SeqPeriodico)
+            @Smc.EditorFor(m => m.NumeroVolumePeriodico)
+            @Smc.EditorFor(m => m.NumeroFasciculoPeriodico)
+            @Smc.EditorFor(m => m.NumeroPaginaInicialPeriodico)
+            @Smc.EditorFor(m => m.NumeroPaginaFinalPeriodico)
+        }
+    }
+
+    if (SMCContext.ApplicationId == SMC.Academico.Common.Constants.SIGLA_APLICACAO.SGA_ADMINISTRATIVO)
+    {
+        using (Smc.Fieldset("informacoesNota").Conditional(SMCConditionalBehavior.Visibility, "SeqDivisaoComponente", SMCConditionalOperation.NotEqual, "").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.EditorFor(m => m.ApuracaoNota)
+            @Smc.EditorFor(m => m.ApuracaoEscala)
+            @Smc.EditorFor(m => m.ApuracaoFrequencia)
+            @Smc.EditorFor(m => m.NotaMaxima)
+            @Smc.EditorFor(m => m.Nota)
+            @Smc.EditorFor(m => m.SeqEscalaApuracao)
+            @Smc.EditorFor(m => m.PercentualFrequenciaAprovado)
+            @Smc.EditorFor(m => m.PercentualNotaAprovado)
+            @Smc.EditorFor(m => m.PermiteAlunoSemNota)
+            @Smc.EditorFor(m => m.SeqEscalaApuracaoItem)
+            @Smc.EditorFor(m => m.Faltas)
+            @Smc.EditorFor(m => m.SituacaoFinal)
+            @Smc.EditorFor(m => m.DescricaoSituacaoFinal)
+        }
+    }
+
+    @Html.Partial("_BotoesNavegacao", Model)
+}
+
+@using (Smc.ModalWindow("modalIntegralizacaoCurricular")
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }

@@ -1,0 +1,347 @@
+﻿@using SMC.Framework.Model;
+@using SMC.SGA.Administrativo.Areas.CNC.Models;
+@using SMC.Academico.Common.Areas.CNC.Constants;
+@using SMC.Academico.Common.Areas.SRC.Constants;
+
+@model DocumentoConclusaoConsultaViewModel
+
+@{
+    SMCButtonFluentConfiguration buttonAnularDocumentoDigital = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+         .Attribute(SMCMvcConsts.MODAL_ID, "modalAlterarStatusDocumentoDigital")
+         .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Botao_Anular_Documento"))
+         .Ajax(isPost: false)
+         .Hide(!Model.ExibirBotaoAnularDocumentoDigital)
+         .Text(Smc.GetUIResource("Botao_Anular_Documento"))
+         .Tooltip(Smc.GetUIResource("Botao_Anular_Documento"))
+         .Type(SMCButtonType.Link)
+         .SecurityToken(UC_CNC_002_01_07.MANTER_STATUS_DOCUMENTO_DIGITAL)
+         .Action("AnularDocumentoDigital", "DocumentoConclusao", new { SeqDocumentoConclusao = new SMCEncryptedLong(Model.Seq), SeqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico.GetValueOrDefault()), TokenTipoDocumento = Model.TokenTipoDocumento, Area = "CNC" });
+
+    SMCButtonFluentConfiguration buttonRestaurarDocumentoDigital = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, "modalAlterarStatusDocumentoDigital")
+            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Botao_Restaurar_Documento"))
+            .Ajax(isPost: false)
+            .Hide(!Model.ExibirBotaoRestaurarDocumentoDigital)
+            .Text(Smc.GetUIResource("Botao_Restaurar_Documento"))
+            .Tooltip(Smc.GetUIResource("Botao_Restaurar_Documento"))
+            .Type(SMCButtonType.Link)
+            .SecurityToken(UC_CNC_002_01_07.MANTER_STATUS_DOCUMENTO_DIGITAL)
+            .Action("RestaurarDocumentoDigital", "DocumentoConclusao", new { SeqDocumentoConclusao = new SMCEncryptedLong(Model.Seq), Area = "CNC" });
+
+    if (Model.ExibirMensagemRestaurarDocumentoDigital)
+    {
+        buttonRestaurarDocumentoDigital.Enabled(false);
+        buttonRestaurarDocumentoDigital.ButtonInstructions(Smc.GetUIResource("buttonInstructions_MensagemRestaurarDocumentoDigital"));
+    }
+
+    SMCButtonFluentConfiguration buttonApostilamento = Smc.Button(SMCButtonBehavior.Visualizar)
+    .Hide(!Model.ExibirBotaoApostilamento)
+    .Enabled(Model.HabilitarBotaoApostilamento)
+    .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoApostilamento))
+    .Text(Smc.GetUIResource("Botao_Consultar_Apostilamento"))
+    .Tooltip(Smc.GetUIResource("botao_consultar_apostilamento_tooltip"))
+    .Type(SMCButtonType.Link)
+    .Action("Index", "DocumentoConclusaoApostilamento", new { SeqDocumentoConclusao = new SMCEncryptedLong(Model.Seq), Area = "CNC" })
+    .SecurityToken(UC_CNC_002_01_04.PESQUISAR_APOSTILAMENTO);
+
+    SMCButtonSetFluentConfiguration buttonSetCabecalho = (Smc.ButtonSet().Type(SMCButtonSetType.Primary).NumberOfButtonsToShow(0));
+    buttonSetCabecalho.AddButton(buttonAnularDocumentoDigital);
+    buttonSetCabecalho.AddButton(buttonRestaurarDocumentoDigital);
+    buttonSetCabecalho.AddButton(buttonApostilamento);
+
+    @buttonSetCabecalho
+}
+
+@using (Smc.TabSet("tabDocumentoConclusao").CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Tab("tab01").Title(Smc.GetUIResource("Tab_Dados_Gerais")).Begin())
+    {
+        using (Smc.Fieldset("Aluno").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_aluno")).Begin())
+        {
+            @Smc.EditorFor(a => a.NumeroRegistroAcademico)
+            @Smc.EditorFor(a => a.CodigoAlunoMigracao)
+            @Smc.EditorFor(a => a.NomeCompleto)
+            @Smc.EditorFor(a => a.Cpf)
+            @Smc.EditorFor(a => a.NumeroPassaporte)
+
+            if (Model.SeqPessoaDadosPessoais.HasValue)
+            {
+                using (Smc.Div("DivVisualizar").Size(SMCSize.Grid4_24).Begin())
+                {
+                    @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary)
+                     .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                   .Attribute(SMCMvcConsts.MODAL_ID, "modalDadosPessoais")
+                                   //.Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_VisualizarDadosPessoais"))
+                                   .Ajax(isPost: false)
+                                   .Text(Smc.GetUIResource("Botao_VisualizarDadosPessoais"))
+                                   .Tooltip(Smc.GetUIResource("Botao_VisualizarDadosPessoais"))
+                                   .Type(SMCButtonType.Link).CssClass("smc-btn-visualizar-icotext")
+                                   .Action("VisualizarDadosPessoais", "DocumentoConclusao", new { @seqPessoaDadosPessoais = new SMCEncryptedLong(Model.SeqPessoaDadosPessoais.Value), @area = "CNC" })
+                                   ));
+                }
+            }
+
+            using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.EditorFor(a => a.DescricaoNivelEnsino)
+                @Smc.EditorFor(a => a.DescricaoCursoOferta)
+                @Smc.EditorFor(a => a.DescricaoDocumentoConclusao)
+                @Smc.EditorFor(a => a.DescricaoGrauAcademico)
+                @Smc.EditorFor(a => a.DescricaoTitulacao)
+            }
+
+            @Smc.EditorFor(m => m.ExibirMensagemInformativaBachareladoLicenciatura)
+            @Smc.DisplayFor(m => m.MensagemInformativaBachareladoLicenciatura)
+
+            using (Smc.Fieldset("Formacoes").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_formacoes")).Begin())
+            {
+                @(Smc.Grid("gridFormacoes", new SMCPagerModel<DocumentoConclusaoFormacaoListarViewModel>
+                (Model.FormacoesEspecificas))
+                .AutoHideNavigator()
+                .HideNavigator()
+                .HideGridTitle()
+                .HideRowNumber()
+                .FieldColumn(a => a.NumeroRegistroAcademico)
+                .FieldColumn(a => a.FormacoesEspecificas)
+                .FieldColumn(a => a.DataConclusao)
+                .FieldColumn(a => a.DataColacaoGrau)
+                )
+            }
+        }
+
+        using (Smc.Fieldset("DadosDocumento").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_dados_documento")).Begin())
+        {
+            @Smc.EditorFor(a => a.Seq)
+            @Smc.EditorFor(a => a.DescricaoTipoDocumentoAcademico)
+
+            @Smc.EditorFor(a => a.NumeroViaDocumentoFormatado)
+            @Smc.EditorFor(a => a.NumeroProcesso)
+
+            if (!string.IsNullOrEmpty(Model.NumeroProtocolo))
+            {
+                using (Smc.Div().Size(SMCSize.Grid4_24).Begin())
+                {
+                    using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+                    {
+                        <label>
+                            Solicitação de serviço
+                            <br />
+                            @{ var buttonSetSolicitacaoServico = Smc.ButtonSet().CssClass("smc-sga-btn-formato-link smc-wizard-passo");
+                                buttonSetSolicitacaoServico.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                  .Attribute(SMCMvcConsts.MODAL_ID, "modalSolicitacao")
+                                                  .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Solicitacao_Servico_Simplificado"))
+                                                  //.Action("ConsultarSolicitacaoServicoModal", "SolicitacaoServicoRoute", new { @seqSolicitacaoServico = Model.SeqSolicitacaoServico, @numeroProtocolo = Model.NumeroProtocolo, @backUrl = HttpContext.Current.Request.Url.ToString(), @area = "" })
+                                                  .Action("Solicitacao", "SolicitacaoServico", new { @seqSolicitacaoServico = Model.SeqSolicitacaoServico, @backUrl = HttpContext.Current.Request.Url.ToString(), @area = "SRC" })
+                                                  .Ajax(isPost: false)
+                                                  .SecurityToken(UC_SRC_004_01_02.CONSULTAR_SOLICITACAO)
+                                                  .Type(SMCButtonType.Link)
+                                                  .Text(Model.NumeroProtocolo));
+
+                                @buttonSetSolicitacaoServico;
+                            }
+                        </label>
+                    }
+                }
+            }
+            else
+            {
+                using (Smc.Div().Size(SMCSize.Grid4_24).Begin())
+                {
+                    using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+                    {
+                        <label>Solicitação de serviço</label>
+                        <p>-</p>
+                    }
+                }
+            }
+
+            if (Model.HabilitarSecoes)
+            {
+                if (Model.SeqDocumentoDiplomaGAD.HasValue)
+                {
+                    using (Smc.Div().Size(SMCSize.Grid4_24).Begin())
+                    {
+                        using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+                        {
+                            <label>
+                                Documento GAD
+                                <br />
+                                @{ var buttonSetDocumentoGAD = Smc.ButtonSet().CssClass("smc-sga-btn-formato-link smc-wizard-passo");
+                                    buttonSetDocumentoGAD.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                  .Attribute(SMCMvcConsts.MODAL_ID, "modalDiploma")
+                                                  .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Visualizar_Documento_Academico"))
+                                                  .Ajax(isPost: false)
+                                                  .Type(SMCButtonType.Link)
+                                                  .Url(Model.UrlDocumentoGAD)
+                                                  .SecurityToken(UC_CNC_002_01_03.CONSULTAR_DOCUMENTO_CONCLUSAO)
+                                                  .Text(Model.SeqDocumentoDiplomaGAD.Value.ToString()));
+
+                                    @buttonSetDocumentoGAD;
+                                }
+                            </label>
+                        }
+                    }
+                }
+                else
+                {
+                    @Smc.EditorFor(a => a.SeqDocumentoDiplomaGAD)
+                }
+            }
+
+            if (!string.IsNullOrEmpty(Model.CodigoMigracaoDocumento))
+            {
+                @Smc.EditorFor(a => a.CodigoMigracaoDocumento)
+            }
+
+            if (Model.LancamentoHistorico)
+            {
+                @Smc.EditorFor(a => a.LancamentoHistorico)
+            }
+
+            if (Model.ExibirBotaoApostilamento)
+            {
+                using (Smc.Div().Size(SMCSize.Grid4_24).Begin())
+                {
+                    using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid24_24).Begin())
+                    {
+                        <label>Possui apostilamentos?</label>
+
+                        if (Model.PossuiApostilamentos)
+                        {
+                            <span class="smc-legenda-status-apontamento">Sim</span>
+                        }
+                        else
+                        {
+                            <p>Não</p>
+                        }
+                    }
+                }
+            }
+
+            if (!Model.HabilitarSecoes)
+            {
+                using (Smc.Fieldset("Impressao").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_impressao")).Begin())
+                {
+                    @Smc.EditorFor(a => a.NumeroSerie)
+                    @Smc.EditorFor(a => a.DataImpressao)
+                    @Smc.EditorFor(a => a.UsuarioImpressao)
+                }
+            }
+
+            if (Model.HabilitarSecaoRegistro)
+            {
+                using (Smc.Fieldset("Registro").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_registro")).Begin())
+                {
+                    @Smc.EditorFor(a => a.TipoRegistroDocumento)
+                    @Smc.EditorFor(a => a.GrupoRegistro)
+                    @Smc.EditorFor(a => a.OrgaoDeRegistro)
+                    @Smc.EditorFor(a => a.NumeroRegistro)
+                    @Smc.EditorFor(a => a.DataRegistro)
+                    @Smc.EditorFor(a => a.UsuarioRegistro)
+                    @Smc.EditorFor(a => a.Livro)
+                    @Smc.EditorFor(a => a.Folha)
+                }
+            }
+
+            if (Model.ExibirSecaoEntrega)
+            {
+                using (Smc.Fieldset("Entrega").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_entrega")).Begin())
+                {
+                    if (Model.ConfirmacaoAluno.HasValue)
+                    {
+                        @Smc.EditorFor(a => a.ConfirmacaoAluno)
+                    }                    
+                }
+            }
+
+            if (Model.ExibirSecaoHistoricosDownload)
+            {
+                using (Smc.Fieldset("HistoricoDownload").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_historico_download")).Begin())
+                {
+                    using (Smc.Div("divgridHistoricoDownload").Attribute("data-id", "divgridHistoricoDownload").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+                    {
+                        @Smc.ActionList("ListarHistoricosDownload", Model.FiltroHistoricoDownload)
+                    }
+                }
+            }
+
+            if (Model.DocumentoConclusaoViaAnterior != null)
+            {
+                using (Smc.Fieldset("DocumentoAnterior").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_documentoAnterior")).Begin())
+                {
+                    @(Smc.Grid("gridDocumentoAnterior", new SMCPagerModel<DocumentoConclusaoViaAnteriorListarViewModel>(Model.DocumentoConclusaoViaAnterior))
+                         .AutoGenerateColumns()
+                         .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "", true,
+                                       f => Smc.Button(SMCButtonBehavior.Visualizar, "Consultar", new { seq = new SMCEncryptedLong((f as DocumentoConclusaoViaAnteriorListarViewModel).Seq), Area = "CNC" })
+                                       .Attribute("target", "_blank")
+                                       .DisplayMode(SMCButtonDisplayMode.Icon)
+                                       .Tooltip(Smc.GetUIResource("botao_consultar_documento_conclusao_tooltip")))
+                         .HideRowNumber()
+                         .AutoHideNavigator()
+                         .HideNavigator()
+                         .HideGridTitle()
+                    )
+                }
+            }
+
+            using (Smc.Fieldset("InformacoesAdicionais").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_informacoes_adicionais")).Begin())
+            {
+                @(Smc.Grid("gridDocumentoAnterior", new SMCPagerModel<DocumentoConclusaoMensagemViewModel>(Model.InformacoesAdicionais))
+                         .AutoGenerateColumns()
+                         .HideRowNumber()
+                         .AutoHideNavigator()
+                         .HideNavigator()
+                         .HideGridTitle()
+                    )
+            }
+        }
+    }
+
+    using (Smc.Tab("tab02").Title(Smc.GetUIResource("Tab_Historicos")).Begin())
+    {
+        using (Smc.Fieldset("Situacao").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_situacao")).Begin())
+        {
+            @(Smc.Grid("gridSituacoes", new SMCPagerModel<DocumentoConclusaoHistoricoListarViewModel>(Model.Situacoes))
+                                                            .AutoGenerateColumns()
+                                                            .AutoHideNavigator()
+                                                            .HideNavigator()
+                                                            .HideGridTitle()
+            )
+        }
+    }
+
+    var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24);
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+    .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+    .Type(SMCButtonType.Link)
+    .Url(Url.Action("Index", "DocumentoConclusao"), true));
+
+    @buttonSet;
+}
+
+@using (Smc.ModalWindow("modalSolicitacao")
+           .Form("formSolicitacao", closeOnSubmit: true)
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }
+
+@using (Smc.ModalWindow("modalDadosPessoais")
+           .Form("formDadosPessoais", closeOnSubmit: true)
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }
+
+@using (Smc.ModalWindow("modalDiploma")
+           .Form("formDiploma", closeOnSubmit: true)
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }
+
+@using (Smc.ModalWindow("modalAlterarStatusDocumentoDigital")
+        .Form("frmAlterarStatusDocumentoDigital", "SalvarStatusDocumentoDigital", "DocumentoConclusao", new { area = "CNC" }, closeOnSubmit: true, config: x => x.Ajax())
+        .Size(SMCModalWindowSize.Large)
+        .Button(SMCButtonBehavior.Salvar, "SalvarStatusDocumentoDigital", "SalvarStatusDocumentoDigital", new { area = string.Empty }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .SecurityToken(UC_CNC_002_01_07.MANTER_STATUS_DOCUMENTO_DIGITAL)
+        .Begin()) { }

@@ -1,0 +1,78 @@
+﻿@model SMC.SGA.Administrativo.Areas.CNC.Models.ConsultaPublicaFiltrarViewModel
+
+@{
+    ViewBag.Title = "Consulta Pública";
+    Layout = "~/Views/Shared/_LayoutConsulta.cshtml";
+}
+
+@if (!Model.ExibirApenasConsulta)
+{
+    using (Smc.Form("filtroConsultaPublica").Ajax("#divConsultaPublica").Size(SMCSize.Grid24_24).Begin())
+    {
+        <div class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24 smc-cpd-mensagem-inicio">
+            <span>
+                Preencha os campos abaixo e clique em Consultar.
+            </span>
+        </div>
+        @Smc.EditorFor(m => m.CodigoVerificacao)
+
+        using (Smc.HidePanel("hidePanel").Header("Ajuda").Begin())
+        {
+            <span></span>
+        }
+
+        @Smc.EditorFor(m => m.NomeCompletoDiplomado)
+
+        using (Smc.Div("captcha").Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid12_24).Begin())
+        {
+            @Smc.Captcha().Theme(SMCCaptchaTheme.Light)
+        }
+
+        <div class="smc-size-md-12 smc-size-xs-24 smc-size-sm-8 smc-size-lg-12 smc-btn-inline">
+            @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar)
+               .DisplayMode(SMCButtonDisplayMode.Text)
+               .Tooltip(@Smc.GetUIResource("Botao_Consultar"))
+               .Text(@Smc.GetUIResource("Botao_Consultar"))
+               .Action("Visualizar", "ConsultaPublica")
+            ))
+        </div>
+
+        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24) smc-cpd-informacoes">@Smc.GetUIResource("Texto_Informativo")</label>
+    }
+
+    using (Smc.Div("divConsultaPublica").Attribute("data-id", "divConsultaPublica").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        @Smc.ActionList("Visualizar", Model, true)
+    }
+
+    @(Smc.ButtonSet()
+         .AddButton(Smc.Button(SMCButtonBehavior.Voltar).Tooltip(@Smc.GetUIResource("Botao_Pagina_Inicial"))
+                                                        .Text(@Smc.GetUIResource("Botao_Pagina_Inicial"))
+                                                        .DisplayMode(SMCButtonDisplayMode.Text)
+                                                        .Url(Model.Url, true)
+                                                        ))
+}
+else
+{
+    using (Smc.Div("divConsultaPublica").Attribute("data-id", "divConsultaPublica").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        @Smc.ActionList("Visualizar", Model, false)
+    }
+}
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#captcha > div').attr('data-callback', 'habilitar');
+            var id = $('.smc-btn-pesquisar').attr('id');
+            $('#' + id).attr('disabled', 'disabled');
+        });
+
+        function habilitar() {
+            $('.smc-btn-pesquisar').each(function () {
+                $(this).removeAttr('disabled');
+            });
+        }
+    </script>
+}

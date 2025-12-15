@@ -1,0 +1,60 @@
+﻿@model GrupoDocumentoRequeridoListarViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("smc-sga-display").Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(p => p.Descricao).Size(SMCSize.Grid8_24)
+                @Smc.DisplayFor(p => p.MinimoObrigatorio).Size(SMCSize.Grid8_24)
+                @Smc.DisplayFor(p => p.UploadObrigatorio).Size(SMCSize.Grid8_24)
+            }
+        }
+
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            @(Smc.Grid("gridDocumentos", new SMCPagerModel<GrupoDocumentoRequeridoItemListarViewModel>(Model.Itens))
+                                                   .AutoGenerateColumns()
+                                                   .AutoHideNavigator()
+                                                   .HideNavigator()
+            )
+        }
+    }
+
+    var buttonSet = Smc.Templates.DetailedListButtons()
+                   .Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24)
+                   .NumberOfButtonsToShow(0);
+
+    var btnEditar = Smc.Button(SMCButtonBehavior.Alterar)
+        .CssClass("smc-btn-alterar-ico")
+        .Tooltip(Smc.GetUIResource("Botao_Editar_Grupo_Documento_Requerido_Tooltip"))
+        .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirNovoGrupoDocumentoRequerido")
+        .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Botao_Editar_Grupo_Documento_Requerido_Tooltip"))
+        .Ajax(isPost: false, updateTargetId: "#divGridGruposDocumentosRequeridos")
+        .SecurityToken(UC_SRC_002_04_13.CONFIGURAR_ETAPA_MANTER_GRUPO_DOCUMENTOS)
+        .Action("Editar", "GrupoDocumentoRequerido", new { Seq = new SMCEncryptedLong(Model.Seq), Area = "SRC" });
+
+    var btnExcluir = Smc.Button(SMCButtonBehavior.Excluir)
+       .Enabled(Model.HabilitarBotaoExcluir)
+       .ButtonInstructions(Smc.GetUIResource(Model.MensagemBotaoExcluir))
+       .DisplayMode(SMCButtonDisplayMode.Icon)
+       .Confirm(Smc.GetUIResource("Exclusao_Grupo_Documento_Requerido_Title"), string.Format(Smc.GetUIResource("Exclusao_Grupo_Documento_Requerido_Confirmacao"), Model.Descricao))
+       .Tooltip(Smc.GetUIResource("Botao_Excluir_Grupo_Documento_Requerido_Tooltip"))
+       .SecurityToken(UC_SRC_002_04_13.CONFIGURAR_ETAPA_MANTER_GRUPO_DOCUMENTOS)
+       .Action("Excluir", "GrupoDocumentoRequerido", new { Seq = new SMCEncryptedLong(Model.Seq), SeqProcessoEtapa = new SMCEncryptedLong(Model.SeqProcessoEtapa), SeqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa), Area = "SRC" });
+
+    buttonSet.AddButton(btnEditar);
+    buttonSet.AddButton(btnExcluir);
+
+    @buttonSet;
+}
+
+
+
+              
+               
+          

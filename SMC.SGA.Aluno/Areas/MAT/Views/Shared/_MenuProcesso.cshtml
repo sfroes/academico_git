@@ -1,0 +1,73 @@
+﻿@model MatriculaPaginaViewModelBase
+@Smc.MultiTabChecker("EntrarEtapa_" + Model.SeqSolicitacaoMatricula + "_" + Model.SeqConfiguracaoEtapa)
+@using (Smc.Div().CssClass("smc-sga-painel-lateral-processo").Size(SMCSize.Grid5_24, SMCSize.Grid24_24, SMCSize.Grid5_24, SMCSize.Grid5_24).Begin())
+{
+    using (Smc.Div().CssClass("smc-sga-painel-lateral-processo-nome").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        <span class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">@Model.DescricaoProcesso</span>
+
+        if (Model.ExibeEntidadeResponsavel)
+        {
+            <span class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">@Model.DescricaoUnidadeResponsavel</span>
+        }
+        if (Model.ExibeNivelEnsino)
+        {
+            <span class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">@Model.DescricaoNivelEnsino</span>
+        }
+        if (Model.ExibeDescricaoCurso)
+        {
+            <span class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">@Model.DescricaoCurso</span>
+        }
+        if (Model.ExibeVinculo)
+        {
+            <span class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">@Model.DescricaoVinculo</span>
+        }
+        <span class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">@Model.DescricaoEtapa</span>
+    }
+
+    using (Smc.Div().CssClass("smc-sga-painel-lateral-processo-passos").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        foreach (var pagina in @Model.FluxoPaginas)
+        {
+            string cssClass = "";
+            string url = "";
+            if (Model.Ordem == pagina.Ordem)
+            {
+                cssClass += "smc-sga-processo-passo-atual";
+            }
+            else if (Model.Ordem > pagina.Ordem)
+            {
+                cssClass += "smc-sga-processo-passo-concluido";
+
+                url = Url.Action("EntrarEtapa", "Matricula", new
+                {
+                    area = "MAT",
+                    seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacaoMatricula),
+                    seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa),
+                    tokenRet = pagina.Token
+                });
+            }
+            else
+            {
+                cssClass += "smc-sga-processo-passo-emaberto";
+            }
+
+            using (Smc.Div().CssClass(cssClass).Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Attribute("title", pagina.Titulo).Begin())
+            {
+                if (!Model.EtapaFinalizada && !string.IsNullOrEmpty(url) && !Model.Bloqueios.Any())
+                {
+                    <a href="@url">@pagina.Titulo</a>
+                }
+                else
+                {
+                    <span>@pagina.Titulo</span>
+                }
+            }
+        }
+    }
+
+    using (Smc.Div().CssClass("smc-sga-painel-lateral-processo-contador").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        <span>@String.Format(Smc.GetUIResource("Texto_Passo_Atual"), Model.NumeroPaginaAtual.ToString(), Model.FluxoPaginas.Count.ToString())</span>
+    }
+}

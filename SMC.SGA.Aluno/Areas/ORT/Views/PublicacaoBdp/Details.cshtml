@@ -1,0 +1,86 @@
+﻿@using SMC.Framework.Util
+@model PublicacaoBdpViewModel
+
+@Html.Action("CabecalhoPublicacaoBdp", new { seqTrabalhoAcademico = Model.SeqTrabalhoAcademico })
+
+@if (Model.ExibirAutorizacao)
+{
+    using (Smc.Header("Publicacao", SMCHeaderType.Primary)
+                            .Item(prop => prop.DataAutorizacao, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24)
+                            .Item(prop => prop.TipoAutorizacao, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24)
+                            .Item(prop => prop.CodigoAutorizacao, sizeMD: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24)
+                            .Begin())
+    {
+        @*@Smc.Button(SMCButtonBehavior.Imprimir, "ImprimirAutorizacao", new { Seq = new SMCEncryptedLong(Model.Seq), SeqInstituicaoNivel = new SMCEncryptedLong(Model.SeqInstituicaoNivel), Area = "ORT" }, "PublicacaoBdp").Text(Smc.GetUIResource("Botao_SegundaViaAutorizacaoPublicacaoBdp")).Tooltip(Smc.GetUIResource("Botao_SegundaViaAutorizacaoPublicacaoBdp_Tooltip")).SecurityToken(UC_ORT_003_01_03.EXIBIR_RELATORIO_AUTORIZACAO_PUBLICACAO).CssClass("smc-btn-imprimir-icotext").Attribute("target", "_blank")*@
+    }
+}
+
+@using (Smc.Fieldset("fieldSetAutores").CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    foreach (var item in Model.TrabalhoAcademico.Autores)
+    {
+        @Smc.DisplayFor(d => item.NomeAutor).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid8_24)
+        @Smc.DisplayFor(d => item.NomeAutorFormatado).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid8_24)
+        @Smc.DisplayFor(d => item.EmailAutor).Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid8_24)
+    }
+}
+
+@using (Smc.Fieldset("fieldSetInformacoesGerais").CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    @Smc.DisplayFor(d => d.UltimaSituacaoTrabalho).Size(SMCSize.Grid8_24, SMCSize.Grid12_24, SMCSize.Grid16_24, SMCSize.Grid8_24)
+    @Smc.DisplayFor(d => d.DataDefesa).Size(SMCSize.Grid4_24, SMCSize.Grid12_24, SMCSize.Grid6_24, SMCSize.Grid4_24)
+    @Smc.DisplayFor(d => d.DescricaoTipoTrabalho).Size(SMCSize.Grid4_24, SMCSize.Grid12_24, SMCSize.Grid6_24, SMCSize.Grid4_24)
+    @Smc.DisplayFor(d => d.QuantidadeVolumes).Size(SMCSize.Grid4_24, SMCSize.Grid12_24, SMCSize.Grid6_24, SMCSize.Grid4_24)
+    @Smc.DisplayFor(d => d.QuantidadePaginas).Size(SMCSize.Grid4_24, SMCSize.Grid12_24, SMCSize.Grid6_24, SMCSize.Grid4_24)
+}
+
+
+@using (Smc.Fieldset("fieldsetArquivo").Begin())
+{
+    @Smc.DisplayFor(e => e.Arquivos).HideLabel().CssClass("smc-sga-externo-upload-arquivo");
+}
+
+@using (Smc.Fieldset("FieldSetBancaExaminadora").CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    @(Smc.Grid("gridBancaExaminadora" + Model.Seq, new SMCPagerModel<BancaExaminadoraViewModel>(Model.TrabalhoAcademico.MembrosBancaExaminadora))
+                                                                            .HideGridTitle()
+                                                                            .HideNavigator()
+                                                                            .HideRowNumber()
+                                                                            .FieldColumn(f => f.Nome, cssClass: "smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+                                                                            .FieldColumn(f => f.Instituicao, cssClass: "smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+                                                                            .Size(SMCSize.Grid24_24))
+}
+
+@using (Smc.Fieldset("fieldSetInformcoesIdiomas").CssClass("smc-sga-confirmacao-dados").Begin())
+{
+
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+    {
+        <p>@Smc.GetUIResource("Mensagem_Informativa_Idioma_Trabalho")</p>
+    }
+
+    foreach (var item in Model.InformacoesIdioma)
+    {
+        using (Smc.Accordion("idiomas").Begin())
+        {
+            using (Smc.AccordionSection(item.Idioma.ToString()).Title(SMCEnumHelper.GetDescription(item.Idioma)).Begin())
+            {
+                @Smc.DisplayFor(d => item.IdiomaTrabalho).Size(SMCSize.Grid4_24)
+                @Smc.DisplayFor(d => item.Titulo).Size(SMCSize.Grid20_24)
+                @Smc.DisplayFor(d => item.Resumo).Size(SMCSize.Grid24_24)
+                @Smc.DisplayFor(d => item.ListaPalavrasChave).Size(SMCSize.Grid24_24)
+            }
+        }
+    }
+}
+
+@{
+    var buttonSet2 = Smc.ButtonSet();
+
+    buttonSet2.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+    .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+    .Action("Index", "Home", new { Area = "" }, forceForBackBehavior: true)
+    .Highlight(Smc.GetViewMode() == SMCViewMode.ReadOnly));
+
+    @buttonSet2;
+}

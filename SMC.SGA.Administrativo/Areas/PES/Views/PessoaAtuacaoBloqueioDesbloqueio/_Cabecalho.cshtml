@@ -1,0 +1,15 @@
+﻿@model   PessoaAtuacaoBloqueioCabecalhoViewModel
+
+@using (Smc.Header("PesssoaAtuacaoBloqueio", SMCHeaderType.Primary)
+   .Item(prop => prop.NomePessoa, sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid6_24)
+   .Item(prop => prop.TipoAtuacao, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid8_24)
+   .Item(prop => prop.DescricaoReferenciaAtuacao, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid10_24)
+   .Item(prop => prop.DataBloqueio, sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid6_24)
+   .Item(prop => prop.DescricaoMotivoBloqueioFormatado, sizeMD: SMCSize.Grid16_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid8_24)
+   .Item(prop => prop.Descricao, sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid10_24)
+   .Item(prop => prop.ResponsavelBloqueio, sizeMD: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid6_24)
+   .Item(prop => prop.SituacaoBloqueio, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid6_24)
+   .Begin())
+{
+
+}

@@ -1,0 +1,19 @@
+﻿@model SMCPagerModel<OfertaCursoCicloLetivoAssociacaoLocalidadeListaViewModel>
+
+@(Smc.Grid("gridAssociacaoLocalidade")
+     .Action("ListarAssociacaoLocalidade", "OfertaCursoCicloLetivo")
+     .AutoGenerateColumns()
+             .ButtonColumn(SMCButtonSetType.Secondary, "smc-sga-grid-coluna-botoes",
+                    item => Smc.FieldButton(SMCButtonBehavior.Excluir, "ExcluirAssociacaoLocalidade", 
+                                    new 
+                                    { 
+                                        @seqOfertaCursoCicloLetivo = SMCDESCrypto.EncryptNumberForURL((item as OfertaCursoCicloLetivoAssociacaoLocalidadeListaViewModel).SeqOfertaCursoCicloLetivo),
+                                        @seqAssociacaoLocalidade = SMCDESCrypto.EncryptNumberForURL((item as OfertaCursoCicloLetivoAssociacaoLocalidadeListaViewModel).SeqAssociacaoLocalidade),
+                                    }, "OfertaCursoCicloLetivo")
+                               .DisplayMode(SMCButtonDisplayMode.Icon)
+                               .Ajax(isPost: true, updateTargetId: "#divGridAssociacaoLocalidade")
+                               .Confirm(Smc.GetUIResource("Exclusao_Associacao_Localidade_Title"),
+                                        string.Format(Smc.GetUIResource("Exclusao_Associacao_Localidade_Confirmacao"), (item as OfertaCursoCicloLetivoAssociacaoLocalidadeListaViewModel).NomeLocalidade))
+                  )
+)
+

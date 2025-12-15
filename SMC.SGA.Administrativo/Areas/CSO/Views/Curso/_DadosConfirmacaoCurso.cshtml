@@ -1,0 +1,24 @@
+﻿@model CursoDynamicModel
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Fieldset("fieldsetDadosCurso").LegendText(@Smc.GetUIResource("Label_DadosCurso")).Begin())
+    {
+        @Smc.DisplayFor(m => m.Nome)
+        if (!string.IsNullOrEmpty(Model.Sigla)) { Smc.DisplayFor(m => m.Sigla); }
+        if (!string.IsNullOrEmpty(Model.NomeReduzido)) { Smc.DisplayFor(m => m.NomeReduzido); }
+        @Smc.DisplayFor(m => m.DescricaoNivelEnsino)
+
+        @Smc.DisplayFor(m => m.HierarquiasEntidades).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-conteudo-lista smc-sga-confirmacao-dados-agrupamento")
+        if (Model.Hierarquias != null)
+        {
+            foreach (var hierarquia in Model.Hierarquias)
+            {
+                using (Smc.Div("DivHierarquias").CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+                {
+                    @Smc.DisplayFor(m => hierarquia.Descricao).HideLabel(SMCDisplayHideLabel.Children).CssClass("smc-listdetailed-conteudo-subtitulo")
+                    @Smc.DisplayFor(m => hierarquia.Classificacoes).HideLabel(SMCDisplayHideLabel.All)
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSObjetivoEstrategico" targetNamespace="http://tempuri.org/DSObjetivoEstrategico.xsd" xmlns:mstns="http://tempuri.org/DSObjetivoEstrategico.xsd" xmlns="http://tempuri.org/DSObjetivoEstrategico.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSObjetivoEstrategico" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSObjetivoEstrategico" msprop:Generator_UserDSName="DSObjetivoEstrategico">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ObjetivoEstrategico" msprop:Generator_TableClassName="ObjetivoEstrategicoDataTable" msprop:Generator_TableVarName="tableObjetivoEstrategico" msprop:Generator_RowChangedName="ObjetivoEstrategicoRowChanged" msprop:Generator_TablePropName="ObjetivoEstrategico" msprop:Generator_RowDeletingName="ObjetivoEstrategicoRowDeleting" msprop:Generator_RowChangingName="ObjetivoEstrategicoRowChanging" msprop:Generator_RowEvHandlerName="ObjetivoEstrategicoRowChangeEventHandler" msprop:Generator_RowDeletedName="ObjetivoEstrategicoRowDeleted" msprop:Generator_RowClassName="ObjetivoEstrategicoRow" msprop:Generator_UserTableName="ObjetivoEstrategico" msprop:Generator_RowEvArgName="ObjetivoEstrategicoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SeqPlanoMeta" msprop:Generator_ColumnVarNameInTable="columnSeqPlanoMeta" msprop:Generator_ColumnPropNameInRow="SeqPlanoMeta" msprop:Generator_ColumnPropNameInTable="SeqPlanoMetaColumn" msprop:Generator_UserColumnName="SeqPlanoMeta" type="xs:long" minOccurs="0" />
+              <xs:element name="DescricaoPlanoMeta" msprop:Generator_ColumnVarNameInTable="columnDescricaoPlanoMeta" msprop:Generator_ColumnPropNameInRow="DescricaoPlanoMeta" msprop:Generator_ColumnPropNameInTable="DescricaoPlanoMetaColumn" msprop:Generator_UserColumnName="DescricaoPlanoMeta" type="xs:string" minOccurs="0" />
+              <xs:element name="Ordem" msprop:Generator_ColumnVarNameInTable="columnOrdem" msprop:Generator_ColumnPropNameInRow="Ordem" msprop:Generator_ColumnPropNameInTable="OrdemColumn" msprop:Generator_UserColumnName="Ordem" type="xs:short" minOccurs="0" />
+              <xs:element name="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" msprop:Generator_UserColumnName="Descricao" type="xs:string" minOccurs="0" />
+              <xs:element name="NomeUsuarioResponsavel" msprop:Generator_ColumnVarNameInTable="columnNomeUsuarioResponsavel" msprop:Generator_ColumnPropNameInRow="NomeUsuarioResponsavel" msprop:Generator_ColumnPropNameInTable="NomeUsuarioResponsavelColumn" msprop:Generator_UserColumnName="NomeUsuarioResponsavel" type="xs:string" minOccurs="0" />
+              <xs:element name="NomeUsuarioCorresponsavel" msprop:Generator_ColumnVarNameInTable="columnNomeUsuarioCorresponsavel" msprop:Generator_ColumnPropNameInRow="NomeUsuarioCorresponsavel" msprop:Generator_ColumnPropNameInTable="NomeUsuarioCorresponsavelColumn" msprop:Generator_UserColumnName="NomeUsuarioCorresponsavel" type="xs:string" minOccurs="0" />
+              <xs:element name="MesPrazo" msprop:Generator_ColumnVarNameInTable="columnMesPrazo" msprop:Generator_ColumnPropNameInRow="MesPrazo" msprop:Generator_ColumnPropNameInTable="MesPrazoColumn" msprop:Generator_UserColumnName="MesPrazo" type="xs:string" minOccurs="0" />
+              <xs:element name="UltimoStatus" msprop:Generator_ColumnVarNameInTable="columnUltimoStatus" msprop:Generator_ColumnPropNameInRow="UltimoStatus" msprop:Generator_ColumnPropNameInTable="UltimoStatusColumn" msprop:Generator_UserColumnName="UltimoStatus" type="xs:string" minOccurs="0" />
+              <xs:element name="PercentualUltimoStatus" msprop:Generator_ColumnVarNameInTable="columnPercentualUltimoStatus" msprop:Generator_ColumnPropNameInRow="PercentualUltimoStatus" msprop:Generator_ColumnPropNameInTable="PercentualUltimoStatusColumn" msprop:Generator_UserColumnName="PercentualUltimoStatus" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoUltimoStatus" msprop:Generator_ColumnVarNameInTable="columnDescricaoUltimoStatus" msprop:Generator_ColumnPropNameInRow="DescricaoUltimoStatus" msprop:Generator_ColumnPropNameInTable="DescricaoUltimoStatusColumn" msprop:Generator_UserColumnName="DescricaoUltimoStatus" type="xs:string" minOccurs="0" />
+              <xs:element name="PenultimoStatus" msprop:Generator_ColumnVarNameInTable="columnPenultimoStatus" msprop:Generator_ColumnPropNameInRow="PenultimoStatus" msprop:Generator_ColumnPropNameInTable="PenultimoStatusColumn" msprop:Generator_UserColumnName="PenultimoStatus" type="xs:string" minOccurs="0" />
+              <xs:element name="PercentualPenultimoStatus" msprop:Generator_ColumnVarNameInTable="columnPercentualPenultimoStatus" msprop:Generator_ColumnPropNameInRow="PercentualPenultimoStatus" msprop:Generator_ColumnPropNameInTable="PercentualPenultimoStatusColumn" msprop:Generator_UserColumnName="PercentualPenultimoStatus" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoPenultimoStatus" msprop:Generator_ColumnVarNameInTable="columnDescricaoPenultimoStatus" msprop:Generator_ColumnPropNameInRow="DescricaoPenultimoStatus" msprop:Generator_ColumnPropNameInTable="DescricaoPenultimoStatusColumn" msprop:Generator_UserColumnName="DescricaoPenultimoStatus" type="xs:string" minOccurs="0" />
+              <xs:element name="IndiceUltimoStatus" msprop:Generator_ColumnVarNameInTable="columnIndiceUltimoStatus" msprop:Generator_ColumnPropNameInRow="IndiceUltimoStatus" msprop:Generator_ColumnPropNameInTable="IndiceUltimoStatusColumn" msprop:Generator_UserColumnName="IndiceUltimoStatus" type="xs:short" minOccurs="0" />
+              <xs:element name="IndicePenultimoStatus" msprop:Generator_ColumnVarNameInTable="columnIndicePenultimoStatus" msprop:Generator_ColumnPropNameInRow="IndicePenultimoStatus" msprop:Generator_ColumnPropNameInTable="IndicePenultimoStatusColumn" msprop:Generator_UserColumnName="IndicePenultimoStatus" type="xs:short" minOccurs="0" />
+              <xs:element name="EnumDescricaoUltimoStatus" msprop:Generator_ColumnVarNameInTable="columnEnumDescricaoUltimoStatus" msprop:Generator_ColumnPropNameInRow="EnumDescricaoUltimoStatus" msprop:Generator_ColumnPropNameInTable="EnumDescricaoUltimoStatusColumn" msprop:Generator_UserColumnName="EnumDescricaoUltimoStatus" type="xs:string" minOccurs="0" />
+              <xs:element name="EnumDescricaoPenultimoStatus" msprop:Generator_ColumnVarNameInTable="columnEnumDescricaoPenultimoStatus" msprop:Generator_ColumnPropNameInRow="EnumDescricaoPenultimoStatus" msprop:Generator_ColumnPropNameInTable="EnumDescricaoPenultimoStatusColumn" msprop:Generator_UserColumnName="EnumDescricaoPenultimoStatus" type="xs:string" minOccurs="0" />
+              <xs:element name="EnumDescricaoMesPrazo" msprop:Generator_ColumnVarNameInTable="columnEnumDescricaoMesPrazo" msprop:Generator_ColumnPropNameInRow="EnumDescricaoMesPrazo" msprop:Generator_ColumnPropNameInTable="EnumDescricaoMesPrazoColumn" msprop:Generator_UserColumnName="EnumDescricaoMesPrazo" type="xs:string" minOccurs="0" />
+              <xs:element name="AnoPrazo" msprop:Generator_ColumnVarNameInTable="columnAnoPrazo" msprop:Generator_ColumnPropNameInRow="AnoPrazo" msprop:Generator_ColumnPropNameInTable="AnoPrazoColumn" msprop:Generator_UserColumnName="AnoPrazo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

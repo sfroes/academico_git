@@ -1,0 +1,21 @@
+﻿@model ProfessorSeletorViewModel
+
+@if (Model.HabilitarSelecao)
+{
+    using (Smc.ModalWindow("modalSelecionarInstituicaoInicial")
+        .Title(Smc.GetUIResource("Titulo_Modal_Selecao_Instituicao"))
+        .Form("formSelecionarInstituicao", "SelecionarInstituicao", "Home", new { @area = "" }, config: a => a.Ajax())
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .CssClass("sga-modal-selecionar-aluno")
+        .AutoShow()
+        .AllowEscKeyToClose(false)
+        .HideCloseButton()
+        .Begin())
+    {
+        @Smc.EditorFor(m => m.SeqInstituicaoEnsino); 
+    }
+}
+else
+{
+    @Html.Action("MarcaProfessor", "Home", new { @area = "" })
+}

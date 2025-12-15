@@ -1,0 +1,5 @@
+﻿@model CicloLetivoCabecalhoViewModel
+
+@using (Smc.Header("CicloLetivo", SMCHeaderType.Primary)
+                 .Item(prop => prop.Descricao, sizeMD: SMCSize.Grid12_24)
+                 .Begin()) { }

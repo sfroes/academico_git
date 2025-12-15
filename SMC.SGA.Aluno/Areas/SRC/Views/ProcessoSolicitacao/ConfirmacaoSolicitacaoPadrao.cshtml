@@ -1,0 +1,20 @@
+﻿@model ConfirmacaoSolicitacaoPadraoPaginaViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_CONFIRMACAO))
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_ARQUIVO_CONFIRMACAO))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    @Html.Raw(Model.DescricaoOriginal)
+
+    @Html.Partial("_BotoesNavegacao", Model)
+}

@@ -1,0 +1,44 @@
+﻿@using SMC.SGA.Administrativo.Areas.CAM.Views.CampanhaCopia.App_LocalResources
+@model CampanhaCopiaViewModel
+
+@using (Smc.Fieldset("fieldsetCampanhaConfirmacao").Begin())
+{
+    @Smc.DisplayFor(prop => prop.DescricaoCampanhaOrigem)
+    @Smc.DisplayFor(prop => prop.CiclosLetivosCampanhaOrigem)
+}
+
+@using (Smc.Fieldset("fieldsetOfertaConfirmacao").Begin())
+{
+
+    @(Smc.Grid("gridCampanhaOfertaConfirmacao", Model.CampanhaOfertas)
+                         .AutoGenerateColumns()
+                         .HideRowNumber()
+                         .HidePager()
+                         .HideRowsTotalizer()
+                         .HideNumberOfRowsPerPageSelector()
+                         .HideNavigator()
+                         .HideGridTitle()
+    )
+
+}
+
+@using (Smc.Fieldset("fieldsetProcessoSeletivoConfirmacao").Begin())
+{
+    foreach (var processoSeletivo in Model.ProcessosSeletivos)
+    {
+        using (Smc.Fieldset("fieldsetProcessoSeletivoItemConfirmacao").LegendText(processoSeletivo.Descricao).Begin())
+        {
+            @Smc.DisplayFor(prop => processoSeletivo.CopiarProcessoGPI).Size(SMCSize.Grid6_24)
+            @Smc.DisplayFor(prop => processoSeletivo.DataInicioInscricaoProcessoGPI).Size(SMCSize.Grid4_24)
+            @Smc.DisplayFor(prop => processoSeletivo.DataFimInscricaoProcessoGPI).Size(SMCSize.Grid14_24)
+
+            foreach (var convocacao in processoSeletivo.Convocacoes)
+            {
+                @Smc.DisplayFor(prop => convocacao.Descricao).Size(SMCSize.Grid12_24)
+                @Smc.DisplayFor(prop => convocacao.DescricaoCicloLetivo).Size(SMCSize.Grid6_24)
+            }
+        }
+    }
+}
+
+@Smc.WizardView()

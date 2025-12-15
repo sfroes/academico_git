@@ -1,0 +1,39 @@
+﻿@using SMC.Academico.Common.Areas.GRD.Constants;
+
+@model HistoricoDivisaoTurmaConfiguracaoGradeFiltroViewModel
+
+@using (Smc.Header("CabecalhoConfiguracaoGrade", SMCHeaderType.Primary)
+            .Item(p => p.DescricaoTurma, sizeMD: SMCSize.Grid24_24)
+            .Item(p => p.DescricoesCursoOfertaLocalidadeTurno, sizeMD: SMCSize.Grid24_24, hideDescription: true).Begin())
+{
+}
+
+@(Smc.ButtonSet().Type(SMCButtonSetType.Primary)
+               .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+               .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirNovaConfiguracaoGrade")
+               .Text(Smc.GetUIResource("Botao_Incluir_Nova_Configuracao_Grade"))
+               .Tooltip(Smc.GetUIResource("Botao_Incluir_Nova_Configuracao_Grade_Tooltip"))
+               .Ajax(isPost: false, updateTargetId: "modalIncluirNovaConfiguracaoGrade")
+               .CssClass("smc-btn-novo-icotext-destaque")
+               .SecurityToken(UC_GRD_001_02_01.ALTERAR_CONFIGURACAO_GRADE)
+               .Url(Url.Action("Incluir", "HistoricoDivisaoTurmaConfiguracaoGrade", new { SeqDivisaoTurma = new SMCEncryptedLong((Model as HistoricoDivisaoTurmaConfiguracaoGradeFiltroViewModel).SeqDivisaoTurma) })))
+)
+
+@using (Smc.Div("divGridHistoricosDivisaoTurmaConfiguracaoGrade").Attribute("data-id", "divGridHistoricosDivisaoTurmaConfiguracaoGrade").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Smc.ActionList("ListarHistoricosDivisaoConfiguracaoGrade", Model, false)
+}
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button("Voltar", "Index", new { Area = "TUR" }, "Turma")
+    .Type(SMCButtonType.Link)
+    .CssClass("smc-btn-voltar-icotext"))
+)
+
+@using (Smc.ModalWindow("modalIncluirNovaConfiguracaoGrade")
+                    .Title(Smc.GetUIResource("Botao_Incluir_Nova_Configuracao_Grade_Title"))
+                    .Form("Incluir", "Salvar", "HistoricoDivisaoTurmaConfiguracaoGrade", null, true, x => x.Ajax("#divGridHistoricosDivisaoTurmaConfiguracaoGrade", fieldsContainerToRequest: "#divGridHistoricosDivisaoTurmaConfiguracaoGrade"))
+                    .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Botao_Cancelar")).Tooltip(Smc.GetUIResource("Botao_Cancelar")))
+                    .Begin())
+{ }

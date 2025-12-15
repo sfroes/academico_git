@@ -1,0 +1,48 @@
+UC; Descrição
+UC_ALN_001_01_01.Pesquisar_Aluno;Este caso de uso tem como objetivo pesquisar os alunos.
+UC_ALN_001_01_02.Manter_Aluno;Este caso de uso tem como objetivo alterar alunos.
+UC_ALN_001_01_02.Permitir_Alterar_CPF;Permite incluir/alterar o seguinte dado da pessoa-atuação:  - Nome Social    Permite alterar os seguintes dados da pessoa-atuação:  - CPF  - Data de Nascimento  - Nacionalidade  - País de Origem  - Filiação      Quando os campos estiverem desabilitados, exibir a seguinte mensagem em um ícone informativo:  <i> "Somente o Administrador Acadêmico do Sistema pode alterar este campo."</i>
+UC_ALN_001_01_03.Importar_Aluno;Este caso de uso tem como objetivo importar os alunos do SGA legado.
+UC_ALN_001_02_02.Visualizar_Dados_Matricula;Este caso de uso tem como objetivo visualizar os dados de matrícula do Aluno.
+UC_ALN_001_03_01.Pesquisar_Vinculo;Este caso de uso tem como objetivo pesquisar os vínculos de uma pessoa-atuação, permitindo também a exclusão.
+UC_ALN_001_03_02.Manter_Vinculo;Este caso de uso tem como objetivo cadastrar ou alterar os vínculos de uma pessoa-atuação.
+UC_ALN_001_04_01.Associar_Formacao_Especifica_Aluno;Este caso de uso tem como objetivo a associação de formação específia ao aluno.
+UC_ALN_001_06_01.Exibir_Relatorio_Identidade_Estudantil;Esse caso de uso tem como objetivo a emissão do relatório de identidade estudantil.
+UC_ALN_001_08_01.Emissao_Declaracoes_Genericas_Alunos_CRA;Permite a emissão de declarações genéricas de alunos gerenciadas pelo Centro de Registros Acadêmicos (CRA).
+UC_ALN_001_08_01.Emissao_Declaracoes_Genericas_Alunos_PROPPg;Permite a emissão de declarações genéricas de alunos gerenciadas pelos Programas de Pós-graduação.
+UC_ALN_001_08_01.Emissao_Declaracoes_Genericas_Alunos_Secretarias_Coreu;Permite a emissão de declarações genéricas de alunos gerenciadas pelas secretarias acadêmicas do Campus Coração Eucarístico
+UC_ALN_001_08_01.Pesquisar_Aluno_Relatorio;Este caso de uso tem como objetivo a pesquisa de alunos para a emissão de relatórios.    Relatórios disponíveis:  <ul>   <li>Declaração de disciplinas cursadas</li>   <li>Declaração de matrícula</li>   <li>Declaração genérica</li>   <li>Identidade estudantil</li>   <li>Histórico escolar</li>   <li>Histórico escolar interno</li>   <li>Listagem de alunos</li>  </ul>
+UC_ALN_001_08_02.Informar_Tags_Declaracao_Generica;Este caso de uso tem como objetivo o preenchimento e conferência de informações das tags utilizadas no tipo de declaração genérica sendo emitido.
+UC_ALN_001_09_01.Cancelar_matricula;Este caso de uso tem como objetivo cancelar um aluno por descumprimento de normas do curso.
+UC_ALN_001_10_01.Exibir_Relatorio_Listagem_Assinatura;Este caso de uso tem como objetivo exibir lista de alunos.
+UC_ALN_001_11_01.Pesquisar_Previsao_Conclusao_Orientacao_Alunos;Este caso de uso tem como objetivo informar os filtros de pesquisa para o relatório de previsão de conclusão e orientação de alunos.
+UC_ALN_001_11_02.Exibir_Previsao_Conclusao_Orientacao_Alunos;Este caso de uso tem como objetivo exibir relatório de alunos com a previsão de conclusão e orientação.
+UC_ALN_001_12_01.Emitir_Relatorio_Declaracao_Generica;Este caso de uso tem como objetivo a emissão do relatório de declaração genérica, de acordo com os parâmetros e valores de tags informados pelo usuário.
+UC_ALN_002_01_01.Pesquisar_Ingressante;Este caso de uso tem como objetivo pesquisar os ingressantes, permitindo também a exclusão.
+UC_ALN_002_01_02.Manter_Ingressante;Este caso de uso tem como objetivo cadastrar ou alterar ingressantes.
+UC_ALN_002_01_03.Consultar_Situacoes_Ingressante;Esse caso de uso tem como objetivo consultar o histórico de situações de um ingressante.
+UC_ALN_002_01_04.Manter_Ticket;Esse caso de uso tem como objetivo o cadastro de tickets para um ingressante.
+UC_ALN_002_03_01.Pesquisar_Associacao_Dados_Academicos_Ingressante_Lote;Este caso de uso tem como objetivo pesquisar os ingressantes para associação de dados acadêmicos e financeiros em lote.
+UC_ALN_002_03_02.Associar_Formacao_Especifica;Este caso de uso tem como objetivo associar formação específica aos ingressantes selecionados.
+UC_ALN_002_03_03.Associar_Orientador;Este caso de uso tem como objetivo associar orientador aos ingressantes selecionados.
+UC_ALN_002_08_01.Associar_Condicao_Obrigatoriedade;Este caso de uso tem como objetivo associar condições de obrigatoriedade a um ingressante.
+UC_ALN_003_01_01.Pesquisar_Vinculo_Instituicao_Nivel;Este caso de uso tem como objetivo pesquisar uma associação de vínculo a um nível de ensino permitindo também a exclusão de associação.
+UC_ALN_003_01_02.Manter_Vinculo_Instituicao_Nivel;Este caso de uso tem como objetivo cadastrar ou alterar uma associação de vínculo a um nível de ensino.
+UC_ALN_003_01_03.Associar_Tipo_Orientacao;Este caso de uso tem como objetivo a associação de tipos de orientação por tipo de vínculo do aluno.
+UC_ALN_004_01_01.Pesquisar_Parceria_Intercambio;Este caso de uso tem como objetivo pesquisar as parcerias de intercâmbio, permitindo também a exclusão.
+UC_ALN_004_01_02.Manter_Parceria_Intercambio;Este caso de uso tem como objetivo cadastrar ou alterar parcerias de intercâmbio.
+UC_ALN_004_01_03.Pesquisar_Termo_Intercambio;Este caso de uso tem como objetivo pesquisar os termos de intercâmbio de uma parceria, permitindo também a exclusão.
+UC_ALN_004_01_04.Manter_Termo_Intercambio;Este caso de uso tem como objetivo cadastrar ou alterar termos de intercâmbios de uma parceria.
+UC_ALN_004_01_05.Pesquisar_Beneficio_Termo_Intercambio;Este caso de uso tem como objetivo pesquisar as associações de benefícios a um termo de intercâmbio, permitindo também a exclusão.
+UC_ALN_004_01_06.Associar_Beneficio_Termo_Intercambio;Este caso de uso tem como objetivo cadastrar ou alterar associações de benefícios a um termo de intercâmbio.
+UC_ALN_004_02_01.Tipo_Termo_Intercambio;Este caso de uso tem como objetivo manter o cadastro de tipo de termo, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_ALN_004_03_01.Pesquisar_Intercambio;Este caso de uso tem como objetivo pesquisar os alunos intercâmbistas.
+UC_ALN_004_03_02.Manter_Intercambio;Este caso de uso tem como objetivo alterar um período de intercambio do aluno.  
+UC_ALN_005_01_01.Selecionar_Vinculo;Esse caso de uso tem como objetivo selecionar o vínculo do aluno.
+UC_ALN_005_01_02.Home_Portal_Aluno;Este caso de uso tem como objetivo apresentar a página inicial (home) dos alunos.
+UC_ALN_005_01_02.Permitir_Visualizar_Banner_Turmas_Linha_do_Tempo;Liberar visualização de banner, turmas e linha do tempo
+UC_ALN_005_01_02.Permitir_Visualizar_Link_Bdp;Liberar visualização do link do BDP
+UC_ALN_005_01_03.Visualizar_Notas_Frequencia;Este caso de uso tem como objetivo visualizar as notas e frequencia de um aluno em uma turma.
+UC_ALN_005_02_01.Pesquisar_Solicitacao_Aluno;Esse caso de uso tem como objetivo a pesquisa de soliciações de um aluno.
+UC_ALN_005_02_02.Manter_Solicitacao_Aluno;Esse caso de uso tem como objtetivo a seleção de um tipo de serviço para criar uma nova solicitação para o aluno.
+UC_ALN_005_02_03.Cancelar_Solicitacao_Aluno;Esse caso de uso tem como objetivo o cancelamento de uma solicitação do aluno.

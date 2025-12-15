@@ -1,0 +1,485 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Security</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.Security.Configuration.SMCProviderElement">
+            <summary>
+            Representa um elemento de configuração para um provider de autenticação.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCProviderElement.IsConfigured">
+            <summary>
+            Define se o elemento foi configurado corretamente.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCProviderElement.Name">
+            <summary>
+            Recupera o nome do provider.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCProviderElement.Type">
+            <summary>
+            Recupera o tipo da classe do provider.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.Configuration.SMCProviderElement.Create``1">
+            <summary>
+            Método de suporte para criação da classe de autenticação.
+            </summary>
+            <typeparam name="T">Tipo da classe a ser criada.</typeparam>
+            <returns>Classe de autenticação criada.</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.Configuration.SMCProviderElementCollection">
+            <summary>
+            Representa uma coleção de elementos de configuração de providers de autenticação.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCProviderElementCollection.ElementName">
+            <summary>
+            Define o nome do elemento da coleção.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCProviderElementCollection.IsConfigured">
+            <summary>
+            Verifica se o itens está configurado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.Configuration.SMCProviderElementCollection.CreateNewElement">
+            <summary>
+            Cria um novo elemento para configuração.
+            </summary>
+            <returns>Elemento para configuração.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Configuration.SMCProviderElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Recupera a chave de um elemento.
+            </summary>
+            <param name="element">Elemento.</param>
+            <returns>Chave do elemento (Name).</returns>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCProviderElementCollection.Item(System.Int32)">
+            <summary>
+            Recupera um item pelo índice.
+            </summary>
+            <param name="index">Índice do item procurado.</param>
+            <returns>Item que possui o índice informado.</returns>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCProviderElementCollection.Item(System.String)">
+            <summary>
+            Recupera um item pelo nome.
+            </summary>
+            <param name="name">Nome do item procurado.</param>
+            <returns>Item que possui o nome informado.</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.Configuration.SMCAuthenticationSection">
+            <summary>
+            Representa a seção de configuração dos providers de segurança.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.Configuration.SMCAuthenticationSection.SectionName">
+            <summary>
+            Armazena o nome padrão da seção.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCAuthenticationSection.Providers">
+            <summary>
+            Recupera a lista de providers configurados.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCAuthenticationSection.DefaultProvider">
+            <summary>
+            Recupera o nome do provider padrão.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCAuthenticationSection.Current">
+            <summary>
+            Recupera a seção corrente configurada no arquivo de configuração.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.Configuration.SMCClaimsSection">
+            <summary>
+            Representa a seção de configuração dos providers de claims.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.Configuration.SMCClaimsSection.SectionName">
+            <summary>
+            Armazena o nome padrão da seção.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCClaimsSection.Providers">
+            <summary>
+            Recupera a lista de providers configurados.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCClaimsSection.DefaultProvider">
+            <summary>
+            Recupera o nome do provider padrão.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCClaimsSection.Current">
+            <summary>
+            Recupera a seção corrente configurada no arquivo de configuração.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.Configuration.SMCServiceCertificateElement">
+            <summary>
+            Elemento de configuração do certificado do serviço.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCServiceCertificateElement.CertificateReference">
+            <summary>
+            Recupera a referência para o certificado.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Configuration.SMCServiceCertificateElement.IsConfigured">
+            <summary>
+            Define se o item foi configurado.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.Configuration.SMCServiceCertificateElement.GetCertificate">
+            <summary>
+            Recupera o certificado configurado.
+            </summary>
+            <returns>Certificado configurado.</returns>
+        </member>
+        <member name="F:SMC.Framework.Security.SMCSecurityConsts.SMC_DENY_AUTHORIZATION">
+            <summary>
+            Token de segurança que é automaticamente negado pelo framework.
+            TOKEN_INVALID
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.Exceptions.SMCPrivateKeyNotFoundException">
+            <summary>
+            Representa uma exceção quando a chave privada não foi encontrada.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.Exceptions.SMCPrivateKeyNotFoundException.#ctor(System.String)">
+            <summary>
+            Cria uma nova instância de SMCPrivateKeyNotFoundException.
+            </summary>
+            <param name="paramName">Nome do parâmetro inválido.</param>
+        </member>
+        <member name="T:SMC.Framework.Security.Model.SMCUserProfile">
+            <summary>
+            Classe de suporte que abstrai os dados do usuário corrente em propriedades de fácil acesso.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Model.SMCUserProfile.Seq">
+            <summary>
+            Recupera o sequencial do usuário corrente.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Model.SMCUserProfile.NomeCompleto">
+            <summary>
+            Nome completo do usuário corrente.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Model.SMCUserProfile.NomeReduzido">
+            <summary>
+            Nome reduzido do usuário corrente.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Model.SMCUserProfile.Email">
+            <summary>
+            Recupera o e-mail do usuário corrente.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Model.SMCUserProfile.CPF">
+            <summary>
+            Recupera o cpf do usuário corrente.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Model.SMCUserProfile.CodigoPessoa">
+            <summary>
+            Recupera o código de pessoa do usuário corrente.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Model.SMCUserProfile.Item(System.String)">
+            <summary>
+            Recupera o valor de uma claim do usuário corrente.
+            </summary>
+            <param name="claimName">Nome da claim procurada.</param>
+        </member>
+        <member name="T:SMC.Framework.Security.Resources.ExceptionsResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Resources.ExceptionsResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Resources.ExceptionsResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.Resources.ExceptionsResource.SMCPrivateKeyNotFoundException">
+            <summary>
+              Looks up a localized string similar to O certificado não foi informado ou não possui chave privada para descriptografia..
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Security.Util.SMCCryptographyHelper">
+            <summary>
+            Classe utilitária para a criptografia de dados
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCCryptographyHelper.SMCRSADecrypt(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Byte[])">
+            <summary>
+            Efetua a descriptografia RSA de um vetor de bytes criptografados
+            </summary>
+            <param name="cert">Certificado que possui a chave privada para descriptografar</param>
+            <param name="data">Vetor de bytes criptografados</param>
+            <returns>Vetor de bytes descriptografados</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCCryptographyHelper.SMCRSAEncrypt(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Byte[])">
+            <summary>
+            Efetua a criptografia RSA de um vetor de bytes
+            </summary>
+            <param name="cert">Certificado que possui a chave pública para criptografia</param>
+            <param name="data">Vetor de bytes a serem criptografados</param>
+            <returns>Vetor de bytes criptografados</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCCryptographyHelper.SMCRSADecrypt(System.Security.Cryptography.X509Certificates.X509Certificate2,System.String)">
+            <summary>
+            Efetua a descriptografia RSA de uma string base64 criptografada
+            </summary>
+            <param name="cert">Certificado que possui a chave privada para descriptografar</param>
+            <param name="text">Texto base64 criptografado</param>
+            <returns>Texto descriptografado</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCCryptographyHelper.SMCRSAEncrypt(System.Security.Cryptography.X509Certificates.X509Certificate2,System.String)">
+            <summary>
+            Efetua a criptografia RSA de uma string em base64
+            </summary>
+            <param name="cert">Certificado que possui a chave pública para criptografia</param>
+            <param name="text">Texto a sere criptografado</param>
+            <returns>Texto em base64 criptografado</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.Util.SMCSecurityHelper">
+            <summary>
+            Contém métodos de suporte para tratamento da segurança.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.Util.SMCSecurityHelper._logonTokenKey">
+            <summary>
+            Armazena a chave de criptografica utilizada para criptografia do logon.
+            ATENÇÃO: essa chave foi copiada para a classe com o mesmo nome na biblioteca SMC.Framework.UI.Mvc.Security
+                     alterando aqui é necessário também alterar na outra classe.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCSecurityHelper.ExtractLogonUser(System.String)">
+            <summary>
+            Extrai o logon de um usuário a partir do token.
+            </summary>
+            <param name="token">Token do usuário.</param>
+            <returns>Logon do usuário extraído do token.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCSecurityHelper.ValidateToken(System.String,System.String,System.DateTime)">
+            <summary>
+            Valida o token utilizando chave de criptografia.
+            </summary>
+            <param name="token">Token para validação.</param>
+            <param name="login">Login do usuário.</param>
+            <param name="dataAcesso">Data de acesso.</param>
+            <returns>Verdadeiro se o token foi gerado com sucesso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCSecurityHelper.Authorize(System.String)">
+            <summary>
+            Verifica se o usuário possui permissão (de acordo com a token)
+            </summary>
+            <param name="token">Token de segurança a ser verificado.</param>
+            <returns>Verdadeiro se o usuário possui permissão no token, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCSecurityHelper.Refresh">
+            <summary>
+            Limpa o cache de segurança e força a leitura das configurações atualizadas.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCSecurityHelper.SetAuthenticatedUser(System.String)">
+            <summary>
+            Configura uma identidade genérica para o usuário informado.
+            Deve ser utilizado em contextos que o Framework não autentica o usuário como WebApi e Console.
+            </summary>
+            <param name="userName">Nome do usuário. Exemplo: "JOB\Carga ingressante"</param>
+            <exception cref="T:SMC.Framework.Exceptions.SMCApplicationException">Caso não seja informado o nome do usuário e não tenha um nome padrão configurado no config da aplicação</exception>
+        </member>
+        <member name="T:SMC.Framework.Security.Util.SMCCertificateHelper">
+            <summary>
+            Classe de suporte para recuperar um certificado x509.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCCertificateHelper.GetCertificate(System.Security.Cryptography.X509Certificates.StoreName,System.Security.Cryptography.X509Certificates.StoreLocation,System.Security.Cryptography.X509Certificates.X509FindType,System.String)">
+            <summary>
+            Busca um certificado em um repositório específico.
+            </summary>
+            <param name="name">Nome do repositório de certificados.</param>
+            <param name="location">Localização do repositório de certificados.</param>
+            <param name="findType">Tipo para pesquisa.</param>
+            <param name="findValue">Valor para pesquisa.</param>
+            <returns>Cerfificado procurado.</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.Util.SMCServiceTokenHelper">
+            <summary>
+            Classe utilitária para auxiliar na utilização de tokens de validação de serviço.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCServiceTokenHelper.ValidateJSonToken``1(System.String,System.Security.Cryptography.X509Certificates.X509Certificate2,System.Int32)">
+            <summary>
+            Informa se um token JSON é válido ou não
+            </summary>
+            <param name="jsonData">Bytes do token a ser validado</param>
+            <param name="cert">Certificado a ser utilizado para descriptografia do token</param>
+            <param name="minutes">Tempo em minutos para garantir validade do token</param>
+            <returns>Válido ou não</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCServiceTokenHelper.ValidateToken``1(System.Byte[],System.Security.Cryptography.X509Certificates.X509Certificate2,System.Int32)">
+            <summary>
+            Informa se um token é válido ou não
+            </summary>
+            <param name="data">Bytes do token a ser validado</param>
+            <param name="cert">Certificado a ser utilizado para descriptografia do token</param>
+            <param name="minutes">Tempo em minutos para garantir validade do token</param>
+            <returns>Válido ou não</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCServiceTokenHelper.ValidateToken``1(System.String,System.Security.Cryptography.X509Certificates.X509Certificate2,System.Int32)">
+            <summary>
+            Informa se um token é válido ou não
+            </summary>
+            <param name="base64Data">Token a ser validado</param>
+            <param name="cert">Certificado a ser utilizado para descriptografia do token</param>
+            <param name="minutes">Tempo em minutos para garantir validade do token</param>
+            <returns>Válido ou não</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCServiceTokenHelper.GenerateToken(SMC.Framework.ISMCServiceToken,System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Criptografa um token para envio
+            </summary>
+            <param name="token">Token a ser criptografado</param>
+            <param name="cert">Certificado a ser utilizado para criptografia</param>
+            <returns>Token criptografado</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCServiceTokenHelper.GenerateTokenBase64(SMC.Framework.ISMCServiceToken,System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Criptografa um token para envio e retorna em base64
+            </summary>
+            <param name="token">Token a ser criptografado</param>
+            <param name="cert">Certificado a ser utilizado para criptografia</param>
+            <returns>Token criptografado</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCServiceTokenHelper.GenerateJSonToken(SMC.Framework.ISMCServiceToken,System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Criptografa um token para envio e retorna em base64
+            </summary>
+            <param name="token">Token a ser criptografado</param>
+            <param name="cert">Certificado a ser utilizado para criptografia</param>
+            <returns>Token criptografado</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCServiceTokenHelper.TakeToken``1(System.Byte[],System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Descriptografa um token
+            </summary>
+            <typeparam name="TToken">Tipo do token a ser descriptografado</typeparam>
+            <param name="data">Dados do token criptografados</param>
+            <param name="cert">Certificado para descriptografia do token</param>
+            <returns>Objeto do token descriptografado</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.Util.SMCServiceTokenHelper.TakeJSonToken``1(System.String,System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Descriptografa um token JSon
+            </summary>
+            <typeparam name="TToken">Tipo do token a ser descriptografado</typeparam>
+            <param name="data">Dados do token criptografados</param>
+            <param name="cert">Certificado para descriptografia do token</param>
+            <returns>Objeto do token descriptografado</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.ISMCAuthorizationService">
+            <summary>
+            Interface para o serviço de busca de permissões do usuário.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.ISMCAuthorizationService.BuscarSeqPapeisDoUsuario">
+            <summary>
+            Recupera os sequenciais dos papeis do usuário dentro de uma aplicação.
+            </summary>
+            <returns>Array contendo os códigos dos papeis do usuário dentro de uma aplicação.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.ISMCAuthorizationService.BuscarNomePapeisDoUsuario">
+            <summary>
+            Recupera os nomes dos papeis do usuário dentro de uma aplicação.
+            </summary>
+            <returns>Array contendo os nomes dos papeis do usuário dentro de uma aplicação.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.ISMCAuthorizationService.BuscarSeqPapeisComPermissao(System.String)">
+            <summary>
+            Recupera os sequenciais dos papeis que possuem permissão a determinada funcionalidade.
+            </summary>
+            <param name="token">Token da funcionalidade.</param>
+            <returns>Array contendo os códigos dos papeis com permissão na funcionalidade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.ISMCAuthorizationService.BuscarSeqUsuariosComPermissao(System.String)">
+            <summary>
+            Recupera os logins que participam dos papeis que possuem permissão para uma determinada funcionalidade.
+            </summary>
+            <param name="tokenFuncionalidade">Token da funcionalidade.</param>
+            <returns>Array contendo os sequenciais dos usuários que tem acesso a determinada funcionalidade</returns>
+        </member>
+        <member name="T:SMC.Framework.Security.SMCAuthorization">
+            <summary>
+            Classe responsável pela verificação de autorização.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.SMCAuthorization._container">
+            <summary>
+            Armazena o container de Ioc.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.SMCAuthorization._keyCache">
+            <summary>
+            Armazena a chave da cache com os papéis do usuário.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.SMCAuthorization._cache">
+            <summary>
+             Instância do objeto de cache
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Security.SMCAuthorization._timeExpirationCache">
+            <summary>
+            Armazena o tempo de expiração do cache: 10 minutos
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.SMCAuthorization.AutorizacaoService">
+            <summary>
+            Cria o proxy para o serviço de autorização
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Security.SMCAuthorization.User">
+            <summary>
+            Identidade do usuário logado
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Security.SMCAuthorization.Authorize(System.String)">
+            <summary>
+            Verifica se o usuário logado tem permissão em uma funcionalidade
+            </summary>
+            <param name="token">Token da funcionalidade</param>
+            <returns>Verdadeiro se o usuário possui permissão no token.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.SMCAuthorization.GetUserCacheKey">
+            <summary>
+            Recupera a chave do cache para o usuário corrente.
+            </summary>
+            <returns>Chave do cache para o usuário corrente.</returns>
+        </member>
+        <member name="M:SMC.Framework.Security.SMCAuthorization.Refresh">
+            <summary>
+            Limpa o cache de segurança e força a leitura das configurações atualizadas.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,11 @@
+﻿@using SMC.SGA.Administrativo.Areas.ORT.Models
+@model OrientacaoDynamicModel
+
+@Smc.HiddenFor(h => h.SeqNivelEnsino)
+@Smc.HiddenFor(h => h.SeqTipoVinculoAluno)
+@Smc.HiddenFor(h => h.SeqTipoTermoIntercambio)
+@Smc.HiddenFor(h => h.StepOrigemAluno)
+
+@Smc.EditorFor(m => m.MensagemAlertaAluno).ConditionalDisplay("StepOrigemAluno", SMCConditionalOperation.GreaterThen, 1).HideLabel()
+
+@Smc.MasterDetail(m => m.OrientacoesPessoaAtuacao).MinimumItens(1).MaximumItens(@Model.NumeroMaximoAlunos)

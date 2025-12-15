@@ -1,0 +1,100 @@
+﻿@model TrabalhoAcademicoListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+        // Header item
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.TipoTrabalho).Size(SMCSize.Grid4_24)
+            @Smc.DisplayFor(m => m.DataInicioAplicacaoAvaliacao).Size(SMCSize.Grid4_24)
+            @Smc.DisplayFor(m => m.NumeroDefesa).Size(SMCSize.Grid4_24)
+            @Smc.DisplayFor(m => m.Titulo).Size(SMCSize.Grid12_24)
+
+            var buttonSet = Smc.ButtonSet().CssClass("smc-sga-btn-formato-link");
+            if (!string.IsNullOrEmpty(Model.ProtocoloSolicitacaoInclusao))
+            {
+                buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalSolicitacao")
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Solicitacao_Servico_Simplificado"))
+                .Action("ConsultarSolicitacaoServicoModal", "SolicitacaoServicoRoute", new { @numeroProtocolo = SMCDESCrypto.EncryptForURL(Model.ProtocoloSolicitacaoInclusao), @backUrl = HttpContext.Current.Request.Url.ToString(), @area = "" })
+                .Ajax(isPost: false)
+                .CssClass("smc-link-download")
+                .Type(SMCButtonType.Link)
+                .Text(Model.ProtocoloSolicitacaoInclusao + " - " + "Solicitação de Inclusão"));
+
+                @buttonSet;
+            }
+        }
+
+        if (Model.DataAutorizacaoSegundoDeposito.HasValue)
+        {
+            // Autorização deposito
+            using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+            {
+                @Smc.DisplayFor(m => m.DataAutorizacaoSegundoDeposito).Size(SMCSize.Grid4_24)
+                @Smc.DisplayFor(m => m.JustificativaSegundoDeposito).Size(SMCSize.Grid12_24)
+                @Smc.DisplayFor(m => m.UsuarioInclusaoSegundoDeposito).Size(SMCSize.Grid4_24)
+                @Smc.DisplayFor(m => m.DataInclusaoSegundoDeposito).Size(SMCSize.Grid4_24)
+
+                SMCButtonFluentConfiguration buttonDownloadArquivoSegundoDeposito = Smc.Button("btn-download-segundo-deposito")
+                  .CssClass("smc-btn-download-icotext")
+                  .Text(Smc.GetUIResource("Botao_Download_Arquivo_Segundo_Deposito"))
+                  .Type(SMCButtonType.Link)
+                  .Attribute("target", "_blank")
+                  .Enabled(Model.ArquivoAnexadoSegundoDeposito != null)
+                  .Action("DownloadFileGuid", "Home",
+                  new
+                  {
+                      @area = "",
+                      @guidFile = Model.ArquivoAnexadoSegundoDeposito == null ? Guid.NewGuid().ToString() : Model.ArquivoAnexadoSegundoDeposito.GuidFile,
+                      name = Model.ArquivoAnexadoSegundoDeposito == null ? string.Empty : Model.ArquivoAnexadoSegundoDeposito.Name,
+                      seqEntity = Model.ArquivoAnexadoSegundoDeposito == null ? Guid.NewGuid().ToString() : Model.ArquivoAnexadoSegundoDeposito.GuidFile,
+                      propertyName = "ArquivoAnexadoSegundoDeposito"
+                  })
+                  .Hide(Model.ArquivoAnexadoSegundoDeposito == null);
+
+                @buttonDownloadArquivoSegundoDeposito;
+
+            }
+
+        }
+
+
+        // Div de Alunos (Autores) (lista de 1 item) detalhada do trabalho acadêmico
+        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Label_Alunos")</label>
+
+            if (Model.Autores.SMCCount() > 0)
+            {
+                @(Smc.Grid("gridAutores", new SMCPagerModel<TrabalhoAcademicoAutorListaViewModel>
+                    (Model.Alunos))
+                    .AutoGenerateColumns()
+                    .AutoHideNavigator()
+                    .HideGridTitle()
+                    .HideNavigator()
+                    .HideNumberOfRowsPerPageSelector()
+                    .HidePager()
+                    .HideRowNumber()
+                    .HideRowsTotalizer()
+                    )
+            }
+            else
+            {
+                using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+                }
+            }
+        }
+    }
+    @Html.Partial("_DetailListButtons", Model)
+}
+
+@using (Smc.ModalWindow("modalSolicitacao")
+           .Form("formSolicitacao", closeOnSubmit: true)
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }

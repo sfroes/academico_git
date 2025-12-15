@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Botao_Anular_Documento" xml:space="preserve">
+    <value>Anular documento digital</value>
+  </data>
+  <data name="Botao_Consultar_Apostilamento" xml:space="preserve">
+    <value>Apostilamento</value>
+  </data>
+  <data name="botao_consultar_apostilamento_tooltip" xml:space="preserve">
+    <value>Apostilamento</value>
+  </data>
+  <data name="botao_consultar_documento_conclusao_tooltip" xml:space="preserve">
+    <value>Consultar</value>
+  </data>
+  <data name="Botao_Download_Arquivo_Anexo" xml:space="preserve">
+    <value>Download Protocolo</value>
+  </data>
+  <data name="botao_excluir_documento_conclusao_tooltip" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="Botao_Restaurar_Documento" xml:space="preserve">
+    <value>Restaurar documento digital</value>
+  </data>
+  <data name="Botao_VisualizarDadosPessoais" xml:space="preserve">
+    <value>Dados Pessoais</value>
+  </data>
+  <data name="buttonInstructions_MensagemRestaurarDocumentoDigital" xml:space="preserve">
+    <value>Não é possível restaurar o documento, ele foi cancelado de forma permanente.</value>
+  </data>
+  <data name="ConsultaDocumentoConclusao_Title" xml:space="preserve">
+    <value>Consulta de Documento de Conclusão</value>
+  </data>
+  <data name="DadosPessoais_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados pessoais do Aluno</value>
+  </data>
+  <data name="Exclusao_Documento_Conclusao_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão do documento de conclusão?</value>
+  </data>
+  <data name="Exclusao_Documento_Conclusao_Title" xml:space="preserve">
+    <value>Excluir Documento de Conclusão</value>
+  </data>
+  <data name="fieldset_aluno" xml:space="preserve">
+    <value>Aluno</value>
+  </data>
+  <data name="fieldset_assinaturas" xml:space="preserve">
+    <value>Assinaturas</value>
+  </data>
+  <data name="fieldset_dados_documento" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+  <data name="fieldset_documentoAnterior" xml:space="preserve">
+    <value>Documentos anteriores</value>
+  </data>
+  <data name="fieldset_entrega" xml:space="preserve">
+    <value>Entrega</value>
+  </data>
+  <data name="fieldset_formacoes" xml:space="preserve">
+    <value>Formações</value>
+  </data>
+  <data name="fieldset_historico_download" xml:space="preserve">
+    <value>Histórico de Download</value>
+  </data>
+  <data name="fieldset_impressao" xml:space="preserve">
+    <value>Impressão</value>
+  </data>
+  <data name="fieldset_informacoes_adicionais" xml:space="preserve">
+    <value>Informações Adicionais</value>
+  </data>
+  <data name="fieldset_registro" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="fieldset_situacao" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="gridDocumentoConclusao_Grid_Titulo" xml:space="preserve">
+    <value>Documentos de Conclusão</value>
+  </data>
+  <data name="gridFormacoesAluno_Grid_Titulo" xml:space="preserve">
+    <value>Formação do Aluno</value>
+  </data>
+  <data name="gridHistoricoDownload_Grid_Titulo" xml:space="preserve">
+    <value>Histórico de Download</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Pesquisa de Documento de Conclusão</value>
+  </data>
+  <data name="LabelApostilamento" xml:space="preserve">
+    <value>Apostilamento</value>
+  </data>
+  <data name="MensagemDesabilitaBotaoApostilamento" xml:space="preserve">
+    <value>Opção indisponível. O apostilamento está disponível somente para documentos que exigem registro.</value>
+  </data>
+  <data name="MensagemDesabilitaBotaoExcluir" xml:space="preserve">
+    <value>Opção indisponível. Somente os documentos que foram cadastrados para registrar histórico antigo e com a situação atual igual a "Cadastro de histórico concluído" poderão ser excluídos.</value>
+  </data>
+  <data name="Mensagem_Informativa_Anular_Documento" xml:space="preserve">
+    <value>Relate o motivo da anulação do documento. Atenção quanto as ações que são realizadas de acordo com o tipo de anulação selecionado:&lt;/br&gt;
+- Se permanente não será possível restaurar o documento posteriormente.&lt;/br&gt;
+- Se temporário o documento poderá ser restaurado, mas os dados não poderão ser editados. Caso seja identificada a necessidade de atualizar alguma informação é necessário  gerar novo documento.</value>
+  </data>
+  <data name="Mensagem_Informativa_Grau_Bacharelado_Licenciatura" xml:space="preserve">
+    <value>Atenção! Conforme orientação do MEC foram gerados dois diplomas digitais para o aluno. Sendo um diploma/registro de Bacharelado e outro de Licenciatura e ambos &lt;br&gt; estão relacionados através de indicação no campo de informações adicionais.</value>
+  </data>
+  <data name="Mensagem_Informativa_Restaurar_Documento" xml:space="preserve">
+    <value>Informe o motivo para que o documento seja restaurado. Ao restaurar o documento será considerado Válido.</value>
+  </data>
+  <data name="Mensagem_Sucesso_Exclusao_Documento_Conclusao" xml:space="preserve">
+    <value>Documento de Conclusão excluído com sucesso.</value>
+  </data>
+  <data name="MSG_Assert_Confirma_AnularDocumentosAssociados" xml:space="preserve">
+    <value>Foram identificados os seguintes documentos associados a mesma formação do respectivo documento selecionado para ser anulado: &lt;br&gt;&lt;br&gt;
+{0} &lt;br&gt;
+Confirma a anulação de todos os documentos?</value>
+  </data>
+  <data name="MSG_Assert_Confirma_RestaurarDocumentosAssociados" xml:space="preserve">
+    <value>Foram identificados os seguintes documentos associados a mesma formação do respectivo documento selecionado para ser restaurado: &lt;br&gt;&lt;br&gt;
+{0} &lt;br&gt;
+Confirma a restauração de todos os documentos?</value>
+  </data>
+  <data name="Tab_Dados_Gerais" xml:space="preserve">
+    <value>Dados Gerais</value>
+  </data>
+  <data name="Tab_Historicos" xml:space="preserve">
+    <value>Históricos</value>
+  </data>
+  <data name="Title_Modal_Visualizar_Documento_Academico" xml:space="preserve">
+    <value>Visualizar Documento Acadêmico</value>
+  </data>
+  <data name="Title_VisualizarDadosPessoais" xml:space="preserve">
+    <value>Dados Pessoais</value>
+  </data>
+</root>

@@ -1,0 +1,245 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+@using SMC.Academico.Common.Areas.SRC.Constants
+
+@model ConsultaDadosAlunoViewModel
+
+@Html.Action("BuscarAlunoCabecalho", Model.SeqAluno)
+
+@using (Smc.Header("TermoAdesao", SMCHeaderType.Primary)
+        .Item(prop => prop.CicloLetivoIngresso, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid6_24)
+        .Item(prop => prop.OfertaCurso, sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid16_24, sizeLG: SMCSize.Grid8_24)
+        .Item(prop => prop.Localidade, sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24)
+        .Item(prop => prop.Turno, sizeMD: SMCSize.Grid2_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid2_24)
+        .Item(prop => prop.DescricaoFormaIngresso, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid6_24)
+        .Item(prop => prop.NomeInstituicaoTransferenciaExterna, sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid8_24)
+        .Item(prop => prop.CursoTransferenciaExterna, sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid12_24, sizeLG: SMCSize.Grid8_24)
+        .Item(prop => prop.IdIngressante, sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid6_24)
+        .Item(prop => prop.OfertaMatriz, sizeMD: SMCSize.Grid18_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid16_24, sizeLG: SMCSize.Grid18_24)
+        .Begin())
+{
+}
+
+
+@using (Smc.Accordion("Ciclos").Begin())
+{
+    ///Manterá qual guia virá aberta
+    bool isOpen = true;
+
+    foreach (var registro in Model.CiclosLetivos.OrderByDescending(o => o.AnoNumeroCicloLetivo))
+    {
+        using (Smc.AccordionSection("ciclo" + registro.Seq).Title(registro.DescricaoFormatada).IsOpen(isOpen).Begin())
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+            {
+                using (Smc.Fieldset("Situacoes").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario").LegendText(@Smc.GetUIResource("fieldset_situacoes")).Begin())
+                {
+
+                    @(Smc.Grid("gridSituacoes" + registro.Seq, new SMCPagerModel<ConsultaDadosAlunoCiclosLetivosSituacoesViewModel>(registro.CiclosLetivosSituacoes))
+                                                                        .HideGridTitle()
+                                                                        .HideNavigator()
+                                                                        .HideRowNumber()
+                                                                        .FieldColumn(f => f.DataInicio, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2")
+                                                                        .FieldColumn(f => f.Situacao, cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3")
+                                                                        .ContentColumn(@<text>
+                                                                            @{
+                                                                                var itemParsed = item as ConsultaDadosAlunoCiclosLetivosSituacoesViewModel;
+                                                                                var buttonSet = Smc.ButtonSet().CssClass("smc-sga-btn-formato-link");
+                                                                                if (!string.IsNullOrEmpty(itemParsed.NumeroProtocolo))
+                                                                                {
+                                                                                    buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                                    .Attribute(SMCMvcConsts.MODAL_ID, "modalSolicitacao")
+                                                                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Solicitacao_Servico_Simplificado"))
+                                                                    .Action("ConsultarSolicitacaoServicoModal", "SolicitacaoServicoRoute", new { @seqSolicitacaoServico = itemParsed.SeqSolicitacaoServico, @numeroProtocolo = SMCDESCrypto.EncryptForURL(itemParsed.NumeroProtocolo), @backUrl = HttpContext.Current.Request.Url.ToString(), @area = "" })
+                                                                    .Ajax(isPost: false)
+                                                                    .SecurityToken(UC_SRC_004_14_01.CONSULTAR_SOLICITACAO)
+                                                                    .Type(SMCButtonType.Link)
+                                                                    .Text(itemParsed.NumeroProtocolo));
+
+                                                                                    @buttonSet;
+                                                                                                }
+                                                                                                else
+                                                                                                {
+                                                                                    <label>-</label>
+                                                                                                }
+                                                                            }
+                                                                        </text>, header: Smc.GetUIResource("LabelProtocoloInclusao"), cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3")
+                                                                                     .FieldColumn(f => f.Observacao, cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3")
+                                                                                     .FieldColumn(f => f.Inclusao, cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3")
+                                                                                     .ContentColumn(@<text>
+                                                                                        @{
+                                                                                            var itemParsed = item as ConsultaDadosAlunoCiclosLetivosSituacoesViewModel;
+                                                                                            var buttonSet = Smc.ButtonSet().CssClass("smc-sga-btn-formato-link");
+
+                                                                                            if (itemParsed.ExisteDataExclusao)
+                                                                                            {
+                                                                                                buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                                .Attribute(SMCMvcConsts.MODAL_ID, "modalSolicitacao")
+                                                                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Solicitacao_Servico_Simplificado"))
+                                                                .Action("ConsultarSolicitacaoServicoModal", "SolicitacaoServicoRoute", new { @seqSolicitacaoServico = itemParsed.SeqSolicitacaoServicoExclusao, @numeroProtocolo = SMCDESCrypto.EncryptForURL(itemParsed.NumeroProtocoloExclusao), @backUrl = HttpContext.Current.Request.Url.ToString(), @area = "" })
+                                                                .Ajax(isPost: false)
+                                                                .SecurityToken(UC_SRC_004_14_01.CONSULTAR_SOLICITACAO)
+                                                                .Type(SMCButtonType.Link)
+                                                                .Text(itemParsed.NumeroProtocoloExclusao));
+
+                                                                                    @buttonSet;
+                                                                                                }
+                                                                                                else
+                                                                                                {
+                                                                                    <label>-</label>
+                                                                                                }
+                                                                                        }
+                                                                                    </text>, header: Smc.GetUIResource("LabelProtocoloExclusao"), cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3")
+                                                                                                  .FieldColumn(f => f.ObservacaoExclusao, cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3")
+                                                                                                  .FieldColumn(f => f.Exclusao, cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3")
+                                                                                                  .GridRowConfiguration((x, y) =>
+                                                                                                  {
+                                                                                                      if ((y as ConsultaDadosAlunoCiclosLetivosSituacoesViewModel).EmDestaque)
+                                                                                                      {
+                                                                                                          x.CssClass = "smc-sga-item-disponivel";
+                                                                                                      }
+
+                                                                                                      if ((y as ConsultaDadosAlunoCiclosLetivosSituacoesViewModel).ExisteDataExclusao)
+                                                                                                      {
+                                                                                                          x.CssClass += " smc-sga-item-tachado";
+                                                                                                      }
+                                                                                                  })
+                                                                                                  .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-sga-col-button-situacao smc-size-md-1 smc-size-xs-1 smc-size-sm-1 smc-size-lg-1", true,
+                                                                                                                  f => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                                                                                  .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarIntercambio")
+                                                                                                                  .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Ver_Dados_Intercambio"))
+                                                                                                                  .Ajax(isPost: false)
+                                                                                                                  .Text(Smc.GetUIResource("Botao_Ver_Dados_Intercambio"))
+                                                                                                                  .Tooltip(Smc.GetUIResource("Botao_Ver_Dados_Intercambio"))
+                                                                                                                  .Type(SMCButtonType.Link).CssClass("smc-btn-visualizar-ico")
+                                                                                                                  .SecurityToken(UC_ALN_001_01_01.PESQUISAR_ALUNO)
+                                                                                                                  .Action("VisualizarDadosIntercambioAluno", "AlunoRoute", new { area = "", seqPeriodoIntercambio = new SMCEncryptedLong((f as ConsultaDadosAlunoCiclosLetivosSituacoesViewModel).SeqPeriodoIntercambio) })
+                                                                                                                  .CssClass("smc-btn-custom-destaque-grid")
+                                                                                                                  .Hide(!(f as ConsultaDadosAlunoCiclosLetivosSituacoesViewModel).FlagVerDadosIntercambio))
+                                                                                                                  .ContentColumn(@<text>
+                                                                                                                  @{
+                                                                                                                      var itemParsed = item as ConsultaDadosAlunoCiclosLetivosSituacoesViewModel;
+                                                                                                                      var buttonSet = Smc.ButtonSet().CssClass("smc-buttonset-horizontal-secundario");
+                                                                                                                      if (itemParsed.SeqArquivoAnexado.HasValue)
+                                                                                                                      {
+                                                                                                                          buttonSet.AddButton(Smc.Button("btn-download-arquivo-anexo")
+                                                                                                                            .CssClass("smc-btn-download-ico")
+                                                                                                                            .Text(Smc.GetUIResource("Botao_Download_Arquivo_Anexo"))
+                                                                                                                            .Tooltip(Smc.GetUIResource("Botao_Download_Arquivo_Anexo_Tooltip"))
+                                                                                                                            .Type(SMCButtonType.Link)
+                                                                                                                            .Attribute("target", "_blank")
+                                                                                                                            .Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, true)
+                                                                                                                            .SecurityToken(UC_ALN_001_01_01.PESQUISAR_ALUNO)
+                                                                                                                            .Action("DownloadFileGuid", "Home", new { @area = "", @guidFile = itemParsed.ArquivoAnexado.GuidFile })
+                                                                                                                            .CssClass("smc-btn-custom-destaque-grid"));
+
+                                                                                                                          @buttonSet;
+                                                                                                                      }
+
+                                                                                                                  }
+                                                                                                                  </text>, cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3")
+
+                                                                                                  .Size(SMCSize.Grid24_24))
+                }
+            }
+
+            if (registro.PlanosEstudos != null && registro.PlanosEstudos.Any())
+            {
+                using (Smc.Fieldset("PlanoEstudo").Size(SMCSize.Grid24_24).CssClass("smc-sga-fieldset-secundario smc-sga-fs-planoestudo").LegendText(@Smc.GetUIResource("fieldset_plano_estudo")).Begin())
+                {
+                    foreach (var plano in registro.PlanosEstudos)
+                    {
+                        if (!string.IsNullOrEmpty(plano.OfertaMatriz))
+                        {
+                            <div class="smc-sga-grupo-fieldset-secundario">
+                                <p>@plano.OfertaMatriz</p>
+                            </div>
+                        }
+
+                        @*Inicio da arvore de turmas*@
+                        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+                        {
+                            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Title_Tree_Plano_Estudo")</label>
+
+                            if (plano.TurmasTree.SMCCount() > 0)
+                            {
+                                @(Smc.TreeView("Turmas" + registro.Seq, plano.TurmasTree)
+                                    .Expanded()
+                                    .ContextMenu(i => Smc.ContextMenu("smc-cm-" + i.Seq)
+                                        .OpenEvent(SMCMouseEvent.LeftClick)
+                                        .Item(x => x.Text(Smc.GetUIResource("botao_detalhe_divisão_turma"))
+                                        .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDivisaoTurma")
+                                        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Divisao_Turma"))
+                                        .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                        .Ajax(isPost: false)
+                                        .SecurityToken(SMC.Academico.Common.Areas.TUR.Constants.UC_TUR_001_06_01.VISUALIZAR_DETALHES_DIVISAO_TURMA)
+                                        .Action("VisualizarDivisaoTurmaDetalhes", "DetalhesDivisaoTurmaRoute", new { seqDivisaoTurma = i.Value.Seq * -1, seqPessoaAtuacao = Model.SeqAluno, area = string.Empty })),
+                                        y => Smc.Button(SMCButtonBehavior.Configurar).DisplayMode(SMCButtonDisplayMode.Icon).Hide(!y.Value.ExibirMenu))
+                                    .ConfigureNode(n => n.Options.CssClass = n.Value.SeqPai == null ? "smc-sga-treeview-destaque-item" : ""))
+                            }
+                            else
+                            {
+                                using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                                {
+                                    <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+                                }
+                            }
+                        }
+                        @*Fim da arvore de turmas*@
+
+                        @*Inicio da lista atividades*@
+                        using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+                        {
+                            <label class="smc-listdetailed-conteudo-subtitulo">@Smc.GetUIResource("Title_List_Plano_Estudo")</label>
+
+                            if (plano.Atividades.SMCCount() > 0)
+                            {
+                                using (Smc.Div().CssClass("smc-sga-grid-fieldset-secundario").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+                                {
+                                    @(Smc.Grid("PlanoEstudoAtividade" + registro.Seq, new SMCPagerModel<ConsultaDadosAlunoCiclosLetivosPlanoEstudoAtividadeViewModel>(plano.Atividades))
+                                                                                        .FieldColumn(f => f.Descricao)
+                                                                                        .HideGridTitle()
+                                                                                        .HideNavigator()
+                                                                                        .HideRowNumber()
+                                                                                        .Size(SMCSize.Grid24_24))
+                                }
+                            }
+                            else
+                            {
+                                using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                                {
+                                    <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+                                }
+                            }
+                        }
+                        @*Fim da lista atividades*@
+                    }
+                }
+            }
+        }
+
+        isOpen = false;
+    }
+}
+
+@(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+                        .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                        .Action("Index", "Aluno")
+                        .SecurityToken(UC_ALN_001_01_01.PESQUISAR_ALUNO)))
+
+@using (Smc.ModalWindow("modalVisualizarDivisaoTurma")
+        .Form("formVisualizarDivisaoTurma", closeOnSubmit: true)
+        .Size(SMCModalWindowSize.Large)
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalVisualizarIntercambio")
+        .Form("formVisualizarIntercambio", closeOnSubmit: true)
+        .Size(SMCModalWindowSize.Large)
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalSolicitacao")
+           .Form("formSolicitacao", closeOnSubmit: true)
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }

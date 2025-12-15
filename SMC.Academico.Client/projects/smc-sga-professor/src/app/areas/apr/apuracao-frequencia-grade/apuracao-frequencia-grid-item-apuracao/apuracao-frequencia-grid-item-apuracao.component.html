@@ -1,0 +1,37 @@
+<smc-button
+  s-label=""
+  [s-button-class]="classe"
+  [s-disabled]="desativarButton"
+  [s-loading]="processando$ | async"
+  (s-click)="alterarFrequencia()"
+  [s-tooltip]="tooltip"
+></smc-button>
+<smc-modal s-title="Observação" #observacao>
+  <div s-modal-body>
+    <div class="smc-display">
+      <label>Tipo ocorrência</label>
+      <p>{{ descricaoTipoMensagem }}</p>
+    </div>
+    <div class="smc-display">
+      <label>Descrição</label>
+      <p [innerHTML]="observacaoValue"></p>
+    </div>
+    <div class="smc-display">
+      <label>Data</label>
+      <p>{{ dataObservacaoValue }}</p>
+    </div>
+  </div>
+  <div s-modal-footer>
+    <smc-button s-label="Ok" (s-click)="observacao.close()"></smc-button>
+  </div>
+</smc-modal>
+<smc-modal s-title="Aluno com histórico escolar" #modalAlunoHistorico s-hide-close="true">
+  <div s-modal-body>
+    <p>Este aluno já possui histórico escolar para essa turma, ao salvar, os dados serão atualizados.</p>
+    <p>Deseja continuar?</p>
+  </div>
+  <div s-modal-footer>
+    <smc-button s-label="Sim" s-tooltip="Sim" (s-click)="alterarFrequencia(true)"></smc-button>
+    <smc-button #btnAssertSalvarNao s-label="Não" s-tooltip="Não" (s-click)="modalAlunoHistorico.close()"></smc-button>
+  </div>
+</smc-modal>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSAlunosPorSituacao" targetNamespace="http://tempuri.org/DSAlunosPorSituacao.xsd" xmlns:mstns="http://tempuri.org/DSAlunosPorSituacao.xsd" xmlns="http://tempuri.org/DSAlunosPorSituacao.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSAlunosPorSituacao" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSAlunosPorSituacao" msprop:Generator_UserDSName="DSAlunosPorSituacao">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSAlunosPorSituacao" msprop:Generator_TableClassName="DSAlunosPorSituacaoDataTable" msprop:Generator_TableVarName="tableDSAlunosPorSituacao" msprop:Generator_RowChangedName="DSAlunosPorSituacaoRowChanged" msprop:Generator_TablePropName="_DSAlunosPorSituacao" msprop:Generator_RowDeletingName="DSAlunosPorSituacaoRowDeleting" msprop:Generator_RowChangingName="DSAlunosPorSituacaoRowChanging" msprop:Generator_RowEvHandlerName="DSAlunosPorSituacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="DSAlunosPorSituacaoRowDeleted" msprop:Generator_RowClassName="DSAlunosPorSituacaoRow" msprop:Generator_UserTableName="DSAlunosPorSituacao" msprop:Generator_RowEvArgName="DSAlunosPorSituacaoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Seq" msprop:Generator_ColumnVarNameInTable="columnSeq" msprop:Generator_ColumnPropNameInRow="Seq" msprop:Generator_ColumnPropNameInTable="SeqColumn" msprop:Generator_UserColumnName="Seq" type="xs:double" minOccurs="0" />
+              <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoCursoOferta" msprop:Generator_ColumnVarNameInTable="columnDescricaoCursoOferta" msprop:Generator_ColumnPropNameInRow="DescricaoCursoOferta" msprop:Generator_ColumnPropNameInTable="DescricaoCursoOfertaColumn" msprop:Generator_UserColumnName="DescricaoCursoOferta" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoVinculoAluno" msprop:Generator_ColumnVarNameInTable="columnTipoVinculoAluno" msprop:Generator_ColumnPropNameInRow="TipoVinculoAluno" msprop:Generator_ColumnPropNameInTable="TipoVinculoAlunoColumn" msprop:Generator_UserColumnName="TipoVinculoAluno" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoSituacaoMatricula" msprop:Generator_ColumnVarNameInTable="columnDescricaoSituacaoMatricula" msprop:Generator_ColumnPropNameInRow="DescricaoSituacaoMatricula" msprop:Generator_ColumnPropNameInTable="DescricaoSituacaoMatriculaColumn" msprop:Generator_UserColumnName="DescricaoSituacaoMatricula" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoTipoSituacaoMatricula" msprop:Generator_ColumnVarNameInTable="columnDescricaoTipoSituacaoMatricula" msprop:Generator_ColumnPropNameInRow="DescricaoTipoSituacaoMatricula" msprop:Generator_ColumnPropNameInTable="DescricaoTipoSituacaoMatriculaColumn" msprop:Generator_UserColumnName="DescricaoTipoSituacaoMatricula" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoTipoAtuacao" msprop:Generator_ColumnVarNameInTable="columnDescricaoTipoAtuacao" msprop:Generator_ColumnPropNameInRow="DescricaoTipoAtuacao" msprop:Generator_ColumnPropNameInTable="DescricaoTipoAtuacaoColumn" msprop:Generator_UserColumnName="DescricaoTipoAtuacao" type="xs:string" minOccurs="0" />
+              <xs:element name="SeqPessoaAtuacao" msprop:Generator_ColumnVarNameInTable="columnSeqPessoaAtuacao" msprop:Generator_ColumnPropNameInRow="SeqPessoaAtuacao" msprop:Generator_ColumnPropNameInTable="SeqPessoaAtuacaoColumn" msprop:Generator_UserColumnName="SeqPessoaAtuacao" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoVinculo" msprop:Generator_ColumnVarNameInTable="columnDescricaoVinculo" msprop:Generator_ColumnPropNameInRow="DescricaoVinculo" msprop:Generator_ColumnPropNameInTable="DescricaoVinculoColumn" msprop:Generator_UserColumnName="DescricaoVinculo" type="xs:string" minOccurs="0" />
+              <xs:element name="SeqEntidadeResponsavel" msprop:Generator_ColumnVarNameInTable="columnSeqEntidadeResponsavel" msprop:Generator_ColumnPropNameInRow="SeqEntidadeResponsavel" msprop:Generator_ColumnPropNameInTable="SeqEntidadeResponsavelColumn" msprop:Generator_UserColumnName="SeqEntidadeResponsavel" type="xs:long" minOccurs="0" />
+              <xs:element name="NomeEntidadeResponsavel" msprop:Generator_ColumnVarNameInTable="columnNomeEntidadeResponsavel" msprop:Generator_ColumnPropNameInRow="NomeEntidadeResponsavel" msprop:Generator_ColumnPropNameInTable="NomeEntidadeResponsavelColumn" msprop:Generator_UserColumnName="NomeEntidadeResponsavel" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

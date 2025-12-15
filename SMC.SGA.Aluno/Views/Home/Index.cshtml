@@ -1,0 +1,338 @@
+﻿@using SMC.Formularios.Common.Areas.TMP.Enums
+@using SMC.Academico.Common.Areas.ORT.Constants
+@using SMC.Academico.Common.Areas.ALN.Constants
+@using SMC.Academico.Common.Areas.CNC.Constants
+@using System
+@model HomeAlunoViewModel
+
+@Smc.HiddenFor(h => h.PermitiPesquisarSolicitacaoAluno)
+@Smc.HiddenFor(h => h.PermitirVisualizarBannerTurmasLinhaTempo)
+@Smc.HiddenFor(h => h.PermitirExibirIntegralizacaoCurricular)
+@Smc.HiddenFor(h => h.ExibirIntegralizacao)
+
+@{
+    var totalBanners = 0;
+    var carousel = Smc.Carousel("banners")
+        .Infinite()
+        .Interval(5000)
+        .PauseOnHover()
+        .Size(SMCSize.Grid18_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid18_24);
+}
+
+@if (Model != null && Model.ExisteRematriculaAberta)
+{
+    totalBanners++;
+    carousel.AddItem(@<text>
+    <a href="@Url.Action("Index", "Home", new { @area = "MAT", seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoRematricula.Value) })"></a>
+    <p class="col-md-offset-5 col-lg-offset-6 col-sm-offset-6 col-xs-offset-4  @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+        @if (Model.TipoMatricula == SMC.Academico.Common.Areas.MAT.Enums.TipoMatricula.RenovacaoMatricula)
+        {
+            @Smc.GetUIResource("Index_Texto_Banner_RenovacaoMatricula") <br /> <span>@string.Format(Smc.GetUIResource("MSG_Rematricula_Aberta"), Model.DataInicioRematricula.Value.ToShortDateString())</span>
+        }
+        else
+        {
+            @Smc.GetUIResource("Index_Texto_Banner_ReaberturaMatricula") <br /> <span>@string.Format(Smc.GetUIResource("MSG_Reabertura_Aberta"), Model.DataInicioRematricula.Value.ToShortDateString())</span>
+        }
+    </p>
+    </text>, "smc-sga-banner-matricula");
+}
+
+@if (Model != null && Model.ExibirBannerAvaliacaoCpa)
+{
+    totalBanners++;
+    carousel.AddItem(@<text>
+    <form name="avaliacao_cpa" method="post" action="@Model.UrlAvaliacaoCpa" target="_blank">
+        <div id="divBannerAvaliacaoCPA" class="smc-sga-banner-avaliacao-cpa @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+            <input type="submit" value="Banner Avaliação CPA" />
+            <input type="hidden" value="@Model.CodigoAmostraPpa" name="amostra" id="amostra" />
+        </div>
+    </form>
+    </text>);
+}
+
+@if (Model != null && Model.ExibirBannerAvaliacaoSemestralCpa)
+{
+    totalBanners++;
+    carousel.AddItem(@<text>
+    <form name="avaliacao_semestral_cpa" method="post" action="@Model.UrlAvaliacaoSemestralCpa" target="_blank">
+        <div id="divBannerAvaliacaoSemestralCPA" class="smc-sga-banner-avaliacao-semestral-cpa @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+            <input type="submit" value="Banner Avaliação Semestral CPA" />
+            <input type="hidden" value="@User.SMCGetCodigoPessoa()" name="codigoPessoa" id="codigoPessoa" />
+        </div>
+    </form>
+    </text>);
+}
+
+@{
+    totalBanners++;
+    carousel.AddItem(@<text>
+    <div id="divBannerFALECOMAGENTE" class="smc-sga-banner-falecomagente @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+        <a href="https://www.pucminas.br/destaques/Paginas/Fale-com-a-PUC-Minas.aspx" target="_blank">
+        </a>
+    </div>
+    </text>);
+//carousel.AddItem("https://www.sistemas.pucminas.br/sga4/SilverStream/objectstore/images/smc-sgagrad-banner-contatos-regimeremoto.jpeg", "https://www.pucminas.br/destaques/Paginas/Fale-com-a-PUC-Minas.aspx");
+}
+
+@{
+    totalBanners++;
+    carousel.AddItem(@<text>
+    <div id="divBannerRegimeRemoto" class="smc-sga-banner-regimeremoto @SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+        <a href="https://www.pucminas.br/guiacanvas/Paginas/default.aspx" target="_blank" title="Guia Regime Remoto">
+        </a>
+    </div>
+    </text>);
+}
+
+@if (Model != null && Model.PermitirVisualizarBannerTurmasLinhaTempo)
+{
+    @(carousel.GenerateArrows(totalBanners > 1).GenerateDots(totalBanners > 1))
+
+    <div class="smc-sga-acesso-rapido smc-size-md-5 smc-size-xs-24 smc-size-sm-24 smc-size-lg-5">
+        <p class="smc-sga-acesso-rapido-titulo">Acesso Rápido</p>
+        <div class="smc-sga-acesso-rapido-teams">
+            <a href="https://teams.microsoft.com/dl/launcher/launcher.html?url=teams&amp;type=meetup-join&amp;enableMobilePage=true&amp;suppressPrompt=true" target="_blank" title="Acesso ao Teams">
+                <p>Teams</p>
+            </a>
+        </div>
+        <div class="smc-sga-acesso-rapido-canvas">
+            <a href="https://pucminas.instructure.com/login/microsoft" target="_blank" title="Acesso ao Canvas">
+                <p>Canvas</p>
+            </a>
+        </div>
+    </div>
+}
+
+@using (Smc.Div("divDadosMatriculados").CssClass("smc-sga-externo-turmas smc-clear").Size(SMCSize.Grid12_24).Begin())
+{
+    using (Smc.Div("divIntegralizacao")
+        .CssClass("smc-clear smc-sga-externo-integralizacao")
+        .Size(SMCSize.Grid24_24)
+        .ConditionalDisplay("PermitirVisualizarBannerTurmasLinhaTempo", SMCConditionalOperation.Equals, "R1", true)
+        .ConditionalDisplay("ExibirIntegralizacao", SMCConditionalOperation.Equals, "R2", true)
+        .ConditionalDisplay("PermitirExibirIntegralizacaoCurricular", SMCConditionalOperation.Equals, "R3", true)
+        .ConditionalRule("R1 && R2 && R3")
+        .Begin())
+    {
+        using (Smc.Div("divTituloIntegralizacao").Size(SMCSize.Grid20_24, SMCSize.Grid20_24, SMCSize.Grid20_24, SMCSize.Grid20_24).Begin())
+        {
+            <span>Integralização Curricular</span>
+        }
+
+        using (Smc.Div("divBtnIntegralizacao").Size(SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24).Begin())
+        {
+            // INTEGRALIZAÇÃO CURRICULAR
+            SMCButtonFluentConfiguration buttonIntegralizacao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                .Action("ConsultaIntegralizacaoCurricular", "IntegralizacaoCurricularRoute", new { @seqPessoaAtuacao = Model.SeqPessoaAtuacao, Area = "" })
+                                .Ajax(isPost: false)
+                                .Attribute(SMCMvcConsts.MODAL_ID, "modalIntegralizacaoCurricular")
+                                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Integralizacao_Curricular"))
+                                .Text(Smc.GetUIResource("Botao_Integralizacao_Curricular"))
+                                .CssClass("smc-btn-visualizar-ico-destaque")
+                                .Tooltip(Smc.GetUIResource("Botao_Integralizacao_Curricular_Tooltip"));
+
+            @Smc.ButtonSet().AddButton(buttonIntegralizacao);
+        }
+
+    }
+
+    using (Smc.Form("frmFiltroTurmas", "ListarTurmas")
+        .Ajax("#divListaDados")
+        .ConditionalDisplay("PermitirVisualizarBannerTurmasLinhaTempo", true)
+        .Begin())
+    {
+
+        using (Smc.Div("dataselector-filter-selecaoturma")
+            .ConditionalDisplay("PermitirVisualizarBannerTurmasLinhaTempo", true)
+            .CssClass("smc-sga-externo-filtro")
+            .Size(SMCSize.Grid14_24, SMCSize.Grid16_24, SMCSize.Grid13_24, SMCSize.Grid16_24)
+            .Begin())
+        {
+            @Smc.EditorFor(x => x.SeqCicloLetivo).HideLabel()
+            //@Smc.ButtonSet().Size(SMCSize.Grid7_24, SMCSize.Grid18_24, SMCSize.Grid8_24, SMCSize.Grid3_24).CssClass("smc-sga-externo-botoes-filtro-principal").AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.Icon))
+        }
+    }
+    using (Smc.Div("divListaDados")
+        .ConditionalDisplay("PermitirVisualizarBannerTurmasLinhaTempo", true)
+        .Dependency("SeqCicloLetivo", "ListarTurmas", "Home", true)
+        .Begin())
+    {
+        @Html.Partial("_ListarTurmas", Model)
+    }
+}
+
+@using (Smc.Div("divLinhaTempo")
+    .ConditionalDisplay("PermitirVisualizarBannerTurmasLinhaTempo", true)
+    .CssClass("smc-sga-externo-solicitacoes")
+    .Size(SMCSize.Grid12_24)
+    .Begin())
+{
+    using (Smc.Div("divLinhaDoTempo").CssClass("col-md-offset-1 col-lg-offset-1 col-sm-offset-1 col-xs-offset-0").Size(SMCSize.Grid22_24).Begin())
+    {
+        <h2>Linha do tempo</h2>
+        @Html.Action("ListarTimeline")
+    }
+}
+
+@using (Smc.Div("AgrupamentoSolicitacoes").CssClass("smc-sga-externo-separador").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div("divSolicitacoes").Size(SMCSize.Grid24_24).Begin())
+    {
+        @*<a href="@Url.Action("Index", "SolicitacaoServico", new { @area = "SRC" })">*@
+        <h2 class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24,SMCSize.Grid24_24,SMCSize.Grid24_24,SMCSize.Grid12_24)">@Smc.GetUIResource("Index_fsSolicitacoes_Fieldset_Legenda")</h2>
+        @(Smc.ButtonSet().CssClass("smc-sga-externo-alinha-botoes").Size(SMCSize.Grid12_24)
+                                                                                                 .AddButton(Smc.Button(SMCButtonBehavior.Visualizar, "Index", new { area = "SRC" }, "SolicitacaoServico")
+                                                                                                               .SecurityToken(UC_ALN_005_02_01.PESQUISAR_SOLICITACAO_ALUNO)
+                                                                                                               .Text(Smc.GetUIResource("Botao_VerSolicitacao")).Tooltip(Smc.GetUIResource("Botao_VerSolicitacao"))
+                                                                                                               .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                                                                                               .Type(SMCButtonType.Link))
+                                                                                                 .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "NovaSolicitacao", new { area = "SRC" }, "SolicitacaoServico")
+                                                                                                               .Id("BotaoNovaSolicitacao")
+                                                                                                               .SecurityToken(UC_ALN_005_02_02.MANTER_SOLICITACAO_ALUNO)
+                                                                                                               .Attribute(SMCMvcConsts.MODAL_ID, "modalNovaSolicitacao")
+                                                                                                               .Text(Smc.GetUIResource("Botao_NovaSolicitacao")).Tooltip(Smc.GetUIResource("Botao_NovaSolicitacao"))
+                                                                                                               .CssClass("smc-btn-novo-icotext")
+                                                                                                               .Ajax())
+        );
+
+        @*</a>*@
+        using (Smc.Div("divTotalizador").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div("divTotalizadorNovas").CssClass("col-md-offset-1 col-lg-offset-1 col-sm-offset-1 smc-sga-totalizador smc-sga-externo-totalizador-status-novo").Size(SMCSize.Grid5_24, SMCSize.Grid11_24, SMCSize.Grid11_24, SMCSize.Grid5_24).Begin())
+            {
+                <a href="@Url.Action("Index", "SolicitacaoServico", new { @area = "SRC", @CategoriaSituacao = (int)CategoriaSituacao.Novo })">
+                    <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Label_Solicitacoes_Novas")</span>
+                    @Smc.DisplayFor(m => m.TotalSolicitacoesNovas).CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid24_24)
+                </a>
+            }
+
+            using (Smc.Div("divTotalizadorEmAndamento").CssClass("col-md-offset-1 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 smc-sga-totalizador  smc-sga-externo-totalizador-status-emandamento").Size(SMCSize.Grid5_24, SMCSize.Grid11_24, SMCSize.Grid11_24, SMCSize.Grid5_24).Begin())
+            {
+                <a href="@Url.Action("Index", "SolicitacaoServico", new { @area = "SRC", @CategoriaSituacao = (int)CategoriaSituacao.EmAndamento })">
+                    <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Label_Solicitacoes_EmAndamento")</span>
+                    @Smc.DisplayFor(m => m.TotalSolicitacoesEmAndamento).CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid24_24)
+                </a>
+            }
+
+            using (Smc.Div("divTotalizadorConcluidas").CssClass("col-md-offset-1 col-lg-offset-1 col-sm-offset-1 smc-sga-totalizador smc-sga-externo-totalizador-status-concluida").Size(SMCSize.Grid5_24, SMCSize.Grid11_24, SMCSize.Grid11_24, SMCSize.Grid5_24).Begin())
+            {
+                <a href="@Url.Action("Index", "SolicitacaoServico", new { @area = "SRC", @CategoriaSituacao = (int)CategoriaSituacao.Concluido })">
+                    <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Label_Solicitacoes_Concluidas")</span>
+                    @Smc.DisplayFor(m => m.TotalSolicitacoesConcluidas).CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid24_24)
+                </a>
+            }
+
+            using (Smc.Div("divTotalizadorEncerradas").CssClass("col-md-offset-1 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 smc-sga-totalizador smc-sga-externo-totalizador-status-encerrada").Size(SMCSize.Grid5_24, SMCSize.Grid11_24, SMCSize.Grid11_24, SMCSize.Grid5_24).Begin())
+            {
+                <a href="@Url.Action("Index", "SolicitacaoServico", new { @area = "SRC", @CategoriaSituacao = (int)CategoriaSituacao.Encerrado })">
+                    <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Label_Solicitacoes_Encerradas")</span>
+                    @Smc.DisplayFor(m => m.TotalSolicitacoesEncerradas).CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid24_24)
+                </a>
+            }
+        }
+    }
+
+    if (Model != null && Model.Publicacoes != null && Model.Publicacoes.Count > 0)
+    {
+        using (Smc.Div("divPublicacoes").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Html.Partial("_ListarPublicacoes", Model)
+        }
+    }
+}
+
+@using (Smc.Div("linksUteis").SecurityToken(UC_ALN_005_01_02.PERMITIR_VISUALIZAR_LINK_BDP).CssClass("smc-sga-externo-separador").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    <h2>Links úteis</h2>
+    <ul class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">
+        <li class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid4_24)">
+            <a target="_blank" class="smc-sga-aluno-logotipo-bdp" title="Biblioteca Digital da PUC Minas" href="https://web.sistemas.pucminas.br/BDP/PUC%20Minas">
+            </a>
+        </li>
+    </ul>
+}
+
+@using (Smc.ModalWindow("modalNotasFrequencias").Title(Smc.GetUIResource("Titulo_Modal_NotasFrequencia")).Size(SMCModalWindowSize.Large).Button(SMCButtonBehavior.Fechar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon)).Begin())
+{
+
+}
+
+@using (Smc.ModalWindow("modalVisualizarDivisaoTurma")
+        .Form("formVisualizarDivisaoTurma", closeOnSubmit: true)
+        .Size(SMCModalWindowSize.Large)
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }
+
+@using (Smc.ModalWindow("modalAutorizacaoPublicacaoBdp").Title(Smc.GetUIResource("Titulo_Modal_AutorizacaoPublicacaoBdp"))
+    .AutoShow(Model.SeqPublicacaoBdp.HasValue)
+    .Form("frmSalvarAutorizacao", "Autorizar", "PublicacaoBdp", new { Area = "ORT" })
+    .Button(SMCButtonBehavior.Confirmar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Botao_Autorizar_Publicacao")).Highlight().Hide(Smc.GetViewMode() == SMCViewMode.ReadOnly).SecurityToken(UC_ORT_003_01_02.AUTORIZAR_PUBLICACAO_TRABALHO_BIBLIOTECA))
+    .Button(SMCButtonBehavior.Fechar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+    .Size(SMCModalWindowSize.Large).Begin())
+{
+    if (Model.SeqPublicacaoBdp.HasValue)
+    {
+        @Html.Action("ModalAutorizarPublicacao", "PublicacaoBdp", new { Area = "ORT", Seq = Model.SeqPublicacaoBdp.Value })
+    }
+}
+
+@using (Smc.ModalWindow("modalDetailsPublicacaoBdp")
+        .Title(Smc.GetUIResource("Titulo_Modal_DetailsPublicacaoBdp"))
+        .Size(SMCModalWindowSize.Largest)
+        .Button(SMCButtonBehavior.Fechar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon)).Begin())
+{
+}
+
+@using (Smc.ModalWindow("modalNovaSolicitacao")
+                .Form("frmNovaSolicitacao", "Index", "ProcessoSolicitacao", new { @area = "SRC" }, config: x => x.Ajax())
+                .Title(Smc.GetUIResource("Modal_NovaSolicitacao_Titulo"))
+                .Button("Proximo", config: x => x.Id("BotaoProxSocilitacao").CssClass("smc-btn-proximo-icotext-destaque").Type(SMCButtonType.Submit))
+
+                .Button(SMCButtonBehavior.Fechar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+                .Begin())
+{
+}
+
+@using (Smc.ModalWindow("modalIntegralizacaoCurricular")
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }
+
+
+@****** REDIRECIONA PARA CHAMAR A TELA DE TERMOS ******@
+@if (Model.RedirecionarTermoCiencia)
+{
+    <form id="frm-termos" method="post" action="@Model.UrlTermoCiencia">
+        <input type="hidden" value="@User.SMCGetCodigoPessoa()" name="codPessoa" />
+        <input type="hidden" value="SGA" name="codSistema" />
+        <input type="hidden" value="@Url.Action("Index", "Home", null, Request.Url.Scheme)" name="dscPagSeguinte" />
+        <input type="hidden" value="N" name="indEmpregado" />
+    </form>
+
+}
+
+@if (Model.RedirecionarQuestionarioSurveyMonkey)
+{
+    <form id="frm-questionarioSurveyMonkey" method="post" action="@Model.UrlQuestionarioSurveyMonkey">
+        <input type="hidden" value="@Model.CodigoAlunoMigracao" name="codAluno" />
+        <input type="hidden" value="@Url.Action("Index", "Home", null, Request.Url.Scheme)" name="dscPagSeguinte" />
+    </form>
+
+}
+
+@section scripts
+{
+    @if (Model.RedirecionarTermoCiencia)
+    {
+        <script>
+            $("#frm-termos").submit();
+        </script>
+    }
+
+    @if (Model.RedirecionarQuestionarioSurveyMonkey)
+    {
+        <script>
+            $("#frm-questionarioSurveyMonkey").submit();
+        </script>
+    }
+}

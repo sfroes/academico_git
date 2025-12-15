@@ -1,0 +1,13 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.CUR.Lookups;
+@using SMC.Framework.UI.Mvc;
+@using SMC.Framework.UI.Mvc.Html;
+
+@model SMC.Framework.Model.SMCPagerModel<object>   
+@(Smc.List("SelectedValues", Model)
+    .AllowSelect(true)
+    .HtmlTemplate(
+        @<text>
+            @Html.ExternalPartial(SMC.Academico.UI.Mvc.AcademicoExternalViews._MATRIZ_CURRICULAR_003_DETAIL_LIST, (item as MatrizCurricularLookupViewModel))
+        </text>
+    )
+)    

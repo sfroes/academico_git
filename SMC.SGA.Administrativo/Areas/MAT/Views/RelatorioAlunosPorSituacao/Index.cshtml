@@ -1,0 +1,35 @@
+﻿@model RelatorioAlunosPorSituacaoFiltroViewModel
+
+@using (Smc.Form("frmViewPadrao", "GerarRelatorio", Model).Begin())
+{
+    //Filtros
+    using (Smc.Fieldset("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqCicloLetivo)
+        @Smc.EditorFor(prop => prop.SeqCursoOfertaLocalidade)
+        @Smc.EditorFor(prop => prop.SeqTurno)
+        @Smc.EditorFor(prop => prop.SeqsTipoVinculoAluno)
+        @Smc.EditorFor(prop => prop.TipoAtuacao)
+        @Smc.EditorFor(prop => prop.SeqCicloLetivoIngresso)
+        @Smc.EditorFor(prop => prop.SeqsTipoSituacaoMatricula)
+        @Smc.EditorFor(prop => prop.SeqsSituacaoMatricula)
+        @Smc.EditorFor(prop => prop.SituacoesIngressante)
+        @Smc.EditorFor(prop => prop.SeqsEntidadesResponsaveis)
+        @Smc.EditorFor(prop => prop.SelectedValues)
+
+        @Html.Partial("_BotoesRelatorioPadrao", true)
+
+        if (Model.ExibirBotaoGerarArquivo)
+        {
+            <div class="smc-buttonset-horizontal-primario">
+                <div class="smc-button" data-control="button" data-type="smc-button">
+                    <button arquivosmd="true" class="smc-btn-relatorio-icotext-destaque smc-btn-gerar-relatorio-icotext-destaque"
+                            id="GerarArquivo" name="GerarArquivo" title="Fazer download do arquivo de texto"
+                            type="submit" value="True" data-btn-configurated="true" formtarget="_blank">
+                        Gerar arquivo SMD
+                    </button>
+                </div>
+            </div>
+        }
+    }
+}

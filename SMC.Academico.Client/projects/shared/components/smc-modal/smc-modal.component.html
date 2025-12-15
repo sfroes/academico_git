@@ -1,0 +1,28 @@
+<div *ngIf="!isHidden" class="po-modal" tabindex="0" (keydown.esc)="closeModalOnEscapeKey($event)">
+  <div class="po-modal-overlay">
+    <div class="po-modal-container po-pb-2 po-pt-2" (mousedown)="onClickOut($event)">
+      <div class="po-modal-vertical-align">
+        <div #modalContent class="po-modal-content po-modal-{{ size }}" tabindex="-1">
+          <div class="po-modal-header">
+            <div class="po-modal-title po-text-ellipsis">
+              {{ title }}
+            </div>
+
+            <a *ngIf="!hideClose" class="po-modal-header-close-button" tabindex="0" (click)="close(true)">
+              <span class="po-icon po-icon-close"></span>
+            </a>
+          </div>
+
+          <div class="po-modal-body">
+            <ng-content select="[s-modal-body]"></ng-content>
+          </div>
+          <div class="po-modal-footer">
+            <div class="smc-buttonset-horizontal-primario">
+              <ng-content select="[s-modal-footer]"></ng-content>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

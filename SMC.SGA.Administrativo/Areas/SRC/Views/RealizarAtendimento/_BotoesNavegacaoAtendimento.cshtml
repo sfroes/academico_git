@@ -1,0 +1,30 @@
+﻿@model RegistroDocumentosAtendimentoViewModel
+
+@{
+    var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24);
+
+    //var btnConfirmar = Smc.Button(SMCButtonBehavior.Salvar)
+    //        .Id("confirmar")
+    //        .Text("Confirmar")
+    //        .DisplayMode(SMCButtonDisplayMode.Text);
+
+    var btnConfirmar = Smc.Button(SMCButtonBehavior.Confirmar)
+           .Id("confirmar")
+           .Text("Confirmar")
+           .DisplayMode(SMCButtonDisplayMode.TextAndIcon);
+
+    btnConfirmar.Action("SalvarRegistrarEntregaDocumentacaoAtendimento", "RealizarAtendimento", new { seqSolicitacaoServico = Model.SeqSolicitacaoServico, seqSolicitacaoHistoricoNavegacao = Model.SeqSolicitacaoHistoricoNavegacao});
+
+    buttonSet.AddButton(btnConfirmar);
+
+    var botaoCancelar = Smc.Button("cancelarProcesso")
+         .Id("cancelarProcesso")
+         .Type(SMCButtonType.Link)
+         .CssClass("smc-btn-cancelar-icotext");
+
+    botaoCancelar.Action("Index", "SolicitacaoServico", new { area = "SRC" });
+
+    buttonSet.AddButton(botaoCancelar);
+
+    @buttonSet
+}

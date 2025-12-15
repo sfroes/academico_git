@@ -1,0 +1,29 @@
+﻿@model ProcessoEtapaConfiguracaoNotificacaoViewModel
+@using (Smc.Div().CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Fieldset("TipoNotificacao").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("fieldset_tipo_notificacao")).Begin())
+    {
+        @Smc.DisplayFor(m => m.DescricaoTipoNotificacao).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.EnvioAutomatico).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.Observacao).Size(SMCSize.Grid24_24)
+    }
+
+    using (Smc.Fieldset("ConfiguracaoEmail").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("fieldset_configuracao_email")).Begin())
+    {
+        @Smc.DisplayFor(m => m.DescricaoProcessoUnidadeResponsavel).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.ConfiguracaoNotificacao.NomeOrigem)
+        @Smc.DisplayFor(m => m.ConfiguracaoNotificacao.EmailOrigem)
+        @Smc.DisplayFor(m => m.ConfiguracaoNotificacao.EmailResposta)
+        @Smc.DisplayFor(m => m.ConfiguracaoNotificacao.Assunto)
+        using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+        {
+            <div class="smc-display" data-control="display" data-type="smc-display">
+                <label>@Smc.GetUIResource("Mensagem")</label><p>
+                    @Html.Raw(HttpUtility.HtmlDecode(Model.ConfiguracaoNotificacao.Mensagem))
+                </p>
+            </div>
+        }
+        @Smc.DisplayFor(m => m.ConfiguracaoNotificacao.Emails).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+    }
+    @Smc.WizardView()
+}

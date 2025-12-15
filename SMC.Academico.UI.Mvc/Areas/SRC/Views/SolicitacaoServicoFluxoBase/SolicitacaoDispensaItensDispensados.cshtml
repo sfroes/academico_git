@@ -1,0 +1,138 @@
+﻿@using SMC.Formularios.UI.Mvc;
+@using SMC.Academico.Common.Areas.SRC.Constants;
+@using SMC.Academico.Common.Areas.CNC.Constants;
+
+@model SMC.Academico.UI.Mvc.Areas.SRC.Models.SolicitacaoDispensaItensDispensadosViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_DISPENSA_ITENS_SEREM_DISPENSADOS))
+
+@using (Smc.Form("frmPagina").Ajax("#divSolicitacaoDispensaItensDispensados").Begin())
+{
+
+    @Smc.EditorFor(m => m.backUrl)
+    @Smc.EditorFor(m => m.SeqProcessoEtapa)
+    @Smc.EditorFor(m => m.SeqCicloLetivo)
+    @Smc.EditorFor(m => m.SeqCurriculoCursoOferta)
+    @Smc.EditorFor(m => m.SeqInstituicaoNivelResponsavel)
+    @Smc.EditorFor(m => m.ExibirGrupoComponente)
+    @Smc.EditorFor(m => m.BloquearCicloLetivo)
+    @Smc.EditorFor(m => m.DesconsiderarItensQueNaoPermitemCadastroDispensa)
+    @Smc.EditorFor(m => m.DesconsiderarItensCursadosAprovacaoOuDispensadosAluno)
+    @Smc.EditorFor(m => m.DesconsiderarGruposTodosItensObrigatorios)
+    @Smc.EditorFor(m => m.SeqMatrizCurricular)
+    @Smc.EditorFor(m => m.FiltrarFormacoesEspecificasAluno)
+    @Smc.EditorFor(m => m.PermitirSelecionarGruposComComponentes)
+
+    if (Model.ExibirIntegralizacao == true)
+    {
+        var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid12_24);
+
+        // INTEGRALIZAÇÃO CURRICULAR
+        SMCButtonFluentConfiguration buttonIntegralizacao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Action("ConsultaIntegralizacaoCurricular", "IntegralizacaoCurricularRoute", new { @seqPessoaAtuacao = Model.SeqPessoaAtuacao, Area = "" })
+                .Ajax(isPost: false)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalIntegralizacaoCurricular")
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Title_Integralizacao_Curricular"))
+                .Text(Smc.GetUIResource("Botao_Integralizacao_Curricular"))
+                .SecurityToken(UC_CNC_001_02_01.EXIBIR_INTEGRALIZACAO_CURRICULAR)
+                .Tooltip(Smc.GetUIResource("Botao_Integralizacao_Curricular_Tooltip"));
+
+        @buttonSet.AddButton(buttonIntegralizacao);
+    }
+
+    if (Model.ComponentesCurricularesForaMatriz != null && Model.ComponentesCurricularesForaMatriz.Count > 0)
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-alerta").Begin())
+        {
+            var i = 0;
+            if (Model.ComponentesCurricularesForaMatriz.Count == 1)
+            {
+                <p>@Smc.GetUIResource("Texto_Informativo_Itens_Matriz_Singular")</p>
+            }
+            else
+            {
+                <p>@Smc.GetUIResource("Texto_Informativo_Itens_Matriz_Plural")</p>
+            }
+            <ul>
+                @foreach (var item in Model.ComponentesCurricularesForaMatriz)
+                {
+                    <li>
+                        @item.Descricao
+                        <input name="ComponentesCurricularesForaMatriz[@i].Seq" type="hidden" value="@item.Seq">
+                        <input name="ComponentesCurricularesForaMatriz[@i].Descricao" type="hidden" value="@item.Descricao">
+                    </li>
+                    i++;
+                }
+            </ul>
+        }
+    }
+
+    using (Smc.Div("divComponentesCurriculares").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(m => m.ComponentesCurriculares)
+    }
+
+    using (Smc.Div("divGruposCurriculares").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(m => m.GruposCurriculares)
+    }
+
+    using (Smc.Fieldset("TotalItensCursados").Size(SMCSize.Grid11_24, SMCSize.Grid12_24, SMCSize.Grid11_24, SMCSize.Grid11_24).Begin())
+    {
+
+        using (Smc.Div("TotaisCargaHoraria").CssClass("smc-sga-totalizador").Size(SMCSize.Grid11_24, SMCSize.Grid24_24, SMCSize.Grid11_24, SMCSize.Grid11_24).Begin())
+        {
+            <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Titulo_Label_TotalCargaHoraria")</span>
+            @Smc.DisplayFor(m => m.CursadosTotalCargaHorariaHoras).Attribute("id", "CursadosTotalCargaHorariaHoras").CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+            @Smc.DisplayFor(m => m.CursadosTotalCargaHorariaHorasAula).Attribute("id", "CursadosTotalCargaHorariaHorasAula").CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+            <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Detalhe_Label_TotalCargaHorariaHoras")</span>
+            <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Detalhe_Label_TotalCargaHorariaHorasAula")</span>
+        }
+
+        using (Smc.Div("TotaisCreditos").CssClass("smc-sga-totalizador col-md-offset-2 col-sm-offset-2 col-lg-offset-2").Size(SMCSize.Grid11_24, SMCSize.Grid24_24, SMCSize.Grid11_24, SMCSize.Grid11_24).Begin())
+        {
+            <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Titulo_Label_TotalCreditos")</span>
+            @Smc.DisplayFor(m => m.CursadosTotalCreditos).Attribute("id", "CursadosTotalCreditos").CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)
+        }
+    }
+
+    using (Smc.Fieldset("TotalItensDispensa").CssClass("col-md-offset-2 col-sm-offset-2 col-lg-offset-2").Size(SMCSize.Grid11_24, SMCSize.Grid12_24, SMCSize.Grid11_24, SMCSize.Grid11_24).Begin())
+    {
+
+        using (Smc.Div("TotaisCargaHoraria").CssClass("smc-sga-totalizador").Size(SMCSize.Grid11_24, SMCSize.Grid24_24, SMCSize.Grid11_24, SMCSize.Grid11_24).Begin())
+        {
+            <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Titulo_Label_TotalCargaHoraria")</span>
+            @Smc.DisplayFor(m => m.DispensaTotalCargaHorariaHoras).Attribute("id", "DispensaTotalCargaHorariaHoras").CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+            @Smc.DisplayFor(m => m.DispensaTotalCargaHorariaHorasAula).Attribute("id", "DispensaTotalCargaHorariaHorasAula").CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24)
+            <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Detalhe_Label_TotalCargaHorariaHoras")</span>
+            <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24, SMCSize.Grid12_24) smc-sga-totalizador-texto-detalhe">@Smc.GetUIResource("Detalhe_Label_TotalCargaHorariaHorasAula")</span>
+        }
+
+        using (Smc.Div("TotaisCreditos").CssClass("smc-sga-totalizador col-md-offset-2 col-sm-offset-2 col-lg-offset-2").Size(SMCSize.Grid11_24, SMCSize.Grid24_24, SMCSize.Grid11_24, SMCSize.Grid11_24).Begin())
+        {
+            <span class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-totalizador-titulo">@Smc.GetUIResource("Titulo_Label_TotalCreditos")</span>
+            @Smc.DisplayFor(m => m.DispensaTotalCreditos).Attribute("id", "DispensaTotalCreditos").CssClass("smc-sga-totalizador-valor").HideLabel().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)
+        }
+    }
+
+
+    @Html.Partial("_BotoesNavegacao", Model)
+}
+
+@using (Smc.ModalWindow("modalIntegralizacaoCurricular")
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }
+
+@section scripts
+    {
+    <script src="@Url.SMCBuscarRecursoGlobalAplicacao("Scripts/Areas/SRC/SolicitacaoDispensaItensDispensados.js")" type="text/javascript"></script>
+}

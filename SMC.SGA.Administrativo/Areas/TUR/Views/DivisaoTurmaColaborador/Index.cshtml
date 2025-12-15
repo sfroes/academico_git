@@ -1,0 +1,52 @@
+﻿@model DivisaoTurmaColaboradorViewModel
+
+
+@Html.Action("CabecalhoTurma", new { seqTurma = Model.SeqTurma })
+
+
+@Smc.List("Lista", m => m.Divisoes).HtmlTemplate(item => Html.Partial("_DetailTurmaDivisoes", item.Value)).CssClass("smc-listdetailed-conteudo-lista-item-destaque smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24")
+
+
+
+
+@(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+                                            .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                            .Action("Index", "Turma")
+                                            .SecurityToken(UC_TUR_001_01_01.PESQUISAR_TURMA)))
+
+@using (Smc.ModalWindow("modalAdicionarResponsavel")
+           .Form("frmAdicionarResponsavel", "SalvarSair", "TurmaColaborador", new { area = "TUR", seqTurma = Model.SeqTurma }, closeOnSubmit: true, config: x => x.Ajax())
+           .Size(SMCModalWindowSize.Large)
+           .Button(SMCButtonBehavior.Salvar, "SalvarSair", "TurmaColaborador", new { area = "TUR", seqTurma = Model.SeqTurma }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }
+
+@using (Smc.ModalWindow("modalAdicionarProfessor")
+           .Form("frmAdicionarProfessor", "SalvarSair", "TurmaColaboradorDivisao", new { area = "TUR", seqTurma = Model.SeqTurma }, closeOnSubmit: true, config: x => x.Ajax())
+           .Size(SMCModalWindowSize.Large)
+           .Button(SMCButtonBehavior.Salvar, "SalvarSair", "TurmaColaboradorDivisao", new { area = "TUR", seqTurma = Model.SeqTurma }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }
+
+@using (Smc.ModalWindow("modalAlterarProfessor")
+           .Form("frmAlterarProfesso", "SalvarSair", "TurmaColaboradorDivisao", new { area = "TUR", seqTurma = Model.SeqTurma }, closeOnSubmit: true, config: x => x.Ajax())
+           .Size(SMCModalWindowSize.Large)
+           .Button(SMCButtonBehavior.Salvar, "SalvarSair", "TurmaColaboradorDivisao", new { area = "TUR", seqTurma = Model.SeqTurma }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }
+
+@using (Smc.ModalWindow("modalDetalheComponenteCurricular")
+        .Size(SMCModalWindowSize.Largest)
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }
+
+
+
+
+
+
+
+
+
+
+

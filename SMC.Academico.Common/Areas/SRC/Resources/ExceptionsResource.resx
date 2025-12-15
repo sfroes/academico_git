@@ -1,0 +1,1241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERR_ProcessoEtapaConfiguracaoEtapaSemDocumentoUpload" xml:space="preserve">
+    <value>Alteração não permitida. Para configuração de etapa que possui em seu fluxo de páginas a página “Upload de Documentos”, é necessário que exista pelo menos um documento requerido que permite upload de arquivos.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaConfiguracaoEtapaSemTokenUpload" xml:space="preserve">
+    <value>Alteração não permitida. Para configuração de etapa que tenha documentos requeridos que permitem upload, é necessário que a página de “Upload de Documentos” esteja no fluxo de páginas.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaDataFimAnteriorMenorDataInicio" xml:space="preserve">
+    <value>Alteração não permitida. Ao indicar que é permitido iniciar a vigência da etapa somente após o fim da vigência da etapa anterior, a Data/Hora Início desta etapa deverá ser maior que a Data/Hora Fim da etapa anterior.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaDataInicioEscalonamentoMenorDataFimEscalonamentoAnterior" xml:space="preserve">
+    <value>Alteração não permitida. Ao indicar que é permitido iniciar a vigência da etapa somente após o fim da vigência da etapa anterior, a Data/Hora Início do escalonamento dessa etapa deverá ser maior do que a maior Data/Hora Fim do escalonamento da etapa anterior.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaDataInicioFimEscalonamentoForaPeriodoProcesso" xml:space="preserve">
+    <value>Alteração não permitida. As datas e horário dos escalonamentos deverão estar compreendidos entre as datas e horário do processo.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaDataInicioFimEtapaForaPeriodoProcesso" xml:space="preserve">
+    <value>Operação não permitida. O período de vigência da etapa não está de acordo com o período do processo.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaDataVencimentoParcelaMenorDataFimEscalonamento" xml:space="preserve">
+    <value>Alteração não permitida. Existem parcelas cadastradas para o escalonamento e sua data/hora fim deve ser menor ou igual a data de vencimento de todas as parcelas.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaEtapaSemNenhumaConfiguracao" xml:space="preserve">
+    <value>Alteração não permitida. Para liberar a etapa é necessário que a etapa em questão tenha pelo menos uma configuração.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaEtapaSemNenhumEscalonamento" xml:space="preserve">
+    <value>Alteração não permitida. Para liberar a etapa é necessário cadastrar pelo menos um escalonamento.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaProcessoSemNenhumaConfiguracao" xml:space="preserve">
+    <value>Alteração não permitida. Para liberar a etapa é necessário que o processo em questão tenha pelo menos uma configuração.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaProcessoSemNenhumGrupoEscalonamento" xml:space="preserve">
+    <value>Alteração não permitida. Para liberar a etapa é necessário cadastrar pelo menos um grupo de escalonamento para o processo.</value>
+  </data>
+  <data name="ERR_ProcessoForaPeriodoVigencia" xml:space="preserve">
+    <value>Opção indisponível. Para {0} um grupo de escalonamento é necessário que o período do processo esteja vigente.</value>
+  </data>
+  <data name="FK_arquivo_secao_pagina_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração da página já possui arquivos anexos.</value>
+  </data>
+  <data name="FK_arquivo_secao_pagina_02" xml:space="preserve">
+    <value>Exclusão não permitida. Arquivo anexado está associado a uma configuração de página de processo/serviço.</value>
+  </data>
+  <data name="FK_configuracao_etapa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Etapa do processo já possui configurações.</value>
+  </data>
+  <data name="FK_configuracao_etapa_02" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração do processo já possui configuração de etapa.</value>
+  </data>
+  <data name="FK_configuracao_etapa_bloqueio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração da etapa já possui bloqueios associados.</value>
+  </data>
+  <data name="FK_configuracao_etapa_bloqueio_02" xml:space="preserve">
+    <value>Exclusão não permitida. Motivo de bloqueio está associado a uma configuração de etapa.</value>
+  </data>
+  <data name="FK_configuracao_etapa_pagina_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de etapa já possui páginas configuradas.</value>
+  </data>
+  <data name="FK_configuracao_processo_curso_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de processo já possui cursos associados.</value>
+  </data>
+  <data name="FK_configuracao_processo_curso_02" xml:space="preserve">
+    <value>Exclusão não permitida. Curso-oferta-turno já está associado a uma configuração de processo.</value>
+  </data>
+  <data name="FK_configuracao_processo_nivel_ensino_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de processo já possui níveis de ensino associados.</value>
+  </data>
+  <data name="FK_configuracao_processo_nivel_ensino_02" xml:space="preserve">
+    <value>Exclusão não permitida. Nível de ensino já está associado a uma configuração de processo.</value>
+  </data>
+  <data name="FK_configuracao_processo_tipo_vinculo_aluno_01" xml:space="preserve">
+    <value>Exclusão não permitida. configuração de processo já possui tipo de vínculo de aluno associado.</value>
+  </data>
+  <data name="FK_configuracao_processo_tipo_vinculo_aluno_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de vínculo de aluno já está associado a uma configuração de processo.</value>
+  </data>
+  <data name="FK_documento_requerido_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de etapa já possui documentos requeridos.</value>
+  </data>
+  <data name="FK_escalonamento_01" xml:space="preserve">
+    <value>Exclusão não permitida. Etapa do processo já possui escalonamentos cadastrados.</value>
+  </data>
+  <data name="FK_grupo_documento_requerido_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração da etapa possui grupos de documentos requeridos cadastrados.</value>
+  </data>
+  <data name="FK_grupo_documento_requerido_item_01" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo de documento requerido já possui itens.</value>
+  </data>
+  <data name="FK_grupo_documento_requerido_item_02" xml:space="preserve">
+    <value>Exclusão não permitida. Documento requerido faz parte de um grupo de documentos requeridos.</value>
+  </data>
+  <data name="FK_grupo_escalonamento_01" xml:space="preserve">
+    <value>Exclusão não permitida. Processo já possui grupos de escalonamento cadastrados.</value>
+  </data>
+  <data name="FK_grupo_escalonamento_item_01" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo de escalonamento já possui itens.</value>
+  </data>
+  <data name="FK_grupo_escalonamento_item_02" xml:space="preserve">
+    <value>Exclusão não permitida. Escalonamento faz parte de um grupo de escalonamento.</value>
+  </data>
+  <data name="FK_grupo_escalonamento_item_parcela_01" xml:space="preserve">
+    <value>Exclusão não permitida. Item do grupo de escalonamento já possui parcelas configuradas.</value>
+  </data>
+  <data name="FK_grupo_escalonamento_item_parcela_02" xml:space="preserve">
+    <value>Exclusão não permitida. Motivo de bloqueio já possui parcelas de escalonamento configuradas.</value>
+  </data>
+  <data name="FK_instituicao_nivel_servico_02" xml:space="preserve">
+    <value>Exclusão não permitida. Existe serviço configurado para este nível de ensino x instituição de ensino x tipo de vínculo de aluno.</value>
+  </data>
+  <data name="FK_processo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Serviço já possui processos cadastrados.</value>
+  </data>
+  <data name="FK_processo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Existem processos cadastrados para este ciclo letivo.</value>
+  </data>
+  <data name="FK_processo_etapa_filtro_dado_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem filtro de dados cadastrados para este processo x etapa.</value>
+  </data>
+  <data name="FK_processo_unidade_responsavel_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe unidade responsável associada a este processo.</value>
+  </data>
+  <data name="FK_processo_unidade_responsavel_02" xml:space="preserve">
+    <value>Exclusão não permitida. Entidade é responsável por processos.</value>
+  </data>
+  <data name="FK_servico_01" xml:space="preserve">
+    <value>Exclusão não permitida. Existem serviços cadastrados para a instituição de ensino.</value>
+  </data>
+  <data name="FK_servico_02" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de serviço já possui serviço configurado.</value>
+  </data>
+  <data name="FK_servico_situacao_aluno_02" xml:space="preserve">
+    <value>Exclusão não permitida. Situação de matrícula já está associada a uma configuração de serviço.</value>
+  </data>
+  <data name="FK_solicitacao_documento_requerido_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço já possui documento requerido cadastrado.</value>
+  </data>
+  <data name="FK_solicitacao_documento_requerido_02" xml:space="preserve">
+    <value>Exclusão não permitida. Documento requerido já foi entregue em uma solicitação de serviço x etapa.</value>
+  </data>
+  <data name="FK_solicitacao_documento_requerido_03" xml:space="preserve">
+    <value>Exclusão não permitida. Arquivo anexado a uma solicitação de serviço.</value>
+  </data>
+  <data name="FK_solicitacao_historico_navegacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação etapa já possui histórico de navegação.</value>
+  </data>
+  <data name="FK_solicitacao_historico_navegacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração da página já possui histórico de navegação.</value>
+  </data>
+  <data name="FK_solicitacao_historico_situacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação etapa já possui histórico de situação.</value>
+  </data>
+  <data name="FK_solicitacao_servico_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de processo já possui solicitações de serviço.</value>
+  </data>
+  <data name="FK_solicitacao_servico_02" xml:space="preserve">
+    <value>Exclusão não permitida. Pessoa atuação já possui solicitações de serviço.</value>
+  </data>
+  <data name="FK_solicitacao_servico_03" xml:space="preserve">
+    <value>Exclusão não permitida. Justificativa de solicitação de serviço já utilizada em solicitação de serviço.</value>
+  </data>
+  <data name="FK_solicitacao_servico_etapa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de etapa já utilizada em solicitação de serviço.</value>
+  </data>
+  <data name="FK_solicitacao_servico_etapa_02" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço possui etapas cadastradas.</value>
+  </data>
+  <data name="FK_texto_secao_pagina_01" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração da página possui seções de texto configuradas.</value>
+  </data>
+  <data name="UN_configuracao_etapa_01" xml:space="preserve">
+    <value>Já existe configuração de etapa com esta descrição para esta configuração de processo x etapa.</value>
+  </data>
+  <data name="UN_configuracao_etapa_bloqueio_01" xml:space="preserve">
+    <value>Já existe configuração de bloqueio com este motivo para esta etapa.</value>
+  </data>
+  <data name="UN_configuracao_etapa_pagina_01" xml:space="preserve">
+    <value>Já existe página configurada com esta ordem nesta etapa.</value>
+  </data>
+  <data name="UN_configuracao_processo_01" xml:space="preserve">
+    <value>Já existe configuração com esta descrição para este processo.</value>
+  </data>
+  <data name="UN_configuracao_processo_curso_01" xml:space="preserve">
+    <value>Curso-oferta-turno já está configurado para este processo.</value>
+  </data>
+  <data name="UN_configuracao_processo_nivel_ensino_01" xml:space="preserve">
+    <value>Nível de ensino já está configurado para este processo.</value>
+  </data>
+  <data name="UN_configuracao_processo_tipo_vinculo_aluno_01" xml:space="preserve">
+    <value>Tipo de vínculo de aluno já está configurado para este processo.</value>
+  </data>
+  <data name="UN_documento_requerido_01" xml:space="preserve">
+    <value>Tipo de documento já está configurado para esta etapa.</value>
+  </data>
+  <data name="UN_escalonamento_01" xml:space="preserve">
+    <value>Já existe escalonamento para esta etapa com esta data de início e de fim.</value>
+  </data>
+  <data name="UN_escalonamento_parcela_01" xml:space="preserve">
+    <value>Já existe parcela com este número neste escalonamento.</value>
+  </data>
+  <data name="UN_grupo_documento_requerido_01" xml:space="preserve">
+    <value>Já existe grupo de documento requerido com esta descrição.</value>
+  </data>
+  <data name="UN_grupo_documento_requerido_item_01" xml:space="preserve">
+    <value>Documento requerido já está associado a este grupo de documento requerido.</value>
+  </data>
+  <data name="UN_grupo_escalonamento_01" xml:space="preserve">
+    <value>Já existe grupo de escalonamento com esta descrição.</value>
+  </data>
+  <data name="UN_grupo_escalonamento_item_01" xml:space="preserve">
+    <value>Escalonamento já está associado a este grupo.</value>
+  </data>
+  <data name="UN_grupo_escalonamento_item_parcela_01" xml:space="preserve">
+    <value>Já existe parcela para este grupo de escalonamento com este número e serviço adicional.</value>
+  </data>
+  <data name="UN_grupo_escalonamento_item_parcela_02" xml:space="preserve">
+    <value>Já existe parcela para este grupo de escalonamento com esta descrição.</value>
+  </data>
+  <data name="UN_instituicao_nivel_servico_01" xml:space="preserve">
+    <value>Serviço já está configurado para esta instituição x nível x tipo de vínculo de aluno.</value>
+  </data>
+  <data name="UN_justificativa_solicitacao_servico_01" xml:space="preserve">
+    <value>Já existe justificativa com esta descrição para este serviço.</value>
+  </data>
+  <data name="UN_processo_01" xml:space="preserve">
+    <value>Já existe processo configurado com esta descrição para este serviço x ciclo letivo.</value>
+  </data>
+  <data name="UN_processo_etapa_01" xml:space="preserve">
+    <value>Já existe etapa com esta descrição para este processo.</value>
+  </data>
+  <data name="UN_processo_etapa_filtro_dado_01" xml:space="preserve">
+    <value>Filtro de dado já está configurado para este processo x etapa.</value>
+  </data>
+  <data name="UN_processo_unidade_responsavel_01" xml:space="preserve">
+    <value>Entidade já está configurada como unidade responsável do processo.</value>
+  </data>
+  <data name="UN_servico_01" xml:space="preserve">
+    <value>Já existe serviço com esta descrição para este tipo de atuação x instituição de ensino.</value>
+  </data>
+  <data name="UN_servico_situacao_aluno_01" xml:space="preserve">
+    <value>Situação de matrícula de aluno já está configurada para este serviço com esta permissão.</value>
+  </data>
+  <data name="UN_servico_situacao_ingressante_01" xml:space="preserve">
+    <value>Situação de ingressante já está configurada para este serviço com esta permissão.</value>
+  </data>
+  <data name="UN_solicitacao_documento_requerido_01" xml:space="preserve">
+    <value>Documento requerido já está registrado para esta solicitação de serviço x etapa.</value>
+  </data>
+  <data name="UN_solicitacao_servico_etapa_01" xml:space="preserve">
+    <value>Configuração de etapa já está associada a esta solicitação de serviço.</value>
+  </data>
+  <data name="UN_texto_secao_pagina_01" xml:space="preserve">
+    <value>Seção já está configurada para esta página.</value>
+  </data>
+  <data name="UN_texto_secao_pagina_02" xml:space="preserve">
+    <value>Token já está configurada para esta página.</value>
+  </data>
+  <data name="UN_tipo_servico_01" xml:space="preserve">
+    <value>Já existe tipo de serviço com esta descrição.</value>
+  </data>
+  <data name="UN_tipo_servico_02" xml:space="preserve">
+    <value>Já existe tipo de serviço com este token.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoDataInicioMaiorDataFimAnterior" xml:space="preserve">
+    <value>Operação não permitida. Para etapa configurada para permitir iniciar a vigência somente após o fim da vigência da etapa anterior, a data/hora início do escalonamento deve ser maior do que a data/hora fim do escalonamento da etapa anterior.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoItemParcelaDataVencimentoMenorEscalonamento" xml:space="preserve">
+    <value>Configuração não permitida. A data de vencimento de todas as parcelas deverá ser maior ou igual do que a data/hora fim do escalonamento em questão e menor do que a data/hora fim do processo em questão.</value>
+  </data>
+  <data name="ERR_ProcessoDataFimMenorDataInicio" xml:space="preserve">
+    <value>A data fim não pode ser menor que a data início</value>
+  </data>
+  <data name="FK_solicitacao_servico_04" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo de escalonamento já possui solicitações de serviço cadastradas.</value>
+  </data>
+  <data name="FK_parametro_envio_notificacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo de escalonamento já possui parâmetro de envio de notificação configurado.</value>
+  </data>
+  <data name="FK_parametro_envio_notificacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de notificação já possui parâmetro de envio de notificação configurado.</value>
+  </data>
+  <data name="FK_processo_etapa_configuracao_notificacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de notificação já possui configuração de envio configurado para um processo etapa.</value>
+  </data>
+  <data name="FK_processo_etapa_configuracao_notificacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Entidade responsável já possui configuração de notificação cadastrada.</value>
+  </data>
+  <data name="FK_processo_etapa_configuracao_notificacao_03" xml:space="preserve">
+    <value>Exclusão não permitida. Etapa do processo já possui configuração de notificação cadastrada.</value>
+  </data>
+  <data name="FK_solicitacao_servico_envio_notificacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço já possui notificações enviadas.</value>
+  </data>
+  <data name="FK_tipo_notificacao_atributo_agendamento_01" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de notificação já possui atributos de agendamento configurados.</value>
+  </data>
+  <data name="UN_processo_etapa_configuracao_notificacao_01" xml:space="preserve">
+    <value>Já existe configuração de notificação para esta etapa x unidade responsável x tipo de notificação.</value>
+  </data>
+  <data name="UN_solicitacao_servico_envio_notificacao_01" xml:space="preserve">
+    <value>Notificação já está associada a esta solicitação de serviço.</value>
+  </data>
+  <data name="UN_tipo_notificacao_01" xml:space="preserve">
+    <value>Já existe tipo de notificação com este token.</value>
+  </data>
+  <data name="UN_tipo_notificacao_atributo_agendamento_01" xml:space="preserve">
+    <value>Atributo de agendamento já está associado a este tipo de notificação.</value>
+  </data>
+  <data name="FK_solicitacao_servico_05" xml:space="preserve">
+    <value>Exclusão não permitida. Entidade é responsável por solicitações de serviço.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoProcessoComEtapaLiberadaExclusao" xml:space="preserve">
+    <value>Exclusão não permitida. Para criar um grupo de escalonamento é necessário que todas as etapas do processo estejam com a situação igual a "Em manutenção".</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoProcessoComEtapaEncerrada" xml:space="preserve">
+    <value>Opção indisponível. As etapas do processo foram encerradas.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoDataInicioMenorDataInicioAnterior" xml:space="preserve">
+    <value>Operação não permitida. Etapa posterior não pode conter a data início menor do que a
+etapa anterior.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoItemParcelaDataVencimentoMaiorProximaParcela" xml:space="preserve">
+    <value>Configuração não permitida. A data de vencimento das parcelas deverá levar em consideração o número da parcela, isto é, parcela com o número menor do que a outra parcela deverá conter a data de vencimento menor também.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoItemSomatorioPercentualInvalido" xml:space="preserve">
+    <value>Configuração não permitida. O somatório do percentual das parcelas que não é de serviço adicional deve ser igual a 100%.</value>
+  </data>
+  <data name="FK_solicitacao_servico_envio_notificacao_02" xml:space="preserve">
+    <value>Exclusão não permitida. Parâmetro de envio de notificação já possui notificações enviadas.</value>
+  </data>
+  <data name="FK_solicitacao_servico_envio_notificacao_03" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração de notificação do processo etapa já possui notificações enviadas.</value>
+  </data>
+  <data name="ERR_RegistroDocumentoExtensaoArquivoNaoPermitida" xml:space="preserve">
+    <value>O arquivo {0} não é permitido. Favor enviar o arquivo em uma das seguintes extensões: doc, docx, xls, xlsx, jpg, jpeg, png, pdf, rar, zip, ps, xml.</value>
+  </data>
+  <data name="ERR_RegistroDocumentoDataPrazoEntregaInvalida" xml:space="preserve">
+    <value>Operação não permitida. Favor informar as datas de prazo de entrega maiores ou iguais a {0}.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoExpiradoException" xml:space="preserve">
+    <value>Não é possível associar um grupo de escalonamento que possui pelo menos um escalonamento com data fim expirada.</value>
+  </data>
+  <data name="ERR_RegistroDocumentoArquivoAnexoObrigatorio" xml:space="preserve">
+    <value>Registro não permitido. É obrigatório anexar arquivos aos documentos requeridos quando a forma de entrega for Anexado ou por E-mail.</value>
+  </data>
+  <data name="ERR_RegistroDocumentoItemObrigatorio" xml:space="preserve">
+    <value>Registro não permitido. É necessário existir pelo menos um registro para todos os documentos listados.</value>
+  </data>
+  <data name="ERR_RegistroDocumentoMotivoBloqueioNaoCadastrado" xml:space="preserve">
+    <value>Operação não permitida. Não existe um motivo de bloqueio cadastrado para geração de bloqueio, quando existir algum documento com situação pendente.</value>
+  </data>
+  <data name="FK_solicitacao_historico_usuario_responsavel_01" xml:space="preserve">
+    <value>Solicitação de serviço já possui usuário responsável.</value>
+  </data>
+  <data name="FK_solicitacao_servico_06" xml:space="preserve">
+    <value>Exclusão não permitida. Aluno x Histórico já possui solicitações de serviço associadas.</value>
+  </data>
+  <data name="FK_solicitacao_servico_07" xml:space="preserve">
+    <value>Exclusão não permitida. Entidade possui responsabilidade compartilhada por solicitação de serviço.</value>
+  </data>
+  <data name="UN_servico_02" xml:space="preserve">
+    <value>Já existe serviço com este token para este tipo de atuação x instituição de ensino</value>
+  </data>
+  <data name="UN_solicitacao_historico_usuario_responsavel_01" xml:space="preserve">
+    <value>Usuário já é responsável por esta solicitação de serviço.</value>
+  </data>
+  <data name="FK_solicitacao_dado_formulario_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço possui formulários preenchidos.</value>
+  </data>
+  <data name="FK_solicitacao_dado_formulario_02" xml:space="preserve">
+    <value>Exclusão não permitida. Configuração x página x etapa possui formulários preenchidos.</value>
+  </data>
+  <data name="FK_solicitacao_dado_formulario_campo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Formulário já possui campos preenchidos.</value>
+  </data>
+  <data name="UN_solicitacao_dado_formulario_01" xml:space="preserve">
+    <value>Este formulário já foi preenchido para esta solcitação de serviço.</value>
+  </data>
+  <data name="ERR_EscalonamentoDataFimMenorDataAtual" xml:space="preserve">
+    <value>A data fim deverá ser maior ou igual a data atual.</value>
+  </data>
+  <data name="ERR_EscalonamentoDataFimEscalonamentoMenorDataInicioEscalonamentoAnteriorException" xml:space="preserve">
+    <value>Operação não permitida. Esse escalonamento deve finalizar antes do início do escalonamento da próxima etapa. Favor verificar o(s) grupo(s) associado(s): {0}</value>
+  </data>
+  <data name="ERR_EscalonamentoDataFimMaiorDataFimPeriodoFinanceiroException" xml:space="preserve">
+    <value>Operação não permitida. A data fim do escalonamento é maior que o período financeiro do ciclo letivo do processo.</value>
+  </data>
+  <data name="ERR_EscalonamentoDataInicioEscalonamentoMaiorDataFimEscalonamentoAnteriorException" xml:space="preserve">
+    <value>Operação não permitida. A etapa deste escalonamento não pode iniciar antes da finalização da etapa anterior.</value>
+  </data>
+  <data name="ERR_EscalonamentoEdicaoDataFimMaiorDataFimAnteriorException" xml:space="preserve">
+    <value>Operação não permitida. A data fim deste escalonamento não pode ser menor do que a data fim do escalonamento da etapa anterior. Favor verificar o(s) grupo(s): {0}</value>
+  </data>
+  <data name="ERR_EscalonamentoEdicaoDataFimMenorDataFimPosteriorException" xml:space="preserve">
+    <value>Operação não permitida. A data fim deste escalonamento não pode ser maior do que a data fim do escalonamento da etapa posterior. Favor verificar o(s) grupo(s): {0}</value>
+  </data>
+  <data name="ERR_EscalonamentoEdicaoDataInicioMaiorDataInicioAnteriorException" xml:space="preserve">
+    <value>Operação não permitida. A data início deste escalonamento não pode ser menor do que a data início do escalonamento da etapa anterior. Favor verificar o(s) grupo(s): {0}</value>
+  </data>
+  <data name="ERR_EscalonamentoEdicaoDataInicioMenorDataInicioPosteriorException" xml:space="preserve">
+    <value>Operação não permitida. A data início deste escalonamento não pode ser maior do que a data início do escalonamento da etapa posterior. Favor verificar o(s) grupo(s): {0}</value>
+  </data>
+  <data name="FK_solicitacao_artigo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de atividade complementar já possui uma solicitação de artigo.</value>
+  </data>
+  <data name="FK_solicitacao_artigo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Periódico CAPES já possui solicitação de atividade complementar (artigo).</value>
+  </data>
+  <data name="FK_solicitacao_artigo_03" xml:space="preserve">
+    <value>Exclusão não permitida. Qualis CAPES já possui solicitação de atividade complementar (artigo).</value>
+  </data>
+  <data name="FK_solicitacao_atividade_complementar_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço é uma solicitação de atividade complementar.</value>
+  </data>
+  <data name="FK_solicitacao_atividade_complementar_02" xml:space="preserve">
+    <value>Exclusão não permitida. Divisão de componente já possui solicitação de atividade complementar.</value>
+  </data>
+  <data name="FK_solicitacao_atividade_complementar_03" xml:space="preserve">
+    <value>Exclusão não permitida. Ciclo letivo já possui solicitação de atividade complementar.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço é uma solicitação de dispensa.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_destino_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem grupos e/ou componentes a serem dispensados nesta solicitação de dispensa.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_destino_02" xml:space="preserve">
+    <value>Exclusão não permitida. Componente do grupo curricular já possui solicitação de dispensa cadastrada.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_destino_03" xml:space="preserve">
+    <value>Exclusão não permitida. Grupo curricular já possui solicitação de dispensa cadastrada.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_destino_04" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe solicitação de dispensa cadastrada para este ciclo letivo (destino).</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_origem_externa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem componentes cursados externamente cadastrado para esta solicitação de dispensa.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_origem_externa_02" xml:space="preserve">
+    <value>Exclusão não permitida. Ciclo letivo já possui solicitação de dispensa cadastrada (origem externa).</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_origem_interna_01" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem componentes cursados internamente cadastrado para esta solicitação de dispensa.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_origem_interna_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe solicitação de dispensa cadatrada utilizando este histórico escolar.</value>
+  </data>
+  <data name="UN__solicitacao_dispensa_destino_01" xml:space="preserve">
+    <value>Já existe associação deste grupo curricular ou deste componente nesta solicitação de dispensa.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_origem_externa_03" xml:space="preserve">
+    <value>Exclusão não permitida. Titulação já está sendo utilizada em solicitação de dispensa (origem externa).</value>
+  </data>
+  <data name="ERR_DocumentoRequeridoObrigatorioNaoEnviadoException" xml:space="preserve">
+    <value>Para prosseguir com o preenchimento da solicitação é necessário que todos os documentos obrigatórios sejam anexados. {0}</value>
+  </data>
+  <data name="ERR_DocumentoRequeridoObrigatorioNaoEnviadoExceptionGrupos" xml:space="preserve">
+    <value>Os seguintes grupos de documentos não tiveram o requisito de preenchimento atendido: {0}</value>
+  </data>
+  <data name="ERR_ServicoSemConfiguracoesException" xml:space="preserve">
+    <value>Nenhuma configuração foi encontrada para o serviço informado.</value>
+  </data>
+  <data name="ERR_ServicoSemTemplateSGFException" xml:space="preserve">
+    <value>Não foi configurado nenhum template de processo do SGF para este serviço.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoConflitanteException" xml:space="preserve">
+    <value>Inclusão não permitida. Não é possível prosseguir, pois há em aberto as seguintes solicitações que restrigem a solicitação do serviço selecionado:&lt;br/&gt;&lt;ul&gt;{0}&lt;/ul&gt;</value>
+  </data>
+  <data name="ERR_SolicitacaoAtividadeComplementarTipoPublicacaoObrigatoriaException" xml:space="preserve">
+    <value>Favor informar um tipo de publicação.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaConfiguracaoNotificacaoLiberadaException" xml:space="preserve">
+    <value>Para {0} uma configuração de notificação, a situação da etapa do processo deve ser diferente de "Liberada".</value>
+  </data>
+  <data name="ERR_ProcessoEtapaConfiguracaoNotificacaoTagException" xml:space="preserve">
+    <value>Para o tipo de notificação "{0}", não existem as tags:{1}</value>
+  </data>
+  <data name="ERR_ProcessoEtapaConfiguracaoNotificacaoJaEnviadaException" xml:space="preserve">
+    <value>O Tipo de Notificação não pode ser alterado, pois já existem registros de envio desta notificação. Para não enviar mais este tipo de notificação, desative o seu envio automático.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaConfiguracaoNotificacaoNaoPermiteAgendamentoException" xml:space="preserve">
+    <value>Alteração não permitida. O tipo de notificação que está sendo alterado possui parâmetro de envio cadastrado e só pode ser alterado para um tipo de notificação que permite agendamento de envio de notificação.</value>
+  </data>
+  <data name="ERR_ParametroEnvioNotificacaoLiberadaException" xml:space="preserve">
+    <value>Para incluir, alterar ou excluir um parâmetro de envio de notificação, a situação da etapa deve ser diferente de "liberada".</value>
+  </data>
+  <data name="ERR_ParametroEnvioNotificacaoComNotificacaoJaEnviadaException" xml:space="preserve">
+    <value>Já foram enviadas notificações com o parâmetro em questão. Ele não pode ser alterado, tampouco excluído, somente desativado.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaConfiguracaoNotificacaoExcluirException" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem registros de envio de notificação com a configuração em questão. Para não enviar mais este tipo de notificação, desative o seu Envio de Notificação Automático.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaParametrosPrazoInvalidoException" xml:space="preserve">
+    <value>As configurações para o cálculo de prazo de conclusão da solicitação estão inválidas.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoProcessoTodosEscalonamentosExpiradosException" xml:space="preserve">
+    <value>Inclusão não permitida. É necessário que pelo menos um escalonamento vigente ou futuro.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoProcessoEtapasExpiradasException" xml:space="preserve">
+    <value>Operação não permitida. Todas as etapas do grupo de escalonamento estão expiradas.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoComBloqueioException" xml:space="preserve">
+    <value>Você não pode abrir solicitação para "{0}" pois existe(m) bloqueio(s) impeditivo(s). {1}</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoComBloqueioFimEtapaException" xml:space="preserve">
+    <value>Não é possível {0} pois existe um bloqueio que impede a finalização da etapa</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoAssociacaoClassificacaoStiuacaoFinalException" xml:space="preserve">
+    <value>Associação não permitida. A solicitação selecionada finalizou o processo com sucesso.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoAssociacaoDataEtapaExpiradaException" xml:space="preserve">
+    <value>Associação não permitida. Quando é realizada a associação, a solicitação reinicia o processo a partir da última etapa em que parou. E a {0}, do novo grupo de escalonamento está expirada.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoAssociacaoGrupoNovoIgualGrupoAtualException" xml:space="preserve">
+    <value>Associação não permitida. A solicitação selecionada já está associada a esse grupo de escalonamento.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoAssociacaoProcessoEtapaExpiradosException" xml:space="preserve">
+    <value>Associação não permitida. A associação de solicitação não pode ser realizada quando todas as etapas do grupo estiverem expiradas.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoAssociacaoSituacaoDiferenteLiberadaException" xml:space="preserve">
+    <value>Associação não permitida. Quando é realizada a associação, a solicitação reinicia o processo a partir da última etapa em que parou. E a situação da {0} do novo grupo de escalonamento está diferente de liberada.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoAssociacaoSemVagasException" xml:space="preserve">
+    <value>Associação não permitida. Quando é realizada a associação, a solicitação reinicia o processo a partir da última etapa em que parou. E não há vaga disponível na turma para os itens da solicitação. &lt;br /&gt; {0}</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoComEtapaAnteriorNaoFinalizadaException" xml:space="preserve">
+    <value>Não é possível acessar, pois é necessário finalizar a etapa anterior.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoComEtapaForaPeriodoVigenciaException" xml:space="preserve">
+    <value>Não é possível acessar, pois a etapa está fora do período de vigência.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoComEtapaNãoLiberadaException" xml:space="preserve">
+    <value>Não é possível acessar, pois esta etapa se encontra na situação: {0}.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoEmSituacaoNaoPermiteAcessoException" xml:space="preserve">
+    <value>Não é possível acessar, pois a solicitação está na situação: {0}.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoInativaParaSolicitanteSituacaoException" xml:space="preserve">
+    <value>Não é possível {2} quando o {0} se encontra na situação {1}.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoEnvioNotificacaoException" xml:space="preserve">
+    <value>Erro ao enviar e-mail de notificação. (Token: {0})</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoDispensaNaoSelecionadoException" xml:space="preserve">
+    <value>Para prosseguir com o preenchimento da solicitação é necessário selecionar um componente ou um grupo curricular.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoDispensaCursadosNaoSelecionadoException" xml:space="preserve">
+    <value>Para prosseguir com o preenchimento da solicitação é necessário informar pelo menos um dispensa externa e/ou interna.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoDispensaCursadosCargaHorariaException" xml:space="preserve">
+    <value>Para solicitar uma dispensa, é necessário que o somatório de carga horária dos itens cursados seja, no mínimo, {0}% equivalente ao somatório de carga horária dos itens solicitados para dispensa.</value>
+  </data>
+  <data name="ERR_SolicitacaoProrrogacaoPrazoConclusaoForaPrazoException" xml:space="preserve">
+    <value>Inclusão não permitida. Você só poderá solicitar este serviço {0} meses antes da sua data limite de conclusão de curso {1}.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoFinalizacaoNaoDataFimMaiorDataFimPosteriorException" xml:space="preserve">
+    <value>Operação não permitida. Uma etapa não pode terminar depois do término da etapa posterior.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoFinalizacaoNaoDataFimMenorDataFimAnteriorException" xml:space="preserve">
+    <value>Operação não permitida. Uma etapa não pode terminar antes do término da etapa anterior.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoFinalizacaoNaoDataInicioMaiorDataInicioPosteriorException" xml:space="preserve">
+    <value>Operação não permitida. Uma etapa não pode iniciar antes da etapa anterior.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoFinalizacaoNaoDataInicioMenorDataInicioAnteriorException" xml:space="preserve">
+    <value>Operação não permitida. Uma etapa não pode iniciar antes da etapa anterior.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoFinalizacaoSimDataInicioMaiorDataFimAnteriorException" xml:space="preserve">
+    <value>Operação não permitida. Para etapa configurada para permitir iniciar a vigência somente após o fim da vigência da etapa anterior: a data início do escalonamento deve ser maior do que a data fim do escalonamento da etapa anterior.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoDispensaComponenteCurricularAprovadoException" xml:space="preserve">
+    <value>O(s) seguinte(s) componente(s) curricular(es) já está(ão) aprovado(s) ou dispensado(s): {0}</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoDispensaComponenteCurricularNaoPermiteDispensaException" xml:space="preserve">
+    <value>O(s) seguinte(s) componente(s) curricular(es) não permite(m) dispensa: {0}</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoSemAlunoHistoricoException" xml:space="preserve">
+    <value>Erro ao deferir solicitação que não possui SeqAlunoHistorico informado.</value>
+  </data>
+  <data name="ERR_SolicitacaoDispensaComOrigemInternaJaDeferidaOutraSolicitacaoException" xml:space="preserve">
+    <value>Operação não permitida. Existe item cursado nesta solicitação de dispensa que já foi utilizado em solicitação anterior com aprovação.</value>
+  </data>
+  <data name="ERR_SolicitacaoAtividadeComplementarPreRequisitoNaoCursadoException" xml:space="preserve">
+    <value>Esta atividade complementar possui pré-requisitos que você ainda não concluiu. &lt;br /&gt;{0}</value>
+  </data>
+  <data name="ERR_CriarSolicitacaoProrrogacaoPrazoConclusaoComDataDepositoException" xml:space="preserve">
+    <value>Inclusão não permitida. Você depositou o trabalho "{0}" no dia {1}, portanto não é necessário solicitar prorrogação de prazo de conclusão de curso.</value>
+  </data>
+  <data name="ERR_SolicitacaoDispensaDeferidaSemDestinoException" xml:space="preserve">
+    <value>Operação não permitida. Para deferir uma solicitação de dispensa, é necessário informar pelo menos um item a ser dispensado.</value>
+  </data>
+  <data name="ERR_SolicitacaoDispensaNenhumItemCursadoException" xml:space="preserve">
+    <value>Para prosseguir é necessário informar pelo menos um item já cursado.</value>
+  </data>
+  <data name="ERR_MotivoCancelamentoSolicitacaoInvalidoException" xml:space="preserve">
+    <value>Não foi localizado o motivo de cancelamento {0}.</value>
+  </data>
+  <data name="ERR_DeferirProrrogacaoPrazoConclusaoComDataDepositoException" xml:space="preserve">
+    <value>Deferimento não permitido. O(a) aluno(a) já depositou o trabalho  "{0}" no dia {1}, portanto não é necessário solicitar prorrogação de prazo de conclusão de curso.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoNaoInformadoException" xml:space="preserve">
+    <value>Para deferir a solicitação é necessário selecionar o grupo de escalonamento na página anterior.</value>
+  </data>
+  <data name="ERR_SolicitacaoMatriculaReaberturaNaoCriadaException" xml:space="preserve">
+    <value>Erro inesperado ao criar a solicitação de matrícula para reabertura.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoDisciplinaIsoladaSemMatriculaException" xml:space="preserve">
+    <value>Inclusão não permitida. O seu vínculo com a instituição não está mais ativo.</value>
+  </data>
+  <data name="ERR_SolicitacaoDispensaComOrigemExternaSemInstituicaoException" xml:space="preserve">
+    <value>É obrigatório preencher o nome da instituição de ensino em "Itens cursados em outras instituições".</value>
+  </data>
+  <data name="UN_solicitacao_dispensa_destino_01" xml:space="preserve">
+    <value>Existe duplicidade na inclusão de componente ou grupo curricular como item a ser dispensado. </value>
+  </data>
+  <data name="ERR_EscalonamentoDataInicioMenorDataInicioProcessoException" xml:space="preserve">
+    <value>Data de início do escalonamento deve ser maior ou igual a data de início do processo.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoVigenciaExpiradaException" xml:space="preserve">
+    <value>Opção indisponível. Para criar um grupo de escalonamento é necessário que período do processo esteja vigente ou futuro.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoAssociacaoNaoPermiteReaberturaException" xml:space="preserve">
+    <value>Associação não permitida. O tipo do processo não permite que uma solicitação seja reaberta.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoAssociacaoPrazoReabrirSolicitacaoEncerradoException" xml:space="preserve">
+    <value>Associação não permitida. O prazo permitido para reabrir a solicitação após o encerramento expirou.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoAssociacaoNaoPermiteReaberturaComSolicitacoesAbertasException" xml:space="preserve">
+    <value>Associação não permitida. Não é possível reabrir a solicitação, pois foram identificadas as seguintes solicitações em aberto. E o serviço dessas solicitações são restritivo comparado ao serviço da solicitação selecionada:&lt;br /&gt; {0}</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoAssociacaoSituacaoAtualNaoPermiteReaberturaException" xml:space="preserve">
+    <value>Associação não permitida. Para o tipo de serviço da solicitação, a situação atual do solicitante não permite que a solicitação seja reaberta.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoItemSomatorioPercentualMaiorPermitidoException" xml:space="preserve">
+    <value>Configuração não permitida. O somatório do percentual das parcelas que são de serviço adicional deve ser menor ou igual a 100%.</value>
+  </data>
+  <data name="ERR_SolicitacaoIntercambioNaoCadastradaException" xml:space="preserve">
+    <value>Para deferir esta solicitação, os campos da página "Intercâmbio" devem ser preenchidos.</value>
+  </data>
+  <data name="ERR_SolicitacaoIntercambioDataInicioInvalidaException" xml:space="preserve">
+    <value>Deferimento não permitido. A solicitação de intercâmbio só poderá ser deferida se no ciclo letivo da data de início do intercâmbio o aluno estiver matriculado.</value>
+  </data>
+  <data name="ERR_SolicitacaoIntercambioPrazoEncerradoException" xml:space="preserve">
+    <value>Deferimento não permitido. A partir de {0} o aluno estará com a situação de matrícula {1}. É necessário realizar a prorrogação do prazo de conclusão para deferir esta solicitação de intercâmbio.</value>
+  </data>
+  <data name="ERR_SolicitacaoIntercambioParticipanteExternoFaltanteException" xml:space="preserve">
+    <value>Para o tipo de participação {0} deverá ser selecionado um professor/pesquisador associado à instituição externa do termo de intercâmbio.</value>
+  </data>
+  <data name="ERR_SolicitacaoIntercambioParticipanteInternoFaltanteException" xml:space="preserve">
+    <value>Para o tipo de participação {0} deverá ser selecionado um professor/pesquisador interno.</value>
+  </data>
+  <data name="ERR_SolicitacaoIntercambioTipoParticipanteFaltanteException" xml:space="preserve">
+    <value>É necessário selecionar o(s) tipo(s) de participação {0} para este tipo de orientação.</value>
+  </data>
+  <data name="ERR_SolicitacaoIntercambioConfiguracaoNaoEncontradaException" xml:space="preserve">
+    <value>Não foi encontrada configuração para Instituicao Nível Tipo de Termo de Intercambio para o termo selecionado e o nível de ensino do aluno.</value>
+  </data>
+  <data name="ERR_EtapaSemSituacaoFinalException" xml:space="preserve">
+    <value>Nenhuma situação foi configurada como final de etapa para etapa "{0}".</value>
+  </data>
+  <data name="ERR_ProcessoSemCicloLetivoException" xml:space="preserve">
+    <value>O processo não possui ciclo letivo configurado.</value>
+  </data>
+  <data name="ERR_SolicitacaoIntercambioFinalizaAposPrazoConclusaoException" xml:space="preserve">
+    <value>Deferimento não permitido. A partir de {0} o aluno estará com prazo de conclusão de curso encerrado.</value>
+  </data>
+  <data name="ERR_SolicitacaoIntercambioDeferimentoTardioException" xml:space="preserve">
+    <value>Deferimento não permitido. A solicitação não pode ser deferida após 2 ciclos letivos do início do intercâmbio.</value>
+  </data>
+  <data name="ERR_SolicitacaoIntercambioPeriodoCoincidenteException" xml:space="preserve">
+    <value>Deferimento não permitido. Já existe um termo de intercâmbio associado ao aluno com período coincidente ao período do termo desta solicitação.</value>
+  </data>
+  <data name="ERR_ProcessoTodasUnidadesResponsaveisTipoCompartilhadaException" xml:space="preserve">
+    <value>Obrigatório associar entidade responsável.</value>
+  </data>
+  <data name="FK_solicitacao_intercambio_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço é uma solicitação de intercâmbio.</value>
+  </data>
+  <data name="FK_solicitacao_intercambio_02" xml:space="preserve">
+    <value>Exclusão não permitida. Termo de intercâmbio já possui solicitação de intercâmbio cadastrada.</value>
+  </data>
+  <data name="FK_solicitacao_intercambio_03" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de orientação já possui solicitação de intercâmbio cadastrada.</value>
+  </data>
+  <data name="FK_solicitacao_intercambio_04" xml:space="preserve">
+    <value>Exclusão não permitida. Tipo de termo de intercâmbio já possui solicitação de intercâmbio cadastrada.</value>
+  </data>
+  <data name="ERR_SolicitacaoIntercambioPeriodoNaoInformadoException" xml:space="preserve">
+    <value>Deferimento não permitido. Termo de intercâmbio já está associado ao aluno e é obrigatório informar o período da viagem.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoComPendenciaFinanceira" xml:space="preserve">
+    <value>O aluno possui pendência financeira! O deferimento da solicitação de Cancelamento de Matrícula somente será possível mediante a regularização junto a Divisão Financeira.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoSemCicloLetivoException" xml:space="preserve">
+    <value>Erro ao deferir solicitação que não possui ciclo letivo informado no processo. É obrigatório ter o ciclo!</value>
+  </data>
+  <data name="ERR_EscalonamentoDataFimParcelaMenorDataFimEscalonamento" xml:space="preserve">
+    <value>Configuração não permitida. A data de vencimento de todas as parcelas deverá ser maior ou igual do que a data/hora fim do escalonamento em questão e menor do que a data/hora fim do processo em questão.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_grupo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de dispensa já possui agrupamentos.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_grupo_02" xml:space="preserve">
+    <value>Exclusão não permitida. Equivalência já foi utilizada em agrupamento de solicitação de dispensa individual.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_grupo_destino_01" xml:space="preserve">
+    <value>Exclusão não permitida. Agrupamento possui destino.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_grupo_destino_02" xml:space="preserve">
+    <value>Exclusão não permitida. Esse item a ser dispensado já está associado a um agrupamento desta solictiação de dispensa.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_grupo_origem_externa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Agrupamento possui origem externa.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_grupo_origem_externa_02" xml:space="preserve">
+    <value>Exclusão não permitida. Esse item cursado externamente já está associado a um agrupamento desta solictiação de dispensa.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_grupo_origem_interna_01" xml:space="preserve">
+    <value>Exclusão não permitida. Agrupamento possui origem interna.</value>
+  </data>
+  <data name="FK_solicitacao_dispensa_grupo_origem_interna_02" xml:space="preserve">
+    <value>Exclusão não permitida. Esse item cursado internamento já está associado a um agrupamento desta solictiação de dispensa.</value>
+  </data>
+  <data name="UN_solicitacao_dispensa_grupo_destino_01" xml:space="preserve">
+    <value>Existem um ou mais itens a serem dispensados que já foram utilizados em outros agrupamentos desta solicitação de dispensa.</value>
+  </data>
+  <data name="UN_solicitacao_dispensa_grupo_origem_externa_01" xml:space="preserve">
+    <value>Existem um ou mais itens a cursados externamente que já foram utilizados em outros agrupamentos desta solicitação de dispensa.</value>
+  </data>
+  <data name="UN_solicitacao_dispensa_grupo_origem_interna_01" xml:space="preserve">
+    <value>Existem um ou mais itens a cursados internamente que já foram utilizados em outros agrupamentos desta solicitação de dispensa.</value>
+  </data>
+  <data name="ERR_SolicitacaoDispensaOrigemNaoAgrupadaException" xml:space="preserve">
+    <value>Operação não permitida. Existem um ou mais itens cursados que não foram agrupados.</value>
+  </data>
+  <data name="ERR_SolicitacaoDispensaDestinoNaoAgrupadoException" xml:space="preserve">
+    <value>Operação não permitida. Existem um ou mais itens a serem dispensados que não foram agrupados.</value>
+  </data>
+  <data name="FK_restricao_solicitacao_simultanea_02" xml:space="preserve">
+    <value>Exclusão não permitida. Serviço já está configurado em um serviço de restrição.</value>
+  </data>
+  <data name="ERR_JaExisteTipoNotificacaoException" xml:space="preserve">
+    <value>Operação não permitida. O tipo de notificação já existe.</value>
+  </data>
+  <data name="ERR_AtributosAgendamentoNaoCadastrados" xml:space="preserve">
+    <value>Operação não permitida. O tipo de agendamento está parametrizado para permitir agendamento, mas os atributos de
+agendamento não foram associados.</value>
+  </data>
+  <data name="ERR_JaExisteTokenTipoNotificacaoException" xml:space="preserve">
+    <value>Já existe tipo de notificação com este token.</value>
+  </data>
+  <data name="ERR_AtributoAgendamentoJaAssociado" xml:space="preserve">
+    <value>Atributo de agendamento já está associado a este tipo de notificação.</value>
+  </data>
+  <data name="ERR_ConfiguracaoProcessoJaAssociada" xml:space="preserve">
+    <value>Cadastro não permitido. A configuração do processo deverá ser feita por:
+&lt;p&gt;
+- Oferta de Curso por Localidade e Turno x Tipo de Vínculo, ou,
+&lt;p&gt;
+- Nível de Ensino x Tipo de Vínculo</value>
+  </data>
+  <data name="ERR_ConfiguracaoProcessoObrigatoria" xml:space="preserve">
+    <value>É necessário configurar o processo em uma das opções:
+&lt;p&gt;
+- Oferta de Curso por Localidade e Turno x Tipo de Vínculo, ou,
+&lt;p&gt;
+- Nível de Ensino x Tipo de Vínculo</value>
+  </data>
+  <data name="ERR_ConfiguracaoEtapaConfiguracaoProcessoJaAssociadaException" xml:space="preserve">
+    <value>Operação não permitida. É permitido somente uma configuração de etapa para cada configuração do processo.</value>
+  </data>
+  <data name="ERR_ConfiguracaoEtapaOpcaoIndisponivelEtapaException" xml:space="preserve">
+    <value>Opção indisponível. Configurações não são permitidas se a etapa estiver encerrada ou liberada.</value>
+  </data>
+  <data name="ERR_JaExisteSolicitacaoHistoricoNavegacaoException" xml:space="preserve">
+    <value>Opção indisponível. Existe solicitação em aberto e consta essa página no fluxo de navegação.</value>
+  </data>
+  <data name="ERR_ArquivosSecaoOrdemRepetidaException" xml:space="preserve">
+    <value>Operação não permitida. Há repetição do número de ordem dos arquivos.</value>
+  </data>
+  <data name="ERR_FormularioJaAssociadoEmOutraPaginaEtapaException" xml:space="preserve">
+    <value>Operação não permitida. Há outra página nessa etapa que exibe formulário e está configurada para exibir o formulário selecionado.</value>
+  </data>
+  <data name="ERR_MotivoBloqueioJaAssociadoEmOutraEtapaBloqueioException" xml:space="preserve">
+    <value>Operação não permitida. O motivo de bloqueio já está associado.</value>
+  </data>
+  <data name="ERR_TipoVinculoNivelEnsinoCursoJaAssociadaException" xml:space="preserve">
+    <value>Cadastro não permitido. Já existe para esse processo configuração com o mesmo Nível de Ensino x Tipo de Vínculo ou, Oferta de Curso por Localidade x Tipo de Vínculo.</value>
+  </data>
+  <data name="ERR_DocumentoAssociadoGrupoUploadNaoObrigatorioException" xml:space="preserve">
+    <value>Operação não permitida. Documentos que estão associados a grupos configurados com upload não obrigatório deverão ser parametrizados como:
+&lt;p&gt;
+- Não obrigatórios
+&lt;p&gt;
+- Upload não obrigatório</value>
+  </data>
+  <data name="ERR_DocumentoAssociadoGrupoUploadObrigatorioException" xml:space="preserve">
+    <value>Operação não permitida. Documentos que estão associadas a grupos configurados com upload obrigatório, deverão ser parametrizados como:
+&lt;p&gt;
+- Não obrigatório
+&lt;p&gt;
+- Permitem upload
+&lt;p&gt;
+- Upload não obrigatório</value>
+  </data>
+  <data name="ERR_ExistemSolicitacoesAssociadasTrocaTipoDocumentoException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível trocar o tipo do documento, pois existem solicitações associadas a respectiva configuração. Se necessário adicione um novo tipo de documento.</value>
+  </data>
+  <data name="ERR_TipoDocumentoJaAssociadoEmOutraEtapaDocumentoException" xml:space="preserve">
+    <value>Operação não permitida. O tipo do documento já está associado.</value>
+  </data>
+  <data name="ERR_ExclusaoDocumentoAssociadoSolicitacaoException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível excluir a configuração de documento quando o mesmo está associado em alguma solicitação de serviço.</value>
+  </data>
+  <data name="ERR_SalvarGrupoUploadObrigatorioException" xml:space="preserve">
+    <value>Operação não permitida. Não é permitido criar um grupo com upload obrigatório se algum dos seus documentos estiver configurado como obrigatório, não permite upload ou upload obrigatório.</value>
+  </data>
+  <data name="ERR_SalvarGrupoUploadNaoObrigatorioException" xml:space="preserve">
+    <value>Operação não permitida. Não é permitido criar um grupo se algum dos seus documentos estiver configurado como obrigatório ou upload obrigatório.</value>
+  </data>
+  <data name="ERR_SalvarGrupoQuantidadeDocumentosAssociadosException" xml:space="preserve">
+    <value>Operação não permitida. A quantidade de documentos associados ao grupo deve ser maior ou igual ao número mínimo de documentos obrigatórios.</value>
+  </data>
+  <data name="ERR_ExclusaoGrupoDocumentoAssociadoSolicitacaoException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível excluir a configuração de um grupo de documento quando algum item desse grupo está associado em alguma solicitação de serviço.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaLiberarEtapaDocumentosSemPaginaUploadException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível liberar a etapa. Foi realizada a configuração de documentos que permite upload, portanto não foi inserido no fluxo de páginas, a página que permite o Upload.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaLiberarEtapaPaginaSemDocumentosUploadException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível liberar a etapa. Foi associada a página que permite upload/registro de documentos, porém, não foi realizada a configuração de documentos.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaLiberarEtapaPaginaSemFormularioException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível liberar a etapa. Foi associada a página de exibição de formulário, portanto não foi definido o formulário que deverá ser apresentado.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaLiberarEtapaPaginaSemEntidadeCompartilhadaException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível liberar a etapa. A etapa está parametrizada para ser compartilhada, mas não foi associado no processo quais as entidades responsáveis do tipo compartilhada.</value>
+  </data>
+  <data name="ERR_ExistemSolicitacoesAssociadasTrocaDocumentoGrupoException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível trocar o documento já inserido no grupo, pois existem solicitações associadas a respectiva configuração. Se necessário adicione um novo grupo de documento.</value>
+  </data>
+  <data name="ERR_ConfiguracaoEtapaOperacaoNaoPermitidaException" xml:space="preserve">
+    <value>Operação não permitida. Configurações não são permitidas se a etapa estiver encerrada ou liberada.</value>
+  </data>
+  <data name="ERR_SolicitacaoReaberturaAlunoSemOfertaMatrizException" xml:space="preserve">
+    <value>Para deferir a solicitação é necessário que o aluno possua oferta de matriz associada.</value>
+  </data>
+  <data name="ERR_FormacaoEspecificaNaoPermiteEmissaoDocumentoException" xml:space="preserve">
+    <value>Inclusão não permitida. Não consta no seu histórico, formação que permita a emissão do documento de conclusão: {0}</value>
+  </data>
+  <data name="ERR_ProcessoEtapaDataFimEscalonamentosMaiorEscalonamentoEtapaPosterior" xml:space="preserve">
+    <value>Operação não permitida. A próxima etapa do processo está parametrizada para que seja iniciada somente após a finalização dessa etapa, por esse motivo a data fim dos escalonamentos deverá ser menor que a data início do escalonamento da próxima etapa.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaDataFimMaiorEtapaPosterior" xml:space="preserve">
+    <value>Operação não permitida. A próxima etapa do processo está parametrizada para que seja iniciada somente após a finalização dessa etapa, por esse motivo a data fim deverá ser menor que a data início da próxima etapa.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaDataInicioEscalonamentosMenorEscalonamentoEtapaAnterior" xml:space="preserve">
+    <value>Operação não permitida. A etapa está parametrizada para que seja iniciada somente após a finalização da etapa anterior, por esse motivo a data início dos escalonamentos dessa etapa e que estão associados a grupo de escalonamento, não pode ser menor que a data fim do escalonamento correspondente da etapa anterior.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaDataInicioMenorEtapaAnterior" xml:space="preserve">
+    <value>Operação não permitida. A etapa está parametrizada para que seja iniciada somente após a finalização da etapa anterior, por esse motivo a data início não pode ser menor que a data fim da etapa anterior.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaTipoPrazoEscalonamento" xml:space="preserve">
+    <value>Operação não permitida. Quando o tipo de prazo da etapa for igual a Escalonamento, as demais etapas do processo também deverão ser do tipo escalonamento.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaTipoPrazoPeriodoVigencia" xml:space="preserve">
+    <value>Operação não permitida. Quando o tipo de prazo da etapa for igual a "Período de Vigência", as demais etapas do processo também deverão ser do tipo "Período de Vigência".</value>
+  </data>
+  <data name="ERR_ProcessoEtapaTipoPrazoSemPrazoDiasCorridosUteis" xml:space="preserve">
+    <value>Operação não permitida. Quando o tipo de prazo da etapa for igual a "Sem prazo específico", "Dias Corridos" ou "Dias
+úteis", as demais etapas do processo também deverão ser do tipo "Sem prazo específico", "Dias corridos" ou "Dias úteis".</value>
+  </data>
+  <data name="ERR_ProcessoEtapaDataFimMenorDataAtual" xml:space="preserve">
+    <value>A data fim não pode ser menor que a data atual.</value>
+  </data>
+  <data name="ERR_SolicitacaoDepositoTrabalhoAcademicoJaRegistradaException" xml:space="preserve">
+    <value>O depósito da dissertação/tese para o agendamento da defesa deste(a) aluno(a) já foi registrado no sistema. Sendo assim esta solicitação só poderá ser indeferida.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoItemParcelaMotivoBloqueioObrigatorio" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatória a seleção dos motivo(s) bloqueio:
+{0}</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoItemParcelaDataVencimentoCicloLetivo" xml:space="preserve">
+    <value>Não é possível prosseguir. Este serviço exige que a data de vencimento das parcelas seja o primeiro dia do ciclo letivo.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoItemParcelaMenorVencimentoSemMotivoBloqueio" xml:space="preserve">
+    <value>Não é possível prosseguir. A parcela 1 deve possuir a menor data de vencimento e estar associada ao motivo bloqueio "Parcela de pré-matrícula pendente".</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoItemParcelaUnicaSemMotivoBloqueio" xml:space="preserve">
+    <value>Não é possível prosseguir. A parcela única deve ser de número 1 e estar associada ao motivo bloqueio "Parcela de matrícula pendente"</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoItemParcelaDataVencimentoForaFatorDivisao" xml:space="preserve">
+    <value>Não é possível prosseguir. A data de vencimento da parcela deve ser de acordo com o fator de divisão do grupo, seguindo a seguinte regra:
+&lt;p&gt;
+- Fator de divisão = 4: a data de vencimento deve estar dentro do primeiro mês do ciclo letivo
+&lt;p&gt;
+- Fator de divisão = 3: a data de vencimento deve estar dentro do segundo mês do ciclo letivo
+&lt;p&gt;
+- Fator de divisão = 2: a data de vencimento deve estar dentro do terceiro mês do ciclo letivo
+&lt;p&gt;
+- Fator de divisão = 1: a data de vencimento deve estar dentro do quarto mês do ciclo letivo ou demais meses.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoAssociacaoCodigoAdesaoGrupoDiferente" xml:space="preserve">
+    <value>Associação não permitida. Este grupo deve possuir a mesma quantidade e os mesmos números das parcelas do grupo já associado à solicitação selecionada.</value>
+  </data>
+  <data name="ERR_ProcessoUnidadeResponsavelRepetidaException" xml:space="preserve">
+    <value>Entidade já está configurada como unidade responsável do processo.</value>
+  </data>
+  <data name="ERR_ConfiguracaoEtapaEtapaSemPrazoException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível liberar a etapa. É obrigatório identificar o tipo de prazo da etapa.</value>
+  </data>
+  <data name="ERR_ConfiguracaoEtapaLiberarEtapaSemConfiguracaoException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível liberar a etapa. É obrigatório configurar a etapa.</value>
+  </data>
+  <data name="ERR_ProcessoDataFimMaiorDataFimPeriodoFinanceiroException" xml:space="preserve">
+    <value>Operação não permitida. A data fim do processo é maior que a data fim do período financeiro do ciclo letivo do processo.</value>
+  </data>
+  <data name="ERR_ProcessoDataFimMaiorDataFimPeriodoFinanceiroCopiarProcessoException" xml:space="preserve">
+    <value>Operação não permitida. A data fim do processo é maior que a data fim do período financeiro do ciclo letivo selecionado.</value>
+  </data>
+  <data name="ERR_SolicitacaoDispensaCursadosCreditoException" xml:space="preserve">
+    <value>Para solicitar uma dispensa, é necessário que o somatório de créditos dos itens cursados seja, no mínimo, {0}% equivalente ao somatório de créditos dos itens solicitados para dispensa.</value>
+  </data>
+  <data name="FK_servico_parametro_emissao_taxa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Serviço possui parametrização de taxas.</value>
+  </data>
+  <data name="FK_servico_taxa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Serviço possui taxas associadas.</value>
+  </data>
+  <data name="UN_servico_parametro_emissao_taxa_01" xml:space="preserve">
+    <value>Tipo de emissão de taxa já está parametrizada para este serviço.</value>
+  </data>
+  <data name="UN_servico_taxa_01" xml:space="preserve">
+    <value>Taxa já está associada a este serviço.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaLiberarEtapaSemPaginaCobrancaException" xml:space="preserve">
+    <value>Não é possível liberar a etapa. O serviço está parametrizado com cobrança de taxa, portanto não foi inserido no fluxo de páginas, a página de taxas.</value>
+  </data>
+  <data name="ERR_ServicoSemParametroEmissaoTaxaException" xml:space="preserve">
+    <value>Obrigatório associar parametrização de emissão.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaLiberarEtapaDocumentosSemPaginaUploadRegistroException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível liberar a etapa. Foi realizada a configuração de documentos requeridos, porém não foi inserido no fluxo de páginas a página que permite o Upload ou o Registro. </value>
+  </data>
+  <data name="FK_solicitacao_servico_boleto_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço possui boletos para emissão.</value>
+  </data>
+  <data name="FK_solicitacao_servico_boleto_taxa_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço x Boleto possui taxas cadastradas.</value>
+  </data>
+  <data name="FK_solicitacao_servico_boleto_titulo_01" xml:space="preserve">
+    <value>Exclusão não permitida. Solicitação de serviço x Boleto possui títulos cadastrados.</value>
+  </data>
+  <data name="UN_solicitacao_servico_boleto_taxa_01" xml:space="preserve">
+    <value>Taxa já está configurada para este boleto desta solicitação de serviço.</value>
+  </data>
+  <data name="ERR_SolicitacaoCobrancaTaxaSemValorException" xml:space="preserve">
+    <value>Atenção. Não foi identificado o valor da taxa. Para prosseguir favor entrar em contato com a Divisão Financeira. Telefones (31) 3319-4142 / 3319-4215.</value>
+  </data>
+  <data name="ERR_SolicitacaoCobrancaTaxaValorIncorretoException" xml:space="preserve">
+    <value>Atenção. O valor da taxa está incorreto. Para prosseguir favor entrar em contato com a Divisão Financeira. Telefones (31) 3319-4142/3319-4215.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoTituloSemValorException" xml:space="preserve">
+    <value>Não foi possível realizar a geração do título pois o mesmo se encontra sem valor das taxas. </value>
+  </data>
+  <data name="ERR_DataPeriodoLetivoNaoEncontrada" xml:space="preserve">
+    <value>Não foi encontrado nenhum evento letivo com os parâmetros informados.</value>
+  </data>
+  <data name="ERR_DataPeriodoLetivoTipoAluno" xml:space="preserve">
+    <value>O tipo de aluno é obrigatório para busca do período do evento letivo {0} no ciclo {1}.</value>
+  </data>
+  <data name="ERR_EscalonamentoDataFimEscalonamentoForaMesmoMes" xml:space="preserve">
+    <value>Não é possível prosseguir. A data início e a data fim devem estar no mesmo mês.</value>
+  </data>
+  <data name="ERR_EscalonamentoDataVencimentoParcelaDeveSerMaiorDataEscalonamento" xml:space="preserve">
+    <value>Configuração não permitida. A data de vencimento da parcela deverá ser maior ou igual à data/hora fim do escalonamento e menor que a data fim do ciclo letivo do processo.</value>
+  </data>
+  <data name="ERR_EscalonamentoDataVencimentoParcelaDeveSerMaiorEscalonamentoPrimeiroDia" xml:space="preserve">
+    <value>Configuração não permitida. A data de vencimento da parcela deverá ser maior ou igual à data/hora fim do escalonamento e menor ou igual ao dia primeiro do mês subsequente à data fim do escalonamento.</value>
+  </data>
+  <data name="ERR_EscalonamentoDataVencimentoParcelaMaiorDataFim" xml:space="preserve">
+    <value>Operação não permitida. A data de vencimento da parcela deverá ser maior ou igual a data/hora fim do escalonamento e menor ou igual a data início do ciclo letivo.</value>
+  </data>
+  <data name="ERR_EscalonamentoFinalizarAntesInicioCicloLetivo" xml:space="preserve">
+    <value>Não é possível prosseguir. O escalonamento deve finalizar antes da data início do ciclo letivo.</value>
+  </data>
+  <data name="ERR_EscalonamentoParcelasUltrapassamFimCicloLetivo" xml:space="preserve">
+    <value>Não é possível prosseguir. As parcelas não podem ultrapassar o fim do ciclo letivo, portanto de acordo com a data fim informada para o escalonamento, o fator de divisão deve ser igual a 1.</value>
+  </data>
+  <data name="ERR_EscalonamentoParcelasUltrapassamFimCicloLetivoFatorDivisao" xml:space="preserve">
+    <value>Não é possível prosseguir. As parcelas não podem ultrapassar o fim do ciclo letivo, portanto de acordo com a data fim informada para o escalonamento, o fator de divisão deve ser menor ou igual a [quantidade de meses do ciclo letivo – ordem do mês no ciclo letivo].</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoItemDataVencimentoMenorDataFimEscalonamentoException" xml:space="preserve">
+    <value>Configuração não permitida. A data de vencimento da parcela deverá ser maior ou igual à data/hora fim do escalonamento e menor ou igual a data início do ciclo letivo do processo.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoItemDatavencimentoMenorIgualPrimeiroDiaException" xml:space="preserve">
+    <value>Configuração não permitida. A data de vencimento da parcela deverá ser maior ou igual à data/hora fim do escalonamento e menor ou igual ao dia primeiro do mês subsequente à data fim do escalonamento.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoItemVencimentoDeveSerMaiorDataFimEscalonamentoException" xml:space="preserve">
+    <value>Configuração não permitida. A data de vencimento da parcela deverá ser maior ou igual à data/hora fim do escalonamento e menor que a data fim do ciclo letivo do processo.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoEscalonamentoParcelasUltrapassamCicloDemaisMeses" xml:space="preserve">
+    <value>Não é possível prosseguir. As parcelas não podem ultrapassar o fim do ciclo letivo, portanto de acordo com a data fim informada para o escalonamento da primeira etapa, o fator de divisão deve ser menor ou igual a {0}.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoEscalonamentoParcelasUltrapassamCicloFatorUm" xml:space="preserve">
+    <value>Não é possível prosseguir. As parcelas não podem ultrapassar o fim do ciclo letivo, portanto de acordo com a data fim informada para o escalonamento da primeira etapa, o fator de divisão deve ser igual a 1.</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoEscalonamentoParcelasUltrapassamFimCicloLetivo" xml:space="preserve">
+    <value>Não é possível prosseguir. As parcelas não podem ultrapassar o fim do ciclo letivo, portanto de acordo com a data fim informada para o escalonamento da primeira etapa, o fator de divisão deve ser menor ou igual a {0}.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaLiberarEtapaSemParametrizacaoTaxaException" xml:space="preserve">
+    <value>Não é possível liberar a etapa. Consta no fluxo de páginas, a página de taxas, mas o respectivo serviço não possui parametrização de taxa.</value>
+  </data>
+  <data name="ERR_ServicoSemMotivoSGFConfiguradoException" xml:space="preserve">
+    <value>"Inserção/alteração" não permitida! Não existe configurado no SGF o motivo "Aluno Formado" para o cancelamento das solicitações deste serviço.</value>
+  </data>
+  <data name="ERR_SolicitacaoDispensaDeferidaPlanoVazioException" xml:space="preserve">
+    <value>Operação não permitida. Os itens a serem dispensados não podem ser excluídos do plano de estudo do aluno pois o plano de estudo não pode ficar vazio. Para concluir a dispensa o plano de estudo deve ser alterado primeiro.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoReabeturaNaoPermitidaException" xml:space="preserve">
+    <value>Operação não permitida. A solicitação foi cancelada, enquanto aguardava as assinaturas digitais. Por esse motivo não é possível reabrir a solicitação de serviço. Se necessário inicie novamente o processo de emissão através da criação de nova solicitação.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoSemAlunoHistoricoSituacaoException" xml:space="preserve">
+    <value>Aluno não tem situação válida em nenhum ciclo letivo</value>
+  </data>
+  <data name="ERR_DocumentoPermiteEntregaPosteriorNaoPodeSerAlterado" xml:space="preserve">
+    <value>Operação não permitida. O campo “Permite entrega posterior?” não pode ser alterado, pois existe solicitação de serviço com este tipo de documento marcado para ser entregue posteriormente.</value>
+  </data>
+  <data name="ERR_DocumentoRequeridoExibeTermoResponsabilidadeException" xml:space="preserve">
+    <value>Operação não permitida. O campo "Permite entrega posterior?" não pode ser alterado, pois este documento pertence a um grupo de documentos configurado para exibir o termo de responsabilidade de entrega.</value>
+  </data>
+  <data name="ERR_SalvarGrupoDocumentosExibeTermoResponsabilidadeNaoPodeSerAlteradoGrupoDocumentosException" xml:space="preserve">
+    <value>Exibe termo de responsabilidade de entrega?” não pode
+ser alterado, pois existe solicitação de serviço com documento deste grupo marcado para ser entregue
+posteriormente.</value>
+  </data>
+  <data name="ERR_SalvarGrupoExibeTermoResponsabilidadeDocumentosGrupoDocumentosException" xml:space="preserve">
+    <value>Operação não permitida. Não é permitido criar um
+grupo de documento requerido que exibe o termo de responsabilidade de entrega se algum de seus
+documentos não estiver configurado para permitir entrega posterior.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaLiberarEtapaDescricaoTermoNaoInformada" xml:space="preserve">
+    <value>Não é possível liberar a etapa. Existe documento requerido configurado para permitir entrega posterior, porém a descrição do termo de responsabilidade de entrega não foi informada.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaLiberarEtapaSemDocumentoRequeridoComEntregaPosterior" xml:space="preserve">
+    <value>Não é possível liberar a etapa. A descrição do termo de responsabilidade de entrega da documentação foi preenchida, porém não existe documento requerido configurado para permitir entrega posterior.</value>
+  </data>
+  <data name="ERR_NumeroDeDocumentosExcedidoException" xml:space="preserve">
+    <value>Não é permitido anexar mais de 10 arquivos para o tipo de documento {0}</value>
+  </data>
+  <data name="ERR_TipoDocumentoRequeridoJaExistenteEmEtapa" xml:space="preserve">
+    <value>Operação não permitida. O
+tipo de documento informado já foi associado à etapa {0}.</value>
+  </data>
+  <data name="ERR_RegistroDocumentoSituacaoPendenteDeferidoAguardando" xml:space="preserve">
+    <value>Não é possível prosseguir. Os seguintes documentos estão com a situação pendente, porém já foram entregues: &lt;br/&gt; {0}</value>
+  </data>
+  <data name="ERR_RegistroDocumentoDataPrazoEntregaDiferentes" xml:space="preserve">
+    <value>Não é possível prosseguir. Todos os registros de um documento deve receber o mesmo prazo de entrega.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoEnvioNotificacaoConfiguracaoNaoEncontradaException" xml:space="preserve">
+    <value>Não foi encontrada configuração de notificação para envio.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaLiberarEtapaPaginaSemConfiguracaoDeDocumentosException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível liberar a etapa. A etapa possui página que permite upload, mas não foi realizada a configuração de documentos</value>
+  </data>
+  <data name="ERR_ProcessoEtapaLiberarEtapaSemNenhumaEtapaComConfiguracaoDocumentosException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível liberar a etapa. A etapa possui página de registro de documentos, mas não foi realizada a configuração de documentos em nenhuma etapa do processo.</value>
+  </data>
+  <data name="ERR_SolicitacaoServicoNaoEncontrouSituacaoMatriculaAtualException" xml:space="preserve">
+    <value>Erro ao burcar situação atual da matrícula</value>
+  </data>
+  <data name="ERR_ProcessoEtavaConfiguracaoNotificacaoObrigatorioParaEsteTipoNotificacao" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatório existir um parâmetro de envio ativo deste tipo de notificação para cada grupo de escalonamento existente no processo.</value>
+  </data>
+  <data name="ERR_ProcessoEtapaLiberarEtapaTipoNotificacaoObrigatorioFaltanteException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível liberar a etapa. Os seguintes tipos de notificação são obrigatórios para a etapa e não foram associados: {0}</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoProcessoEtapasComNotificacaoObrigatoriaSemParametrosEnvioException" xml:space="preserve">
+    <value>Não é possível prosseguir. Os seguintes tipos de notificação são obrigatórios para a etapa e não possuem parâmetros de envio cadastrados: &lt;br&gt; {0}</value>
+  </data>
+  <data name="ERR_GrupoEscalonamentoEtapasSemParcelas" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatória a configuração de parcela em pelo menos uma das etapas.</value>
+  </data>
+  <data name="ERR_ProcessoCopiarProcessoSemGrupoEscalonamento" xml:space="preserve">
+    <value>Não é possível prosseguir. É obrigatória a cópia de pelo menos um grupo de escalonamento.</value>
+  </data>
+  <data name="ERR_Documento_Aguardando_Validacao" xml:space="preserve">
+    <value>Não é possível prosseguir. É necessário realizar a entrega ou a troca de algum documento.</value>
+  </data>
+  <data name="ERR_ExisteConfiguracaoComTipoNotificacao" xml:space="preserve">
+    <value>Operação não permitida. O tipo de notificação a ser excluído já foi configurado em algum processo. Neste caso, só é permitido retirar a obrigatoriedade.</value>
+  </data>
+  <data name="ERR_AlunoPossuiDefesaAgendadaSolicitacaoException" xml:space="preserve">
+    <value>Associação não permitida, pois este aluno já possui defesa agendada e não possui pendências.</value>
+  </data>
+  <data name="ERR_RegistroDocumentoAtendimentoValidacao" xml:space="preserve">
+    <value>Não é possível prosseguir. É necessário validar os documentos para finalizar a solicitação.</value>
+  </data>
+  <data name="ERR_TipoDocumentoUnicoException" xml:space="preserve">
+    <value>Não é possível prosseguir. Este tipo de documento é único e não pode ser configurado para permitir mais de um arquivo.</value>
+  </data>
+  <data name="ERR_ExisteProcessoServicoCicloLetivo" xml:space="preserve">
+    <value>Não é possível prosseguir. Já existe processo deste serviço para o ciclo letivo {0}, para as seguintes entidades responsáveis: {1}</value>
+  </data>
+  <data name="ERR_NaoExisteOutroGrupoEscalonamentoAtivoException" xml:space="preserve">
+    <value>Não é possível prosseguir. Não existe outro grupo de escalonamento ativo neste processo.</value>
+  </data>
+  <data name="ERR_SolicitacaoDepositoProjetoQualificacaoJaRegistradaException" xml:space="preserve">
+    <value>Já existe um trabalho do tipo 'projeto de qualificação' registrado para o aluno. Sendo assim esta solicitação só poderá ser indeferida.</value>
+  </data>
+  <data name="FK_solicitacao_trabalho_academico_02" xml:space="preserve">
+    <value>Exclusão não permitida. Divisão de componente já está em uso por uma solicitação de trabalho acadêmico.</value>
+  </data>
+  <data name="ERR_RegistroDocumentoArquivosObrigatoriosException" xml:space="preserve">
+    <value>Não é possível prosseguir. É necessário que os documentos obrigatórios sejam entregues.</value>
+  </data>
+  <data name="ERR_RegistroDocumentoAtendimentoValidacaoDiploma" xml:space="preserve">
+    <value>Não é possível prosseguir. É necessário validar os documentos que foram entregues para finalizar a solicitação.</value>
+  </data>
+  <data name="ERR_EmissaoDocumentoConclusaoMensagemVaziaException" xml:space="preserve">
+    <value>Não foi possível concluir a operação. Por favor, verifique as mensagens adicionais</value>
+  </data>
+</root>

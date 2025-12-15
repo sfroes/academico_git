@@ -1,0 +1,52 @@
+﻿@model ServicoViewModel
+
+@Smc.EditorFor(m => m.ExibirSecaoReabrir)
+@Smc.EditorFor(m => m.ExibirSecaoMotivosBloqueioParcelas)
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.MasterDetail(m => m.SituacoesSolicitar).MinimumItens(1).CssClass("smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+    @Smc.MasterDetail(m => m.SituacoesAtender).MinimumItens(1).CssClass("smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+}
+
+@if (!Model.ExibirSecaoReabrir && !Model.ExibirSecaoMotivosBloqueioParcelas)
+{
+    //Não exibe mestre detalhes reabrir e motivo
+
+    using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.MasterDetail(m => m.TiposDocumento).CssClass("smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+        @Smc.MasterDetail(m => m.RestricoesSolicitacaoSimultanea).CssClass("smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+        @*@Smc.MasterDetail(m => m.TiposNotificacao).CssClass("smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")*@
+    }
+}
+else if (!Model.ExibirSecaoReabrir && Model.ExibirSecaoMotivosBloqueioParcelas)
+{
+    //Exibe meste detalhes motivo e não exibe reabrir
+
+    using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.MasterDetail(m => m.TiposDocumento).CssClass("smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+        @Smc.MasterDetail(m => m.RestricoesSolicitacaoSimultanea).CssClass("smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+        @Smc.MasterDetail(m => m.MotivosBloqueioParcela).CssClass("smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+    }
+
+    @*using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.MasterDetail(m => m.TiposNotificacao).CssClass("smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+        }*@
+}
+else
+{
+    //Exibe todos os mestre detalhes ou exibe reabrir e não exibe motivo
+
+    using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.MasterDetail(m => m.SituacoesReabrir).MinimumItens(1).CssClass("smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+        @Smc.MasterDetail(m => m.TiposDocumento).CssClass("smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+        @Smc.MasterDetail(m => m.RestricoesSolicitacaoSimultanea).CssClass("smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+        @Smc.MasterDetail(m => m.MotivosBloqueioParcela).CssClass("smc-size-md-12 smc-size-xs-12 smc-size-sm-12 smc-size-lg-12")
+    }
+}
+
+@Smc.WizardView()

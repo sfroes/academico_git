@@ -1,0 +1,34 @@
+<div class="smc-header smc-header-tipo-primary">
+  <div class="smc-header-grupo-itens">
+    <div class="smc-header-item smc-size-lg-20 smc-size-md-19 smc-size-sm-18 smc-size-xs-20">
+      <label>Origem da avaliação</label>
+      <p [innerHTML]="descricaoOrigemAvaliacaoSafeHtml"></p>
+    </div>
+    <div class="smc-size-lg-4 smc-size-md-5 smc-size-sm-6 smc-size-xs-24">
+      <div class="smc-button" *ngIf="permiteMateriaLecionada">
+        <button
+          (click)="modalMateriaLecionada.open()"
+          class="smc-btn-custom smc-btn-alterar-icotext"
+          title="Matéria lecionada"
+          [disabled]="processandoMateriaLecionada"
+        >
+          <i></i>Matéria lecionada
+        </button>
+      </div>
+    </div>
+    <div class="smc-header-item smc-size-md-24" *ngIf="nomeAluno">
+      <label>Nome Aluno</label>
+      <p>{{ nomeAluno }}</p>
+    </div>
+  </div>
+</div>
+<po-modal
+  #modalMateriaLecionada
+  p-title="Matéria Lecionada"
+  class="smc-sga-modal-ajuste-botoes"
+  [p-primary-action]="acaoFecharModalMateria"
+  [p-secondary-action]="acaoSalvarModalMateria"
+>
+  <po-textarea p-label="Descrição" [p-disabled]="diarioFechado" [(ngModel)]="materiaLecionada" class="smc-textarea">
+  </po-textarea>
+</po-modal>

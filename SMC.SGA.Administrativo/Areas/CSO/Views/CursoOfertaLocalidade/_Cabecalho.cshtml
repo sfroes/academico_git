@@ -1,0 +1,8 @@
+﻿@model   CursoOfertaLocalidadeCabecalhoViewModel
+
+@using (Smc.Header("CursoOfertaLocalidade", SMCHeaderType.Primary)
+                    .Item(prop => prop.Seq, sizeSM: SMCSize.Grid2_24, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+                    .Item(prop => prop.Curso, sizeSM: SMCSize.Grid11_24, sizeMD: SMCSize.Grid11_24, sizeLG: SMCSize.Grid11_24, sizeXS: SMCSize.Grid11_24)
+                    .Item(prop => prop.Unidade, sizeSM: SMCSize.Grid11_24, sizeMD: SMCSize.Grid11_24, sizeLG: SMCSize.Grid11_24, sizeXS: SMCSize.Grid11_24)
+                    .Begin())
+{ }

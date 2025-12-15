@@ -1,0 +1,20 @@
+﻿@model GrupoConfiguracaoComponenteListarDynamicModel
+@using (Smc.Div("divItem").Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div("divItem").CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        using (Smc.Div("divItem").CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.Descricao).Size(SMCSize.Grid10_24)
+            @Smc.DisplayFor(m => m.Ativo).Size(SMCSize.Grid10_24)
+            @Smc.DisplayFor(m => m.TipoGrupoConfiguracaoComponente).Size(SMCSize.Grid10_24)
+        }
+
+        using (Smc.Div("divItem").CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(m => m.Itens).HideLabel(SMCDisplayHideLabel.Children).Size(SMCSize.Grid24_24)
+        }
+    }
+
+    @Smc.Templates.DetailedListButtons().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24)
+}

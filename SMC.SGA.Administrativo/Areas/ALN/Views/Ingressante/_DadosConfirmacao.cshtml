@@ -1,0 +1,56 @@
+﻿@model IngressanteDynamicModel
+
+@using (Smc.Div().CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Fieldset("DadosPessoais").Begin())
+    {
+        @Smc.DisplayFor(m => m.NomeConfirmacao).CssClass("smc-sga-clear-p").Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.DataNascimento).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(m => m.Sexo).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(m => m.Cpf).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(m => m.NumeroPassaporteConfirmacao).Size(SMCSize.Grid6_24)
+        @Smc.DisplayFor(m => m.EmailConfirmacao).CssClass("smc-sga-clear-p").Size(SMCSize.Grid24_24)
+        if (Model.Filiacao.SMCCount() > 0)
+        {
+            @Smc.DisplayFor(p => p.Filiacao).CssClass("smc-sga-confirmacao-dados-agrupamento")
+        }
+    }
+
+    using (Smc.Fieldset("DadosAcademicos").Begin())
+    {
+        @Smc.DisplayFor(m => m.Campanha).Size(SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.SeqProcessoSeletivo).Size(SMCSize.Grid12_24)
+        @Smc.DisplayFor(m => m.SeqGrupoEscalonamento).Size(SMCSize.Grid12_24)
+        @Smc.DisplayFor(m => m.SeqNivelEnsino).Size(SMCSize.Grid12_24)
+        @Smc.DisplayFor(m => m.VinculoConfirmacao).Size(SMCSize.Grid12_24)
+        @Smc.DisplayFor(m => m.SeqFormaIngresso).Size(SMCSize.Grid12_24)
+
+        using (Smc.Div().CssClass("smc-sga-confirmacao-dados-agrupamento").Size(SMCSize.Grid24_24).Begin())
+        {
+            <h3>@Smc.GetUIResource("Label_Ofertas")</h3>
+            @Smc.DisplayFor(m => m.Ofertas).Size(SMCSize.Grid24_24).HideLabel()
+        }
+
+        @Smc.DisplayFor(m => m.MatrizCurricularOfertaConfirmacao).CssClass("smc-sga-confirmacao-oferta-matriz-curricular").Size(SMCSize.Grid24_24)
+
+        if (Model.CondicoesObrigatoriedade.SMCCount() > 0)
+        {
+            @Smc.DisplayFor(m => m.CondicoesObrigatoriedadeConfirmacao).CssClass("smc-sga-confirmacao-dados-agrupamento").Size(SMCSize.Grid24_24).HideLabel(SMCDisplayHideLabel.Children)
+        }
+        if (Model.TermosIntercambio.SMCCount() > 0)
+        {
+
+            using (Smc.Div().CssClass("smc-sga-confirmacao-dados-agrupamento").Size(SMCSize.Grid24_24).Begin())
+            {
+                <h3>@Smc.GetUIResource("Label_Termo_Intercambio")</h3>
+                foreach (var item in Model.TermosIntercambio)
+                {
+                    using (Smc.Div().CssClass("smc-sga-confirmacao-termo-intercambio").Size(SMCSize.Grid24_24).Begin())
+                    {
+                        @Html.Partial("_DadosConfirmacaoTermo", item)
+                    }
+                }
+            }
+        }
+    }
+}

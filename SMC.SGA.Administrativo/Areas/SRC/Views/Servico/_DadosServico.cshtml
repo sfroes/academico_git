@@ -1,0 +1,40 @@
+﻿@model ServicoViewModel
+
+@using (Smc.Wizard("WizardServico").CssClass("smc-sga-wizard-ingressante")
+           .ButtonSet(1, SMCButtonSetGroupedStyle.Arrow, false, "smc-wizard-salvar-arrow",
+                          item => Smc.Button(SMCButtonBehavior.Salvar)
+                                     .Type(SMCButtonType.Submit)
+                                     .Action("Salvar", "Servico")
+                                     .Ajax(isPost: true)
+                                     .DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight(),
+                          item => Smc.Button(SMCButtonBehavior.SalvarNovo)
+                                     .Type(SMCButtonType.Submit)
+                                     .Action("SalvarNovo", "Servico")
+                                     .Ajax(isPost: true)
+                                     .DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight(),
+                          item => Smc.Button(SMCButtonBehavior.SalvarSair)
+                                     .Type(SMCButtonType.Submit)
+                                     .Action("SalvarSair", "Servico")
+                                     .Ajax(isPost: true)
+                                     .DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+           .ButtonSet(1, SMCButtonSetGroupedStyle.Arrow, cssClass: "smc-wizard-cancelar-arrow", alwaysVisible: true, buttons:
+                          item => Smc.Button(SMCButtonBehavior.Cancelar)
+                                     .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                     .Action("Index", "Servico"))
+
+ .Begin())
+{
+    using (Smc.WizardStep(0).Title(Smc.GetUIResource("WizardStepCadastroGeral_Title")).Action("WizardStepCadastroGeral").Begin())
+    { }
+    using (Smc.WizardStep(1).Title(Smc.GetUIResource("WizardStepNivelEnsinoTipoVinculo_Title")).Action("WizardStepNivelEnsinoTipoVinculo").Begin())
+    { }
+    using (Smc.WizardStep(2).Title(Smc.GetUIResource("WizardStepSituacoesResticoes_Title")).Action("WizardStepSituacoesRestricoes").Begin())
+    { }
+    using (Smc.WizardStep(3).Title(Smc.GetUIResource("WizardStepTiposNotificacaoParaEtapas_Title")).Action("WizardStepTiposNotificacaoParaEtapas").Begin())
+    { }
+    using (Smc.WizardStep(4).Title(Smc.GetUIResource("WizardStepTaxas_Title")).Action("WizardStepTaxas").Begin())
+    { }
+    using (Smc.WizardStep(5).Title(Smc.GetUIResource("WizardStepServicoConfirmacao_Title")).Action("WizardStepConfirmacao").Begin())
+    { }
+}
+

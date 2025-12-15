@@ -1,0 +1,48 @@
+﻿@using SMC.Academico.Common.Areas.MAT.Constants
+@model SolicitacaoServicoItemListaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item-filho").Begin())
+{
+
+    if (!string.IsNullOrEmpty(Model.Instrucoes))
+    {
+        @Smc.DisplayFor(x => x.DescricaoEtapa).Size(SMCSize.Grid6_24,SMCSize.Grid16_24,SMCSize.Grid16_24,SMCSize.Grid6_24)
+        @Smc.Instructions().Text(Model.Instrucoes).Size(SMCSize.Grid2_24,SMCSize.Grid8_24,SMCSize.Grid8_24,SMCSize.Grid2_24)
+    }
+    else
+    {
+        @Smc.DisplayFor(x => x.DescricaoEtapa).Size(SMCSize.Grid6_24,SMCSize.Grid24_24,SMCSize.Grid24_24,SMCSize.Grid7_24)
+    }
+    
+    @Smc.DisplayFor(x => x.DataVigencia).Size(sizeMD: SMCSize.Grid6_24, sizeXS: SMCSize.Grid10_24, sizeSM: SMCSize.Grid9_24, sizeLG: SMCSize.Grid6_24)
+    @Smc.DisplayFor(x => x.SituacaoEtapa).Size(sizeMD: SMCSize.Grid5_24, sizeXS: SMCSize.Grid10_24, sizeSM: SMCSize.Grid9_24, sizeLG: SMCSize.Grid5_24)
+
+    using (Smc.Div().Size(SMCSize.Grid5_24, SMCSize.Grid4_24, SMCSize.Grid6_24, SMCSize.Grid4_24).Begin())
+    {
+        var buttonSet = Smc.ButtonSet()
+        .Type(SMCButtonSetType.Secondary)
+        .NumberOfButtonsToShow(1);
+
+        var botaoPlanoEnsino = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarPlanoEnsino")
+            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Visualizar_PlanoEnsino"))
+            .Ajax(isPost: false)
+            .Text(Smc.GetUIResource("Botao_Visualizar_PlanoEnsino"))
+            .Tooltip(Smc.GetUIResource("Botao_Visualizar_PlanoEnsino"))
+            .Hide(!Model.ExibirVisualizarPlanoEstudos)
+            .CssClass("smc-btn-visualizar-icotext")
+            .SecurityToken(UC_MAT_003_20_01.VISUALIZAR_ITENS_PLANO_ESTUDO)
+            .Action("VisualizarTurmaAtividade", "SolicitacaoMatriculaItemRoute", new { @seqSolicitacaoMatricula = new SMCEncryptedLong(Model.SeqSolicitacao), @seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa), @erro = false, @area = string.Empty, @desconsideraEtapa = false });
+
+        buttonSet.AddButton(botaoPlanoEnsino);
+
+        @buttonSet;
+    }
+
+}
+
+@using (Smc.ModalWindow("modalVisualizarPlanoEnsino")
+                    .Form("formVisualizarTurma", "VisualizarTurmaAtividade", "SolicitacaoMatriculaItemRoute", new { seqSolicitacaoMatricula = 1, area = string.Empty, @desconsideraEtapa = false }, closeOnSubmit: true)
+                    .Size(SMCModalWindowSize.Largest)
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+                    .Begin()) { }

@@ -1,0 +1,33 @@
+﻿@model RelatoriosServicosFiltroViewModel
+
+@section Scripts{
+    <script type="text/javascript" src=@Url.SMCBuscarRecursoAplicacao("Scripts/Relatorio.js")></script>
+}
+
+@using (Smc.Form("frmViewPadrao", "GerarRelatorio", Model).Ajax("divViewPadrao").Begin())
+{
+    using (Smc.Fieldset("fieldsetTipoRelatorio").Size(SMCSize.Grid24_24).CssClass("smc-fieldset-filter smc-filtro-relatorio").Begin())
+    {
+        using (Smc.Fieldset("fieldsetParametrosRelatorio").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            @Smc.EditorFor(prop => prop.TipoRelatorioServico)
+            @Smc.EditorFor(prop => prop.SeqCicloLetivo)
+            @Smc.EditorFor(prop => prop.SeqServico)
+            @Smc.EditorFor(prop => prop.SeqsEntidadeResponsavel)
+            @Smc.EditorFor(prop => prop.SeqsProcessos)
+            @Smc.EditorFor(prop => prop.SeqProcessoEtapa)
+        }
+    }
+
+    var buttonSet = Smc.ButtonSet();
+    buttonSet.AddButton(Smc.Button("Gerar_Relatorio").Url(Url.Action("GerarRelatorio"))
+                                                     .Ajax(fieldsContainerToRequest: "#divViewPadrao #fieldsetParametrosRelatorio #TipoRelatorioServico", onSuccess: "GerarRelatorio")
+                                                     .CssClass("smc-btn-gerar-relatorio-icotext-destaque")
+                                                     .Text(Smc.GetUIResource("Botao_Relatorio"))
+                                                     .Tooltip(Smc.GetUIResource("Botao_Relatorio_Tooltip"))
+                                                     .Attribute("data-behavior-download", "true"));
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Limpar).DisplayMode(SMCButtonDisplayMode.Icon).Attribute("data-clear", "#divViewPadrao"));
+
+    @buttonSet;
+}

@@ -1,0 +1,23 @@
+﻿@model DocumentoRequeridoViewModel
+
+@using (Smc.Header("CabecalhoDocumentoRequerido", SMCHeaderType.Primary)
+       .Item(i => i.DescricaoConfiguracaoEtapa, sizeMD: SMCSize.Grid24_24).Begin())
+{}
+
+@Smc.EditorFor(m => m.SeqConfiguracaoEtapa)
+@Smc.EditorFor(m => m.DescricaoConfiguracaoEtapa)
+@Smc.EditorFor(m => m.SeqProcessoEtapa)
+@Smc.EditorFor(m => m.CamposReadyOnly)
+@Smc.EditorFor(m => m.BloqueiaCampoPrazoEntrega)
+
+@Smc.EditorFor(m => m.Seq)
+@Smc.EditorFor(m => m.SeqTipoDocumento)
+@Smc.EditorFor(m => m.Obrigatorio)
+@Smc.EditorFor(m => m.PermiteUploadArquivo)
+@Smc.EditorFor(m => m.ObrigatorioUpload)
+@Smc.EditorFor(m => m.VersaoDocumento)
+@Smc.EditorFor(m => m.Sexo)
+@Smc.EditorFor(m => m.PermiteEntregaPosterior)
+@Smc.EditorFor(m => m.DataLimiteEntrega)
+@Smc.EditorFor(m => m.ValidacaoOutroSetor)
+@Smc.EditorFor(m => m.PermiteVarios)

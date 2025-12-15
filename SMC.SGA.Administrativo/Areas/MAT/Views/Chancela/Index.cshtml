@@ -1,0 +1,34 @@
+﻿@model ChancelaFiltroViewModel
+
+@using (Smc.Form("frmViewPadrao", "Listar", Model).Ajax("#divViewPadrao").Begin())
+{
+    //Filtros
+    using (Smc.Fieldset("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.ApenasProcessoVigente)
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+
+        var buttonSet = Smc.ButtonSet();
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight());
+        buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Limpar)
+                               .DisplayMode(SMCButtonDisplayMode.Icon)
+                               .Action("LimparProcessosFiltroChancela")
+                               .Ajax(isPost: true));
+
+
+        @buttonSet;
+    }
+
+    using (Smc.Div("divViewPadrao").Attribute("data-id", "divViewPadrao").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Html.Action("Listar")
+    }
+}
+
+@using (Smc.ModalWindow("_modalPlanoEstudos").Size(SMCModalWindowSize.Largest).Begin())
+{ }
+
+@using (Smc.ModalWindow("modalIntegralizacaoCurricular")
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }

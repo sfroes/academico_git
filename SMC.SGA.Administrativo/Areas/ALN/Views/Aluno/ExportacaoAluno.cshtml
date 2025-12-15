@@ -1,0 +1,5 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+
+@model List<AlunoListarDynamicModel>
+
+@Smc.List("Alunos", Model).HtmlTemplate(item => @Html.Partial("ExportacaoAlunoItem", item))

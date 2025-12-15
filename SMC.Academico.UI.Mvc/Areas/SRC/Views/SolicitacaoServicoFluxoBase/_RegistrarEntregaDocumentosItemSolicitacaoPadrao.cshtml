@@ -1,0 +1,31 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.SRC.Models
+@model IEnumerable<SolicitacaoDocumentoViewModel>
+
+@if (Model != null && Model.Any())
+{
+    GrupoDocumentoViewModel grupo = TempData["__GrupoDocumentoObrigatorio"] as GrupoDocumentoViewModel;
+    if (grupo != null)
+    {
+        <p class="smc-sga-texto-informativo">@string.Format(Smc.GetUIResource("Texto_Minimo_Requerido_Grupo"), grupo.NumeroMinimoDocumentosRequerido)</p>
+    }
+    TempData["__GrupoDocumentoObrigatorio"] = null;
+}
+
+@(Smc.Grid("grid", new SMCPagerModel<SolicitacaoDocumentoViewModel>(Model))
+    .ContentColumn(@<text>
+        @{ 
+            var model = (item as SolicitacaoDocumentoViewModel);
+            @Smc.LegendItem(x => model.SituacaoEntregaDocumentoListaAluno, false, model)
+        }
+    </text>, cssClass: "smc-sga-coluna-status")
+    .ContentColumn(@<text>@item.DescricaoTipoDocumento</text>)
+    .CssClass("smc-sga-grid-sem-header")
+    .AutoGenerateColumns(false)
+    .AutoHideNavigator(true)
+    .HideRowNumber()
+    .HideNavigator(true)
+    .HideNumberOfRowsPerPageSelector(true)
+    .HidePager()
+    .HideGridTitle()
+    .HideRowsTotalizer(true)
+)

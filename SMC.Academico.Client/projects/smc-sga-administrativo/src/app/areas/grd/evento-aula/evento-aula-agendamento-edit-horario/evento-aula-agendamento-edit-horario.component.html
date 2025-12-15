@@ -1,0 +1,189 @@
+<smc-modal s-size="xl" s-title="Alterar Horário do Agendamento" (s-on-close)="fecharModal()">
+  <div s-modal-body *ngIf="formEdit">
+    <form [formGroup]="formEdit">
+      <div class="smc-size-md-24 smc-size-lg-24">
+        <fieldset class="smc-size-md-24 smc-size-lg-24 smc-sga-fieldset-agendamento">
+          <legend>Dados da divisão de turma</legend>
+          <div class="smc-size-lg-24 smc-size-md-24">
+            <div class="smc-display">
+              <label>Divisão de turma</label>
+              <p>{{ divisao.descricaoDivisaoFormatada }}</p>
+            </div>
+          </div>
+          <sga-bi-grd-001 [s-dados]="divisao"></sga-bi-grd-001>
+        </fieldset>
+      </div>
+      <div class="smc-size-md-24 smc-size-lg-24">
+        <fieldset class="smc-size-md-24 smc-size-lg-24 smc-sga-fieldset-agendamento">
+          <legend>Quais ocorrências serão alteradas?</legend>
+          <po-radio-group
+            class="smc-sga-agendamento-radio-vertical smc-size-md-14 smc-size-lg-14"
+            formControlName="tipoEdicao"
+            p-columns="3"
+            [p-options]="[
+              { label: 'Somente esta ocorrência', value: '1' },
+              { label: 'Todas as ocorrências', value: '2' },
+              { label: 'Do período', value: '3' }
+            ]"
+          >
+          </po-radio-group>
+          <po-datepicker
+            class="smc-size-md-5 smc-size-lg-5 smc-sga-datepicker-horizontal"
+            formControlName="dataInicio"
+            p-label="Data início"
+            [class.smc-datapicker-required]="dataObrigatoria"
+            [hidden]="esconderDataPeriodo"
+            [p-required]="dataObrigatoria"
+          >
+          </po-datepicker>
+          <po-datepicker
+            class="smc-size-md-5 smc-size-lg-5 smc-sga-datepicker-horizontal"
+            formControlName="dataFim"
+            p-error-pattern="A data fim deverá ser maior ou igual à data início."
+            p-label="Data fim"
+            [class.smc-datapicker-required]="dataObrigatoria"
+            [hidden]="esconderDataPeriodo"
+            [p-min-date]="formEdit.get('dataInicio').value"
+            [p-required]="dataObrigatoria"
+            [p-disabled]="divisao.tipoDistribuicaoAula !== 'Livre'"
+          >
+          </po-datepicker>
+        </fieldset>
+        <fieldset class="smc-size-md-24 smc-size-lg-24 smc-sga-fieldset-agendamento">
+          <legend>Dados do agendamento</legend>
+          <p class="smc-sga-agendamento-data">
+            {{ eventoAula.diaSemanaFormatada }} de {{ eventoAula.horaInicio }} - {{ eventoAula.horaFim }}
+          </p>
+          <p class="smc-sga-agendamento-local" [class.smc-italico]="!eventoAula.codigoLocalSEF">
+            {{ localFormatado() }}
+          </p>
+          <ul class="smc-sga-agendamento-professor">
+            <li *ngFor="let professor of eventoAula.colaboradores" [class.smc-italico]="!professor.seqColaborador">
+              {{ professor.descricaoFormatada }}
+            </li>
+          </ul>
+          <po-datepicker
+            *ngIf="!edicaoMultipla"
+            formControlName="novaData"
+            class="smc-size-md-4 smc-size-lg-4"
+            p-label="Nova data"
+            p-required="true"
+            [p-error-pattern]="mensagemErroPattern"
+            [p-min-date]="inicioPeriodoLetivo"
+            [p-max-date]="fimPeriodoLetivo"
+            (p-change)="calcularDiaSemana()"
+          ></po-datepicker>
+          <smc-select
+            *ngIf="edicaoMultipla"
+            class="smc-size-lg-4 smc-size-md-4"
+            formControlName="idtTipoRecorrencia"
+            s-label="Tipo de recorrência"
+            [s-required]="edicaoMultipla"
+            [s-disabled]="tipoRecorrenciaDisabled"
+            [s-options]="dataSourceTipoOcorrencia"
+            (s-change)="onChangeTipoRecorrencia($event)"
+          >
+          </smc-select>
+          <po-input
+            *ngIf="edicaoMultipla"
+            class="smc-size-lg-5 smc-size-md-5"
+            formControlName="repetir"
+            p-label="Repetir a cada"
+            [class.smc-input-required]="formEdit.controls.tipoEdicao.value != '1'"
+            [class.smc-sga-agendamento-repetir-semana]="!tipoRecorrenciaMensal"
+            [class.smc-sga-agendamento-repetir-mensal]="tipoRecorrenciaMensal"
+            [p-disabled]="repetirDisabled"
+          >
+          </po-input>
+          <smc-select
+            *ngIf="edicaoMultipla && tipoRecorrenciaMensal"
+            class="smc-size-lg-4 smc-size-md-4"
+            formControlName="idtTipoInicioRecorrencia"
+            s-label="Na semana"
+            [s-required]="formEdit?.controls.idtTipoRecorrencia.value == 4"
+            [s-options]="dataSourceTipoInicioOcorrencia"
+          ></smc-select>
+          <smc-select
+            class="smc-size-lg-5 smc-size-md-5"
+            formControlName="turno"
+            s-label="Turno"
+            s-required="true"
+            [s-options]="dataSourceTurno"
+          ></smc-select>
+          <po-radio-group
+            *ngIf="edicaoMultipla"
+            class="smc-size-lg-24 smc-size-md-24 smc-sga-agendamento-diasemana-edit"
+            formControlName="diasSemana"
+            p-columns="4"
+            p-label="Dia da semana"
+            p-required="true"
+            [p-options]="dataSourceDiasSemana"
+          >
+          </po-radio-group>
+          <smc-select
+            class="smc-size-lg-24 smc-size-md-24"
+            formControlName="horarios"
+            s-label="Horário"
+            s-required="true"
+            [s-options]="dataSourceHorarios"
+          >
+          </smc-select>
+        </fieldset>
+      </div>
+    </form>
+  </div>
+  <div s-modal-footer>
+    <div *ngIf="mensagemInformativa" [class]="classeMensagemInformativa">
+      <p (click)="exibirModalMensagemInformativa()" [innerHtml]="mensagemInformativa | safeHtml"></p>
+    </div>
+    <smc-button
+      s-button-class="smc-btn-salvar-icotext-destaque"
+      s-label="Salvar"
+      s-tooltip="Salvar"
+      s-type="submit"
+      [s-loading]="validacaoBackend$ | async"
+      [s-disabled]="!formValido"
+      (s-click)="formatarMensagens()"
+    ></smc-button>
+    <smc-button
+      s-button-class="smc-btn-fechar-icotext"
+      s-tooltip="Fechar"
+      s-label="Fechar"
+      (s-click)="fecharModal()"
+    ></smc-button>
+  </div>
+</smc-modal>
+<!-- Assert de confirmação -->
+<smc-modal s-title="Atenção!" #confirmar s-hide-close="true">
+  <div s-modal-body>
+    <p>{{ mensagemAssert }}</p>
+    <p>{{ mensagemConfirmacao }}</p>
+    <p>Confirma a alteração?</p>
+  </div>
+  <div s-modal-footer>
+    <smc-button s-label="Sim" s-tooltip="Sim" (s-click)="onSubmit()"></smc-button>
+    <smc-button #btNao s-label="Não" s-tooltip="Não" (s-click)="confirmar.close()"></smc-button>
+  </div>
+</smc-modal>
+<!-- Assert de mensagem informativa -->
+<smc-modal #modalMensagemInformativa s-title="Alteração de horário não realizada!">
+  <div s-modal-body>
+    <p>Coincidência(s) de horário(s) ocorrida(s):</p>
+    <ng-container *ngIf="alunosCoincidentes.length > 0">
+      <p>Para o(s) aluno(s):</p>
+      <ul class="smc-sga-lista-bullet">
+        <li *ngFor="let aluno of alunosCoincidentes">{{ aluno }}</li>
+      </ul>
+    </ng-container>
+    <br />
+    <ng-container *ngIf="protocolosCoincidentes.length > 0">
+      <p>No(s) protocolo(s) de serviço número:</p>
+      <ul class="smc-sga-lista-bullet">
+        <li *ngFor="let protocolo of protocolosCoincidentes">{{ protocolo }}</li>
+      </ul>
+    </ng-container>
+  </div>
+  <div s-modal-footer>
+    <smc-button #btNao s-label="Ok" s-tooltip="Ok" (s-click)="modalMensagemInformativa.close()"></smc-button>
+  </div>
+</smc-modal>

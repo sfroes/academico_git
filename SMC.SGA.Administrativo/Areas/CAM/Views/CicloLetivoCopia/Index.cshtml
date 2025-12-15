@@ -1,0 +1,26 @@
+﻿@model CicloLetivoCopiaFiltroViewModel
+@{
+    Layout = null;
+}
+@using (Smc.Form("frmViewPadrao", "BuscarCiclosLetivosCopia", Model).Ajax("#divViewPadrao").Begin())
+{
+    // Filtros
+    using (Smc.Fieldset("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorForModel()
+    }
+
+    var buttonSet = Smc.ButtonSet();
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().SecurityToken(UC_CAM_002_01_05.COPIAR_CICLO_LETIVO));
+
+    @buttonSet;
+
+
+    // Grid
+    using (Smc.Div("divViewPadrao").Attribute("data-id", "divViewPadrao").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+
+    }
+
+}

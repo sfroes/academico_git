@@ -1,0 +1,49 @@
+﻿@using SMC.SGA.Administrativo.Areas.SRC.Views.RealizarAtendimento.App_LocalResources
+
+@model AtendimentoDispensaAgrupamentoViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_ATENDIMENTO_REABERTURA))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+    SMCButtonFluentConfiguration botaoReabrirSolicitacao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+     .Attribute(SMCMvcConsts.MODAL_ID, "modalAdicionarGrupo")
+     .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource(UIResource.Title_Modal_AdicionarGrupo))
+     .Ajax(isPost: false)
+     .Action("AtendimentoDispensaAgrupamentoIncluirGrupo", "RealizarAtendimento", new { @seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa) })
+     .Text(Smc.GetUIResource(UIResource.Botao_AdicionarGrupo))
+     .Tooltip(Smc.GetUIResource(UIResource.Botao_AdicionarGrupo_Tooltip))
+     .SecurityToken(UC_SRC_004_17_02.MANTER_AGRUPAMENTO_ITENS_DISPENSA)
+     .Type(SMCButtonType.InputButton);
+
+    @Smc.ButtonSet().AddButton(botaoReabrirSolicitacao)
+
+    if (Model.Grupos == null || !Model.Grupos.Any())
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-margin-top-5").Begin())
+        {
+            <p class="smc-sga-msg-conteudo-linha">@UIResource.MSG_Informativa_Sem_Grupos</p>
+        }
+    }
+    else
+    {
+        @Smc.List("Grupos", m => m.Grupos).HtmlTemplate(x => Html.Partial("_AtendimentoDispensaAgrupamentoItem", x.Value))
+    }
+    @Html.Partial("_BotoesNavegacao", Model)
+}
+
+@using (Smc.ModalWindow("modalAdicionarGrupo")
+        .Form("frmAdicionarGrupo", "SalvarAtendimentoDispensaAgrupamentoGrupo", "RealizarAtendimento", new { area = "SRC" }, closeOnSubmit: true, config: x => x.Ajax())
+        .Size(SMCModalWindowSize.Largest)
+        .Button(SMCButtonBehavior.Salvar, "SalvarAtendimentoDispensaAgrupamentoGrupo", "RealizarAtendimento", new { area = string.Empty }, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .SecurityToken(UC_SRC_004_17_02.MANTER_AGRUPAMENTO_ITENS_DISPENSA)
+        .Begin()) { }

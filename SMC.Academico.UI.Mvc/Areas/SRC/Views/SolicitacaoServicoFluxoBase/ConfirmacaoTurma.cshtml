@@ -1,0 +1,78 @@
+﻿@using SMC.Formularios.UI.Mvc;
+@using SMC.Academico.Common.Areas.SRC.Constants;
+
+@model SMC.Academico.UI.Mvc.Areas.SRC.Models.ConfirmacaoTurmaAtividadeViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_CONFIRMACAO_MATRICULA))
+
+@using (Smc.Form("frmPagina").Ajax("#divSelecaoTurmaAluno").Begin())
+{
+    using (Smc.Fieldset("divJustificativa").LegendText(@Smc.GetUIResource("Justificativa_Solicitacao_Titulo")).Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(m => m.Justificativa)
+    }
+
+    using (Smc.Div("divSelecaoTurmaAluno").Attribute("data-id", "divSelecaoTurmaAluno").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+
+        using (Smc.Fieldset("divSelecaoTurmaOferta").LegendText(@Smc.GetUIResource("TurmaMatrizSelecionada_Lista_Titulo")).Size(SMCSize.Grid24_24).Begin())
+        {
+
+            @Smc.EditorFor(m => m.backUrl)
+            @Smc.EditorFor(m => m.SeqProcessoEtapa)
+            @Smc.EditorFor(m => m.TokenServico)
+            if (Model.TurmasMatriculaItem != null && Model.TurmasMatriculaItem.Count > 0)
+            {
+                @(Smc.List("SelectedValues", Model.TurmasMatriculaItem).HtmlTemplate(@<text>
+                        @{ var viewTurma = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews._CONFIRMACAO_TURMA_OFERTA); }
+                        @Html.Partial(viewTurma, item)
+                </text>))
+            }
+            else
+            {
+                using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <p>@Smc.GetUIResource("Label_Nenhum_Registro_Turma_Selecionada")</p>
+                }
+            }
+        }
+
+        if (Model.ExibirAtividade.GetValueOrDefault())
+        {
+            using (Smc.Fieldset("divSelecaoAtividadeOferta").LegendText(@Smc.GetUIResource("AtividadeAcademicaSelecionada_Lista_Titulo")).Size(SMCSize.Grid24_24).Begin())
+            {
+
+                if (Model.AtividadesAcademicaMatriculaItem.Count > 0)
+                {
+                    @(Smc.List("listaAtividade", m => m.AtividadesAcademicaMatriculaItem).HtmlTemplate(@<text>
+                            @{ var viewAtividade = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews._CONFIRMACAO_ATIVIDADE_OFERTA); }
+                            @Html.Partial(viewAtividade, item.Value)
+                    </text>))
+                }
+                else
+                {
+                    using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+                    {
+                        <p>@Smc.GetUIResource("Label_Nenhum_Registro_Atividade_Selecionada")</p>
+                    }
+                }
+            }
+        }
+
+        @Html.Partial("_BotoesNavegacao", Model)
+    }
+}
+
+@using (Smc.ModalWindow("modalVisualizarDivisaoTurma")
+           .Form("formVisualizarDivisaoTurma", closeOnSubmit: true)
+           .Size(SMCModalWindowSize.Large)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }

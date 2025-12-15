@@ -1,0 +1,117 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.CNC.Models;
+@using SMC.Framework.Model;
+@using SMC.Academico.Common.Areas.SRC.Constants;
+
+@model IntegralizacaoMatrizHistoricoEscolarViewModel
+
+
+@using (Smc.Header("Cabecalho", SMCHeaderType.Primary)
+                        .Item(prop => prop.CodigoConfiguracao, sizeMD: SMCSize.Grid4_24)
+                        .Item(prop => prop.SiglaComponente, sizeMD: SMCSize.Grid2_24)
+                        .Item(prop => prop.DescricaoConfiguracao, sizeMD: SMCSize.Grid18_24)
+                        .Begin()) { }
+
+@if (Model.HistoricosEmCurso.SMCCount() > 0)
+{
+    @using (Smc.Fieldset("DadosEmCurso").Size(SMCSize.Grid24_24).LegendText(Smc.GetUIResource("Label_Historico_Escolar_Integralizacao_EmCurso")).Begin())
+    {
+        @(Smc.Grid("gridEmCurso", new SMCPagerModel<IntegralizacaoMatrizHistoricoEmCursoViewModel>(Model.HistoricosEmCurso))
+                                                                                    .HideGridTitle()
+                                                                                    .HideNavigator()
+                                                                                    .HidePager()
+                                                                                    .HideRowNumber()
+                                                                                    .HideRowsTotalizer()
+                                                                                    .FieldColumn(f => f.DescricaoCicloLetivo, cssClass: "smc-size-md-3 smc-size-sm-24 smc-size-xs-24 smc-size-lg-3")
+                                                                                    .FieldColumn(f => f.SituacaoHistoricoEscolar, cssClass: "smc-size-md-4 smc-size-sm-24 smc-size-xs-24 smc-size-lg-4")
+                                                                                    .FieldColumn(f => f.CodigoTurma, cssClass: "smc-size-md-3 smc-size-sm-24 smc-size-xs-24 smc-size-lg-3", visible: Model.ExibirTurma)
+                                                                                    .FieldColumn(f => f.Nota, cssClass: "smc-size-md-2 smc-size-sm-24 smc-size-xs-24 smc-size-lg-2")
+                                                                                    .FieldColumn(f => f.DescricaoConceito, cssClass: "smc-size-md-3 smc-size-sm-24 smc-size-xs-24 smc-size-lg-3")
+                                                                                    .FieldColumn(f => f.Faltas, cssClass: "smc-size-md-2 smc-size-sm-24 smc-size-xs-24 smc-size-lg-2")
+                                                                                    .FieldColumn(f => f.Professores, cssClass: "smc-size-md-7 smc-size-sm-24 smc-size-xs-24 smc-size-lg-7", visible: Model.ExibirProfessores)
+                                                                                    .FieldColumn(f => f.ProfessorTexto, cssClass: "smc-size-md-7 smc-size-sm-24 smc-size-xs-24 smc-size-lg-7", visible: !Model.ExibirProfessores));
+
+    }
+}
+
+@if (Model.HistoricosSemApuracao.SMCCount() > 0)
+{
+    @using (Smc.Fieldset("DadosSemApuracao").Size(SMCSize.Grid24_24).LegendText(Smc.GetUIResource("Label_Historico_Escolar_Integralizacao_SemApuracao")).Begin())
+    {
+        @(Smc.Grid("gridSemApuracao", new SMCPagerModel<IntegralizacaoMatrizHistoricoSemApuracaoViewModel>(Model.HistoricosSemApuracao))
+                                                                                    .HideGridTitle()
+                                                                                    .HideNavigator()
+                                                                                    .HidePager()
+                                                                                    .HideRowNumber()
+                                                                                    .HideRowsTotalizer()
+                                                                                    .FieldColumn(f => f.DescricaoCicloLetivo, cssClass: "smc-size-md-3 smc-size-sm-24 smc-size-xs-24 smc-size-lg-3")
+                                                                                    .FieldColumn(f => f.SituacaoHistoricoEscolar, cssClass: "smc-size-md-4 smc-size-sm-24 smc-size-xs-24 smc-size-lg-4")
+                                                                                    .FieldColumn(f => f.CodigoTurma, cssClass: "smc-size-md-3 smc-size-sm-24 smc-size-xs-24 smc-size-lg-3", visible: Model.ExibirTurma)
+                                                                                    .FieldColumn(f => f.Nota, cssClass: "smc-size-md-2 smc-size-sm-24 smc-size-xs-24 smc-size-lg-2")
+                                                                                    .FieldColumn(f => f.DescricaoConceito, cssClass: "smc-size-md-3 smc-size-sm-24 smc-size-xs-24 smc-size-lg-3")
+                                                                                    .FieldColumn(f => f.Faltas, cssClass: "smc-size-md-2 smc-size-sm-24 smc-size-xs-24 smc-size-lg-2")
+                                                                                    .FieldColumn(f => f.Professores, cssClass: "smc-size-md-7 smc-size-sm-24 smc-size-xs-24 smc-size-lg-7", visible: Model.ExibirProfessores)
+                                                                                    .FieldColumn(f => f.ProfessorTexto, cssClass: "smc-size-md-7 smc-size-sm-24 smc-size-xs-24 smc-size-lg-7", visible: !Model.ExibirProfessores));
+
+    }
+}
+
+@if (Model.HistoricosNotas.SMCCount() > 0)
+{
+    @using (Smc.Fieldset("DadosCursadoNota").Size(SMCSize.Grid24_24).LegendText(Smc.GetUIResource("Label_Historico_Escolar_Integralizacao_Cursados")).Begin())
+    {
+        @(Smc.Grid("gridCursadoNota", new SMCPagerModel<IntegralizacaoMatrizHistoricoEscolarNotaViewModel>(Model.HistoricosNotas))
+                                                                                    .HideGridTitle()
+                                                                                    .HideNavigator()
+                                                                                    .HidePager()
+                                                                                    .HideRowNumber()
+                                                                                    .HideRowsTotalizer()
+                                                                                    .FieldColumn(f => f.DescricaoCicloLetivo, cssClass: "smc-size-md-3 smc-size-sm-24 smc-size-xs-24 smc-size-lg-3")
+                                                                                    .FieldColumn(f => f.SituacaoHistoricoEscolar, cssClass: "smc-size-md-4 smc-size-sm-24 smc-size-xs-24 smc-size-lg-4")
+                                                                                    .FieldColumn(f => f.CodigoTurma, cssClass: "smc-size-md-3 smc-size-sm-24 smc-size-xs-24 smc-size-lg-3", visible: Model.ExibirTurma)
+                                                                                    .FieldColumn(f => f.Nota, cssClass: "smc-size-md-2 smc-size-sm-24 smc-size-xs-24 smc-size-lg-2")
+                                                                                    .FieldColumn(f => f.DescricaoConceito, cssClass: "smc-size-md-3 smc-size-sm-24 smc-size-xs-24 smc-size-lg-3")
+                                                                                    .FieldColumn(f => f.Faltas, cssClass: "smc-size-md-2 smc-size-sm-24 smc-size-xs-24 smc-size-lg-2")
+                                                                                    .FieldColumn(f => f.Professores, cssClass: "smc-size-md-7 smc-size-sm-24 smc-size-xs-24 smc-size-lg-7", visible: Model.ExibirProfessores)
+                                                                                    .FieldColumn(f => f.ProfessorTexto, cssClass: "smc-size-md-7 smc-size-sm-24 smc-size-xs-24 smc-size-lg-7", visible: !Model.ExibirProfessores));
+
+    }
+}
+
+
+@if (Model.HistoricosDispensa.SMCCount() > 0)
+{
+    @using (Smc.Fieldset("DadosCursadoNota").Size(SMCSize.Grid24_24).LegendText(Smc.GetUIResource("Label_Historico_Escolar_Integralizacao_Dispensa")).Begin())
+    {
+        @(Smc.Grid("gridCursadoDispensa", new SMCPagerModel<IntegralizacaoMatrizHistoricoEscolarDispensaViewModel>(Model.HistoricosDispensa))
+                                                                            .HideGridTitle()
+                                                                            .HideNavigator()
+                                                                            .HidePager()
+                                                                            .HideRowNumber()
+                                                                            .HideRowsTotalizer()
+                                                                            .FieldColumn(f => f.DescricaoCicloLetivo, cssClass: "smc-size-md-3 smc-size-sm-24 smc-size-xs-24 smc-size-lg-3")
+                                                                            //.FieldColumn(f => f.SituacaoHistoricoEscolar, cssClass: "smc-size-md-4 smc-size-sm-24 smc-size-xs-24 smc-size-lg-4")
+                                                                            .ContentColumn(@<text>
+                                                                                @{
+                                                                                                    var dispensa = (item as IntegralizacaoMatrizHistoricoEscolarDispensaViewModel);
+                                                                                                    var buttonSet = Smc.ButtonSet().CssClass("smc-sga-btn-formato-link");
+
+                                                                                                    buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                                                                     .Attribute(SMCMvcConsts.MODAL_ID, "modalSolicitacao")
+                                                                                                     .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Solicitacao_Servico_Simplificado"))
+                                                                                                     .Action("ConsultarSolicitacaoServicoModal", "SolicitacaoServicoRoute", new { SeqSolicitacaoServico = dispensa.SeqSolicitacaoDispensa, BackUrl = HttpContext.Current.Request.UrlReferrer.ToString(), area = string.Empty })
+                                                                                                     .Ajax(isPost: false)
+                                                                                                     .SecurityToken(UC_SRC_004_14_01.CONSULTAR_SOLICITACAO)
+                                                                                                     .Type(SMCButtonType.Link)
+                                                                                                     .Text(dispensa.SituacaoHistoricoEscolar));
+
+                                                                                            @buttonSet;
+                                                                                }
+                                                                            </text>, cssClass: "smc-size-md-6 smc-size-sm-24 smc-size-xs-24 smc-size-lg-6", header: Smc.GetUIResource("Label_Protocolo"))
+                                                                            .FieldColumn(f => f.CodigoTurma, cssClass: "smc-size-md-3 smc-size-sm-24 smc-size-xs-24 smc-size-lg-3", visible: Model.ExibirTurma)
+                                                                            .FieldColumn(f => f.Nota, cssClass: "smc-size-md-2 smc-size-sm-24 smc-size-xs-24 smc-size-lg-2")
+                                                                            .FieldColumn(f => f.DescricaoConceito, cssClass: "smc-size-md-2 smc-size-sm-24 smc-size-xs-24 smc-size-lg-2")
+                                                                            .FieldColumn(f => f.Faltas, cssClass: "smc-size-md-2 smc-size-sm-24 smc-size-xs-24 smc-size-lg-2")
+                                                                            .FieldColumn(f => f.Professores, cssClass: "smc-size-md-6 smc-size-sm-24 smc-size-xs-24 smc-size-lg-6", visible: Model.ExibirProfessores)
+                                                                            .FieldColumn(f => f.ProfessorTexto, cssClass: "smc-size-md-6 smc-size-sm-24 smc-size-xs-24 smc-size-lg-6", visible: !Model.ExibirProfessores));
+    }
+}

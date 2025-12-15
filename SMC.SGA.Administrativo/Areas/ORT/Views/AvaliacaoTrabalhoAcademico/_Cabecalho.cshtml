@@ -1,0 +1,11 @@
+﻿@model AvaliacaoTrabalhoAcademicoCabecalhoViewModel
+
+@using (Smc.Header("AvaliacaoTrabalhoAcademico", SMCHeaderType.Primary)
+                                    .Item(prop => prop.DescricaoTipoTrabalho, sizeMD: SMCSize.Grid6_24)
+                                    .Item(prop => prop.Titulo, sizeMD: SMCSize.Grid18_24)
+                                    .Item(prop => prop.NomesAutores, sizeMD: SMCSize.Grid24_24)
+                                    .Begin())
+{
+
+}
+@(Smc.Legend("Status", SMCOrientation.Horizontal).Items<SMC.Academico.Common.Areas.APR.Enums.BancaCancelada>())

@@ -1,0 +1,120 @@
+﻿@model EscalonamentoListarDynamicModel
+
+
+@{
+    foreach (var item in Model.Etapas.OrderBy(o => o.Ordem))
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+        {
+            using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+            {
+                using (Smc.Div().CssClass("smc-listdetailed-header-conteudo").Size(SMCSize.Grid24_24).Begin())
+                {
+                    using (Smc.Div().Size(SMCSize.Grid23_24, SMCSize.Grid21_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+                    {
+                        @Smc.DisplayFor(p => item.DescricaoEtapa).Size(SMCSize.Grid17_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid17_24)
+                        @Smc.DisplayFor(p => item.SituacaoEtapa).Size(SMCSize.Grid6_24, SMCSize.Grid20_24, SMCSize.Grid20_24, SMCSize.Grid6_24)
+                    }
+                    using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid3_24, SMCSize.Grid2_24, SMCSize.Grid1_24).Begin())
+                    {
+                        ///Configuração dos buttoes
+                        SMCButtonFluentConfiguration buttonLiberar = (Smc.Button(SMCButtonBehavior.Visualizar)
+                                                           .Text(Smc.GetUIResource("botao_liberar_etapa"))
+                                                           .Action("LiberarEtapa", "Escalonamento", new { SeqEtapa = new SMCEncryptedLong(item.Seq), Area = "SRC" })
+                                                           .Ajax(isPost: false)
+                                                           .Tooltip(Smc.GetUIResource("botao_liberar_etapa_tooltip"))
+                                                           .Confirm(Smc.GetUIResource("title_modal_liberar_etapa"), string.Format(Smc.GetUIResource("mensagem_liberar_etapa"), item.DescricaoEtapa), SMCWindowButtons.Yes, true)
+                                                           .Enabled(item.HabilitaBtnComPermissaoManutencaoProcesso)
+                                                           .SecurityToken(UC_SRC_002_05_02.MANTER_ESCALONAMENTO_ETAPA));
+
+                        SMCButtonFluentConfiguration buttonColocarManutencao = (Smc.Button(SMCButtonBehavior.Visualizar)
+                                               .Text(Smc.GetUIResource("botao_colocar_manutencao"))
+                                               .Action("ColocarManutencaoEtapa", "Escalonamento", new { SeqEtapa = new SMCEncryptedLong(item.Seq), Area = "SRC" })
+                                               .Ajax(isPost: false)
+                                               .Confirm(Smc.GetUIResource("title_modal_etapa_em_manutencao"), string.Format(Smc.GetUIResource("mensagem_etapa_em_manutencao"), item.DescricaoEtapa), SMCWindowButtons.Yes, true)
+                                               .Tooltip(Smc.GetUIResource("botao_colocar_manutencao_tooltip"))
+                                               .Enabled(item.HabilitaBtnComPermissaoManutencaoProcesso)
+                                               .SecurityToken(UC_SRC_002_05_02.MANTER_ESCALONAMENTO_ETAPA));
+
+                        SMCButtonFluentConfiguration buttonNovoEscalonamento = (Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                        .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_NEW)
+                                        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("title_novo_escalonamento"))
+                                        .Ajax(isPost: false)
+                                        .Text(Smc.GetUIResource("botao_novo_escalonamento"))
+                                        .Tooltip(Smc.GetUIResource("botao_novo_escalonamento_tooltip"))
+                                        .SecurityToken(UC_SRC_002_05_02.MANTER_ESCALONAMENTO_ETAPA)
+                                        .Enabled(item.HabilitaBtnComPermissaoManutencaoProcesso)
+                                        .Action("Incluir", "Escalonamento", new { SeqProcessoEtapa = new SMCEncryptedLong(item.Seq), SeqProcesso = new SMCEncryptedLong(item.SeqProcesso), Area = "SRC" }));
+
+                        SMCButtonSetFluentConfiguration buttonSet = (Smc.ButtonSet().Type(SMCButtonSetType.Secondary)
+                                                                    .NumberOfButtonsToShow(0)
+                                                                    .Size(SMCSize.Grid1_24));
+
+                        using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid4_24, SMCSize.Grid4_24, SMCSize.Grid1_24).CssClass("smc-sga-margem-superior").Begin())
+                        {
+
+                            switch (item.SituacaoEtapa)
+                            {
+                                case SMC.Academico.Common.Areas.SRC.Enums.SituacaoEtapa.AguardandoLiberacao:
+                                    buttonSet.AddButton(buttonLiberar);
+                                    break;
+                                case SMC.Academico.Common.Areas.SRC.Enums.SituacaoEtapa.Liberada:
+                                    buttonSet.AddButton(buttonColocarManutencao);
+                                    //buttonNovoEscalonamento.Enabled(false);
+                                    //buttonNovoEscalonamento.ButtonInstructions(Smc.GetUIResource("boto_novo_escalonamento_instructions"));
+                                    break;
+                                case SMC.Academico.Common.Areas.SRC.Enums.SituacaoEtapa.EmManutencao:
+                                    buttonSet.AddButton(buttonLiberar);
+                                    break;
+                                case SMC.Academico.Common.Areas.SRC.Enums.SituacaoEtapa.Encerrada:
+                                    buttonColocarManutencao.Enabled(false);
+                                    buttonColocarManutencao.ButtonInstructions(Smc.GetUIResource("boto_manutencao_situacao_encerrada_instructions"));
+                                    buttonSet.AddButton(buttonColocarManutencao);
+                                    buttonNovoEscalonamento.Enabled(false);
+                                    buttonNovoEscalonamento.ButtonInstructions(Smc.GetUIResource("boto_novo_escalonamento_instructions"));
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            @(buttonSet.AddButton(buttonNovoEscalonamento))
+                        }
+                    }
+                }
+
+                using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista").Size(SMCSize.Grid24_24).Begin())
+                {
+                    @(Smc.Grid("gridEscalonamento", new SMCPagerModel<EscalonamentoViewModel>(item.Escalonamentos))
+                    .AutoGenerateColumns()
+                    .AutoHideNavigator()
+                    .HideGridTitle()
+                    .HideNavigator()
+                    .ButtonColumn(SMCButtonSetType.Secondary, 5, "", "", "smc-grid-coluna-botoes", true,
+
+                    ///Exibir botão de edição conforme regra de navegação 06 escolhe entre as duas opçoes abaixo --regras ViewModel
+                    x => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                            .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+                            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("title_editar_escalonamento"))
+                            .Ajax(isPost: false)
+                            .CssClass("smc-btn-alterar-ico")
+                            .Tooltip(Smc.GetUIResource("botao_edit_escalonamento_tooltip"))
+                            .SecurityToken(UC_SRC_002_05_02.MANTER_ESCALONAMENTO_ETAPA)
+                            .Enabled((x as EscalonamentoViewModel).HabilitaBtnComPermissaoManutencaoProcesso && (x as EscalonamentoViewModel).HabilitarBotaoEditar)
+                            .ButtonInstructions(Smc.GetUIResource((x as EscalonamentoViewModel).MensagemBotaoEditar))
+                            .Action("Editar", "Escalonamento", new { Seq = new SMCEncryptedLong((x as EscalonamentoViewModel).Seq), SeqProcesso = new SMCEncryptedLong(item.SeqProcesso) }),
+
+
+                   ///Exibir botão de exclusão conforme regra de navegação 07 escolhe entre as tres opçoes abaixo --regras ViewModel
+                   x => Smc.Button(SMCButtonBehavior.Excluir)
+                             .DisplayMode(SMCButtonDisplayMode.Icon)
+                             .Tooltip(Smc.GetUIResource("botao_excluir_escalonamento_tooltip"))
+                             .Confirm(Smc.GetUIResource("title_excluir_escalonamento"), Smc.GetUIResource("mensagem_excluir_escalonamento"), SMCWindowButtons.Yes, true)
+                             .SecurityToken(UC_SRC_002_05_02.MANTER_ESCALONAMENTO_ETAPA)
+                             .Enabled((x as EscalonamentoViewModel).HabilitaBtnComPermissaoManutencaoProcesso && (x as EscalonamentoViewModel).HabilitarBotaoExcluir)
+                             .ButtonInstructions(Smc.GetUIResource((x as EscalonamentoViewModel).MesnsageBotaoExcluir))
+                             .Action("Excluir", "Escalonamento", new { Seq = new SMCEncryptedLong((x as EscalonamentoViewModel).Seq), SeqProcesso = new SMCEncryptedLong(item.SeqProcesso) })))
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+﻿@model RelatorioListarViewModel
+
+@(Smc.Grid("gridAlunos", Model.Alunos)
+                      .AutoGenerateColumns()
+                      .HideNavigator()
+                      .HideNumberOfRowsPerPageSelector()
+                      .HidePager()
+                      .HideRowsTotalizer()
+                      .AllowSelect()
+                      .CssClass("smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24")
+
+)

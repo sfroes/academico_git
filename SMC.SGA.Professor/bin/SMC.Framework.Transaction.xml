@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Transaction</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.Transaction.Ioc.SMCIocMapping">
+            <summary>
+            Classe de configuração de Ioc para transação.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Transaction.Ioc.SMCIocMapping.Configure(SMC.Framework.Ioc.ISMCIocContainer)">
+            <summary>
+            Configura o mapeamento.
+            </summary>
+            <param name="container">Container de Ioc.</param>
+        </member>
+        <member name="T:SMC.Framework.Transaction.SMCTransactionUnitOfWork">
+            <summary>
+            Classe para operações transasionadas utilizando TransactionScope. Versão 2
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Transaction.SMCTransactionUnitOfWork._transaction">
+            <summary>
+            Armazena a transação.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Transaction.SMCTransactionUnitOfWork.#ctor(SMC.Framework.SMCIsolationLevel)">
+            <summary>
+            Cria uma nova instância de SMCTransactionUnitOfWork.
+            </summary>
+            <param name="isolationLevel"></param>
+        </member>
+        <member name="M:SMC.Framework.Transaction.SMCTransactionUnitOfWork.#ctor(System.Transactions.TransactionScopeOption,System.Transactions.IsolationLevel)">
+            <summary>
+            Cria uma nova instância de SMCTransactionUnitOfWork.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Transaction.SMCTransactionUnitOfWork.OnCommit">
+            <summary>
+            Faz a chamada do método Complete da transação.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Transaction.SMCTransactionUnitOfWork.OnRollback">
+            <summary>
+            Desfaz as operações.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Transaction.SMCTransactionUnitOfWork.OnDispose">
+            <summary>
+            Limpa os recursos utilizados pela classe.
+            </summary>
+        </member>
+    </members>
+</doc>

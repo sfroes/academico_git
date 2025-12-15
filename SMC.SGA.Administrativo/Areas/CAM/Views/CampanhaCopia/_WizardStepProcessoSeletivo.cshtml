@@ -1,0 +1,27 @@
+﻿@using SMC.SGA.Administrativo.Areas.CAM.Views.CampanhaCopia.App_LocalResources
+@model CampanhaCopiaViewModel
+
+@using (Smc.Div("divSelecaoProcessoSeletivo").Begin())
+{
+    @Smc.GetUIResource(UIResource.MSG_Copia_Campanha_Selecao_ProcessoSeletivo)
+}
+
+@using (Smc.Div("divProcessoSeletivo").Begin())
+{
+    var pagerModel = new SMCPagerModel<CampanhaCopiaProcessoSeletivoListaViewModel>(Model.ProcessosSeletivos);
+    pagerModel.SelectedValues = Model.GridProcessoSeletivo;
+
+    @(Smc.Grid("gridProcessoSeletivo", pagerModel)
+             .AllowSelect(f => f.Seq)
+             .FieldColumn(prop => prop.Descricao)
+             .FieldColumn(prop => prop.TipoProcessoSeletivo)
+             .HideRowNumber()
+             .HidePager()
+             .HideRowsTotalizer()
+             .HideNumberOfRowsPerPageSelector()
+             .HideNavigator()
+    )
+
+}
+
+@Smc.WizardView()

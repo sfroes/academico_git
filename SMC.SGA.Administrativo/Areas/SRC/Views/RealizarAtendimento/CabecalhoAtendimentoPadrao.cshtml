@@ -1,0 +1,29 @@
+﻿@model RealizarAtendimentoPadraoCabecalhoViewModel
+
+@{
+    var header = Smc.Header("headerSolicitacao", SMCHeaderType.Primary).CssClass("smc-header-botao smc-header-botao-solicitacao-servico")
+                    .Item(x => x.Protocolo, sizeMD: SMCSize.Grid4_24, sizeSM: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid4_24)
+                    .Item(x => x.DescricaoProcesso, sizeMD: SMCSize.Grid10_24, sizeSM: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid10_24)
+                    .Item(x => x.Nome, sizeMD: SMCSize.Grid10_24, sizeSM: SMCSize.Grid16_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid9_24)
+                    .Item(x => x.DescricaoVinculo, sizeMD: SMCSize.Grid4_24, sizeSM: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid4_24)
+                    .Item(x => x.DadosVinculo, sizeMD: SMCSize.Grid10_24, sizeSM: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid10_24)
+                    .Item(x => x.FormacoesEspecificas, sizeMD: SMCSize.Grid10_24, sizeSM: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid10_24);
+    }
+
+    @using (header.Begin())
+    {
+        @Smc.ButtonSet().AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDadosSolicitante")
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("VisualizarDadosSolicitante_Title"))
+                .Text(Smc.GetUIResource("Botao_VisualizarDadosSolicitante"))
+                .CssClass("smc-sga-btn-dados-contato")
+                .Tooltip(Smc.GetUIResource("Botao_VisualizarDadosSolicitante_Tooltip"))
+                .Ajax(isPost: false)
+                .Action("VisualizarDadosSolicitante", "SolicitacaoServico", new { @seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao) }));
+    }
+
+
+    @using (Smc.ModalWindow("modalVisualizarDadosSolicitante")
+      .Size(SMCModalWindowSize.Largest)
+      .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+      .Begin()) { }

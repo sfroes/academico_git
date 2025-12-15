@@ -1,0 +1,30 @@
+<smc-modal s-size="xl" s-title="Simulação dos Agendamentos">
+  <div s-modal-body *ngIf="exibir">
+    <div class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24 smc-sga-mensagem smc-sga-mensagem-alerta">
+      <p>
+        Dados da simulação meramente informativos. Professor(es) fora do período de vínculo ativo não será(ão)
+        alocado(s) ao(s) agendamento(s). Validações e consistências serão feitas ao salvar os dados
+      </p>
+    </div>
+    <h3 class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24 smc-sga-agendamento-titulo">
+      {{ divisaoTurma.descricaoDivisaoFormatada }}
+    </h3>
+    <div class="smc-size-lg-24 smc-sga-agendamento-lista-itens">
+      <po-table [p-columns]="colunasTabela" [p-items]="eventosAula" p-hide-columns-manager="true"> </po-table>
+    </div>
+  </div>
+  <div s-modal-footer>
+    <smc-button
+      s-button-class="smc-btn-salvar-icotext-destaque"
+      s-label="Salvar"
+      s-tooltip="Salvar"
+      (s-click)="salvarSimulacao()"
+    ></smc-button>
+    <smc-button
+      s-button-class="smc-btn-custom smc-btn-fechar-icotext"
+      s-label="Fechar"
+      s-tooltip="Fechar"
+      (s-click)="fecharSimulacao()"
+    ></smc-button>
+  </div>
+</smc-modal>

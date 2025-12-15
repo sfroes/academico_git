@@ -1,0 +1,13 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.CUR.Models.SelecaoAtividadeOfertaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid22_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+        {
+            @Smc.LegendItem(m => m.Pertence)
+        }
+        @Smc.DisplayFor(m => m.DescricaoFormatada).CssClass("smc-listdetailed-conteudo-titulo-linhaunica").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid23_24, SMCSize.Grid23_24).HideLabel()
+    }
+}

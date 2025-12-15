@@ -1,0 +1,63 @@
+﻿// DATAGRID
+.smc-datagrid {
+    thead {
+        box-shadow: 0px 3px 0px $smc-branco;
+    }
+
+    table {
+        border-collapse: inherit; // classe para retornar com as bordas internas da tabela
+        td {
+            box-shadow: 1px 1px 0 $smc-branco !important; // inclusão de box shadow para linhas internas mais leves
+            .smc-display {
+                ol, ul {
+                    display: inline-block;
+                }
+
+                p {
+                    word-wrap: normal;
+                    color: $smc-cinza;
+                }
+            }
+        }
+    }
+}
+.smc-sga-col-btn-instruction{
+    min-width:100px;
+    vertical-align: middle!important;
+    padding-bottom:0!important;
+}
+
+th.smc-datagrid-column-check {
+    .smc-checkbox {
+        input {
+            margin-left: 5px;
+        }
+    }
+}
+
+.smc-sga-tabela-ajustada {
+    .smc-grid {
+        .smc-datagrid {
+            overflow: auto !important;
+
+            table {
+                tbody {
+                    tr {
+                        td {
+                            max-width: 350px;
+
+                            @media screen and (max-width: 1320px) {
+                                max-width: 250px;
+                            }
+
+                            p {
+                                white-space: normal;
+                                word-wrap: break-word;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

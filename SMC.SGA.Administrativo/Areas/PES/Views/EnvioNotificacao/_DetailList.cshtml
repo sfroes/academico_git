@@ -1,0 +1,15 @@
+﻿@using SMC.SGA.Administrativo.Areas.PES.Models
+
+@model SMCPagerModel<EnvioNotificacaoListarViewModel>
+
+@(Smc.Grid("gridEnvioNotificacoes", Model)
+        .AutoGenerateColumns()
+        .HideRowNumber()
+        .AllowSort()
+
+        .ButtonColumn(SMCButtonSetType.Secondary, 2, null, null, "smc-grid-coluna-botoes", false,
+                        f => Smc.Button(SMCButtonBehavior.Visualizar).DisplayMode(SMCButtonDisplayMode.Icon)
+                        .CssClass("smc-btn-custom")
+                        .Action("VisualizarNotificacao", "EnvioNotificacao", new { Seq = new SMCEncryptedLong((f as EnvioNotificacaoListarViewModel).Seq)} )
+        )
+)

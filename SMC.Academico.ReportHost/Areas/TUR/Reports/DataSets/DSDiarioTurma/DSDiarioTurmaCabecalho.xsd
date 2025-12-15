@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSDiarioTurmaCabecalho" targetNamespace="http://tempuri.org/DSDiarioTurmaCabecalho.xsd" xmlns:mstns="http://tempuri.org/DSDiarioTurmaCabecalho.xsd" xmlns="http://tempuri.org/DSDiarioTurmaCabecalho.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSDiarioTurmaCabecalho" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSDiarioTurmaCabecalho" msprop:Generator_UserDSName="DSDiarioTurmaCabecalho">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSDiarioTurmaCabecalho" msprop:Generator_TableClassName="DSDiarioTurmaCabecalhoDataTable" msprop:Generator_TableVarName="tableDSDiarioTurmaCabecalho" msprop:Generator_TablePropName="_DSDiarioTurmaCabecalho" msprop:Generator_RowDeletingName="DSDiarioTurmaCabecalhoRowDeleting" msprop:Generator_RowChangingName="DSDiarioTurmaCabecalhoRowChanging" msprop:Generator_RowEvHandlerName="DSDiarioTurmaCabecalhoRowChangeEventHandler" msprop:Generator_RowDeletedName="DSDiarioTurmaCabecalhoRowDeleted" msprop:Generator_UserTableName="DSDiarioTurmaCabecalho" msprop:Generator_RowChangedName="DSDiarioTurmaCabecalhoRowChanged" msprop:Generator_RowEvArgName="DSDiarioTurmaCabecalhoRowChangeEvent" msprop:Generator_RowClassName="DSDiarioTurmaCabecalhoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NomeCursoOfertaLocalidade" msprop:Generator_ColumnVarNameInTable="columnNomeCursoOfertaLocalidade" msprop:Generator_ColumnPropNameInRow="NomeCursoOfertaLocalidade" msprop:Generator_ColumnPropNameInTable="NomeCursoOfertaLocalidadeColumn" msprop:Generator_UserColumnName="NomeCursoOfertaLocalidade" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoTurno" msprop:Generator_ColumnVarNameInTable="columnDescricaoTurno" msprop:Generator_ColumnPropNameInRow="DescricaoTurno" msprop:Generator_ColumnPropNameInTable="DescricaoTurnoColumn" msprop:Generator_UserColumnName="DescricaoTurno" type="xs:string" minOccurs="0" />
+              <xs:element name="CodigoTurma" msprop:Generator_ColumnVarNameInTable="columnCodigoTurma" msprop:Generator_ColumnPropNameInRow="CodigoTurma" msprop:Generator_ColumnPropNameInTable="CodigoTurmaColumn" msprop:Generator_UserColumnName="CodigoTurma" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoTurmaConfiguracaoComponente" msprop:Generator_ColumnVarNameInTable="columnDescricaoTurmaConfiguracaoComponente" msprop:Generator_ColumnPropNameInRow="DescricaoTurmaConfiguracaoComponente" msprop:Generator_ColumnPropNameInTable="DescricaoTurmaConfiguracaoComponenteColumn" msprop:Generator_UserColumnName="DescricaoTurmaConfiguracaoComponente" type="xs:string" minOccurs="0" />
+              <xs:element name="DescricaoCicloLetivo" msprop:Generator_ColumnVarNameInTable="columnDescricaoCicloLetivo" msprop:Generator_ColumnPropNameInRow="DescricaoCicloLetivo" msprop:Generator_ColumnPropNameInTable="DescricaoCicloLetivoColumn" msprop:Generator_UserColumnName="DescricaoCicloLetivo" type="xs:string" minOccurs="0" />
+              <xs:element name="IndicadorDiarioFechado" msprop:Generator_ColumnVarNameInTable="columnIndicadorDiarioFechado" msprop:Generator_ColumnPropNameInRow="IndicadorDiarioFechado" msprop:Generator_ColumnPropNameInTable="IndicadorDiarioFechadoColumn" msprop:Generator_UserColumnName="IndicadorDiarioFechado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DataFechamentoDiario" msprop:Generator_ColumnVarNameInTable="columnDataFechamentoDiario" msprop:Generator_ColumnPropNameInRow="DataFechamentoDiario" msprop:Generator_ColumnPropNameInTable="DataFechamentoDiarioColumn" msprop:Generator_UserColumnName="DataFechamentoDiario" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TurmaCabecalhoRelatorio" msprop:Generator_ColumnVarNameInTable="columnTurmaCabecalhoRelatorio" msprop:Generator_ColumnPropNameInRow="TurmaCabecalhoRelatorio" msprop:Generator_ColumnPropNameInTable="TurmaCabecalhoRelatorioColumn" msprop:Generator_UserColumnName="TurmaCabecalhoRelatorio" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,55 @@
+﻿@model HomeTurmaViewModel
+
+@using SMC.Academico.Common.Areas.ALN.Constants
+
+@if (Model.TurmaDivisoes != null)
+{
+    if (Model.TurmaDivisoes.Count > 0)
+    {
+        using (Smc.Div().CssClass("smc-sga-externo-agrupamento-secundario").Size(SMCSize.Grid24_24).Begin())
+        {
+        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid21_24, SMCSize.Grid20_24, SMCSize.Grid20_24, SMCSize.Grid21_24)">@Model.DescricaoConfiguracaoComponente</label>
+
+            SMCButtonFluentConfiguration botaoAvaliacao = Smc.Button("Avaliacao")
+            .Action("Index", "Avaliacao", new { SeqTurma = new SMCEncryptedLong(Model.Seq), Area = "APR", backUrl = Url.Action("Index") })
+            .Text(Smc.GetUIResource("Botao_Avaliacoes"))
+            .Type(SMCButtonType.Link)
+            .Hide(Model.HideAvaliacao)
+            .Tooltip(Smc.GetUIResource("Botao_Avaliacoes_Tooltip"))
+            .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_001_13_01.CONSULTAR_AVALIACAO);
+
+            SMCButtonFluentConfiguration botaoFrequencia = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "NotasFrequencias", new { @seqTurma = new SMCEncryptedLong(Model.Seq) })
+            .Ajax()
+            .Hide(Model.HideNotasFrequencia)
+            .Attribute(SMCMvcConsts.MODAL_ID, "modalNotasFrequencias")
+            .SecurityToken(UC_ALN_005_01_03.VISUALIZAR_NOTAS_FREQUENCIA)
+            .Text(Smc.GetUIResource("Botao_Notasfrequencia"))
+            .Tooltip("NotasFrequencias");
+
+            var buttonset = Smc.ButtonSet()
+                            .Size(SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24, SMCSize.Grid2_24)
+                            .CssClass("smc-sga-externo-botoes-grid")                            
+                            .AddButton(botaoAvaliacao)
+                            .AddButton(botaoFrequencia)
+                            .NumberOfButtonsToShow(0);
+
+            //if (Model.TurmaCompartilhada)
+            //{
+            //    buttonset.AddButton(Smc.Button("DetalhesCompartilhamento"));
+            //}
+
+            @buttonset
+        }
+        @Smc.List("Divisoes", m => m.TurmaDivisoes).CssClass("smc-list-item-grid").Size(SMCSize.Grid24_24).HtmlTemplate(divisao => Html.Partial("_HomeTurmaDivisao", divisao.Value))
+
+    }
+    else
+    {
+        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-externo-agrupamento-secundario">@Model.DescricaoConfiguracaoComponente</label>
+
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+        {
+            <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+        }
+    }
+}

@@ -1,0 +1,34 @@
+﻿@model ServicoViewModel
+
+@Smc.EditorFor(a => a.CamposTaxaReadOnly)
+@Smc.EditorFor(a => a.OrigemSolicitacaoServicoAuxiliarTaxas)
+
+@if (!string.IsNullOrEmpty(Model.MensagemInformativaConfiguracaoTaxaNaoPermitida))
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-display smc-sga-mensagem smc-sga-mensagem-informativa smc-sga-mensagem-multiplas-linhas").Begin())
+    {
+        using (Smc.Div().CssClass(" smc-sga-ico-mensagem").Begin())
+        { }
+
+        @Smc.DisplayFor(d => d.MensagemInformativaConfiguracaoTaxaNaoPermitida).HideLabel()
+    }
+}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.MasterDetail(m => m.Taxas).MaximumItens(1);
+}
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    if (Model.OrigemSolicitacaoServicoAuxiliarTaxas != OrigemSolicitacaoServico.Presencial)
+    {
+        @Smc.EditorFor(m => m.ParametrosEmissaoTaxa)
+    }
+    else
+    {
+        @Smc.EditorFor(m => m.ParametrosEmissaoTaxaSemCamposEmissao).Name("ParametrosEmissaoTaxa")
+    }
+}
+
+@Smc.WizardView()

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSConsolidadoSituacao" targetNamespace="http://tempuri.org/DSConsolidadoSituacao.xsd" xmlns:mstns="http://tempuri.org/DSConsolidadoSituacao.xsd" xmlns="http://tempuri.org/DSConsolidadoSituacao.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSConsolidadoSituacao" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSConsolidadoSituacao" msprop:Generator_UserDSName="DSConsolidadoSituacao">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSConsolidadoSituacao" msprop:Generator_TableClassName="DSConsolidadoSituacaoDataTable" msprop:Generator_TableVarName="tableDSConsolidadoSituacao" msprop:Generator_TablePropName="_DSConsolidadoSituacao" msprop:Generator_RowDeletingName="DSConsolidadoSituacaoRowDeleting" msprop:Generator_RowChangingName="DSConsolidadoSituacaoRowChanging" msprop:Generator_RowEvHandlerName="DSConsolidadoSituacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="DSConsolidadoSituacaoRowDeleted" msprop:Generator_UserTableName="DSConsolidadoSituacao" msprop:Generator_RowChangedName="DSConsolidadoSituacaoRowChanged" msprop:Generator_RowEvArgName="DSConsolidadoSituacaoRowChangeEvent" msprop:Generator_RowClassName="DSConsolidadoSituacaoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SeqGrupoPrograma" msprop:Generator_ColumnVarNameInTable="columnSeqGrupoPrograma" msprop:Generator_ColumnPropNameInRow="SeqGrupoPrograma" msprop:Generator_ColumnPropNameInTable="SeqGrupoProgramaColumn" msprop:Generator_UserColumnName="SeqGrupoPrograma" type="xs:double" minOccurs="0" />
+              <xs:element name="NomeGrupoPrograma" msprop:Generator_ColumnVarNameInTable="columnNomeGrupoPrograma" msprop:Generator_ColumnPropNameInRow="NomeGrupoPrograma" msprop:Generator_ColumnPropNameInTable="NomeGrupoProgramaColumn" msprop:Generator_UserColumnName="NomeGrupoPrograma" type="xs:string" minOccurs="0" />
+              <xs:element name="SeqCurso" msprop:Generator_ColumnVarNameInTable="columnSeqCurso" msprop:Generator_ColumnPropNameInRow="SeqCurso" msprop:Generator_ColumnPropNameInTable="SeqCursoColumn" msprop:Generator_UserColumnName="SeqCurso" type="xs:double" minOccurs="0" />
+              <xs:element name="NomeCurso" msprop:Generator_ColumnVarNameInTable="columnNomeCurso" msprop:Generator_ColumnPropNameInRow="NomeCurso" msprop:Generator_ColumnPropNameInTable="NomeCursoColumn" msprop:Generator_UserColumnName="NomeCurso" type="xs:string" minOccurs="0" />
+              <xs:element name="Ingressante_AL" msprop:Generator_ColumnVarNameInTable="columnIngressante_AL" msprop:Generator_ColumnPropNameInRow="Ingressante_AL" msprop:Generator_ColumnPropNameInTable="Ingressante_ALColumn" msprop:Generator_UserColumnName="Ingressante_AL" type="xs:int" minOccurs="0" />
+              <xs:element name="Ingressante_AM" msprop:Generator_ColumnVarNameInTable="columnIngressante_AM" msprop:Generator_ColumnPropNameInRow="Ingressante_AM" msprop:Generator_ColumnPropNameInTable="Ingressante_AMColumn" msprop:Generator_UserColumnName="Ingressante_AM" type="xs:int" minOccurs="0" />
+              <xs:element name="Ingressante_CA" msprop:Generator_ColumnVarNameInTable="columnIngressante_CA" msprop:Generator_ColumnPropNameInRow="Ingressante_CA" msprop:Generator_ColumnPropNameInTable="Ingressante_CAColumn" msprop:Generator_UserColumnName="Ingressante_CA" type="xs:int" minOccurs="0" />
+              <xs:element name="Ingressante_DE" msprop:Generator_ColumnVarNameInTable="columnIngressante_DE" msprop:Generator_ColumnPropNameInRow="Ingressante_DE" msprop:Generator_ColumnPropNameInTable="Ingressante_DEColumn" msprop:Generator_UserColumnName="Ingressante_DE" type="xs:int" minOccurs="0" />
+              <xs:element name="Ingressante_MA" msprop:Generator_ColumnVarNameInTable="columnIngressante_MA" msprop:Generator_ColumnPropNameInRow="Ingressante_MA" msprop:Generator_ColumnPropNameInTable="Ingressante_MAColumn" msprop:Generator_UserColumnName="Ingressante_MA" type="xs:int" minOccurs="0" />
+              <xs:element name="Calouro_AM" msprop:Generator_ColumnVarNameInTable="columnCalouro_AM" msprop:Generator_ColumnPropNameInRow="Calouro_AM" msprop:Generator_ColumnPropNameInTable="Calouro_AMColumn" msprop:Generator_UserColumnName="Calouro_AM" type="xs:int" minOccurs="0" />
+              <xs:element name="Calouro_CA" msprop:Generator_ColumnVarNameInTable="columnCalouro_CA" msprop:Generator_ColumnPropNameInRow="Calouro_CA" msprop:Generator_ColumnPropNameInTable="Calouro_CAColumn" msprop:Generator_UserColumnName="Calouro_CA" type="xs:int" minOccurs="0" />
+              <xs:element name="Calouro_FO" msprop:Generator_ColumnVarNameInTable="columnCalouro_FO" msprop:Generator_ColumnPropNameInRow="Calouro_FO" msprop:Generator_ColumnPropNameInTable="Calouro_FOColumn" msprop:Generator_UserColumnName="Calouro_FO" type="xs:int" minOccurs="0" />
+              <xs:element name="Calouro_MA" msprop:Generator_ColumnVarNameInTable="columnCalouro_MA" msprop:Generator_ColumnPropNameInRow="Calouro_MA" msprop:Generator_ColumnPropNameInTable="Calouro_MAColumn" msprop:Generator_UserColumnName="Calouro_MA" type="xs:int" minOccurs="0" />
+              <xs:element name="Calouro_NM" msprop:Generator_ColumnVarNameInTable="columnCalouro_NM" msprop:Generator_ColumnPropNameInRow="Calouro_NM" msprop:Generator_ColumnPropNameInTable="Calouro_NMColumn" msprop:Generator_UserColumnName="Calouro_NM" type="xs:int" minOccurs="0" />
+              <xs:element name="Calouro_TR" msprop:Generator_ColumnVarNameInTable="columnCalouro_TR" msprop:Generator_ColumnPropNameInRow="Calouro_TR" msprop:Generator_ColumnPropNameInTable="Calouro_TRColumn" msprop:Generator_UserColumnName="Calouro_TR" type="xs:int" minOccurs="0" />
+              <xs:element name="Calouro_TF" msprop:Generator_ColumnVarNameInTable="columnCalouro_TF" msprop:Generator_ColumnPropNameInRow="Calouro_TF" msprop:Generator_ColumnPropNameInTable="Calouro_TFColumn" msprop:Generator_UserColumnName="Calouro_TF" type="xs:int" minOccurs="0" />
+              <xs:element name="Veterano_AM" msprop:Generator_ColumnVarNameInTable="columnVeterano_AM" msprop:Generator_ColumnPropNameInRow="Veterano_AM" msprop:Generator_ColumnPropNameInTable="Veterano_AMColumn" msprop:Generator_UserColumnName="Veterano_AM" type="xs:int" minOccurs="0" />
+              <xs:element name="Veterano_CA" msprop:Generator_ColumnVarNameInTable="columnVeterano_CA" msprop:Generator_ColumnPropNameInRow="Veterano_CA" msprop:Generator_ColumnPropNameInTable="Veterano_CAColumn" msprop:Generator_UserColumnName="Veterano_CA" type="xs:int" minOccurs="0" />
+              <xs:element name="Veterano_FO" msprop:Generator_ColumnVarNameInTable="columnVeterano_FO" msprop:Generator_ColumnPropNameInRow="Veterano_FO" msprop:Generator_ColumnPropNameInTable="Veterano_FOColumn" msprop:Generator_UserColumnName="Veterano_FO" type="xs:int" minOccurs="0" />
+              <xs:element name="Veterano_MA" msprop:Generator_ColumnVarNameInTable="columnVeterano_MA" msprop:Generator_ColumnPropNameInRow="Veterano_MA" msprop:Generator_ColumnPropNameInTable="Veterano_MAColumn" msprop:Generator_UserColumnName="Veterano_MA" type="xs:int" minOccurs="0" />
+              <xs:element name="Veterano_NM" msprop:Generator_ColumnVarNameInTable="columnVeterano_NM" msprop:Generator_ColumnPropNameInRow="Veterano_NM" msprop:Generator_ColumnPropNameInTable="Veterano_NMColumn" msprop:Generator_UserColumnName="Veterano_NM" type="xs:int" minOccurs="0" />
+              <xs:element name="Veterano_TR" msprop:Generator_ColumnVarNameInTable="columnVeterano_TR" msprop:Generator_ColumnPropNameInRow="Veterano_TR" msprop:Generator_ColumnPropNameInTable="Veterano_TRColumn" msprop:Generator_UserColumnName="Veterano_TR" type="xs:int" minOccurs="0" />
+              <xs:element name="Veterano_TF" msprop:Generator_ColumnVarNameInTable="columnVeterano_TF" msprop:Generator_ColumnPropNameInRow="Veterano_TF" msprop:Generator_ColumnPropNameInTable="Veterano_TFColumn" msprop:Generator_UserColumnName="Veterano_TF" type="xs:int" minOccurs="0" />
+              <xs:element name="SeqNivelEnsino" msprop:Generator_ColumnVarNameInTable="columnSeqNivelEnsino" msprop:Generator_ColumnPropNameInRow="SeqNivelEnsino" msprop:Generator_ColumnPropNameInTable="SeqNivelEnsinoColumn" msprop:Generator_UserColumnName="SeqNivelEnsino" type="xs:long" minOccurs="0" />
+              <xs:element name="DescricaoNivelEnsino" msprop:Generator_ColumnVarNameInTable="columnDescricaoNivelEnsino" msprop:Generator_ColumnPropNameInRow="DescricaoNivelEnsino" msprop:Generator_ColumnPropNameInTable="DescricaoNivelEnsinoColumn" msprop:Generator_UserColumnName="DescricaoNivelEnsino" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,10 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.APR.Models
+@using SMC.Framework.UI.Mvc
+@using SMC.Academico.Common.Areas.APR.Constants
+@using SMC.Academico.UI.Mvc.Areas.APR.Views.Aula.App_LocalResources
+@model AulaViewModel
+
+@{
+    var view = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.AULA_PATH + "_Editar");
+    @Html.Partial(view, Model)
+}

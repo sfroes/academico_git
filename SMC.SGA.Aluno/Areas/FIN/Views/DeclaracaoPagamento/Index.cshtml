@@ -1,0 +1,15 @@
+﻿@using SMC.SGA.Aluno.Areas.FIN.Models
+
+@model DeclaracaoPagamentoFiltroViewModel
+
+@using (Smc.Form("frmViewPadrao", "GerarRelatorio", Model).Begin())
+{
+    //Filtros
+    using (Smc.Fieldset("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.DataInicio)
+        @Smc.EditorFor(prop => prop.DataFim)
+
+        @Html.Partial("_BotoesRelatorioPadrao", true)
+    }
+}

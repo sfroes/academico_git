@@ -1,0 +1,52 @@
+﻿@model ConfiguracaoTurmaDynamicModel
+
+@Html.Partial("_CabecalhoCompleto", Model.Cabecalho)
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    var buttonSet = Smc.ButtonSet();
+    SMCButtonFluentConfiguration button = null;
+    button = Smc.Button(SMCButtonBehavior.Salvar)
+                .Type(SMCButtonType.Submit)
+                .Text(Smc.GetUIResource("Botao_Recuperar_Matriz"))
+                .Tooltip(Smc.GetUIResource("Botao_Recuperar_Matriz"))
+                .Action("SalvarConfiguracaoTurmaComComponenteMatriz", "Turma")
+                .Ajax(isPost: true)
+                .DisplayMode(SMCButtonDisplayMode.Text)
+                .Highlight(Model.OcorreuAlteracaoManual);
+
+    buttonSet.AddButton(button);
+
+    @buttonSet;
+
+    using (Smc.Fieldset("CriterioAprovacao").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("fieldset_criterio_aprovacao")).Begin())
+    {
+        @Smc.EditorFor(x => x.SeqCriterioAprovacao)
+        @Smc.EditorFor(x => x.NotaMaxima)
+        @Smc.EditorFor(x => x.PercentualNotaAprovado)
+        @Smc.EditorFor(x => x.PercentualFrequenciaAprovado)
+        @Smc.EditorFor(x => x.DescricaoEscalaApuracao)
+        @Smc.EditorFor(prop => prop.PermiteAvaliacaoParcial)
+
+        @Smc.EditorFor(x => x.Seq)
+        @Smc.EditorFor(x => x.SeqEscalaApuracao)
+        @Smc.EditorFor(x => x.ApuracaoFrequencia)
+        @Smc.EditorFor(x => x.ApuracaoNota)
+        @Smc.EditorFor(x => x.TipoEscalaApuracao)
+        @Smc.EditorFor(x => x.SeqOrigemAvaliacao)
+        @Smc.EditorFor(x => x.SeqConfiguracaoComponente)
+        @Smc.EditorFor(prop => prop.SeqMatrizCurricularOferta)
+    }
+
+    using (Smc.Div()
+    .Dependency("SeqCriterioAprovacao", "PreencherConfiguracaoTurmaDivisaoComponente", "Turma", new string[] { "Seq" })
+    .Begin())
+    {
+
+    }
+
+    @*using (Smc.Fieldset("Divisao").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("fieldset_divisao_configuracao_componente_curricular")).Begin())
+        {
+            @Smc.List("DivisaoComponente", x => x.DivisaoComponente).HtmlTemplate(divisao => Html.Partial("_ConfiguracaoTurmaDivisaoComponente", divisao.Value));
+        }*@
+}

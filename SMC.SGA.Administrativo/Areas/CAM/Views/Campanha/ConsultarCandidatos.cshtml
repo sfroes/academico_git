@@ -1,0 +1,39 @@
+﻿@model CampanhaConsultarCandidatoFiltroViewModel
+
+@Html.Action("CabecalhoCampanha", Model.SeqCampanha)
+
+@using (Smc.Form("frmViewPadrao", "ListarCandidatosCampanha", Model).Ajax("#divViewPadrao").Begin())
+{
+    // Filtros
+    using (Smc.Fieldset("fieldsetPesquisaViewPadrao").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqCampanha)
+        @Smc.EditorFor(prop => prop.SeqCicloLetivo)
+        @Smc.EditorFor(prop => prop.SeqTipoProcessoSeletivo)
+        @Smc.EditorFor(prop => prop.SeqProcessoSeletivo)
+        @Smc.EditorFor(prop => prop.Exportado)
+        @Smc.EditorFor(prop => prop.SeqConvocacao)
+        @Smc.EditorFor(prop => prop.TipoChamada)
+        @Smc.EditorFor(prop => prop.SeqChamada)
+        @Smc.EditorFor(prop => prop.OfertaCampanha)
+    }
+
+    @(Smc.ButtonSet()
+                                    .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().SecurityToken(UC_CAM_001_03_01.CONSULTAR_CANDIDATO))
+                                    .AddButton(Smc.Button(SMCButtonBehavior.Limpar).DisplayMode(SMCButtonDisplayMode.Icon).SecurityToken(UC_CAM_001_03_01.CONSULTAR_CANDIDATO))
+    )
+}
+
+@using (Smc.Div("divViewPadrao").Attribute("data-id", "divViewPadrao").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Html.Action("ListarCandidatosCampanha", Model)
+}
+
+@{
+    var buttonSet2 = Smc.ButtonSet();
+
+    buttonSet2.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon));
+
+    @buttonSet2;
+}
+

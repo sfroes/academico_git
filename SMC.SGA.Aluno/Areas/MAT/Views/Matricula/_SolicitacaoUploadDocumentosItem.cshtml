@@ -1,0 +1,32 @@
+﻿@model IEnumerable<SolicitacaoMatriculaDocumentoViewModel>
+
+@if (Model != null && Model.Any())
+{
+    GrupoDocumentoViewModel grupo = TempData["__GrupoDocumentoObrigatorio"] as GrupoDocumentoViewModel;
+    if (grupo != null)
+    {
+        <p class="smc-sga-texto-informativo">@string.Format(Smc.GetUIResource("Texto_Minimo_Requerido_Grupo"), grupo.NumeroMinimoDocumentosRequerido)</p>
+    }
+    TempData["__GrupoDocumentoObrigatorio"] = null;
+}
+
+@(Smc.Grid("grid", new SMCPagerModel<SolicitacaoMatriculaDocumentoViewModel>(Model))
+    .ContentColumn(@<text>
+        @{
+            /* A legenda da tela só possui dois itens: 'Documento pendente' ou 'Documento entregue',
+            então se tiver documento anexado considera que foi entregue */
+            var itemDocumento = (item as SolicitacaoMatriculaDocumentoViewModel);
+            @Smc.LegendItem(x => itemDocumento.Situacao, false, itemDocumento)
+        }
+    </text>, cssClass: "smc-sga-coluna-status")
+    .ContentColumn(@<text>@item.DescricaoTipoDocumento</text>)
+    .CssClass("smc-sga-grid-sem-header")
+    .AutoGenerateColumns(false)
+    .AutoHideNavigator(true)
+    .HideRowNumber()
+    .HideNavigator(true)
+    .HideNumberOfRowsPerPageSelector(true)
+    .HidePager()
+    .HideGridTitle()
+    .HideRowsTotalizer(true)
+)

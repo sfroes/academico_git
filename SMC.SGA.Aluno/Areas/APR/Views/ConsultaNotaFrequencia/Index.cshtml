@@ -1,0 +1,136 @@
+﻿@model HistoricoViewModel
+
+@if (Model.PossuiDadosHistoricoEscolar)
+{
+    if (Model.ComponentesExame.SMCAny())
+    {
+        using (Smc.Fieldset("fieldExame").Begin())
+        {
+            var gridExame = Smc.Grid("gridExame", new SMCPagerModel<ComponeteCreditoViewModel>(Model.ComponentesExame));
+
+            gridExame.FieldColumn(x => x.SemAnoCicloLetivo, cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3");
+            gridExame.FieldColumn(x => x.DescricaoComponenteFormatada, cssClass: "smc-size-md-9 smc-size-xs-9 smc-size-sm-9 smc-size-lg-9");
+            gridExame.FieldColumn(x => x.Nota, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            gridExame.FieldColumn(x => x.DescricaoEscalaApuracaoItem, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            gridExame.FieldColumn(x => x.SituacaoHistoricoEscolar, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");           
+            gridExame.FieldColumn(x => x.DataExame, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+
+            if (Model.PermitirCredito)
+            {
+                gridExame.FieldColumn(x => x.Credito, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            }
+
+            gridExame.AutoGenerateColumns(false);
+            gridExame.AutoHideNavigator(true);
+            gridExame.HideGridTitle(true);
+            gridExame.HideNavigator(true);
+            gridExame.HideRowNumber();
+            gridExame.HideNumberOfRowsPerPageSelector(true);
+            gridExame.HidePager();
+            gridExame.HideRowsTotalizer(true);
+
+            @gridExame;
+        }
+    }
+
+    if (Model.AproveitamentoCredito.SMCAny())
+    {
+        using (Smc.Fieldset("fieldAproveitamentoCredito").Begin())
+        {
+            var gridAproveitamentoCredito = Smc.Grid("gridAproveitamentoCredito", new SMCPagerModel<ComponeteCreditoViewModel>(Model.AproveitamentoCredito));
+
+            gridAproveitamentoCredito.FieldColumn(x => x.SemAnoCicloLetivo, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-11 smc-size-lg-2");
+            gridAproveitamentoCredito.FieldColumn(x => x.DescricaoComponenteAssuntoFormatadaAproveitamento, cssClass: "smc-size-md-9 smc-size-xs-9 smc-size-sm-9 smc-size-lg-9");
+            gridAproveitamentoCredito.FieldColumn(x => x.Nota, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            gridAproveitamentoCredito.FieldColumn(x => x.DescricaoEscalaApuracaoItem, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            gridAproveitamentoCredito.FieldColumn(x => x.CargaHoraria, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+
+            if (Model.PermitirCredito)
+            {
+                gridAproveitamentoCredito.FieldColumn(x => x.Credito, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            }
+
+            gridAproveitamentoCredito.AutoGenerateColumns(false);
+            gridAproveitamentoCredito.AutoHideNavigator(true);
+            gridAproveitamentoCredito.HideGridTitle(true);
+            gridAproveitamentoCredito.HideNavigator(true);
+            gridAproveitamentoCredito.HideRowNumber();
+            gridAproveitamentoCredito.HideNumberOfRowsPerPageSelector(true);
+            gridAproveitamentoCredito.HidePager();
+            gridAproveitamentoCredito.HideRowsTotalizer(true);
+
+            @gridAproveitamentoCredito;
+        }
+    }
+
+    if (Model.ComponentesConcluidos.SMCAny())
+    {
+        using (Smc.Fieldset("fieldComponenteConcluido").Begin())
+        {
+            var gridComponenteConcluido = Smc.Grid("gridComponenteConcluido", new SMCPagerModel<ComponeteCreditoViewModel>(Model.ComponentesConcluidos));
+
+            gridComponenteConcluido.FieldColumn(x => x.SemAnoCicloLetivo, cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3");
+            gridComponenteConcluido.FieldColumn(x => x.DescricaoComponenteAssuntoFormatadaConcluido, cssClass: "smc-size-md-9 smc-size-xs-9 smc-size-sm-9 smc-size-lg-9");
+            gridComponenteConcluido.FieldColumn(x => x.Faltas, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            gridComponenteConcluido.FieldColumn(x => x.PercentualFrequencia, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            gridComponenteConcluido.FieldColumn(x => x.Nota, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            gridComponenteConcluido.FieldColumn(x => x.DescricaoEscalaApuracaoItem, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            gridComponenteConcluido.FieldColumn(x => x.SituacaoHistoricoEscolar, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            gridComponenteConcluido.FieldColumn(x => x.CargaHoraria, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+
+            if (Model.PermitirCredito)
+            {
+                gridComponenteConcluido.FieldColumn(x => x.Credito, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            }
+
+            gridComponenteConcluido.AutoGenerateColumns(false);
+            gridComponenteConcluido.AutoHideNavigator(true);
+            gridComponenteConcluido.HideGridTitle(true);
+            gridComponenteConcluido.HideNavigator(true);
+            gridComponenteConcluido.HideNumberOfRowsPerPageSelector(true);
+            gridComponenteConcluido.HideRowNumber();
+            gridComponenteConcluido.HidePager();
+            gridComponenteConcluido.HideRowsTotalizer(true);
+
+            @gridComponenteConcluido;
+        }
+    }
+
+    if (Model.ComponentesSemApuracao.SMCAny())
+    {
+        using (Smc.Fieldset("fieldComponentesSemApuracao").Begin())
+        {
+            var gridComponentesSemApuracao = Smc.Grid("gridComponentesSemApuracao", new SMCPagerModel<ComponeteCreditoViewModel>(Model.ComponentesSemApuracao));
+
+            gridComponentesSemApuracao.FieldColumn(x => x.SemAnoCicloLetivo, cssClass: "smc-size-md-3 smc-size-xs-3 smc-size-sm-3 smc-size-lg-3");
+            gridComponentesSemApuracao.FieldColumn(x => x.DescricaoComponenteAssuntoFormatadaConcluido, cssClass: "smc-size-md-9 smc-size-xs-9 smc-size-sm-9 smc-size-lg-9");
+            gridComponentesSemApuracao.FieldColumn(x => x.Faltas, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            gridComponentesSemApuracao.FieldColumn(x => x.PercentualFrequencia, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            gridComponentesSemApuracao.FieldColumn(x => x.CargaHoraria, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+
+            if (Model.PermitirCredito)
+            {
+                gridComponentesSemApuracao.FieldColumn(x => x.Credito, cssClass: "smc-size-md-2 smc-size-xs-2 smc-size-sm-2 smc-size-lg-2");
+            }
+
+            gridComponentesSemApuracao.AutoGenerateColumns(false);
+            gridComponentesSemApuracao.AutoHideNavigator(true);
+            gridComponentesSemApuracao.HideGridTitle(true);
+            gridComponentesSemApuracao.HideNavigator(true);
+            gridComponentesSemApuracao.HideNumberOfRowsPerPageSelector(true);
+            gridComponentesSemApuracao.HideRowNumber();
+            gridComponentesSemApuracao.HidePager();
+            gridComponentesSemApuracao.HideRowsTotalizer(true);
+
+            @gridComponentesSemApuracao;
+        }
+    }
+}
+else
+{
+    <p>@Smc.GetUIResource("Mensagem_Sem_Historico")</p>
+}
+
+@(Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+                                                .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                                                .Action("Index", "Home", new { @area = "" })))

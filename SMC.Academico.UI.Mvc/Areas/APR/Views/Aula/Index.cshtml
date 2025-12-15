@@ -1,0 +1,56 @@
+﻿@using SMC.Academico.UI.Mvc.Areas.APR.Models
+@using SMC.Framework.UI.Mvc
+@using SMC.Academico.Common.Areas.APR.Constants
+@using System.Web.Routing
+
+@model AulaFiltroViewModel
+
+@using (Smc.Div("divViewIndex").Begin())
+{
+    @Html.Action("HeaderIndex", Model)
+
+    using (Smc.Form("frmFiltro", "Listar").Ajax("#divListaAulas").Begin())
+    {
+        using (Smc.Fieldset("Filtro").CssClass("smc-fieldset-filter").Begin())
+        {
+            @Smc.EditorFor(m => m.BackUrl)
+            @Smc.EditorFor(m => m.SeqDivisaoTurma)
+            @Smc.EditorFor(m => m.DataInicio)
+            @Smc.EditorFor(m => m.DataFim)
+
+            // Botões de buscar, limpar e inserir
+            var buttonSet = Smc.ButtonSet();
+            buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight().Id("BotaoPesquisarVP"));
+            buttonSet.AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon).Id("BotaoLimparVP"));
+            SMCButtonFluentConfiguration button = null;
+            button = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).CssClass("smc-btn-novo-icotext").Tooltip(Smc.GetUIResource("Botao_Novo"))
+                .Text(Smc.GetUIResource("Botao_Novo"))
+                .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("Incluir", new { seq = 0, seqDivisaoTurma = new SMCEncryptedLong(Model.SeqDivisaoTurma), backUrl = Model.BackUrl }))
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalFiltrarAlunos")
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("FiltrarAluno_Title"))
+                .Ajax().Type(SMCButtonType.Link)
+                .SecurityToken(UC_APR_006_01_02.MANTER_LANCAMENTO_FREQUENCIA)
+                .Action("FitrarAlunos", routeValues: new { seqDivisaoTurma = new SMCEncryptedLong(Model.SeqDivisaoTurma), backUrl = Model.BackUrl })
+                .Id("BotaoNovoVP");
+
+            buttonSet.AddButton(button);
+
+            @buttonSet;
+        }
+    }
+
+    // Listagem dos dados
+    using (Smc.Div("divListaAulas").Attribute("data-id", "divListaAulas").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        @Smc.ActionList("Listar", Model, false)
+    }
+
+    @Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Url(Model.BackUrl, true))
+}
+
+@using (Smc.ModalWindow("modalFiltrarAlunos")
+        .Form("formFiltrarAlunos")
+        .Size(Model.GeraOrientacao ? SMCModalWindowSize.Medium : SMCModalWindowSize.Small)
+        .Button(SMCButtonBehavior.Pesquisar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Id("BotaoPesquisarMD").Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Id("BotaoFecharMD"))
+        .Begin()) { }

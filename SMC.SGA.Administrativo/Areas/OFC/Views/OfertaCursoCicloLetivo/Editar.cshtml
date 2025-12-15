@@ -1,0 +1,12 @@
+﻿@model OfertaCursoCicloLetivoViewModel
+
+<div class="smc-sga-linha-btn-edicao">
+    @using (Smc.ButtonSet().Begin())
+    {
+        <li>
+            @Html.Partial("_BotaoConfigurarOfertaCursoCicloLetivo", new OfertaCursoCicloLetivoBotaoConfigurarViewModel() { Action = OfertaCursoCicloLetivoActionsEnum.Editar, SeqOfertaCursoCicloLetivo = (SMCEncryptedLong)Model.Seq })
+        </li>
+    }
+</div>
+
+@Html.Partial("_EditarOfertaCursoCicloLetivo", Model)

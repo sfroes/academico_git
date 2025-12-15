@@ -1,0 +1,127 @@
+﻿@model SolicitacaoServicoListaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-header-conteudo smc-sga-hidepanel-etapas").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(prop => prop.NumeroProtocolo).Size(sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid3_24, sizeLG: SMCSize.Grid3_24)
+            @Smc.DisplayFor(prop => prop.DescricaoProcesso).Size(sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24)
+            @Smc.DisplayFor(prop => prop.DescricaoConcatenada).Size(sizeMD: SMCSize.Grid8_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24)
+            @Smc.DisplayFor(prop => prop.DataSolicitacao).Size(sizeMD: SMCSize.Grid4_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24)
+
+            using (Smc.HidePanel("hidePanelEtapas").Header("Etapas").Begin())
+            {
+                @(Smc.List("Etapas", Model.Etapas)
+                            .HideNavigator()
+                            .HtmlTemplate(item => @Html.Partial("_SolicitacaoItem", item)))
+            }
+        }
+    }
+
+    var buttonSet = Smc.Templates.DetailedListButtons()
+                       .Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24)
+                       .NumberOfButtonsToShow(0);
+
+
+    /************************* BOTÃO CANCELAR */
+    {
+        var btnCancelarSolicitacao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                    .Attribute(SMCMvcConsts.MODAL_ID, "modalCancelarSolicitacao")
+                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("CancelarSolicitacao_Modal_Titulo"))
+                    .Ajax(isPost: false)
+                    .Text(Smc.GetUIResource("Botao_Cancelar_Solicitacao"))
+                    .Tooltip(Smc.GetUIResource("Botao_Cancelar_Solicitacao_Tooltip"))
+                    .Type(SMCButtonType.Link);
+
+        if (Model.OrigemSolicitacaoServico != SMC.Academico.Common.Areas.SRC.Enums.OrigemSolicitacaoServico.PortalAluno)
+        {
+            btnCancelarSolicitacao.ButtonInstructions("Não é possível cancelar esta solicitação. Ela não foi originada pelo Portal do Aluno.");
+            btnCancelarSolicitacao.Enabled(false);
+        }
+        else if (Model.Cancelado)
+        {
+            btnCancelarSolicitacao.ButtonInstructions("Opção indisponível. A solicitação encontra-se cancelada.");
+            btnCancelarSolicitacao.Enabled(false);
+        }
+        else if (Model.Encerrado)
+        {
+            btnCancelarSolicitacao.ButtonInstructions("Opção indisponível. A solicitação encontra-se encerrada.");
+            btnCancelarSolicitacao.Enabled(false);
+        }
+        else if (Model.ExisteUsuarioResponsavel)
+        {
+            btnCancelarSolicitacao.ButtonInstructions("Opção indisponível. Não é possível cancelar esta solicitação. O seu atendimento já foi iniciado.");
+            btnCancelarSolicitacao.Enabled(false);
+        }
+        else
+        {
+            btnCancelarSolicitacao.Action("CancelarSolicitacao", "SolicitacaoServico", new { seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico) });
+        }
+
+        buttonSet.AddButton(btnCancelarSolicitacao);
+    }
+
+    /************************* BOTÃO ABRIR */
+    {
+        var btnExibirSolicitacao = Smc.Button(SMCButtonBehavior.Visualizar)
+         .DisplayMode(SMCButtonDisplayMode.Text)
+         .Text(Smc.GetUIResource("Botao_Abrir_Solicitacao"))
+         .Tooltip(Smc.GetUIResource("Botao_Abrir_Solicitacao_Tooltip"));
+
+        if (Model.AbrirCentralPreMatricula)
+        {
+            btnExibirSolicitacao.Action("Index", "Home", new { @area = "MAT", seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico) });
+        }
+        else
+        {
+            btnExibirSolicitacao.Action("EntrarEtapa", "ProcessoSolicitacao", new { @seqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), @seqConfiguracaoEtapa = new SMCEncryptedLong(Model.SeqConfiguracaoEtapa) });
+        }
+
+        if (Model.Cancelado)
+        {
+            btnExibirSolicitacao.ButtonInstructions("Opção indisponível. A solicitação encontra-se cancelada.");
+            btnExibirSolicitacao.Enabled(false);
+        }
+        if (Model.ProcessoEncerrado)
+        {
+            btnExibirSolicitacao.ButtonInstructions("Opção indisponível. A etapa/processo encontra-se encerrada.");
+            btnExibirSolicitacao.Enabled(false);
+        }
+
+        buttonSet.AddButton(btnExibirSolicitacao);
+    }
+
+    /************************* BOTÃO VISUALIZAR */
+    {
+
+        var btnVisualizarSolicitacao = Smc.Button(SMCButtonBehavior.Visualizar)
+            //.Attribute(SMCMvcConsts.MODAL_ID, "modalSolicitacao")
+            //.Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Solicitacao_Servico_Simplificado"))
+            .Action("ConsultarSolicitacaoServicoModal", "SolicitacaoServicoRoute", new { SeqSolicitacaoServico = new SMCEncryptedLong(Model.SeqSolicitacaoServico), numeroProtocolo = SMCDESCrypto.EncryptForURL(Model.NumeroProtocolo), area = string.Empty })
+            //.Ajax(isPost: false)
+            .Text(Smc.GetUIResource("Botao_Visualizar_Solicitacao"))
+            .Tooltip(Smc.GetUIResource("Botao_Visualizar_Solicitacao_Tooltip"))
+            .SecurityToken(UC_SRC_004_14_01.CONSULTAR_SOLICITACAO);
+
+        buttonSet.AddButton(btnVisualizarSolicitacao);
+    }
+
+    @buttonSet;
+
+}
+
+@using (Smc.ModalWindow("modalCancelarSolicitacao")
+           .Size(SMCModalWindowSize.Large)
+           .Form("frmCancelarSolicitacao", "SalvarCancelamentoSolicitacao", "SolicitacaoServico", new { @area = "SRC" }, config: x => x.Ajax())
+           .Title(Smc.GetUIResource("Modal_CancelarSolicitacao_Titulo"))
+           .Button(SMCButtonBehavior.Confirmar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Button(SMCButtonBehavior.Fechar, config: x => x.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }
+
+@using (Smc.ModalWindow("modalSolicitacao")
+           .Form("formSolicitacao", closeOnSubmit: true)
+           .Size(SMCModalWindowSize.Largest)
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Begin()) { }

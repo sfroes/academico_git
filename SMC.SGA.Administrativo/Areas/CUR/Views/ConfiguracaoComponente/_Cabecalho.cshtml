@@ -1,0 +1,10 @@
+﻿@model ComponenteCurricularCabecalhoViewModel
+
+@using (Smc.Header("ComponenteCurricular", SMCHeaderType.Primary)
+                                    .Item(prop => prop.DescricaoTipoComponenteCurricular, sizeMD: SMCSize.Grid6_24)
+                                    .Item(prop => prop.DescricaoCompleta, sizeMD: SMCSize.Grid12_24)
+                                    .Item(prop => prop.TipoOrganizacao, sizeMD: SMCSize.Grid6_24)
+                                    .Begin())
+{
+
+}

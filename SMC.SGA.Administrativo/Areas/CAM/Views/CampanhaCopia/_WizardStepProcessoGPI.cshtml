@@ -1,0 +1,14 @@
+﻿@using SMC.SGA.Administrativo.Areas.CAM.Views.CampanhaCopia.App_LocalResources
+@model CampanhaCopiaViewModel
+
+@if (Model.ProcessosSeletivos.Any(p => p.SeqProcessoGpi.HasValue))
+{
+    using (Smc.Div("divProcessoGPI").Begin())
+    {
+        @Smc.GetUIResource(UIResource.MSG_Copia_Campanha_Processo_GPI)
+    }
+}
+
+@Smc.List("ProcessosGPI", r => r.ProcessosSeletivos).HtmlTemplate(item => Html.Partial("_ProcessoGPI", item.Value)).CssClass("smc-sga-processo-gpi")
+
+@Smc.WizardView()

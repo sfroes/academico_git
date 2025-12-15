@@ -1,0 +1,38 @@
+﻿@model PaginaInstrucoesFinaisMatriculaViewModel
+
+@section MenuLateral {
+    @Html.Action("MenuPaginas", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(MatriculaTokens.PAGINA_INSTRUCOES_FINAIS_MATRICULA_INSTRUCOES))
+
+@using (Smc.Form("frmPagina").Ajax().Begin())
+{
+
+    using (Smc.Div("divAdesao").Begin())
+    {
+        @Html.Partial("_InstrucoesFinaisAdesaoContratoResidencia", Model)
+    }
+
+    var buttonSet = Smc.ButtonSet().CssClass("smc-sga-matricula-linha-botoes").Size(SMCSize.Grid24_24);
+
+    if(!string.IsNullOrEmpty(Model.BackUrl))
+    {
+        buttonSet.AddButton(Smc.Button("sairProcesso")
+                .Id("sairProcesso")
+                .Type(SMCButtonType.Link)
+                .Url(Model.BackUrl)
+                .CssClass("smc-btn-proximo-icotext-destaque"));
+    }
+    else
+    {
+        buttonSet.AddButton(Smc.Button("sairProcesso")
+                .Id("sairProcesso")
+                .Type(SMCButtonType.Link)
+                .Action("Index", "Home", new { area = "MAT" })
+                .CssClass("smc-btn-proximo-icotext-destaque"));
+    }
+
+    @buttonSet;
+
+}

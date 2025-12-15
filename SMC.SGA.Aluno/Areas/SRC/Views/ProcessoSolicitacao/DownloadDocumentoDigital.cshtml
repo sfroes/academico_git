@@ -1,0 +1,133 @@
+﻿@using SMC.Academico.Common.Areas.CNC.Enums;
+@model DownloadDocumentoDigitalPaginaViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutFluxo.cshtml";
+}
+
+@section MenuFluxo {
+    @Html.Action("MenuFluxo", Model)
+}
+
+@(Smc.SGFTemplate().Secao().Token(TOKEN_SOLICITACAO_SERVICO.SECAO_TEXTO_DOWNLOAD_DOCUMENTO_DIGITAL))
+
+@if (Model.DocumentosConclusao != null && Model.DocumentosConclusao.Any())
+{
+    foreach (var documentoConclusao in Model.DocumentosConclusao)
+    {
+        @Html.Partial("_DownloadDocumentoDigitalDocumentoConclusao", documentoConclusao)
+    }
+}
+
+@if (Model.CategoriaSituacaoDocumentoAcademicoAtual != ClasseSituacaoDocumento.Invalido)
+{
+    @Smc.EditorFor(x => x.ExisteDocumentoDiplomaDigital);
+
+    using (Smc.Fieldset("fsDadosDiplomado").Begin())
+    {
+        @Smc.DisplayFor(x => x.CodigoAlunoMigracao);
+        @Smc.DisplayFor(x => x.Cpf);
+        @Smc.DisplayFor(x => x.NomeAluno);
+
+        if (!string.IsNullOrEmpty(Model.NomeSocial))
+        {
+            @Smc.DisplayFor(x => x.NomeSocial);
+        }
+
+        if (!string.IsNullOrEmpty(Model.NumeroIdentidade))
+        {
+            @Smc.DisplayFor(x => x.NumeroIdentidade);
+        }
+
+        if (!string.IsNullOrEmpty(Model.OrgaoEmissorIdentidade))
+        {
+            @Smc.DisplayFor(x => x.OrgaoEmissorIdentidade);
+        }
+
+        if (!string.IsNullOrEmpty(Model.UfIdentidade))
+        {
+            @Smc.DisplayFor(x => x.UfIdentidade);
+        }
+
+        if (!string.IsNullOrEmpty(Model.NumeroPassaporte))
+        {
+            @Smc.DisplayFor(x => x.NumeroPassaporte);
+        }
+
+        if (!string.IsNullOrEmpty(Model.NomePaisEmissaoPassaporte))
+        {
+            @Smc.DisplayFor(x => x.NomePaisEmissaoPassaporte);
+        }
+
+        @Smc.DisplayFor(x => x.Sexo);
+        @Smc.DisplayFor(x => x.DescricaoNacionalidade);
+        @Smc.DisplayFor(x => x.Naturalidade);
+        @Smc.DisplayFor(x => x.DataNascimento);
+    }
+
+    using (Smc.Fieldset("fsDadosCurso").Begin())
+    {
+        @Smc.DisplayFor(x => x.DescricaoCurso);
+        @Smc.DisplayFor(x => x.CodigoEmecCurso);
+        @Smc.DisplayFor(x => x.DescricaoModalidade);
+
+        if (!string.IsNullOrEmpty(Model.AtoAutorizacaoCurso))
+        {
+            @Smc.DisplayFor(x => x.AtoAutorizacaoCurso);
+        }
+
+        if (!string.IsNullOrEmpty(Model.AtoReconhecimentoCurso))
+        {
+            @Smc.DisplayFor(x => x.AtoReconhecimentoCurso);
+        }
+
+        if (!string.IsNullOrEmpty(Model.AtoRenovacaoReconhecimentoCurso))
+        {
+            @Smc.DisplayFor(x => x.AtoRenovacaoReconhecimentoCurso);
+        }
+
+        @Smc.DisplayFor(x => x.EnderecoCurso);
+    }
+
+    using (Smc.Fieldset("fsDadosInstituicao").LegendText(Model.TituloSecaoInstituicaoEmissora).Begin())
+    {
+        @Smc.DisplayFor(x => x.NomeInstituicao);
+        @Smc.DisplayFor(x => x.CodigoEmecInstituicao);
+        @Smc.DisplayFor(x => x.CnpjInstituicao);
+        @Smc.DisplayFor(x => x.EnderecoInstituicao);
+
+        if (!string.IsNullOrEmpty(Model.AtoCredenciamentoInstituicao))
+        {
+            @Smc.DisplayFor(x => x.AtoCredenciamentoInstituicao);
+        }
+
+        if (!string.IsNullOrEmpty(Model.AtoRecredenciamentoInstituicao))
+        {
+            @Smc.DisplayFor(x => x.AtoRecredenciamentoInstituicao);
+        }
+
+        if (!string.IsNullOrEmpty(Model.AtoRenovacaoRecredenciamentoInstituicao))
+        {
+            @Smc.DisplayFor(x => x.AtoRenovacaoRecredenciamentoInstituicao);
+        }
+    }
+
+    using (Smc.Fieldset("fsMantenedora").Begin())
+    {
+        @Smc.DisplayFor(x => x.RazaoSocialMantenedora);
+        @Smc.DisplayFor(x => x.CnpjMantenedora);
+        @Smc.DisplayFor(x => x.EnderecoMantenedora);
+    }
+}
+
+@{
+    var buttonSet = Smc.ButtonSet().CssClass("smc-sga-matricula-linha-botoes").Size(SMCSize.Grid24_24);
+
+    buttonSet.AddButton(Smc.Button("cancelarProcesso")
+                                    .Id("cancelarProcesso")
+                                    .Type(SMCButtonType.Link)
+                                    .Action("Index", "SolicitacaoServico", new { area = "SRC" })
+                                    .CssClass("smc-btn-cancelar-icotext"));
+
+    @buttonSet;
+}

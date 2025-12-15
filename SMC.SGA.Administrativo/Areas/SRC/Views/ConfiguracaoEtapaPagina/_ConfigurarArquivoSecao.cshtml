@@ -1,0 +1,19 @@
+﻿@model ConfigurarArquivoSecaoViewModel
+
+@using (Smc.Header("headerCabecalhoConfigurarArquivoSecao", SMCHeaderType.Primary)
+               .Item(prop => prop.DescricaoPagina, sizeSM: SMCSize.Grid8_24, sizeMD: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24, sizeXS: SMCSize.Grid8_24)              
+               .Item(prop => prop.DescricaoSecao, sizeSM: SMCSize.Grid16_24, sizeMD: SMCSize.Grid16_24, sizeLG: SMCSize.Grid16_24, sizeXS: SMCSize.Grid16_24)
+               .Begin())
+{
+
+}
+
+@Smc.EditorFor(prop => prop.CamposReadOnly)
+
+@Smc.EditorFor(prop => prop.SeqConfiguracaoEtapaPagina)
+@Smc.EditorFor(prop => prop.SeqSecaoPaginaSgf)
+@Smc.EditorFor(prop => prop.Arquivos)
+
+
+
+

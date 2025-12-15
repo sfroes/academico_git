@@ -1,0 +1,1942 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.Fake</name>
+    </assembly>
+    <members>
+        <member name="F:SMC.Framework.Fake.Configuration.SMCSelectFakeStrategy._randomValues">
+            <summary>
+            Armazena os valores randomicos para a propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Fake.Configuration.SMCSelectFakeStrategy.RandomValues">
+            <summary>
+            Valores randomicos para a propriedade.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCSelectFakeStrategy.ChangePriority(System.Int32)">
+            <summary>
+            Altera a prioriedade da estratégia.
+            </summary>
+            <param name="priority">Prioriedade da estratégia.</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCSelectFakeStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Checa se a estratégia deve ser executada para o método.
+            </summary>
+            <param name="methodInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCSelectFakeStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Cria lista de itens de select com id iniciando em 1.
+            </summary>
+            <param name="methodInfo">Informações do método.</param>
+            <returns>Lista de itens de select preenchido.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCSelectFakeStrategyConfiguration.RandomValues(System.String[])">
+            <summary>
+            Permite definir valores randomicos para a propriedade.
+            </summary>
+            <param name="values">Valores randomicos para a propriedade.</param>
+            <returns>Própria classe de configuração.</returns>
+        </member>
+        <member name="T:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy">
+            <summary>
+            Classe de suporte para criação de estratégia de fake customizada para uma propriedade.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy.#ctor">
+            <summary>
+            Cria uma nova instância de SMCPropertyFakeStrategy.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy.#ctor(System.Type)">
+            <summary>
+            Cria uma nova instância de SMCPropertyFakeStrategy.
+            </summary>
+            <param name="propertyType">Tipo da propriedade.</param>
+        </member>
+        <member name="P:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy.PropertyType">
+            <summary>
+            Tipo da propriedade da estratégia.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy.WhereClause">
+            <summary>
+            Cláusula para filtro das propriedades que serão consideradas pela estratégia.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy._defaultValue">
+            <summary>
+            Armazena o valor default para a propriedade.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy._defaultValueSet">
+            <summary>
+            Define se foi definido valor default para a propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy.DefaultValue">
+            <summary>
+            Valor default para a propriedade.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy._randomValues">
+            <summary>
+            Armazena os valores randomicos para a propriedade.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy._randomValuesSet">
+            <summary>
+            Define se foram definidos valores randomicos para a propriedade.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy.RandomValues">
+            <summary>
+            Valores randomicos para a propriedade.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy._priority">
+            <summary>
+            Armazena a prioridade da estratégia.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy.Priority">
+            <summary>
+            Prioridade da estratégia.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy.GroupViewForApplyStrategy">
+            <summary>
+            Grupo de visão que aplicará a estrategia especifica.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy.ChangePriority(System.Int32)">
+            <summary>
+            Altera a prioriedade da estratégia.
+            </summary>
+            <param name="priority">Prioriedade da estratégia.</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy.IsViewForStrategies">
+            <summary>
+            Verifica se a view foi configurada para ter uma estratégia especifica.
+            </summary>
+            <returns>Verdadeiro para view configurada, caso contrário, falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="T:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategyConfiguration`1">
+            <summary>
+            Classe de configuração fluent de uma estratégia dinâmica de uma propriedade.
+            </summary>
+            <typeparam name="T">Tipo da propriedade.</typeparam>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategyConfiguration`1.#ctor(SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategy)">
+            <summary>
+            Cria uma nova instância de SMCPropertyFakeStrategyConfiguration.
+            </summary>
+            <param name="propertyStrategy">Classe com a estratégia dinâmica de uma propriedade.</param>
+        </member>
+        <member name="F:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategyConfiguration`1._propertyStrategy">
+            <summary>
+            Armazena a estratégia dinâmica da propriedade a ser configurada.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategyConfiguration`1.Where(System.Func{System.Reflection.PropertyInfo,System.Boolean})">
+            <summary>
+            Permite informar uma cláusula de filtro para a estratégia.
+            </summary>
+            <param name="whereClause">Cláusula de filtro para a estratégia.</param>
+            <returns>Própria classe de configuração.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategyConfiguration`1.DefaultValue(`0)">
+            <summary>
+            Permite definir o valor padrão para a propriedade.
+            </summary>
+            <param name="defaultValue">Valor padrão para a propriedade.</param>
+            <returns>Própria classe de configuração.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategyConfiguration`1.RandomValues(`0[])">
+            <summary>
+            Permite definir valores randomicos para a propriedade.
+            </summary>
+            <param name="values">Valores randomicos para a propriedade.</param>
+            <returns>Própria classe de configuração.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategyConfiguration`1.Priority(System.Int32)">
+            <summary>
+            Permite definir a prioridade da estratégia.
+            </summary>
+            <param name="priority">Prioridade da estratégia.</param>
+            <returns>Própria classe de configuração.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Configuration.SMCPropertyFakeStrategyConfiguration`1.SetViewStrategy(System.String)">
+            <summary>
+            Seta uma condição que torna está estratégia exclusiva para a view informada.
+            </summary>
+            <param name="groupView">Pasta e nome da view que terá a estratégia exclusiva.</param>
+            <returns>Própria classe de configuração.</returns>
+        </member>
+        <member name="T:SMC.Framework.Fake.SMCFakeStrategyConfigurationExtension">
+            <summary>
+            Classe com métodos de extensão para configuração fluent de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStrategyConfigurationExtension.AddForProperty``1(SMC.Framework.Fake.SMCFakeStrategyConfiguration)">
+            <summary>
+            Adiciona uma nova estratégia customizada para fake de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da propriedade.</typeparam>
+            <param name="config">Classe de configuração de estratégias de fake.</param>
+            <returns>Classe de configuração de estratégia de fake para a propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStrategyConfigurationExtension.AddForProperty(SMC.Framework.Fake.SMCFakeStrategyConfiguration)">
+            <summary>
+            Adiciona uma nova estratégia customizada para fake de uma entidade.
+            </summary>
+            <param name="config">Classe de configuração de estratégias de fake.</param>
+            <returns>Classe de configuração de estratégia de fake para a propriedade.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStrategyConfigurationExtension.AddForSelect(SMC.Framework.Fake.SMCFakeStrategyConfiguration,System.Type,System.String)">
+            <summary>
+            Adiciona uma nova estratégia customizada para fake de um método de uma interface.
+            </summary>
+            <param name="config">Classe de configuração de estratégias de fake.</param>
+            <param name="typeInterface">Tipo da interface.</param>
+            <param name="methodName">Nome do método.</param>
+            <returns>Classe de configuração de estratégia de fake para a interface.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeCnpjStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCnpjStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Tipo a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCnpjStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCnpjStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCnpjStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCnpjStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCnpjStrategy.GetValue(System.Type)">
+            <summary>
+            Recupera o valor baseado no tipo de retorno.
+            </summary>
+            <param name="typeIp">Tipo de retorno.</param>
+            <returns>Valor.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCnpjStrategy.GenerateCnpj">
+            <summary>
+            Gerador de CNPJ
+            </summary>
+            <returns>CNPJ gerado.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeCpfStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCpfStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Tipo a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCpfStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCpfStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCpfStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCpfStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCpfStrategy.GetValue(System.Type)">
+            <summary>
+            Recupera o valor baseado no tipo de retorno.
+            </summary>
+            <param name="typeIp">Tipo de retorno.</param>
+            <returns>Valor.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCpfStrategy.GenerateCpf">
+            <summary>
+            Gerador de CPF
+            </summary>
+            <returns>CPF gerado.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeArrayStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeArrayStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Tipo da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeArrayStrategy.IsName(System.Type)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeArrayStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeArrayStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeArrayStrategy.ReturnArray(System.Type)">
+            <summary>
+            Retorna um vetor da propriedade em questão.
+            </summary>
+            <param name="typeArray">Tipo do item da lista.</param>
+            <returns>Vetor.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeArrayStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeCepStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCepStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCepStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCepStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCepStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCepStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCepStrategy.GetValue(System.Type)">
+            <summary>
+            Recupera o valor baseado no tipo de retorno.
+            </summary>
+            <param name="typeCep">Tipo de retorno.</param>
+            <returns>Valor.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeCityStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCityStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCityStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCityStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCityStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCityStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeComplementStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeComplementStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeComplementStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeComplementStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeComplementStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeComplementStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeDistrictStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDistrictStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDistrictStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDistrictStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDistrictStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDistrictStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeEmailStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeEmailStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeEmailStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeEmailStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeEmailStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeEmailStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeBoolStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeBoolStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeBoolStrategy.IsName(System.Type)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeBoolStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeBoolStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeBoolStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeEnumStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeEnumStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeEnumStrategy.IsName(System.Type)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeEnumStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeEnumStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeEnumStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeGuidStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeGuidStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            
+            </summary>
+            <param name="methodInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeGuidStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            
+            </summary>
+            <param name="propertyInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeGuidStrategy.CheckType(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeGuidStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            
+            </summary>
+            <param name="methodInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeGuidStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            
+            </summary>
+            <param name="propertyInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeGuidStrategy.CreateType(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeLongStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeLongStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeLongStrategy.IsName(System.Type)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeLongStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeLongStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeLongStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeListStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeListStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeListStrategy.IsName(System.Type)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeListStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeListStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeListStrategy.ReturnList(System.Type)">
+            <summary>
+            Retorna a lista da propriedade em questão.
+            </summary>
+            <param name="typeList">Tipo do item da lista.</param>
+            <returns>Lista.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeListStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakePagerModelStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakePagerModelStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se o retorno do método é um retorno do tipo SMCPagerModel.
+            </summary>
+            <param name="methodInfo">Informação do método a ser requisitado o fake.</param>
+            <returns>Verdadeiro para método com retorno do tipo SMCPagerModel, caso contrário, falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakePagerModelStrategy.CheckType(System.Type)">
+            <summary>
+            Verifica se o tipo é um tipo SMCPagerModel.
+            </summary>
+            <param name="type">Tipo de objeto.</param>
+            <returns>Verdadeiro para tipo do tipo SMCPagerModel, caso contrário, falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakePagerModelStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se o tipo da propriedade é do tipo SMCPagerModel.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade a ser requisitado pelo fake.</param>
+            <returns>Verdadeiro para propriedade do tipo SMCPagerModel, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakePagerModelStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Cria um objeto do tipo SMCPagerModel do tipo de retorno do método.
+            </summary>
+            <param name="methodInfo">Informação do método a ser requisitado o fake.</param>
+            <returns>Objeto SMCPagerModel.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakePagerModelStrategy.CreateType(System.Type)">
+            <summary>
+            Cria um objeto do tipo SMCPagerModel.
+            </summary>
+            <param name="type">Tipo a ser feito o fake.</param>
+            <returns>SMCPagerModel.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakePagerModelStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Cria um objeto do tipo SMCPagerModel referente a propriedade passada como parâmetro.
+            </summary>
+            <param name="propertyInfo">Propriedade para criar o fake.</param>
+            <returns>SMCPagerModel.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakePagerModelStrategy.CreateReturn(System.Type)">
+            <summary>
+            Cria o objeto do tipo SMCPagerModel.
+            </summary>
+            <param name="type">Tipo do SMCPagerModel.</param>
+            <returns>SMCPagerModel.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakePhoneStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakePhoneStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakePhoneStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakePhoneStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakePhoneStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakePhoneStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeSeqStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeSeqStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeSeqStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeSeqStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeSeqStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeSeqStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeStateStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStateStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStateStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStateStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStateStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStateStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeStreetStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStreetStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStreetStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStreetStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStreetStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStreetStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeStringStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStringStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStringStrategy.IsName(System.Type)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStringStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStringStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStringStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStringStrategy.CreateType(System.Type)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="type">Tipo a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="T:SMC.Framework.Fake.SMCTreeNodeViewModel">
+            <summary>
+            Classe de apoio a estratégia padrão da treeview.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Fake.SMCFakeTreeViewStrategy">
+            <summary>
+            Estratégia padrão da treeview.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeTreeViewStrategy.Priority">
+            <summary>
+            Prioridade de execução.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeTreeViewStrategy.CheckType(System.Type)">
+            <summary>
+            Define em que situação a estratégia deve ser aplicada
+            </summary>
+            <param name="type">Tipo da classe</param>
+            <returns>TRUE se a estratégia deve ser aplicada. Caso contrário, retorna FALSE.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeTreeViewStrategy.CreateType(System.Type)">
+            <summary>
+            Retorna uma lista de áreas de conhecimento fixa, já que é impossível gerar a estrutura da árvore de
+            áreas de conhecimento aleatoriamente.
+            </summary>
+            <param name="type">Tipo da classe</param>
+            <returns>Lista de áreas de conhecimento</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeUserStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeUserStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeUserStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeUserStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeUserStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeUserStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Create.New``1(System.Action{``0}[])">
+            <summary>
+            Retorna uma nova instancia do tipo solicitadao;
+            Nenhuam propriedade ou atributo serão populados com dados fake.
+            </summary>
+            <typeparam name="T">O tipo de retorno.</typeparam>
+            <returns>Uma nova instância do tipo solicitado.</returns>
+            <param name="actions">Optional list of actions that should be executed against each created object instance.</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.Create.New``1(System.Int32,System.Action{``0}[])">
+            <summary>
+            Returns a set number of created data objects.
+            No properties or fields will be populated with fake data.
+            </summary>
+            <typeparam name="T">The type to create data.</typeparam>
+            <param name="count">The number of items to return.</param>
+            <param name="actions">Optional list of actions that should be executed against each created object instance.</param>
+            <returns>An enumerable of the requested type.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Create.New``1(System.Int32,System.Int32,System.Action{``0}[])">
+            <summary>
+            Returns a random number of created data objects.
+            No properties or fields will be populated with fake data.
+            </summary>
+            <typeparam name="T">The type to create data.</typeparam>
+            <param name="minCount">The minimum number of items to return.</param>
+            <param name="maxCount">The maximum number of items to return.</param>
+            <param name="actions">Optional list of actions that should be executed against each created object instance.</param>
+            <returns>An enumerable of the requested type.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Create.Fake``1(System.Action{``0}[])">
+            <summary>
+            Retorna uma nova instancia do tipo solcitado
+            Todas as propriedades 'setaveis' serão populadas com dados fake.     
+            </summary>
+            <typeparam name="T">Tipo de retorno.</typeparam>
+            <param name="actions">Lista opcional de ações que devem ser executadas para cada instancia de objeto criada.</param>
+            <returns>Uma nova instância do tipo requisitado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Create.Fake(System.Int32,System.Type)">
+            <summary>
+            Returns a set number of created data objects.
+            All setable properties and fields will be populated with fake data.
+            </summary>
+            <param name="count">The number of items to return.</param>
+            <param name="tipo">Tipo do objeto.</param>
+            <returns>An enumerable of the requested type.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Create.Fake``1(System.Int32,System.Int32,System.Action{``0}[])">
+            <summary>
+            Retorna um numero aleatório de objetos criados.
+            Todas as propriedades setaveis serão poulados dados fake.
+            </summary>
+            <typeparam name="T">O tipo para criar os dados.</typeparam>
+            <param name="minCount">O número mínimo de itens retornados.</param>
+            <param name="maxCount">O número máximo de itens retornados.</param>
+            <param name="actions">Lista opcional de ações que devem ser executadas para cada objeto criado.</param>
+            <returns>Um enumerable do tipo solicitado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Create.SubObjeto(System.Type)">
+            <summary>
+            Cria um objeto dinamico do tipo solicitado
+            </summary>
+            <param name="tipo">O tipo do objeto a ser criado.</param>
+            <returns>Retorna o objeto criado e populado com dados fake.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCDataHelper.Random``1">
+            <summary>
+            Adiciona um dado aleatorio para um determinado tipo.
+            </summary>
+            <typeparam name="T">O tipo de dado a ser gerado.</typeparam>
+            <returns>Random data of the requested type.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCDataHelper.Random(System.Type,System.Double,System.Double,System.Int32)">
+            <summary>
+            Adiciona um dado aleatorio para um determinado tipo.
+            </summary>
+            <param name="t">O tipo de dado a ser gerado.</param>
+            <param name="min">Valor minimo.</param>
+            <param name="max">Valor Máximo.</param>
+            <param name="decimalPlaces">Quantidade de casas decimais.</param>
+            <returns>Dado aleátorio de um determinado tipo.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCDateHelper.Random">
+            <summary>
+            Gera uma data Aleatória com ano entre 1900 e 2100
+            </summary>
+            <returns>Data aleatoria</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCDateHelper.Random(System.DateTime,System.DateTime)">
+            <summary>
+            Gera uma data aleatória entre um intervalo de datas
+            </summary>
+            <param name="startDate">Data inicial</param>
+            <param name="endDate">Data final</param>
+            <returns>Data aleatória</returns>
+        </member>
+        <member name="T:SMC.Framework.Fake.SMCDistinctHelper">
+            <summary>
+            Cria valores distintos, não apenas aleatórios.
+            Within the same AppDomain, the same 2 values shouldnt be repeated.
+            Useful for objects that need unique IDs.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCDistinctHelper.Guid">
+            <summary>
+            Cria um novo Guid.
+            </summary>
+            <returns>Novo Guid</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCDistinctHelper.String">
+            <summary>
+            Retorna uma string única de 32 caracteres.
+            É na verdade um Guid.ToString("N").
+            </summary>
+            <returns>Retorna uma string única de 32 caracteres</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCDistinctHelper.DNumber">
+            <summary>
+            Retorna um número distinto.
+            Os números seguem em sequência começando de 1.
+            </summary>
+            <returns>Um número</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCDistinctHelper.Seq">
+            <summary>
+            Gera um Seq único.
+            </summary>
+            <returns>Retorna o Seq.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.Extensions.ArrayExtensions.Random(System.String[])">
+            <summary>
+            Seleciona um elemento aleatório do array.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.Extensions.ArrayExtensions.Random(System.Collections.Generic.IEnumerable{System.Func{System.String}})">
+            <summary>
+            Seleciona uma string aleatorio de uma Enumerable list.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.Extensions.ArrayExtensions.Random(System.Collections.Generic.IEnumerable{System.Func{System.String[]}})">
+            <summary>
+            Seleciona um array de string aleatório de uma Enumerable list.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.Extensions.ArrayExtensions.Random(System.Array)">
+            <summary>
+            Seleciona uma opção de um enumerator.
+            </summary>        
+        </member>
+        <member name="M:SMC.Framework.Fake.Extensions.StringExtensions.Numerify(System.String)">
+            <summary>
+            Obtem uma string substituindo cada '#' por um número.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.Extensions.StringExtensions.Letterify(System.String)">
+            <summary>
+            Obtem uma string substituindo cada '?' por uma letra do alfabeto.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.Extensions.StringExtensions.Capitalise(System.String)">
+            <summary>
+            Capitalise the first letter of the given string.
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.FakeCreator.Fake``1(System.Action{``0}[])">
+            <summary>
+            Returns one new instance of the requested type.
+            All setable properties and fields will be populated with fake data.
+            </summary>
+            <typeparam name="T">The type to return.</typeparam>
+            <param name="actions">Optional list of actions that should be executed against each created object instance.</param>
+            <returns>One new instance on the requested type.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.FakeCreator.Fake``1(System.Int32,System.Action{``0}[])">
+            <summary>
+            Returns a set number of created data objects.
+            All setable properties and fields will be populated with fake data.
+            </summary>
+            <typeparam name="T">The type to create data.</typeparam>
+            <param name="count">The number of items to return.</param>
+            <param name="actions">Optional list of actions that should be executed against each created object instance.</param>
+            <returns>An enumerable of the requested type.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.FakeCreator.Fake``1(System.Int32,System.Int32,System.Action{``0}[])">
+            <summary>
+            Returns a random number of created data objects.
+            All setable properties and fields will be populated with fake data.
+            </summary>
+            <typeparam name="T">The type to create data.</typeparam>
+            <param name="minCount">The minimum number of items to return.</param>
+            <param name="maxCount">The maximum number of items to return.</param>
+            <param name="actions">Optional list of actions that should be executed against each created object instance.</param>
+            <returns>An enumerable of the requested type.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.FakeCreator.Forget``1">
+            <summary>
+            Remove all remembered actions for the given type.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:SMC.Framework.Fake.FakeCreator.ForgetAll">
+            <summary>
+            Removes all remembered actions for all types.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Fake.SMCFakeHelper">
+            <summary>
+            Externaliza métodos auxiliares para geração de dados fake padrão
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.CEP">
+            <summary>
+            CEP no formato #####-###.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.Pais">
+            <summary>
+            Nome de um país. Ex: Zimbábue
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.UF">
+            <summary>
+            Nome de um estado. Ex: Minas Gerais
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.UFSigla">
+            <summary>
+            Sigla de um estado. Ex: MG
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.Cidade">
+            <summary>
+            Nome de uma cidade. Ex: Belo Horizonte
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.Bairro">
+            <summary>
+            Nome de um bairro. Ex: Castelo
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.TipoLogradouro">
+            <summary>
+            Tipo de logradouro. Ex: Rua
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.Endereco">
+            <summary>
+            Endereço completo
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.Endereco(System.Boolean)">
+            <summary>
+            Endereço completo
+            </summary>
+            <param name="incluiComplemento">TRUE para incluir complemento no endereço</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.NomeEmpresa">
+            <summary>
+            Retorna um nome de uma empresa. Ex: PUC Minas
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.SuffixoEmpresa">
+            <summary>
+            Retorna um sufixo para um nome de empresa. Ex: S.A.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.Random``1(System.Double,System.Double)">
+            <summary>
+            Gera um valor aleatório para o tipo T
+            </summary>
+            <typeparam name="T">Tipo do valor a ser gerado</typeparam>
+            <param name="min">Valor mínimo do valor a ser gerado, se for aplicável</param>
+            <param name="max">Valor máximo do valor a ser gerado, se for aplicável</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.StringPattern(System.String)">
+            <summary>
+            Gera uma string aleatoriamente baseada no padrão do parâmetro, onde:
+            A - será substituído por uma letra maiúscula aleatória
+            a - será substituído por uma letra minúscula aleatória
+            9 - será substituído por um número aleatório
+            * - será substituído por um simbolo aleatório
+            </summary>
+            <param name="pattern">Padrão a ser utilizado na geração da string</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.StringPattern(System.String,System.Int32)">
+            <summary>
+            Gera uma lista de strings aleatoriamente baseada no padrão do parâmetro, onde:
+            A - será substituído por uma letra maiúscula aleatória
+            a - será substituído por uma letra minúscula aleatória
+            9 - será substituído por um número aleatório
+            * - será substituído por um simbolo aleatório
+            </summary>
+            <param name="pattern">Padrão a ser utilizado na geração da string</param>
+            <param name="amount">Quantidade de itens a serem gerados</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.Data">
+            <summary>
+            Gera uma data aleatória
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.Random(System.DateTime,System.DateTime)">
+            <summary>
+            Gera uma data aleatória entre um intervalo de datas
+            </summary>
+            <param name="startDate">Data inicial</param>
+            <param name="endDate">Data final</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.UserName">
+            <summary>
+            Gera um nome de usuário
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.Email">
+            <summary>
+            Gera um email
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.LoremIpsumWord">
+            <summary>
+            Retorna uma palavra de Lorem Ipsum
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.LoremIpsumSentence(System.Int32)">
+            <summary>
+            Retorna uma ou mais sentenças de Lorem Ipsum
+            </summary>
+            <param name="minWordCount">Quantidade de senteças mínimas a serem geradas</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.LoremIpsumParagraph(System.Int32)">
+            <summary>
+            Retorna um ou mais parágrafos de Lorem Ipsum
+            </summary>
+            <param name="minSentenceCount">Quantidade de sentenças mínimas a serem geradas</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.NomeCompleto">
+            <summary>
+            Retorna um nome completo
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.PrimeiroNome">
+            <summary>
+            Retorna primeiro nome
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.SegundoNome">
+            <summary>
+            Retorna segundo nome
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.Sobrenome">
+            <summary>
+            Retorna sobrenome
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.PrefixoNome">
+            <summary>
+            Retorna um prefixo de nome. Ex: Sr.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.RandomListElement``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Seleciona um elemento aleatório de um IEnumerable
+            </summary>
+            <typeparam name="T">Tipo do IEnumerable</typeparam>
+            <param name="array">IEnumerable alvo</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.GenerateStringList(System.Func{System.String}[])">
+            <summary>
+            Gera um vetor de string a partir de uma lista de métodos que retornam uma string
+            </summary>
+            <param name="methods">Métodos a serem chamados para preencher o vetor</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.GenerateStringList(System.Int32,System.Func{System.String}[])">
+            <summary>
+            Gera um vetor de string a partir de uma lista de métodos que retornam uma string
+            </summary>
+            <param name="methods">Métodos a serem chamados para preencher o vetor</param>
+            <param name="amount">Quantidade de elementos a serem gerados</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.GenerateGenericList``1(System.Int32,System.Double,System.Double,System.Int32)">
+            <summary>
+            Gera um vetor do tipo T com elementos gerados aleatoriamente
+            </summary>
+            <param name="amount">Quantidade de elementos a serem gerados</param>
+            <param name="min">Valor mínimo a ser gerado, caso se aplique</param>
+            <param name="max">Valor máximo a ser gerado, caso se aplique</param>
+            <param name="decimalPlaces">Quantidade de casas decimais</param>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.CNPJ">
+            <summary>
+            Retorna um CNPJ válido
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeHelper.CPF">
+            <summary>
+            Retorna um CPF válido
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCLoremHelper.Words(System.Int32)">
+            <summary>
+            Obtem um conjunto aleatorio de palavras.
+            </summary>
+            <param name="count">Número de palavras desejadas</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCLoremHelper.Sentence(System.Int32)">
+            <summary>
+            Gera uma frase de palavras aleatórias.
+            </summary>
+            <param name="minWordCount">Número minimo de palavras</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCNameHelper.FullName">
+            <summary>
+            Cria um nome completo.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCNameHelper.FullName(SMC.Framework.Fake.SMCNameFormats)">
+            <summary>
+            Cria um nome utilizando um formato especifico.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.Fake.SMCNumberHelper">
+            <summary>
+            Gerador de números aleatórios
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCNumberHelper.NextLong(System.Int64,System.Int64)">
+            <summary>
+            Gera um número long entre um intervalo
+            </summary>
+            <param name="min">Valor mínimo</param>
+            <param name="max">Valor máximo</param>
+            <returns>Retorna um long aleatório dentro do intervalo passado.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeCompanyStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCompanyStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCompanyStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCompanyStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCompanyStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeCompanyStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeDateStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDateStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDateStrategy.IsName(System.Type)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDateStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDateStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDateStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeDoubleStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDoubleStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDoubleStrategy.IsName(System.Type)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDoubleStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDoubleStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeDoubleStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeIntStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeIntStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeIntStrategy.IsName(System.Type)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeIntStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeIntStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeIntStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeNameStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeNameStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeNameStrategy.IsName(System.Type,System.String)">
+            <summary>
+            Verifica se é um membro do tipo nome.
+            </summary>
+            <param name="typeMember">Tipo do membro.</param>
+            <param name="name">Nome do membro</param>
+            <returns>Se atender todas as condições será a estrategia que resolver a questão de nome.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeNameStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeNameStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeNameStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="T:SMC.Framework.Fake.SMCFakeStrategy">
+            <summary>
+            Estratégia genérica para todos os tipos.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCFakeStrategy.Priority">
+            <summary>
+            Define a prioridade da estratégia de fake.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStrategy.CheckType(System.Type)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="type">Tipo a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStrategy.CheckField(System.Reflection.FieldInfo)">
+            <summary>
+            Verifica se a regra se aplica ao field informado.
+            </summary>
+            <param name="fieldInfo">Field a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao field informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStrategy.CheckMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStrategy.CreateType(System.Type)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="type">Tipo a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica à propriedade informada.
+            </summary>
+            <param name="propertyInfo">Propriedade a ser verificada.</param>
+            <returns>Verdadeiro se a regra se aplica à propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStrategy.CreateField(System.Reflection.FieldInfo)">
+            <summary>
+            Verifica se a regra se aplica ao field informado.
+            </summary>
+            <param name="fieldInfo">Field a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao field informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCFakeStrategy.CreateMethod(System.Reflection.MethodInfo)">
+            <summary>
+            Verifica se a regra se aplica ao método informado.
+            </summary>
+            <param name="methodInfo">Método a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao método informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="T:SMC.Framework.Fake.SMCModelClassFakeStrategy">
+            <summary>
+            Classe que contém estratégia para geração da fake para entidades de modelo.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.Fake.SMCModelClassFakeStrategy.Priority">
+            <summary>
+            Prioridade da estratégia.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCModelClassFakeStrategy.CheckProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica a propriedade informada.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade.</param>
+            <returns>Verdadeiro se a regra se aplica a propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCModelClassFakeStrategy.CheckType(System.Type)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="type">Tipo a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCModelClassFakeStrategy.IsValid(System.Type)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="type">Tipo a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCModelClassFakeStrategy.CreateType(System.Type)">
+            <summary>
+            Verifica se a regra se aplica ao tipo informado.
+            </summary>
+            <param name="type">Tipo a ser verificado.</param>
+            <returns>Verdadeiro se a regra se aplica ao tipo informado ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCModelClassFakeStrategy.CreateProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Verifica se a regra se aplica a propriedade informada.
+            </summary>
+            <param name="propertyInfo">Informações da propriedade desejada.</param>
+            <returns>Verdadeiro se a regra se aplica a propriedade informada ou falso, caso não se aplique.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCModelClassFakeStrategy.CreateModelClass(System.Type)">
+            <summary>
+            Cria a classe de modelo.
+            </summary>
+            <param name="type">Tipo a ser verificado.</param>
+            <returns>Classe de modelo.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCModelClassFakeStrategy.IsFrameworkType(System.Type)">
+            <summary>
+            Classe de suporte para verificar se uma classe faz parte do .Net framework.
+            </summary>
+            <param name="type">Tipo a ser verificado.</param>
+            <returns>Verdadeiro se o tipo é do framework, caso contrário falso.</returns>
+        </member>
+        <member name="T:SMC.Framework.Fake.SMCStringHelper">
+            <summary>
+            Gera uma string de caracteres aleatórios
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCStringHelper.Random">
+            <summary>
+            Gera uma string aleatória de tamanho entre 2 e 15
+            Serão utilizados somente letras minusculas.
+            </summary>
+            <returns>retorna string aleatória</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCStringHelper.Random(System.Int32)">
+            <summary>
+            Gera uma string aleatória de tamanho especificado.
+            </summary>
+            <param name="length">tamanho da string.</param>
+            <returns>retorna string aleatória de tamanho especificado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCStringHelper.Random(System.Int32,SMC.Framework.Fake.SMCStringHelper.StringFormats)">
+            <summary>
+            Gera uma string aleatória de tamanho e formato especificado.
+            </summary>
+            <param name="length">Tamanho da string.</param>
+            <param name="format">Formato com caracteres utilizados para gerar string.</param>
+            <returns>Retorna string aleatória de tamanho especificado.</returns>
+        </member>
+        <member name="M:SMC.Framework.Fake.SMCStringHelper.Pattern(System.String)">
+            <summary>
+            Gera uma string aleatoriamente baseada no padrão do parâmetro, onde:
+            A - será substituído por uma letra maiúscula aleatória
+            a - será substituído por uma letra minúscula aleatória
+            9 - será substituído por um número aleatório
+            * - será substituído por um simbolo aleatório
+            </summary>
+            <param name="pattern">Padrão a ser utilizado na geração da string</param>
+        </member>
+    </members>
+</doc>

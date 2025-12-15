@@ -1,0 +1,7 @@
+﻿@model ConfigurarVagasOfertaCampanhaListaViewModel
+
+@Smc.EditorFor(m => m.Seq).Name("CampanhaOfertas[" + ViewBag.Index + "].Seq")
+@Smc.EditorFor(m => m.TipoOferta).Name("CampanhaOfertas[" + ViewBag.Index + "].TipoOferta")
+@Smc.EditorFor(m => m.Oferta).Name("CampanhaOfertas[" + ViewBag.Index + "].Oferta")
+@Smc.EditorFor(m => m.Vagas).Name("CampanhaOfertas[" + ViewBag.Index + "].Vagas").HideLabel()
+@Smc.EditorFor(m => m.VagasBase).Name("CampanhaOfertas[" + ViewBag.Index + "].VagasBase")

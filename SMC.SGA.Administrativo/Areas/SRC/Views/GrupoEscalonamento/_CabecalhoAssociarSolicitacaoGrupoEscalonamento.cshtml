@@ -1,0 +1,10 @@
+﻿@model GrupoEscalonamentoCabecalhoViewModel
+
+
+
+@using (Smc.Header("ProcessoCabecalho", SMCHeaderType.Primary)
+                                                     .Item(prop => prop.SeqProcesso, sizeMD: SMCSize.Grid2_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid4_24, sizeLG: SMCSize.Grid2_24)
+                                                     .Item(prop => prop.DescricaoProcesso, sizeMD: SMCSize.Grid22_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid20_24, sizeLG: SMCSize.Grid22_24)
+                                                     .Item(prop => prop.DescricaoGrupoEscalonamento, sizeMD: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24)
+                                                     .Begin())
+{ }

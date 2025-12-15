@@ -1,0 +1,40 @@
+﻿@using SMC.Academico.Common.Areas.MAT.Enums;
+@model SMC.Academico.UI.Mvc.Areas.CUR.Models.SelecaoAtividadeViewModel
+@using (Smc.Fieldset("divSelecaoAtividadeModal").LegendText(@Smc.GetUIResource("Fieldset_Modal_SelecaoAtividade_Lista_Titulo")).Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(m => m.SeqSolicitacaoMatricula)
+    @Smc.EditorFor(m => m.SeqIngressante)
+    @Smc.EditorFor(m => m.SeqProcessoEtapa)
+    @Smc.EditorFor(m => m.backUrl)
+
+    if (Model.ExibirPreRequisito == true)
+    {
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+        {
+            <p>@Smc.GetUIResource("Informativo_Atividade_Existe_PreRequisito")</p>
+        }
+    }
+    using (Smc.Div("divModalSelecaoAtividadePesquisa").Attribute("data-id", "divModalSelecaoAtividadePesquisa").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        if (Model.AtividadesAcademicaMatriculaItem.Count > 0)
+        {
+            using (Smc.Div("divLegenda").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+            {
+                using (Smc.Div("PertenceCurriculo").Size(SMCSize.Grid8_24).Begin())
+                {
+                    <p class="smc-sga-titulo-legenda"> @Smc.GetUIResource("Titulo_Legenda_TurmaOfertaMatricula")</p>
+                    @(Smc.Legend("PertenceCurriculo", SMCOrientation.Horizontal).Items<TurmaOfertaMatricula>())
+                }
+            }
+            var view1 = Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.SELECAO_ATIVIDADE_OFERTA);
+            @(Smc.List("SelectedValues", Model.AtividadesAcademicaMatriculaItem).AllowSelect(s => s.Seq, x => !x.PreRequisito).HtmlTemplate(atividade => Html.Partial(view1, atividade)))
+        }
+        else
+        {
+            using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+            {
+                <p>@Smc.GetUIResource("Label_Nenhum_Registro_Atividade_Selecionada")</p>
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+﻿@model ComponenteCurricularDetalheViewModel
+
+@using (Smc.Header("ComponenteCurricular", SMCHeaderType.Primary)
+            .Item(prop => prop.DescricaoTipoComponente, sizeMD: SMCSize.Grid5_24)
+            .Item(prop => prop.DescricaoCompleta, sizeMD: SMCSize.Grid12_24)
+            .Item(prop => prop.Ativo, sizeMD: SMCSize.Grid2_24)
+            .Item(prop => prop.DescricaoTipoOrganizacao, sizeMD: SMCSize.Grid5_24)
+            .Begin())
+{ }
+
+@using (Smc.Fieldset("divNiveisEnsino").Size(SMCSize.Grid11_24, SMCSize.Grid24_24, SMCSize.Grid11_24, SMCSize.Grid11_24).Begin())
+{
+    if (Model.NiveisResponsavel.Count > 0 || Model.NiveisEnsino.Count > 0)
+    {
+        @Smc.DisplayFor(m => m.NiveisResponsavel).HideLabel();
+
+        @Smc.DisplayFor(m => m.NiveisEnsino).HideLabel();
+    }
+    else
+    {
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid11_24).Begin())
+        {
+            <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+        }
+    }
+}
+
+@using (Smc.Fieldset("divEntidadesResponsaveis").CssClass("col-md-offset-2 col-lg-offset-2 col-sm-offset-2").Size(SMCSize.Grid11_24, SMCSize.Grid24_24, SMCSize.Grid11_24, SMCSize.Grid11_24).Begin())
+{
+    if (Model.EntidadesResponsaveis.Count > 0)
+    {
+        @Smc.DisplayFor(m => m.EntidadesResponsaveis).HideLabel();
+    }
+    else
+    {
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid11_24).Begin())
+        {
+            <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+        }
+    }
+}
+
+@using (Smc.Accordion("divAccordion").Begin())
+{
+    using (Smc.AccordionSection("divObservacao").Title("Observação").Begin())
+    {
+        @Smc.DisplayFor(m => m.Observacao).HideLabel();
+    }
+
+    if (Model.PermiteEmenta)
+    {
+        using (Smc.AccordionSection("divEmenta").Title("Ementas").Begin())
+        {
+            @Smc.List("ListEmentas", Model.Ementas).HtmlTemplate(item => Html.Partial("_VerDetalhesEmenta", item)).Size(SMCSize.Grid24_24)
+        }
+    }
+}
+
+@using (Smc.Fieldset("divConfiguracaoComponente").LegendText(@Smc.GetUIResource("ConfiguracaoComponente_Lista_Titulo")).Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.List("Configuracoes", Model.Configuracoes).HtmlTemplate(item => Html.Partial("_VerDetalhesItem", item)).Size(SMCSize.Grid24_24)
+}

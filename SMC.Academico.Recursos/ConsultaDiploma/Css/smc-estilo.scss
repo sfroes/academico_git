@@ -1,0 +1,969 @@
+﻿@charset "utf-8";
+/* CSS Document */
+@font-face {
+    font-family: "segoe_uiregular";
+    src: url("../Fonts/segoeui.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "UniSansRegular";
+    src: url("../Fonts/UniSansRegular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "UniSansLight";
+    src: url("../Fonts/UniSansLight.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, button, input, select, textarea, a, p, span, label, li, font {
+    font-family: "segoe_uiregular", Arial, sans-serif;
+    font-size: 14px;
+    color: #807f7f;
+}
+
+h1 {
+    font-family: "UniSansLight";
+    font-size: 30px !important;
+    color: #807f7f;
+    margin: 5.5% 15% 19px 24%;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: left;
+    line-height: 38px;
+
+    @media screen and (max-width: 767px) {
+        margin: 8.5% 0% 19px 27% !important;
+    }
+
+    @media screen and (max-width: 550px) {
+        font-size: 24px !important;
+        margin: 8.5% 0% 19px 37% !important;
+    }
+
+    @media screen and (max-width: 430px) {
+        margin-right: -35px;
+    }
+}
+
+h2 {
+    font-family: "UniSansLight";
+    font-size: 25px !important;
+    color: #3a3434;
+    margin: 5px 0 20px 30px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+body {
+    background: #ffffff url("../Images/smc-img-background-superior.png") no-repeat top left;
+}
+
+.smc-cpd-header-login {
+    height: 170px;
+    width: 100%;
+    position: relative;
+    margin-left: 0;
+    padding: 0 7%;
+    border: 0;
+    //background: transparent url("../Images/smc-img-logotipo-pucminas.png") no-repeat 10% 50%;
+    background: transparent url(../Images/smc-img-logotipo-pucminas.svg) no-repeat 11.6% 50%;
+    background-size: 90px;
+    margin-bottom: 70px;
+
+    @media screen and (max-width: 550px) {
+        padding: 0 3% !important;
+    }
+
+    @media screen and (max-width: 430px) {
+        padding: 0 !important;
+    }
+
+    .navbar-fixed-top {
+        margin-bottom: 0;
+        border-bottom: 1px solid #807f7f;
+        padding-bottom: 31px;
+        height: 100%;
+    }
+}
+
+.smc-cpd-header-login::before {
+    display: block;
+    width: 150px;
+    height: 3px;
+    content: "";
+    background-color: #00557e;
+    margin-top: 170px;
+    position: absolute;
+    margin-left: 20px;
+}
+
+.smc-cpd-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 7%;
+
+    @media screen and (max-width: 550px) {
+        padding: 0 3% !important;
+    }
+}
+
+.smc-cpd-content-interno {
+    width: 83.33%;
+    margin-left: 8.33%;
+}
+
+
+input[type="text"], input[type="password"], select {
+    background-color: #fff;
+    border: 1px solid #b3b3b3;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 5px 15px !important;
+    font-family: "segoe_uiregular",Arial,sans-serif;
+    height: 50px !important;
+    clear: inherit !important;
+    display: inline-block !important;
+    width: 100% !important;
+}
+
+.smc-btn-inline {
+    margin-top: 22px;
+}
+
+a.smc-btn-voltar {
+    line-height: 40px;
+    margin-right: 15px;
+}
+
+.smc-cpd-btn-consultar, .smc-btn-pesquisar, .smc-btn-voltar {
+    display: block;
+    cursor: pointer;
+    text-decoration: none !important;
+    font-size: 16px;
+    margin: 5px 0 30px 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    background-repeat: no-repeat;
+    height: 50px;
+    padding: 2px 40px 0 40px;
+    background-color: #00557e;
+    border: solid 1px #00557e;
+    color: #fff;
+    font-family: "UniSansLight";
+    float: right;
+    clear: both;
+
+    &:focus {
+        color: #fff !important;
+    }
+}
+
+.smc-cpd-informacoes {
+    font-size: 11px;
+    text-align: justify;
+    line-height: 12px;
+    margin: 30px 0;
+    width: 100%;
+    clear: both;
+    display: block;
+}
+
+.smc-cpd-informacoes > font {
+    font-size: 11px !important;
+}
+
+.smc-cpd-agrupamento-header {
+    margin: 10px 0;
+
+    div {
+        float: left;
+        display: inline-block;
+        width: auto !important;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.smc-cpd-agrupamento-campos {
+    margin-top: 10px;
+
+    div {
+        float: left;
+        display: inline-block;
+        width: auto !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    label {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+}
+
+.smc-cpd-nomeinstituicaoensino {
+    &::before {
+        content: "-";
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.smc-cpd-cabecalho-conteudo {
+    font-family: "UniSansLight";
+    font-size: 18px;
+    color: #00557e;
+
+    p, label {
+        font-family: "UniSansRegular";
+        color: #00557e !important;
+        font-size: 18px !important;
+        font-weight: normal !important;
+    }
+
+    label {
+        margin-right: 5px;
+    }
+
+    label::before {
+        content: "-";
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.smc-cpd-cabecalho-conteudo-nome p {
+    font-family: "UniSansRegular";
+    color: #00557e;
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+.smc-cpd-agrupamento-resultado {
+    border: 1px solid #cecece;
+    padding: 40px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    display: block;
+    clear: both;
+    overflow: hidden;
+
+    @media screen and (max-width: 550px) {
+        padding: 20px !important;
+    }
+}
+
+.smc-cpd-agrupamento-resultado p, .smc-cpd-agrupamento-resultado font {
+    font-size: 14px;
+}
+
+.smc-cpd-data {
+    float: right;
+    width: 185px;
+    margin-right: -20px;
+    //  margin-top: -50px;
+    label, p {
+        font-size: 11px !important;
+        font-weight: normal !important;
+        color: $smc-cinza-08;
+    }
+
+    label {
+        margin-right: 10px;
+    }
+}
+
+.smc-cpd-data font {
+    font-size: 12px;
+}
+
+.smc-cpd-footer {
+    border-top: 1px solid #dddddd;
+    height: 120px;
+    width: 50%;
+    margin-left: 8.33%;
+    padding-top: 30px;
+    padding-left: 4.16%;
+    display: block;
+    clear: both;
+}
+
+.smc-cpd-footer p {
+    font-size: 12px !important;
+    margin-top: 40px;
+}
+
+.smc-cpd-footer font {
+    font-size: 12px !important;
+}
+
+
+
+
+.smc-size-xs-1, .smc-size-sm-1, .smc-size-md-1, .smc-size-lg-1, .smc-size-xs-2, .smc-size-sm-2, .smc-size-md-2, .smc-size-lg-2, .smc-size-xs-3, .smc-size-sm-3, .smc-size-md-3, .smc-size-lg-3, .smc-size-xs-4, .smc-size-sm-4, .smc-size-md-4, .smc-size-lg-4, .smc-size-xs-5, .smc-size-sm-5, .smc-size-md-5, .smc-size-lg-5, .smc-size-xs-6, .smc-size-sm-6, .smc-size-md-6, .smc-size-lg-6, .smc-size-xs-7, .smc-size-sm-7, .smc-size-md-7, .smc-size-lg-7, .smc-size-xs-8, .smc-size-sm-8, .smc-size-md-8, .smc-size-lg-8, .smc-size-xs-9, .smc-size-sm-9, .smc-size-md-9, .smc-size-lg-9, .smc-size-xs-10, .smc-size-sm-10, .smc-size-md-10, .smc-size-lg-10, .smc-size-xs-11, .smc-size-sm-11, .smc-size-md-11, .smc-size-lg-11, .smc-size-xs-12, .smc-size-sm-12, .smc-size-md-12, .smc-size-lg-12, .smc-size-xs-13, .smc-size-sm-13, .smc-size-md-13, .smc-size-lg-13, .smc-size-xs-14, .smc-size-sm-14, .smc-size-md-14, .smc-size-lg-14, .smc-size-xs-15, .smc-size-sm-15, .smc-size-md-15, .smc-size-lg-15, .smc-size-xs-16, smc-size-sm-16, .smc-size-md-16, .smc-size-lg-16, .smc-size-xs-17, .smc-size-sm-17, .smc-size-md-17, .smc-size-lg-17, .smc-size-xs-18, .smc-size-sm-18, .smc-size-md-18, .smc-size-lg-18, .smc-size-xs-19, .smc-size-sm-19, .smc-size-md-19, .smc-size-lg-19, .smc-size-xs-20, .smc-size-sm-20, .smc-size-md-20, .smc-size-lg-20, .smc-size-xs-21, .smc-size-sm-21, .smc-size-md-21, .smc-size-lg-21, .smc-size-xs-22, .smc-size-sm-22, .smc-size-md-22, .smc-size-lg-22, .smc-size-xs-23, .smc-size-sm-23, .smc-size-md-23, .smc-size-lg-23, .smc-size-xs-24, .smc-size-sm-24, .smc-size-md-24, .smc-size-lg-24 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.smc-size-xs-1, .smc-size-xs-2, .smc-size-xs-3, .smc-size-xs-4, .smc-size-xs-5, .smc-size-xs-6, .smc-size-xs-7, .smc-size-xs-8, .smc-size-xs-9, .smc-size-xs-10, .smc-size-xs-11, .smc-size-xs-12, .smc-size-xs-13, .smc-size-xs-14, .smc-size-xs-15, .smc-size-xs-16, .smc-size-xs-17, .smc-size-xs-18, .smc-size-xs-19, .smc-size-xs-20, .smc-size-xs-21, .smc-size-xs-22, .smc-size-xs-23, .smc-size-xs-24 {
+    float: left;
+}
+
+.smc-size-xs-1 {
+    width: 4.16667%;
+}
+
+.smc-size-xs-2 {
+    width: 8.33333%;
+}
+
+.smc-size-xs-3 {
+    width: 12.5%;
+}
+
+.smc-size-xs-4 {
+    width: 16.66667%;
+}
+
+.smc-size-xs-5 {
+    width: 20.83333%;
+}
+
+.smc-size-xs-6 {
+    width: 25%;
+}
+
+.smc-size-xs-7 {
+    width: 29.16667%;
+}
+
+.smc-size-xs-8 {
+    width: 33.33333%;
+}
+
+.smc-size-xs-9 {
+    width: 37.5%;
+}
+
+.smc-size-xs-10 {
+    width: 41.66667%;
+}
+
+.smc-size-xs-11 {
+    width: 45.83333%;
+}
+
+.smc-size-xs-12 {
+    width: 50%;
+}
+
+.smc-size-xs-13 {
+    width: 54.16667%;
+}
+
+.smc-size-xs-14 {
+    width: 58.33333%;
+}
+
+.smc-size-xs-15 {
+    width: 62.5%;
+}
+
+.smc-size-xs-16 {
+    width: 66.66667%;
+}
+
+.smc-size-xs-17 {
+    width: 70.83333%;
+}
+
+.smc-size-xs-18 {
+    width: 75%;
+}
+
+.smc-size-xs-19 {
+    width: 79.16667%;
+}
+
+.smc-size-xs-20 {
+    width: 83.33333%;
+}
+
+.smc-size-xs-21 {
+    width: 87.5%;
+}
+
+.smc-size-xs-22 {
+    width: 91.66667%;
+}
+
+.smc-size-xs-23 {
+    width: 95.83333%;
+}
+
+.smc-size-xs-24 {
+    width: 100%;
+}
+
+@media (min-width: 0) and (max-width: 767px) {
+
+    //  .smc-cpd-content, .smc-cpd-footer {
+    //      width: 75%;
+    //  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    //.smc-cpd-content, .smc-cpd-footer {
+    //    width: 75%;
+    //}
+    .smc-size-sm-1, .smc-size-sm-2, .smc-size-sm-3, .smc-size-sm-4, .smc-size-sm-5, .smc-size-sm-6, .smc-size-sm-7, .smc-size-sm-8, .smc-size-sm-9, .smc-size-sm-10, .smc-size-sm-11, .smc-size-sm-12, .smc-size-sm-13, .smc-size-sm-14, .smc-size-sm-15, .smc-size-sm-16, .smc-size-sm-17, .smc-size-sm-18, .smc-size-sm-19, .smc-size-sm-20, .smc-size-sm-21, .smc-size-sm-22, .smc-size-sm-23, .smc-size-sm-24 {
+        float: left;
+    }
+
+    .smc-size-sm-1 {
+        width: 4.16667%;
+    }
+
+    .smc-size-sm-2 {
+        width: 8.33333%;
+    }
+
+    .smc-size-sm-3 {
+        width: 12.5%;
+    }
+
+    .smc-size-sm-4 {
+        width: 16.66667%;
+    }
+
+    .smc-size-sm-5 {
+        width: 20.83333%;
+    }
+
+    .smc-size-sm-6 {
+        width: 25%;
+    }
+
+    .smc-size-sm-7 {
+        width: 29.16667%;
+    }
+
+    .smc-size-sm-8 {
+        width: 33.33333%;
+    }
+
+    .smc-size-sm-9 {
+        width: 37.5%;
+    }
+
+    .smc-size-sm-10 {
+        width: 41.66667%;
+    }
+
+    .smc-size-sm-11 {
+        width: 45.83333%;
+    }
+
+    .smc-size-sm-12 {
+        width: 50%;
+    }
+
+    .smc-size-sm-13 {
+        width: 54.16667%;
+    }
+
+    .smc-size-sm-14 {
+        width: 58.33333%;
+    }
+
+    .smc-size-sm-15 {
+        width: 62.5%;
+    }
+
+    .smc-size-sm-16 {
+        width: 66.66667%;
+    }
+
+    .smc-size-sm-17 {
+        width: 70.83333%;
+    }
+
+    .smc-size-sm-18 {
+        width: 75%;
+    }
+
+    .smc-size-sm-19 {
+        width: 79.16667%;
+    }
+
+    .smc-size-sm-20 {
+        width: 83.33333%;
+    }
+
+    .smc-size-sm-21 {
+        width: 87.5%;
+    }
+
+    .smc-size-sm-22 {
+        width: 91.66667%;
+    }
+
+    .smc-size-sm-23 {
+        width: 95.83333%;
+    }
+
+    .smc-size-sm-24 {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    //  .smc-cpd-header-login, .smc-cpd-content, .smc-cpd-footer {
+    //      width: 41.66%;
+    //   }
+
+    .smc-size-md-1, .smc-size-md-2, .smc-size-md-3, .smc-size-md-4, .smc-size-md-5, .smc-size-md-6, .smc-size-md-7, .smc-size-md-8, .smc-size-md-9, .smc-size-md-10, .smc-size-md-11, .smc-size-md-12, .smc-size-md-13, .smc-size-md-14, .smc-size-md-15, .smc-size-md-16, .smc-size-md-17, .smc-size-md-18, .smc-size-md-19, .smc-size-md-20, .smc-size-md-21, .smc-size-md-22, .smc-size-md-23, .smc-size-md-24 {
+        float: left;
+    }
+
+    .smc-size-md-1 {
+        width: 4.16667%;
+    }
+
+    .smc-size-md-2 {
+        width: 8.33333%;
+    }
+
+    .smc-size-md-3 {
+        width: 12.5%;
+    }
+
+    .smc-size-md-4 {
+        width: 16.66667%;
+    }
+
+    .smc-size-md-5 {
+        width: 20.83333%;
+    }
+
+    .smc-size-md-6 {
+        width: 25%;
+    }
+
+    .smc-size-md-7 {
+        width: 29.16667%;
+    }
+
+    .smc-size-md-8 {
+        width: 33.33333%;
+    }
+
+    .smc-size-md-9 {
+        width: 37.5%;
+    }
+
+    .smc-size-md-10 {
+        width: 41.66667%;
+    }
+
+    .smc-size-md-11 {
+        width: 45.83333%;
+    }
+
+    .smc-size-md-12 {
+        width: 50%;
+    }
+
+    .smc-size-md-13 {
+        width: 54.16667%;
+    }
+
+    .smc-size-md-14 {
+        width: 58.33333%;
+    }
+
+    .smc-size-md-15 {
+        width: 62.5%;
+    }
+
+    .smc-size-md-16 {
+        width: 66.66667%;
+    }
+
+    .smc-size-md-17 {
+        width: 70.83333%;
+    }
+
+    .smc-size-md-18 {
+        width: 75%;
+    }
+
+    .smc-size-md-19 {
+        width: 79.16667%;
+    }
+
+    .smc-size-md-20 {
+        width: 83.33333%;
+    }
+
+    .smc-size-md-21 {
+        width: 87.5%;
+    }
+
+    .smc-size-md-22 {
+        width: 91.66667%;
+    }
+
+    .smc-size-md-23 {
+        width: 95.83333%;
+    }
+
+    .smc-size-md-24 {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .smc-size-lg-1, .smc-size-lg-2, .smc-size-lg-3, .smc-size-lg-4, .smc-size-lg-5, .smc-size-lg-6, .smc-size-lg-7, .smc-size-lg-8, .smc-size-lg-9, .smc-size-lg-10, .smc-size-lg-11, .smc-size-lg-12, .smc-size-lg-13, .smc-size-lg-14, .smc-size-lg-15, .smc-size-lg-16, .smc-size-lg-17, .smc-size-lg-18, .smc-size-lg-19, .smc-size-lg-20, .smc-size-lg-21, .smc-size-lg-22, .smc-size-lg-23, .smc-size-lg-24 {
+        float: left;
+    }
+
+    .smc-size-lg-1 {
+        width: 4.16667%;
+    }
+
+    .smc-size-lg-2 {
+        width: 8.33333%;
+    }
+
+    .smc-size-lg-3 {
+        width: 12.5%;
+    }
+
+    .smc-size-lg-4 {
+        width: 16.66667%;
+    }
+
+    .smc-size-lg-5 {
+        width: 20.83333%;
+    }
+
+    .smc-size-lg-6 {
+        width: 25%;
+    }
+
+    .smc-size-lg-7 {
+        width: 29.16667%;
+    }
+
+    .smc-size-lg-8 {
+        width: 33.33333%;
+    }
+
+    .smc-size-lg-9 {
+        width: 37.5%;
+    }
+
+    .smc-size-lg-10 {
+        width: 41.66667%;
+    }
+
+    .smc-size-lg-11 {
+        width: 45.83333%;
+    }
+
+    .smc-size-lg-12 {
+        width: 50%;
+    }
+
+    .smc-size-lg-13 {
+        width: 54.16667%;
+    }
+
+    .smc-size-lg-14 {
+        width: 58.33333%;
+    }
+
+    .smc-size-lg-15 {
+        width: 62.5%;
+    }
+
+    .smc-size-lg-16 {
+        width: 66.66667%;
+    }
+
+    .smc-size-lg-17 {
+        width: 70.83333%;
+    }
+
+    .smc-size-lg-18 {
+        width: 75%;
+    }
+
+    .smc-size-lg-19 {
+        width: 79.16667%;
+    }
+
+    .smc-size-lg-20 {
+        width: 83.33333%;
+    }
+
+    .smc-size-lg-21 {
+        width: 87.5%;
+    }
+
+    .smc-size-lg-22 {
+        width: 91.66667%;
+    }
+
+    .smc-size-lg-23 {
+        width: 95.83333%;
+    }
+
+    .smc-size-lg-24 {
+        width: 100%;
+    }
+}
+//ESTRUTURA DO FW
+.smc-login {
+    //  margin-top: 66px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.smc-display > label {
+    color: #807f7f;
+    margin-right: 5px;
+}
+
+// class para situação do diploma
+.smc-cpd-diploma-valido {
+    display: block;
+    clear: both;
+    float: left;
+    margin: -5px 0 0 15px;
+    background: #fff;
+    padding: 3px 12px;
+    border-radius: 30px;
+    border: 2px solid #328b41;
+
+    .smc-display {
+        padding: 0;
+        margin: 0;
+    }
+
+    p {
+        color: #328b41;
+        font-family: "UniSansRegular";
+        font-size: 13px;
+        font-weight: 600;
+    }
+}
+
+.smc-cpd-diploma-invalido {
+    display: block;
+    clear: both;
+    float: left;
+    margin: -5px 0 0 15px;
+    background: #fff;
+    padding: 3px 12px;
+    border-radius: 30px;
+    border: 2px solid #cd3f34;
+
+    .smc-display {
+        padding: 0;
+        margin: 0;
+    }
+
+    p {
+        color: #cd3f34;
+        font-family: "UniSansRegular";
+        font-size: 13px;
+        font-weight: 600;
+    }
+}
+
+.smc-cpd-diploma-andamento {
+    display: block;
+    clear: both;
+    float: left;
+    margin: -5px 0 0 15px;
+    background: #fff;
+    padding: 3px 12px;
+    border-radius: 30px;
+    border: 2px solid #d9a60a;
+
+    .smc-display {
+        padding: 0;
+        margin: 0;
+    }
+
+    p {
+        color: #d9a60a;
+        font-family: "UniSansRegular";
+        font-size: 13px;
+        font-weight: 600;
+    }
+}
+
+.smc-list-no-results,
+.smc-datagrid-no-results,
+.smc-treeview-no-results,
+.smc-detalhe-editavel-painel-nao-encontrado {
+    color: #807f7f;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.smc-list-faca-filtros {
+    display: none;
+}
+
+.smc-cpd-mensagem-inicio {
+    margin-bottom: 20px;
+}
+
+.smc-cpd-historico-anulacao {
+    border: 1px solid #cecece;
+    padding: 25px 60px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+
+    @media screen and (max-width: 550px) {
+        padding: 25px !important;
+    }
+
+    h2 {
+        margin-left: 0;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    div.smc-grid {
+        div.smc-datagrid {
+            table {
+                thead {
+                    tr {
+                        th {
+                            background-color: #00557e;
+                            color: #ffffff;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.smc-footer {
+    height: 120px;
+    width: 100%;
+    margin: 0;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 0;
+    display: block;
+    clear: both;
+
+    .smc-footer-conteudo {
+        border-top: 1px solid #ddd;
+        padding-top: 30px;
+    }
+}
+
+.smc-footer-copyright {
+    font-size: 9px;
+    color: #807f7f;
+}
+
+.smc-footer-logo-smc:before, .smc-footer-logo-gti:before {
+    color: #807f7f;
+}
+
+.smc-hidepanel {
+    width: 30px;
+    display: inline-block;
+    float: left;
+    margin-left: -35px;
+    z-index: 100;
+    position: relative;
+
+    .smc-hidepanel-button {
+        font-size: 0;
+        margin-top: -3px;
+        border: 1px solid #807f7f !important;
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+
+        &::before {
+            content: "?";
+            display: block;
+            font-weight: bold;
+            color: #807f7f;
+            font-size: 16px;
+            margin-left: -15px;
+            margin-top: -2px;
+        }
+    }
+
+    .smc-hidepanel-panel {
+        width: 350px;
+        height: 248px;
+        background-image: url('../Images/diploma-cod-validacao.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 5px solid #fff;
+        -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+        position: absolute;
+    }
+}
+
+.smc-acessibilidade-contraste {
+    .smc-cpd-header-login {
+        filter: grayscale(100%);
+    }
+}
+
+.smc-acessibilidade1 {
+    h2 {
+        font-size: 27px !important;
+    }
+
+    button {
+        font-size: 18px !important;
+        padding-right: auto;
+    }
+}
+
+.smc-acessibilidade2 {
+    button {
+        font-size: 22px !important;
+        padding-right: auto;
+    }
+
+    h2 {
+        font-size: 30px !important;
+    }
+}

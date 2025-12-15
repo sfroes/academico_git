@@ -1,0 +1,12 @@
+﻿@model List<AdesaoContratoBeneficiosViewModel>
+
+@(Smc.Grid("gridBeneficio" + Model.Count(), new SMCPagerModel<AdesaoContratoBeneficiosViewModel>(Model))
+                                                            .FieldColumn(f => f.DescricaoBeneficio, cssClass: "smc-size-md-10")
+                                                            .FieldColumn(f => f.DataInicioVigencia, cssClass: "smc-size-md-3")
+                                                            .FieldColumn(f => f.DataFimVigencia, cssClass: "smc-size-md-3")
+                                                            .FieldColumn(f => f.TipoBeneficio, cssClass: "smc-size-md-5")
+                                                            .FieldColumn(f => f.DescricaoValorBeneficio, cssClass: "smc-size-md-3")
+                                                            .HideGridTitle()
+                                                            .HideNavigator()
+                                                            .HideRowNumber()
+                                                            .Size(SMCSize.Grid24_24))

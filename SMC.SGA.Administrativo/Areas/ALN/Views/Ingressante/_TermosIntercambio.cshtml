@@ -1,0 +1,7 @@
+﻿@model IngressanteDynamicModel
+
+@if (Model.ExigeParceriaIntercambioIngresso.GetValueOrDefault())
+{
+    @Smc.EditorFor(m => m.OfertasMatrizDependencyTermos)
+    @Smc.EditorFor(m => m.TermosIntercambio).Readonly(Model.DadosAcademicosSomenteLeitura)
+}

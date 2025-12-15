@@ -1,0 +1,48 @@
+﻿@using SMC.SGA.Administrativo.Areas.ALN.Models
+
+@model IngressanteListarDynamicModel
+
+@Html.Action("CabecalhoIngressante", "Ingressante", new { seqIngressante = Model.Seq })
+
+@using (Smc.Form("formAssociacaoFormacaoEspecificaIngressante", "SalvarAssociacaoFormacaoEspecificaIngressante").Begin())
+{
+    using (Smc.Fieldset("DadosAcademicos").Begin())
+    {
+        @Smc.DisplayFor(m => m.Campanha).Size(SMCSize.Grid10_24)
+        @Smc.DisplayFor(m => m.ProcessoSeletivo).Size(SMCSize.Grid14_24)
+        @Smc.DisplayFor(m => m.GrupoEscalonamento).Size(SMCSize.Grid10_24)
+
+        using (Smc.Div().Size(SMCSize.Grid7_24).Begin())
+        {
+            if (Model.TipoVinculoAlunoExigeCurso && !string.IsNullOrEmpty(Model.InformacaoEscalonamentoFormatada))
+            {
+                @Smc.Instructions().Text(Model.InformacaoEscalonamentoFormatada).CssClass("smc-sga-instruction smc-sga-instruction-vinculo-ingressante-modal")
+            }
+            @Smc.DisplayFor(m => m.Vinculo)
+        }
+        @Smc.DisplayFor(m => m.FormaIngresso).Size(SMCSize.Grid7_24)
+        if (!string.IsNullOrEmpty(Model.DescricaoInstituicaoTransferenciaExterna))
+        {
+            @Smc.DisplayFor(m => m.DescricaoInstituicaoTransferenciaExterna).Size(SMCSize.Grid10_24)
+            @Smc.DisplayFor(m => m.CursoTransferenciaExterna).Size(SMCSize.Grid14_24)
+        }
+        if (Model.OfertasCampanha.SMCCount() > 0)
+        {
+            @Smc.DisplayFor(m => m.OfertasCampanha).Size(SMCSize.Grid24_24)
+        }
+        else
+        {
+            using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+            {
+                <p>@Smc.GetUIResource("Label_Campo_Vazio")</p>
+            }
+        }
+        if (Model.TipoVinculoAlunoExigeCurso)
+        {
+            @Smc.DisplayFor(m => m.MatrizCurricularOferta).Size(SMCSize.Grid24_24)
+            @Smc.DisplayFor(m => m.FormacoesEspecificas).Size(SMCSize.Grid24_24)
+            @Smc.DisplayFor(m => m.TipoOrientacao).Size(SMCSize.Grid24_24)
+            @Smc.DisplayFor(m => m.Orientadores).Size(SMCSize.Grid24_24)
+        }
+    }
+}

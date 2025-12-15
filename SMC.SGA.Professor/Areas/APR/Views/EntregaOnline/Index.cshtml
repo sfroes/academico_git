@@ -1,0 +1,102 @@
+﻿@model AplicacaoAvaliacaoEntregaOnlineViewModel
+
+@using (Smc.Header("headerAplicacaoAvaliacao", SMCHeaderType.Primary)
+            .Item(x => x.DescricaoOrigemAvaliacao, sizeMD: SMCSize.Grid24_24, sizeSM: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24)
+            .Item(x => x.Sigla, sizeMD: SMCSize.Grid4_24, sizeSM: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24)
+            .Item(x => x.Descricao, sizeMD: SMCSize.Grid20_24, sizeSM: SMCSize.Grid20_24, sizeXS: SMCSize.Grid20_24, sizeLG: SMCSize.Grid20_24)
+            .Item(x => x.Valor, sizeMD: SMCSize.Grid4_24, sizeSM: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24)
+            //.Item(x => x.DataInicio, sizeMD: SMCSize.Grid3_24, sizeSM: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid3_24)
+            //.Item(x => x.DataFim, sizeMD: SMCSize.Grid3_24, sizeSM: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid3_24)
+            .Item("Data", $"{Model.DataInicio.ToString("dd/MM/yyyy HH:mm")} a {(Model.DataFim.HasValue ? Model.DataFim.Value.ToString("dd/MM/yyyy HH:mm") : "-")}", sizeMD: SMCSize.Grid8_24, sizeSM: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid8_24)
+            .Item(x => x.QuantidadeMaximaPessoasGrupo, sizeMD: SMCSize.Grid6_24, sizeSM: SMCSize.Grid10_24, sizeXS: SMCSize.Grid24_24, sizeLG: SMCSize.Grid6_24)
+            .Begin())
+{
+}
+
+@if (Model.EntregasOnline != null && Model.EntregasOnline.Any())
+{
+    using (Smc.Div("DivLegendasSituacao").Size(SMCSize.Grid16_24, SMCSize.Grid24_24, SMCSize.Grid16_24, SMCSize.Grid16_24).Begin())
+    {
+        @(Smc.Legend("legendaSituacao", SMCOrientation.Horizontal)
+            .CssClass("smc-legenda-titulo-agrupamento")
+            .Items<SMC.Academico.Common.Areas.APR.Enums.SituacaoEntregaOnline>())
+    }
+    using (Smc.Div("DivLegendasResponsavel").Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid8_24).Begin())
+    {
+
+        @(Smc.Legend("legendaResponsavel", SMCOrientation.Horizontal)
+            .CssClass("smc-legenda-titulo-agrupamento")
+            .Items<SMC.Academico.Common.Areas.APR.Enums.ResponsavelEntregaOnline>())
+    }
+
+    @Smc.EditorFor(x => x.OrdenacaoCorrecaoEntregaOnline).CssClass("smc-sga-alinhamento-ordenacao col-sm-offset-8 col-md-offset-14 col-lg-offset-16")
+
+    using (Smc.Form("frmSalvar", "Salvar").Begin())
+    {
+        Model.PostIndex = true;
+
+        @Smc.HiddenFor(x => x.SeqAplicacaoAvaliacao)
+        @Smc.HiddenFor(x => x.SeqOrigemAvaliacao)
+        @Smc.HiddenFor(x => x.QuantidadeMaximaPessoasGrupo)
+        @Smc.HiddenFor(x => x.DataInicio)
+        @Smc.HiddenFor(x => x.DataFim)
+        @Smc.HiddenFor(x => x.Valor)
+        @Smc.HiddenFor(x => x.PostIndex)
+
+        @(Smc.List("EntregasOnline", m => m.EntregasOnline).CssClass("smc-sga-lista-entrega-online")
+            .HtmlTemplate(item => @Html.Partial("_EntregaOnlineItem", item.Value)).AllowSelect())
+
+        var botaoVoltar = Smc.Button(SMCButtonBehavior.Voltar).CssClass("smc-btn-voltar-icotext");
+        if (Model.BackLancamentoNota)
+        {
+            botaoVoltar.Url(Url.Content("~/App/APR/LancamentoNota?seqOrigemAvaliacao=" + new SMCEncryptedLong(Model.SeqOrigemAvaliacao)));
+        }
+        else
+        {
+            botaoVoltar.Action("Index", "Avaliacao", new { @SeqOrigemAvaliacao = new SMCEncryptedLong(Model.SeqOrigemAvaliacao) }, true);
+        }
+
+        @(Smc.ButtonSet()
+                .AddButton(Smc.Button("DownloadSelecionados").CssClass("smc-btn-download-icotext-destaque").Action("DownloadSelecionados").Type(SMCButtonType.Submit).Attribute(SMCMvcConsts.BUTTON_ATTRIBUTE_DOWNLOAD, "true"))
+                .AddButton(Smc.Button(SMCButtonBehavior.Salvar).Action("Salvar").CssClass("smc-btn-salvar-icotext-destaque"))
+                .AddButton(botaoVoltar)
+        )
+    }
+}
+else
+{
+    <p class="smc-datagrid-no-results"> @Smc.GetUIResource("EntregaOnline_Nenhuma_Entrega") </p>
+    @(Smc.ButtonSet()
+          .AddButton(Smc.Button(SMCButtonBehavior.Voltar).CssClass("smc-btn-voltar-icotext"))
+    )
+}
+
+@using (Smc.ModalWindow("modalLiberarNegarNovaEntrega")
+            .Form("frmModalLiberarNegarNovaEntrega", "SalvarLiberacaoNovaEntrega", "EntregaOnline", new { area = "APR" }, true, x => x.Ajax())
+            .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("SalvarNegacaoNovaEntrega").Text(Smc.GetUIResource("Botao_LiberarNovaEntrega_Negar")))
+            .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("SalvarLiberacaoNovaEntrega").Text(Smc.GetUIResource("Botao_LiberarNovaEntrega_Liberar")).Highlight())
+            .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Size(SMCModalWindowSize.Medium)
+            .Begin()) { }
+
+@using (Smc.ModalWindow("modalLiberarNovaEntrega")
+            .Form("frmModalLiberarNovaEntrega", "SalvarLiberacaoNovaEntrega", "EntregaOnline", new { area = "APR" }, true, x => x.Ajax())
+            .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Enabled(false).Text(Smc.GetUIResource("Botao_LiberarNovaEntrega_Negar")))
+            .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("SalvarLiberacaoNovaEntrega").Text(Smc.GetUIResource("Botao_LiberarNovaEntrega_Liberar")).Highlight())
+            .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Size(SMCModalWindowSize.Medium)
+            .Begin()) { }
+
+@using (Smc.ModalWindow("modalHistoricoSituacoes")
+           .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+           .Size(SMCModalWindowSize.Large)
+           .Begin()) { }
+
+@section scripts
+{
+    <script type="text/javascript">
+        $("[name='OrdenacaoCorrecaoEntregaOnline']").on("change", function () {
+            window.location.href = "@Html.Raw(Url.Action("index", "EntregaOnline", new { area = "apr", seqAplicacaoAvaliacao = new SMCEncryptedLong(Model.SeqAplicacaoAvaliacao), seqOrigemAvaliacao = new SMCEncryptedLong(Model.SeqOrigemAvaliacao)}))&ordenacaoCorrecaoEntregaOnline=" + $(this).val();
+        });
+    </script>
+}

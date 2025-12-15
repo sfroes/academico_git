@@ -1,0 +1,41 @@
+﻿@model FuncionarioDynamicModel
+@using (Smc.Div("DivConfirmacao").CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    @Smc.EditorFor(m => m.MensagemStep6)
+
+    using (Smc.Fieldset("DadosPessoais").Begin())
+    {
+        @Smc.DisplayFor(p => p.Nome)
+        @Smc.DisplayFor(p => p.NomeSocialConfirmacao)
+        @Smc.DisplayFor(p => p.DataNascimento)
+        @Smc.DisplayFor(p => p.Cpf)
+        @Smc.DisplayFor(p => p.NumeroPassaporteConfirmacao).Size(SMCSize.Grid8_24)
+    }
+    if (Model.Enderecos.SMCCount() + Model.Telefones.SMCCount() + Model.EnderecosEletronicos.SMCCount() > 0)
+    {
+        using (Smc.Fieldset("Contatos").Begin())
+        {
+            if (Model.Enderecos.SMCCount() > 0)
+            {
+                @Smc.DisplayFor(p => p.Enderecos).CssClass("smc-sga-confirmacao-dados-agrupamento")
+            }
+            if (Model.Telefones.SMCCount() > 0)
+            {
+                @Smc.DisplayFor(p => p.Telefones).CssClass("smc-sga-confirmacao-dados-agrupamento-telefone")
+            }
+            if (Model.EnderecosEletronicos.SMCCount() > 0)
+            {
+                @Smc.DisplayFor(p => p.EnderecosEletronicos).CssClass("smc-sga-confirmacao-dados-agrupamento-email")
+            }
+        }
+    }
+    using (Smc.Fieldset("Vinculo").Begin())
+    {
+        @Smc.DisplayFor(p => p.DescricaoVinculoConfirmacao)
+
+        if (Model.ExibirCamposTipoEntidadesEEntidades)
+        {
+            @Smc.DisplayFor(p => p.DescricaoEntidadeCadastrada)
+        }
+    }
+}

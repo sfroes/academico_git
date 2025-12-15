@@ -1,0 +1,34 @@
+﻿@model TurmaCabecalhoConfiguracoesViewModel
+
+@*@if (Model.ConfiguracaoPrincipal == SMC.Academico.Common.Enums.LegendaPrincipal.Principal)
+{
+    using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+    {
+        @Smc.LegendItem(m => m.ConfiguracaoPrincipal, false)
+    }
+    @Smc.DisplayFor(m => m.DescricaoConfiguracaoComponente).CssClass("smc-listdetailed-conteudo-titulo smc-listdetailed-conteudo-titulo-aninhado").HideLabel().Size(SMCSize.Grid23_24, SMCSize.Grid23_24, SMCSize.Grid23_24, SMCSize.Grid23_24)
+}
+else
+{
+    @Smc.DisplayFor(m => m.DescricaoConfiguracaoComponente).CssClass("smc-listdetailed-conteudo-titulo smc-listdetailed-conteudo-titulo-aninhado smc-recuo-esquerda").HideLabel().Size(SMCSize.Grid23_24, SMCSize.Grid23_24, SMCSize.Grid23_24, SMCSize.Grid23_24)
+
+}*@
+
+@if (Model.ConfiguracaoPrincipal == SMC.Academico.Common.Enums.LegendaPrincipal.Principal)
+{
+    using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid1_24, SMCSize.Grid1_24).Begin())
+    {
+        @Smc.LegendItem(m => m.ConfiguracaoPrincipal, false)
+    }
+    @Smc.DisplayFor(m => m.DescricaoConfiguracaoComponente).HideLabel().Size(SMCSize.Grid19_24, SMCSize.Grid22_24, SMCSize.Grid17_24, SMCSize.Grid19_24)
+}
+else
+{
+    @Smc.DisplayFor(m => m.DescricaoConfiguracaoComponente).CssClass("smc-sga-header-detalhes-offset").HideLabel().Size(SMCSize.Grid20_24, SMCSize.Grid24_24, SMCSize.Grid18_24, SMCSize.Grid20_24)
+
+}
+
+
+
+
+

@@ -1,0 +1,40 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.MAT.Models.TurmaSelecionadaItemViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-sga-plano-estudo-item").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div().CssClass("").Size(SMCSize.Grid22_24).Begin())
+            {
+                <div class="smc-sga-plano-estudo-intro">
+                    @Smc.LegendItem(m => m.PertenceAoCurriculo)
+                    @Smc.DisplayFor(m => m.DescricaoConteudoTurma).CssClass("smc-sga-plano-desc").Size(SMCSize.Grid24_24).HideLabel()
+                </div>
+
+                <ul>
+                    @foreach (var cargaHoraria in Model.ListaCargasHorarias)
+                    {
+                        <li>@cargaHoraria</li>
+                    }
+                </ul>
+            }
+
+            using (Smc.Div().CssClass("").Size(SMCSize.Grid2_24).Begin())
+            {
+                var buttonSet = Smc.ButtonSet().Type(SMCButtonSetType.Secondary).Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24).Orientation(SMCOrientation.Vertical);
+
+                buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Excluir)
+                                     .Enabled(Model.PermiteExclusao)
+                                     .Ajax(isPost: false)
+                                     //.Action("TurmaExcluirSelecaoAluno", "Matricula", new { @SeqTurma = Model.Seq, @SeqSolicitacaoMatricula = Request.QueryString["seqSolicitacaoMatricula"], @SeqProcessoEtapa = Model.SeqProcessoEtapa, @SeqConfiguracaoEtapa = Request.QueryString["seqConfiguracaoEtapa"] })
+                                     .Action("SelecaoPlanoEstudoExcluirTurma", "Matricula", new { @SeqSolicitacaoMatriculaItem = Model.SeqSolicitacaoMatriculaItem, @SeqSolicitacaoMatricula = Model.SeqSolicitacaoMatricula, @SeqConfiguracaoEtapa = Model.SeqConfiguracaoEtapa })
+                                     .Confirm(Smc.GetUIResource("Title_Excluir_Turma_Selecionado"), string.Format(Smc.GetUIResource("Excluir_Turma_Item_Selecionado"), Model.NomeDisciplina))
+                                     .DisplayMode(SMCButtonDisplayMode.Icon));
+
+                @buttonSet;
+            }
+        }
+    }
+}

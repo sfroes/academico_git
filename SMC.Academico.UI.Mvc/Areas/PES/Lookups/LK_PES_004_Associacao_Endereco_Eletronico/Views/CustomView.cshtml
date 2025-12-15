@@ -1,0 +1,51 @@
+﻿@*
+    BaseType: SMC.Framework.UI.Mvc.SMCWebViewPage
+    DisableLinePragmas: true
+    Imports: SMC.Framework,
+    SMC.Framework.DataAnnotations,
+    SMC.Framework.Extensions,
+    SMC.Framework.Ioc,
+    SMC.Framework.Mapper,
+    SMC.Framework.Model,
+    SMC.Framework.Security,
+    SMC.Framework.Service.Security,
+    SMC.Framework.UI.Mvc.Dynamic,
+    SMC.Framework.UI.Mvc.Exceptions,
+    SMC.Framework.UI.Mvc.Helpers,
+    SMC.Framework.UI.Mvc.Html,
+    SMC.Framework.UI.Mvc.Util,
+    SMC.Framework.Util,
+    System,
+    System.Collections.Generic,
+    System.Configuration,
+    System.Web,
+    System.Web.Mvc,
+    System.Web.Mvc.Html,
+    SMC.Academico.UI.Mvc.Areas.CUR.Lookups,
+    SMC.Academico.UI.Mvc.Areas.PES.Lookups
+*@
+
+@using SMC.Framework.UI.Mvc.Html.DataSelector
+
+@{object s = ViewBag.DataSelectorSelectedValue; }
+
+@Smc.DataSelectorGrid(s, true, x =>
+{
+    var btn = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+    .Attribute(SMCMvcConsts.MODAL_ID, TempData.Peek("LOOKUP_GUID_JANELA"))
+    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Editar_Endereco_Eletronico_Pessoa"))
+    .Ajax(isPost: false)
+    .CssClass("smc-btn-alterar-ico")
+    .Text(Smc.GetUIResource("Botao_Editar_Endereco_Eletronico_Pessoa"))
+    .Tooltip(Smc.GetUIResource("Botao_Editar_Endereco_Eletronico_Pessoa"))
+    .Action("Editar", "PessoaEnderecoEletronicoRoute", new { seq = new SMCEncryptedLong((x as SMC.Academico.UI.Mvc.Areas.PES.Lookups.PessoaEnderecoEletronicoLookupViewModel).Seq), area = string.Empty });
+
+    if((x as SMC.Academico.UI.Mvc.Areas.PES.Lookups.PessoaEnderecoEletronicoLookupViewModel).BloquearEdicao)
+    {
+        btn.Enabled(false);
+        btn.ButtonInstructions(Smc.GetUIResource("Botao_Editar_Endereco_Eletronico_WebMail_PUCMinas_Inativo"));
+    }
+
+    return btn;
+
+})

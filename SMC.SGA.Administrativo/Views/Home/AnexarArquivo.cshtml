@@ -1,0 +1,8 @@
+﻿@model AnexarArquivoViewModel
+
+<p>Selecione o arquivo que deseja anexar:</p>
+@using (Smc.Form("frmArquivos", "SalvarArquivo").Begin())
+{
+    @Smc.EditorFor(x => x.Arquivo).HideLabel()
+    @Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Salvar))
+}

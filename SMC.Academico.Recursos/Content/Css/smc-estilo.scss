@@ -1,0 +1,1263 @@
+@import "componentes/_smc-treeview.scss";
+@import "componentes/_smc-accordion.scss";
+@import "componentes/_smc-dashboard-sat.scss";
+
+.smc-sga-fieldset-agrupamentos-internos {
+    border: solid 1px $smc-cor-principal-bordas !important;
+
+    legend {
+        font-size: 13px !important;
+        font-weight: bold !important;
+        padding: 0 5px !important;
+    }
+
+    .smc-display {
+        label {
+            font-size: 13px !important;
+            margin-left: 10px;
+        }
+    }
+}
+
+//Bug 39008:BUG_UC_CUR_002_01 - Componente Curricular Alinhamento_Divisoes_CHGrade - CLASSE ESPECÍFICA PARA AJUSTAR O ALINHAMENTO DESTE ITEM
+.smc-sga-itens-lista-ajuste {
+    margin-top: 3px !important;
+}
+// BOTÃO ACESSO A DOCUMENTAÇÃO
+.smc-sga-icone-documentacao {
+    background-color: #01253e;
+    border: 2px solid #1783a7;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    z-index: 100;
+    display: block;
+    right: 3%;
+    bottom: 6%;
+    border-radius: 50px;
+
+    a {
+        height: 50px;
+        font-size: 0;
+        width: 50px;
+
+
+        &:before {
+            font-size: 26px !important;
+            padding: 14px 18px;
+            @extend .fa;
+            @extend .fa-file-text;
+            color: #80caff;
+        }
+    }
+}
+// botões de navegação
+.smc-float-left {
+    float: left;
+}
+
+.smc-conta-caracteres { // passar para FW
+    height: 1px;
+}
+
+.smc-sga-matricula-linha-botoes {
+    margin-top: 30px;
+    border-top: 1px solid $smc-cinza-04;
+    box-shadow: 0 -1px 0 0 $smc-branco !important;
+    padding-top: 10px;
+}
+
+.smc-margin-left-15 {
+    margin-left: -15px;
+}
+
+.smc-sga-treeview-legend {
+    div[data-type="smc-treeview-nodes-node-content"] {
+        float: left;
+    }
+}
+
+.smc-sga-treeview-destaque-item {
+    font-weight: bold;
+}
+
+.smc-treeview-campo-busca {
+    border: $smc-treeview-campo-busca-border;
+}
+
+table {
+    td, th {
+        float: none !important;
+    }
+}
+// NO RESULTS
+.smc-list-group-no-results {
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    color: $smc-cor-principal-01;
+
+    p {
+        padding: 0;
+        margin: 5px 0 0 0;
+    }
+}
+// MENSAGENS
+.smc-display.smc-sga-mensagem {
+    width: 100%;
+}
+
+.smc-sga-mensagem {
+    @extend .fa;
+    padding: 9px 10px 0 0;
+    min-height: 47px;
+    margin: 10px 0 10px 0;
+
+    &::before {
+        font-size: 36px;
+        float: left;
+        margin: 0 0 0 8px;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    label, p, ul {
+        margin-left: 50px !important;
+        margin-top: 5px;
+        font-size: 13px;
+    }
+}
+
+.smc-sga-mensagem-multiplas-linhas {
+    padding: 9px 6px 13px 0 !important;
+
+    &::before {
+        /*margin: 6px 0 0 10px;*/
+        //margin: 4px 0 0 10px;
+    }
+}
+
+@mixin coresdasmensagens($smc-mensagem-cor-background, $smc-mensagem-cor-texto, $smc-mensagem-cor-borda, $smc-mensagem-cor-icone, $smc-mensagem-cor-texto-1) {
+    background: $smc-mensagem-cor-background;
+    color: $smc-mensagem-cor-texto;
+    border: solid 2px $smc-mensagem-cor-borda;
+
+    &::before {
+        color: $smc-mensagem-cor-icone;
+    }
+
+    label, p {
+        color: $smc-mensagem-cor-texto !important;
+    }
+}
+
+.smc-sga-mensagem-informativa {
+    @include coresdasmensagens($smc-mensagem-informa-cor-background,$smc-mensagem-informa-cor-texto,$smc-mensagem-informa-cor-borda,$smc-mensagem-informa-cor-borda,$smc-mensagem-informa-cor-texto);
+    @extend .fa-info-circle;
+}
+
+.smc-sga-mensagem-alerta {
+    @include coresdasmensagens($smc-mensagem-aviso-cor-background,$smc-mensagem-aviso-cor-texto,$smc-mensagem-aviso-cor-borda,$smc-mensagem-aviso-cor-borda,$smc-mensagem-informa-cor-texto);
+    @extend .fa-exclamation-circle;
+}
+
+.smc-sga-mensagem-sucesso {
+    @include coresdasmensagens($smc-mensagem-sucesso-cor-background,$smc-mensagem-sucesso-cor-texto,$smc-mensagem-sucesso-cor-borda,$smc-mensagem-sucesso-cor-borda,$smc-mensagem-informa-cor-texto);
+    @extend .fa-check-circle;
+}
+
+.smc-sga-mensagem-erro {
+    @include coresdasmensagens($smc-mensagem-erro-cor-background,$smc-mensagem-erro-cor-texto,$smc-mensagem-erro-cor-borda,$smc-mensagem-erro-cor-borda,$smc-mensagem-informa-cor-texto);
+    @extend .fa-times-circle;
+}
+//UPLOAD
+// Classe específica usada em:
+// - PES/PessoaAtuacaoBloqueio no mestre detalhe de comprovantes para alinhar dropdown ao lado do botão de seleção de arquivo
+// - ALN/ParceriaIntercambio - ver em parceria de intercâmbio http://localhost/Dev/SGA.Administrativo/ALN/ParceriaIntercambio/Editar?seq=54B44C94F46C1EC7
+// - ALN/TermoIntercambio - ver em termo intercâmbio http://localhost/Dev/SGA.Administrativo/ALN/TermoIntercambio/Incluir?seqParceriaIntercambio=54B44C94F46C1EC7
+// - SRC/SolicitacaoServico - ver em etapa bloqueada o desbloqueio da mesma (fieldset "Comprovantes") http://localhost/Dev/SGA.Administrativo/SRC/SolicitacaoServico/Solicitacao?seqSolicitacaoServico=266989ADC993533F)
+.smc-sga-upload-linha-unica {
+    .smc-upload-readonly {
+        margin-top: 32px;
+
+        .smc-uploadFile-arquivo {
+            float: left;
+            margin-top: -31px;
+        }
+    }
+
+    .smc-uploadFile-arquivos {
+        margin-top: -31px;
+        margin-left: 150px;
+        height: 31px;
+
+        span.smc-uploadFile-arquivo-download {
+            right: 6px !important;
+            top: 27px !important;
+        }
+    }
+}
+
+.smc-detalhe-editavel-blocos {
+    .smc-sga-upload-linha-unica {
+        .smc-upload-readonly {
+            margin-top: 0;
+        }
+
+        .smc-uploadFile-arquivo {
+            float: none;
+        }
+    }
+}
+
+.smc-listdetailed-conteudo-valor-secundario {
+    margin: -5px 5px 5px 10px !important;
+}
+
+.smc-listdetailed-background {
+    background-color: #f7f8f9;
+    border-bottom: 3px solid $smc-branco;
+
+    .smc-listdetailed-conteudo-titulo {
+        padding-top: 7px;
+    }
+}
+
+
+//ajuste local para btn uploadfile sga administrativo
+.smc-uploadFile .smc-uploadFile-controles > .smc-uploadFile-input {
+    width: 150px; //limita ao tamanho do botão, não atrapalhando os itens seguintes
+    //border: 1px solid red;
+    //opacity: 1;
+}
+
+//*****RESPONSIVIDADE*****//
+//SM
+@media (max-width:$smc-size-screen-sm-max) {
+    //.navbar > div > .navbar-nav {
+    //    margin-top: -5px !important;
+    //}
+    .navbar::after {
+        display: none;
+    }
+
+    .smc-modal-window-medium {
+        width: 90% !important;
+        left: 5% !important;
+    }
+
+    .smc-sga-ingressante-cabecalho-titulo span {
+        padding-top: 17px;
+    }
+
+    .smc-ribbon {
+        background-position: center center;
+    }
+    //Responsividade abas em SM e XS. Ver em edição de ingressante (ALN)
+    .smc-tabs-header {
+        .smc-tabs-tab {
+            width: 100%;
+            padding: 5px 3px 8px 6px;
+            margin-top: -2px;
+        }
+
+        .smc-tabs-tab-selected {
+            box-shadow: 3px 0px 10px $smc-cinza-05;
+        }
+    }
+    // Accordion
+    .smc-accordion {
+        div[data-type="smc-accordion-content"] {
+            padding: 0 6px 6px 6px;
+        }
+
+        & section {
+            margin: 12px 0 2px 0;
+            padding: 0 7px;
+        }
+    }
+
+    .smc-sga-fieldset-lancamento-nota {
+        .smc-detalhe-editavel-header {
+            display: none !important;
+        }
+    }
+}
+//XS
+@media (max-width:$smc-size-screen-xs-max) {
+    // Accordion
+    .smc-accordion {
+        div[data-type="smc-accordion-content"] {
+            padding: 0 4px 4px 4px;
+        }
+
+        & section {
+            margin: 10px 0 2px 0;
+            padding: 0 5px;
+        }
+    }
+    // Checkbox em lista detalhada
+    .smc-list-item .smc-size-md-1 .smc-checkbox {
+        width: auto;
+    }
+    // Ocultando acessibilidade
+    .smc-acessibilidade {
+        display: none;
+    }
+}
+// MARGENS
+.smc-sga-margin-top-20 {
+    margin-top: 20px;
+}
+// TOTALIZADOR
+.smc-sga-totalizador, .smc-sga-totalizador-destaque {
+    border: 1px solid $smc-cinza-03;
+    background-color: $smc-branco;
+    padding: 7px 0 10px 0;
+
+    p {
+        text-align: center;
+        width: 100% !important;
+        font-weight: bold !important;
+        color: $smc-cor-principal-04 !important;
+    }
+}
+
+.smc-sga-totalizador-destaque {
+    p {
+        margin-bottom: 0 !important;
+    }
+}
+
+.smc-sga-totalizador { // totalizadores http://localhost/Dev/SGA.Administrativo/CUR/CurriculoCursoOfertaGrupo?seqCurriculoCursoOferta=384F9C8FCB58D09F
+    margin-bottom: 0;
+    margin-top: 2px;
+
+    p {
+        margin-top: 5px !important;
+        margin-bottom: -4px !important;
+        // font-size: 12px !important;
+    }
+}
+
+.smc-sga-totalizador-destaque {
+    margin: 5px 0 5px 0;
+    padding: 2px 0;
+
+    label {
+        text-align: center;
+        margin-top: 6px;
+        width: 100%;
+        color: $smc-cinza-07 !important;
+    }
+}
+// CHECKBOX
+.smc-input-checkbox-desabilitado {
+    input {
+        &:before {
+            opacity: 0.6;
+        }
+    }
+}
+// Selecionar turma
+.smc-sga-instruction-totalizador {
+    position: absolute;
+    right: 12px;
+    top: 6px;
+}
+// LEGENDA
+.smc-sga-lista-legenda {
+    padding-top: 2%;
+    clear: both;
+}
+
+.smc-sga-legenda, .smc-legend-box {
+    .smc-legend-content-title {
+        display: none !important;
+    }
+
+    span {
+        color: $smc-preto;
+        font-size: 11px;
+        font-weight: bold;
+    }
+}
+
+.smc-sga-legenda-configuracao-principal {
+    @extend .fa;
+    @extend .fa-star;
+    color: $smc-cor-principal-04;
+
+    &:before {
+        margin: 5px 5px 0 8px !important;
+        display: inline-block;
+    }
+}
+
+.smc-sga-titulo-legenda {
+    margin: 0;
+    font-size: 12px;
+    color: $smc-cinza-07;
+}
+
+.smc-legenda-base {
+    @extend .fa;
+    font-size: 14px;
+    content: "";
+
+    &:before {
+        margin-right: 2px;
+    }
+}
+
+
+.smc-sga-legenda-bloqueio {
+    @extend .smc-legenda-base;
+    @extend .fa-ban;
+    color: #a80b00 !important;
+}
+
+
+.smc-sga-legenda-desbloqueio {
+    @extend .smc-legenda-base;
+    @extend .fa-check-circle-o;
+    color: #47a303 !important;
+}
+
+.smc-sga-legenda-final-etapa {
+    @extend .smc-legenda-base;
+    @extend .fa-star;
+    color: $smc-cor-principal-04;
+}
+
+.smc-sga-legenda-formado {
+    @extend .smc-legenda-base;
+    @extend .fa-graduation-cap;
+    color: $smc-cor-secundaria-01;
+}
+
+.smc-sga-legenda-historico {
+    @extend .smc-legenda-base;
+    @extend .fa-file-text-o;
+    color: $smc-cor-secundaria-04;
+}
+
+.smc-sga-legenda-historico-divergente, .smc-sga-legenda-sancao {
+    @extend .smc-legenda-base;
+    @extend .fa-file-text-o;
+    color: $smc-cor-secundaria-titulos;
+}
+
+%smc-base-legenda-status {
+    margin-top: 0;
+
+    &:before {
+        @extend .fa;
+        margin-right: 5px;
+        font-size: 16px;
+    }
+}
+
+.smc-legenda-status-aguardandoentrega {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-hourglass-half;
+        color: #3d7ef5;
+    }
+}
+
+.smc-legenda-status-aguardandovalidacao {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-clock-o;
+        color: #e6c616;
+    }
+}
+
+.smc-legenda-status-deferido {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-check;
+        color: #3c9c64;
+    }
+}
+
+.smc-legenda-status-apontamento {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-check-circle;
+        color: #518f23;
+    }
+}
+
+.smc-legenda-status-indeferido {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-ban;
+        color: #df6262;
+    }
+}
+
+.smc-legenda-status-aguardandoanalise {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-low-vision;
+        color: #72c6e5;
+    }
+}
+
+.smc-legenda-status-pendente {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-exclamation-triangle;
+        color: #ec9417;
+    }
+}
+
+.smc-legenda-status-instrucoes {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-info-circle;
+        color: #fdcc6e;
+    }
+}
+//ITENS EM DESTAQUE NO GRID
+.smc-sga-item-disponivel {
+    td {
+        background-color: #fffbe7 !important;
+    }
+}
+
+.smc-sga-item-tachado {
+    td {
+        p {
+            text-decoration: line-through;
+            font-style: italic;
+            color: $smc-cinza-05 !important;
+        }
+    }
+}
+// PÁGINA DE REGISTRO DE DOCUMENTOS CADASTRADOS
+.smc-sga-grid-sem-header {
+    thead {
+        display: none;
+    }
+}
+
+.smc-sga-coluna-status {
+    width: 50px;
+    text-align: center;
+
+    div {
+        display: inline-block;
+    }
+}
+
+.smc-sga-texto-informativo { // mensagem de mínimo de itens obrigatórios no registro de documentos
+    color: $smc-cor-principal-04;
+    font-style: italic;
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+// ESTILOS PARA FIELDSET DENTRO DE FIELDSET
+.smc-sga-confirmacao-dados {
+    .smc-sga-fieldset-secundario {
+        clear: none;
+
+        legend {
+            background-color: $smc-branco;
+        }
+    }
+
+    .smc-sga-fieldset-terciario {
+        legend {
+            background-color: transparent;
+        }
+    }
+}
+
+.smc-sga-fieldset-secundario {
+    border-width: 1px !important;
+    padding-bottom: 2px;
+    clear: both;
+
+    legend {
+        font-size: 17px;
+    }
+
+    .smc-datagrid {
+        thead {
+            tr {
+                th {
+                    font-family: "sf_ui_displayregular";
+                }
+            }
+        }
+
+        table {
+            td {
+                padding: 0 5px 0 5px !important;
+            }
+        }
+    }
+}
+
+.smc-sga-fieldset-terciario {
+    margin: 5px;
+    padding: 15px;
+    background: $smc-cinza-02;
+    border-width: 1px !important;
+
+    legend {
+        font-size: 15px !important;
+        font-style: italic;
+    }
+
+    hr {
+        border: none;
+        border-bottom: dashed 1px $smc-cinza-05 !important;
+    }
+}
+
+.smc-sga-fieldset-agrupador {
+    padding: 10px 0 10px 0;
+    display: inline-block;
+    border-bottom: 1px dashed $smc-cor-principal-bordas;
+}
+
+.smc-sga-grupo-fieldset-secundario {
+    background: $smc-cor-principal-01;
+    margin: 0 5px 0 5px;
+    padding: 7px 10px;
+    display: flex;
+
+    p {
+        color: $smc-branco;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.smc-sga-grid-fieldset-secundario {
+    margin-bottom: 10px;
+}
+// ESTILO PARA TELA DE REGISTRO DE DOCUMENTOS
+.smc-sga-registro-documentos {
+    //link
+    .smc-sga-link-entregaposterior {
+        a {
+            text-decoration: underline;
+            color: $smc-cor-principal;
+            font-size: 13px;
+            font-style: italic;
+            border: 0px solid $smc-cor-principal;
+            border-radius: 3px;
+            padding: 1px 3px;
+
+
+            &:before {
+                @extend .fa-external-link;
+                @extend .fa;
+                margin-right: 9px;
+                margin-top: 0px;
+                position: unset;
+                font-size: 13px;
+                padding: 0px;
+                margin-left: 0px;
+            }
+        }
+    }
+    //btn
+    .smc-sga-btn-entregaposterior {
+        margin-top: -9px;
+
+        a {
+            text-decoration: underline;
+            color: $smc-cor-principal;
+            font-size: 13px;
+            font-style: italic;
+            border: 1px solid $smc-cor-principal;
+            border-radius: 3px;
+            padding: 6px 10px 4px 10px;
+            display: inline-block;
+
+
+            &:before {
+                @extend .fa-eye;
+                @extend .fa;
+                margin-right: 9px;
+                margin-top: 0px;
+                position: unset;
+                font-size: 13px;
+                padding: 0px;
+                margin-left: 0px;
+            }
+        }
+    }
+
+    .smc-detalhe-editavel-tabular {
+        margin: 5px 0 0 0;
+        padding-bottom: 0;
+        padding-top: 0;
+        overflow: inherit;
+    }
+
+    .smc-instrucoes-preenchimento-container {
+        display: inline-block !important;
+    }
+
+    .smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados .smc-uploadFile-arquivo-download {
+        margin-top: 7px !important;
+    }
+
+    .smc-detalhe-editavel-header {
+        margin-top: 0 !important;
+    }
+
+    .smc-detalhe-editavel-linha-dados {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .smc-detalhe-editavel-header {
+        .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1:first-child {
+            width: 10px;
+            padding: 0;
+        }
+
+        div {
+            label {
+                font-size: 12px !important;
+            }
+        }
+
+        div:nth-child(1) {
+            label {
+                display: none;
+            }
+        }
+
+        div:nth-child(5) {
+            width: 13px;
+            // background: red!important;
+            // border: 1px solid red!important;
+        }
+
+        div:nth-child(8) {
+            width: 17px;
+        }
+    }
+
+    .smc-detalhe-editavel-linha-dados {
+        .smc-size-md-24 {
+            .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1 {
+                width: 9px !important;
+                margin-left: -9px;
+                padding: 0;
+            }
+
+            .smc-sga-margin-20 {
+                margin-left: -20px;
+            }
+
+            .smc-size-md-1.smc-size-xs-1.smc-size-sm-1.smc-size-lg-1 {
+                margin-left: -9px;
+                width: 28px
+            }
+
+            .smc-upload {
+                width: 102px;
+            }
+
+            .smc-uploadFile-filesCounter {
+                left: 50px;
+            }
+        }
+    }
+
+    .smc-display-legend {
+        margin-top: 7px;
+        margin-left: -10px;
+    }
+
+    .smc-uploadFile-arquivo-download {
+        margin-top: -25px !important;
+    }
+
+    .smc-uploadFile-contextWindowControls {
+        height: 0;
+    }
+}
+
+
+//ajusta item dos labels em relação aos inputs ( que saem do lugar )
+.smc-sga-registro-documentos.smc-sga-ajusta-label .smc-detalhe-editavel-header div:nth-child(5) {
+    width: 9.5%;
+}
+
+.smc-sga-registro-documentos.smc-sga-ajusta-label .smc-detalhe-editavel-header div:nth-child(8) {
+    //border: 1px solid red;
+    width: 4%;
+}
+
+//fim
+
+
+.smc-legend-solicita-inclusao, .smc-legend-solicita-exclusao, .smc-legend-plan-est-nao-alterado {
+    &:before {
+        margin: 0 5px 0 0;
+        font-size: 16px;
+        vertical-align: text-bottom;
+    }
+}
+
+
+.smc-legend-solicita-inclusao {
+    &:before {
+        content: "\f055";
+        color: $smc-verde;
+    }
+}
+
+.smc-legend-solicita-exclusao {
+    &:before {
+        content: "\f056";
+        color: $smc-vermelho;
+    }
+}
+
+.smc-legend-plan-est-nao-alterado {
+    &:before {
+        content: "\f111";
+        color: $smc-cor-principal-03;
+    }
+}
+
+ul.smc-display-collection {
+    list-style: none;
+
+    li::before {
+        content: "• ";
+        margin: 5px 4px 0 5px;
+        color: $smc-cor-principal-04;
+    }
+}
+
+.smc-display.smc-display-collection {
+    p {
+        width: 95% !important;
+    }
+}
+
+.smc-display-collection {
+
+
+    ul {
+        list-style: none;
+
+        li::before {
+            content: "• ";
+            margin: 5px 4px 0 5px;
+            color: $smc-cor-principal-04;
+        }
+    }
+
+    .smc-display {
+        p {
+            width: 95% !important;
+        }
+    }
+}
+// classe para seleção de tipos de relatório
+.smc-filtro-relatorio {
+    background-color: $smc-cinza-02;
+    padding-bottom: 5px;
+
+    fieldset {
+        border: 1px solid $smc-cinza-04 !important;
+    }
+
+    h4, legend {
+        font-size: 12px !important;
+    }
+
+    legend {
+        // font-weight: bold;
+        margin-left: -8px;
+        color: $smc-cinza-06;
+    }
+
+    h4 {
+        background-color: $smc-cor-principal-08;
+        padding: 6px 13px;
+        margin: -10px -5px 5px -5px;
+        color: $smc-cor-principal-01;
+        font: normal normal bold 14px/14px "sf_ui_displayregular",Arial,sans-serif !important;
+    }
+}
+// GERAR RELATÓRIO
+.smc-btn-gerar-relatorio-icotext-destaque {
+
+    & > i {
+        margin-top: 0;
+
+        &:before {
+            line-height: 25px;
+        }
+    }
+}
+//DANDO À BOTÕES APARÊNCIA DE LINK
+.smc-sga-btn-formato-link {
+    float: none;
+    text-align: left;
+
+    .smc-button {
+        .smc-btn-custom {
+            background: transparent;
+            border: none;
+            font-size: 14px;
+            height: 20px;
+            padding: 0 5px 0 5px;
+            min-width: 110px;
+            box-shadow: none !important;
+
+            & > i {
+                @include smc-base-icones;
+                @extend .fa-external-link;
+                float: right;
+                padding: 3px 0 0 4px;
+                font-size: 12px;
+                color: $smc-cor-secundaria;
+            }
+
+            &:hover {
+                color: $smc-cor-principal;
+                text-decoration: underline !important;
+                border: none;
+            }
+        }
+    }
+}
+// Adgrupamento de legandas -> Exemplo na tela de Chancela:
+///SRC/RealizarAtendimento/EntrarEtapa?seqSolicitacaoServico=284997CAB9E53145A3972EF167C78189&seqConfiguracaoEtapa=E4788B75F0FB8F1C
+.smc-sga-legenda-agrupamento {
+    .smc-display-legend {
+        float: left;
+        width: 20px;
+        text-align: center;
+    }
+}
+
+.smc-sga-legenda-agrupamento-legendas {
+    .smc-legend-plan-est-nao-alterado, .smc-legend-solicita-inclusao, .smc-legend-solicita-exclusao {
+        float: left;
+        margin-left: 0px;
+        margin-top: 5px;
+    }
+}
+
+
+//Formatações específicas em Lançamento Notas e Frequências
+.smc-sga-notas-frequencias {
+    .smc-detalhe-editavel-header, .smc-detalhe-editavel-linha-dados {
+        .smc-instrucoes-preenchimento-container {
+            float: right !important;
+        }
+    }
+}
+// Componente de Endereço: Tratamento de responsividade. Disponível em: http://localhost/Dev/SGA.Administrativo/ORG/InstituicaoEnsino/Incluir
+// CLASSE REMOVIDA, POIS FOI APLICADA DIRETAMENTE NO COMPONENTE DE LOCALIDADES
+//.smc-sga-detalhe-editavel-blocos-endereco-responsivo {
+//  & .smc-detalhe-editavel-linha-dados {
+//  .smc-select-simple {
+//  @extend .smc-size-md-6;
+//  @extend .smc-size-xs-24;
+//  @extend .smc-size-sm-7;
+//  @extend .smc-size-lg-4;
+//   }
+//    .smc-button {
+// @extend .smc-size-md-2;
+// @extend .smc-size-xs-6;
+// @extend .smc-size-sm-2;
+// @extend .smc-size-lg-1;
+// & .smc-size-md-1 {
+//     width: 7%;
+// }
+//
+// & .smc-size-sm-3 {
+//     width: 9.5%;
+// }
+//  }
+//  .smc-endereco-correspondencia {
+//  @extend .smc-size-md-6;
+//  @extend .smc-size-xs-24;
+//  @extend .smc-size-sm-10;
+//  @extend .smc-size-lg-4;
+// }
+// }
+//}
+//tela 404
+.smc-tela404-bg {
+    background-color: $smc-cor-principal;
+}
+
+.smc-tela404 {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: 360px;
+    margin-left: -180px;
+    height: 398px;
+    margin-top: -200px;
+    background-color: $smc-cor-principal !important;
+    border: 27px solid $smc-branco !important;
+    box-shadow: 0px 0px 66px -25px #000;
+    opacity: 0.96;
+}
+//
+//Classe para personalização de elementos de Credenciais de Acesso.
+.smc-sga-buttonset-esquerda {
+    float: left !important;
+    margin-top: 10px;
+}
+
+.smc-sga-credencial-acesso {
+    label {
+        font-weight: bold;
+        color: #004058;
+        margin-top: 20px;
+    }
+
+    .smc-sga-credencial-acesso-box {
+        border-bottom: solid 1px $smc-cinza-03;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+
+    .smc-display {
+        label {
+            clear: both;
+        }
+    }
+
+    .smc-buttonset-horizontal-primario {
+        .smc-button {
+            .smc-btn-custom {
+                height: 25px;
+                font-size: 11px;
+            }
+
+            .smc-btn-custom-destaque {
+                line-height: 19px;
+            }
+
+            .smc-btn-proximo-icotext {
+                line-height: 14px;
+                margin-top: 4px;
+
+                i::before {
+                    font-size: 13px !important;
+                }
+            }
+
+            .smc-btn-documento-icotext {
+                line-height: 20px;
+                border: solid 1px $smc-cor-principal !important;
+                margin-top: 0 !important;
+                color: $smc-cor-principal !important;
+
+                &:hover {
+                    color: $smc-branco !important;
+                }
+            }
+        }
+    }
+}
+// --- CLASSE PARA LOOKUP DE DOIS NÍVEIS
+.smc-sga-valor-selecionado {
+    border: 1px solid $smc-cinza-04;
+    color: $smc-cinza-07;
+    background-color: #ededed;
+    border-radius: 5px;
+    min-height: 31px;
+    padding-left: 5px;
+    overflow: hidden;
+
+    p {
+        line-height: 13px;
+        margin: 1px 0px 0 5px !important;
+        display: inline-block;
+        width: 90%;
+        vertical-align: middle;
+    }
+
+    .smc-instrucoes-preenchimento-container {
+        display: inline-block !important;
+        margin-top: 6px;
+        z-index: 1;
+        float: left;
+    }
+
+    .smc-sga-valor-selecionado-pesquisa {
+        margin: 6px 0 0 5px !important;
+    }
+}
+// Tela de chancela de plano de estudo com justificativa
+.smc-sga-chancela-plano-estudo {
+    margin-top: -30px;
+}
+
+.smc-sga-chancela-plano-estudo + .smc-header-tipo-primary {
+    margin-top: -25px;
+    border-top: none;
+}
+// legenda customizada área de integralização
+.smc-sga-legenda-sigla {
+    .smc-display-collection {
+        h3 {
+            margin: 0;
+            font-size: 12px;
+            color: $smc-cinza-07;
+            font-weight: normal !important;
+        }
+
+        > div > div {
+            display: inline-block;
+            width: 30%;
+            // clear: both;
+            p {
+                color: #333;
+                font-size: 11px;
+                font-weight: bold;
+                display: inline-block;
+                width: 85%;
+                position: absolute;
+            }
+
+            label {
+                font-size: 11px;
+                font-weight: bold;
+                margin-right: 3px;
+            }
+        }
+
+        > div > p {
+            display: none;
+        }
+
+        p {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+.smc-btn-acesso-simulado > div > a {
+    background-color: #074458 !important;
+    width: 97%;
+}
+
+.smc-modal-window .smc-modal-header > h2 {
+    font-family: "sf_ui_displayregular" !important;
+    font-size: 1.5em !important;
+}
+
+.smc-btn-alterar-icotext-destaque, .smc-btn-anexar-icotext-destaque, .smc-btn-anterior-icotext-destaque, .smc-btn-atualizar-icotext-destaque, .smc-btn-concluir-icotext-destaque, .smc-btn-configurar-icotext-destaque, .smc-btn-confirmar-icotext-destaque, .smc-btn-copiar-icotext-destaque, .smc-btn-desfazer-icotext-destaque, .smc-btn-desvincular-icotext-destaque, .smc-btn-encaminhar-icotext-destaque, .smc-btn-enviar-icotext-destaque, .smc-btn-fechar-icotext-destaque, .smc-btn-imprimir-icotext-destaque, .smc-btn-limpar-icotext-destaque, .smc-btn-limparenviar-icotext-destaque, .smc-btn-novo-icotext-destaque, .smc-btn-pesquisar-icotext-destaque, .smc-btn-proximo-icotext-destaque, .smc-btn-sair-icotext-destaque, .smc-btn-salvar-icotext-destaque, .smc-btn-salvarnovo-icotext-destaque, .smc-btn-salvarsair-icotext-destaque, .smc-btn-vincular-icotext-destaque, .smc-btn-visualizar-icotext-destaque, .smc-btn-voltar-icotext-destaque, .smc-btn-download-icotext-destaque, .smc-lookup-open-command-text, .smc-sortpicker-ordenar, .smc-uploadFile-contextWindowControls > .smc-button > button, .smc-btn-gerar-relatorio-icotext-destaque {
+    position: relative;
+}
+
+//Emissão documentos - fieldset nome social
+.smc-sga-fieldset-nome-social {
+    border: 2px solid #ccc !important;
+    /* color: red; */
+    margin: 10px 0px;
+    //background-color: #fffae7;
+    border: 2px dashed #d3be6c !important;
+    background: #fff4cc;
+    border-radius: 4px;
+    padding: 7px 0px 9px 10px !important;
+
+    > Legend {
+        font-size: 16px;
+    }
+
+    > div > div > div.smc-sga-mensagem {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.smc-sga-nome-social {
+
+    > label {
+        border-top: 1px dashed #cbc05c;
+        border-bottom: 1px dashed #cbc05c;
+        padding: 0 3px;
+        background-color: #edf7d9;
+    }
+}
+
+
+.smc-sga-select-ReadOly {
+
+    label {
+        font-weight: bold;
+        color: $smc-cor-principal;
+    }
+}
+
+.smc-sga-margin-y-15 {
+    margin: 15px 0px;
+}
+
+.smc-sga-padding-y-10 {
+    margin: 10px 0px;
+}
+
+.smc-sga-mensagens-importantes > div > div > div > p {
+    list-style: inside;
+    list-style-type: disc;
+    display: list-item;
+    margin-left: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e3e3;
+}
+
+.smc-sga-mensagens-importantes > div > div:last-child > div > p {
+    border-bottom: 0px solid;
+}
+
+
+//tabela na modal de emissão ( botão confirmar )
+table.smc-sga-tabela-modal-emissao {
+    //border: 1px solid red;
+    width: 100%;
+    display: inline-block;
+    overflow-x: auto;
+
+    & > tbody > tr > th {
+        width: 155px;
+        border: 1px solid #ccc;
+        padding: 4px 10px;
+        white-space: nowrap;
+        font-weight: lighter;
+    }
+
+    & > tbody > tr:first-child {
+        background: #bad6da;
+        font-weight: bolder;
+    }
+
+    & > tbody > tr:first-child > th {
+        font-weight: bold;
+        padding: 8px 10px;
+    }
+}
+
+//fim emissão documentos

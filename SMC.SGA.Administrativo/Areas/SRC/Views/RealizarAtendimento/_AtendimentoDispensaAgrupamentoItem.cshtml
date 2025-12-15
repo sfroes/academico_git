@@ -1,0 +1,90 @@
+﻿@model SolicitacaoDispensaGrupoViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    {
+        using (Smc.Div().CssClass("smc-listdetailed-item-conteudo").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+        {
+            @Smc.DisplayFor(x => x.ModoExibicaoHistoricoEscolar).CssClass("sga-campo-modo-exibicao").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)
+
+            using (Smc.Div().Begin())
+            {
+                <div class="smc-size-md-12 smc-size-xs-24 smc-size-sm-24 smc-size-lg-12">
+                    <div class="smc-display" data-control="display" data-type="smc-display">
+                        <label>Itens cursados</label>
+                        @if (Model.OrigensInternas != null && Model.OrigensInternas.Any())
+                        {
+                            <ul class="smc-ul-clear">
+                                @foreach (var item in Model.OrigensInternas)
+                                {
+                                    <li>@item.Descricao</li>
+                                }
+                            </ul>
+                        }
+
+                        @if (Model.OrigensExternas != null && Model.OrigensExternas.Any())
+                        {
+                            <ul class="smc-ul-clear">
+                                @foreach (var item in Model.OrigensExternas)
+                                {
+                                    <li>@item.Descricao</li>
+                                }
+                            </ul>
+
+                        }
+
+                        @if ((Model.OrigensInternas == null || !Model.OrigensInternas.Any()) && (Model.OrigensExternas == null || !Model.OrigensExternas.Any()))
+                        {
+                            <p>Nenhum item cursado foi selecionado</p>
+                        }
+                    </div>
+                </div>
+            }
+
+            using (Smc.Div().Begin())
+            {
+                <div class="smc-size-md-12 smc-size-xs-24 smc-size-sm-24 smc-size-lg-12">
+                    <div class="smc-display" data-control="display" data-type="smc-display">
+                        <label>Itens a serem dispensados</label>
+                        @if (Model.Destinos != null && Model.Destinos.Any())
+                        {
+                            <ul class="smc-ul-clear">
+                                @foreach (var item in Model.Destinos)
+                                {
+                                    <li>@item.Descricao</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p>Nenhuma item a ser dispensado foi selecionado</p>
+                        }
+                    </div>
+                </div>
+            }
+        }
+    }
+
+    @(Smc.Templates.DetailedListButtons()
+                 .AllowEdit()
+                 .NumberOfButtonsToShow(2)
+                 .IsModalEdit(true, "modalAdicionarGrupo", Url.Action("SalvarAtendimentoDispensaAgrupamentoGrupo", "RealizarAtendimento", new { area = "SRC" }))
+                 .UrlEdit(Url.Action("AtendimentoDispensaAgrupamentoEditarGrupo", new
+                 {
+                     seqGrupo = Model.Seq,
+                     seqSolicitacaoServico = Model.SeqSolicitacaoDispensa,
+                     seqConfiguracaoEtapa = Model.SeqConfiguracaoEtapa
+                 }))
+                 .TokenEdit(UC_SRC_004_17_02.MANTER_AGRUPAMENTO_ITENS_DISPENSA)
+                 .AllowRemove()
+                 .TokenRemove(UC_SRC_004_17_02.MANTER_AGRUPAMENTO_ITENS_DISPENSA)
+                 .UrlRemove(Url.Action("AtendimentoDispensaAgrupamentoRemoverGrupo", new
+                 {
+                     seqGrupo = Model.Seq,
+                     seqSolicitacaoServico = Model.SeqSolicitacaoDispensa,
+                     seqConfiguracaoEtapa = Model.SeqConfiguracaoEtapa
+                 }))
+                 .MessageRemoveConfirm(SMC.SGA.Administrativo.Areas.SRC.Views.RealizarAtendimento.App_LocalResources.UIResource.MSG_Excluir_Grupo_Dispensa)
+                 .Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24))
+}

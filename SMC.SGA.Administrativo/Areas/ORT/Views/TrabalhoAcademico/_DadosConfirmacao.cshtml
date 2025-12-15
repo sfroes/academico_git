@@ -1,0 +1,53 @@
+﻿@using SMC.SGA.Administrativo.Areas.ORT.Models
+@model TrabalhoAcademicoDynamicModel
+
+@using (Smc.Div().CssClass("smc-sga-confirmacao-dados").Begin())
+{
+    using (Smc.Fieldset("DadosTrabalhoAcademico").Begin())
+    {
+        @Smc.DisplayFor(m => m.Titulo).Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid24_24)
+        @Smc.DisplayFor(m => m.DescricaoNivelEnsino).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24)
+        @Smc.DisplayFor(m => m.DescricaoTipoTrabalho).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24)
+
+		if (Model.DataDepositoSecretaria.HasValue)
+		{
+			@Smc.DisplayFor(m => m.DataDepositoSecretaria).Size(SMCSize.Grid6_24, SMCSize.Grid24_24, SMCSize.Grid12_24, SMCSize.Grid6_24)
+		}
+	}
+
+	using (Smc.Fieldset("Alunos").LegendText(@Smc.GetUIResource("TituloListaAutores")).Begin())
+	{
+		using (Smc.Div("DivAutores").CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24).Begin())
+		{
+            @(Smc.Grid("gridAutor" + Model.Seq, new SMCPagerModel<TrabalhoAcademicoAutoriaViewModel>(Model.Autores))
+                                                                    .ContentColumn(
+                                                                        @<text>
+                                                                            @((item as TrabalhoAcademicoAutoriaViewModel).NomeAutor)
+                                                                        </text>, Smc.GetUIResource("NomeAutor")
+                                                                                )
+                                                                                .ContentColumn(
+                                                                                    @<text>
+                                                                                        @((item as TrabalhoAcademicoAutoriaViewModel).NomeAutorFormatado)
+                                                                                    </text>, Smc.GetUIResource("NomeAutorFormatado")
+                                                                                            )
+                                                                                            .HideGridTitle()
+                                                                                            .HideNavigator()
+                                                                                            .HideRowNumber()
+                                                                                            .Size(SMCSize.Grid24_24))
+        }
+    }
+
+    using (Smc.Fieldset("DivisaoComponentes").LegendText(@Smc.GetUIResource("TituloListaDivisaoComponentes")).Begin())
+    {
+        using (Smc.Div("DivDivisaoComponentes").CssClass("smc-listdetailed-conteudo-lista-item-destaque").Size(SMCSize.Grid24_24).Begin())
+        {
+
+        @(Smc.Grid("gridDivisaoComponentes" + Model.Seq, new SMCPagerModel<TrabalhoAcademicoDivisaoComponenteViewModel>(Model.DivisoesComponente))
+                                                                            .FieldColumn(f => f.DescricaoDivisaoComponente)
+                                                                            .HideGridTitle()
+                                                                            .HideNavigator()
+                                                                            .HideRowNumber()
+                                                                            .Size(SMCSize.Grid24_24))
+        }
+    }
+}

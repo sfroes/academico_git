@@ -1,0 +1,71 @@
+﻿@using SMC.Academico.Common.Areas.CNC.Enums;
+@using SMC.SGA.Administrativo.Areas.SRC.Views.RealizarAtendimento.App_LocalResources;
+@model SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarHistoricoViewModel
+
+@Smc.HiddenFor(a => a.EmissaoDiplomaDigital1Via)
+@Smc.HiddenFor(a => a.CodigoCursoOfertaLocalidade)
+
+@using (Smc.Header("CabecalhoConsultarHistorico", SMCHeaderType.Primary)
+               .Item(i => i.DescricaoSituacaoAtualMatricula, sizeMD: SMCSize.Grid6_24)
+               .Item(i => i.DescricaoFormaIngresso, sizeMD: SMCSize.Grid6_24)
+               .Item(i => i.DataIngresso, sizeMD: SMCSize.Grid6_24)
+               .Item(i => i.DataConclusao, sizeMD: SMCSize.Grid6_24)
+               .Item(i => i.DataColacao, sizeMD: SMCSize.Grid6_24)
+               .Item(i => i.CodigoCurriculo, sizeMD: SMCSize.Grid6_24)
+               .Item(i => i.CargaHorariaCursoFormatada, sizeMD: SMCSize.Grid6_24)
+               .Item(i => i.CargaHorariaCursoIntegralizadaFormatada, sizeMD: SMCSize.Grid6_24).Begin())
+{
+}
+
+@using (Smc.Div("LegendaConsultaHistoricoEscolar").Size(SMCSize.Grid6_24).Begin())
+{
+    <p class="smc-sga-titulo-legenda">
+        @Smc.GetUIResource(UIResource.Titulo_Legenda_ConsultaHistoricoEscolar)
+    </p>
+
+    @(Smc.Legend("ConsultaHistoricoEscolar", SMCOrientation.Horizontal).Items<LegendaConsultaHistoricoEscolar>())
+}
+
+@if (!string.IsNullOrEmpty(Model.MensagemInformativa))
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-display smc-sga-mensagem smc-sga-mensagem-alerta smc-sga-mensagem-multiplas-linhas").Begin())
+    {
+        @Smc.DisplayFor(m => m.MensagemInformativa).HideLabel()
+    }
+}
+
+@using (Smc.Form("filtroConsultarHistorico", "ListarHistoricoEscolar").Ajax("#divGridHistoricoEscolar").Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Fieldset("filtros").CssClass("smc-fieldset-filter").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(m => m.SeqSolicitacaoServico)
+        @Smc.EditorFor(m => m.NumeroVia)
+    }
+}
+
+@using (Smc.Div("divGridHistoricoEscolar").Attribute("data-id", "divGridHistoricoEscolar").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Accordion("AccordionHistoricoEscolar").Begin())
+    {
+        using (Smc.AccordionSection("Disciplina").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.ActionList("ListarHistoricoEscolar", Model)
+        }
+        using (Smc.AccordionSection("AtividadeComplementar").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.ActionList("ListarHistoricoEscolarAtividadeComplementar", Model)
+        }
+        using (Smc.AccordionSection("SituacaoEnade").Size(SMCSize.Grid24_24).Begin())
+        {
+            @(Smc.Grid("gridSituacaoEnade", new SMCPagerModel<SolicitacaoAnaliseEmissaoDocumentoConclusaoConsultarEnadeViewModel>(Model.Enade))
+                .AutoGenerateColumns()
+                .HideGridTitle()
+                .HideNavigator()
+                .HideNumberOfRowsPerPageSelector()
+                .HidePager()
+                .HideRowNumber()
+                .HideRowsTotalizer()
+                )
+        }
+    }
+}

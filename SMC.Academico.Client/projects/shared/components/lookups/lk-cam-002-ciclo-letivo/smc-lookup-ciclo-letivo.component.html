@@ -1,0 +1,11 @@
+<ng-template #template [formGroup]="filterForm">
+    <po-number formControlName="ano" class="smc-size-md-4" p-maxlength="4" p-label="Ano ciclo"></po-number>
+    <po-number formControlName="numero" class="smc-size-md-4" p-maxlength="2" p-label="Nº ciclo"></po-number>
+    <po-select formControlName="seqRegimeLetivo"  class="smc-size-md-6" p-label="Regime letivo"  [p-options]="dataSourceRegimeLetivo"></po-select>
+</ng-template>
+<smc-lookup
+  [s-advanced-search-template]="template"
+  [s-advanced-list-columns]="colunasBuscaAvancada"
+  s-search-by-key="false"
+  s-label="Ciclo Letivo">
+</smc-lookup>

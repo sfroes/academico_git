@@ -1,0 +1,37 @@
+﻿@model OfertaCursoCicloLetivoAssociacaoCursoUnidadeTurnoLoteFiltroViewModel
+
+@section Scripts{
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.Datepicker)
+}
+
+@using (Smc.Form("formPesquisaAssociacaoCursoUnidadeTurnoLote", "ListarAssociacaoCursoUnidadeTurnoLote").Ajax("#divGridAssociacaoCursoUnidadeTurnoLote").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaAssociacaoCursoUnidadeTurnoLote").Begin())
+    {
+        @Smc.FieldEditorFor(prop => prop.SeqOfertaCursoCicloLetivo)
+        @Smc.FieldEditorFor(prop => prop.SeqModalidade)
+        @Smc.FieldEditorFor(prop => prop.SeqUnidadeLocalidadeSelecionada)
+        @Smc.FieldEditorFor(prop => prop.SeqCurso)
+        @Smc.FieldEditorFor(prop => prop.SeqTurno)
+
+        using (Smc.FieldButtonSet().Size(SMCSize.Grid4_24).Begin())
+        {
+            @Smc.FieldButton(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight()
+            @Smc.FieldButton(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon)
+        }
+    }
+}
+
+@using (Smc.Form("formAssociacaoCursoUnidadeTurnoLote", "AssociarCursoUnidadeTurnoLote").Begin())
+{
+    <div id="divGridAssociacaoCursoUnidadeTurnoLote">
+        @Html.Action("ListarAssociacaoCursoUnidadeTurnoLote")
+    </div>
+   
+
+    using (Smc.ButtonSet().Size(SMCSize.Grid24_24).CssClass("smc-sga-buttonset-bottom-paginas").Begin())
+    {
+        @Smc.FieldButton(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight()
+        @Smc.FieldButton(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Url(Url.Action("AssociacaoCursoUnidadeTurno", new { seqOfertaCursoCicloLetivo = (SMCEncryptedLong)Model.SeqOfertaCursoCicloLetivo }))
+    }
+}

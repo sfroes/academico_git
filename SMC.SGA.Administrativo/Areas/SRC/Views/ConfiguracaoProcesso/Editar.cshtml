@@ -1,0 +1,47 @@
+﻿@model ConfiguracaoProcessoViewModel
+
+@Html.Partial("_CabecalhoManter", Model)
+
+@using (Smc.Form("formConfiguracaoProcesso", "Salvar").Ajax().Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.EditorFor(m => m.SeqProcesso)
+    @Smc.EditorFor(m => m.DescricaoProcesso)
+    @Smc.EditorFor(m => m.ProcessoEncerrado)
+    @Smc.HiddenFor(m => m.SeqTipoConfiguracao)
+    @Smc.EditorFor(m => m.ExibirSecaoNivelEnsino)
+    @Smc.EditorFor(m => m.ExibirSecaoCursos)
+    @Smc.EditorFor(m => m.ListarDepartamentosGruposProgramas)
+    @Smc.EditorFor(m => m.SeqsEntidadesResponsaveis)
+    @Smc.EditorFor(m => m.SeqsNiveisEnsino)
+
+    @Smc.EditorFor(m => m.Seq)
+    @Smc.EditorFor(m => m.Descricao).Size(SMCSize.Grid21_24)
+
+    using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.MasterDetail(m => m.TiposVinculoAluno).MinimumItens(1)
+    }
+
+    using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.MasterDetail(m => m.NiveisEnsino).MinimumItens(1)
+    }
+
+    using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.MasterDetail(m => m.Cursos).MinimumItens(1)
+    }
+
+    var buttonSet = Smc.ButtonSet().Size(SMCSize.Grid24_24);
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+                           .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                           .Highlight());
+
+    buttonSet.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+             .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+             .Type(SMCButtonType.Link)
+             .Url(Url.Action("Index", "ConfiguracaoProcesso", new { SeqProcesso = new SMCEncryptedLong((Model as ConfiguracaoProcessoViewModel).SeqProcesso) }), true));
+
+    @buttonSet;
+}

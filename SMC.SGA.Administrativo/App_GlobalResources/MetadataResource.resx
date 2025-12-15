@@ -1,0 +1,2050 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Class_ArquivoLogotipo" xml:space="preserve">
+    <value>Logotipo</value>
+  </data>
+  <data name="Class_ConfirmarNovaSenha" xml:space="preserve">
+    <value>Confirmação da nova senha​​</value>
+  </data>
+  <data name="Class_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Class_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_NomeReduzido" xml:space="preserve">
+    <value>Nome resumido</value>
+  </data>
+  <data name="Class_NovaSenha" xml:space="preserve">
+    <value>Nova senha</value>
+  </data>
+  <data name="Class_Numero" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="Class_Seq" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Class_SeqPais" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="Class_TipoEnderecoEletronico" xml:space="preserve">
+    <value>Tipo de end. eletrônico</value>
+  </data>
+  <data name="Class_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_CodigoUnidadeSeo" xml:space="preserve">
+    <value>Código SEO</value>
+  </data>
+  <data name="Class_NomeComplementar" xml:space="preserve">
+    <value>Nome complementar</value>
+  </data>
+  <data name="Class_SeqInstituicaoEnsino" xml:space="preserve">
+    <value>Instituição de ensino</value>
+  </data>
+  <data name="Class_SeqTipoEntidade" xml:space="preserve">
+    <value>Tipo de entidade</value>
+  </data>
+  <data name="Class_Cep" xml:space="preserve">
+    <value>CEP</value>
+  </data>
+  <data name="Class_CodigoArea" xml:space="preserve">
+    <value>DDD</value>
+  </data>
+  <data name="Class_CodigoPais" xml:space="preserve">
+    <value>DDI</value>
+  </data>
+  <data name="Class_NomeCidade" xml:space="preserve">
+    <value>Cidade</value>
+  </data>
+  <data name="Class_SiglaUf" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="Class_TipoEndereco" xml:space="preserve">
+    <value>Tipo de endereço</value>
+  </data>
+  <data name="Class_TipoTelefone" xml:space="preserve">
+    <value>Tipo de telefone</value>
+  </data>
+  <data name="Class_TipoVisao" xml:space="preserve">
+    <value>Visão</value>
+  </data>
+  <data name="Class_Obrigatorio" xml:space="preserve">
+    <value>Obrigatório?</value>
+  </data>
+  <data name="Class_DescricaoTipoEntidade" xml:space="preserve">
+    <value>Tipo de entidade</value>
+  </data>
+  <data name="Class_Ativo" xml:space="preserve">
+    <value>Ativo?</value>
+  </data>
+  <data name="Class_SeqSituacaoEntidade" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_TipoCurso" xml:space="preserve">
+    <value>Tipo de curso</value>
+  </data>
+  <data name="Class_SeqNivelEnsino" xml:space="preserve">
+    <value>Nível de ensino</value>
+  </data>
+  <data name="Class_DescricaoNivelEnsino" xml:space="preserve">
+    <value>Nível de ensino</value>
+  </data>
+  <data name="Class_NivelEnsino" xml:space="preserve">
+    <value>Nível de ensino</value>
+  </data>
+  <data name="Class_SeqInstituicaoNivel" xml:space="preserve">
+    <value>Nível de ensino</value>
+  </data>
+  <data name="Class_SeqTurno" xml:space="preserve">
+    <value>Turno</value>
+  </data>
+  <data name="Class_DescricaoInstituicaoNivel" xml:space="preserve">
+    <value>Nível de ensino</value>
+  </data>
+  <data name="Class_DescricaoTurno" xml:space="preserve">
+    <value>Turno</value>
+  </data>
+  <data name="Class_DescricaoTipoCurso" xml:space="preserve">
+    <value>Tipo de curso</value>
+  </data>
+  <data name="Class_DescricaoTipoOfertaCurso" xml:space="preserve">
+    <value>Tipo de oferta de curso</value>
+  </data>
+  <data name="Class_SeqTipoOfertaCurso" xml:space="preserve">
+    <value>Tipo de oferta de curso</value>
+  </data>
+  <data name="Class_CodigoCentroCusto" xml:space="preserve">
+    <value>Código centro de custo</value>
+  </data>
+  <data name="Class_Codigo" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="Class_CodigoEstabelecimentoEms" xml:space="preserve">
+    <value>Estabelecimento EMS</value>
+  </data>
+  <data name="Class_NomeCentroCusto" xml:space="preserve">
+    <value>Centro de custo</value>
+  </data>
+  <data name="Class_Vigencia" xml:space="preserve">
+    <value>Período de vigência</value>
+  </data>
+  <data name="Class_NomeMantenedora" xml:space="preserve">
+    <value>Mantenedora</value>
+  </data>
+  <data name="Class_DescricaoRegimeLetivo" xml:space="preserve">
+    <value>Regime letivo</value>
+  </data>
+  <data name="Class_DescricaoHierarquiaClassificacao" xml:space="preserve">
+    <value>Hierarquia de classificação</value>
+  </data>
+  <data name="Class_QuantidadeMaxima" xml:space="preserve">
+    <value>Quant. máxima</value>
+  </data>
+  <data name="Class_QuantidadeMinima" xml:space="preserve">
+    <value>Quant. mínima</value>
+  </data>
+  <data name="Class_DescricaoTipoClassificacao" xml:space="preserve">
+    <value>Tipo de classificação</value>
+  </data>
+  <data name="Class_SeqHierarquiaClassificacao" xml:space="preserve">
+    <value>Hierarquia de classificação</value>
+  </data>
+  <data name="Class_SeqTipoClassificacao" xml:space="preserve">
+    <value>Tipo de classificação</value>
+  </data>
+  <data name="Class_DataFimSituacaoAtual" xml:space="preserve">
+    <value>Data fim</value>
+  </data>
+  <data name="Class_DataInicioSituacaoAtual" xml:space="preserve">
+    <value>Data início</value>
+  </data>
+  <data name="Class_SeqSituacaoAtual" xml:space="preserve">
+    <value>Situação atual</value>
+  </data>
+  <data name="Class_SeqRegimeLetivo" xml:space="preserve">
+    <value>Regime letivo</value>
+  </data>
+  <data name="Class_DescricaoTipoHierarquiaClassificacao" xml:space="preserve">
+    <value>Tipo de hierarquia de classificação</value>
+  </data>
+  <data name="Class_DescricaoModalidade" xml:space="preserve">
+    <value>Modalidade</value>
+  </data>
+  <data name="Class_TipoAtividadeColaborador" xml:space="preserve">
+    <value>Tipo de atividade</value>
+  </data>
+  <data name="Class_Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="Class_Emails" xml:space="preserve">
+    <value>E-mails</value>
+  </data>
+  <data name="Class_QuantidadeMaximaOrientandos" xml:space="preserve">
+    <value>Quantidade máxima de orientandos</value>
+  </data>
+  <data name="Class_DescricaoTipoDivisaoCurricular" xml:space="preserve">
+    <value>Tipo de divisão curricular</value>
+  </data>
+  <data name="Class_SeqTipoDivisaoCurricular" xml:space="preserve">
+    <value>Tipo de divisão curricular</value>
+  </data>
+  <data name="Class_Classificacoes" xml:space="preserve">
+    <value>Classificações</value>
+  </data>
+  <data name="Class_DescricaoSituacaoAtual" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_SeqEntidadeResponsavel" xml:space="preserve">
+    <value>Entidade responsável</value>
+  </data>
+  <data name="Class_DescricaoInstituicaoNivelEnsino" xml:space="preserve">
+    <value>Nível de ensino</value>
+  </data>
+  <data name="Class_QuantidadeMaximaOrientadores" xml:space="preserve">
+    <value>Quantidade máxima orientadores</value>
+  </data>
+  <data name="Class_SeqCurso" xml:space="preserve">
+    <value>Curso</value>
+  </data>
+  <data name="Class_SeqGrauAcademico" xml:space="preserve">
+    <value>Grau</value>
+  </data>
+  <data name="Class_SeqTipoFormacaoEspecifica" xml:space="preserve">
+    <value>Tipo de formação</value>
+  </data>
+  <data name="Class_DescricaoCurso" xml:space="preserve">
+    <value>Curso</value>
+  </data>
+  <data name="Class_DescricaoOfertaCurso" xml:space="preserve">
+    <value>Oferta de curso</value>
+  </data>
+  <data name="Class_AnoCiclo" xml:space="preserve">
+    <value>Ano ciclo</value>
+  </data>
+  <data name="Class_NiveisEnsino" xml:space="preserve">
+    <value>Níveis de ensino</value>
+  </data>
+  <data name="Class_NumeroCiclo" xml:space="preserve">
+    <value>Nº ciclo</value>
+  </data>
+  <data name="Class_CargaHoraria" xml:space="preserve">
+    <value>Carga horária</value>
+  </data>
+  <data name="Class_Credito" xml:space="preserve">
+    <value>Crédito</value>
+  </data>
+  <data name="Class_DescricaoTipoComponenteCurricular" xml:space="preserve">
+    <value>Tipo de componente</value>
+  </data>
+  <data name="Class_EntidadesResponsaveis" xml:space="preserve">
+    <value>Entidades responsáveis</value>
+  </data>
+  <data name="Class_NivelEnsinoDescricao" xml:space="preserve">
+    <value>Nível de ensino</value>
+  </data>
+  <data name="Class_SeqEntidade" xml:space="preserve">
+    <value>Entidade</value>
+  </data>
+  <data name="Class_SeqInstituicaoNivelResponsavel" xml:space="preserve">
+    <value>Nível de ensino</value>
+  </data>
+  <data name="Class_SeqTipoComponenteCurricular" xml:space="preserve">
+    <value>Tipo de componente</value>
+  </data>
+  <data name="Class_ConfiguracaoComponenteDescricaoCompleta" xml:space="preserve">
+    <value>Configuração</value>
+  </data>
+  <data name="ConfiguracaoComponenteDivisaoLookupViewModel_Numero" xml:space="preserve">
+    <value>Número da divisão</value>
+  </data>
+  <data name="ConfiguracaoComponenteDivisaoLookupViewModel_CargaHoraria" xml:space="preserve">
+    <value>Carga horária</value>
+  </data>
+  <data name="ConfiguracaoComponenteDivisaoLookupViewModel_PermiteGrupo" xml:space="preserve">
+    <value>Permite grupo?</value>
+  </data>
+  <data name="ConfiguracaoComponenteDivisaoLookupViewModel_TipoDivisaoDescricao" xml:space="preserve">
+    <value>Tipo divisão componete</value>
+  </data>
+  <data name="ConfiguracaoComponenteLookupFiltroViewModel_SeqComponenteCurricular" xml:space="preserve">
+    <value>Componente curricular</value>
+  </data>
+  <data name="Class_FormacaoEspecifica" xml:space="preserve">
+    <value>Formação específica</value>
+  </data>
+  <data name="Class_Correspondencia" xml:space="preserve">
+    <value>Correspondência</value>
+  </data>
+  <data name="Class_MinutosMaximoAula" xml:space="preserve">
+    <value>Máx. duração aula</value>
+  </data>
+  <data name="Class_MinutosMinimoAula" xml:space="preserve">
+    <value>Mín. duração aula</value>
+  </data>
+  <data name="Class_SeqCurriculo" xml:space="preserve">
+    <value>Currículo</value>
+  </data>
+  <data name="Class_SeqCursoOferta" xml:space="preserve">
+    <value>Oferta de curso</value>
+  </data>
+  <data name="Class_SeqModalidade" xml:space="preserve">
+    <value>Modalidade</value>
+  </data>
+  <data name="MatrizCurricularOfertasLookupViewModel_DescricaoUnidadeLocalidade" xml:space="preserve">
+    <value>Unidade / Localidade</value>
+  </data>
+  <data name="MatrizCurricularOfertasLookupViewModel_HistoricoSituacaoAtual" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="TitulacaoFormacaoEspecificaDynamicModel" xml:space="preserve">
+    <value>Titulação associada à formação específica</value>
+  </data>
+  <data name="Class_OutroRequisitoItem" xml:space="preserve">
+    <value>Outro requisito</value>
+  </data>
+  <data name="Class_QuantidadeOutroRequisito" xml:space="preserve">
+    <value>Quantidade</value>
+  </data>
+  <data name="Class_SeqComponenteCurricular" xml:space="preserve">
+    <value>Componente curricular</value>
+  </data>
+  <data name="Class_SeqDivisaoCurricularItem" xml:space="preserve">
+    <value>Divisão da matriz</value>
+  </data>
+  <data name="Class_TipoRequisito" xml:space="preserve">
+    <value>Tipo do requisito</value>
+  </data>
+  <data name="Class_TipoRequisitoItem" xml:space="preserve">
+    <value>Tipo do item</value>
+  </data>
+  <data name="Class_SeqComponenteCurricularDetalhe" xml:space="preserve">
+    <value>Componente curricular</value>
+  </data>
+  <data name="Class_SeqDivisaoCurricularItemDetalhe" xml:space="preserve">
+    <value>Divisão da matriz</value>
+  </data>
+  <data name="ComponenteCurricularLookupViewModel_DescricaoCompleta" xml:space="preserve">
+    <value>Componente curricular</value>
+  </data>
+  <data name="Class_SeqCursoID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Class_DescricaoCompleta" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Class_DataInicioVigencia" xml:space="preserve">
+    <value>Data início de vigência</value>
+  </data>
+  <data name="Class_DescricaoInstituicaoTipoEntidade" xml:space="preserve">
+    <value>Tipo de entidade</value>
+  </data>
+  <data name="Class_SeqHierarquiaClassificacaoFiltro" xml:space="preserve">
+    <value>Hierarquia de classificação</value>
+  </data>
+  <data name="Class_SeqLocalidade" xml:space="preserve">
+    <value>Localidade</value>
+  </data>
+  <data name="OfertaMatrizCurricularOfertasLookupViewModel_DataFinalVigencia" xml:space="preserve">
+    <value>Data final de vigência</value>
+  </data>
+  <data name="OfertaMatrizCurricularOfertasLookupViewModel_DataInicioVigencia" xml:space="preserve">
+    <value>Data início de vigência</value>
+  </data>
+  <data name="OfertaMatrizCurricularOfertasLookupViewModel_DescricaoUnidadeLocalidade" xml:space="preserve">
+    <value>Unidade / Localidade</value>
+  </data>
+  <data name="OfertaMatrizCurricularOfertasLookupViewModel_HistoricoSituacaoAtual" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_Enderecos" xml:space="preserve">
+    <value>Endereços</value>
+  </data>
+  <data name="PessoaEnderecoLookupViewModel_Correspondencia" xml:space="preserve">
+    <value>Correspondência</value>
+  </data>
+  <data name="PessoaEnderecoLookupViewModel_DescCidadeEstado" xml:space="preserve">
+    <value>Cidade/Estado</value>
+  </data>
+  <data name="PessoaEnderecoLookupViewModel_DescPais" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="PessoaEnderecoLookupViewModel_EnderecoCompleto" xml:space="preserve">
+    <value>Endereço</value>
+  </data>
+  <data name="ConfiguracaoComponenteDivisaoOrganizacaoViewModel_SeqComponenteCurricularOrganizacao" xml:space="preserve">
+    <value>Organização</value>
+  </data>
+  <data name="ConfiguracaoComponenteDivisaoViewModel_PermiteGrupo" xml:space="preserve">
+    <value>Permite grupos?</value>
+  </data>
+  <data name="ConfiguracaoComponenteDivisaoViewModel_SeqTipoDivisaoComponente" xml:space="preserve">
+    <value>Tipo divisão componente</value>
+  </data>
+  <data name="Class_SeqCursoOfertaLocalidade" xml:space="preserve">
+    <value>Oferta de curso por localidade</value>
+  </data>
+  <data name="Class_SeqCursoOfertaTurno" xml:space="preserve">
+    <value>Turno</value>
+  </data>
+  <data name="Class_SeqEntidadeLocalidade" xml:space="preserve">
+    <value>Localidade</value>
+  </data>
+  <data name="Class_DescricaoCategoria" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="Class_DescricaoPais" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="Class_SeqCategoriaInstituicaoEnsino" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="Class_TipoInstituicaoEnsino" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="InstituicaoExternaLookupFiltroViewModel_CodigoPais" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="Class_DescricaoTipoBloqueio" xml:space="preserve">
+    <value>Tipo de bloqueio</value>
+  </data>
+  <data name="Class_FormaBloqueio" xml:space="preserve">
+    <value>Forma de cadastro</value>
+  </data>
+  <data name="Class_FormaDesbloqueio" xml:space="preserve">
+    <value>Forma de desbloqueio</value>
+  </data>
+  <data name="Class_OrientacoesDesbloqueio" xml:space="preserve">
+    <value>Orientações para desbloqueio</value>
+  </data>
+  <data name="Class_PermiteDesbloqueioTemporario" xml:space="preserve">
+    <value>Permite desbloqueio temporário?</value>
+  </data>
+  <data name="Class_SeqTipoBloqueio" xml:space="preserve">
+    <value>Tipo de bloqueio</value>
+  </data>
+  <data name="Class_SeqsEntidadesResponsaveis" xml:space="preserve">
+    <value>Entidade responsável</value>
+  </data>
+  <data name="Class_NomeCurso" xml:space="preserve">
+    <value>Curso</value>
+  </data>
+  <data name="CursoOfertaLocalidadeLookupFiltroViewModel_SeqCurso" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Class_NomeLocalidade" xml:space="preserve">
+    <value>Localidade</value>
+  </data>
+  <data name="Class_EnderecosEletronicos" xml:space="preserve">
+    <value>Endereços eletrônicos</value>
+  </data>
+  <data name="Class_DataBloqueio" xml:space="preserve">
+    <value>Data do bloqueio</value>
+  </data>
+  <data name="Class_DataBloqueioFim" xml:space="preserve">
+    <value>Data fim do bloqueio</value>
+  </data>
+  <data name="Class_DataBloqueioInicio" xml:space="preserve">
+    <value>Data início do bloqueio</value>
+  </data>
+  <data name="Class_PessoaAtuacao" xml:space="preserve">
+    <value>Pessoa atuação</value>
+  </data>
+  <data name="Class_ResponsavelBloqueio" xml:space="preserve">
+    <value>Responsável pelo bloqueio</value>
+  </data>
+  <data name="Class_SeqMotivoBloqueio" xml:space="preserve">
+    <value>Motivo do bloqueio</value>
+  </data>
+  <data name="Class_SituacaoBloqueio" xml:space="preserve">
+    <value>Situação do bloqueio</value>
+  </data>
+  <data name="Class_TipoDesbloqueio" xml:space="preserve">
+    <value>Tipo de desbloqueio</value>
+  </data>
+  <data name="ColaboradorVinculoCursoViewModel_SeqCursoOfertaLocalidadeLookup" xml:space="preserve">
+    <value>Oferta de curso por localidade</value>
+  </data>
+  <data name="Class_Cpf" xml:space="preserve">
+    <value>CPF</value>
+  </data>
+  <data name="Class_DataDesbloqueioEfetivo" xml:space="preserve">
+    <value>Data do desbloqueio efetivo</value>
+  </data>
+  <data name="Class_DataDesbloqueioTemporario" xml:space="preserve">
+    <value>Data do desbloqueio temporário</value>
+  </data>
+  <data name="Class_DescricaoAtuacao" xml:space="preserve">
+    <value>Descrição da atuação</value>
+  </data>
+  <data name="Class_DescricaoMotivoBloqueio" xml:space="preserve">
+    <value>Motivo do bloqueio</value>
+  </data>
+  <data name="Class_Justificativadesbloqueio" xml:space="preserve">
+    <value>Justificativa do desbloqueio</value>
+  </data>
+  <data name="Class_NumeroPassaporte" xml:space="preserve">
+    <value>Passaporte</value>
+  </data>
+  <data name="Class_Observacao" xml:space="preserve">
+    <value>Observação</value>
+  </data>
+  <data name="Class_TipoAtuacao" xml:space="preserve">
+    <value>Tipo de atuação</value>
+  </data>
+  <data name="Class_UltimaAtualizacao" xml:space="preserve">
+    <value>Última atualização</value>
+  </data>
+  <data name="Class_UsuarioDesbloqueioEfetivo" xml:space="preserve">
+    <value>Usuário do desbloqueio efetivo</value>
+  </data>
+  <data name="Class_UsuarioDesbloqueioTemporario" xml:space="preserve">
+    <value>Usuário do desbloqueio temporário</value>
+  </data>
+  <data name="Class_DataDesbloqueio" xml:space="preserve">
+    <value>Data do desbloqueio</value>
+  </data>
+  <data name="Class_ResponsavelDesbloqueio" xml:space="preserve">
+    <value>Responsável pelo desbloqueio</value>
+  </data>
+  <data name="Class_ArquivoAnexado" xml:space="preserve">
+    <value>Arquivo anexado</value>
+  </data>
+  <data name="Class_DataAnexo" xml:space="preserve">
+    <value>Data do anexo</value>
+  </data>
+  <data name="Class_NomeSocial" xml:space="preserve">
+    <value>Nome social</value>
+  </data>
+  <data name="Class_EventoLetivo" xml:space="preserve">
+    <value>Evento letivo?</value>
+  </data>
+  <data name="Class_ReplicarLancamentoPorLocalidade" xml:space="preserve">
+    <value>Replicar lançamentos por localidade?</value>
+  </data>
+  <data name="Class_DiaUtil" xml:space="preserve">
+    <value>Dia útil?</value>
+  </data>
+  <data name="Class_SeqUnidadeResponsavelAgd" xml:space="preserve">
+    <value>Unidade responsável AGD</value>
+  </data>
+  <data name="Class_AbrangenciaEvento" xml:space="preserve">
+    <value>Abrangência do evento</value>
+  </data>
+  <data name="Class_ApenasUmaParametrizacao" xml:space="preserve">
+    <value>Apenas uma parametrização?</value>
+  </data>
+  <data name="Class_DiaUtilAdministrativo" xml:space="preserve">
+    <value>Dia útil administrativo?</value>
+  </data>
+  <data name="Class_DiaUtilEscolarDocente" xml:space="preserve">
+    <value>Dia útil escolar e docente?</value>
+  </data>
+  <data name="Class_SeqTipoAgenda" xml:space="preserve">
+    <value>Tipo de agenda</value>
+  </data>
+  <data name="Class_SeqTipoEventoAgd" xml:space="preserve">
+    <value>Tipo de evento do AGD</value>
+  </data>
+  <data name="Class_DescricaoTipoAgenda" xml:space="preserve">
+    <value>Tipo de agenda</value>
+  </data>
+  <data name="Class_DescricaoTipoEvento" xml:space="preserve">
+    <value>Tipo de evento</value>
+  </data>
+  <data name="Class_TipoParametroEvento" xml:space="preserve">
+    <value>Tipo de parâmetro do evento</value>
+  </data>
+  <data name="Class_SeqTipoEvento" xml:space="preserve">
+    <value>Tipo de evento</value>
+  </data>
+  <data name="Class_QuantidadeMaximaFiliacao" xml:space="preserve">
+    <value>Quantidade máxima</value>
+  </data>
+  <data name="Class_QuantidadeMinimaFiliacaoObrigatoria" xml:space="preserve">
+    <value>Quantidade mínima obrigatória</value>
+  </data>
+  <data name="Class_MensagemInformativa" xml:space="preserve">
+    <value>Mensagem informativa</value>
+  </data>
+  <data name="Class_TipoPublicacao" xml:space="preserve">
+    <value>Tipo de publicação</value>
+  </data>
+  <data name="Class_QualisCapes" xml:space="preserve">
+    <value>Qualis CAPES</value>
+  </data>
+  <data name="Class_TipoEventoPublicacao" xml:space="preserve">
+    <value>Tipo de evento</value>
+  </data>
+  <data name="Class_ApurarFrequencia" xml:space="preserve">
+    <value>Apuração por frequência?</value>
+  </data>
+  <data name="Class_NotaMaxima" xml:space="preserve">
+    <value>Nota máxima</value>
+  </data>
+  <data name="Class_QuantidadeGrupos" xml:space="preserve">
+    <value>Quant. de grupos</value>
+  </data>
+  <data name="Class_QuantidadeProfessores" xml:space="preserve">
+    <value>Quant. de professores</value>
+  </data>
+  <data name="Class_QuantidadeVagas" xml:space="preserve">
+    <value>Quant. de vagas</value>
+  </data>
+  <data name="Class_SeqConfiguracaoComponente" xml:space="preserve">
+    <value>Configuração do componente curricular</value>
+  </data>
+  <data name="Class_SeqCriterioAprovacao" xml:space="preserve">
+    <value>Critério</value>
+  </data>
+  <data name="Class_SeqDivisaoComponente" xml:space="preserve">
+    <value>Divisão</value>
+  </data>
+  <data name="Class_SeqDivisaoMatrizCurricular" xml:space="preserve">
+    <value>Divisão matriz</value>
+  </data>
+  <data name="Class_SeqEscalaApuracao" xml:space="preserve">
+    <value>Escala de apuração</value>
+  </data>
+  <data name="Class_TurnosExcecao" xml:space="preserve">
+    <value>Turno</value>
+  </data>
+  <data name="Class_OutroRequisito" xml:space="preserve">
+    <value>Outro requisito</value>
+  </data>
+  <data name="CurriculoCursoOfertaViewModel_QuantidadeCreditoObrigatorio" xml:space="preserve">
+    <value>Obrigatórios</value>
+  </data>
+  <data name="CurriculoCursoOfertaViewModel_QuantidadeCreditoOptativo" xml:space="preserve">
+    <value>Optativos</value>
+  </data>
+  <data name="CurriculoCursoOfertaViewModel_QuantidadeHoraAulaObrigatoria" xml:space="preserve">
+    <value>Obrigatória (horas-aulas)</value>
+  </data>
+  <data name="CurriculoCursoOfertaViewModel_QuantidadeHoraAulaOptativa" xml:space="preserve">
+    <value>Optativa (horas-aulas)</value>
+  </data>
+  <data name="CurriculoCursoOfertaViewModel_QuantidadeHoraRelogioObrigatoria" xml:space="preserve">
+    <value>Obrigatória (horas)</value>
+  </data>
+  <data name="CurriculoCursoOfertaViewModel_QuantidadeHoraRelogioOptativa" xml:space="preserve">
+    <value>Optativa (horas)</value>
+  </data>
+  <data name="Class_AgendaAgd" xml:space="preserve">
+    <value>Agenda</value>
+  </data>
+  <data name="Class_DescricaoCalendario" xml:space="preserve">
+    <value>Calendário</value>
+  </data>
+  <data name="Class_DescricaoUnidadeResponsavel" xml:space="preserve">
+    <value>Unidade responsável</value>
+  </data>
+  <data name="Class_ID" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="Class_SeqAgendaAgd" xml:space="preserve">
+    <value>Agenda</value>
+  </data>
+  <data name="Class_SeqCalendario" xml:space="preserve">
+    <value>Calendário</value>
+  </data>
+  <data name="Class_SeqTipoCalendario" xml:space="preserve">
+    <value>Tipo de calendário</value>
+  </data>
+  <data name="Class_SeqUnidadeResponsavel" xml:space="preserve">
+    <value>Unidade responsável</value>
+  </data>
+  <data name="Class_TipoCalendario" xml:space="preserve">
+    <value>Tipo de calendário</value>
+  </data>
+  <data name="Class_UnidadeResponsavel" xml:space="preserve">
+    <value>Unidade responsável</value>
+  </data>
+  <data name="PessoaJuridicaLookupFiltroViewModel_NomeFantasia" xml:space="preserve">
+    <value>Nome fantasia</value>
+  </data>
+  <data name="PessoaJuridicaLookupFiltroViewModel_RazaoSocial" xml:space="preserve">
+    <value>Razão social</value>
+  </data>
+  <data name="PessoaJuridicaLookupViewModel_NomeFantasia" xml:space="preserve">
+    <value>Nome fantasia</value>
+  </data>
+  <data name="PessoaJuridicaLookupViewModel_RazaoSocial" xml:space="preserve">
+    <value>Razão social</value>
+  </data>
+  <data name="Class_Endereco" xml:space="preserve">
+    <value>Endereço</value>
+  </data>
+  <data name="Class_NomePessoa" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="CursoOfertaLookupFiltroViewModel_SeqSituacaoAtual" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_SeqBeneficio" xml:space="preserve">
+    <value>Benefício</value>
+  </data>
+  <data name="Class_TipoAluno" xml:space="preserve">
+    <value>Tipo de aluno</value>
+  </data>
+  <data name="Class_Token_FillInstructions" xml:space="preserve">
+    <value>Token deve utilizar apenas letras (A a Z), números (0 a 9) ou underline (_). Mínimo requerido de 3 caracteres.</value>
+  </data>
+  <data name="Class_CicloLetivo" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="Class_DataFim" xml:space="preserve">
+    <value>Data fim</value>
+  </data>
+  <data name="Class_DataInicio" xml:space="preserve">
+    <value>Data início</value>
+  </data>
+  <data name="Class_SeqCicloLetivo" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="Class_SeqCicloLetivoLookup" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="Class_TipoMobilidade" xml:space="preserve">
+    <value>Tipo mobilidade</value>
+  </data>
+  <data name="Class_ProcessoMatricula" xml:space="preserve">
+    <value>Processo de matrícula</value>
+  </data>
+  <data name="Class_SeqServico" xml:space="preserve">
+    <value>Serviço</value>
+  </data>
+  <data name="Class_SeqTipoServico" xml:space="preserve">
+    <value>Tipo de serviço</value>
+  </data>
+  <data name="Class_DescricaoCicloLetivo" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="Class_DescricaoEtapa" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="Class_DescricaoTipoServico" xml:space="preserve">
+    <value>Tipo de serviço</value>
+  </data>
+  <data name="Class_SituacaoEtapa" xml:space="preserve">
+    <value>Situação da etapa</value>
+  </data>
+  <data name="Class_UnidadesResponsaveis" xml:space="preserve">
+    <value>Unidades responsáveis</value>
+  </data>
+  <data name="Class_DescricaoProcesso" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="Class_DescricaoEscalonamento" xml:space="preserve">
+    <value>Escalonamento</value>
+  </data>
+  <data name="Class_QuantidadeParcelas" xml:space="preserve">
+    <value>Quantidade de parcelas</value>
+  </data>
+  <data name="Class_SeqEscalonamento" xml:space="preserve">
+    <value>Escalonamento</value>
+  </data>
+  <data name="Class_NumeroDivisaoParcelas" xml:space="preserve">
+    <value>N° de divisão de parcelas</value>
+  </data>
+  <data name="Class_DataVencimentoParcela" xml:space="preserve">
+    <value>Data de vencimento</value>
+  </data>
+  <data name="Class_NumeroParcela" xml:space="preserve">
+    <value>Número parcela</value>
+  </data>
+  <data name="Class_ValorPercentualParcela" xml:space="preserve">
+    <value>Valor percentual (%)</value>
+  </data>
+  <data name="Class_SeqOrigemFinanceira" xml:space="preserve">
+    <value>Origem financeira</value>
+  </data>
+  <data name="Class_DescricaoEtapaSgf" xml:space="preserve">
+    <value>Etapa SGF</value>
+  </data>
+  <data name="Class_NumeroDiasPrazoEtapa" xml:space="preserve">
+    <value>Número de dias de prazo da etapa</value>
+  </data>
+  <data name="Class_TipoPrazoEtapa" xml:space="preserve">
+    <value>Tipo do prazo de atendimento da etapa</value>
+  </data>
+  <data name="Class_SeqUnidadeResponsavelGpi" xml:space="preserve">
+    <value>Unidade responsável GPI</value>
+  </data>
+  <data name="Class_SeqFormaIngresso" xml:space="preserve">
+    <value>Forma de ingresso</value>
+  </data>
+  <data name="Class_TipoFormaIngresso" xml:space="preserve">
+    <value>Tipo de forma de ingresso</value>
+  </data>
+  <data name="Class_SeqTipoProcessoSeletivo" xml:space="preserve">
+    <value>Tipo de processo seletivo</value>
+  </data>
+  <data name="Class_ExigeCursoOfertaLocalidadeTurno" xml:space="preserve">
+    <value>Exige curso oferta localidade turno?</value>
+  </data>
+  <data name="Class_SeqTipoItemHierarquiaOfertaGpi" xml:space="preserve">
+    <value>Tipo de item de hierarquia de oferta do GPI</value>
+  </data>
+  <data name="Class_SeqCriterioAprovacaoPadrao" xml:space="preserve">
+    <value>Critério de aprovação padrão</value>
+  </data>
+  <data name="Class_IngressoDireto" xml:space="preserve">
+    <value>Ingresso direto?</value>
+  </data>
+  <data name="Class_TipoCalculoDataAdmissao" xml:space="preserve">
+    <value>Tipo de cálculo da data de admissão</value>
+  </data>
+  <data name="Class_SeqTipoOferta" xml:space="preserve">
+    <value>Tipo de oferta</value>
+  </data>
+  <data name="Class_SeqTipoProcessoGpi" xml:space="preserve">
+    <value>Tipo de processo seletivo</value>
+  </data>
+  <data name="Class_DescricaoPessoaAtuacao" xml:space="preserve">
+    <value>Descrição da pessoa atuação</value>
+  </data>
+  <data name="Class_DescricaoReferenciaAtuacao" xml:space="preserve">
+    <value>Descrição de referência da atuação</value>
+  </data>
+  <data name="Class_CodigoIntegracaoSistemaOrigem" xml:space="preserve">
+    <value>Código de integração do sistema origem</value>
+  </data>
+  <data name="Class_DataAlteracao" xml:space="preserve">
+    <value>Data de alteração</value>
+  </data>
+  <data name="Class_DataCriacao" xml:space="preserve">
+    <value>Data de criação</value>
+  </data>
+  <data name="Class_DataInclusao" xml:space="preserve">
+    <value>Data de inclusão</value>
+  </data>
+  <data name="Class_UsuarioAlteracao" xml:space="preserve">
+    <value>Usuário de alteração</value>
+  </data>
+  <data name="Class_UsuarioDesbloqueio" xml:space="preserve">
+    <value>Responsável pelo desbloqueio</value>
+  </data>
+  <data name="Class_UsuarioInclusao" xml:space="preserve">
+    <value>Usuário de inclusão</value>
+  </data>
+  <data name="Class_DescCampanhaCicloLetivo" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="Class_QuantidadeChamadasRegulares" xml:space="preserve">
+    <value>Quant. de chamadas regulares</value>
+  </data>
+  <data name="Class_SituacaoChamada" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_TipoChamada" xml:space="preserve">
+    <value>Tipo de chamada</value>
+  </data>
+  <data name="Class_NomeFormatado" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="PessoaAtuacaoLookupViewModel_Descricao" xml:space="preserve">
+    <value>Atuação</value>
+  </data>
+  <data name="Class_TipoFormaIngressoDescricao" xml:space="preserve">
+    <value>Tipo de forma de ingresso</value>
+  </data>
+  <data name="Class_ExigeTipoTransacao" xml:space="preserve">
+    <value>Exige transação financeira?</value>
+  </data>
+  <data name="Class_SeqClasseTemplateProcessoSgf" xml:space="preserve">
+    <value>Classe template SGF</value>
+  </data>
+  <data name="CampanhaLookupFiltroViewModel_SeqEntidadeResponsavel" xml:space="preserve">
+    <value>Unidade responsável</value>
+  </data>
+  <data name="Class_CiclosLetivos" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="Class_DescricaoMotivoBloqueioFormatado" xml:space="preserve">
+    <value>Motivo do bloqueio</value>
+  </data>
+  <data name="Class_SeqPessoaAtuacao" xml:space="preserve">
+    <value>Pessoa</value>
+  </data>
+  <data name="Class_SeqCampanha" xml:space="preserve">
+    <value>Campanha</value>
+  </data>
+  <data name="Class_SeqCampanhaCicloLetivo" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="Class_SeqGrupoEscalonamento" xml:space="preserve">
+    <value>Grupo de escalonamento</value>
+  </data>
+  <data name="Class_SeqCampanhaOferta" xml:space="preserve">
+    <value>Oferta de campanha</value>
+  </data>
+  <data name="Class_SeqOrientador" xml:space="preserve">
+    <value>Orientador</value>
+  </data>
+  <data name="Class_SeqVinculo" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="Class_SomenteConvocados" xml:space="preserve">
+    <value>Somente convocados</value>
+  </data>
+  <data name="TermoIntercambioLookupFiltroViewModel_DescricaoParceria" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="TermoIntercambioLookupFiltroViewModel_SeqInstituicaoExterna" xml:space="preserve">
+    <value>Instituição de ensino externa</value>
+  </data>
+  <data name="TermoIntercambioLookupFiltroViewModel_SeqTipoTermoIntercambio" xml:space="preserve">
+    <value>Tipo de termo</value>
+  </data>
+  <data name="TermoIntercambioLookupFiltroViewModel_TipoParceriaIntercambio" xml:space="preserve">
+    <value>Tipo de parceria</value>
+  </data>
+  <data name="TermoIntercambioLookupViewModel_InstituicaoEnsinoExterna" xml:space="preserve">
+    <value>Instituição de ensino externa</value>
+  </data>
+  <data name="TermoIntercambioLookupViewModel_TipoTermoIntercambio" xml:space="preserve">
+    <value>Tipo de termo</value>
+  </data>
+  <data name="Class_GrupoEscalonamento" xml:space="preserve">
+    <value>Grupo de escalonamento</value>
+  </data>
+  <data name="Class_SeqProcesso" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="ColaboradorLookupFiltroViewModel_SeqEntidadeVinculo" xml:space="preserve">
+    <value>Entidade</value>
+  </data>
+  <data name="ColaboradorLookupFiltroViewModel_SeqInstituicaoExterna" xml:space="preserve">
+    <value>Instituição</value>
+  </data>
+  <data name="ColaboradorLookupFiltroViewModel_SeqTipoVinculoColaborador" xml:space="preserve">
+    <value>Tipo de vínculo</value>
+  </data>
+  <data name="ColaboradorLookupFiltroViewModel_SituacaoColaboradorNaInstituicao" xml:space="preserve">
+    <value>Situação na instituição</value>
+  </data>
+  <data name="ColaboradorLookupFiltroViewModel_TipoAtividade" xml:space="preserve">
+    <value>Tipo de atividade</value>
+  </data>
+  <data name="Class_DataNascimento" xml:space="preserve">
+    <value>Data de nascimento</value>
+  </data>
+  <data name="Class_InstituicaoEnsinoExterna" xml:space="preserve">
+    <value>Instituição de ensino externa</value>
+  </data>
+  <data name="Class_SeqTermoIntercambio" xml:space="preserve">
+    <value>Termo de intercâmbio</value>
+  </data>
+  <data name="Class_TipoTermoIntercambio" xml:space="preserve">
+    <value>Tipo de termo</value>
+  </data>
+  <data name="Class_DescricaoTipoBeneficio" xml:space="preserve">
+    <value>Tipo de benefício</value>
+  </data>
+  <data name="Class_OrigemColaborador" xml:space="preserve">
+    <value>Origem colaborador</value>
+  </data>
+  <data name="Class_SeqColaborador" xml:space="preserve">
+    <value>Colaborador</value>
+  </data>
+  <data name="Class_SeqTipoOrientacao" xml:space="preserve">
+    <value>Tipo de orientação</value>
+  </data>
+  <data name="Class_SeqTipoParticipacao" xml:space="preserve">
+    <value>Tipo de patricipação</value>
+  </data>
+  <data name="Class_TipoParticipacaoOrientacao" xml:space="preserve">
+    <value>Tipo de participação</value>
+  </data>
+  <data name="Class_Convocacao" xml:space="preserve">
+    <value>Convocação</value>
+  </data>
+  <data name="Class_DataCadastroIngressante" xml:space="preserve">
+    <value>Data de cadastro do ingressante</value>
+  </data>
+  <data name="Class_DataSituacaoIngressante" xml:space="preserve">
+    <value>Data da situação do ingressante</value>
+  </data>
+  <data name="Class_NumeroInscricao" xml:space="preserve">
+    <value>Número de inscrição</value>
+  </data>
+  <data name="Class_ProcessoSeletivo" xml:space="preserve">
+    <value>Processo seletivo</value>
+  </data>
+  <data name="Class_SeqChamada" xml:space="preserve">
+    <value>Chamada</value>
+  </data>
+  <data name="Class_SeqConvocacao" xml:space="preserve">
+    <value>Convocação</value>
+  </data>
+  <data name="Class_SeqProcessoSeletivo" xml:space="preserve">
+    <value>Processo seletivo</value>
+  </data>
+  <data name="Class_SituacaoIngressante" xml:space="preserve">
+    <value>Situação do ingressante</value>
+  </data>
+  <data name="Class_SeqFormacaoEspecifica" xml:space="preserve">
+    <value>Formação específica</value>
+  </data>
+  <data name="Class_CodigoPaisNacionalidade" xml:space="preserve">
+    <value>País de origem</value>
+  </data>
+  <data name="Class_TipoNacionalidade" xml:space="preserve">
+    <value>Nacionalidade</value>
+  </data>
+  <data name="Class_OfertaCampanha" xml:space="preserve">
+    <value>Oferta de campanha</value>
+  </data>
+  <data name="Class_Cnpj" xml:space="preserve">
+    <value>CNPJ</value>
+  </data>
+  <data name="Class_SeqInscricao" xml:space="preserve">
+    <value>Nº de inscrição</value>
+  </data>
+  <data name="Class_NomeCompleto" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Class_CursoOferta" xml:space="preserve">
+    <value>Oferta de curso</value>
+  </data>
+  <data name="Class_TipoEvento" xml:space="preserve">
+    <value>Tipo de evento</value>
+  </data>
+  <data name="Class_SeqUnidadeResponsavelNotificacao" xml:space="preserve">
+    <value>Unidade responsável notificações</value>
+  </data>
+  <data name="SolicitacaoMatriculaItemDivisoesViewModel_SeqDivisaoTurma" xml:space="preserve">
+    <value>Codificação:</value>
+  </data>
+  <data name="Class_DataFimVigencia" xml:space="preserve">
+    <value>Data fim de vigência</value>
+  </data>
+  <data name="Class_SeqDivisaoTurma" xml:space="preserve">
+    <value>Codificação</value>
+  </data>
+  <data name="Class_DataEntrega" xml:space="preserve">
+    <value>Data da entrega</value>
+  </data>
+  <data name="Class_PrazoEntrega" xml:space="preserve">
+    <value>Prazo de entrega</value>
+  </data>
+  <data name="DocumentoItemViewModel_FormaEntregaDocumento" xml:space="preserve">
+    <value>Forma de entrega</value>
+  </data>
+  <data name="DocumentoItemViewModel_SituacaoEntregaDocumento" xml:space="preserve">
+    <value>Validação</value>
+  </data>
+  <data name="DocumentoItemViewModel_VersaoDocumento" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="DetalhesDivisaoTurmaViewModel_DescricaoFormatada" xml:space="preserve">
+    <value>Divisão da turma</value>
+  </data>
+  <data name="DetalhesDivisaoTurmaViewModel_DescricaoLocalidade" xml:space="preserve">
+    <value>Localidade</value>
+  </data>
+  <data name="DetalhesDivisaoTurmaViewModel_GrupoFormatado" xml:space="preserve">
+    <value>Codificação da divisão</value>
+  </data>
+  <data name="DetalhesDivisaoTurmaViewModel_InformacoesAdicionais" xml:space="preserve">
+    <value>Informações adicionais</value>
+  </data>
+  <data name="DetalhesDivisaoTurmaViewModel_TurmaDescricaoFormatado" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="SolicitacaoMatriculaItemSituacaoViewModel_DescricaoConfiguracaoComponente" xml:space="preserve">
+    <value>Atividade</value>
+  </data>
+  <data name="SolicitacaoMatriculaItemSituacaoViewModel_DescricaoTurma" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="SolicitacaoMatriculaItemSituacaoViewModel_SituacaoMotivo" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_DescricaoProtocolo" xml:space="preserve">
+    <value>Protocolo</value>
+  </data>
+  <data name="DocumentoItemViewModel_SituacaoEntregaDocumentoInicial" xml:space="preserve">
+    <value>&amp;#32</value>
+    <comment>espaço em Unicode</comment>
+  </data>
+  <data name="DocumentoItemViewModel_InformacaoVersaoExigida" xml:space="preserve">
+    <value>&amp;#32</value>
+    <comment>espaço em Unicode</comment>
+  </data>
+  <data name="AlunoLookupFiltroViewModel_NumeroRegistroAcademico" xml:space="preserve">
+    <value>Registro acadêmico</value>
+  </data>
+  <data name="AlunoLookupFiltroViewModel_SeqTipoVinculoAluno" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="AlunoLookupFiltroViewModel_VinculoAlunoAtivo" xml:space="preserve">
+    <value>Situação do vínculo ativo</value>
+  </data>
+  <data name="AlunoLookupViewModel_DescricaoCursoOferta" xml:space="preserve">
+    <value>Oferta de curso</value>
+  </data>
+  <data name="AlunoLookupViewModel_NumeroRegistroAcademico" xml:space="preserve">
+    <value>Registro acadêmico</value>
+  </data>
+  <data name="AlunoLookupViewModel_VinculoAlunoAtivo" xml:space="preserve">
+    <value>Situação do vínculo ativo</value>
+  </data>
+  <data name="AlunoLookupViewModel_TipoVinculoAluno" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="Class_SeqTag" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="Class_SeqTipoMensagem" xml:space="preserve">
+    <value>Tipo de mensagem</value>
+  </data>
+  <data name="CursoOfertaLocalidadeLookupViewModel_Ativo" xml:space="preserve">
+    <value>Ativo</value>
+  </data>
+  <data name="CursoOfertaLocalidadeLookupViewModel_DescricaoCurso" xml:space="preserve">
+    <value>Curso</value>
+  </data>
+  <data name="Class_NomeSigla" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Class_MensagensValidas" xml:space="preserve">
+    <value>Exibir somente mensagens válidas</value>
+  </data>
+  <data name="Class_DataPrazoEntrega" xml:space="preserve">
+    <value>Prazo de entrega</value>
+  </data>
+  <data name="Class_IdentificacaoCpf" xml:space="preserve">
+    <value>CPF</value>
+  </data>
+  <data name="Class_IdentificacaoDataNascimento" xml:space="preserve">
+    <value>Data de nascimento</value>
+  </data>
+  <data name="Class_IdentificacaoNome" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Class_IdentificacaoNumeroPassaporte" xml:space="preserve">
+    <value>Passaporte</value>
+  </data>
+  <data name="Class_IdentificacaoTipoNacionalidade" xml:space="preserve">
+    <value>Nacionalidade</value>
+  </data>
+  <data name="Class_MensagemIdentificacaoPessoaExistente" xml:space="preserve">
+    <value>A pessoa que deseja cadastrar já existe na base de dados?</value>
+  </data>
+  <data name="IngressanteDynamicModel_MensagemStep3" xml:space="preserve">
+    <value>Dados de contato</value>
+  </data>
+  <data name="Class_TipoMaterial" xml:space="preserve">
+    <value>Tipo de material</value>
+  </data>
+  <data name="Class_UrlLink" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="Class_NumeroRegistroAcademico" xml:space="preserve">
+    <value>RA</value>
+  </data>
+  <data name="CampanhaOfertaLookupFiltroViewModel_Descricao" xml:space="preserve">
+    <value>Oferta</value>
+  </data>
+  <data name="CampanhaOfertaLookupViewModel_Descricao" xml:space="preserve">
+    <value>Oferta</value>
+  </data>
+  <data name="Class_ExibeProfessor" xml:space="preserve">
+    <value>Exibe professor?</value>
+  </data>
+  <data name="Class_ExibirEmentasComponentesCurriculares" xml:space="preserve">
+    <value>Exibir ementas dos componentes curriculares?</value>
+  </data>
+  <data name="Class_ExibirNaDeclaracao" xml:space="preserve">
+    <value>Exibir na declaração</value>
+  </data>
+  <data name="Class_ImprimirComponenteCurricularSemCreditos" xml:space="preserve">
+    <value>Imprimir componente curricular sem créditos?</value>
+  </data>
+  <data name="Class_CpfNumeroPassaporte" xml:space="preserve">
+    <value>CPF ou Passaporte</value>
+  </data>
+  <data name="Class_DescricaoSituacaoMatricula" xml:space="preserve">
+    <value>Situação da matrícula</value>
+  </data>
+  <data name="Class_TipoVinculoAlunoFinanceiro" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="Class_Filiacao" xml:space="preserve">
+    <value>Filiação</value>
+  </data>
+  <data name="GrupoEscalonamentoLookupListaViewModel_ItensDescricao" xml:space="preserve">
+    <value>Itens</value>
+  </data>
+  <data name="Class_SeqAluno" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="TrabalhoAcademicoAutoriaViewModel_NomeFormatado" xml:space="preserve">
+    <value>Nome formatado</value>
+  </data>
+  <data name="Class_DescricaoServico" xml:space="preserve">
+    <value>Serviço</value>
+  </data>
+  <data name="Class_DisponivelParaAtendimento" xml:space="preserve">
+    <value>Disponível para atendimento?</value>
+  </data>
+  <data name="Class_PossuiUsuarioResponsavel" xml:space="preserve">
+    <value>Possui usuário responsável?</value>
+  </data>
+  <data name="Class_SeqUsuarioResponsavel" xml:space="preserve">
+    <value>Usuário responsável</value>
+  </data>
+  <data name="Class_DataPrevistaSolucao" xml:space="preserve">
+    <value>Data prevista para solução</value>
+  </data>
+  <data name="Class_PossuiBloqueio" xml:space="preserve">
+    <value>Possui bloqueios</value>
+  </data>
+  <data name="Class_EnderecoEletronico" xml:space="preserve">
+    <value>Endereço eletrônico</value>
+  </data>
+  <data name="Class_Telefone" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="Class_AtualizadoPor" xml:space="preserve">
+    <value>Atualizado por</value>
+  </data>
+  <data name="Class_DataAtualizacao" xml:space="preserve">
+    <value>Data de atualização</value>
+  </data>
+  <data name="Class_DataSolucao" xml:space="preserve">
+    <value>Data da solução</value>
+  </data>
+  <data name="Class_DescricaoSolicitacao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Class_Documentacao" xml:space="preserve">
+    <value>Documentação</value>
+  </data>
+  <data name="Class_HistoricoAluno" xml:space="preserve">
+    <value>Histórico do aluno</value>
+  </data>
+  <data name="Class_UsuarioResponsavel" xml:space="preserve">
+    <value>Usuário responsável</value>
+  </data>
+  <data name="PublicacaoBdpIdiomaViewModel_DescricaoIdioma" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="PublicacaoBdpIdiomaViewModel_Titulo" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="PublicacaoBdpPalavraChaveViewModel_PalavraChave" xml:space="preserve">
+    <value>Palavra-chave</value>
+  </data>
+  <data name="Class_CriadoPor" xml:space="preserve">
+    <value>Criado por</value>
+  </data>
+  <data name="Class_Situacao" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_DataEnvio" xml:space="preserve">
+    <value>Data de envio</value>
+  </data>
+  <data name="Class_SucessoEnvio" xml:space="preserve">
+    <value>Sucesso no envio</value>
+  </data>
+  <data name="Class_TipoNotificacao" xml:space="preserve">
+    <value>Tipo de notificação</value>
+  </data>
+  <data name="Class_NomePasta" xml:space="preserve">
+    <value>Pasta</value>
+  </data>
+  <data name="Class_ArquivoFoto" xml:space="preserve">
+    <value>Foto</value>
+  </data>
+  <data name="Class_EstadoCivil" xml:space="preserve">
+    <value>Estado civil</value>
+  </data>
+  <data name="Class_RacaCor" xml:space="preserve">
+    <value>Raça/Cor</value>
+  </data>
+  <data name="Class_DataEntrada" xml:space="preserve">
+    <value>Data de entrada</value>
+  </data>
+  <data name="Class_DataSaida" xml:space="preserve">
+    <value>Data de saida</value>
+  </data>
+  <data name="Class_Pagina" xml:space="preserve">
+    <value>Página</value>
+  </data>
+  <data name="Class_FormaEntregaDocumento" xml:space="preserve">
+    <value>Forma de entrega</value>
+  </data>
+  <data name="Class_TipoDocumento" xml:space="preserve">
+    <value>Tipo de documento</value>
+  </data>
+  <data name="Class_VersaoDocumento" xml:space="preserve">
+    <value>Versão do documento</value>
+  </data>
+  <data name="Class_SeqSituacaoCancelamento" xml:space="preserve">
+    <value>Situação de cancelamento</value>
+  </data>
+  <data name="Class_DataHoraEncerramento" xml:space="preserve">
+    <value>Data e hora de encerramento</value>
+  </data>
+  <data name="IngressanteOrientacaoViewModel_SeqInstituicaoExterna" xml:space="preserve">
+    <value>Instituição</value>
+  </data>
+  <data name="Class_SituacaoEntregaDocumento" xml:space="preserve">
+    <value>Situação de entrega</value>
+  </data>
+  <data name="Class_Validacao" xml:space="preserve">
+    <value>Validação</value>
+  </data>
+  <data name="Class_SeqsSolicitacoesServico" xml:space="preserve">
+    <value>Solicitações de serviço</value>
+  </data>
+  <data name="Class_DescricaoGrupoEscalonamento" xml:space="preserve">
+    <value>Grupo de escalonamento</value>
+  </data>
+  <data name="ParametroEnvioNotificacaoItemViewModel_AtributoAgendamento" xml:space="preserve">
+    <value>Data de referência</value>
+  </data>
+  <data name="ParametroEnvioNotificacaoItemViewModel_QuantidadeDiasInicioEnvio" xml:space="preserve">
+    <value>Nº de dias</value>
+  </data>
+  <data name="ParametroEnvioNotificacaoItemViewModel_QuantidadeDiasRecorrencia" xml:space="preserve">
+    <value>Repete a cada - Dia(s)</value>
+  </data>
+  <data name="ParametroEnvioNotificacaoItemViewModel_ReenviarNotificacao" xml:space="preserve">
+    <value>Reenviar notificação?</value>
+  </data>
+  <data name="ParametroEnvioNotificacaoItemViewModel_Temporalidade" xml:space="preserve">
+    <value>Quando?</value>
+  </data>
+  <data name="Class_DataEncerramento" xml:space="preserve">
+    <value>Data de encerramento</value>
+  </data>
+  <data name="Class_OrigemSolicitacaoServico" xml:space="preserve">
+    <value>Origem</value>
+  </data>
+  <data name="Class_SeqGrupoCurricularComponente" xml:space="preserve">
+    <value>Grupo curricular componente</value>
+  </data>
+  <data name="SolicitacaoServicoLookupFiltroViewModel_SeqProcessoEtapa" xml:space="preserve">
+    <value>Etapa atual</value>
+  </data>
+  <data name="SolicitacaoServicoLookupFiltroViewModel_SeqSituacaoEtapa" xml:space="preserve">
+    <value>Situação atual</value>
+  </data>
+  <data name="SolicitacaoServicoLookupListaViewModel_EtapaAtual" xml:space="preserve">
+    <value>Etapa atual</value>
+  </data>
+  <data name="SolicitacaoServicoLookupListaViewModel_GrupoEscalonamentoAtual" xml:space="preserve">
+    <value>Grupo de escalonamento atual</value>
+  </data>
+  <data name="SolicitacaoServicoLookupListaViewModel_SituacaoAtual" xml:space="preserve">
+    <value>Situação atual</value>
+  </data>
+  <data name="Class_MotivoBloqueio" xml:space="preserve">
+    <value>Motivo do bloqueio</value>
+  </data>
+  <data name="ProcessoLookupListaViewModel_Descricao" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="AlunoLookupViewModel_DescricaoLocalidade" xml:space="preserve">
+    <value>Localidade</value>
+  </data>
+  <data name="Class_DataProcessamento" xml:space="preserve">
+    <value>Data de processamento</value>
+  </data>
+  <data name="Class_DescricaoTipoNotificacao" xml:space="preserve">
+    <value>Tipo de notificação</value>
+  </data>
+  <data name="Class_ListaDataAlteracao" xml:space="preserve">
+    <value>Data do desbloqueio</value>
+  </data>
+  <data name="Class_ListaDescricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="PessoaAtuacaoBloqueioItemViewModel_SituacaoBloqueioReadOnly" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_SeqMotivoCancelamento" xml:space="preserve">
+    <value>Motivo de cancelamento</value>
+  </data>
+  <data name="DocumentoItemViewModel_ArquivoAnexado" xml:space="preserve">
+    <value>Anexos</value>
+  </data>
+  <data name="Class_SeqsProcessos" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="CampanhaDynamicModel" xml:space="preserve">
+    <value>Campanha</value>
+  </data>
+  <data name="Class_DescricaoNiveisEnsino" xml:space="preserve">
+    <value>Níveis de ensino</value>
+  </data>
+  <data name="ParceriaIntercambioVigenciaViewModel_Justificativa" xml:space="preserve">
+    <value>Justificativa da alteração</value>
+  </data>
+  <data name="SolicitacaoServicoLookupListaViewModel_NumeroProtocolo" xml:space="preserve">
+    <value>Protocolo</value>
+  </data>
+  <data name="Class_AreaConcentracao" xml:space="preserve">
+    <value>Área de concentração</value>
+  </data>
+  <data name="Class_EixoTematico" xml:space="preserve">
+    <value>Eixo temático</value>
+  </data>
+  <data name="Class_LinhaPesquisa" xml:space="preserve">
+    <value>Linha de pesquisa</value>
+  </data>
+  <data name="Class_CodigoAlunoMigracao" xml:space="preserve">
+    <value>Código de migração</value>
+  </data>
+  <data name="Class_SituacaoFinalEtapa" xml:space="preserve">
+    <value>Situação final da etapa</value>
+  </data>
+  <data name="Class_AreaTematica" xml:space="preserve">
+    <value>Área temática</value>
+  </data>
+  <data name="Class_DescricaoEscalaApuracaoItem" xml:space="preserve">
+    <value>Apuração</value>
+  </data>
+  <data name="Class_DescricaoSituacaoHistoricoEscolar" xml:space="preserve">
+    <value>Situação final</value>
+  </data>
+  <data name="Class_MateriaLecionada" xml:space="preserve">
+    <value>Matéria lecionada</value>
+  </data>
+  <data name="Class_NomeAluno" xml:space="preserve">
+    <value>Aluno</value>
+  </data>
+  <data name="Class_SeqEscalaApuracaoItem" xml:space="preserve">
+    <value>Apuração</value>
+  </data>
+  <data name="DispensaComponenteCurricularLookupFiltroViewModel_DisciplinaIsolada" xml:space="preserve">
+    <value>Disciplina(s) isolada(s)</value>
+  </data>
+  <data name="DispensaComponenteCurricularLookupFiltroViewModel_DisciplinaIsolada_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="DispensaComponenteCurricularLookupFiltroViewModel_DisciplinaIsolada_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="DispensaComponenteCurricularLookupFiltroViewModel_SeqOfertaCurso" xml:space="preserve">
+    <value>Oferta de curso</value>
+  </data>
+  <data name="DispensaComponenteCurricularLookupViewModel_DescricaoCicloLetivo" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="DispensaComponenteCurricularLookupViewModel_DescricaoCompleta" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="DispensaComponenteCurricularLookupViewModel_DescricaoOfertaCurso" xml:space="preserve">
+    <value>Oferta de curso</value>
+  </data>
+  <data name="Class_CodigoMigracao" xml:space="preserve">
+    <value>Código de migração</value>
+  </data>
+  <data name="Class_DescricaoFormaIngresso" xml:space="preserve">
+    <value>Forma de ingresso</value>
+  </data>
+  <data name="Class_OfertaCurso" xml:space="preserve">
+    <value>Oferta de curso</value>
+  </data>
+  <data name="Class_OfertaMatriz" xml:space="preserve">
+    <value>Oferta de matriz curricular</value>
+  </data>
+  <data name="Class_SituacaoOfertaMatriz" xml:space="preserve">
+    <value>Situação oferta</value>
+  </data>
+  <data name="IntegralizacaoMatrizCurricularOfertaCabecalhoViewModel_SeqIngressante" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="IntegralizacaoMatrizCurricularOfertaCabecalhoViewModel_SituacaoIngressante" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="SolicitacaoDispensaComponenteCurricularViewModel_SeqComponenteCurricular" xml:space="preserve">
+    <value>Componente curricular</value>
+  </data>
+  <data name="SolicitacaoDispensaComponenteCurricularViewModel_SeqComponenteCurricularAssunto" xml:space="preserve">
+    <value>Assunto</value>
+  </data>
+  <data name="SolicitacaoDispensaComponenteCurricularViewModel_SeqGrupoCurricularComponente" xml:space="preserve">
+    <value>Componente curricular</value>
+  </data>
+  <data name="SolicitacaoDispensaGrupoCurricularViewModel_QuantidadeDispensaGrupo" xml:space="preserve">
+    <value>Total a ser dispensado</value>
+  </data>
+  <data name="SolicitacaoDispensaGrupoCurricularViewModel_SeqGrupoCurricular" xml:space="preserve">
+    <value>Grupo curricular</value>
+  </data>
+  <data name="SolicitacaoDispensaItensCursadosOutrasInstituicoesViewModel_CargaHoraria" xml:space="preserve">
+    <value>Carga horária</value>
+  </data>
+  <data name="SolicitacaoDispensaItensCursadosOutrasInstituicoesViewModel_Conceito" xml:space="preserve">
+    <value>Conceito</value>
+  </data>
+  <data name="SolicitacaoDispensaItensCursadosOutrasInstituicoesViewModel_Credito" xml:space="preserve">
+    <value>Créditos</value>
+  </data>
+  <data name="SolicitacaoDispensaItensCursadosOutrasInstituicoesViewModel_Dispensa" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="SolicitacaoDispensaItensCursadosOutrasInstituicoesViewModel_FormatoCargaHoraria" xml:space="preserve">
+    <value>Formato da carga horária</value>
+  </data>
+  <data name="SolicitacaoDispensaItensCursadosOutrasInstituicoesViewModel_Instituicao" xml:space="preserve">
+    <value>Instituição de ensino</value>
+  </data>
+  <data name="SolicitacaoDispensaItensCursadosOutrasInstituicoesViewModel_NomeProfessor" xml:space="preserve">
+    <value>Professor</value>
+  </data>
+  <data name="SolicitacaoDispensaItensCursadosOutrasInstituicoesViewModel_Nota" xml:space="preserve">
+    <value>Nota</value>
+  </data>
+  <data name="SolicitacaoDispensaItensCursadosOutrasInstituicoesViewModel_SeqCicloLetivo" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="SolicitacaoDispensaItensCursadosOutrasInstituicoesViewModel_SeqTitulacaoProfessor" xml:space="preserve">
+    <value>Titulação</value>
+  </data>
+  <data name="SolicitacaoDispensaItensCursadosViewModel_ItensCursadosNestaInstituicao" xml:space="preserve">
+    <value>Itens cursados nesta instituição</value>
+  </data>
+  <data name="SolicitacaoDispensaItensDispensadosViewModel_SeqCicloLetivo" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="Class_CodigoConfiguracao" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="Class_DescricaoConfiguracao" xml:space="preserve">
+    <value>Configuração componente curricular</value>
+  </data>
+  <data name="Class_CodigoComponente" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="Class_DescricaoComponente" xml:space="preserve">
+    <value>Componente curricular</value>
+  </data>
+  <data name="Class_SeqsEntidadeResponsavel" xml:space="preserve">
+    <value>Entidade responsável</value>
+  </data>
+  <data name="ModalConsultaSolicitacaoServicoViewModel_DataSituacaoAtual" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="ModalConsultaSolicitacaoServicoViewModel_DescricaoJustificativa" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="ModalConsultaSolicitacaoServicoViewModel_ObservacaoSituacaoAtual" xml:space="preserve">
+    <value>Observação</value>
+  </data>
+  <data name="ModalConsultaSolicitacaoServicoViewModel_ObservacoesJustificativa" xml:space="preserve">
+    <value>Observação</value>
+  </data>
+  <data name="ModalConsultaSolicitacaoServicoViewModel_UsuarioCriacao" xml:space="preserve">
+    <value>Criado por</value>
+  </data>
+  <data name="ModalConsultaSolicitacaoServicoViewModel_UsuarioSituacaoAtual" xml:space="preserve">
+    <value>Usuário responsável</value>
+  </data>
+  <data name="Class_DescricaoConceito" xml:space="preserve">
+    <value>Conceito</value>
+  </data>
+  <data name="Class_SituacaoHistoricoEscolar" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_FiltroDescricaoConfiguracao" xml:space="preserve">
+    <value>Componente curricular</value>
+  </data>
+  <data name="Class_FiltroSituacaoConfiguracao" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_DataSolicitacaoDispensa" xml:space="preserve">
+    <value>Data solicitação</value>
+  </data>
+  <data name="Class_Protocolo" xml:space="preserve">
+    <value>Protocolo</value>
+  </data>
+  <data name="ModalConsultaSolicitacaoServicoViewModel_DescricaoSituacaoAtual" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Class_DataFimEscalonamento" xml:space="preserve">
+    <value>Data fim</value>
+  </data>
+  <data name="Class_DataInicioEscalonamento" xml:space="preserve">
+    <value>Data início</value>
+  </data>
+  <data name="Class_LastUpdateDateTime" xml:space="preserve">
+    <value>Última atualização</value>
+  </data>
+  <data name="Class_NomeOrigem" xml:space="preserve">
+    <value>Nome da origem</value>
+  </data>
+  <data name="Class_TipoFeedback" xml:space="preserve">
+    <value>Tipo de feedback</value>
+  </data>
+  <data name="Class_DescricaoAssunto" xml:space="preserve">
+    <value>Assunto</value>
+  </data>
+  <data name="Class_VinculoDisciplinaIsolada" xml:space="preserve">
+    <value>Dados do vínculo</value>
+  </data>
+  <data name="ChancelaFiltroViewModel_ApenasProcessoVigente" xml:space="preserve">
+    <value>Somente processos vigentes?</value>
+  </data>
+  <data name="ChancelaFiltroViewModel_ApenasProcessoVigente_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="ChancelaFiltroViewModel_ApenasProcessoVigente_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="ChancelaFiltroViewModel_SeqProcesso" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="ChancelaItemListaViewModel_Bloqueios" xml:space="preserve">
+    <value>Bloqueio(s)</value>
+  </data>
+  <data name="ChancelaItemListaViewModel_DataEscalonamento" xml:space="preserve">
+    <value>Período da chancela</value>
+  </data>
+  <data name="ChancelaItemListaViewModel_DescricaoOfertaCurso" xml:space="preserve">
+    <value>Oferta de curso</value>
+  </data>
+  <data name="ChancelaItemListaViewModel_DescricaoProcesso" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="ChancelaItemListaViewModel_DescricaoSituacao" xml:space="preserve">
+    <value>Situação atual da solicitação</value>
+  </data>
+  <data name="ChancelaItemListaViewModel_NomePessoaAtuacao" xml:space="preserve">
+    <value>Solicitante</value>
+  </data>
+  <data name="ChancelaItemListaViewModel_NumeroProtocolo" xml:space="preserve">
+    <value>Protocolo</value>
+  </data>
+  <data name="PessoaAtuacaoTermoIntercambioViewModel_DescricaoTipoIntercambio" xml:space="preserve">
+    <value>Tipo de termo</value>
+  </data>
+  <data name="PessoaAtuacaoTermoIntercambioViewModel_InstituicaoExterna" xml:space="preserve">
+    <value>Instituição de ensino externa</value>
+  </data>
+  <data name="TermoIntercambioVigenciaViewModel_Justificativa" xml:space="preserve">
+    <value>Justificativa da alteração</value>
+  </data>
+  <data name="IngressanteOrientacaoViewModel_ColaboradorParticipacaoConfirmacao" xml:space="preserve">
+    <value>Professor/Pesquisador</value>
+  </data>
+  <data name="IngressanteOrientacaoViewModel_NomeInstituicaoExternaConfirmacao" xml:space="preserve">
+    <value>Instituição</value>
+  </data>
+  <data name="PessoaAtuacaoTermoIntercambioViewModel_TipoTermoIntercambioConfirmacao" xml:space="preserve">
+    <value>Tipo de termo</value>
+  </data>
+  <data name="Class_ValorPercentualServicoAdicional" xml:space="preserve">
+    <value>Percentual de serviço adicional</value>
+  </data>
+  <data name="SolicitacaoServicoLookupFiltroViewModel_NumeroProtocolo" xml:space="preserve">
+    <value>Protocolo</value>
+  </data>
+  <data name="SolicitacaoServicoLookupFiltroViewModel_Solicitante" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="IntegralizacaoMatrizHistoricoEscolarNotaViewModel_CodigoTurma" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="Class_CiclosLetivosCampanhaOrigem" xml:space="preserve">
+    <value>Ciclos letivos</value>
+  </data>
+  <data name="Class_SeqCampanhaOrigem" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Class_TipoProcessoSeletivo" xml:space="preserve">
+    <value>Tipo de processo seletivo</value>
+  </data>
+  <data name="LookupProcessoFiltroViewModel_AnoReferencia" xml:space="preserve">
+    <value>Ano referência</value>
+  </data>
+  <data name="LookupProcessoFiltroViewModel_SemestreReferencia" xml:space="preserve">
+    <value>Semestre referência</value>
+  </data>
+  <data name="LookupProcessoFiltroViewModel_TipoProcesso" xml:space="preserve">
+    <value>Tipo processo</value>
+  </data>
+  <data name="LookupProcessoViewModel_AnoReferencia" xml:space="preserve">
+    <value>Ano referência</value>
+  </data>
+  <data name="LookupProcessoViewModel_SemestreReferencia" xml:space="preserve">
+    <value>Semestre referência </value>
+  </data>
+  <data name="LookupProcessoViewModel_TipoProcesso" xml:space="preserve">
+    <value>Tipo processo</value>
+  </data>
+  <data name="Class_CategoriaSituacao" xml:space="preserve">
+    <value>Categoria da situação</value>
+  </data>
+  <data name="Class_SituacaoAtualMatricula" xml:space="preserve">
+    <value>Situação atual da matrícula</value>
+  </data>
+  <data name="Class_TipoUnidadeResponsavel" xml:space="preserve">
+    <value>Tipo de unidade responsável</value>
+  </data>
+  <data name="OfertaMatrizCurricularLookupViewModel_DataFinalVigencia" xml:space="preserve">
+    <value>Data final de vigência</value>
+  </data>
+  <data name="OfertaMatrizCurricularLookupViewModel_DescricaoUnidadeLocalidade" xml:space="preserve">
+    <value>Unidade / Localidade</value>
+  </data>
+  <data name="OfertaMatrizCurricularLookupViewModel_HistoricoSituacaoAtual" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_SituacaoDocumentacao" xml:space="preserve">
+    <value>Situação da documentação</value>
+  </data>
+  <data name="Class_CodPessoa" xml:space="preserve">
+    <value>Código de pessoa</value>
+  </data>
+  <data name="Class_ExibirCampoAssinatura" xml:space="preserve">
+    <value>Exibir campo para assinatura?</value>
+  </data>
+  <data name="Class_ExibirSolicitanteMatrículaNaoFinalizada" xml:space="preserve">
+    <value>Exibir solicitante com matrícula não finalizada?</value>
+  </data>
+  <data name="Class_SeqTurma" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="Class_SeqUnidadeResponsavelFormulario" xml:space="preserve">
+    <value>Unidade responsável formulários</value>
+  </data>
+  <data name="SolicitacaoDeServicoLookupFiltroViewModel_DataInclusaoFim" xml:space="preserve">
+    <value>Término</value>
+  </data>
+  <data name="SolicitacaoDeServicoLookupFiltroViewModel_DataInclusaoInicio" xml:space="preserve">
+    <value>Início</value>
+  </data>
+  <data name="SolicitacaoDeServicoLookupFiltroViewModel_NumeroProtocolo" xml:space="preserve">
+    <value>Protocolo</value>
+  </data>
+  <data name="SolicitacaoDeServicoLookupFiltroViewModel_SeqProcessoEtapa" xml:space="preserve">
+    <value>Etapa atual</value>
+  </data>
+  <data name="SolicitacaoDeServicoLookupFiltroViewModel_SeqSituacaoEtapa" xml:space="preserve">
+    <value>Situação atual</value>
+  </data>
+  <data name="SolicitacaoDeServicoLookupFiltroViewModel_Solicitante" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="SolicitacaoDeServicoLookupListaViewModel_DataInclusaoFormatada" xml:space="preserve">
+    <value>Data de criação</value>
+  </data>
+  <data name="SolicitacaoDeServicoLookupListaViewModel_EtapaAtualCompleta" xml:space="preserve">
+    <value>Etapa atual</value>
+  </data>
+  <data name="SolicitacaoDeServicoLookupListaViewModel_NumeroProtocolo" xml:space="preserve">
+    <value>Protocolo</value>
+  </data>
+  <data name="SolicitacaoDeServicoLookupListaViewModel_SituacaoAtual" xml:space="preserve">
+    <value>Situação atual</value>
+  </data>
+  <data name="SolicitacaoDispensaItensCursadosOutrasInstituicoesViewModel_FormatoCargaHoraria_FillInstructions" xml:space="preserve">
+    <value>O formato de carga horária Hora-aula considera que cada horário de tem 50 minutos (normalmente utilizado para disciplinas).
+&lt;br /&gt;
+O formato Hora considera que cada horário tem 60 minutos (normalmente utilizado para atividades como palestras, eventos e estágios).</value>
+  </data>
+  <data name="EntidadeSelecaoMultiplaLookupFiltroViewModel_CategoriaAtividade" xml:space="preserve">
+    <value>Categoria da situação</value>
+  </data>
+  <data name="EntidadeSelecaoMultiplaLookupFiltroViewModel_SeqsTipoEntidade" xml:space="preserve">
+    <value>Tipo de entidade</value>
+  </data>
+  <data name="EntidadeSelecaoMultiplaLookupListaViewModel_CategoriaAtividadeSituacaoAtual" xml:space="preserve">
+    <value>Categoria da situação</value>
+  </data>
+  <data name="CursoOfertaLocalidadeLookupFiltroViewModel_SeqsNiveisEnsino" xml:space="preserve">
+    <value>Nível de ensino</value>
+  </data>
+  <data name="ParametroEnvioNotificacaoItemSemGrupoEscalonamentoViewModel_AtributoAgendamento" xml:space="preserve">
+    <value>Data de referência</value>
+  </data>
+  <data name="ParametroEnvioNotificacaoItemSemGrupoEscalonamentoViewModel_QuantidadeDiasInicioEnvio" xml:space="preserve">
+    <value>Nº de dias</value>
+  </data>
+  <data name="ParametroEnvioNotificacaoItemSemGrupoEscalonamentoViewModel_QuantidadeDiasRecorrencia" xml:space="preserve">
+    <value>Repete a cada - Dia(s)</value>
+  </data>
+  <data name="ParametroEnvioNotificacaoItemSemGrupoEscalonamentoViewModel_ReenviarNotificacao" xml:space="preserve">
+    <value>Reenviar notificação?</value>
+  </data>
+  <data name="ParametroEnvioNotificacaoItemSemGrupoEscalonamentoViewModel_Temporalidade" xml:space="preserve">
+    <value>Quando?</value>
+  </data>
+  <data name="PublicacaoBdpIdiomaViewModel_IdiomaTrabalho" xml:space="preserve">
+    <value>Idioma do trabalho?</value>
+  </data>
+  <data name="ServicoParametroEmissaoTaxaViewModel_CodigoAgenciaEmissaoTitulo" xml:space="preserve">
+    <value>Agência</value>
+  </data>
+  <data name="ServicoParametroEmissaoTaxaViewModel_CodigoBancoEmissaoTitulo" xml:space="preserve">
+    <value>Código do banco</value>
+  </data>
+  <data name="ServicoParametroEmissaoTaxaViewModel_CodigoCarteiraEmissaoTitulo" xml:space="preserve">
+    <value>Carteira</value>
+  </data>
+  <data name="ServicoParametroEmissaoTaxaViewModel_CodigoContaEmissaoTitulo" xml:space="preserve">
+    <value>Conta</value>
+  </data>
+  <data name="ServicoParametroEmissaoTaxaViewModel_NumeroDiasPrazoVencimentoTitulo" xml:space="preserve">
+    <value>Dias corridos para prazo vencimento boleto</value>
+  </data>
+  <data name="ServicoParametroEmissaoTaxaViewModel_SeqMensagemTitulo" xml:space="preserve">
+    <value>Mensagem boleto</value>
+  </data>
+  <data name="ServicoParametroEmissaoTaxaViewModel_TipoEmissaoTaxa" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="ServicoParametroEmissaoTaxaSemCamposEmissaoViewModel_TipoEmissaoTaxa" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="TurmaLookupFiltroViewModel_CodigoFormatado" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="TurmaLookupFiltroViewModel_DescricaoConfiguracao" xml:space="preserve">
+    <value>Descricao da turma</value>
+  </data>
+  <data name="TurmaLookupFiltroViewModel_SeqCicloLetivoInicio" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="TurmaLookupViewModel_CodigoFormatado" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="TurmaLookupViewModel_DescricaoCicloLetivoInicio" xml:space="preserve">
+    <value>Ciclo letivo</value>
+  </data>
+  <data name="TurmaLookupViewModel_FimPeriodoLetivo" xml:space="preserve">
+    <value>Fim periodo letivo</value>
+  </data>
+  <data name="TurmaLookupViewModel_InicioPeriodoLetivo" xml:space="preserve">
+    <value>Inicio periodo letivo</value>
+  </data>
+  <data name="TurmaLookupViewModel_SituacaoTurmaAtual" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="TurmaLookupViewModel_DescricaoConfiguracaoComponente" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Class_ExibirMediaNotas" xml:space="preserve">
+    <value>Exibir média de notas</value>
+  </data>
+  <data name="ServicoParametroEmissaoTaxaViewModel_SeqBancoAgenciaContaCarteira" xml:space="preserve">
+    <value>Banco</value>
+  </data>
+  <data name="Class_CargaHorariaGrade" xml:space="preserve">
+    <value>Carga horária grade</value>
+  </data>
+  <data name="Class_SeqComponenteCurricularOrganizacao" xml:space="preserve">
+    <value>Organização</value>
+  </data>
+  <data name="Class_ComponenteCurricularOrganizacao" xml:space="preserve">
+    <value>Organização</value>
+  </data>
+  <data name="Class_NomesColaboradores" xml:space="preserve">
+    <value>Colaboradores</value>
+  </data>
+  <data name="Class_SeqsNivelEnsino" xml:space="preserve">
+    <value>Níveis de ensino</value>
+  </data>
+  <data name="DetalhesDivisaoTurmaViewModel_NomesColaboradores" xml:space="preserve">
+    <value>Professores/Pesquisadores</value>
+  </data>
+  <data name="RequisitoItemViewModel_SeqGrupoCurricular" xml:space="preserve">
+    <value>Grupo curricular</value>
+  </data>
+  <data name="Class_DescricaoInstituicaoEnsino" xml:space="preserve">
+    <value>Instituição</value>
+  </data>
+  <data name="DocumentoItemViewModel_DescricaoInconformidade" xml:space="preserve">
+    <value>Inconformidade</value>
+  </data>
+  <data name="DocumentoItemViewModel_ObservacaoSecretaria" xml:space="preserve">
+    <value>Observação da Secretaria</value>
+  </data>
+  <data name="Class_DescricaoTipoEnderecoEletronico" xml:space="preserve">
+    <value>Tipo de end. eletrônico</value>
+  </data>
+  <data name="Class_DescricaoTipoTelefone" xml:space="preserve">
+    <value>Tipo de telefone</value>
+  </data>
+  <data name="Class_CodigoOrgaoRegulador" xml:space="preserve">
+    <value>Código órgão regulador</value>
+  </data>
+  <data name="Class_TipoOrgaoRegulador" xml:space="preserve">
+    <value>Órgão regulador</value>
+  </data>
+  <data name="DocumentoAtendimentoViewModel_ArquivoAnexadoDownload" xml:space="preserve">
+    <value>Anexos</value>
+  </data>
+  <data name="DocumentoAtendimentoViewModel_DescricaoInconformidade" xml:space="preserve">
+    <value>Inconformidade</value>
+  </data>
+  <data name="DocumentoAtendimentoViewModel_ObservacaoSecretaria" xml:space="preserve">
+    <value>Observação secretaria</value>
+  </data>
+  <data name="DocumentoAtendimentoViewModel_SituacaoEntregaDocumento" xml:space="preserve">
+    <value>Validação</value>
+  </data>
+  <data name="DocumentoAtendimentoViewModel_InformacaoVersaoExigida" xml:space="preserve">
+    <value>&amp;#32</value>
+  </data>
+  <data name="DocumentoAtendimentoViewModel_SituacaoEntregaDocumentoInicial" xml:space="preserve">
+    <value>&amp;#32</value>
+  </data>
+  <data name="DocumentoAtendimentoViewModel_VersaoDocumento" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="ConfiguracaoProcessoGedLookupFilterViewModel_SeqContextoBiblioteca" xml:space="preserve">
+    <value>Biblioteca</value>
+  </data>
+  <data name="ConfiguracaoProcessoGedLookupFilterViewModel_SeqProcessoGed" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="ConfiguracaoProcessoGedLookupFilterViewModel_SeqTipoDocumento" xml:space="preserve">
+    <value>Tipo de documento</value>
+  </data>
+  <data name="ConfiguracaoProcessoGedLookupViewModel_ContextoBiblioteca" xml:space="preserve">
+    <value>Biblioteca</value>
+  </data>
+  <data name="ConfiguracaoProcessoGedLookupViewModel_ProcessoGed" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="ConfiguracaoProcessoGedLookupViewModel_SeqContextoBiblioteca" xml:space="preserve">
+    <value>Biblioteca</value>
+  </data>
+  <data name="ConfiguracaoProcessoGedLookupViewModel_SeqProcessoGed" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="ConfiguracaoProcessoGedLookupViewModel_SeqTipoDocumento" xml:space="preserve">
+    <value>Tipo de documento</value>
+  </data>
+  <data name="Class_UsuarioEnvio" xml:space="preserve">
+    <value>Usuário de envio</value>
+  </data>
+  <data name="Class_DescricaoXSD" xml:space="preserve">
+    <value>Descrição XSD</value>
+  </data>
+</root>

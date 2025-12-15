@@ -1,0 +1,2469 @@
+﻿@import "componentes/_smc-buttons.scss";
+@import "componentes/_smc-header.scss";
+@import "componentes/_smc-hidepanel.scss";
+@import "componentes/_smc-list.scss";
+
+//acessibilidade
+@import "../../Content/Css/smc-acessibilidade.scss";
+
+
+.smc-janela-ajuda .dropdown-menu > div > div > a {
+    &:hover {
+        color: $smc-cor-secundaria-04;
+    }
+}
+
+.carousel-indicators, .smc-hidepanel-pesquisa-avancada {
+    z-index: 5;
+}
+
+.smc-carousel {
+    margin-right: 10px;
+}
+
+.smc-sga-acesso-rapido {
+    border: 3px solid #e5e5e5;
+    height: 160px;
+    width: 23.83333%;
+
+    .smc-sga-acesso-rapido-titulo {
+        font-weight: bold;
+        font-size: 15px;
+        color: #909090;
+        margin-top: 10px;
+        margin-left: 15px;
+        margin-bottom: 15px;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    div {
+        width: 49%;
+        display: inline-block;
+        height: 90px;
+        text-align: center;
+
+        p {
+            width: 100%;
+            text-align: center;
+            color: #505050;
+            font-size: 11px;
+            line-height: 11px;
+        }
+    }
+}
+
+.smc-sga-acesso-rapido-teams {
+    a {
+        background-image: url('../../Content/Images/smc-sga-ico-teams.png');
+        width: 100%;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        margin: 10px 0;
+        display: block;
+
+        p {
+            padding-top: 50px;
+        }
+    }
+}
+
+.smc-sga-acesso-rapido-canvas {
+    a {
+        background-image: url('../../Content/Images/smc-sga-ico-canvas.png');
+        width: 100%;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        margin: 10px 0;
+        display: block;
+
+        p {
+            padding-top: 50px;
+        }
+    }
+}
+
+
+.smc-btn-ajuda-icotext {
+    display: inline;
+    cursor: pointer;
+    text-decoration: none !important;
+    font-size: 12px;
+    margin: 1px 2px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    background-repeat: no-repeat;
+    padding: 3px 8px 5px 30px;
+    background-color: #fff;
+    border: solid 1px #0083a2;
+    color: #0083a2;
+
+    & > i {
+        position: absolute;
+        margin-left: -21px;
+        @extend .fa;
+        @extend .fa-question-circle;
+        font-style: normal;
+        display: inline-block;
+        margin: 2px 8px 0 0;
+
+        &:before {
+            font-size: 18px;
+            position: absolute;
+            margin-left: -21px;
+        }
+    }
+
+    &:hover {
+        background-color: #1f9fc9;
+        border: solid 1px #0083a2;
+        color: #fff;
+    }
+}
+
+.smc-ico-ajuda {
+    width: 30px;
+    @extend .fa;
+    @extend .fa-question-circle;
+
+    &:before {
+        color: #074458;
+        font-size: 25px;
+        margin-top: 4px;
+        position: absolute;
+        position: absolute;
+        margin-left: 5px;
+    }
+}
+
+//Banner rotativo temático
+.smc-sga-banner-regimeremoto {
+    height: 160px;
+    width: 100%;
+    padding: 0px;
+    background-image: url('../Images/banner-guia-regime-remoto-01.png'), url('../Images/banner-guia-regime-remoto-02.png'), url('../Images/banner-guia-regime-remoto-03.png'), url('../Images/banner-guia-regime-remoto-04.png');
+    background-position: 5%,55%,97% center,90%;
+    background-repeat: no-repeat, no-repeat,no-repeat, repeat-x;
+    background-size: 35%,25%,25%,100%;
+
+    a {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+}
+
+.smc-sga-banner-falecomagente {
+    height: 160px;
+    width: 100%;
+    padding: 0px;
+    background-image: url('../Images/banner-fale-com-a-gente_02.png'), url('../Images/banner-fale-com-a-gente_04.png'), url('../Images/banner-fale-com-a-gente_03.png');
+    background-position: 10%, right center, 90%;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    background-size: 50%, 40%, 20%;
+
+    a {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+}
+
+//.smc-sga-banner-covid19 {
+//    background-color: #273154;
+//    background-image: url('../Images/smc-sga-banner-covid19-logo.png'), url('../Images/smc-sga-banner-covid19-ilustracao.png'), url('../Images/smc-sga-banner-covid19-botao.png');
+//    background-repeat: no-repeat, no-repeat, no-repeat;
+//    background-position: 10%,center bottom, 90%;
+//    background-size: 27%, 20%, 20%;
+//    height: 160px;
+//    width: 100%;
+//    padding: 0px;
+//
+//    & > input {
+//        width: 100%;
+//        height: 160px;
+//        opacity: 0;
+//    }
+//}
+////////// ********** PROFESSOR
+.smc-sga-externo-area-rolagem {
+    max-height: 540px;
+    overflow: auto;
+    margin-top: 20px;
+}
+
+.smc-sga-legenda-avaliacoes {
+    background-color: transparent !important;
+}
+
+.smc-busca-funcionalidade > input {
+    width: 85% !important;
+}
+//.smc-login-instituicao {
+//    & > .smc-estilo-sigla-instituicao {
+//        text-align: center !important;
+//    }
+//}
+.smc-login-section {
+    h2::before {
+        display: none;
+    }
+}
+
+// Classe para ser passada para o content após finalizada
+// Para todos os agrupamentos de filtro dos módulos professor e aluno
+.smc-sga-externo-filtro {
+    background-color: $smc-cinza-03;
+    margin-top: 20px;
+    padding: 5px;
+
+    label {
+        font-size: 13px;
+    }
+
+    .smc-hidepanel-panel {
+        border: none;
+        margin-top: -18px;
+        margin-left: -5px;
+
+        fieldset {
+            border: none !important;
+            border-radius: 0;
+
+            legend {
+                display: none;
+            }
+        }
+    }
+}
+
+.smc-hidepanel-pesquisa-avancada > .smc-editorformodel-advancedfilter {
+    position: absolute;
+    right: 97px;
+    font-size: 0;
+    margin-top: -54px;
+    padding-right: 32px !important;
+
+    &:hover {
+        background: $smc-cor-principal-hover;
+    }
+
+    &::before {
+        color: #fff;
+        font-size: 18px;
+        margin-left: 5px;
+    }
+}
+
+.smc-sga-externo-botoes-filtro-principal {
+    margin-top: -37px;
+}
+
+.smc-sga-externo-agrupamento {
+    label {
+        color: $smc-cor-principal-03;
+        margin: 10px 0 10px 0;
+    }
+
+    border-bottom: 1px solid $smc-cinza-05;
+}
+
+.smc-sga-externo-agrupamento-primario {
+    label {
+        color: $smc-cor-principal-04;
+        margin: 20px 0 5px -5px;
+        font-size: 20px;
+    }
+}
+
+.smc-sga-externo-agrupamento-secundario {
+    background-color: #e9f0f3;
+    padding-left: 12px;
+
+    &:before {
+        @extend .fa;
+        @extend .fa-clipboard;
+        float: left;
+        position: absolute;
+        margin-top: 9px;
+        margin-left: 1px;
+        font-size: 14px;
+        color: $smc-cor-secundaria-01;
+    }
+
+    label {
+        color: $smc-cor-principal-03;
+        padding-bottom: 5px;
+        margin: 5px 0 5px 15px;
+    }
+}
+
+.smc-sga-externo-agrupamento-terciario {
+    &:before {
+        @extend .fa;
+        @extend .fa-file-o;
+        float: left;
+        position: absolute;
+        margin-top: 9px;
+        margin-left: 19px;
+        font-size: 12px;
+        color: $smc-cinza-08;
+    }
+
+    .smc-sga-externo-botoes-grid {
+        padding-right: 4%;
+    }
+    // .smc-dropdown-btn-toggle-config {
+    //     color: $smc-cinza-07;
+    // }
+    //
+    label {
+        color: $smc-cinza-08;
+        margin: 5px 0 5px 30px;
+        padding-bottom: 5px;
+    }
+
+    border-bottom: 1px solid $smc-cinza-03;
+
+    &:last-child {
+        margin-bottom: 5px;
+        // padding-bottom: 10px;
+        // border: none;
+    }
+}
+
+.smc-list-item-grid {
+    > div > div[data-control-child="smc-list"]:last-child {
+        .smc-sga-externo-agrupamento-terciario {
+            border-bottom: none;
+        }
+    }
+}
+
+.smc-sga-externo-botoes-grid {
+    clear: inherit;
+    padding-right: 4%;
+}
+
+// MINHAS SOLICITAÇÕES
+.smc-sga-externo-solicitacoes {
+    background-color: #f2f0f1;
+}
+
+.smc-sga-externo-area-rolagem {
+    max-height: 560px;
+    overflow: auto;
+}
+
+.smc-dropdown-btn-toggle-config {
+    background-color: transparent;
+    color: $smc-cor-secundaria-01;
+    border: none;
+
+    &:hover, &:focus {
+        border: none;
+        color: $smc-cor-principal-hover;
+        background-color: transparent;
+    }
+}
+
+
+// FIM
+// TOTALIZADORES
+.smc-sga-externo-totalizador {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    border-width: 2px;
+
+    p {
+        font-size: 40px !important;
+        margin-bottom: 5px !important;
+    }
+
+    label {
+        text-align: center;
+        width: 100%;
+    }
+
+    span {
+        margin-top: 12px;
+    }
+
+    &:before {
+        float: left;
+        margin-bottom: -15px;
+        margin-left: -10px;
+        margin-top: -17px;
+        font-size: 20px;
+        line-height: 24px;
+        border-radius: 1000px;
+        background-color: #fff;
+        padding: 2px 3px;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+
+.smc-sga-externo-totalizador-status-novo {
+    @extend .smc-sga-externo-totalizador;
+    @extend .fa-certificate;
+    @extend .fa;
+    border-color: #ecbd02;
+
+    &:before {
+        color: #ecbd02;
+        border: 2px solid #ecbd02;
+    }
+}
+
+.smc-sga-externo-totalizador-status-emandamento {
+    @extend .smc-sga-externo-totalizador;
+    @extend .fa-hourglass-half;
+    @extend .fa;
+    border-color: #f26e32;
+
+    &:before {
+        color: #f26e32;
+        border: 2px solid #f26e32;
+        font-size: 16px;
+    }
+}
+
+.smc-sga-externo-totalizador-status-concluida {
+    @extend .smc-sga-externo-totalizador;
+    @extend .fa-check;
+    @extend .fa;
+    border-color: #00d15d;
+
+    &:before {
+        color: #00d15d;
+        border: 2px solid #00d15d;
+    }
+}
+
+.smc-sga-externo-totalizador-status-encerrada {
+    @extend .smc-sga-externo-totalizador;
+    @extend .fa-flag-checkered;
+    @extend .fa;
+    border-color: #00b5e2;
+
+    &:before {
+        color: #00b5e2;
+        border: 2px solid #00b5e2;
+        font-size: 18px;
+    }
+}
+
+.dropdown-menu {
+    position: fixed;
+}
+
+.smc-sga-header-detalhes {
+    margin: 10px 0 0 0 !important;
+    padding: 10px 0 0 0;
+    border-top: solid 1px $smc-cor-principal-06;
+}
+
+.smc-sga-externo-totalizador-simples {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    border-width: 2px;
+
+    p {
+        font-size: 20px !important;
+        margin-bottom: 5px !important;
+    }
+
+    label {
+        text-align: center;
+        width: 100%;
+    }
+
+    span {
+        margin-top: 12px;
+    }
+}
+
+.smc-modal-header {
+    h2:before {
+        display: none;
+    }
+}
+
+.smc-modal-window .smc-modal-content {
+    padding: 0 30px;
+}
+// FIM
+
+
+
+/////// FIM ///////////////////
+
+
+
+//////// Fim responsividade
+.smc-sga-aluno-logotipo-intituicao {
+    height: 50px;
+    text-align: center;
+
+    img {
+        height: 45px;
+    }
+}
+
+.smc-sga-aluno-usuario {
+    margin-top: -10px !important;
+}
+
+.smc-sga-aluno-remove {
+    i {
+        display: none !important;
+    }
+
+    &:hover {
+        color: $smc-cor-principal-hover !important;
+    }
+}
+
+.smc-sga-aluno-ribbon {
+    height: 100px;
+    background-image: url('../Images/smc-sga-aluno-textura-topo.png') !important;
+    background-position: left center;
+    background-color: $smc-branco;
+
+    .navbar-fixed-top {
+        padding-top: 12px;
+    }
+
+    .smc-login-instituicao {
+        white-space: unset !important;
+
+        & > .smc-button {
+            width: 8.33333% !important;
+            float: left;
+            margin-top: 21px;
+        }
+    }
+
+    .smc-estilo-sigla-instituicao {
+        padding: 0 !important;
+        line-height: 14px;
+        position: relative !important;
+        width: 90% !important;
+        font-size: 10px !important;
+        float: left;
+        margin-right: 5px;
+    }
+
+    .navbar-nav {
+        margin-top: 26px;
+    }
+}
+
+.smc-sga-aluno-logotipo-intituicao {
+    width: 58.33333%;
+    margin-top: 15px;
+    float: left;
+}
+
+
+.smc-sga-aluno-conteudo {
+    margin-top: 100px !important;
+}
+
+.smc-menu-responsivo {
+    top: 100px;
+}
+
+
+//** links uteis
+
+h2 {
+    color: $smc-cor-secundaria-01 !important;
+    font-size: 22px;
+
+    &:before {
+        width: 50px;
+        content: "";
+        background-color: $smc-cor-secundaria-01;
+        height: 3px;
+        position: absolute;
+        margin-top: 50px;
+    }
+}
+
+.smc-sga-aluno-links-uteis {
+    margin-top: 20px;
+    border-top: 1px solid $smc-cinza-03;
+
+    ul {
+        list-style-type: none;
+
+        li {
+            margin-top: 20px;
+        }
+    }
+}
+
+
+.smc-sga-aluno-logotipo-bdp {
+    background-image: url('../Images/smc-sga-img-logotipo-bdp.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 100%;
+    display: inline-block;
+}
+
+.smc-sga-aluno-logotipo-periodicocapes {
+    background-image: url('../Images/smc-sga-img-logotipo-periodicocapes.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 100%;
+    display: inline-block;
+}
+
+
+
+
+////////// ********** FIM ALUNO
+// classe para inclusão de arquivos na tela incial do ingressante
+.smc-sgf-template-arquivo-item {
+    > .smc-display {
+        clear: both;
+        padding-top: 5px;
+    }
+
+    a {
+        color: $smc-cor-secundaria-04;
+        text-decoration: underline;
+    }
+}
+
+.smc-display-legend {
+    > div {
+        margin-top: 7px;
+    }
+}
+
+body {
+    color: $smc-cinza;
+}
+
+.smc-legend-box {
+    width: 99%;
+}
+
+.smc-sga-margin-top-5 {
+    margin-top: 5px;
+}
+
+//body
+.smc-sga-body {
+    background: url(../Images/smc-sga-img-inicio.png) right 120px no-repeat, url(../Images/smc-sga-img-background.png) 0 120px repeat-x;
+    background-color: $smc-cinza-01;
+
+    h1.smc-sga-titulo {
+        display: none;
+    }
+
+    .ui-draggable.smc-modal-window-auto.smc-message-fixed {
+        position: fixed;
+        width: 80%;
+        z-index: 2;
+        margin-top: 10px;
+        top: 120px !important;
+
+        h2 {
+            margin-bottom: 0;
+            margin-top: 5px;
+        }
+    }
+}
+//
+
+.smc-conteudo-centro {
+    margin-top: 150px;
+    min-height: 537px;
+
+    h1 {
+        margin-top: 25px;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+}
+
+.smc-display > label {
+    color: $smc-cor-principal-01;
+}
+
+fieldset {
+    margin-bottom: 10px;
+}
+
+// Rodapé
+.smc-footer-centro {
+
+    &::after { // inclusão da borda inferior
+        content: "";
+        padding: 0 47.5%;
+        border-bottom: 4px solid $smc-cor-secundaria-01;
+        margin-left: 2%;
+    }
+}
+
+
+//MENU HORIZONTAL
+.smc-menu-dinamico-controls {
+    display: none;
+}
+
+.smc-menu-responsivo-orientation-horizontal {
+    width: 100%;
+    padding-right: 0;
+    height: 45px;
+
+    .smc-menu-dinamico {
+        padding-top: 0;
+    }
+
+    .smc-dynamic-menu {
+        margin-left: 8.33333%;
+        width: 83.33333%;
+    }
+
+    .smc-menu-dinamico-principal {
+        padding: 0;
+        margin-top: 0;
+
+        > li {
+            display: inline-block;
+            cursor: pointer;
+            height: 45px;
+
+            a {
+                padding: 12px 15px 10px 15px;
+                display: inline-block;
+            }
+        }
+    }
+
+    .smc-menu-submenu {
+        min-height: 0;
+        background-color: $smc-cor-secundaria-01;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        width: auto;
+        margin-top: 0px;
+        top: 15px !important;
+
+        a {
+            color: $smc-branco;
+            width: 100%;
+        }
+
+        .smc-menu-submenu-items {
+            margin-left: 200px !important;
+            top: -28px !important;
+
+            :hover {
+                > a {
+                    color: $smc-cor-secundaria-01;
+                }
+            }
+        }
+    }
+
+    .smc-menu-N2 {
+        display: none;
+        position: absolute;
+        margin-left: auto !important;
+        padding: 0;
+        height: auto;
+        list-style-type: none;
+        border: none;
+        width: auto;
+        left: auto !important;
+        margin-top: 30px;
+        min-width: 200px;
+    }
+
+    .smc-menu-dinamico-link-submenu:before, .smc-menu-setinha:before {
+        display: inline-block;
+        position: inherit;
+        margin-top: 13px !important;
+        float: right;
+        -ms-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        position: inherit !important;
+        margin-right: 15px !important;
+        cursor: pointer;
+        color: $smc-cor-principal-06;
+    }
+
+    .smc-menu-favorito {
+        display: none;
+    }
+
+    .smc-menu-submenu, .smc-menu-submenu-items {
+        background-color: $smc-cor-principal-03 !important;
+    }
+}
+
+.smc-footer-conteudo { // redução da margem para ficar um pouco menor a distância entre os logos e a borda.
+    margin-bottom: 0;
+
+    .smc-footer-logo-smc {
+        background-image: url(../../Content/Images/img-logo-smc.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 89px;
+        height: 38px;
+        margin-top: 14px;
+
+        &:before {
+            display: none !important;
+        }
+    }
+}
+
+// conteúdo central
+.smc-sga-ingressante-cabecalho {
+    margin-bottom: 30px;
+    margin-top: -45px;
+}
+
+.smc-sga-ingressante-cabecalho-titulo {
+    background-color: $smc-cor-principal-09;
+    position: fixed;
+    z-index: 1;
+    height: 80px;
+    left: 0;
+    right: 0;
+
+    span {
+        color: $smc-branco;
+        font-size: 16px;
+        padding-top: 15px;
+        display: inline-block;
+    }
+}
+
+.smc-sga-ingressante-cabecalho-subtitulo {
+    font-size: 14px !important;
+    padding-top: 5px !important;
+}
+
+.smc-sga-ingressante-cabecalho-itens {
+    margin-top: 95px;
+    height: 280px;
+}
+
+.smc-sga-separador {
+    border-bottom: 1px solid $smc-cinza-04;
+    box-shadow: 0 1px 0 $smc-branco !important;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+}
+
+.smc-sga-display-header {
+    padding: 5px 0 0 0;
+
+    label {
+        font-weight: normal;
+        color: $smc-cinza-07;
+        margin-right: 5px;
+    }
+
+    p {
+        font-weight: bold;
+        color: $smc-cor-principal-01;
+    }
+}
+
+.smc-sga-btn-trocaroferta {
+    @include smc-btn-base;
+    @include smc-btn-ico;
+    @include smc-btn-tamanho (primario_ico_button);
+    @include icone-posicao(primario);
+    @include smc-btn-cor-destaque;
+    background-color: transparent;
+    border: none;
+    margin-top: 25px;
+
+    & > i {
+        @extend .fa-retweet;
+        @extend .fa;
+    }
+
+    &:hover {
+        background-color: transparent;
+        border: none;
+        color: $smc-cor-principal-04;
+    }
+}
+
+.smc-btn-documento-icotext {
+    border: 2px solid $smc-cor-principal-04 !important;
+    line-height: 24px;
+    color: $smc-cor-principal-04 !important;
+
+    & > i {
+        @extend .fa-file-text-o;
+        @extend .fa;
+        margin-right: 6px;
+    }
+
+    &:hover {
+        border: 2px solid $smc-cor-secundaria-03 !important;
+        color: $smc-cor-secundaria-03 !important;
+    }
+}
+// título
+.smc-sga-titulo-etapa, .smc-sga-titulo {
+    color: $smc-cor-secundaria-01;
+    font-size: 22px;
+
+    &:before {
+        width: 50px;
+        content: "";
+        background-color: $smc-cor-secundaria-01;
+        height: 3px;
+        position: absolute;
+        margin-top: 50px;
+    }
+}
+
+.smc-sga-titulo {
+    margin-bottom: 40px;
+}
+
+// legenda
+.smc-sga-legenda {
+    text-align: right;
+
+    .smc-legend-content-title {
+        display: none !important;
+    }
+
+    span {
+        font-size: 11px;
+        color: $smc-preto;
+        font-weight: bold;
+    }
+}
+
+.smc-sga-legenda-turma {
+    margin-top: -10px;
+    margin-bottom: -25px;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.smc-sga-legenda-agrupamento-chancela {
+    margin-top: 6px;
+}
+
+.smc-sga-legenda-agrupamento-chancela-situacao-plano {
+
+    .fa {
+        margin-top: 1px;
+    }
+}
+
+.smc-sga-select-situacao {
+    select {
+        height: 25px !important;
+        padding: 0;
+        margin-top: -2px;
+    }
+}
+
+.smc-sga-legenda-agrupamento-legendas {
+    .smc-display-legend {
+        width: 17px !important;
+    }
+
+    .smc-legend-plan-est-nao-alterado, .smc-legend-solicita-inclusao, .smc-legend-solicita-exclusao {
+        float: left;
+        margin-left: 2px;
+        margin-top: 6px;
+    }
+}
+
+.smc-sga-filtro-turma {
+    margin-top: -15px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed $smc-cor-secundaria-05 !important;
+    border-radius: 0 !important;
+    padding-bottom: 5px;
+}
+
+legend {
+    font-size: 18px !important;
+}
+
+%smc-base-legenda-matricula {
+    margin-top: 0;
+
+    &:before {
+        @extend .fa;
+        margin-right: 5px;
+        font-size: 16px;
+    }
+}
+
+.smc-sga-legenda-matricula-naoiniciada {
+    &:before {
+        @extend %smc-base-legenda-matricula;
+        @extend .fa-stop-circle;
+        color: #3d7ef5;
+    }
+}
+
+.smc-sga-legenda-matricula-emandamento {
+    &:before {
+        @extend %smc-base-legenda-matricula;
+        @extend .fa-clock-o;
+        color: #e6c616;
+    }
+}
+
+.smc-sga-legenda-matricula-aguardandopagamento {
+    &:before {
+        @extend %smc-base-legenda-matricula;
+        @extend .fa-usd;
+        color: #ec9417;
+        font-size: 13px;
+    }
+}
+
+.smc-sga-legenda-matricula-finalizada {
+    &:before {
+        @extend %smc-base-legenda-matricula;
+        @extend .fa-check-circle;
+        color: #3c9c64;
+    }
+}
+
+.smc-sga-legenda-matricula-naofinalizada {
+    &:before {
+        @extend %smc-base-legenda-matricula;
+        @extend .fa-times-circle;
+        color: #df6262;
+    }
+}
+
+
+// grid
+
+.smc-sga-etapa-atual {
+    td {
+        background-color: #fefae3 !important;
+        border-color: #e6c616 !important;
+    }
+}
+
+
+.smc-sga-grid-inicial {
+    background-color: transparent !important;
+
+    table {
+        border-collapse: separate;
+        border-spacing: 0 5px !important;
+
+        .smc-sga-ingressante-etapas-descricao {
+            width: 90%;
+            float: left;
+
+            a {
+                color: $smc-cor-secundaria-04;
+
+                :hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        background-color: transparent !important;
+        height: 36px !important;
+    }
+
+    td:first-child {
+        border-radius: 50px 0 0 50px;
+        border-top: 1px solid $smc-cinza-03 !important;
+        border-bottom: 1px solid $smc-cinza-03 !important;
+        border-left: 1px solid $smc-cinza-03 !important;
+        border-right: none;
+        width: 50px;
+        text-align: center;
+
+        div {
+            display: inline-block;
+        }
+
+        .smc-display-legend {
+            width: 12px;
+            display: inline-block;
+        }
+    }
+
+    td:last-child {
+        border-radius: 0 50px 50px 0;
+        border-top: 1px solid $smc-cinza-03 !important;
+        border-bottom: 1px solid $smc-cinza-03 !important;
+        border-right: 1px solid $smc-cinza-03 !important;
+        border-left: none;
+    }
+
+    td {
+        border-bottom: 1px solid $smc-cinza-03 !important;
+        border-top: 1px solid $smc-cinza-03 !important;
+        border-left: none !important;
+        border-right: none !important;
+    }
+
+    .smc-btn-custom {
+        height: 15px;
+        padding: 0;
+        border: none !important;
+        color: $smc-cor-secundaria-04 !important;
+
+        &:hover {
+            border: none !important;
+            text-decoration: underline !important;
+        }
+    }
+}
+
+.smc-sga-ingressante-data-destaque {
+    p {
+        font-weight: bold;
+    }
+}
+
+
+// área do usuário
+.user-header {
+    p {
+        color: $smc-cor-principal;
+    }
+}
+
+// ÁREA DE MATRÍCULA
+// painel lateral
+.smc-sga-painel-lateral-processo {
+    margin-top: 70px;
+    padding-top: 15px;
+    position: fixed;
+    height: 100%;
+    min-height: 100%;
+    padding-bottom: 85px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 10;
+    background-color: $smc-cinza-02;
+
+    span, a {
+        font-size: 11px;
+        margin-left: 5px;
+    }
+}
+
+.smc-sga-painel-lateral-processo-nome {
+    margin-bottom: 15px;
+
+    span {
+        margin: 3px 0;
+        font-weight: bold;
+        font-size: 12px;
+        color: $smc-cinza-09;
+
+        &:last-child {
+            margin-top: 20px;
+            margin-bottom: -10px;
+            color: $smc-cor-principal-01;
+        }
+    }
+}
+
+.smc-sga-painel-lateral-processo-passos {
+
+    div {
+        border: 1px solid $smc-cinza-03;
+        margin: 2px 0;
+        border-radius: 20px;
+        min-height: 37px;
+        padding: 10px 0 10px 5px;
+    }
+
+    .smc-sga-processo-passo-concluido {
+        background-color: $smc-cinza-01;
+        @extend .fa-check;
+        @extend .fa;
+        color: $smc-cor-secundaria-04;
+
+        &:before {
+            margin-left: 3px;
+        }
+
+        & > a {
+            color: $smc-cor-secundaria-04;
+        }
+    }
+
+    .smc-sga-processo-passo-atual {
+        background-color: #fefae3;
+        @extend .fa-star;
+        @extend .fa;
+        color: #e6c616;
+        border-color: #e6c616;
+
+        &:before {
+            margin-left: 3px;
+        }
+
+        & > span {
+            font-weight: 600;
+            color: #000;
+        }
+    }
+
+    .smc-sga-processo-passo-emaberto {
+        background-color: $smc-cinza-03;
+        @extend .fa;
+        @extend .fa-star-o;
+        color: $smc-cinza-05;
+
+        &:before {
+            margin-left: 3px;
+        }
+
+        & > span {
+            color: $smc-cinza-07 !important;
+        }
+    }
+}
+
+.smc-sga-painel-lateral-processo-contador {
+    text-align: right;
+    padding: 5px 10px 5px 10px;
+
+    & > span {
+        color: $smc-cinza-05;
+    }
+}
+// painel central
+.smc-sga-conteudo-centro-menu {
+    padding-left: 40px;
+    padding-right: 25px;
+    margin-top: 70px;
+}
+//
+
+.smc-sga-destaque-label {
+    label {
+        font-weight: bold;
+    }
+}
+
+// Modal selecionar oferta
+.smc-sga-modal-selecionar-ingressante {
+    h2 {
+        color: $smc-cor-secundaria-01 !important;
+        font-size: 22px;
+
+        &:before {
+            width: 50px;
+            content: "";
+            background-color: $smc-cor-secundaria-01;
+            height: 3px;
+            position: absolute;
+            margin-top: 50px;
+        }
+    }
+
+    h3 {
+        color: $smc-cor-principal-04;
+        border-bottom: 1px solid $smc-cinza-02;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .smc-modal-backdrop {
+        opacity: 1;
+        background: url($smc-background-image-modal)left top no-repeat;
+        background-color: $smc-cinza-01;
+    }
+
+    .smc-modal-window {
+        -webkit-box-shadow: 0px 0px 15px 1px rgba(140,140,140,0.61);
+        -moz-box-shadow: 0px 0px 15px 1px rgba(140,140,140,0.61);
+        box-shadow: 0px 0px 15px 1px rgba(140,140,140,0.61);
+    }
+}
+
+.smc-sga-aluno-selecao-titulo-processo {
+    font-weight: bold;
+    color: $smc-cinza-08;
+
+    .smc-display {
+        padding-top: 5px;
+        padding-bottom: 7px;
+    }
+}
+
+.smc-sga-aluno-selecao-campos-processo {
+    label, p {
+        font-size: 12px;
+    }
+
+    label {
+        color: $smc-cor-principal-04;
+        font-weight: normal;
+    }
+
+    p {
+        color: $smc-cinza-08;
+    }
+
+    .smc-display {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+// MENSAGENS LOCAIS + BOTÕES
+.smc-mensagem-botoes {
+    margin-top: -22px;
+}
+
+// TELA DE CONFIRMAÇÃO DE DADOS
+.smc-sga-confirmacao-dados {
+    .smc-display {
+        label, p {
+            display: block;
+            clear: both;
+        }
+    }
+}
+
+.smc-sga-botoes-secundarios {
+    margin: 15px 0;
+}
+
+.smc-btn-custom[disabled="disabled"] {
+    border: 2px solid $smc-cinza-03 !important;
+    //height: 25px;
+    &:hover {
+        border: 2px solid transparent !important;
+        color: $smc-cinza-06 !important;
+    }
+}
+
+//.smc-detalhe-editavel-header {
+//    label{
+//        margin-left:5px;
+//    }
+//}
+
+.smc-radiobutton-list-horizontal .smc-radiobutton > label > input.input-validation-error::before,
+.smc-checkbox-list-horizontal .smc-radiobutton > label > input.input-validation-error::before,
+.smc-radiobutton label > input.input-validation-error::before,
+.smc-radiobutton-list-horizontal .smc-checkbox > label > input.input-validation-error::before,
+.smc-checkbox-list-horizontal .smc-checkbox > label > input.input-validation-error::before,
+.smc-checkbox label > input.input-validation-error::before {
+    top: -1px;
+}
+
+.smc-radiobutton-list-horizontal > .smc-radiobutton-list-itens > .smc-radiobutton > label {
+    margin-bottom: 11px;
+}
+
+.smc-sga-termo-conteudo {
+    text-align: justify;
+    margin: 5px 0 10px 0;
+}
+
+.smc-sga-check-aceite {
+    float: left;
+    width: 60%;
+
+    .smc-preenchimento-obrigatorio {
+        margin: 9px 6px 2px 0;
+    }
+}
+
+.smc-sga-botao-aceite {
+    float: left;
+    width: auto;
+}
+
+.smc-sga-alinhamento-botao-secundario {
+    float: left;
+    width: auto;
+    clear: none;
+
+    .smc-btn-custom {
+        font-size: 11px;
+        padding: 3px 7px 5px 7px;
+        height: 25px !important;
+        border-color: $smc-cor-secundaria-04 !important;
+        color: $smc-cor-secundaria-04 !important;
+
+        i {
+            height: 10px;
+            margin-top: -5px !important;
+            margin-right: 5px;
+            font-size: 12px;
+
+            &:before {
+                font-size: 13px;
+            }
+        }
+
+        &:hover {
+            border-color: $smc-cor-principal-04 !important;
+            color: $smc-cor-principal-04 !important;
+            background-color: $smc-branco !important;
+        }
+    }
+}
+
+.smc-sga-msg-conteudo-botao {
+    width: 80% !important;
+}
+
+// ATIVIDADES ACADÊMICAS
+.smc-listdetailed-botao-unico {
+    .smc-buttonset-vertical-secundario {
+        margin-top: -4px;
+    }
+}
+
+// INSTRUÇÕES FINAIS
+.smc-sga-botao-boleto {
+    i {
+        @extend .fa;
+        @extend .fa-barcode;
+        line-height: 29px;
+        float: left;
+
+        &:before {
+            font-size: 18px !important;
+        }
+    }
+}
+
+.smc-modal-window-small {
+    .smc-sga-mensagem > p {
+        margin: 5px 0 15px 15%;
+        width: 84%;
+    }
+}
+
+///////// ********** ----- RESPONSIVIDADE ----- ********** //////////
+
+
+.smc-sga-mob-btn-visualizar-ico {
+    & > i {
+        @extend .fa-eye;
+        line-height: 20px;
+    }
+}
+
+.smc-display {
+    label {
+        margin-right: 5px;
+    }
+}
+
+// ACESSIBILIDADE
+.smc-acessibilidade-contraste {
+    .smc-sga-processo-passo-concluido,
+    .smc-sga-processo-passo-atual,
+    .smc-sga-processo-passo-emaberto,
+    .smc-list-item .smc-size-md-1 .smc-checkbox {
+        background-color: #000 !important;
+
+        span, a {
+            color: $smc-branco !important;
+        }
+    }
+
+    .smc-ribbon {
+        background: none;
+
+        .fa-user:before, .user > .smc-btn-usuario > i:before,
+        .fa-universal-access:before,
+        .smc-btn-acessibilidade > i:before {
+            color: #fff000 !important;
+        }
+    }
+}
+
+.smc-buttonset-horizontal-secundario {
+    .smc-btn-chancela {
+        height: 25px;
+    }
+}
+//COMPONENTE DE CARREGAMENTO - PORCENTAGEM CIRCULAR
+div.smc-sga-round-percent {
+    width: 80px !important;
+    height: 80px !important;
+    margin-left: 10px;
+    position: absolute;
+}
+
+div.smc-sga-round-percent div input, div.smc-sga-round-percent div input:focus {
+    background-color: transparent !important;
+    border: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    left: 16px;
+    top: -55px;
+    position: relative !important;
+}
+
+@media (max-width:1199px) {
+    .smc-sga-acesso-rapido {
+        width: 22.83333%;
+    }
+}
+
+@media (max-width: 992px) {
+    div.smc-sga-round-percent {
+        position: relative !important;
+    }
+
+    .smc-sga-acesso-rapido {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    div.smc-sga-round-percent div input, div.smc-sga-round-percent div input:focus {
+        left: -4px !important;
+    }
+}
+// ***** Responsividade ***** //
+//LG
+@media (min-width:1200px) {
+    //.container-fluid{
+    //    background: red!important;
+    //}
+}
+
+//SM e XS
+@media (max-width:991px) {
+    //.container-fluid {
+    //    background: blue;
+    //}
+    .smc-hidepanel-pesquisa-avancada {
+        z-index: 5;
+    }
+}
+
+//SM
+@media (min-width:768px) and (max-width:991px) {
+    //.container-fluid {
+    //    background: #00d15d;
+    //}
+
+    .smc-hidepanel-pesquisa-avancada > .smc-editorformodel-advancedfilter {
+        right: 92px;
+    }
+
+    .smc-sga-aluno-ribbon {
+        background-position: -100px center;
+    }
+
+    .smc-busca-funcionalidade {
+        margin-top: 12px !important;
+    }
+
+    .navbar {
+        & > div {
+            & > .smc-login-instituicao {
+                margin-left: 0 !important;
+            }
+
+            & > .navbar-nav {
+                float: none !important;
+                margin-top: 30px !important;
+            }
+        }
+    }
+
+    .smc-menu-dinamico-controls {
+        top: 100px !important;
+        display: block !important;
+        background: $smc-cor-principal-02;
+        width: 100%;
+        height: 42px;
+        box-shadow: 0 3px 12px -4px rgba(0,0,0,.75);
+    }
+
+    .smc-menu-dinamico-ico-referencia {
+        top: 9px;
+        left: 15px;
+
+        &::before {
+            color: $smc-branco;
+            text-shadow: 0 1px 0 $smc-cor-principal;
+        }
+    }
+
+    .smc-menu-submenu {
+        background: $smc-cinza-03;
+    }
+
+    .smc-menu-N2 {
+        & > li {
+            & > a {
+                color: $smc-cinza-08 !important;
+
+                &:hover {
+                    background: $smc-cor-principal-01;
+                    color: $smc-branco !important;
+                }
+            }
+        }
+    }
+}
+
+//XS
+@media (min-width:0px) and (max-width:$smc-size-screen-xs-max) {
+    .smc-sga-body {
+        background: url(../Images/smc-sga-img-inicio.png) left 120px no-repeat,url(../Images/smc-sga-img-background.png) right 115px repeat-x;
+    }
+
+    .smc-sga-externo-botoes-filtro-principal {
+        margin-top: -54px;
+    }
+
+    .smc-hidepanel-pesquisa-avancada > .smc-editorformodel-advancedfilter {
+        margin-left: 50.33333%;
+    }
+
+    .user > .dropdown-menu {
+        min-width: 300px;
+        border: solid 4px $smc-cinza-03 !important;
+    }
+
+    .user-footer {
+        height: 70px;
+    }
+
+    .user-header p, .smc-acessibilidade > div.dropdown-menu {
+        min-width: 300px;
+    }
+
+    fieldset {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .smc-sga-grid-inicial .smc-btn-custom {
+        height: 55px;
+        margin-left: -30px;
+        line-height: 12px !important;
+    }
+
+    .smc-sga-separador {
+        margin-bottom: 0;
+        padding-bottom: 5px;
+    }
+
+    .smc-sga-ingressante-cabecalho-itens {
+        margin-top: 85px;
+        height: auto;
+    }
+
+    .smc-login {
+        background: transparent;
+        margin-top: 5px !important;
+    }
+
+    .smc-sga-ingressante-cabecalho {
+        margin-bottom: 15px;
+        background-image: url(../Images/smc-sga-img-inicio.png) left 120px no-repeat,url(../Images/smc-sga-img-background.png) right 115px repeat-x;
+        background-color: #f9f8f8;
+        padding-bottom: 10px;
+    }
+
+    .smc-sga-body {
+        background: none !important;
+    }
+
+    .smc-btn-custom.smc-sga-botao-boleto {
+        height: 50px !important;
+        text-align: center;
+        padding: 6px 7px 5px 7px;
+
+        i {
+            display: none;
+        }
+    }
+
+    //h1 {
+    //    margin: 20px 0 10px 0;
+    //
+    //    &:before {
+    //        display: none;
+    //    }
+    //}
+
+    .smc-sga-titulo {
+        margin-bottom: 15px;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    .smc-sga-modal-selecionar-ingressante {
+        h2 {
+            &:before {
+                display: none;
+            }
+        }
+
+        .smc-modal-header {
+            margin-bottom: 0;
+        }
+    }
+
+    .smc-aplicaco-logotipo {
+        padding-top: 12px;
+    }
+
+    .smc-sga-ingressante-cabecalho-titulo {
+        span {
+            padding-top: 5px;
+        }
+    }
+
+    .smc-sga-mensagem {
+        &::before {
+            font-size: 25px;
+        }
+
+        p {
+            font-size: 12px;
+            margin: 0 5px 5px 30px !important;
+        }
+    }
+    // div central
+    .smc-sga-conteudo-centro-menu {
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-top: 0;
+    }
+    // botões
+    .smc-sga-matricula-linha-botoes {
+        .smc-button:last-child {
+            float: right;
+        }
+    }
+
+    .smc-btn-gerar-relatorio-icotext-destaque,
+    .smc-btn-anterior-icotext,
+    .smc-btn-proximo-icotext-destaque,
+    .smc-btn-cancelar-icotext,
+    .smc-btn-fechar-icotext,
+    .smc-btn-confirmar-icotext-destaque,
+    .smc-btn-download-icotext,
+    .smc-sga-mob-btn-visualizar-ico,
+    .smc-btn-confirmar-icotext,
+    .smc-btn-voltar-icotext,
+    .smc-btn-limpar-ico,
+    .smc-btn-limparenviar-ico,
+    .smc-btn-novo-icotext,
+    .smc-btn-novo-icotext-destaque,
+    .smc-btn-pesquisar-icotext-destaque,
+    .smc-btn-salvar-icotext-destaque,
+    .smc-hidepanel-pesquisa-avancada > .smc-editorformodel-advancedfilter {
+        font-size: 0;
+        height: 50px;
+        padding: 0 8px 0 16px;
+    }
+
+    .smc-btn-pesquisar-destaque,
+    .smc-btn-custom,
+    .smc-btn-relatorio-destaque,
+    .smc-btn-custom[disabled="disabled"] {
+        height: 50px;
+        padding: 0 8px 0 16px;
+        text-transform: uppercase;
+    }
+
+    .smc-btn-gerar-relatorio-icotext-destaque {
+        padding-top: 12px;
+    }
+
+    .smc-btn-download-icotext {
+        padding-top: 12px;
+        position: absolute;
+        margin-top: -88px !important;
+        margin-left: -54px;
+    }
+
+    .smc-btn-confirmar-icotext-destaque {
+        padding-top: 10px;
+        margin-left: 6px;
+    }
+
+    .smc-btn-chancela {
+        padding-top: 15px !important;
+    }
+
+    .smc-btn-novo-icotext, .smc-btn-novo-icotext-destaque {
+        padding-top: 10px;
+    }
+    //.smc-btn-pesquisar-destaque,
+    //.smc-btn-custom,
+    //.smc-btn-limpar-ico i {
+    //    line-height: 53px !important;
+    //}
+    .smc-btn-relatorio-destaque {
+        line-height: 32px;
+    }
+
+    .smc-btn-voltar-icotext i {
+        line-height: 46px;
+    }
+
+    .user-footer {
+        ul {
+            .btn-default {
+                .smc-button {
+                    a {
+                        line-height: 48px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-sga-mob-btn-visualizar-ico {
+        @include smc-btn-base;
+        @include smc-btn-ico;
+        @include smc-btn-tamanho(primario_ico_button);
+        @include icone-posicao(primario);
+        @include smc-btn-cor-padrao;
+        margin-top: 0;
+    }
+    // botões dentro da mensagem
+    .smc-mensagem-botoes {
+        margin-top: 0;
+        margin-right: 5px;
+        margin-bottom: 2px;
+    }
+    // lista detalhada
+    .smc-listdetailed-conteudo {
+        div {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .smc-listdetailed-header-conteudo {
+        padding: 0 0px 5px 0px !important;
+    }
+
+    .smc-buttonset-vertical-secundario {
+        width: 12.5%;
+
+        .smc-button {
+            margin-left: -7px;
+            display: block;
+            text-align: center;
+        }
+    }
+    // header
+    //.smc-header {
+    //    padding: 5px;
+    //}
+
+    .ui-draggable.smc-modal-window-auto.smc-message-fixed {
+        .smc-modal-content {
+            height: auto !important;
+        }
+    }
+
+    .smc-modal-window .smc-modal-header > div.smc-button {
+        float: left;
+        width: 25px;
+        position: absolute;
+        margin-left: 10px;
+    }
+    // mensagem fixa
+    .smc-modal-window-medium,
+    .smc-modal-window-large,
+    .smc-modal-window-largest {
+        width: 96% !important;
+        left: 2% !important;
+    }
+
+    .smc-sga-alinhamento-botao-secundario {
+        float: right;
+        margin-right: 10px;
+
+        .smc-btn-custom {
+            line-height: 15px !important;
+        }
+    }
+
+    .smc-modal {
+        .smc-message-fixed {
+            padding: 0 !important;
+        }
+
+        .smc-modal-header {
+            .smc-button {
+                left: 80% !important;
+            }
+
+            h2 {
+                margin-left: 5px !important;
+                margin: 0;
+            }
+        }
+
+        .smc-modal-content {
+            height: 350px !important;
+            padding: 0 5px;
+
+            .smc-sga-margin-top-20 {
+                margin-top: 0;
+            }
+
+            .smc-buttonset-horizontal-primario {
+                margin-top: 0;
+            }
+
+            p {
+                //font-size: 12px;
+                margin: 0 0 5px 0;
+            }
+
+            .smc-legend-box {
+                width: 100%;
+                //float: right;
+                margin-top: 0;
+            }
+        }
+    }
+
+    .ui-draggable.smc-modal-window-small.smc-modal-window {
+        .smc-modal-content {
+            height: 200px !important;
+        }
+    }
+    // grid
+    .smc-sga-grid-inicial td:last-child {
+        width: 50px;
+    }
+    // passos
+    .smc-sga-painel-lateral-processo-passos {
+        div {
+            padding: 10px 0 10px 0;
+        }
+    }
+
+    .smc-sga-processo-passo-concluido,
+    .smc-sga-processo-passo-atual,
+    .smc-sga-processo-passo-emaberto {
+        width: 12.5%;
+        text-align: center;
+
+        & > a, & > span {
+            width: 100%;
+            height: 40px;
+            position: absolute;
+            margin-left: -21px;
+            margin-top: -11px;
+            font-size: 0;
+        }
+    }
+
+    .smc-sga-painel-lateral-processo {
+        padding-top: 5px;
+        position: relative;
+        height: auto;
+        min-height: auto;
+        padding-bottom: 0;
+    }
+    // aceite
+    .smc-sga-check-aceite {
+        width: 100%;
+    }
+    //rodapé
+    .smc-footer-logo-gti, .smc-footer-logo-smc {
+        line-height: 15px;
+
+        &:before {
+            font-size: 40px;
+            line-height: 20px;
+        }
+    }
+
+    .smc-footer-copyright {
+        display: none;
+    }
+
+    .smc-footer-conteudo {
+        margin-top: 0;
+    }
+
+    .smc-footer-centro {
+        height: 20px;
+    }
+    // login
+    .smc-login-body {
+        background-position: -250px 0;
+    }
+
+    .smc-login-footer-copyright {
+        display: none;
+    }
+}
+
+
+
+// LEGENDAS
+.smc-legenda-titulo-agrupamento {
+    .smc-legend-content {
+        .smc-legend-content-title {
+            display: block !important;
+            margin-bottom: 0 !important;
+        }
+    }
+}
+
+// LISTA AGRUPADORA EDITAVEL - CORREÇÃO DE ENTREGA ONLINE
+.smc-sga-lista-agrupadora-dados {
+    border: 3px solid $smc-cor-secundaria-05;
+    margin-bottom: 10px;
+
+    .smc-display-legend {
+        margin-top: 20px;
+        margin-left: 10px;
+
+        div {
+            padding-right: 0 !important;
+
+            span {
+                display: none;
+            }
+        }
+    }
+
+    .smc-detalhe-editavel-titulo {
+        display: none !important;
+    }
+
+    .smc-btn-download-icotext {
+        margin-top: 18px;
+    }
+
+    .smc-detalhe-editavel-tabular, .smc-masterdetail-detailpartial, .smc-detalhe-editavel-blocos {
+        border-top: solid 1px $smc-cor-secundaria-05;
+        padding: 0 10px !important;
+        margin: 15px 0 0 0 !important;
+        border-bottom: none !important;
+        border-right: none !important;
+        border-left: none !important;
+    }
+
+    .smc-detalhe-editavel-header {
+        margin-top: 10px !important;
+
+        label {
+            font-size: 12px !important;
+            color: #074458;
+            font-weight: bold;
+        }
+    }
+
+    .smc-detalhe-editavel-linha-dados {
+        .smc-display-legend {
+            margin-top: 9px !important;
+        }
+    }
+}
+
+.smc-sga-lista-entrega-online {
+    div[data-control-child ="smc-list"] {
+        clear: both;
+
+        .smc-checkbox {
+            background-color: $smc-cor-secundaria-05;
+            width: 100%;
+            height: 31px;
+            padding: 0 5px 0 11px;
+            margin-right: -5px;
+            margin-left: 5px;
+        }
+    }
+
+    div[data-type="smc-submitlist-body"] {
+        > .smc-size-md-24 {
+            > .smc-checkbox {
+                padding-left: 16px;
+            }
+        }
+    }
+
+    .smc-display {
+        p {
+            clear: both;
+        }
+    }
+
+    .smc-dropdown-btn-toggle-config {
+        margin-top: 17px;
+    }
+}
+
+.smc-sga-alinhamento-ordenacao {
+    text-align: right;
+    margin-bottom: -27px;
+    z-index: 1;
+
+    label {
+        float: left;
+        width: 20%;
+        margin-top: 7px;
+        margin-right: 5px;
+    }
+
+    select {
+        float: left;
+        width: 75% !important;
+        clear: none;
+    }
+}
+
+%smc-base-legenda-entrega {
+    margin-top: 0;
+
+    &:before {
+        @extend .fa;
+        margin-right: 5px;
+        font-size: 16px;
+    }
+}
+
+.smc-sga-legenda-entrega-aguardando {
+    padding-right: 20px !important;
+
+    &:before {
+        @extend %smc-base-legenda-entrega;
+        @extend .fa-clock-o;
+        color: #ec9417;
+    }
+}
+
+.smc-sga-legenda-entrega-entregue {
+    padding-right: 20px !important;
+
+    &:before {
+        @extend %smc-base-legenda-entrega;
+        @extend .fa-check;
+        color: #08c423;
+    }
+}
+
+.smc-sga-legenda-entrega-liberadocorrecao {
+    padding-right: 20px !important;
+
+    &:before {
+        @extend %smc-base-legenda-entrega;
+        @extend .fa-pencil-square-o;
+        color: #3d7ef5;
+    }
+}
+
+.smc-sga-legenda-entrega-solicitadonovaentrega {
+    padding-right: 20px !important;
+
+    &:before {
+        @extend %smc-base-legenda-entrega;
+        @extend .fa-external-link;
+        color: #e6c616;
+    }
+}
+
+.smc-sga-legenda-entrega-corrigido {
+    padding-right: 20px !important;
+
+    &:before {
+        @extend %smc-base-legenda-entrega;
+        @extend .fa-flag-checkered;
+        color: #3c9c64;
+    }
+}
+
+
+// Todas as faixas
+@media (min-width:$smc-size-screen-xs-max) and (max-width:3000px) {
+    .smc-sga-mob-btn-visualizar-ico {
+        & > i {
+            display: none;
+        }
+    }
+    // login
+    .smc-login-body {
+        background-position: -105px 0;
+    }
+
+    .smc-sga-mensagem > p {
+        margin: 5px 0 10px 5%;
+        width: 81%;
+    }
+}
+//MD
+//@media (max-width: 1200px) {
+//    .smc-sga-banner-covid19 {
+//        background-position: 10%,55% bottom,90%;
+//        background-size: 32%,24%,23%;
+//    }
+//}
+//SM
+@media (max-width: 992px) {
+   // .smc-sga-banner-covid19 {
+   //     background-position: 10%,56% bottom,90%;
+   //     background-size: 37%,22%,26%;
+   // }
+
+    .smc-sga-lista-entrega-online {
+        div[data-control-child ="smc-list"] {
+            > .smc-size-md-1 {
+                width: 7%;
+                display: inline-block;
+                float: left;
+            }
+        }
+
+        .smc-display {
+            label, p {
+                float: none;
+            }
+        }
+
+        label {
+            color: #074458;
+            font-weight: bold;
+            font-size: 12px;
+        }
+    }
+
+    .smc-sga-lista-agrupadora-dados .smc-display-legend div {
+        margin-top: 25px;
+    }
+}
+//XS
+@media (max-width: 768px) {
+
+    .smc-sga-alinhamento-ordenacao {
+        margin-bottom: 5px !important;
+    }
+
+    .smc-sga-lista-agrupadora-dados .smc-display-legend div {
+        margin-top: 25px;
+    }
+
+    .smc-hidepanel-pesquisa-avancada > .smc-editorformodel-advancedfilter {
+        right: 124px;
+        margin-top: -70px;
+
+        &::before {
+            margin-left: 0;
+        }
+    }
+
+    .navbar > div > .smc-login-instituicao {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .navbar > div > .navbar-nav {
+        margin-top: 20px !important;
+    }
+
+    .smc-sga-aluno-logotipo-intituicao {
+        margin-top: 8px;
+    }
+
+    .smc-sga-aluno-ribbon {
+        .smc-login-instituicao {
+            .smc-button {
+                margin-top: 6px;
+            }
+        }
+    }
+
+    .smc-menu-dinamico {
+        padding-top: 82px;
+    }
+
+    .smc-menu-dinamico-controls {
+        z-index: 1040 !important;
+        top: 92px !important;
+        display: block !important;
+        background: transparent;
+        width: auto;
+        height: auto;
+        box-shadow: 0 3px 12px -4px rgba(255,255,255,.75);
+    }
+
+    .smc-menu-dinamico-ico-referencia {
+        &::before {
+            color: $smc-cor-principal-02;
+            text-shadow: 0 1px 0 $smc-branco;
+        }
+    }
+
+    .smc-menu-N2 {
+        position: inherit !important;
+        margin-left: 0 !important;
+        margin-top: 0;
+
+        & > li {
+            & > a {
+                color: $smc-cinza-08;
+                background: $smc-cinza-03;
+
+                &:hover {
+                    background: $smc-cor-principal-01;
+                    color: $smc-branco !important;
+                }
+            }
+        }
+    }
+
+    .smc-sga-aluno-conteudo {
+        margin-top: 135px !important;
+    }
+
+    .smc-login {
+        background: $smc-branco !important;
+        height: 65px !important;
+    }
+}
+
+//Personalizadas
+//@media (max-width: 560px) {
+//    .smc-sga-banner-covid19 {
+//        background-position: 10%,57% bottom,90%;
+//        background-size: 40%,24%,30%;
+//    }
+//}
+//
+//@media (max-width: 420px) {
+//    .smc-sga-banner-covid19 {
+//        background-position: center 15%, 25% bottom, 80% 110px;
+//        background-size: 61%,30%,32%;
+//    }
+//}
+//
+//@media (max-width: 320px) {
+//    .smc-sga-banner-covid19 {
+//        background-position: center 15%,16% bottom,87% 110px;
+//        background-size: 80%,35%,44%;
+//    }
+//}
+
+
+//banner home - avaliação semestral cpa
+.smc-sga-banner-avaliacao-semestral-cpa {
+    background-image: url('../Images/sga_POS_1171x160px_cpa_2025_2_PROF.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 160px;
+    padding: 0px;
+
+    & > input {
+        width: 100%;
+        height: 160px;
+        opacity: 0;
+    }
+}
+
+//banner home - 6 do bem
+.smc-sga-banner-6-do-bem {
+    background-image: url('../Images/smc-sga-banner-6dobem-1171x160.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 160px;
+    padding: 0px;
+
+    & > input {
+        width: 100%;
+        height: 160px;
+        opacity: 0;
+    }
+}
+
+@media (max-width:1600px) {
+    .smc-sga-banner-avaliacao-semestral-cpa {
+        background-image: url('../Images/web_POS_837x160px_cpa_2025_2_PROF.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 160px;
+        padding: 0px;
+
+        & > input {
+            width: 100%;
+            height: 160px;
+            opacity: 0;
+        }
+    }
+
+    .smc-sga-banner-6-do-bem {
+        background-image: url('../Images/smc-sga-banner-6dobem-xs837x160.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 160px;
+        padding: 0px;
+
+        & > input {
+            width: 100%;
+            height: 160px;
+            opacity: 0;
+        }
+    }
+
+}
+
+@media (max-width: 767px) {
+    //banner home - avaliação semestral cpa
+    .smc-sga-banner-avaliacao-semestral-cpa {
+        background-size: contain;
+    }
+}

@@ -1,0 +1,24 @@
+<smc-lookup-busca-simples
+  [s-listaResultado]="autoCompleteList"
+  [s-required]="required"
+  [s-label]="label"
+  [s-value]="selectedItem"
+  [s-readonly]="readonly"
+  (s-respostaSelecionado)="onValueChanged.emit($event)"
+  (s-pesquisa)="onTextSearch.emit($event)"
+  (s-buscaAvancada)="buscaAvancada(modalBuscaAvancada)">
+</smc-lookup-busca-simples>
+<smc-lookup-busca-avancada
+  #modalBuscaAvancada
+  [s-template]="advancedSearchTemplate"
+  [s-selector]="selector"
+  [s-advancedListData]="advancedListData"
+  [s-advancedListColumns]="advancedListColumns"
+  [s-auto-search]="autoSearch"
+  [s-selected-item]="selectedItem"
+  [s-form]="form"
+  (s-selected)="itemSelecionado($event)"
+  (s-page-settings-changed)="onPageSettingsChanged.emit($event)"
+  (s-clear)="clearData()"
+  (s-search)="onAdvancedSearch.emit()">
+</smc-lookup-busca-avancada>

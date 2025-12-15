@@ -1,0 +1,44 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.CUR.Lookups.GrupoCurricularComponenteLookupViewModel
+
+
+<div>
+    <input type="hidden" data-lookup-component="Seq" value="@Model.Seq" data-model-property="key" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).Seq" />
+    <input type="hidden" data-lookup-component="SeqGrupoCurricular" value="@Model.SeqGrupoCurricular" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).SeqGrupoCurricular" />
+    <input type="hidden" data-lookup-component="SeqGrupoComponenteCurricular" value="@Model.SeqGrupoComponenteCurricular" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).SeqGrupoComponenteCurricular" />
+    <input type="hidden" data-lookup-component="SeqGrupoCurricularSuperior" value="@Model.SeqGrupoCurricularSuperior" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).SeqGrupoCurricularSuperior" />
+    <input type="hidden" data-lookup-component="SeqPai" value="@Model.SeqPai" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).SeqPai" />
+    <input type="hidden" data-lookup-component="Descricao" value="@Model.Descricao" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).Descricao" />
+    <input type="hidden" data-lookup-component="TipoConfiguracaoDescricao" value="@Model.TipoConfiguracaoDescricao" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).TipoConfiguracaoDescricao" />
+    <input type="hidden" data-lookup-component="FormatoConfiguracaoGrupo" value="@Model.FormatoConfiguracaoGrupo" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).FormatoConfiguracaoGrupo" />
+    <input type="hidden" data-lookup-component="QuantidadeItens" value="@Model.QuantidadeItens" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).QuantidadeItens" />
+    <input type="hidden" data-lookup-component="QuantidadeHoraAula" value="@Model.QuantidadeHoraAula" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).QuantidadeHoraAula" />
+    <input type="hidden" data-lookup-component="QuantidadeHoraRelogio" value="@Model.QuantidadeHoraRelogio" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).QuantidadeHoraRelogio" />
+    <input type="hidden" data-lookup-component="QuantidadeCreditos" value="@Model.QuantidadeCreditos" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).QuantidadeCreditos" />
+    <input type="hidden" data-lookup-component="DescricaoFormatada" value="@Model.DescricaoFormatada" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).DescricaoFormatada" />
+    <input type="hidden" data-lookup-component="ContemGrupos" value="@Model.ContemGrupos" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).ContemGrupos" />
+    <input type="hidden" data-lookup-component="ContemComponentes" value="@Model.ContemComponentes" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).ContemComponentes" />
+    <input type="hidden" data-lookup-component="Codigo" value="@Model.Codigo" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).Codigo" />
+    <input type="hidden" data-lookup-component="CargaHoraria" value="@Model.CargaHoraria" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).CargaHoraria" />
+    <input type="hidden" data-lookup-component="Formato" value="@Model.Formato" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).Formato" />
+    <input type="hidden" data-lookup-component="Credito" value="@Model.Credito" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).Credito" />
+    <input type="hidden" data-lookup-component="Folha" value="@Model.Folha" name="@(SMCLookupHelper.GetCurrentPropertyName(Smc)).Folha" />
+
+	@if (Model.Seq != 0)
+	{
+		<div class="smc-sga-valor-selecionado">
+            @if (!string.IsNullOrEmpty(Model.DescricaoGrupoCurricular))
+            {
+                @Smc.Instructions().Text(Model.DescricaoGrupoCurricular)
+            }
+            <p>@Model.DescricaoFormatada</p>
+		</div>
+	}
+	else
+	{
+		<div class="smc-sga-valor-selecionado">
+			<p class="smc-sga-valor-selecionado-pesquisa">Pesquisar...</p>
+		</div>
+	}
+
+    
+</div>

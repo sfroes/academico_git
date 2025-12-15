@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSListaFrequenciaCabecalho" targetNamespace="http://tempuri.org/DSListaFrequenciaCabecalho.xsd" xmlns:mstns="http://tempuri.org/DSListaFrequenciaCabecalho.xsd" xmlns="http://tempuri.org/DSListaFrequenciaCabecalho.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSListaFrequenciaCabecalho" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSListaFrequenciaCabecalho" msprop:Generator_UserDSName="DSListaFrequenciaCabecalho">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSListaFrequenciaCabecalho" msprop:Generator_TableClassName="DSListaFrequenciaCabecalhoDataTable" msprop:Generator_TableVarName="tableDSListaFrequenciaCabecalho" msprop:Generator_RowChangedName="DSListaFrequenciaCabecalhoRowChanged" msprop:Generator_TablePropName="_DSListaFrequenciaCabecalho" msprop:Generator_RowDeletingName="DSListaFrequenciaCabecalhoRowDeleting" msprop:Generator_RowChangingName="DSListaFrequenciaCabecalhoRowChanging" msprop:Generator_RowEvHandlerName="DSListaFrequenciaCabecalhoRowChangeEventHandler" msprop:Generator_RowDeletedName="DSListaFrequenciaCabecalhoRowDeleted" msprop:Generator_RowClassName="DSListaFrequenciaCabecalhoRow" msprop:Generator_UserTableName="DSListaFrequenciaCabecalho" msprop:Generator_RowEvArgName="DSListaFrequenciaCabecalhoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Seq" msprop:Generator_ColumnVarNameInTable="columnSeq" msprop:Generator_ColumnPropNameInRow="Seq" msprop:Generator_ColumnPropNameInTable="SeqColumn" msprop:Generator_UserColumnName="Seq" type="xs:long" minOccurs="0" />
+              <xs:element name="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" msprop:Generator_UserColumnName="Descricao" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

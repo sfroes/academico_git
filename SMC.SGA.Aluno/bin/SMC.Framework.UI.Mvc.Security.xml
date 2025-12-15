@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMC.Framework.UI.Mvc.Security</name>
+    </assembly>
+    <members>
+        <member name="T:SMC.Framework.UI.Mvc.Security.SMCAccessMonitoringAttribute">
+            <summary>
+            Realiza o monitoramento das ações do usuário.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCAccessMonitoringAttribute.OnActionExecuted(System.Web.Mvc.ActionExecutedContext)">
+            <summary>
+            Tratamento quando a ação é executada.
+            </summary>
+            <param name="filterContext">Contexto de execução.</param>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCAccessMonitoringAttribute.GetApplicationName">
+            <summary>
+            Recupera o nome da aplicação.
+            </summary>
+            <returns>Nome da aplicação.</returns>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCAccessMonitoringAttribute.GetAuthorizationTokens(System.Web.Mvc.ActionExecutedContext)">
+            <summary>
+            Recupera os tokens de autorização associados à action.
+            </summary>
+            <param name="filterContext">Contexto atual.</param>
+            <returns>Tokens de autorização associados à action.</returns>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCAccessMonitoringAttribute.SendMessage(System.Web.Mvc.ActionExecutedContext)">
+            <summary>
+            Envia a mensagem sobre o acesso.
+            </summary>
+            <param name="filterContext">Contexto atual.</param>
+        </member>
+        <member name="T:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute">
+            <summary>
+            Atributo para verificação de permissão do usuário em uma action de um controller.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute.#ctor(System.String[])">
+            <summary>
+            Cria um novo objeto SMCAuthorizeAttribute.
+            </summary>
+            <param name="tokens">Tokens para validação.</param>
+        </member>
+        <member name="F:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute._tokens">
+            <summary>
+            Armazena os tokens de validação.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute.Tokens">
+            <summary>
+            Tokens de validação.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute._viewName">
+            <summary>
+            Armazena o nome da view que será exibida em caso de erro.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute.ViewName">
+            <summary>
+            View que será exibida em caso de erro.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute._typeId">
+            <summary>
+            Armazena o id da classe.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute.TypeId">
+            <summary>
+            Recupera o id de identificação da classe.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)">
+            <summary>
+            Autoriza o usuário.
+            </summary>
+            <param name="filterContext">Contexto corrente.</param>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute.IsControllerAnonymous(System.Web.Mvc.AuthorizationContext)">
+            <summary>
+            [AllowAnonymous]
+            </summary>
+            <param name="filterContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute.AuthorizeCore(System.Web.HttpContextBase,System.String[],System.String@)">
+            <summary>
+            Método interno para verificação da permissão do usuário.
+            </summary>
+            <param name="httpContext">Contexto corrente.</param>
+            <param name="tokens">Tokens para validação de permissão.</param>
+            <param name="validToken">Token que foi validado.</param>
+            <returns>Verdadeiro se o usuário tem permissão de acesso, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute.CacheValidateHandler(System.Web.HttpContext,System.Object,System.Web.HttpValidationStatus@)">
+            <summary>
+            Faz o tratamento da requisição quando cache está sendo utilizado.
+            </summary>
+            <param name="context">Contexto corrente.</param>
+            <param name="data">Controller/action.</param>
+            <param name="validationStatus">Status da autenticação.</param>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute.HandleUnauthorizedRequest(System.Web.Mvc.AuthorizationContext,System.String[])">
+            <summary>
+            Realiza o tratamento de uma requisição não autorizada.
+            </summary>
+            <param name="filterContext">Contexto corrente.</param>
+            <param name="tokens">Tokens que não foram autorizados.</param>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCAuthorizeAttribute.OnCacheAuthorization(System.Web.HttpContextBase,System.String)">
+            <summary>
+            Verifica autorização quando cache é utilizada.
+            </summary>
+            <param name="httpContext">Contexto corrente.</param>
+            <param name="data">Controller/action.</param>
+            <returns>Status da requisição.</returns>
+        </member>
+        <member name="T:SMC.Framework.UI.Mvc.Security.Exceptions.SMCFederationException">
+            <summary>
+            Representa uma exceção quando ocorre uma exceção genérica no SMCFederationHelper
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.Exceptions.SMCFederationException.#ctor(System.Exception)">
+            <summary>
+            Cria um objeto SMCFederationException
+            </summary>
+            <param name="innerException">Exceção original.</param>
+        </member>
+        <member name="T:SMC.Framework.UI.Mvc.Security.SMCFederationHelper">
+            <summary>
+            Classe de suporte para configuração de federação em uma aplicação MVC.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationHelper.ReadConfiguration(System.Web.HttpRequestBase,System.String@,System.String@,System.Boolean@)">
+            <summary>
+            Faz a leitura das configurações enviadas pela aplicação na requisição.
+            </summary>
+            <param name="request">Requisição.</param>
+            <param name="applicationName">Nome da aplicação.</param>
+            <param name="authenticationType">Tipo da autenticação.</param>
+            <param name="integrated">Se a autenticação será integrada.</param>
+            <returns>Verdadeiro se os dados foram lidos com sucesso, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationHelper.ReadConfiguration(System.String,System.String@,System.String@,System.Boolean@)">
+            <summary>
+            Faz a leitura das configurações enviadas pela aplicação na requisição.
+            </summary>
+            <param name="query">Requisição.</param>
+            <param name="applicationName">Nome da aplicação.</param>
+            <param name="authenticationType">Tipo da autenticação.</param>
+            <param name="integrated">Se a autenticação será integrada.</param>
+            <returns>Verdadeiro se os dados foram lidos com sucesso, caso contrário falso.</returns>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationHelper.ProcessRequest(System.Web.Mvc.Controller,System.EventHandler{SMC.Framework.UI.Mvc.Security.SMCOutputClaimsEventArgs})">
+            <summary>
+            Realiza o tratamento de uma requisição feita via federação.
+            </summary>
+            <param name="controller">Controller que recebeu a requisição.</param>
+            <param name="loadingOutputClaims">Evento para carregar os dados da claim.</param>
+        </member>
+        <member name="F:SMC.Framework.UI.Mvc.Security.SMCFederationHelper.SMCQueryString">
+            <summary>
+            Regex para tratamento da querystring "integrated".
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationHelper.ClearQueryString(Microsoft.IdentityModel.Protocols.WSFederation.SignInResponseMessage)">
+            <summary>
+            Remove a querystring enviada pelo cliente para desabilitar a autenticação integrada
+            de forma que essa mesma querystring não retorne para o cliente quando o usuário reautenticar.
+            </summary>
+            <param name="responseMessage">Mensagem que está sendo enviada para o cliente.</param>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationHelper.GetReturnUrl(System.String@,System.Reflection.Assembly,System.Boolean)">
+            <summary>
+            Recupera a url que o usuário estava tentando acessar antes de fazer a autenticação.
+            </summary>
+            <param name="returnUrl">Url de retorno que o usuário estava tentando acessar.</param>
+            <param name="callingAssembly">Assembly que fez a chamada à este método</param>
+            <param name="requireReturnUrlGet">Por padrão só considera returnUrl para métodos GET, para aceitar outros métodos informe false</param>
+            <returns>Verdadeiro se for uma requisição vinda do SAS e que contém uma url de retorno.</returns>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationHelper.SignOut(System.String,System.String,System.Object,System.Boolean)">
+            <summary>
+            Faz o signout do usuário.
+            </summary>
+            <param name="actionName">Nome da action para redirecionar o usuário.</param>
+            <param name="controllerName">Nome do controller para redirecionar o usuário.</param>
+            <param name="routeValues">Valores da rota para redirecionar o usuário.</param>
+            <param name="forceClientSignout">Define se o signout deve ser feito pela aplicação cliente, ao invés de deixar ser processada pelo SAS.</param>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationHelper.SignOut(System.String,System.Boolean)">
+            <summary>
+            Faz o signout do usuário.
+            </summary>
+            <param name="url">URL para redirecionar após o logout.</param>
+            <param name="forceClientSignout">Define se o signout deve ser feito pela aplicação cliente, ao invés de deixar ser processada pelo SAS.</param>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationHelper.ReturnUrlIsGet(System.Uri,System.String,System.Reflection.Assembly)">
+            <summary>
+            Valida se a url de retorno é GET
+            </summary>
+            <param name="requestUrl">Url da requisição atual</param>
+            <param name="returnUrl">Url de retorno</param>
+            <param name="callingAssembly">Assembly que invocou este método</param>
+            <returns></returns>
+        </member>
+        <member name="T:SMC.Framework.UI.Mvc.Security.SMCFederationInvalidActionException">
+            <summary>
+            Exceção quando uma ação não é identificada corretamente.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationInvalidActionException.#ctor(System.String)">
+            <summary>
+            Cria uma nova instância de SMCFederationInvalidActionException.
+            </summary>
+            <param name="message">Mensagem de erro.</param>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationSecurityTokenService.#ctor(SMC.Framework.UI.Mvc.Security.SMCFederationSecurityTokenServiceConfiguration)">
+            <summary>
+            	Creates an instance of CustomSecurityTokenService.
+            </summary>
+            <param name = "configuration">The SecurityTokenServiceConfiguration.</param>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationSecurityTokenService.ValidateAppliesTo(System.ServiceModel.EndpointAddress)">
+            <summary>
+            	Validates appliesTo and throws an exception if the appliesTo is null or contains an unexpected address.
+            </summary>
+            <param name = "appliesTo">The AppliesTo value that came in the RST.</param>
+            <exception cref = "T:SMC.Framework.Exceptions.SMCArgumentException">If 'appliesTo' parameter is null.</exception>
+            <exception cref = "T:Microsoft.IdentityModel.SecurityTokenService.InvalidRequestException">If 'appliesTo' is not valid.</exception>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationSecurityTokenService.GetScope(Microsoft.IdentityModel.Claims.IClaimsPrincipal,Microsoft.IdentityModel.Protocols.WSTrust.RequestSecurityToken)">
+            <summary>
+            	This method returns the configuration for the token issuance request. The configuration
+            	is represented by the Scope class. In our case, we are only capable of issuing a token for a
+            	single RP identity represented by the EncryptingCertificateName.
+            </summary>
+            <param name = "principal">The caller's principal.</param>
+            <param name = "request">The incoming RST.</param>
+            <returns>The scope information to be used for the token issuance.</returns>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationSecurityTokenService.GetOutputClaimsIdentity(Microsoft.IdentityModel.Claims.IClaimsPrincipal,Microsoft.IdentityModel.Protocols.WSTrust.RequestSecurityToken,Microsoft.IdentityModel.SecurityTokenService.Scope)">
+            <summary>
+            	This method returns the claims to be issued in the token.
+            </summary>
+            <param name = "principal">The caller's principal.</param>
+            <param name = "request">The incoming RST, can be used to obtain addtional information.</param>
+            <param name = "scope">The scope information corresponding to this request.</param>
+            ///
+            <exception cref = "T:SMC.Framework.Exceptions.SMCArgumentException">If 'principal' parameter is null.</exception>
+            <returns>The outgoing claimsIdentity to be included in the issued token.</returns>
+        </member>
+        <member name="T:SMC.Framework.UI.Mvc.Security.SMCFederationSecurityTokenServiceConfiguration">
+            <summary>
+            	Classe para o serviço de autenticação.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCFederationSecurityTokenServiceConfiguration.#ctor">
+            <summary>
+            	Cria um novo objeto FederationSecurityTokenServiceConfiguration através do nome do Issuer e do certificado digital utilizado.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.UI.Mvc.Security.SMCOutputClaimsEventArgs">
+            <summary>
+            Argumentos para o serviço de autenticação federada.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCOutputClaimsEventArgs.#ctor(Microsoft.IdentityModel.Claims.IClaimsIdentity,Microsoft.IdentityModel.Protocols.WSTrust.RequestSecurityToken,Microsoft.IdentityModel.SecurityTokenService.Scope)">
+            <summary>
+            Cria uma nova instância de SMCOutputClaimsEventArgs.
+            </summary>
+            <param name="identity">Identidade do usuário.</param>
+            <param name="request">Requisição.</param>
+            <param name="scope">Escopo.</param>
+        </member>
+        <member name="P:SMC.Framework.UI.Mvc.Security.SMCOutputClaimsEventArgs.Identity">
+            <summary>
+            Recupera a identidade do usuário.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.UI.Mvc.Security.SMCOutputClaimsEventArgs.Request">
+            <summary>
+            Recupera o token de requisição.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.UI.Mvc.Security.SMCOutputClaimsEventArgs.Scope">
+            <summary>
+            Recupera o escopo.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.UI.Mvc.Security.Resources.ExceptionsResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.UI.Mvc.Security.Resources.ExceptionsResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.UI.Mvc.Security.Resources.ExceptionsResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.UI.Mvc.Security.Resources.ExceptionsResource.SMCFederationException">
+            <summary>
+              Looks up a localized string similar to An unexpected error occurred when processing the request. See inner exception for details..
+            </summary>
+        </member>
+        <member name="P:SMC.Framework.UI.Mvc.Security.Resources.ExceptionsResource.SMCUnauthorizedAccessException">
+            <summary>
+              Looks up a localized string similar to User not authenticated.
+            </summary>
+        </member>
+        <member name="T:SMC.Framework.UI.Mvc.Security.SMCSecurityHttpHelper">
+            <summary>
+            Contém métodos de suporte para tratamento da segurança.
+            </summary>
+        </member>
+        <member name="F:SMC.Framework.UI.Mvc.Security.SMCSecurityHttpHelper._logonTokenKey">
+            <summary>
+            Armazena a chave de criptografica utilizada para criptografia do logon.
+            ATENÇÃO: essa chave foi copiada para a classe com o mesmo nome na biblioteca SMC.Framework.Security
+                     alterando aqui é necessário também alterar na outra classe.
+            </summary>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.Security.SMCSecurityHttpHelper.GetLogonUserToken(System.Web.HttpContext)">
+            <summary>
+            Recupera a identidade do usuário de forma integrada com o navegador.
+            </summary>
+            <param name="context">Requisição.</param>
+            <returns>Token do usuário.</returns>
+        </member>
+        <member name="M:SMC.Framework.UI.Mvc.SMCHttpApplicationExtesions.SMCError(System.Web.HttpApplication)">
+            <summary>
+            Tentando corrigir o problema da criptografia
+            </summary>
+            <param name="http"></param>
+        </member>
+    </members>
+</doc>

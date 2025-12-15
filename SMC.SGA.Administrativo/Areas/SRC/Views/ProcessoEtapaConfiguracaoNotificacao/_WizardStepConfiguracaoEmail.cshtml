@@ -1,0 +1,16 @@
+﻿@using SMC.Notificacoes.UI.Mvc.Extensions
+
+@model ProcessoEtapaConfiguracaoNotificacaoViewModel
+
+@Smc.EditorFor(e => e.SeqProcesso)
+@Smc.EditorFor(e => e.SeqProcessoEtapa)
+@Smc.EditorFor(e => e.CamposReadyOnly)
+@Smc.EditorFor(e => e.DescricaoTipoNotificacaoAuxiliar).Size(SMCSize.Grid12_24)
+@Smc.EditorFor(e => e.SeqProcessoUnidadeResponsavel).Size(SMCSize.Grid12_24)
+
+@using (Smc.Div().CssClass("smc-sga-notificacoes-display-desabilitado").Begin())
+{
+    @Smc.ConfiguracaoTipoNotificacao(prop => prop.ConfiguracaoNotificacao).ReadOnly(Model.CamposReadyOnly).HiddenFields(f => f.DescricaoTipoNotificacao, f => f.Seq, f => f.Descricao, f => f.DataFimValidade, f => f.DataInicioValidade)
+}
+
+@Smc.WizardView()

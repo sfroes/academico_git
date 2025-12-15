@@ -1,0 +1,37 @@
+﻿@model CursoOfertaDynamicModel
+
+@using (Smc.Div().CssClass("smc-display-collection").Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().CssClass("smc-display").Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+        if (Model.Ativo)
+        {
+            @Smc.DisplayFor(m => m.Descricao).HideLabel(true)
+        }
+        else
+        {
+            @Smc.DisplayFor(m => m.Descricao).CssClass("smc-sga-item-inativo").HideLabel(true)
+        }
+    }
+    using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24).Begin())
+    {
+        @(Smc.ButtonSet().NumberOfButtonsToShow(0).Type(SMCButtonSetType.Secondary)
+             .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                           .Attribute(SMCMvcConsts.MODAL_ID, SMCMvcConsts.SMC_VIEWPADRAO_MODAL_ID_EDIT)
+                           .Attribute(SMCMvcConsts.MODAL_SUBMIT_URL, Url.Action("Salvar", "CursoOferta", new { @backUrl = Url.Action("Index", "Curso") }))
+                           .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Editar_Curso_Oferta"))
+                           .Ajax(isPost: false)
+                           .Text(Smc.GetUIResource("Botao_Editar_Curso_Oferta"))
+                           .Tooltip(Smc.GetUIResource("Botao_Editar_Curso_Oferta"))
+                           .SecurityToken(UC_CSO_001_01_03.MANTER_OFERTA_CURSO)
+                           .Action("Editar", "CursoOferta", new { seq = new SMCEncryptedLong(Model.Seq), seqCurso = new SMCEncryptedLong(Model.SeqCurso) }))
+             .AddButton(Smc.Button(SMCButtonBehavior.Excluir)
+                           .Text(Smc.GetUIResource("Botao_Excluir_Curso_Oferta"))
+                           .Tooltip(Smc.GetUIResource("Botao_Excluir_Curso_Oferta"))
+                           .SecurityToken(UC_CSO_001_01_03.MANTER_OFERTA_CURSO)
+                           .Ajax(isPost: false, updateTargetId: "#OfertaCurso")
+                           .Confirm(Smc.GetUIResource("Title_Excluir_Curso_Oferta"), string.Format(Smc.GetUIResource("Excluir_Curso_Oferta_Confirmacao"), Model.Descricao))
+                           .Action("ExcluirCursoOferta", "Curso", new { seq = new SMCEncryptedLong(Model.Seq) }))
+        )
+    }
+}

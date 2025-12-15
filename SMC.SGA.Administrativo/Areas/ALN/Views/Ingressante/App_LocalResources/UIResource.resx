@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Aba_Title_0" xml:space="preserve">
+    <value>Dados Pessoais</value>
+  </data>
+  <data name="Aba_Title_1" xml:space="preserve">
+    <value>Contatos</value>
+  </data>
+  <data name="Arquivos_Detalhe_Titulo" xml:space="preserve">
+    <value>Anexos</value>
+  </data>
+  <data name="Botao_Novo" xml:space="preserve">
+    <value>Novo ingressante</value>
+  </data>
+  <data name="Botao_Novo_Tooltip" xml:space="preserve">
+    <value>Nova ingressante</value>
+  </data>
+  <data name="ContatosEnderecoEletronico_Fieldset_Legenda" xml:space="preserve">
+    <value>Endereço eletrônico</value>
+  </data>
+  <data name="ContatosEndereco_Fieldset_Legenda" xml:space="preserve">
+    <value>Endereço</value>
+  </data>
+  <data name="ContatosTelefone_Fieldset_Legenda" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="Contatos_Fieldset_Legenda" xml:space="preserve">
+    <value>Contatos</value>
+  </data>
+  <data name="DadosPessoais_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados pessoais</value>
+  </data>
+  <data name="DOCUMENTOCNH_Fieldset_Legenda" xml:space="preserve">
+    <value>Carteira de motorista</value>
+  </data>
+  <data name="DOCUMENTOMILITAR_Fieldset_Legenda" xml:space="preserve">
+    <value>Documento militar</value>
+  </data>
+  <data name="DOCUMENTOPASSAPORTE_Fieldset_Legenda" xml:space="preserve">
+    <value>Passaporte</value>
+  </data>
+  <data name="DOCUMENTOPISPASEP_Fieldset_Legenda" xml:space="preserve">
+    <value>PIS/PASEP</value>
+  </data>
+  <data name="DOCUMENTORG_Fieldset_Legenda" xml:space="preserve">
+    <value>Identidade</value>
+  </data>
+  <data name="DOCUMENTOTITULOELEITOR_Fieldset_Legenda" xml:space="preserve">
+    <value>Título de eleitor</value>
+  </data>
+  <data name="Editar_Title" xml:space="preserve">
+    <value>Alterar Ingressante</value>
+  </data>
+  <data name="EnderecoCorrespondencia" xml:space="preserve">
+    <value>*Correspondência</value>
+  </data>
+  <data name="EnderecosEletronicos_DataSelector_Botao_Abrir" xml:space="preserve">
+    <value>Incluir/Alterar endereço eletrônico</value>
+  </data>
+  <data name="EnderecosEletronicos_DataSelector_Botao_Abrir_Tooltip" xml:space="preserve">
+    <value>Incluir/Alterar endereço eletrônico</value>
+  </data>
+  <data name="Enderecos_DataSelector_Botao_Abrir" xml:space="preserve">
+    <value>Incluir/Alterar endereço</value>
+  </data>
+  <data name="Enderecos_DataSelector_Botao_Abrir_Tooltip" xml:space="preserve">
+    <value>Incluir/Alterar endereço</value>
+  </data>
+  <data name="Filiacao_Detalhe_Titulo" xml:space="preserve">
+    <value>Filiação</value>
+  </data>
+  <data name="Incluir_Title" xml:space="preserve">
+    <value>Novo Ingressante</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Cadastro de Ingressante</value>
+  </data>
+  <data name="Label_DadosAcademicos" xml:space="preserve">
+    <value>Dados acadêmicos</value>
+  </data>
+  <data name="Listar_Excluir_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão do ingressante "{0}" ?</value>
+  </data>
+  <data name="Listar_Excluir_Titulo" xml:space="preserve">
+    <value>Excluir Ingressante</value>
+  </data>
+  <data name="NACIONALIDADE_Fieldset_Legenda" xml:space="preserve">
+    <value>Nacionalidade</value>
+  </data>
+  <data name="NATURALIDADE_Fieldset_Legenda" xml:space="preserve">
+    <value>Naturalidade</value>
+  </data>
+  <data name="NECESSIADESESPECIAIS_Fieldset_Legenda" xml:space="preserve">
+    <value>Necessidades especiais</value>
+  </data>
+  <data name="Telefones_DataSelector_Botao_Abrir" xml:space="preserve">
+    <value>Incluir/Alterar telefone</value>
+  </data>
+  <data name="Telefones_DataSelector_Botao_Abrir_Tooltip" xml:space="preserve">
+    <value>Incluir/Alterar telefone</value>
+  </data>
+  <data name="Aba_Title_2" xml:space="preserve">
+    <value>Dados Acadêmicos</value>
+  </data>
+  <data name="Botao_AssociacaoFormacaoEspecificaIngressante_Tooltip" xml:space="preserve">
+    <value>Associar formação específica</value>
+  </data>
+  <data name="Botao_AssociacaoFormacaoEspecificaIngressante" xml:space="preserve">
+    <value>Associar formação específica</value>
+  </data>
+  <data name="AssociacaoFormacaoEspecificaIngressante_Title" xml:space="preserve">
+    <value>Associação de Formação Específica</value>
+  </data>
+  <data name="Botao_AssociacaoBenificio" xml:space="preserve">
+    <value>Associar benefício</value>
+  </data>
+  <data name="Botao_AssociacaoBenificio_Tooltip" xml:space="preserve">
+    <value>Associar benefício</value>
+  </data>
+  <data name="Botao_AssociacaoOrientadorIngressante" xml:space="preserve">
+    <value>Associar orientador</value>
+  </data>
+  <data name="Botao_AssociacaoOrientadorIngressante_Tooltip" xml:space="preserve">
+    <value>Associar orientador</value>
+  </data>
+  <data name="MSG_AssociacaoFormacaoEspecificaIngressante_Sucesso" xml:space="preserve">
+    <value>{0} alterada com sucesso.</value>
+  </data>
+  <data name="MSG_Titulo_Erro" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="MSG_Titulo_Sucesso" xml:space="preserve">
+    <value>Sucesso</value>
+  </data>
+  <data name="AssociacaoOrientadorIngressante_Title" xml:space="preserve">
+    <value>Associação de Orientador</value>
+  </data>
+  <data name="MSG_AssociacaoOrientadorIngressante_Sucesso" xml:space="preserve">
+    <value>{0} alterada com sucesso.</value>
+  </data>
+  <data name="Botao_PessoaAtuacaoCondicaoObrigatoriedade" xml:space="preserve">
+    <value>Associar condição de obrigatoriedade</value>
+  </data>
+  <data name="Botao_PessoaAtuacaoCondicaoObrigatoriedade_Tooltip" xml:space="preserve">
+    <value>Associar condição de obrigatoriedade</value>
+  </data>
+  <data name="Title_PessoaAtuacaoCondicaoObrigatoriedade" xml:space="preserve">
+    <value>Associação de Condição de Obrigatoriedade</value>
+  </data>
+  <data name="TermosIntercambio_Detalhe_Titulo" xml:space="preserve">
+    <value>Intercâmbio</value>
+  </data>
+  <data name="Label_CodicoesObrigatoriedade" xml:space="preserve">
+    <value>Condição de obrigatoriedade</value>
+  </data>
+  <data name="Aba_Title_3" xml:space="preserve">
+    <value>Grupo de Escalonamento</value>
+  </data>
+  <data name="OrientacaoParticipacoesColaboradores_Detalhe_Titulo" xml:space="preserve">
+    <value>Participações</value>
+  </data>
+  <data name="DadosAcademicos_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados acadêmicos</value>
+  </data>
+  <data name="Label_FormacoesEspecificas" xml:space="preserve">
+    <value>Formações Específicas</value>
+  </data>
+  <data name="Label_OfertasCampanha" xml:space="preserve">
+    <value>Oferta de campanha</value>
+  </data>
+  <data name="ButtonInstructions_PossuiSituacaoImpeditivaIngressante" xml:space="preserve">
+    <value>Operação não permitida. A situação do ingressante não permite alteração de dados.</value>
+  </data>
+  <data name="ButtonInstructions_PossuiVinculoAssociacaoFormacaoEspecifica" xml:space="preserve">
+    <value>Operação não permitida. O vínculo do ingressante não permite a associação de formação específica.</value>
+  </data>
+  <data name="ButtonInstructions_PossuiVinculoAssociacaoOrientador" xml:space="preserve">
+    <value>Operação não permitida. O vínculo do ingressante não permite a associação de orientador.</value>
+  </data>
+  <data name="ButtonInstructions_NaoPermiteAssociacaoOrientador" xml:space="preserve">
+    <value>Operação não permitida. O vínculo do ingressante não permite associação de orientador neste comando. Para alterar a associação de orientador, acione o comando de alteração do ingressante</value>
+  </data>
+  <data name="Label_Vinculo" xml:space="preserve">
+    <value>Vínculo</value>
+  </data>
+  <data name="Label_InstituicaoExterna" xml:space="preserve">
+    <value>Instituição de ensino externa:</value>
+  </data>
+  <data name="Label_PeriodoIntercambio" xml:space="preserve">
+    <value>Período de intercâmbio:</value>
+  </data>
+  <data name="Modal_Editar_Titulo" xml:space="preserve">
+    <value>Intercâmbio</value>
+  </data>
+  <data name="MSG_Visualizacao_Situacao" xml:space="preserve">
+    <value>Alteração não permitida. A situação do ingressante não permite alterar os dados.
+Deseja visualizar os dados?</value>
+    <comment>RN_ALN_003 - Consistência situação ingressante</comment>
+  </data>
+  <data name="Title_Visualizacao" xml:space="preserve">
+    <value>Visualização de dados</value>
+  </data>
+  <data name="Botao_VisualizarDadosAcademicosIngressante" xml:space="preserve">
+    <value>Mais informações</value>
+  </data>
+  <data name="Title_VisualizarDadosAcademicosIngressante" xml:space="preserve">
+    <value>Visualização de dados acadêmicos</value>
+  </data>
+  <data name="ButtonInstructions_CondicaoObrigatoriedade" xml:space="preserve">
+    <value>Operação não permitida. O vínculo do ingressante não permite a associação de condição de obrigatoriedade.</value>
+  </data>
+  <data name="FormacoesEspecificas_DataSelector_Botao_Abrir" xml:space="preserve">
+    <value>Associar formações específicas</value>
+  </data>
+  <data name="FormacoesEspecificas_DataSelector_Botao_Abrir_Tooltip" xml:space="preserve">
+    <value>Associar formações específicas</value>
+  </data>
+  <data name="IngressanteDynamicModel" xml:space="preserve">
+    <value>Ingressante</value>
+  </data>
+  <data name="Visualizar_Title" xml:space="preserve">
+    <value>Visualizar Ingressante</value>
+  </data>
+  <data name="Wizard_Title_0" xml:space="preserve">
+    <value>Identificação</value>
+  </data>
+  <data name="Wizard_Title_1" xml:space="preserve">
+    <value>Dados Pessoais</value>
+  </data>
+  <data name="Wizard_Title_2" xml:space="preserve">
+    <value>Contatos</value>
+  </data>
+  <data name="Wizard_Title_3" xml:space="preserve">
+    <value>Dados Acadêmicos</value>
+  </data>
+  <data name="Wizard_Title_4" xml:space="preserve">
+    <value>Grupo de Escalonamento</value>
+  </data>
+  <data name="Wizard_Title_5" xml:space="preserve">
+    <value>Confirmação</value>
+  </data>
+  <data name="Ofertas_Detalhe_Titulo" xml:space="preserve">
+    <value>Ofertas</value>
+  </data>
+  <data name="Label_Ofertas" xml:space="preserve">
+    <value>Ofertas de campanha</value>
+  </data>
+  <data name="Botao_LiberacaoMatriculaIngressante" xml:space="preserve">
+    <value>Liberar matrícula</value>
+  </data>
+  <data name="ButtonInstructions_LiberacaoMatriculaIngressante" xml:space="preserve">
+    <value>Este ingressante já foi liberado para matrícula.</value>
+  </data>
+  <data name="MSG_LiberacaoMatriculaSucesso" xml:space="preserve">
+    <value>Liberação de matrícula realizada com sucesso.</value>
+  </data>
+  <data name="MSG_Liberacao" xml:space="preserve">
+    <value>Confirma liberação para matrícula do ingressante?</value>
+  </data>
+  <data name="Title_Liberacao" xml:space="preserve">
+    <value>Liberação para matrícula</value>
+  </data>
+  <data name="Label_Termo_Intercambio" xml:space="preserve">
+    <value>Termos de intercâmbio</value>
+  </data>
+  <data name="OrientacoesPessoaAtuacao_Detalhe_Titulo" xml:space="preserve">
+    <value>Orientação</value>
+  </data>
+  <data name="FiliacaoReadOnly_Detalhe_Titulo" xml:space="preserve">
+    <value>Filiação</value>
+  </data>
+  <data name="Title_Associacao_Formacao_Especifica_Readonly" xml:space="preserve">
+    <value>Visualização de Formação Específica</value>
+  </data>
+  <data name="Botao_LiberacaoMatriculaIngressante_Tooltip" xml:space="preserve">
+    <value>Liberar matrícula</value>
+  </data>
+  <data name="MSG_Edicao_DadosPessoais" xml:space="preserve">
+    <value>A situação do(s) ingressante(s) não permite alterar os dados acadêmicos e o grupo de escalonamento.</value>
+  </data>
+  <data name="TermosIntercambio_Modal_Editar_Titulo" xml:space="preserve">
+    <value>Intercâmbio</value>
+  </data>
+  <data name="_OrientacoesIngressante_Orientacoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Participações</value>
+  </data>
+  <data name="REGISTROPROFISSIONAL_Fieldset_Legenda" xml:space="preserve">
+    <value>Registro Profissional</value>
+  </data>
+  <data name="DOCUMENTOIDENTIDADEESTRANGEIRA_Fieldset_Legenda" xml:space="preserve">
+    <value>Identidade Estrangeira</value>
+  </data>
+  <data name="ButtonInstructions_NaoPermiteAssociarBeneficioExigeCurso" xml:space="preserve">
+    <value>Operação não permitida. Não é possível associar benefícios a um ingressante de disciplina isolada. A associação deve ser realizada diretamente no sistema financeiro, somente após a efetivação da matrícula.</value>
+  </data>
+</root>

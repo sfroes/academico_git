@@ -1,0 +1,47 @@
+﻿@model HistoricoSolicitacaoViewModel
+
+    @(Smc.Grid("gridEtapasSolicitacao", new SMCPagerModel<HistoricoSolicitacaoEtapaViewModel>(Model.Etapas))
+                .FieldColumn(x => x.Etapa)
+                .ContentColumn(
+            @<text>
+                @Html.Partial("_PossuiBloqueioEtapaLegendItem", (item as HistoricoSolicitacaoEtapaViewModel))
+            </text>)
+                         .ButtonColumn(SMCButtonSetType.Secondary, 0, "", "", "", true,
+                               f => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                    .Attribute(SMCMvcConsts.MODAL_ID, "modalConsultarHistoricoNavegacao")
+                                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("ConsultarHistoricoNavegacao_Title"))
+                                    .Text(Smc.GetUIResource("Botao_ConsultarHistoricoNavegacao"))
+                                    .Tooltip(Smc.GetUIResource("Botao_ConsultarHistoricoNavegacao_Tooltip"))
+                                    .Ajax(isPost: false).Action("ConsultarHistoricosNavegacao", "SolicitacaoServico", new { @seqSolicitacaoServico = new SMCEncryptedLong((f as HistoricoSolicitacaoEtapaViewModel).SeqSolicitacaoServico), @seqSolicitacaoServicoEtapa = new SMCEncryptedLong((f as HistoricoSolicitacaoEtapaViewModel).SeqSolicitacaoServicoEtapa) }),
+                               f => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                    .Attribute(SMCMvcConsts.MODAL_ID, "modalConsultarBloqueioEtapa")
+                                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("ConsultarBloqueioEtapa_Title"))
+                                    .Text(Smc.GetUIResource("Botao_ConsultarBloqueioEtapa"))
+                                    .Tooltip(Smc.GetUIResource("Botao_ConsultarBloqueioEtapa_Tooltip"))
+                                    .Ajax(isPost: false).Action("ConsultarBloqueiosEtapa", "SolicitacaoServico", new { @seqSolicitacaoServico = new SMCEncryptedLong((f as HistoricoSolicitacaoEtapaViewModel).SeqSolicitacaoServico), @seqSolicitacaoServicoEtapa = new SMCEncryptedLong((f as HistoricoSolicitacaoEtapaViewModel).SeqSolicitacaoServicoEtapa), @backUrl = (f as HistoricoSolicitacaoEtapaViewModel).BackUrl }))
+                         .HideNavigator()
+                         .HideNumberOfRowsPerPageSelector()
+                         .HidePager()
+                         .HideRowNumber()
+                         .HideRowsTotalizer()
+                         .HideGridTitle()
+    )
+
+
+    @(Smc.Grid("gridHistoricosSolicitacao", new SMCPagerModel<HistoricoSolicitacaoEtapaItemViewModel>(Model.Historicos))
+                      .ContentColumn(
+                    @<text>
+                        @Html.Partial("_SituacaoFinalEtapaLegendItem", (item as HistoricoSolicitacaoEtapaItemViewModel))
+                    </text>)
+                                 .FieldColumn(x => x.Etapa)
+                                 .FieldColumn(x => x.Situacao)
+                                 .FieldColumn(x => x.DataInicio)
+                                 .FieldColumn(x => x.UsuarioResponsavel)
+                                 .FieldColumn(x => x.Observacao)
+                                 .HideGridTitle()
+                                 .HideNavigator()
+                                 .HideNumberOfRowsPerPageSelector()
+                                 .HidePager()
+                                 .HideRowNumber()
+                                 .HideRowsTotalizer()
+    )

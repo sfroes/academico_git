@@ -1,0 +1,8 @@
+﻿@model CampanhaOfertaCabecalhoViewModel
+
+@using (Smc.Header("cabecalhoCampanhaOferta", SMCHeaderType.Primary)
+        .Item(m => m.SeqCampanha, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid12_24, sizeMD: SMCSize.Grid3_24, sizeLG: SMCSize.Grid3_24)
+        .Item(m => m.Campanha, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid12_24, sizeMD: SMCSize.Grid15_24, sizeLG: SMCSize.Grid15_24)
+        .Item(m => m.CiclosLetivos, sizeXS: SMCSize.Grid12_24, sizeSM: SMCSize.Grid12_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24)
+    .Begin())
+{ }

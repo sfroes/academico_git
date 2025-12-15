@@ -1,0 +1,24 @@
+﻿@model InstituicaoNivelTipoMensagemDynamicModel
+
+@using (Smc.Div("divCampos").Begin())
+{
+    @Smc.EditorFor(m => m.Seq)
+    @Smc.EditorFor(m => m.SeqInstituicaoEnsino)
+    @Smc.EditorFor(m => m.SeqInstituicaoNivel)
+    @Smc.EditorFor(m => m.SeqTipoMensagem)
+    @Smc.EditorFor(m => m.SeqMotivoBloqueio)
+    @Smc.EditorFor(m => m.ExigeArquivo)
+
+    using (Smc.Div("divTiposAtuacao").Dependency("SeqTipoMensagem", "BuscarTiposAtuacao", "InstituicaoNivelTipoMensagem").Begin())
+    {
+    }
+
+    using (Smc.Div("divTiposUso").Dependency("SeqTipoMensagem", "BuscarTiposUso", "InstituicaoNivelTipoMensagem").Begin())
+    {
+    }
+
+    using (Smc.Div("divTags").Dependency("SeqTipoMensagem", "BuscarTags", "InstituicaoNivelTipoMensagem", "Seq").Begin())
+    {
+        @Smc.Action("BuscarTags", "InstituicaoNivelTipoMensagem", new { seqTipoMensagem = Model.SeqTipoMensagem, seq = Model.Seq })
+    }
+}

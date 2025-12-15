@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSHistoricoEscolarBancasAvaliacoesComissao" targetNamespace="http://tempuri.org/DSHistoricoEscolarBancasAvaliacoesComissao.xsd" xmlns:mstns="http://tempuri.org/DSHistoricoEscolarBancasAvaliacoesComissao.xsd" xmlns="http://tempuri.org/DSHistoricoEscolarBancasAvaliacoesComissao.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSHistoricoEscolarBancasAvaliacoesComissao" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="_DSHistoricoEscolarBancasAvaliacoesComissao" msprop:Generator_UserDSName="DSHistoricoEscolarBancasAvaliacoesComissao">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSHistoricoEscolarBancasAvaliacoesComissao" msprop:Generator_TableClassName="DSHistoricoEscolarBancasAvaliacoesComissaoDataTable" msprop:Generator_TableVarName="tableDSHistoricoEscolarBancasAvaliacoesComissao" msprop:Generator_TablePropName="DSHistoricoEscolarBancasAvaliacoesComissao" msprop:Generator_RowDeletingName="DSHistoricoEscolarBancasAvaliacoesComissaoRowDeleting" msprop:Generator_RowChangingName="DSHistoricoEscolarBancasAvaliacoesComissaoRowChanging" msprop:Generator_RowEvHandlerName="DSHistoricoEscolarBancasAvaliacoesComissaoRowChangeEventHandler" msprop:Generator_RowDeletedName="DSHistoricoEscolarBancasAvaliacoesComissaoRowDeleted" msprop:Generator_UserTableName="DSHistoricoEscolarBancasAvaliacoesComissao" msprop:Generator_RowChangedName="DSHistoricoEscolarBancasAvaliacoesComissaoRowChanged" msprop:Generator_RowEvArgName="DSHistoricoEscolarBancasAvaliacoesComissaoRowChangeEvent" msprop:Generator_RowClassName="DSHistoricoEscolarBancasAvaliacoesComissaoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Seq" msprop:Generator_ColumnVarNameInTable="columnSeq" msprop:Generator_ColumnPropNameInRow="Seq" msprop:Generator_ColumnPropNameInTable="SeqColumn" msprop:Generator_UserColumnName="Seq" type="xs:long" minOccurs="0" />
+              <xs:element name="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" msprop:Generator_UserColumnName="Descricao" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

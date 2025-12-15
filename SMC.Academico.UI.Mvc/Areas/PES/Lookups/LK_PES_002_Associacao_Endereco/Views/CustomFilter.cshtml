@@ -1,0 +1,55 @@
+﻿@*
+    BaseType: SMC.Framework.UI.Mvc.SMCWebViewPage
+    DisableLinePragmas: true
+    Imports: SMC.Framework,
+    SMC.Framework.DataAnnotations,
+    SMC.Framework.Extensions,
+    SMC.Framework.Ioc,
+    SMC.Framework.Mapper,
+    SMC.Framework.Model,
+    SMC.Framework.Security,
+    SMC.Framework.Service.Security,
+    SMC.Framework.UI.Mvc.Dynamic,
+    SMC.Framework.UI.Mvc.Exceptions,
+    SMC.Framework.UI.Mvc.Helpers,
+    SMC.Framework.UI.Mvc.Html,
+    SMC.Framework.UI.Mvc.Util,
+    SMC.Framework.Util,
+    System,
+    System.Collections.Generic,
+    System.Configuration,
+    System.Web,
+    System.Web.Mvc,
+    System.Web.Mvc.Html,
+    SMC.Academico.UI.Mvc.Areas.CUR.Lookups,
+    SMC.Academico.UI.Mvc.Areas.PES.Lookups
+*@
+
+@model SMC.Academico.UI.Mvc.Areas.PES.Lookups.PessoaEnderecoLookupFiltroViewModel
+
+@{
+    var guidJanela = Guid.NewGuid().ToString();
+
+    TempData["LOOKUP_GUID_JANELA"] = guidJanela;
+
+    var btnNovo = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Attribute(SMCMvcConsts.MODAL_ID, guidJanela)
+        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Modal_Novo_Endereco_Pessoa"))
+        .Ajax(isPost: false)
+        .Text(Smc.GetUIResource("Botao_Novo_Endereco_Pessoa"))
+        .Tooltip(Smc.GetUIResource("Botao_Novo_Endereco_Pessoa"))
+        .Type(SMCButtonType.InputButton).CssClass("smc-btn-custom-destaque")
+        .Action("Incluir", "PessoaEnderecoRoute", new { seqPessoa = new SMCEncryptedLong(Model.SeqPessoa), area = "" })
+        .Id("NovoEndereco");
+}
+
+<div id="@(guidJanela)_filtro">
+    @Smc.DefaultSelectorFilter(btnNovo)
+</div>
+
+@using (Smc.ModalWindow(guidJanela)
+            .Size(SMCModalWindowSize.Large)
+            .Form("frmJanela" + guidJanela, "Salvar", "PessoaEnderecoRoute", new { area = "" }, config: obj => obj.Ajax(onComplete: "$('#" + guidJanela + "_filtro').find('[data-behavior=\"data-dataselector-search\"]').click();"))
+            .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Begin()) { }

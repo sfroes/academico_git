@@ -1,0 +1,17 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.TUR.Models.SelecaoTurmaOfertaDivisaoViewModel
+@{
+
+    if (Model.SeqDivisaoTurmaTemp > 0)
+    {
+        @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-alinhamento-botao-secundario")
+									 .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+											.Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDivisaoTurma")
+											.Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Divisao_Turma"))
+											.Ajax(isPost: false)
+											.SecurityToken(SMC.Academico.Common.Areas.TUR.Constants.UC_TUR_001_06_01.VISUALIZAR_DETALHES_DIVISAO_TURMA)
+											.CssClass("smc-btn-visualizar-icotext").Tooltip(Smc.GetUIResource("Tooltip_Divisao_Turma"))
+											.Text(Smc.GetUIResource("Botao_Divisao_Turma"))
+											.Action("VisualizarDivisaoTurmaDetalhes", "DetalhesDivisaoTurmaRoute", new { seqDivisaoTurma = new SMCEncryptedLong(Model.SeqDivisaoTurmaTemp), seqPessoaAtuacao = new SMCEncryptedLong(Model.SeqPessoaAtuacao), area = string.Empty }))
+        )
+    }
+}

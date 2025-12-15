@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Botao_Detalhescompartilhamento" xml:space="preserve">
+    <value>Detalhes de compartilhamento da turma</value>
+  </data>
+  <data name="Botao_Detalhescompartilhamento_Tooltip" xml:space="preserve">
+    <value>Detalhes de compartilhamento da turma</value>
+  </data>
+  <data name="Botao_DetalhesDivisao" xml:space="preserve">
+    <value>Detalhes da divisão de turma</value>
+  </data>
+  <data name="Botao_DetalhesDivisao_Tooltip" xml:space="preserve">
+    <value>Detalhes da divisão de turma</value>
+  </data>
+  <data name="Botao_Materialdidatico" xml:space="preserve">
+    <value>Material didático</value>
+  </data>
+  <data name="Botao_Materialdidatico_Tooltip" xml:space="preserve">
+    <value>Material didático</value>
+  </data>
+  <data name="Botao_Notasfrequencia" xml:space="preserve">
+    <value>Notas e frequências</value>
+  </data>
+  <data name="Botao_Notasfrequencia_Tooltip" xml:space="preserve">
+    <value>Notas e frequências</value>
+  </data>
+  <data name="Botao_Selecionaraluno" xml:space="preserve">
+    <value>Selecionar vínculo acadêmico</value>
+  </data>
+  <data name="Botao_Selecionaraluno_Tooltip" xml:space="preserve">
+    <value>Selecionar vínculo acadêmico</value>
+  </data>
+  <data name="Index_fsFiltroTurmas_Fieldset_Legenda" xml:space="preserve">
+    <value>Filtrar por ciclo letivo</value>
+  </data>
+  <data name="_ListarTurmas_Label_Dados_Turmas" xml:space="preserve">
+    <value>Minhas turmas</value>
+  </data>
+  <data name="Index_NomeSistema" xml:space="preserve">
+    <value>SGA Aluno</value>
+  </data>
+  <data name="MSG_Sem_Lancamentos_NotasFaltas" xml:space="preserve">
+    <value>A apuração final de notas e faltas para esta turma não foi finalizada e encontra-se em aberto.</value>
+  </data>
+  <data name="Titulo_Modal_NotasFrequencia" xml:space="preserve">
+    <value>Notas e frequências</value>
+  </data>
+  <data name="Titulo_Modal_Selecao_Vinculo" xml:space="preserve">
+    <value>Selecione o vínculo acadêmico</value>
+  </data>
+  <data name="_ModalSelecionarAluno_Botao_Salvar" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="_ListarTurmas_Label_Dados_Atividades" xml:space="preserve">
+    <value>Minhas atividades acadêmicas</value>
+  </data>
+  <data name="Index_fsSolicitacoes_Fieldset_Legenda" xml:space="preserve">
+    <value>Minhas solicitações</value>
+  </data>
+  <data name="Index_Label_Solicitacoes_Concluidas" xml:space="preserve">
+    <value>Concluídas</value>
+  </data>
+  <data name="Index_Label_Solicitacoes_EmAndamento" xml:space="preserve">
+    <value>Em andamento</value>
+  </data>
+  <data name="Index_Label_Solicitacoes_Encerradas" xml:space="preserve">
+    <value>Encerradas</value>
+  </data>
+  <data name="Index_Label_Solicitacoes_Novas" xml:space="preserve">
+    <value>Novas</value>
+  </data>
+  <data name="Botao_AlterarPublicacaoBdp" xml:space="preserve">
+    <value>Alterar dados do Trabalho</value>
+  </data>
+  <data name="Botao_AlterarPublicacaoBdp_Tooltip" xml:space="preserve">
+    <value>Alterar dados do Trabalho</value>
+  </data>
+  <data name="Botao_SegundaViaAutorizacaoPublicacaoBdp" xml:space="preserve">
+    <value>Imprimir autorização</value>
+  </data>
+  <data name="Botao_SegundaViaAutorizacaoPublicacaoBdp_Tooltip" xml:space="preserve">
+    <value>Imprimir autorização</value>
+  </data>
+  <data name="Botao_VisualizarPublicacaoBdp" xml:space="preserve">
+    <value>Visualizar publicação BDP</value>
+  </data>
+  <data name="Botao_VisualizarPublicacaoBdp_Tooltip" xml:space="preserve">
+    <value>Visualizar publicação BDP</value>
+  </data>
+  <data name="Label_Dados_Publicacoes" xml:space="preserve">
+    <value>Publicações BDP</value>
+  </data>
+  <data name="Botao_AutorizarPublicacaoBdp" xml:space="preserve">
+    <value>Autorizar publicação BDP</value>
+  </data>
+  <data name="Botao_AutorizarPublicacaoBdp_Tooltip" xml:space="preserve">
+    <value>Autorizar publicação BDP</value>
+  </data>
+  <data name="LegendaSituacaoTrabalhoAcademico_Legenda_Titulo" xml:space="preserve">
+    <value>Situação do Trabalho</value>
+  </data>
+  <data name="Titulo_Modal_AutorizacaoPublicacaoBdp" xml:space="preserve">
+    <value>Autorização da publicação do trabalho na biblioteca digital</value>
+  </data>
+  <data name="Titulo_Modal_DetailsPublicacaoBdp" xml:space="preserve">
+    <value>Visualizar dados da publicação</value>
+  </data>
+  <data name="Botao_AlterarPublicacaoBdp_Instruction" xml:space="preserve">
+    <value>A sua publicação já foi autorizada, e os dados não podem mais ser atualizados.</value>
+  </data>
+  <data name="Botao_AutorizarPublicacaoBdp_Instruction" xml:space="preserve">
+    <value>Você já realizou a autorização da publicação, e não poderá realizá-la novamente.</value>
+  </data>
+  <data name="Botao_SegundaViaAutorizacaoPublicacaoBdp_Instruction" xml:space="preserve">
+    <value>Para realizar a emissão da segunda via da autorização da publicação, você precisa autorizar a publicação.</value>
+  </data>
+  <data name="Botao_AutorizarPublicacaoBdp_Aguardando_Aluno_Instruction" xml:space="preserve">
+    <value>A publicação não pode ser autorizada, será possível somente após atualizar as suas informações.</value>
+  </data>
+  <data name="MSG_Rematricula_Aberta" xml:space="preserve">
+    <value>Início em {0}.</value>
+  </data>
+  <data name="Index_Botao_NovaSolicitacao" xml:space="preserve">
+    <value>Nova solicitação</value>
+  </data>
+  <data name="Index_Modal_NovaSolicitacao_Titulo" xml:space="preserve">
+    <value>Nova Solicitação</value>
+  </data>
+  <data name="Index_Botao_VerSolicitacao" xml:space="preserve">
+    <value>Visualizar solicitações</value>
+  </data>
+  <data name="Index_Texto_Banner_RenovacaoMatricula" xml:space="preserve">
+    <value>Processo de renovação de matrícula.</value>
+  </data>
+  <data name="Botao_NovaPublicacaoBdp" xml:space="preserve">
+    <value>Incluir dados do Trabalho</value>
+  </data>
+  <data name="Botao_NovaPublicacaoBdp_Tooltip" xml:space="preserve">
+    <value>Incluir dados do Trabalho</value>
+  </data>
+  <data name="Botao_Autorizar_Publicacao" xml:space="preserve">
+    <value>Autorizar</value>
+  </data>
+  <data name="Index_Texto_Banner_ReaberturaMatricula" xml:space="preserve">
+    <value>Processo de reabertura de matrícula.</value>
+  </data>
+  <data name="MSG_Reabertura_Aberta" xml:space="preserve">
+    <value>Início em {0}.</value>
+  </data>
+  <data name="Mensagem_Informativa_Intrucao_Bdp" xml:space="preserve">
+    <value>Você, aluno que foi aprovado na defesa de sua Dissertação ou Tese em um dos Programas de Pós-graduação da {0}, deverá realizar o registro dos dados de seu trabalho e liberar para a publicação na Biblioteca Digital. Para isto será necessário:&lt;br /&gt;&lt;br /&gt;
+
+1. Cadastrar os dados do trabalho; &lt;br /&gt;
+2. Anexar o arquivo em formato .PDF;   &lt;br /&gt;
+3. Realizar o registro de sua autorização para a publicação na Biblioteca.&lt;br /&gt;</value>
+  </data>
+  <data name="Titulo_BDP_Fillstructions" xml:space="preserve">
+    <value>O título registrado para a Defesa e que foi registrado em Ata não poderá ser alterado. Na Biblioteca Digital o título a ser exibido é o registrado para o idioma “Português” em Informações por Idioma no Cadastro dos dados do trabalho. Portanto caso seja necessário alterar esta informação deverá ser realizado na funcionalidade informada.</value>
+  </data>
+  <data name="Botao_Avaliacoes" xml:space="preserve">
+    <value>Avaliações</value>
+  </data>
+  <data name="Botao_Avaliacoes_Tooltip" xml:space="preserve">
+    <value>Avaliações</value>
+  </data>
+</root>

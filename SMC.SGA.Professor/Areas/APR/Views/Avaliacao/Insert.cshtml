@@ -1,0 +1,60 @@
+﻿@model AvaliacaoViewModel
+
+<h1>@Smc.GetUIResource("Insert_Avaliacao_Title")</h1>
+
+@Html.Action("CabecalhoAvalicaoTurma", "Avaliacao", new { seqOrigemAvaliacao = Model.SeqOrigemAvaliacao })
+
+@using (Smc.Form("formCadastroAvaliacao", "SalvarAvaliacao", "Avaliacao").Begin())
+{
+    @Smc.EditorFor(e => e.Seq)
+    @Smc.EditorFor(e => e.SeqOrigemAvaliacao)
+    @Smc.EditorFor(e => e.TipoAvaliacao)
+    @Smc.EditorFor(e => e.Sigla)
+    @Smc.EditorFor(e => e.Descricao)
+    @Smc.EditorFor(e => e.Valor)
+    @Smc.EditorFor(e => e.EntregaWeb)
+    @Smc.EditorFor(e => e.DisponibilizarGrade)
+    @Smc.EditorFor(e => e.HorarioGrade)
+    @Smc.EditorFor(e => e.DataInicioAplicacaoAvaliacao)
+    @Smc.EditorFor(e => e.DataFimAplicacaoAvaliacao)
+    @Smc.EditorFor(e => e.SeqInicioGradeAvaliacao)
+    @Smc.EditorFor(e => e.SeqFimGradeAvaliacao)
+    @Smc.EditorFor(e => e.QuantidadeMaximaPessoasGrupo)
+    @Smc.EditorFor(e => e.Local)
+    @Smc.EditorFor(e => e.SeqAgendaTurma)
+    @Smc.EditorFor(e => e.TurmaIntegracaoSEF)
+    @Smc.EditorFor(e => e.LocalSEF)
+    @Smc.EditorFor(e => e.Instrucao)
+    @Smc.EditorFor(e => e.SeqArquivoAnexadoInstrucao)
+    @Smc.EditorFor(e => e.ArquivoAnexadoInstrucao)
+    @Smc.EditorFor(e => e.TipoEscalaApuracao)
+    @Smc.EditorFor(e => e.TipoOrigemAvaliacao)
+    @Smc.EditorFor(e => e.TemConfiguracaoGrade)
+    @Smc.EditorFor(e => e.SeqAplicacaoAvaliacao)
+    @Smc.EditorFor(e => e.SeqEventoAgd)
+    @Smc.EditorFor(e => e.CodigoUnidade)
+    @Smc.EditorFor(e => e.DataInicioLimiteAvaliacao)
+    @Smc.EditorFor(e => e.DataFimLimiteAvaliacao)
+    @(Smc.Templates.SaveButtons()
+        .AllowBack(true)
+        .AllowSaveNew(true)
+        .AllowSaveQuit(false)
+        .UrlSave(Url.Action("SalvarAvaliacao", "Avaliacao"))
+        .UrlSaveNew(Url.Action("SalvarNovoAvaliacao", "Avaliacao"))
+        .UrlBack(Url.Action("Index", "Avaliacao", new { SeqOrigemAvaliacao = new SMCEncryptedLong(Model.SeqOrigemAvaliacao) })))
+}
+
+
+@*<script>   
+    const localSEF = document.getElementsByName("LocalSEFGradeInicio");
+    localSEF[0].onchange = function (event) {
+        const val = event.target.value;
+        const separado = val.split('#');
+        const displayText = document.getElementsByName("LocalSEF_display_text");
+        const valueText = document.getElementsByName("LocalSEF.Descricao");
+        const valueSeq = document.getElementsByName("LocalSEF.Seq");
+        displayText[0].value = separado[1];
+        valueText[0].value = separado[1];
+        valueSeq[0].value = separado[0];
+    }    
+</script>*@

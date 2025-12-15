@@ -1,0 +1,81 @@
+﻿@model TurmaDivisoesViewModel
+
+@using SMC.Academico.Common.Areas.APR.Enums;
+@using SMC.Academico.Common.Areas.APR.Constants;
+@using SMC.Academico.Common.Areas.GRD.Constants;
+
+@if (Model.DivisoesComponentesDisplay != null)
+{
+    if (Model.DivisoesComponentesDisplay.Count > 0)
+    {
+        using (Smc.Div("").CssClass("smc-listdetailed-conteudo-destaque").Size(SMCSize.Grid24_24).Begin())
+        {
+            using (Smc.Div("").Size(SMCSize.Grid22_24, SMCSize.Grid21_24, SMCSize.Grid22_24, SMCSize.Grid22_24).Begin())
+            {
+                <label class="smc-listdetailed-conteudo-subtitulo">@Model.DivisaoComponenteDescricao</label>
+            }
+
+        }
+
+        @(Smc.Grid("DivisoesComponentesDisplay" + Model.SeqDivisaoComponente, new SMCPagerModel<TurmaDivisoesDetailDisplayViewModel>(Model.DivisoesComponentesDisplay))
+             .AutoGenerateColumns()
+             .HideGridTitle()
+             .HideNavigator()
+             .HideRowNumber()
+             .Size(SMCSize.Grid24_24)
+             .ButtonColumn(SMCButtonSetType.Secondary, 0, "", "", "smc-grid-coluna-botoes smc-sga-margin-top--5", true,
+
+                x => Smc.Button("LancamentoNota")
+                       .Action("RelatorioAcompanhamento", "Turma", new { seqOrigemAvaliacao = new SMCEncryptedLong((x as TurmaDivisoesDetailDisplayViewModel).SeqOrigemAvaliacao), administrativo = true })
+                       .Text(Smc.GetUIResource("Botao_Acompanhamento_Nota"))
+                       .Type(SMCButtonType.Link)
+                       .Attribute("target", "_blank")
+                       .Tooltip(Smc.GetUIResource("Botao_Acompanhamento_Nota_Tooltip"))
+                       .SecurityToken(SMC.Academico.Common.Areas.APR.Constants.UC_APR_001_17_01.EXIBIR_RELATORIO_ACOMPANHAMENTO_NOTA),
+
+                x => Smc.Button("AlterarConfiguracaoGrade", "Index", new { SeqDivisaoTurma = new SMCEncryptedLong((x as TurmaDivisoesDetailDisplayViewModel).Seq), Area = "GRD" }, "HistoricoDivisaoTurmaConfiguracaoGrade")
+                         .Text(Smc.GetUIResource("Botao_AlterarConfiguracaoGrade"))
+                         .Type(SMCButtonType.Link)
+                         .Tooltip(Smc.GetUIResource("Botao_AlterarConfiguracaoGrade_Tooltip"))
+                         .SecurityToken(UC_GRD_001_02_01.ALTERAR_CONFIGURACAO_GRADE)
+                         .Enabled((x as TurmaDivisoesDetailDisplayViewModel).HabilitaBtnConfiguracaoGrade)
+                         .ButtonInstructions((x as TurmaDivisoesDetailDisplayViewModel).InstructionConfiguracaoGrade),
+
+                x => Smc.Button("LancarFrequencia", "Index", new { Area = "", SeqDivisaoTurma = new SMCEncryptedLong((x as TurmaDivisoesDetailDisplayViewModel).Seq), BackUrl = Url.Action("Index", "Turma", new { area = "TUR" }) }, "AulaRoute")
+                        .Text(Smc.GetUIResource("Botao_LancarFrequencia"))
+                        .Type(SMCButtonType.Link)
+                        .Tooltip(Smc.GetUIResource("Botao_LancarFrequencia_Tooltip"))
+                        .SecurityToken(UC_APR_006_01_02.MANTER_LANCAMENTO_FREQUENCIA)
+                        .Enabled((x as TurmaDivisoesDetailDisplayViewModel).HabilitaBtnLancarFrequencia)
+                        .ButtonInstructions((x as TurmaDivisoesDetailDisplayViewModel).InstructionLancarFrequencia),
+
+                x => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "Index", new { seqDivisaoTurma = new SMCEncryptedLong((x as TurmaDivisoesDetailDisplayViewModel).Seq), Area = "APR" }, "ListaFrequencia")
+                        .Text(Smc.GetUIResource("Botao_ListaFrequencia"))
+                        .Type(SMCButtonType.Link)
+                        .Ajax(isPost: false)
+                        .Attribute(SMCMvcConsts.MODAL_ID, "modalListaFrequencia" + (x as TurmaDivisoesDetailDisplayViewModel).SeqTurma)
+                        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_Lista_Frequencia"))
+                        .SecurityToken(UC_APR_006_03_01.PARAMETROS_LISTA_FREQUENCIA)
+                        .Tooltip(Smc.GetUIResource("Botao_ListaFrequencia_Tooltip"))
+                        .Enabled((x as TurmaDivisoesDetailDisplayViewModel).HabilitaBtnListaFrequencia)
+                        .ButtonInstructions((x as TurmaDivisoesDetailDisplayViewModel).InstructionListaFrequencia),
+
+                x => Smc.Button("TurmaOrientacao", "Index", new { SeqTurma = new SMCEncryptedLong((x as TurmaDivisoesDetailDisplayViewModel).SeqTurma), SeqDivisaoTurma = new SMCEncryptedLong((x as TurmaDivisoesDetailDisplayViewModel).Seq) }, "TurmaOrientacao")
+                        .Text(Smc.GetUIResource("Botao_TurmaOrientacao"))
+                        .Type(SMCButtonType.Link)
+                        .Tooltip(Smc.GetUIResource("Botao_TurmaOrientacao_Tooltip"))
+                        .SecurityToken(UC_TUR_001_07_01.PESQUISAR_ORIENTACAO_TURMA)
+                        .Enabled((x as TurmaDivisoesDetailDisplayViewModel).HabilitaBtnOrientacaoTurma)
+                        .ButtonInstructions((x as TurmaDivisoesDetailDisplayViewModel).InstructionOrientacaoTurma))
+        )
+    }
+    else
+    {
+        <label class="smc-listdetailed-conteudo-subtitulo">@Model.DivisaoComponenteDescricao</label>
+
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+        {
+            <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+        }
+    }
+}

@@ -1,0 +1,6 @@
+﻿@model ReplicaFormacaoEspecificaProgramaViewModel
+
+@Smc.EditorFor(m => m.MensagemInformativa)
+@Smc.List("CursosTitulacoes", m => m.CursosTitulacoes).HtmlTemplate(item => @Html.Partial("_WizardStepTitulacaoItem", item.Value))
+
+@Smc.WizardView()

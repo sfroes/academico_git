@@ -1,0 +1,20 @@
+﻿@model DivisaoMatrizCurricularComponenteCabecalhoViewModel
+
+@using (Smc.Header("MatrizCurricularCabecalho", SMCHeaderType.Primary)
+                   .Item(i => i.DescricaoMatrizFormatada, sizeMD: SMCSize.Grid12_24)
+                   .Item(i => i.DescricaoComponenteFormatada, sizeMD: SMCSize.Grid12_24)
+                   .Begin())
+{
+
+    <div class="smc-header-grupo-itens">
+        <div class="smc-header-item smc-size-md-24">
+            <label class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">Grupo(s)</label>
+            <ul class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24 smc-display-collection smc-solicitacao">
+                @foreach (string grupo in Model.GruposPertecentes)
+                {
+                    <li>@grupo</li>
+                }
+            </ul>
+        </div>
+    </div>
+}

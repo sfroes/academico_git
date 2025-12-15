@@ -1,0 +1,53 @@
+﻿@using SMC.DadosMestres.Common.Areas.PES.Enums
+@using SMC.Academico.UI.Mvc.Areas.SRC.Views.RegistroDocumento.App_LocalResources
+
+@model SMC.Academico.UI.Mvc.Areas.SRC.Models.RegistroDocumentoViewModel
+
+@Html.Action("CabecalhoRegistroDocumentos", "RegistroDocumento", new { seqSolicitacaoservico = Model.SeqSolicitacaoServico })
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-sga-mensagem smc-sga-mensagem-informativa").Begin())
+{
+    using (Smc.Div().CssClass("smc-sga-ico-mensagem").Begin())
+    {
+    }
+    @Html.Raw(UIResource.MSG_ObrigatoriedadeCampos)
+
+}
+
+@(Smc.Legend("SituacaoEntregaDocumento", SMCOrientation.Horizontal).Items<SituacaoEntregaDocumento>())
+
+@Smc.List("Documentos", r => r.Documentos).HtmlTemplate(item => Html.Partial(Smc.GetExternalView(SMC.Academico.UI.Mvc.AcademicoExternalViews.REGISTRAR_DOCUMENTOS_DOCUMENTO), item.Value)).CssClass("smc-sga-registro-documentos smc-sga-ajusta-label")
+
+@Smc.EditorFor(m => m.SeqSolicitacaoServico)
+@Smc.EditorFor(m => m.SeqPessoaAtuacao)
+@Smc.EditorFor(m => m.BackUrl)
+
+<script type="text/javascript">
+    $(document).on("focus", ".smc-academico-situacao-entrega-documento > select", function () {
+        $(this).data('valorAntigo', $(this).val());
+    });
+
+    $(document).on("change", ".smc-academico-situacao-entrega-documento > select", function () {
+
+        var select = $(this);
+        var linha = $(this).closest(".smc-detalhe-editavel-linha-dados");
+        var upload = $(linha).find("[data-name='ArquivoAnexado']");
+
+        var controlUpload = smc.core.uicontrol(upload);
+        var controlSelect = smc.core.uicontrol(select);
+
+        if ((controlSelect.getValue() == 1 || controlSelect.getValue() == 6) && controlUpload.getValue() != null)
+        {
+            if (controlSelect.getValue() == 1)
+            {
+                smc.core.alertError('@UIResource.Titulo_Inserir_Erro', '@UIResource.ERR_ArquivoAnexadoValidacaoAguardandoEntrega');
+            }
+            if (controlSelect.getValue() == 6)
+            {
+                smc.core.alertError('@UIResource.Titulo_Inserir_Erro', '@UIResource.ERR_ArquivoAnexadoValidacaoPendente');
+            }
+            select.val($(select).data("valorAntigo"));
+            select.trigger("change");
+        }
+    });
+</script>

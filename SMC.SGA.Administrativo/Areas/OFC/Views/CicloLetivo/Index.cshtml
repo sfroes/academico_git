@@ -1,0 +1,30 @@
+﻿@model CicloLetivoFiltroViewModel
+
+@using (Smc.Form("formPesquisaCicloLetivo", "ListarCicloLetivo").Ajax("#divGridCicloLetivo").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaCicloLetivo").Begin())
+    {
+        @Smc.FieldEditorFor(prop => prop.Seq).Focus()
+        @Smc.FieldEditorFor(prop => prop.Descricao)
+
+        @Smc.FieldEditorFor(prop => prop.SeqNivelEnsino)
+      
+        @Smc.FieldEditorFor(prop => prop.AnoCiclo)
+
+        using (Smc.FieldButtonSet().Size(SMCSize.Grid9_24).Begin())
+        {
+            @Smc.FieldButton(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight()
+            @Smc.FieldButton(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon)
+
+            @(Smc.FieldButton(SMCButtonBehavior.Novo)
+                 .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                 .Type(SMCButtonType.Link)
+                 .Url(Url.Action("Incluir"))
+            )
+        }
+    }
+}
+
+<div id="divGridCicloLetivo">
+    @Html.Action("ListarCicloLetivo")
+</div>

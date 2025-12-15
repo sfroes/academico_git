@@ -1,0 +1,27 @@
+﻿@model GrupoCurricularListarDynamicModel
+
+@using (Smc.Div().Size(SMCSize.Grid2_24).Begin())
+{
+    if (Model.SituacaoComponente != 0)
+    {
+        @Smc.LegendItem(m => m.SituacaoComponente, false)
+    }
+    else if (Model.SituacaoConfiguracaoGrupoCurricular != 0)
+    {
+        var buttonSet = Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-margem-superior");
+
+        buttonSet.AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                    .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarDadosGrupoCurricular")
+                    .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Title_VisualizarDadosGrupoCurricular"))
+                    .Ajax(isPost: false)
+                    .Text(Smc.GetUIResource("Botao_VisualizarDadosGrupoCurricular"))
+                    .Tooltip(Smc.GetUIResource("Botao_VisualizarDadosGrupoCurricular"))
+                    .Type(SMCButtonType.Link).CssClass("smc-btn-visualizar-ico")
+                    .SecurityToken(UC_CUR_001_06_01.CONSULTA_DIVISOES_MATRIZ_CURRICULAR)
+                    .Action("VisualizarDadosGrupoCurricular", "ConsultaDivisoesMatrizCurricular", new { seqGrupoCurricular = new SMCEncryptedLong(Model.SeqGrupoCurricular.Value) })
+                    .CssClass("smc-btn-custom-destaque-grid"));
+
+        @buttonSet;
+        @Smc.LegendItem(m => m.SituacaoConfiguracaoGrupoCurricular, false)
+    }
+}

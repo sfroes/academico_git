@@ -1,0 +1,31 @@
+﻿@model CursoOfertaLocalidadeListaViewModel
+
+@using (Smc.Div().CssClass("smc-listdetailed-detalhes-conteudo-item smc-display-collection").Size(SMCSize.Grid24_24).Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid23_24, SMCSize.Grid22_24, SMCSize.Grid22_24, SMCSize.Grid23_24).Begin())
+    {
+        if (Model.Ativo)
+        {
+            @Smc.DisplayFor(x => x.Descricao).HideLabel(true)
+
+        }
+        else
+        {
+            @Smc.DisplayFor(x => x.Descricao).CssClass("smc-sga-item-inativo").HideLabel(true)
+        }
+    }
+    using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid1_24).Begin())
+    {
+        @(Smc.ButtonSet().NumberOfButtonsToShow(0).Type(SMCButtonSetType.Secondary)
+             .AddButton(Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { seq = new SMCEncryptedLong(Model.Seq), seqEntidade = new SMCEncryptedLong(Model.SeqCursoUnidade) }, "CursoOfertaLocalidade")
+                        .SecurityToken(UC_CSO_001_02_03.MANTER_CURSO_OFERTA_LOCALIDADE))
+             .AddButton(Smc.Button(SMCButtonBehavior.Excluir, "ExcluirCursoOfertaLocalidade", new { seq = new SMCEncryptedLong(Model.Seq) }, "CursoUnidade")
+                        .Confirm(Smc.GetUIResource("Title_Excluir_CursoOfertaLocalidade"), string.Format(Smc.GetUIResource("Excluir_Curso_OfertaConfirmacaoLocalidade"), Model.Descricao))
+                        .SecurityToken(UC_CSO_001_02_03.MANTER_CURSO_OFERTA_LOCALIDADE))
+             .AddButton(Smc.Button(SMCButtonBehavior.Alterar, "Index", new { seqEntidade = new SMCEncryptedLong(Model.Seq), seqTipoEntidade = new SMCEncryptedLong(Model.SeqTipoEntidade) }, "CursoOfertaLocalidadeHistoricoSituacao")
+                        .Text(Smc.GetUIResource("Botao_AlterarEntidadeHistoricoSituacao"))
+                        .Tooltip(Smc.GetUIResource("Botao_AlterarEntidadeHistoricoSituacao"))
+                        .SecurityToken(UC_CSO_001_02_03.MANTER_CURSO_OFERTA_LOCALIDADE))
+        )
+    }
+}

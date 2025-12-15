@@ -1,0 +1,64 @@
+﻿@model SMC.Academico.UI.Mvc.Areas.CNC.Models.IntegralizacaoMatrizCurricularOfertaCabecalhoViewModel
+
+@{
+    var header = (Smc.Header("Cabecalho", SMCHeaderType.Primary));
+
+    if (Model.SeqAluno > 0)
+    {
+        var percentual = Model.PercentualConclusaoGeral.HasValue ? (int)Model.PercentualConclusaoGeral.Value : 0;
+
+        header.Item(prop => prop.RA, sizeMD: SMCSize.Grid2_24)
+              .Item(prop => prop.CodigoMigracao, sizeMD: SMCSize.Grid4_24)
+              .Item(prop => prop.Nome, sizeMD: SMCSize.Grid7_24)
+              .Item(prop => prop.Vinculo, sizeMD: SMCSize.Grid4_24)
+              .Item(prop => prop.DescricaoFormaIngresso, sizeMD: SMCSize.Grid4_24);
+
+        if (Model.ExibirOfertaMatriz == true)
+        {
+            header
+                .Item("Conclusão geral", @<text>@Smc.CircularProgress("circular").Colors("#074458", "#e3e3e3").CssClass("smc-sga-round-percent").Value(percentual)</text>, sizeMD: SMCSize.Grid3_24, sizeXS: SMCSize.Grid3_24, sizeSM: SMCSize.Grid3_24, sizeLG: SMCSize.Grid3_24)
+                .Item(prop => prop.OfertaMatriz, sizeMD: SMCSize.Grid17_24)
+                .Item(prop => prop.SituacaoOfertaMatriz, sizeMD: SMCSize.Grid4_24);
+        }
+        else
+        {
+            if (Model.ExibirDisciplinaIsolada)
+            {
+                header.Item(prop => prop.VinculoDisciplinaIsolada, sizeMD: SMCSize.Grid24_24);
+            }
+            else
+            {
+                header.Item(prop => prop.OfertaCurso, sizeMD: SMCSize.Grid8_24)
+                      .Item(prop => prop.Localidade, sizeMD: SMCSize.Grid8_24)
+                      .Item(prop => prop.Turno, sizeMD: SMCSize.Grid8_24);
+            }
+        }
+    }
+    else
+    {
+        if (Model.SeqIngressante > 0)
+        {
+            header.Item(prop => prop.SeqIngressante, sizeMD: SMCSize.Grid8_24)
+                  .Item(prop => prop.Nome, sizeMD: SMCSize.Grid8_24)
+                  .Item(prop => prop.SituacaoIngressante, sizeMD: SMCSize.Grid8_24)
+                  .Item(prop => prop.Vinculo, sizeMD: SMCSize.Grid8_24)
+                  .Item(prop => prop.DescricaoFormaIngresso, sizeMD: SMCSize.Grid8_24);
+        }
+
+        if (Model.ExibirOfertaMatriz == true)
+        {
+            header.Item(prop => prop.OfertaMatriz, sizeMD: SMCSize.Grid17_24)
+                  .Item(prop => prop.SituacaoOfertaMatriz, sizeMD: SMCSize.Grid4_24);
+        }
+        else
+        {
+            header.Item(prop => prop.OfertaCampanha, sizeMD: SMCSize.Grid24_24);
+        }
+    }
+}
+
+@using (header.Begin())
+{
+
+    @*Smc.CircularProgress("lala").Value(20).Size(SMCSize.Grid2_24).CssClass("smc-sga-round-percent")*@
+}

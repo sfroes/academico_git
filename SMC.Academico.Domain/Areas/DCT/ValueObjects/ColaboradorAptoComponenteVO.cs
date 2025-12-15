@@ -1,0 +1,15 @@
+﻿using SMC.DadosMestres.Common.Areas.PES.Enums;
+using SMC.Framework.Mapper;
+using System;
+using System.Collections.Generic;
+
+namespace SMC.Academico.Domain.Areas.DCT.ValueObjects
+{
+    public class ColaboradorAptoComponenteVO : ISMCMappable
+    {
+        public long Seq { get; set; }
+        public long SeqAtuacaoColaborador { get; set; }
+
+        public long SeqComponenteCurricular { get; set; }
+    }
+}

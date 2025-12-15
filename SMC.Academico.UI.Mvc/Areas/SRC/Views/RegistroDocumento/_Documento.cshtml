@@ -1,0 +1,13 @@
+﻿
+@model SMC.Academico.UI.Mvc.Areas.SRC.Models.DocumentoViewModel
+
+@{
+    // Registra o datasource do item da lista detalhada
+    SMC.Framework.UI.Mvc.Helpers.SMCDataSourceHelper.RegisterDataSource(Html.ViewContext.Controller, Model);
+}
+
+@Smc.EditorFor(d => d.SeqDocumentoRequerido)
+@Smc.EditorFor(d => d.SeqTipoDocumento)
+@Smc.EditorFor(d => d.PermiteVarios)
+@Smc.HiddenFor(d => d.DescricaoTipoDocumento)
+@Smc.MasterDetail(d => d.Documentos).HideButtons(!Model.PermiteVarios).TitleMasterDetail(Model.DescricaoTipoDocumento)

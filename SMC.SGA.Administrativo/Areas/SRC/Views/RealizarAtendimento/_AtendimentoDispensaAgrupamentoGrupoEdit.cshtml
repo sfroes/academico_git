@@ -1,0 +1,25 @@
+﻿@model SolicitacaoDispensaGrupoViewModel
+
+@Smc.EditorFor(x => x.Seq)
+@Smc.EditorFor(x => x.SeqDispensa)
+@Smc.EditorFor(x => x.SeqSolicitacaoDispensa)
+@Smc.EditorFor(x => x.ModoExibicaoHistoricoEscolar)
+
+<!-- e o titulo? -->
+
+
+@using (Smc.Div("").Size(SMCSize.Grid24_24).CssClass("").Begin())
+{
+    using (Smc.Fieldset("").Size(SMCSize.Grid12_24).LegendText(@Smc.GetUIResource("legenda_itens_cursados")).Begin())
+    {
+        @Smc.EditorFor(x => x.OrigensInternas)
+        @Smc.EditorFor(x => x.OrigensExternas)
+    }
+    using (Smc.Fieldset("").Size(SMCSize.Grid12_24).LegendText(@Smc.GetUIResource("legenda_itens_dispensados")).Begin())
+    {
+        @Smc.EditorFor(x => x.Destinos)
+    }
+}
+
+
+@Smc.EditorFor(x => x.SeqConfiguracaoEtapa)

@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AtividadeAcademicaSelecionada_Lista_Titulo" xml:space="preserve">
+    <value>Atividades acadêmicas</value>
+  </data>
+  <data name="Botao_Divisao_Turma" xml:space="preserve">
+    <value>Mais informações</value>
+  </data>
+  <data name="Botao_Selecionar" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="Botao_Visualizarcomprovante" xml:space="preserve">
+    <value>Visualizar comprovante</value>
+  </data>
+  <data name="Botao_Visualizar_Turma_Atividade" xml:space="preserve">
+    <value>Exibir itens</value>
+  </data>
+  <data name="Desfazer_Excluir_Atividade_Selecionado" xml:space="preserve">
+    <value>Confirma desfazer a exclusão da atividade acadêmica "{0}" ?</value>
+  </data>
+  <data name="Desfazer_Excluir_Turma_Selecionado" xml:space="preserve">
+    <value>Confirma desfazer a exclusão da turma "{0}" ?</value>
+  </data>
+  <data name="Documentos_Fieldset_Legenda" xml:space="preserve">
+    <value>Documentos da solicitação</value>
+  </data>
+  <data name="Excluir_Atividade_Selecionado" xml:space="preserve">
+    <value>Confirma a exclusão da seleção da atividade acadêmica "{0}" ?</value>
+  </data>
+  <data name="Excluir_Turma_Selecionado" xml:space="preserve">
+    <value>Confirma a exclusão da seleção da turma "{0}" ?</value>
+  </data>
+  <data name="ExibicaoBloqueio_Title" xml:space="preserve">
+    <value>Bloqueios</value>
+  </data>
+  <data name="Label_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Atividade_Selecionada" xml:space="preserve">
+    <value>Nenhuma atividade acadêmica selecionada</value>
+  </data>
+  <data name="Label_Nenhum_Registro_Turma_Selecionada" xml:space="preserve">
+    <value>Nenhuma turma selecionada</value>
+  </data>
+  <data name="Label_Selecionar" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="Label_Selecionar_Atividade" xml:space="preserve">
+    <value>Selecionar atividade acadêmica</value>
+  </data>
+  <data name="Label_Selecionar_Turma" xml:space="preserve">
+    <value>Selecionar turma</value>
+  </data>
+  <data name="Mensagem_Bloqueio" xml:space="preserve">
+    <value>Prezado(a) aluno(a), existe um ou mais bloqueios que impedem a realização da solicitação.</value>
+  </data>
+  <data name="Modal_Title_Selecionar_Atividade" xml:space="preserve">
+    <value>Selecionar Atividade Acadêmica</value>
+  </data>
+  <data name="Modal_Title_Selecionar_Turma" xml:space="preserve">
+    <value>Selecionar Turma</value>
+  </data>
+  <data name="ParametroDivisoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Divisões de turma</value>
+  </data>
+  <data name="Texto_Bloqueio" xml:space="preserve">
+    <value>Bloqueio</value>
+  </data>
+  <data name="Texto_Meses" xml:space="preserve">
+    <value>meses</value>
+  </data>
+  <data name="Title_Desfazer_Excluir_Atividade_Selecionado" xml:space="preserve">
+    <value>Desfazer Exclusão de Atividade Acadêmica</value>
+  </data>
+  <data name="Title_Desfazer_Excluir_Turma_Selecionado" xml:space="preserve">
+    <value>Desfazer Exclusão de Turma</value>
+  </data>
+  <data name="Title_Divisao_Turma" xml:space="preserve">
+    <value>Detalhes da Divisão de Turma</value>
+  </data>
+  <data name="Title_Excluir_Atividade_Selecionado" xml:space="preserve">
+    <value>Excluir Seleção de Atividade Acadêmica</value>
+  </data>
+  <data name="Title_Excluir_Turma_Selecionado" xml:space="preserve">
+    <value>Excluir Seleção de Turma</value>
+  </data>
+  <data name="Title_Modal_Visualizar_Turma_Atividade" xml:space="preserve">
+    <value>Turmas e Atividades</value>
+  </data>
+  <data name="Titulo_Modal_Bloqueios" xml:space="preserve">
+    <value>Bloqueios</value>
+  </data>
+  <data name="Tooltip_Alterar" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="Tooltip_Divisao_Turma" xml:space="preserve">
+    <value>Mais informações</value>
+  </data>
+  <data name="TurmaAlterarSelecaoAluno_Title" xml:space="preserve">
+    <value>Alterar Divisões da Turma</value>
+  </data>
+  <data name="TurmaMatrizFiltro_Titulo" xml:space="preserve">
+    <value>Selecione um programa</value>
+  </data>
+  <data name="TurmaMatrizOferta_Lista_Titulo" xml:space="preserve">
+    <value>Turmas ofertadas - </value>
+  </data>
+  <data name="TurmaMatrizSelecionada_Lista_Titulo" xml:space="preserve">
+    <value>Turmas selecionadas</value>
+  </data>
+  <data name="InstrucoesIniciaisSolicitacaoPadrao_fsJustificativa_Fieldset_Legenda" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="fsSolicitacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Solicitação</value>
+  </data>
+  <data name="InstrucoesFinaisSolicitacaoPadrao_fsJustificativa_Fieldset_Legenda" xml:space="preserve">
+    <value>Justificativa da solicitação</value>
+  </data>
+  <data name="fsDocumento_Fieldset_Legenda" xml:space="preserve">
+    <value>Documentos</value>
+  </data>
+  <data name="Botao_Concluirprocesso" xml:space="preserve">
+    <value>Confirmar solicitação</value>
+  </data>
+  <data name="Botao_Concluir_Mensagem_Texto" xml:space="preserve">
+    <value>Atenção. Os dados desta solicitação não poderão ser alterados após a confirmação. Confirma o preenchimento da solicitação?</value>
+  </data>
+  <data name="Botao_Concluir_Mensagem_Titulo" xml:space="preserve">
+    <value>Confirmação de Solicitação de Serviço</value>
+  </data>
+  <data name="Observacao" xml:space="preserve">
+    <value>Observação</value>
+  </data>
+  <data name="Justificativa_Solicitacao_Titulo" xml:space="preserve">
+    <value>Justifique sua solicitação</value>
+  </data>
+  <data name="fsDescricaoAtualizada_Fieldset_Legenda" xml:space="preserve">
+    <value>Descrição atualizada</value>
+  </data>
+  <data name="fsDescricaoOriginal_Fieldset_Legenda" xml:space="preserve">
+    <value>Descrição original</value>
+  </data>
+  <data name="MSG_Titulo_Erro" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="fsTaxas_Fieldset_Legenda" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="Botao_Gerarboleto" xml:space="preserve">
+    <value>Emitir boleto</value>
+  </data>
+  <data name="fsDadosPessoais_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados pessoais</value>
+  </data>
+  <data name="fsFormacoesAluno_Fieldset_Legenda" xml:space="preserve">
+    <value>Formação</value>
+  </data>
+  <data name="fsConfirmacaoDados_Fieldset_Legenda" xml:space="preserve">
+    <value>Confirmação dos dados</value>
+  </data>
+  <data name="DocumentosUpload_Detalhe_Titulo" xml:space="preserve">
+    <value>Arquivos</value>
+  </data>
+  <data name="MSG_Dados_Pessoais" xml:space="preserve">
+    <value>Confirma que os dados pessoais não estão corretos?</value>
+  </data>
+  <data name="MSG_Confirmacao_Fluxo_Assinatura" xml:space="preserve">
+    <value>Atenção. O fluxo de assinatura digital não foi concluído. Se a solicitação for cancelada não será possível reabri-la. Confirma o cancelamento?</value>
+  </data>
+  <data name="Botao_Consulta_Publica_Tooltip" xml:space="preserve">
+    <value>Consulta Pública</value>
+  </data>
+  <data name="Botao_Consultapublicadownloaddiploma" xml:space="preserve">
+    <value>Visualizar a Consulta Pública do Diploma</value>
+  </data>
+  <data name="Botao_Baixarrelatoriomanifestodiploma" xml:space="preserve">
+    <value>Baixar o Relatório de Manifesto das Assinaturas</value>
+  </data>
+  <data name="Botao_Baixarrepresentacaovisualdiploma" xml:space="preserve">
+    <value>Baixar a Representação Visual do Diploma</value>
+  </data>
+  <data name="Botao_Baixarxmldiploma" xml:space="preserve">
+    <value>Baixar o XML do Diploma Assinado</value>
+  </data>
+  <data name="MSG_MensagemDiplomaInvalido" xml:space="preserve">
+    <value>Não existem informações válidas sobre esse código de validação.</value>
+  </data>
+  <data name="fsDadosCurso_Fieldset_Legenda" xml:space="preserve">
+    <value>Curso</value>
+  </data>
+  <data name="fsDadosDiplomado_Fieldset_Legenda" xml:space="preserve">
+    <value>Aluno</value>
+  </data>
+  <data name="fsDadosInstituicao_Fieldset_Legenda" xml:space="preserve">
+    <value>IES emissora e registradora</value>
+  </data>
+  <data name="fsDadosPublicosDiploma_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados públicos do diploma</value>
+  </data>
+  <data name="fsDadosRegistro_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados do registro</value>
+  </data>
+  <data name="fsMantenedora_Fieldset_Legenda" xml:space="preserve">
+    <value>Mantenedora</value>
+  </data>
+  <data name="Botao_Baixarrelatoriomanifestohistorico" xml:space="preserve">
+    <value>Baixar o Relatório de Manifesto das Assinaturas</value>
+  </data>
+  <data name="Botao_Baixarrepresentacaovisualhistorico" xml:space="preserve">
+    <value>Baixar a Representação Visual do Histórico Escolar</value>
+  </data>
+  <data name="Botao_Baixarxmlhistorico" xml:space="preserve">
+    <value>Baixar o XML do Histórico Escolar Assinado</value>
+  </data>
+  <data name="Botao_Consultapublicadownloadhistorico" xml:space="preserve">
+    <value>Visualizar a Consulta Pública do Histórico Escolar</value>
+  </data>
+</root>

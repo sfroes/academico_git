@@ -1,0 +1,23 @@
+﻿@model HomeCursoViewModel
+
+@if (Model.Turmas != null)
+{
+    if (Model.Turmas.Count > 0)
+    {
+        using (Smc.Div().CssClass("smc-sga-externo-agrupamento-primario").Size(SMCSize.Grid24_24).Begin())
+        {
+            <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24)">@Model.DescricaoCursoLocalidadeTurno</label>
+        }
+            @Smc.List("Turmas", m => m.Turmas).CssClass("").Size(SMCSize.Grid24_24).HtmlTemplate(turma => Html.Partial("_HomeTurma", turma.Value))
+
+    }
+    else
+    {
+        <label class="@SMCSizeHelper.GetSizeClasses(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24) smc-sga-externo-agrupamento-primario">@Model.DescricaoCursoLocalidadeTurno</label>
+
+        using (Smc.Div().CssClass("smc-list-group-no-results").Size(SMCSize.Grid24_24).Begin())
+        {
+            <p>@Smc.GetUIResource("Label_Nenhum_Registro")</p>
+        }
+    }
+}

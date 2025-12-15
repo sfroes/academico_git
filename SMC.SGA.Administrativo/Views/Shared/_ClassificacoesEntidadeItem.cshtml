@@ -1,0 +1,9 @@
+﻿@model SMC.SGA.Administrativo.Areas.ORG.Models.EntidadeClassificacoesViewModel
+
+@using (Smc.Div().CssClass("smc-detalhe-editavel-blocos").Size(SMCSize.Grid24_24).Begin())
+{
+    <span class="smc-detalhe-editavel-titulo">@Model.Descricao</span>
+    @Smc.EditorFor(m => m.SeqHierarquiaClassificacao)
+    @Smc.EditorFor(m => m.SeqTipoClassificacao)
+    @Smc.EditorFor(m => m.Classificacoes).HideLabel()
+}

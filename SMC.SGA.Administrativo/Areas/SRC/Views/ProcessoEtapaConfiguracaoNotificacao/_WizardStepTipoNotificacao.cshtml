@@ -1,0 +1,15 @@
+﻿@model ProcessoEtapaConfiguracaoNotificacaoViewModel
+
+@Smc.HiddenFor(e => e.Seq)
+@Smc.EditorFor(e => e.SeqProcesso)
+@Smc.EditorFor(e => e.SeqProcessoEtapa)
+
+@Smc.EditorFor(e => e.SeqTipoNotificacao).Size(SMCSize.Grid12_24)
+@Smc.EditorFor(e => e.EnvioAutomatico).Size(SMCSize.Grid12_24)
+
+@using (Smc.Div("divObservacao")
+    .Dependency("SeqTipoNotificacao", "BuscarObservacaoTipoNotificacao", "ProcessoEtapaConfiguracaoNotificacao", false).Begin())
+{
+}
+
+@Smc.WizardView()

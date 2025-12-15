@@ -1,0 +1,29 @@
+<div class="smc-sga-painelalertas-estrutura-botao">
+  <a class="smc-sga-painelalertas-botao" (click)="exibirNotificacao()">Painel alertas</a>
+  <span *ngIf="listaNotificacoes.length" class="smc-sga-painelalertas-totalizador">{{ listaNotificacoes.length }}</span>
+</div>
+<div [hidden]="!exibir" class="smc-size-lg-10 smc-size-sm-18 smc-size-xs-22 smc-size-md-8 smc-sga-painelalertas">
+  <h3>Alertas e Inconsistências</h3>
+  <div class="smc-sga-painelalertas-itens">
+    <ul>
+      <li *ngFor="let notificacao of listaNotificacoes">
+        <a
+          *ngIf="notificacao.seqEvento"
+          [routerLink]="['', { outlets: { modais: ['Detalhes', notificacao.seqEvento, notificacao.seqDivisaoTurma] } }]"
+          queryParamsHandling="preserve"
+          (click)="exibir = false"
+        >
+          <span>
+            {{ notificacao.descricao }}
+          </span>
+        </a>
+        <span *ngIf="!notificacao.seqEvento">
+          {{ notificacao.descricao }}
+        </span>
+      </li>
+      <li *ngIf="listaNotificacoes.length === 0">
+        <span> Nenhuma notificação. </span>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+﻿@model SMCPagerModel<OfertaCursoCicloLetivoAssociacaoPoloListaViewModel>
+
+@(Smc.Grid("gridAssociacaoPolo")
+     .Action("ListarAssociacaoPolo", "OfertaCursoCicloLetivo")
+     .AutoGenerateColumns()
+             .ButtonColumn(SMCButtonSetType.Secondary, "smc-sga-grid-coluna-botoes",
+                    item => Smc.FieldButton(SMCButtonBehavior.Excluir, "ExcluirAssociacaoPolo", 
+                                    new 
+                                    { 
+                                        @seqOfertaCursoCicloLetivo = SMCDESCrypto.EncryptNumberForURL((item as OfertaCursoCicloLetivoAssociacaoPoloListaViewModel).SeqOfertaCursoCicloLetivo),
+                                        @seqAssociacaoPolo = SMCDESCrypto.EncryptNumberForURL((item as OfertaCursoCicloLetivoAssociacaoPoloListaViewModel).SeqAssociacaoPolo),
+                                    }, "OfertaCursoCicloLetivo")
+                               .DisplayMode(SMCButtonDisplayMode.Icon)
+                               .Ajax(isPost: true, updateTargetId: "#divGridAssociacaoPolo")
+                               .Confirm(Smc.GetUIResource("Exclusao_Associacao_Polo_Title"),
+                                        string.Format(Smc.GetUIResource("Exclusao_Associacao_Polo_Confirmacao"), (item as OfertaCursoCicloLetivoAssociacaoPoloListaViewModel).NomePolo))
+                  )
+)
+

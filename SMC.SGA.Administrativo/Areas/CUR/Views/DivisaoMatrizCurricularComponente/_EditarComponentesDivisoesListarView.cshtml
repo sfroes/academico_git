@@ -1,0 +1,6 @@
+﻿@model DivisaoMatrizCurricularComponenteDynamicModel
+
+@using (Smc.Fieldset("fieldsetDivisoesComponentes").LegendText(Smc.GetUIResource("DivisoesComponente_Detalhe_Titulo")).Begin())
+{
+    @Smc.List("DivisoesComponente", x => x.DivisoesComponente).HtmlTemplate(divisao => Html.Partial("_EditarComponentesDivisoesView", divisao.Value));
+}

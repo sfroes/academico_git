@@ -1,0 +1,50 @@
+﻿<header class="smc-ribbon smc-sga-aluno-ribbon">
+    <nav class="navbar navbar-fixed-top smc-size-md-20 smc-size-xs-24 smc-size-sm-22 smc-size-lg-20 col-md-offset-2 col-sm-offset-1 col-lg-offset-2">
+        @*-- Logo --*@
+        <a href="@Url.Action("index", "home", new { @area = "" })" class="smc-aplicaco-logotipo @SMCSizeHelper.GetSizeClasses(SMCSize.Grid4_24, SMCSize.Grid6_24, SMCSize.Grid5_24,SMCSize.Grid4_24)">
+            @*-- Padrão para insersão de logotipo --*@
+            <img class="img-responsive" src="/Recursos/Academico/4.0/SGA.Professor/Images/smc-img-logo-sga-professor.png" alt="Logotipo SGA" />
+        </a>
+
+        @*-- Busca de funcionalidades --*@
+        @using (Smc.Div("divBuscaFuncionalidades").Size(SMCSize.Grid12_24, SMCSize.Grid18_24, SMCSize.Grid11_24, SMCSize.Grid14_24).Begin())
+        {
+            @Smc.SearchMenu()
+        }
+
+        @*-- Área do usuário e nome da instituição--*@
+        @using (Smc.Div("divAreaUsuario").CssClass("smc-login navbar-custom-menu smc-sga-aluno-usuario").Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid8_24, SMCSize.Grid6_24).Begin())
+        {
+
+            using (Smc.Div("divLoginProfessor").CssClass("smc-login-instituicao").Size(SMCSize.Grid15_24, SMCSize.Grid15_24, SMCSize.Grid14_24, SMCSize.Grid15_24).Begin())
+            {
+                @Html.Action("ModalSelecionarInstituicao", "Home", new { @area = "" })
+                @(Smc.Button("selecionarInstituicao").Size(SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid2_24, SMCSize.Grid2_24).CssClass("smc-estilo-botao-selecionar-instituicao smc-sga-aluno-remove").Type(SMCButtonType.Link).Url(Url.Action("ModalTrocarInstituicao", "Home", new { @area = "" })))
+            }
+
+            @*-- Área do usuário*@
+            <ul class="nav navbar-nav @SMCSizeHelper.GetSizeClasses(SMCSize.Grid7_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid9_24)">
+                <li>
+                    @*--janelas do menu superior--*@
+                    @*Smc.MenuFavoritos()*@
+                    @*@Smc.Button("open-favorites").CssClass("smc-usuario-favorito").Attribute("title", "Meus itens favoritos").Type(SMCButtonType.Link)*@
+                </li>
+
+                @*-- Usuário --*@
+
+                @(Smc.UserProfileWindow()
+                            .Buttons(b => b
+                            .ShowProfile()
+                            .ChangePassword()
+                            .Logout()))
+                <li>
+                    @Smc.Accessibility()
+                </li>
+
+                <li>
+                    @Smc.HelpWindow()
+                </li>
+            </ul>
+        }
+    </nav>
+</header>
