@@ -1,1 +1,33 @@
-/node_modules       
+# Node.js
+**/node_modules/
+**/package-lock.json
+
+# Build outputs
+**/dist/
+**/build/
+**/out-tsc/
+
+# .NET Build outputs
+**/bin/
+**/obj/
+**/packages/
+**/*.dll
+**/*.pdb
+**/*.exe
+**/*.cache
+**/*.Up2Date
+
+# IDEs
+**/.vs/
+**/.vscode/
+**/*.user
+**/*.suo
+**/*.userosscache
+**/*.sln.docstates
+
+# OS
+**/.DS_Store
+**/Thumbs.db
+
+# Root level - só o Client tem package-lock
+/package-lock.json
