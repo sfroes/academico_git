@@ -16,6 +16,11 @@
 **/*.exe
 **/*.cache
 **/*.Up2Date
+**/DesignTimeResolveAssemblyReferencesInput.cache
+**/*.csproj.AssemblyReference.cache
+**/*.csproj.CoreCompileInputs.cache
+**/*.csproj.FileListAbsolute.txt
+**/*.csproj.GenerateResource.cache
 
 # IDEs
 **/.vs/
