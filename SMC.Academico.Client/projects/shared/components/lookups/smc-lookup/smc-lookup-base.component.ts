@@ -76,7 +76,7 @@ export abstract class SmcLookupBaseComponent implements ControlValueAccessor, On
     if (v !== this._innerValue) {
       this._innerValue = v;
       this.onChangeCb(v);
-      if (this.lookup) {
+      if (this.lookup && this.lookup.selectedItem) {
         this.lookupCacheService.add(this.lookup.label, v, this.lookup.selectedItem.value);
       }
     }
@@ -146,8 +146,10 @@ export abstract class SmcLookupBaseComponent implements ControlValueAccessor, On
   async searchByKey(key: string) {
     if (this.lookup) {
       this.lookup.selectedItem = await this.lookupService.searchByKey(key);
-      this.onChangeCb(this.lookup.selectedItem.key);
-      this.lookupCacheService.add(this.lookup.label, this.lookup.selectedItem.key, this.lookup.selectedItem.value);
+      if (this.lookup.selectedItem) {
+        this.onChangeCb(this.lookup.selectedItem.key);
+        this.lookupCacheService.add(this.lookup.label, this.lookup.selectedItem.key, this.lookup.selectedItem.value);
+      }
     }
   }
 
@@ -165,15 +167,19 @@ export abstract class SmcLookupBaseComponent implements ControlValueAccessor, On
     this.changeDetectorRef.detectChanges();
     this.lookup.onValueChanged.subscribe(value => {
       this.onChangeCb(value);
-      this.lookupCacheService.add(this.lookup.label, this.lookup.selectedItem.key, this.lookup.selectedItem.value);
+      if (this.lookup.selectedItem) {
+        this.lookupCacheService.add(this.lookup.label, this.lookup.selectedItem.key, this.lookup.selectedItem.value);
+      }
     });
     this.lookup.onTextSearch.subscribe(text => {
       if (convertToBoolean(this.lookup.searchByKey) && isNaturalNumber(text)) {
         this.lookupService.searchByKey(text).then(result => {
           if (result) {
             this.lookup.selectedItem = result;
-            this.onChangeCb(this.lookup.selectedItem.key);
-            this.lookupCacheService.add(this.lookup.label, this.lookup.selectedItem.key, this.lookup.selectedItem.value);
+            if (this.lookup.selectedItem) {
+              this.onChangeCb(this.lookup.selectedItem.key);
+              this.lookupCacheService.add(this.lookup.label, this.lookup.selectedItem.key, this.lookup.selectedItem.value);
+            }
           } else {
             this.lookup.autoCompleteList = [];
           }

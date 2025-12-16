@@ -55,6 +55,13 @@ export class SmcLookupCicloLetivoComponent extends SmcLookupBaseComponent implem
   }
 
   async buscarDataSourceRegimeLetivo() {
-    this.dataSourceRegimeLetivo = await this.lookupCicloLetivoService.dataSourceRegimeLetivo();
+    try {
+      const result = await this.lookupCicloLetivoService.dataSourceRegimeLetivo();
+      this.dataSourceRegimeLetivo = result || [];
+      this.changeDetectorRef.detectChanges();
+    } catch (error) {
+      console.error('Erro ao buscar regime letivo:', error);
+      this.dataSourceRegimeLetivo = [];
+    }
   }
 }
