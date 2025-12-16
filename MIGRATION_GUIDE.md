@@ -159,7 +159,7 @@ npm run professor
 
 ---
 
-### **FASE 4: Angular 13 → 14**
+### **FASE 4: Angular 13 → 14** ✅ CONCLUÍDO
 
 #### Pré-requisitos
 - Node.js 14.15+, ou 16.10+
@@ -185,7 +185,7 @@ npm install angular-calendar@0.31.x --save
 
 ---
 
-### **FASE 5: Angular 14 → 15**
+### **FASE 5: Angular 14 → 15** ✅ CONCLUÍDO
 
 #### Pré-requisitos
 - Node.js 14.20+, 16.13+, ou 18.10+
