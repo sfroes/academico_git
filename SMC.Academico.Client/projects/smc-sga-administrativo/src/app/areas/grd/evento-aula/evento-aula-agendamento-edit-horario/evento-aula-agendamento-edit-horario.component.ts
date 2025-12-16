@@ -219,7 +219,7 @@ export class EventoAulaAgendamentoEditHorarioComponent implements AfterViewInit,
         seqColaboradorBanco: [prof.seqColaborador],
         seqColaboradorSubstituto: [prof.seqColaboradorSubstituto],
       });
-      colaboradores.push(groupProf);
+      colaboradores.push(groupProf as any);
     });
     return colaboradores;
   }

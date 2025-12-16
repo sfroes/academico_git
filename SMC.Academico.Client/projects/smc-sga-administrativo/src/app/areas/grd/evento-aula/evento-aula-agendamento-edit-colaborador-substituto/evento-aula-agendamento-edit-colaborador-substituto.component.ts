@@ -131,7 +131,7 @@ export class EventoAulaAgendamentoEditColaboradorSubstitutoComponent implements 
         //  asyncValidators: vinculoAtivoColaborador(this.service, () => this.recuperarPeriodo()),
         //}
       );
-      colaboradores.push(groupProf);
+      colaboradores.push(groupProf as any);
     });
     return colaboradores;
   }
@@ -148,7 +148,7 @@ export class EventoAulaAgendamentoEditColaboradorSubstitutoComponent implements 
       //  asyncValidators: vinculoAtivoColaborador(this.service, () => this.recuperarPeriodo()),
       //}
     );
-    control.push(groupProf);
+    control.push(groupProf as any);
   }
 
   getProfessores() {

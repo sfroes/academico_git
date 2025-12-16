@@ -89,7 +89,7 @@ export class EventoAulaAgendamentoAssociarProfessorComponent implements AfterVie
         const groupProf = this.fb.group({
           seq: [prof],
         });
-        colaboradores.push(groupProf);
+        colaboradores.push(groupProf as any);
       });
     }
     return colaboradores;
@@ -100,7 +100,7 @@ export class EventoAulaAgendamentoAssociarProfessorComponent implements AfterVie
     const groupProf = this.fb.group({
       seq: ['', Validators.required],
     });
-    control.push(groupProf);
+    control.push(groupProf as any);
   }
 
   getProfessores() {

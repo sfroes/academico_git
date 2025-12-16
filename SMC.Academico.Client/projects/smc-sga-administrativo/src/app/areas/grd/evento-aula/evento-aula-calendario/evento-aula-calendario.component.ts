@@ -107,6 +107,9 @@ export class EventoAulaCalendarioComponent implements OnInit, OnChanges {
     ) {
       return;
     }
+    // TODO: ngx-contextmenu incompatível com Angular 14+ - desabilitado temporariamente
+    // Alternativa: adicionar botão de ação no calendário
+    /*
     this.contextMenuService.show.next({
       contextMenu: this.menuContexto,
       event: $event,
@@ -114,6 +117,7 @@ export class EventoAulaCalendarioComponent implements OnInit, OnChanges {
     });
     $event.preventDefault();
     $event.stopPropagation();
+    */
   }
 
   async abriModalAgendamentoReduzido(event: any) {

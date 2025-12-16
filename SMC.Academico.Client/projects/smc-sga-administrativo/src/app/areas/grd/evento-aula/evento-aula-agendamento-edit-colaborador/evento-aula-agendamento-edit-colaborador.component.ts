@@ -130,7 +130,7 @@ export class EventoAulaAgendamentoEditColaboradorComponent implements AfterViewI
           seqColaboradorBanco: [prof.seqColaborador],
           seqColaboradorSubstituto: [prof.seqColaboradorSubstituto]
         });
-        colaboradores.push(groupProf);
+        colaboradores.push(groupProf as any);
       } else {
         const indexColaborador = this.dataSourceColaboradores.findIndex(f => f.key === prof.seqColaboradorSubstituto);
         this.dataSourceColaboradores.slice(indexColaborador, 1);
@@ -146,7 +146,7 @@ export class EventoAulaAgendamentoEditColaboradorComponent implements AfterViewI
       seqColaboradorBanco: [''],
       seqColaboradorSubstituto: [''],
     });
-    control.push(groupProf);
+    control.push(groupProf as any);
   }
 
   getProfessores() {
@@ -157,7 +157,7 @@ export class EventoAulaAgendamentoEditColaboradorComponent implements AfterViewI
         seqColaboradorBanco: [''],
         seqColaboradorSubstituto: [''],
       });
-      professores.push(groupProf);
+      professores.push(groupProf as any);
     }
     return professores.controls;
   }
