@@ -23,6 +23,7 @@
             "polyfills": "projects/smc-sga-administrativo/src/polyfills.ts",
             "tsConfig": "projects/smc-sga-administrativo/tsconfig.app.json",
             "aot": true,
+            "baseHref": "/Dev/SGA.Administrativo/App/",
             "assets": ["projects/smc-sga-administrativo/src/favicon.ico", "projects/smc-sga-administrativo/src/assets"],
             "styles": [
               "node_modules/angular-calendar/css/angular-calendar.css",
@@ -164,6 +165,7 @@
             "polyfills": "projects/smc-sga-aluno/src/polyfills.ts",
             "tsConfig": "projects/smc-sga-aluno/tsconfig.app.json",
             "aot": true,
+            "baseHref": "/Dev/SGA.Aluno/App/",
             "assets": ["projects/smc-sga-aluno/src/favicon.ico", "projects/smc-sga-aluno/src/assets"],
             "styles": [
               "node_modules/@po-ui/style/css/po-theme-default-variables.min.css",
@@ -293,6 +295,7 @@
             "polyfills": "projects/smc-sga-professor/src/polyfills.ts",
             "tsConfig": "projects/smc-sga-professor/tsconfig.app.json",
             "aot": true,
+            "baseHref": "/Dev/SGA.Professor/App/",
             "assets": ["projects/smc-sga-professor/src/favicon.ico", "projects/smc-sga-professor/src/assets"],
             "styles": [
               "node_modules/@po-ui/style/css/po-theme-default-variables.min.css",
