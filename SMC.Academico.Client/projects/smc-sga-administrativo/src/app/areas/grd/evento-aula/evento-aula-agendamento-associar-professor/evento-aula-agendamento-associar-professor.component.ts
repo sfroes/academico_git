@@ -18,9 +18,9 @@ import { EventoAulaService } from '../../services/evento-aula.service';
   styles: [],
 })
 export class EventoAulaAgendamentoAssociarProfessorComponent implements AfterViewInit {
-  dadosTurmaCabecalhoAssociarProfessor: EventoAulaTurmaCabecalhoAssociarProfessorModel;
-  seqTurma: string;
-  htmlDetalhe: SafeHtml;
+  dadosTurmaCabecalhoAssociarProfessor: EventoAulaTurmaCabecalhoAssociarProfessorModel = {} as any;
+  seqTurma: string = '';
+  htmlDetalhe: SafeHtml = '';
   formAssociar: FormGroup;
   validacaoAssociacaoProfessor$ = new BehaviorSubject(false);
   mensagemItensMasterDetail = 'Não existem itens cadastrados';

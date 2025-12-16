@@ -10,7 +10,7 @@ import {
   CalendarWeekViewBeforeRenderEvent,
 } from 'angular-calendar';
 import * as moment from 'moment';
-import { ContextMenuService } from 'ngx-contextmenu';
+import { ContextMenuComponent, ContextMenuService } from '@perfectmemory/ngx-contextmenu';
 import { SmcLoadService } from 'projects/shared/services/load/smc-load.service';
 import { environment } from 'projects/smc-sga-administrativo/src/environments/environment';
 import { EventoAulaModel } from '../../moldels/evento-aula.model';
@@ -33,7 +33,7 @@ export class EventoAulaCalendarioComponent implements OnInit, OnChanges {
   }
   @Input('e-eventos-turma') eventosTurma: EventoAulaModel[] = [];
   @ViewChild('modalAgendamentoDetalhes') modal: EventoAulaAgendamentoDetalhesComponent;
-  @ViewChild('menuBasico') menuContexto;
+  @ViewChild('menubasico') menuContexto!: ContextMenuComponent<Date>;
 
   colunasTabelaEventos: PoTableColumn[] = [
     { property: 'horaInicio', label: 'Hora inicio' },
@@ -43,7 +43,7 @@ export class EventoAulaCalendarioComponent implements OnInit, OnChanges {
   ];
   constructor(
     private router: Router,
-    private contextMenuService: ContextMenuService,
+    private contextMenuService: ContextMenuService<Date>,
     private dataService: EventoAulaDataService,
     private service: EventoAulaService,
     private loadingService: SmcLoadService
@@ -97,6 +97,7 @@ export class EventoAulaCalendarioComponent implements OnInit, OnChanges {
         algumaDivisaoCargaHorariaCompleta = true;
       }
     });
+
     if (
       domingo ||
       somenteLeitura ||
@@ -107,21 +108,39 @@ export class EventoAulaCalendarioComponent implements OnInit, OnChanges {
     ) {
       return;
     }
-    // TODO: ngx-contextmenu incompatível com Angular 14+ - desabilitado temporariamente
-    // Alternativa: adicionar botão de ação no calendário
-    /*
-    this.contextMenuService.show.next({
-      contextMenu: this.menuContexto,
-      event: $event,
-      item: date,
+
+    if (!this.menuContexto) {
+      return;
+    }
+
+    // Restaurado com @perfectmemory/ngx-contextmenu v15 (compatível com Angular 15+)
+    // A API mudou: agora usa show() como função em vez de Subject
+    this.contextMenuService.show(this.menuContexto, {
+      x: $event.clientX,
+      y: $event.clientY,
+      value: date,
     });
+
+    // FIX: A biblioteca está calculando a posição incorretamente
+    // Forçar o posicionamento correto manualmente
+    setTimeout(() => {
+      const menuElement = document.querySelector('context-menu-content') as HTMLElement;
+      if (menuElement) {
+        menuElement.style.position = 'fixed';
+        menuElement.style.top = `${$event.clientY}px`;
+        menuElement.style.left = `${$event.clientX}px`;
+        menuElement.style.zIndex = '9999';
+      }
+    }, 0);
+
     $event.preventDefault();
     $event.stopPropagation();
-    */
   }
 
   async abriModalAgendamentoReduzido(event: any) {
-    this.router.navigate([{ outlets: { modais: ['AddReduce', moment(event.item).format('YYYY-MM-DD')] } }], {
+    // API do @perfectmemory/ngx-contextmenu v15 usa event.value em vez de event.item
+    const date = event.value || event.item;
+    this.router.navigate([{ outlets: { modais: ['AddReduce', moment(date).format('YYYY-MM-DD')] } }], {
       queryParamsHandling: 'preserve',
     });
   }

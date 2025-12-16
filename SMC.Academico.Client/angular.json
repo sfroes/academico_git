@@ -32,7 +32,8 @@
               "projects/smc-sga-administrativo/src/styles.scss",
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/saga-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css"
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/@perfectmemory/ngx-contextmenu/src/assets/stylesheets/base.scss"
             ],
             "scripts": [
               "projects/smc-sga-administrativo/src/assets/recursos/node_modules/jquery/dist/jquery.js",

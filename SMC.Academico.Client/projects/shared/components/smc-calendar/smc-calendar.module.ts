@@ -8,7 +8,7 @@ import {
   DateAdapter,
   MOMENT,
 } from 'angular-calendar';
-import { ContextMenuModule } from 'ngx-contextmenu';
+import { ContextMenuModule } from '@perfectmemory/ngx-contextmenu';
 import { SmcButtonModule } from '../smc-button/smc-button.module';
 import { PoUiModule } from 'projects/shared/modules/po-ui.module';
 import { FormsModule } from '@angular/forms';

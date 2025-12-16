@@ -3,7 +3,7 @@ import { AbstractControl, ValidatorFn } from '@angular/forms';
 export function smcMax(value: number): ValidatorFn {
   return (c: AbstractControl): { [key: string]: number } | null => {
     const inputValue = +(c.value as string)?.replace(',', '.');
-    if (inputValue !== NaN && inputValue > value) {
+    if (!Number.isNaN(inputValue) && inputValue > value) {
       return { smcMax: inputValue };
     }
     return null;

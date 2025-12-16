@@ -46,7 +46,7 @@ export class EventoAulaAgendamentoEditHorarioComponent implements AfterViewInit,
   dataObrigatoria: boolean = false;
   turmaIntegradaSEF: boolean = true;
   inicioPeriodoLetivo: string;
-  fimPeriodoLetivo: string;
+  fimPeriodoLetivo: string ;
   tipoRecorrenciaDisabled = true;
   camposDisabled = true;
   dataSourceTipoOcorrencia: SmcKeyValueModel[] = [];

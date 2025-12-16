@@ -68,9 +68,7 @@ export class SmcSelectComponent implements OnInit, OnDestroy, ControlValueAccess
   }
   set value(val: string) {
     this._value = val;
-    if (!isNullOrEmpty(val)) {
-      this.select?.element.nativeElement.classList.add('ng-dirty');
-    }
+    // Removed: this.select?.element.nativeElement - property 'element' no longer exists in PO-UI 15+
     this.onChangeCb(val);
   }
 
@@ -91,9 +89,7 @@ export class SmcSelectComponent implements OnInit, OnDestroy, ControlValueAccess
 
   writeValue(obj: any): void {
     this._value = obj;
-    if (isNullOrEmpty(obj)) {
-      this.select?.element.nativeElement.classList.remove('ng-dirty');
-    }
+    // Removed: this.select?.element.nativeElement - property 'element' no longer exists in PO-UI 15+
     this.onChange.next(obj);
   }
   registerOnChange(fn: any): void {
@@ -114,15 +110,9 @@ export class SmcSelectComponent implements OnInit, OnDestroy, ControlValueAccess
     Promise.resolve().then(() => {
       const hostControl = this.injector.get(NgControl);
       this._subscriptions.push(
-        hostControl.statusChanges.subscribe(status => {
-          if (status === 'INVALID') {
-            this.select?.element.nativeElement.classList.remove('ng-valid');
-            this.select?.element.nativeElement.classList.add('ng-invalid');
-          }
-          if (status === 'VALID') {
-            this.select?.element.nativeElement.classList.remove('ng-invalid');
-            this.select?.element.nativeElement.classList.add('ng-valid');
-          }
+        hostControl.statusChanges.subscribe(() => {
+          // Removed: this.select?.element.nativeElement - property 'element' no longer exists in PO-UI 15+
+          // The validation classes are now handled automatically by Angular forms
         })
       );
     });

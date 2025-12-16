@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ContextMenuModule } from 'ngx-contextmenu';
+import { ContextMenuModule } from '@perfectmemory/ngx-contextmenu';
 import { PoUiModule } from 'projects/shared/modules/po-ui.module';
 
 @NgModule({
@@ -17,7 +17,7 @@ import { PoUiModule } from 'projects/shared/modules/po-ui.module';
     FormsModule,
     ReactiveFormsModule,
     PoUiModule,
-    ContextMenuModule.forRoot(),
+    ContextMenuModule,
   ],
   exports: [
     BrowserModule,

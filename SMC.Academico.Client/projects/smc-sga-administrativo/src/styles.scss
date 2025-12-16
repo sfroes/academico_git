@@ -3,6 +3,49 @@ $smc-caminho-fonte-aplicacao: "../../Fonts/";
 @import "../../shared/css/smc-estilo-base.scss";
 @import "../../../../SMC.Academico.Recursos/SGA.Administrativo/Css/identidade/_smc-identidade-visual.scss";
 @import "../../../../../Framework4.2/SMC.Recursos/Css/sass-padrao/font-awesome/scss/font-awesome.scss";
+@import "../../../node_modules/@perfectmemory/ngx-contextmenu/src/assets/stylesheets/base.scss";
+
+/* Forçar visibilidade do menu de contexto */
+context-menu-content {
+  position: fixed !important;
+  z-index: 9999 !important;
+  display: block !important;
+}
+
+.ngx-contextmenu {
+  position: fixed !important;
+  z-index: 9999 !important;
+
+  ul.ngx-contextmenu--dropdown-menu {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    z-index: 9999 !important;
+    background-color: white !important;
+    border: 1px solid rgba(0, 0, 0, 0.18) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18) !important;
+    min-width: 160px !important;
+    padding: 5px 0 !important;
+  }
+
+  li {
+    display: block !important;
+
+    [role='menuitem'] {
+      display: block !important;
+      padding: 6px 20px !important;
+      cursor: pointer !important;
+      color: #70757e !important;
+      white-space: nowrap !important;
+
+      &:hover {
+        background-color: #f8f8f8 !important;
+        color: #5a6473 !important;
+      }
+    }
+  }
+}
 
 select.po-select:focus + .po-select-container {
   .po-select-button {

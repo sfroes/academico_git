@@ -28,7 +28,7 @@ import { EventoAulaTurmaCabecalhoAssociarProfessorModel } from '../moldels/event
   providedIn: 'root',
 })
 export class EventoAulaService {
-  private _refresh = new Subject();
+  private _refresh = new Subject<void>();
   get refresh() {
     return this._refresh;
   }

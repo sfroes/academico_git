@@ -8,9 +8,9 @@ import { SmcTokensSeguranca } from 'projects/shared/models/smc-tokens-seguranca.
   providedIn: 'root',
 })
 export class SituacaoAulaLoteDataService {
-  $atualizarListaAulas = new Subject();
+  $atualizarListaAulas = new Subject<void>();
   $carregando = new Subject<boolean>();
-  $filtra = new Subject();
+  $filtra = new Subject<void>();
 
   private _dataSourceSituacaoAula: SmcKeyValueModel[] = [
     { key: '1', value: 'Executada' },
