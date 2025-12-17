@@ -249,17 +249,28 @@ npm install angular-calendar@0.31.x --save
 
 ---
 
-### **FASE 7: Angular 16 → 17**
+### **FASE 7: Angular 16 → 17** ✅ CONCLUÍDO
 
 #### Pré-requisitos
-- Node.js 18.13+, ou 20.9+
+- Node.js 18.13+ ou 22.x (usado: 22.21.0)
 - TypeScript 5.2+
 
-#### Comandos
-```powershell
-ng update @angular/core@17 @angular/cli@17
-ng update @angular/cdk@17
-```
+#### Status: MIGRADO COM SUCESSO
+- ✅ package.json atualizado para Angular 17.3.12
+- ✅ @angular/cdk atualizado para 17.3.10
+- ✅ @angular/cli atualizado para 17.3.17
+- ✅ @perfectmemory/ngx-contextmenu atualizado para 17.0.3
+- ✅ @po-ui/ng-components atualizado para 17.26.28
+- ✅ primeng atualizado para 17.18.11
+- ✅ angular-calendar mantido em 0.31.1
+- ✅ TypeScript atualizado para 5.4.5
+- ✅ zone.js atualizado para 0.14.10
+- ✅ npm install com --legacy-peer-deps
+- ✅ Build testado com sucesso (~19s)
+- ✅ Dev server testado com sucesso
+
+#### Correções Necessárias
+- ✅ Atualizado `import 'zone.js/dist/zone'` → `import 'zone.js'` nos 3 projetos (administrativo, aluno, professor)
 
 #### Breaking Changes Principais
 - **Nova sintaxe de controle de fluxo** (OPCIONAL - antiga ainda funciona):
@@ -268,6 +279,7 @@ ng update @angular/cdk@17
   - `@switch` ao invés de `*ngSwitch`
 - **Deferrable Views**: `@defer` para lazy loading
 - **Vite** como opção de build
+- **zone.js imports**: Mudou de `zone.js/dist/zone` para `zone.js`
 
 #### Exemplo de Nova Sintaxe (OPCIONAL)
 ```typescript
@@ -280,11 +292,11 @@ ng update @angular/cdk@17
 }
 ```
 
-#### Bibliotecas
-```powershell
-npm install primeng@17.18.x --save
-npm install angular-calendar@0.32.x --save
-```
+#### Observações
+- Warnings de SASS deprecation (não bloqueante)
+- Warning de CommonJS para `moment` (não bloqueante)
+- Build warning de budget exceeded (2.70 MB vs 2.00 MB)
+- **Não migrado para nova sintaxe** de controle de fluxo (opcional)
 
 ---
 
@@ -457,12 +469,38 @@ export class AppModule {}
 
 ---
 
+## � PROGRESSO DA MIGRAÇÃO
+
+### ✅ Fases Concluídas (7 de 9)
+1. ✅ Angular 10 → 11
+2. ✅ Angular 11 → 12
+3. ✅ Angular 12 → 13
+4. ✅ Angular 13 → 14
+5. ✅ Angular 14 → 15
+6. ✅ Angular 15 → 16
+7. ✅ Angular 16 → 17 **← VERSÃO ATUAL**
+
+### ⏭️ Próximas Fases
+8. ⏸️ Angular 17 → 18
+9. ⏸️ Angular 18 → 19
+
+**Status:** 78% concluído (7 de 9 etapas)
+**Versão atual:** Angular 17.3.12
+**Última atualização:** 17/12/2025
+
+---
+
 ## 📞 PRÓXIMOS PASSOS
 
-1. **Criar backup** (conforme início deste guia)
-2. **Verificar Node.js** está na versão adequada
-3. **Começar com Angular 10 → 11**
-4. **Testar cada etapa** antes de avançar
+### Para Angular 17 → 18:
+1. **Node.js**: 18.19+ ou 20.9+ (você já tem 22.21.0 ✅)
+2. **TypeScript**: 5.4+
+3. Executar `ng update @angular/core@18 @angular/cli@18`
+
+### Para Angular 18 → 19:
+1. **Node.js**: 18.19+, 20.9+, ou 22.0+
+2. **TypeScript**: 5.5+
+3. Nova Resource API e LinkedSignal
 
 ---
 
@@ -475,7 +513,8 @@ export class AppModule {}
 
 ---
 
-**Última atualização:** Dezembro 2025
+**Última atualização:** 17 de Dezembro de 2025
 **Projeto:** SMC Acadêmico
-**Versão atual:** Angular 10.0.14
-**Versão alvo:** Angular 19
+**Versão inicial:** Angular 10.0.14
+**Versão atual:** Angular 17.3.12
+**Versão alvo final:** Angular 19

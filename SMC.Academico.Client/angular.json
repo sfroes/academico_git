@@ -96,18 +96,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "administrativo:build"
+            "buildTarget": "administrativo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "administrativo:build:production"
+              "buildTarget": "administrativo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "administrativo:build"
+            "buildTarget": "administrativo:build"
           }
         },
         "test": {
@@ -229,18 +229,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "aluno:build"
+            "buildTarget": "aluno:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "aluno:build:production"
+              "buildTarget": "aluno:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "aluno:build"
+            "buildTarget": "aluno:build"
           }
         },
         "test": {
@@ -359,18 +359,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "professor:build"
+            "buildTarget": "professor:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "professor:build:production"
+              "buildTarget": "professor:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "professor:build"
+            "buildTarget": "professor:build"
           }
         },
         "test": {
