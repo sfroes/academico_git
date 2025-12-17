@@ -12,6 +12,7 @@ import { EventoAulaService } from '../../services/evento-aula.service';
 @Component({
   selector: 'sga-evento-aula-agendamento-simulacao',
   templateUrl: './evento-aula-agendamento-simulacao.component.html',
+  standalone: false,
 })
 export class EventoAulaAgendamentoSimulacaoComponent implements OnInit {
   colunasTabela: PoTableColumn[] = [

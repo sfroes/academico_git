@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, ViewChild } fro
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PoTableColumn } from '@po-ui/ng-components';
-import * as moment from 'moment';
+import moment from 'moment';
 import { SmcNotificationService } from 'projects/shared/services/notification/smc-notification.service';
 import { isNullOrEmpty } from 'projects/shared/utils/util';
 import { environment } from 'projects/smc-sga-administrativo/src/environments/environment';
@@ -20,6 +20,7 @@ import { SmcButtonComponent } from './../../../../../../../shared/components/smc
   selector: 'sga-evento-aula-agendamento-delete',
   templateUrl: './evento-aula-agendamento-delete.component.html',
   styles: [],
+  standalone: false,
 })
 export class EventoAulaAgendamentoDeleteComponent implements AfterViewInit, OnDestroy {
   modeloCrud: EventoAulaAgendamentoDeleteModel;
@@ -233,7 +234,7 @@ export class EventoAulaAgendamentoDeleteComponent implements AfterViewInit, OnDe
       this.classeMensagemInformativa = 'smc-sga-mensagem-local-erro';
       this.formExclusao.setErrors({ nenhumRegistro: true });
     } else if (this.validarSituacaoEventoAula()) {
-      this.mensagemInformativa = `Alteração ou exclusão do horário de aula não permitida. Existem aulas que estão com a 
+      this.mensagemInformativa = `Alteração ou exclusão do horário de aula não permitida. Existem aulas que estão com a
         situação de "apurada" ou "não executada" dentro do período informado.`;
       this.classeMensagemInformativa = 'smc-sga-mensagem-local-erro';
       this.formExclusao.setErrors({ situacaoAulaInvalida: true });

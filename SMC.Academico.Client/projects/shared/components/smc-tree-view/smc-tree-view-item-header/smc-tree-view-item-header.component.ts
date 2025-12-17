@@ -7,6 +7,7 @@ import { SmcTreeViewItem } from '../smc-tree-view-item/smc-tree-view-item.interf
   selector: 'smc-tree-view-item-header',
   templateUrl: './smc-tree-view-item-header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class SmcTreeViewItemHeaderComponent {
   private _selectableSingleItem: boolean = false;

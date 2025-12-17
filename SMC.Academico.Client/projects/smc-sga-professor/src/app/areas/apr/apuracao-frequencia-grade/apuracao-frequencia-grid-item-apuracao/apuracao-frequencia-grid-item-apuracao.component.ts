@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import * as moment from 'moment';
+import moment from 'moment';
 import { SmcModalComponent } from 'projects/shared/components/smc-modal/smc-modal.component';
 import { isNullOrEmpty } from 'projects/shared/utils/util';
 import { Subscription } from 'rxjs';

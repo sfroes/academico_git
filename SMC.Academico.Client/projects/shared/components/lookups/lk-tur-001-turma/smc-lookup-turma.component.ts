@@ -11,6 +11,7 @@ import { isNullOrEmpty } from 'projects/shared/utils/util';
 @Component({
   selector: 'smc-lookup-turma',
   templateUrl: './smc-lookup-turma.component.html',
+  standalone: false,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

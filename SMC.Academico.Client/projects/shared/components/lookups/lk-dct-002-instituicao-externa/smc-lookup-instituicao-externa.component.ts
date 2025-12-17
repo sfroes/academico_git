@@ -18,6 +18,7 @@ import { SmcLookupCacheService } from '../smc-lookup/smc-lookup-cache.service';
       multi: true,
     },
   ],
+  standalone: false,
 })
 export class SmcLookupInstituicaoExternaComponent extends SmcLookupBaseComponent implements OnInit {
   listaBuscaSimples: SmcKeyValueModel[] = [];

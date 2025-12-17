@@ -16,6 +16,7 @@ import { EventoAulaService } from '../../services/evento-aula.service';
   selector: 'sga-evento-aula-agendamento-associar-professor',
   templateUrl: './evento-aula-agendamento-associar-professor.component.html',
   styles: [],
+  standalone: false,
 })
 export class EventoAulaAgendamentoAssociarProfessorComponent implements AfterViewInit {
   dadosTurmaCabecalhoAssociarProfessor: EventoAulaTurmaCabecalhoAssociarProfessorModel = {} as any;

@@ -9,6 +9,7 @@ import { EventoAulaDataService } from './../../services/evento-aula-data.service
 @Component({
   selector: 'sga-evento-aula-divisao-turma',
   templateUrl: './evento-aula-divisao-turma.component.html',
+  standalone: false,
 })
 export class EventoAulaDivisaoTurmaComponent implements OnInit {
   checekd = true;

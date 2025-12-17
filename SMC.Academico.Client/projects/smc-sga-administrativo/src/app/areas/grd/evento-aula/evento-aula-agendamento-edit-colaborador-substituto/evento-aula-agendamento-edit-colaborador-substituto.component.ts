@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import * as moment from 'moment';
+import moment from 'moment';
 import { isNullOrEmpty } from 'projects/shared/utils/util';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { SmcKeyValueModel } from '../../../../../../../shared/models/smc-key-value.model';
@@ -20,6 +20,7 @@ import { SmcNotificationService } from './../../../../../../../shared/services/n
   selector: 'sga-evento-aula-agendamento-edit-colaborador-substituto',
   templateUrl: './evento-aula-agendamento-edit-colaborador-substituto.component.html',
   styles: [],
+  standalone: false,
 })
 export class EventoAulaAgendamentoEditColaboradorSubstitutoComponent implements AfterViewInit, OnDestroy {
   formEdit: FormGroup;

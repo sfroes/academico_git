@@ -15,6 +15,7 @@ import { EventoAulaService } from '../../services/evento-aula.service';
   selector: 'sga-evento-aula-bi-tree-local',
   templateUrl: './evento-aula-bi-tree-local.component.html',
   providers: [SmcTreeViewService],
+  standalone: false,
 })
 export class EventoAulaBiTreeLocalComponent implements OnInit, OnDestroy {
   dataSourceLocal: SmcTreeViewItem[];

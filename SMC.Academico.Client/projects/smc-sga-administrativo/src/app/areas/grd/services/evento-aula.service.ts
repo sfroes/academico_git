@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { PoCheckboxGroupOption } from '@po-ui/ng-components';
-import * as moment from 'moment';
+import moment from 'moment';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { v4 as uuid } from 'uuid';

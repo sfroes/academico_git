@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-import * as moment from 'moment';
+import moment from 'moment';
 import { distinctArray, isNullOrEmpty } from 'projects/shared/utils/util';
 import { environment } from 'projects/smc-sga-professor/src/environments/environment';
 import { ApuracaoFrequenciaAlunoModel } from '../models/apuracao-frequencia-aluno.model';

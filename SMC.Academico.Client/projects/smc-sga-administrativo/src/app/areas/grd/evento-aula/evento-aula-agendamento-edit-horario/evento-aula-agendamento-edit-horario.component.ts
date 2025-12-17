@@ -10,7 +10,7 @@ import {
 import { FormGroup, FormBuilder, Validators, FormArray, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PoCheckboxGroupOption } from '@po-ui/ng-components';
-import * as moment from 'moment';
+import moment from 'moment';
 import { SmcModalComponent } from 'projects/shared/components/smc-modal/smc-modal.component';
 import { SmcKeyValueModel } from 'projects/shared/models/smc-key-value.model';
 import { SmcNotificationService } from 'projects/shared/services/notification/smc-notification.service';
@@ -31,6 +31,7 @@ import { SmcButtonComponent } from 'projects/shared/components/smc-button/smc-bu
 @Component({
   selector: 'sga-evento-aula-agendamento-edit-horario',
   templateUrl: './evento-aula-agendamento-edit-horario.component.html',
+  standalone: false,
 })
 export class EventoAulaAgendamentoEditHorarioComponent implements AfterViewInit, OnDestroy {
   formEdit: FormGroup;

@@ -3,6 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, 
 @Component({
   selector: 'smc-button',
   templateUrl: './smc-button.component.html',
+  standalone: false,
 })
 export class SmcButtonComponent implements AfterViewInit {
   private _disabled?: boolean = false;

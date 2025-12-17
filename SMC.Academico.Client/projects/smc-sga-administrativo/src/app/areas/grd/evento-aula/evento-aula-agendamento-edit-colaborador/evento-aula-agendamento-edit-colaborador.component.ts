@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChi
 import { FormGroup, FormBuilder, Validators, FormArray, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PoCheckboxGroupOption, PoTableComponent } from '@po-ui/ng-components';
-import * as moment from 'moment';
+import moment from 'moment';
 import { SmcModalComponent } from 'projects/shared/components/smc-modal/smc-modal.component';
 import { SmcKeyValueModel } from 'projects/shared/models/smc-key-value.model';
 import { SmcNotificationService } from 'projects/shared/services/notification/smc-notification.service';
@@ -23,6 +23,7 @@ import { SmcButtonComponent } from './../../../../../../../shared/components/smc
   selector: 'sga-evento-aula-agendamento-edit-colaborador',
   templateUrl: './evento-aula-agendamento-edit-colaborador.component.html',
   styles: [],
+  standalone: false,
 })
 export class EventoAulaAgendamentoEditColaboradorComponent implements AfterViewInit, OnDestroy {
   formEdit: FormGroup;

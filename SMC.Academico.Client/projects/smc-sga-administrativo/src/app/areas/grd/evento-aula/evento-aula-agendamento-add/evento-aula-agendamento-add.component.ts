@@ -12,7 +12,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PoCheckboxGroupOption, PoSelectOption } from '@po-ui/ng-components';
 import { CalendarEvent } from 'angular-calendar';
-import * as moment from 'moment';
+import moment from 'moment';
 import { SmcKeyValueModel } from 'projects/shared/models/smc-key-value.model';
 import { SmcNotificationService } from 'projects/shared/services/notification/smc-notification.service';
 import { SmcModalComponent } from '../../../../../../../shared/components/smc-modal/smc-modal.component';
@@ -32,6 +32,7 @@ import { SmcButtonComponent } from './../../../../../../../shared/components/smc
   selector: 'sga-evento-aula-agendamento-add',
   templateUrl: './evento-aula-agendamento-add.component.html',
   styles: [],
+  standalone: false,
 })
 export class EventoAulaAgendamentoAddComponent implements OnInit, OnDestroy, AfterViewInit {
   formAgendamento: FormGroup;

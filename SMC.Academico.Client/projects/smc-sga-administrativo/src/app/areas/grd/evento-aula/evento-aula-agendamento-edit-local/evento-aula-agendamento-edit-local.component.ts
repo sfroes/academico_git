@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import * as moment from 'moment';
+import moment from 'moment';
 import { SmcModalComponent } from 'projects/shared/components/smc-modal/smc-modal.component';
 import { SmcKeyValueModel } from 'projects/shared/models/smc-key-value.model';
 import { SmcNotificationService } from 'projects/shared/services/notification/smc-notification.service';
@@ -17,6 +17,7 @@ import { SmcButtonComponent } from './../../../../../../../shared/components/smc
   selector: 'sga-evento-aula-agendamento-edit-local',
   templateUrl: './evento-aula-agendamento-edit-local.component.html',
   styles: [],
+  standalone: false,
 })
 export class EventoAulaAgendamentoEditLocalComponent implements AfterViewInit, OnDestroy {
   formEdit: FormGroup;
@@ -230,7 +231,7 @@ export class EventoAulaAgendamentoEditLocalComponent implements AfterViewInit, O
         s => s.situacaoApuracaoFrequencia === 'Executada' || s.situacaoApuracaoFrequencia === 'Não executada'
       )
     ) {
-      this.mensagemInformativa = `Alteração ou exclusão do local de aula não permitida. Existem aulas que estão com a 
+      this.mensagemInformativa = `Alteração ou exclusão do local de aula não permitida. Existem aulas que estão com a
                                   situação de "apurada" ou "não executada" dentro do período informado.`;
       this.classeMensagemInformativa = 'smc-sga-mensagem-local-erro';
       this.formEdit.setErrors({ situacaoEventoInvalida: true });

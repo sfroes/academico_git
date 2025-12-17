@@ -6,6 +6,7 @@ import { isNullOrEmpty } from 'projects/shared/utils/util';
 @Component({
   selector: 'sga-evento-aula',
   templateUrl: './evento-aula.component.html',
+  standalone: false,
 })
 export class EventoAulaComponent implements OnInit {
   addAgendamento: boolean = false;

@@ -26,6 +26,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'smc-select',
   templateUrl: './smc-select.component.html',
+  standalone: false,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

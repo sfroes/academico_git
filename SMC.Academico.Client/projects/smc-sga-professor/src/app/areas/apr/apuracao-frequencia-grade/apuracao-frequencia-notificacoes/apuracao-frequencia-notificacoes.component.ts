@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as moment from 'moment';
+import moment from 'moment';
 import { PrimeNgMultiselectOptionsModel } from 'projects/shared/models/primeng-multiselect-options.model';
 import { distinctArray } from 'projects/shared/utils/util';
 import { ApuracaoFrequenciaDataService } from '../services/apuracao-frequencia-data.service';

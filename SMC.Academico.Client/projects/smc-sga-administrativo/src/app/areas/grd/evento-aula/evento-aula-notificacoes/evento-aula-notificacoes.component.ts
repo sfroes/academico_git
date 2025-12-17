@@ -5,11 +5,12 @@ import { EventoAulaNotificacaoModel } from '../../moldels/evento-aula-notificaca
 import { EventoAulaService } from '../../services/evento-aula.service';
 import { isNullOrEmpty } from 'projects/shared/utils/util';
 import { SmcKeyValueModel } from 'projects/shared/models/smc-key-value.model';
-import * as moment from 'moment';
+import moment from 'moment';
 
 @Component({
   selector: 'sga-evento-aula-notificacoes',
   templateUrl: './evento-aula-notificacoes.component.html',
+  standalone: false,
 })
 export class EventoAulaNotificacoesComponent implements OnInit {
   exibir = false;
@@ -39,7 +40,7 @@ export class EventoAulaNotificacoesComponent implements OnInit {
             seqDivisaoTurma: evento.seqDivisaoTurma,
             seqHorarioAgd: evento.seqHorarioAgd,
             codigoRecorrencia: evento.codigoRecorrencia,
-            descricao: `O{s} {x} agendamento{s} de ${evento.diaSemanaDescricao} de ${evento.horaInicio} à ${evento.horaFim}, 
+            descricao: `O{s} {x} agendamento{s} de ${evento.diaSemanaDescricao} de ${evento.horaInicio} à ${evento.horaFim},
             referente{s} a divisão de turma ${divisao.grupoFormatado}, {es} sem local vinculado.`,
             dataOrdenacao: moment(moment(evento.data).format('YYYY-MM-DD') + evento.horaInicio, 'YYYY-MM-DDhh:mm')
               .toDate()
@@ -52,8 +53,8 @@ export class EventoAulaNotificacoesComponent implements OnInit {
             seqDivisaoTurma: evento.seqDivisaoTurma,
             seqHorarioAgd: evento.seqHorarioAgd,
             codigoRecorrencia: evento.codigoRecorrencia,
-            descricao: `O{s} {x} agendamento{s} de ${evento.diaSemanaDescricao} de ${evento.horaInicio} à ${evento.horaFim}, 
-                        referente{s} à divisão de turma ${divisao.grupoFormatado}, {es} sem pesquisador(es)/professor(es) vinculado(s) por não alocação 
+            descricao: `O{s} {x} agendamento{s} de ${evento.diaSemanaDescricao} de ${evento.horaInicio} à ${evento.horaFim},
+                        referente{s} à divisão de turma ${divisao.grupoFormatado}, {es} sem pesquisador(es)/professor(es) vinculado(s) por não alocação
                         ou por não possuir vinculo ativo durante o período de agendamento.`,
             dataOrdenacao: moment(moment(evento.data).format('YYYY-MM-DD') + evento.horaInicio, 'YYYY-MM-DDhh:mm')
               .toDate()

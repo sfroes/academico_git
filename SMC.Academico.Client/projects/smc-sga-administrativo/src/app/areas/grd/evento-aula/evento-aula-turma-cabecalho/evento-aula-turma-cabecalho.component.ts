@@ -6,6 +6,7 @@ import { EventoAulaService } from '../../services/evento-aula.service';
 @Component({
   selector: 'sga-evento-aula-turma-cabecalho',
   templateUrl: './evento-aula-turma-cabecalho.component.html',
+  standalone: false,
 })
 export class EventoAulaTurmaCabecalhoComponent implements OnInit {
   @Input('e-dadosCabecalho') dadosCabecalho: EventoAulaTurmaCabecalhoModel;

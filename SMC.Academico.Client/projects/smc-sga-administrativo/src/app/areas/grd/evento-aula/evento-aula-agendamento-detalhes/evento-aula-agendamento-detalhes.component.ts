@@ -12,6 +12,7 @@ import { SmcKeyValueModel } from 'projects/shared/models/smc-key-value.model';
   selector: 'sga-evento-aula-agendamento-detalhes',
   templateUrl: './evento-aula-agendamento-detalhes.component.html',
   styles: [],
+  standalone: false,
 })
 export class EventoAulaAgendamentoDetalhesComponent implements OnInit, AfterViewInit {
   descricaoDivisaoFormatadaSeleciona: string = '';

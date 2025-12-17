@@ -9,7 +9,7 @@ import {
   CalendarView,
   CalendarWeekViewBeforeRenderEvent,
 } from 'angular-calendar';
-import * as moment from 'moment';
+import moment from 'moment';
 import { ContextMenuComponent, ContextMenuService } from '@perfectmemory/ngx-contextmenu';
 import { SmcLoadService } from 'projects/shared/services/load/smc-load.service';
 import { environment } from 'projects/smc-sga-administrativo/src/environments/environment';
@@ -21,6 +21,7 @@ import { EventoAulaAgendamentoDetalhesComponent } from '../evento-aula-agendamen
 @Component({
   selector: 'sga-evento-aula-calendario',
   templateUrl: './evento-aula-calendario.component.html',
+  standalone: false,
 })
 export class EventoAulaCalendarioComponent implements OnInit, OnChanges {
   visaoPadrao: CalendarView = CalendarView.Month;

@@ -8,6 +8,7 @@ import { GradeHorarioCompartilhadoAddComponent } from '../grade-horario-comparti
   selector: 'sga-grade-horario-compartilhada-filtro',
   templateUrl: './grade-horario-compartilhada-filtro.component.html',
   styles: [],
+  standalone: false,
 })
 export class GradeHorarioCompartilhadaFiltroComponent implements OnInit {
   formFiltro: FormGroup;

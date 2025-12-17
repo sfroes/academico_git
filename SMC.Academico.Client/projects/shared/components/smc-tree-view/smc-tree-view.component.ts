@@ -18,6 +18,7 @@ import { SmcTreeViewService } from './services/smc-tree-view.service';
   templateUrl: './smc-tree-view.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [SmcTreeViewService],
+  standalone: false,
 })
 export class SmcTreeViewComponent extends SmcTreeViewBaseComponent implements OnInit {
   get hasItems() {

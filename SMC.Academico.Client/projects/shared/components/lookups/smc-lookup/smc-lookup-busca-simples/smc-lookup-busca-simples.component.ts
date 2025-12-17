@@ -19,6 +19,7 @@ import { filter, debounceTime, tap } from 'rxjs/operators';
   selector: 'smc-lookup-busca-simples',
   templateUrl: './smc-lookup-busca-simples.component.html',
   styles: [],
+  standalone: false,
 })
 export class SmcLookupBuscaSimplesComponent implements OnInit, OnChanges {
   valueSelecioando: string;

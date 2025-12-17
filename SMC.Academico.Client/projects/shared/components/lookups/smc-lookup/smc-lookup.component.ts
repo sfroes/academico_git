@@ -12,6 +12,7 @@ import { SmcLookupCacheService } from './smc-lookup-cache.service';
 @Component({
   selector: 'smc-lookup',
   templateUrl: './smc-lookup.component.html',
+  standalone: false,
 })
 export class SmcLookupComponent implements OnInit, OnChanges {
   /**

@@ -9,6 +9,7 @@ import { convertToBoolean } from '../../../utils/util';
   selector: 'smc-tree-view-item',
   templateUrl: './smc-tree-view-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
   animations: [
     trigger('toggleBody', [
       state(

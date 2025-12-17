@@ -9,6 +9,7 @@ import { SmcPagerDataModel } from '../../models/smc-pager-data.model';
   selector: 'smc-table',
   templateUrl: './smc-table.component.html',
   styles: [],
+  standalone: false,
 })
 export class SmcTableComponent implements OnInit {
   currentPage = 1;

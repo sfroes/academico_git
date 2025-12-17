@@ -6,6 +6,7 @@ import { SMCPageSetting } from '../../models/smc-page-setting.model';
 @Component({
   selector: 'smc-pager',
   templateUrl: './smc-pager.component.html',
+  standalone: false,
 })
 export class SmcPagerComponent implements OnInit, OnDestroy {
   pages: PoSelectOption[];

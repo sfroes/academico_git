@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'sga-evento-aula-lista-divisao-turma',
   templateUrl: './evento-aula-lista-divisao-turma.component.html',
+  standalone: false,
 })
 export class EventoAulaListaDivisaoTurmaComponent implements OnInit {
   colunasTabela: PoTableColumn[] = [

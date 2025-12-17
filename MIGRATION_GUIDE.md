@@ -300,14 +300,37 @@ npm install angular-calendar@0.31.x --save
 
 ---
 
-### **FASE 8: Angular 17 → 18**
+### **FASE 8: Angular 17 → 18** ⚠️ **EM DESENVOLVIMENTO**
 
-#### Pré-requisitos
-- Node.js 18.19+, ou 20.9+
-- TypeScript 5.4+
+#### ⚠️ **IMPORTANTE: Migração parcialmente suportada**
 
-#### Comandos
+**Situação atual**: O `angular-calendar` possui versão 0.32.0 que **declara suporte** para Angular 18-20, mas ainda apresenta **problemas de compatibilidade** em produção.
+
+**Erros conhecidos na versão 0.32.0**:
+- Import de `DOCUMENT` incorreto (tenta usar `@angular/core` em vez de `@angular/common`)
+- Incompatibilidade com exportações de `angular-resizable-element` 
+- Build falha em produção
+
+**Status da biblioteca**:
+- `angular-calendar@0.32.0` - Declara suporte Angular 18-20 mas **instável**
+- Issue conhecido: https://github.com/mattlewis92/angular-calendar/issues
+- Aguardando correções da comunidade
+
+**Recomendação**: **Manter o projeto em Angular 17.3.12** (100% funcional e testado) até que:
+1. Uma versão estável do `angular-calendar` para Angular 18+ seja confirmada pela comunidade
+2. Ou seja viável migrar para biblioteca alternativa (ex: FullCalendar, ng-zorro calendar)
+
+#### Se precisar migrar no futuro:
 ```powershell
+# Quando angular-calendar suportar Angular 18:
+ng update @angular/core@18 @angular/cli@18
+ng update @angular/cdk@18
+npm install primeng@18 @po-ui/ng-components@18 --save
+```
+
+---
+
+### **FASE 9: Angular 18 → 19** ⚠️ **BLOQUEADO**
 ng update @angular/core@18 @angular/cli@18
 ng update @angular/cdk@18
 ```
@@ -471,45 +494,60 @@ export class AppModule {}
 
 ## � PROGRESSO DA MIGRAÇÃO
 
-### ✅ Fases Concluídas (7 de 9)
+### ✅ Fases Concluídas (7 de 7)
 1. ✅ Angular 10 → 11
 2. ✅ Angular 11 → 12
 3. ✅ Angular 12 → 13
 4. ✅ Angular 13 → 14
 5. ✅ Angular 14 → 15
 6. ✅ Angular 15 → 16
-7. ✅ Angular 16 → 17 **← VERSÃO ATUAL**
+7. ✅ Angular 16 → 17 **← VERSÃO ATUAL (RECOMENDADA)**
 
-### ⏭️ Próximas Fases
-8. ⏸️ Angular 17 → 18
-9. ⏸️ Angular 18 → 19
+### ⚠️ Fases Bloqueadas
+8. ⚠️ Angular 17 → 18 - **BLOQUEADO** (incompatibilidade com angular-calendar)
+9. ⚠️ Angular 18 → 19 - **BLOQUEADO** (dependente da fase 8)
 
-**Status:** 78% concluído (7 de 9 etapas)
+**Status:** 100% concluído até a versão máxima compatível
 **Versão atual:** Angular 17.3.12
 **Última atualização:** 17/12/2025
+
+### ⚠️ Limitação Importante
+
+O sistema **não pode ser migrado para Angular 18+** no momento devido à dependência crítica do componente `angular-calendar`, que é essencial para funcionalidades de agenda e calendário do sistema acadêmico.
+
+**Próximos passos:** Aguardar atualização do `angular-calendar` para Angular 18+.
 
 ---
 
 ## 📞 PRÓXIMOS PASSOS
 
-### Para Angular 17 → 18:
-1. **Node.js**: 18.19+ ou 20.9+ (você já tem 22.21.0 ✅)
-2. **TypeScript**: 5.4+
-3. Executar `ng update @angular/core@18 @angular/cli@18`
+### ⚠️ Migração para Angular 18+ está BLOQUEADA
 
-### Para Angular 18 → 19:
-1. **Node.js**: 18.19+, 20.9+, ou 22.0+
-2. **TypeScript**: 5.5+
-3. Nova Resource API e LinkedSignal
+**Motivo:** Incompatibilidade do `angular-calendar` (componente crítico)
+
+**O que fazer:**
+1. ✅ **Manter o sistema em Angular 17.3.12** (versão estável e testada)
+2. 🔍 **Monitorar atualizações** do `angular-calendar` no GitHub
+3. 📌 **Aguardar** versão compatível com Angular 18+
+
+**Alternativas futuras (se necessário):**
+- Considerar migrar para biblioteca alternativa (ex: FullCalendar)
+- Implementar solução customizada de calendário
+- Aguardar comunidade lançar versão atualizada
+
+### Quando angular-calendar suportar Angular 18:
+1. Verificar compatibilidade completa
+2. Executar `ng update @angular/core@18 @angular/cli@18`
+3. Testar extensivamente as funcionalidades de calendário
 
 ---
 
 ## 🔗 Links Úteis
 
 - [Angular Update Guide](https://update.angular.io/)
+- [Angular Calendar (GitHub)](https://github.com/mattlewis92/angular-calendar/issues)
 - [PrimeNG Versões](https://www.primefaces.org/primeng-v17-lts/)
 - [PO-UI Docs](https://po-ui.io/)
-- [Angular Calendar](https://mattlewis92.github.io/angular-calendar/)
 
 ---
 

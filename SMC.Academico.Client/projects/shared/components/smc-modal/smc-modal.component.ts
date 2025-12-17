@@ -12,6 +12,7 @@ import { SmcModalService } from './smc-modal-service';
 @Component({
   selector: 'smc-modal',
   templateUrl: './smc-modal.component.html',
+  standalone: false,
 })
 export class SmcModalComponent extends SmcModalBaseComponent {
   @ViewChild('modalContent', { read: ElementRef }) modalContent: ElementRef;

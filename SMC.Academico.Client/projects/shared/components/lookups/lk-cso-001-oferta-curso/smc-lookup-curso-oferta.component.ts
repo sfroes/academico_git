@@ -17,6 +17,7 @@ import { SmcLookupCursoOfertaService } from './smc-lookup-curso-oferta.service';
       multi: true,
     },
   ],
+  standalone: false,
 })
 export class SmcLookupCursoOfertaComponent extends SmcLookupBaseComponent implements OnInit {
   colunasBuscaAvancada: PoTableColumn[] = [

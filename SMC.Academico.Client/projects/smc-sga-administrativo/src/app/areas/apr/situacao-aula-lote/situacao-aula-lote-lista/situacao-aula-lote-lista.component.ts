@@ -10,6 +10,7 @@ import { distinctArray } from 'projects/shared/utils/util';
 @Component({
   selector: 'sga-situacao-aula-lote-lista',
   templateUrl: './situacao-aula-lote-lista.component.html',
+  standalone: false,
 })
 export class SituacaoAulaLoteListaComponent implements OnInit {
   colunas: PoTableColumn[] = [
@@ -143,7 +144,7 @@ export class SituacaoAulaLoteListaComponent implements OnInit {
       numFalatas += faltas;
     });
     if (numFalatas > 0) {
-      this.mensagemAssert = `A situação de ${aulasSelecionadas.length} aulas serão alteradas para "${acaoSelecionada}" e ${numFalatas} 
+      this.mensagemAssert = `A situação de ${aulasSelecionadas.length} aulas serão alteradas para "${acaoSelecionada}" e ${numFalatas}
                              faltas serão apagadas. Deseja continuar?`;
     } else {
       this.mensagemAssert = `A situação de ${aulasSelecionadas.length} aulas serão alteradas para "${acaoSelecionada}". Deseja continhar?`;
@@ -174,10 +175,10 @@ export class SituacaoAulaLoteListaComponent implements OnInit {
     }
 
     if (niveis.length === 0) {
-      this.mensagemAssert = `A correção da apuração de ${aulasSelecionadas.length} aulas selecionadas poderá ser realizada num prazo 
+      this.mensagemAssert = `A correção da apuração de ${aulasSelecionadas.length} aulas selecionadas poderá ser realizada num prazo
                              de ${todosPrazosAlteracao[0]} horas, deseja continuar?`;
     } else {
-      this.mensagemAssert = `A correção da apuração de ${aulasSelecionadas.length} aulas selecionadas poderá 
+      this.mensagemAssert = `A correção da apuração de ${aulasSelecionadas.length} aulas selecionadas poderá
                              ser realizada num prazo de ${niveis.join(', ')} horas, deseja continuar?`;
     }
     this.modalConfimacao.open();
@@ -199,7 +200,7 @@ export class SituacaoAulaLoteListaComponent implements OnInit {
     let retorno = false;
     if (aulasSelecionadas.length > 0) {
       const codigoTumas = distinctArray(aulasSelecionadas.map(m => m.codigoDivisaoTurma));
-      this.mensagemAlert = `Alteração não permitida, existe aluno com histórico escolar na(s) turma(s): 
+      this.mensagemAlert = `Alteração não permitida, existe aluno com histórico escolar na(s) turma(s):
                             ${codigoTumas.join(' - ')}`;
       this.modalAlert.open();
       retorno = true;

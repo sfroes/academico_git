@@ -1,5 +1,5 @@
 import { ValidatorFn, AbstractControl, ValidationErrors, AsyncValidatorFn, FormGroup } from '@angular/forms';
-import * as moment from 'moment';
+import moment from 'moment';
 import { isNullOrEmpty } from 'projects/shared/utils/util';
 import { Observable, of } from 'rxjs';
 import { delay, map, tap } from 'rxjs/operators';

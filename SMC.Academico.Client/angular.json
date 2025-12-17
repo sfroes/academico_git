@@ -15,24 +15,31 @@
       "prefix": "sga",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
             "outputPath": "dist/administrativo",
             "index": "projects/smc-sga-administrativo/src/index.html",
             "main": "projects/smc-sga-administrativo/src/main.ts",
-            "polyfills": "projects/smc-sga-administrativo/src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/smc-sga-administrativo/tsconfig.app.json",
-            "aot": true,
             "baseHref": "/Dev/SGA.Administrativo/App/",
-            "assets": ["projects/smc-sga-administrativo/src/favicon.ico", "projects/smc-sga-administrativo/src/assets"],
+            "assets": [
+              "projects/smc-sga-administrativo/src/favicon.ico",
+              "projects/smc-sga-administrativo/src/assets",
+              {
+                "glob": "**/*",
+                "input": "SMC.Academico.Recursos/Content/Fonts",
+                "output": "Content/Fonts"
+              }
+            ],
             "styles": [
               "node_modules/angular-calendar/css/angular-calendar.css",
               "node_modules/@po-ui/style/css/po-theme-default-variables.min.css",
               "node_modules/@po-ui/style/css/po-theme-core.min.css",
               "projects/smc-sga-administrativo/src/styles.scss",
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/saga-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",
+              
+              
               "node_modules/@perfectmemory/ngx-contextmenu/src/assets/stylesheets/base.scss"
             ],
             "scripts": [
@@ -63,21 +70,9 @@
                   "with": "projects/smc-sga-administrativo/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": {
-                "scripts": true,
-                "styles": {
-                  "minify": true,
-                  "inlineCritical": false
-                },
-                "fonts": false
-              },
+              "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -158,22 +153,29 @@
       "prefix": "sga",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
             "outputPath": "dist/aluno",
             "index": "projects/smc-sga-aluno/src/index.html",
             "main": "projects/smc-sga-aluno/src/main.ts",
-            "polyfills": "projects/smc-sga-aluno/src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/smc-sga-aluno/tsconfig.app.json",
-            "aot": true,
             "baseHref": "/Dev/SGA.Aluno/App/",
-            "assets": ["projects/smc-sga-aluno/src/favicon.ico", "projects/smc-sga-aluno/src/assets"],
+            "assets": [
+              "projects/smc-sga-aluno/src/favicon.ico",
+              "projects/smc-sga-aluno/src/assets",
+              {
+                "glob": "**/*",
+                "input": "SMC.Academico.Recursos/Content/Fonts",
+                "output": "Content/Fonts"
+              }
+            ],
             "styles": [
               "node_modules/@po-ui/style/css/po-theme-default-variables.min.css",
               "node_modules/@po-ui/style/css/po-theme-core.min.css",
               "projects/smc-sga-aluno/src/styles.scss",
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              
               "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": [
@@ -196,21 +198,9 @@
                   "with": "projects/smc-sga-aluno/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": {
-                "scripts": true,
-                "styles": {
-                  "minify": true,
-                  "inlineCritical": false
-                },
-                "fonts": false
-              },
+              "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -288,22 +278,29 @@
       "prefix": "sga",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
             "outputPath": "dist/Professor",
             "index": "projects/smc-sga-professor/src/index.html",
             "main": "projects/smc-sga-professor/src/main.ts",
-            "polyfills": "projects/smc-sga-professor/src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/smc-sga-professor/tsconfig.app.json",
-            "aot": true,
             "baseHref": "/Dev/SGA.Professor/App/",
-            "assets": ["projects/smc-sga-professor/src/favicon.ico", "projects/smc-sga-professor/src/assets"],
+            "assets": [
+              "projects/smc-sga-professor/src/favicon.ico",
+              "projects/smc-sga-professor/src/assets",
+              {
+                "glob": "**/*",
+                "input": "SMC.Academico.Recursos/Content/Fonts",
+                "output": "Content/Fonts"
+              }
+            ],
             "styles": [
               "node_modules/@po-ui/style/css/po-theme-default-variables.min.css",
               "node_modules/@po-ui/style/css/po-theme-core.min.css",
               "projects/smc-sga-professor/src/styles.scss",
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              
               "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": [
@@ -326,21 +323,9 @@
                   "with": "projects/smc-sga-professor/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": {
-                "scripts": true,
-                "styles": {
-                  "minify": true,
-                  "inlineCritical": false
-                },
-                "fonts": false
-              },
+              "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",

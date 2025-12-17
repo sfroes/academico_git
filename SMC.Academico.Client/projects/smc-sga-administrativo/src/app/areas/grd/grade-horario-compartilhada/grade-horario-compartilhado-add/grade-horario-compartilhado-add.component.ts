@@ -6,6 +6,7 @@ import { SmcModalComponent } from './../../../../../../../shared/components/smc-
   selector: 'sga-grade-horario-compartilhado-add',
   templateUrl: './grade-horario-compartilhado-add.component.html',
   styles: [],
+  standalone: false,
 })
 export class GradeHorarioCompartilhadoAddComponent implements OnInit {
   formGrade: FormGroup;

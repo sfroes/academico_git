@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { PoMultiselectOption } from '@po-ui/ng-components';
-import * as moment from 'moment';
+import moment from 'moment';
 import { PrimeNgMultiselectOptionsModel } from 'projects/shared/models/primeng-multiselect-options.model';
 import { isNullOrEmpty, runOnNexEventLoop } from 'projects/shared/utils/util';
 import { Observable, Subscription } from 'rxjs';

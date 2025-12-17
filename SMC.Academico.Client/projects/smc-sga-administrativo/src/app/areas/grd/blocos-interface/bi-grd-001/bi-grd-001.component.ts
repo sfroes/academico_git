@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'sga-bi-grd-001',
   templateUrl: './bi-grd-001.component.html',
+  standalone: false,
 })
 export class BiGrd001Component implements OnInit {
   /**

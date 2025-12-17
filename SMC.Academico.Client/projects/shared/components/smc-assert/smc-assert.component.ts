@@ -3,7 +3,8 @@ import { PoModalAction, PoModalComponent } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-smc-assert',
-  templateUrl: './smc-assert.component.html'
+  templateUrl: './smc-assert.component.html',
+  standalone: false,
 })
 export class SmcAssertComponent {
   @Input() title = '[title]';

@@ -9,7 +9,7 @@ import { EventoAulaService } from '../../services/evento-aula.service';
 import { EventoAulaDataService } from '../../services/evento-aula-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { isNullOrEmpty } from 'projects/shared/utils/util';
-import * as moment from 'moment';
+import moment from 'moment';
 import { EventoAulaSimulacaoModel } from '../../moldels/evento-aula-simulacao.model';
 import { SmcNotificationService } from 'projects/shared/services/notification/smc-notification.service';
 import { EventoAulaDivisaoTurmaModel } from './../../moldels/evento-aula-divisao-turma.model';
@@ -23,6 +23,7 @@ import { SmcButtonComponent } from './../../../../../../../shared/components/smc
   selector: 'sga-evento-aula-agendamento-add-reduzido-min',
   templateUrl: './evento-aula-agendamento-add-reduzido.component.html',
   styles: [],
+  standalone: false,
 })
 export class EventoAulaAgendamentoAddReduzidoComponent implements AfterViewInit, OnDestroy {
   private _subs: Subscription[] = [];

@@ -18,6 +18,7 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'smc-lookup-busca-avancada',
   templateUrl: './smc-lookup-busca-avancada.component.html',
+  standalone: false,
 })
 export class SmcLookupBuscaAvancadaComponent implements OnChanges {
   searched = false;

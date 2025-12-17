@@ -6,6 +6,7 @@ import { SmcCalendarCustomFormatter } from './smc-calendar-custom-formatter';
 @Component({
   selector: 'smc-calendar',
   templateUrl: './smc-calendar.component.html',
+  standalone: false,
   providers: [
     {
       provide: CalendarDateFormatter,

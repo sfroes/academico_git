@@ -12,6 +12,7 @@ import { conditionalValidator } from 'projects/shared/validators/smc-validator.d
 @Component({
   selector: 'sga-situacao-aula-lote-filtro',
   templateUrl: './situacao-aula-lote-filtro.component.html',
+  standalone: false,
 })
 export class SituacaoAulaLoteFiltroComponent implements OnInit, OnDestroy {
   formFiltro: FormGroup;

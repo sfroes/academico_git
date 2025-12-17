@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'sga-evento-aula-filtro',
   templateUrl: './evento-aula-filtro.component.html',
+  standalone: false,
 })
 export class EventoAulaFiltroComponent implements OnInit, OnDestroy {
   formFiltro: FormGroup;

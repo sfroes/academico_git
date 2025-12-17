@@ -17,6 +17,7 @@ import { SmcKeyValueModel } from 'projects/shared/models/smc-key-value.model';
 @Component({
   selector: 'sga-evento-aula-listar',
   templateUrl: './evento-aula-listar.component.html',
+  standalone: false,
 })
 export class EventoAulaListarComponent implements OnInit {
   view: CalendarView = CalendarView.Month;
