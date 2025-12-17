@@ -1,8 +1,9 @@
-import { CommonModule, registerLocaleData } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import localePtExtra from '@angular/common/locales/extra/pt';
 import localePt from '@angular/common/locales/pt';
 import { LOCALE_ID, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { PoNotificationService } from '@po-ui/ng-components';
 import { AuthenticationInterceptor } from 'projects/shared/authentication/authentication.interceptor';
 import { SmcLoadService } from 'projects/shared/load/smc-load.service';
@@ -22,7 +23,7 @@ registerLocaleData(localePt, 'pt-BR', localePtExtra);
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, MenuComponent, FooterComponent],
-  imports: [CommonModule, AppRoutingModule, SharedModule, HomeModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, HomeModule],
   bootstrap: [AppComponent],
   providers: [
     SmcNotificationService,

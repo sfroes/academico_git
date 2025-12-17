@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContextMenuModule } from '@perfectmemory/ngx-contextmenu';
 import { PoUiModule } from 'projects/shared/modules/po-ui.module';
@@ -11,7 +10,6 @@ import { PoUiModule } from 'projects/shared/modules/po-ui.module';
   declarations: [],
   imports: [
     CommonModule,
-    BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
@@ -20,7 +18,7 @@ import { PoUiModule } from 'projects/shared/modules/po-ui.module';
     ContextMenuModule,
   ],
   exports: [
-    BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,

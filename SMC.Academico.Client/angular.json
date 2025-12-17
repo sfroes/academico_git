@@ -73,7 +73,7 @@
               },
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
+
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -206,7 +206,7 @@
               },
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
+
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -336,7 +336,7 @@
               },
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
+
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -407,7 +407,6 @@
       }
     }
   },
-  "defaultProject": "professor",
   "cli": {
     "analytics": "2751c81f-9592-4058-88b7-e53da5dcc42e"
   }

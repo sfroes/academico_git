@@ -213,28 +213,39 @@ npm install angular-calendar@0.31.x --save
 
 ---
 
-### **FASE 6: Angular 15 → 16**
+### **FASE 6: Angular 15 → 16** ✅ CONCLUÍDO
 
 #### Pré-requisitos
-- Node.js 16.14+, ou 18.10+
+- Node.js 18.10+ ou 22.x (usado: 22.21.0)
 - TypeScript 4.9.3+
 
-#### Comandos
-```powershell
-ng update @angular/core@16 @angular/cli@16
-ng update @angular/cdk@16
-```
+#### Status: MIGRADO COM SUCESSO
+- ✅ package.json atualizado para Angular 16.2.12
+- ✅ @angular/cdk atualizado para 16.2.14
+- ✅ @perfectmemory/ngx-contextmenu atualizado para 16.0.2
+- ✅ @po-ui/ng-components atualizado para 16.16.0
+- ✅ primeng atualizado para 16.9.x
+- ✅ angular-calendar atualizado para 0.31.1
+- ✅ TypeScript 4.9.5
+- ✅ zone.js atualizado para 0.13.3
+- ✅ npm install com --legacy-peer-deps
+- ✅ Build testado com sucesso (~16s)
+
+#### Correções Necessárias
+- ❌ Removido `extractCss` do angular.json (obsoleto)
+- ✅ Corrigido `SmcCalendarCustomFormatter`: Injetado `DateAdapter` no construtor
+- ✅ Removido import desnecessário em `boolean.pipe.ts`
 
 #### Breaking Changes Principais
 - **Signals**: Introduzido (novo sistema de reatividade)
 - **Required Inputs**: `@Input({ required: true })`
 - **Self-closing tags**: Suporte para `<component />`
+- **extractCss**: Removido do angular.json (agora é comportamento padrão)
 
-#### Bibliotecas
-```powershell
-npm install primeng@16.9.x --save
-npm install angular-calendar@0.31.x --save
-```
+#### Observações
+- Warnings de SASS deprecation (não bloqueante)
+- Warning de CommonJS para `moment` (não bloqueante)
+- Build warning de budget exceeded (2.52 MB vs 2.00 MB)
 
 ---
 

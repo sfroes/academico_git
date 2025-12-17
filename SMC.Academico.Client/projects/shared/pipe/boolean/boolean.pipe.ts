@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { CalendarWeekViewHourSegmentComponent } from 'angular-calendar/modules/week/calendar-week-view-hour-segment.component';
 
 @Pipe({
   name: 'boolean',
