@@ -1,0 +1,12 @@
+diff --git a/node_modules/angular-draggable-droppable/fesm2022/angular-draggable-droppable.mjs b/node_modules/angular-draggable-droppable/fesm2022/angular-draggable-droppable.mjs
+index 0f10ea4..17b76cf 100644
+--- a/node_modules/angular-draggable-droppable/fesm2022/angular-draggable-droppable.mjs
++++ b/node_modules/angular-draggable-droppable/fesm2022/angular-draggable-droppable.mjs
+@@ -1,5 +1,6 @@
+ import * as i0 from '@angular/core';
+-import { Injectable, inject, ElementRef, Directive, EventEmitter, Renderer2, NgZone, ViewContainerRef, DOCUMENT, Output, Input, NgModule } from '@angular/core';
++import { Injectable, inject, ElementRef, Directive, EventEmitter, Renderer2, NgZone, ViewContainerRef, Output, Input, NgModule } from '@angular/core';
++import { DOCUMENT } from '@angular/common';
+ import { Subject, Observable, ReplaySubject, merge, combineLatest, fromEvent } from 'rxjs';
+ import { filter, mergeMap, startWith, map, share, takeUntil, take, takeLast, count, pairwise, distinctUntilChanged } from 'rxjs/operators';
+ import autoScroll from '@mattlewis92/dom-autoscroller';

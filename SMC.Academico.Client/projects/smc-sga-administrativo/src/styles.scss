@@ -1,9 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 $smc-caminho-fonte-aplicacao: "../../../SMC.Academico.Recursos/Content/Fonts/";
-@import "../../shared/css/smc-estilo-base.scss";
-@import "../../../../SMC.Academico.Recursos/SGA.Administrativo/Css/identidade/_smc-identidade-visual.scss";
-@import "../../../../../Framework4.2/SMC.Recursos/Css/sass-padrao/font-awesome/scss/font-awesome.scss";
-@import "../../../node_modules/@perfectmemory/ngx-contextmenu/src/assets/stylesheets/base.scss";
+@import "../../shared/css/smc-estilo-base";
+@import "../../../../SMC.Academico.Recursos/Content/Css/identidade/_smc-identidade-visual";
+@import "../../../node_modules/@perfectmemory/ngx-contextmenu/src/assets/stylesheets/base";
+
+// Fonte sf-ui-display - TEMPORARIAMENTE DESABILITADA (problema de caminho no Angular 19)
+// @font-face {
+//   font-family: "sf_ui_displayregular";
+//   src: url("../../../SMC.Academico.Recursos/Content/Fonts/sf-ui-display-regular-webfont.woff") format('woff');
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
 /* Forçar visibilidade do menu de contexto */
 context-menu-content {

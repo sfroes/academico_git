@@ -20,7 +20,7 @@ $smc-caminho-fonte-login: "../../Objectstore/General/" !default;
 
 
 // Font-faces
-@include font-face($smc-caminho-fonte-aplicacao, "sf_ui_displayregular", "sf-ui-display-regular-webfont");
+// @include font-face($smc-caminho-fonte-aplicacao, "sf_ui_displayregular", "sf-ui-display-regular-webfont");
 
 // dentro das fontes ( CAMINHO DA FONTE, NOME CHAMADO NA APLICAÇÃO, NOME DO ARQUIVO )
 @include font-face($smc-caminho-fonte-aplicacao, "SegoeLight", "segoewp-light-webfont");

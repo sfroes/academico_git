@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "../../../../SMC.Academico.Recursos/Content/Css/identidade/_smc-identidade-visual.scss";
-@import "../../../../../Framework4.2/SMC.Recursos/Css/sass-padrao/font-awesome/scss/font-awesome.scss";
+// Definir variáveis necessárias para Font Awesome antes do import
+$path-awesome: "../fonts" !default;
+$fa-version: "4.7.0" !default;
+
+@import "../../../../SMC.Academico.Recursos/Content/Css/identidade/_smc-identidade-visual";
+@import "../../../../../Framework4.2/SMC.Recursos/Css/sass-padrao/font-awesome/scss/font-awesome";
 
 :root {
   --color-input-border-text-focusable: #ececec;
