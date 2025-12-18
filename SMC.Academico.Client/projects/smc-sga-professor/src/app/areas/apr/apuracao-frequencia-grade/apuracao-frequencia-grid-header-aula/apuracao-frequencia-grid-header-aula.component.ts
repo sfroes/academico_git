@@ -11,6 +11,7 @@ import { SmcButtonComponent } from 'projects/shared/components/smc-button/smc-bu
 @Component({
   selector: 'sga-apuracao-frequencia-grid-header-aula',
   templateUrl: './apuracao-frequencia-grid-header-aula.component.html',
+  standalone: false,
 })
 export class ApuracaoFrequenciaGridHeaderAulaComponent implements AfterViewChecked, OnInit {
   toggleMenu = false;

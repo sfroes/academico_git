@@ -7,7 +7,8 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'smc-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass'],
-  providers: [ FrontService ]
+  providers: [ FrontService ],
+  standalone: false,
 })
 export class HeaderComponent implements OnInit {
   content: any;

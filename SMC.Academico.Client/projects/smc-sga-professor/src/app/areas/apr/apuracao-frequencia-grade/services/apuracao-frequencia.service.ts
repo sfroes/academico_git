@@ -194,8 +194,8 @@ export class ApuracaoFrequenciaService {
     });
   }
 
-  private criarApuracores(seqAlunoHistoricoCicloLetivo: string, model: ApuracaoFrequenciaApuracaoModel[]) {
-    const apuracoes = this.fb.array([]);
+  private criarApuracores(seqAlunoHistoricoCicloLetivo: string, model: ApuracaoFrequenciaApuracaoModel[]): FormArray<FormGroup> {
+    const apuracoes = this.fb.array<FormGroup>([]);
     model.reverse().forEach(f => {
       apuracoes.push(
         this.fb.group({

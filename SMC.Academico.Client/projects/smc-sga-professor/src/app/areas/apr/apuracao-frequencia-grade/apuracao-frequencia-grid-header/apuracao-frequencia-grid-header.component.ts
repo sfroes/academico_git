@@ -7,6 +7,7 @@ import { ApuracaoFrequenciaDataService } from '../services/apuracao-frequencia-d
 @Component({
   selector: 'sga-apuracao-frequencia-grid-header',
   templateUrl: './apuracao-frequencia-grid-header.component.html',
+  standalone: false,
   styles: [],
 })
 export class ApuracaoFrequenciaGridHeaderComponent implements OnInit {

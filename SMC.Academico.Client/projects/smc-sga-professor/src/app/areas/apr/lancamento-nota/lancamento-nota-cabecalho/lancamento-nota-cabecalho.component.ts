@@ -5,6 +5,7 @@ import { PoModalComponent, PoModalAction } from '@po-ui/ng-components';
 @Component({
   selector: 'app-lancamento-nota-cabecalho',
   templateUrl: './lancamento-nota-cabecalho.component.html',
+  standalone: false,
 })
 export class LancamentoNotaCabecalhoComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer) {}

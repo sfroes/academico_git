@@ -24,8 +24,8 @@ export class LancamentoNotaMapService {
     });
   }
 
-  mapearFormAlunos(model: LancamentoNotaModel) {
-    const arrayAluno = this.formBuilder.array([]);
+  mapearFormAlunos(model: LancamentoNotaModel): FormArray<FormGroup> {
+    const arrayAluno = this.formBuilder.array<FormGroup>([]);
     model.alunos.forEach(aluno => {
       const groupAluno = this.formBuilder.group({
         seqAlunoHistorico: [aluno.seqAlunoHistorico],
@@ -38,8 +38,8 @@ export class LancamentoNotaMapService {
     return arrayAluno;
   }
 
-  mapearFormApuracoes(apuracoes: LancamentoNotaAlunoApuracaoModel[], avaliacoes: LancamentoNotaAvaliacaoModel[]) {
-    const apuracoesForm = this.formBuilder.array([]);
+  mapearFormApuracoes(apuracoes: LancamentoNotaAlunoApuracaoModel[], avaliacoes: LancamentoNotaAvaliacaoModel[]): FormArray<FormGroup> {
+    const apuracoesForm = this.formBuilder.array<FormGroup>([]);
     apuracoes.forEach(apuracao => {
       const avaliacao = avaliacoes.filter(f => f.seqAplicacaoAvaliacao === apuracao.seqAplicacaoAvaliacao)[0];
       const controle = this.formBuilder.group({

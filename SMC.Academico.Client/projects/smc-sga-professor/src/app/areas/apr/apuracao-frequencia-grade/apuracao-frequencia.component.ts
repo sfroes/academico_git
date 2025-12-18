@@ -16,6 +16,7 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'sga-apuracao-frequencia',
   templateUrl: './apuracao-frequencia.component.html',
+  standalone: false,
 })
 export class ApuracaoFrequenciaComponent implements OnInit, OnDestroy {
   maximizar = false;

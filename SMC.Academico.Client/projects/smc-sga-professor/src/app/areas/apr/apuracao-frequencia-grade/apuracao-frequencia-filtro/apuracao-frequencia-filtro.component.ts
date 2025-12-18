@@ -17,6 +17,7 @@ import { ApuracaoFrequenciaDataService } from '../services/apuracao-frequencia-d
 @Component({
   selector: 'sga-apuracao-frequencia-filtro',
   templateUrl: './apuracao-frequencia-filtro.component.html',
+  standalone: false,
 })
 export class ApuracaoFrequenciaFiltroComponent implements OnInit, OnDestroy {
   @Input() maximizar: boolean;

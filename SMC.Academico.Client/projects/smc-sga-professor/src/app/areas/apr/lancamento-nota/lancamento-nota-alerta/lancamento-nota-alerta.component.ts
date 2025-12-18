@@ -3,7 +3,8 @@ import { PoModalComponent, PoModalAction } from '@po-ui/ng-components';
 
 @Component({
     selector: 'app-lancamento-nota-alerta',
-    templateUrl: './lancamento-nota-alerta.component.html'
+    templateUrl: './lancamento-nota-alerta.component.html',
+standalone: false,
 })
 export class LancamentoNotaAlertaComponent implements OnInit {
     constructor() { }

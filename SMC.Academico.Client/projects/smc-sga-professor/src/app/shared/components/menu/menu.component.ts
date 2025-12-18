@@ -7,6 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'smc-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.sass'],
+  standalone: false,
   providers: [FrontService]
 })
 export class MenuComponent implements OnInit {

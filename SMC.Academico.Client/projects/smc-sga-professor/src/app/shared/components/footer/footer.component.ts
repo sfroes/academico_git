@@ -6,6 +6,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'smc-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.sass'],
+  standalone: false,
   providers: [ FrontService ]
 })
 export class FooterComponent implements OnInit {

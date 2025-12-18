@@ -14,6 +14,7 @@ import { SmcButtonComponent } from 'projects/shared/components/smc-button/smc-bu
 @Component({
   selector: 'sga-apuracao-frequencia-grid-item-apuracao',
   templateUrl: './apuracao-frequencia-grid-item-apuracao.component.html',
+  standalone: false,
 })
 export class ApuracaoFrequenciaGridItemApuracaoComponent implements OnInit, OnDestroy {
   classe:

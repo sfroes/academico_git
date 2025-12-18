@@ -9,7 +9,8 @@ import { LancamentoNotaMapService } from '../services/lancamento-nota-map.servic
 
 @Component({
   selector: 'app-lancamento-nota-observacao',
-  templateUrl: './lancamento-nota-observacao.component.html'
+  templateUrl: './lancamento-nota-observacao.component.html',
+  standalone: false,
 })
 export class LancamentoNotaObservacaoComponent implements OnInit {
   @Input() diarioFechado: boolean;

@@ -6,6 +6,7 @@ import { ApuracaoFrequenciaDataService } from '../services/apuracao-frequencia-d
 @Component({
   selector: 'sga-apuracao-frequencia-cabecalho',
   templateUrl: './apuracao-frequencia-cabecalho.component.html',
+  standalone: false,
 })
 export class ApuracaoFrequenciaCabecalhoComponent implements OnInit {
   get descricaoOrigemAvaliacao$() {

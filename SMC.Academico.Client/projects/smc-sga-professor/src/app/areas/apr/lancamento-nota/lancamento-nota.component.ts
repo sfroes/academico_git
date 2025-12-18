@@ -25,6 +25,7 @@ import { SmcAssertComponent } from 'projects/shared/components/smc-assert/smc-as
   selector: 'app-lancamento-nota',
   templateUrl: './lancamento-nota.component.html',
   styleUrls: ['./lancamento-nota.component.scss'],
+  standalone: false,
 })
 export class LancamentoNotaComponent implements OnInit {
   get descricaoComponenteSafeHtml() {

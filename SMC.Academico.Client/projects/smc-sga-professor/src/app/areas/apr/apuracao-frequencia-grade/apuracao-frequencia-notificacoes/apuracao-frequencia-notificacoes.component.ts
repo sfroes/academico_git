@@ -9,6 +9,7 @@ import { ApuracaoFrequenciaAulaModel } from './../models/apuracao-frequencia-aul
   selector: 'sga-apuracao-frequencia-notificacoes',
   templateUrl: './apuracao-frequencia-notificacoes.component.html',
   styles: [],
+  standalone: false,
 })
 export class ApuracaoFrequenciaNotificacoesComponent implements OnInit {
   exibir = false;

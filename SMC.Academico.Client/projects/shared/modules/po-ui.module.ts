@@ -13,7 +13,7 @@ import {
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, PoFieldModule, PoModalModule, PoDropdownModule, PoDialogModule, PoTabsModule, PoTooltipModule ],
+  imports: [CommonModule, PoFieldModule, PoModalModule, PoLoadingModule, PoDropdownModule, PoDialogModule, PoTabsModule, PoTableModule, PoTooltipModule ],
   exports: [
     PoFieldModule,
     PoModalModule,
@@ -22,7 +22,7 @@ import {
     PoDialogModule,
     PoTabsModule,
     PoTableModule,
-    PoTooltipModule 
+    PoTooltipModule
   ],
 })
 export class PoUiModule {}

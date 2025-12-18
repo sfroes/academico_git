@@ -8,6 +8,7 @@ import { ApuracaoFrequenciaDataService } from '../services/apuracao-frequencia-d
 @Component({
   selector: 'sga-apuracao-frequencia-grid-itens',
   templateUrl: './apuracao-frequencia-grid-itens.component.html',
+  standalone: false,
 })
 export class ApuracaoFrequenciaGridItensComponent implements OnInit {
   get alunos$() {

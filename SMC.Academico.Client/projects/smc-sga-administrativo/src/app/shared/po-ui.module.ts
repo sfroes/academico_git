@@ -7,11 +7,13 @@ import {
   PoDropdownModule,
   PoDialogModule,
   PoTabsModule,
+  PoTableModule,
+  PoTooltipModule
 } from '@po-ui/ng-components';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, PoFieldModule, PoModalModule, PoDropdownModule, PoDialogModule, PoTabsModule],
-  exports: [PoFieldModule, PoModalModule, PoLoadingModule, PoDropdownModule, PoDialogModule, PoTabsModule],
+  imports: [CommonModule, PoFieldModule, PoModalModule, PoLoadingModule, PoDropdownModule, PoDialogModule, PoTabsModule, PoTableModule, PoTooltipModule],
+  exports: [PoFieldModule, PoModalModule, PoLoadingModule, PoDropdownModule, PoDialogModule, PoTabsModule, PoTableModule, PoTooltipModule],
 })
 export class PoUiModule {}

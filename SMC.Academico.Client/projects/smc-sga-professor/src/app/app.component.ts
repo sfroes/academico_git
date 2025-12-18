@@ -8,6 +8,7 @@ import { SmcLoadService } from 'projects/shared/services/load/smc-load.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
+  standalone: false,
 })
 export class AppComponent implements OnInit {
   componentesCarregados: number = 0;

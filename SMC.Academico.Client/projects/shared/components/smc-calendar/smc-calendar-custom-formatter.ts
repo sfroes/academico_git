@@ -1,12 +1,12 @@
-import { CalendarNativeDateFormatter, DateFormatterParams } from 'angular-calendar';
-import { Injectable } from '@angular/core';
+import { CalendarNativeDateFormatter, DateFormatterParams, DateAdapter } from 'angular-calendar';
+import { Injectable, inject } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 @Injectable()
 export class SmcCalendarCustomFormatter extends CalendarNativeDateFormatter {
 
   constructor() {
-    super();
+    super(inject(DateAdapter));
   }
 
   // you can override any of the methods defined in the parent class
