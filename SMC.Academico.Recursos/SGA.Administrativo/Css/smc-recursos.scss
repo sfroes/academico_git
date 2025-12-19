@@ -5,7 +5,10 @@
 
 
 // ********** ----- Recursos compatilhados ------ ********** //
+@import "./angular/smc-angular.scss";
+@import "./angular/smc-estilo-base.scss";
 @import "../../Content/Css/smc-recursos.scss";
+
 
 // ********** ----- ESTILO CUSTOMIZADO (APLICAÇÃO) ----- ********** //
 @import "smc-estilo.scss";

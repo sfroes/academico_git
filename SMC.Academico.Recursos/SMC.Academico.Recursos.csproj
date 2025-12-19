@@ -438,6 +438,8 @@
     <Content Include="SGA.Administrativo\Css\componentes\_smc-cabecalho.scss" />
     <Content Include="SGA.Administrativo\Css\componentes\_smc-detalhe-editavel.scss" />
     <Content Include="SGA.Administrativo\Css\componentes\smc-flex-helpers.scss" />
+    <Content Include="SGA.Administrativo\Css\angular\smc-estilo-base.scss" />
+    <Content Include="SGA.Administrativo\Css\angular\smc-angular.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -489,6 +491,7 @@
     <Folder Include="SGA.BDP\Css\componentes\" />
     <Folder Include="SGA.Grad\Scripts\" />
     <Folder Include="SGA.Mobile\Scripts\" />
+    <Folder Include="SGA.Professor\Css\angular\" />
     <Folder Include="SGA.Professor\Scripts\" />
   </ItemGroup>
   <PropertyGroup>
