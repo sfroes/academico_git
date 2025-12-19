@@ -194,7 +194,7 @@
               "projects/smc-sga-aluno/src/styles.scss"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.js",
+              "projects/smc-sga-aluno/src/assets/recursos/node_modules/jquery/dist/jquery.js",
               "projects/smc-sga-aluno/src/assets/recursos/scripts/smc-developwarning.js"
             ],
             "optimization": {

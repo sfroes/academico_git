@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectorRef, Component, ElementRef, Inject, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { SmcLoadService } from 'projects/shared/load/smc-load.service';
+import { SmcLoadService } from 'projects/shared/services/load/smc-load.service';
 import { AppConstants } from './app.constants';
 
 @Component({

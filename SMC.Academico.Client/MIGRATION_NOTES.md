@@ -42,16 +42,30 @@ Removidos patches incompatíveis do patch-package:
 ### ✅ Administrativo
 Compilando com sucesso
 
-### ⚠️ Professor
-Ainda apresenta erro com `smc-table` e `smc-pager`
-- Erro: "Can't bind to 's-reset' since it isn't a known property of 'smc-pager'"
-- Investigação em andamento
+### ✅ Professor
+Compilando com sucesso após adicionar `SmcTableModule` ao `SharedModule`
+- **Solução**: O `SharedModule` do professor não estava exportando o `SmcTableModule`
+- Arquivo corrigido: `projects/smc-sga-professor/src/app/shared/shared.module.ts`
 
 ### 🔄 Aluno
-Não testado ainda
+Em teste...
+
+## Correções Específicas por Projeto
+
+### Professor
+Adicionado ao `projects/smc-sga-professor/src/app/shared/shared.module.ts`:
+```typescript
+import { SmcTableModule } from 'projects/shared/components/smc-table/smc-table.module';
+
+// ... no @NgModule
+imports: [..., SmcTableModule],
+exports: [..., SmcTableModule]
+```
 
 ## Próximos Passos
 
-1. Investigar diferenças específicas do projeto professor
-2. Testar projeto aluno
-3. Remover NO_ERRORS_SCHEMA se foi adicionado temporariamente
+1. ✅ Projeto Administrativo - Funcionando
+2. ✅ Projeto Professor - Funcionando
+3. 🔄 Projeto Aluno - Em teste
+4. Testar funcionalidades em runtime
+5. Verificar se há warnings que precisam ser corrigidos

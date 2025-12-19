@@ -1920,6 +1920,7 @@
           <Property Name="UsoSistemaOrigem" Type="Self.UsoSistemaOrigem" Nullable="false" />
           <Property Name="SeqConfiguracaoProcessoGed" Type="Int64" />
           <Property Name="TokenPermissaoEmissaoDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NotificaEmailDocumentoAssinado" Type="Boolean" />
           <NavigationProperty Name="FormacoesEspecificas" Relationship="Self.InstituicaoNivelTipoDocumentoFormacaoEspecifica_InstituicaoNivelTipoDocumentoAcademico" FromRole="InstituicaoNivelTipoDocumentoFormacaoEspecifica_InstituicaoNivelTipoDocumentoAcademico_Target" ToRole="InstituicaoNivelTipoDocumentoFormacaoEspecifica_InstituicaoNivelTipoDocumentoAcademico_Source" />
           <NavigationProperty Name="GrupoRegistro" Relationship="Self.InstituicaoNivelTipoDocumentoAcademico_GrupoRegistro" FromRole="InstituicaoNivelTipoDocumentoAcademico_GrupoRegistro_Source" ToRole="InstituicaoNivelTipoDocumentoAcademico_GrupoRegistro_Target" />
           <NavigationProperty Name="InstituicaoNivel" Relationship="Self.InstituicaoNivelTipoDocumentoAcademico_InstituicaoNivel" FromRole="InstituicaoNivelTipoDocumentoAcademico_InstituicaoNivel_Source" ToRole="InstituicaoNivelTipoDocumentoAcademico_InstituicaoNivel_Target" />
@@ -23964,6 +23965,7 @@
                 <ScalarProperty Name="UsoSistemaOrigem" ColumnName="idt_dom_uso_sistema_origem" />
                 <ScalarProperty Name="SeqConfiguracaoProcessoGed" ColumnName="seq_configuracao_processo_ged" />
                 <ScalarProperty Name="TokenPermissaoEmissaoDocumento" ColumnName="dsc_token_permissao_emissao_documento" />
+                <ScalarProperty Name="NotificaEmailDocumentoAssinado" ColumnName="ind_notifica_email_documento_assinado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -30532,6 +30534,7 @@
           <Property Name="idt_dom_uso_sistema_origem" Type="smallint" Nullable="false" />
           <Property Name="seq_configuracao_processo_ged" Type="bigint" Nullable="true" />
           <Property Name="dsc_token_permissao_emissao_documento" Type="nvarchar" MaxLength="255" Nullable="true" />
+          <Property Name="ind_notifica_email_documento_assinado" Type="bit" Nullable="true" />
         </EntityType>
         <EntityType Name="InstituicaoNivelTipoDocumentoFormacaoEspecifica" customannotation:Index="{ }">
           <Key>

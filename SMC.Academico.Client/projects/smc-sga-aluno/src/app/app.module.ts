@@ -5,11 +5,11 @@ import localePt from '@angular/common/locales/pt';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { PoNotificationService } from '@po-ui/ng-components';
-import { AuthenticationInterceptor } from 'projects/shared/authentication/authentication.interceptor';
-import { SmcLoadService } from 'projects/shared/load/smc-load.service';
-import { MiniProfilerInterceptor } from 'projects/shared/mini-profiler/mini-profiler.interceptor';
-import { SmcNotificationService } from 'projects/shared/notification/smc-notification.service';
-import { SessionErrorInterceptor } from 'projects/shared/session-error/session-error.interceptor';
+import { AuthenticationInterceptor } from 'projects/shared/interceptors/authentication/authentication.interceptor';
+import { SmcLoadService } from 'projects/shared/services/load/smc-load.service';
+import { MiniProfilerInterceptor } from 'projects/shared/interceptors/mini-profiler/mini-profiler.interceptor';
+import { SmcNotificationService } from 'projects/shared/services/notification/smc-notification.service';
+import { SessionErrorInterceptor } from 'projects/shared/interceptors/session-error/session-error.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
@@ -17,7 +17,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { MenuComponent } from './shared/components/menu/menu.component';
 import { HomeModule } from './shared/home/home.module';
 import { SharedModule } from './shared/shared.module';
-import { ErrorInterceptor } from 'projects/shared/error/error.interceptor';
+import { ErrorInterceptor } from 'projects/shared/interceptors/error/error.interceptor';
 
 registerLocaleData(localePt, 'pt-BR', localePtExtra);
 
