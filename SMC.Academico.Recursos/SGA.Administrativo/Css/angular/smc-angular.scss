@@ -1,3 +1,4 @@
+
 context-menu-content {
     position: fixed !important;
     z-index: 9999 !important;
@@ -473,7 +474,7 @@ select.po-select:focus + .po-select-container {
     box-shadow: none;
     border-top: 3px solid #074458 !important;
     z-index: 3;
-    border: solid 3px$smc-cinza-04;
+    border: solid 3px $smc-cinza-04;
     cursor: pointer;
     border-bottom: none;
     margin-bottom: 0;
@@ -697,8 +698,8 @@ po-multiselect input[readonly][disabled] {
 // AJUSTES NO GRID PADRO ANGULAR
 .po-table-header {
     padding: 12px 10px;
-    background-color: #bad6da;
-    height: 28px;
+    background-color: #bad6da !important;
+    height: 28px !important;
     vertical-align: middle;
 
     span {
@@ -716,10 +717,10 @@ po-multiselect input[readonly][disabled] {
 }
 
 .po-table-column {
-    vertical-align: middle;
-    min-height: 42px;
-    padding: 5px;
-    color: #7a7a7a;
+    vertical-align: middle !important;
+    min-height: 42px !important;
+    padding: 5px !important;
+    color: #7a7a7a !important;
 
     span {
         color: #7a7a7a;
@@ -1388,15 +1389,15 @@ po-multiselect {
     @include botoes-footer-modal-lookup;
 
     .po-button-modal-first-action {
-        .po-button-danger {
+        .po-button {
             background-color: #fff !important;
-            border: solid 1px #074458;
+            border: solid 1px #074458 !important;
             color: #074458 !important;
 
             &:hover {
                 background-color: #fff;
-                border: solid 1px #1f9fc9;
-                color: #1f9fc9;
+                border: solid 1px #1f9fc9 !important;
+                color: #1f9fc9 !important;
             }
 
             .po-button-label {
@@ -1407,15 +1408,15 @@ po-multiselect {
         }
     }
 
-    .po-button.po-text-ellipsis {
-        background-color: #074458;
-        border: solid 1px #074458;
-        color: #fff;
+    .po-button[p-kind="secondary"] {
+        background-color: #074458 !important;
+        border: solid 1px #074458 !important;
+        color: #fff !important;
 
         &:hover {
-            background-color: #fff;
-            border: solid 1px #1f9fc9;
-            color: #1f9fc9;
+            background-color: #fff !important;
+            border: solid 1px #1f9fc9 !important;
+            color: #1f9fc9 !important;
         }
 
         .po-button-label {
@@ -1427,6 +1428,7 @@ po-multiselect {
 }
 // Ajuste apenas para lookups dentro da modal
 .po-modal-content {
+    width:90% !important;
     .smc-lookup-open-command > i::before {
         line-height: 25px;
     }

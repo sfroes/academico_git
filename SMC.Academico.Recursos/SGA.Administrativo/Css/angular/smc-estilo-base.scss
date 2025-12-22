@@ -606,3 +606,185 @@ $smc-mensagem-sucesso-cor-texto: #546d3e !default;
         }
     }
 }
+
+
+////CORREÇÕES PÓS MIGRAÇÃO
+.po-field-container-content {
+    padding: 8px 0 !important;
+
+}
+
+.smc-fieldset-filter {
+
+    .smc-btn-lookup-open-modal {
+        i {
+            margin-top: 7px !important;
+        }
+    }
+}
+
+.po-label {
+    color: #7a7a7a !important;
+    margin-right: 0;
+    min-height: 0;
+    float: left;
+    font-weight: normal !important;
+    margin-bottom: 2px !important;
+    font-family: "sf_ui_displayregular" !important;
+    font-size: 14px !important;
+}
+
+sga-evento-aula {
+    h1 {
+        clear: both;
+        color: #074458 !important;
+        font-family: "sf_ui_displayregular" !important;
+        font-weight: normal !important;
+        font-size: 2em !important;
+    }
+}
+.smc-lookup-required:before{
+    font-size:7px !important;
+}
+
+.po-multiselect-flex-item {
+    .po-field-container-content, .po-field-container-input {
+        padding: 0 !important;
+    }
+
+    .smc-fieldset-filter {
+        .smc-btn-lookup-open-modal {
+            i {
+                margin-top: 7px !important;
+            }
+        }
+    }
+}
+
+.po-field-container-input{
+    padding:0 !important;
+    margin-top:-2px !important;
+}
+
+.po-input:focus {
+    border-color: #074458 !important;
+    outline-color: #074458 !important;
+    outline-width: 1px;
+    outline-style: solid;
+    outline-offset: 1px;
+}
+.po-multiselect-input.po-multiselect-input-static,
+.po-select-phosphor,
+.po-input[type=number],
+.po-select,
+.po-select-phosphor {
+    max-height: 31px !important;
+    height: 31px !important;
+    margin-top: -2px;
+    border-radius: 3px !important;
+    border-color: #b3b3b3 !important;
+}
+.po-select-phosphor{
+    margin-top:-3px !important;
+}
+.po-modal-content .smc-lookup-open-command > i::before {
+    line-height: 17px !important;
+}
+
+po-multiselect .po-field-icon-container-right {
+    top: 9px !important;
+}
+
+.po-input:hover,
+.po-multiselect-input:hover:not(.po-multiselect-input-disabled),
+.po-select-phosphor:hover {
+    border: 1px solid #dbeaf2 !important;
+    background-color: #f2fdff !important;
+}
+
+
+.po-table-column-selectable .po-table-radio + .po-table-radio-label:before {
+    background-color: var(--color-table-background-color-radio) !important;
+    border: 1px solid var(--color-table-border-select-radio) !important;
+    border-radius: 50%;
+    box-shadow: inset 0 1px 8px 0 var(--color-black-alpha-10);
+    content: " ";
+    display: inline-block;
+    height: 20px;
+    margin-right: 8px;
+    margin-top: -2px;
+    vertical-align: middle;
+    width: 20px;
+}
+
+.po-table .po-table-master-detail thead tr th, .po-table thead tr th {
+    background-color: #bad6da !important;
+}
+
+.po-table .po-table-row-active td {
+    background-color: #ddf9fd !important;
+}
+
+.po-radio input[type=radio]:checked, [data-a11y=AAA] .po-radio input[type=radio][p-size=small]:checked {
+    background: var(--background-radial-md);
+    background-color: var(--color-unchecked);
+    border-color: #074458 !important;
+}
+.po-radio label:not(.po-label-disabled) {
+    color: #074458 !important;
+}
+.po-button[p-kind=tertiary] {
+    color: #074458 !important;
+}
+
+.po-radio input[type=radio]:hover {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-color: #074458 !important;
+}
+po-radio {
+    --color-unchecked: var(--color-neutral-light-00);
+    --border-color: var(--color-neutral-dark-70);
+    --shadow-color-hover: var(--color-brand-01-lighter);
+    --color-hover: var(--color-brand-01-dark);
+    --outline-color-focused: var(--color-brand-01-darkest);
+    --color-checked: #074458 !important;
+    --color-unchecked-disabled: var(--color-neutral-light-30);
+    --color-checked-disabled: var(--color-neutral-dark-70);
+}
+
+.po-button[p-kind=link]:hover, .po-button[p-kind=tertiary]:hover {
+    color: #bad6da !important;
+    background-color: transparent !important
+}
+.smc-lookup-input-width, .smc-lookup-corpo-acoes {
+    .po-field-container-content {
+        padding: 8px 0 !important;
+    }
+}
+.po-modal-content {
+    .smc-fieldset-filter {
+        .po-field-container {
+            .po-field-container-content{
+                padding: 0 !important;
+            }
+        }
+    }
+}
+
+smc-select {
+    .po-field-container-content {
+        padding: 0 !important;
+    }
+}
+
+.po-input:focus {
+    outline-color: #1f9fc9 !important;
+    outline-width: 1px !important;
+    outline-style: solid;
+    outline-offset: 1px !important;
+}
+
+.po-select, [data-a11y=AAA] .po-select-aa{
+    font-size:14px !important;
+}
