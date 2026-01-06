@@ -4794,7 +4794,7 @@ input[type=button].btn-block {
   font-weight: normal;
   font-style: normal;
 }
-.fa, .smc-sga-legenda-entrega-corrigido:before, .smc-sga-legenda-entrega-solicitadonovaentrega:before, .smc-sga-legenda-entrega-liberadocorrecao:before, .smc-sga-legenda-entrega-entregue:before, .smc-sga-legenda-entrega-aguardando:before, .smc-sga-botao-boleto i, .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-concluido, .smc-sga-legenda-matricula-naofinalizada:before, .smc-sga-legenda-matricula-finalizada:before, .smc-sga-legenda-matricula-aguardandopagamento:before, .smc-sga-legenda-matricula-emandamento:before, .smc-sga-legenda-matricula-naoiniciada:before, .smc-btn-documento-icotext > i, .smc-sga-btn-trocaroferta > i, .smc-sga-externo-totalizador-status-encerrada, .smc-sga-externo-totalizador-status-concluida, .smc-sga-externo-totalizador-status-emandamento, .smc-sga-externo-totalizador-status-novo, .smc-sga-externo-agrupamento-terciario:before, .smc-sga-externo-agrupamento-secundario:before, .smc-ico-ajuda, .smc-btn-ajuda-icotext > i, .smc-grupo-legenda-sga-notas-frequencias-preenchida > span::before, .smc-grupo-legenda-sga-notas-frequencias-em-branco > span::before, .smc-sga-notas-frequencias div > button.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias div > button.smc-hidepanel-button-filled::before, .smc-sga-notas-frequencias .smc-hidepanel-button-expanded::before, .smc-sga-notas-frequencias .smc-hidepanel-button::before, .smc-hidepanel-button-expanded::before, .smc-hidepanel-button::before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior a:before, .smc-legenda-status-instrucoes:before, .smc-legenda-status-pendente:before, .smc-legenda-status-aguardandoanalise:before, .smc-legenda-status-indeferido:before, .smc-legenda-status-apontamento:before, .smc-legenda-status-deferido:before, .smc-legenda-status-aguardandovalidacao:before, .smc-legenda-status-aguardandoentrega:before, .smc-sga-legenda-configuracao-principal, .smc-sga-mensagem, .smc-sga-icone-documentacao a:before, .smc-sat-situacao-proximasexecucoes:before, .smc-sat-situacao-emexecucao:before, .smc-sat-situacao-inativo:before, .smc-sat-situacao-ativo:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a:before, .treeview-desmarcar-todos:before, .treeview-marcar-todos:before, .fancytree-drop-reject, .smc-mensagem, .smc-menu-dinamico-ico-referencia, .smc-btn-legenda-base i, a.smc-btn-documento-nao-requerida i, a.smc-btn-documento-entrega-pendencia i, a.smc-btn-documento-entregue i, a.smc-btn-documento-aguarda-validacao i, a.smc-btn-documento-aguarda-nova-entrega i, a.smc-btn-desbloqueio i, a.smc-btn-bloqueio i, .smc-legenda-base, .smc-sga-legenda-historico-divergente, .smc-sga-legenda-sancao, .smc-sga-legenda-historico, .smc-sga-legenda-formado, .smc-sga-legenda-final-etapa, .smc-sga-legenda-desbloqueio, .smc-sga-legenda-bloqueio, .smc-legenda-documento-nao-requerida, .smc-legenda-documento-entrega-pendencia, .smc-legenda-documento-entregue, .smc-legenda-documento-aguarda-validacao, .smc-legenda-documento-aguarda-nova-entrega, .smc-hidepanel-pesquisa-avancada > .smc-editorformodel-advancedfilter-expanded, .smc-hidepanel-pesquisa-avancada > .smc-hidepanel-button-expanded, .smc-hidepanel-pesquisa-avancada > .smc-editorformodel-advancedfilter, .smc-hidepanel-pesquisa-avancada > .smc-hidepanel-button {
+.fa, .smc-sga-legenda-entrega-corrigido:before, .smc-sga-legenda-entrega-solicitadonovaentrega:before, .smc-sga-legenda-entrega-liberadocorrecao:before, .smc-sga-legenda-entrega-entregue:before, .smc-sga-legenda-entrega-aguardando:before, .smc-sga-botao-boleto i, .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-concluido, .smc-sga-legenda-matricula-naofinalizada:before, .smc-sga-legenda-matricula-finalizada:before, .smc-sga-legenda-matricula-aguardandopagamento:before, .smc-sga-legenda-matricula-emandamento:before, .smc-sga-legenda-matricula-naoiniciada:before, .smc-btn-documento-icotext > i, .smc-sga-btn-trocaroferta > i, .smc-sga-externo-totalizador-status-encerrada, .smc-sga-externo-totalizador-status-concluida, .smc-sga-externo-totalizador-status-emandamento, .smc-sga-externo-totalizador-status-novo, .smc-sga-externo-agrupamento-terciario:before, .smc-sga-externo-agrupamento-secundario:before, .smc-ico-ajuda, .smc-btn-ajuda-icotext > i, .smc-grupo-legenda-sga-notas-frequencias-preenchida > span::before, .smc-grupo-legenda-sga-notas-frequencias-em-branco > span::before, .smc-sga-notas-frequencias div > button.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias div > button.smc-hidepanel-button-filled::before, .smc-sga-notas-frequencias .smc-hidepanel-button-expanded::before, .smc-sga-notas-frequencias .smc-hidepanel-button::before, .smc-hidepanel-button-expanded::before, .smc-hidepanel-button::before, .smc-sga-calendario-hoje button i, .po-loading:before, .smc-sga-btn-minimizar:before, .smc-sga-btn-maximizar:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type button:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger button:before, .po-toaster-error div:before, .po-toaster-success div:before, .po-toaster-warning div:before, .po-toaster-info div:before, button .smc-sga-carregando-local:before, .smc-sga-carregando-local:before, .smc-sga-painelalertas h3:before, .smc-sga-painelalertas-botao, .smc-sga-grid-menu-aula-fechado, .smc-sga-grid-menu-aula-aberto, .smc-btn-frequencia-sancao, .smc-btn-frequencia-abono, .smc-btn-frequencia-presente, .smc-btn-frequencia-falta, .smc-btn-frequencia-branco, .smc-btn-comentario-preenchido, .smc-btn-comentario, .smc-btn-historico-divergente, .smc-btn-historico-preenchido, .smc-btn-historico, .smc-sga-mensagem-lancamento-frequencia p.smc-sga-frequencia-convertida:before, .smc-aluno-highlight:before, .smc-sga-mensagem-lancamento-frequencia p.smc-sga-frequencia-apurada:before, .smc-sga-mensagem-lancamento-nota:before, .smc-sga-grid-lancamento-frequencia-header > div .link:before, .smc-sga-grid-lancamento-nota-header > div .link:before, .smc-sga-filtro-aluno:before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior a:before, .smc-legenda-status-instrucoes:before, .smc-legenda-status-pendente:before, .smc-legenda-status-aguardandoanalise:before, .smc-legenda-status-indeferido:before, .smc-legenda-status-apontamento:before, .smc-legenda-status-deferido:before, .smc-legenda-status-aguardandovalidacao:before, .smc-legenda-status-aguardandoentrega:before, .smc-sga-legenda-configuracao-principal, .smc-sga-mensagem, .smc-sga-icone-documentacao a:before, .smc-sat-situacao-proximasexecucoes:before, .smc-sat-situacao-emexecucao:before, .smc-sat-situacao-inativo:before, .smc-sat-situacao-ativo:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a:before, .treeview-desmarcar-todos:before, .treeview-marcar-todos:before, .fancytree-drop-reject, .smc-mensagem, .smc-menu-dinamico-ico-referencia, .smc-btn-legenda-base i, a.smc-btn-documento-nao-requerida i, a.smc-btn-documento-entrega-pendencia i, a.smc-btn-documento-entregue i, a.smc-btn-documento-aguarda-validacao i, a.smc-btn-documento-aguarda-nova-entrega i, a.smc-btn-desbloqueio i, a.smc-btn-bloqueio i, .smc-legenda-base, .smc-sga-legenda-historico-divergente, .smc-sga-legenda-sancao, .smc-sga-legenda-historico, .smc-sga-legenda-formado, .smc-sga-legenda-final-etapa, .smc-sga-legenda-desbloqueio, .smc-sga-legenda-bloqueio, .smc-legenda-documento-nao-requerida, .smc-legenda-documento-entrega-pendencia, .smc-legenda-documento-entregue, .smc-legenda-documento-aguarda-validacao, .smc-legenda-documento-aguarda-nova-entrega, .smc-hidepanel-pesquisa-avancada > .smc-editorformodel-advancedfilter-expanded, .smc-hidepanel-pesquisa-avancada > .smc-hidepanel-button-expanded, .smc-hidepanel-pesquisa-avancada > .smc-editorformodel-advancedfilter, .smc-hidepanel-pesquisa-avancada > .smc-hidepanel-button {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -4814,7 +4814,7 @@ input[type=button].btn-block {
   font-size: 2em;
 }
 
-.fa-3x {
+.fa-3x, .po-loading:before, button .smc-sga-carregando-local:before, .smc-sga-carregando-local:before {
   font-size: 3em;
 }
 
@@ -4826,7 +4826,7 @@ input[type=button].btn-block {
   font-size: 5em;
 }
 
-.fa-fw {
+.fa-fw, .po-loading:before, button .smc-sga-carregando-local:before, .smc-sga-carregando-local:before {
   width: 1.2857142857em;
   text-align: center;
 }
@@ -4865,10 +4865,10 @@ input[type=button].btn-block {
   float: right;
 }
 
-.fa.fa-pull-left, .fa-pull-left.smc-sga-legenda-entrega-corrigido:before, .fa-pull-left.smc-sga-legenda-entrega-solicitadonovaentrega:before, .fa-pull-left.smc-sga-legenda-entrega-liberadocorrecao:before, .fa-pull-left.smc-sga-legenda-entrega-entregue:before, .fa-pull-left.smc-sga-legenda-entrega-aguardando:before, .smc-sga-botao-boleto i.fa-pull-left, .smc-sga-painel-lateral-processo-passos .fa-pull-left.smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .fa-pull-left.smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .fa-pull-left.smc-sga-processo-passo-concluido, .fa-pull-left.smc-sga-legenda-matricula-naofinalizada:before, .fa-pull-left.smc-sga-legenda-matricula-finalizada:before, .fa-pull-left.smc-sga-legenda-matricula-aguardandopagamento:before, .fa-pull-left.smc-sga-legenda-matricula-emandamento:before, .fa-pull-left.smc-sga-legenda-matricula-naoiniciada:before, .smc-btn-documento-icotext > i.fa-pull-left, .smc-sga-btn-trocaroferta > i.fa-pull-left, .fa-pull-left.smc-sga-externo-totalizador-status-encerrada, .fa-pull-left.smc-sga-externo-totalizador-status-concluida, .fa-pull-left.smc-sga-externo-totalizador-status-emandamento, .fa-pull-left.smc-sga-externo-totalizador-status-novo, .fa-pull-left.smc-sga-externo-agrupamento-terciario:before, .fa-pull-left.smc-sga-externo-agrupamento-secundario:before, .fa-pull-left.smc-ico-ajuda, .smc-btn-ajuda-icotext > i.fa-pull-left, .smc-grupo-legenda-sga-notas-frequencias-preenchida > span.fa-pull-left::before, .smc-grupo-legenda-sga-notas-frequencias-em-branco > span.fa-pull-left::before, .smc-sga-notas-frequencias div > button.fa-pull-left.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias div > button.fa-pull-left.smc-hidepanel-button-filled::before, .fa-pull-left.smc-hidepanel-button-expanded::before, .fa-pull-left.smc-hidepanel-button::before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a.fa-pull-left:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior a.fa-pull-left:before, .fa-pull-left.smc-legenda-status-instrucoes:before, .fa-pull-left.smc-legenda-status-pendente:before, .fa-pull-left.smc-legenda-status-aguardandoanalise:before, .fa-pull-left.smc-legenda-status-indeferido:before, .fa-pull-left.smc-legenda-status-apontamento:before, .fa-pull-left.smc-legenda-status-deferido:before, .fa-pull-left.smc-legenda-status-aguardandovalidacao:before, .fa-pull-left.smc-legenda-status-aguardandoentrega:before, .fa-pull-left.smc-sga-legenda-configuracao-principal, .fa-pull-left.smc-sga-mensagem, .smc-sga-icone-documentacao a.fa-pull-left:before, .fa-pull-left.smc-sat-situacao-proximasexecucoes:before, .fa-pull-left.smc-sat-situacao-emexecucao:before, .fa-pull-left.smc-sat-situacao-inativo:before, .fa-pull-left.smc-sat-situacao-ativo:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a.fa-pull-left:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a.fa-pull-left:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.fa-pull-left:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.fa-pull-left:before, .fa-pull-left.treeview-desmarcar-todos:before, .fa-pull-left.treeview-marcar-todos:before, .fa-pull-left.fancytree-drop-reject, .fa-pull-left.smc-mensagem, .fa-pull-left.smc-menu-dinamico-ico-referencia, .smc-btn-legenda-base i.fa-pull-left, a.smc-btn-documento-nao-requerida i.fa-pull-left, a.smc-btn-documento-entrega-pendencia i.fa-pull-left, a.smc-btn-documento-entregue i.fa-pull-left, a.smc-btn-documento-aguarda-validacao i.fa-pull-left, a.smc-btn-documento-aguarda-nova-entrega i.fa-pull-left, a.smc-btn-desbloqueio i.fa-pull-left, a.smc-btn-bloqueio i.fa-pull-left, .fa-pull-left.smc-legenda-base, .fa-pull-left.smc-sga-legenda-historico-divergente, .fa-pull-left.smc-sga-legenda-sancao, .fa-pull-left.smc-sga-legenda-historico, .fa-pull-left.smc-sga-legenda-formado, .fa-pull-left.smc-sga-legenda-final-etapa, .fa-pull-left.smc-sga-legenda-desbloqueio, .fa-pull-left.smc-sga-legenda-bloqueio, .fa-pull-left.smc-legenda-documento-nao-requerida, .fa-pull-left.smc-legenda-documento-entrega-pendencia, .fa-pull-left.smc-legenda-documento-entregue, .fa-pull-left.smc-legenda-documento-aguarda-validacao, .fa-pull-left.smc-legenda-documento-aguarda-nova-entrega, .smc-hidepanel-pesquisa-avancada > .fa-pull-left.smc-editorformodel-advancedfilter-expanded, .smc-hidepanel-pesquisa-avancada > .fa-pull-left.smc-hidepanel-button-expanded, .smc-hidepanel-pesquisa-avancada > .fa-pull-left.smc-editorformodel-advancedfilter, .smc-hidepanel-pesquisa-avancada > .fa-pull-left.smc-hidepanel-button {
+.fa.fa-pull-left, .fa-pull-left.smc-sga-legenda-entrega-corrigido:before, .fa-pull-left.smc-sga-legenda-entrega-solicitadonovaentrega:before, .fa-pull-left.smc-sga-legenda-entrega-liberadocorrecao:before, .fa-pull-left.smc-sga-legenda-entrega-entregue:before, .fa-pull-left.smc-sga-legenda-entrega-aguardando:before, .smc-sga-botao-boleto i.fa-pull-left, .smc-sga-painel-lateral-processo-passos .fa-pull-left.smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .fa-pull-left.smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .fa-pull-left.smc-sga-processo-passo-concluido, .fa-pull-left.smc-sga-legenda-matricula-naofinalizada:before, .fa-pull-left.smc-sga-legenda-matricula-finalizada:before, .fa-pull-left.smc-sga-legenda-matricula-aguardandopagamento:before, .fa-pull-left.smc-sga-legenda-matricula-emandamento:before, .fa-pull-left.smc-sga-legenda-matricula-naoiniciada:before, .smc-btn-documento-icotext > i.fa-pull-left, .smc-sga-btn-trocaroferta > i.fa-pull-left, .fa-pull-left.smc-sga-externo-totalizador-status-encerrada, .fa-pull-left.smc-sga-externo-totalizador-status-concluida, .fa-pull-left.smc-sga-externo-totalizador-status-emandamento, .fa-pull-left.smc-sga-externo-totalizador-status-novo, .fa-pull-left.smc-sga-externo-agrupamento-terciario:before, .fa-pull-left.smc-sga-externo-agrupamento-secundario:before, .fa-pull-left.smc-ico-ajuda, .smc-btn-ajuda-icotext > i.fa-pull-left, .smc-grupo-legenda-sga-notas-frequencias-preenchida > span.fa-pull-left::before, .smc-grupo-legenda-sga-notas-frequencias-em-branco > span.fa-pull-left::before, .smc-sga-notas-frequencias div > button.fa-pull-left.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias div > button.fa-pull-left.smc-hidepanel-button-filled::before, .fa-pull-left.smc-hidepanel-button-expanded::before, .fa-pull-left.smc-hidepanel-button::before, .smc-sga-calendario-hoje button i.fa-pull-left, .fa-pull-left.po-loading:before, .fa-pull-left.smc-sga-btn-minimizar:before, .fa-pull-left.smc-sga-btn-maximizar:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type button.fa-pull-left:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger button.fa-pull-left:before, .po-toaster-error div.fa-pull-left:before, .po-toaster-success div.fa-pull-left:before, .po-toaster-warning div.fa-pull-left:before, .po-toaster-info div.fa-pull-left:before, .fa-pull-left.smc-sga-carregando-local:before, .smc-sga-painelalertas h3.fa-pull-left:before, .fa-pull-left.smc-sga-painelalertas-botao, .fa-pull-left.smc-sga-grid-menu-aula-fechado, .fa-pull-left.smc-sga-grid-menu-aula-aberto, .fa-pull-left.smc-btn-frequencia-sancao, .fa-pull-left.smc-btn-frequencia-abono, .fa-pull-left.smc-btn-frequencia-presente, .fa-pull-left.smc-btn-frequencia-falta, .fa-pull-left.smc-btn-frequencia-branco, .fa-pull-left.smc-btn-comentario-preenchido, .fa-pull-left.smc-btn-comentario, .fa-pull-left.smc-btn-historico-divergente, .fa-pull-left.smc-btn-historico-preenchido, .fa-pull-left.smc-btn-historico, .smc-sga-mensagem-lancamento-frequencia p.fa-pull-left.smc-sga-frequencia-convertida:before, .fa-pull-left.smc-aluno-highlight:before, .smc-sga-mensagem-lancamento-frequencia p.fa-pull-left.smc-sga-frequencia-apurada:before, .fa-pull-left.smc-sga-mensagem-lancamento-nota:before, .smc-sga-grid-lancamento-frequencia-header > div .fa-pull-left.link:before, .smc-sga-grid-lancamento-nota-header > div .fa-pull-left.link:before, .fa-pull-left.smc-sga-filtro-aluno:before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a.fa-pull-left:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior a.fa-pull-left:before, .fa-pull-left.smc-legenda-status-instrucoes:before, .fa-pull-left.smc-legenda-status-pendente:before, .fa-pull-left.smc-legenda-status-aguardandoanalise:before, .fa-pull-left.smc-legenda-status-indeferido:before, .fa-pull-left.smc-legenda-status-apontamento:before, .fa-pull-left.smc-legenda-status-deferido:before, .fa-pull-left.smc-legenda-status-aguardandovalidacao:before, .fa-pull-left.smc-legenda-status-aguardandoentrega:before, .fa-pull-left.smc-sga-legenda-configuracao-principal, .fa-pull-left.smc-sga-mensagem, .smc-sga-icone-documentacao a.fa-pull-left:before, .fa-pull-left.smc-sat-situacao-proximasexecucoes:before, .fa-pull-left.smc-sat-situacao-emexecucao:before, .fa-pull-left.smc-sat-situacao-inativo:before, .fa-pull-left.smc-sat-situacao-ativo:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a.fa-pull-left:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a.fa-pull-left:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.fa-pull-left:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.fa-pull-left:before, .fa-pull-left.treeview-desmarcar-todos:before, .fa-pull-left.treeview-marcar-todos:before, .fa-pull-left.fancytree-drop-reject, .fa-pull-left.smc-mensagem, .fa-pull-left.smc-menu-dinamico-ico-referencia, .smc-btn-legenda-base i.fa-pull-left, a.smc-btn-documento-nao-requerida i.fa-pull-left, a.smc-btn-documento-entrega-pendencia i.fa-pull-left, a.smc-btn-documento-entregue i.fa-pull-left, a.smc-btn-documento-aguarda-validacao i.fa-pull-left, a.smc-btn-documento-aguarda-nova-entrega i.fa-pull-left, a.smc-btn-desbloqueio i.fa-pull-left, a.smc-btn-bloqueio i.fa-pull-left, .fa-pull-left.smc-legenda-base, .fa-pull-left.smc-sga-legenda-historico-divergente, .fa-pull-left.smc-sga-legenda-sancao, .fa-pull-left.smc-sga-legenda-historico, .fa-pull-left.smc-sga-legenda-formado, .fa-pull-left.smc-sga-legenda-final-etapa, .fa-pull-left.smc-sga-legenda-desbloqueio, .fa-pull-left.smc-sga-legenda-bloqueio, .fa-pull-left.smc-legenda-documento-nao-requerida, .fa-pull-left.smc-legenda-documento-entrega-pendencia, .fa-pull-left.smc-legenda-documento-entregue, .fa-pull-left.smc-legenda-documento-aguarda-validacao, .fa-pull-left.smc-legenda-documento-aguarda-nova-entrega, .smc-hidepanel-pesquisa-avancada > .fa-pull-left.smc-editorformodel-advancedfilter-expanded, .smc-hidepanel-pesquisa-avancada > .fa-pull-left.smc-hidepanel-button-expanded, .smc-hidepanel-pesquisa-avancada > .fa-pull-left.smc-editorformodel-advancedfilter, .smc-hidepanel-pesquisa-avancada > .fa-pull-left.smc-hidepanel-button {
   margin-right: 0.3em;
 }
-.fa.fa-pull-right, .fa-pull-right.smc-sga-legenda-entrega-corrigido:before, .fa-pull-right.smc-sga-legenda-entrega-solicitadonovaentrega:before, .fa-pull-right.smc-sga-legenda-entrega-liberadocorrecao:before, .fa-pull-right.smc-sga-legenda-entrega-entregue:before, .fa-pull-right.smc-sga-legenda-entrega-aguardando:before, .smc-sga-botao-boleto i.fa-pull-right, .smc-sga-painel-lateral-processo-passos .fa-pull-right.smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .fa-pull-right.smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .fa-pull-right.smc-sga-processo-passo-concluido, .fa-pull-right.smc-sga-legenda-matricula-naofinalizada:before, .fa-pull-right.smc-sga-legenda-matricula-finalizada:before, .fa-pull-right.smc-sga-legenda-matricula-aguardandopagamento:before, .fa-pull-right.smc-sga-legenda-matricula-emandamento:before, .fa-pull-right.smc-sga-legenda-matricula-naoiniciada:before, .smc-btn-documento-icotext > i.fa-pull-right, .smc-sga-btn-trocaroferta > i.fa-pull-right, .fa-pull-right.smc-sga-externo-totalizador-status-encerrada, .fa-pull-right.smc-sga-externo-totalizador-status-concluida, .fa-pull-right.smc-sga-externo-totalizador-status-emandamento, .fa-pull-right.smc-sga-externo-totalizador-status-novo, .fa-pull-right.smc-sga-externo-agrupamento-terciario:before, .fa-pull-right.smc-sga-externo-agrupamento-secundario:before, .fa-pull-right.smc-ico-ajuda, .smc-btn-ajuda-icotext > i.fa-pull-right, .smc-grupo-legenda-sga-notas-frequencias-preenchida > span.fa-pull-right::before, .smc-grupo-legenda-sga-notas-frequencias-em-branco > span.fa-pull-right::before, .smc-sga-notas-frequencias div > button.fa-pull-right.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias div > button.fa-pull-right.smc-hidepanel-button-filled::before, .fa-pull-right.smc-hidepanel-button-expanded::before, .fa-pull-right.smc-hidepanel-button::before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a.fa-pull-right:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior a.fa-pull-right:before, .fa-pull-right.smc-legenda-status-instrucoes:before, .fa-pull-right.smc-legenda-status-pendente:before, .fa-pull-right.smc-legenda-status-aguardandoanalise:before, .fa-pull-right.smc-legenda-status-indeferido:before, .fa-pull-right.smc-legenda-status-apontamento:before, .fa-pull-right.smc-legenda-status-deferido:before, .fa-pull-right.smc-legenda-status-aguardandovalidacao:before, .fa-pull-right.smc-legenda-status-aguardandoentrega:before, .fa-pull-right.smc-sga-legenda-configuracao-principal, .fa-pull-right.smc-sga-mensagem, .smc-sga-icone-documentacao a.fa-pull-right:before, .fa-pull-right.smc-sat-situacao-proximasexecucoes:before, .fa-pull-right.smc-sat-situacao-emexecucao:before, .fa-pull-right.smc-sat-situacao-inativo:before, .fa-pull-right.smc-sat-situacao-ativo:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a.fa-pull-right:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a.fa-pull-right:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.fa-pull-right:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.fa-pull-right:before, .fa-pull-right.treeview-desmarcar-todos:before, .fa-pull-right.treeview-marcar-todos:before, .fa-pull-right.fancytree-drop-reject, .fa-pull-right.smc-mensagem, .fa-pull-right.smc-menu-dinamico-ico-referencia, .smc-btn-legenda-base i.fa-pull-right, a.smc-btn-documento-nao-requerida i.fa-pull-right, a.smc-btn-documento-entrega-pendencia i.fa-pull-right, a.smc-btn-documento-entregue i.fa-pull-right, a.smc-btn-documento-aguarda-validacao i.fa-pull-right, a.smc-btn-documento-aguarda-nova-entrega i.fa-pull-right, a.smc-btn-desbloqueio i.fa-pull-right, a.smc-btn-bloqueio i.fa-pull-right, .fa-pull-right.smc-legenda-base, .fa-pull-right.smc-sga-legenda-historico-divergente, .fa-pull-right.smc-sga-legenda-sancao, .fa-pull-right.smc-sga-legenda-historico, .fa-pull-right.smc-sga-legenda-formado, .fa-pull-right.smc-sga-legenda-final-etapa, .fa-pull-right.smc-sga-legenda-desbloqueio, .fa-pull-right.smc-sga-legenda-bloqueio, .fa-pull-right.smc-legenda-documento-nao-requerida, .fa-pull-right.smc-legenda-documento-entrega-pendencia, .fa-pull-right.smc-legenda-documento-entregue, .fa-pull-right.smc-legenda-documento-aguarda-validacao, .fa-pull-right.smc-legenda-documento-aguarda-nova-entrega, .smc-hidepanel-pesquisa-avancada > .fa-pull-right.smc-editorformodel-advancedfilter-expanded, .smc-hidepanel-pesquisa-avancada > .fa-pull-right.smc-hidepanel-button-expanded, .smc-hidepanel-pesquisa-avancada > .fa-pull-right.smc-editorformodel-advancedfilter, .smc-hidepanel-pesquisa-avancada > .fa-pull-right.smc-hidepanel-button {
+.fa.fa-pull-right, .fa-pull-right.smc-sga-legenda-entrega-corrigido:before, .fa-pull-right.smc-sga-legenda-entrega-solicitadonovaentrega:before, .fa-pull-right.smc-sga-legenda-entrega-liberadocorrecao:before, .fa-pull-right.smc-sga-legenda-entrega-entregue:before, .fa-pull-right.smc-sga-legenda-entrega-aguardando:before, .smc-sga-botao-boleto i.fa-pull-right, .smc-sga-painel-lateral-processo-passos .fa-pull-right.smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .fa-pull-right.smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .fa-pull-right.smc-sga-processo-passo-concluido, .fa-pull-right.smc-sga-legenda-matricula-naofinalizada:before, .fa-pull-right.smc-sga-legenda-matricula-finalizada:before, .fa-pull-right.smc-sga-legenda-matricula-aguardandopagamento:before, .fa-pull-right.smc-sga-legenda-matricula-emandamento:before, .fa-pull-right.smc-sga-legenda-matricula-naoiniciada:before, .smc-btn-documento-icotext > i.fa-pull-right, .smc-sga-btn-trocaroferta > i.fa-pull-right, .fa-pull-right.smc-sga-externo-totalizador-status-encerrada, .fa-pull-right.smc-sga-externo-totalizador-status-concluida, .fa-pull-right.smc-sga-externo-totalizador-status-emandamento, .fa-pull-right.smc-sga-externo-totalizador-status-novo, .fa-pull-right.smc-sga-externo-agrupamento-terciario:before, .fa-pull-right.smc-sga-externo-agrupamento-secundario:before, .fa-pull-right.smc-ico-ajuda, .smc-btn-ajuda-icotext > i.fa-pull-right, .smc-grupo-legenda-sga-notas-frequencias-preenchida > span.fa-pull-right::before, .smc-grupo-legenda-sga-notas-frequencias-em-branco > span.fa-pull-right::before, .smc-sga-notas-frequencias div > button.fa-pull-right.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias div > button.fa-pull-right.smc-hidepanel-button-filled::before, .fa-pull-right.smc-hidepanel-button-expanded::before, .fa-pull-right.smc-hidepanel-button::before, .smc-sga-calendario-hoje button i.fa-pull-right, .fa-pull-right.po-loading:before, .fa-pull-right.smc-sga-btn-minimizar:before, .fa-pull-right.smc-sga-btn-maximizar:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type button.fa-pull-right:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger button.fa-pull-right:before, .po-toaster-error div.fa-pull-right:before, .po-toaster-success div.fa-pull-right:before, .po-toaster-warning div.fa-pull-right:before, .po-toaster-info div.fa-pull-right:before, .fa-pull-right.smc-sga-carregando-local:before, .smc-sga-painelalertas h3.fa-pull-right:before, .fa-pull-right.smc-sga-painelalertas-botao, .fa-pull-right.smc-sga-grid-menu-aula-fechado, .fa-pull-right.smc-sga-grid-menu-aula-aberto, .fa-pull-right.smc-btn-frequencia-sancao, .fa-pull-right.smc-btn-frequencia-abono, .fa-pull-right.smc-btn-frequencia-presente, .fa-pull-right.smc-btn-frequencia-falta, .fa-pull-right.smc-btn-frequencia-branco, .fa-pull-right.smc-btn-comentario-preenchido, .fa-pull-right.smc-btn-comentario, .fa-pull-right.smc-btn-historico-divergente, .fa-pull-right.smc-btn-historico-preenchido, .fa-pull-right.smc-btn-historico, .smc-sga-mensagem-lancamento-frequencia p.fa-pull-right.smc-sga-frequencia-convertida:before, .fa-pull-right.smc-aluno-highlight:before, .smc-sga-mensagem-lancamento-frequencia p.fa-pull-right.smc-sga-frequencia-apurada:before, .fa-pull-right.smc-sga-mensagem-lancamento-nota:before, .smc-sga-grid-lancamento-frequencia-header > div .fa-pull-right.link:before, .smc-sga-grid-lancamento-nota-header > div .fa-pull-right.link:before, .fa-pull-right.smc-sga-filtro-aluno:before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a.fa-pull-right:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior a.fa-pull-right:before, .fa-pull-right.smc-legenda-status-instrucoes:before, .fa-pull-right.smc-legenda-status-pendente:before, .fa-pull-right.smc-legenda-status-aguardandoanalise:before, .fa-pull-right.smc-legenda-status-indeferido:before, .fa-pull-right.smc-legenda-status-apontamento:before, .fa-pull-right.smc-legenda-status-deferido:before, .fa-pull-right.smc-legenda-status-aguardandovalidacao:before, .fa-pull-right.smc-legenda-status-aguardandoentrega:before, .fa-pull-right.smc-sga-legenda-configuracao-principal, .fa-pull-right.smc-sga-mensagem, .smc-sga-icone-documentacao a.fa-pull-right:before, .fa-pull-right.smc-sat-situacao-proximasexecucoes:before, .fa-pull-right.smc-sat-situacao-emexecucao:before, .fa-pull-right.smc-sat-situacao-inativo:before, .fa-pull-right.smc-sat-situacao-ativo:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a.fa-pull-right:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a.fa-pull-right:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.fa-pull-right:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.fa-pull-right:before, .fa-pull-right.treeview-desmarcar-todos:before, .fa-pull-right.treeview-marcar-todos:before, .fa-pull-right.fancytree-drop-reject, .fa-pull-right.smc-mensagem, .fa-pull-right.smc-menu-dinamico-ico-referencia, .smc-btn-legenda-base i.fa-pull-right, a.smc-btn-documento-nao-requerida i.fa-pull-right, a.smc-btn-documento-entrega-pendencia i.fa-pull-right, a.smc-btn-documento-entregue i.fa-pull-right, a.smc-btn-documento-aguarda-validacao i.fa-pull-right, a.smc-btn-documento-aguarda-nova-entrega i.fa-pull-right, a.smc-btn-desbloqueio i.fa-pull-right, a.smc-btn-bloqueio i.fa-pull-right, .fa-pull-right.smc-legenda-base, .fa-pull-right.smc-sga-legenda-historico-divergente, .fa-pull-right.smc-sga-legenda-sancao, .fa-pull-right.smc-sga-legenda-historico, .fa-pull-right.smc-sga-legenda-formado, .fa-pull-right.smc-sga-legenda-final-etapa, .fa-pull-right.smc-sga-legenda-desbloqueio, .fa-pull-right.smc-sga-legenda-bloqueio, .fa-pull-right.smc-legenda-documento-nao-requerida, .fa-pull-right.smc-legenda-documento-entrega-pendencia, .fa-pull-right.smc-legenda-documento-entregue, .fa-pull-right.smc-legenda-documento-aguarda-validacao, .fa-pull-right.smc-legenda-documento-aguarda-nova-entrega, .smc-hidepanel-pesquisa-avancada > .fa-pull-right.smc-editorformodel-advancedfilter-expanded, .smc-hidepanel-pesquisa-avancada > .fa-pull-right.smc-hidepanel-button-expanded, .smc-hidepanel-pesquisa-avancada > .fa-pull-right.smc-editorformodel-advancedfilter, .smc-hidepanel-pesquisa-avancada > .fa-pull-right.smc-hidepanel-button {
   margin-left: 0.3em;
 }
 
@@ -4881,10 +4881,10 @@ input[type=button].btn-block {
   float: left;
 }
 
-.fa.pull-left, .pull-left.smc-sga-legenda-entrega-corrigido:before, .pull-left.smc-sga-legenda-entrega-solicitadonovaentrega:before, .pull-left.smc-sga-legenda-entrega-liberadocorrecao:before, .pull-left.smc-sga-legenda-entrega-entregue:before, .pull-left.smc-sga-legenda-entrega-aguardando:before, .smc-sga-botao-boleto i.pull-left, .smc-sga-painel-lateral-processo-passos .pull-left.smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .pull-left.smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .pull-left.smc-sga-processo-passo-concluido, .pull-left.smc-sga-legenda-matricula-naofinalizada:before, .pull-left.smc-sga-legenda-matricula-finalizada:before, .pull-left.smc-sga-legenda-matricula-aguardandopagamento:before, .pull-left.smc-sga-legenda-matricula-emandamento:before, .pull-left.smc-sga-legenda-matricula-naoiniciada:before, .smc-btn-documento-icotext > i.pull-left, .smc-sga-btn-trocaroferta > i.pull-left, .pull-left.smc-sga-externo-totalizador-status-encerrada, .pull-left.smc-sga-externo-totalizador-status-concluida, .pull-left.smc-sga-externo-totalizador-status-emandamento, .pull-left.smc-sga-externo-totalizador-status-novo, .pull-left.smc-sga-externo-agrupamento-terciario:before, .pull-left.smc-sga-externo-agrupamento-secundario:before, .pull-left.smc-ico-ajuda, .smc-btn-ajuda-icotext > i.pull-left, .smc-grupo-legenda-sga-notas-frequencias-preenchida > span.pull-left::before, .smc-grupo-legenda-sga-notas-frequencias-em-branco > span.pull-left::before, .smc-sga-notas-frequencias div > button.pull-left.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias div > button.pull-left.smc-hidepanel-button-filled::before, .pull-left.smc-hidepanel-button-expanded::before, .pull-left.smc-hidepanel-button::before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a.pull-left:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior a.pull-left:before, .pull-left.smc-legenda-status-instrucoes:before, .pull-left.smc-legenda-status-pendente:before, .pull-left.smc-legenda-status-aguardandoanalise:before, .pull-left.smc-legenda-status-indeferido:before, .pull-left.smc-legenda-status-apontamento:before, .pull-left.smc-legenda-status-deferido:before, .pull-left.smc-legenda-status-aguardandovalidacao:before, .pull-left.smc-legenda-status-aguardandoentrega:before, .pull-left.smc-sga-legenda-configuracao-principal, .pull-left.smc-sga-mensagem, .smc-sga-icone-documentacao a.pull-left:before, .pull-left.smc-sat-situacao-proximasexecucoes:before, .pull-left.smc-sat-situacao-emexecucao:before, .pull-left.smc-sat-situacao-inativo:before, .pull-left.smc-sat-situacao-ativo:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a.pull-left:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a.pull-left:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.pull-left:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.pull-left:before, .pull-left.treeview-desmarcar-todos:before, .pull-left.treeview-marcar-todos:before, .pull-left.fancytree-drop-reject, .pull-left.smc-mensagem, .pull-left.smc-menu-dinamico-ico-referencia, .smc-btn-legenda-base i.pull-left, a.smc-btn-documento-nao-requerida i.pull-left, a.smc-btn-documento-entrega-pendencia i.pull-left, a.smc-btn-documento-entregue i.pull-left, a.smc-btn-documento-aguarda-validacao i.pull-left, a.smc-btn-documento-aguarda-nova-entrega i.pull-left, a.smc-btn-desbloqueio i.pull-left, a.smc-btn-bloqueio i.pull-left, .pull-left.smc-legenda-base, .pull-left.smc-sga-legenda-historico-divergente, .pull-left.smc-sga-legenda-sancao, .pull-left.smc-sga-legenda-historico, .pull-left.smc-sga-legenda-formado, .pull-left.smc-sga-legenda-final-etapa, .pull-left.smc-sga-legenda-desbloqueio, .pull-left.smc-sga-legenda-bloqueio, .pull-left.smc-legenda-documento-nao-requerida, .pull-left.smc-legenda-documento-entrega-pendencia, .pull-left.smc-legenda-documento-entregue, .pull-left.smc-legenda-documento-aguarda-validacao, .pull-left.smc-legenda-documento-aguarda-nova-entrega, .smc-hidepanel-pesquisa-avancada > .pull-left.smc-editorformodel-advancedfilter-expanded, .smc-hidepanel-pesquisa-avancada > .pull-left.smc-hidepanel-button-expanded, .smc-hidepanel-pesquisa-avancada > .pull-left.smc-editorformodel-advancedfilter, .smc-hidepanel-pesquisa-avancada > .pull-left.smc-hidepanel-button {
+.fa.pull-left, .pull-left.smc-sga-legenda-entrega-corrigido:before, .pull-left.smc-sga-legenda-entrega-solicitadonovaentrega:before, .pull-left.smc-sga-legenda-entrega-liberadocorrecao:before, .pull-left.smc-sga-legenda-entrega-entregue:before, .pull-left.smc-sga-legenda-entrega-aguardando:before, .smc-sga-botao-boleto i.pull-left, .smc-sga-painel-lateral-processo-passos .pull-left.smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .pull-left.smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .pull-left.smc-sga-processo-passo-concluido, .pull-left.smc-sga-legenda-matricula-naofinalizada:before, .pull-left.smc-sga-legenda-matricula-finalizada:before, .pull-left.smc-sga-legenda-matricula-aguardandopagamento:before, .pull-left.smc-sga-legenda-matricula-emandamento:before, .pull-left.smc-sga-legenda-matricula-naoiniciada:before, .smc-btn-documento-icotext > i.pull-left, .smc-sga-btn-trocaroferta > i.pull-left, .pull-left.smc-sga-externo-totalizador-status-encerrada, .pull-left.smc-sga-externo-totalizador-status-concluida, .pull-left.smc-sga-externo-totalizador-status-emandamento, .pull-left.smc-sga-externo-totalizador-status-novo, .pull-left.smc-sga-externo-agrupamento-terciario:before, .pull-left.smc-sga-externo-agrupamento-secundario:before, .pull-left.smc-ico-ajuda, .smc-btn-ajuda-icotext > i.pull-left, .smc-grupo-legenda-sga-notas-frequencias-preenchida > span.pull-left::before, .smc-grupo-legenda-sga-notas-frequencias-em-branco > span.pull-left::before, .smc-sga-notas-frequencias div > button.pull-left.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias div > button.pull-left.smc-hidepanel-button-filled::before, .pull-left.smc-hidepanel-button-expanded::before, .pull-left.smc-hidepanel-button::before, .smc-sga-calendario-hoje button i.pull-left, .pull-left.po-loading:before, .pull-left.smc-sga-btn-minimizar:before, .pull-left.smc-sga-btn-maximizar:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type button.pull-left:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger button.pull-left:before, .po-toaster-error div.pull-left:before, .po-toaster-success div.pull-left:before, .po-toaster-warning div.pull-left:before, .po-toaster-info div.pull-left:before, .pull-left.smc-sga-carregando-local:before, .smc-sga-painelalertas h3.pull-left:before, .pull-left.smc-sga-painelalertas-botao, .pull-left.smc-sga-grid-menu-aula-fechado, .pull-left.smc-sga-grid-menu-aula-aberto, .pull-left.smc-btn-frequencia-sancao, .pull-left.smc-btn-frequencia-abono, .pull-left.smc-btn-frequencia-presente, .pull-left.smc-btn-frequencia-falta, .pull-left.smc-btn-frequencia-branco, .pull-left.smc-btn-comentario-preenchido, .pull-left.smc-btn-comentario, .pull-left.smc-btn-historico-divergente, .pull-left.smc-btn-historico-preenchido, .pull-left.smc-btn-historico, .smc-sga-mensagem-lancamento-frequencia p.pull-left.smc-sga-frequencia-convertida:before, .pull-left.smc-aluno-highlight:before, .smc-sga-mensagem-lancamento-frequencia p.pull-left.smc-sga-frequencia-apurada:before, .pull-left.smc-sga-mensagem-lancamento-nota:before, .smc-sga-grid-lancamento-frequencia-header > div .pull-left.link:before, .smc-sga-grid-lancamento-nota-header > div .pull-left.link:before, .pull-left.smc-sga-filtro-aluno:before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a.pull-left:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior a.pull-left:before, .pull-left.smc-legenda-status-instrucoes:before, .pull-left.smc-legenda-status-pendente:before, .pull-left.smc-legenda-status-aguardandoanalise:before, .pull-left.smc-legenda-status-indeferido:before, .pull-left.smc-legenda-status-apontamento:before, .pull-left.smc-legenda-status-deferido:before, .pull-left.smc-legenda-status-aguardandovalidacao:before, .pull-left.smc-legenda-status-aguardandoentrega:before, .pull-left.smc-sga-legenda-configuracao-principal, .pull-left.smc-sga-mensagem, .smc-sga-icone-documentacao a.pull-left:before, .pull-left.smc-sat-situacao-proximasexecucoes:before, .pull-left.smc-sat-situacao-emexecucao:before, .pull-left.smc-sat-situacao-inativo:before, .pull-left.smc-sat-situacao-ativo:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a.pull-left:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a.pull-left:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.pull-left:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.pull-left:before, .pull-left.treeview-desmarcar-todos:before, .pull-left.treeview-marcar-todos:before, .pull-left.fancytree-drop-reject, .pull-left.smc-mensagem, .pull-left.smc-menu-dinamico-ico-referencia, .smc-btn-legenda-base i.pull-left, a.smc-btn-documento-nao-requerida i.pull-left, a.smc-btn-documento-entrega-pendencia i.pull-left, a.smc-btn-documento-entregue i.pull-left, a.smc-btn-documento-aguarda-validacao i.pull-left, a.smc-btn-documento-aguarda-nova-entrega i.pull-left, a.smc-btn-desbloqueio i.pull-left, a.smc-btn-bloqueio i.pull-left, .pull-left.smc-legenda-base, .pull-left.smc-sga-legenda-historico-divergente, .pull-left.smc-sga-legenda-sancao, .pull-left.smc-sga-legenda-historico, .pull-left.smc-sga-legenda-formado, .pull-left.smc-sga-legenda-final-etapa, .pull-left.smc-sga-legenda-desbloqueio, .pull-left.smc-sga-legenda-bloqueio, .pull-left.smc-legenda-documento-nao-requerida, .pull-left.smc-legenda-documento-entrega-pendencia, .pull-left.smc-legenda-documento-entregue, .pull-left.smc-legenda-documento-aguarda-validacao, .pull-left.smc-legenda-documento-aguarda-nova-entrega, .smc-hidepanel-pesquisa-avancada > .pull-left.smc-editorformodel-advancedfilter-expanded, .smc-hidepanel-pesquisa-avancada > .pull-left.smc-hidepanel-button-expanded, .smc-hidepanel-pesquisa-avancada > .pull-left.smc-editorformodel-advancedfilter, .smc-hidepanel-pesquisa-avancada > .pull-left.smc-hidepanel-button {
   margin-right: 0.3em;
 }
-.fa.pull-right, .pull-right.smc-sga-legenda-entrega-corrigido:before, .pull-right.smc-sga-legenda-entrega-solicitadonovaentrega:before, .pull-right.smc-sga-legenda-entrega-liberadocorrecao:before, .pull-right.smc-sga-legenda-entrega-entregue:before, .pull-right.smc-sga-legenda-entrega-aguardando:before, .smc-sga-botao-boleto i.pull-right, .smc-sga-painel-lateral-processo-passos .pull-right.smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .pull-right.smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .pull-right.smc-sga-processo-passo-concluido, .pull-right.smc-sga-legenda-matricula-naofinalizada:before, .pull-right.smc-sga-legenda-matricula-finalizada:before, .pull-right.smc-sga-legenda-matricula-aguardandopagamento:before, .pull-right.smc-sga-legenda-matricula-emandamento:before, .pull-right.smc-sga-legenda-matricula-naoiniciada:before, .smc-btn-documento-icotext > i.pull-right, .smc-sga-btn-trocaroferta > i.pull-right, .pull-right.smc-sga-externo-totalizador-status-encerrada, .pull-right.smc-sga-externo-totalizador-status-concluida, .pull-right.smc-sga-externo-totalizador-status-emandamento, .pull-right.smc-sga-externo-totalizador-status-novo, .pull-right.smc-sga-externo-agrupamento-terciario:before, .pull-right.smc-sga-externo-agrupamento-secundario:before, .pull-right.smc-ico-ajuda, .smc-btn-ajuda-icotext > i.pull-right, .smc-grupo-legenda-sga-notas-frequencias-preenchida > span.pull-right::before, .smc-grupo-legenda-sga-notas-frequencias-em-branco > span.pull-right::before, .smc-sga-notas-frequencias div > button.pull-right.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias div > button.pull-right.smc-hidepanel-button-filled::before, .pull-right.smc-hidepanel-button-expanded::before, .pull-right.smc-hidepanel-button::before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a.pull-right:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior a.pull-right:before, .pull-right.smc-legenda-status-instrucoes:before, .pull-right.smc-legenda-status-pendente:before, .pull-right.smc-legenda-status-aguardandoanalise:before, .pull-right.smc-legenda-status-indeferido:before, .pull-right.smc-legenda-status-apontamento:before, .pull-right.smc-legenda-status-deferido:before, .pull-right.smc-legenda-status-aguardandovalidacao:before, .pull-right.smc-legenda-status-aguardandoentrega:before, .pull-right.smc-sga-legenda-configuracao-principal, .pull-right.smc-sga-mensagem, .smc-sga-icone-documentacao a.pull-right:before, .pull-right.smc-sat-situacao-proximasexecucoes:before, .pull-right.smc-sat-situacao-emexecucao:before, .pull-right.smc-sat-situacao-inativo:before, .pull-right.smc-sat-situacao-ativo:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a.pull-right:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a.pull-right:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.pull-right:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.pull-right:before, .pull-right.treeview-desmarcar-todos:before, .pull-right.treeview-marcar-todos:before, .pull-right.fancytree-drop-reject, .pull-right.smc-mensagem, .pull-right.smc-menu-dinamico-ico-referencia, .smc-btn-legenda-base i.pull-right, a.smc-btn-documento-nao-requerida i.pull-right, a.smc-btn-documento-entrega-pendencia i.pull-right, a.smc-btn-documento-entregue i.pull-right, a.smc-btn-documento-aguarda-validacao i.pull-right, a.smc-btn-documento-aguarda-nova-entrega i.pull-right, a.smc-btn-desbloqueio i.pull-right, a.smc-btn-bloqueio i.pull-right, .pull-right.smc-legenda-base, .pull-right.smc-sga-legenda-historico-divergente, .pull-right.smc-sga-legenda-sancao, .pull-right.smc-sga-legenda-historico, .pull-right.smc-sga-legenda-formado, .pull-right.smc-sga-legenda-final-etapa, .pull-right.smc-sga-legenda-desbloqueio, .pull-right.smc-sga-legenda-bloqueio, .pull-right.smc-legenda-documento-nao-requerida, .pull-right.smc-legenda-documento-entrega-pendencia, .pull-right.smc-legenda-documento-entregue, .pull-right.smc-legenda-documento-aguarda-validacao, .pull-right.smc-legenda-documento-aguarda-nova-entrega, .smc-hidepanel-pesquisa-avancada > .pull-right.smc-editorformodel-advancedfilter-expanded, .smc-hidepanel-pesquisa-avancada > .pull-right.smc-hidepanel-button-expanded, .smc-hidepanel-pesquisa-avancada > .pull-right.smc-editorformodel-advancedfilter, .smc-hidepanel-pesquisa-avancada > .pull-right.smc-hidepanel-button {
+.fa.pull-right, .pull-right.smc-sga-legenda-entrega-corrigido:before, .pull-right.smc-sga-legenda-entrega-solicitadonovaentrega:before, .pull-right.smc-sga-legenda-entrega-liberadocorrecao:before, .pull-right.smc-sga-legenda-entrega-entregue:before, .pull-right.smc-sga-legenda-entrega-aguardando:before, .smc-sga-botao-boleto i.pull-right, .smc-sga-painel-lateral-processo-passos .pull-right.smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .pull-right.smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .pull-right.smc-sga-processo-passo-concluido, .pull-right.smc-sga-legenda-matricula-naofinalizada:before, .pull-right.smc-sga-legenda-matricula-finalizada:before, .pull-right.smc-sga-legenda-matricula-aguardandopagamento:before, .pull-right.smc-sga-legenda-matricula-emandamento:before, .pull-right.smc-sga-legenda-matricula-naoiniciada:before, .smc-btn-documento-icotext > i.pull-right, .smc-sga-btn-trocaroferta > i.pull-right, .pull-right.smc-sga-externo-totalizador-status-encerrada, .pull-right.smc-sga-externo-totalizador-status-concluida, .pull-right.smc-sga-externo-totalizador-status-emandamento, .pull-right.smc-sga-externo-totalizador-status-novo, .pull-right.smc-sga-externo-agrupamento-terciario:before, .pull-right.smc-sga-externo-agrupamento-secundario:before, .pull-right.smc-ico-ajuda, .smc-btn-ajuda-icotext > i.pull-right, .smc-grupo-legenda-sga-notas-frequencias-preenchida > span.pull-right::before, .smc-grupo-legenda-sga-notas-frequencias-em-branco > span.pull-right::before, .smc-sga-notas-frequencias div > button.pull-right.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias div > button.pull-right.smc-hidepanel-button-filled::before, .pull-right.smc-hidepanel-button-expanded::before, .pull-right.smc-hidepanel-button::before, .smc-sga-calendario-hoje button i.pull-right, .pull-right.po-loading:before, .pull-right.smc-sga-btn-minimizar:before, .pull-right.smc-sga-btn-maximizar:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type button.pull-right:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger button.pull-right:before, .po-toaster-error div.pull-right:before, .po-toaster-success div.pull-right:before, .po-toaster-warning div.pull-right:before, .po-toaster-info div.pull-right:before, .pull-right.smc-sga-carregando-local:before, .smc-sga-painelalertas h3.pull-right:before, .pull-right.smc-sga-painelalertas-botao, .pull-right.smc-sga-grid-menu-aula-fechado, .pull-right.smc-sga-grid-menu-aula-aberto, .pull-right.smc-btn-frequencia-sancao, .pull-right.smc-btn-frequencia-abono, .pull-right.smc-btn-frequencia-presente, .pull-right.smc-btn-frequencia-falta, .pull-right.smc-btn-frequencia-branco, .pull-right.smc-btn-comentario-preenchido, .pull-right.smc-btn-comentario, .pull-right.smc-btn-historico-divergente, .pull-right.smc-btn-historico-preenchido, .pull-right.smc-btn-historico, .smc-sga-mensagem-lancamento-frequencia p.pull-right.smc-sga-frequencia-convertida:before, .pull-right.smc-aluno-highlight:before, .smc-sga-mensagem-lancamento-frequencia p.pull-right.smc-sga-frequencia-apurada:before, .pull-right.smc-sga-mensagem-lancamento-nota:before, .smc-sga-grid-lancamento-frequencia-header > div .pull-right.link:before, .smc-sga-grid-lancamento-nota-header > div .pull-right.link:before, .pull-right.smc-sga-filtro-aluno:before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a.pull-right:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior a.pull-right:before, .pull-right.smc-legenda-status-instrucoes:before, .pull-right.smc-legenda-status-pendente:before, .pull-right.smc-legenda-status-aguardandoanalise:before, .pull-right.smc-legenda-status-indeferido:before, .pull-right.smc-legenda-status-apontamento:before, .pull-right.smc-legenda-status-deferido:before, .pull-right.smc-legenda-status-aguardandovalidacao:before, .pull-right.smc-legenda-status-aguardandoentrega:before, .pull-right.smc-sga-legenda-configuracao-principal, .pull-right.smc-sga-mensagem, .smc-sga-icone-documentacao a.pull-right:before, .pull-right.smc-sat-situacao-proximasexecucoes:before, .pull-right.smc-sat-situacao-emexecucao:before, .pull-right.smc-sat-situacao-inativo:before, .pull-right.smc-sat-situacao-ativo:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a.pull-right:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a.pull-right:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.pull-right:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.pull-right:before, .pull-right.treeview-desmarcar-todos:before, .pull-right.treeview-marcar-todos:before, .pull-right.fancytree-drop-reject, .pull-right.smc-mensagem, .pull-right.smc-menu-dinamico-ico-referencia, .smc-btn-legenda-base i.pull-right, a.smc-btn-documento-nao-requerida i.pull-right, a.smc-btn-documento-entrega-pendencia i.pull-right, a.smc-btn-documento-entregue i.pull-right, a.smc-btn-documento-aguarda-validacao i.pull-right, a.smc-btn-documento-aguarda-nova-entrega i.pull-right, a.smc-btn-desbloqueio i.pull-right, a.smc-btn-bloqueio i.pull-right, .pull-right.smc-legenda-base, .pull-right.smc-sga-legenda-historico-divergente, .pull-right.smc-sga-legenda-sancao, .pull-right.smc-sga-legenda-historico, .pull-right.smc-sga-legenda-formado, .pull-right.smc-sga-legenda-final-etapa, .pull-right.smc-sga-legenda-desbloqueio, .pull-right.smc-sga-legenda-bloqueio, .pull-right.smc-legenda-documento-nao-requerida, .pull-right.smc-legenda-documento-entrega-pendencia, .pull-right.smc-legenda-documento-entregue, .pull-right.smc-legenda-documento-aguarda-validacao, .pull-right.smc-legenda-documento-aguarda-nova-entrega, .smc-hidepanel-pesquisa-avancada > .pull-right.smc-editorformodel-advancedfilter-expanded, .smc-hidepanel-pesquisa-avancada > .pull-right.smc-hidepanel-button-expanded, .smc-hidepanel-pesquisa-avancada > .pull-right.smc-editorformodel-advancedfilter, .smc-hidepanel-pesquisa-avancada > .pull-right.smc-hidepanel-button {
   margin-left: 0.3em;
 }
 
@@ -4893,7 +4893,7 @@ input[type=button].btn-block {
   animation: fa-spin 2s infinite linear;
 }
 
-.fa-pulse {
+.fa-pulse, .po-loading:before, button .smc-sga-carregando-local:before, .smc-sga-carregando-local:before {
   -webkit-animation: fa-spin 1s infinite steps(8);
   animation: fa-spin 1s infinite steps(8);
 }
@@ -5043,13 +5043,14 @@ input[type=button].btn-block {
   content: "\f00b";
 }
 
-.fa-check:before, .smc-sga-legenda-entrega-entregue:before, .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-concluido:before, .smc-sga-externo-totalizador-status-concluida:before, .smc-legenda-status-deferido:before, .smc-uploadFile-filesCounter > i:before, .smc-sgf-filter-selecionados > i:before, .smc-btn-confirmar-ico > i:before, .smc-btn-confirmar-ico-destaque > i:before, .smc-btn-confirmar-icotext > i:before, .smc-btn-confirmar-icotext-destaque > i:before {
+.fa-check:before, .smc-sga-legenda-entrega-entregue:before, .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-concluido:before, .smc-sga-externo-totalizador-status-concluida:before, .po-toaster-success div:before, .smc-legenda-status-deferido:before, .smc-uploadFile-filesCounter > i:before, .smc-sgf-filter-selecionados > i:before, .smc-btn-confirmar-ico > i:before, .smc-btn-confirmar-ico-destaque > i:before, .smc-btn-confirmar-icotext > i:before, .smc-btn-confirmar-icotext-destaque > i:before {
   content: "\f00c";
 }
 
 .fa-remove:before,
 .fa-close:before,
 .fa-times:before,
+.smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger button:before,
 .smc-btn-cancelar-ico > i:before,
 .smc-btn-cancelar-ico-destaque > i:before,
 .smc-btn-cancelar-icotext > i:before,
@@ -5345,7 +5346,7 @@ input[type=button].btn-block {
   content: "\f056";
 }
 
-.fa-times-circle:before, .smc-sga-legenda-matricula-naofinalizada:before, .smc-sga-mensagem-erro:before, .smc-modal-window .smc-modal-header > div.smc-button .smc-modal-close > i:before, .smc-mensagem-erro:before, .smc-message-information > div.ui-draggable .smc-modal-close > i:before, .smc-message-error > div.ui-draggable .smc-modal-header > h2 > i:before, .smc-message-error > div.ui-draggable .smc-modal-close > i:before, .smc-message-alert > div.ui-draggable .smc-modal-close > i:before, .smc-message-success > div.ui-draggable .smc-modal-close > i:before, a.smc-btn-documento-nao-requerida i:before, .smc-legenda-documento-nao-requerida:before, .smc-btn-fechar-ico > i:before, .smc-btn-fechar-ico-destaque > i:before, .smc-btn-fechar-icotext > i:before, .smc-btn-fechar-icotext-destaque > i:before {
+.fa-times-circle:before, .smc-sga-legenda-matricula-naofinalizada:before, .po-toaster-error div:before, .smc-sga-mensagem-erro:before, .smc-modal-window .smc-modal-header > div.smc-button .smc-modal-close > i:before, .smc-mensagem-erro:before, .smc-message-information > div.ui-draggable .smc-modal-close > i:before, .smc-message-error > div.ui-draggable .smc-modal-header > h2 > i:before, .smc-message-error > div.ui-draggable .smc-modal-close > i:before, .smc-message-alert > div.ui-draggable .smc-modal-close > i:before, .smc-message-success > div.ui-draggable .smc-modal-close > i:before, a.smc-btn-documento-nao-requerida i:before, .smc-legenda-documento-nao-requerida:before, .smc-btn-fechar-ico > i:before, .smc-btn-fechar-ico-destaque > i:before, .smc-btn-fechar-icotext > i:before, .smc-btn-fechar-icotext-destaque > i:before {
   content: "\f057";
 }
 
@@ -5369,11 +5370,11 @@ input[type=button].btn-block {
   content: "\f05c";
 }
 
-.fa-check-circle-o:before, .smc-sga-legenda-desbloqueio:before, a.smc-btn-desbloqueio i:before {
+.fa-check-circle-o:before, .smc-btn-frequencia-presente:before, .smc-sga-legenda-desbloqueio:before, a.smc-btn-desbloqueio i:before {
   content: "\f05d";
 }
 
-.fa-ban:before, .smc-legenda-status-indeferido:before, .smc-sga-legenda-bloqueio:before, .fancytree-drop-reject:before, a.smc-btn-bloqueio i:before {
+.fa-ban:before, .smc-btn-frequencia-falta:before, .smc-legenda-status-indeferido:before, .smc-sga-legenda-bloqueio:before, .fancytree-drop-reject:before, a.smc-btn-bloqueio i:before {
   content: "\f05e";
 }
 
@@ -5398,11 +5399,11 @@ input[type=button].btn-block {
   content: "\f064";
 }
 
-.fa-expand:before {
+.fa-expand:before, .smc-sga-btn-maximizar:before {
   content: "\f065";
 }
 
-.fa-compress:before {
+.fa-compress:before, .smc-sga-btn-minimizar:before {
   content: "\f066";
 }
 
@@ -5444,6 +5445,7 @@ input[type=button].btn-block {
 
 .fa-warning:before,
 .fa-exclamation-triangle:before,
+.po-toaster-warning div:before,
 .smc-legenda-status-pendente:before,
 a.smc-btn-documento-entrega-pendencia i:before,
 .smc-legenda-documento-entrega-pendencia:before {
@@ -5454,7 +5456,7 @@ a.smc-btn-documento-entrega-pendencia i:before,
   content: "\f072";
 }
 
-.fa-calendar:before, .smc-datepicker > div.smc-ico-datepicker:before {
+.fa-calendar:before, .smc-sga-calendario-hoje button i:before, .smc-datepicker > div.smc-ico-datepicker:before {
   content: "\f073";
 }
 
@@ -5462,7 +5464,7 @@ a.smc-btn-documento-entrega-pendencia i:before,
   content: "\f074";
 }
 
-.fa-comment:before, .smc-grupo-legenda-sga-notas-frequencias-em-branco > span:before, .smc-sga-notas-frequencias .smc-hidepanel-button:before, .smc-message-information > div.ui-draggable .smc-modal-header:before {
+.fa-comment:before, .smc-grupo-legenda-sga-notas-frequencias-em-branco > span:before, .smc-sga-notas-frequencias .smc-hidepanel-button:before, .po-toaster-info div:before, .smc-btn-comentario-preenchido:before, .smc-message-information > div.ui-draggable .smc-modal-header:before {
   content: "\f075";
 }
 
@@ -5562,7 +5564,7 @@ a.smc-btn-documento-entrega-pendencia i:before,
   content: "\f08d";
 }
 
-.fa-external-link:before, .smc-sga-legenda-entrega-solicitadonovaentrega:before, .smc-sga-btn-formato-link .smc-button .smc-btn-custom > i:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior a:before {
+.fa-external-link:before, .smc-sga-legenda-entrega-solicitadonovaentrega:before, .smc-sga-grid-lancamento-frequencia-header > div .link:before, .smc-sga-grid-lancamento-nota-header > div .link:before, .smc-sga-btn-formato-link .smc-button .smc-btn-custom > i:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior a:before {
   content: "\f08e";
 }
 
@@ -5688,7 +5690,7 @@ a.smc-btn-documento-entrega-pendencia i:before,
   content: "\f0ae";
 }
 
-.fa-filter:before, .smc-sgf-sgffilter .smc-btn-pesquisa-mais > i:before {
+.fa-filter:before, .smc-sga-filtro-aluno:before, .smc-sgf-sgffilter .smc-btn-pesquisa-mais > i:before {
   content: "\f0b0";
 }
 
@@ -5744,6 +5746,7 @@ a.smc-btn-documento-entrega-pendencia i:before,
 
 .fa-save:before,
 .fa-floppy-o:before,
+.smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type button:before,
 .smc-btn-salvar-ico > i:before,
 .smc-btn-salvar-ico-destaque > i:before,
 .smc-btn-salvar-icotext > i:before,
@@ -5847,12 +5850,14 @@ a.smc-btn-documento-entrega-pendencia i:before,
 
 .fa-sort-down:before,
 .fa-sort-desc:before,
+.smc-sga-grid-menu-aula-fechado:before,
 .smc-orderpick-btn-down > i:before {
   content: "\f0dd";
 }
 
 .fa-sort-up:before,
 .fa-sort-asc:before,
+.smc-sga-grid-menu-aula-aberto:before,
 .smc-orderpick-btn-up > i:before {
   content: "\f0de";
 }
@@ -5884,7 +5889,7 @@ a.smc-btn-documento-entrega-pendencia i:before,
   content: "\f0e4";
 }
 
-.fa-comment-o:before, .smc-sga-notas-frequencias .smc-hidepanel-button-expanded:before {
+.fa-comment-o:before, .smc-sga-notas-frequencias .smc-hidepanel-button-expanded:before, .smc-btn-comentario:before {
   content: "\f0e5";
 }
 
@@ -5941,7 +5946,7 @@ a.smc-btn-documento-aguarda-nova-entrega i:before,
   content: "\f0f2";
 }
 
-.fa-bell-o:before {
+.fa-bell-o:before, .smc-sga-painelalertas h3:before, .smc-sga-painelalertas-botao:before {
   content: "\f0a2";
 }
 
@@ -5953,7 +5958,7 @@ a.smc-btn-documento-aguarda-nova-entrega i:before,
   content: "\f0f5";
 }
 
-.fa-file-text-o:before, .smc-btn-documento-icotext > i:before, .smc-sga-legenda-historico-divergente:before, .smc-sga-legenda-sancao:before, .smc-sga-legenda-historico:before {
+.fa-file-text-o:before, .smc-btn-documento-icotext > i:before, .smc-btn-frequencia-sancao:before, .smc-btn-frequencia-abono:before, .smc-btn-historico:before, .smc-sga-legenda-historico-divergente:before, .smc-sga-legenda-sancao:before, .smc-sga-legenda-historico:before {
   content: "\f0f6";
 }
 
@@ -6038,7 +6043,7 @@ a.smc-btn-documento-aguarda-nova-entrega i:before,
   content: "\f10b";
 }
 
-.fa-circle-o:before {
+.fa-circle-o:before, .smc-btn-frequencia-branco:before, .smc-sga-mensagem-lancamento-frequencia p.smc-sga-frequencia-convertida:before {
   content: "\f10c";
 }
 
@@ -6050,11 +6055,11 @@ a.smc-btn-documento-aguarda-nova-entrega i:before,
   content: "\f10e";
 }
 
-.fa-spinner:before {
+.fa-spinner:before, .po-loading:before, button .smc-sga-carregando-local:before, .smc-sga-carregando-local:before {
   content: "\f110";
 }
 
-.fa-circle:before {
+.fa-circle:before, .smc-aluno-highlight:before, .smc-sga-mensagem-lancamento-frequencia p.smc-sga-frequencia-apurada:before, .smc-sga-mensagem-lancamento-nota:before {
   content: "\f111";
 }
 
@@ -6361,7 +6366,7 @@ a.smc-btn-documento-aguarda-nova-entrega i:before,
   content: "\f15b";
 }
 
-.fa-file-text:before, .smc-sga-icone-documentacao a:before {
+.fa-file-text:before, .smc-btn-historico-divergente:before, .smc-btn-historico-preenchido:before, .smc-sga-icone-documentacao a:before {
   content: "\f15c";
 }
 
@@ -9323,7 +9328,7 @@ div.jGrowl div.jGrowl-closer {
   width: 6%;
 }
 
-.carousel-control .fa.fa-angle-left, .carousel-control .fa-angle-left.smc-sga-legenda-entrega-corrigido:before, .carousel-control .fa-angle-left.smc-sga-legenda-entrega-solicitadonovaentrega:before, .carousel-control .fa-angle-left.smc-sga-legenda-entrega-liberadocorrecao:before, .carousel-control .fa-angle-left.smc-sga-legenda-entrega-entregue:before, .carousel-control .fa-angle-left.smc-sga-legenda-entrega-aguardando:before, .carousel-control .smc-sga-botao-boleto i.fa-angle-left, .smc-sga-botao-boleto .carousel-control i.fa-angle-left, .carousel-control .smc-sga-painel-lateral-processo-passos .fa-angle-left.smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .carousel-control .fa-angle-left.smc-sga-processo-passo-emaberto, .carousel-control .smc-sga-painel-lateral-processo-passos .fa-angle-left.smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .carousel-control .fa-angle-left.smc-sga-processo-passo-atual, .carousel-control .smc-sga-painel-lateral-processo-passos .fa-angle-left.smc-sga-processo-passo-concluido, .smc-sga-painel-lateral-processo-passos .carousel-control .fa-angle-left.smc-sga-processo-passo-concluido, .carousel-control .fa-angle-left.smc-sga-legenda-matricula-naofinalizada:before, .carousel-control .fa-angle-left.smc-sga-legenda-matricula-finalizada:before, .carousel-control .fa-angle-left.smc-sga-legenda-matricula-aguardandopagamento:before, .carousel-control .fa-angle-left.smc-sga-legenda-matricula-emandamento:before, .carousel-control .fa-angle-left.smc-sga-legenda-matricula-naoiniciada:before, .carousel-control .smc-btn-documento-icotext > i.fa-angle-left, .carousel-control .smc-sga-btn-trocaroferta > i.fa-angle-left, .carousel-control .fa-angle-left.smc-sga-externo-totalizador-status-encerrada, .carousel-control .fa-angle-left.smc-sga-externo-totalizador-status-concluida, .carousel-control .fa-angle-left.smc-sga-externo-totalizador-status-emandamento, .carousel-control .fa-angle-left.smc-sga-externo-totalizador-status-novo, .carousel-control .fa-angle-left.smc-sga-externo-agrupamento-terciario:before, .carousel-control .fa-angle-left.smc-sga-externo-agrupamento-secundario:before, .carousel-control .fa-angle-left.smc-ico-ajuda, .carousel-control .smc-btn-ajuda-icotext > i.fa-angle-left, .carousel-control .smc-grupo-legenda-sga-notas-frequencias-preenchida > span.fa-angle-left::before, .carousel-control .smc-grupo-legenda-sga-notas-frequencias-em-branco > span.fa-angle-left::before, .carousel-control .smc-sga-notas-frequencias div > button.fa-angle-left.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias .carousel-control div > button.fa-angle-left.smc-hidepanel-button-expanded-filled::before, .carousel-control .smc-sga-notas-frequencias div > button.fa-angle-left.smc-hidepanel-button-filled::before, .smc-sga-notas-frequencias .carousel-control div > button.fa-angle-left.smc-hidepanel-button-filled::before, .carousel-control .smc-sga-notas-frequencias .fa-angle-left.smc-hidepanel-button-expanded::before, .smc-sga-notas-frequencias .carousel-control .fa-angle-left.smc-hidepanel-button-expanded::before, .carousel-control .smc-sga-notas-frequencias .fa-angle-left.smc-hidepanel-button::before, .smc-sga-notas-frequencias .carousel-control .fa-angle-left.smc-hidepanel-button::before, .carousel-control .fa-angle-left.smc-hidepanel-button-expanded::before, .carousel-control .fa-angle-left.smc-hidepanel-button::before, .carousel-control .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a.fa-angle-left:before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior .carousel-control a.fa-angle-left:before, .carousel-control .smc-sga-registro-documentos .smc-sga-link-entregaposterior a.fa-angle-left:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior .carousel-control a.fa-angle-left:before, .carousel-control .fa-angle-left.smc-legenda-status-instrucoes:before, .carousel-control .fa-angle-left.smc-legenda-status-pendente:before, .carousel-control .fa-angle-left.smc-legenda-status-aguardandoanalise:before, .carousel-control .fa-angle-left.smc-legenda-status-indeferido:before, .carousel-control .fa-angle-left.smc-legenda-status-apontamento:before, .carousel-control .fa-angle-left.smc-legenda-status-deferido:before, .carousel-control .fa-angle-left.smc-legenda-status-aguardandovalidacao:before, .carousel-control .fa-angle-left.smc-legenda-status-aguardandoentrega:before, .carousel-control .fa-angle-left.smc-sga-legenda-configuracao-principal, .carousel-control .fa-angle-left.smc-sga-mensagem, .carousel-control .smc-sga-icone-documentacao a.fa-angle-left:before, .smc-sga-icone-documentacao .carousel-control a.fa-angle-left:before, .carousel-control .fa-angle-left.smc-sat-situacao-proximasexecucoes:before, .carousel-control .fa-angle-left.smc-sat-situacao-emexecucao:before, .carousel-control .fa-angle-left.smc-sat-situacao-inativo:before, .carousel-control .fa-angle-left.smc-sat-situacao-ativo:before, .carousel-control .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a.fa-angle-left:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item .carousel-control a.fa-angle-left:before, .carousel-control .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a.fa-angle-left:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item .carousel-control a.fa-angle-left:before, .carousel-control .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.fa-angle-left:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item .carousel-control a.fa-angle-left:after, .carousel-control .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.fa-angle-left:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item .carousel-control a.fa-angle-left:before, .carousel-control .fa-angle-left.treeview-desmarcar-todos:before, .carousel-control .fa-angle-left.treeview-marcar-todos:before, .carousel-control .fa-angle-left.fancytree-drop-reject, .carousel-control .fa-angle-left.smc-mensagem, .carousel-control .fa-angle-left.smc-menu-dinamico-ico-referencia, .carousel-control .smc-btn-legenda-base i.fa-angle-left, .carousel-control a.smc-btn-documento-nao-requerida i.fa-angle-left, .carousel-control a.smc-btn-documento-entrega-pendencia i.fa-angle-left, .carousel-control a.smc-btn-documento-entregue i.fa-angle-left, .carousel-control a.smc-btn-documento-aguarda-validacao i.fa-angle-left, .carousel-control a.smc-btn-documento-aguarda-nova-entrega i.fa-angle-left, .carousel-control a.smc-btn-desbloqueio i.fa-angle-left, .carousel-control a.smc-btn-bloqueio i.fa-angle-left, .smc-btn-legenda-base .carousel-control i.fa-angle-left, a.smc-btn-documento-nao-requerida .carousel-control i.fa-angle-left, a.smc-btn-documento-entrega-pendencia .carousel-control i.fa-angle-left, a.smc-btn-documento-entregue .carousel-control i.fa-angle-left, a.smc-btn-documento-aguarda-validacao .carousel-control i.fa-angle-left, a.smc-btn-documento-aguarda-nova-entrega .carousel-control i.fa-angle-left, a.smc-btn-desbloqueio .carousel-control i.fa-angle-left, a.smc-btn-bloqueio .carousel-control i.fa-angle-left, .carousel-control .fa-angle-left.smc-legenda-base, .carousel-control .fa-angle-left.smc-sga-legenda-historico-divergente, .carousel-control .fa-angle-left.smc-sga-legenda-sancao, .carousel-control .fa-angle-left.smc-sga-legenda-historico, .carousel-control .fa-angle-left.smc-sga-legenda-formado, .carousel-control .fa-angle-left.smc-sga-legenda-final-etapa, .carousel-control .fa-angle-left.smc-sga-legenda-desbloqueio, .carousel-control .fa-angle-left.smc-sga-legenda-bloqueio, .carousel-control .fa-angle-left.smc-legenda-documento-nao-requerida, .carousel-control .fa-angle-left.smc-legenda-documento-entrega-pendencia, .carousel-control .fa-angle-left.smc-legenda-documento-entregue, .carousel-control .fa-angle-left.smc-legenda-documento-aguarda-validacao, .carousel-control .fa-angle-left.smc-legenda-documento-aguarda-nova-entrega, .carousel-control .smc-hidepanel-pesquisa-avancada > .fa-angle-left.smc-editorformodel-advancedfilter-expanded, .carousel-control .smc-hidepanel-pesquisa-avancada > .fa-angle-left.smc-hidepanel-button-expanded, .carousel-control .smc-hidepanel-pesquisa-avancada > .fa-angle-left.smc-editorformodel-advancedfilter, .carousel-control .smc-hidepanel-pesquisa-avancada > .fa-angle-left.smc-hidepanel-button,
+.carousel-control .fa.fa-angle-left, .carousel-control .fa-angle-left.smc-sga-legenda-entrega-corrigido:before, .carousel-control .fa-angle-left.smc-sga-legenda-entrega-solicitadonovaentrega:before, .carousel-control .fa-angle-left.smc-sga-legenda-entrega-liberadocorrecao:before, .carousel-control .fa-angle-left.smc-sga-legenda-entrega-entregue:before, .carousel-control .fa-angle-left.smc-sga-legenda-entrega-aguardando:before, .carousel-control .smc-sga-botao-boleto i.fa-angle-left, .smc-sga-botao-boleto .carousel-control i.fa-angle-left, .carousel-control .smc-sga-painel-lateral-processo-passos .fa-angle-left.smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .carousel-control .fa-angle-left.smc-sga-processo-passo-emaberto, .carousel-control .smc-sga-painel-lateral-processo-passos .fa-angle-left.smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .carousel-control .fa-angle-left.smc-sga-processo-passo-atual, .carousel-control .smc-sga-painel-lateral-processo-passos .fa-angle-left.smc-sga-processo-passo-concluido, .smc-sga-painel-lateral-processo-passos .carousel-control .fa-angle-left.smc-sga-processo-passo-concluido, .carousel-control .fa-angle-left.smc-sga-legenda-matricula-naofinalizada:before, .carousel-control .fa-angle-left.smc-sga-legenda-matricula-finalizada:before, .carousel-control .fa-angle-left.smc-sga-legenda-matricula-aguardandopagamento:before, .carousel-control .fa-angle-left.smc-sga-legenda-matricula-emandamento:before, .carousel-control .fa-angle-left.smc-sga-legenda-matricula-naoiniciada:before, .carousel-control .smc-btn-documento-icotext > i.fa-angle-left, .carousel-control .smc-sga-btn-trocaroferta > i.fa-angle-left, .carousel-control .fa-angle-left.smc-sga-externo-totalizador-status-encerrada, .carousel-control .fa-angle-left.smc-sga-externo-totalizador-status-concluida, .carousel-control .fa-angle-left.smc-sga-externo-totalizador-status-emandamento, .carousel-control .fa-angle-left.smc-sga-externo-totalizador-status-novo, .carousel-control .fa-angle-left.smc-sga-externo-agrupamento-terciario:before, .carousel-control .fa-angle-left.smc-sga-externo-agrupamento-secundario:before, .carousel-control .fa-angle-left.smc-ico-ajuda, .carousel-control .smc-btn-ajuda-icotext > i.fa-angle-left, .carousel-control .smc-grupo-legenda-sga-notas-frequencias-preenchida > span.fa-angle-left::before, .carousel-control .smc-grupo-legenda-sga-notas-frequencias-em-branco > span.fa-angle-left::before, .carousel-control .smc-sga-notas-frequencias div > button.fa-angle-left.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias .carousel-control div > button.fa-angle-left.smc-hidepanel-button-expanded-filled::before, .carousel-control .smc-sga-notas-frequencias div > button.fa-angle-left.smc-hidepanel-button-filled::before, .smc-sga-notas-frequencias .carousel-control div > button.fa-angle-left.smc-hidepanel-button-filled::before, .carousel-control .smc-sga-notas-frequencias .fa-angle-left.smc-hidepanel-button-expanded::before, .smc-sga-notas-frequencias .carousel-control .fa-angle-left.smc-hidepanel-button-expanded::before, .carousel-control .smc-sga-notas-frequencias .fa-angle-left.smc-hidepanel-button::before, .smc-sga-notas-frequencias .carousel-control .fa-angle-left.smc-hidepanel-button::before, .carousel-control .fa-angle-left.smc-hidepanel-button-expanded::before, .carousel-control .fa-angle-left.smc-hidepanel-button::before, .carousel-control .smc-sga-calendario-hoje button i.fa-angle-left, .smc-sga-calendario-hoje button .carousel-control i.fa-angle-left, .carousel-control .fa-angle-left.po-loading:before, .carousel-control .fa-angle-left.smc-sga-btn-minimizar:before, .carousel-control .fa-angle-left.smc-sga-btn-maximizar:before, .carousel-control .smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type button.fa-angle-left:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type .carousel-control button.fa-angle-left:before, .carousel-control .smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger button.fa-angle-left:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger .carousel-control button.fa-angle-left:before, .carousel-control .po-toaster-error div.fa-angle-left:before, .carousel-control .po-toaster-success div.fa-angle-left:before, .carousel-control .po-toaster-warning div.fa-angle-left:before, .carousel-control .po-toaster-info div.fa-angle-left:before, .po-toaster-error .carousel-control div.fa-angle-left:before, .po-toaster-success .carousel-control div.fa-angle-left:before, .po-toaster-warning .carousel-control div.fa-angle-left:before, .po-toaster-info .carousel-control div.fa-angle-left:before, .carousel-control button .fa-angle-left.smc-sga-carregando-local:before, button .carousel-control .fa-angle-left.smc-sga-carregando-local:before, .carousel-control .fa-angle-left.smc-sga-carregando-local:before, .carousel-control .smc-sga-painelalertas h3.fa-angle-left:before, .smc-sga-painelalertas .carousel-control h3.fa-angle-left:before, .carousel-control .fa-angle-left.smc-sga-painelalertas-botao, .carousel-control .fa-angle-left.smc-sga-grid-menu-aula-fechado, .carousel-control .fa-angle-left.smc-sga-grid-menu-aula-aberto, .carousel-control .fa-angle-left.smc-btn-frequencia-sancao, .carousel-control .fa-angle-left.smc-btn-frequencia-abono, .carousel-control .fa-angle-left.smc-btn-frequencia-presente, .carousel-control .fa-angle-left.smc-btn-frequencia-falta, .carousel-control .fa-angle-left.smc-btn-frequencia-branco, .carousel-control .fa-angle-left.smc-btn-comentario-preenchido, .carousel-control .fa-angle-left.smc-btn-comentario, .carousel-control .fa-angle-left.smc-btn-historico-divergente, .carousel-control .fa-angle-left.smc-btn-historico-preenchido, .carousel-control .fa-angle-left.smc-btn-historico, .carousel-control .smc-sga-mensagem-lancamento-frequencia p.fa-angle-left.smc-sga-frequencia-convertida:before, .smc-sga-mensagem-lancamento-frequencia .carousel-control p.fa-angle-left.smc-sga-frequencia-convertida:before, .carousel-control .fa-angle-left.smc-aluno-highlight:before, .carousel-control .smc-sga-mensagem-lancamento-frequencia p.fa-angle-left.smc-sga-frequencia-apurada:before, .smc-sga-mensagem-lancamento-frequencia .carousel-control p.fa-angle-left.smc-sga-frequencia-apurada:before, .carousel-control .fa-angle-left.smc-sga-mensagem-lancamento-nota:before, .carousel-control .smc-sga-grid-lancamento-frequencia-header > div .fa-angle-left.link:before, .smc-sga-grid-lancamento-frequencia-header > div .carousel-control .fa-angle-left.link:before, .carousel-control .smc-sga-grid-lancamento-nota-header > div .fa-angle-left.link:before, .smc-sga-grid-lancamento-nota-header > div .carousel-control .fa-angle-left.link:before, .carousel-control .fa-angle-left.smc-sga-filtro-aluno:before, .carousel-control .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a.fa-angle-left:before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior .carousel-control a.fa-angle-left:before, .carousel-control .smc-sga-registro-documentos .smc-sga-link-entregaposterior a.fa-angle-left:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior .carousel-control a.fa-angle-left:before, .carousel-control .fa-angle-left.smc-legenda-status-instrucoes:before, .carousel-control .fa-angle-left.smc-legenda-status-pendente:before, .carousel-control .fa-angle-left.smc-legenda-status-aguardandoanalise:before, .carousel-control .fa-angle-left.smc-legenda-status-indeferido:before, .carousel-control .fa-angle-left.smc-legenda-status-apontamento:before, .carousel-control .fa-angle-left.smc-legenda-status-deferido:before, .carousel-control .fa-angle-left.smc-legenda-status-aguardandovalidacao:before, .carousel-control .fa-angle-left.smc-legenda-status-aguardandoentrega:before, .carousel-control .fa-angle-left.smc-sga-legenda-configuracao-principal, .carousel-control .fa-angle-left.smc-sga-mensagem, .carousel-control .smc-sga-icone-documentacao a.fa-angle-left:before, .smc-sga-icone-documentacao .carousel-control a.fa-angle-left:before, .carousel-control .fa-angle-left.smc-sat-situacao-proximasexecucoes:before, .carousel-control .fa-angle-left.smc-sat-situacao-emexecucao:before, .carousel-control .fa-angle-left.smc-sat-situacao-inativo:before, .carousel-control .fa-angle-left.smc-sat-situacao-ativo:before, .carousel-control .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a.fa-angle-left:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item .carousel-control a.fa-angle-left:before, .carousel-control .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a.fa-angle-left:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item .carousel-control a.fa-angle-left:before, .carousel-control .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.fa-angle-left:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item .carousel-control a.fa-angle-left:after, .carousel-control .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a.fa-angle-left:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item .carousel-control a.fa-angle-left:before, .carousel-control .fa-angle-left.treeview-desmarcar-todos:before, .carousel-control .fa-angle-left.treeview-marcar-todos:before, .carousel-control .fa-angle-left.fancytree-drop-reject, .carousel-control .fa-angle-left.smc-mensagem, .carousel-control .fa-angle-left.smc-menu-dinamico-ico-referencia, .carousel-control .smc-btn-legenda-base i.fa-angle-left, .carousel-control a.smc-btn-documento-nao-requerida i.fa-angle-left, .carousel-control a.smc-btn-documento-entrega-pendencia i.fa-angle-left, .carousel-control a.smc-btn-documento-entregue i.fa-angle-left, .carousel-control a.smc-btn-documento-aguarda-validacao i.fa-angle-left, .carousel-control a.smc-btn-documento-aguarda-nova-entrega i.fa-angle-left, .carousel-control a.smc-btn-desbloqueio i.fa-angle-left, .carousel-control a.smc-btn-bloqueio i.fa-angle-left, .smc-btn-legenda-base .carousel-control i.fa-angle-left, a.smc-btn-documento-nao-requerida .carousel-control i.fa-angle-left, a.smc-btn-documento-entrega-pendencia .carousel-control i.fa-angle-left, a.smc-btn-documento-entregue .carousel-control i.fa-angle-left, a.smc-btn-documento-aguarda-validacao .carousel-control i.fa-angle-left, a.smc-btn-documento-aguarda-nova-entrega .carousel-control i.fa-angle-left, a.smc-btn-desbloqueio .carousel-control i.fa-angle-left, a.smc-btn-bloqueio .carousel-control i.fa-angle-left, .carousel-control .fa-angle-left.smc-legenda-base, .carousel-control .fa-angle-left.smc-sga-legenda-historico-divergente, .carousel-control .fa-angle-left.smc-sga-legenda-sancao, .carousel-control .fa-angle-left.smc-sga-legenda-historico, .carousel-control .fa-angle-left.smc-sga-legenda-formado, .carousel-control .fa-angle-left.smc-sga-legenda-final-etapa, .carousel-control .fa-angle-left.smc-sga-legenda-desbloqueio, .carousel-control .fa-angle-left.smc-sga-legenda-bloqueio, .carousel-control .fa-angle-left.smc-legenda-documento-nao-requerida, .carousel-control .fa-angle-left.smc-legenda-documento-entrega-pendencia, .carousel-control .fa-angle-left.smc-legenda-documento-entregue, .carousel-control .fa-angle-left.smc-legenda-documento-aguarda-validacao, .carousel-control .fa-angle-left.smc-legenda-documento-aguarda-nova-entrega, .carousel-control .smc-hidepanel-pesquisa-avancada > .fa-angle-left.smc-editorformodel-advancedfilter-expanded, .carousel-control .smc-hidepanel-pesquisa-avancada > .fa-angle-left.smc-hidepanel-button-expanded, .carousel-control .smc-hidepanel-pesquisa-avancada > .fa-angle-left.smc-editorformodel-advancedfilter, .carousel-control .smc-hidepanel-pesquisa-avancada > .fa-angle-left.smc-hidepanel-button,
 .carousel-control .fa.fa-angle-right,
 .carousel-control .fa-angle-right.smc-sga-legenda-entrega-corrigido:before,
 .carousel-control .fa-angle-right.smc-sga-legenda-entrega-solicitadonovaentrega:before,
@@ -9365,6 +9370,52 @@ div.jGrowl div.jGrowl-closer {
 .smc-sga-notas-frequencias .carousel-control .fa-angle-right.smc-hidepanel-button::before,
 .carousel-control .fa-angle-right.smc-hidepanel-button-expanded::before,
 .carousel-control .fa-angle-right.smc-hidepanel-button::before,
+.carousel-control .smc-sga-calendario-hoje button i.fa-angle-right,
+.smc-sga-calendario-hoje button .carousel-control i.fa-angle-right,
+.carousel-control .fa-angle-right.po-loading:before,
+.carousel-control .fa-angle-right.smc-sga-btn-minimizar:before,
+.carousel-control .fa-angle-right.smc-sga-btn-maximizar:before,
+.carousel-control .smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type button.fa-angle-right:before,
+.smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type .carousel-control button.fa-angle-right:before,
+.carousel-control .smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger button.fa-angle-right:before,
+.smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger .carousel-control button.fa-angle-right:before,
+.carousel-control .po-toaster-error div.fa-angle-right:before,
+.carousel-control .po-toaster-success div.fa-angle-right:before,
+.carousel-control .po-toaster-warning div.fa-angle-right:before,
+.carousel-control .po-toaster-info div.fa-angle-right:before,
+.po-toaster-error .carousel-control div.fa-angle-right:before,
+.po-toaster-success .carousel-control div.fa-angle-right:before,
+.po-toaster-warning .carousel-control div.fa-angle-right:before,
+.po-toaster-info .carousel-control div.fa-angle-right:before,
+.carousel-control button .fa-angle-right.smc-sga-carregando-local:before,
+button .carousel-control .fa-angle-right.smc-sga-carregando-local:before,
+.carousel-control .fa-angle-right.smc-sga-carregando-local:before,
+.carousel-control .smc-sga-painelalertas h3.fa-angle-right:before,
+.smc-sga-painelalertas .carousel-control h3.fa-angle-right:before,
+.carousel-control .fa-angle-right.smc-sga-painelalertas-botao,
+.carousel-control .fa-angle-right.smc-sga-grid-menu-aula-fechado,
+.carousel-control .fa-angle-right.smc-sga-grid-menu-aula-aberto,
+.carousel-control .fa-angle-right.smc-btn-frequencia-sancao,
+.carousel-control .fa-angle-right.smc-btn-frequencia-abono,
+.carousel-control .fa-angle-right.smc-btn-frequencia-presente,
+.carousel-control .fa-angle-right.smc-btn-frequencia-falta,
+.carousel-control .fa-angle-right.smc-btn-frequencia-branco,
+.carousel-control .fa-angle-right.smc-btn-comentario-preenchido,
+.carousel-control .fa-angle-right.smc-btn-comentario,
+.carousel-control .fa-angle-right.smc-btn-historico-divergente,
+.carousel-control .fa-angle-right.smc-btn-historico-preenchido,
+.carousel-control .fa-angle-right.smc-btn-historico,
+.carousel-control .smc-sga-mensagem-lancamento-frequencia p.fa-angle-right.smc-sga-frequencia-convertida:before,
+.smc-sga-mensagem-lancamento-frequencia .carousel-control p.fa-angle-right.smc-sga-frequencia-convertida:before,
+.carousel-control .fa-angle-right.smc-aluno-highlight:before,
+.carousel-control .smc-sga-mensagem-lancamento-frequencia p.fa-angle-right.smc-sga-frequencia-apurada:before,
+.smc-sga-mensagem-lancamento-frequencia .carousel-control p.fa-angle-right.smc-sga-frequencia-apurada:before,
+.carousel-control .fa-angle-right.smc-sga-mensagem-lancamento-nota:before,
+.carousel-control .smc-sga-grid-lancamento-frequencia-header > div .fa-angle-right.link:before,
+.smc-sga-grid-lancamento-frequencia-header > div .carousel-control .fa-angle-right.link:before,
+.carousel-control .smc-sga-grid-lancamento-nota-header > div .fa-angle-right.link:before,
+.smc-sga-grid-lancamento-nota-header > div .carousel-control .fa-angle-right.link:before,
+.carousel-control .fa-angle-right.smc-sga-filtro-aluno:before,
 .carousel-control .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a.fa-angle-right:before,
 .smc-sga-registro-documentos .smc-sga-btn-entregaposterior .carousel-control a.fa-angle-right:before,
 .carousel-control .smc-sga-registro-documentos .smc-sga-link-entregaposterior a.fa-angle-right:before,
@@ -9438,6 +9489,52 @@ div.jGrowl div.jGrowl-closer {
 .smc-sga-notas-frequencias .carousel-control .smc-menu-dinamico-link-submenu.smc-hidepanel-button:before,
 .carousel-control .smc-menu-dinamico-link-submenu.smc-hidepanel-button-expanded:before,
 .carousel-control .smc-menu-dinamico-link-submenu.smc-hidepanel-button:before,
+.carousel-control .smc-sga-calendario-hoje button i.smc-menu-dinamico-link-submenu:before,
+.smc-sga-calendario-hoje button .carousel-control i.smc-menu-dinamico-link-submenu:before,
+.carousel-control .smc-menu-dinamico-link-submenu.po-loading:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-sga-btn-minimizar:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-sga-btn-maximizar:before,
+.carousel-control .smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type button.smc-menu-dinamico-link-submenu:before,
+.smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type .carousel-control button.smc-menu-dinamico-link-submenu:before,
+.carousel-control .smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger button.smc-menu-dinamico-link-submenu:before,
+.smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger .carousel-control button.smc-menu-dinamico-link-submenu:before,
+.carousel-control .po-toaster-error div.smc-menu-dinamico-link-submenu:before,
+.carousel-control .po-toaster-success div.smc-menu-dinamico-link-submenu:before,
+.carousel-control .po-toaster-warning div.smc-menu-dinamico-link-submenu:before,
+.carousel-control .po-toaster-info div.smc-menu-dinamico-link-submenu:before,
+.po-toaster-error .carousel-control div.smc-menu-dinamico-link-submenu:before,
+.po-toaster-success .carousel-control div.smc-menu-dinamico-link-submenu:before,
+.po-toaster-warning .carousel-control div.smc-menu-dinamico-link-submenu:before,
+.po-toaster-info .carousel-control div.smc-menu-dinamico-link-submenu:before,
+.carousel-control button .smc-menu-dinamico-link-submenu.smc-sga-carregando-local:before,
+button .carousel-control .smc-menu-dinamico-link-submenu.smc-sga-carregando-local:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-sga-carregando-local:before,
+.carousel-control .smc-sga-painelalertas h3.smc-menu-dinamico-link-submenu:before,
+.smc-sga-painelalertas .carousel-control h3.smc-menu-dinamico-link-submenu:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-sga-painelalertas-botao:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-sga-grid-menu-aula-fechado:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-sga-grid-menu-aula-aberto:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-btn-frequencia-sancao:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-btn-frequencia-abono:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-btn-frequencia-presente:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-btn-frequencia-falta:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-btn-frequencia-branco:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-btn-comentario-preenchido:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-btn-comentario:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-btn-historico-divergente:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-btn-historico-preenchido:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-btn-historico:before,
+.carousel-control .smc-sga-mensagem-lancamento-frequencia p.smc-menu-dinamico-link-submenu.smc-sga-frequencia-convertida:before,
+.smc-sga-mensagem-lancamento-frequencia .carousel-control p.smc-menu-dinamico-link-submenu.smc-sga-frequencia-convertida:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-aluno-highlight:before,
+.carousel-control .smc-sga-mensagem-lancamento-frequencia p.smc-menu-dinamico-link-submenu.smc-sga-frequencia-apurada:before,
+.smc-sga-mensagem-lancamento-frequencia .carousel-control p.smc-menu-dinamico-link-submenu.smc-sga-frequencia-apurada:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-sga-mensagem-lancamento-nota:before,
+.carousel-control .smc-sga-grid-lancamento-frequencia-header > div .smc-menu-dinamico-link-submenu.link:before,
+.smc-sga-grid-lancamento-frequencia-header > div .carousel-control .smc-menu-dinamico-link-submenu.link:before,
+.carousel-control .smc-sga-grid-lancamento-nota-header > div .smc-menu-dinamico-link-submenu.link:before,
+.smc-sga-grid-lancamento-nota-header > div .carousel-control .smc-menu-dinamico-link-submenu.link:before,
+.carousel-control .smc-menu-dinamico-link-submenu.smc-sga-filtro-aluno:before,
 .carousel-control .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a.smc-menu-dinamico-link-submenu:before,
 .smc-sga-registro-documentos .smc-sga-btn-entregaposterior .carousel-control a.smc-menu-dinamico-link-submenu:before,
 .carousel-control .smc-sga-registro-documentos .smc-sga-link-entregaposterior a.smc-menu-dinamico-link-submenu:before,
@@ -9509,6 +9606,52 @@ div.jGrowl div.jGrowl-closer {
 .smc-sga-notas-frequencias .carousel-control .smc-menu-setinha.smc-hidepanel-button:before,
 .carousel-control .smc-menu-setinha.smc-hidepanel-button-expanded:before,
 .carousel-control .smc-menu-setinha.smc-hidepanel-button:before,
+.carousel-control .smc-sga-calendario-hoje button i.smc-menu-setinha:before,
+.smc-sga-calendario-hoje button .carousel-control i.smc-menu-setinha:before,
+.carousel-control .smc-menu-setinha.po-loading:before,
+.carousel-control .smc-menu-setinha.smc-sga-btn-minimizar:before,
+.carousel-control .smc-menu-setinha.smc-sga-btn-maximizar:before,
+.carousel-control .smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type button.smc-menu-setinha:before,
+.smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type .carousel-control button.smc-menu-setinha:before,
+.carousel-control .smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger button.smc-menu-setinha:before,
+.smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger .carousel-control button.smc-menu-setinha:before,
+.carousel-control .po-toaster-error div.smc-menu-setinha:before,
+.carousel-control .po-toaster-success div.smc-menu-setinha:before,
+.carousel-control .po-toaster-warning div.smc-menu-setinha:before,
+.carousel-control .po-toaster-info div.smc-menu-setinha:before,
+.po-toaster-error .carousel-control div.smc-menu-setinha:before,
+.po-toaster-success .carousel-control div.smc-menu-setinha:before,
+.po-toaster-warning .carousel-control div.smc-menu-setinha:before,
+.po-toaster-info .carousel-control div.smc-menu-setinha:before,
+.carousel-control button .smc-menu-setinha.smc-sga-carregando-local:before,
+button .carousel-control .smc-menu-setinha.smc-sga-carregando-local:before,
+.carousel-control .smc-menu-setinha.smc-sga-carregando-local:before,
+.carousel-control .smc-sga-painelalertas h3.smc-menu-setinha:before,
+.smc-sga-painelalertas .carousel-control h3.smc-menu-setinha:before,
+.carousel-control .smc-menu-setinha.smc-sga-painelalertas-botao:before,
+.carousel-control .smc-menu-setinha.smc-sga-grid-menu-aula-fechado:before,
+.carousel-control .smc-menu-setinha.smc-sga-grid-menu-aula-aberto:before,
+.carousel-control .smc-menu-setinha.smc-btn-frequencia-sancao:before,
+.carousel-control .smc-menu-setinha.smc-btn-frequencia-abono:before,
+.carousel-control .smc-menu-setinha.smc-btn-frequencia-presente:before,
+.carousel-control .smc-menu-setinha.smc-btn-frequencia-falta:before,
+.carousel-control .smc-menu-setinha.smc-btn-frequencia-branco:before,
+.carousel-control .smc-menu-setinha.smc-btn-comentario-preenchido:before,
+.carousel-control .smc-menu-setinha.smc-btn-comentario:before,
+.carousel-control .smc-menu-setinha.smc-btn-historico-divergente:before,
+.carousel-control .smc-menu-setinha.smc-btn-historico-preenchido:before,
+.carousel-control .smc-menu-setinha.smc-btn-historico:before,
+.carousel-control .smc-sga-mensagem-lancamento-frequencia p.smc-menu-setinha.smc-sga-frequencia-convertida:before,
+.smc-sga-mensagem-lancamento-frequencia .carousel-control p.smc-menu-setinha.smc-sga-frequencia-convertida:before,
+.carousel-control .smc-menu-setinha.smc-aluno-highlight:before,
+.carousel-control .smc-sga-mensagem-lancamento-frequencia p.smc-menu-setinha.smc-sga-frequencia-apurada:before,
+.smc-sga-mensagem-lancamento-frequencia .carousel-control p.smc-menu-setinha.smc-sga-frequencia-apurada:before,
+.carousel-control .smc-menu-setinha.smc-sga-mensagem-lancamento-nota:before,
+.carousel-control .smc-sga-grid-lancamento-frequencia-header > div .smc-menu-setinha.link:before,
+.smc-sga-grid-lancamento-frequencia-header > div .carousel-control .smc-menu-setinha.link:before,
+.carousel-control .smc-sga-grid-lancamento-nota-header > div .smc-menu-setinha.link:before,
+.smc-sga-grid-lancamento-nota-header > div .carousel-control .smc-menu-setinha.link:before,
+.carousel-control .smc-menu-setinha.smc-sga-filtro-aluno:before,
 .carousel-control .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a.smc-menu-setinha:before,
 .smc-sga-registro-documentos .smc-sga-btn-entregaposterior .carousel-control a.smc-menu-setinha:before,
 .carousel-control .smc-sga-registro-documentos .smc-sga-link-entregaposterior a.smc-menu-setinha:before,
@@ -19572,6 +19715,1532 @@ table.smc-sga-tabela-modal-emissao > tbody > tr:first-child > th {
   padding: 8px 10px;
 }
 
+.po-field-container-bottom-text-error {
+  position: absolute;
+  font-size: 8px;
+  top: 23px;
+  border-radius: 3px;
+  background-color: #ffe1e0;
+  width: 100%;
+  margin-left: -5px;
+  padding: 0 2px;
+  z-index: 1;
+}
+
+.po-field-container-icon-error {
+  display: none;
+}
+
+.po-button {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.smc-sga-tela-maximizada .smc-sga-grid-lancamento-nota-rolagem {
+  max-height: calc(100vh - 220px);
+  overflow-y: initial;
+  margin-right: 0;
+}
+.smc-sga-tela-maximizada .smc-sga-grid-lancamento-nota-header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+.smc-sga-tela-maximizada .smc-sga-grid-agrupamento-header {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 3;
+}
+
+@media (max-width: 767px) {
+  .smc-sga-tela-maximizada .smc-sga-grid-lancamento-nota-rolagem {
+    max-height: calc(100vh - 300px);
+    overflow-y: auto;
+    margin-right: 0;
+  }
+}
+@media (max-width: 767px) {
+  .smc-sga-filtro-aluno:before {
+    margin: 14px 8px 10px 6px !important;
+  }
+  .smc-sga-lancamento-nota-tabela {
+    overflow-x: hidden !important;
+  }
+}
+.smc-sga-filtro-aluno {
+  background-color: #ececec;
+  padding-top: 5px;
+  margin-bottom: -14px;
+}
+.smc-sga-filtro-aluno:before {
+  float: left;
+  font-size: 20px;
+  margin: 14px 10px 10px 15px;
+  color: #074458;
+}
+.smc-sga-filtro-aluno po-multiselect-item {
+  display: block;
+  clear: both;
+}
+.smc-sga-filtro-aluno .po-field-title {
+  font-family: "sf_ui_displayregular";
+  color: #626262;
+  font-size: 12px;
+  margin-right: 0;
+  margin-left: 5px;
+  min-height: 0;
+  float: left;
+  font-weight: normal;
+  margin-bottom: -25px;
+  position: relative;
+  z-index: 1;
+}
+.smc-sga-filtro-aluno .po-input {
+  height: 48px !important;
+  margin-top: -6px;
+  padding-top: 15px;
+  margin-bottom: 0;
+}
+.smc-sga-filtro-aluno .po-input {
+  background-color: #fff !important;
+  border: 1px solid #b3b3b3 !important;
+}
+.smc-sga-filtro-aluno .po-disclaimer .po-disclaimer-label,
+.smc-sga-filtro-aluno .po-disclaimer .po-disclaimer-remove {
+  background-color: #cfdf97;
+  position: relative !important;
+}
+.smc-sga-filtro-aluno .po-disclaimer .po-disclaimer-label,
+.smc-sga-filtro-aluno .po-disclaimer .po-disclaimer-remove {
+  height: 22px;
+  line-height: 22px;
+  margin-top: 2px;
+}
+
+.po-disclaimer .po-disclaimer-remove:before {
+  top: 0;
+}
+
+.smc-legend-hexagon-fill:before {
+  font-size: 13px;
+  display: contents;
+}
+
+.po-field-icon {
+  color: #333333;
+}
+
+.po-field-container-content.po-multiselect-show > .po-input {
+  border: 1px solid #f7f8f9 !important;
+}
+
+.po-multiselect-checkbox-input-checked + .po-multiselect-checkbox-label:before {
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  color: #333333;
+}
+
+.smc-sga-lancamento-nota-estrutura {
+  padding: 0;
+}
+
+.smc-sga-grid-agrupamento-header {
+  display: grid;
+}
+
+.smc-sga-grid-lancamento-nota-rolagem {
+  display: grid;
+}
+
+.smc-sga-lancamento-nota-tabela {
+  padding: 0;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 15px;
+}
+
+.smc-sga-grid-header, .smc-sga-grid-lancamento-frequencia-header, .smc-sga-grid-lancamento-nota-header {
+  background-color: #bad6da;
+}
+.smc-sga-grid-header > div, .smc-sga-grid-lancamento-frequencia-header > div, .smc-sga-grid-lancamento-nota-header > div {
+  border-right: 1px solid #ffffff;
+  min-height: 27px;
+  background-color: #bad6da;
+}
+.smc-sga-grid-header > div:last-child, .smc-sga-grid-lancamento-frequencia-header > div:last-child, .smc-sga-grid-lancamento-nota-header > div:last-child {
+  border-right: none;
+}
+.smc-sga-grid-header > div p, .smc-sga-grid-lancamento-frequencia-header > div p, .smc-sga-grid-lancamento-nota-header > div p {
+  font-size: 12px;
+  color: #074458;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.smc-sga-grid-lancamento-nota-header {
+  display: flex;
+}
+.smc-sga-grid-lancamento-nota-header > div {
+  width: 100%;
+}
+.smc-sga-grid-lancamento-nota-header > div .link {
+  text-decoration: underline;
+  color: #074458;
+  cursor: pointer;
+}
+.smc-sga-grid-lancamento-nota-header > div .link:before {
+  float: right;
+  padding: 5px;
+  font-size: 10px;
+  color: #1f9fc9;
+}
+.smc-sga-grid-lancamento-nota-header > div .link:hover,
+.smc-sga-grid-lancamento-nota-header > div .link p:hover {
+  color: #1f9fc9;
+}
+
+.smc-sga-grid-lancamento-frequencia-header {
+  display: flex;
+}
+.smc-sga-grid-lancamento-frequencia-header > div {
+  display: flex;
+  flex: auto;
+  background-color: #bad6da;
+}
+.smc-sga-grid-lancamento-frequencia-header > div p {
+  padding: 0 0 0 6px;
+  font-size: 12px;
+  color: #074458;
+  font-weight: bold;
+  margin-bottom: 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 16px;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
+.smc-sga-grid-lancamento-frequencia-header > div .link {
+  text-decoration: underline;
+  color: #074458;
+  cursor: pointer;
+}
+.smc-sga-grid-lancamento-frequencia-header > div .link:before {
+  float: right;
+  padding: 5px;
+  font-size: 10px;
+  color: #1f9fc9;
+}
+.smc-sga-grid-lancamento-frequencia-header > div .link:hover,
+.smc-sga-grid-lancamento-frequencia-header > div .link p:hover {
+  color: #1f9fc9;
+}
+
+.smc-sga-grid-linha, .smc-sga-grid-lancamento-nota-linha {
+  padding: 0;
+}
+.smc-sga-grid-linha > div, .smc-sga-grid-lancamento-nota-linha > div {
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  height: 35px;
+  background-color: #ffffff;
+}
+.smc-sga-grid-linha > div:first-child, .smc-sga-grid-lancamento-nota-linha > div:first-child {
+  border-left: 1px solid #dcdcdc;
+}
+.smc-sga-grid-linha > div .po-field-container-content, .smc-sga-grid-lancamento-nota-linha > div .po-field-container-content {
+  padding: 1px 0 0 0;
+}
+.smc-sga-grid-linha > div p, .smc-sga-grid-lancamento-nota-linha > div p {
+  margin-top: 6px;
+  margin-left: 5px;
+}
+
+.smc-sga-grid-lancamento-nota-linha {
+  display: flex;
+}
+.smc-sga-grid-lancamento-nota-linha > div {
+  width: 100%;
+}
+
+.smc-sga-grid-lancamento-nota-coluna-padrao {
+  min-width: 60px;
+  max-width: 80px;
+}
+
+.smc-sga-grid-lancamento-frequencia-coluna-padrao {
+  min-width: 70px;
+  max-width: 80px;
+}
+
+.smc-sga-grid-lancamento-nota-coluna-situacao {
+  min-width: 60px;
+  max-width: 165px;
+}
+
+.smc-sga-grid-lancamento-nota-aluno {
+  min-width: 300px;
+}
+.smc-sga-grid-lancamento-nota-aluno p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.smc-sga-grid-lancamento-nota-aluno p span {
+  padding: 0 10px;
+}
+.smc-sga-grid-lancamento-nota-aluno p span:before {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+}
+.smc-sga-grid-lancamento-nota-aluno p span.smc-sga-legenda-formado:before {
+  left: 6px;
+}
+
+.smc-sga-grid-lancamento-nota-coluna-avaliacoes {
+  min-width: 60px;
+  max-width: 100px;
+}
+
+.smc-sga-grid-lancamento-frequencia-coluna-avaliacoes-header-dia {
+  max-width: max-content;
+  position: relative;
+  text-align: center;
+  background-color: #0084a5 !important;
+}
+
+.smc-sga-grid-lancamento-frequencia-coluna-avaliacoes-header-dia-titulo {
+  padding: 3px 18px 0 18px;
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 0;
+  background-color: #0084a5;
+  position: absolute;
+  width: 100%;
+}
+
+.smc-sga-grid-lancamento-frequencia-coluna-avaliacoes-header-dia-aula {
+  min-width: 99.75px;
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #bad6da;
+}
+
+.smc-sga-grid-lancamento-frequencia-coluna-avaliacoes {
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.smc-sga-grid-lancamento-nota-coluna-avaliacoes-sigla {
+  display: inline;
+  margin-right: 15px;
+}
+
+.smc-sga-grid-lancamento-nota-coluna-ra {
+  left: 0;
+  top: 0;
+  position: sticky;
+  z-index: 2;
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.smc-sga-grid-lancamento-nota-aluno-fixa {
+  left: 100px;
+  position: sticky;
+  z-index: 2;
+}
+
+.smc-aluno-highlight:before, .smc-sga-mensagem-lancamento-frequencia p.smc-sga-frequencia-apurada:before, .smc-sga-mensagem-lancamento-nota:before {
+  color: #71c7db;
+  font-size: 11px;
+}
+
+.smc-sga-mensagem-lancamento-nota {
+  border: 1px solid #71c7db;
+  float: right;
+  margin-top: 3px;
+  margin-right: 7px;
+}
+.smc-sga-mensagem-lancamento-nota:after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-color: transparent transparent transparent #71c7db;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: -5px;
+}
+.smc-sga-mensagem-lancamento-nota p {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 5px;
+  color: #333333;
+}
+.smc-sga-mensagem-lancamento-nota:before {
+  float: left;
+  margin: 7px 8px 5px 5px;
+}
+
+.smc-sga-mensagem-lancamento-frequencia {
+  border: 1px solid #71c7db;
+  float: right;
+  margin-top: 3px;
+  margin-right: 7px;
+}
+.smc-sga-mensagem-lancamento-frequencia:after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-color: transparent transparent transparent #71c7db;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: -5px;
+}
+.smc-sga-mensagem-lancamento-frequencia p.smc-sga-frequencia-apurada {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 5px;
+  color: #333333;
+}
+.smc-sga-mensagem-lancamento-frequencia p.smc-sga-frequencia-apurada:before {
+  color: #003b87 !important;
+  float: left;
+  margin: 3px 8px 0 5px;
+}
+.smc-sga-mensagem-lancamento-frequencia p.smc-sga-frequencia-convertida {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 5px;
+  color: #333333;
+}
+.smc-sga-mensagem-lancamento-frequencia p.smc-sga-frequencia-convertida:before {
+  margin: 3px 8px 0 5px;
+  float: left;
+  color: #999999;
+  font-size: 11px;
+}
+
+.smc-legend-grey::before {
+  color: #999999;
+}
+
+.smc-aluno-highlight:before {
+  margin: 11px 11px 0 0;
+  right: 0;
+  position: absolute;
+}
+
+.smc-btn-frequencia-sancao, .smc-btn-frequencia-abono, .smc-btn-frequencia-presente, .smc-btn-frequencia-falta, .smc-btn-frequencia-branco, .smc-btn-comentario-preenchido, .smc-btn-comentario, .smc-btn-historico-divergente, .smc-btn-historico-preenchido, .smc-btn-historico {
+  color: #0083a2;
+  margin-top: 3px;
+  display: inline-block;
+  border: 1px solid #0083a2;
+  padding: 6px;
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+.smc-btn-frequencia-sancao:hover, .smc-btn-frequencia-abono:hover, .smc-btn-frequencia-presente:hover, .smc-btn-frequencia-falta:hover, .smc-btn-frequencia-branco:hover, .smc-btn-comentario-preenchido:hover, .smc-btn-comentario:hover, .smc-btn-historico-divergente:hover, .smc-btn-historico-preenchido:hover, .smc-btn-historico:hover {
+  color: #1f9fc9;
+  border-color: #1f9fc9;
+}
+
+.smc-btn-historico {
+  margin-left: 3px;
+}
+.smc-btn-historico[disabled] {
+  background-color: #ececec;
+  border-color: #ececec;
+  color: #cccccc;
+  cursor: no-drop;
+}
+
+.smc-btn-historico-preenchido {
+  margin-left: 3px;
+}
+.smc-btn-historico-preenchido[disabled] {
+  background-color: #ececec;
+  border-color: #ececec;
+  color: #cccccc;
+  cursor: no-drop;
+}
+
+.smc-btn-historico-divergente {
+  margin-left: 3px;
+  color: #ea502f !important;
+  border-color: #ea502f !important;
+}
+.smc-btn-historico-divergente[disabled] {
+  background-color: #ececec;
+  border-color: #ececec;
+  color: #cccccc;
+  cursor: no-drop;
+}
+
+.smc-btn-comentario[disabled] {
+  background-color: #ececec;
+  border-color: #ececec;
+  color: #cccccc;
+  cursor: no-drop;
+}
+
+.smc-btn-comentario-preenchido:before {
+  color: #0083a2;
+}
+.smc-btn-comentario-preenchido[disabled] {
+  background-color: #ececec;
+  border-color: #ececec;
+  color: #cccccc;
+  cursor: no-drop;
+}
+
+.smc-sga-grid-menu-aula {
+  background-color: #ffffff;
+  border-radius: 0 0 3px 3px;
+  position: absolute;
+  margin-left: -5px;
+  z-index: 3;
+  display: block;
+  width: 120px;
+  border: 1px solid #bad6da;
+  margin-top: -1px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+.smc-sga-grid-menu-aula ul {
+  list-style-type: none;
+}
+.smc-sga-grid-menu-aula ul li {
+  padding: 5px;
+  text-align: left;
+  height: 30px;
+  border-bottom: solid 1px #dcdcdc;
+  cursor: pointer;
+  font-size: 11px;
+  color: #626262;
+}
+.smc-sga-grid-menu-aula ul li:first-child {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  height: 35px;
+}
+.smc-sga-grid-menu-aula ul li:last-child {
+  border-bottom: none;
+}
+.smc-sga-grid-menu-aula ul li:hover {
+  background-color: #bad6da;
+}
+.smc-sga-grid-menu-aula ul li span {
+  margin-right: 5px;
+  width: 15px;
+  float: left;
+}
+.smc-sga-grid-menu-aula ul li span::before {
+  font-size: 14px;
+}
+
+.smc-sga-grid-menu-aula-aberto::before {
+  position: relative;
+  top: 3px;
+}
+
+.smc-sga-grid-menu-aula-fechado::before {
+  position: relative;
+  top: -3px;
+}
+
+.smc-btn-frequencia-branco {
+  color: #cccccc;
+  border: none !important;
+}
+.smc-btn-frequencia-branco .smc-sga-carregando-local {
+  background-color: #ffffff;
+  height: 26px !important;
+  margin-top: -25px;
+}
+.smc-btn-frequencia-branco:before {
+  font-size: 18px;
+}
+.smc-btn-frequencia-branco:hover {
+  background-color: transparent;
+  border: none;
+}
+.smc-btn-frequencia-branco:focus {
+  box-shadow: none;
+  color: #cccccc;
+}
+.smc-btn-frequencia-branco[disabled] {
+  border: none !important;
+  background-color: transparent !important;
+  color: #cccccc !important;
+}
+
+.smc-btn-frequencia-falta {
+  color: #fe4218;
+  border: none !important;
+}
+.smc-btn-frequencia-falta .smc-sga-carregando-local {
+  background-color: #ffffff;
+  height: 26px !important;
+  margin-top: -25px;
+}
+.smc-btn-frequencia-falta:before {
+  font-size: 18px;
+}
+.smc-btn-frequencia-falta:hover {
+  background-color: transparent;
+  border: none;
+}
+.smc-btn-frequencia-falta:focus {
+  box-shadow: none;
+  color: #fe4218;
+}
+.smc-btn-frequencia-falta[disabled] {
+  border: none !important;
+  background-color: transparent !important;
+  color: #fe4218 !important;
+}
+
+.smc-btn-frequencia-presente {
+  color: #146504;
+  border: none !important;
+}
+.smc-btn-frequencia-presente .smc-sga-carregando-local {
+  background-color: #ffffff;
+  height: 26px !important;
+  margin-top: -25px;
+}
+.smc-btn-frequencia-presente:before {
+  font-size: 18px;
+}
+.smc-btn-frequencia-presente:hover {
+  background-color: transparent;
+  border: none;
+}
+.smc-btn-frequencia-presente:focus {
+  box-shadow: none;
+  color: #146504;
+}
+.smc-btn-frequencia-presente[disabled] {
+  border: none !important;
+  background-color: transparent !important;
+  color: #146504 !important;
+}
+
+.smc-btn-frequencia-abono {
+  border: none !important;
+  color: #00b09e;
+}
+.smc-btn-frequencia-abono .smc-sga-carregando-local {
+  background-color: #ffffff;
+  height: 26px !important;
+  margin-top: -25px;
+}
+.smc-btn-frequencia-abono:before {
+  font-size: 18px;
+}
+.smc-btn-frequencia-abono:hover {
+  background-color: transparent;
+  border: none;
+}
+.smc-btn-frequencia-abono:focus {
+  box-shadow: none;
+  color: #00b09e;
+}
+.smc-btn-frequencia-abono[disabled] {
+  border: none !important;
+  background-color: transparent !important;
+  color: #00b09e !important;
+}
+
+.smc-btn-frequencia-sancao {
+  border: none !important;
+  color: #ea502f;
+}
+.smc-btn-frequencia-sancao .smc-sga-carregando-local {
+  background-color: #ffffff;
+  height: 26px !important;
+  margin-top: -25px;
+}
+.smc-btn-frequencia-sancao:before {
+  font-size: 18px;
+}
+.smc-btn-frequencia-sancao:hover {
+  background-color: transparent;
+  border: none;
+}
+.smc-btn-frequencia-sancao:focus {
+  box-shadow: none;
+  color: #ea502f;
+}
+.smc-btn-frequencia-sancao[disabled] {
+  border: none !important;
+  background-color: transparent !important;
+  color: #ea502f !important;
+}
+.smc-btn-frequencia-sancao:hover {
+  color: #ff8827 !important;
+}
+
+.smc-display label {
+  display: block;
+  width: 100%;
+}
+.smc-display p {
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+}
+
+.p-multiselect-chip {
+  width: 100%;
+}
+
+.smc-multiselect-agrupado .p-multiselect-header {
+  height: 45px;
+}
+.smc-multiselect-agrupado .p-multiselect-header .p-checkbox {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 0;
+  margin-bottom: 10px;
+  z-index: 2;
+}
+.smc-multiselect-agrupado .p-multiselect-header .p-multiselect-filter-container {
+  margin-top: 5px !important;
+}
+.smc-multiselect-agrupado .p-multiselect-header .p-multiselect-filter-container .p-multiselect-filter {
+  margin-left: 30px;
+}
+.smc-multiselect-agrupado .p-multiselect-header .p-multiselect-close {
+  margin-top: 1px;
+}
+.smc-multiselect-agrupado .p-multiselect-token,
+.smc-multiselect-agrupado .smc-legend-circle-fill {
+  margin-left: 0 !important;
+}
+.smc-multiselect-agrupado .p-multiselect-panel,
+.smc-multiselect-agrupado .p-multiselect-filter-container {
+  margin-left: 0 !important;
+  line-height: 0;
+}
+.smc-multiselect-agrupado .p-checkbox.p-component {
+  position: absolute;
+  top: 5px;
+}
+.smc-multiselect-agrupado .ng-star-inserted {
+  margin-left: 30px;
+}
+.smc-multiselect-agrupado .p-multiselect-panel .p-multiselect-items .p-multiselect-item {
+  min-height: 45px;
+  padding-top: 14px;
+}
+
+.smc-campo-filtro {
+  background-color: #fff !important;
+  border: 1px solid #b3b3b3 !important;
+  margin-top: 2px;
+  margin-bottom: 6px;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+.smc-campo-filtro label {
+  font-size: 12px;
+  width: 100%;
+}
+.smc-campo-filtro .p-multiselect {
+  border: none;
+}
+.smc-campo-filtro .p-multiselect-label {
+  font-size: 14px;
+}
+.smc-campo-filtro .p-inputtext {
+  border: none;
+  width: 100%;
+}
+.smc-campo-filtro input[type=text],
+.smc-campo-filtro input {
+  height: 24px !important;
+  margin-bottom: 5px;
+}
+
+.p-inputtext {
+  font-size: 14px !important;
+  font-family: "segoe_uiregular", Arial, sans-serif;
+}
+
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none !important;
+  border: none;
+}
+
+.smc-sga-painelalertas-estrutura-botao {
+  position: fixed;
+  right: 4px;
+  top: 240px;
+  z-index: 9;
+  display: block;
+}
+
+.smc-sga-painelalertas-botao {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #0083a2;
+  font-size: 0;
+  color: #ffffff;
+}
+.smc-sga-painelalertas-botao:before {
+  font-size: 20px;
+  padding: 9px;
+  margin-top: -1px;
+  display: block;
+}
+.smc-sga-painelalertas-botao:hover {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+.smc-sga-painelalertas-totalizador {
+  padding: 1px;
+  width: 12px;
+  height: 14px;
+  background-color: red;
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 50px;
+  position: absolute;
+  left: 23px;
+  top: 20px;
+}
+
+.smc-sga-painelalertas {
+  background-color: #f7f8f9;
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  padding: 15px;
+  min-height: 50px;
+  max-height: 220px;
+  z-index: 2;
+  position: fixed;
+  right: 0;
+  top: 280px;
+  overflow-y: auto;
+}
+.smc-sga-painelalertas h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #0083a2;
+}
+.smc-sga-painelalertas h3:before {
+  margin-right: 10px;
+}
+.smc-sga-painelalertas .smc-sga-painelalertas-itens {
+  overflow-x: auto;
+  max-height: 150px;
+}
+.smc-sga-painelalertas ul {
+  margin-bottom: 10px;
+  margin-left: 30px;
+}
+.smc-sga-painelalertas span {
+  font-size: 12px;
+}
+
+.smc-sga-tag {
+  margin-bottom: 2px;
+  float: left;
+  background-color: #dcdcdc;
+  font-size: 10px !important;
+  border-radius: 4px;
+  margin-left: 6px;
+  color: #505050 !important;
+  margin-top: 7px;
+  padding: 2px 5px;
+  align-self: flex-start;
+}
+
+.smc-sga-grid-lancamento-nota-aluno {
+  display: flex;
+}
+
+.smc-sga-grid-lancamento-frequencia-coluna-avaliacoes-header-dia .po-modal-body p {
+  color: #333 !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 5px 0 !important;
+  height: auto;
+}
+
+.po-textarea {
+  font-size: 14px !important;
+  color: #626262;
+  font-family: "sf_ui_displayregular";
+  line-height: 20px;
+  padding: 5px;
+}
+
+:root {
+  --color-input-border-text-focusable: #ececec;
+  --color-textarea-border-focusable: #ececec;
+  --color-checkbox-group-box-shadow-color-focusable: #ececec;
+  --color-checkbox-group-border-input-active: #333;
+  --color-checkbox-group-background-color-active: #333;
+  --color-checkbox-group-box-shadow-color-focusable: #ececec #bad6da;
+  --color-accordion-header-color-primary: $smc-cor-principal-01;
+  --color-primary-alpha-50: rgba(26, 130, 159, 0.68);
+  --color-primary: rgba(98, 98, 98, 0.5);
+}
+
+.smc-campo-highlight .po-input {
+  border: 2px solid #71c7db;
+}
+
+a {
+  cursor: pointer;
+}
+
+.po-field-title {
+  font-family: "segoe_uiregular" !important;
+  color: #626262;
+  float: left;
+  margin-bottom: -6px;
+  line-height: 19px;
+}
+
+:focus,
+a:focus {
+  outline: none;
+}
+
+.po-button-primary {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none !important;
+  font-size: 12px;
+  margin: 1px 2px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  background-repeat: no-repeat;
+  height: 31px;
+  padding: 2px 8px 0 8px;
+  background-color: #0083a2;
+  border: solid 1px #0083a2;
+  color: #fff !important;
+}
+
+.po-button-primary:hover {
+  background-color: #bad6da;
+}
+
+.po-checkbox-group-item {
+  padding: 0px 8px 10px 0;
+  line-height: 4px;
+  min-height: 18px;
+}
+
+.po-checkbox-group-item > label {
+  margin-top: 16px;
+}
+
+.po-input {
+  box-shadow: inset 0 0px 0px 0;
+}
+
+.po-textarea {
+  box-shadow: inset 0 0px 0px 0;
+  resize: vertical;
+}
+
+.smc-sga-carregando-local {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  height: 34px !important;
+  padding: 7px;
+  color: transparent;
+}
+.smc-sga-carregando-local:before {
+  font-size: 12px !important;
+  color: #0083a2;
+}
+
+.smc-sga-mensagem-local-informa {
+  min-width: 32% !important;
+}
+
+button .smc-sga-carregando-local {
+  margin-left: -11px;
+  width: 98%;
+  height: auto;
+  display: block;
+  background-color: #e5e5e5;
+  border-radius: 4px;
+  text-align: center;
+  overflow: hidden;
+  height: 31px !important;
+  padding: 7px;
+  color: transparent;
+  position: absolute;
+  margin-top: -3px;
+}
+button .smc-sga-carregando-local:before {
+  font-size: 12px !important;
+  color: #0083a2;
+}
+
+.smc-btn-novo-icotext .smc-sga-carregando-local,
+.smc-btn-excluir-icotext .smc-sga-carregando-local {
+  width: 95%;
+}
+
+.po-multiselect-container {
+  margin-top: -8px;
+}
+
+.po-multiselect-items-container li {
+  list-style: none;
+  list-style-type: none;
+  padding: 0;
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+.po-field-icon-container-left,
+.po-field-icon-container-right {
+  right: 15px;
+}
+
+.po-disclaimer .po-disclaimer-label,
+.po-disclaimer .po-disclaimer-remove {
+  background-color: #cfdf97;
+  position: relative !important;
+}
+
+.po-disclaimer .po-disclaimer-label,
+.po-disclaimer .po-disclaimer-remove {
+  height: 22px;
+  line-height: 22px;
+  margin-top: 2px;
+}
+.po-disclaimer .po-disclaimer-label:before,
+.po-disclaimer .po-disclaimer-remove:before {
+  top: -5px;
+  position: relative;
+}
+
+.po-toaster {
+  z-index: 2147483641;
+}
+
+.smc-sga-mensagem::before {
+  margin: 0;
+}
+
+.po-toaster-error, .po-toaster-success, .po-toaster-warning, .po-toaster-info {
+  padding: 10px 10px;
+}
+.po-toaster-error div:before, .po-toaster-success div:before, .po-toaster-warning div:before, .po-toaster-info div:before {
+  font-size: 20px;
+  margin-left: 10px;
+}
+.po-toaster-error span:before, .po-toaster-success span:before, .po-toaster-warning span:before, .po-toaster-info span:before {
+  display: none !important;
+}
+
+.po-toaster-info {
+  background-color: #D9EDF7;
+  color: #5c7f8f;
+  border: 2px solid #59aac3;
+}
+.po-toaster-info div:before {
+  color: #59aac3 !important;
+}
+
+.po-toaster-warning {
+  background-color: #FCF8E3;
+  color: #A38147;
+  border: 2px solid #e4a445;
+}
+.po-toaster-warning div:before {
+  color: #e4a445 !important;
+}
+
+.po-toaster-success {
+  background-color: #DFF0D8;
+  color: #546d3e;
+  border: 2px solid #63ad4b;
+}
+.po-toaster-success div:before {
+  color: #63ad4b !important;
+}
+
+.po-toaster-error {
+  background-color: #F2DEDE;
+  color: #92302e;
+  border: 2px solid #c43937;
+}
+.po-toaster-error div:before {
+  color: #c43937 !important;
+}
+
+.po-toaster-message {
+  font-weight: normal !important;
+  font-family: "sf_ui_displayregular" !important;
+  font-size: 12px;
+}
+
+.po-overlay-absolute,
+.po-overlay-fixed {
+  background-color: rgba(51, 51, 51, 0.96);
+  z-index: 2147483641;
+}
+
+.po-loading-overlay-content {
+  background-color: transparent;
+  box-shadow: -1 1px 4px 0 var(--color-loading-overlay-box-shadow-content);
+  text-align: center;
+}
+
+.smc-sga-alinha-centro {
+  text-align: center;
+}
+
+.smc-modal-header h2 {
+  padding-left: 1.5%;
+  margin: -2px 0 25px 0 !important;
+}
+
+.po-modal {
+  z-index: 1042;
+}
+.po-modal .po-modal-content {
+  max-width: 90%;
+  box-shadow: none;
+  padding: 0 20px;
+}
+.po-modal .po-modal-body {
+  max-width: 100%;
+  max-height: calc(100vh - 200px);
+  overflow: auto;
+  padding: 0 5px;
+  line-height: 19px;
+}
+.po-modal .po-modal-title {
+  font-family: "sf_ui_displayregular" !important;
+  font-size: 21px !important;
+  color: #0083a2;
+}
+
+.po-modal-lg {
+  width: 70%;
+}
+
+.po-modal-xl {
+  width: 90%;
+}
+
+.po-modal-overlay {
+  background: rgba(98, 98, 98, 0.7) !important;
+}
+
+.po-modal-body::-webkit-scrollbar {
+  border-radius: 0;
+  height: 4px;
+  opacity: 0.6;
+  width: 5px;
+  background: rgba(98, 98, 98, 0.2);
+}
+
+.po-icon-close {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  margin-top: 1px;
+  line-height: -2px;
+  margin-left: 1px;
+}
+
+.po-modal-header-close-button {
+  background-color: #b3b3b3;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+}
+
+.po-modal-header {
+  padding: 15px 8px 0 8px;
+}
+
+.smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger button:before {
+  margin-right: 6px;
+}
+.smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type button {
+  background-color: #0083a2;
+  border: solid 1px #0083a2;
+  color: #ffffff;
+}
+.smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type button:before {
+  margin-right: 6px;
+}
+
+.po-modal-footer {
+  padding: 10px 8px 25px 8px;
+}
+.po-modal-footer .po-button-primary {
+  position: relative;
+  top: -1px;
+}
+
+.po-modal-footer .po-button {
+  margin: 1px 2px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  height: 31px;
+  padding: 1px 10px;
+  border: solid 1px #0083a2;
+  color: #0083a2;
+}
+
+.po-modal-footer .po-button:hover {
+  background-color: #1f9fc9;
+  border: solid 1px #0083a2;
+  color: #ffffff;
+}
+
+.po-modal-footer .po-button:disabled {
+  background-color: #ececec !important;
+  border-color: #ececec !important;
+  color: #cccccc !important;
+  cursor: no-drop;
+}
+
+.smc-sga-btn-minimizar, .smc-sga-btn-maximizar {
+  float: right;
+  cursor: pointer;
+}
+.smc-sga-btn-minimizar:before, .smc-sga-btn-maximizar:before {
+  margin-bottom: 3px;
+  float: right;
+  margin-top: -3px;
+  color: #074458;
+}
+.smc-sga-btn-minimizar:hover, .smc-sga-btn-maximizar:hover {
+  color: #0083a2;
+}
+.smc-sga-btn-minimizar:hover:before, .smc-sga-btn-maximizar:hover:before {
+  color: #0083a2;
+}
+
+.smc-sga-tela-maximizada {
+  position: fixed;
+  background-color: #ffffff;
+  z-index: 1041;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 20px;
+  background-image: url("./smc-sga-logotipo-login.png");
+  background-repeat: no-repeat;
+  background-position: 16px 6px;
+  background-size: 85px;
+}
+.smc-sga-tela-maximizada h2 {
+  margin-left: 100px;
+  font-size: 17px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+.smc-sga-tela-maximizada h2:before {
+  display: none;
+}
+
+.po-loading-icon {
+  display: none;
+}
+
+.po-loading:before {
+  font-size: 3em;
+  color: #1a829f;
+}
+
+.po-loading-label {
+  font-size: 14px;
+  color: #1a829f;
+  margin-top: 3px;
+  font-family: "segoe_uiregular";
+}
+
+.smc-sga-grid-header, .smc-sga-grid-lancamento-nota-header, .smc-sga-grid-lancamento-frequencia-header {
+  background-color: #bad6da;
+}
+.smc-sga-grid-header > div, .smc-sga-grid-lancamento-nota-header > div, .smc-sga-grid-lancamento-frequencia-header > div {
+  border-right: 1px solid #ffffff;
+  min-height: 27px;
+  background-color: #bad6da;
+}
+.smc-sga-grid-header > div:last-child, .smc-sga-grid-lancamento-nota-header > div:last-child, .smc-sga-grid-lancamento-frequencia-header > div:last-child {
+  border-right: none;
+}
+.smc-sga-grid-header > div p, .smc-sga-grid-lancamento-nota-header > div p, .smc-sga-grid-lancamento-frequencia-header > div p {
+  padding: 3px 0 0 6px;
+  font-size: 12px;
+  color: #074458;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.smc-sga-grid-linha, .smc-sga-grid-lancamento-nota-linha {
+  padding: 0;
+}
+.smc-sga-grid-linha > div, .smc-sga-grid-lancamento-nota-linha > div {
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  height: 35px;
+  background-color: #ffffff;
+}
+.smc-sga-grid-linha > div:first-child, .smc-sga-grid-lancamento-nota-linha > div:first-child {
+  border-left: 1px solid #dcdcdc;
+}
+.smc-sga-grid-linha > div .po-field-container-content, .smc-sga-grid-lancamento-nota-linha > div .po-field-container-content {
+  padding: 1px 0 0 0;
+}
+.smc-sga-grid-linha > div p, .smc-sga-grid-lancamento-nota-linha > div p {
+  margin-top: 6px;
+  margin-left: 5px;
+}
+
+.smc-sga-grid-estrutura {
+  padding: 0;
+}
+
+.smc-sga-grid-header {
+  display: block;
+}
+.smc-sga-grid-header > div {
+  display: inline-block;
+}
+
+.smc-sga-grid-linha {
+  padding: 0;
+}
+.smc-sga-grid-linha > div {
+  display: inline-block;
+}
+
+.smc-sga-calendario-hoje button {
+  padding-left: 35px;
+}
+.smc-sga-calendario-hoje button i {
+  margin-right: 8px;
+  margin-left: -22px;
+}
+
+.po-field-container-content {
+  padding: 8px 0 !important;
+}
+
+.smc-fieldset-filter .smc-btn-lookup-open-modal i {
+  margin-top: 7px !important;
+}
+
+.po-label {
+  color: #7a7a7a !important;
+  margin-right: 0;
+  min-height: 0;
+  float: left;
+  font-weight: normal !important;
+  margin-bottom: 2px !important;
+  font-family: "segoe_uiregular" !important;
+  font-size: 14px !important;
+}
+
+sga-evento-aula h1 {
+  clear: both;
+  color: #074458 !important;
+  font-family: "sf_ui_displayregular" !important;
+  font-weight: normal !important;
+  font-size: 2em !important;
+}
+
+.smc-lookup-required:before {
+  font-size: 7px !important;
+}
+
+.po-multiselect-flex-item .po-field-container-content, .po-multiselect-flex-item .po-field-container-input {
+  padding: 0 !important;
+}
+.po-multiselect-flex-item .smc-fieldset-filter .smc-btn-lookup-open-modal i {
+  margin-top: 7px !important;
+}
+
+.po-field-container-input {
+  padding: 0 !important;
+  margin-top: -2px !important;
+}
+
+.po-input:focus {
+  border-color: #074458 !important;
+  outline-color: #074458 !important;
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: 1px;
+}
+
+.po-multiselect-input.po-multiselect-input-static,
+.po-select-phosphor,
+.po-input[type=number],
+.po-select,
+.po-select-phosphor {
+  max-height: 31px !important;
+  height: 31px !important;
+  margin-top: -2px;
+  border-radius: 3px !important;
+  border-color: #b3b3b3 !important;
+}
+
+.po-select-phosphor {
+  margin-top: -3px !important;
+}
+
+.po-modal-content .smc-lookup-open-command > i::before {
+  line-height: 17px !important;
+}
+
+po-multiselect .po-field-icon-container-right {
+  top: 9px !important;
+}
+
+.po-input:hover,
+.po-multiselect-input:hover:not(.po-multiselect-input-disabled),
+.po-select-phosphor:hover {
+  border: 1px solid #dbeaf2 !important;
+  background-color: #f2fdff !important;
+}
+
+.po-table-column-selectable .po-table-radio + .po-table-radio-label:before {
+  background-color: var(--color-table-background-color-radio) !important;
+  border: 1px solid var(--color-table-border-select-radio) !important;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 8px 0 var(--color-black-alpha-10);
+  content: " ";
+  display: inline-block;
+  height: 20px;
+  margin-right: 8px;
+  margin-top: -2px;
+  vertical-align: middle;
+  width: 20px;
+}
+
+.po-table .po-table-master-detail thead tr th, .po-table thead tr th {
+  background-color: #bad6da !important;
+}
+
+.po-table .po-table-row-active td {
+  background-color: #ddf9fd !important;
+}
+
+.po-radio input[type=radio] {
+  border: 1px solid #b7b7b7 !important;
+}
+
+.po-radio input[type=radio]:checked, [data-a11y=AAA] .po-radio input[type=radio][p-size=small]:checked {
+  background: var(--background-radial-md);
+  background-color: var(--color-unchecked);
+  border-color: #074458 !important;
+}
+
+.po-radio label:not(.po-label-disabled) {
+  color: #074458 !important;
+}
+
+.po-button[p-kind=tertiary] {
+  color: #074458 !important;
+}
+
+.po-radio input[type=radio]:hover {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border-color: #074458 !important;
+}
+
+po-radio {
+  --color-unchecked: var(--color-neutral-light-00);
+  --border-color: var(--color-neutral-dark-70);
+  --shadow-color-hover: var(--color-brand-01-lighter);
+  --color-hover: var(--color-brand-01-dark);
+  --outline-color-focused: var(--color-brand-01-darkest);
+  --color-checked: #074458 !important;
+  --color-unchecked-disabled: var(--color-neutral-light-30);
+  --color-checked-disabled: var(--color-neutral-dark-70);
+}
+
+.po-button[p-kind=link]:hover, .po-button[p-kind=tertiary]:hover {
+  color: #bad6da !important;
+  background-color: transparent !important;
+}
+
+.smc-lookup-input-width .po-field-container-content, .smc-lookup-corpo-acoes .po-field-container-content {
+  padding: 8px 0 !important;
+}
+
+.po-modal-content .smc-fieldset-filter .po-field-container .po-field-container-content {
+  padding: 0 !important;
+}
+
+smc-select .po-field-container-content {
+  padding: 0 !important;
+}
+
+.po-input:focus {
+  outline-color: #1f9fc9 !important;
+  outline-width: 1px !important;
+  outline-style: solid;
+  outline-offset: 1px !important;
+}
+
+.po-select, [data-a11y=AAA] .po-select-aa {
+  font-size: 14px !important;
+}
+
+.po-modal-header {
+  border-bottom: none !important;
+}
+
+.po-modal-footer {
+  border-top: none !important;
+}
+
+.po-modal .po-modal-content {
+  background-color: #fff !important;
+  border: none !important;
+}
+
 .smc-button > [disabled=disabled] {
   opacity: 1;
 }
@@ -20767,7 +22436,7 @@ fieldset {
   margin-top: 6px;
 }
 
-.smc-sga-legenda-agrupamento-chancela-situacao-plano .fa, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-entrega-corrigido:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-entrega-solicitadonovaentrega:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-entrega-liberadocorrecao:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-entrega-entregue:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-entrega-aguardando:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-botao-boleto i, .smc-sga-botao-boleto .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-processo-passo-emaberto, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-processo-passo-atual, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-concluido, .smc-sga-painel-lateral-processo-passos .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-processo-passo-concluido, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-matricula-naofinalizada:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-matricula-finalizada:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-matricula-aguardandopagamento:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-matricula-emandamento:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-matricula-naoiniciada:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-pesquisa-avancada > .smc-editorformodel-advancedfilter, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-pesquisa-avancada > .smc-editorformodel-advancedfilter-expanded, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-base, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-documento-aguarda-nova-entrega, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-documento-aguarda-validacao, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-documento-entregue, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-documento-entrega-pendencia, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-documento-nao-requerida, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-legenda-base i, .smc-btn-legenda-base .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-bloqueio i, a.smc-btn-bloqueio .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-desbloqueio i, a.smc-btn-desbloqueio .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-documento-aguarda-nova-entrega i, a.smc-btn-documento-aguarda-nova-entrega .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-documento-aguarda-validacao i, a.smc-btn-documento-aguarda-validacao .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-documento-entregue i, a.smc-btn-documento-entregue .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-documento-entrega-pendencia i, a.smc-btn-documento-entrega-pendencia .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-documento-nao-requerida i, a.smc-btn-documento-nao-requerida .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-menu-dinamico-ico-referencia, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-mensagem, .smc-sga-legenda-agrupamento-chancela-situacao-plano .fancytree-drop-reject, .smc-sga-legenda-agrupamento-chancela-situacao-plano .treeview-marcar-todos:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .treeview-desmarcar-todos:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item .smc-sga-legenda-agrupamento-chancela-situacao-plano a:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item .smc-sga-legenda-agrupamento-chancela-situacao-plano a:after, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item .smc-sga-legenda-agrupamento-chancela-situacao-plano a:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item .smc-sga-legenda-agrupamento-chancela-situacao-plano a:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sat-situacao-ativo:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sat-situacao-inativo:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sat-situacao-emexecucao:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sat-situacao-proximasexecucoes:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-icone-documentacao a:before, .smc-sga-icone-documentacao .smc-sga-legenda-agrupamento-chancela-situacao-plano a:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-mensagem, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-configuracao-principal, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-bloqueio, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-desbloqueio, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-final-etapa, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-formado, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-historico, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-historico-divergente, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-sancao, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-aguardandoentrega:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-aguardandovalidacao:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-deferido:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-apontamento:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-indeferido:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-aguardandoanalise:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-pendente:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-instrucoes:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-registro-documentos .smc-sga-link-entregaposterior a:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior .smc-sga-legenda-agrupamento-chancela-situacao-plano a:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a:before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior .smc-sga-legenda-agrupamento-chancela-situacao-plano a:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-button::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-button-expanded::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-notas-frequencias div > button.smc-hidepanel-button-filled::before, .smc-sga-notas-frequencias .smc-sga-legenda-agrupamento-chancela-situacao-plano div > button.smc-hidepanel-button-filled::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-notas-frequencias div > button.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias .smc-sga-legenda-agrupamento-chancela-situacao-plano div > button.smc-hidepanel-button-expanded-filled::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-grupo-legenda-sga-notas-frequencias-em-branco > span::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-grupo-legenda-sga-notas-frequencias-preenchida > span::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-pesquisa-avancada > .smc-hidepanel-button, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-pesquisa-avancada > .smc-hidepanel-button-expanded, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-ajuda-icotext > i, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-ico-ajuda, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-externo-agrupamento-secundario:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-externo-agrupamento-terciario:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-externo-totalizador-status-novo, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-externo-totalizador-status-emandamento, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-externo-totalizador-status-concluida, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-externo-totalizador-status-encerrada, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-btn-trocaroferta > i, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-documento-icotext > i {
+.smc-sga-legenda-agrupamento-chancela-situacao-plano .fa, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-entrega-corrigido:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-entrega-solicitadonovaentrega:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-entrega-liberadocorrecao:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-entrega-entregue:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-entrega-aguardando:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-botao-boleto i, .smc-sga-botao-boleto .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-emaberto, .smc-sga-painel-lateral-processo-passos .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-processo-passo-emaberto, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-atual, .smc-sga-painel-lateral-processo-passos .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-processo-passo-atual, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-painel-lateral-processo-passos .smc-sga-processo-passo-concluido, .smc-sga-painel-lateral-processo-passos .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-processo-passo-concluido, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-matricula-naofinalizada:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-matricula-finalizada:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-matricula-aguardandopagamento:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-matricula-emandamento:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-matricula-naoiniciada:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-pesquisa-avancada > .smc-editorformodel-advancedfilter, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-pesquisa-avancada > .smc-editorformodel-advancedfilter-expanded, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-base, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-documento-aguarda-nova-entrega, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-documento-aguarda-validacao, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-documento-entregue, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-documento-entrega-pendencia, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-documento-nao-requerida, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-legenda-base i, .smc-btn-legenda-base .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-bloqueio i, a.smc-btn-bloqueio .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-desbloqueio i, a.smc-btn-desbloqueio .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-documento-aguarda-nova-entrega i, a.smc-btn-documento-aguarda-nova-entrega .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-documento-aguarda-validacao i, a.smc-btn-documento-aguarda-validacao .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-documento-entregue i, a.smc-btn-documento-entregue .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-documento-entrega-pendencia i, a.smc-btn-documento-entrega-pendencia .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano a.smc-btn-documento-nao-requerida i, a.smc-btn-documento-nao-requerida .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-menu-dinamico-ico-referencia, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-mensagem, .smc-sga-legenda-agrupamento-chancela-situacao-plano .fancytree-drop-reject, .smc-sga-legenda-agrupamento-chancela-situacao-plano .treeview-marcar-todos:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .treeview-desmarcar-todos:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a:before, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item .smc-sga-legenda-agrupamento-chancela-situacao-plano a:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item a:after, .smc-sga-treeview-ico-link .fancytree-title .smc-treeview-item .smc-sga-legenda-agrupamento-chancela-situacao-plano a:after, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item a:before, .smc-sga-treeview-ico-pasta .fancytree-title .smc-treeview-item .smc-sga-legenda-agrupamento-chancela-situacao-plano a:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item a:before, .smc-sga-treeview-ico-arquivo .fancytree-title .smc-treeview-item .smc-sga-legenda-agrupamento-chancela-situacao-plano a:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sat-situacao-ativo:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sat-situacao-inativo:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sat-situacao-emexecucao:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sat-situacao-proximasexecucoes:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-icone-documentacao a:before, .smc-sga-icone-documentacao .smc-sga-legenda-agrupamento-chancela-situacao-plano a:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-mensagem, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-configuracao-principal, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-bloqueio, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-desbloqueio, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-final-etapa, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-formado, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-historico, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-historico-divergente, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-legenda-sancao, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-aguardandoentrega:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-aguardandovalidacao:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-deferido:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-apontamento:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-indeferido:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-aguardandoanalise:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-pendente:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-legenda-status-instrucoes:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-registro-documentos .smc-sga-link-entregaposterior a:before, .smc-sga-registro-documentos .smc-sga-link-entregaposterior .smc-sga-legenda-agrupamento-chancela-situacao-plano a:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-registro-documentos .smc-sga-btn-entregaposterior a:before, .smc-sga-registro-documentos .smc-sga-btn-entregaposterior .smc-sga-legenda-agrupamento-chancela-situacao-plano a:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-filtro-aluno:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-grid-lancamento-nota-header > div .link:before, .smc-sga-grid-lancamento-nota-header > div .smc-sga-legenda-agrupamento-chancela-situacao-plano .link:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-grid-lancamento-frequencia-header > div .link:before, .smc-sga-grid-lancamento-frequencia-header > div .smc-sga-legenda-agrupamento-chancela-situacao-plano .link:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-mensagem-lancamento-nota:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-mensagem-lancamento-frequencia p.smc-sga-frequencia-apurada:before, .smc-sga-mensagem-lancamento-frequencia .smc-sga-legenda-agrupamento-chancela-situacao-plano p.smc-sga-frequencia-apurada:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-mensagem-lancamento-frequencia p.smc-sga-frequencia-convertida:before, .smc-sga-mensagem-lancamento-frequencia .smc-sga-legenda-agrupamento-chancela-situacao-plano p.smc-sga-frequencia-convertida:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-aluno-highlight:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-historico, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-historico-preenchido, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-historico-divergente, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-comentario, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-comentario-preenchido, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-grid-menu-aula-aberto, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-grid-menu-aula-fechado, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-frequencia-branco, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-frequencia-falta, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-frequencia-presente, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-frequencia-abono, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-frequencia-sancao, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-painelalertas-botao, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-painelalertas h3:before, .smc-sga-painelalertas .smc-sga-legenda-agrupamento-chancela-situacao-plano h3:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-carregando-local:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano button .smc-sga-carregando-local:before, button .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-carregando-local:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .po-toaster-info div:before, .po-toaster-info .smc-sga-legenda-agrupamento-chancela-situacao-plano div:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .po-toaster-warning div:before, .po-toaster-warning .smc-sga-legenda-agrupamento-chancela-situacao-plano div:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .po-toaster-success div:before, .po-toaster-success .smc-sga-legenda-agrupamento-chancela-situacao-plano div:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .po-toaster-error div:before, .po-toaster-error .smc-sga-legenda-agrupamento-chancela-situacao-plano div:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger button:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button.po-button-danger .smc-sga-legenda-agrupamento-chancela-situacao-plano button:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type button:before, .smc-sga-modal-ajuste-botoes .po-modal-footer po-button:first-of-type .smc-sga-legenda-agrupamento-chancela-situacao-plano button:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-btn-maximizar:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-btn-minimizar:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .po-loading:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-calendario-hoje button i, .smc-sga-calendario-hoje button .smc-sga-legenda-agrupamento-chancela-situacao-plano i, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-button::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-button-expanded::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-notas-frequencias .smc-hidepanel-button::before, .smc-sga-notas-frequencias .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-button::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-notas-frequencias .smc-hidepanel-button-expanded::before, .smc-sga-notas-frequencias .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-button-expanded::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-notas-frequencias div > button.smc-hidepanel-button-filled::before, .smc-sga-notas-frequencias .smc-sga-legenda-agrupamento-chancela-situacao-plano div > button.smc-hidepanel-button-filled::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-notas-frequencias div > button.smc-hidepanel-button-expanded-filled::before, .smc-sga-notas-frequencias .smc-sga-legenda-agrupamento-chancela-situacao-plano div > button.smc-hidepanel-button-expanded-filled::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-grupo-legenda-sga-notas-frequencias-em-branco > span::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-grupo-legenda-sga-notas-frequencias-preenchida > span::before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-pesquisa-avancada > .smc-hidepanel-button, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-hidepanel-pesquisa-avancada > .smc-hidepanel-button-expanded, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-ajuda-icotext > i, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-ico-ajuda, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-externo-agrupamento-secundario:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-externo-agrupamento-terciario:before, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-externo-totalizador-status-novo, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-externo-totalizador-status-emandamento, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-externo-totalizador-status-concluida, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-externo-totalizador-status-encerrada, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-sga-btn-trocaroferta > i, .smc-sga-legenda-agrupamento-chancela-situacao-plano .smc-btn-documento-icotext > i {
   margin-top: 1px;
 }
 
