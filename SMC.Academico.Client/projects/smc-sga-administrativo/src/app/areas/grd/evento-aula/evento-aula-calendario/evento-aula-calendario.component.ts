@@ -114,6 +114,10 @@ export class EventoAulaCalendarioComponent implements OnInit, OnChanges {
       return;
     }
 
+    // FIX: Fechar qualquer menu de contexto aberto antes de abrir um novo
+    // Isso evita que múltiplos menus fiquem abertos simultaneamente
+    this.contextMenuService.closeAll();
+
     // Restaurado com @perfectmemory/ngx-contextmenu v15 (compatível com Angular 15+)
     // A API mudou: agora usa show() como função em vez de Subject
     this.contextMenuService.show(this.menuContexto, {
