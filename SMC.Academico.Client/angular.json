@@ -58,7 +58,8 @@
               "calendar-utils/date-adapters/date-fns",
               "dom-set",
               "dom-plane",
-              "@mattlewis92/dom-autoscroller"
+              "@mattlewis92/dom-autoscroller",
+              "moment"
             ],
             "optimization": {
               "scripts": false,
@@ -197,6 +198,9 @@
               "projects/smc-sga-aluno/src/assets/recursos/node_modules/jquery/dist/jquery.js",
               "projects/smc-sga-aluno/src/assets/recursos/scripts/smc-developwarning.js"
             ],
+            "allowedCommonJsDependencies": [
+              "moment"
+            ],
             "optimization": {
               "fonts": false,
               "styles": {
@@ -319,6 +323,9 @@
             "scripts": [
               "projects/smc-sga-professor/src/assets/recursos/node_modules/jquery/dist/jquery.js",
               "projects/smc-sga-professor/src/assets/recursos/scripts/smc-developwarning.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "moment"
             ],
             "optimization": {
               "fonts": false,
