@@ -91,7 +91,18 @@ select.po-select:focus + .po-select-container {
     font-size: 1.3em;
     font-weight: bold;
 }
-
+.po-calendar-footer{
+    display:none !important;
+}
+.po-calendar{
+    height:285px !important;
+}
+.po-calendar-content .po-calendar-box-foreground-today-disabled {
+    border: none !important;
+}
+.po-calendar-content .po-calendar-box-background-selected {
+    background-color: $smc-cor-secundaria-01 !important;
+}
 @mixin estrutura-botao-calendario {
     button {
         border: none;
@@ -100,7 +111,7 @@ select.po-select:focus + .po-select-container {
         i {
             @extend .fa;
             color: $smc-cor-secundaria-01;
-            font-size: 16px;
+            font-size: 16px !important;
 
             &:hover {
                 border: none;
@@ -152,7 +163,8 @@ select.po-select:focus + .po-select-container {
 
 .cal-month-view .cal-day-cell.cal-weekend .cal-day-number,
 .cal-week-view .cal-header.cal-weekend span {
-    color: $smc-cinza-07;
+    color: $smc-cinza-07 !important;
+    font-family: "segoe_uiregular" !important;
 }
 
 .cal-month-view .cal-day-number {
@@ -171,6 +183,7 @@ select.po-select:focus + .po-select-container {
     b {
         opacity: 1;
         color: $smc-cor-principal-01;
+        font-family: "segoe_uiregular" !important;
     }
 }
 
@@ -245,6 +258,7 @@ select.po-select:focus + .po-select-container {
         margin-top: 10px;
         font-size: 12px;
         font-weight: bold;
+        font-family: "segoe_uiregular" !important;
     }
 }
 
@@ -278,7 +292,7 @@ select.po-select:focus + .po-select-container {
     input:checked {
         background-color: #000;
         width: 28px;
-        height: 8px;
+        height: 14px;
         padding: 0 4px;
         outline: #b6bdbf 1px solid;
         border: 3px solid #fff;
@@ -287,10 +301,12 @@ select.po-select:focus + .po-select-container {
 
 .smc-sga-agendamento-lista-disciplina-descricao {
     padding-right: 0;
+    font-family: "segoe_uiregular" !important;
 
     span {
         //float:left;
         font-size: 12px !important;
+        font-family: "segoe_uiregular" !important;
     }
 }
 
@@ -300,6 +316,7 @@ select.po-select:focus + .po-select-container {
         display: inline-block;
         padding: 5px 0;
         width: 100%;
+        font-family: "segoe_uiregular" !important;
     }
 
     .smc-size-md-1 {
@@ -317,13 +334,16 @@ select.po-select:focus + .po-select-container {
         }
 
         &:hover {
-            color: $smc-cor-secundaria-01;
+            color: $smc-cor-secundaria-01 !important;
+            background-color:#fff !important;
+            border:none !important;
         }
     }
 
     span {
         padding: 0;
         font-size: 13px;
+        font-family: "segoe_uiregular" !important;
     }
 
     li {
@@ -334,7 +354,7 @@ select.po-select:focus + .po-select-container {
 
     .smc-sga-agendamento-bullet {
         border-radius: 50px;
-        width: 7px;
+        width: 7px !important;
         height: 7px;
         display: inline-block;
         margin-bottom: 2px;
@@ -344,20 +364,20 @@ select.po-select:focus + .po-select-container {
 // tooltip
 .po-tooltip,
 .po-tooltip-arrow {
-    background-color: $smc-cor-principal-02;
-    z-index: 51;
+    background-color: $smc-cor-principal-02 !important;
+    z-index: 51 !important;
 }
 
 .po-tooltip-content {
     font-family: "segoe_uiregular";
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 13px !important;
+    line-height: 18px !important;
     color: #fff;
 }
 //BOLINHAS dos agendamentos
 .smc-sga-agendamento-bullet {
     border-radius: 50px;
-    width: 15px;
+    width: 15px !important;
     height: 15px;
     display: block;
     margin-top: 5px;
@@ -453,21 +473,22 @@ select.po-select:focus + .po-select-container {
     display: inline-block;
 }
 
-.po-tab-button-md {
+.po-tab-button-md, .po-tab-button-default {
     border-radius: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
-    background-color: $smc-branco;
-    border: solid 3px $smc-cinza-04;
+    background-color: $smc-branco !important;
+    border: solid 3px $smc-cinza-04 !important;
     float: left;
     margin: 0 5px 0 0;
     position: relative;
     z-index: 0;
-    padding: 15px;
+    padding: 15px !important;
     cursor: pointer;
-    color: #999;
+    color: #999 !important;
     font: normal normal bold 16px/18px segoe_uiregular;
     width: auto;
+    height: 44px !important;
 }
 
 .po-tab-button-active {
@@ -480,16 +501,33 @@ select.po-select:focus + .po-select-container {
     margin-bottom: 0;
     color: #074458;
     font: normal normal bold 16px/18px segoe_uiregular;
+    padding: 15px;
+    border-bottom: 3px solid #fff !important;
+    z-index: 1;
+    position: relative;
+    margin-left: 0 !important;
 }
-
+.po-tab-button-label {
+    padding: 0 16px !important;
+    width: 100% !important;
+}
+.po-tabs-header {
+    padding-inline: 0 !important;
+}
+po-tab-button.po-tab-button:first-child{
+    margin-left:0 !important;
+}
 .po-tabs-content {
     width: 100%;
     display: inline-block;
     border: solid 3px $smc-cinza-04;
     margin-top: -3px;
-    padding-bottom: 10px;
+    padding-bottom: 10px !important;
 }
 //////////////////////////////// DAQUI PARA BAIXO SOMENTE ITENS DO PROFESSOR VERIFICAR, QUANDO PUDER
+.po-tab-button-default{
+    background-color:#fff !important;
+}
 .po-button-primary {
     display: inline-block;
     cursor: pointer;
@@ -624,7 +662,7 @@ po-multiselect input[readonly][disabled] {
     height: 40px;
     border-radius: 10px;
     background-color: #0083a2;
-    font-size: 0;
+    font-size: 0 !important;
     @extend .fa;
     @extend .fa-bell-o;
     color: $smc-branco;
@@ -655,6 +693,7 @@ po-multiselect input[readonly][disabled] {
     position: absolute;
     left: 23px;
     top: 20px;
+    line-height: 13px;
 }
 
 .smc-sga-painelalertas {
@@ -662,17 +701,18 @@ po-multiselect input[readonly][disabled] {
     background-color: $smc-cinza-02;
     border-radius: 5px;
     border: 1px solid $smc-cinza-04;
-    padding: 15px;
-    min-height: 50px;
+    padding: 15px !important;
+    min-height: 50px !important;
     max-height: 220px;
     z-index: 2;
-    position: fixed;
+    position: fixed !important;
     right: 0;
 
     h3 {
         font-size: 16px;
         margin-bottom: 10px;
         color: $smc-cor-secundaria-01;
+        font-weight: normal !important;
 
         &:before {
             @extend .fa;
@@ -693,9 +733,18 @@ po-multiselect input[readonly][disabled] {
 
     span {
         font-size: 12px;
+        font-family: "segoe_uiregular" !important;
     }
 }
 // AJUSTES NO GRID PADRO ANGULAR
+.smc-sga-agendamento-agrupamento{
+.po-table {
+    table-layout: fixed;
+}
+.po-table .po-table-column-cell{
+    text-wrap: auto;
+ }
+}
 .po-table-header {
     padding: 12px 10px;
     background-color: #bad6da !important;
@@ -709,6 +758,7 @@ po-multiselect input[readonly][disabled] {
         font-weight: bold;
         -ms-word-wrap: break-word;
         word-wrap: break-word;
+        font-family: "segoe_uiregular" !important;
     }
 }
 
@@ -724,25 +774,30 @@ po-multiselect input[readonly][disabled] {
 
     span {
         color: #7a7a7a;
+        font-family: "segoe_uiregular" !important;
     }
 }
 //BOTOES SOMENTE CONE
 @mixin sga-botao-somente-icone {
     &:before {
-        @extend .fa;
+        @extend .fa ;
         color: #004058;
         font-size: 16px;
     }
 }
 
-.po-icon.po-icon-eye.po-clickable {
-    @include sga-botao-somente-icone;
+.po-icon.po-icon-eye {
+    font: normal normal normal 14px / 1 FontAwesome !important;
+    color: #004058;
+    font-size: 16px;
 
     &:before {
-        @extend .fa-eye;
+        content: "\f06e" !important;
     }
 }
-
+.po-icon {
+    font: normal normal normal 14px / 1 FontAwesome !important;
+}
 .po-icon.po-icon-edit.po-clickable {
     @include sga-botao-somente-icone;
 
@@ -796,6 +851,7 @@ po-multiselect input[readonly][disabled] {
         width: auto;
         display: block;
         overflow: hidden;
+        font-family: "segoe_uiregular" !important;
     }
 }
 
@@ -812,6 +868,7 @@ po-multiselect input[readonly][disabled] {
 
     span {
         color: #848484 !important;
+        font-family: "segoe_uiregular" !important;
     }
 }
 
@@ -857,7 +914,7 @@ po-multiselect input[readonly][disabled] {
 //}
 
 .smc-sga-calendario-mes {
-    padding-left: 35px;
+    padding-left: 35px !important;
 
     i {
         @extend .fa;
@@ -877,7 +934,7 @@ po-multiselect input[readonly][disabled] {
 }
 
 .smc-sga-calendario-semana {
-    padding-left: 35px;
+    padding-left: 35px !important;
 
     i {
         @extend .fa;
@@ -1030,15 +1087,15 @@ mwl-calendar-week-view-event {
 }
 
 .smc-btn-substituto-ico-destaque {
-    font-size: 0;
+    font-size: 0 !important;
     // margin-right: 6px;
     padding: 0 9px 0 9px;
 
     &:before {
         line-height: 1;
         display: block;
-        font-size: 10px;
-        margin-top: 13px;
+        font-size: 10px !important;
+        margin-top: 12px;
         position: absolute;
         height: 12px;
         z-index: 1;
@@ -1053,8 +1110,8 @@ mwl-calendar-week-view-event {
     i:before {
         line-height: 0;
         display: block;
-        font-size: 16px;
-        margin-top: 13px;
+        font-size: 16px !important;
+        margin-top: 5px;
         left: -3px;
         position: relative;
         @extend .fa;
@@ -1115,6 +1172,10 @@ mwl-calendar-week-view-event {
                 line-height: 22px;
             }
         }
+    }
+
+    .po-field-container-content-datepicker{
+        padding:0 !important;
     }
 }
 
@@ -1190,8 +1251,8 @@ mwl-calendar-week-view-event {
 }
 // DATEPICKER
 .po-calendar-box-foreground-today {
-    color: $smc-branco;
-    opacity: 1;
+    color: $smc-branco !important;
+    opacity: 1 !important;
 }
 
 .po-calendar-box-background-today {
@@ -1208,10 +1269,13 @@ mwl-calendar-week-view-event {
     height: 260px;
     margin-top: -9px;
 }
-
+.po-calendar-header .po-calendar-header-title {
+    color: #333 !important;
+}
 .po-calendar-nav-title {
     span {
-        color: $smc-preto;
+        color: $smc-preto !important;
+        font-family: "segoe_uiregular" !important;
     }
 }
 
@@ -1219,11 +1283,14 @@ mwl-calendar-week-view-event {
 }
 
 po-datepicker {
-    .po-field-icon-container-right {
+    .po-field-icon-container-right, .po-datepicker-button {
         position: absolute;
         z-index: 3;
-        top: 23px;
-        right: 6px;
+        top: 6px;
+        right: 0;
+        .po-button{
+            opacity:0;
+        }
     }
 
     .po-field-container-content {
@@ -1231,7 +1298,7 @@ po-datepicker {
             position: absolute;
             z-index: 1;
             right: 8px;
-            top: 16px;
+            top: 8px;
             color: $smc-cor-secundaria-01;
             @extend .fa;
             @extend .fa-calendar;
@@ -1250,6 +1317,7 @@ po-datepicker {
 
     span {
         color: $smc-branco;
+        font-family: "segoe_uiregular" !important;
     }
 }
 
@@ -1266,6 +1334,9 @@ po-datepicker {
         width: 15% !important;
     }
 }
+.an-caret-left:before, .an-caret-right:before {
+    color: #b0b0b0 !important;
+}
 
 .smc-sga-agendamento-radio-vertical {
     .po-radio-group-item {
@@ -1279,6 +1350,9 @@ po-datepicker {
         top: -1px;
         width: 18px;
     }
+}
+.po-calendar-content .po-calendar-box-foreground-today{
+    border:none !important;
 }
 ////////////////////////////////////
 // PASSAR PARA ESTILO GERAL DO ANGULAR
@@ -1295,7 +1369,7 @@ po-datepicker {
     &:before {
         @extend .fa;
         @extend .fa-asterisk;
-        font-size: 7px;
+        font-size: 7px !important;
         position: absolute;
         color: #00d0d0;
         margin: 4px 2px -2px 0;
@@ -1357,6 +1431,7 @@ po-multiselect {
 @mixin botoes-footer-modal-lookup {
     span {
         font-size: 12px;
+        font-family: "segoe_uiregular" !important;
     }
 
     .po-button {
@@ -1367,7 +1442,7 @@ po-multiselect {
             padding-left: 15px;
 
             &:before {
-                font-size: 18px;
+                font-size: 18px !important;
                 margin-left: -15px;
                 margin-right: 6px;
                 @extend .fa;
@@ -1375,11 +1450,39 @@ po-multiselect {
         }
     }
 }
+.po-button {
+    height: 31px;
+    padding: 2px 8px 0 8px;
+    background-color: #fff !important;
+    border: solid 1px #074458 !important;
+    color: #074458 !important;
+
+
+    .po-button-label {
+        padding-left: 15px;
+        font-family: "segoe_uiregular" !important;
+
+        &:before {
+            font-size: 18px !important;
+            margin-left: -15px;
+            margin-right: 6px;
+            @extend .fa;
+            @extend .fa-times-circle;
+        }
+    }
+
+    &:hover {
+        background-color: #fff;
+        border: solid 1px #1f9fc9 !important;
+        color: #1f9fc9 !important;
+    }
+}
 
 .smc-sga-estrutura-lookup-modal {
     .po-field-title,
     .po-table-column-cell span {
         font-size: 14px !important;
+        font-family: "segoe_uiregular" !important;
     }
 
     .smc-btn-limparenviar-ico {
@@ -1636,6 +1739,7 @@ po-multiselect {
         text-align: center;
         line-height: 12px;
         color: #a38147;
+        font-family: "segoe_uiregular" !important;
     }
 
     &:after {
@@ -1750,7 +1854,11 @@ font-size:12px;
         font-size: 12px;
         margin-top: 2px;
         margin-bottom: -2px;
+        line-height: 12px;
         color: $smc-cor-texto;
+        font-family: "segoe_uiregular" !important;
+        text-align: left;
+        margin-left: 20px;
     }
 
     a {
@@ -1760,6 +1868,7 @@ font-size:12px;
         display: inline-block;
         width: 60px;
         text-decoration: underline;
+        font-family: "segoe_uiregular" !important;
 
         &:hover {
             font-weight: bold;
@@ -1830,150 +1939,236 @@ font-size:12px;
     margin-top: -13px;
     margin-bottom: -7px;
 
-    po-field-container-bottom .po-field-container-bottom-text-error {
-        top: 34px;
-        margin-left: -57%;
-        width: 60%;
-    }
-
     .po-field-container-content {
-        width: 60%;
-        float: left;
-        display: inline-block;
-        margin-left: 7px;
-    }
-
-    .po-field-container-title {
-        float: left;
-        width: auto;
-        margin-top: 15px;
-    }
-
-    &.smc-datapicker-required:before {
-        margin: 20px 2px -2px 0;
-    }
-}
-
-.smc-header-tipo-primary {
-    padding: 10px 15px 1px 15px;
-}
-
-.smc-sga-lista-bullet {
-    padding-left: 20px;
-    margin-bottom: 10px;
-
-    li {
-        list-style-type: disc;
-
-        &::marker {
-            color: $smc-cor-secundaria-01;
+        &:before {
+            top: 16px;
+            }
         }
-    }
-}
-/// MEGAMENU  -ADEQUA PARA FUNCIONAMENTO CORRETO
+            .po-field-container-content-datepicker {
+                padding: 9px 0 !important;
+            }
 
-.smc-megamenu-nomeagrupamento {
-    padding-left: 0 !important;
-}
+            po-field-container-bottom .po-field-container-bottom-text-error {
+                top: 34px;
+                margin-left: -57%;
+                width: 60%;
+            }
 
-.smc-megamenu-estruturaprincipal {
-    padding-top: 14px;
-}
+            .po-field-container-content {
+                width: 60%;
+                float: left;
+                display: inline-block;
+                margin-left: 7px;
+            }
 
-.smc-megamenu-nomemenu h3 {
-    margin-top: 19px;
-}
-// FIM MEGAMENU
-// TREEVIEW
-.po-tree-view-item-header-padding {
-    padding-left: 0;
-}
+            .po-field-container-title {
+                float: left;
+                width: auto;
+                margin-top: 15px;
+            }
 
-.po-tree-view-item-header {
-    .po-checkbox {
-        margin-left: -7px;
-    }
-}
+            &.smc-datapicker-required:before {
+                margin: 20px -2px 3px -7px;
+            }
+        }
 
-.smc-sga-msg-instrucao {
-    width: auto;
-    background-color: $smc-cor-principal-07;
-    background-repeat: no-repeat;
-    background-position: 5px -2px;
-    padding: 5px 10px 5px 30px;
-    border-radius: 2px;
-    margin-bottom: 5px;
-    display: inline-block;
-    // margin-left: 10px;
-    position: relative;
+        .smc-header-tipo-primary {
+            padding: 10px 15px 1px 15px;
+        }
 
-    &:before {
-        @extend .fa;
-        @extend .fa-comment;
-        color: $smc-cor-principal;
-        font-size: 16px;
-        position: absolute;
-        left: 18px;
-        transform: scaleX(-1);
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
+        .smc-sga-lista-bullet {
+            padding-left: 20px;
+            margin-bottom: 10px;
 
-    p {
-        float: left;
-        clear: left;
-        color: $smc-cor-principal;
-        font-size: 12px;
-        margin: 2px 0 0 6px;
-    }
+            li {
+                list-style-type: disc;
 
-    a {
-        font-size: 13px;
-        color: $smc-cor-secundaria-01;
-        text-decoration: underline;
-        font-style: italic;
-        position: relative;
-        padding-right: 13px;
+                &::marker {
+                    color: $smc-cor-secundaria-01;
+                }
+            }
+        }
+        /// MEGAMENU  -ADEQUA PARA FUNCIONAMENTO CORRETO
 
-        &::after {
-            @extend .fa;
-            @extend .fa-external-link;
-            font-size: 10px;
-            color: $smc-cor-secundaria-01;
-            content: "\f08e";
-            margin-left: 4px;
-            top: -2px;
+        .smc-megamenu-nomeagrupamento {
+            padding-left: 0 !important;
+        }
+
+        .smc-megamenu-estruturaprincipal {
+            padding-top: 14px;
+        }
+
+        .smc-megamenu-nomemenu h3 {
+            margin-top: 19px;
+        }
+        // FIM MEGAMENU
+        // TREEVIEW
+        .po-tree-view-item-header-padding {
+            padding-left: 0;
+        }
+
+        .po-tree-view-item-header {
+            .po-checkbox {
+                margin-left: -7px;
+            }
+        }
+
+        .smc-sga-msg-instrucao {
+            width: auto;
+            background-color: $smc-cor-principal-07;
+            background-repeat: no-repeat;
+            background-position: 5px -2px;
+            padding: 5px 10px 5px 30px;
+            border-radius: 2px;
+            margin-bottom: 5px;
+            display: inline-block;
+            // margin-left: 10px;
             position: relative;
+
+            &:before {
+                @extend .fa;
+                @extend .fa-comment;
+                color: $smc-cor-principal;
+                font-size: 16px;
+                position: absolute;
+                left: 18px;
+                transform: scaleX(-1);
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            p {
+                float: left;
+                clear: left;
+                color: $smc-cor-principal;
+                font-size: 12px;
+                margin: 2px 0 0 6px;
+            }
+
+            a {
+                font-size: 13px;
+                color: $smc-cor-secundaria-01;
+                text-decoration: underline;
+                font-style: italic;
+                position: relative;
+                padding-right: 13px;
+
+                &::after {
+                    @extend .fa;
+                    @extend .fa-external-link;
+                    font-size: 10px;
+                    color: $smc-cor-secundaria-01;
+                    content: "\f08e";
+                    margin-left: 4px;
+                    top: -2px;
+                    position: relative;
+                }
+            }
         }
-    }
-}
 
-.smc-sga-alinha-direita {
-    .smc-button {
-        float: right;
-    }
-}
+        .smc-sga-alinha-direita {
+            .smc-button {
+                float: right;
+            }
+        }
 
-.smc-sga-tag {
-    margin-bottom: 2px;
-    float: left;
-    background-color: #dcdcdc;
-    font-size: 10px !important;
-    border-radius: 4px;
-    margin-left: 6px;
-    color: #505050 !important;
-    margin-top: 7px;
-    padding: 2px 5px;
-    align-self: flex-start;
-}
+        .smc-sga-tag {
+            margin-bottom: 2px;
+            float: left;
+            background-color: #dcdcdc;
+            font-size: 10px !important;
+            border-radius: 4px;
+            margin-left: 6px;
+            color: #505050 !important;
+            margin-top: 7px;
+            padding: 2px 5px;
+            align-self: flex-start;
+        }
 
-.smc-btn-header-secundario {
-    font-size: 11px;
-    line-height: 13px;
-    height: 25px;
+        .smc-btn-header-secundario {
+            font-size: 11px;
+            line-height: 13px;
+            height: 25px;
 
-    i {
-        position: relative;
-        margin-top: 0;
-    }
-}
+            i {
+                position: relative;
+                margin-top: 0;
+            }
+        }
+
+        .po-tab-button-label,
+        .smc-sga-calendario-navegacao-setas p,
+        .smc-sga-calendario-semana,
+        .smc-sga-calendario-mes,
+        .smc-sga-calendario-hoje,
+        .smc-sga-calendario-hoje button,
+        .smc-btn-header-secundario.smc-btn-novo-icotext,
+        .po-modal-title,
+        .po-text-ellipsis,
+        .smc-datagrid table td .smc-display p,
+        .smc-datagrid-no-results,
+        .smc-btn-pesquisar-icotext-destaque,
+        .smc-pager ul li p,
+        .smc-sga-agendamento-situacaoaula,
+        .smc-sga-agendamento-situacaoaula-label,
+        .smc-sga-agendamento-data,
+        .smc-sga-agendamento-local,
+        .smc-sga-agendamento-professor li,
+        .smc-sga-agendamento-turma,
+        .po-modal-header > .po-modal-title,
+        .smc-sga-agendamento-total-lista label,
+        .smc-sga-agendamento-total-lista p,
+        .smc-btn-fechar-icotext,
+        .smc-btn-excluir-icotext,
+        .smc-btn-substituto-ico-destaque,
+        legend,
+        .smc-display p,
+        .smc-btn-novo-icotext,
+        .smc-btn-salvar-icotext-destaque,
+        .smc-sga-mensagem-local-erro p,
+        .smc-display > label,
+        .smc-sga-msg-instrucao > p,
+        .smc-btn-confirmar-icotext-destaque,
+        .po-calendar-header-title span,
+        .po-calendar-box-foreground,
+        .po-modal-body p,
+        .smc-btn-custom,
+        .po-modal-content > .po-modal-header > .po-modal-title.po-text-ellipsis {
+            font-family: "segoe_uiregular" !important;
+        }
+
+        .smc-sga-msg-instrucao > p {
+            margin: 3px 0 0 26px !important;
+        }
+
+        .smc-sga-agendamento-agrupamento {
+            h3 {
+                font-size: 1.17em !important;
+                font-weight: normal !important;
+                color: #074458 !important;
+            }
+        }
+
+        .po-table .po-table-master-detail tbody tr:not(:last-child) td, .po-table tbody:not(:last-child) tr td {
+            border-bottom-color: #e3e3e3 !important;
+        }
+
+        po-select .po-field-container:focus-within {
+            box-shadow: none !important;
+            outline: none !important;
+        }
+
+        po-select .po-select:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        po-select input:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        .smc-input-required .po-field-container-title:before,
+        [p-required=true] .po-field-container-title:before {
+            margin: -5px 2px -1px -5px;
+        }

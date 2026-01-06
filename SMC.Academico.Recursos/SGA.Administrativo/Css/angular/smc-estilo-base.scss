@@ -25,7 +25,7 @@ a {
 }
 
 .po-field-title {
-    font-family: "sf_ui_displayregular";
+    font-family: "segoe_uiregular" !important;
     color: $smc-cinza;
     float: left;
     margin-bottom: -6px;
@@ -340,7 +340,7 @@ $smc-mensagem-sucesso-cor-texto: #546d3e !default;
 }
 
 .po-modal-overlay {
-    background: rgba(98, 98, 98, 0.7);
+    background: rgba(98, 98, 98, 0.7) !important;
 }
 
 .po-modal-body::-webkit-scrollbar {
@@ -630,7 +630,7 @@ $smc-mensagem-sucesso-cor-texto: #546d3e !default;
     float: left;
     font-weight: normal !important;
     margin-bottom: 2px !important;
-    font-family: "sf_ui_displayregular" !important;
+    font-family: "segoe_uiregular" !important;
     font-size: 14px !important;
 }
 
@@ -725,6 +725,10 @@ po-multiselect .po-field-icon-container-right {
     background-color: #ddf9fd !important;
 }
 
+.po-radio input[type=radio] {
+    border: 1px solid #b7b7b7 !important;
+}
+
 .po-radio input[type=radio]:checked, [data-a11y=AAA] .po-radio input[type=radio][p-size=small]:checked {
     background: var(--background-radial-md);
     background-color: var(--color-unchecked);
@@ -787,4 +791,17 @@ smc-select {
 
 .po-select, [data-a11y=AAA] .po-select-aa{
     font-size:14px !important;
+}
+
+.po-modal-header{
+border-bottom: none !important;
+}
+
+.po-modal-footer{
+    border-top:none !important;
+}
+
+.po-modal .po-modal-content{
+    background-color:#fff !important;
+    border:none !important;
 }
